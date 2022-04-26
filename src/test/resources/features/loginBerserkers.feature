@@ -39,7 +39,7 @@
       Y presiono el boton Continuar
       Entonces valido que se presente el mensaje de error "This information is required."
 
-    @LoginBerserker @LoginCasoNegativo
+    @LoginBerserker  @LoginCasoNegativo
     Escenario: Login - Caso negativo - Password incorrecta
       Dado que abro la pagina de movistar
       Cuando presiono el boton Iniciar Sesion
