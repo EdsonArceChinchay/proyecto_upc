@@ -1,5 +1,5 @@
 #language:es
-  @NuevoProyecto
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
   Característica: Login - Berserker
 
