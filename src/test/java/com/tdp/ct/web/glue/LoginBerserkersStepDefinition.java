@@ -1,14 +1,19 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
+import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
 
+@CucumberContextConfiguration
+@SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
     @Value("${url.movistar}")
