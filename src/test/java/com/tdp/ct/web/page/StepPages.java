@@ -6,5 +6,6 @@ import org.springframework.stereotype.Component;
 public class StepPages {
 
     public LoginBerserkerPage loginBerserkerPage(){ return new LoginBerserkerPage(); }
+    public HomePage homePage(){ return new HomePage();}
 
 }
