@@ -21,6 +21,7 @@ public class HomeStep {
     public void ingresoDocumento(String documento){
         page.homePage().ingresoDocumento(documento);
     }
+
     @ScreenShotBefore
     public void clickBotonConsultar(){
         page.homePage().clickBotonConsultar();

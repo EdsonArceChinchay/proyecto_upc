@@ -7,5 +7,6 @@ public class StepPages {
 
     public LoginBerserkerPage loginBerserkerPage(){ return new LoginBerserkerPage(); }
     public HomePage homePage(){ return new HomePage();}
+    public AltaFijaAltaMovilRetailPage altaFijaAltaMovilRetailPage(){ return new AltaFijaAltaMovilRetailPage();}
 
 }

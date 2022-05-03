@@ -1,12 +1,16 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends WebBase {
+
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[3]/div[1]")
+    protected WebElement boton01;
 
     @FindBy(xpath = "//div[1]/form/div/div[3]/button")
     protected WebElement btnconsultar;
@@ -26,6 +30,8 @@ public class HomePage extends WebBase {
     }
     public void clickBotonConsultar(){
         click(btnconsultar);
+        waitUntilElementIsVisible(boton01,5);
+        UtilWeb.waitForSeconds(5);
     }
 
 }
