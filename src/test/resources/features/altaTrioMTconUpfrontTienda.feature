@@ -16,6 +16,8 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        doy click en el boton linea nueva
+    Y        doy click en el boton mostrar ofertas
     Ejemplos:
       |tipoUsuario    |userName    |password      |msgHome   |tiendaAsesor      |tipoDocumento |documento |
-      |usuario externo|lterrazosce |Telefonica2021|Bienvenid@|TIENDA SAN MIGUEL |DNI           |74414338  |
+      |usuario externo|lterrazosce |Telefonica2021|Bienvenid@|TIENDA SAN MIGUEL |DNI           |74414335  |
