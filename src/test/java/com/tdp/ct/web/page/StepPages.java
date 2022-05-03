@@ -8,4 +8,7 @@ public class StepPages {
     public LoginBerserkerPage loginBerserkerPage(){ return new LoginBerserkerPage(); }
     public HomePage homePage(){ return new HomePage();}
     public AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage(){ return new AltaTrioMTconUpfrontTiendaPage();}
+    public AltaFijaAltaMovilRetailPage altaFijaAltaMovilRetailPage(){ return new AltaFijaAltaMovilRetailPage();}
+
+
 }
