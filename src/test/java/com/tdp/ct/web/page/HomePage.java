@@ -30,7 +30,7 @@ public class HomePage extends WebBase {
     }
     public void clickBotonConsultar(){
         click(btnconsultar);
-        waitUntilElementIsVisible(boton01,5);
+        waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);
     }
 

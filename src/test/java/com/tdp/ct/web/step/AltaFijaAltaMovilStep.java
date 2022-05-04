@@ -2,11 +2,12 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AltaFijaAltaMovilRetailStep {
+public class AltaFijaAltaMovilStep {
 
     @Autowired
     private StepPages page;
@@ -41,12 +42,10 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().seleccionarDistrito(tipoDis);
     }
 
-
     @ScreenShotAfter
     public void writeDirec(String data) {
         page.altaFijaAltaMovilRetailPage().writeDireccion(data);
     }
-
 
     @ScreenShotAfter
     public void writeReferencia(String data1) {
@@ -94,4 +93,24 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().consultaCobertura();
     }
 
+    public void mostrarDetalleOfertasSugeridas() {
+        Assert.assertTrue(page.altaFijaAltaMovilRetailPage().validarQueExistanOfertasSugeridas());
+    }
+
+    public void seleccionarOferta(String oferta) {
+
+        page.altaFijaAltaMovilRetailPage().seleccionarOferta(oferta);
+    }
+
+    public void seleccionarPlan(String plan) {
+        page.altaFijaAltaMovilRetailPage().seleccionarPlan();
+    }
+
+    public void validarDetalleSeleccion() {
+        page.altaFijaAltaMovilRetailPage().validarDetalleSeleccion();
+    }
+
+    public void clicIniciarRegistro() {
+        page.altaFijaAltaMovilRetailPage().clicIniciarRegistro();
+    }
 }

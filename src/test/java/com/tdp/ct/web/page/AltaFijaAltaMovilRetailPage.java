@@ -122,4 +122,24 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
+    public boolean validarQueExistanOfertasSugeridas() {
+
+        return true;
+    }
+
+    public void seleccionarOferta(String oferta) {
+
+    }
+
+    public void seleccionarPlan() {
+
+    }
+
+    public void validarDetalleSeleccion() {
+
+    }
+
+    public void clicIniciarRegistro() {
+
+    }
 }
