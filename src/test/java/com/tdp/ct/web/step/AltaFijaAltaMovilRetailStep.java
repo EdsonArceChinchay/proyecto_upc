@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AltaFijaAltaMovilStep {
+public class AltaFijaAltaMovilRetailStep {
 
     @Autowired
     private StepPages page;
@@ -93,24 +93,4 @@ public class AltaFijaAltaMovilStep {
         page.altaFijaAltaMovilRetailPage().consultaCobertura();
     }
 
-    public void mostrarDetalleOfertasSugeridas() {
-        Assert.assertTrue(page.altaFijaAltaMovilRetailPage().validarQueExistanOfertasSugeridas());
-    }
-
-    public void seleccionarOferta(String oferta) {
-
-        page.altaFijaAltaMovilRetailPage().seleccionarOferta(oferta);
-    }
-
-    public void seleccionarPlan(String plan) {
-        page.altaFijaAltaMovilRetailPage().seleccionarPlan();
-    }
-
-    public void validarDetalleSeleccion() {
-        page.altaFijaAltaMovilRetailPage().validarDetalleSeleccion();
-    }
-
-    public void clicIniciarRegistro() {
-        page.altaFijaAltaMovilRetailPage().clicIniciarRegistro();
-    }
 }
