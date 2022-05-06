@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
+import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -16,6 +17,8 @@ public class AltaFijaAltaMovilRetailStepDefinition {
 
   @Autowired
   private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
+  @Autowired
+  private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Y("selecciono el boton Linea Nueva Hogar")
     public void seleccionoElBotonLineaNuevaHogar() {
@@ -94,6 +97,7 @@ public class AltaFijaAltaMovilRetailStepDefinition {
 
   @Y("presionamos el boton Consultar Cobertura")
   public void presionamosElBotonConsultarCobertura() {
+      altaFijaMovilRegistroStep.moverseFinalDocumento();
       altaFijaAltaMovilRetailStep.btnCobertura();
   }
 
