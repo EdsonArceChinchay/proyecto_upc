@@ -57,8 +57,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
-    @FindBy(xpath = "//button[contains(text(),'acepta')]")
-    protected WebElement buttonSiAcepto;
+    @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
+    protected WebElement rootModalButtonSiAcepto;
 
     @FindBy(xpath = "//span[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
@@ -98,7 +98,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarPlan(String plan) {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
@@ -127,7 +127,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
     public void clicIniciarRegistro() {
-        waitUntilElementIsVisible(buttonIniciarRegistro, 10).click();
+        waitUntilElementIsVisible(buttonIniciarRegistro, 20).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
        // UtilWeb.waitForSeconds(2);
     }
 
@@ -163,7 +164,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             existe = false;
             System.out.println(ex.getMessage());
         }
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         return existe;
     }
 
@@ -176,7 +177,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void completarCorreo(String correo) {
         UtilWeb.waitForSeconds(2);
         scrollByJavaScriptToPrincipio();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[1]");
         SearchContext context1 = sh().getContext(rootInputCorreo);
         context1.findElement(By.cssSelector("div > div > div > input")).sendKeys(correo);
@@ -244,17 +245,21 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
-        waitUntilElementIsVisible(buttonSiAcepto, 10);
+
+        WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
+        waitUntilElementIsVisible(element, 10);
+        UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
 
     public void clicSiAcepto() {
-        waitUntilElementIsVisible(buttonSiAcepto, 10).click();
-        UtilWeb.waitForSeconds(2);
+        WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
+        waitUntilElementIsVisible(element, 10).click();
+        UtilWeb.waitForSeconds(4);
     }
 
     public boolean validarMensajeExitoso() {
-        boolean existe = waitUntilElementIsVisible(msjExitoso, 60).isDisplayed();
+        boolean existe = waitUntilElementIsVisible(msjExitoso, 120).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         return existe;
@@ -357,6 +362,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void scrollByJavaScriptToFinal() {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
     }
 }

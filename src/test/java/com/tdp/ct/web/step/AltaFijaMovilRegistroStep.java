@@ -53,10 +53,10 @@ public class AltaFijaMovilRegistroStep {
     public void clicIniciarRegistro() {
         page.altaFijaMovilRegistroPage().clicIniciarRegistro();
     }
-//    @ScreenShotAfter
-//    public void moverToElementIniciarRegistro() {
-//        page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
-//    }
+    @ScreenShotAfter
+    public void moverToElementIniciarRegistro() {
+        page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
+    }
     @ScreenShotAfter
     public void validarPantallaAgendamiento() {
         Assert.assertTrue("No se mostro pantalla de agendamiento",
@@ -119,7 +119,6 @@ public class AltaFijaMovilRegistroStep {
     }
     @ScreenShotAfter
     public void clicValidarContrato() {
-
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
     @ScreenShotAfter

@@ -66,7 +66,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Cuando("doy clic a iniciar registro")
     public void doyClicAIniciarRegistro() {
-        altaFijaMovilRegistroStep.moverseFinalDocumento();
+        altaFijaMovilRegistroStep.moverToElementIniciarRegistro();
         altaFijaMovilRegistroStep.clicIniciarRegistro();
     }
 
@@ -134,7 +134,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
     @Y("doy clic en continuar")
     public void doyClicEnContinuar() {
-        altaFijaMovilRegistroStep.moverseFinalDocumento();
+        //altaFijaMovilRegistroStep.moverseFinalDocumento();
         altaFijaMovilRegistroStep.clicBotonContinuar();
     }
 
