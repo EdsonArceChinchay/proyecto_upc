@@ -5,7 +5,10 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -74,6 +77,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//")
     protected WebElement labelCodigoOrden;
+
+
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -210,7 +215,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         String nomMadre = UtilWeb.getValueFromDataTable(datos, "nombreMadre");
         String nomPadre = UtilWeb.getValueFromDataTable(datos, "nombrePadre");
         String distritoNacimiento = UtilWeb.getValueFromDataTable(datos, "distritoNac");
-        validaciones(nomMadre, nomPadre, distritoNacimiento);
+        validacionesCliente(nomMadre, nomPadre, distritoNacimiento);
     }
 
     public void clicSiguiente() {
@@ -229,16 +234,21 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void verificarIdentidadValidada() {
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsVisible(buttonIdentidadValidada,10).isDisplayed();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Identidad validada");
+        UtilWeb.waitForSeconds(3);
+        String loadingInserted="//div[@class='loadingCard ng-star-inserted']";
+
+        if(esperarLoadingIsNotVisible(loadingInserted,30)){
+            waitUntilElementIsVisible(buttonIdentidadValidada,20).isDisplayed();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Identidad validada");
+        }
     }
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsVisible(buttonValidarContrato,10).isDisplayed();
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsVisible(buttonValidarContrato,10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
     public void clicBotonContinuar() {
+        UtilWeb.waitForSeconds(1);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
@@ -255,13 +265,23 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicSiAcepto() {
         WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
         waitUntilElementIsVisible(element, 10).click();
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
+        UtilWeb.waitForSeconds(3);
     }
 
     public boolean validarMensajeExitoso() {
-        boolean existe = waitUntilElementIsVisible(msjExitoso, 120).isDisplayed();
-        UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+        boolean existe=false;
+        UtilWeb.waitForSeconds(10);
+        String loadingcargando="//div/h1[text()='Cargando']";
+
+        if(esperarLoadingIsNotVisible(loadingcargando,60)){
+            existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
+            UtilWeb.waitForSeconds(1);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+        }else{
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay mensaje exitoso,ver captura en reporte");
+        }
+
         return existe;
     }
 
@@ -306,7 +326,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     //OTROS metodos
-    public void validaciones(String madre, String padre, String lugar) {
+    public void validacionesCliente(String madre, String padre, String lugar) {
         waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
@@ -354,7 +374,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollBy(100,150)");
     }
-
     public void scrollByJavaScriptToPrincipio() {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0, 0);");
@@ -364,4 +383,19 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
         UtilWeb.waitForSeconds(2);
     }
+
+    public boolean esperarLoadingIsNotVisible(String xpath,int segundos) {
+        boolean retorno;
+        try {
+            WebDriverWait webDriverWait = new WebDriverWait(driver(), segundos);
+            webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
+            retorno= true;
+        } catch (Exception e) {
+            retorno=false;
+            System.out.println("No se esperó a que se oculte el elemento");
+        }
+        return retorno;
+    }
+
+
 }

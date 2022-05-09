@@ -47,4 +47,4 @@ Característica: Alta Fija + Alta Movil
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | DNI           | 75769642  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | DNI           | 72313097  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |

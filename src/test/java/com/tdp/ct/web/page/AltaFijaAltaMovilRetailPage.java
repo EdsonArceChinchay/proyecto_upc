@@ -23,12 +23,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
+        waitUntilElementIsClickable(btnHogar,20);
         click(btnHogar);
         waitUntilElementIsVisible(btnMovil,5);
         UtilWeb.waitForSeconds(2);
     }
 
     public void altaMovil(){
+        waitUntilElementIsClickable(btnMovil,10);
         click(btnMovil);
         UtilWeb.waitForSeconds(5);
     }
@@ -112,7 +114,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarConjuntoHabitacional(String tipoConjunto){
         WebElement conjuntoList= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
         click(conjuntoList);
-      //  UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(conjuntoList);
         context.findElement(By.cssSelector("[data-value='"+tipoConjunto+"']")).click();
     }

@@ -114,7 +114,6 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void validarIdentidadValidada() {
-
         page.altaFijaMovilRegistroPage().verificarIdentidadValidada();
     }
     @ScreenShotAfter

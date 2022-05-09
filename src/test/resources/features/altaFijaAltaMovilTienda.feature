@@ -5,12 +5,6 @@ Característica: Alta Fija + Alta Movil
 
   Antecedentes:
     Dado     que abro la pagina de movistar
-#     Y        me logueo con las credenciales en la aplicacion
-#      | tipoUsuario     | userName    | password       |
-#      | usuario externo | nishuizas | $t3l3f0n1c4$ |
-#    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-#    Y        valido que se presente la tienda "TALARA"
-
 
   @AltaFijaTienda
   Esquema del escenario: Alta Tienda con DNI sin productos asociados sin biometria
@@ -59,7 +53,6 @@ Característica: Alta Fija + Alta Movil
             | <nombreMadre> | <nombrePadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
-    Y        doy clic en continuar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
