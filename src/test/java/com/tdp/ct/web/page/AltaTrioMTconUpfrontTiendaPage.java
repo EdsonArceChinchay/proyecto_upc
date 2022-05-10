@@ -16,7 +16,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement btnConsultaCobertura ;
 
-    @FindBy(xpath = "//app-footer-offert/div[1]//div[3]/app-footer-item/div/div[2]/div[3]/div/button")
+    @FindBy(xpath = "//app-oferta-age/body/div[3]/div[4]/app-footer-offert/div[1]/div/div/div[3]/app-footer-item/div/div[2]/div[3]/div/button")
     protected WebElement btnIrMovistarTotal ;
 
     @FindBy(xpath = "//app-resume-mt/div/div[6]/div[3]/div/button")
@@ -51,9 +51,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     public void clickBotonConsultarCobertura(){
         waitUntilElementIsVisible(btnConsultaCobertura,10);
         click(btnConsultaCobertura);
-        UtilWeb.waitForSeconds(10);
+
     }
     public void clickBotonIrMovistarTotal(){
+        waitUntilElementIsVisible(btnIrMovistarTotal,30);
         click(btnIrMovistarTotal);
     }
     public void clickBotonIniciarRegistro(){
