@@ -134,7 +134,6 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
     @Y("doy clic en continuar")
     public void doyClicEnContinuar() {
-        //altaFijaMovilRegistroStep.moverseFinalDocumento();
         altaFijaMovilRegistroStep.clicBotonContinuar();
     }
 
@@ -153,4 +152,17 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarMensajeExitoso();
     }
 
+
+    @Y("doy click en validar huella")
+    public void doyClickEnValidarHuella() {
+        UtilWeb.waitForSeconds(3);
+        altaFijaMovilRegistroStep.clicValidarHuella();
+    }
+
+
+    @Y("doy click en boton confirmar huella")
+    public void doyClickEnBotonConfirmarHuella() {
+        UtilWeb.waitForSeconds(3);
+        altaFijaMovilRegistroStep.clicEnConfirmar();
+    }
 }

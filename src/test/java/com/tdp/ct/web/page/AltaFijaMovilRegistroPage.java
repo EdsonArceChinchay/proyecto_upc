@@ -388,4 +388,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return retorno;
     }
 
+    public void clicEnValidarHuella() {
+        WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        SearchContext context = sh().getContext(rootInputCorreo);
+        context.findElement(By.cssSelector("button")).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en Validar huella");
+        UtilWeb.waitForSeconds(2);
+    }
+
 }

@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil
+Característica: Alta Fija + Alta Movil por Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -44,6 +44,15 @@ Característica: Alta Fija + Alta Movil
     Y        doy clic en confirmar
     Y        completo los datos solicitados "<correo>"
     Y        doy click en validar identidad del titular
+
+#    Y        doy click en validar huella
+#    Y        doy click en boton confirmar huella
+#    Entonces valido que me muestre el boton con el texto de identidad validada
+#    Y        doy clic para validar contrato Movil
+#    Y        me muestra en pantalla el contrato solicitado
+#    Cuando   doy clic en si acepto
+#    Y        doy clic en continuar
+#    Entonces visualizo en pantalla el mensaje de exito
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
