@@ -73,6 +73,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("valido que me encuentre en la pantalla agendamiento")
     public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
         altaFijaMovilRegistroStep.validarPantallaAgendamiento();
+        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
     }
 
     @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
@@ -164,5 +165,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void doyClickEnBotonConfirmarHuella() {
         UtilWeb.waitForSeconds(3);
         altaFijaMovilRegistroStep.clicEnConfirmar();
+    }
+
+    @Y("agrego el SVA para fija HBO")
+    public void agregoElSVAParaFijaHBO() {
+        altaFijaMovilRegistroStep.clicEnAgregarSVA();
+        altaFijaMovilRegistroStep.clicSVAHBO();
+        altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 }
