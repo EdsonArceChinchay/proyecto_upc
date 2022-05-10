@@ -57,8 +57,7 @@ Característica: Alta Fija + Alta Movil
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito
-#    Y        muestro en consola el numero de registro generado
-#    Y        doy clic para ver el contrato PDF
+
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |

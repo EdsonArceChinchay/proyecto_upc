@@ -159,14 +159,5 @@ public class AltaFijaMovilRegistroStep {
     public void validarMensajeExitoso() {
         Assert.assertTrue("No se pudo validar registro exitoso!!!",page.altaFijaMovilRegistroPage().validarMensajeExitoso());
     }
-    @ScreenShotAfter
-    public void imprimirConsolaNumeroRegistroGenerado() {
-        page.altaFijaMovilRegistroPage().imprimirConsolaNumeroRegistroGenerado();
-    }
-
-    @ScreenShotAfter
-    public void clicVerPDF() {
-        page.altaFijaMovilRegistroPage().clicVerPDF();
-    }
 
 }

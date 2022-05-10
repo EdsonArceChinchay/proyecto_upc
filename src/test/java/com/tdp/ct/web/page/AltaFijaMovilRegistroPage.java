@@ -66,18 +66,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
 
-    @FindBy(xpath = "//button[contains(text(),'contrato PDF')]")
-    protected WebElement buttonVerPDF;
-
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
 
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Validar contrato')]/..")
     protected WebElement buttonValidarContrato;
-
-    @FindBy(xpath = "//")
-    protected WebElement labelCodigoOrden;
-
 
 
     public boolean validarPantallaIngresarDireccion() {
@@ -123,9 +116,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void validarDetalleSeleccion() {
-        waitUntilElementIsVisible(titlePlan, 10);
+        waitUntilElementIsVisible(titlePlan, 20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
     }
     public void moverToElementIniciarRegistro() {
         js().scrollElementTop(buttonIniciarRegistro);
@@ -248,7 +241,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
     public void clicBotonContinuar() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
@@ -266,32 +259,30 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
         waitUntilElementIsVisible(element, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-        UtilWeb.waitForSeconds(3);
+
     }
 
     public boolean validarMensajeExitoso() {
         boolean existe=false;
         UtilWeb.waitForSeconds(10);
-        String loadingcargando="//div/h1[text()='Cargando']";
+        String loadingSplascargando="//div[@class='splash ng-star-inserted']";
+        String labelCargando="//div/h1[text()='Cargando']";
+        int segundos=60;
 
-        if(esperarLoadingIsNotVisible(loadingcargando,60)){
-            existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
-            UtilWeb.waitForSeconds(1);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
-        }else{
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay mensaje exitoso,ver captura en reporte");
+        if(esperarLoadingIsNotVisible(loadingSplascargando,segundos)){
+            if(esperarLoadingIsNotVisible(labelCargando,60)){
+                UtilWeb.waitForSeconds(2);
+                existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
+                UtilWeb.waitForSeconds(1);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+            }else{
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de "+segundos+" segundos");
+            }
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de 60 segundos");
         }
 
         return existe;
-    }
-
-    public void imprimirConsolaNumeroRegistroGenerado() {
-
-    }
-
-    public void clicVerPDF() {
-        waitUntilElementIsVisible(buttonVerPDF, 10).click();
-        UtilWeb.waitForSeconds(2);
     }
 
 
@@ -396,6 +387,5 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         return retorno;
     }
-
 
 }

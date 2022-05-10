@@ -23,7 +23,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
-        waitUntilElementIsClickable(btnHogar,20);
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(btnHogar,30);
         click(btnHogar);
         waitUntilElementIsVisible(btnMovil,5);
         UtilWeb.waitForSeconds(2);

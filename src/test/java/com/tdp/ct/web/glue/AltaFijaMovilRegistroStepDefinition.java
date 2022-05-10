@@ -153,15 +153,4 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarMensajeExitoso();
     }
 
-    @Y("muestro en consola el numero de registro generado")
-    public void muestroEnConsolaElNumeroDeRegistroGenerado() {
-        altaFijaMovilRegistroStep.imprimirConsolaNumeroRegistroGenerado();
-    }
-
-    @Y("doy clic para ver el contrato PDF")
-    public void doyClicParaVerElContratoPDF() {
-        altaFijaMovilRegistroStep.clicVerPDF();
-    }
-
-
 }
