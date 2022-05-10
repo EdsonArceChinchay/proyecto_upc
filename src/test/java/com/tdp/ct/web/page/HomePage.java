@@ -29,8 +29,9 @@ public class HomePage extends WebBase {
 
     }
     public void clickBotonConsultar(){
+        waitUntilElementIsVisible(btnconsultar,10);
         click(btnconsultar);
-        waitUntilElementIsVisible(boton01,5);
+        waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);
     }
 
