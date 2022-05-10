@@ -33,24 +33,27 @@
       Y        doy click en el boton consultar cobertura
       Y        doy click en el boton Ir a movistar total
       Y        presiono el boton iniciar registro
-     # Y        selecciono la fecha de instalacion
       Y        ingreso telefono del contacto "<numContacto>"
       Y        doy click en el boton confirmar
       Y        valido detalles de instalacion
       Y        confirmo el registro de instalacion
-      Y        ingreso el correo electronico "<correoElectronico>"
-               |correoElectronico|
-               |eloy.m@gmail.com |
-      Y        vuelvo ingresar el correo electronico "<vuelveIngresarCorreo>"
-      Y        doy click en el boton validar identidad del titular
-      Y        doy click en discapacitado o huella desgastado
-      Y        selecciono tipo de documento del supervisor "<tipoDoc>"
-      Y        ingreso el numero de documento del supervisor "<documentoSuperv>"
-      Y        presiono el boton confirmar
-      Y        ingreso usuario citrix de supervisor "<user>"
-      Y        ingreso contraseña de supervisor "<passw>"
-      Y        presiono el boton confirmar
+      Y        completo los datos solicitados "<correo>"
+      Y        doy click en validar identidad del titular
+      Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+      Y        ingreso los datos del supervisor
+         | numdoc   | user        | password     |
+         | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+      Y        ingreso los datos solicitados para la validacion del cliente
+         | nombreMadre   | nombrePadre   | distritoNac   |
+         | <nombreMadre> | <nombrePadre> | <distritoNac> |
+      Entonces valido que me muestre el boton con el texto de identidad validada
+      Y        doy clic para validar contrato Movil
+      Y        me muestra en pantalla el contrato solicitado
+      Cuando   doy clic en si acepto
+      Y        doy clic en continuar
+      Entonces visualizo en pantalla el mensaje de exito
 
-    Ejemplos:
-      |tipoUsuario    |userName    |password      |msgHome   |tiendaAsesor      |tipoDocumento |documento |departamento|provincia|distrito|direccion                    |referencia |mz|lote|piso|int|conjunto|conjHabit|numContacto|correoElectronico|vuelveIngresarCorreo|
-      |usuario externo|lterrazosce |Telefonica2021|Bienvenid@|TIENDA SAN MIGUEL |DNI           |74414332  | 15         |1501     |150101  |Calle Condesa de Chinchon 107| real plaza|a |2   |2   |1  |UR      |casa     |942434295  |eloy.m@gmail.com |eloy.m@gmail.com    |
+
+      Ejemplos:
+      |tipoUsuario    |userName    |password      |msgHome   |tiendaAsesor      |tipoDocumento |documento |departamento|provincia|distrito|direccion                    |referencia |mz|lote|piso|int|conjunto|conjHabit|numContacto|correo           |tipoValidacion|nombreMadre | nombrePadre | distritoNac |
+      |usuario externo|lterrazosce |Telefonica2021|Bienvenid@|TIENDA SAN MIGUEL |DNI           |43078337  | 15         |1501     |150101  |Calle Condesa de Chinchon 107| real plaza|a |2   |2   |1  |UR      |casa     |942434295  |eloy.m@gmail.com |discapacitado |CARMEN      |FRANCISCO    | SAN JUAN DE LURIGANCHO|

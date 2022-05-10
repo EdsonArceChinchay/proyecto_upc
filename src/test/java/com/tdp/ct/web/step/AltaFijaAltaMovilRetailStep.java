@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -41,12 +42,10 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().seleccionarDistrito(tipoDis);
     }
 
-
     @ScreenShotAfter
     public void writeDirec(String data) {
         page.altaFijaAltaMovilRetailPage().writeDireccion(data);
     }
-
 
     @ScreenShotAfter
     public void writeReferencia(String data1) {

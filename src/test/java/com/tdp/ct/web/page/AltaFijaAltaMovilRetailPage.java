@@ -27,19 +27,22 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(btnHogar,30);
         click(btnHogar);
         waitUntilElementIsVisible(btnMovil,5);
         UtilWeb.waitForSeconds(2);
     }
 
     public void altaMovil(){
+        waitUntilElementIsClickable(btnMovil,10);
         click(btnMovil);
         UtilWeb.waitForSeconds(5);
     }
 
     public void mostrarOfertas(){
         click(btnMostrar);
-        UtilWeb.waitForSeconds(2);
+        //UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionarDepa(String tipoDepa){
@@ -48,6 +51,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(depaList);
         context.findElement(By.cssSelector("[data-value='"+tipoDepa+"']")).click();
+        UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarProvincia(String tipoProvincia){
@@ -56,6 +60,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(provinciaList);
         context.findElement(By.cssSelector("[data-value='"+tipoProvincia+"']")).click();
+        UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarDistrito(String tipoDistrito){
@@ -64,6 +69,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
         context.findElement(By.cssSelector("[data-value='"+tipoDistrito+"']")).click();
+        UtilWeb.waitForSeconds(1);
     }
 
     public void writeDireccion(String direc){
@@ -79,14 +85,16 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-        waitUntilElementIsVisible(btnConsulta,8);
+        //waitUntilElementIsVisible(btnConsulta,8);
+        js().scrollElementTop(btnConsulta);
         click(btnConsulta);
-        UtilWeb.waitForSeconds(3);
     }
 
     public void writeManzana(String manzana){
+        UtilWeb.waitForSeconds(1);
         WebElement Mz= find().getElementByCss(" tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
         click(Mz);
+        UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
     }
 
@@ -111,7 +119,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarConjuntoHabitacional(String tipoConjunto){
         WebElement conjuntoList= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
         click(conjuntoList);
-        UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(conjuntoList);
         context.findElement(By.cssSelector("[data-value='"+tipoConjunto+"']")).click();
     }
@@ -123,6 +130,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void consultaCobertura(){
+
         click(cobertura);
         UtilWeb.waitForSeconds(3);
     }
