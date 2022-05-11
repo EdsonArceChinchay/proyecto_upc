@@ -165,4 +165,20 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnValidarHuella();
     }
 
+    @ScreenShotAfter
+    public void clicEnAgregarSVA() {
+        page.altaFijaMovilRegistroPage().clicEnAgregarSVA();
+    }
+    @ScreenShotAfter
+    public void clicSVAHBO() {
+        page.altaFijaMovilRegistroPage().clicSVAHBO();
+    }
+    @ScreenShotAfter
+    public void clicGuardarCambios() {
+        page.altaFijaMovilRegistroPage().clicGuardarCambios();
+    }
+    @ScreenShotAfter
+    public void escogerTurnoAgendamiento() {
+        page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
+    }
 }

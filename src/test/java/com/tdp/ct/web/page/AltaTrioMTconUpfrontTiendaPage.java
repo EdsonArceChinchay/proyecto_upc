@@ -58,13 +58,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         System.out.println("click en consulta cobertura");
     }
     public void clickBotonIrMovistarTotal(){
-        UtilWeb.waitForSeconds(50);
-        System.out.println("entrando para dar click a movistar total");
+        UtilWeb.waitForSeconds(10);
         waitUntilElementIsVisible(botoneraIrA.get(1), 15);
-        System.out.println("esperando que este visible a movistar total");
         waitUntilElementIsClickable(botoneraIrA.get(1),10);
         click(botoneraIrA.get(1));
-        System.out.println("click en movistar total");
         UtilWeb.waitForSeconds(1);
         //waitUntilElementIsVisible(btnIrMovistarTotal,30);
         //click(btnIrMovistarTotal);
@@ -81,9 +78,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     }
     public void clickBotonConfirmar(){
+        js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(btnConfirmar, 10);
-        waitUntilElementIsClickable(btnConfirmar,20);
+      //  waitUntilElementIsVisible(btnConfirmar, 10);
+        waitUntilElementIsClickable(btnConfirmar,10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
     }

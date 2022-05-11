@@ -31,10 +31,11 @@
       Y        ingresamos el Tipo de conjunto habitacional "<conjunto>"
       Y        ingresamos el Nombre del conjunto habitacional "<conjHabit>"
       Y        doy click en el boton consultar cobertura
+      Entonces me muestra la pantalla de ofertas sugeridos
       Y        doy click en el boton Ir a movistar total
       Y        valido el detalle de la seleccion
       Cuando   doy clic a iniciar registro
-      #Y        presiono el boton iniciar registro
+      Y        valido que me encuentre en la pantalla agendamiento
       Y        ingreso telefono del contacto "<numContacto>"
       Y        doy click en el boton confirmar
       Y        valido detalles de instalacion
