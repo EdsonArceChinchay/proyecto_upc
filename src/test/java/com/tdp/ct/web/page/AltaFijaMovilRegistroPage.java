@@ -20,7 +20,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement titleOfertasSugeridas;
-    @FindBy(xpath = "//div[@class='tdp-col-sm-4 stl_plan_actual']/../following-sibling::*//img[@class='margin-icon add_pointer']")
+    @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
 
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
@@ -74,6 +74,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
     protected WebElement lblNumeroOrden;
+
+
+    @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
+    protected WebElement buttonAgregarSVA;
+    @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
+    protected WebElement buttonGuardarCambios;
+    @FindBy(xpath = "//div[@class='boxHour active']")
+    protected WebElement buttonTurnoAgendamientoActivo;
+
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -134,11 +143,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
-        if (isElementVisible(By.xpath("//button[@class='btnStart']"))) {
-            waitUntilElementIsClickable(buttonIniciarRegistro,15);
-            click(buttonIniciarRegistro);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a Otra vez");
-        }
     }
 
     public boolean validarPantallaAgendamiento() {
@@ -158,15 +162,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicConfirmarAgendamiento() {
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(buttonConfirmar, 10);
+        UtilWeb.waitForSeconds(4);
+   //     waitUntilElementIsVisible(buttonConfirmar, 10);
         waitUntilElementIsClickable(buttonConfirmar,10);
         click(buttonConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
     }
 
     public boolean validarDetalleInstalacion() {
-
+        UtilWeb.waitForSeconds(2);
         boolean existe;
         try {
             WebElement element = find().getElementByXPath("//app-modal-detalle/tdp-st-modal//div/h1");
@@ -404,11 +408,38 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicEnValidarHuella() {
-        WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        SearchContext context = sh().getContext(rootInputCorreo);
+        WebElement rootElement = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en Validar huella");
         UtilWeb.waitForSeconds(2);
     }
 
+    public void clicEnAgregarSVA() {
+        waitUntilElementIsVisible(buttonAgregarSVA,5);
+        click(buttonAgregarSVA);
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void clicSVAHBO() {
+        WebElement rootElement = find().getElementByXPath("//div[contains(text(),'Bloque HBO')]/../following-sibling::div//tdp-st-checkbox");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > input")).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en sva HBO");
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void clicGuardarCambios() {
+        waitUntilElementIsVisible(buttonGuardarCambios,5);
+        click(buttonGuardarCambios);
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void clicEnUnTurnoAgendamiento() {
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsVisible(buttonTurnoAgendamientoActivo,10);
+        click(buttonTurnoAgendamientoActivo);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a en turno agendamiento");
+        UtilWeb.waitForSeconds(4);
+    }
 }
