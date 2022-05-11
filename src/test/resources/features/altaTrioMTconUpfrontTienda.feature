@@ -32,7 +32,9 @@
       Y        ingresamos el Nombre del conjunto habitacional "<conjHabit>"
       Y        doy click en el boton consultar cobertura
       Y        doy click en el boton Ir a movistar total
-      Y        presiono el boton iniciar registro
+      Y        valido el detalle de la seleccion
+      Cuando   doy clic a iniciar registro
+      #Y        presiono el boton iniciar registro
       Y        ingreso telefono del contacto "<numContacto>"
       Y        doy click en el boton confirmar
       Y        valido detalles de instalacion

@@ -8,6 +8,9 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+import java.util.logging.Level;
+
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     @FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div")
@@ -16,13 +19,13 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement btnConsultaCobertura ;
 
-    @FindBy(xpath = "//app-oferta-age/body/div[3]/div[4]/app-footer-offert/div[1]/div/div/div[3]/app-footer-item/div/div[2]/div[3]/div/button")
-    protected WebElement btnIrMovistarTotal ;
+    @FindBy(xpath = "//button[@class='btnCard']")
+    protected List<WebElement> botoneraIrA;
 
     @FindBy(xpath = "//app-resume-mt/div/div[6]/div[3]/div/button")
     protected WebElement btnIniciarRegistro ;
 
-    @FindBy(xpath = "//app-lista-contactos/div/div/div[2]/form/div[2]/div/button")
+    @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmar ;
 
     @FindBy(xpath = "//app-modal-detalle/tdp-st-modal/div[2]/div[2]//h1")
@@ -51,22 +54,38 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     public void clickBotonConsultarCobertura(){
         waitUntilElementIsVisible(btnConsultaCobertura,10);
         click(btnConsultaCobertura);
-
+        UtilWeb.waitForSeconds(3);
+        System.out.println("click en consulta cobertura");
     }
     public void clickBotonIrMovistarTotal(){
-        waitUntilElementIsVisible(btnIrMovistarTotal,30);
-        click(btnIrMovistarTotal);
+        UtilWeb.waitForSeconds(50);
+        System.out.println("entrando para dar click a movistar total");
+        waitUntilElementIsVisible(botoneraIrA.get(1), 15);
+        System.out.println("esperando que este visible a movistar total");
+        waitUntilElementIsClickable(botoneraIrA.get(1),10);
+        click(botoneraIrA.get(1));
+        System.out.println("click en movistar total");
+        UtilWeb.waitForSeconds(1);
+        //waitUntilElementIsVisible(btnIrMovistarTotal,30);
+        //click(btnIrMovistarTotal);
     }
     public void clickBotonIniciarRegistro(){
+        waitUntilElementIsVisible(btnIniciarRegistro,20);
         click(btnIniciarRegistro);
     }
     public void ingresoTelefonoContacto(String numContacto){
+        UtilWeb.waitForSeconds(10);
         WebElement numeroContac= find().getElementByCss("div:nth-child(1) > div:nth-child(1) > tdp-st-input-text");
         click(numeroContac);
         type(numeroContac, numContacto);
+
     }
     public void clickBotonConfirmar(){
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(btnConfirmar, 10);
+        waitUntilElementIsClickable(btnConfirmar,20);
         click(btnConfirmar);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
     }
     public void validoDetalleDeInstalacion(){
         Assert.assertEquals("El resultado obtenido no coincide con lo esperado", "Detalles de instalación", getDetalleInst());
