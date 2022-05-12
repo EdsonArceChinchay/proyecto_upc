@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil con SVA HBO por Tienda
+Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaSVAHBO
-  Esquema del escenario: Alta Tienda con SVA HBO sin productos asociados sin biometria
+  @AltaSVABloqueHBO
+  Esquema del escenario: Alta Tienda Fija mas movil con SVA Bloque HBO sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -29,8 +29,8 @@ Característica: Alta Fija + Alta Movil con SVA HBO por Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso los datos del lugar de instalacion
-            | mz | lote | piso | int | conjunto | conjHabit |
-            | A  | 1    | 1    | 1   | UR       | casa      |
+      | mz | lote | piso | int | conjunto | conjHabit |
+      | A  | 1    | 1    | 1   | UR       | casa      |
     Y        presionamos el boton Consultar Cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono el tipo de oferta "<tipoOferta>"
@@ -47,11 +47,11 @@ Característica: Alta Fija + Alta Movil con SVA HBO por Tienda
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-             | numdoc   | user        | password     |
-             | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+      | numdoc   | user        | password     |
+      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
-            | nombreMadre   | nombrePadre   | distritoNac   |
-            | <nombreMadre> | <nombrePadre> | <distritoNac> |
+      | nombreMadre   | nombrePadre   | distritoNac   |
+      | <nombreMadre> | <nombrePadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -59,7 +59,6 @@ Característica: Alta Fija + Alta Movil con SVA HBO por Tienda
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito
 
-
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 72313097  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA     | PERCY        | HUARAL     |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 72313097  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA      | PERCY       | HUARAL      |

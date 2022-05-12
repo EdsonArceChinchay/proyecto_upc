@@ -22,7 +22,8 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void mostrarDetalleOfertasSugeridas() {
-        Assert.assertTrue("La pantalla de ofertas sugeridas no cargo correctamente!!!", page.altaFijaMovilRegistroPage().validarQueExistanOfertasSugeridas());
+        Assert.assertTrue("La pantalla de ofertas sugeridas no cargo correctamente!!!",
+                page.altaFijaMovilRegistroPage().validarQueExistanOfertasSugeridas());
     }
     @ScreenShotAfter
     public void seleccionarOferta(String oferta) {
@@ -157,12 +158,8 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void validarMensajeExitoso() {
-        Assert.assertTrue("No se pudo validar registro exitoso!!!",page.altaFijaMovilRegistroPage().validarMensajeExitoso());
-    }
-
-    @ScreenShotAfter
-    public void clicValidarHuella() {
-        page.altaFijaMovilRegistroPage().clicEnValidarHuella();
+        Assert.assertTrue("No se pudo validar registro exitoso!!!",
+                page.altaFijaMovilRegistroPage().validarMensajeExitoso());
     }
 
     @ScreenShotAfter
@@ -180,5 +177,64 @@ public class AltaFijaMovilRegistroStep {
     @ScreenShotAfter
     public void escogerTurnoAgendamiento() {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
+    }
+
+
+    //CAMBIOS PARA RETAIL
+    @ScreenShotAfter
+    public void ingresarDatosClienteExtranjero(DataTable datos) {
+        String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
+        String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
+        String genero=UtilWeb.getValueFromDataTable(datos,"genero");
+        page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
+        page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
+        page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+    }
+
+    @ScreenShotAfter
+    public void clicEnCrearCliente() {
+        page.altaFijaMovilRegistroPage().crearCliente();
+    }
+    @ScreenShotAfter
+    public void completarDatosClienteExtranjero(DataTable datosCliente) {
+        String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
+        String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
+        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
+
+        page.altaFijaMovilRegistroPage().ingresarFechaNac(fechaNac);
+        page.altaFijaMovilRegistroPage().seleccionoNacionalidad(nacionalidad);
+        page.altaFijaMovilRegistroPage().seleccionarEstadoCivil(estadoCivil);
+
+    }
+    @ScreenShotAfter
+    public void clicDatosDelCliente() {
+        page.altaFijaMovilRegistroPage().clicDatosDeCliente();
+    }
+    @ScreenShotAfter
+    public void clicConfirmarCliente() {
+        page.altaFijaMovilRegistroPage().clicConfirmarCliente();
+    }
+    @ScreenShotAfter
+    public void datosClienteValidado() {
+        page.altaFijaMovilRegistroPage().datosClienteValidado();
+    }
+    @ScreenShotAfter
+    public void mostrarPantallaDescargarContrato() {
+        Assert.assertTrue("No mostro pantalla para descargar contrato",
+                page.altaFijaMovilRegistroPage().mostrarPantallaDescargarContrato());
+    }
+
+    @ScreenShotAfter
+    public void clicDescargarContrato() {
+        page.altaFijaMovilRegistroPage().clicDescargarContrato();
+    }
+    @ScreenShotAfter
+    public void clicRegistrarVenta() {
+        page.altaFijaMovilRegistroPage().clicRegistrarVenta();
+    }
+    @ScreenShotAfter
+    public void validarVentaGenerada() {
+        Assert.assertTrue("No mostro pantalla de venta exitosa",
+                page.altaFijaMovilRegistroPage().validarVentaGenerada());
     }
 }
