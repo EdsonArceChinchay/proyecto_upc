@@ -38,6 +38,7 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
+    Y        escojo un turno de agendamiento
     Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
     Y        doy clic en confirmar agendamiento
     Entonces me muestra el detalle de la instalacion

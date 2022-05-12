@@ -36,6 +36,7 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
+    Y        escojo un turno de agendamiento
     Y        ingreso telefono del contacto "<numContacto>"
     Y        doy click en el boton confirmar
     Y        valido detalles de instalacion

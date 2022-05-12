@@ -73,9 +73,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("valido que me encuentre en la pantalla agendamiento")
     public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
         altaFijaMovilRegistroStep.validarPantallaAgendamiento();
-        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
     }
 
+    @Y("escojo un turno de agendamiento")
+    public void escojoUnTurnoDeAgendamiento() {
+        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
+    }
     @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
     public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contacto) {
         altaFijaMovilRegistroStep.ingresarContacto(contacto);
@@ -199,4 +202,5 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
     }
+
 }
