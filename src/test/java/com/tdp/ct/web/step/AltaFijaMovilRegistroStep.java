@@ -198,11 +198,10 @@ public class AltaFijaMovilRegistroStep {
     @ScreenShotAfter
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
         String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
         String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
 
         page.altaFijaMovilRegistroPage().ingresarFechaNac(fechaNac);
-        page.altaFijaMovilRegistroPage().seleccionoNacionalidad(nacionalidad);
+        page.altaFijaMovilRegistroPage().seleccionoNacionalidad();
         page.altaFijaMovilRegistroPage().seleccionarEstadoCivil(estadoCivil);
 
     }
@@ -237,4 +236,5 @@ public class AltaFijaMovilRegistroStep {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
     }
+
 }
