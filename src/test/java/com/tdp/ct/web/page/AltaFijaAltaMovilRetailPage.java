@@ -86,6 +86,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void btnConsultar(){
         //waitUntilElementIsVisible(btnConsulta,8);
+        UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
     }
@@ -101,6 +102,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void writeLote(String lote){
         WebElement Lte= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(2) > tdp-st-input-text");
         click(Lte);
+
         type(Lte, lote);
     }
 

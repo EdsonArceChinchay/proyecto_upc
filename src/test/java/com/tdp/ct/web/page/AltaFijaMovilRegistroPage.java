@@ -353,7 +353,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-        waitUntilElementIsVisible(lblPreguntas, 30);
+     //   waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
         if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {
