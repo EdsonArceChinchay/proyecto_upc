@@ -27,6 +27,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
+    //@FindBy(xpath = "(//div/button[@class = 'btnCard'])[2]")
+    //protected WebElement botoneraIrA;
 
     @FindBy(xpath = "//span[@class='text-capitalize']")
     protected WebElement titlePlan;
@@ -123,7 +125,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void seleccionarPlan(String plan) {
         UtilWeb.waitForSeconds(3);
-        String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        String elemento = "//span[text()='"+ plan +"']/../../following-sibling::*//img";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
@@ -137,7 +140,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicIrAMovistarTotal() {
-        waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
+        waitUntilElementIsVisible(botoneraIrA.get(2), 5).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -359,7 +362,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-        waitUntilElementIsVisible(lblPreguntas, 30);
+     //   waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
         if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {

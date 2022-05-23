@@ -31,22 +31,33 @@ Característica: Alta Fija Pura MT por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso los datos del lugar de instalacion
-      | mz | lote | vivienda   | piso | int | conjunto | conjHabit |
-      | A  | 1    | CONDOMINIO | 1    | 1   | UR       | casa      |
-    Y        presionamos el boton Consultar Cobertura
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
+    #Y        selecciono el tipo de oferta "<tipoOferta>"
     Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    #Y        escojo un turno de agendamiento
+    Y        escojo un turno de agendamiento
     Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
     Y        doy clic en confirmar agendamiento
-    #Entonces me muestra el detalle de la instalacion
-    #Y        doy clic en confirmar
+    Entonces me muestra el detalle de la instalacion
+    Y        doy clic en confirmar
+    Y        presiono Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        Consulto ubicacion
+    Y        selecciono el tipo de entrega "Delivery Regular 24 horas"
+    Y        selecciono horario "2pm-7pm"
+    Y        ingreso el telefono de contacto "658745259"
+    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    Y        doy clic en confirmar delivery
     Y        completo los datos solicitados "<correo>"
+    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
@@ -60,5 +71,5 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |
