@@ -14,25 +14,86 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//button[@class = 'button_step']")
     protected WebElement btnConfirmaUbicacion;
 
-    @FindBy(xpath = "//span[text()='2pm-7pm']/..")
-    protected  WebElement elegirHorario;
+    private String tipoPago;
 
-    public void btnConfirmarUbicacion(){
-        click(btnConfirmaUbicacion,10);
+    /*@FindBy(xpath = "//span[text()='2pm-7pm']/..")
+    protected WebElement elegirHorario;*/
+
+    public void btnConfirmarUbicacion() {
+        click(btnConfirmaUbicacion, 10);
         UtilWeb.waitForSeconds(5);
     }
 
-    public void selectTipoHorario(){
-        click(elegirHorario);
+    public void selectTipoHorario(String horario) {
+        WebElement elegirHorario1 = find().getElementByXPath("//span[text()='" + horario + "']/..");
+        click(elegirHorario1);
     }
 
-    public void completarIdCall(String idCall){
+    public void completarIdCall(String idCall) {
 
         WebElement rootInputConfirmarCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[2]");
         SearchContext context3 = sh().getContext(rootInputConfirmarCorreo);
         context3.findElement(By.cssSelector("div > div > div > input")).sendKeys(idCall);
 
         UtilWeb.waitForSeconds(1);
+    }
 
+    public void selectTipoDePago(String tipo) {
+        tipoPago = tipo;
+
+        String clickTipo = "div form div:nth-child(7) tdp-st-select;div:nth-child(1)";
+        WebElement tipoElement = js().getWebElement(clickTipo);
+        click(tipoElement);
+
+        switch (tipo) {
+            case "Boleta":
+                String selectTipo = "div form div:nth-child(7) tdp-st-select;div div:nth-child(2) ul li:nth-child(1)";
+                WebElement selectElement = js().getWebElement(selectTipo);
+                click(selectElement);
+                break;
+            case "Factura":
+                String selectTipo2 = "div form div:nth-child(7) tdp-st-select;div div:nth-child(2) ul li:nth-child(2)";
+                WebElement selectElement2 = js().getWebElement(selectTipo2);
+                click(selectElement2);
+                break;
+        }
+
+        /*String inputMz = "div:nth-child(6) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(4);
+        WebElement inputMzElement = js().getWebElement(inputMz);
+        System.out.println(inputMzElement + "reconocio input");
+        click(inputMzElement);
+        type(inputMzElement, manzana);*/
+    }
+
+    public void ingresoDireccionTT(String direccion){
+        String getDireccion = "form div:nth-child(3) div:nth-child(2) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(3);
+        WebElement direccionElement = js().getWebElement(getDireccion);
+        click(direccionElement);
+        type(direccionElement, direccion);
+    }
+
+    public void ingresarReferencia(String referencia){
+        String getReferencia = "form div:nth-child(4) div:nth-child(2) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(3);
+        WebElement referenciaElement = js().getWebElement(getReferencia);
+        click(referenciaElement);
+        type(referenciaElement, referencia);
+    }
+
+    public void ingresarCorreoVerif(String verifCorreo){
+        String getCorreo = "div form div:nth-child(3) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(4);
+        WebElement correoElement = js().getWebElement(getCorreo);
+        click(correoElement);
+        type(correoElement, verifCorreo);
+
+        String inputCorreo2 = "div form div:nth-child(4) tdp-st-input-text;input";
+        WebElement correoElement2 = js().getWebElement(inputCorreo2);
+        click(correoElement2);
+        type(correoElement2, verifCorreo);
+
+        UtilWeb.waitForSeconds(3);
     }
 }

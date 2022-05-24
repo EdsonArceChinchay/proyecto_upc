@@ -36,16 +36,17 @@ Característica: Alta Fija Pura MT por Call Center
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
+    Y        selecciono el tipo de oferta "<tipoOferta>"
     Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        escojo un turno de agendamiento
+    #Y        escojo un turno de agendamiento
     Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
     Y        doy clic en confirmar agendamiento
-    Entonces me muestra el detalle de la instalacion
-    Y        doy clic en confirmar
+    #Entonces me muestra el detalle de la instalacion
+    #Y        doy clic en confirmar
+
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -53,11 +54,15 @@ Característica: Alta Fija Pura MT por Call Center
     Y        Consulto ubicacion
     Y        selecciono el tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono horario "2pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    #Y        ingreso el telefono de contacto "658745259"
+    #Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    E        ingreso telefono del titular "998877665"
+    E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    Y        completo los datos solicitados "<correo>"
-    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    #Y        completo los datos solicitados "<correo>"
+    E         ingreso correo de verificacion "<correo>"
+    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        Selecciono tipo de pago "Boleta"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
