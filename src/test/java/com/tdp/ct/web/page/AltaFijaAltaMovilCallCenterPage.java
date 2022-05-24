@@ -2,9 +2,8 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -31,7 +30,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
-
     }
 
     public void lote(String lote){
@@ -152,6 +150,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void correo(String correo){
+        UtilWeb.waitForSeconds(4);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         type(correoElectronico, correo);
@@ -175,7 +174,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void oferta(){
+
+        UtilWeb.waitForSeconds(4);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,-250)");
+        UtilWeb.waitForSeconds(1);
         click(oferta,30);
+
     }
 
 }
