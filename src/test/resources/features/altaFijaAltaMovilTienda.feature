@@ -6,8 +6,8 @@ Característica: Alta Fija + Alta Movil por Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaTienda
-  Esquema del escenario: Alta Tienda con DNI sin productos asociados sin biometria
+  @AltaFijaMovilTienda
+  Esquema del escenario: Alta fija mas alta movil por Tienda con DNI sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -38,6 +38,7 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
+    Y        escojo un turno de agendamiento
     Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
     Y        doy clic en confirmar agendamiento
     Entonces me muestra el detalle de la instalacion
@@ -57,7 +58,6 @@ Característica: Alta Fija + Alta Movil por Tienda
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito
-
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |

@@ -28,11 +28,11 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmar ;
 
-    @FindBy(xpath = "//app-modal-detalle/tdp-st-modal/div[2]/div[2]//h1")
+    @FindBy(xpath = "//app-modal-detalle//div/h1[contains(text(),'Detalles')]")
     protected WebElement detalleInstalacion;
     public String getDetalleInst() {return getText(detalleInstalacion);}
 
-    @FindBy(xpath = "//app-modal-detalle/tdp-st-modal/div[2]/div[4]/button")
+    @FindBy(xpath = "//app-modal-detalle//div/button")
     protected WebElement btnConfirmarRegistro ;
 
     @FindBy(xpath = "//div[6]/div/div/button/span")

@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -28,6 +27,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
+    //@FindBy(xpath = "(//div/button[@class = 'btnCard'])[2]")
+    //protected WebElement botoneraIrA;
 
     @FindBy(xpath = "//span[@class='text-capitalize']")
     protected WebElement titlePlan;
@@ -83,6 +84,20 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
 
+    @FindBy(xpath = "//button[text()='Crear cliente']")
+    protected WebElement buttonCrearCliente;
+    @FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2]")
+    protected WebElement buttonDatosDeCliente;
+    @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Datos del Cliente')]")
+    protected WebElement labelDatosDeCliente;
+
+
+    @FindBy(xpath = "//div[contains(text(),'Descarga el contrato')]")
+    protected WebElement titleDescargaContrato;
+    @FindBy(xpath = "//button[@class='_close']")
+    protected WebElement buttonCerrarModal;
+
+
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -110,7 +125,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void seleccionarPlan(String plan) {
         UtilWeb.waitForSeconds(3);
-        String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        String elemento = "//span[text()='"+ plan +"']/../../following-sibling::*//img";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
@@ -124,7 +140,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicIrAMovistarTotal() {
-        waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
+        waitUntilElementIsVisible(botoneraIrA.get(2), 5).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -133,10 +149,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
     }
+
     public void moverToElementIniciarRegistro() {
         js().scrollElementTop(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(1);
     }
+
     public void clicIniciarRegistro() {
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
@@ -163,17 +181,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicConfirmarAgendamiento() {
         UtilWeb.waitForSeconds(4);
-   //     waitUntilElementIsVisible(buttonConfirmar, 10);
-        waitUntilElementIsClickable(buttonConfirmar,10);
+        waitUntilElementIsClickable(buttonConfirmar, 10);
         click(buttonConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
     }
 
     public boolean validarDetalleInstalacion() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(1);
         boolean existe;
         try {
-            WebElement element = find().getElementByXPath("//app-modal-detalle/tdp-st-modal//div/h1");
+            WebElement element = find().getElementByXPath("//app-modal-detalle//div/h1[contains(text(),'Detalles')]");
             waitUntilElementIsVisible(element, 5);
             element.isDisplayed();
             existe = true;
@@ -181,14 +198,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             existe = false;
             System.out.println(ex.getMessage());
         }
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(1);
         return existe;
     }
 
     public void clicConfirmarInstalacion() {
-        WebElement element = find().getElementByXPath("//app-modal-detalle/tdp-st-modal//div/button");
+        WebElement element = find().getElementByXPath("//app-modal-detalle//div/button");
         element.click();
-     //   UtilWeb.waitForSeconds(2);
+        //   UtilWeb.waitForSeconds(2);
     }
 
     public void completarCorreo(String correo) {
@@ -246,19 +263,23 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void verificarIdentidadValidada() {
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
-        String loadingInserted="//div[@class='loadingCard ng-star-inserted']";
+        String loadingInserted = "//div[@class='loadingCard ng-star-inserted']";
 
-        if(esperarLoadingIsNotVisible(loadingInserted,30)){
-            waitUntilElementIsVisible(buttonIdentidadValidada,20).isDisplayed();
+        if (esperarLoadingIsNotVisible(loadingInserted, 30)) {
+            waitUntilElementIsVisible(buttonIdentidadValidada, 20).isDisplayed();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Identidad validada");
         }
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
     }
+
     public void clicValidarContrato() {
         UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(buttonValidarContrato,10).click();
+        waitUntilElementIsVisible(buttonValidarContrato, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
+
     public void clicBotonContinuar() {
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
@@ -268,47 +289,48 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void visualizarContratoEnPantalla() {
 
-        WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
+        WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 10);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
 
     public void clicSiAcepto() {
-        WebElement element= sh().getWebElement(rootModalButtonSiAcepto,"button");
+        WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
 
     }
 
     public boolean validarMensajeExitoso() {
-        boolean existe=false;
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        boolean existe = false;
         UtilWeb.waitForSeconds(10);
-        String loadingSplascargando="//div[@class='splash ng-star-inserted']";
-        String labelCargando="//div/h1[text()='Cargando']";
-        int segundos=60;
+        String loadingSplascargando = "//div[@class='splash ng-star-inserted']";
+        String labelCargando = "//div/h1[text()='Cargando']";
+        int segundos = 60;
 
-        if(esperarLoadingIsNotVisible(loadingSplascargando,segundos)){
-            if(esperarLoadingIsNotVisible(labelCargando,60)){
+        if (esperarLoadingIsNotVisible(loadingSplascargando, segundos)) {
+            if (esperarLoadingIsNotVisible(labelCargando, 60)) {
                 UtilWeb.waitForSeconds(3);
                 scrollByJavaScriptToPrincipio();
                 existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
                 UtilWeb.waitForSeconds(1);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
-            }else{
+            } else {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
             }
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de "+segundos+"  segundos");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
         }
-
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         return existe;
     }
 
 
     public void ingresarDNISupervisor(String numdoc) {
-        waitUntilElementIsVisible(selectTipoDoc,5).click();
-        clickElementInAList(listDocumentos,"DNI");
+        waitUntilElementIsVisible(selectTipoDoc, 5).click();
+        clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
@@ -340,7 +362,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-        waitUntilElementIsVisible(lblPreguntas, 30);
+     //   waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
         if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {
@@ -387,39 +409,34 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollBy(100,150)");
     }
+
     public void scrollByJavaScriptToPrincipio() {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0, 0);");
     }
+
     public void scrollByJavaScriptToFinal() {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
         UtilWeb.waitForSeconds(2);
     }
 
-    public boolean esperarLoadingIsNotVisible(String xpath,int segundos) {
+    public boolean esperarLoadingIsNotVisible(String xpath, int segundos) {
         boolean retorno;
         try {
             WebDriverWait webDriverWait = new WebDriverWait(driver(), segundos);
             webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
-            retorno= true;
+            retorno = true;
         } catch (Exception e) {
-            retorno=false;
+            retorno = false;
             System.out.println("No se esperó a que se oculte el elemento");
         }
         return retorno;
     }
 
-    public void clicEnValidarHuella() {
-        WebElement rootElement = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("button")).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en Validar huella");
-        UtilWeb.waitForSeconds(2);
-    }
 
     public void clicEnAgregarSVA() {
-        waitUntilElementIsVisible(buttonAgregarSVA,5);
+        waitUntilElementIsVisible(buttonAgregarSVA, 5);
         click(buttonAgregarSVA);
         UtilWeb.waitForSeconds(2);
     }
@@ -433,16 +450,169 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicGuardarCambios() {
-        waitUntilElementIsVisible(buttonGuardarCambios,5);
+        waitUntilElementIsVisible(buttonGuardarCambios, 5);
         click(buttonGuardarCambios);
         UtilWeb.waitForSeconds(2);
     }
 
     public void clicEnUnTurnoAgendamiento() {
         UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(buttonTurnoAgendamientoActivo,10);
+        waitUntilElementIsVisible(buttonTurnoAgendamientoActivo, 10);
         click(buttonTurnoAgendamientoActivo);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a en turno agendamiento");
         UtilWeb.waitForSeconds(4);
     }
+
+    //CAMBIOS PARA RETAIL
+    public void ingresarNombreClienteExtranjero(String nombre) {
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void ingresarApellidoClienteExtranjero(String apellidos) {
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(apellidos);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionarGeneroClienteExtranjero(String genero) {
+        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
+        click(generoList);
+        String dataValue = "";
+        SearchContext context = sh().getContext(generoList);
+        if (genero.equalsIgnoreCase("femenino")) {
+            dataValue = "F";
+        } else {
+            dataValue = "M";
+        }
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void crearCliente() {
+        waitUntilElementIsClickable(buttonCrearCliente, 10);
+        click(buttonCrearCliente);
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void clicDatosDeCliente() {
+        js().scrollElementTop(buttonDatosDeCliente);
+        waitUntilElementIsVisible(buttonDatosDeCliente, 10).click();
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void ingresarFechaNac(String fechaNac) {
+        WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(fechaNac);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionoNacionalidad() {
+        WebElement nacList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
+        click(nacList);
+        UtilWeb.waitForSeconds(2);
+        String dataValue = "DEU";
+        SearchContext context = sh().getContext(nacList);
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        System.out.println("seleccionando nacionalidad");
+    }
+
+    public void seleccionarEstadoCivil(String estadoCivil) {
+        WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
+        click(generoList);
+        String dataValue = "";
+        UtilWeb.waitForSeconds(2);
+        SearchContext context = sh().getContext(generoList);
+        if (estadoCivil.equalsIgnoreCase("Soltero")) {
+            dataValue = "single";
+        } else {
+            dataValue = "married";
+        }
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        System.out.println("seleccionando estado civil");
+    }
+
+    public void clicConfirmarCliente() {
+        UtilWeb.waitForSeconds(1);
+        WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
+        element.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void datosClienteValidado() {
+        //UtilWeb.waitForSeconds(3);
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        String loadingInserted = "//div[@class='loadingCard ng-star-inserted']";
+
+        if (esperarLoadingIsNotVisible(loadingInserted, 30)) {
+            waitUntilElementIsVisible(labelDatosDeCliente, 10).isDisplayed();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "datos cliente validado");
+        }
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+    }
+
+    public boolean mostrarPantallaDescargarContrato() {
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        boolean existe = false;
+        UtilWeb.waitForSeconds(2);
+        String loadingSplascargando = "//div[@class='splash ng-star-inserted']";
+        String labelCargando = "//div/h1[text()='Cargando']";
+        int segundos = 60;
+
+        if (esperarLoadingIsNotVisible(loadingSplascargando, segundos)) {
+            if (esperarLoadingIsNotVisible(labelCargando, 60)) {
+                UtilWeb.waitForSeconds(3);
+                scrollByJavaScriptToPrincipio();
+                existe = waitUntilElementIsVisible(titleDescargaContrato, 20).isDisplayed();
+                UtilWeb.waitForSeconds(1);
+
+            } else {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
+            }
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
+        }
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        return existe;
+    }
+
+    public void clicDescargarContrato() {
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("button")).click();
+        UtilWeb.waitForSeconds(3);
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+    }
+
+    public void clicRegistrarVenta() {
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        waitUntilElementIsVisible(buttonCerrarModal,3).click();
+        UtilWeb.waitForSeconds(1);
+        scrollByJavaScriptToFinal();
+        UtilWeb.waitForSeconds(1);
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Registrar venta')]");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("button")).click();
+        UtilWeb.waitForSeconds(3);
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+    }
+
+    public boolean validarVentaGenerada() {
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        boolean existe = false;
+        scrollByJavaScriptToPrincipio();
+        existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        return existe;
+    }
+
+
 }

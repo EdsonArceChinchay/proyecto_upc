@@ -73,9 +73,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("valido que me encuentre en la pantalla agendamiento")
     public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
         altaFijaMovilRegistroStep.validarPantallaAgendamiento();
-        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
     }
 
+    @Y("escojo un turno de agendamiento")
+    public void escojoUnTurnoDeAgendamiento() {
+        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
+    }
     @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
     public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contacto) {
         altaFijaMovilRegistroStep.ingresarContacto(contacto);
@@ -153,24 +156,51 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarMensajeExitoso();
     }
 
-
-    @Y("doy click en validar huella")
-    public void doyClickEnValidarHuella() {
-        UtilWeb.waitForSeconds(3);
-        altaFijaMovilRegistroStep.clicValidarHuella();
-    }
-
-
-    @Y("doy click en boton confirmar huella")
-    public void doyClickEnBotonConfirmarHuella() {
-        UtilWeb.waitForSeconds(3);
-        altaFijaMovilRegistroStep.clicEnConfirmar();
-    }
-
     @Y("agrego el SVA para fija HBO")
     public void agregoElSVAParaFijaHBO() {
         altaFijaMovilRegistroStep.clicEnAgregarSVA();
         altaFijaMovilRegistroStep.clicSVAHBO();
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
+
+
+//CAMBIOS PARA RETAIL
+    @Y("ingreso los datos del cliente a registrar")
+    public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
+        altaFijaMovilRegistroStep.clicEnCrearCliente();
+    }
+
+    @Y("completo los datos del cliente")
+    public void completoLosDatosDelCliente(DataTable datosCliente) {
+        altaFijaMovilRegistroStep.completarDatosClienteExtranjero(datosCliente);
+        altaFijaMovilRegistroStep.clicConfirmarCliente();
+        altaFijaMovilRegistroStep.datosClienteValidado();
+    }
+
+    @Y("doy click en datos del cliente")
+    public void doyClickEnDatosDelCliente() {
+        altaFijaMovilRegistroStep.clicDatosDelCliente();
+    }
+
+    @Y("me muestra pantalla para Descargar contrato")
+    public void meMuestraPantallaParaDescargarContrato() {
+        altaFijaMovilRegistroStep.mostrarPantallaDescargarContrato();
+    }
+
+    @Y("doy clic para descargar el contrato")
+    public void doyClicParaDescargarElContrato() {
+        altaFijaMovilRegistroStep.clicDescargarContrato();
+    }
+
+    @Y("doy clic en Registrar venta")
+    public void doyClicEnRegistrarVenta() {
+        altaFijaMovilRegistroStep.clicRegistrarVenta();
+    }
+
+    @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
+    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
+        altaFijaMovilRegistroStep.validarVentaGenerada();
+    }
+
 }
