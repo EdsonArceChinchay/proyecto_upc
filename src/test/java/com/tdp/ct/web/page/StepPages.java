@@ -12,6 +12,8 @@ public class StepPages {
     public AltaFijaMovilRegistroPage altaFijaMovilRegistroPage(){ return new AltaFijaMovilRegistroPage();}
     public AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage(){ return new AltaFijaAltaMovilCallCenterPage();}
     public AltaFijaTiendaPage altaFijaTiendaPage(){return new AltaFijaTiendaPage();}
+    public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage(){return  new AltaPuraMTcallCenterPage();}
+
 
 
 }

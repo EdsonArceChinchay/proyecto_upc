@@ -97,13 +97,24 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
+
+        /*String inputMz = "div:nth-child(6) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(4);
+        WebElement inputMzElement = js().getWebElement(inputMz);
+        System.out.println(inputMzElement + "reconocio input");
+        click(inputMzElement);
+        type(inputMzElement, manzana);*/
     }
 
     public void writeLote(String lote){
         WebElement Lte= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(2) > tdp-st-input-text");
         click(Lte);
-
         type(Lte, lote);
+
+        /*String inputLote = "div:nth-child(6) div:nth-child(2) tdp-st-input-text";
+        WebElement inputLoteElement = js().getWebElement(inputLote);
+        click(inputLoteElement);
+        type(inputLoteElement, lote);*/
     }
 
     public void writePiso(String piso){
