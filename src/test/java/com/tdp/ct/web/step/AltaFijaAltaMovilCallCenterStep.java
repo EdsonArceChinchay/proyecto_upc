@@ -49,6 +49,10 @@ public class AltaFijaAltaMovilCallCenterStep {
        page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
    }
 
+    public void seleccionarBtnHorario(String horario){
+        page.altaFijaAltaMovilCallCenterPage().btnHorario(horario);
+    }
+
    public void ingresarTxtTelefono(String telefono){
        page.altaFijaAltaMovilCallCenterPage().txtTelefono(telefono);
    }
@@ -78,6 +82,10 @@ public class AltaFijaAltaMovilCallCenterStep {
     }
     public void clickOferta(){
         page.altaFijaAltaMovilCallCenterPage().oferta();
+    }
+
+    public void seleccionarListaOferta(String listaOferta){
+        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta);
     }
 
 }

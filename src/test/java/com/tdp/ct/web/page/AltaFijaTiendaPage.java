@@ -26,15 +26,26 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement btnDescargar;
     @FindBy(xpath = "(//button[@class='_close'])")
     protected WebElement btnClose;
-    @FindBy(xpath = "(//button[@class='btn btnFirst'])")
-    protected WebElement lblBoton;
+    @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
+    protected List<WebElement> listaOfertas;
 
 
     public void listaPlanFija(String planFija){
         UtilWeb.waitForSeconds(4);
-        System.out.println("esto me trae la posicion 1" + listaPlanFija.get(1).getText());
         clickElementInAList(listaPlanFija,planFija);
+        UtilWeb.waitForSeconds(1);
     }
+
+    public void listaOfertas(String planOfertas){
+        UtilWeb.waitForSeconds(1);
+        for (WebElement element:listaOfertas){
+            if(element.getText().contains(planOfertas)){
+                click(element);
+            }
+        }
+        UtilWeb.waitForSeconds(1);
+    }
+
 
     public void listaBotones(){
         for(WebElement element:listaBotones){
@@ -83,7 +94,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
         click(boton);
         UtilWeb.waitForSeconds(20);
@@ -95,6 +106,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf(){
+        UtilWeb.waitForSeconds(5);
         click(btnDescargar);
     }
 

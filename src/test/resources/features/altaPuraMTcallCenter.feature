@@ -6,7 +6,7 @@ Característica: Alta Fija Pura MT por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaPuraMTcallCenter
+  @AltaPuraMTcallCenter_CE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -18,6 +18,7 @@ Característica: Alta Fija Pura MT por Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -36,28 +37,35 @@ Característica: Alta Fija Pura MT por Call Center
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
+    Y        selecciono el tipo de oferta "<tipoOferta>"
     Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        escojo un turno de agendamiento
-    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
-    Y        doy clic en confirmar agendamiento
-    Entonces me muestra el detalle de la instalacion
-    Y        doy clic en confirmar
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+<<<<<<< HEAD
+=======
+    #Y        escojo un turno de agendamiento
+#    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
+#    Y        doy clic en confirmar agendamiento
+    #Entonces me muestra el detalle de la instalacion
+    #Y        doy clic en confirmar
+
+>>>>>>> 684a52fedf9005a23d86942ab333301522da5b93
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
-    Y        selecciono el tipo de entrega "Delivery Regular 24 horas"
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "2pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    E        ingreso telefono del titular "998877665"
+    E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    Y        completo los datos solicitados "<correo>"
-    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    E         ingreso correo de verificacion "<correo>"
+    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        Selecciono tipo de pago "Boleta"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
@@ -65,10 +73,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    Y        doy click en el boton de continuar
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |

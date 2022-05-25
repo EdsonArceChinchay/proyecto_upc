@@ -20,7 +20,7 @@ public class AltaPuraMTcallCenterStepDefinition {
 
     @Y("selecciono horario {string}")
     public void seleccionoHorario(String horario) {
-        altaPuraMTcallCenterStep.selectTipoHorario();
+        altaPuraMTcallCenterStep.selectTipoHorario(horario);
     }
 
     @Y("completo id call {string}")
@@ -28,4 +28,33 @@ public class AltaPuraMTcallCenterStepDefinition {
         altaPuraMTcallCenterStep.completarIdCall(idCall);
     }
 
+    @Y("Selecciono tipo de pago {string}")
+    public void seleccionoTipoDePago(String tipo) {
+        altaPuraMTcallCenterStep.selectTipoDePago(tipo);
+    }
+
+    @E("ingreso telefono del titular {string}")
+    public void ingresoTelefonoDelTitular(String direccion) {
+        altaPuraMTcallCenterStep.ingresoDireccionTT(direccion);
+    }
+
+    @E("ingreso instrucciones de delivery {string}")
+    public void ingresoInstruccionesDeDelivery(String referencia) {
+        altaPuraMTcallCenterStep.ingresarReferencia(referencia);
+    }
+
+    @E("ingreso correo de verificacion {string}")
+    public void ingresoCorreoDeVerificacion(String verifCorreo) {
+        altaPuraMTcallCenterStep.ingresarCorreoVerif(verifCorreo);
+    }
+
+    @Y("doy click en el boton de continuar")
+    public void doyClickEnElBotonDeContinuar() {
+        altaPuraMTcallCenterStep.clicBotonContinuar();
+    }
+
+    @Y("cierro popup de error")
+    public void cierroPopupDeError() {
+        altaPuraMTcallCenterStep.clickCierrePopup();
+    }
 }

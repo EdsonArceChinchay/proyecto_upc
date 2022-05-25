@@ -25,9 +25,8 @@ jxray:
 url:
   movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
 
-
 ###################
 ### TIMING - PAGES ###
 ###################
 timing:
-  waitingWebElement: 2
+  waitingWebElement: 70
