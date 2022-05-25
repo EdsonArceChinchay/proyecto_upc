@@ -45,7 +45,7 @@ Característica: Alta Fija + Alta Movil por Call Center
       | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
       | A  | 1    |EDIFICIO     |Familia Ccallo|1   | 1   | URBANIZACION POPULAR  | conjunto b |
     Y        presiono el boton confirmar ubicacion
-    Y        selecciono el tipo de entrega "Delivery Express"
+    Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
@@ -94,7 +94,7 @@ Característica: Alta Fija + Alta Movil por Call Center
       | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
       | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
+#    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
