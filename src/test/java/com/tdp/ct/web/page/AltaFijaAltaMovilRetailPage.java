@@ -25,6 +25,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
 
+    private String inputCorreo;
+
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(2);
@@ -86,7 +88,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void btnConsultar(){
         //waitUntilElementIsVisible(btnConsulta,8);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
     }
@@ -145,6 +147,22 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void consultaCobertura(){
 
         click(cobertura);
+        UtilWeb.waitForSeconds(3);
+    }
+
+    public void tipearCorreo(String correo){
+        inputCorreo = correo;
+        String getCorreo = "div form div:nth-child(4) tdp-st-input-text;input";
+        UtilWeb.waitForSeconds(4);
+        WebElement correoElement = js().getWebElement(getCorreo);
+        click(correoElement);
+        correoElement.sendKeys(inputCorreo);
+
+        String inputCorreo2 = "div form div:nth-child(5) tdp-st-input-text;input";
+        WebElement correoElement2 = js().getWebElement(inputCorreo2);
+        click(correoElement2);
+        type(correoElement2, correo);
+
         UtilWeb.waitForSeconds(3);
     }
 

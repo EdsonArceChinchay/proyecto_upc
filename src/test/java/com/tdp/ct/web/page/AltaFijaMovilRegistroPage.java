@@ -113,7 +113,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarOferta(String oferta) {
-        scrollByJavaScript();
+        //scrollByJavaScript();
+        UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
 
@@ -126,7 +127,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void seleccionarPlan(String plan) {
         UtilWeb.waitForSeconds(3);
         //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
-        String elemento = "//span[text()='"+ plan +"']/../../following-sibling::*//img";
+        String elemento = "//div[text()='"+ plan +"']/../..";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
@@ -588,6 +589,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+
     }
 
     public void clicRegistrarVenta() {
