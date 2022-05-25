@@ -94,7 +94,11 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
         click(boton);
         UtilWeb.waitForSeconds(20);
