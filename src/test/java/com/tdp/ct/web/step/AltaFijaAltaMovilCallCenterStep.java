@@ -80,6 +80,9 @@ public class AltaFijaAltaMovilCallCenterStep {
     public void clickBtnFinalizarRegistro(){
         page.altaFijaAltaMovilCallCenterPage().btnFinalizarRegistro();
     }
+    public void scrollUp(){
+        page.altaFijaAltaMovilCallCenterPage().scrollUp();
+    }
     public void clickOferta(){
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }
