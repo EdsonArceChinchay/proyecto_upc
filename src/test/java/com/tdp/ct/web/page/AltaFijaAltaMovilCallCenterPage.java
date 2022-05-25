@@ -185,10 +185,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(btnFinalizarRegistro,5);
     }
 
-    public void oferta(){
+    public void scrollUp(){
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor)driver();
-        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+    }
+
+    public void oferta(){
         UtilWeb.waitForSeconds(2);
         click(oferta,30);
 
