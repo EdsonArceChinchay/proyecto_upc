@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.page.HomePage;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,10 @@ public class AltaFijaTiendaStep {
 
     public void seleccionarListaPLanFija(String planFija){
         page.altaFijaTiendaPage().listaPlanFija(planFija);
+    }
+
+    public void seleccionarListaOfertas(String ofertas){
+        page.altaFijaTiendaPage().listaOfertas(ofertas);
     }
 
     public void clickListaBotones(){

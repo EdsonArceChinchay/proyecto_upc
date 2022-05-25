@@ -30,4 +30,4 @@ url:
 ### TIMING - PAGES ###
 ###################
 timing:
-  waitingWebElement: 2
+  waitingWebElement: 70

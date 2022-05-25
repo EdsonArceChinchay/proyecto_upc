@@ -26,15 +26,26 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement btnDescargar;
     @FindBy(xpath = "(//button[@class='_close'])")
     protected WebElement btnClose;
-    @FindBy(xpath = "(//button[@class='btn btnFirst'])")
-    protected WebElement lblBoton;
+    @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
+    protected List<WebElement> listaOfertas;
 
 
     public void listaPlanFija(String planFija){
         UtilWeb.waitForSeconds(4);
-        System.out.println("esto me trae la posicion 1" + listaPlanFija.get(1).getText());
         clickElementInAList(listaPlanFija,planFija);
+        UtilWeb.waitForSeconds(1);
     }
+
+    public void listaOfertas(String planOfertas){
+        UtilWeb.waitForSeconds(1);
+        for (WebElement element:listaOfertas){
+            if(element.getText().contains(planOfertas)){
+                click(element);
+            }
+        }
+        UtilWeb.waitForSeconds(1);
+    }
+
 
     public void listaBotones(){
         for(WebElement element:listaBotones){
