@@ -431,7 +431,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se esperó a que se oculte el elemento");
+            System.out.println("No se esper� a que se oculte el elemento");
         }
         return retorno;
     }

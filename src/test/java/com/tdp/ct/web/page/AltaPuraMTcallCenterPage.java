@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 public class AltaPuraMTcallCenterPage extends WebBase {
 
@@ -16,8 +18,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     private String tipoPago;
 
-    /*@FindBy(xpath = "//span[text()='2pm-7pm']/..")
-    protected WebElement elegirHorario;*/
+    @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
+    protected WebElement buttonContinuar;
+
+    @FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
+    protected WebElement cierrePopUoError;
 
     public void btnConfirmarUbicacion() {
         click(btnConfirmaUbicacion, 10);
@@ -95,6 +100,28 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         type(correoElement2, verifCorreo);
 
         UtilWeb.waitForSeconds(3);
+    }
+
+    public void clicBotonContinuar() {
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsVisible(buttonContinuar, 10).click();
+        UtilWeb.waitForSeconds(2);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
+
+        UtilWeb.waitForSeconds(45);
+    }
+
+    public void clickCierrePopup(){
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
+        if (elementoExistente){
+            System.out.println("Se cierra Popup de error");
+            click(cierrePopUoError);
+            UtilWeb.waitForSeconds(2);
+        }else {
+            System.out.println("no se encontró mensaje de error");
+        }
     }
 
 }

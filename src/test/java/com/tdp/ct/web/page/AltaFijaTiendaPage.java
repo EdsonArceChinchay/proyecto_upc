@@ -119,6 +119,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf(){
+        UtilWeb.waitForSeconds(5);
         click(btnDescargar);
     }
 
