@@ -135,8 +135,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSeleccionarOferta() {
-            JavascriptExecutor jse = (JavascriptExecutor)driver();
-        jse.executeScript("window.scrollBy(0,250)");
+        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
+        eventFiringWebDriver.executeScript("document.querySelector(\"body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal\")" +
+                ".shadowRoot.querySelector(\"div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content\").scrollTop=500");
+        UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
     }
@@ -432,7 +434,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se esperó a que se oculte el elemento");
+            System.out.println("No se esperï¿½ a que se oculte el elemento");
         }
         return retorno;
     }
