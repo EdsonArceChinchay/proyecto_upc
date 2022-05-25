@@ -108,7 +108,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
 
-        UtilWeb.waitForSeconds(45);
+        UtilWeb.waitForSeconds(60);
     }
 
     public void clickCierrePopup(){
