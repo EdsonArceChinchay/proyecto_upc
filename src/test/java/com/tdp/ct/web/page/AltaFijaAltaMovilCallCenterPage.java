@@ -18,10 +18,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnConfirmar2;
     @FindBy(xpath = "//button[@type='submit']")
     protected WebElement btnConsultarCobertura;
+    @FindBy(xpath = "//div[@class='contHours']/div/span")
+    protected List<WebElement> btnHorario;
     @FindBy(xpath = "(//button[@type='submit'])[3]")
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
+    @FindBy(xpath = "//div[@class='stl_plan_valor']")
+    protected List<WebElement> listaOfertas;
 
 
     public void manzana(String manzana){
@@ -46,7 +50,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(listElementPLan);
         List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
             if(elements.getText().equals(tipoVivienda)){
                 UtilWeb.waitForSeconds(1);
                 click(elements,30);
@@ -79,7 +82,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(listElementPLan);
         List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
             if(elements.getText().equals(tipoConjunto)){
                 UtilWeb.waitForSeconds(2);
                 click(elements,30);
@@ -117,14 +119,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
+    public void btnHorario(String horario){
+        clickElementInAList(btnHorario,horario);
+        UtilWeb.waitForSeconds(1);
+    }
+
+
+
     public void txtTelefono(String telefono){
-        WebElement txtTel= find().getElementByXPath("(//div[@class='tdp-col-12'])[2]/tdp-st-input-text");
+        WebElement txtTel= find().getElementByXPath("(//tdp-st-input-text)[1]");
         click(txtTel);
         type(txtTel, telefono);
     }
 
     public void txtInstrucciones(String instrucciones){
-        WebElement txtInstr= find().getElementByXPath("(//div[@class='tdp-col-12'])[3]/tdp-st-input-text");
+        WebElement txtInstr= find().getElementByXPath("(//tdp-st-input-text)[2]");
         click(txtInstr);
         type(txtInstr, instrucciones);
     }
@@ -178,9 +187,19 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,-250)");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         click(oferta,30);
 
+    }
+
+    public void listaOfertas(String planOfertas){
+        UtilWeb.waitForSeconds(1);
+        for (WebElement element:listaOfertas){
+            if(element.getText().contains(planOfertas)){
+                click(element);
+            }
+        }
+        UtilWeb.waitForSeconds(1);
     }
 
 }

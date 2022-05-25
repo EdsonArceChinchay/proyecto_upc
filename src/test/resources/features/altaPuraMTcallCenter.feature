@@ -44,12 +44,21 @@ Característica: Alta Fija Pura MT por Call Center
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
+<<<<<<< HEAD
+=======
+    #Y        escojo un turno de agendamiento
+#    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
+#    Y        doy clic en confirmar agendamiento
+    #Entonces me muestra el detalle de la instalacion
+    #Y        doy clic en confirmar
+
+>>>>>>> 684a52fedf9005a23d86942ab333301522da5b93
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
-    Y        selecciono el tipo de entrega "Delivery Regular 24 horas"
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "2pm-7pm"
     E        ingreso telefono del titular "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"

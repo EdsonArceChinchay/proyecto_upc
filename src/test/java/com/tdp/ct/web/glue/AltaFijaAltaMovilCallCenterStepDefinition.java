@@ -18,6 +18,8 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
   @Autowired
   private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
+  @Autowired
+  private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
   @Y("ingreso la informacion del lugar de instalacion")
   public void iingreso_la_informacion_del_lugar_de_instalacion(DataTable dirInstalacion) {
@@ -49,6 +51,13 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   @Y("selecciono tipo de oferta")
   public void selecciono_tipo_de_oferta() {
     altaFijaAltaMovilCallCenterStep.clickOferta();
+  }
+
+  @Y("selecciono un plan Movistar Total {string}")
+  public void selecciono_un_plan_movistar_total(String nombrePlan) {
+    altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
+    altaFijaMovilRegistroStep.clicBotonSeleccionarOferta();
+    altaFijaMovilRegistroStep.clicIrAMovistarTotal();
   }
 
 
@@ -109,9 +118,14 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     altaFijaAltaMovilCallCenterStep.clickBtnConfirmarUbicacion();
   }
 
-  @Y("selecciono el tipo de entrega {string}")
-  public void selecciono_el_tipo_de_entrega(String tipoEntrega) {
+  @Y("selecciono un tipo de entrega {string}")
+  public void selecciono_un_tipo_de_entrega(String tipoEntrega) {
     altaFijaAltaMovilCallCenterStep.seleccionarTipoEntrega(tipoEntrega);
+  }
+
+  @Y("selecciono el horario de entrega {string}")
+  public void selecciono_el_horario_de_entrega(String horarioEntrega) {
+    altaFijaAltaMovilCallCenterStep.seleccionarBtnHorario(horarioEntrega);
   }
 
   @Y("ingreso el telefono de contacto {string}")
