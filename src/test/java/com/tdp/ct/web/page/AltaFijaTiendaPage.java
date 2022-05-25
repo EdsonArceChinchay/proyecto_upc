@@ -83,7 +83,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
         click(boton);
         UtilWeb.waitForSeconds(20);
@@ -95,6 +95,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf(){
+        UtilWeb.waitForSeconds(5);
         click(btnDescargar);
     }
 

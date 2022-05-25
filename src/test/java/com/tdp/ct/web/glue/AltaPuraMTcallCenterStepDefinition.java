@@ -47,4 +47,14 @@ public class AltaPuraMTcallCenterStepDefinition {
     public void ingresoCorreoDeVerificacion(String verifCorreo) {
         altaPuraMTcallCenterStep.ingresarCorreoVerif(verifCorreo);
     }
+
+    @Y("doy click en el boton de continuar")
+    public void doyClickEnElBotonDeContinuar() {
+        altaPuraMTcallCenterStep.clicBotonContinuar();
+    }
+
+    @Y("cierro popup de error")
+    public void cierroPopupDeError() {
+        altaPuraMTcallCenterStep.clickCierrePopup();
+    }
 }

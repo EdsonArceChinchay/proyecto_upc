@@ -6,7 +6,7 @@ Característica: Alta Fija Pura MT por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaPuraMTcallCenter
+  @AltaPuraMTcallCenter_CE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -18,6 +18,7 @@ Característica: Alta Fija Pura MT por Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -41,12 +42,8 @@ Característica: Alta Fija Pura MT por Call Center
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    #Y        escojo un turno de agendamiento
-    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
-    Y        doy clic en confirmar agendamiento
-    #Entonces me muestra el detalle de la instalacion
-    #Y        doy clic en confirmar
-
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -54,12 +51,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        Consulto ubicacion
     Y        selecciono el tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono horario "2pm-7pm"
-    #Y        ingreso el telefono de contacto "658745259"
-    #Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     E        ingreso telefono del titular "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    #Y        completo los datos solicitados "<correo>"
     E         ingreso correo de verificacion "<correo>"
     #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        Selecciono tipo de pago "Boleta"
@@ -70,11 +64,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    #Y        doy clic en continuar
-   #Y        me muestra pantalla para Descargar contrato
-    #Y        presiono el boton descargar contrato
-    #Y        presiono el boton Registrar venta
+    Y        doy click en el boton de continuar
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
