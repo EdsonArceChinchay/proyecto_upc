@@ -46,4 +46,5 @@ public class AltaPuraMTcallCenterStep {
     public void ingresarCorreoVerif(String verifCorreo){
         page.altaPuraMTcallCenterPage().ingresarCorreoVerif(verifCorreo);
     }
+
 }

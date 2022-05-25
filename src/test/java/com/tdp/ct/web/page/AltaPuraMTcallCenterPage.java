@@ -96,4 +96,5 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
         UtilWeb.waitForSeconds(3);
     }
+
 }

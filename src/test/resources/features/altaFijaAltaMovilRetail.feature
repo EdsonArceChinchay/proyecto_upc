@@ -47,9 +47,11 @@ Característica: Alta Fija + Alta Movil por Retail
     #Y        escojo un turno de agendamiento
     Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
     Y        doy clic en confirmar agendamiento
-    Entonces me muestra el detalle de la instalacion
-    Y        doy clic en confirmar
-    Y        completo el correo "<correo>"
+    #Entonces me muestra el detalle de la instalacion
+    #Y        doy clic en confirmar
+    #Y        completo el correo "<correo>"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
@@ -59,8 +61,8 @@ Característica: Alta Fija + Alta Movil por Retail
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
