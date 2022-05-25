@@ -135,6 +135,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSeleccionarOferta() {
+            JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
     }
@@ -430,7 +432,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se esperÃ³ a que se oculte el elemento");
+            System.out.println("No se esperó a que se oculte el elemento");
         }
         return retorno;
     }
