@@ -88,4 +88,12 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta);
     }
 
+    public void clickSeleccionarOferta(){
+        page.altaFijaAltaMovilCallCenterPage().seleccionarOferta();
+    }
+
+    public void clickIrAMovistarTotal(){
+        page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();
+    }
+
 }

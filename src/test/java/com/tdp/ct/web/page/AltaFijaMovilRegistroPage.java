@@ -136,10 +136,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSeleccionarOferta() {
-        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
-        eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
-                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
     }

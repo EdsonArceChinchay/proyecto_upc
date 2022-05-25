@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.List;
 
@@ -26,8 +27,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement oferta;
     @FindBy(xpath = "//div[@class='stl_plan_valor']")
     protected List<WebElement> listaOfertas;
-
-
+    @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
+    protected WebElement buttonSeleccionarOferta;
+    @FindBy(xpath = "//button[@class='btnCard']")
+    protected List<WebElement> botoneraIrA;
     public void manzana(String manzana){
         UtilWeb.waitForSeconds(1);
         WebElement Mz= find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
@@ -183,10 +186,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void oferta(){
-
         UtilWeb.waitForSeconds(4);
-        JavascriptExecutor jse = (JavascriptExecutor)driver();
-        jse.executeScript("window.scrollBy(0,-250)");
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
         UtilWeb.waitForSeconds(2);
         click(oferta,30);
 
@@ -199,6 +201,20 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 click(element);
             }
         }
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionarOferta(){
+        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
+        eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
+                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
+        UtilWeb.waitForSeconds(1);
+        buttonSeleccionarOferta.click();
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void irAMovistarTotal() {
+        waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }
 

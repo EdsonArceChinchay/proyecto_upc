@@ -28,7 +28,8 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement btnClose;
     @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
-
+    @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
+    protected WebElement buttonSeleccionarOferta;
 
     public void listaPlanFija(String planFija){
         UtilWeb.waitForSeconds(4);
@@ -43,6 +44,15 @@ public class AltaFijaTiendaPage extends WebBase {
                 click(element);
             }
         }
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionarOferta(){
+        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
+        eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
+                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
+        UtilWeb.waitForSeconds(1);
+        buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -95,6 +105,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void descargarContrato(){
         UtilWeb.waitForSeconds(2);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
         click(boton);
         UtilWeb.waitForSeconds(20);
