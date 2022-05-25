@@ -56,8 +56,8 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   @Y("selecciono un plan Movistar Total {string}")
   public void selecciono_un_plan_movistar_total(String nombrePlan) {
     altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
-    altaFijaMovilRegistroStep.clicBotonSeleccionarOferta();
-    altaFijaMovilRegistroStep.clicIrAMovistarTotal();
+    altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
+    altaFijaAltaMovilCallCenterStep.clickIrAMovistarTotal();
   }
 
 

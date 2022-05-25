@@ -21,6 +21,10 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().listaOfertas(ofertas);
     }
 
+    public void clickSeleccionarOferta(){
+        page.altaFijaTiendaPage().seleccionarOferta();
+    }
+
     public void clickListaBotones(){
         page.altaFijaTiendaPage().listaBotones();
     }
