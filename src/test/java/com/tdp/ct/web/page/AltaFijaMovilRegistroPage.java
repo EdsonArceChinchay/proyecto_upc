@@ -495,6 +495,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void crearCliente() {
+        js().scrollElementTop(buttonCrearCliente);
         waitUntilElementIsClickable(buttonCrearCliente, 10);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
