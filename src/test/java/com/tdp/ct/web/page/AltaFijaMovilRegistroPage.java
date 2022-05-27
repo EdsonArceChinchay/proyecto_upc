@@ -315,7 +315,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             if (esperarLoadingIsNotVisible(labelCargando, 60)) {
                 UtilWeb.waitForSeconds(3);
                 scrollByJavaScriptToPrincipio();
-                existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
+                existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
                 UtilWeb.waitForSeconds(1);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
             } else {
