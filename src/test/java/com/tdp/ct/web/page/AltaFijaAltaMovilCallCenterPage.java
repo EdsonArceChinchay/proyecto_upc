@@ -101,7 +101,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConsultarCobertura() {
         click(btnConsultarCobertura, 10);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(80);
     }
 
     public void btnConfirmarUbicacion() {
