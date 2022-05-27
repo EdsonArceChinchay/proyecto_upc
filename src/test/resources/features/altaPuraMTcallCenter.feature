@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Pura MT por Call Center
+CaracterÃ­stica: Alta Fija Pura MT por Call Center
 
 
   Antecedentes:
