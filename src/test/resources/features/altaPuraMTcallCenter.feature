@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Pura MT por Call Center
+Caracter�stica: Alta Fija Pura MT por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -36,8 +36,8 @@ Característica: Alta Fija Pura MT por Call Center
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
+    #Entonces me muestra la pantalla de ofertas sugeridos
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
