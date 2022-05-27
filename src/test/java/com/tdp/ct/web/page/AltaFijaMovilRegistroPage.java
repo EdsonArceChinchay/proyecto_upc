@@ -118,7 +118,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
-
         WebElement elementOferta = find().getElementByXPath(elemento);
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando la oferta >>> {0}", oferta);
@@ -495,6 +494,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void crearCliente() {
+        js().scrollElementTop(buttonCrearCliente);
         waitUntilElementIsClickable(buttonCrearCliente, 10);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
