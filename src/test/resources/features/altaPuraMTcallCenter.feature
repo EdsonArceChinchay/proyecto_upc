@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Caracter√≠stica: Alta Fija Pura MT por Call Center
+Característica: Alta Fija Pura MT por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
