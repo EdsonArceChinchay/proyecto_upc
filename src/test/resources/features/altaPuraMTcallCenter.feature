@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Pura MT por Call Center
+Caracter�stica: Alta Fija Pura MT por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -60,7 +60,7 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
-      | 12/12/1980 | soltero     |
+      | 12/12/1980 | casado      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
