@@ -80,4 +80,5 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }
 
-}
+    }
+

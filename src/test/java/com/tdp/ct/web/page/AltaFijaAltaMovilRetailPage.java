@@ -25,6 +25,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
 
+    //carlos
+
+    @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
+    protected WebElement AnadirEquipos;
+
+
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(2);
@@ -35,13 +41,15 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void altaMovil(){
-        waitUntilElementIsClickable(btnMovil,10);
+        js().scrollElementTop(btnMovil);
+        waitUntilElementIsClickable(btnMovil,30);
         click(btnMovil);
         UtilWeb.waitForSeconds(5);
     }
 
     public void mostrarOfertas(){
         click(btnMostrar);
+        UtilWeb.waitForSeconds(10);
         //UtilWeb.waitForSeconds(2);
     }
 

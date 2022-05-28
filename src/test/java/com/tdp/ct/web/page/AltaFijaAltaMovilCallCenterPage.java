@@ -153,6 +153,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void correo(String correo){
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
+        correoElectronico.clear();
         click(correoElectronico);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);
@@ -160,6 +161,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void confirmarCorreo(String correo){
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
+        correoElectronico.clear();
         click(correoElectronico);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);
