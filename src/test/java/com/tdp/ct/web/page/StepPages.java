@@ -14,4 +14,5 @@ public class StepPages {
     public AltaFijaTiendaPage altaFijaTiendaPage(){return new AltaFijaTiendaPage();}
     public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage(){return  new AltaPuraMTcallCenterPage();}
     public AltaMonoInstalacionHfcTiendaPage altaMonoHfcTiendaPage(){ return new AltaMonoInstalacionHfcTiendaPage(); }
+    public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage(){ return new AltaMovilPrepagoSoloChipTiendaPage();}
 }
