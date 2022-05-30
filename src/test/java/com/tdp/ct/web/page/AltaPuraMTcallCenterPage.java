@@ -21,7 +21,8 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
-    @FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
+    //@FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
+    @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
     public void btnConfirmarUbicacion() {
@@ -114,11 +115,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     public void clickCierrePopup(){
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
+        //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
+        elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() !=0;
         if (elementoExistente){
             System.out.println("Se cierra Popup de error");
             click(cierrePopUoError);
-            UtilWeb.waitForSeconds(2);
         }else {
             System.out.println("no se encontró mensaje de error");
         }
