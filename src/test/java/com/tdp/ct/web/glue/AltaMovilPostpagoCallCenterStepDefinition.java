@@ -81,4 +81,25 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
       altaMovilPostpagoCallCenterStep.meMuestraLaPantallaDeDeliveryDeLineaNueva();
     }
+
+  @Y("ingreso el tipo de pago {string}")
+  public void ingresoElTipoDePago(String Pago) {
+    altaMovilPostpagoCallCenterStep.ingresoElTipoDePago(Pago);
+  }
+
+  @Y("selecciono el tipo de entrega de delivery {string}")
+  public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
+    altaMovilPostpagoCallCenterStep.seleccionoElTipoDeEntregaDeDelivery(tipo);
+
+  }
+
+  @Y("seleccionamos el horario de entrega {string}")
+  public void seleccionamosElHorarioDeEntrega(String horario) {
+    altaMovilPostpagoCallCenterStep.seleccionamosElHorarioDeEntrega(horario);
+  }
+
+    @Y("ingreso los datos del cliente")
+    public void ingresoLosDatosDelCliente(DataTable datosCliente) {
+      altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
+    }
 }

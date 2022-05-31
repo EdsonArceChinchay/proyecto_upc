@@ -272,7 +272,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         waitUntilElementIsVisible(buttonValidarContrato, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -493,7 +493,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void clicDatosDeCliente() {
@@ -555,6 +555,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean mostrarPantallaDescargarContrato() {
+        UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         boolean existe = false;
         UtilWeb.waitForSeconds(2);
@@ -580,8 +581,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDescargarContrato() {
+
+        UtilWeb.waitForSeconds(7);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
+        js().scrollElementTop(rootElement);
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
@@ -589,6 +593,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicRegistrarVenta() {
+        UtilWeb.waitForSeconds(7);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         waitUntilElementIsVisible(buttonCerrarModal,3).click();
         UtilWeb.waitForSeconds(1);

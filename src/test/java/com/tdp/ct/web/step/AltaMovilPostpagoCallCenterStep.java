@@ -63,5 +63,29 @@ public class AltaMovilPostpagoCallCenterStep {
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
+
+    public void ingresoElTipoDePago(String pago) {
+        page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(pago);
+    }
+
+    public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
+        page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
+    }
+
+    public void seleccionamosElHorarioDeEntrega(String horario) {
+        page.altaMovilPostpagoCallCenterPage().seleccionamosElHorarioDeEntrega(horario);
+    }
+
+    public void ingresoLosDatosDelCliente(DataTable datosCliente) {
+        String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
+        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
+        String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
+
+
+        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
+        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
+        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
+
+    }
 }
 

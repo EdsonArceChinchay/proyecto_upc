@@ -36,7 +36,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='button-filter-section']//button")
     protected List<WebElement> listPlan;
 
-    @FindBy(css= "tdp-st-input-text")
+    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
     protected WebElement inputText;
 
     @FindBy(xpath = "//tdp-st-button[@type=\"button\"]")
@@ -45,8 +45,19 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(css= "body > app-root > app-delivery > div.info-user span")
     protected WebElement titleDelivery;
 
+    @FindBy(xpath = "//div[@class='option-boxes']//div")
+    protected List<WebElement> listPago;
+
+
+    @FindBy(xpath= "//div[@class=\"_item\"]")
+    protected WebElement lblItem;
+
+    @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
+    protected WebElement btnConfirmar;
+
 
     public void BtonOpciones() {
+        js().scrollElementTop(BtnOpciones);
         waitUntilElementIsVisible(BtnOpciones, 5);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
@@ -87,22 +98,22 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
 
     public void BuscarEquipo(String buscarE) {
+        WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright=\"search\"]");
+        click(Input);
+        type(Input, buscarE);
+        click(lblItem, 10);
 
-        System.out.println("producto: "+buscarE);
-        waitUntilElementIsVisible(inputText, 5);
-        click(inputText,5);
-        type(inputText, buscarE);
 //        click(btnBuscar, 10);
     }
 
     public void seleccionoLaCartillaLineaNueva() {
-        waitUntilElementIsVisible(lblLineaNueva, 5);
+        waitUntilElementIsVisible(lblLineaNueva, 10);
         click(lblLineaNueva, 10);
     }
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
-        waitUntilElementIsVisible(lblSeleccionarOferta, 5);
+        waitUntilElementIsVisible(lblSeleccionarOferta, 10);
         click(lblSeleccionarOferta, 10);
     }
 
@@ -125,7 +136,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void doyClickEnIniciarRegistro() {
         js().scrollElementTop(btnIniciar);
-        waitUntilElementIsVisible(btnIniciar, 5);
+        waitUntilElementIsVisible(btnIniciar, 10);
         click(btnIniciar, 10);
     }
 
@@ -136,7 +147,86 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de delivery de la linea nueva", existe);
         return existe;
     }
-}
+
+    public void ingresoElTipoDePago(String pago) {
+        System.out.println("cantidad: " + listPago.size());
+        for (WebElement elements : listPago) {
+            System.out.println("Producto: " + elements.getText());
+            if (elements.getText().equals(pago))
+                click(elements, 30);
+        }
+    }
+
+
+    public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
+        WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[1]");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(1);
+        SearchContext contexPlan=sh().getContext(listElementPLan);
+        List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
+        for(WebElement elements:lista){
+            System.out.println(elements.getText());
+            if(elements.getText().equals(tipo)){
+                UtilWeb.waitForSeconds(1);
+                click(elements,30);
+            }
+        }
+        UtilWeb.waitForSeconds(1);
+
+    }
+
+    public void seleccionamosElHorarioDeEntrega(String horario) {
+//        WebElement listElementHorario=find().getElementByCss("tdp-st-card:nth-child(3) > div > div._body > form > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1)");
+//        click(listElementHorario);
+//        UtilWeb.waitForSeconds(2);
+//        SearchContext contexPlan=sh().getContext(listElementHorario);
+//        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+//        for(WebElement elements:lista){
+//            System.out.println(elements.getText());
+//            if(elements.getText().equals(horario)){
+//                UtilWeb.waitForSeconds(2);
+//                click(elements,30);
+//            }
+//        }
+
+    }
+
+    public void ingresarFechaNac(String fechaNac) {
+        WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(fechaNac);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionoNacionalidad(String nacionalidad) {
+        WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
+        click(listNacionalidad);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan=sh().getContext(listNacionalidad);
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for(WebElement elements:lista){
+            System.out.println(elements.getText());
+            if(elements.getText().equals(nacionalidad)){
+                UtilWeb.waitForSeconds(2);
+                click(elements,30);
+            }
+        }
+    }
+
+    public void seleccionarEstadoCivil(String estadoCivil) {
+        WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
+        click(generoList);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan=sh().getContext(generoList);
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for(WebElement elements:lista){
+            System.out.println(elements.getText());
+            if(elements.getText().equals(estadoCivil)){
+                UtilWeb.waitForSeconds(2);
+                click(elements,30);
+            }
+        }
+}}
 
 
 

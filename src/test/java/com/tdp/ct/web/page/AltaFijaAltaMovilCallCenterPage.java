@@ -35,9 +35,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void lote(String lote){
+        UtilWeb.waitForSeconds(1);
         WebElement Lte= find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
         click(Lte);
-
         type(Lte, lote);
     }
 
@@ -95,6 +95,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         type(ConjHab, hab);
     }
     public void btnConsultarCobertura(){
+        UtilWeb.waitForSeconds(10);
         click(btnConsultarCobertura,10);
         UtilWeb.waitForSeconds(20);
     }
@@ -120,18 +121,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void txtTelefono(String telefono){
+        UtilWeb.waitForSeconds(10);
         WebElement txtTel= find().getElementByXPath("(//div[@class='tdp-col-12'])[2]/tdp-st-input-text");
         click(txtTel);
         type(txtTel, telefono);
     }
 
     public void txtInstrucciones(String instrucciones){
+        UtilWeb.waitForSeconds(4);
         WebElement txtInstr= find().getElementByXPath("(//div[@class='tdp-col-12'])[3]/tdp-st-input-text");
         click(txtInstr);
         type(txtInstr, instrucciones);
     }
 
     public void btnConfirmarDelivery(){
+        UtilWeb.waitForSeconds(4);
         click(btnConfirmarDelivery,5);
         UtilWeb.waitForSeconds(10);
     }
@@ -152,16 +156,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void correo(String correo){
+
+        UtilWeb.waitForSeconds(5);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
-        correoElectronico.clear();
+        js().scrollElementTop(correoElectronico);
+        //correoElectronico.clear();
         click(correoElectronico);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);
     }
 
     public void confirmarCorreo(String correo){
+        UtilWeb.waitForSeconds(5);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
-        correoElectronico.clear();
+        js().scrollElementTop(correoElectronico);
+        //correoElectronico.clear();
         click(correoElectronico);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);

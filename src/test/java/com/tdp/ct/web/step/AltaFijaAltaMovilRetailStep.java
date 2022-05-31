@@ -93,4 +93,5 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().consultaCobertura();
     }
 
+
 }
