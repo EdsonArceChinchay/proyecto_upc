@@ -118,7 +118,8 @@ public class AltaFijaMovilRegistroStep {
     public void validarIdentidadValidada() {
         page.altaFijaMovilRegistroPage().verificarIdentidadValidada();
     }
-    @ScreenShotAfter
+
+    @ScreenShotBefore
     public void clicValidarContrato() {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
