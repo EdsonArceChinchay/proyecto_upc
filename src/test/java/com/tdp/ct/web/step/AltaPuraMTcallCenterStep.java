@@ -60,6 +60,7 @@ public class AltaPuraMTcallCenterStep {
 
     public void clickCierrePopup(){
         page.altaPuraMTcallCenterPage().clickCierrePopup();
+        UtilWeb.waitForSeconds(4);
     }
 
 }
