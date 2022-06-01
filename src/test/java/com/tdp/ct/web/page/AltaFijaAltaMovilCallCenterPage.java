@@ -26,16 +26,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void manzana(String manzana){
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         WebElement Mz= find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         type(Mz, manzana);
 
     }
 
     public void lote(String lote){
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         WebElement Lte= find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
         click(Lte);
         type(Lte, lote);

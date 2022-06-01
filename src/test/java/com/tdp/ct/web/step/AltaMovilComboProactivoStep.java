@@ -40,5 +40,6 @@ public class AltaMovilComboProactivoStep {
     public void clicConfirmarCliente() {
         page.altaMovilComboProactivoPage().clicConfirmarCliente();
     }
+
 }
 
