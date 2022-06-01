@@ -62,6 +62,7 @@ public class AltaFijaMovilRegistroStep {
     public void validarPantallaAgendamiento() {
         Assert.assertTrue("No se mostro pantalla de agendamiento",
                 page.altaFijaMovilRegistroPage().validarPantallaAgendamiento());
+
     }
 
     @ScreenShotAfter
@@ -117,7 +118,8 @@ public class AltaFijaMovilRegistroStep {
     public void validarIdentidadValidada() {
         page.altaFijaMovilRegistroPage().verificarIdentidadValidada();
     }
-    @ScreenShotAfter
+
+    @ScreenShotBefore
     public void clicValidarContrato() {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }

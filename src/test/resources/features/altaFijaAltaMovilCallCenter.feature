@@ -6,8 +6,8 @@ Característica: Alta Fija + Alta Movil por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilCallCenter
-  Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados sin biometria
+  @AltaFijaMovilCallCenterSinProductosDeliveryExpress
+  Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery express
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -29,30 +29,23 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda|piso | int | conjunto            | conjHabit |
-      | A  | 1    |alex mancilla|alex mancilla |1    | 1   | URBANIZACION POPULAR| casa      |
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "<tipoPlan>"
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        escojo un turno de agendamiento
-    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
-    Y        doy clic en confirmar agendamiento
-    Y        doy clic nuevamente en confirmar
-#    Y        selecciono el departamento donde sera la entrega "<departamento>"
-#    Y        selecciono la provincia donde sera la entrega "<provincia>"
-#    Y        selecciono el distrito donde sera la entrega "<distrito>"
-#    Y        ingreso la direccion donde sera la entrega "<direccion>"
-#    Y        ingreso la referencia de la direccion de entrega "<referencia>"
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda|piso | int | conjunto            | conjHabit |
-      | A  | 1    |alex mancilla|alex mancilla |1    | 1   | URBANIZACION POPULAR| casa      |
-    Y        presiono el boton consultar cobertura
-    Y        selecciono el tipo de entrega "Delivery Express"
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Ccallo|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+    Y        presiono el boton confirmar ubicacion
+    Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
@@ -71,12 +64,12 @@ Característica: Alta Fija + Alta Movil por Call Center
     Entonces visualizo en pantalla el mensaje de exito
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | 70 Mbps + 26 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 
-  @AltaFijaMovilCallCenter2
-  Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados sin biometria
+  @AltaFijaMovilCallCenterSinProductosDeliveryRegular
+  Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery regular
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -98,32 +91,30 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda|piso | int | conjunto            | conjHabit |
-      | A  | 1    |alex mancilla|alex mancilla |1    | 1   | URBANIZACION POPULAR| casa      |
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
+#    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "<tipoPlan>"
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
-    Y        doy clic en confirmar agendamiento
-    Y        selecciono el departamento donde sera la entrega "<departamento>"
-    Y        selecciono la provincia donde sera la entrega "<provincia>"
-    Y        selecciono el distrito donde sera la entrega "<distrito>"
-    Y        ingreso la direccion donde sera la entrega "<direccion>"
-    Y        ingreso la referencia de la direccion de entrega "<referencia>"
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
-    Y        ingreso los datos del lugar de entrega
-      | mz | lote | piso | int | conjunto | conjHabit |
-      | A  | 1    | 1    | 1   | UR       | casa      |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Ccallo|1   | 1   | URBANIZACION POPULAR  | conjunto b |
     Y        presiono el boton confirmar ubicacion
-    Y        selecciono el tipo de entrega "Delivery Express"
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    Y        selecciono el horario de entrega "2pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
-    Y        completo los datos solicitados "<correo>"
+    Y        selecciono el metodo de pago "Contra entrega"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
@@ -136,6 +127,7 @@ Característica: Alta Fija + Alta Movil por Call Center
     Entonces visualizo en pantalla el mensaje de exito
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | ELIZABETH   | JORGE       | LIMA        |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb  | correo@gmail.com | ELIZABETH   | JORGE       | LIMA        |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | 70 Mbps + 26 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+
+

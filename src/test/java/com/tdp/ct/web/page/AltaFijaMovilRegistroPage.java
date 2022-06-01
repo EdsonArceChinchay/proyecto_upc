@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -111,10 +112,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarOferta(String oferta) {
-        scrollByJavaScript();
+        //scrollByJavaScript();
+        UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
-
         WebElement elementOferta = find().getElementByXPath(elemento);
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando la oferta >>> {0}", oferta);
@@ -123,7 +124,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void seleccionarPlan(String plan) {
         UtilWeb.waitForSeconds(3);
-        String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
+        String elemento = "//div[text()='"+ plan +"']/../..";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
@@ -426,7 +428,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se esperó a que se oculte el elemento");
+            System.out.println("No se esper� a que se oculte el elemento");
         }
         return retorno;
     }
@@ -590,6 +592,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+
     }
 
     public void clicRegistrarVenta() {

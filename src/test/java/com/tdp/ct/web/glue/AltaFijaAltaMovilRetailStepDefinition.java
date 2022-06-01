@@ -101,4 +101,8 @@ public class AltaFijaAltaMovilRetailStepDefinition {
       altaFijaAltaMovilRetailStep.btnCobertura();
   }
 
+    @Y("completo el correo {string}")
+    public void completoElCorreo(String correo) {
+      altaFijaAltaMovilRetailStep.tipearCorreo(correo);
+    }
 }

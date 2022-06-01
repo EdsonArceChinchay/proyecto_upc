@@ -93,5 +93,9 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().consultaCobertura();
     }
 
+    public void tipearCorreo(String correo){
+        page.altaFijaAltaMovilRetailPage().tipearCorreo(correo);
+    }
+
 
 }
