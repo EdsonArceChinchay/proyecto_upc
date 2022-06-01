@@ -1,11 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Trio MT - Upfront Tienda
+Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
 
-  @AltaTriomt
-  Esquema del escenario: Alta trio Mt
+  Antecedentes:
     Dado     que abro la pagina de movistar
+
+  @AltaSVABloqueHBO
+  Esquema del escenario: Alta Tienda Fija mas movil con SVA Bloque HBO sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -13,34 +15,35 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
-    Y        selecciono el tipo de documento "<tipoDocumento>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        doy click en el boton linea nueva
+    Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingresamos la Manzana o bloque "<mz>"
-    Y        ingresamos el Lote "<lote>"
-    Y        ingresamos el Piso "<piso>"
-    Y        ingresamos el interior "<int>"
-    Y        ingresamos el Tipo de conjunto habitacional "<conjunto>"
-    Y        ingresamos el Nombre del conjunto habitacional "<conjHabit>"
-    Y        doy click en el boton consultar cobertura
+    Y        ingreso los datos del lugar de instalacion
+      | mz | lote | piso | int | conjunto | conjHabit |
+      | A  | 1    | 1    | 1   | UR       | casa      |
+    Y        presionamos el boton Consultar Cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    Y        doy click en el boton Ir a movistar total
+    Y        selecciono el tipo de oferta "<tipoOferta>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
+    Y        agrego el SVA para fija HBO
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        escojo un turno de agendamiento
-    Y        ingreso telefono del contacto "<numContacto>"
-    Y        doy click en el boton confirmar
-    Y        valido detalles de instalacion
-    Y        confirmo el registro de instalacion
+    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
+    Y        doy clic en confirmar agendamiento
+    Entonces me muestra el detalle de la instalacion
+    Y        doy clic en confirmar
     Y        completo los datos solicitados "<correo>"
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
@@ -57,7 +60,6 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito
 
-
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | mz | lote | piso | int | conjunto | conjHabit | numContacto | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | real plaza | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 72313097  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA      | PERCY       | HUARAL      |
