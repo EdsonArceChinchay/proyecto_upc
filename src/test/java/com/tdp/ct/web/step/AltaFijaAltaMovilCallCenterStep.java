@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 @ScreenShot
 @Component
 public class AltaFijaAltaMovilCallCenterStep {
@@ -12,91 +13,105 @@ public class AltaFijaAltaMovilCallCenterStep {
     @Autowired
     private StepPages page;
 
-    public void ingresarManzana(String manzana){
+    public void ingresarManzana(String manzana) {
         page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
     }
-    public void ingresarLote(String lote){
+
+    public void ingresarLote(String lote) {
         page.altaFijaAltaMovilCallCenterPage().lote(lote);
     }
-    public void seleccionarTipoVivienda(String tipoVivienda){
+
+    public void seleccionarTipoVivienda(String tipoVivienda) {
         page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
     }
-    public void ingresarNombreVivienda(String nomVivienda){
+
+    public void ingresarNombreVivienda(String nomVivienda) {
         page.altaFijaAltaMovilCallCenterPage().nombreVivienda(nomVivienda);
     }
-    public void ingresarPiso(String piso){
+
+    public void ingresarPiso(String piso) {
         page.altaFijaAltaMovilCallCenterPage().piso(piso);
     }
-    public void ingresarInterior(String interior){
+
+    public void ingresarInterior(String interior) {
         page.altaFijaAltaMovilCallCenterPage().interior(interior);
     }
-    public void seleccionarTipoConjuntoHabitacional(String data){
+
+    public void seleccionarTipoConjuntoHabitacional(String data) {
         page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(data);
     }
-    public void ingresarConjuntoHabitacional(String data){
+
+    public void ingresarConjuntoHabitacional(String data) {
         page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(data);
     }
 
-   public void clickBtnConfirmarUbicacion(){
-       page.altaFijaAltaMovilCallCenterPage().btnConfirmarUbicacion();
-   }
+    public void clickBtnConfirmarUbicacion() {
+        page.altaFijaAltaMovilCallCenterPage().btnConfirmarUbicacion();
+    }
 
-   public void clickConsultarCobertura(){
+    public void clickConsultarCobertura() {
         page.altaFijaAltaMovilCallCenterPage().btnConsultarCobertura();
-   }
+    }
 
-   public void seleccionarTipoEntrega(String tipEntrega){
-       page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
-   }
+    public void seleccionarTipoEntrega(String tipEntrega) {
+        page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
+    }
 
-    public void seleccionarBtnHorario(String horario){
+    public void seleccionarBtnHorario(String horario) {
         page.altaFijaAltaMovilCallCenterPage().btnHorario(horario);
     }
 
-   public void ingresarTxtTelefono(String telefono){
-       page.altaFijaAltaMovilCallCenterPage().txtTelefono(telefono);
-   }
+    public void ingresarTxtTelefono(String telefono) {
+        page.altaFijaAltaMovilCallCenterPage().txtTelefono(telefono);
+    }
 
-    public void ingresarTxtInstrucciones(String instrucciones){
+    public void ingresarTxtInstrucciones(String instrucciones) {
         page.altaFijaAltaMovilCallCenterPage().txtInstrucciones(instrucciones);
     }
 
-    public void clickBtnConfirmarDelivery(){
-       page.altaFijaAltaMovilCallCenterPage().btnConfirmarDelivery();
+    public void clickBtnConfirmarDelivery() {
+        page.altaFijaAltaMovilCallCenterPage().btnConfirmarDelivery();
     }
 
-    public void seleccionarTipoPago(String tipoPago){
+    public void seleccionarTipoPago(String tipoPago) {
         page.altaFijaAltaMovilCallCenterPage().tipoPago(tipoPago);
     }
-    public void ingresarCorreo(String correo){
+
+    public void ingresarCorreo(String correo) {
         page.altaFijaAltaMovilCallCenterPage().correo(correo);
     }
-    public void ingresarCorreoNuevamente(String correo){
+
+    public void ingresarCorreoNuevamente(String correo) {
         page.altaFijaAltaMovilCallCenterPage().confirmarCorreo(correo);
     }
-    public void clickBtnConfirmar2(){
+
+    public void clickBtnConfirmar2() {
         page.altaFijaAltaMovilCallCenterPage().btnConfirmar2();
     }
-    public void clickBtnFinalizarRegistro(){
+
+    public void clickBtnFinalizarRegistro() {
         page.altaFijaAltaMovilCallCenterPage().btnFinalizarRegistro();
     }
-    public void scrollUp(){
+
+    public void scrollUp() {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
     }
-    public void clickOferta(){
+
+    public void clickOferta() {
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }
 
-    public void seleccionarListaOferta(String listaOferta){
+    public void seleccionarListaOferta(String listaOferta) {
         page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta);
     }
 
-    public void clickSeleccionarOferta(){
+    public void clickSeleccionarOferta() {
         page.altaFijaAltaMovilCallCenterPage().seleccionarOferta();
     }
 
-    public void clickIrAMovistarTotal(){
+    public void clickIrAMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();
     }
 
 }
+

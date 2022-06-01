@@ -190,8 +190,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        UtilWeb.waitForSeconds(1);
-        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta(){
