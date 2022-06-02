@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AltaMonoInstalacionHfcTiendaPage extends WebBase {
+public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     @FindBy(css = ".content_title .title")
     protected WebElement titleOfertas;

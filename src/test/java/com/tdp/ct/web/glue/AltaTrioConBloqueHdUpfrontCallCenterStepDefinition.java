@@ -4,6 +4,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
+import com.tdp.ct.web.step.AltaTrioConBloqueHdUpfrontCallCenterStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Y;
@@ -21,9 +22,18 @@ public class AltaTrioConBloqueHdUpfrontCallCenterStepDefinition {
   @Autowired
   private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
-  @Cuando("cierro el popup de error")
-  public void cierro_el_popup_de_error() {
+  @Autowired
+  private AltaTrioConBloqueHdUpfrontCallCenterStep altaTrioConBloqueHdUpfrontCallCenterStep;
 
+  @Cuando("valido si el usuario aplica para upfront")
+  public void valido_si_el_usuario_aplica_para_upfront() {
+    altaTrioConBloqueHdUpfrontCallCenterStep.clickSubDetalles();
+    altaTrioConBloqueHdUpfrontCallCenterStep.validarlblAplicaUpFrom();
+  }
+
+  @Y("ingreso el call id {string}")
+  public void ingreso_el_call_id(String data){
+    altaTrioConBloqueHdUpfrontCallCenterStep.ingresarCallID(data);
   }
 
 }

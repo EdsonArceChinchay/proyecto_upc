@@ -17,7 +17,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de error
+    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero   |
       | Juan    | Lopez Garcia | masculino |
@@ -34,6 +34,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
       | mz | lote |vivienda     |nombreVivienda  |piso | int | conjunto            | conjHabit  |
       | A  | 1    |EDIFICIO     |Familia Barreto |1    | 1   | URBANIZACION POPULAR| conjunto b |
     Y        presiono el boton consultar cobertura
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -43,10 +44,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | estadoCivil |
-      | 12/12/1980 | soltero     |
+    Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
@@ -55,13 +53,11 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento| documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000003  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono    | RA 100 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000012| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 200 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
