@@ -99,7 +99,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
     public void btnConsultarCobertura(){
         click(btnConsultarCobertura,10);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(35);
     }
 
     public void btnConfirmarUbicacion(){
@@ -190,6 +190,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta(){
