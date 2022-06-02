@@ -62,6 +62,6 @@ Característica: Alta Fija por tienda
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor   | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 46940927  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono    | RA 100 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 46940927  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono    | RA 500 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
