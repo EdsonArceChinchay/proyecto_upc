@@ -2,17 +2,17 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
-import com.tdp.ct.web.step.AltaMonoInstalacionHfcTiendaStep;
+import com.tdp.ct.web.step.AltaMonoInstalacionFtthTiendaStep;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class AltaMonoInstalacionHfcTiendaStepDefinition {
+public class AltaMonoInstalacionFtthTiendaStepDefinition {
 
     @Autowired
-    private AltaMonoInstalacionHfcTiendaStep altaMonoHfcTiendaStep;
+    private AltaMonoInstalacionFtthTiendaStep altaMonoHfcTiendaStep;
 
     @Autowired
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
