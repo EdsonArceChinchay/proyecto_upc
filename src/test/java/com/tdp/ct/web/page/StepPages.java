@@ -3,7 +3,7 @@ package com.tdp.ct.web.page;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StepPages {
+public class StepPages{
 
     public LoginBerserkerPage loginBerserkerPage(){ return new LoginBerserkerPage(); }
     public HomePage homePage(){ return new HomePage();}
@@ -11,7 +11,11 @@ public class StepPages {
     public AltaFijaAltaMovilRetailPage altaFijaAltaMovilRetailPage(){ return new AltaFijaAltaMovilRetailPage();}
     public AltaFijaMovilRegistroPage altaFijaMovilRegistroPage(){ return new AltaFijaMovilRegistroPage();}
     public AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage(){ return new AltaFijaAltaMovilCallCenterPage();}
+    public AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage(){ return new AltaMovilPostpagoCallCenterPage();}
+    public AltaMovilComboProactivoPage altaMovilComboProactivoPage(){ return new AltaMovilComboProactivoPage();}
+
     public AltaFijaTiendaPage altaFijaTiendaPage(){return new AltaFijaTiendaPage();}
     public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage(){return  new AltaPuraMTcallCenterPage();}
-    public AltaMonoInstalacionHfcTiendaPage altaMonoHfcTiendaPage(){ return new AltaMonoInstalacionHfcTiendaPage(); }
+    public AltaMonoInstalacionFtthTiendaPage altaMonoFtthTiendaPage(){ return new AltaMonoInstalacionFtthTiendaPage(); }
+    public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage(){return new AltaTrioConBloqueHdUpfrontCallCenterPage();}
 }

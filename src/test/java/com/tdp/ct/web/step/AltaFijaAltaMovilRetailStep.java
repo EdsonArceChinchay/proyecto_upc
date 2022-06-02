@@ -97,4 +97,5 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().tipearCorreo(correo);
     }
 
+
 }

@@ -3,6 +3,7 @@
 
 Característica: Alta Fija Pura MT por Call Center
 
+
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -36,9 +37,9 @@ Característica: Alta Fija Pura MT por Call Center
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
-    Y        selecciono el tipo de plan "<tipoPlan>"
+    #Entonces me muestra la pantalla de ofertas sugeridos
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -55,12 +56,12 @@ Característica: Alta Fija Pura MT por Call Center
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
-    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        Selecciono tipo de pago "Boleta"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil |
-      | 12/12/1980 | soltero     |
+      | 12/12/1980 | casado      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -69,5 +70,5 @@ Característica: Alta Fija Pura MT por Call Center
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 100 Mbps + 26 Gb | correo@gmail.com |
