@@ -1,12 +1,11 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija por tienda
+Característica: Alta Trio con bloque HD Upfront por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
-
-  @AltaFijaTienda
+  @AltaTrioConBloqueHdUpfrontCallCenter
   Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -18,6 +17,10 @@ Característica: Alta Fija por tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos    | genero   |
+      | Juan    | Lopez Garcia | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -31,6 +34,7 @@ Característica: Alta Fija por tienda
       | mz | lote |vivienda     |nombreVivienda  |piso | int | conjunto            | conjHabit  |
       | A  | 1    |EDIFICIO     |Familia Barreto |1    | 1   | URBANIZACION POPULAR| conjunto b |
     Y        presiono el boton consultar cobertura
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -40,30 +44,20 @@ Característica: Alta Fija por tienda
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user        | password     |
-      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
-
-    Y        ingreso los datos solicitados para la validacion del cliente
-            | nombreMadre   | nombrePadre   | distritoNac   |
-            | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Entonces valido que me muestre el boton con el texto de identidad validada
+    Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        doy click en datos del cliente
+    Y        completo los datos del cliente
+      | fechaNac   | estadoCivil |
+      | 12/12/1980 | soltero     |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor   | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia    | tipoPlan  | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento| documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 46940927  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono     | RA 500 MBPS| discapacitado   | ODELIA      | CIPRIANO    | EL AGUSTINO |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | RA 500 MBPS| discapacitado   | SORAYA      | FIDEL       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 500 MBPS| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000012| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 200 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
