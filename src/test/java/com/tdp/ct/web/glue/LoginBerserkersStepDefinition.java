@@ -2,7 +2,9 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
@@ -12,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@CucumberContextConfiguration
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
@@ -84,5 +85,17 @@ public class LoginBerserkersStepDefinition {
     @Y("presiono el boton Continuar para intentar el ingreso")
     public void presionoElBotonContinuarParaIntentarElIngreso() {
         loginBerserkerStep.clickBtnContinuarToLogin();
+    }
+
+    @Y("me logueo con las credenciales en la aplicacion")
+    public void meLogueoConLasCredencialesEnLaAplicacion(DataTable credenciales) {
+        String tipoUsuario= UtilWeb.getValueFromDataTable(credenciales,"tipoUsuario");
+        String userName= UtilWeb.getValueFromDataTable(credenciales,"userName");
+        String password= UtilWeb.getValueFromDataTable(credenciales,"password");
+        loginBerserkerStep.clickBtnIniciarSesion();
+        loginBerserkerStep.selectTipoUsuario(tipoUsuario);
+        loginBerserkerStep.writeUserName(userName);
+        loginBerserkerStep.writePassword(password);
+        loginBerserkerStep.clickBtnContinuarHaciaHome();
     }
 }
