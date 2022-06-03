@@ -16,7 +16,7 @@ import java.util.logging.Logger;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
 
-        tags = "@AltaMovilPostPagoDeliveryCallCenter_HAPPYPATH"
+        tags = "@AltaFijaMovilComboProactivo_HappyPath"
 
 )
 public class Runner {
