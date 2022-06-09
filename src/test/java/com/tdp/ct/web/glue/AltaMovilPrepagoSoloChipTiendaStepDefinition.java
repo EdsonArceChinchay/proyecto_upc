@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.page.AltaMovilPrepagoSoloChipTiendaPage;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
+import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.AltaMovilPrepagoSoloChipTiendaStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.E;
@@ -13,9 +14,13 @@ public class AltaMovilPrepagoSoloChipTiendaStepDefinition {
     @Autowired
     private AltaMovilPrepagoSoloChipTiendaStep altaMovilPrepagoSoloChipTiendaStep;
 
+    @Autowired
+    private AltaFijaTiendaStep altaFijaTiendaStep;
+
     @Y("selecciono la oferta de plan movil {string}")
     public void seleccionoLaOfertaDePlanMovil(String oferta) {
         altaMovilPrepagoSoloChipTiendaStep.clickSeleccionarOferta(oferta);
+        //altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
     @Y("selecciono plan prepago {string}")
