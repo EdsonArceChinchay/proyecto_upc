@@ -28,23 +28,21 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso los datos del lugar de instalacion
-      | mz | lote | piso | int | conjunto | conjHabit |
-      | A  | 1    | 1    | 1   | UR       | casa      |
-    Y        presionamos el boton Consultar Cobertura
+    Y        presiono el boton Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto                | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION RESIDENCIAL  | conjunto b |
+    Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono el tipo de oferta "<tipoOferta>"
     Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
-    Y        agrego el SVA para fija HBO
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        escojo un turno de agendamiento
-    Y        ingreso datos del contacto en la pantalla agendamiento "999888777"
-    Y        doy clic en confirmar agendamiento
-    Entonces me muestra el detalle de la instalacion
-    Y        doy clic en confirmar
-    Y        completo los datos solicitados "<correo>"
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor

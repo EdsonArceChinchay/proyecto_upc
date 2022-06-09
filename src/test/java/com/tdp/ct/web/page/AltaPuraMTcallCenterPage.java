@@ -21,6 +21,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
+    //@FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
@@ -120,6 +121,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
             System.out.println("Se cierra Popup de error");
             click(cierrePopUoError);
             UtilWeb.waitForSeconds(4);
+
         }else {
             System.out.println("no se encontró mensaje de error");
             UtilWeb.waitForSeconds(4);

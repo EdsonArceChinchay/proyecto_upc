@@ -61,10 +61,12 @@ public class AltaFijaTiendaPage extends WebBase {
         for(WebElement element:listaBotones){
             System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
             if (element.getText().contains("nueva")){
-                click(element);
-                System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
+                UtilWeb.waitForSeconds(2);
+                click(element,30);
+                System.out.println("click"+element.getText());
             }
         }
+        UtilWeb.waitForSeconds(4);
     }
 
     public void datosAgendamiento(){
