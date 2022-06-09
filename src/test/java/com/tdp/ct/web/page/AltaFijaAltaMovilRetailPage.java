@@ -101,7 +101,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void writeManzana(String manzana){
         UtilWeb.waitForSeconds(1);
-        WebElement Mz= find().getElementByCss(" tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
+        WebElement Mz= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
