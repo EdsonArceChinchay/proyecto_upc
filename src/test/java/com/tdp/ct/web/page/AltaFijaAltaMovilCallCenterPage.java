@@ -97,9 +97,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(ConjHab);
         type(ConjHab, hab);
     }
-    public void btnConsultarCobertura(){
-        click(btnConsultarCobertura,10);
-        UtilWeb.waitForSeconds(35);
+
+
+    public void btnConsultarCobertura() {
+        click(btnConsultarCobertura, 10);
+        UtilWeb.waitForSeconds(80);
+
     }
 
     public void btnConfirmarUbicacion(){
