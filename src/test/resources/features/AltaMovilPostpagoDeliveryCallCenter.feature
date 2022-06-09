@@ -50,7 +50,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A1  | 11    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    Y        selecciono el tipo de entrega "Delivery Express"
+    Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery

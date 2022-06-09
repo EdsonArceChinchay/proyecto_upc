@@ -1,9 +1,8 @@
 package com.tdp.ct.web.step;
 
-import com.tdp.ct.web.page.HomePage;
 import com.tdp.ct.web.page.StepPages;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +13,11 @@ public class AltaFijaTiendaStep {
     private StepPages page;
 
     @ScreenShotBefore
+    public void validarNombresCompletosCliente(String nombreCompleto){
+        Assert.assertTrue("No existe el nombre del cliente",page.altaFijaTiendaPage().nombresCompletosCliente()
+                        .contains(nombreCompleto));
+    }
+
     public void seleccionarListaPLanFija(String planFija){
         page.altaFijaTiendaPage().listaPlanFija(planFija);
     }
