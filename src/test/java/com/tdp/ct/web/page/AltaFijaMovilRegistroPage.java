@@ -129,7 +129,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
-        js().scrollElementTop(buttonSeleccionarOferta);
+        js().scrollElementTop(find().getElementByCss("div.block_scroll"));
     }
 
     public void clicSeleccionarOferta() {
@@ -525,7 +525,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
         String dataValue = "";
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         SearchContext context = sh().getContext(generoList);
         if (estadoCivil.equalsIgnoreCase("Soltero")) {
             dataValue = "single";
@@ -534,10 +534,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         System.out.println("seleccionando estado civil");
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clicConfirmarCliente() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");

@@ -50,7 +50,8 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A1  | 11    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    Y        selecciono el tipo de entrega "Delivery Express"
+	Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+	Y        selecciono el horario de entrega "2pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
@@ -65,10 +66,11 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en finalizar registro
+	Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito
 
-    Ejemplos:
+
+	Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/149.9 | Postpago  | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
 #
