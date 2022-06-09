@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.step.AltaFijaRetailStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,4 +16,5 @@ public class StepPages {
     public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage(){return  new AltaPuraMTcallCenterPage();}
     public AltaMonoInstalacionHfcTiendaPage altaMonoHfcTiendaPage(){ return new AltaMonoInstalacionHfcTiendaPage(); }
     public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage(){ return new AltaMovilPrepagoSoloChipTiendaPage();}
+    public AltaFijaRetailPage altaFijaRetailPage(){ return new AltaFijaRetailPage(); }
 }

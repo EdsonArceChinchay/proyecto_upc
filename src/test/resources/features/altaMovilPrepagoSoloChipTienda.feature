@@ -27,7 +27,22 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono la oferta de plan movil "<oferta>"
     Y        selecciono plan prepago "<nombrePlan>"
+    E        inicio registro
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        doy click en datos del cliente
+    Y        completo datos del cliente
+      | fechaNac   | nacionalidad | estado_civil | departamento | provincia | distrito   | direccion                     |
+      | 12/12/1980 | Alemania     | Casado       | LIMA         | LIMA      | SAN MIGUEL | Calle Condesa de Chinchon 107 |
+    Y        doy clic para validar contrato Movil
+    Y        me muestra en pantalla el contrato solicitado
+    Cuando   doy clic en si acepto
+    Y        presiono continuar
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | oferta       | nombrePlan | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | PLAN CONTROL | Preplan    | correo@gmail.com |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | oferta       | nombrePlan         |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000006 | PLAN CONTROL | Preplan            |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000006 | PLAN CONTROL | Prepago con Tarifa |
