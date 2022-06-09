@@ -18,4 +18,5 @@ public class StepPages{
     public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage(){return  new AltaPuraMTcallCenterPage();}
     public AltaMonoInstalacionFtthTiendaPage altaMonoFtthTiendaPage(){ return new AltaMonoInstalacionFtthTiendaPage(); }
     public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage(){return new AltaTrioConBloqueHdUpfrontCallCenterPage();}
+    public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage(){ return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage(); }
 }

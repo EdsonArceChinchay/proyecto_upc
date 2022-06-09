@@ -116,6 +116,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("ingreso los datos del supervisor")
     public void ingresoLosDatosDelSupervisor(DataTable datos) {
         altaFijaMovilRegistroStep.ingresarDatosSupervisor(datos);
+        altaFijaMovilRegistroStep.clicConfirmarUsuarioSupervisor();
     }
 
     @Y("ingreso los datos solicitados para la validacion del cliente")

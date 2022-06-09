@@ -129,7 +129,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
-        js().scrollElementTop(buttonSeleccionarOferta);
+        js().scrollElementTop(find().getElementByCss("div.block_scroll"));
     }
 
     public void clicSeleccionarOferta() {
@@ -534,6 +534,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         System.out.println("seleccionando estado civil");
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clicConfirmarCliente() {
