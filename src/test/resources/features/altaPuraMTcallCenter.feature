@@ -3,7 +3,6 @@
 
 Característica: Alta Fija Pura MT por Call Center
 
-
   Antecedentes:
     Dado     que abro la pagina de movistar
 
