@@ -22,7 +22,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
 
-    @FindBy(xpath = "//app-resume-mt/div/div[6]/div[3]/div/button")
+    @FindBy(css = "button.btnStart")
     protected WebElement btnIniciarRegistro ;
 
     @FindBy(xpath = "//button[contains(text(),'Confirmar')]")

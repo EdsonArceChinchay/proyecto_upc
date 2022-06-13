@@ -4,12 +4,8 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.datatable.DataTable;
-import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import static com.tdp.ct.web.service.util.UtilWeb.getValueFromDataTable;
 
 @ScreenShot
 @Component
@@ -53,7 +49,6 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().ingresarCorreoVerif(verifCorreo);
     }
 
-    @ScreenShotAfter
     public void clicBotonContinuar(){
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
     }

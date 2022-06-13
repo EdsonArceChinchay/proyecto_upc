@@ -43,7 +43,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void mostrarOfertas(){
         click(btnMostrar);
-        //UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(6);
     }
 
     public void seleccionarDepa(String tipoDepa){
