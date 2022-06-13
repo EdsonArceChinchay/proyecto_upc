@@ -7,21 +7,20 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AltaMonoInstalacionHfcTiendaPage extends WebBase {
+import java.util.List;
 
-    @FindBy(css = ".content_title .title")
+public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
+
+    @FindBy(css = "h1.title")
     protected WebElement titleOfertas;
 
     @FindBy(css = ".tdp-col-md-6:nth-child(2) .tdp-col-2 .margin-icon.add_pointer")
     protected WebElement btnPlanNuevo;
 
-    @FindBy(xpath = "//button[contains(text(),'Mono')]")
-    protected WebElement btnPlanMono;
+    @FindBy(css = ".button-filter-section .button-filter")
+    protected List <WebElement> btnPlanList;
 
-    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
-    protected WebElement btnLineaNueva;
-
-    @FindBy(css = ".tdp-col-4:nth-child(1) .detail-content div.features")
+    @FindBy(css = ".detail-content div.features")
     protected WebElement featureContent;
 
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -57,6 +56,7 @@ public class AltaMonoInstalacionHfcTiendaPage extends WebBase {
     }
 
     public void scrollToBtnPlanNuevo(){
+        UtilWeb.waitForSeconds(1);
         js().scrollElementTop(titleOfertas);
     }
 
@@ -65,16 +65,29 @@ public class AltaMonoInstalacionHfcTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clickBtnMono(){
-        click(btnPlanMono);
+    public void clickBtnTipoPlan(String tipoPlan){
+        for (int i = 0; i < btnPlanList.size(); i++) {
+            String encontrado = btnPlanList.get(i).getText().toLowerCase();
+            if (encontrado.equals(tipoPlan.toLowerCase())) {
+                btnPlanList.get(i).click();
+                break;
+            }
+        }
+        UtilWeb.waitForSeconds(3);
     }
 
     public void esperarBtnLineaNueva(){
-        waitUntilElementIsVisible(btnLineaNueva, 8);
+        UtilWeb.waitForSeconds(5);
+        boolean existe = find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").size() != 0;
+        if (existe){
+            js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
+        }
     }
 
-    public void clickBtnLineaNueva(){
-        click(btnLineaNueva);
+    public void clickBtnLinea(String btnName){
+        String element = "//button[contains(text(),'"+ btnName +"')]";
+        WebElement btn = find().getElementByXPath(element);
+        click(btn);
     }
 
     public void validarDetallePlan(){

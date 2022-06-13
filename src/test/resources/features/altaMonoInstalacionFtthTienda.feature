@@ -1,10 +1,10 @@
 #language:es
   @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4
 
-  Característica: Alta de Mono con instalación HFC por Canal tienda
+  Característica: Alta de Mono con instalación FTTH por Canal tienda
 
-    @AltaMonoHfcTienda
-    Escenario: Realizar una Alta de Mono con instalación HFC por Canal tienda
+    @AltaMonoFtthTienda
+    Escenario: Realizar una Alta de Mono con instalación FTTH por Canal tienda
       Dado que abro la pagina de movistar
       Cuando presiono el boton Iniciar Sesion
       Y selecciono el tipo de usuario "usuario externo"
@@ -23,7 +23,9 @@
       Y selecciono el boton Linea Nueva Hogar
       Y selecciono el boton Mostrar ofertas
       Entonces me muestra la pantalla para ingresar la direccion
-      Y selecciono departamento "15" provincia "1501" distrito "150136" direccion "Calle Condesa de Chinchon 107" y referencia "parque"
+      Y completo los datos para consultar la cobertura
+      |departamento|provincia|distrito|direccion                    |referencia|
+      |15          |1501     |150136  |Calle Condesa de Chinchon 107|parque    |
       Y presiono el boton Consultar Ubicacion
       Y ingreso la informacion del lugar para la instalacion
         | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -31,9 +33,9 @@
       Y presiono el boton Consultar Cobertura
       Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
       Y selecciono el boton de eleccion de planes Plan Nuevo
-      Y selecciono la opcion Mono
-      Y selecciono el tipo de plan mono "Internet Movistar RA 100 Mbps" y presiono Seleccionar oferta
-      Y presiono el boton Linea Nueva
+      Y selecciono el tipo "Mono"
+      Y selecciono el plan "Internet Movistar RA 1000 Mbps" y presiono Seleccionar oferta
+      Y presiono el boton "Línea nueva"
       Y valido que se presente el detalle de el plan
       Y presiono el boton Iniciar Registro
       Y valido que se presente la pantalla agendamiento

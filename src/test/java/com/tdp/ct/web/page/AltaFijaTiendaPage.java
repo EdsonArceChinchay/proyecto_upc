@@ -30,6 +30,13 @@ public class AltaFijaTiendaPage extends WebBase {
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
+    @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
+    protected WebElement nombresCompletosCliente;
+
+    public String nombresCompletosCliente(){
+        waitUntilElementIsVisible(nombresCompletosCliente,10);
+        return getText(nombresCompletosCliente);
+    }
 
     public void listaPlanFija(String planFija){
         UtilWeb.waitForSeconds(4);
@@ -61,10 +68,12 @@ public class AltaFijaTiendaPage extends WebBase {
         for(WebElement element:listaBotones){
             System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
             if (element.getText().contains("nueva")){
-                click(element);
-                System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
+                UtilWeb.waitForSeconds(2);
+                click(element,30);
+                System.out.println("click"+element.getText());
             }
         }
+        UtilWeb.waitForSeconds(4);
     }
 
     public void datosAgendamiento(){

@@ -28,8 +28,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    //@FindBy(xpath = "(//div/button[@class = 'btnCard'])[2]")
-    //protected WebElement botoneraIrA;
 
     @FindBy(xpath = "//span[@class='text-capitalize']")
     protected WebElement titlePlan;
@@ -131,7 +129,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
-        js().scrollElementTop(buttonSeleccionarOferta);
+        js().scrollElementTop(find().getElementByCss("div.block_scroll"));
     }
 
     public void clicSeleccionarOferta() {
@@ -276,7 +274,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         waitUntilElementIsVisible(buttonValidarContrato, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -315,7 +313,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             if (esperarLoadingIsNotVisible(labelCargando, 60)) {
                 UtilWeb.waitForSeconds(3);
                 scrollByJavaScriptToPrincipio();
-                existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
+                existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
                 UtilWeb.waitForSeconds(1);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
             } else {
@@ -494,10 +492,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void crearCliente() {
+        //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
-        waitUntilElementIsClickable(buttonCrearCliente, 10);
         click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void clicDatosDeCliente() {
@@ -527,7 +525,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
         String dataValue = "";
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         SearchContext context = sh().getContext(generoList);
         if (estadoCivil.equalsIgnoreCase("Soltero")) {
             dataValue = "single";
@@ -536,10 +534,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         System.out.println("seleccionando estado civil");
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clicConfirmarCliente() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -547,7 +546,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void datosClienteValidado() {
-        //UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         String loadingInserted = "//div[@class='loadingCard ng-star-inserted']";
 
@@ -559,6 +558,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean mostrarPantallaDescargarContrato() {
+        UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         boolean existe = false;
         UtilWeb.waitForSeconds(2);
@@ -584,8 +584,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDescargarContrato() {
+
+        UtilWeb.waitForSeconds(7);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
+        js().scrollElementTop(rootElement);
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
@@ -594,6 +597,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicRegistrarVenta() {
+        UtilWeb.waitForSeconds(7);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         waitUntilElementIsVisible(buttonCerrarModal,3).click();
         UtilWeb.waitForSeconds(1);
