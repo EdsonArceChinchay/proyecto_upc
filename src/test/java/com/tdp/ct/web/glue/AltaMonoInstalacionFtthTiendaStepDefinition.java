@@ -4,7 +4,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaMonoInstalacionFtthTiendaStep;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
-import com.tdp.ct.web.step.CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -20,9 +19,6 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
 
     @Autowired
     private AltaTrioMTconUpfrontTiendaStep altaTrioMTconUpfrontTiendaStep;
-
-    @Autowired
-    private CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep caplConCaeqAlContadoCanalTiendaStep;
 
     @Y("ingreso los datos del cliente extranjero a registrar")
     public void ingresoNombreApellidoYGeneroDelClienteExtranjero(DataTable datos) {
@@ -42,21 +38,21 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaMonoHfcTiendaStep.clickBtnPlanNuevo();
     }
 
-    @Y("selecciono el tipo {string}")
-    public void seleccionoElTipo(String tipoPlan) {
-        altaMonoHfcTiendaStep.clickBtnTipoPlan(tipoPlan);
+    @Y("selecciono la opcion Mono")
+    public void seleccionoLaOpcionMono() {
+        altaMonoHfcTiendaStep.clickBtnMono();
     }
 
-    @Y("selecciono el plan {string} y presiono Seleccionar oferta")
+    @Y("selecciono el tipo de plan mono {string} y presiono Seleccionar oferta")
     public void seleccionoElTipoDePlanMonoYPresionoSeleccionarOferta(String plan) {
         altaMonoHfcTiendaStep.seleccionarPlan(plan);
-        altaMonoHfcTiendaStep.clickSelectOferta();
+        altaMonoHfcTiendaStep.clickSeleccionarOferta();
     }
 
-    @Y("presiono el boton {string}")
-    public void presionoElBotonLineaNueva(String btnName) {
+    @Y("presiono el boton Linea Nueva")
+    public void presionoElBotonLineaNueva() {
         altaMonoHfcTiendaStep.esperarBtnLineaNueva();
-        altaMonoHfcTiendaStep.clickBtnLineaNueva(btnName);
+        altaMonoHfcTiendaStep.clickBtnLineaNueva();
     }
 
     @Y("valido que se presente el detalle de el plan")
@@ -64,14 +60,9 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaMonoHfcTiendaStep.validarDetallePlan();
     }
 
-    @Y("completo los datos para consultar la cobertura")
-    public void completoLosDatosParaConsultarLaCobertura(DataTable datos) {
-        String departamento = UtilWeb.getValueFromDataTable(datos,"departamento");
-        String provincia = UtilWeb.getValueFromDataTable(datos,"provincia");
-        String distrito = UtilWeb.getValueFromDataTable(datos,"distrito");
-        String direccion = UtilWeb.getValueFromDataTable(datos,"direccion");
-        String referencia = UtilWeb.getValueFromDataTable(datos,"referencia");
-        altaMonoHfcTiendaStep.writeDireccion(departamento, provincia, distrito, direccion, referencia);
+    @Y("selecciono departamento {string} provincia {string} distrito {string} direccion {string} y referencia {string}")
+    public void seleccionoDepartamentoProvinciaDistritoDireccionYReferencia(String depa, String prov, String distrito, String direc, String ref) {
+        altaMonoHfcTiendaStep.writeDireccion(depa, prov, distrito, direc, ref);
     }
 
     @Y("ingreso la informacion del lugar para la instalacion")
@@ -122,7 +113,7 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
 
     @Y("ingreso email {string} y lo repito")
     public void ingresoEmailYLoRepito(String correo) {
-        caplConCaeqAlContadoCanalTiendaStep.writeEmail(correo);
+        altaMonoHfcTiendaStep.writeEmail(correo);
     }
 
     @Y("presiono la opcion validar contrato")

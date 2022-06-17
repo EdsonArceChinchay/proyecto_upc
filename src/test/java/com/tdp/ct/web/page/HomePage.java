@@ -51,7 +51,7 @@ public class HomePage extends WebBase {
         waitUntilElementIsVisible(btnconsultar,10);
         click(btnconsultar);
         waitUntilElementIsVisible(boton01,20);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
     }
 
 }
