@@ -49,6 +49,7 @@ Característica: Alta Trio por el canal Proactivo
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
 	  | 12/12/1980 | Casado      | Albania      |
+	Y       doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
@@ -104,6 +105,7 @@ Característica: Alta Trio por el canal Proactivo
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
 	  | 12/12/1980 | Casado      | Albania      |
+	Y       doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
