@@ -150,8 +150,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void moverToElementIniciarRegistro() {
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicIniciarRegistro() {
