@@ -1,38 +1,30 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.page.HomePage;
 import com.tdp.ct.web.page.StepPages;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import org.junit.Assert;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+@ScreenShot
 @Component
 public class AltaFijaTiendaStep {
 
     @Autowired
     private StepPages page;
 
-    @ScreenShotBefore
-    public void validarNombresCompletosCliente(String nombreCompleto){
-        Assert.assertTrue("No existe el nombre del cliente",page.altaFijaTiendaPage().nombresCompletosCliente()
-                        .contains(nombreCompleto));
-    }
-
     public void seleccionarListaPLanFija(String planFija){
         page.altaFijaTiendaPage().listaPlanFija(planFija);
     }
 
-    @ScreenShotBefore
     public void seleccionarListaOfertas(String ofertas){
         page.altaFijaTiendaPage().listaOfertas(ofertas);
     }
 
-    @ScreenShotBefore
     public void clickSeleccionarOferta(){
         page.altaFijaTiendaPage().seleccionarOferta();
     }
 
-    @ScreenShotBefore
     public void clickListaBotones(){
         page.altaFijaTiendaPage().listaBotones();
     }
@@ -41,17 +33,13 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().datosAgendamiento();
     }
 
-    @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento(){
         page.altaFijaTiendaPage().botonConfirmarAgendamiento();
     }
 
-    @ScreenShotBefore
     public void clickDescargarContrato(){
         page.altaFijaTiendaPage().descargarContrato();
     }
-
-    @ScreenShotBefore
     public void clickDescargarPdf(){
         page.altaFijaTiendaPage().descargarPdf();
     }
@@ -64,7 +52,6 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().cerrarPopUp();
     }
 
-    @ScreenShotBefore
     public void clickRegistrarVenta(){
         page.altaFijaTiendaPage().registrarVenta();
     }

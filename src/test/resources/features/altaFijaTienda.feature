@@ -18,7 +18,6 @@ Característica: Alta Fija por tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        valido que muestre el nombre completo del cliente "<nombreCompletos>"
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -61,9 +60,10 @@ Característica: Alta Fija por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor   | tipoDocumento | documento |nombreCompletos              | departamento | provincia | distrito | direccion                     | referencia    | tipoPlan  | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 46940927  |JORGE JHONNY HUANCARI PUCHURI| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono     | RA 500 MBPS| discapacitado   | ODELIA      | CIPRIANO    | EL AGUSTINO |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  |nombreCompletos              | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | RA 500 MBPS| discapacitado   | SORAYA      | FIDEL       | LIMA        |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  |nombreCompletos              | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 500 MBPS| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor   | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia    | tipoPlan  | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 46940927  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Mono     | RA 500 MBPS| discapacitado   | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | RA 500 MBPS| discapacitado   | SORAYA      | FIDEL       | LIMA        |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 500 MBPS| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
 
 

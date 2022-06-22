@@ -3,6 +3,7 @@
 
 Característica: Alta Fija Pura MT por Call Center
 
+
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -56,9 +57,7 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
-    #Y        Selecciono tipo de pago "Boleta"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
       | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
@@ -71,3 +70,4 @@ Característica: Alta Fija Pura MT por Call Center
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 200 Mbps + 26 Gb | correo@gmail.com |
+

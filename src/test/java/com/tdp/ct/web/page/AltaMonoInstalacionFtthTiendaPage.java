@@ -7,20 +7,21 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
-    @FindBy(css = "h1.title")
+    @FindBy(css = ".content_title .title")
     protected WebElement titleOfertas;
 
     @FindBy(css = ".tdp-col-md-6:nth-child(2) .tdp-col-2 .margin-icon.add_pointer")
     protected WebElement btnPlanNuevo;
 
-    @FindBy(css = ".button-filter-section .button-filter")
-    protected List <WebElement> btnPlanList;
+    @FindBy(xpath = "//button[contains(text(),'Mono')]")
+    protected WebElement btnPlanMono;
 
-    @FindBy(css = ".detail-content div.features")
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
+    protected WebElement btnLineaNueva;
+
+    @FindBy(css = ".tdp-col-4:nth-child(1) .detail-content div.features")
     protected WebElement featureContent;
 
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -56,7 +57,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void scrollToBtnPlanNuevo(){
-        UtilWeb.waitForSeconds(1);
         js().scrollElementTop(titleOfertas);
     }
 
@@ -65,29 +65,16 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clickBtnTipoPlan(String tipoPlan){
-        for (int i = 0; i < btnPlanList.size(); i++) {
-            String encontrado = btnPlanList.get(i).getText().toLowerCase();
-            if (encontrado.equals(tipoPlan.toLowerCase())) {
-                btnPlanList.get(i).click();
-                break;
-            }
-        }
-        UtilWeb.waitForSeconds(3);
+    public void clickBtnMono(){
+        click(btnPlanMono);
     }
 
     public void esperarBtnLineaNueva(){
-        UtilWeb.waitForSeconds(5);
-        boolean existe = find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").size() != 0;
-        if (existe){
-            js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
-        }
+        waitUntilElementIsVisible(btnLineaNueva, 8);
     }
 
-    public void clickBtnLinea(String btnName){
-        String element = "//button[contains(text(),'"+ btnName +"')]";
-        WebElement btn = find().getElementByXPath(element);
-        click(btn);
+    public void clickBtnLineaNueva(){
+        click(btnLineaNueva);
     }
 
     public void validarDetallePlan(){

@@ -37,16 +37,12 @@ Característica: Alta Fija por Retail
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono un plan hogar "<plan_hogar>"
-    Y        selecciono el plan hogar "<nombrePlan>"
-    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
       | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
