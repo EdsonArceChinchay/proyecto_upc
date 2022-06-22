@@ -17,7 +17,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    @FindBy(xpath = "// div[@class='add_Product']")
+    @FindBy(xpath = "//div[@class='add_Product']")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
@@ -49,7 +49,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     protected List<WebElement> listPago;
 
 
-    @FindBy(css = "div.cont-autocomplete")
+    @FindBy(xpath= "//div[@class=\"_item\"]")
     protected WebElement lblItem;
 
     @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
@@ -81,8 +81,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionarTiempo(String tiempoP) {
-        js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
+                WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
         click(listElementPLan);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
@@ -91,7 +90,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println(elements.getText());
             if(elements.getText().equals(tiempoP)){
                 UtilWeb.waitForSeconds(2);
-                click(elements,3);
+                click(elements,30);
             }
         }
     }
@@ -99,22 +98,25 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
 
     public void BuscarEquipo(String buscarE) {
-        WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright='search']");
+        WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright=\"search\"]");
         click(Input);
         type(Input, buscarE);
-        UtilWeb.waitForSeconds(1);
-        click(lblItem);
+        click(lblItem, 10);
+
+//        click(btnBuscar, 10);
     }
 
     public void seleccionoLaCartillaLineaNueva() {
-        waitUntilElementIsVisible(lblLineaNueva, 10);
+        waitUntilElementIsVisible(lblLineaNueva, 5);
         click(lblLineaNueva, 10);
+        waitUntilElementIsVisible(lblLineaNueva, 5);
     }
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
         waitUntilElementIsVisible(lblSeleccionarOferta, 10);
         click(lblSeleccionarOferta, 10);
+
     }
 
 
@@ -153,8 +155,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         for (WebElement elements : listPago) {
             System.out.println("Producto: " + elements.getText());
             if (elements.getText().equals(pago))
-                click(elements, 3);
-                break;
+                click(elements, 30);
         }
     }
 

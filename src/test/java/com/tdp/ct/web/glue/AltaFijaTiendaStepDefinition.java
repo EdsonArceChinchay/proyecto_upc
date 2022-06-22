@@ -21,10 +21,7 @@ public class AltaFijaTiendaStepDefinition {
   @Autowired
   private AltaFijaTiendaStep altaFijaTiendaStep;
 
-  @Y("valido que muestre el nombre completo del cliente {string}")
-  public void valido_que_muestre_el_nombre_completo_del_cliente(String nombreCompletos){
-    altaFijaTiendaStep.validarNombresCompletosCliente(nombreCompletos);
-  }
+
 
   @Y("selecciono el tipo de plan fija {string}")
   public void selecciono_el_tipo_de_plan_fija(String planFija){

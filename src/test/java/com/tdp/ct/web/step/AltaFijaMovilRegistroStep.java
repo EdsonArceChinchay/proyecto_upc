@@ -90,15 +90,17 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().completarCorreo( correo);
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicValidarIdentidadTitular() {
         page.altaFijaMovilRegistroPage().clicValidarIdentidadTitular();
     }
 
+    @ScreenShotAfter
     public void seleccionoTipoValidacion(String tipoValidacion) {
         page.altaFijaMovilRegistroPage().seleccionoTipoValidacion( tipoValidacion);
     }
 
+    @ScreenShotAfter
     public void ingresarDatosSupervisor(DataTable datos) {
 
         String numdoc= UtilWeb.getValueFromDataTable(datos,"numdoc");
@@ -109,13 +111,10 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
         page.altaFijaMovilRegistroPage().IngresarUsuarioSupervisor(user);
         page.altaFijaMovilRegistroPage().ingresarPasswordSupervisor(password);
-    }
-
-    @ScreenShotBefore
-    public void clicConfirmarUsuarioSupervisor(){
         page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
     }
 
+    @ScreenShotAfter
     public void validarIdentidadValidada() {
         page.altaFijaMovilRegistroPage().verificarIdentidadValidada();
     }
@@ -124,17 +123,17 @@ public class AltaFijaMovilRegistroStep {
     public void clicValidarContrato() {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
-
+    @ScreenShotAfter
     public void ingresarDatosValidacionSolicitada(DataTable datos) {
         page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicEnSiguiente() {
         page.altaFijaMovilRegistroPage().clicSiguiente();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicEnConfirmar() {
         page.altaFijaMovilRegistroPage().clicEnConfirmar();
     }
@@ -144,16 +143,17 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().scrollByJavaScriptToFinal();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicBotonContinuar() {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
 
+    @ScreenShotAfter
     public void visualizarContratoEnPantalla() {
         page.altaFijaMovilRegistroPage().visualizarContratoEnPantalla();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicSiAcepto() {
         page.altaFijaMovilRegistroPage().clicSiAcepto();
     }
@@ -197,25 +197,25 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnCrearCliente() {
         page.altaFijaMovilRegistroPage().crearCliente();
     }
-
+    @ScreenShotAfter
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
         String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"<estadoCivil>");
+        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
 
         page.altaFijaMovilRegistroPage().ingresarFechaNac(fechaNac);
         page.altaFijaMovilRegistroPage().seleccionoNacionalidad();
         page.altaFijaMovilRegistroPage().seleccionarEstadoCivil(estadoCivil);
 
     }
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicDatosDelCliente() {
         page.altaFijaMovilRegistroPage().clicDatosDeCliente();
     }
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clicConfirmarCliente() {
         page.altaFijaMovilRegistroPage().clicConfirmarCliente();
     }
-
+    @ScreenShotAfter
     public void datosClienteValidado() {
         page.altaFijaMovilRegistroPage().datosClienteValidado();
     }
