@@ -33,10 +33,10 @@ public class Hooks {
         this.scenario.setScenario(scenario);
     }
 
-    @After(order = 0)
+    /*@After(order = 0)
     public void afterScenario() {
         manager.quitDriver();
-    }
+    }*/
 
     @After(order = 1)
     public void tearDown() {

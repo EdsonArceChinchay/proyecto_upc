@@ -56,11 +56,11 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
-    Y        Selecciono tipo de pago "Boleta"
+    #Y        Selecciono tipo de pago "Boleta"
     Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | estadoCivil |
-      | 12/12/1980 | casado      |
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -70,4 +70,4 @@ Característica: Alta Fija Pura MT por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 200 Mbps + 26 Gb | correo@gmail.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 200 Mbps + 26 Gb | correo@gmail.com |
