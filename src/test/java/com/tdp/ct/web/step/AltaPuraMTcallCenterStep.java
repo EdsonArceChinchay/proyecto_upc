@@ -55,6 +55,7 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
     }
 
+    @ScreenShotBefore
     public void clickCierrePopup(){
         page.altaPuraMTcallCenterPage().clickCierrePopup();
     }

@@ -200,13 +200,14 @@ public class AltaFijaMovilRegistroStep {
 
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
         String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"<estadoCivil>");
+        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
 
         page.altaFijaMovilRegistroPage().ingresarFechaNac(fechaNac);
         page.altaFijaMovilRegistroPage().seleccionoNacionalidad();
         page.altaFijaMovilRegistroPage().seleccionarEstadoCivil(estadoCivil);
 
     }
+    public void esperarBtnDatosCliente(){ page.altaFijaMovilRegistroPage().esperarBtnDatosCliente(); }
     @ScreenShotBefore
     public void clicDatosDelCliente() {
         page.altaFijaMovilRegistroPage().clicDatosDeCliente();

@@ -498,9 +498,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(10);
     }
 
-    public void clicDatosDeCliente() {
+    public void esperarBtnDatosCliente(){
         js().scrollElementTop(buttonDatosDeCliente);
-        waitUntilElementIsVisible(buttonDatosDeCliente, 10).click();
+        waitUntilElementIsVisible(buttonDatosDeCliente, 10);
+    }
+
+    public void clicDatosDeCliente() {
+        buttonDatosDeCliente.click();
         UtilWeb.waitForSeconds(2);
     }
 
@@ -527,12 +531,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         String dataValue = "";
         UtilWeb.waitForSeconds(5);
         SearchContext context = sh().getContext(generoList);
-        if (estadoCivil.equalsIgnoreCase("Soltero")) {
+        /*if (estadoCivil.equalsIgnoreCase("Soltero")) {
             dataValue = "single";
         } else {
             dataValue = "married";
-        }
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        }*/
+        context.findElement(By.cssSelector("[data-value='"+ estadoCivil +"']")).click();
         System.out.println("seleccionando estado civil");
         UtilWeb.waitForSeconds(1);
     }

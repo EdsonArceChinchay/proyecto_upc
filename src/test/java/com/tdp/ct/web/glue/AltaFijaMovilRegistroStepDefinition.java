@@ -181,6 +181,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
+        altaFijaMovilRegistroStep.esperarBtnDatosCliente();
         altaFijaMovilRegistroStep.clicDatosDelCliente();
     }
 

@@ -48,7 +48,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarOfertasSugeridasView(String title){
-        waitUntilElementIsVisible(titleOfertas, 25);
+        waitUntilElementIsVisible(titleOfertas, 35);
         UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
