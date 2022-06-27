@@ -44,7 +44,7 @@ public class AltaMonoInstalacionFtthTiendaStep {
         page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(conjH);
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnConsultarCobertura(){ page.altaMonoFtthTiendaPage().clickBtnConsultarCobertura(); }
 
     @ScreenShotAfter
@@ -55,20 +55,18 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @ScreenShotBefore
     public void clickBtnPlanNuevo(){ page.altaMonoFtthTiendaPage().clickBtnPlanNuevo(); }
 
-    @ScreenShotBefore
-    public void clickBtnMono(){ page.altaMonoFtthTiendaPage().clickBtnMono(); }
+    public void clickBtnTipoPlan(String plan){ page.altaMonoFtthTiendaPage().clickBtnTipoPlan(plan); }
 
     public void seleccionarPlan(String plan) { page.altaFijaMovilRegistroPage().seleccionarPlan(plan); }
 
     @ScreenShotBefore
-    public void clickSeleccionarOferta() { page.altaFijaMovilRegistroPage().clicSeleccionarOferta(); }
+    public void clickSelectOferta() { page.altaFijaMovilRegistroPage().clicSeleccionarOferta(); }
 
     public void esperarBtnLineaNueva(){ page.altaMonoFtthTiendaPage().esperarBtnLineaNueva(); }
 
     @ScreenShotBefore
-    public void clickBtnLineaNueva(){ page.altaMonoFtthTiendaPage().clickBtnLineaNueva(); }
+    public void clickBtnLineaNueva(String btnName){ page.altaMonoFtthTiendaPage().clickBtnLinea(btnName); }
 
-    @ScreenShotAfter
     public void validarDetallePlan(){ page.altaMonoFtthTiendaPage().validarDetallePlan(); }
 
     public void moverToElementIniciarRegistro() { page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro(); }
@@ -87,12 +85,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento(){
         page.altaFijaTiendaPage().botonConfirmarAgendamiento();
-    }
-
-    @ScreenShotAfter
-    public void writeEmail(String correo){
-        page.altaFijaAltaMovilCallCenterPage().correo(correo);
-        page.altaFijaAltaMovilCallCenterPage().confirmarCorreo(correo);
     }
 
 }

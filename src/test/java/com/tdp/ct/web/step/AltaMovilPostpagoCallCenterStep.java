@@ -1,29 +1,31 @@
 package com.tdp.ct.web.step;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import com.tdp.ct.web.page.StepPages;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@ScreenShot
 @Component
 public class AltaMovilPostpagoCallCenterStep {
 
     @Autowired
     private  StepPages page;
 
+    @ScreenShotBefore
     public void BtonOpciones() {
         page.altaMovilPostpagoCallCenterPage().BtonOpciones();
     }
 
-
+    @ScreenShotBefore
     public  void seleccionarPlan(String tipoPlan) {
         page.altaMovilPostpagoCallCenterPage().seleccionarPlan(tipoPlan);
 
     }
 
+    @ScreenShotBefore
     public  void seleccionarEquipo() {
         page.altaMovilPostpagoCallCenterPage().seleccionarEquipo();
     }
@@ -32,50 +34,50 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().seleccionarTiempo(tiempoP);
     }
 
-    public  void seleccionarTipoPago(String tipoPago) {
-    }
-
+    @ScreenShotAfter
     public  void BuscarEquipo(String buscarE) {
         page.altaMovilPostpagoCallCenterPage().BuscarEquipo(buscarE);
     }
 
-
+    @ScreenShotAfter
     public  void seleccionoElPlanMovil(String tipoPlan) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElPlanMovil(tipoPlan);
     }
 
+    @ScreenShotBefore
     public void seleccionoLaCartillaLineaNueva() {
         page.altaMovilPostpagoCallCenterPage().seleccionoLaCartillaLineaNueva();
     }
-
+    @ScreenShotBefore
     public void doyClickEnElBotonSeleccionarOferta() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionarOferta();
     }
-
+    @ScreenShotBefore
     public void doyClickEnElBotonSeleccionar() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionar();
     }
-
+    @ScreenShotBefore
     public void doyClickEnIniciarRegistro() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
-
+    @ScreenShotAfter
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
-
+    @ScreenShotBefore
     public void ingresoElTipoDePago(String pago) {
         page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(pago);
     }
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
-
+    @ScreenShotAfter
     public void seleccionamosElHorarioDeEntrega(String horario) {
         page.altaMovilPostpagoCallCenterPage().seleccionamosElHorarioDeEntrega(horario);
     }
-
+    @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
         String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
         String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");

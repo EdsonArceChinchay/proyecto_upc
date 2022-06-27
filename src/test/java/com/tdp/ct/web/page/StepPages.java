@@ -1,13 +1,9 @@
 package com.tdp.ct.web.page;
 
-import com.tdp.ct.web.step.MigracionDuoATrioTiendaStep;
 import org.springframework.stereotype.Component;
 
 @Component
 public class StepPages{
-
-
-
     public LoginBerserkerPage loginBerserkerPage(){ return new LoginBerserkerPage(); }
     public HomePage homePage(){ return new HomePage();}
     public AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage(){ return new AltaTrioMTconUpfrontTiendaPage();}
@@ -23,4 +19,7 @@ public class StepPages{
     public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage(){return new AltaTrioConBloqueHdUpfrontCallCenterPage();}
     public MigracionDuoATrioTiendaPage migracionDuoATrioTiendaPage(){return new MigracionDuoATrioTiendaPage();}
     public AltaTrioDuoProactivoPage altaTrioDuoProactivoPage(){return new AltaTrioDuoProactivoPage();}
+    public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage(){ return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage(); }
+    public AltaFijaRetailPage altaFijaRetailPage(){ return new AltaFijaRetailPage(); }
+    public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage(){ return new AltaMovilPrepagoSoloChipTiendaPage(); }
 }

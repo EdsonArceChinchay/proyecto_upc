@@ -7,21 +7,20 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
-    @FindBy(css = ".content_title .title")
+    @FindBy(css = "h1.title")
     protected WebElement titleOfertas;
 
     @FindBy(css = ".tdp-col-md-6:nth-child(2) .tdp-col-2 .margin-icon.add_pointer")
     protected WebElement btnPlanNuevo;
 
-    @FindBy(xpath = "//button[contains(text(),'Mono')]")
-    protected WebElement btnPlanMono;
+    @FindBy(css = ".button-filter-section .button-filter")
+    protected List<WebElement> btnPlanList;
 
-    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
-    protected WebElement btnLineaNueva;
-
-    @FindBy(css = ".tdp-col-4:nth-child(1) .detail-content div.features")
+    @FindBy(css = ".detail-content div.features")
     protected WebElement featureContent;
 
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -49,7 +48,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarOfertasSugeridasView(String title){
-        waitUntilElementIsVisible(titleOfertas, 25);
+        waitUntilElementIsVisible(titleOfertas, 35);
         UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
@@ -65,16 +64,29 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clickBtnMono(){
-        click(btnPlanMono);
+    public void clickBtnTipoPlan(String tipoPlan) {
+        for (int i = 0; i < btnPlanList.size(); i++) {
+            String encontrado = btnPlanList.get(i).getText().toLowerCase();
+            if (encontrado.equals(tipoPlan.toLowerCase())) {
+                btnPlanList.get(i).click();
+                break;
+            }
+        }
+        UtilWeb.waitForSeconds(3);
     }
 
     public void esperarBtnLineaNueva(){
-        waitUntilElementIsVisible(btnLineaNueva, 8);
+        UtilWeb.waitForSeconds(5);
+        boolean existe = find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").size() != 0;
+        if (existe) {
+            js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
+        }
     }
 
-    public void clickBtnLineaNueva(){
-        click(btnLineaNueva);
+    public void clickBtnLinea(String btnName) {
+        String element = "//button[contains(text(),'" + btnName + "')]";
+        WebElement btn = find().getElementByXPath(element);
+        click(btn);
     }
 
     public void validarDetallePlan(){
