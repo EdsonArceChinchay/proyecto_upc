@@ -18,7 +18,6 @@ public class AltaPuraMTcallCenterStep {
         UtilWeb.waitForSeconds(3);
         page.altaPuraMTcallCenterPage().btnConfirmarUbicacion();
     }
-
     @ScreenShotAfter
     public void selectTipoHorario(String horaio){
         UtilWeb.waitForSeconds(3);
@@ -55,6 +54,7 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
     }
 
+    @ScreenShotBefore
     public void clickCierrePopup(){
         page.altaPuraMTcallCenterPage().clickCierrePopup();
     }

@@ -18,6 +18,7 @@ public class AltaFijaAltaMovilRetailStep {
         page.altaFijaAltaMovilRetailPage().altaHogar();
     }
 
+    @ScreenShotAfter
     public void btnMovil() {
         page.altaFijaAltaMovilRetailPage().altaMovil();
     }

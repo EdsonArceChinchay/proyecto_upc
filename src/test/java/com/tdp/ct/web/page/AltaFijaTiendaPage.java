@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
@@ -30,13 +31,6 @@ public class AltaFijaTiendaPage extends WebBase {
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
-    @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
-    protected WebElement nombresCompletosCliente;
-
-    public String nombresCompletosCliente(){
-        waitUntilElementIsVisible(nombresCompletosCliente,10);
-        return getText(nombresCompletosCliente);
-    }
 
     public void listaPlanFija(String planFija){
         UtilWeb.waitForSeconds(4);

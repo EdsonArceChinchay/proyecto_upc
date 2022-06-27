@@ -17,7 +17,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    @FindBy(xpath = "// div[@class='add_Product']")
+    @FindBy(xpath = "//div[@class='add_Product']")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
@@ -107,14 +107,16 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionoLaCartillaLineaNueva() {
-        waitUntilElementIsVisible(lblLineaNueva, 10);
+        waitUntilElementIsVisible(lblLineaNueva, 5);
         click(lblLineaNueva, 10);
+        waitUntilElementIsVisible(lblLineaNueva, 5);
     }
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
         waitUntilElementIsVisible(lblSeleccionarOferta, 10);
         click(lblSeleccionarOferta, 10);
+
     }
 
 
