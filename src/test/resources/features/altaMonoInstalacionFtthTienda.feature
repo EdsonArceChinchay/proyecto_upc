@@ -8,7 +8,7 @@
       Dado que abro la pagina de movistar
       Cuando presiono el boton Iniciar Sesion
       Y selecciono el tipo de usuario "usuario externo"
-      Y ingreso el usuario "lterrazosce"
+      Y ingreso el usuario "ggonzalesgg"
       Y ingreso el password "Telefonica2021"
       Y presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -23,7 +23,9 @@
       Y selecciono el boton Linea Nueva Hogar
       Y selecciono el boton Mostrar ofertas
       Entonces me muestra la pantalla para ingresar la direccion
-      Y selecciono departamento "15" provincia "1501" distrito "150136" direccion "Calle Condesa de Chinchon 107" y referencia "parque"
+      Y completo los datos para consultar la cobertura
+        |departamento|provincia|distrito|direccion                    |referencia|
+        |15          |1501     |150136  |Calle Condesa de Chinchon 107|parque    |
       Y presiono el boton Consultar Ubicacion
       Y ingreso la informacion del lugar para la instalacion
         | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -31,9 +33,9 @@
       Y presiono el boton Consultar Cobertura
       Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
       Y selecciono el boton de eleccion de planes Plan Nuevo
-      Y selecciono la opcion Mono
-      Y selecciono el tipo de plan mono "Internet Movistar RA 1000 Mbps" y presiono Seleccionar oferta
-      Y presiono el boton Linea Nueva
+      Y selecciono el tipo "Mono"
+      Y selecciono el plan "Internet Movistar RA 100 Mbps" y presiono Seleccionar oferta
+      Y presiono el boton "Línea nueva"
       Y valido que se presente el detalle de el plan
       Y presiono el boton Iniciar Registro
       Y valido que se presente la pantalla agendamiento
@@ -43,11 +45,11 @@
       Y doy click en datos del cliente
       Y completo los datos del cliente
         | fechaNac   | estadoCivil |
-        | 12/12/1980 | casado      |
+        | 12/12/1980 | married     |
       Y presiono la opcion validar contrato
       Y me muestra en pantalla el contrato solicitado
       Cuando doy clic en si acepto
       Y doy click en el boton de continuar
       Y presiono el boton descargar contrato
-      Y presiono el boton Registrar venta
-      Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#      Y presiono el boton Registrar venta
+#      Entonces visualizo en pantalla el mensaje de exito de la venta generada

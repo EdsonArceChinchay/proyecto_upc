@@ -21,8 +21,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   @Y("selecciono la opcion {string}")
   public void seleccionoLaOpcion(String Tipo) {
     altaMovilPostpagoCallCenterStep.seleccionarPlan(Tipo);
-
-
   }
 
   @Y("selecciono añadir equipos")
@@ -33,13 +31,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   @Y("ingreso el tiempo de permanencia{string}")
   public void ingresoElTiempoDePermanencia(String TiempoP) {
     altaMovilPostpagoCallCenterStep.seleccionarTiempo(TiempoP);
-
-  }
-
-  @Y("selecciono el tipo de pago {string}")
-  public void seleccionoElTipoDePago(String TipoPago) {
-    altaMovilPostpagoCallCenterStep.seleccionarTipoPago(TipoPago);
-
   }
 
   @Y("busco el equipo {string}")
