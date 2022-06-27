@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: Alta Duo por tienda
 
@@ -58,4 +58,4 @@ Característica: Alta Duo por tienda
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                      |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar HD RA 200 Mbps |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar RA 40 Mbps |
