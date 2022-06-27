@@ -48,43 +48,35 @@ public class AltaMovilPostpagoCallCenterStep {
     public void seleccionoLaCartillaLineaNueva() {
         page.altaMovilPostpagoCallCenterPage().seleccionoLaCartillaLineaNueva();
     }
-
     @ScreenShotBefore
     public void doyClickEnElBotonSeleccionarOferta() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionarOferta();
     }
-
     @ScreenShotBefore
     public void doyClickEnElBotonSeleccionar() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionar();
     }
-
     @ScreenShotBefore
     public void doyClickEnIniciarRegistro() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
-
     @ScreenShotAfter
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
-
     @ScreenShotBefore
     public void ingresoElTipoDePago(String pago) {
         page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(pago);
     }
-
     @ScreenShotBefore
     @ScreenShotAfter
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
-
     @ScreenShotAfter
     public void seleccionamosElHorarioDeEntrega(String horario) {
         page.altaMovilPostpagoCallCenterPage().seleccionamosElHorarioDeEntrega(horario);
     }
-
     @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
         String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");

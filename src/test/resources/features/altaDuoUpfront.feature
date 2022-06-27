@@ -1,14 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Pura MT por Call Center
-
+Característica: Alta Duo por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaPuraMTcallCenter_CE
-  Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
+  @AltaDuo_Upfront_CE
+  Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -24,7 +23,6 @@ Característica: Alta Fija Pura MT por Call Center
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -35,29 +33,19 @@ Característica: Alta Fija Pura MT por Call Center
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque      |
     Y        presiono el boton consultar cobertura
-    #Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido el detalle de la seleccion
-    Cuando   doy clic a iniciar registro
+    Y        selecciono un plan hogar "<plan_hogar>"
+    Y        selecciono el plan hogar "<nombrePlan>"
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "2pm-7pm"
-    E        ingreso telefono del titular "998877665"
-    E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
-    E         ingreso correo de verificacion "<correo>"
-#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
+    Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
       | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
@@ -67,7 +55,7 @@ Característica: Alta Fija Pura MT por Call Center
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 200 Mbps + 26 Gb | correo@gmail.com |
 
+    Ejemplos:
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                      |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar HD RA 200 Mbps |

@@ -31,7 +31,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   @Y("ingreso el tiempo de permanencia{string}")
   public void ingresoElTiempoDePermanencia(String TiempoP) {
     altaMovilPostpagoCallCenterStep.seleccionarTiempo(TiempoP);
-
   }
 
   @Y("busco el equipo {string}")
