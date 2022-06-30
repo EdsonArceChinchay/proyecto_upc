@@ -1,12 +1,14 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Trio con bloque HD Upfront por Call Center
+Característica: Alta Fija Call Center
+                Quiero realizar una alta fija por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
-  @AltaTrioConBloqueHdUpfrontCallCenter
-  Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
+
+  @AltaDuoPorCallCenter
+  Esquema del escenario: Alta Duo Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -20,24 +22,26 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero   |
-      | Juan    | Lopez Garcia | masculino |
+      | Juan    | Lopez Anibal | masculino |
+    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Mostrar ofertas
+    Y        presiono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
+    Y        selecciono el departamento donde sera la instalacion "15"
+    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el distrito donde sera la instalacion "150136"
+    Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
+    Y        ingreso la referencia de la direccion "casa naranja"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote |vivienda     |nombreVivienda  |piso | int | conjunto            | conjHabit  |
       | A  | 1    |EDIFICIO     |Familia Barreto |1    | 1   | URBANIZACION POPULAR| conjunto b |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
+    Y        valido que este en la seccion de registro "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -52,12 +56,11 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+#    Y        doy click en el boton de continuar
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy clic para validar contrato Movil
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento| documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000012| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 70 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
-
-
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlan  | nombrePlan                               |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000006|Control       | RV Plan Mi Movistar S/25.9 III           |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000006|Duo       | DÚO MOVISTAR VOZ INTERNET RA 70 MBPS           |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000006|Trío      | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100 MBPS           |
