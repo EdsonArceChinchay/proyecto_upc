@@ -20,5 +20,6 @@ public class StepPages{
     public AltaFijaRetailPage altaFijaRetailPage(){ return new AltaFijaRetailPage(); }
     public AltaMonoInstalacionFtthTiendaPage altaMonoFtthTiendaPage(){ return new AltaMonoInstalacionFtthTiendaPage(); }
     public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage(){return new AltaTrioConBloqueHdUpfrontCallCenterPage();}
+    public AltaMovilSoloSimCallCenterPage altaMovilSoloSimCallCenterPage(){return new AltaMovilSoloSimCallCenterPage();}
 
 }

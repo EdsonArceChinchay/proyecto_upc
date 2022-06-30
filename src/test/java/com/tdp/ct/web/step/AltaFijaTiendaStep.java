@@ -15,6 +15,7 @@ public class AltaFijaTiendaStep {
     private StepPages page;
 
     public void validarNombresCompletosCliente(String nombreCompleto){
+
         Assert.assertTrue("No existe el nombre del cliente",page.altaFijaTiendaPage().nombresCompletosCliente()
                         .contains(nombreCompleto));
     }

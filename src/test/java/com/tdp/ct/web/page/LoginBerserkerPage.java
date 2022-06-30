@@ -62,6 +62,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome(){
+        waitUntilElementIsClickable(btnContinuar,15);
         click(btnContinuar);
         waitUntilElementIsVisible(msgHome, 15);
     }

@@ -35,6 +35,8 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public String nombresCompletosCliente(){
         waitUntilElementIsVisible(nombresCompletosCliente,10);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         return getText(nombresCompletosCliente);
     }
 
@@ -45,8 +47,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas){
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         for (WebElement element:listaOfertas){
+            System.out.println("hola mundo: " + element.getText());
             if(element.getText().contains(planOfertas)){
                 click(element);
             }
@@ -61,12 +64,12 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
+        System.out.println("paso por aqui 65");
     }
 
 
     public void listaBotones(){
         for(WebElement element:listaBotones){
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
             if (element.getText().contains("nueva")){
                 UtilWeb.waitForSeconds(2);
                 click(element,30);

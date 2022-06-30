@@ -155,7 +155,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
-        UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
         click(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(2);
@@ -495,7 +494,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(2);
+        //UtilWeb.waitForSeconds(10);
     }
 
     public void clicDatosDeCliente() {
@@ -522,12 +522,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarEstadoCivil(String estadoCivil) {
+        System.out.println("Esto mando: " + estadoCivil);
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
         String dataValue = "";
         UtilWeb.waitForSeconds(5);
         SearchContext context = sh().getContext(generoList);
-        if (estadoCivil.equalsIgnoreCase("Soltero")) {
+        if (estadoCivil.equalsIgnoreCase("hola")) {
             dataValue = "single";
         } else {
             dataValue = "married";
