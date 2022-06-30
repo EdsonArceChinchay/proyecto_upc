@@ -1,0 +1,50 @@
+package com.tdp.ct.web.glue;
+import com.tdp.ct.web.WebAutomationApplication;
+import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.step.*;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.es.Y;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
+@SpringBootTest(classes = WebAutomationApplication.class)
+public class AltaMovilSoloSimCallCenterStepDefinition {
+
+  @Autowired
+  private AltaMovilSoloSimCallCenterStep altaMovilSoloSimCallCenterStep;
+
+  @Autowired
+  private AltaFijaTiendaStep altaFijaTiendaStep;
+
+  @Y("valido que este en la pagina de ofertas sugeridas")
+  public void valido_que_este_en_la_pagina_de_ofertas_sugeridas(){
+    altaMovilSoloSimCallCenterStep.validarOfertasSugeridas();
+  }
+
+  @Y("selecciono el tipo de plan movil {string}")
+  public void selecciono_el_tipo_de_plan_movil(String tipoPlanMovil){
+    altaMovilSoloSimCallCenterStep.seleccionarListaTipoPlanMovil(tipoPlanMovil);
+  }
+
+  @Y("selecciono un plan movil {string}")
+  public void selecciono_un_plan_movil(String planMovil){
+    altaMovilSoloSimCallCenterStep.seleccionarListaPlanMovil(planMovil);
+    altaMovilSoloSimCallCenterStep.clickBotonSeleccionarOferta();
+    altaFijaTiendaStep.clickListaBotones();
+  }
+
+
+  @Y("valido que este en la seccion de registro {string}")
+  public void valido_que_este_en_la_pagina_de_registro(String data){
+    altaMovilSoloSimCallCenterStep.validarPaginaResumen(data);
+  }
+
+  @Y("valido que este en la seccion completa los datos solicitados")
+  public void valido_que_este_en_seccion_completa_los_datos_solicitados(){
+    altaMovilSoloSimCallCenterStep.validarCompletaDatosSolicitados();
+  }
+
+
+
+}

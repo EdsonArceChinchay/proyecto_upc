@@ -113,6 +113,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clickCierrePopup(){
+        UtilWeb.waitForSeconds(8);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
@@ -121,8 +122,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
             System.out.println("Se cierra Popup de error");
             UtilWeb.waitForSeconds(3);
             click(cierrePopUoError);
+            UtilWeb.waitForSeconds(2);
         }else {
             System.out.println("no se encontró mensaje de error");
+            UtilWeb.waitForSeconds(2);
         }
     }
 
