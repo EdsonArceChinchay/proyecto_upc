@@ -12,7 +12,8 @@ public class AltaFijaTiendaStep {
     @Autowired
     private StepPages page;
 
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void validarNombresCompletosCliente(String nombreCompleto){
 
         Assert.assertTrue("No existe el nombre del cliente",page.altaFijaTiendaPage().nombresCompletosCliente()
