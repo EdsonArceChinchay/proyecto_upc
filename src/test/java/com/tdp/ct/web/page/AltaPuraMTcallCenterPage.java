@@ -119,6 +119,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() !=0;
         if (elementoExistente){
             System.out.println("Se cierra Popup de error");
+            UtilWeb.waitForSeconds(3);
             click(cierrePopUoError);
         }else {
             System.out.println("no se encontró mensaje de error");
