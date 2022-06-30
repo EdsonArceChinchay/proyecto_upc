@@ -12,7 +12,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[2]")
+    @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
 
     @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div[3]/button")
