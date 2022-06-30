@@ -23,4 +23,5 @@ public class StepPages{
     public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage(){return new AltaTrioConBloqueHdUpfrontCallCenterPage();}
     public MigracionDuoATrioTiendaPage migracionDuoATrioTiendaPage(){return new MigracionDuoATrioTiendaPage();}
     public AltaTrioDuoProactivoPage altaTrioDuoProactivoPage(){return new AltaTrioDuoProactivoPage();}
+    public AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage(){return new AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage();}
 }
