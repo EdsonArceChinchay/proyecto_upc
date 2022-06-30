@@ -122,7 +122,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
             System.out.println("Se cierra Popup de error");
             click(cierrePopUoError);
             UtilWeb.waitForSeconds(2);
-
         }else {
             System.out.println("no se encontró mensaje de error");
             UtilWeb.waitForSeconds(2);

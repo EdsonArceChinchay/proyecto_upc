@@ -44,6 +44,7 @@ public class AltaFijaRetailStep {
         page.altaFijaRetailPage().irIniciarRegistro();
     }
 
+    @ScreenShotAfter
     public void ingresarDatosCliente(DataTable dataTable){
         var fechNacimiento = getValueFromDataTable(dataTable, "fechaNac");
         var nacionalidad = getValueFromDataTable(dataTable, "nacionalidad");
@@ -52,6 +53,10 @@ public class AltaFijaRetailStep {
         page.altaMovilPrepagoSoloChipTiendaPage().ingresarFechaNacimiento(fechNacimiento);
         page.altaMovilPrepagoSoloChipTiendaPage().ingresarNacionalidad(nacionalidad);
         page.altaMovilPrepagoSoloChipTiendaPage().selecEstadoCivil(estadoCivil);
+
+        scenario.printFullView();
+        UtilWeb.waitForSeconds(1);
+
         page.altaMovilPrepagoSoloChipTiendaPage().clickConfirmar();
     }
 }

@@ -2,13 +2,12 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -34,10 +33,13 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
 
     public void seleccionarOferta(String oferta) {
         //clickElementInAList(listOfert, oferta.toUpperCase());
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(10);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,400)");
+        UtilWeb.waitForSeconds(1);
         WebElement btnOferta = find().getElementByXPath("//span[text()='" + oferta + "']/../../following-sibling::*//img");
         click(btnOferta);
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionaPrepago() {

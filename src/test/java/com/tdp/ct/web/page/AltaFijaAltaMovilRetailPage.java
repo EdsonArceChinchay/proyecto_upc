@@ -12,7 +12,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[2]")
+    @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
 
     @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div[3]/button")
@@ -74,7 +74,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void seleccionarDistrito(String tipoDistrito){
-        WebElement distritoList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
@@ -95,6 +95,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
+
         //waitUntilElementIsVisible(btnConsulta,8);
         //UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
@@ -103,7 +104,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void writeManzana(String manzana){
         UtilWeb.waitForSeconds(1);
-        WebElement Mz= find().getElementByCss(" tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
+        WebElement Mz= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);

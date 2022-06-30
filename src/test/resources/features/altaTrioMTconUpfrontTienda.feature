@@ -24,24 +24,19 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingresamos la Manzana o bloque "<mz>"
-    Y        ingresamos el Lote "<lote>"
-    Y        ingresamos el Piso "<piso>"
-    Y        ingresamos el interior "<int>"
-    Y        ingresamos el Tipo de conjunto habitacional "<conjunto>"
-    Y        ingresamos el Nombre del conjunto habitacional "<conjHabit>"
-    Y        doy click en el boton consultar cobertura
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
+      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+    Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        doy click en el boton Ir a movistar total
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        escojo un turno de agendamiento
-    Y        ingreso telefono del contacto "<numContacto>"
-    Y        doy click en el boton confirmar
-    Y        valido detalles de instalacion
-    Y        confirmo el registro de instalacion
-    Y        completo los datos solicitados "<correo>"
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor

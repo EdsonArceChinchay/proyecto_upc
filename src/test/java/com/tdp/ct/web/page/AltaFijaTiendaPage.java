@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
