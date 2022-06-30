@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,6 +32,7 @@ public class AltaMovilSoloSimCallCenterStep {
 
         Assert.assertTrue("El elemento esperado no es igual al actual",
                 page.altaMovilSoloSimCallCenterPage().paginaResumen().equalsIgnoreCase(data));
+        UtilWeb.waitForSeconds(2);
     }
 
     public void validarCompletaDatosSolicitados(){

@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -137,11 +138,11 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(1);
         click(btnIniciar, 10);
         System.out.println("paso por aqui" + btnIniciar.getText());
     }
