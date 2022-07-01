@@ -156,7 +156,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
-        UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
         click(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(2);
@@ -276,7 +275,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(15);
         waitUntilElementIsVisible(buttonValidarContrato, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -497,7 +496,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(2);
+        //UtilWeb.waitForSeconds(10);
     }
 
     public void esperarBtnDatosCliente(){
@@ -527,19 +527,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         System.out.println("seleccionando nacionalidad");
     }
 
-    public void seleccionarEstadoCivil(String estadoCivil) {
-        WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
+    public void seleccionarEstadoCivil(String genero) {
+        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
         click(generoList);
         String dataValue = "";
-        UtilWeb.waitForSeconds(2);
         SearchContext context = sh().getContext(generoList);
-        /*if (estadoCivil.equalsIgnoreCase("Soltero")) {
-            dataValue = "single";
+        if (genero.equalsIgnoreCase("femenino")) {
+            dataValue = "F";
         } else {
-            dataValue = "married";
-        }*/
-        context.findElement(By.cssSelector("[data-value='"+ estadoCivil +"']")).click();
-        System.out.println("seleccionando estado civil");
+            dataValue = "M";
+        }
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clicConfirmarCliente() {
