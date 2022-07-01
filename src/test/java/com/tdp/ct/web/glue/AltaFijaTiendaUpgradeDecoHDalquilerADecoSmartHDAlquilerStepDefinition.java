@@ -27,4 +27,12 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStepDefiniti
     public void seleccionamosGuardarCambios() {
         altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.seleccionamosGuardarCambios();
     }
-}
+
+    @Y("seleccionamos agregar decodificador Smart HD")
+    public void seleccionamosAgregarDecodificador() {
+        altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.scrollTo();
+        altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.seleccionamosAgregarDecodificador();
+        altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.scrollToUp();
+    }}
+
+
