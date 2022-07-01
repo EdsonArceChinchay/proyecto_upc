@@ -28,11 +28,8 @@ public class AltaMovilSoloSimCallCenterStep {
 
     public void clickBotonSeleccionarOferta(){page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();}
 
-    public void validarPaginaResumen(String data){
-
-        Assert.assertTrue("El elemento esperado no es igual al actual",
-                page.altaMovilSoloSimCallCenterPage().paginaResumen().equalsIgnoreCase(data));
-        UtilWeb.waitForSeconds(2);
+    public void validarPaginaResumen(){
+        page.altaMovilSoloSimCallCenterPage().paginaResumen();
     }
 
     public void validarCompletaDatosSolicitados(){

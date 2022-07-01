@@ -40,9 +40,9 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   }
 
 
-  @Y("valido que este en la seccion de registro {string}")
-  public void valido_que_este_en_la_pagina_de_registro(String data){
-    altaMovilSoloSimCallCenterStep.validarPaginaResumen(data);
+  @Y("valido que este en la seccion de registro")
+  public void valido_que_este_en_la_pagina_de_registro(){
+    altaMovilSoloSimCallCenterStep.validarPaginaResumen();
   }
 
   @Y("valido que este en la seccion completa los datos solicitados")

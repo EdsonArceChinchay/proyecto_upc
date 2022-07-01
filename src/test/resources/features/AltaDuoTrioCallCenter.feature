@@ -41,7 +41,7 @@ Característica: Alta Fija Call Center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro "<nombrePlan>"
+    Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -61,7 +61,6 @@ Característica: Alta Fija Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlan  | nombrePlan                               |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000006|Control       | RV Plan Mi Movistar S/25.9 III           |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Duo       | DÚO MOVISTAR VOZ INTERNET RA 70 MBPS           |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Trío      | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100 MBPS           |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlan  | nombrePlan  |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Duo       | RA 70 MBPS  |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Trío      | RA 100 MBPS |
