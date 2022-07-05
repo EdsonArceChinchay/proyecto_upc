@@ -22,4 +22,5 @@ public class StepPages{
     public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage(){ return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage(); }
     public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage(){ return new AltaMovilPrepagoSoloChipTiendaPage(); }
 
+    public AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage(){return new AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage();}
 }

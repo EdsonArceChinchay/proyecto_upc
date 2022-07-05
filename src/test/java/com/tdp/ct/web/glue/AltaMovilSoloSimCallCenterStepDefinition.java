@@ -17,6 +17,11 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   @Autowired
   private AltaFijaTiendaStep altaFijaTiendaStep;
 
+  @Y("valido que muestre el nombre completo del cliente {string}")
+  public void valido_que_muestre_el_nombre_completo_del_cliente(String data) {
+    altaFijaTiendaStep.validarNombresCompletosCliente(data);
+  }
+
   @Y("valido que este en la pagina de ofertas sugeridas")
   public void valido_que_este_en_la_pagina_de_ofertas_sugeridas(){
     altaMovilSoloSimCallCenterStep.validarOfertasSugeridas();
@@ -35,9 +40,9 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   }
 
 
-  @Y("valido que este en la seccion de registro {string}")
-  public void valido_que_este_en_la_pagina_de_registro(String data){
-    altaMovilSoloSimCallCenterStep.validarPaginaResumen(data);
+  @Y("valido que este en la seccion de registro")
+  public void valido_que_este_en_la_pagina_de_registro(){
+    altaMovilSoloSimCallCenterStep.validarPaginaResumen();
   }
 
   @Y("valido que este en la seccion completa los datos solicitados")

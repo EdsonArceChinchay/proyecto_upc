@@ -223,6 +223,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarIdentidadTitular() {
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonValidarIdentidad);
         waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
         UtilWeb.waitForSeconds(2);
