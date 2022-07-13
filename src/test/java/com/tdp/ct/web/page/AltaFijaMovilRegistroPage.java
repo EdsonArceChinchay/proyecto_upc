@@ -438,7 +438,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicEnAgregarSVA() {
         waitUntilElementIsVisible(buttonAgregarSVA, 5);
         click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicSVAHBO() {
@@ -446,13 +446,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("div > div > input")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en sva HBO");
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicGuardarCambios() {
         waitUntilElementIsVisible(buttonGuardarCambios, 5);
         click(buttonGuardarCambios);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicEnUnTurnoAgendamiento() {
