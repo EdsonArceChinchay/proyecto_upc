@@ -442,7 +442,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSVAHBO() {
-        WebElement rootElement = find().getElementByXPath("//div[contains(text(),'Bloque HBO')]/../following-sibling::div//tdp-st-checkbox");
+        WebElement rootElement = find().getElementByXPath("//div[contains(text(),'HBO')]/../following-sibling::div//tdp-st-checkbox");
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("div > div > input")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en sva HBO");
