@@ -19,7 +19,8 @@ public class AltaMovilComboProactivoPage extends WebBase {
     protected WebElement labelDatosDeCliente1;
     @FindBy(xpath = "//tdp-st-textarea[@formcontrolname='direccion']")
     protected WebElement lblDireccion;
-
+    @FindBy(xpath = "//app-resumen-page/div/div[4]/div/div[3]/div/button")
+    protected WebElement lblSva;
     @FindBy(xpath = "//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
     protected WebElement lblConsultar;
 
@@ -135,10 +136,16 @@ public class AltaMovilComboProactivoPage extends WebBase {
 
 
     public void clicConsultar() {
+        js().scrollElementTop(lblSva);
+        click(lblSva,10);
 
 
 
     }
 
+    public void seleccionoElBotonAgregarSva() {
+
+
+    }
 }
 

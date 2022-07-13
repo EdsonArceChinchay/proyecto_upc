@@ -41,5 +41,10 @@ public class AltaMovilComboProactivoStep {
         page.altaMovilComboProactivoPage().clicConfirmarCliente();
     }
 
+    public void seleccionoElBotonAgregarSva() {
+        page.altaMovilComboProactivoPage().seleccionoElBotonAgregarSva();
+    }
+
 }
+
 
