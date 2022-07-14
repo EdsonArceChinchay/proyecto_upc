@@ -34,7 +34,7 @@ Característica: Alta Fija por Retail
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | EDIFICIO             | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        valido que me encuentre en la pantalla agendamiento

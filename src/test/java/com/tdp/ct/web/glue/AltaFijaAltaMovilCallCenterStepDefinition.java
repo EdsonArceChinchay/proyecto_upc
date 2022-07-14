@@ -30,16 +30,16 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     String nombreVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"nombreVivienda");
     String piso= UtilWeb.getValueFromDataTable(dirInstalacion,"piso");
     String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
-    String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
-    String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
+    //String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
+    //String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
     altaFijaAltaMovilCallCenterStep.ingresarManzana(manzana);
     altaFijaAltaMovilCallCenterStep.ingresarLote(lote);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(vivienda);
     altaFijaAltaMovilCallCenterStep.ingresarNombreVivienda(nombreVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarPiso(piso);
     altaFijaAltaMovilCallCenterStep.ingresarInterior(interior);
-    altaFijaAltaMovilCallCenterStep.seleccionarTipoConjuntoHabitacional(habitacion);
-    altaFijaAltaMovilCallCenterStep.ingresarConjuntoHabitacional(conj);
+   // altaFijaAltaMovilCallCenterStep.seleccionarTipoConjuntoHabitacional(habitacion);
+    //altaFijaAltaMovilCallCenterStep.ingresarConjuntoHabitacional(conj);
 
   }
 

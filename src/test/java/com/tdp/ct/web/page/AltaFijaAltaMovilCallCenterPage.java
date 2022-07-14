@@ -205,6 +205,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void oferta(){
+        waitUntilElementIsVisible(oferta,30);
         UtilWeb.waitForSeconds(2);
         click(oferta,5);
 

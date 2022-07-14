@@ -40,9 +40,11 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        presiono el boton consultar cobertura
 
     Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
-    Y        selecciono el tipo de plan "<tipoPlan>"
-    Y        valido el detalle de la seleccion
+    #Y        selecciono el tipo de oferta "<tipoOferta>"
+    #Y        selecciono el tipo de plan "<tipoPlan>"
+    #Y        valido el detalle de la seleccion
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -50,9 +52,9 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | estadoCivil |
-      | 12/12/1980 | soltero     |
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -61,6 +63,7 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
+
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 200 Mbps + 26 Gb |
