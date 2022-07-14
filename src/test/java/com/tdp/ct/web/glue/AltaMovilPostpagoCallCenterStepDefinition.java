@@ -93,4 +93,9 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
       altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
     }
+
+    @Y("valido que se muestre el detalle del pedido")
+    public void validoQueSeMuestreElDetalleDelPedido() {
+    altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido();
+    }
 }

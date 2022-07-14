@@ -35,7 +35,8 @@ Característica: Migracion de Duo a Trio por el canal Tienda
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
 	Y 		presiono el boton Registrar venta
-	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
+	  Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |

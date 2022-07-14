@@ -14,15 +14,15 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y         seleccion plan nuevo para ver las ofertas
-    Y         selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y         selecciono el tipo de plan trio "<planTrio>" y presiono Seleccionar oferta
+    Y        selecciono plan Movistar Total para ver las ofertas
+    Y        selecciono una oferta y doy click en el boton seleccionar oferta
+    Y        selecciono el tipo de plan trio "<planTrio>" y presiono Seleccionar oferta
     Y        luego doy click en la cartilla cambiar plan hogar
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -34,9 +34,9 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y 		presiono el boton Registrar venta
+    Y 		 presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 102313480 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName   | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                           |
+      | usuario externo | jpachaot   | $t3l3f0n1c4$ | Bienvenid@ | SAN MIGUEL   | DNI           | 75447343  | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | MOVISTAR TOTAL  |

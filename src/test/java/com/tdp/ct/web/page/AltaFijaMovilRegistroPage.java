@@ -301,7 +301,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
 
     }
-
+    /*
     public boolean validarMensajeExitoso() {
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         boolean existe = false;
@@ -326,6 +326,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         return existe;
     }
+
+     */
 
 
     public void ingresarDNISupervisor(String numdoc) {
@@ -613,11 +615,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
     }
+    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
+    protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
+        UtilWeb.waitForSeconds(2);
+        js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         boolean existe = false;
-        scrollByJavaScriptToPrincipio();
+        //scrollByJavaScriptToPrincipio();
         existe = waitUntilElementIsVisible(msjExitoso, 20).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
