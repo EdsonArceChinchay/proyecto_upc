@@ -41,7 +41,7 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | oferta       | nombrePlan         |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000006 | PLAN CONTROL | Preplan            |

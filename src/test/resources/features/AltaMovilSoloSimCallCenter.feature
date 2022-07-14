@@ -30,7 +30,7 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        valido que este en la seccion de registro "<nombrePlan>"
+    #Y        valido que este en la seccion de registro "<nombrePlan>"
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -61,6 +61,7 @@ Característica: Alta Movil Solo Sim Por Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlanMovil | nombrePlan                               |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/25.9 III           |

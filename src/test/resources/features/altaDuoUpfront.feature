@@ -55,7 +55,7 @@ Característica: Alta Duo por tienda
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                       |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar HD RA 500 Mbps |

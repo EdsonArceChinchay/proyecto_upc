@@ -157,12 +157,13 @@ public class AltaFijaMovilRegistroStep {
     public void clicSiAcepto() {
         page.altaFijaMovilRegistroPage().clicSiAcepto();
     }
-
+    /*
     @ScreenShotAfter
     public void validarMensajeExitoso() {
         Assert.assertTrue("No se pudo validar registro exitoso!!!",
                 page.altaFijaMovilRegistroPage().validarMensajeExitoso());
     }
+     */
 
     @ScreenShotAfter
     public void clicEnAgregarSVA() {

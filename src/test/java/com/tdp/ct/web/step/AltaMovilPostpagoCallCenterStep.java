@@ -90,5 +90,9 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
 
     }
+    @ScreenShotAfter
+    public void ValidoQuePresenteDetallePedido() {
+        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();
+    }
 }
 

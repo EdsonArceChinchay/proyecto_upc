@@ -57,6 +57,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
     protected WebElement btnConfirmar;
 
+    @FindBy(xpath= "/html/body/app-root/app-success/div[3]/div/img")
+    protected WebElement btnDetallePedido;
+
 
     public void BtonOpciones() {
         js().scrollElementTop(BtnOpciones);
@@ -235,7 +238,13 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 click(elements,30);
             }
         }
-}}
+}
+
+    public void ValidoQuePresenteDetallePedido() {
+        click(btnDetallePedido);
+        UtilWeb.waitForSeconds(1);
+    }
+}
 
 
 
