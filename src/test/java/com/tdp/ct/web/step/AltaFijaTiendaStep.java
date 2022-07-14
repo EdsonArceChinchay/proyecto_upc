@@ -63,4 +63,7 @@ public class AltaFijaTiendaStep {
     public void clickRegistrarVenta(){
         page.altaFijaTiendaPage().registrarVenta();
     }
-}
+
+
+    }
+

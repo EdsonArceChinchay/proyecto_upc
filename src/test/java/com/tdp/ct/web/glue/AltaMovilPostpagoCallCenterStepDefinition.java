@@ -3,6 +3,7 @@ import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
+import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.AltaMovilPostpagoCallCenterStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Entonces;
@@ -18,6 +19,8 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   @Autowired
   private AltaMovilPostpagoCallCenterStep altaMovilPostpagoCallCenterStep;
 
+    @Autowired
+    private AltaFijaTiendaStep altaFijaTiendaStep;
   @Y("selecciono la opcion {string}")
   public void seleccionoLaOpcion(String Tipo) {
     altaMovilPostpagoCallCenterStep.seleccionarPlan(Tipo);
@@ -55,7 +58,8 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
   @Y("doy click en el boton seleccionar oferta")
   public void doyClickEnElBotonSeleccionarOferta() {
-    altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionarOferta();
+      altaFijaTiendaStep.clickSeleccionarOferta();
+   // altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionarOferta();
   }
 
   @Y("doy click en el boton seleccionar")
