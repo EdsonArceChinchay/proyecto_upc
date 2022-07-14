@@ -58,8 +58,8 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
   @Y("doy click en el boton seleccionar oferta")
   public void doyClickEnElBotonSeleccionarOferta() {
-      altaFijaTiendaStep.clickSeleccionarOferta();
-   // altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionarOferta();
+      //altaFijaTiendaStep.clickSeleccionarOferta();
+      altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionarOferta();
   }
 
   @Y("doy click en el boton seleccionar")
