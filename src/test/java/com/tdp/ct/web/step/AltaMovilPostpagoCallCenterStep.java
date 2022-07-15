@@ -57,6 +57,7 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionar();
     }
     @ScreenShotBefore
+    @ScreenShotAfter
     public void doyClickEnIniciarRegistro() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
@@ -88,6 +89,10 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
         page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
 
+    }
+    @ScreenShotAfter
+    public void ValidoQuePresenteDetallePedido() {
+        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();
     }
 }
 

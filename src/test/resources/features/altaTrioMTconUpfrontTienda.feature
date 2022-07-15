@@ -50,7 +50,8 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Entonces visualizo en pantalla el mensaje de exito
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
 
     Ejemplos:
