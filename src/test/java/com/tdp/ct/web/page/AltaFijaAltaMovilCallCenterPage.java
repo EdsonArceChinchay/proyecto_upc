@@ -172,8 +172,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 }
             }
     }
+    @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
+    protected WebElement esperarCorreo;
 
     public void correo(String correo){
+        waitUntilElementIsVisible(esperarCorreo,50);
+        UtilWeb.waitForSeconds(3);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         type(correoElectronico, correo);
