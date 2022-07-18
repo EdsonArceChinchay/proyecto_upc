@@ -3,7 +3,9 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -54,6 +56,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
     protected WebElement btnConfirmar;
+
+    @FindBy(xpath= "/html/body/app-root/app-success/div[3]/div/img")
+    protected WebElement btnDetallePedido;
 
 
     public void BtonOpciones() {
@@ -137,7 +142,10 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        js().scrollElementTop(btnIniciar);
+        UtilWeb.waitForSeconds(2);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        //js().scrollElementTop(btnIniciar);
         UtilWeb.waitForSeconds(2);
         click(btnIniciar, 10);
         System.out.println("paso por aqui" + btnIniciar.getText());
@@ -230,7 +238,13 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 click(elements,30);
             }
         }
-}}
+}
+
+    public void ValidoQuePresenteDetallePedido() {
+        click(btnDetallePedido);
+        UtilWeb.waitForSeconds(1);
+    }
+}
 
 
 

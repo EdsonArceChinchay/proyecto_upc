@@ -34,7 +34,7 @@ Característica: Alta Fija por Retail
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | EDIFICIO             | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        valido que me encuentre en la pantalla agendamiento
@@ -52,7 +52,8 @@ Característica: Alta Fija por Retail
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                                    |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar RA 500 Mbps              |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                    |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar RA 500 Mbps |

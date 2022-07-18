@@ -1,4 +1,5 @@
 package com.tdp.ct.web.page;
+import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,5 +22,6 @@ public class StepPages{
     public AltaTrioDuoProactivoPage altaTrioDuoProactivoPage(){return new AltaTrioDuoProactivoPage();}
     public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage(){ return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage(); }
     public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage(){ return new AltaMovilPrepagoSoloChipTiendaPage(); }
-
+    public AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage(){return new AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage();}
+    public MigraTrioaMTcanalCallCenterPage migraTrioaMTcanalCallCenterPage(){return new MigraTrioaMTcanalCallCenterPage();}
 }

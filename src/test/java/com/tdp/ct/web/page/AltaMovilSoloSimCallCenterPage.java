@@ -94,11 +94,11 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         click(botonSeleccionarOferta,10);
     }
 
-    public String paginaResumen(){
+    public void paginaResumen(){
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        return getText(paginaResumen);
+        Assert.assertTrue("El elemento no existe",paginaResumen.isDisplayed());
     }
 
     public void completaDatosSolicitados(){

@@ -64,8 +64,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(1);
-        System.out.println("paso por aqui 65");
+        UtilWeb.waitForSeconds(10);
     }
 
 
