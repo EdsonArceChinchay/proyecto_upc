@@ -13,4 +13,21 @@ public class MigraTrioaMTcanalCallCenterStepDefinition {
         migraTrioaMTcanalCallCenterStep.scrollUp();
         migraTrioaMTcanalCallCenterStep.seleccionoPlanMovistarTotal();
     }
+
+
+    @Y("selecciono un plan y doy click en el boton seleccionar oferta")
+    public void seleccionoUnPlanYDoyClickEnElBotonSeleccionarOferta() {
+        migraTrioaMTcanalCallCenterStep.seleccionoPlandeOferta();
+        migraTrioaMTcanalCallCenterStep.clickBotonSeleccionarOferta();
+    }
+
+    @Y("luego doy click en la cartilla ir a Movistar Total")
+    public void luegoDoyClickEnLaCartillaIrAMovistarTotal() {
+        migraTrioaMTcanalCallCenterStep.clickBtnIrMovistarTotal();
+    }
+
+    @Y("doy click en Finalizar registro")
+    public void doyClickEnFinalizarRegistro() {
+        migraTrioaMTcanalCallCenterStep.clickFinalizarRegistro();
+    }
 }
