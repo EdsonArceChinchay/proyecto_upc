@@ -98,4 +98,5 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.writePassword(password);
         loginBerserkerStep.clickBtnContinuarHaciaHome();
     }
+
 }
