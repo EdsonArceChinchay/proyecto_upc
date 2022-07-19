@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija por tienda
+Característica: Alta Fija por tienda + SVA
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
@@ -33,7 +33,7 @@ Característica: Alta Fija por tienda
 	Y        presiono el boton consultar cobertura
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
-	Y         selecciono la opcion "<tipoPlanes>"
+	Y        selecciono el plan "<nombrePlan>"
 	Y         doy click en el boton seleccionar oferta
 	Y         selecciono la cartilla Linea Nueva
 	Y         agrego el SVA para fija HBO

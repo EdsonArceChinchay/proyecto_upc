@@ -198,7 +198,8 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnCrearCliente() {
         page.altaFijaMovilRegistroPage().crearCliente();
     }
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
         String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
         String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
