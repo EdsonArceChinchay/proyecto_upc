@@ -46,9 +46,10 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | estadoCivil |
-      | 12/12/1980 | soltero     |
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1980 | Casado      | Albania      |
+    Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
