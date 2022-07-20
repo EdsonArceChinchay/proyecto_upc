@@ -26,14 +26,23 @@ Característica: Alta Fija migracion deco HD a Smart HD
 	Y        presiono el boton confirmar agendamiento
 #	Y        ingreso un correo electronico "hola@gmail.com"
 #	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-	Y        doy clic para validar contrato hogar
-	Y        me muestra en pantalla el contrato solicitado
-	Cuando   doy clic en si acepto
-	Y        doy click en el boton de continuar
-	Y 		presiono el boton Registrar venta
-	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	  Y        valido que se muestre el detalle del pedido
+	Y doy click en validar identidad del titular
+	Y elijo el tipo de validacion a realizar "discapacitado"
+	Y ingreso los datos del supervisor
+	  |numdoc  |user       |password    |
+	  |42770472|rdelatorreg|$t3l3f0n1c4$|
+	Y ingreso los datos solicitados para la validacion del cliente
+	  |nombreMadre|nombrePadre|distritoNac         |
+	  |AUDELIA    |ALFONSO    |SAN MARTIN DE PORRES|
+	Entonces valido que me muestre el boton con el texto de identidad validada
+	Y doy clic para validar contrato Movil
+	Y me muestra en pantalla el contrato solicitado
+	Cuando doy clic en si acepto
+	Y doy clic en continuar
+	Y presiono el boton Registrar venta
+	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+	Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |decoficador|
-		| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 40125685 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |SMART HD   |
+		| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 41524764| correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |SMART HD   |
