@@ -18,6 +18,7 @@ import java.util.logging.Logger;
         tags = "@AltaFijaMovilRetail_CE_Nuevo"
 
 
+
 )
 public class Runner {
 
