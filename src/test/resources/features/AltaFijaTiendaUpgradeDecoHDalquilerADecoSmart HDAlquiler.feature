@@ -36,4 +36,4 @@ Característica: Alta Fija migracion deco HD a Smart HD
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |decoficador|
-		| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 40125685 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |SMART HD   |
+		| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 41524764 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |SMART HD   |
