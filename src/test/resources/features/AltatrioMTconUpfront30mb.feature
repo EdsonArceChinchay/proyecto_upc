@@ -1,13 +1,11 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Duo por tienda
+Característica: Alta trio MT con Upfront 30mb
 
-  Antecedentes:
+  @AltatrioMTconUpfront30mb
+  Esquema del escenario: Alta trio MT con Upfront 30mb
     Dado     que abro la pagina de movistar
-
-  @AltaDuo_Upfront_CE
-  Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -18,7 +16,6 @@ Característica: Alta Duo por tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -33,17 +30,18 @@ Característica: Alta Duo por tienda
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+      | A  | 1    | EDIFICIO      | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono un plan hogar "<plan_hogar>"
-    Y        selecciono el plan hogar "<nombrePlan>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el plan "<nombrePlan>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
@@ -55,7 +53,11 @@ Característica: Alta Duo por tienda
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                       |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ |  MOQUEGUA    | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar HD RA 500 Mbps |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan   | nombrePlan |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Parque     |  Trío      | RA 40 MBPS |
+
+
+
+
