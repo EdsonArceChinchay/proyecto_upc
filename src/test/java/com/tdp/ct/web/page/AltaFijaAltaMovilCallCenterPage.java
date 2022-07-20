@@ -22,7 +22,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnConsultarCobertura;
     @FindBy(xpath = "//div[@class='contHours']/div/span")
     protected List<WebElement> btnHorario;
-    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button")
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
@@ -197,7 +197,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
     public void btnFinalizarRegistro(){
-        click(btnFinalizarRegistro,5);
+        waitUntilElementIsVisible(btnFinalizarRegistro,30);
+        UtilWeb.waitForSeconds(120);
+        click(btnFinalizarRegistro,10);
         UtilWeb.waitForSeconds(2);
     }
 
