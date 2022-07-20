@@ -39,8 +39,9 @@ Característica: Alta Fija migracion deco HD a Smart HD
 	Y me muestra en pantalla el contrato solicitado
 	Cuando doy clic en si acepto
 	Y doy clic en continuar
+	Y presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	Y        valido que se muestre el detalle del pedido
+
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |decoficador|
