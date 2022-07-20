@@ -26,15 +26,15 @@ Característica: Alta Fija migracion deco HD a Smart HD
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "hola@gmail.com"
 	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-	Y doy click en validar identidad del titular
-	Y elijo el tipo de validacion a realizar "discapacitado"
-	Y ingreso los datos del supervisor
-	  |numdoc  |user       |password    |
-	  |42770472|rdelatorreg|$t3l3f0n1c4$|
-	Y ingreso los datos solicitados para la validacion del cliente
-	  |nombreMadre|nombrePadre|distritoNac         |
-	  |EMMA    |EDILBERTO    |GUADALUPE|
-	Entonces valido que me muestre el boton con el texto de identidad validada
+#	Y doy click en validar identidad del titular
+#	Y elijo el tipo de validacion a realizar "discapacitado"
+#	Y ingreso los datos del supervisor
+#	  |numdoc  |user       |password    |
+#	  |42770472|rdelatorreg|$t3l3f0n1c4$|
+#	Y ingreso los datos solicitados para la validacion del cliente
+#	  |nombreMadre|nombrePadre|distritoNac         |
+#	  |EMMA    |EDILBERTO    |GUADALUPE|
+#	Entonces valido que me muestre el boton con el texto de identidad validada
 	Y doy clic para validar contrato Movil
 	Y me muestra en pantalla el contrato solicitado
 	Cuando doy clic en si acepto
