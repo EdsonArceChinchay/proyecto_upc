@@ -116,7 +116,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -131,7 +131,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf(){
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(7);
         click(btnDescargar);
     }
 
