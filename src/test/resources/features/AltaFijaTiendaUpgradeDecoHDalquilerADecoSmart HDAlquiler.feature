@@ -33,7 +33,7 @@ Característica: Alta Fija migracion deco HD a Smart HD
 	  |42770472|rdelatorreg|$t3l3f0n1c4$|
 	Y ingreso los datos solicitados para la validacion del cliente
 	  |nombreMadre|nombrePadre|distritoNac         |
-	  |EMMA    |EDILBERGO    |GUADALUPE|
+	  |EMMA    |EDILBERTO    |GUADALUPE|
 	Entonces valido que me muestre el boton con el texto de identidad validada
 	Y doy clic para validar contrato Movil
 	Y me muestra en pantalla el contrato solicitado
