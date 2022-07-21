@@ -54,7 +54,7 @@ Característica: Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                             | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9  | SAMSUNG GXY A11 AZUL 64GB SM-A115MZ | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9  | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso02

@@ -112,7 +112,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarOferta(String oferta) {
-        //scrollByJavaScript();
+        scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
