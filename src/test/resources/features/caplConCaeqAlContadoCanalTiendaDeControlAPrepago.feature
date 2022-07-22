@@ -13,7 +13,7 @@
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando selecciono el tipo de documento "DNI"
-      Y ingreso el documento "45454540"
+      Y ingreso el documento "48549685"
       Y doy click en el boton consultar
       Y selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
       Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"

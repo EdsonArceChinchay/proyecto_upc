@@ -508,7 +508,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDatosDeCliente() {
-        buttonDatosDeCliente.click();
+        click(buttonDatosDeCliente);
         UtilWeb.waitForSeconds(2);
     }
 

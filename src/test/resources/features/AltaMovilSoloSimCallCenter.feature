@@ -49,13 +49,13 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Alemania     |
-    Y       doy click en el boton confirmar
+#    Y        ingreso un correo electronico "hola@gmail.com"
+#    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+#    Y        doy click en datos del cliente
+#    Y        ingreso los datos del cliente
+#      | fechaNac   | estadoCivil | nacionalidad |
+#      | 12/12/1980 | Casado      | Alemania     |
+#    Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -65,12 +65,12 @@ Característica: Alta Movil Solo Sim Por Call Center
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlanMovil | nombrePlan                               |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/25.9 III           |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9 III |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90 II |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9 III |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90 II |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |
