@@ -1,4 +1,4 @@
-package com.tdp.ct.web.page;
+package com.tdp.ct.web.page.MovilFinanciado;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;

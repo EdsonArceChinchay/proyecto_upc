@@ -1,6 +1,5 @@
-package com.tdp.ct.web.glue;
-import com.tdp.ct.web.step.AltaMovilControlFinancimientoStep;
-import com.tdp.ct.web.step.AltaPuraMTcallCenterStep;
+package com.tdp.ct.web.glue.MovilFinanciado;
+import com.tdp.ct.web.step.MovilFinanciado.AltaMovilControlFinancimientoStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;

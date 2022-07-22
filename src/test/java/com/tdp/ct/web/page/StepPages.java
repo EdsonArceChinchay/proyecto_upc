@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import org.springframework.stereotype.Component;
 
 @Component

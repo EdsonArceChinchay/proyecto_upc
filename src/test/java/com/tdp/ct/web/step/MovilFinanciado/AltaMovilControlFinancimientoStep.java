@@ -1,4 +1,4 @@
-package com.tdp.ct.web.step;
+package com.tdp.ct.web.step.MovilFinanciado;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
