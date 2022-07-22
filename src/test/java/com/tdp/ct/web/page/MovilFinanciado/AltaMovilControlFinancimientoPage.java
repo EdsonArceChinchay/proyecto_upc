@@ -60,6 +60,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     }
 
     public void selectBtnOferta() {
+        js().scrollElementTop(btnSeleccionarOferta);
         UtilWeb.waitForSeconds(2);
         click(btnSeleccionarOferta);
     }

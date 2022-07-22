@@ -49,7 +49,8 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
 
     @ScreenShotBefore
     public void clickBtnConShadowIniciarRegistro(){ page.caplConCaeqAlContadoCanalTiendaPage().clickBtnConShadowIniciarRegistro(); }
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void writeEmail(String email){ page.caplConCaeqAlContadoCanalTiendaPage().writeEmail(email); }
 
 }

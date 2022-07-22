@@ -35,12 +35,14 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        selecciono un equipo movil
     Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
-    Entonces valido la pantalla despues de iniciar registro :"Completa los datos solicitados"
-    Y         ingreso email "correo@gmail.com" y lo repito
-    Y        doy click en datos del cliente
-    Y        completo los datos del cliente en alta movil con financiamiento
-      | fechaNac   | estadoCivil |  direccion                    |
-      | 12/12/1980 | casado      |  Calle condesa de chinchon 107|
+    #Y        ingreso un correo electronico "hola@gmail.com"
+    #Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+   # Entonces valido la pantalla despues de iniciar registro :"Completa los datos solicitados"
+    #Y         ingreso email "correo@gmail.com" y lo repito
+    #Y        doy click en datos del cliente
+    #Y        completo los datos del cliente en alta movil con financiamiento
+     # | fechaNac   | estadoCivil |  direccion                    |
+      #| 12/12/1980 | casado      |  Calle condesa de chinchon 107|
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
