@@ -9,6 +9,7 @@ webdriver:
   headless.dimension: --window-size=1400,600
   pageload: EAGER
 
+
 ###################
 ### JIRA - XRAY ###
 ###################
@@ -23,7 +24,7 @@ jxray:
 ### URL - SITES ###
 ###################
 url:
-  movistar: https://wa-berserkers-certie2e2.azurewebsites.net/inicio
+  movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
 
 
 ###################
