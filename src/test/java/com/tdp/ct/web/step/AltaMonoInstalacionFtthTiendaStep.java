@@ -44,7 +44,7 @@ public class AltaMonoInstalacionFtthTiendaStep {
         page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(conjH);
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnConsultarCobertura(){ page.altaMonoFtthTiendaPage().clickBtnConsultarCobertura(); }
 
     @ScreenShotAfter
@@ -54,9 +54,8 @@ public class AltaMonoInstalacionFtthTiendaStep {
 
     @ScreenShotBefore
     public void clickBtnPlanNuevo(){ page.altaMonoFtthTiendaPage().clickBtnPlanNuevo(); }
-
+    @ScreenShotBefore
     public void clickBtnTipoPlan(String plan){ page.altaMonoFtthTiendaPage().clickBtnTipoPlan(plan); }
-
     @ScreenShotBefore
     public void seleccionarPlan(String plan) { page.altaFijaMovilRegistroPage().seleccionarPlan(plan); }
 

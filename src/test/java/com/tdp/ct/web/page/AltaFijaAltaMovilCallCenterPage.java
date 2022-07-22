@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
@@ -31,8 +32,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
+    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]" )
+    protected WebElement ofertasSugeridas;
+    @FindBy(xpath = "(//div[@class='title'])/span" )
+    protected WebElement paginaResumen;
+    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]" )
+    protected WebElement completaDatosSolicitados;
+
     public void manzana(String manzana){
-        UtilWeb.waitForSeconds(1);
+
+        UtilWeb.waitForSeconds(2);
         WebElement Mz= find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
@@ -100,8 +109,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
-        click(btnConsultarCobertura, 10);
-        UtilWeb.waitForSeconds(80);
+        click(btnConsultarCobertura, 20);
+        UtilWeb.waitForSeconds(30);
 
     }
 
@@ -146,7 +155,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConfirmarDelivery(){
         click(btnConfirmarDelivery,5);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(8);
     }
 
     public void tipoPago(String tipoPago){
@@ -163,9 +172,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 }
             }
     }
+    @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
+    protected WebElement esperarCorreo;
 
     public void correo(String correo){
-        UtilWeb.waitForSeconds(4);
+        waitUntilElementIsVisible(esperarCorreo,50);
+        UtilWeb.waitForSeconds(3);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         type(correoElectronico, correo);
@@ -190,21 +202,25 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp(){
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(2);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta(){
+        waitUntilElementIsVisible(oferta,30);
         UtilWeb.waitForSeconds(2);
-        click(oferta,30);
+        click(oferta,5);
 
     }
 
     public void listaOfertas(String planOfertas){
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(4);
+        System.out.println("paso por aqui");
+        System.out.println("cantidad de la lista : "+listaOfertas.size());
         for (WebElement element:listaOfertas){
+            System.out.println("lista de ofertas" + element.getText());
             if(element.getText().contains(planOfertas)){
                 click(element);
             }

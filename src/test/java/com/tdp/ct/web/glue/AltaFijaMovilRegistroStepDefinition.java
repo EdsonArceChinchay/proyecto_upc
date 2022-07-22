@@ -151,11 +151,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void doyClicEnSiAcepto() {
         altaFijaMovilRegistroStep.clicSiAcepto();
     }
-
+    /*
     @Entonces("visualizo en pantalla el mensaje de exito")
     public void visualizoEnPantallaElMensajeDeExito() {
         altaFijaMovilRegistroStep.validarMensajeExitoso();
     }
+     */
 
     @Y("agrego el SVA para fija HBO")
     public void agregoElSVAParaFijaHBO() {
@@ -181,6 +182,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
+        altaFijaMovilRegistroStep.esperarBtnDatosCliente();
         altaFijaMovilRegistroStep.clicDatosDelCliente();
     }
 

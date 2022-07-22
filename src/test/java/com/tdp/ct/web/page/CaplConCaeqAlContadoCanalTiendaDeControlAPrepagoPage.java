@@ -92,14 +92,14 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void writeEmail(String email){
         UtilWeb.waitForSeconds(4);
-        String element1 = "form div:nth-child(2) tdp-st-input-text;input";
-        WebElement ele1 = js().getWebElement(element1);
+        WebElement element1 = find().getElementByXPath("//*[@formcontrolname='mail']");
+        WebElement ele1 = sh().getWebElement(element1, "input");
         clear(ele1);
         type(ele1, email);
 
         UtilWeb.waitForSeconds(1);
-        String element2 = "form div:nth-child(3) tdp-st-input-text;input";
-        WebElement ele2 = js().getWebElement(element2);
+        WebElement element2 = find().getElementByXPath("//*[@formcontrolname='confirmEmail']");
+        WebElement ele2 = sh().getWebElement(element2, "input");
         clear(ele2);
         type(ele2, email);
         UtilWeb.waitForSeconds(1);

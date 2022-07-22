@@ -6,7 +6,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
   @AltaTrioConBloqueHdUpfrontCallCenter
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -54,10 +54,11 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento| documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000012| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | RA 200 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000011| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 70 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 

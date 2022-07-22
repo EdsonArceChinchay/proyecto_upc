@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
@@ -35,6 +36,8 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public String nombresCompletosCliente(){
         waitUntilElementIsVisible(nombresCompletosCliente,10);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         return getText(nombresCompletosCliente);
     }
 
@@ -45,8 +48,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas){
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
         for (WebElement element:listaOfertas){
+            System.out.println("hola mundo: " + element.getText());
             if(element.getText().contains(planOfertas)){
                 click(element);
             }
@@ -60,13 +64,12 @@ public class AltaFijaTiendaPage extends WebBase {
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(10);
     }
 
 
     public void listaBotones(){
         for(WebElement element:listaBotones){
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaa"+element.getText());
             if (element.getText().contains("nueva")){
                 UtilWeb.waitForSeconds(2);
                 click(element,30);

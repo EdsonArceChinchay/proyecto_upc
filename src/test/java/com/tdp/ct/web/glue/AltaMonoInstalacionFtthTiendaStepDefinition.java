@@ -66,11 +66,11 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
 
     @Y("completo los datos para consultar la cobertura")
     public void completoLosDatosParaConsultarLaCobertura(DataTable datos) {
-        String departamento = UtilWeb.getValueFromDataTable(datos,"departamento");
-        String provincia = UtilWeb.getValueFromDataTable(datos,"provincia");
-        String distrito = UtilWeb.getValueFromDataTable(datos,"distrito");
-        String direccion = UtilWeb.getValueFromDataTable(datos,"direccion");
-        String referencia = UtilWeb.getValueFromDataTable(datos,"referencia");
+        String departamento = UtilWeb.getValueFromDataTable(datos, "departamento");
+        String provincia = UtilWeb.getValueFromDataTable(datos, "provincia");
+        String distrito = UtilWeb.getValueFromDataTable(datos, "distrito");
+        String direccion = UtilWeb.getValueFromDataTable(datos, "direccion");
+        String referencia = UtilWeb.getValueFromDataTable(datos, "referencia");
         altaMonoHfcTiendaStep.writeDireccion(departamento, provincia, distrito, direccion, referencia);
     }
 

@@ -44,17 +44,18 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnMovil);
         waitUntilElementIsClickable(btnMovil,30);
         click(btnMovil);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void mostrarOfertas(){
+        waitUntilElementIsVisible(btnMostrar,10);
         click(btnMostrar);
-        UtilWeb.waitForSeconds(10);
+       UtilWeb.waitForSeconds(12);
         //UtilWeb.waitForSeconds(2);
-
     }
 
     public void seleccionarDepa(String tipoDepa){
+        UtilWeb.waitForSeconds(2);
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         click(depaList);
         UtilWeb.waitForSeconds(2);
@@ -73,7 +74,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void seleccionarDistrito(String tipoDistrito){
-        WebElement distritoList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
@@ -94,15 +95,16 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
+
         //waitUntilElementIsVisible(btnConsulta,8);
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
     }
 
     public void writeManzana(String manzana){
         UtilWeb.waitForSeconds(1);
-        WebElement Mz= find().getElementByCss(" tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
+        WebElement Mz= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);

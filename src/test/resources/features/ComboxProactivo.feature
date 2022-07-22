@@ -50,6 +50,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                             | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago             |
@@ -98,6 +99,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
@@ -145,6 +147,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
@@ -191,6 +194,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo     | planMovil | tiempoPermanencia | tipoPago             |
@@ -238,6 +242,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                   | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
@@ -285,6 +290,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
@@ -331,6 +337,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago   |
@@ -378,6 +385,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                          | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
@@ -424,6 +432,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | SAMSUNG GXY J2 CORE NEGRO SM-J260M | Postpago  | sin permanencia   | Financiado 12 cuotas |
@@ -471,6 +480,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
@@ -518,6 +528,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI Y9S NEGRO STK-LX3 | Postpago  | 12 meses          | Financiado 18 cuotas |
@@ -565,6 +576,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo              | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | APPLE IPHONE 6S 16GB GRIS | Postpago  | 12 meses          | Financiado 18 cuotas |
@@ -612,6 +624,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                  | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |
