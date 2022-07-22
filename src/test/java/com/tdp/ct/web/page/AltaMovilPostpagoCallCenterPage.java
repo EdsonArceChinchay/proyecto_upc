@@ -165,8 +165,10 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println("Producto: " + elements.getText());
             if (elements.getText().equals(pago))
                 click(elements, 3);
+                //click(elements, 3);
                 break;
         }
+        UtilWeb.waitForSeconds(10);
     }
 
 

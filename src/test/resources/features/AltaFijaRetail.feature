@@ -46,8 +46,10 @@ Característica: Alta Fija por Retail
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+    Y        ingreso los datos del cliente
+             | fechaNac   | estadoCivil | nacionalidad |
+             | 12/12/1980 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

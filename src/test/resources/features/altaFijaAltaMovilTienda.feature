@@ -33,9 +33,11 @@ Característica: Alta Fija + Alta Movil por Tienda
       | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION RESIDENCIAL  | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
-    Y        selecciono el tipo de plan "<tipoPlan>"
-    Y        valido el detalle de la seleccion
+    #Y        selecciono el tipo de oferta "<tipoOferta>"
+    #Y        selecciono el tipo de plan "<tipoPlan>"
+    #Y        valido el detalle de la seleccion
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -59,5 +61,5 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 75769642  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 75769642  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |

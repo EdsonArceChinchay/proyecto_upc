@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Call Center
+Característica: Alta Duo Trio Call Center
                 Quiero realizar una alta fija por call center
 
   Antecedentes:
