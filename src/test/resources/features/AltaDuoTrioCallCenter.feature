@@ -46,14 +46,14 @@ Característica: Alta Duo Trio Call Center
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-#    Y        ingreso un correo electronico "hola@gmail.com"
-#    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
 #    Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
-#    Y        doy click en datos del cliente
-#    Y        ingreso los datos del cliente
-#      | fechaNac   | estadoCivil | nacionalidad |
-#      | 12/12/1980 | Casado      | Alemania     |
-#    Y       doy click en el boton confirmar
+    Y        doy click en datos del cliente
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1980 | Casado      | Alemania     |
+    Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

@@ -36,6 +36,7 @@ public class AltaFijaTiendaStep {
     public void clickListaBotones(){
         page.altaFijaTiendaPage().listaBotones();
     }
+    @ScreenShotBefore
     public void ingresarDatosAgendamiento(){
         page.altaFijaTiendaPage().datosAgendamiento();
     }
