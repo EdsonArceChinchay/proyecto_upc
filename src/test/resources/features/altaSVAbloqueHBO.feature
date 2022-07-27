@@ -61,4 +61,4 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 72313097  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA      | PERCY       | HUARAL      |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE           | 123456801  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA      | PERCY       | HUARAL      |
