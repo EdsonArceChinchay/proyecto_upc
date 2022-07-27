@@ -37,14 +37,19 @@ Característica: Alta Fija por Retail
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | EDIFICIO             | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el plan "<nombrePlan>"
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+    Y        ingreso los datos del cliente
+             | fechaNac   | estadoCivil | nacionalidad |
+             | 12/12/1980 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -55,5 +60,5 @@ Característica: Alta Fija por Retail
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                    |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | Internet Estándar RA 500 Mbps |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Duo        | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 70 MBPS |

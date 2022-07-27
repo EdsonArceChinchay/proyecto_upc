@@ -148,7 +148,8 @@ public class AltaFijaMovilRegistroStep {
     public void clicBotonContinuar() {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void visualizarContratoEnPantalla() {
         page.altaFijaMovilRegistroPage().visualizarContratoEnPantalla();
     }
@@ -198,7 +199,8 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnCrearCliente() {
         page.altaFijaMovilRegistroPage().crearCliente();
     }
-
+    @ScreenShotBefore
+    @ScreenShotAfter
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
         String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
         String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");

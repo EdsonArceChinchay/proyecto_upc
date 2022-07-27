@@ -22,7 +22,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnConsultarCobertura;
     @FindBy(xpath = "//div[@class='contHours']/div/span")
     protected List<WebElement> btnHorario;
-    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button")
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
@@ -172,8 +172,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 }
             }
     }
+    @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
+    protected WebElement esperarCorreo;
 
     public void correo(String correo){
+        waitUntilElementIsVisible(esperarCorreo,50);
+        UtilWeb.waitForSeconds(3);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         type(correoElectronico, correo);
@@ -193,7 +197,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
     public void btnFinalizarRegistro(){
-        click(btnFinalizarRegistro,5);
+        waitUntilElementIsVisible(btnFinalizarRegistro,30);
+        UtilWeb.waitForSeconds(120);
+        click(btnFinalizarRegistro,10);
         UtilWeb.waitForSeconds(2);
     }
 

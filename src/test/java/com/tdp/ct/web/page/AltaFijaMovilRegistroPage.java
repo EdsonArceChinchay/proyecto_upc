@@ -112,7 +112,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionarOferta(String oferta) {
-        //scrollByJavaScript();
+        scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
@@ -281,9 +281,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(4);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -508,7 +508,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDatosDeCliente() {
-        buttonDatosDeCliente.click();
+        UtilWeb.waitForSeconds(2);
+        click(buttonDatosDeCliente);
         UtilWeb.waitForSeconds(2);
     }
 

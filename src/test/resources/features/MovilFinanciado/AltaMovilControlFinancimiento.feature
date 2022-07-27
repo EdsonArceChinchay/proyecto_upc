@@ -1,0 +1,55 @@
+#language:es
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+
+Característica: Alta Movil Control con un financiamiento por tienda
+
+  Antecedentes:
+    Dado     que abro la pagina de movistar
+
+  @AltaMovilFinaciamientoTienda_CE
+  Esquema del escenario: Realizar una alta movil Control con un financiamiento, metodo de entrega por tienda
+    Cuando   presiono el boton Iniciar Sesion
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
+    Y        presiono el boton Continuar hacia el home
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
+    Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Jbac    | Lozano      | masculino|
+    Y        selecciono el boton Linea Nueva Movil
+    Y        selecciono el boton Mostrar ofertas
+    Y        selecciono tipo de oferta alta movil
+      | Ofertas_Sugeridas |
+      | PLAN MOVIL        |
+    Y        selecciono la campania
+      | Tipo_Ofertas |
+      | Control      |
+    Y        selecciono el boton de Seleccionar Oferta
+    Y        selecciono en linea Nueva
+    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
+    Y        selecciono un equipo movil
+    Y        selecciono en linea Nueva
+    Y        selecciono el boton de iniciar registro
+    #Y        ingreso un correo electronico "hola@gmail.com"
+    #Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+   # Entonces valido la pantalla despues de iniciar registro :"Completa los datos solicitados"
+    #Y         ingreso email "correo@gmail.com" y lo repito
+    #Y        doy click en datos del cliente
+    #Y        completo los datos del cliente en alta movil con financiamiento
+     # | fechaNac   | estadoCivil |  direccion                    |
+      #| 12/12/1980 | casado      |  Calle condesa de chinchon 107|
+    Y        doy clic para validar contrato Movil
+    Y        me muestra en pantalla el contrato solicitado
+    Cuando   doy clic en si acepto
+    Y        doy click en el boton de continuar
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Ejemplos:
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000000003|

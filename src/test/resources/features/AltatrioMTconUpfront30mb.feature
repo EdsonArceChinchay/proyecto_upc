@@ -1,14 +1,11 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil por Retail
+Característica: Alta trio MT con Upfront 30mb
 
-  Antecedentes:
+  @AltatrioMTconUpfront30mb
+  Esquema del escenario: Alta trio MT con Upfront 30mb
     Dado     que abro la pagina de movistar
-
-
-  @AltaFijaMovilRetail_CE_Nuevo
-  Esquema del escenario: Alta fija mas alta movil Retail con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -19,12 +16,10 @@ Característica: Alta Fija + Alta Movil por Retail
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -33,25 +28,20 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  | 1    | EDIFICIO      | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
-
-    Entonces me muestra la pantalla de ofertas sugeridos
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
-    #Y        selecciono el tipo de plan "<tipoPlan>"
-    #Y        valido el detalle de la seleccion
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el plan "<nombrePlan>"
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
-    #Y        presiono el boton confirmar agendamiento
-    Y        presiono el boton Confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
@@ -63,9 +53,11 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan   | nombrePlan |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Parque     |  Trío      | RA 40 MBPS |
+
+
+
+

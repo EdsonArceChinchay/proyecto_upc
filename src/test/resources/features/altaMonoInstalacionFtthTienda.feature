@@ -43,9 +43,13 @@
       Y presiono el boton Confirmar agendamiento
       Y ingreso email "edith@gmail.com" y lo repito
       Y doy click en datos del cliente
-      Y completo los datos del cliente
-        | fechaNac   | estadoCivil |
-        | 12/12/1980 | married     |
+      #Y completo los datos del cliente
+       # | fechaNac   | estadoCivil |
+       # | 12/12/1980 | married     |
+      Y  ingreso los datos del cliente
+        | fechaNac   | estadoCivil | nacionalidad |
+        | 12/12/1980 | Casado      | Albania      |
+      Y  doy click en el boton confirmar
       Y presiono la opcion validar contrato
       Y me muestra en pantalla el contrato solicitado
       Cuando doy clic en si acepto
