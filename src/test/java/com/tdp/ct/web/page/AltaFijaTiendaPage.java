@@ -91,7 +91,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         js().scrollElementTop(buttonConfirmar);
-        WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
+        WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
         UtilWeb.waitForSeconds(2);
@@ -116,7 +116,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -131,7 +131,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf(){
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(7);
         click(btnDescargar);
     }
 
