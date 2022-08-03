@@ -112,7 +112,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionoLaCartillaLineaNueva() {
-        waitUntilElementIsVisible(lblLineaNueva, 10);
+        UtilWeb.waitForSeconds(10);
+        waitUntilElementIsVisible(lblLineaNueva, 5);
         click(lblLineaNueva, 10);
         waitUntilElementIsVisible(lblLineaNueva, 10);
     }
