@@ -31,10 +31,11 @@ Característica: Alta Fija por tienda + SVA
 	  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
 	  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
 	Y        presiono el boton consultar cobertura
-#	Y        selecciono tipo de oferta
-#	Y        selecciono el tipo de plan fija "<tipoPlan>"
-#	Y         selecciono la opcion "<tipoPlanes>"
-#	Y         doy click en el boton seleccionar oferta
+	Y        selecciono tipo de oferta
+	Y selecciono el tipo de plan fija "tipoPlan"
+	Y        selecciono el plan "<nombrePlan>"
+	Y        valido que este en la seccion de registro
+	Cuando   doy clic a iniciar registro
 	Y         selecciono la cartilla Linea Nueva
 	Y         agrego el SVA para fija HBO
 	Cuando   doy clic a iniciar registro
@@ -60,6 +61,6 @@ Característica: Alta Fija por tienda + SVA
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	Ejemplos:
-	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | tipoPlanes          | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
+	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan          | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
 	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE           | 313142553 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | TV Estándar Digital | discapacitado  | TERESA      | CARLOS      | ISLAY       | TV Estándar Digital |
 
