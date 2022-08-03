@@ -31,10 +31,10 @@ Característica: Alta Fija por tienda + SVA
 	  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
 	  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
 	Y        presiono el boton consultar cobertura
-#	Y        selecciono tipo de oferta
-#	Y        selecciono el tipo de plan fija "<tipoPlan>"
-#	Y         selecciono la opcion "<tipoPlanes>"
-#	Y         doy click en el boton seleccionar oferta
+	Y        selecciono tipo de oferta
+	Y        selecciono el tipo de plan fija "<tipoPlan>"
+	Y         selecciono la opcion "<tipoPlanes>"
+	Y         doy click en el boton seleccionar oferta
 	Y         selecciono la cartilla Linea Nueva
 	Y         agrego el SVA para fija HBO
 	Cuando   doy clic a iniciar registro
