@@ -255,6 +255,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicEnConfirmar() {
+        UtilWeb.waitForSeconds(5);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
@@ -281,9 +282,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -452,6 +453,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicGuardarCambios() {
+        js().scrollElementTop(buttonGuardarCambios);
         waitUntilElementIsVisible(buttonGuardarCambios, 5);
         click(buttonGuardarCambios);
         UtilWeb.waitForSeconds(5);
