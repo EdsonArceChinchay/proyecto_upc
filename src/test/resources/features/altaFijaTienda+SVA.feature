@@ -6,7 +6,7 @@ Característica: Alta Fija por tienda + SVA
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaFijaTienda+SVA
+  @AltaFijaTiendaSVA
   Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
