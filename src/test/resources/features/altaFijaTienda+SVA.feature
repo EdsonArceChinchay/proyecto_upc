@@ -32,7 +32,7 @@ Característica: Alta Fija por tienda + SVA
 	  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
 	Y        presiono el boton consultar cobertura
 	Y        selecciono tipo de oferta
-	Y selecciono el tipo de plan fija "tipoPlan"
+	Y selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
 	Cuando   doy clic a iniciar registro
@@ -62,5 +62,5 @@ Característica: Alta Fija por tienda + SVA
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan          | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
-	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | TV Estándar Digital | discapacitado  | ENRIQUETA      | MAXIMO     | PICHANAQUI       | TV Estándar Digital |
+	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | TV Estándar Digital | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital |
 
