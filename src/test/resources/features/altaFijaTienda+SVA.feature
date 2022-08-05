@@ -61,5 +61,5 @@ Característica: Alta Fija por tienda + SVA
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan          | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
-	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | TV Estándar Digital | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital |
+	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | INTERNET MOVISTAR RA 1000 MBPS | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital |
 
