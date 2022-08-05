@@ -42,9 +42,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija){
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
         clickElementInAList(listaPlanFija,planFija);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void listaOfertas(String planOfertas){
