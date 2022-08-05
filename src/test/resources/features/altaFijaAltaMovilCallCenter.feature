@@ -67,7 +67,7 @@ Característica: Alta Fija + Alta Movil por Call Center
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | 70 Mbps + 26 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | 500 Mbps + 26 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular
