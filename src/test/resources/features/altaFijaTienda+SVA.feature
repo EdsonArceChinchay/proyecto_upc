@@ -36,7 +36,6 @@ Característica: Alta Fija por tienda + SVA
 	Y        selecciono el plan "<nombrePlan>"
 #	Y        valido que este en la seccion de registro
 #	Cuando   doy clic a iniciar registro
-	Y         selecciono la cartilla Linea Nueva
 	Y         agrego el SVA para fija HBO
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
