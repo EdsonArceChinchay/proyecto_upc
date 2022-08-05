@@ -37,7 +37,7 @@ Característica: Alta Fija por tienda + SVA
 #	Y        valido que este en la seccion de registro
 #	Cuando   doy clic a iniciar registro
 	Y        valido que este en la seccion de registro
-	Y 		agrego SVA repetidor WIFI PLUS
+	Y        agrego SVA repetidor WIFI PLUS
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
@@ -61,6 +61,6 @@ Característica: Alta Fija por tienda + SVA
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	Ejemplos:
-	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan          | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
-	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | INTERNET MOVISTAR RA 1000 MBPS	 | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital |
+	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                     | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          |
+	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Mono     | INTERNET MOVISTAR RA 1000 MBPS | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital |
 
