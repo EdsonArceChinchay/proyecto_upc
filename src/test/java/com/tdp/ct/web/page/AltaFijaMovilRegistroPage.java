@@ -439,6 +439,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicEnAgregarSVA() {
+        js().scrollElementTop(buttonAgregarSVA);
         waitUntilElementIsVisible(buttonAgregarSVA, 5);
         click(buttonAgregarSVA);
         UtilWeb.waitForSeconds(5);
