@@ -42,13 +42,13 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija){
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(20);
         clickElementInAList(listaPlanFija,planFija);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void listaOfertas(String planOfertas){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         for (WebElement element:listaOfertas){
             System.out.println("hola mundo: " + element.getText());
             if(element.getText().contains(planOfertas)){

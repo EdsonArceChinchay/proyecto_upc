@@ -24,8 +24,8 @@ Característica: Alta Fija migracion deco HD a Smart HD
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
 	Y        presiono el boton confirmar agendamiento
-	Y        ingreso un correo electronico "hola@gmail.com"
-	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+#	Y        ingreso un correo electronico "hola@gmail.com"
+#	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
 #	Y doy click en validar identidad del titular
 #	Y elijo el tipo de validacion a realizar "discapacitado"
 #	Y ingreso los datos del supervisor
@@ -35,11 +35,11 @@ Característica: Alta Fija migracion deco HD a Smart HD
 #	  |nombreMadre|nombrePadre|distritoNac         |
 #	  |EMMA    |EDILBERTO    |GUADALUPE|
 #	Entonces valido que me muestre el boton con el texto de identidad validada
-	Y doy clic para validar contrato Movil
-	Y me muestra en pantalla el contrato solicitado
-	Cuando doy clic en si acepto
-	Y doy clic en continuar
-	Y        doy clic en Registrar venta
+	Y        doy clic para validar contrato hogar
+	Y        me muestra en pantalla el contrato solicitado
+	Cuando   doy clic en si acepto
+	Y        doy click en el boton de continuar
+	Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 
