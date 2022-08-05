@@ -84,6 +84,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         waitUntilElementIsClickable(btnConfirmar,10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
+        UtilWeb.waitForSeconds(20);
     }
     public void validoDetalleDeInstalacion(){
         Assert.assertEquals("El resultado obtenido no coincide con lo esperado", "Detalles de instalación", getDetalleInst());
