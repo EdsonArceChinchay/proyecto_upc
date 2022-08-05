@@ -96,6 +96,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class='_close']")
     protected WebElement buttonCerrarModal;
 
+    @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
+    protected WebElement iconPlus;
+
+
 
 
     public boolean validarPantallaIngresarDireccion() {
@@ -636,4 +640,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
+    public void agregoSVARepetidorWIFIPLUS() {
+        UtilWeb.waitForSeconds(5);
+        WebElement element = sh().getWebElement(iconPlus, "button");
+        element.click();
+        UtilWeb.waitForSeconds(5);
+    }
 }

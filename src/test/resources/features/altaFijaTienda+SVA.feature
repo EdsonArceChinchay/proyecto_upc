@@ -37,13 +37,13 @@ Característica: Alta Fija por tienda + SVA
 #	Y        valido que este en la seccion de registro
 #	Cuando   doy clic a iniciar registro
 	Y        valido que este en la seccion de registro
-	Y         agrego el SVA para fija HBO
+	Y 		agrego SVA repetidor WIFI PLUS
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
 	Y        presiono el boton confirmar agendamiento
-	Y        ingreso un correo electronico "hola@gmail.com"
-	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+#	Y        ingreso un correo electronico "hola@gmail.com"
+#	Y        ingreso nuevamente el correo electronico "hola@gmail.com"
 	Y        doy click en validar identidad del titular
 	Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
 	Y        ingreso los datos del supervisor

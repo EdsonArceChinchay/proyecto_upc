@@ -11,6 +11,7 @@ public class AltaFijaRetailStepDefinition {
     @Autowired
     private AltaFijaRetailStep altaFijaRetailStep;
 
+
     @Y("selecciono un plan hogar {string}")
     public void seleccionoUnPlanHogar(String tipoPlan) {
         altaFijaRetailStep.irSeleccionarTipoPlan(tipoPlan);
@@ -31,4 +32,6 @@ public class AltaFijaRetailStepDefinition {
     public void completoLosDatosSolicitados(DataTable dataTable) {
         altaFijaRetailStep.ingresarDatosCliente(dataTable);
     }
+
+
 }
