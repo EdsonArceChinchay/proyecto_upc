@@ -69,6 +69,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones(){
+        UtilWeb.waitForSeconds(10);
         for(WebElement element:listaBotones){
             if (element.getText().contains("nueva")){
                 UtilWeb.waitForSeconds(2);
@@ -150,6 +151,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta(){
+        UtilWeb.waitForSeconds(15);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
