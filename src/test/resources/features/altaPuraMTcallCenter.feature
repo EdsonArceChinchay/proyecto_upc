@@ -6,7 +6,7 @@ Característica: Alta Fija Pura MT por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaPuraMTcallCenter_CE
+  @AltaPuraMTcallCenterCE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -56,9 +56,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
-    Y        doy click en datos del cliente
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+#    Y        doy click en datos del cliente
+#      | fechaNac   | nacionalidad | estado_civil |
+#      | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

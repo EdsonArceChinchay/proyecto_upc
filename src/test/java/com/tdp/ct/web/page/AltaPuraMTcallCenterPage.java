@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -93,11 +94,15 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         WebElement correoElement = js().getWebElement(getCorreo);
         click(correoElement);
+        correoElement.sendKeys(Keys.CONTROL + "a");
+        correoElement.sendKeys(Keys.DELETE);
         type(correoElement, verifCorreo);
 
         String inputCorreo2 = "div form div:nth-child(4) tdp-st-input-text;input";
         WebElement correoElement2 = js().getWebElement(inputCorreo2);
         click(correoElement2);
+        correoElement2.sendKeys(Keys.CONTROL + "a");
+        correoElement2.sendKeys(Keys.DELETE);
         type(correoElement2, verifCorreo);
 
         UtilWeb.waitForSeconds(3);
