@@ -34,8 +34,10 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
       | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION RESIDENCIAL  | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    Y        selecciono el tipo de oferta "<tipoOferta>"
-    Y        selecciono el tipo de plan "<tipoPlan>"
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    #Y        selecciono el tipo de oferta "<tipoOferta>"
+    #Y        selecciono el tipo de plan "<tipoPlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -43,15 +45,6 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user        | password     |
-      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -60,5 +53,6 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlan            | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE           | 123456801  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com | discapacitado  | ERICKA      | PERCY       | HUARAL      |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          | correo           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE           | 129876888  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 70 Mbps + 26 Gb | correo@gmail.com |
+

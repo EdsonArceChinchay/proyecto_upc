@@ -110,7 +110,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConsultarCobertura() {
         click(btnConsultarCobertura, 20);
-        UtilWeb.waitForSeconds(30);
+        UtilWeb.waitForSeconds(40);
 
     }
 
@@ -180,6 +180,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(3);
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
+        correoElectronico.sendKeys(Keys.CONTROL + "a");
+        correoElectronico.sendKeys(Keys.DELETE);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);
     }
@@ -187,6 +189,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void confirmarCorreo(String correo){
         WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
         click(correoElectronico);
+        correoElectronico.sendKeys(Keys.CONTROL + "a");
+        correoElectronico.sendKeys(Keys.DELETE);
         type(correoElectronico, correo);
         UtilWeb.waitForSeconds(1);
     }

@@ -6,7 +6,7 @@ Característica: Alta Fija migracion deco HD a Smart HD
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaFijaTiendaMigra_Carlos
+  @AltaFijaTiendaMigra_DECOHD_A_DECO_SMART
   Esquema del escenario: alta Fija migracion deco HD a Smart HD
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
