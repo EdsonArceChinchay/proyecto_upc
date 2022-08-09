@@ -81,6 +81,16 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void datosAgendamiento(){
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        // Calendario
+//        boolean elementoExistenteDias;
+//        elementoExistenteDias = driver().findElements(By.xpath("//div[@class='']")).size() != 0;
+//        if (elementoExistenteDias) {
+//            System.out.println("paso aqui 1");
+//            List<WebElement> listaDias= driver().findElements(By.xpath("(//div[@class=''])"));
+//            click(listaDias.get(0));
+//            System.out.println("paso aqui 2" + listaDias.get(0).getText());
+//        }
+
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
         if (elementoExistente) {
@@ -116,11 +126,12 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato(){
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(60);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
+        waitUntilElementIsVisible(boton,120);
         click(boton);
         UtilWeb.waitForSeconds(20);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
