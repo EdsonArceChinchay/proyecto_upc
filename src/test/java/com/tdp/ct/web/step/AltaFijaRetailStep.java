@@ -60,4 +60,6 @@ public class AltaFijaRetailStep {
         page.altaMovilPrepagoSoloChipTiendaPage().clickConfirmar();
         UtilWeb.waitForSeconds(10);
     }
+
+
 }

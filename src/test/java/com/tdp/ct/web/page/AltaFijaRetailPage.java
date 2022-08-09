@@ -25,6 +25,10 @@ public class AltaFijaRetailPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnStart']")
     protected WebElement iniciarRegistro;
 
+    @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
+    protected WebElement iconPlus;
+
+
     public void irSeleccionarTipoPlan(String tipoPlan) {
         UtilWeb.waitForSeconds(1);
         List<WebElement> lista = listTipoPlan.findElements(By.cssSelector("button"));
@@ -69,4 +73,6 @@ public class AltaFijaRetailPage extends WebBase {
         js().scrollElementTop(iniciarRegistro);
         click(iniciarRegistro,2);
     }
+
+
 }

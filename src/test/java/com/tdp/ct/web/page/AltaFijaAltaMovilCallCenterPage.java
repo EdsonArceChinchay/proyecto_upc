@@ -110,7 +110,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConsultarCobertura() {
         click(btnConsultarCobertura, 10);
-        UtilWeb.waitForSeconds(40);
+        UtilWeb.waitForSeconds(70);
 
     }
 
@@ -208,7 +208,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp(){
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(100);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");

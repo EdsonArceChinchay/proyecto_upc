@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos
 
 Característica: Alta Fija por Retail
 
@@ -50,13 +50,13 @@ Característica: Alta Fija por Retail
              | fechaNac   | estadoCivil | nacionalidad |
              | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
-    Y        me muestra en pantalla el contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+	Y        doy clic para validar contrato hogar
+	Y        me muestra en pantalla el contrato solicitado
+	Cuando   doy clic en si acepto
+	Y        doy clic en continuar
+	Y        presiono el boton Registrar venta
+	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                        |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Trío         | RA 1000 MBPS |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono         | INTERNET MOVISTAR RA 1000 MBPS |

@@ -243,4 +243,7 @@ public class AltaFijaMovilRegistroStep {
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
     }
 
+    public void agregoSVARepetidorWIFIPLUS() {
+        page.altaFijaMovilRegistroPage().agregoSVARepetidorWIFIPLUS();
+    }
 }

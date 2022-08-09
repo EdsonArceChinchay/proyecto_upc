@@ -96,6 +96,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class='_close']")
     protected WebElement buttonCerrarModal;
 
+    @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
+    protected WebElement iconPlus;
+
+
 
 
     public boolean validarPantallaIngresarDireccion() {
@@ -276,7 +280,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(30);
         waitUntilElementIsVisible(buttonValidarContrato, 10).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -284,7 +288,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicBotonContinuar() {
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(80);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -636,4 +640,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
+    public void agregoSVARepetidorWIFIPLUS() {
+        UtilWeb.waitForSeconds(5);
+        WebElement element = sh().getWebElement(iconPlus, "button");
+        element.click();
+        UtilWeb.waitForSeconds(5);
+    }
 }
