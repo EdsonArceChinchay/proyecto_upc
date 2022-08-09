@@ -19,9 +19,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+#    Y        ingreso los datos del cliente a registrar
+#      | nombres | apellidos   | genero   |
+#      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
