@@ -161,12 +161,12 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta(){
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(20);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton,100);
+        waitUntilElementIsVisible(boton,500);
         click(boton);
         UtilWeb.waitForSeconds(15);
     }
