@@ -19,9 +19,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-#    Y        ingreso los datos del cliente a registrar
-#      | nombres | apellidos   | genero   |
-#      | Ana     | Lopez Lopez | femenino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -56,9 +56,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
-#    Y        doy click en datos del cliente
-#      | fechaNac   | nacionalidad | estado_civil |
-#      | 12/12/1980 | Alemania     | Casado       |
+    Y        doy click en datos del cliente
+      | fechaNac   | nacionalidad | estado_civil |
+      | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -69,6 +69,6 @@ Característica: Alta Fija Pura MT por Call Center
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 70 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoOferta     | nombrePlan      | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma       | MOVISTAR TOTAL | 200 Mbps + 26 Gb | correo@gmail.com |
 
