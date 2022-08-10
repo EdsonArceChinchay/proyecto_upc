@@ -166,6 +166,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton= find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        waitUntilElementIsVisible(boton,100);
         click(boton);
         UtilWeb.waitForSeconds(15);
     }
