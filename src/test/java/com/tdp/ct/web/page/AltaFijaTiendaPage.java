@@ -161,7 +161,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta(){
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(200);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
