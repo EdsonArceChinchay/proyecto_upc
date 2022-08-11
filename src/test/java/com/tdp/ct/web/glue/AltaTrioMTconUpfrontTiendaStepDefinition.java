@@ -100,4 +100,9 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     public void ingresoContraseñaDeSupervisor(String passw) {
         altaTrioMTconUpfrontTiendaStep.ingresoContraseñaSupervisor(passw);
     }
+
+    @Y("selecciono el nombre de plan movistar total")
+    public void seleccionoElNombreDePlanMovistarTotal() {
+        altaTrioMTconUpfrontTiendaStep.seleccionoElNombreDePlanMovistarTotal();
+    }
 }

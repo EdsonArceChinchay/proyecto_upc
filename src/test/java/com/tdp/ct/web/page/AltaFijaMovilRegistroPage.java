@@ -641,10 +641,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
-    public void agregoSVARepetidorWIFIPLUS() {
-        UtilWeb.waitForSeconds(5);
-        WebElement element = sh().getWebElement(iconPlus, "button");
-        element.click();
-        UtilWeb.waitForSeconds(5);
-    }
-}
+    public void agregoSVAINTERNET(String svaInternet) {
+        js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan=find().getElementByCss("app-adicionales tdp-st-select");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan=sh().getContext(listElementPLan);
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for(WebElement elements:lista){
+            System.out.println(elements.getText());
+            if(elements.getText().equals(svaInternet)){
+                UtilWeb.waitForSeconds(2);
+                click(elements,3);
+            }
+        }
+}}

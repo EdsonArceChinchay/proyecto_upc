@@ -83,4 +83,7 @@ public class AltaTrioMTconUpfrontTiendaStep {
         page.altaTrioMTconUpfrontTiendaPage().ingresoContraseñaSupervisor(passw);
     }
 
+    public void seleccionoElNombreDePlanMovistarTotal() {
+        page.altaTrioMTconUpfrontTiendaPage().seleccionoElNombreDePlanMovistarTotal();
+    }
 }

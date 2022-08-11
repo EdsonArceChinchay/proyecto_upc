@@ -1,28 +1,21 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija por Retail
+Característica: Alta trio MT con Upfront 30mb
 
-
-  Antecedentes:
+  @AltatrioMT_SVA
+  Esquema del escenario: Alta trio MT MAS SVA
     Dado     que abro la pagina de movistar
-
-  @AltaFijaPorRetail_CE
-  Esquema del escenario: Alta fija Retail con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -34,29 +27,35 @@ Característica: Alta Fija por Retail
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | EDIFICIO             | casa      |
+      | A  | 1    | EDIFICIO      | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+	Y 		 selecciono el nombre de plan movistar total
+	Y 		 doy click en añadir sva
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-             | fechaNac   | estadoCivil | nacionalidad |
-             | 12/12/1980 | Casado      | Albania      |
-    Y        doy click en el boton confirmar
-	Y        doy clic para validar contrato hogar
-	Y        me muestra en pantalla el contrato solicitado
-	Cuando   doy clic en si acepto
-	Y        doy clic en continuar
-	Y        presiono el boton Registrar venta
-	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 12/12/1980 | Alemania     | Casado       |
+    Y        doy clic para validar contrato Movil
+    Y        me muestra en pantalla el contrato solicitado
+    Cuando   doy clic en si acepto
+    Y        doy click en el boton de continuar
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                        |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono         | INTERNET MOVISTAR RA 100 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan   | nombrePlan |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | DNI	           | 41524632 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Parque     |  Trío      | RA 40 MBPS |
+
+
+
+
