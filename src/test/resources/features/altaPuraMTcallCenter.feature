@@ -6,7 +6,7 @@ Característica: Alta Fija Pura MT por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaPuraMTcallCenter_CE
+  @AltaPuraMTcallCenterCE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -69,6 +69,6 @@ Característica: Alta Fija Pura MT por Call Center
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | 70 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoOferta     | nombrePlan      | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma       | MOVISTAR TOTAL | 100 Mbps + 26 Gb | correo@gmail.com |
 

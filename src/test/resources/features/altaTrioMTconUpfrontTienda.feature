@@ -56,4 +56,4 @@ Característica: Alta Trio MT - Upfront Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | mz | lote | piso | int | conjunto | conjHabit | numContacto | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | DNI           | 43078337  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | real plaza | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | DNI           | 43078337  | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
