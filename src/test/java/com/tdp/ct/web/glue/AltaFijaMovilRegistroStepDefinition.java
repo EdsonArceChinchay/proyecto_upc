@@ -206,10 +206,11 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarVentaGenerada();
     }
 
-    @Y("agrego SVA repetidor WIFI PLUS")
-    public void agregoSVARepetidorWIFIPLUS() {
+
+    @Y("doy click en agregar {string}")
+    public void doyClickEnAgregar(String String) {
         altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        altaFijaMovilRegistroStep.agregoSVARepetidorWIFIPLUS();
+        altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 }
