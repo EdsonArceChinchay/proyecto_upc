@@ -8,11 +8,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy(css = ".detailHogar img")
+    @FindBy( xpath = "(//*[@class=\"detailHogar\"])[2]")
     protected WebElement btnCardPlanActual;
 
 //    @FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
-    @FindBy( xpath = "//div[@class='div-botton']/div[1] /tdp-st-button[1]")
+    @FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")
@@ -41,10 +41,12 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnRenovarPlan(){
+        waitUntilElementIsVisible(btnRenovarPlan,10);
         click(btnRenovarPlan);
     }
 
     public void clickSelectOferta() {
+        waitUntilElementIsVisible(btnSelectOferta,10);
         btnSelectOferta.click();
         UtilWeb.waitForSeconds(1);
     }
