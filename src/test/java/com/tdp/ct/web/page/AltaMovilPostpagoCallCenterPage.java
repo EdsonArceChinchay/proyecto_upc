@@ -229,19 +229,21 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionarEstadoCivil(String estadoCivil) {
+
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
-        UtilWeb.waitForSeconds(2);
+        System.out.println("Dio click en lista de estado");
+        UtilWeb.waitForSeconds(3);
         SearchContext contexPlan=sh().getContext(generoList);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
-            if(elements.getText().equals(estadoCivil)){
+            System.out.println("Elementos del Estado Civil: "+elements.getText());
+            if(elements.getText().trim().equals(estadoCivil.trim())){
                 UtilWeb.waitForSeconds(2);
                 click(elements,30);
             }
         }
-}
+    }
 
     public void ValidoQuePresenteDetallePedido() {
         click(btnDetallePedido);

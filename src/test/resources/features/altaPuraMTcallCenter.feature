@@ -57,18 +57,20 @@ Característica: Alta Fija Pura MT por Call Center
     E         ingreso correo de verificacion "<correo>"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1980 | Divorciado  | Alemania     |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
+   # Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+#    Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoOferta     | nombrePlan      | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma       | MOVISTAR TOTAL | 100 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 26 Gb | correo@gmail.com |
 
