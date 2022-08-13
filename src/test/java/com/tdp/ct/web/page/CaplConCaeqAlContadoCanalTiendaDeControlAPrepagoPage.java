@@ -27,7 +27,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(css = ".col-2 ._info")
     protected WebElement caracteristicasContent;
 
-    @FindBy(xpath = "//*[@label='Iniciar Registro']")
+    @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
     protected WebElement btnConShadowIniciarRegistro;
 
     public void esperarBtnCardPlanActual(){
@@ -52,7 +52,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void validarPlanSelected(String plan){
-        waitUntilElementIsVisible(lblNewPlanName, 7);
+        waitUntilElementIsVisible(lblNewPlanName, 10);
         String getPlanName = lblNewPlanName.getText().toLowerCase();
         Assertions.assertTrue(getPlanName.contains(plan.toLowerCase()), "El plan obtenido: "+ getPlanName +" no coincide con lo esperado "+plan.toLowerCase());
     }
@@ -90,7 +90,11 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnConShadowIniciarRegistro(){
+        System.out.println("Paso por aquiu");
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(btnConShadowIniciarRegistro,20);
         click(btnConShadowIniciarRegistro);
+        System.out.println("dio cliick");
     }
 
     public void writeEmail(String email){

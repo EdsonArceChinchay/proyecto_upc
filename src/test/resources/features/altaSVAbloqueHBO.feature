@@ -19,7 +19,7 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Linea Nueva Movil
+#    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -32,12 +32,15 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
       | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
       | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
+#    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
-    #Y        selecciono el tipo de plan "<tipoPlan>"
-    Y        valido el detalle de la seleccion
+#    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el plan "<nombrePlan>"
+#    Y        valido el detalle de la seleccion
+    Y        valido que este en la seccion de registro
+    Y        doy click en añadir SVA
+    Y        doy click en agregar Bloque "<bloque>"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -53,5 +56,5 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 129876888 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps + 26 Gb | correo@gmail.com |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan                          |bloque| correo           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 129876888 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |   HBO   |correo@gmail.com |

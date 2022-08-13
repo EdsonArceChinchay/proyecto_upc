@@ -66,7 +66,18 @@ public class AltaFijaTiendaStepDefinition {
   }
 
 
+  @Y("doy click en añadir SVA")
+  public void doyClickEnAñadirSVA() {
+    altaFijaTiendaStep.doyClickEnAñadirSVA();
+  }
 
+  @Y("doy click en agregar Bloque {string}")
+  public void doyClickEnAgregarBloque(String Bloque) {
+    altaFijaTiendaStep.doyClickEnAgregarBloque(Bloque);
+  }
 
-
+  @Y("doy click en Guardar cambios")
+  public void doyClickEnGuardarCambios() {
+    altaFijaTiendaStep.doyClickEnGuardarCambios();
+  }
 }

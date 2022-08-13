@@ -34,6 +34,10 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
+
+    @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
+    protected WebElement btnSVA;
+
     public String nombresCompletosCliente(){
         waitUntilElementIsVisible(nombresCompletosCliente,10);
         JavascriptExecutor js = (JavascriptExecutor)driver();
@@ -171,4 +175,32 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(15);
     }
 
+    public void doyClickEnAñadirSVA() {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        waitUntilElementIsVisible(btnSVA,50);
+        click(btnSVA);
+    }
+
+    public void doyClickEnAgregarBloque(String bloque) {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        WebElement btnbloque= find().getElementByXPath("//*[@class='text' and contains(text(),'"+bloque+"')]//following::tdp-st-checkbox[1]");
+        waitUntilElementIsVisible(btnbloque,50);
+        click(btnbloque);
+    }
+
+    public void doyClickEnGuardarCambios() {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        WebElement btnGuardar= find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
+        waitUntilElementIsVisible(btnGuardar,10);
+        click(btnGuardar);
+    }
 }

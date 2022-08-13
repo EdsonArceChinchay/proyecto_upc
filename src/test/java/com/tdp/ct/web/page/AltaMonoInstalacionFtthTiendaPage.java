@@ -92,7 +92,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarDetallePlan(){
-        waitUntilElementIsVisible(featureContent, 10);
+        waitUntilElementIsVisible(featureContent, 20);
         js().scrollElementTop(find().getElementByCss("span.pst-return"));
         Assertions.assertFalse(featureContent.getText().isEmpty(), "No se encuentran caracteristicas en el contenedor");
         UtilWeb.waitForSeconds(1);

@@ -100,8 +100,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement iconPlus;
 
 
-
-
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
@@ -129,7 +127,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void seleccionarPlan(String plan) {
         UtilWeb.waitForSeconds(3);
         //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
-        String elemento = "//div[text()='"+ plan +"']/../..";
+        String elemento = "//div[text()='" + plan + "']/../..";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
@@ -282,7 +280,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicValidarContrato() {
         UtilWeb.waitForSeconds(30);
         waitUntilElementIsVisible(buttonValidarContrato, 50);
-        waitUntilElementIsClickable(buttonValidarContrato,50).click();
+        waitUntilElementIsClickable(buttonValidarContrato, 50).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
@@ -370,8 +368,24 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-     //   waitUntilElementIsVisible(lblPreguntas, 30);
+        //   waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+
+        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu padre')]"))) {
+            System.out.println("Cual es el nombre de tu padre : " + true);
+            WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
+            element.click();
+        } else {
+            System.out.println("no existe pregunta nombre padre");
+        }
+
+        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu madre')]"))) {
+            System.out.println("nCual es el nombre de tu madre : " + true);
+            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
+            element.click();
+        } else {
+            System.out.println("no existe pregunta nombre madre");
+        }
 
         if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {
             System.out.println("En que distrito naciste : " + true);
@@ -380,20 +394,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         } else {
             System.out.println("no existe pregunta lugar de nacimiento");
         }
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu padre')]"))) {
-            System.out.println("Cual es el nombre de tu padre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
-            element.click();
-        } else {
-            System.out.println("no existe pregunta nombre padre");
-        }
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu madre')]"))) {
-            System.out.println("nCual es el nombre de tu madre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
-            element.click();
-        } else {
-            System.out.println("no existe pregunta nombre madre");
-        }
+
 
         UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -510,7 +511,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //UtilWeb.waitForSeconds(10);
     }
 
-    public void esperarBtnDatosCliente(){
+    public void esperarBtnDatosCliente() {
         js().scrollElementTop(buttonDatosDeCliente);
         waitUntilElementIsVisible(buttonDatosDeCliente, 10);
     }
@@ -614,7 +615,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicRegistrarVenta() {
         UtilWeb.waitForSeconds(7);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        waitUntilElementIsVisible(buttonCerrarModal,100).click();
+        waitUntilElementIsVisible(buttonCerrarModal, 100).click();
         UtilWeb.waitForSeconds(1);
         scrollByJavaScriptToFinal();
         UtilWeb.waitForSeconds(1);
@@ -624,11 +625,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
     }
+
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        waitUntilElementIsVisible(scrollorden,100);
+        waitUntilElementIsVisible(scrollorden, 100);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         boolean existe = false;
@@ -643,16 +645,17 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void agregoSVAINTERNET(String svaInternet) {
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan=find().getElementByCss("app-adicionales tdp-st-select");
+        WebElement listElementPLan = find().getElementByCss("app-adicionales tdp-st-select");
         click(listElementPLan);
         UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
-        for(WebElement elements:lista){
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
             System.out.println(elements.getText());
-            if(elements.getText().equals(svaInternet)){
+            if (elements.getText().equals(svaInternet)) {
                 UtilWeb.waitForSeconds(2);
-                click(elements,3);
+                click(elements, 3);
             }
         }
-}}
+    }
+}
