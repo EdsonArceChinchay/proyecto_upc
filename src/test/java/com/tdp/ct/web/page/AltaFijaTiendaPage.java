@@ -58,6 +58,7 @@ public class AltaFijaTiendaPage extends WebBase {
         for (WebElement element:listaOfertas){
             System.out.println("hola mundo: " + element.getText());
             if(element.getText().contains(planOfertas)){
+                waitUntilElementIsVisible(element,100);
                 click(element);
             }
         }

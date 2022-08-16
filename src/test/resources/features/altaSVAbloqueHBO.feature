@@ -56,5 +56,5 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan                                         | bloque | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 129876888 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100 MBPS | HBO    | correo@gmail.com |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                          | referencia | tipoOferta     | nombrePlan                                    | bloque | correo           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 129876888 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 PISO 1 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100 | HBO    | correo@gmail.com |
