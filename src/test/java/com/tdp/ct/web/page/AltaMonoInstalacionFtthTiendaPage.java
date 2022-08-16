@@ -48,7 +48,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarOfertasSugeridasView(String title){
-        waitUntilElementIsVisible(titleOfertas, 50);
+        waitUntilElementIsVisible(titleOfertas, 100);
         UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
@@ -56,10 +56,12 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void scrollToBtnPlanNuevo(){
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(titleOfertas);
     }
 
     public void clickBtnPlanNuevo(){
+        waitUntilElementIsVisible(btnPlanNuevo,100);
         click(btnPlanNuevo);
         UtilWeb.waitForSeconds(2);
     }
@@ -90,7 +92,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarDetallePlan(){
-        waitUntilElementIsVisible(featureContent, 10);
+        waitUntilElementIsVisible(featureContent, 20);
         js().scrollElementTop(find().getElementByCss("span.pst-return"));
         Assertions.assertFalse(featureContent.getText().isEmpty(), "No se encuentran caracteristicas en el contenedor");
         UtilWeb.waitForSeconds(1);

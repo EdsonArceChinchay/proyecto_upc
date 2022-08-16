@@ -34,6 +34,12 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'nueva')]")
+    protected WebElement btnLineaNueva;
+
+    @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
+    protected WebElement btnSVA;
+
     public String nombresCompletosCliente(){
         waitUntilElementIsVisible(nombresCompletosCliente,10);
         JavascriptExecutor js = (JavascriptExecutor)driver();
@@ -69,26 +75,31 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones(){
-        UtilWeb.waitForSeconds(10);
-        for(WebElement element:listaBotones){
-            if (element.getText().contains("nueva")){
-                UtilWeb.waitForSeconds(2);
-                click(element,30);
-                System.out.println("click"+element.getText());
-            }
-        }
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(btnLineaNueva,30);
+        click(btnLineaNueva);
+        UtilWeb.waitForSeconds(5);
+
+//        UtilWeb.waitForSeconds(10);
+//        for(WebElement element:listaBotones){
+//            if (element.getText().contains("nueva")){
+//                UtilWeb.waitForSeconds(2);
+//                click(element,30);
+//                System.out.println("click"+element.getText());
+//            }
+//        }
+//        UtilWeb.waitForSeconds(4);
     }
 
     public void datosAgendamiento(){
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         // Calendario
 //        boolean elementoExistenteDias;
-//        elementoExistenteDias = driver().findElements(By.xpath("//div[@class='']")).size() != 0;
+//        elementoExistenteDias = driver().findElements(By.xpath("//*[@class='mat-calendar-body-cell-content mat-calendar-body-selected mat-calendar-body-today']//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
 //        if (elementoExistenteDias) {
 //            System.out.println("paso aqui 1");
-//            List<WebElement> listaDias= driver().findElements(By.xpath("(//div[@class=''])"));
-//            click(listaDias.get(0));
+//            List<WebElement> listaDias= driver().findElements(By.xpath("(//*[@class='mat-calendar-body-cell-content mat-calendar-body-selected mat-calendar-body-today']//following::div[@class='mat-calendar-body-cell-content'])"));
+//            click(listaDias.get(2));
 //            System.out.println("paso aqui 2" + listaDias.get(0).getText());
 //        }
 
@@ -161,7 +172,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta(){
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(200);
         JavascriptExecutor jse = (JavascriptExecutor)driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -171,4 +182,32 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(15);
     }
 
+    public void doyClickEnAñadirSVA() {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        waitUntilElementIsVisible(btnSVA,50);
+        click(btnSVA);
+    }
+
+    public void doyClickEnAgregarBloque(String bloque) {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        WebElement btnbloque= find().getElementByXPath("//*[@class='text' and contains(text(),'"+bloque+"')]//following::tdp-st-checkbox[1]");
+        waitUntilElementIsVisible(btnbloque,50);
+        click(btnbloque);
+    }
+
+    public void doyClickEnGuardarCambios() {
+        UtilWeb.waitForSeconds(1);
+        JavascriptExecutor jse = (JavascriptExecutor)driver();
+        jse.executeScript("window.scrollBy(0,250)");
+        UtilWeb.waitForSeconds(1);
+        WebElement btnGuardar= find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
+        waitUntilElementIsVisible(btnGuardar,10);
+        click(btnGuardar);
+    }
 }
