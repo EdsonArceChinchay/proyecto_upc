@@ -70,5 +70,5 @@ Característica: Alta Fija Pura MT por Call Center
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 26 Gb | correo@gmail.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | 1 Gb + 26 Gb | correo@gmail.com |
 
