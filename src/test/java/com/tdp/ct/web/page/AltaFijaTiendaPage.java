@@ -94,15 +94,15 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void datosAgendamiento(){
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        // Calendario
-//        boolean elementoExistenteDias;
-//        elementoExistenteDias = driver().findElements(By.xpath("//*[@class='mat-calendar-body-cell-content mat-calendar-body-selected mat-calendar-body-today']//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
-//        if (elementoExistenteDias) {
-//            System.out.println("paso aqui 1");
-//            List<WebElement> listaDias= driver().findElements(By.xpath("(//*[@class='mat-calendar-body-cell-content mat-calendar-body-selected mat-calendar-body-today']//following::div[@class='mat-calendar-body-cell-content'])"));
-//            click(listaDias.get(2));
-//            System.out.println("paso aqui 2" + listaDias.get(0).getText());
-//        }
+//         Calendario
+        boolean elementoExistenteDias;
+        elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
+        if (elementoExistenteDias) {
+            System.out.println("paso aqui 1");
+            List<WebElement> listaDias= driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']"));
+            click(listaDias.get(0));
+            System.out.println("paso aqui 2 " + listaDias.get(0).getText());
+        }
 
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -110,7 +110,7 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("paso aqui 1");
            List<WebElement> listaHorario= driver().findElements(By.xpath("(//div[@class='contHours'])/div"));
            click(listaHorario.get(0));
-            System.out.println("paso aqui 2" + listaHorario.get(0).getText());
+            System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         js().scrollElementTop(buttonConfirmar);
