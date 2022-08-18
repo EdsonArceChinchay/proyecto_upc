@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
+import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
 import org.springframework.stereotype.Component;
 
@@ -27,5 +28,5 @@ public class StepPages{
     public AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage(){return new AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage();}
     public MigraTrioaMTcanalCallCenterPage migraTrioaMTcanalCallCenterPage(){return new MigraTrioaMTcanalCallCenterPage();}
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage(){return new AltaMovilControlFinancimientoPage();}
-
+    public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
 }
