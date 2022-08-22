@@ -45,4 +45,23 @@ public class LoginBerserkerStep {
     @ScreenShotBefore
     public void validarMsgIncorrectCredential(String msg){ page.loginBerserkerPage().validarMsgIncorrectCredential(msg); }
 
+    @ScreenShotAfter
+    public void doyClickEnElIconoDeAsesor() {
+        page.loginBerserkerPage().clickIconoAsesor();
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnCerrarSesion() {
+        page.loginBerserkerPage().clickBtnCerrarSesion();
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnAtras() {
+        page.loginBerserkerPage().clickBtnAtras();
+    }
+    @ScreenShotAfter
+    @ScreenShotBefore
+    public void confirmoCerrarSesion() {
+        page.loginBerserkerPage().clickBtnCerrarSesion();
+    }
 }
