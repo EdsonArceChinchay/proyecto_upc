@@ -42,6 +42,8 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     @FindBy(xpath ="//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
     protected WebElement btnConfirmar;
 
+    @FindBy(xpath ="//*[contains(@label,'Siguiente')]")
+    protected WebElement btnSiguiente;
 
     public void selectPlanActual() {
         click(planActual);
@@ -177,5 +179,16 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     public String validateTituloSeleccionarEquipo() {
         UtilWeb.waitForSeconds(2);
         return getText(validarSeleccionarEquipo);
+    }
+
+    public void clickPlanMovil(String planMovil) {
+        WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
+        waitUntilElementIsVisible(btnplanMovil, 5);
+        click(btnplanMovil);
+    }
+
+    public void clickEnBotonSiguiente() {
+        waitUntilElementIsVisible(btnSiguiente, 5);
+        click(btnSiguiente);
     }
 }
