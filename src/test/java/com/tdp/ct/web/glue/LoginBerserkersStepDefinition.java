@@ -99,4 +99,23 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.clickBtnContinuarHaciaHome();
     }
 
+    @Y("doy click en el icono de Asesor")
+    public void doyClickEnElIconoDeAsesor() {
+        loginBerserkerStep.doyClickEnElIconoDeAsesor();
+    }
+
+    @Y("doy click en Cerrar Sesion")
+    public void doyClickEnCerrarSesion() {
+        loginBerserkerStep.doyClickEnCerrarSesion();
+    }
+
+    @Y("doy click en Atras")
+    public void doyClickEnAtras() {
+        loginBerserkerStep.doyClickEnAtras();
+    }
+
+    @Y("confirmo Cerrar Sesion")
+    public void confirmoCerrarSesion() {
+        loginBerserkerStep.confirmoCerrarSesion();
+    }
 }
