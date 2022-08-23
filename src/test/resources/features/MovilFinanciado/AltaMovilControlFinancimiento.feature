@@ -32,7 +32,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
       | Tipo_Ofertas |
       | Control      |
     Y        selecciono el boton de Seleccionar Oferta
-    Y        selecciono en linea Nueva
+    Y        selecciono el boton Linea Nueva Movil
 #    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
 #    Y        selecciono un equipo movil
 #    Y        selecciono en linea Nueva
@@ -42,15 +42,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA     | LIMA   | LINCE  | JIRON JULIO CESAR TELLO 460 |
-#    Y        ingreso un correo electronico "hola@gmail.com"
-#    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Entonces valido la pantalla despues de iniciar registro :"Completa los datos solicitados"
-#    Y         ingreso email "correo@gmail.com" y lo repito
-#    Y        doy click en datos del cliente
-#    Y        completo los datos del cliente en alta movil con financiamiento
-#      | fechaNac   | estadoCivil |  direccion                    |
-#      | 12/12/1980 | casado      |  Calle condesa de chinchon 107|
+      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

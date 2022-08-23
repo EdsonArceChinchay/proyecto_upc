@@ -32,7 +32,7 @@ Característica: Alta Fija por tienda + SVA
       | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
 #	Y        valido que este en la seccion de registro
 #	Cuando   doy clic a iniciar registro
