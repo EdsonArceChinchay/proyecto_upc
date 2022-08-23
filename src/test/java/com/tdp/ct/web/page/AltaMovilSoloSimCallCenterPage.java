@@ -41,11 +41,11 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement btnMostrarOfertas;
 
     public void botonMostrarOfertasRapido(){
-        click(btnMostrarOfertas,10);
+        waitUntilElementIsVisible(btnMostrarOfertas,60).click();
     }
 
     public void ofertasSugeridas(){
-        waitUntilElementIsVisible(ofertasSugeridas,30);
+        waitUntilElementIsVisible(ofertasSugeridas,60);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -78,7 +78,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         //-------------------------------------------------------//
         for(int i = 0;i<listaPlanMovil.size();i++){
             System.out.println(listaPlanMovil.get(i).getText());
-            if (listaPlanMovil.get(i).getText().equals(planMovil)){
+            if (listaPlanMovil.get(i).getText().contains(planMovil)){
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
                 break;

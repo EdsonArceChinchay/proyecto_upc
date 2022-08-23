@@ -18,44 +18,66 @@ public class AltaMovilControlFinancimientoStep {
 
     @Autowired
     private ManageScenario scenario;
+
     @ScreenShotAfter
-    public void ingresarPlanActual() {page.altaMovilControlFinancimientoPage().selectPlanActual();
+    public void ingresarPlanActual() {
+        page.altaMovilControlFinancimientoPage().selectPlanActual();
     }
+
     @ScreenShotBefore
-    public void ingresarPlanMovil() { page.altaMovilControlFinancimientoPage().selectPlanMovil();
+    public void ingresarPlanMovil() {
+        page.altaMovilControlFinancimientoPage().selectPlanMovil();
     }
+
     @ScreenShotAfter
-    public void seleccionarCampania() {  page.altaMovilControlFinancimientoPage().selectCampania();
+    public void seleccionarCampania() {
+        page.altaMovilControlFinancimientoPage().selectCampania();
     }
+
     @ScreenShotBefore
-    public void btnSeleccionarOferta() {  page.altaMovilControlFinancimientoPage().selectBtnOferta();
+    public void btnSeleccionarOferta() {
+        page.altaMovilControlFinancimientoPage().selectBtnOferta();
     }
+
     @ScreenShotBefore
-    public void seleccionarLineaNueva() { page.altaMovilControlFinancimientoPage().selectBtnLineaNueva();
+    public void seleccionarLineaNueva() {
+        page.altaMovilControlFinancimientoPage().selectBtnLineaNueva();
     }
+
     @ScreenShotAfter
-    public void btnAgregarEquipo() {page.altaMovilControlFinancimientoPage().selectBtnAgregarEquipo();
+    public void btnAgregarEquipo() {
+        page.altaMovilControlFinancimientoPage().selectBtnAgregarEquipo();
     }
+
     @ScreenShotBefore
-    public void seleccionarEquipo() {page.altaMovilControlFinancimientoPage().selectBtnEquipo();
+    public void seleccionarEquipo() {
+        page.altaMovilControlFinancimientoPage().selectBtnEquipo();
     }
+
     @ScreenShotBefore
-    public void seleccionarBtnIniciarRegistro() {page.altaMovilControlFinancimientoPage().selectBtnIniciarRegistro();
+    public void seleccionarBtnIniciarRegistro() {
+        page.altaMovilControlFinancimientoPage().selectBtnIniciarRegistro();
     }
+
     @ScreenShotAfter
-    public String validarTituloIniciarRegistro() {return page.altaMovilControlFinancimientoPage().validateTituloIniciarRegistro();
+    public String validarTituloIniciarRegistro() {
+        return page.altaMovilControlFinancimientoPage().validateTituloIniciarRegistro();
     }
+
     @ScreenShotAfter
-    public void ingresarBtnPostpago() {page.altaMovilControlFinancimientoPage().selectBtnPostpago();
+    public void ingresarBtnPostpago() {
+        page.altaMovilControlFinancimientoPage().selectBtnPostpago();
     }
+
     @ScreenShotAfter
-    public void ingresarBtnControl() {page.altaMovilControlFinancimientoPage().selectBtnControl();
+    public void ingresarBtnControl() {
+        page.altaMovilControlFinancimientoPage().selectBtnControl();
     }
 
     public void completarDatosClienteExtranjeroMovilFinanciado(DataTable datosCliente) {
-        String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
-        String dir=UtilWeb.getValueFromDataTable(datosCliente,"direccion");
+        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
+        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
+        String dir = UtilWeb.getValueFromDataTable(datosCliente, "direccion");
 
         page.altaMovilControlFinancimientoPage().ingresarFechaNac(fechaNac);
         page.altaMovilControlFinancimientoPage().seleccionoNacionalidad();
@@ -68,7 +90,18 @@ public class AltaMovilControlFinancimientoStep {
         page.altaMovilControlFinancimientoPage().selectBtnConfirmar();
 
     }
+
     @ScreenShotAfter
-    public String validarSeleccionarEquipo() {return page.altaMovilControlFinancimientoPage().validateTituloSeleccionarEquipo();
+    public String validarSeleccionarEquipo() {
+        return page.altaMovilControlFinancimientoPage().validateTituloSeleccionarEquipo();
+    }
+
+    @ScreenShotAfter
+    public void seleccionoElPlanQueDesea(String planMovil) {
+        page.altaMovilControlFinancimientoPage().clickPlanMovil(planMovil);
+    }
+    @ScreenShotAfter
+    public void doyClickEnBotonSiguiente() {
+        page.altaMovilControlFinancimientoPage().clickEnBotonSiguiente();
     }
 }
