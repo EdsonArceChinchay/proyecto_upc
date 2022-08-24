@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Cerrar Sesion - Berserker
+Característica: Cerrar Sesion - FE DITO WEB
 
   @CerrarSesionBerserker @CanceloCerrarSesion
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cancelar la accion de cerrar sesion
