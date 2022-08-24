@@ -1,12 +1,12 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija Pura MT por Call Center
+Característica: AltaMovil + equipo
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaMovil_sva_tienda
+  @AltaMovil_Equipo_tienda
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
