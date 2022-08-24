@@ -90,13 +90,14 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(30);
     }
 
     public void validoDetalleDeInstalacion() {
