@@ -4,9 +4,13 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.logging.Level;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -49,21 +53,6 @@ public class LoginBerserkerPage extends WebBase {
 
     @FindBy(xpath = "//*[@class='atras']")
     protected WebElement btnAtras;
-
-    @FindBy(xpath = "//*[contains(@class,'info-user')]/div")
-    protected WebElement txtNombre;
-
-    @FindBy(xpath = "//*[contains(@class,'info-user')]/div/div[2]")
-    protected WebElement txtDocumento;
-
-    @FindBy(xpath = "//*[contains(@class,'info-user')]/div")
-    protected WebElement txtNombreRuc;
-
-    @FindBy(xpath = "//*[contains(@class,'info-user')]/div/div[2]")
-    protected WebElement txtDocumentoRuc;
-
-    @FindBy(xpath = "//div[1]/form/div/div[3]/button")
-    protected WebElement btnconsultar;
 
     public String getMsgErrorCredential() {
         return msgErrorCredential.getText().trim().toLowerCase();
@@ -145,31 +134,6 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickBtnAtras() {
         waitUntilElementIsVisible(btnAtras, 10).click();
-    }
-
-    public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
-        String expectedNombre = nombre.trim().toUpperCase();
-        String expectedTipoDocumento = tipoDocumento.trim().toUpperCase();
-        String expectedNroDocumento = nroDocumento.trim().toUpperCase();
-        String Nombre = txtNombre.getText().trim().toUpperCase();
-      //  System.out.println(tipoDocumento.toUpperCase().trim().equals("RUC"));
-        Assertions.assertTrue(Nombre.contains(expectedNombre), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNombre);
-        Assertions.assertTrue(Nombre.contains(expectedTipoDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedTipoDocumento);
-        Assertions.assertTrue(Nombre.contains(expectedNroDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNroDocumento);
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void seleccionoElIDDeClienteNro(String nro) {
-        WebElement nroItem = find().getElementByXPath("//*[@class='table']/tbody/tr/td[" + nro.trim() + "]");
-        waitUntilElementIsVisible(nroItem, 10).click();
-        UtilWeb.waitForSeconds(1);
-        WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
-        waitUntilElementIsVisible(btnGuardar, 10).click();
-    }
-
-    public void clickBtnConsultar() {
-        waitUntilElementIsVisible(btnconsultar, 10);
-        click(btnconsultar);
     }
 
 
