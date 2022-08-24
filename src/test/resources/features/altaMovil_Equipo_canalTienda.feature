@@ -41,7 +41,6 @@ Característica: AltaMovil + equipo
 	Y        selecciono completar los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
 	  | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
-	Y       doy click en el boton confirmar
 	Entonces doy clic para validar contrato Movil
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
