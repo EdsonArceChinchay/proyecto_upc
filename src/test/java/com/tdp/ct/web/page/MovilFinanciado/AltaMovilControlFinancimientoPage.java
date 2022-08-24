@@ -3,6 +3,7 @@ package com.tdp.ct.web.page.MovilFinanciado;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,6 +43,8 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     @FindBy(xpath ="//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
     protected WebElement btnConfirmar;
 
+    @FindBy(xpath ="//*[contains(@label,'Siguiente')]")
+    protected WebElement btnSiguiente;
 
     public void selectPlanActual() {
         click(planActual);
@@ -82,6 +85,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     }
     public void selectBtnIniciarRegistro() {
         UtilWeb.waitForSeconds(3);
+        js().scrollElementTop(btnIniciarRegistro);
         click(btnIniciarRegistro);
         UtilWeb.waitForSeconds(2);
     }
@@ -177,5 +181,16 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     public String validateTituloSeleccionarEquipo() {
         UtilWeb.waitForSeconds(2);
         return getText(validarSeleccionarEquipo);
+    }
+
+    public void clickPlanMovil(String planMovil) {
+        WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
+        waitUntilElementIsVisible(btnplanMovil, 5);
+        click(btnplanMovil);
+    }
+
+    public void clickEnBotonSiguiente() {
+        waitUntilElementIsVisible(btnSiguiente, 5);
+        click(btnSiguiente);
     }
 }
