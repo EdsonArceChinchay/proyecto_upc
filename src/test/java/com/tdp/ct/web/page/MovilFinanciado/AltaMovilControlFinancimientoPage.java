@@ -3,6 +3,7 @@ package com.tdp.ct.web.page.MovilFinanciado;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -84,6 +85,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     }
     public void selectBtnIniciarRegistro() {
         UtilWeb.waitForSeconds(3);
+        js().scrollElementTop(btnIniciarRegistro);
         click(btnIniciarRegistro);
         UtilWeb.waitForSeconds(2);
     }
