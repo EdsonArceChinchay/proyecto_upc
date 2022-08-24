@@ -25,14 +25,21 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "<planMovil>" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono tipo de oferta alta movil
-      | Ofertas_Sugeridas |
-      | PLAN MOVIL        |
-    Y        selecciono la campania
-      | Tipo_Ofertas |
-      | Control      |
-    Y        selecciono el boton de Seleccionar Oferta
-    Y        selecciono el boton Linea Nueva Movil
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan movil "Control"
+    Y        selecciono un plan movil "RV Plan Mi Movistar S/55.9"
+#    Y        selecciono la oferta de plan movil "Control"
+#    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
+#    Y        selecciono el boton de iniciar registro
+#    Y        selecciono tipo de oferta alta movil
+#      | Ofertas_Sugeridas |
+#      | PLAN MOVIL        |
+#    Y        selecciono la campania
+#      | Tipo_Ofertas |
+#      | Control      |
+#    Y        selecciono el boton de Seleccionar Oferta
+#    Y        selecciono el boton Linea Nueva Movil
 #    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
 #    Y        selecciono un equipo movil
 #    Y        selecciono en linea Nueva

@@ -118,4 +118,19 @@ public class LoginBerserkersStepDefinition {
     public void confirmoCerrarSesion() {
         loginBerserkerStep.confirmoCerrarSesion();
     }
+
+    @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
+    public void validoQueElNombreDelClienteSeaYSuSea(String nombre, String tipoDocumento, String nroDocumento) {
+        loginBerserkerStep.validacionDeDatos(nombre,tipoDocumento,nroDocumento);
+    }
+
+    @Y("selecciono el ID de Cliente nro {string}")
+    public void seleccionoElIDDeClienteNro(String nro) {
+        loginBerserkerStep.seleccionoElIDDeClienteNro(nro);
+    }
+
+    @Y("doy click en el boton Consultar")
+    public void doyClickEnElBotonConsultar() {
+        loginBerserkerStep.clickBtnConsultar();
+    }
 }

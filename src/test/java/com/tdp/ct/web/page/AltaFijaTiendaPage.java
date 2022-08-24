@@ -34,7 +34,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
-    @FindBy(xpath = "//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva') ]")
+    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')])[1]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
