@@ -22,7 +22,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnConsultarCobertura;
     @FindBy(xpath = "//div[@class='contHours']/div/span")
     protected List<WebElement> btnHorario;
-    @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button")
+    @FindBy(xpath = "//app-register/body/div[2]/form/div[10]/button")
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
