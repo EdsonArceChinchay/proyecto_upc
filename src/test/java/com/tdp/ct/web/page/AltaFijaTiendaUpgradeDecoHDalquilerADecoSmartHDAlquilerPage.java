@@ -24,7 +24,8 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
 
-
+    @FindBy(xpath = "//div//span[contains(text(),'Postpago')]")
+    protected WebElement btnPostpago;
 
 
 
@@ -78,4 +79,22 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
 
 
     }
+
+
+
+
+        public void seleccionoElPlan_movilPostpago() {
+            UtilWeb.waitForSeconds(5);
+            click(btnPostpago, 2);
+            UtilWeb.waitForSeconds(5);
+            seleccionarBotonSiguiente();
+
+        }
+        public void seleccionarBotonSiguiente(){
+            UtilWeb.waitForSeconds(5);
+            WebElement btnSiguiente=find().getElementByCss(".modal_footer tdp-st-button");
+            click(btnSiguiente, 10);
+
+
+        }
 }
