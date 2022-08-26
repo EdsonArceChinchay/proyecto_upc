@@ -51,4 +51,8 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep {
         page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().scrollToUp();
 
     }
+
+    public void seleccionoElPlan_movilPostpago() {
+        page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().seleccionoElPlan_movilPostpago();
+    }
 }

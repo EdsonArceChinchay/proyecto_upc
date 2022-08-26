@@ -28,6 +28,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+	Y        selecciono el plan_movil Postpago
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
