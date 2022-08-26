@@ -24,6 +24,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> btnHorario;
     @FindBy(xpath = "//app-register/body/div[2]/form/div[10]/button")
     protected WebElement btnFinalizarRegistro;
+
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
     @FindBy(xpath = "//div[@class='stl_plan_valor']")
@@ -32,12 +33,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
+
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
+
     @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
+
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public void manzana(String manzana) {
 
@@ -175,6 +181,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
+        clickBtnReintentar();
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
@@ -245,6 +252,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void irAMovistarTotal() {
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
+    }
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
     }
 
 }

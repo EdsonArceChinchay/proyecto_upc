@@ -45,7 +45,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void ofertasSugeridas() {
-        waitUntilElementIsVisible(ofertasSugeridas, 60);
+        waitUntilElementIsVisible(ofertasSugeridas, 100);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
