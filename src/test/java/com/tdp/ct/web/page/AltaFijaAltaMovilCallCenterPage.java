@@ -22,7 +22,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnConsultarCobertura;
     @FindBy(xpath = "//div[@class='contHours']/div/span")
     protected List<WebElement> btnHorario;
-    @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button")
+    @FindBy(xpath = "//app-register/body/div[2]/form/div[10]/button")
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
@@ -32,153 +32,152 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]" )
+    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
-    @FindBy(xpath = "(//div[@class='title'])/span" )
+    @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
-    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]" )
+    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
 
-    public void manzana(String manzana){
+    public void manzana(String manzana) {
 
         UtilWeb.waitForSeconds(2);
-        WebElement Mz= find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
+        WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
     }
 
-    public void lote(String lote){
-        WebElement Lte= find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
+    public void lote(String lote) {
+        WebElement Lte = find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
         click(Lte);
-
         type(Lte, lote);
     }
 
-    public void tipoVivienda(String tipoVivienda){
-        WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[2]");
+    public void tipoVivienda(String tipoVivienda) {
+        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[2]");
         click(listElementPLan);
         UtilWeb.waitForSeconds(1);
-        SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
-        for(WebElement elements:lista){
-            if(elements.getText().equals(tipoVivienda)){
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
+        for (WebElement elements : lista) {
+            if (elements.getText().equals(tipoVivienda)) {
                 UtilWeb.waitForSeconds(1);
-                click(elements,30);
+                click(elements, 30);
             }
         }
     }
 
-    public void nombreVivienda(String nomVivienda){
-        WebElement Nvivienda= find().getElementByXPath("(//div[@class='tdp-col-12'])[7]/tdp-st-input-text");
+    public void nombreVivienda(String nomVivienda) {
+        WebElement Nvivienda = find().getElementByXPath("(//div[@class='tdp-col-12'])[7]/tdp-st-input-text");
         click(Nvivienda);
         type(Nvivienda, nomVivienda);
     }
 
-    public void piso(String piso){
-        WebElement Npiso= find().getElementByXPath("(//div[@class='_col'])[3]/tdp-st-input-text");
+    public void piso(String piso) {
+        WebElement Npiso = find().getElementByXPath("(//div[@class='_col'])[3]/tdp-st-input-text");
         click(Npiso);
         type(Npiso, piso);
     }
 
-    public void interior(String inte){
-        WebElement NInterior= find().getElementByXPath("(//div[@class='_col'])[4]/tdp-st-input-text");
+    public void interior(String inte) {
+        WebElement NInterior = find().getElementByXPath("(//div[@class='_col'])[4]/tdp-st-input-text");
         click(NInterior);
         type(NInterior, inte);
     }
 
-    public void tipoConjuntoHabitacional(String tipoConjunto){
-        WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[3]");
+    public void tipoConjuntoHabitacional(String tipoConjunto) {
+        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
         UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
-        for(WebElement elements:lista){
-            if(elements.getText().equals(tipoConjunto)){
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
+        for (WebElement elements : lista) {
+            if (elements.getText().equals(tipoConjunto)) {
                 UtilWeb.waitForSeconds(2);
-                click(elements,30);
+                click(elements, 30);
             }
         }
     }
 
-    public void conjuntoHabitacional(String hab){
-        WebElement ConjHab= find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
+    public void conjuntoHabitacional(String hab) {
+        WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
         click(ConjHab);
         type(ConjHab, hab);
     }
 
 
     public void btnConsultarCobertura() {
-        click(btnConsultarCobertura, 10);
-        UtilWeb.waitForSeconds(70);
+        waitUntilElementIsVisible(btnConsultarCobertura, 100).click();
+        UtilWeb.waitForSeconds(20);
 
     }
 
-    public void btnConfirmarUbicacion(){
-        click(btnConfirmarUbicacion,10);
+    public void btnConfirmarUbicacion() {
+        waitUntilElementIsVisible(btnConfirmarUbicacion, 100).click();
         UtilWeb.waitForSeconds(5);
     }
-    public void tipoEntrega(String tipEntrega){
-        WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[1]");
+
+    public void tipoEntrega(String tipEntrega) {
+        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
         UtilWeb.waitForSeconds(1);
-        SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
-        for(WebElement elements:lista){
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
+        for (WebElement elements : lista) {
             System.out.println(elements.getText());
-            if(elements.getText().equals(tipEntrega)){
+            if (elements.getText().equals(tipEntrega)) {
                 UtilWeb.waitForSeconds(1);
-                click(elements,30);
+                click(elements, 30);
             }
         }
         UtilWeb.waitForSeconds(1);
     }
 
-    public void btnHorario(String horario){
-        clickElementInAList(btnHorario,horario);
+    public void btnHorario(String horario) {
+        clickElementInAList(btnHorario, horario);
         UtilWeb.waitForSeconds(1);
     }
 
-
-
-    public void txtTelefono(String telefono){
-        WebElement txtTel= find().getElementByXPath("(//tdp-st-input-text)[1]");
+    public void txtTelefono(String telefono) {
+        WebElement txtTel = find().getElementByXPath("(//tdp-st-input-text)[1]");
         click(txtTel);
         type(txtTel, telefono);
     }
 
-    public void txtInstrucciones(String instrucciones){
-        WebElement txtInstr= find().getElementByXPath("(//tdp-st-input-text)[2]");
+    public void txtInstrucciones(String instrucciones) {
+        WebElement txtInstr = find().getElementByXPath("(//tdp-st-input-text)[2]");
         click(txtInstr);
         type(txtInstr, instrucciones);
     }
 
-    public void btnConfirmarDelivery(){
-        click(btnConfirmarDelivery,5);
+    public void btnConfirmarDelivery() {
+        click(btnConfirmarDelivery, 5);
         UtilWeb.waitForSeconds(8);
     }
 
-    public void tipoPago(String tipoPago){
-            WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[3]");
-            click(listElementPLan);
-            UtilWeb.waitForSeconds(1);
-            SearchContext contexPlan=sh().getContext(listElementPLan);
-            List<WebElement>lista= contexPlan.findElements(By.className("mdc-list-item"));
-            for(WebElement elements:lista){
-                System.out.println(elements.getText());
-                if(elements.getText().equals(tipoPago)){
-                    UtilWeb.waitForSeconds(1);
-                    click(elements,30);
-                }
+    public void tipoPago(String tipoPago) {
+        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(1);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(tipoPago)) {
+                UtilWeb.waitForSeconds(1);
+                click(elements, 30);
             }
+        }
     }
+
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
     protected WebElement esperarCorreo;
 
-    public void correo(String correo){
-        waitUntilElementIsVisible(esperarCorreo,50);
+    public void correo(String correo) {
+        waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
-        WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
+        WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");
         correoElectronico.sendKeys(Keys.DELETE);
@@ -186,8 +185,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void confirmarCorreo(String correo){
-        WebElement correoElectronico= find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
+    public void confirmarCorreo(String correo) {
+        WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");
         correoElectronico.sendKeys(Keys.DELETE);
@@ -196,45 +195,45 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
 
-    public void btnConfirmar2(){
-        click(btnConfirmar2,5);
+    public void btnConfirmar2() {
+        click(btnConfirmar2, 5);
         UtilWeb.waitForSeconds(4);
     }
-    public void btnFinalizarRegistro(){
-        waitUntilElementIsVisible(btnFinalizarRegistro,30);
+
+    public void btnFinalizarRegistro() {
+        waitUntilElementIsVisible(btnFinalizarRegistro, 30);
         UtilWeb.waitForSeconds(120);
-        click(btnFinalizarRegistro,10);
+        click(btnFinalizarRegistro, 10);
         UtilWeb.waitForSeconds(2);
     }
 
-    public void scrollUp(){
+    public void scrollUp() {
         UtilWeb.waitForSeconds(100);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
-    public void oferta(){
-        waitUntilElementIsVisible(oferta,30);
-        UtilWeb.waitForSeconds(2);
-        click(oferta,5);
+    public void oferta() {
+        waitUntilElementIsVisible(oferta, 30);
+        click(oferta, 5);
 
     }
 
-    public void listaOfertas(String planOfertas){
+    public void listaOfertas(String planOfertas) {
         UtilWeb.waitForSeconds(4);
         System.out.println("paso por aqui");
-        System.out.println("cantidad de la lista : "+listaOfertas.size());
-        for (WebElement element:listaOfertas){
+        System.out.println("cantidad de la lista : " + listaOfertas.size());
+        for (WebElement element : listaOfertas) {
             System.out.println("lista de ofertas" + element.getText());
-            if(element.getText().contains(planOfertas)){
+            if (element.getText().contains(planOfertas)) {
                 click(element);
             }
         }
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarOferta(){
+    public void seleccionarOferta() {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");

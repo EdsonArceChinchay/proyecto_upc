@@ -2,10 +2,13 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.logging.Level;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
 
@@ -161,6 +164,20 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         type(correoElement2, correo);
 
         UtilWeb.waitForSeconds(3);
+    }
+
+
+    public void reintarPopPup(){
+        boolean btnReintentarboolean;
+        btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
+        if (btnReintentarboolean) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
+            WebElement btnReintentar= find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
+            js().scrollElementTop(btnReintentar);
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(3);
+        }
+
     }
 
 }

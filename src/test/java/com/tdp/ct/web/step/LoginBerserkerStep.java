@@ -88,18 +88,4 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnCerrarSesion();
     }
 
-    @ScreenShotAfter
-    public void validacionDeDatos(String nombre, String tipoDocumento, String nroDocumento) {
-        page.loginBerserkerPage().validarDatosCliente(nombre, tipoDocumento, nroDocumento);
-    }
-
-    @ScreenShotAfter
-    public void seleccionoElIDDeClienteNro(String nro) {
-        page.loginBerserkerPage().seleccionoElIDDeClienteNro(nro);
-    }
-
-    @ScreenShotAfter
-    public void clickBtnConsultar() {
-        page.loginBerserkerPage().clickBtnConsultar();
-    }
 }
