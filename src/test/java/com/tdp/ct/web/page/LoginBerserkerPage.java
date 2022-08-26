@@ -83,17 +83,17 @@ public class LoginBerserkerPage extends WebBase {
     public void clickBtnContinuarHaciaHome() {
         UtilWeb.waitForSeconds(5);
         click(btnContinuar);
-        waitUntilElementIsVisible(msgHome, 15);
+        waitUntilElementIsVisible(msgHome, 30);
     }
 
     public void clickBtnContinuar() {
         click(btnContinuar);
-        waitUntilElementIsVisible(msgError, 13);
+        waitUntilElementIsVisible(msgError, 30);
     }
 
     public void clickBtnContinuarToLogin() {
         click(btnContinuar);
-        waitUntilElementIsVisible(msgErrorCredential, 13);
+        waitUntilElementIsVisible(msgErrorCredential, 30);
     }
 
     public void validarMsgHome(String msg) {

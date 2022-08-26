@@ -22,21 +22,25 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void seleccionarListaPLanFija(String planFija) {
         page.altaFijaTiendaPage().listaPlanFija(planFija);
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void seleccionarListaOfertas(String ofertas) {
         page.altaFijaTiendaPage().listaOfertas(ofertas);
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clickSeleccionarOferta() {
         page.altaFijaTiendaPage().seleccionarOferta();
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clickListaBotones() {
         page.altaFijaTiendaPage().listaBotones();
     }

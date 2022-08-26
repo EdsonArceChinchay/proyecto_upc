@@ -28,15 +28,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement lblSeleccionarOferta;
 
     @FindBy(css = "div.footer_servicio > div > div > div:nth-child(2) > app-footer-item > div > div.tdp-container.background_container > div.tdp-row.buttonW.tdp-mt-1.ng-star-inserted > div > button")
-    protected WebElement lblCartillaCambiar ;
+    protected WebElement lblCartillaCambiar;
 
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
 
-
-
     public void selecciono_la_cartilla_del_plan_Activo() {
-        
         js().scrollElementTop(cartillaHogar);
         waitUntilElementIsVisible(cartillaHogar, 5);
         click(cartillaHogar, 5);
@@ -45,7 +42,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
-
         UtilWeb.waitForSeconds(4);
         click(btnOpcionPlanNuevo);
         UtilWeb.waitForSeconds(4);
@@ -54,7 +50,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
         UtilWeb.waitForSeconds(4);
-        clickElementInAList(listaPlanFija,plaHogar);
+        clickElementInAList(listaPlanFija, plaHogar);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -77,13 +73,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         click(lblCartillaCambiar, 10);
 
 
-
-
     }
 
     public void scrollUp() {
         UtilWeb.waitForSeconds(4);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }

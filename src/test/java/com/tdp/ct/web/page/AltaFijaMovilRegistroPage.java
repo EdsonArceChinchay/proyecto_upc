@@ -280,13 +280,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicValidarContrato() {
         UtilWeb.waitForSeconds(30);
         waitUntilElementIsVisible(buttonValidarContrato, 50);
-        waitUntilElementIsClickable(buttonValidarContrato, 50).click();
+        waitUntilElementIsClickable(buttonValidarContrato, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
     public void clicBotonContinuar() {
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(buttonContinuar, 10).click();
+        waitUntilElementIsVisible(buttonContinuar, 100).click();
         UtilWeb.waitForSeconds(80);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
@@ -294,14 +294,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
 
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 10);
+        waitUntilElementIsVisible(element, 20);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 10).click();
+        waitUntilElementIsVisible(element, 30).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
 
     }
@@ -335,7 +335,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void ingresarDNISupervisor(String numdoc) {
-        waitUntilElementIsVisible(selectTipoDoc, 5).click();
+        waitUntilElementIsVisible(selectTipoDoc, 10).click();
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
@@ -446,7 +446,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicEnAgregarSVA() {
         js().scrollElementTop(buttonAgregarSVA);
-        waitUntilElementIsVisible(buttonAgregarSVA, 5);
+        waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
         UtilWeb.waitForSeconds(5);
     }
@@ -461,7 +461,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicGuardarCambios() {
         js().scrollElementTop(buttonGuardarCambios);
-        waitUntilElementIsVisible(buttonGuardarCambios, 5);
+        waitUntilElementIsVisible(buttonGuardarCambios, 10);
         click(buttonGuardarCambios);
         UtilWeb.waitForSeconds(5);
     }

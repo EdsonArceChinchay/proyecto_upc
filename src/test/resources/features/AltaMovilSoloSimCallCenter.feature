@@ -36,8 +36,8 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150136"
-    Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
+    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
     Y        ingreso la referencia de la direccion "casa verde"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
