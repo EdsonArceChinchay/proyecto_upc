@@ -595,7 +595,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicRegistrarVenta() {
-        UtilWeb.waitForSeconds(7);
+        UtilWeb.waitForSeconds(10);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         waitUntilElementIsVisible(buttonCerrarModal, 100).click();
         UtilWeb.waitForSeconds(1);
