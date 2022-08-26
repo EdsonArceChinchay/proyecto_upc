@@ -148,8 +148,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
-        UtilWeb.waitForSeconds(2);
-        click(btnIniciar, 10);
+        waitUntilElementIsClickable(btnIniciar,100).click();
         System.out.println("paso por aqui" + btnIniciar.getText());
     }
 
@@ -166,7 +165,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         for (WebElement elements : listPago) {
             System.out.println("Producto: " + elements.getText());
             if (elements.getText().equals(pago))
-                click(elements, 3);
+                waitUntilElementIsClickable(elements,30).click();
                 //click(elements, 3);
                 break;
         }
@@ -184,7 +183,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println(elements.getText());
             if(elements.getText().equals(tipo)){
                 UtilWeb.waitForSeconds(1);
-                click(elements,30);
+                waitUntilElementIsClickable(elements,30).click();
             }
         }
         UtilWeb.waitForSeconds(1);
@@ -224,7 +223,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println(elements.getText());
             if(elements.getText().equals(nacionalidad)){
                 UtilWeb.waitForSeconds(2);
-                click(elements,30);
+                waitUntilElementIsClickable(elements,30).click();
             }
         }
     }
