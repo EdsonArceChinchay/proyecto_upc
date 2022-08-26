@@ -26,7 +26,7 @@ Característica: Busqueda Inicial FE DITO WEB
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  | LUIGI GUSTAVO REYNOSO DEXTRE    |
       | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | SAN MIGUEL                   | C             | 123456735 | Tres De Cinco                   |
       | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | DNI           | 43457947  | CLARIVEL ROMERO BALTAZAR        |
-      | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123211233 | JORGE RAMOS                     |
+      | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123456753 | Cinco De Tres                    |
       | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | SAN MIGUEL                   | DNI           | 09822100  | GIOVANNA MARIBEL OCOLA ASENCIO  |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 173215643 | jorge yogua                     |
       | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456758 | Cinco De Ocho                   |

@@ -17,80 +17,59 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
-
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
-
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
-
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-
     @FindBy(xpath = "//span[@class='text-capitalize']")
     protected WebElement titlePlan;
-
     @FindBy(xpath = "//button[@class='btnStart']")
     protected WebElement buttonIniciarRegistro;
-
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
     protected WebElement labelAgendamiento;
-
     @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
     protected WebElement buttonConfirmar;
-
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
-
     @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada')])[1]")
     protected WebElement buttonDiscapacitado;
     @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
     protected WebElement buttonValBiometrica;
-
     @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
     protected WebElement selectTipoDoc;
     @FindBy(xpath = "//mat-option/span")
     protected List<WebElement> listDocumentos;
-
     @FindBy(xpath = "//h4[contains(text(),'Validar identidad del titular')]")
     protected WebElement lblPreguntas;
-
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
-
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
     protected WebElement rootModalButtonSiAcepto;
-
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
-
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
-
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Validar contrato')]/..")
     protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
     protected WebElement lblNumeroOrden;
-
-
     @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
-
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
     @FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2]")
     protected WebElement buttonDatosDeCliente;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Datos del Cliente')]")
     protected WebElement labelDatosDeCliente;
-
-
     @FindBy(xpath = "//div[contains(text(),'Descarga el contrato')]")
     protected WebElement titleDescargaContrato;
     @FindBy(xpath = "//button[@class='_close']")
@@ -98,7 +77,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
-
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -108,6 +88,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarQueExistanOfertasSugeridas() {
+        clickBtnReintentar(); clickBtnReintentar();
         boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
@@ -165,6 +146,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaAgendamiento() {
+        clickBtnReintentar();clickBtnReintentar();clickBtnReintentar();
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -438,7 +420,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se esper� a que se oculte el elemento");
+            System.out.println("No se espero a que se oculte el elemento");
         }
         return retorno;
     }
@@ -630,9 +612,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
+        clickBtnReintentar();
         waitUntilElementIsVisible(scrollorden, 100);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        clickBtnReintentar();
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
         existe = waitUntilElementIsVisible(msjExitoso, 100).isDisplayed();
@@ -657,5 +641,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 click(elements, 3);
             }
         }
+    }
+
+    public void clickBtnReintentar(){
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
     }
 }
