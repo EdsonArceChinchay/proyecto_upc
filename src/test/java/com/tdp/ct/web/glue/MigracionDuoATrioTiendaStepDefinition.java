@@ -28,8 +28,8 @@ public class MigracionDuoATrioTiendaStepDefinition {
     }
 
     @Y("selecciono el tipo de plan Hogar {string}")
-    public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(plaHogar);
+    public void seleccionoElTipoDePlanHogar(String planHogar) {
+        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(planHogar);
     }
 
     @Y("selecciono el tipo de plan trio {string} y presiono Seleccionar oferta")
