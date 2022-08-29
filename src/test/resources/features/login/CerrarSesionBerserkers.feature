@@ -40,13 +40,13 @@ Característica: Cerrar Sesion - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
-      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | SAN MIGUEL                   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
       | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
       | usuario externo | nishuizas    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
 
 
-  @CerrarSesionBerserker  @CierroSesion
+  @CerrarSesionBerserker  @CierroSesionDespuesConsultar
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cerrar sesion despues de consultar el <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -59,10 +59,11 @@ Característica: Cerrar Sesion - FE DITO WEB
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
     Y        doy click en el icono de Asesor
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL                   | CE            | 123456735 |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA                    | CE            | 123456735 |
