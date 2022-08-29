@@ -35,9 +35,9 @@ Característica: Migracion de Duo a Trio por el canal Tienda
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
 	Y 		presiono el boton Registrar venta
-	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	  Y        valido que se muestre el detalle del pedido
+	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+	Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 1654265532 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+	  | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA  | CE            | 1654265532 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
