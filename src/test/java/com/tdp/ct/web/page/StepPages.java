@@ -30,4 +30,5 @@ public class StepPages{
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage(){return new AltaMovilControlFinancimientoPage();}
     public AltaMovilSVATiendaPage altaMovilSVATiendaPage(){return new AltaMovilSVATiendaPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
+    public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
 }
