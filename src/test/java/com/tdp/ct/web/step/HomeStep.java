@@ -13,17 +13,52 @@ public class HomeStep {
     private StepPages page;
 
     @ScreenShotAfter
-    public void seleccionoTipoDocumento(String tipoDocumento){
+    public void seleccionoTipoDocumento(String tipoDocumento) {
         page.homePage().seleccionoTipoDocumento(tipoDocumento);
     }
 
     @ScreenShotAfter
-    public void ingresoDocumento(String documento){
+    public void ingresoDocumento(String documento) {
         page.homePage().ingresoDocumento(documento);
     }
 
     @ScreenShotBefore
-    public void clickBotonConsultar(){
+    public void clickBotonConsultar() {
         page.homePage().clickBotonConsultar();
+    }
+
+    @ScreenShotAfter
+    public void validacionDeDatos(String nombre, String tipoDocumento, String nroDocumento) {
+        page.homePage().validarDatosCliente(nombre, tipoDocumento, nroDocumento);
+    }
+
+    @ScreenShotAfter
+    public void seleccionoElIDDeClienteNro(String nro) {
+        page.homePage().seleccionoElIDDeClienteNro(nro);
+    }
+
+    @ScreenShotAfter
+    public void clickBtnConsultar() {
+        page.homePage().clickBtnConsultar();
+    }
+
+    @ScreenShotAfter
+    public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
+        page.homePage().validoQueMeTraigaLosServiciosContratadosPorElCliente();
+    }
+
+    @ScreenShotAfter
+    public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
+        page.homePage().seleccionoElTipoDeDocumentoDelRepresentanteLegal(tipDoc);
+    }
+
+    @ScreenShotAfter
+    public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
+        page.homePage().ingresoElNumeroDelDocumentoDelRepresentanteLegal(numDoc);
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnValidarRepresentaLegal() {
+        page.homePage().doyClickEnValidarRepresentaLegal();
     }
 }

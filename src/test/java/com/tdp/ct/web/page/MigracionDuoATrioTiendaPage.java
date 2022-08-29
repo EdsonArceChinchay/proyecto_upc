@@ -52,9 +52,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
 
-    public void seleccionoElTipoDePlanHogar(String planHogar) {
+    public void seleccionoElTipoDePlanHogar(String plaHogar) {
         UtilWeb.waitForSeconds(4);
-        clickElementInAList(listaPlanFija,planHogar);
+        clickElementInAList(listaPlanFija,plaHogar);
         UtilWeb.waitForSeconds(1);
     }
 

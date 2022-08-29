@@ -25,7 +25,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='cont-button']")
     protected WebElement btnBuscar;
 
-    @FindBy(xpath = "//button[@class='btnCard']")
+    @FindBy(xpath = "//app-footer-offert-lma/div[1]/div/div/div[2]/app-footer-item-lma/div/div[2]/div[3]/button")
     protected WebElement lblLineaNueva;
 
 
@@ -62,6 +62,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
 
     public void BtonOpciones() {
+        waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
         waitUntilElementIsVisible(BtnOpciones, 5);
         System.out.println("Aqui");
@@ -79,6 +80,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionarEquipo() {
+        UtilWeb.waitForSeconds(10);
         js().scrollElementTop(LblEquipos);
         waitUntilElementIsVisible(LblEquipos, 10);
         click(LblEquipos, 30);
@@ -112,10 +114,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionoLaCartillaLineaNueva() {
-        UtilWeb.waitForSeconds(10);
-        waitUntilElementIsVisible(lblLineaNueva, 5);
+        UtilWeb.waitForSeconds(5);
         click(lblLineaNueva, 10);
-        waitUntilElementIsVisible(lblLineaNueva, 10);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void doyClickEnElBotonSeleccionarOferta() {
@@ -147,8 +148,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
-        UtilWeb.waitForSeconds(2);
-        click(btnIniciar, 10);
+        waitUntilElementIsClickable(btnIniciar,100).click();
         System.out.println("paso por aqui" + btnIniciar.getText());
     }
 
@@ -165,7 +165,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         for (WebElement elements : listPago) {
             System.out.println("Producto: " + elements.getText());
             if (elements.getText().equals(pago))
-                click(elements, 3);
+                waitUntilElementIsClickable(elements,30).click();
                 //click(elements, 3);
                 break;
         }
@@ -183,7 +183,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println(elements.getText());
             if(elements.getText().equals(tipo)){
                 UtilWeb.waitForSeconds(1);
-                click(elements,30);
+                waitUntilElementIsClickable(elements,30).click();
             }
         }
         UtilWeb.waitForSeconds(1);
@@ -223,7 +223,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             System.out.println(elements.getText());
             if(elements.getText().equals(nacionalidad)){
                 UtilWeb.waitForSeconds(2);
-                click(elements,30);
+                waitUntilElementIsClickable(elements,30).click();
             }
         }
     }

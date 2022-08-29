@@ -19,30 +19,37 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Jbac    | Lozano      | masculino|
+      | nombres | apellidos | genero    |
+      | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono tipo de oferta alta movil
-      | Ofertas_Sugeridas |
-      | PLAN MOVIL        |
-    Y        selecciono la campania
-      | Tipo_Ofertas |
-      | Control      |
-    Y        selecciono el boton de Seleccionar Oferta
-    Y        selecciono en linea Nueva
-    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
-    Y        selecciono un equipo movil
-    Y        selecciono en linea Nueva
+    Y        selecciono el plan "<planMovil>" que desea
+    Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan movil "Control"
+    Y        selecciono un plan movil "RV Plan Mi Movistar S/55.9"
+#    Y        selecciono la oferta de plan movil "Control"
+#    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
+#    Y        selecciono el boton de iniciar registro
+#    Y        selecciono tipo de oferta alta movil
+#      | Ofertas_Sugeridas |
+#      | PLAN MOVIL        |
+#    Y        selecciono la campania
+#      | Tipo_Ofertas |
+#      | Control      |
+#    Y        selecciono el boton de Seleccionar Oferta
+#    Y        selecciono el boton Linea Nueva Movil
+#    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
+#    Y        selecciono un equipo movil
+#    Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
-    #Y        ingreso un correo electronico "hola@gmail.com"
-    #Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-   # Entonces valido la pantalla despues de iniciar registro :"Completa los datos solicitados"
-    #Y         ingreso email "correo@gmail.com" y lo repito
-    #Y        doy click en datos del cliente
-    #Y        completo los datos del cliente en alta movil con financiamiento
-     # | fechaNac   | estadoCivil |  direccion                    |
-      #| 12/12/1980 | casado      |  Calle condesa de chinchon 107|
+    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        doy click en datos del cliente
+    Y        selecciono completar los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
+      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -51,5 +58,5 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000000003|
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000000003 | Postpago  |

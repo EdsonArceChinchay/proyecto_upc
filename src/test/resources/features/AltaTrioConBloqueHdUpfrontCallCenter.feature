@@ -5,6 +5,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
+
   @AltaTrioConBloqueHdUpfrontCallCenter
   Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
@@ -19,7 +20,7 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero   |
+      | nombres | apellidos    | genero    |
       | Juan    | Lopez Garcia | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
@@ -31,10 +32,10 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Barreto |1    | 1   | URBANIZACION POPULAR| conjunto b |
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
+#   Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -58,8 +59,8 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento| documento | departamento | provincia | distrito | direccion                     | referencia   | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS| CE           | 1000000043| 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 70 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000043 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 

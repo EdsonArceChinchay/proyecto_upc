@@ -2,7 +2,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Movil Solo Sim Por Call Center
-                Quiero realizar una alta movil solo sin por call center
+  Quiero realizar una alta movil solo sin por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -21,11 +21,13 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero   |
+      | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
@@ -34,13 +36,13 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150136"
-    Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
+    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
     Y        ingreso la referencia de la direccion "casa verde"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Ccallo  |1    | 1    | URBANIZACION POPULAR| conjunto b |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -49,13 +51,13 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-#    Y        ingreso un correo electronico "hola@gmail.com"
-#    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Y        doy click en datos del cliente
-#    Y        ingreso los datos del cliente
-#      | fechaNac   | estadoCivil | nacionalidad |
-#      | 12/12/1980 | Casado      | Alemania     |
-#    Y       doy click en el boton confirmar
+    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
+    Y        doy click en datos del cliente
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1980 | Divorciado  | Alemania     |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -63,14 +65,14 @@ Característica: Alta Movil Solo Sim Por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlanMovil | nombrePlan                               |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/25.9 III           |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | Control       | RV Plan Mi Movistar S/29.9 |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9 III |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9  |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90 II |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90  |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |

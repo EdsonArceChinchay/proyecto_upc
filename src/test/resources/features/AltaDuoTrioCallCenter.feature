@@ -48,6 +48,7 @@ Característica: Alta Duo Trio Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -61,5 +62,5 @@ Característica: Alta Duo Trio Call Center
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |tipoPlan  | nombrePlan  |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Duo       | RA 100 MBPS  |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Duo       | RA 1000 MBPS  |
       #| usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Trío      | RA 100 MBPS |

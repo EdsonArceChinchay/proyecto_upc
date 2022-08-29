@@ -1,7 +1,7 @@
 #language:es
   @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-  Característica: Login - Berserker
+  Característica: Login - FE DITO WEB
 
     @LoginBerserker @LoginExitoso
     Esquema del escenario: Usuario realiza login exitoso: Canal online - Call center Gss, Tienda San Miguel, Talara

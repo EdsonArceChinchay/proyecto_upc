@@ -33,7 +33,6 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO      | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
@@ -68,4 +67,4 @@ Característica: Alta Fija + Alta Movil por Retail
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 26 Gb |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000003 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 26 Gb |

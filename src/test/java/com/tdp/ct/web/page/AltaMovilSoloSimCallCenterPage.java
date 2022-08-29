@@ -20,11 +20,11 @@ import java.util.concurrent.TimeUnit;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]" )
+    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
-    @FindBy(xpath = "(//div[@class='title'])/span" )
+    @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
-    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]" )
+    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
     @FindBy(xpath = "(//div[@class='button-filter-section'])/button")
     protected List<WebElement> listaTipoPlanMovil;
@@ -40,12 +40,12 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Mostrar ofertas')]")
     protected WebElement btnMostrarOfertas;
 
-    public void botonMostrarOfertasRapido(){
-        click(btnMostrarOfertas,10);
+    public void botonMostrarOfertasRapido() {
+        waitUntilElementIsVisible(btnMostrarOfertas, 60).click();
     }
 
-    public void ofertasSugeridas(){
-        waitUntilElementIsVisible(ofertasSugeridas,30);
+    public void ofertasSugeridas() {
+        waitUntilElementIsVisible(ofertasSugeridas, 100);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -53,19 +53,19 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             System.out.println("si estaba abierto el detalle");
             UtilWeb.waitForSeconds(1);
         }
-        Assert.assertTrue("No esta presente el elemento",ofertasSugeridas.isDisplayed());
+        Assert.assertTrue("No esta presente el elemento", ofertasSugeridas.isDisplayed());
     }
 
-    public void listaTipoPlanMovil(String planMovil){
+    public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(4);
-        clickElementInAList(listaTipoPlanMovil,planMovil);
+        clickElementInAList(listaTipoPlanMovil, planMovil);
     }
 
-    public void listaPlanMovil(String planMovil){
+    public void listaPlanMovil(String planMovil) {
         System.out.println("111111 : " + listaPlanMovil.size());
         UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        for(int i = 0 ; i < 2 ;i++){
+        for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             if (elementoExistente) {
@@ -76,36 +76,40 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
-        for(int i = 0;i<listaPlanMovil.size();i++){
+        for (int i = 0; i < listaPlanMovil.size(); i++) {
             System.out.println(listaPlanMovil.get(i).getText());
-            if (listaPlanMovil.get(i).getText().equals(planMovil)){
+            if (listaPlanMovil.get(i).getText().contains(planMovil)) {
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
                 break;
             }
-            if(i==2){btnRight.click();UtilWeb.waitForSeconds(1);}
-            if(i==5){btnRight.click();UtilWeb.waitForSeconds(1);}
-            if(i==8){btnRight.click();UtilWeb.waitForSeconds(1);}
+            if (i == 2 || i == 5 || i == 8) {
+                boolean elementoExistente;
+                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                if (elementoExistente) {
+                    btnRight.click();
+                    UtilWeb.waitForSeconds(1);
+                }
+            }
         }
     }
 
-    public void botonSeleccionarOfeta(){
+    public void botonSeleccionarOfeta() {
         js().scrollElementTop(botonSeleccionarOferta);
-        click(botonSeleccionarOferta,10);
+        click(botonSeleccionarOferta, 10);
     }
 
-    public void paginaResumen(){
+    public void paginaResumen() {
         UtilWeb.waitForSeconds(4);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        Assert.assertTrue("El elemento no existe",paginaResumen.isDisplayed());
+        Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 
-    public void completaDatosSolicitados(){
-        waitUntilElementIsVisible(completaDatosSolicitados,20);
-        Assert.assertTrue("No esta presente el elemento",completaDatosSolicitados.isDisplayed());
+    public void completaDatosSolicitados() {
+        waitUntilElementIsVisible(completaDatosSolicitados, 20);
+        Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
-
 
 
 }
