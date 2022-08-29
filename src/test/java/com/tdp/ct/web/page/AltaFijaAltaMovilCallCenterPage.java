@@ -116,7 +116,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void btnConsultarCobertura() {
         waitUntilElementIsVisible(btnConsultarCobertura, 100).click();
         UtilWeb.waitForSeconds(20);
-
+        clickBtnReintentar();
     }
 
     public void btnConfirmarUbicacion() {
@@ -222,6 +222,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void oferta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(oferta, 30);
         click(oferta, 5);
 
