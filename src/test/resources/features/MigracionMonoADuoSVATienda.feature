@@ -42,4 +42,4 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | correo            |  tipoPlanHogar | plan         |sva                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 1042464993 | tester@tester.com | Duo            | RA 120 MBPS  |PACK ANTIVIRUS MCAFEE |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA   | CE            | 1042464993 | tester@tester.com | Duo            | RA 120 MBPS  |PACK ANTIVIRUS MCAFEE |
