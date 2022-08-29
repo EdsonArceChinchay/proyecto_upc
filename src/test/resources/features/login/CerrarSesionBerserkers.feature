@@ -19,8 +19,8 @@ Característica: Cerrar Sesion - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
-      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | SAN MIGUEL                   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
       | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
       | usuario externo | nishuizas    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
 
