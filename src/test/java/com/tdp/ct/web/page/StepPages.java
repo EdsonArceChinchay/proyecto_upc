@@ -29,4 +29,5 @@ public class StepPages{
     public MigraTrioaMTcanalCallCenterPage migraTrioaMTcanalCallCenterPage(){return new MigraTrioaMTcanalCallCenterPage();}
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage(){return new AltaMovilControlFinancimientoPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
+    public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
 }

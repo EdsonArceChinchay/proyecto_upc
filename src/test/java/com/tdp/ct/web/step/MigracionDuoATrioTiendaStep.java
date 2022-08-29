@@ -22,8 +22,8 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().seleccionPlanNuevoParaVerLasOfertas();
     }
 
-    public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanHogar(plaHogar);
+    public void seleccionoElTipoDePlanHogar(String planHogar) {
+        page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanHogar(planHogar);
     }
 
     public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {

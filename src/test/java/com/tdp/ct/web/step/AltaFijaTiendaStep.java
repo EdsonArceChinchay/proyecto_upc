@@ -25,8 +25,8 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().listaPlanFija(planFija);
     }
     @ScreenShotBefore
-    public void seleccionarListaOfertas(String ofertas){
-        page.altaFijaTiendaPage().listaOfertas(ofertas);
+    public void seleccionarListaOfertas(String oferta){
+        page.altaFijaTiendaPage().listaOfertas(oferta);
     }
     @ScreenShotBefore
     public void clickSeleccionarOferta(){
