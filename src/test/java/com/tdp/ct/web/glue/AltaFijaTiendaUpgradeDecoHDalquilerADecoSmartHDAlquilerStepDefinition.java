@@ -33,6 +33,12 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStepDefiniti
         altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.scrollTo();
         altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.seleccionamosAgregarDecodificador();
         altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.scrollToUp();
-    }}
+    }
+
+    @Y("selecciono el plan_movil Postpago")
+    public void seleccionoElPlan_movilPostpago() {
+        altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep.seleccionoElPlan_movilPostpago();
+    }
+}
 
 
