@@ -78,7 +78,7 @@ public class AltaFijaTiendaPage extends WebBase {
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + ": " + listaOfertas.get(i).getText() +", Plan a elegir "+ listaOfertas.get(i).getText().contains(planOfertas.trim()));
+            System.out.println("Oferta " + i+1 + ": " + listaOfertas.get(i).getText() +", es igual al Plan a elegir: "+ listaOfertas.get(i).getText().contains(planOfertas.trim()));
             if (listaOfertas.get(i).getText().contains(planOfertas.trim())) {
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));

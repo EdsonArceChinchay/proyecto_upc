@@ -56,7 +56,7 @@ Característica: Alta trio MT con Upfront 30mb
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan   | nombrePlan |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Parque     |  Trío      | RA 40 MBPS |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA       | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Parque     |  Trío      | RA 40 MBPS |
 
 
 

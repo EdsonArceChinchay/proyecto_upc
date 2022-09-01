@@ -647,6 +647,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
             btnReintentar.click();
             UtilWeb.waitForSeconds(2);
         }
