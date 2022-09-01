@@ -84,7 +84,7 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
 
 
         public void seleccionoElPlan_movilPostpago() {
-            UtilWeb.waitForSeconds(5);
+            UtilWeb.waitForSeconds(10);
             click(btnPostpago, 2);
             UtilWeb.waitForSeconds(5);
             seleccionarBotonSiguiente();
