@@ -15,7 +15,7 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
