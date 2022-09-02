@@ -170,12 +170,12 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(70);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 120);
+        waitUntilElementIsVisible(boton, 200);
         click(boton);
         UtilWeb.waitForSeconds(20);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
