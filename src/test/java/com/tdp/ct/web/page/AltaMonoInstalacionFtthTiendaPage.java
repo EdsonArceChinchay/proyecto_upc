@@ -4,10 +4,12 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.logging.Level;
 
 public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
@@ -29,7 +31,10 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@type='submit']")
     protected WebElement btnConsultarCobertura;
 
-    public void scrollToBtnCrearCliente(){
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
+
+    public void scrollToBtnCrearCliente() {
         js().scrollElementTop(find().getElementByCss("div.consulta"));
     }
 
@@ -38,30 +43,36 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void scrollDirecCompleta(){
+    public void scrollDirecCompleta() {
         js().scrollElementTop(find().getElementByCss("div.info-user"));
         UtilWeb.waitForSeconds(3);
     }
 
-    public void clickBtnConsultarCobertura(){
+    public void clickBtnConsultarCobertura() {
         click(btnConsultarCobertura);
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
     }
 
-    public void validarOfertasSugeridasView(String title){
-        waitUntilElementIsVisible(titleOfertas, 100);
+    public void validarOfertasSugeridasView(String title) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
+        waitUntilElementIsVisible(titleOfertas, 300);
         UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
-        Assert.assertEquals("El titulo obtenido: "+ actualTitle +", no coincide con lo esperado", title.toLowerCase(), actualTitle);
+        Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
 
-    public void scrollToBtnPlanNuevo(){
+    public void scrollToBtnPlanNuevo() {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(titleOfertas);
     }
 
-    public void clickBtnPlanNuevo(){
-        waitUntilElementIsVisible(btnPlanNuevo,100);
+    public void clickBtnPlanNuevo() {
+        waitUntilElementIsVisible(btnPlanNuevo, 100);
         click(btnPlanNuevo);
         UtilWeb.waitForSeconds(2);
     }
@@ -77,7 +88,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
-    public void esperarBtnLineaNueva(){
+    public void esperarBtnLineaNueva() {
         UtilWeb.waitForSeconds(5);
         boolean existe = find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").size() != 0;
         if (existe) {
@@ -91,14 +102,25 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         click(btn);
     }
 
-    public void validarDetallePlan(){
+    public void validarDetallePlan() {
         waitUntilElementIsVisible(featureContent, 20);
         js().scrollElementTop(find().getElementByCss("span.pst-return"));
         Assertions.assertFalse(featureContent.getText().isEmpty(), "No se encuentran caracteristicas en el contenedor");
         UtilWeb.waitForSeconds(1);
     }
 
-    public void scrollToViewAgendamiento(){
+    public void scrollToViewAgendamiento() {
         js().scrollElementTop(find().getElementByCss("div.return"));
+    }
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
     }
 }

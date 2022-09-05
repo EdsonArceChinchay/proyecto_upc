@@ -39,4 +39,11 @@ public class MigracionDuoATrioTiendaStep {
     }
 
 
+    public void verificoLaDireccionActualDelServicio(String dir) {
+        page.migracionDuoATrioTiendaPage().verificoLaDireccionActualDelServicio(dir);
+    }
+
+    public void doyClickEnEnElBoton(String btn) {
+        page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(btn);
+    }
 }

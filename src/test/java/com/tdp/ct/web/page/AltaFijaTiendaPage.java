@@ -78,7 +78,7 @@ public class AltaFijaTiendaPage extends WebBase {
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + ": " + listaOfertas.get(i).getText() +", Plan a elegir "+ listaOfertas.get(i).getText().contains(planOfertas.trim()));
+            System.out.println("Oferta " + i+1 + ": " + listaOfertas.get(i).getText() +", es igual al Plan a elegir: "+ listaOfertas.get(i).getText().contains(planOfertas.trim()));
             if (listaOfertas.get(i).getText().contains(planOfertas.trim())) {
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
@@ -170,12 +170,12 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(70);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 120);
+        waitUntilElementIsVisible(boton, 200);
         click(boton);
         UtilWeb.waitForSeconds(20);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
