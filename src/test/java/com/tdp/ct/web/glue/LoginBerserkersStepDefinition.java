@@ -29,7 +29,7 @@ public class LoginBerserkersStepDefinition {
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         manager.navigateTo(urlMovistar);
-        Thread.sleep(3000);
+        Thread.sleep(8000);
     }
 
     @Cuando("presiono el boton Iniciar Sesion")
