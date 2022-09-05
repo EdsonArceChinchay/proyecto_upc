@@ -2,6 +2,8 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import io.restassured.internal.common.assertion.Assertion;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -33,11 +35,23 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
 
+    @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']")
+    protected WebElement btnConfirmarDir;
+
+    @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
+    protected WebElement btnActualizarDir;
+
+    @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
+    protected WebElement txtDirC;
+
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsVisible(cartillaHogar, 5);
-        click(cartillaHogar, 5);
+        waitUntilElementIsClickable(cartillaHogar,20).click();
+//        waitUntilElementIsVisible(cartillaHogar, 5);
+//        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);
 
     }
@@ -73,8 +87,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js().scrollElementTop(lblCartillaCambiar);
         waitUntilElementIsVisible(lblCartillaCambiar, 10);
         click(lblCartillaCambiar, 10);
-
-
     }
 
     public void scrollUp() {
@@ -84,4 +96,45 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
+    public void doyClickEnEnElBoton(String btn) {
+        String btnEsperado=btn.toUpperCase().trim();
+        switch (btnEsperado) {
+            case "ACTUALIZAR":
+            case "ACTUALIZAR DIRECCION":
+                js().scrollElementTop(btnActualizarDir);
+                waitUntilElementIsClickable(btnActualizarDir, 5).click();
+                break;
+
+            case "CONFIRMAR":
+            case "CONFIRMAR DIRECCION":
+                js().scrollElementTop(btnConfirmarDir);
+                waitUntilElementIsClickable(btnConfirmarDir, 5).click();
+                break;
+
+            default:
+                System.out.println("Boton Ingresado no existe");
+        }
+    }
+
+    public void verificoLaDireccionActualDelServicio(String dir) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
+        String direccionEsperada = dir.toUpperCase().trim();
+        waitUntilElementIsVisible(txtDirC, 10);
+        js().scrollElementTop(txtDirC);
+        String direccionRecibida = txtDirC.getText().toUpperCase().trim();
+        Assertions.assertTrue(direccionRecibida.contains(direccionEsperada), "La direccion recibida: " + direccionRecibida + " es distinta a la esperada: " + direccionEsperada);
+    }
+
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
+    }
 }

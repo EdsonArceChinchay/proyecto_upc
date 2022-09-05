@@ -16,7 +16,7 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
 
-    @FindBy(xpath = "(//button[@class='btnCard'])[4]")
+    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
     protected WebElement btnIrMovistarTotal;
 
     @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button/span")
@@ -24,12 +24,13 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
 
     public void seleccionoPlanMovistarTotal() {
         UtilWeb.waitForSeconds(3);
-        click(btnselecOferta);
-        UtilWeb.waitForSeconds(10);
+        waitUntilElementIsClickable(btnselecOferta, 50).click();
+        UtilWeb.waitForSeconds(5);
     }
+
     public void scrollUp() {
         UtilWeb.waitForSeconds(4);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
@@ -49,13 +50,14 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
         waitUntilElementIsVisible(btnIrMovistarTotal, 5);
         click(btnIrMovistarTotal);
     }
+
     //tiempo sperarOrden
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement esperarOrden;
 
     public void clickFinalizarRegistro() {
-        waitUntilElementIsVisible(btnFinalizarRegistro,10);
+        waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
-        waitUntilElementIsVisible(esperarOrden,30);
+        waitUntilElementIsVisible(esperarOrden, 30);
     }
 }
