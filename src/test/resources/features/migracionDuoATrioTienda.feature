@@ -20,12 +20,13 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JULIO CESAR TELLO,409,LINCE,LIMA" actual del servicio
+    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el tipo de plan trio "<planTrio>" y presiono Seleccionar oferta
-    Y        luego doy click en la cartilla cambiar plan hogar
+    Y        selecciono el plan "<planTrio>"
+#    Y        selecciono el tipo de plan trio "<planTrio>" y presiono Seleccionar oferta
+#    Y        luego doy click en la cartilla cambiar plan hogar
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -42,4 +43,4 @@ Característica: Migracion de Duo a Trio por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1654265532 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042465128 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

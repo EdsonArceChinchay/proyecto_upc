@@ -88,7 +88,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarQueExistanOfertasSugeridas() {
-        clickBtnReintentar(); clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
@@ -139,6 +140,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
         click(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(2);
@@ -146,7 +150,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaAgendamiento() {
-        clickBtnReintentar();clickBtnReintentar();clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -260,6 +266,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(30);
         waitUntilElementIsVisible(buttonValidarContrato, 50);
         waitUntilElementIsClickable(buttonValidarContrato, 100).click();
@@ -267,6 +276,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(buttonContinuar, 100).click();
         UtilWeb.waitForSeconds(80);
@@ -643,7 +655,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
     }
 
-    public void clickBtnReintentar(){
+    public void clickBtnReintentar() {
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
