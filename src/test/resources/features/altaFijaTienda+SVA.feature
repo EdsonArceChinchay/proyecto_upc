@@ -14,7 +14,7 @@ Característica: Alta Fija por tienda + SVA
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -62,5 +62,5 @@ Característica: Alta Fija por tienda + SVA
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | DNI           | 76457811  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | DNI           | 76457811  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | ENRIQUETA   | MAXIMO      | PICHANAQUI  | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
 

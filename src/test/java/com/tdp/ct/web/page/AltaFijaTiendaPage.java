@@ -61,6 +61,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas) {
+        String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -77,9 +78,10 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
+            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + ": " + listaOfertas.get(i).getText() +", Plan a elegir "+ listaOfertas.get(i).getText().contains(planOfertas.trim()));
-            if (listaOfertas.get(i).getText().contains(planOfertas.trim())) {
+            System.out.println("Oferta " + i+1 + ": " + ofertaObtenida +", es igual al Plan a elegir: "+ ofertaObtenida.contains(ofertaEsperada));
+            if (ofertaObtenida.contains(ofertaEsperada)) {
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
@@ -94,16 +96,6 @@ public class AltaFijaTiendaPage extends WebBase {
 
             }
         }
-
-//        UtilWeb.waitForSeconds(5);
-//        for (WebElement element:listaOfertas){
-//            System.out.println("hola mundo: " + element.getText());
-//            if(element.getText().contains(planOfertas)){
-//                waitUntilElementIsVisible(element,100);
-//                click(element);
-//            }
-//        }
-//        UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarOferta() {
@@ -170,12 +162,12 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(70);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 120);
+        waitUntilElementIsVisible(boton, 200);
         click(boton);
         UtilWeb.waitForSeconds(20);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());

@@ -14,7 +14,7 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -56,5 +56,5 @@ Característica: Alta Fija + Alta Movil con SVA Bloque HBO por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                          | referencia | tipoOferta     | nombrePlan                                    | bloque | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | SAN MIGUEL   | CE            | 123456755 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 PISO 1 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 100 | HBO    | correo@gmail.com |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                          | referencia | tipoOferta     | nombrePlan                                | bloque | correo           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 123456755 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 PISO 1 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 | HBO    | correo@gmail.com |

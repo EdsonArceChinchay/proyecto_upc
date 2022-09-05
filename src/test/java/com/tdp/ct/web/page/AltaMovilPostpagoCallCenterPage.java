@@ -28,7 +28,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-footer-offert-lma/div[1]/div/div/div[2]/app-footer-item-lma/div/div[2]/div[3]/button")
     protected WebElement lblLineaNueva;
 
-
     @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement lblSeleccionarOferta;
 

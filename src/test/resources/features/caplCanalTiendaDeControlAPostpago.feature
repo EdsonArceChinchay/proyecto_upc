@@ -11,7 +11,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Y        ingreso el password "Telefonica2021"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
+#    Y        valido que se presente la tienda "CAJAMARCA"
     Cuando   selecciono el tipo de documento "DNI"
     Y        ingreso el documento "48549685"
     Y        doy click en el boton consultar

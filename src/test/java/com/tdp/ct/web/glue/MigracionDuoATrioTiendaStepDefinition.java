@@ -28,8 +28,8 @@ public class MigracionDuoATrioTiendaStepDefinition {
     }
 
     @Y("selecciono el tipo de plan Hogar {string}")
-    public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(plaHogar);
+    public void seleccionoElTipoDePlanHogar(String planHogar) {
+        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(planHogar);
     }
 
     @Y("selecciono el tipo de plan trio {string} y presiono Seleccionar oferta")
@@ -43,4 +43,13 @@ public class MigracionDuoATrioTiendaStepDefinition {
     }
 
 
+    @Y("verifico la direccion {string} actual del servicio")
+    public void verificoLaDireccionActualDelServicio(String dir) {
+        migracionDuoATrioTiendaStep.verificoLaDireccionActualDelServicio(dir);
+    }
+
+    @Y("doy click en en el boton {string}")
+    public void doyClickEnEnElBoton(String btn) {
+        migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
+    }
 }
