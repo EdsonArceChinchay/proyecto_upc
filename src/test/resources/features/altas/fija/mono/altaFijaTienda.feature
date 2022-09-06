@@ -45,7 +45,6 @@ Característica: Alta Fija por tienda
     Y        ingreso los datos del supervisor
       | numdoc   | user        | password     |
       | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
-
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
@@ -63,7 +62,7 @@ Característica: Alta Fija por tienda
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | DNI           | 46940927  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | DNI           | 47325176  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | Dúo Internet Estándar HD RA 100 Mbps| discapacitado   | SORAYA      | FIDEL       | LIMA        |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | Trío Movistar Voz Internet Estandar HD RA 100 Mbps| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
 

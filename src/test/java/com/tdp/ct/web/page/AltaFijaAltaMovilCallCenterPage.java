@@ -46,7 +46,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnReintentar;
 
     public void manzana(String manzana) {
-
         UtilWeb.waitForSeconds(2);
         WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
@@ -182,6 +181,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void correo(String correo) {
         clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
@@ -208,6 +209,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void btnFinalizarRegistro() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(btnFinalizarRegistro, 30);
         UtilWeb.waitForSeconds(120);
         click(btnFinalizarRegistro, 10);
@@ -225,7 +229,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(oferta, 30);
+        waitUntilElementIsVisible(oferta, 60);
         click(oferta, 5);
 
     }
@@ -244,6 +248,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void seleccionarOferta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -253,6 +260,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void irAMovistarTotal() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }
