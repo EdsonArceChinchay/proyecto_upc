@@ -143,7 +143,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(5);//2
+        UtilWeb.waitForSeconds(3);//2
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
