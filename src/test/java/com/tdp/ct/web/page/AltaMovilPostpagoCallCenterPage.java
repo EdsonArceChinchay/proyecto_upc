@@ -25,7 +25,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='cont-button']")
     protected WebElement btnBuscar;
 
-    @FindBy(xpath = "//app-footer-offert-lma/div[1]/div/div/div[2]/app-footer-item-lma/div/div[2]/div[3]/button")
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
     protected WebElement lblLineaNueva;
 
     @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
@@ -143,7 +143,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);//2
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
