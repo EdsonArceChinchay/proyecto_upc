@@ -59,7 +59,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void seleccionPlanNuevoParaVerLasOfertas() {
 
         UtilWeb.waitForSeconds(4);
-        click(btnOpcionPlanNuevo);
+        waitUntilElementIsClickable(btnOpcionPlanNuevo,60).click();
         UtilWeb.waitForSeconds(4);
     }
 
@@ -80,6 +80,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js().scrollElementTop(lblSeleccionarOferta);
         waitUntilElementIsVisible(lblSeleccionarOferta, 10);
         click(lblSeleccionarOferta, 10);
+
+
     }
 
     public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
@@ -110,9 +112,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 5).click();
                 break;
-
-            default:
-                System.out.println("Boton Ingresado no existe");
         }
     }
 
@@ -121,7 +120,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         String direccionEsperada = dir.toUpperCase().trim();
-        waitUntilElementIsVisible(txtDirC, 10);
+        waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
         String direccionRecibida = txtDirC.getText().toUpperCase().trim();
         Assertions.assertTrue(direccionRecibida.contains(direccionEsperada), "La direccion recibida: " + direccionRecibida + " es distinta a la esperada: " + direccionEsperada);
