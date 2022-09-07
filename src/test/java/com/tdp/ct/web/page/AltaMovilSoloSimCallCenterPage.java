@@ -49,14 +49,10 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void ofertasSugeridas() {
-<<<<<<< HEAD
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(ofertasSugeridas, 1500);//300
-=======
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        waitUntilElementIsVisible(ofertasSugeridas, 1000);//300
->>>>>>> 980ee8db040bd5f8b266bdadc59c51baa881bdf0
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
