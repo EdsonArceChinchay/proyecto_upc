@@ -25,14 +25,10 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
-#    Y        selecciono el tipo de plan trio "<planTrio>" y presiono Seleccionar oferta
-#    Y        luego doy click en la cartilla cambiar plan hogar
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-	#Y        ingreso un correo electronico "<correo>"
-	#Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

@@ -90,12 +90,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         clickBtnReintentar();
         clickBtnReintentar();
-        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
+        clickBtnReintentar();
+        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
 
     public void seleccionarOferta(String oferta) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
@@ -266,11 +270,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
+<<<<<<< HEAD
+        UtilWeb.waitForSeconds(100);//30
+        waitUntilElementIsVisible(buttonValidarContrato, 80);//50
+=======
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(30);
+        UtilWeb.waitForSeconds(100);
         waitUntilElementIsVisible(buttonValidarContrato, 50);
+>>>>>>> 980ee8db040bd5f8b266bdadc59c51baa881bdf0
         waitUntilElementIsClickable(buttonValidarContrato, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -624,6 +633,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
+        clickBtnReintentar();
+        clickBtnReintentar();
         clickBtnReintentar();
         waitUntilElementIsVisible(scrollorden, 100);
         js().scrollElementTop(scrollorden);

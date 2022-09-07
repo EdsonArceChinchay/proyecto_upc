@@ -90,7 +90,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(8);//5
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);

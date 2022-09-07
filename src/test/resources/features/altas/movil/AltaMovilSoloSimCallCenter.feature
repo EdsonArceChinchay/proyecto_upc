@@ -7,7 +7,7 @@ Característica: Alta Movil Solo Sim Por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCalCenter
+  @AltaMovilSoloSimCallCenter
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -38,7 +38,7 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
-    Y        ingreso la referencia de la direccion "casa verde"
+    Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
@@ -53,11 +53,11 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
-    Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
-    Y        doy click en el boton confirmar
+#    Y        doy click en datos del cliente
+#    Y        ingreso los datos del cliente
+#      | fechaNac   | estadoCivil | nacionalidad |
+#      | 12/12/1980 | Divorciado  | Alemania     |
+#    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

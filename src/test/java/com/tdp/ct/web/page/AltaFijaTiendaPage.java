@@ -2,7 +2,10 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -46,6 +49,9 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
+
     public String nombresCompletosCliente() {
         waitUntilElementIsVisible(nombresCompletosCliente, 10);
         JavascriptExecutor js = (JavascriptExecutor) driver();
@@ -54,6 +60,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(esperalistaPlanFija, 100);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
@@ -80,7 +89,7 @@ public class AltaFijaTiendaPage extends WebBase {
         for (int i = 0; i < listaOfertas.size(); i++) {
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i+1 + ": " + ofertaObtenida +", es igual al Plan a elegir: "+ ofertaObtenida.contains(ofertaEsperada));
+            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
@@ -99,6 +108,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -116,6 +128,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
@@ -145,6 +160,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void botonConfirmarAgendamiento() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -162,6 +180,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(70);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
@@ -178,11 +199,17 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(7);
         click(btnDescargar);
     }
 
     public void cambiarPestanaPrincipal() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(2);
         tabs = new ArrayList<String>(driver().getWindowHandles());
         driver().switchTo().window(tabs.get(0));
@@ -196,6 +223,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(200);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
@@ -216,6 +246,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(1);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
@@ -226,6 +259,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnGuardarCambios() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(1);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
@@ -233,5 +269,15 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
         waitUntilElementIsVisible(btnGuardar, 10);
         click(btnGuardar);
+    }
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
     }
 }

@@ -51,14 +51,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void mostrarOfertas(){
-        waitUntilElementIsVisible(btnMostrar,10);
+        waitUntilElementIsVisible(btnMostrar,50);
         click(btnMostrar);
        UtilWeb.waitForSeconds(12);
         //UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionarDepa(String tipoDepa){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         click(depaList);
         UtilWeb.waitForSeconds(2);

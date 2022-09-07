@@ -46,7 +46,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnReintentar;
 
     public void manzana(String manzana) {
-
         UtilWeb.waitForSeconds(2);
         WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
@@ -114,7 +113,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
-        waitUntilElementIsVisible(btnConsultarCobertura, 100).click();
+        waitUntilElementIsVisible(btnConsultarCobertura, 150).click();//100
         UtilWeb.waitForSeconds(20);
         clickBtnReintentar();
     }
@@ -165,7 +164,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoPago(String tipoPago) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);//es 1
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -181,6 +180,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
+        clickBtnReintentar();
+        clickBtnReintentar();
         clickBtnReintentar();
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
@@ -208,6 +209,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void btnFinalizarRegistro() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(btnFinalizarRegistro, 30);
         UtilWeb.waitForSeconds(120);
         click(btnFinalizarRegistro, 10);
@@ -225,7 +229,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(oferta, 30);
+        waitUntilElementIsVisible(oferta, 60);
         click(oferta, 5);
 
     }
@@ -244,6 +248,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void seleccionarOferta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -253,6 +260,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void irAMovistarTotal() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }

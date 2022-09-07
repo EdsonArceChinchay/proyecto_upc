@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos
 
-Característica: Alta Fija por Retail
+Característica: Alta Fija Mono Internet por Retail
 
 
   Antecedentes:
