@@ -40,11 +40,18 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Mostrar ofertas')]")
     protected WebElement btnMostrarOfertas;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
+
     public void botonMostrarOfertasRapido() {
+        clickBtnReintentar();
         waitUntilElementIsVisible(btnMostrarOfertas, 60).click();
     }
 
     public void ofertasSugeridas() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(ofertasSugeridas, 1000);//300
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
@@ -62,6 +69,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void listaPlanMovil(String planMovil) {
+        clickBtnReintentar();
         System.out.println("111111 : " + listaPlanMovil.size());
         UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -95,6 +103,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void botonSeleccionarOfeta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         js().scrollElementTop(botonSeleccionarOferta);
         click(botonSeleccionarOferta, 10);
     }
@@ -109,6 +120,16 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void completaDatosSolicitados() {
         waitUntilElementIsVisible(completaDatosSolicitados, 20);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
+    }
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
     }
 
 

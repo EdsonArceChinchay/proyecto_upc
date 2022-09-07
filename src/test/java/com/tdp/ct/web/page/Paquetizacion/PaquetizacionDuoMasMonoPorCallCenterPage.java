@@ -8,25 +8,26 @@ import org.openqa.selenium.support.FindBy;
 
 public class PaquetizacionDuoMasMonoPorCallCenterPage extends WebBase {
 
-    @FindBy(xpath = "//*[@class='card']//*[contains(text(),'TV+Internet')]")
-    protected WebElement botonDuo;
-
-    @FindBy(xpath = "//*[@class='card']//*[contains(text(),'Voice')]")
-    protected WebElement botonMono;
+//    @FindBy(xpath = "//*[@class='card']//*[contains(text(),'TV+Internet')]")
+//    protected WebElement botonDuo;
+//
+//    @FindBy(xpath = "//*[@class='card']//*[contains(text(),'Voice')]")
+//    protected WebElement botonMono;
 
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
 
 
-    public void clickMonoYDuo() {
-
-        waitUntilElementIsVisible(botonDuo,30);
-        js().scrollElementTop(botonDuo);
-        click(botonDuo);
+    public void clickMonoYDuo(String mono , String duo) {
+        WebElement btnDuo = find().getElementByXPath("//*[@class='card']//*[contains(text(),'"+duo.trim()+"')]");
+        waitUntilElementIsVisible(btnDuo,30);
+        js().scrollElementTop(btnDuo);
+        click(btnDuo);
         System.out.println("click duo");
         UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(botonMono,30);
-        click(botonMono);
+        WebElement btnMono = find().getElementByXPath("//*[@class='card']//*[contains(text(),'"+mono.trim()+"')]");
+        waitUntilElementIsVisible(btnMono,30);
+        click(btnMono);
         System.out.println("click mono");
         UtilWeb.waitForSeconds(5);
     }
@@ -35,4 +36,7 @@ public class PaquetizacionDuoMasMonoPorCallCenterPage extends WebBase {
         waitUntilElementIsVisible(botonContinuar,30);
         botonContinuar.click();
     }
+
+
+
 }
