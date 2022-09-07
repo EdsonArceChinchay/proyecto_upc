@@ -631,7 +631,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(scrollorden, 100);
+        waitUntilElementIsVisible(scrollorden, 200);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         clickBtnReintentar();

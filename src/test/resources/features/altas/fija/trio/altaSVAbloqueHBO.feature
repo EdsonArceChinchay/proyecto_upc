@@ -18,6 +18,10 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos | genero    |
+      | Juan    | Mendoza   | masculino |
     Y        selecciono el boton Linea Nueva Hogar
 #    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -47,6 +51,11 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        doy click en datos del cliente
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1993 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -57,4 +66,4 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                          | referencia | tipoOferta     | nombrePlan                                | bloque | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 123456755 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 PISO 1 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 | HBO    | correo@gmail.com |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12458688888 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 PISO 1 | Inkafarma  | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 | HBO    | correo@gmail.com |
