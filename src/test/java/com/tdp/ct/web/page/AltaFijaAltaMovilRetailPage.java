@@ -51,7 +51,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void mostrarOfertas(){
-        waitUntilElementIsVisible(btnMostrar,10);
+        waitUntilElementIsVisible(btnMostrar,50);
         click(btnMostrar);
        UtilWeb.waitForSeconds(12);
         //UtilWeb.waitForSeconds(2);

@@ -16,6 +16,9 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        doy click en el boton linea nueva
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -37,16 +40,21 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user        | password     |
-      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Entonces valido que me muestre el boton con el texto de identidad validada
+    Y        doy click en datos del cliente
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
+#    Y        doy click en validar identidad del titular
+#    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+#    Y        ingreso los datos del supervisor
+#      | numdoc   | user        | password     |
+#      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+#    Y        ingreso los datos solicitados para la validacion del cliente
+#      | nombreMadre   | nombrePadre   | distritoNac   |
+#      | <nombreMadre> | <nombrePadre> | <distritoNac> |
+#    Entonces valido que me muestre el boton con el texto de identidad validada
+#    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
@@ -55,5 +63,5 @@ Característica: Alta Trio MT - Upfront Tienda
 
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | mz | lote | piso | int | conjunto | conjHabit | numContacto | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | DNI           | 43078337  | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | Inkafarma  | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | mz | lote | piso | int | conjunto | conjHabit | numContacto | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12893858888 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | Inkafarma  | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |

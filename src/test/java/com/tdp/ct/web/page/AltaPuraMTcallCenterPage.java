@@ -22,7 +22,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
-    //@FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
