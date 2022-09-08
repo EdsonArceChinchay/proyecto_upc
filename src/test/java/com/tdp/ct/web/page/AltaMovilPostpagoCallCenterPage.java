@@ -40,7 +40,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 /*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
     protected WebElement inputText;*/
 
-    @FindBy(xpath = "//tdp-st-button[@type=\"button\"]")
+    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement btnIniciar;
 
     @FindBy(css= "body > app-root > app-delivery > div.info-user span")
@@ -48,7 +48,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='option-boxes']//div")
     protected List<WebElement> listPago;
-
 
     @FindBy(css = "div.cont-autocomplete")
     protected WebElement lblItem;
@@ -59,6 +58,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath= "/html/body/app-root/app-success/div[3]/div/img")
     protected WebElement btnDetallePedido;
 
+    @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
+    protected WebElement btnCerrar;
 
     public void BtonOpciones() {
         waitUntilElementIsVisible(BtnOpciones, 10);
@@ -149,6 +150,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         //js().scrollElementTop(btnIniciar);
         waitUntilElementIsClickable(btnIniciar,150).click();
         System.out.println("paso por aqui" + btnIniciar.getText());
+        clickBtnCerrarModalError(btnIniciar);
+
     }
 
     public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
@@ -247,6 +250,17 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void ValidoQuePresenteDetallePedido() {
         click(btnDetallePedido);
         UtilWeb.waitForSeconds(2);//1
+    }
+
+    public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
+            click(btnCerrar);
+            UtilWeb.waitForSeconds(2);
+            click(metodoRepedito);
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.logging.Level;
 
 public class AltaFijaRetailPage extends WebBase {
 
@@ -28,6 +29,8 @@ public class AltaFijaRetailPage extends WebBase {
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
 
+    @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
+    protected WebElement btnCerrar;
 
     public void irSeleccionarTipoPlan(String tipoPlan) {
         UtilWeb.waitForSeconds(1);
@@ -54,7 +57,7 @@ public class AltaFijaRetailPage extends WebBase {
 
         UtilWeb.waitForSeconds(3);
         WebElement nPlan = find().getElementByXPath("//div[contains(text(), '" + nombrePlan + "')]/../..");
-        click(nPlan,2);
+        click(nPlan, 2);
         UtilWeb.waitForSeconds(2);
     }
 
@@ -68,11 +71,21 @@ public class AltaFijaRetailPage extends WebBase {
         click(lineaNueva, 2);
     }
 
-    public void irIniciarRegistro(){
+    public void irIniciarRegistro() {
         UtilWeb.waitForSeconds(3);
         js().scrollElementTop(iniciarRegistro);
-        click(iniciarRegistro,2);
+        click(iniciarRegistro, 2);
+        clickBtnCerrarModalError(iniciarRegistro);
     }
 
-
+    public void clickBtnCerrarModalError(WebElement metodoRepedito) {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
+            click(btnCerrar);
+            UtilWeb.waitForSeconds(2);
+            click(metodoRepedito);
+        }
+    }
 }
