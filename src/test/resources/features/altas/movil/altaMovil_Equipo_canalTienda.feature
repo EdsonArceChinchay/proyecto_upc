@@ -25,15 +25,15 @@ Característica: AltaMovil + equipo
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
-    Y         selecciono el boton de eleccion de planes
-    Y         selecciono la opcion "<tipoPlanes>"
-    Y         doy click en el boton seleccionar oferta
-    Y         selecciono añadir equipos
-    Y         ingreso el tiempo de permanencia"<timpoPermanencia>"
-    Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
-    Y         doy click en el boton seleccionar
-    Y         selecciono la cartilla Linea Nueva
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono la opcion "<tipoPlanes>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
+    Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -72,15 +72,15 @@ Característica: AltaMovil + equipo
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
-    Y         selecciono el boton de eleccion de planes
-    Y         selecciono la opcion "<tipoPlanes>"
-    Y         doy click en el boton seleccionar oferta
-    Y         selecciono añadir equipos
-    Y         ingreso el tiempo de permanencia"<timpoPermanencia>"
-    Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
-    Y         doy click en el boton seleccionar
-    Y         selecciono la cartilla Linea Nueva
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono la opcion "<tipoPlanes>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
+    Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
