@@ -23,7 +23,7 @@ public class AltaFijaRetailPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(), 'HOGAR NUEVO')]/../following-sibling::div/div/button")
     protected WebElement lineaNueva;
 
-    @FindBy(xpath = "//button[@class='btnStart']")
+    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement iniciarRegistro;
 
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
