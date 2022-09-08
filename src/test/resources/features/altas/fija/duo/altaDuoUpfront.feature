@@ -36,8 +36,8 @@ Característica: Alta Duo por tienda
       | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono un plan hogar "<plan_hogar>"
-    Y        selecciono el plan hogar "<nombrePlan>"
+    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el plan "<nombrePlan>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
