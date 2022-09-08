@@ -246,7 +246,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void ValidoQuePresenteDetallePedido() {
         click(btnDetallePedido);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);//1
     }
 }
 
