@@ -11,7 +11,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
      # Realizar una Alta movil Postpago (linea + equipo) con
      #Delivery en Tambo sin cobertura por canal Call Center
 
-  @AltaMovilPostPagoDeliveryCallCenter_HAPPYPATH
+  @AltaMovilPostPagoDeliveryCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
     Dado  presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
