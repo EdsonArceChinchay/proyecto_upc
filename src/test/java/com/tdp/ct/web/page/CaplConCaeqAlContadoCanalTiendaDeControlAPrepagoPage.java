@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy( xpath = "(//*[@class=\"detailHogar\"])[2]")
+    @FindBy( xpath = "(//*[@class=\"detailHogar\"])")
     protected WebElement btnCardPlanActual;
 
 //    @FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")

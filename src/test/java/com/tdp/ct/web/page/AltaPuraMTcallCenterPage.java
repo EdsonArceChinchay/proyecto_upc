@@ -25,6 +25,9 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
+
     public void btnConfirmarUbicacion() {
         click(btnConfirmaUbicacion, 10);
         UtilWeb.waitForSeconds(5);
@@ -108,6 +111,9 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonContinuar);
         waitUntilElementIsVisible(buttonContinuar, 10).click();
@@ -132,6 +138,17 @@ public class AltaPuraMTcallCenterPage extends WebBase {
             System.out.println("no se encontró mensaje de error");
             UtilWeb.waitForSeconds(2);
         }
+    }
+
+    public void clickBtnReintentar() {
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+            btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
     }
 
 }
