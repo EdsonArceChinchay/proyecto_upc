@@ -4,7 +4,7 @@
 Característica: Consultar direccion por coordenadas DITO WEB
 
   @ConsultarDireccionCoordenadas @Coordenadasorrectas
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion por coordenadas
+  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion: <direccion> por coordenadas
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -35,9 +35,6 @@ Característica: Consultar direccion por coordenadas DITO WEB
       | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 1123456753 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
       | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 1059822100 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 1415246326 | -77.00525705  | -12.11851901  | PRINCIPAL 728            |
-#      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 1234523742 |               |               |                          |
-#      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 5421536244 |               |               |                          |
-#      | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 1123456753 |               |               |                          |
 
   @ConsultarDireccionCoordenadas  @CoordenadasIcorrectas
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo que me muestre un mensaje de error cuando ingreso coordenadas incorrectas
@@ -63,10 +60,10 @@ Característica: Consultar direccion por coordenadas DITO WEB
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
     Y        doy click en en el boton "Buscar"
     Y        valido que que me muestre el mensajde de error "La direccion esta incompleta. Agregar detalles adicionales."
-#    Y        doy click en en el boton "Entendido"
+    Y        doy click en en el boton "Entendido"
     Ejemplos:
       | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento    | longitud     | latitud      |
-      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 167834523742 | -77.03498486 | 0            |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 167834523742 | -77.03498486 | 0-            |
       | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 148021536244 | 12           | -            |
       | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 145123456753 | -70-70       | -12.11851901 |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 149915246326 | .            | 9000         |

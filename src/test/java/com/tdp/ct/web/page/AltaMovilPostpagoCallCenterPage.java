@@ -149,7 +149,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
         waitUntilElementIsClickable(btnIniciar,150).click();
-        System.out.println("paso por aqui" + btnIniciar.getText());
+       // System.out.println("paso por aqui" + btnIniciar.getText());
         clickBtnCerrarModalError(btnIniciar);
 
     }
@@ -254,9 +254,10 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
+            System.out.println("Entro al metodo de Cerrar");
             click(btnCerrar);
             UtilWeb.waitForSeconds(2);
             click(metodoRepedito);
