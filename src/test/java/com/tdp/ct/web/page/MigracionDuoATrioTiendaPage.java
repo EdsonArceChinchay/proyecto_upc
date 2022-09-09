@@ -47,6 +47,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Ingresar coordenadas')])[1]")
     protected WebElement btnIngCord;
 
+    @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
+    protected WebElement btnEntendido;
+
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
 
@@ -126,6 +129,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
                 waitUntilElementIsClickable(btnIngCord, 5).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "ENTENDIDO":
+                js().scrollElementTop(btnEntendido);
+                waitUntilElementIsClickable(btnEntendido, 5).click();
                 UtilWeb.waitForSeconds(1);
                 break;
         }
