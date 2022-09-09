@@ -17,4 +17,13 @@ public class ConsultaDireccionPorCoordenasStepDefinition {
         consultaDireccionPorCoordenasStep.ingresoLasCoordenadasDeLogitudyLatitud(x,y);
     }
 
+    @Y("valido que la direccion sea {string}")
+    public void validoQueLaDireccionSea(String direccion) {
+        consultaDireccionPorCoordenasStep.validoQueLaDireccionSea(direccion);
+    }
+
+    @Y("valido que que me muestre el mensajde de error {string}")
+    public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
+        consultaDireccionPorCoordenasStep.validoQueQueMeMuestreElMensajdeDeError(msj);
+    }
 }
