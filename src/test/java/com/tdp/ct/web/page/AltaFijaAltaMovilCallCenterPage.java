@@ -229,8 +229,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(oferta, 60);
-        click(oferta, 5);
+        waitUntilElementIsClickable(oferta, 120);
+        click(oferta, 10);
 
     }
 
