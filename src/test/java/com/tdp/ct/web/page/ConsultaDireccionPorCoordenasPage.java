@@ -29,7 +29,7 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
     }
 
     public void validoQueLaDireccionSea(String direccion) {
-        UtilWeb.waitForSeconds(25);
+        UtilWeb.waitForSeconds(30);
         String direccionObtenida = txtDireccion.getText().trim().toUpperCase();
         String direccionEsperada = direccion.trim().toUpperCase();
 //        Assertions.assertTrue(direccionObtenida.contains(direccionEsperada), "La direccion esperada: " + direccionEsperada + ", es diferente a la obtenida: " + direccionObtenida);

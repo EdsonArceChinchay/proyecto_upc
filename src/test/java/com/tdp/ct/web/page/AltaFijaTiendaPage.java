@@ -188,7 +188,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 200);
+        waitUntilElementIsVisible(boton, 250);
         click(boton);
         UtilWeb.waitForSeconds(20);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
@@ -226,7 +226,11 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(200);
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
