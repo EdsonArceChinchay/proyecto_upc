@@ -270,16 +270,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-<<<<<<< HEAD
-        UtilWeb.waitForSeconds(100);//30
-        waitUntilElementIsVisible(buttonValidarContrato, 80);//50
-=======
+        //UtilWeb.waitForSeconds(100);//30
+        //waitUntilElementIsVisible(buttonValidarContrato, 80);//50
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
         UtilWeb.waitForSeconds(100);
         waitUntilElementIsVisible(buttonValidarContrato, 50);
->>>>>>> 980ee8db040bd5f8b266bdadc59c51baa881bdf0
         waitUntilElementIsClickable(buttonValidarContrato, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -290,7 +287,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(buttonContinuar, 100).click();
-        UtilWeb.waitForSeconds(80);
+        UtilWeb.waitForSeconds(60);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
