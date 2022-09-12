@@ -114,12 +114,14 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "ACTUALIZAR DIRECCION":
                 js().scrollElementTop(btnActualizarDir);
                 waitUntilElementIsClickable(btnActualizarDir, 5).click();
+                UtilWeb.waitForSeconds(1);
                 break;
 
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 5).click();
+                UtilWeb.waitForSeconds(1);
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
