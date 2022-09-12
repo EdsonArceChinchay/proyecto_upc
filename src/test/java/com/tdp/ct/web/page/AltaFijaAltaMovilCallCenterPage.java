@@ -164,7 +164,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoPago(String tipoPago) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(2);//es 1
+        UtilWeb.waitForSeconds(4);//es 1
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
