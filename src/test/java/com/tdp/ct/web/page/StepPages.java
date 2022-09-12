@@ -31,4 +31,6 @@ public class StepPages{
     public AltaMovilSVATiendaPage altaMovilSVATiendaPage(){return new AltaMovilSVATiendaPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
     public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
+    public ConsultaDireccionPorCoordenasPage consultaDireccionPorCoordenasPage(){return new ConsultaDireccionPorCoordenasPage(); };
+
 }

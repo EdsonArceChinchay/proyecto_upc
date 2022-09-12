@@ -11,7 +11,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
      # Realizar una Alta movil Postpago (linea + equipo) con
      #Delivery en Tambo sin cobertura por canal Call Center
 
-  @AltaMovilPostPagoDeliveryCallCenter_HAPPYPATH
+  @AltaMovilPostPagoDeliveryCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
     Dado  presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
@@ -29,19 +29,19 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan_movil Postpago
-    Y         selecciono el boton de eleccion de planes
-    Y         selecciono el plan movil "<planMovil>"
-    Y         selecciono la opcion "<tipoPlanes>"
-    Y         doy click en el boton seleccionar oferta
-    Y         selecciono añadir equipos
-    Y         ingreso el tiempo de permanencia"<timpoPermanencia>"
-    Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
-    Y         doy click en el boton seleccionar
-    Y         selecciono la cartilla Linea Nueva
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan movil "<planMovil>"
+    Y        selecciono la opcion "<tipoPlanes>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
+    Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
-    Entonces    me muestra la pantalla de Delivery de linea nueva
-    Y     selecciono el departamento donde sera la instalacion "<departamento>"
+    Entonces me muestra la pantalla de Delivery de linea nueva
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
@@ -63,7 +63,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
-    Y       doy click en el boton confirmar
+    Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

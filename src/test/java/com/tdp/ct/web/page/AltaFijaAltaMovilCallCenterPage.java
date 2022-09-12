@@ -219,7 +219,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(100);
+        UtilWeb.waitForSeconds(15);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");

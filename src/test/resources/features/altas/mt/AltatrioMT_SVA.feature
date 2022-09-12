@@ -32,7 +32,7 @@ Característica: Alta trio MT con Upfront 30mb
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y         selecciono el nombre de plan movistar total
+    Y        selecciono el nombre de plan movistar total
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

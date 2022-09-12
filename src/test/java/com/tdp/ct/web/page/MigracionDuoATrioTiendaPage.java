@@ -41,6 +41,15 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
     protected WebElement btnActualizarDir;
 
+    @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
+    protected WebElement btnBuscar;
+
+    @FindBy(xpath = "(//*[contains(text(),'Ingresar coordenadas')])[1]")
+    protected WebElement btnIngCord;
+
+    @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
+    protected WebElement btnEntendido;
+
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
 
@@ -49,7 +58,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsClickable(cartillaHogar,20).click();
+        waitUntilElementIsClickable(cartillaHogar, 20).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);
@@ -59,7 +68,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void seleccionPlanNuevoParaVerLasOfertas() {
 
         UtilWeb.waitForSeconds(4);
-        waitUntilElementIsClickable(btnOpcionPlanNuevo,60).click();
+        waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
         UtilWeb.waitForSeconds(4);
     }
 
@@ -99,7 +108,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void doyClickEnEnElBoton(String btn) {
-        String btnEsperado=btn.toUpperCase().trim();
+        String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
@@ -111,6 +120,21 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 5).click();
+                break;
+            case "BUSCAR":
+                js().scrollElementTop(btnBuscar);
+                waitUntilElementIsClickable(btnBuscar, 5).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "INGRESAR COORDENADAS":
+                js().scrollElementTop(btnIngCord);
+                waitUntilElementIsClickable(btnIngCord, 5).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "ENTENDIDO":
+                js().scrollElementTop(btnEntendido);
+                waitUntilElementIsClickable(btnEntendido, 5).click();
+                UtilWeb.waitForSeconds(1);
                 break;
         }
     }

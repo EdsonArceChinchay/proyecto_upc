@@ -27,7 +27,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected List<WebElement> botoneraIrA;
     @FindBy(xpath = "//span[@class='text-capitalize']")
     protected WebElement titlePlan;
-    @FindBy(xpath = "//button[@class='btnStart']")
+    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement buttonIniciarRegistro;
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
     protected WebElement labelAgendamiento;
@@ -79,6 +79,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement iconPlus;
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
+
+    @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
+    protected WebElement btnCerrar;
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -151,9 +154,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonIniciarRegistro);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
+        clickBtnCerrarModalError(buttonIniciarRegistro);
     }
 
     public boolean validarPantallaAgendamiento() {
+        clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
@@ -270,8 +275,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        //UtilWeb.waitForSeconds(100);//30
-        //waitUntilElementIsVisible(buttonValidarContrato, 80);//50
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
@@ -292,7 +295,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
-
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 20);
         UtilWeb.waitForSeconds(2);
@@ -300,6 +305,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSiAcepto() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 30).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
@@ -335,6 +343,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void ingresarDNISupervisor(String numdoc) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         waitUntilElementIsVisible(selectTipoDoc, 10).click();
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
@@ -345,6 +356,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void IngresarUsuarioSupervisor(String user) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
         SearchContext context = sh().getContext(rootInputCorreo);
@@ -352,6 +366,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void ingresarPasswordSupervisor(String password) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
         SearchContext context = sh().getContext(rootInputCorreo);
@@ -359,6 +376,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicConfirmarUsuarioSupervisor() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         WebElement btnConfirmar = find().getElementByXPath("//button[@label='Confirmar']");
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(1);
@@ -368,6 +388,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         //   waitUntilElementIsVisible(lblPreguntas, 30);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
@@ -613,6 +636,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicRegistrarVenta() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         UtilWeb.waitForSeconds(10);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         waitUntilElementIsVisible(buttonCerrarModal, 100).click();
@@ -673,4 +699,17 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
 
     }
+
+    public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
+            click(btnCerrar);
+            UtilWeb.waitForSeconds(2);
+            click(metodoRepedito);
+        }
+    }
+
+
 }
