@@ -135,7 +135,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void validarDetalleSeleccion() {
-        waitUntilElementIsVisible(titlePlan, 20);
+        waitUntilElementIsVisible(titlePlan, 500);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
     }
