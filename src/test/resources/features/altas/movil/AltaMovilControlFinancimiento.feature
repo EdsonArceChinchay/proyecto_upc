@@ -23,7 +23,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
       | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "<planMovil>" que desea
+    Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
