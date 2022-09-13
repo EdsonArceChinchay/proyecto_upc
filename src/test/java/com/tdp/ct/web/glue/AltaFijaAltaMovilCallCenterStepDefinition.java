@@ -50,7 +50,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
 
   @Y("selecciono tipo de oferta")
   public void selecciono_tipo_de_oferta() {
-    altaFijaAltaMovilCallCenterStep.scrollUp();
+    //altaFijaAltaMovilCallCenterStep.scrollUp();
     altaFijaAltaMovilCallCenterStep.clickOferta();
   }
 
