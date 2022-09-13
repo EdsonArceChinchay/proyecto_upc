@@ -202,7 +202,6 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(7);
         click(btnDescargar);
     }
 
@@ -223,7 +222,6 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
@@ -258,7 +256,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsVisible(btnbloque, 50);
+        waitUntilElementIsVisible(btnbloque, 500);
         click(btnbloque);
     }
 
@@ -276,6 +274,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
+        UtilWeb.waitForSeconds(3);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {

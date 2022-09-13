@@ -125,6 +125,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
+        UtilWeb.waitForSeconds(2);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
