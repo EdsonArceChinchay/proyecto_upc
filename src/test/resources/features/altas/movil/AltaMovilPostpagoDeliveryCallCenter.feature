@@ -23,9 +23,9 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Entonces ingreso los datos del cliente a registrar
-    #  | nombres | apellidos   | genero   |
-    #  | Ana     | Lopez Lopez | femenino |
+    Entonces ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan_movil Postpago

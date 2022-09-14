@@ -45,9 +45,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaMovil(){
         js().scrollElementTop(btnMovil);
-        waitUntilElementIsClickable(btnMovil,30);
+        waitUntilElementIsClickable(btnMovil,15);//30
         click(btnMovil);
-        UtilWeb.waitForSeconds(5);//1
+        UtilWeb.waitForSeconds(2);//1
     }
 
     public void mostrarOfertas(){

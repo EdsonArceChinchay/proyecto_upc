@@ -82,6 +82,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
+    @FindBy(xpath = "//button[@class=\"buttonG cls-top\"]")
+    protected WebElement buttonAgregarSVAMT;
+
 
     public boolean validarPantallaIngresarDireccion() {
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -720,4 +723,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
+    public void clicEnAgregarSVAMT() {
+        js().scrollElementTop(buttonAgregarSVAMT);
+        waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
+        click(buttonAgregarSVAMT);
+        UtilWeb.waitForSeconds(5);
+
+
+    }
 }
