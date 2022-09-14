@@ -25,7 +25,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "(//*[contains(text(),'Reintentar')])[1]")
     protected WebElement btnReintentar;
 
     public void btnConfirmarUbicacion() {
@@ -115,8 +115,9 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(buttonContinuar, 100);
         js().scrollElementTop(buttonContinuar);
-        waitUntilElementIsVisible(buttonContinuar, 10).click();
+        buttonContinuar.click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
 
@@ -141,9 +142,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
+        boolean elementoExistente1,elementoExistente2;
+        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        elementoExistente2 = driver().findElements(By.xpath("(//*[contains(text(),'Reintentar')])[1]")).size() != 0;
+        if (elementoExistente1 || elementoExistente2) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
             btnReintentar.click();
             UtilWeb.waitForSeconds(2);

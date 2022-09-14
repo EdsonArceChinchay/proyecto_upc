@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Consultar direccion por coordenadas DITO WEB
+Característica: Busqueda de direccion por coordenadas DITO WEB
 
   @ConsultarDireccionCoordenadas @Coordenadasorrectas
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion: <direccion> por coordenadas

@@ -275,9 +275,10 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void clickBtnReintentar() {
         UtilWeb.waitForSeconds(3);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
+        boolean elementoExistente1, elementoExistente2;
+        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente1 || elementoExistente2) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
             btnReintentar.click();
             UtilWeb.waitForSeconds(2);
