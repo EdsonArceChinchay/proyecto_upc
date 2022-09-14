@@ -213,4 +213,13 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
+
+    @Y("doy click en agregar SVA MT {string}")
+    public void doyCLickEnAgregarSVA(String String) {
+        altaFijaMovilRegistroStep.clicEnAgregarSVAMT();
+        altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
+        altaFijaMovilRegistroStep.clicGuardarCambios();
+
+    }
+
 }

@@ -23,6 +23,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
 
+    @FindBy(css = "body > div.tdp-container.pt-16 > div.tdp-row.add_aling_center > div.tdp-col-md-6.tdp-col-lg-4.ng-star-inserted > app-mt-card > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3.ng-star-inserted > div.tdp-col-2.ng-star-inserted > img")
+    protected WebElement btnOpcionPlanNuevoMT;
+
     @FindBy(xpath = "//div[@class='tdp-col-md-2 ng-star-inserted']")
     protected List<WebElement> listPlanesNuevos;
 
