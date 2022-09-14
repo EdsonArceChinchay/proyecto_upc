@@ -138,7 +138,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void validarDetalleSeleccion() {
-        waitUntilElementIsVisible(titlePlan, 20);
+        waitUntilElementIsVisible(titlePlan, 500);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
     }
@@ -162,10 +162,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarPantallaAgendamiento() {
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        clickBtnCerrarModalError(buttonIniciarRegistro);
+        clickBtnReintentar();
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnReintentar();
-        clickBtnReintentar();
+        clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnReintentar();
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
@@ -282,8 +282,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicValidarContrato() {
         clickBtnReintentar();
         clickBtnReintentar();
-        clickBtnReintentar();
         UtilWeb.waitForSeconds(100);
+        clickBtnReintentar();
         js().scrollElementTop(buttonValidarContrato);
         waitUntilElementIsVisible(buttonValidarContrato, 100);
         waitUntilElementIsClickable(buttonValidarContrato, 100).click();
@@ -664,13 +664,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(scrollorden, 100);
+        waitUntilElementIsVisible(scrollorden, 500);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         clickBtnReintentar();
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
-        existe = waitUntilElementIsVisible(msjExitoso, 200).isDisplayed();
+        existe = waitUntilElementIsVisible(msjExitoso, 600).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -695,6 +695,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
+        System.out.println("Entro al metodo 1");
+        UtilWeb.waitForSeconds(1);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
@@ -707,11 +709,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        UtilWeb.waitForSeconds(5);
+        System.out.println("Entro al metodo 2");
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
-            System.out.println("Dio click en el modal error ");
+            System.out.println("Dio click en cerrar - modal error ");
             click(btnCerrar);
             UtilWeb.waitForSeconds(2);
             click(metodoRepedito);

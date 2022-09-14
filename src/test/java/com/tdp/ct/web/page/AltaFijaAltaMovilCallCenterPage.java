@@ -164,7 +164,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoPago(String tipoPago) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(2);//es 1
+        UtilWeb.waitForSeconds(4);//es 1
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -219,7 +219,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(15);//10
+        UtilWeb.waitForSeconds(20);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");

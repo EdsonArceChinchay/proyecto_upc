@@ -121,7 +121,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
-        waitUntilElementIsVisible(lblSeleccionarOferta, 10);
+        waitUntilElementIsVisible(lblSeleccionarOferta, 40);//10
         click(lblSeleccionarOferta, 10);
 
     }
