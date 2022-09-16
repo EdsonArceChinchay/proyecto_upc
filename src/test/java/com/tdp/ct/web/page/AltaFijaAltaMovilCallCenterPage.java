@@ -46,7 +46,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnReintentar;
 
     public void manzana(String manzana) {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(8);
         WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
@@ -54,6 +54,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void lote(String lote) {
+        UtilWeb.waitForSeconds(8);
         WebElement Lte = find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
         click(Lte);
         type(Lte, lote);
@@ -62,12 +63,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoVivienda(String tipoVivienda) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[2]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(8);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
             if (elements.getText().equals(tipoVivienda)) {
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(8);
                 click(elements, 30);
             }
         }
@@ -75,37 +76,39 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void nombreVivienda(String nomVivienda) {
         WebElement Nvivienda = find().getElementByXPath("(//div[@class='tdp-col-12'])[7]/tdp-st-input-text");
-        click(Nvivienda);
+        waitUntilElementIsClickable(Nvivienda,15).click();
         type(Nvivienda, nomVivienda);
     }
 
     public void piso(String piso) {
         WebElement Npiso = find().getElementByXPath("(//div[@class='_col'])[3]/tdp-st-input-text");
-        click(Npiso);
+        waitUntilElementIsClickable(Npiso,15).click();
         type(Npiso, piso);
     }
 
     public void interior(String inte) {
         WebElement NInterior = find().getElementByXPath("(//div[@class='_col'])[4]/tdp-st-input-text");
-        click(NInterior);
+        waitUntilElementIsClickable(NInterior,15).click();
         type(NInterior, inte);
     }
 
     public void tipoConjuntoHabitacional(String tipoConjunto) {
+        UtilWeb.waitForSeconds(5);
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
             if (elements.getText().equals(tipoConjunto)) {
-                UtilWeb.waitForSeconds(2);
+                UtilWeb.waitForSeconds(5);
                 click(elements, 30);
             }
         }
     }
 
     public void conjuntoHabitacional(String hab) {
+        UtilWeb.waitForSeconds(5);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
         click(ConjHab);
         type(ConjHab, hab);
@@ -114,34 +117,34 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConsultarCobertura() {
         waitUntilElementIsVisible(btnConsultarCobertura, 150).click();//100
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(30);
         clickBtnReintentar();
     }
 
     public void btnConfirmarUbicacion() {
         waitUntilElementIsVisible(btnConfirmarUbicacion, 100).click();
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(15);
     }
 
     public void tipoEntrega(String tipEntrega) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(15);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
             System.out.println(elements.getText());
             if (elements.getText().equals(tipEntrega)) {
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(5);
                 click(elements, 30);
             }
         }
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void btnHorario(String horario) {
         clickElementInAList(btnHorario, horario);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void txtTelefono(String telefono) {
