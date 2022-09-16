@@ -154,4 +154,17 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     }
 
+    public void clicBotonAceptar() {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible((WebElement) clicBotonAceptar, 100);
+        js().scrollElementTop((WebElement) clicBotonAceptar);
+        ((WebElement) clicBotonAceptar).click();
+        UtilWeb.waitForSeconds(2);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en aceptar");
+
+        UtilWeb.waitForSeconds(60);
+    }
 }
