@@ -14,6 +14,7 @@ import java.util.logging.Level;
 
 public class AltaPuraMTcallCenterPage extends WebBase {
 
+    public Object clicBotonAceptar;
     @FindBy(xpath = "//button[@class = 'button_step']")
     protected WebElement btnConfirmaUbicacion;
 
