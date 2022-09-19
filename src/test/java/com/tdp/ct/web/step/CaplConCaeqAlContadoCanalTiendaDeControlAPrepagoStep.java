@@ -31,10 +31,12 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickSelectOferta();
     }
 
+    @ScreenShotBefore
     public void validarPlanSelected(String plan) {
         page.caplConCaeqAlContadoCanalTiendaPage().validarPlanSelected(plan);
     }
 
+    @ScreenShotBefore
     public void esperarBtnAddEquipoInCard() {
         page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnAddEquipoInCard();
     }

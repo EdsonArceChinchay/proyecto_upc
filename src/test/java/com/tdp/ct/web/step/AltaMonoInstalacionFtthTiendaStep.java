@@ -66,7 +66,7 @@ public class AltaMonoInstalacionFtthTiendaStep {
 
     @ScreenShotBefore
     public void clickBtnLineaNueva(String btnName){ page.altaMonoFtthTiendaPage().clickBtnLinea(btnName); }
-
+    @ScreenShotBefore
     public void validarDetallePlan(){ page.altaMonoFtthTiendaPage().validarDetallePlan(); }
 
     public void moverToElementIniciarRegistro() { page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro(); }

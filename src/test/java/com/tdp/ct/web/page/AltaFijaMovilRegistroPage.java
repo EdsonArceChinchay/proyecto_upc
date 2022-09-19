@@ -5,7 +5,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -45,15 +44,19 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected List<WebElement> listDocumentos;
     @FindBy(xpath = "//h4[contains(text(),'Validar identidad del titular')]")
     protected WebElement lblPreguntas;
-    @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
+    @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
+
+    @FindBy(tagName = "submit")
+    protected WebElement btnContinuar;
+
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
-    @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Validar contrato')]/..")
+    @FindBy(xpath = "//*[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
@@ -77,7 +80,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
@@ -282,11 +285,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicValidarContrato() {
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(100);
         clickBtnReintentar();
+        waitUntilElementIsVisible(buttonValidarContrato, 200);
         js().scrollElementTop(buttonValidarContrato);
-        waitUntilElementIsVisible(buttonValidarContrato, 100);
-        waitUntilElementIsClickable(buttonValidarContrato, 100).click();
+        waitUntilElementIsClickable(buttonValidarContrato, 200);
+        click(buttonValidarContrato,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
@@ -294,9 +297,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(buttonContinuar, 100).click();
-        UtilWeb.waitForSeconds(60);
+    //    waitUntilElementIsClickable(btnContinuar,500);
+     //   click(btnContinuar,50);
+        waitUntilElementIsClickable(buttonContinuar, 500);
+        click(buttonContinuar,50);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -315,7 +319,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 30).click();
+        waitUntilElementIsVisible(element, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
 
     }
@@ -352,7 +356,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(selectTipoDoc, 10).click();
+        waitUntilElementIsClickable(selectTipoDoc, 30).click();
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
@@ -695,16 +699,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        System.out.println("Entro al metodo 1");
-        UtilWeb.waitForSeconds(1);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            System.out.println("Dio click en el modal reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
+//        UtilWeb.waitForSeconds(3);
+//        boolean elementoExistente1,elementoExistente2;
+//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+//        elementoExistente2 = btnReintentar.isDisplayed();
+//        if (elementoExistente1 || elementoExistente2) {
+//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+//            btnReintentar.click();
+//            UtilWeb.waitForSeconds(2);
+//        }
 
     }
 
@@ -728,7 +731,5 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
         click(buttonAgregarSVAMT);
         UtilWeb.waitForSeconds(5);
-
-
     }
 }

@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.checkerframework.checker.guieffect.qual.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -49,7 +50,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public String nombresCompletosCliente() {
@@ -183,14 +184,13 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(70);
+        UtilWeb.waitForSeconds(30);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 250);
-        click(boton);
-        UtilWeb.waitForSeconds(20);
+        waitUntilElementIsClickable(boton, 500).click();
+        UtilWeb.waitForSeconds(10);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-success > app-modal-pdf > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -225,7 +225,7 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(200);
+        UtilWeb.waitForSeconds(100);
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
@@ -233,31 +233,26 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 1000);
-        click(boton);
-        UtilWeb.waitForSeconds(15);
+        waitUntilElementIsClickable(boton, 1000);
+        click(boton,20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void doyClickEnAñadirSVA() {
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsVisible(btnSVA, 50);
-        click(btnSVA);
+        waitUntilElementIsVisible(btnSVA, 100);
+        js().scrollElementTop(btnSVA);
+        click(btnSVA,10);
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
+        UtilWeb.waitForSeconds(10);
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
         waitUntilElementIsVisible(btnbloque, 500);
-        click(btnbloque);
+        js().scrollElementTop(btnbloque);
+        click(btnbloque,10);
     }
 
     public void doyClickEnGuardarCambios() {
@@ -274,13 +269,14 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        UtilWeb.waitForSeconds(3);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
+//        UtilWeb.waitForSeconds(3);
+//        boolean elementoExistente1, elementoExistente2;
+//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+//       elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')])")).size() != 0;
+//        if (elementoExistente1 || elementoExistente2 ) {
+//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+//            btnReintentar.click();
+//            UtilWeb.waitForSeconds(2);
+//        }
     }
 }
