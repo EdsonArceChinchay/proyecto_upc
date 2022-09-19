@@ -53,8 +53,8 @@ Característica: Alta Fija por tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        presiono el boton descargar contrato
+#    Y        me muestra pantalla para Descargar contrato
+#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido

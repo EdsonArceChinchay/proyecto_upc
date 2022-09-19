@@ -51,7 +51,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     protected WebElement btnMovistarTotal;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReitentar;
+    protected WebElement btnReintentar;
 
     public void clickBotonLineaNueva() {
         js().scrollElementTop(btnLineaNueva);
@@ -92,7 +92,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        modalError(5,btnReitentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
         UtilWeb.waitForSeconds(8);//5
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
@@ -178,7 +178,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
             System.out.println(message);
         }
         else {
-            System.out.println("No se Encontro el elemento");
+            System.out.println("No se encontro el modal error");
         }
     }
 }
