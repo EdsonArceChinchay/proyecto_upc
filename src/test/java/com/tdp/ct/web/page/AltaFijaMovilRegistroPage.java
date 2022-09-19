@@ -47,7 +47,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
 
-    @FindBy(tagName = "submit")
+    @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
 
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
@@ -321,7 +321,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-
+        UtilWeb.waitForSeconds(3);//
     }
     /*
     public boolean validarMensajeExitoso() {
