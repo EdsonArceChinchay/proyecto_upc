@@ -289,7 +289,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(buttonValidarContrato, 200);
         js().scrollElementTop(buttonValidarContrato);
         waitUntilElementIsClickable(buttonValidarContrato, 200);
-        click(buttonValidarContrato,10);
+        click(buttonValidarContrato,30);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
