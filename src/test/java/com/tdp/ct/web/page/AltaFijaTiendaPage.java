@@ -49,7 +49,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "(//*[contains(text(),'Reintentar')])[1]")
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public String nombresCompletosCliente() {
@@ -270,14 +270,14 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        UtilWeb.waitForSeconds(3);
-        boolean elementoExistente1, elementoExistente2;
-        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        elementoExistente2 = driver().findElements(By.xpath("(//*[contains(text(),'Reintentar')])[1]")).size() != 0;
-        if (elementoExistente1 || elementoExistente2) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
+//        UtilWeb.waitForSeconds(3);
+//        boolean elementoExistente1, elementoExistente2;
+//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+//       elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')])")).size() != 0;
+//        if (elementoExistente1 || elementoExistente2 ) {
+//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+//            btnReintentar.click();
+//            UtilWeb.waitForSeconds(2);
+//        }
     }
 }

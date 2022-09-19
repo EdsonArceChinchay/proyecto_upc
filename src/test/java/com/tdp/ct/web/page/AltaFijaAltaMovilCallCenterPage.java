@@ -271,13 +271,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
-
+//        boolean elementoExistente;
+//        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+//        if (elementoExistente) {
+//            btnReintentar.click();
+//            UtilWeb.waitForSeconds(2);
+//        }
     }
 
 }
