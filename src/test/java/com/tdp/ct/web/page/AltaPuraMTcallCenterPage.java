@@ -116,13 +116,12 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(buttonContinuar, 100);
+        waitUntilElementIsVisible(buttonContinuar, 300);
         js().scrollElementTop(buttonContinuar);
         buttonContinuar.click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void clickCierrePopup(){
@@ -143,7 +142,8 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        boolean elementoExistente1,elementoExistente2;
+        UtilWeb.waitForSeconds(3);
+        boolean elementoExistente1, elementoExistente2;
         elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         elementoExistente2 = driver().findElements(By.xpath("(//*[contains(text(),'Reintentar')])[1]")).size() != 0;
         if (elementoExistente1 || elementoExistente2) {
@@ -159,12 +159,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible((WebElement) clicBotonAceptar, 100);
+        waitUntilElementIsVisible((WebElement) clicBotonAceptar, 150);
         js().scrollElementTop((WebElement) clicBotonAceptar);
         ((WebElement) clicBotonAceptar).click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en aceptar");
-
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(10);
     }
 }
