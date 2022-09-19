@@ -46,10 +46,10 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
-    Y        doy click en datos del cliente
-    Y        selecciono completar los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+#    Y        doy click en datos del cliente
+#    Y        selecciono completar los datos del cliente
+#      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
+#      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

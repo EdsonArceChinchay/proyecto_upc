@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.checkerframework.checker.guieffect.qual.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -224,7 +225,7 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(200);
+        UtilWeb.waitForSeconds(100);
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
@@ -232,8 +233,9 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 1000).click();
-        UtilWeb.waitForSeconds(10);
+        waitUntilElementIsClickable(boton, 1000);
+        click(boton,20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void doyClickEnAñadirSVA() {
@@ -243,15 +245,13 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
+        UtilWeb.waitForSeconds(10);
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsClickable(btnbloque, 500);
+        waitUntilElementIsVisible(btnbloque, 500);
+        js().scrollElementTop(btnbloque);
         click(btnbloque,10);
     }
 
