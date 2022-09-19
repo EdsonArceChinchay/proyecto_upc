@@ -90,12 +90,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         clickBtnReintentar();
         clickBtnReintentar();
-        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
+        clickBtnReintentar();
+        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
 
     public void seleccionarOferta(String oferta) {
+        clickBtnReintentar();
+        clickBtnReintentar();
+        clickBtnReintentar();
         scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";

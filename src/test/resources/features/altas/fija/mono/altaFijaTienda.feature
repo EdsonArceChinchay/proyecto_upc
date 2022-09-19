@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil por Tienda
+Característica: Alta Fija por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilTienda
-  Esquema del escenario: Alta fija mas alta movil por Tienda con DNI sin productos asociados sin biometria
+  @AltaFijaTienda
+  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -19,7 +19,6 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -29,21 +28,18 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
     Y        presiono el boton consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
-    #Y        selecciono el tipo de plan "<tipoPlan>"
-    #Y        valido el detalle de la seleccion
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el plan "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
@@ -53,13 +49,21 @@ Característica: Alta Fija + Alta Movil por Tienda
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy clic para validar contrato Movil
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
+    Y        me muestra pantalla para Descargar contrato
+    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | DNI           | 75769642  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | 1 Gb + 26 Gb | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | DNI           | 47325176  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+     # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | Dúo Internet Estándar HD RA 100 Mbps| discapacitado   | SORAYA      | FIDEL       | LIMA        |
+     # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | Trío Movistar Voz Internet Estandar HD RA 100 Mbps| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
+
+

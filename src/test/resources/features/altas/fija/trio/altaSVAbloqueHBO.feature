@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija  con SVA Bloque HBO por Tienda
+Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @AltaSVABloqueHBO
-  Esquema del escenario: Alta Tienda Fija  con SVA Bloque HBO sin productos asociados sin biometria
+  Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
