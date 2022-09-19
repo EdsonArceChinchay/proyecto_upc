@@ -26,7 +26,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
-    @FindBy(xpath = "(//*[contains(text(),'Reintentar')])[1]")
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public void btnConfirmarUbicacion() {
@@ -115,13 +115,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(buttonContinuar, 300);
+        waitUntilElementIsVisible(buttonContinuar, 500);
         js().scrollElementTop(buttonContinuar);
-        buttonContinuar.click();
-        UtilWeb.waitForSeconds(2);
+        click(buttonContinuar,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clickCierrePopup(){
@@ -142,15 +140,15 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clickBtnReintentar() {
-        UtilWeb.waitForSeconds(3);
-        boolean elementoExistente1, elementoExistente2;
-        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        elementoExistente2 = driver().findElements(By.xpath("(//*[contains(text(),'Reintentar')])[1]")).size() != 0;
-        if (elementoExistente1 || elementoExistente2) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
+//        UtilWeb.waitForSeconds(3);
+//        boolean elementoExistente1, elementoExistente2;
+//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+//        elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() != 0;
+//        if (elementoExistente1 || elementoExistente2) {
+//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
+//            btnReintentar.click();
+//            UtilWeb.waitForSeconds(2);
+//        }
 
     }
 

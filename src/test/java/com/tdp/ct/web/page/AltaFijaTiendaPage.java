@@ -237,11 +237,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAñadirSVA() {
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsClickable(btnSVA, 100).click();
+        waitUntilElementIsVisible(btnSVA, 100);
+        js().scrollElementTop(btnSVA);
+        click(btnSVA,10);
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
@@ -253,7 +251,8 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsClickable(btnbloque, 500).click();
+        waitUntilElementIsClickable(btnbloque, 500);
+        click(btnbloque,10);
     }
 
     public void doyClickEnGuardarCambios() {
