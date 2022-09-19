@@ -114,7 +114,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(15);//5
         waitUntilElementIsVisible(buttonContinuar, 100);
         js().scrollElementTop(buttonContinuar);
         buttonContinuar.click();
