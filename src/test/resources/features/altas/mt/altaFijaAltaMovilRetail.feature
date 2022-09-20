@@ -67,4 +67,4 @@ Característica: Alta Fija + Alta Movil por Retail
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor     | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan         |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | AMITEL MIRAFLORES | CE            | 1000000023 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 26 Gb |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | AMITEL MIRAFLORES | CE            | 1000000023 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
