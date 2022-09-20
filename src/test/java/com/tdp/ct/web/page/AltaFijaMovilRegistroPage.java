@@ -281,12 +281,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonValidarContrato, 200);
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        waitUntilElementIsVisible(buttonValidarContrato, 1200);
         js().scrollElementTop(buttonValidarContrato);
-        waitUntilElementIsClickable(buttonValidarContrato, 200);
+        waitUntilElementIsClickable(buttonValidarContrato, 1200);
         click(buttonValidarContrato, 30);UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
