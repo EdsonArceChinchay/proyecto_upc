@@ -51,7 +51,7 @@ Característica: AltaMovil + equipo
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000045 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
 
   @AltaMovil_Equipo_tienda
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
@@ -98,4 +98,4 @@ Característica: AltaMovil + equipo
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000045 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
