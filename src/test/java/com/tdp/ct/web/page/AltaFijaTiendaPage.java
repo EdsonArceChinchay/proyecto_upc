@@ -226,7 +226,7 @@ public class AltaFijaTiendaPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        UtilWeb.waitForSeconds(200);
+        UtilWeb.waitForSeconds(100);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);

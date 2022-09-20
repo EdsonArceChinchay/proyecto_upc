@@ -285,7 +285,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnReintentar();
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(buttonContinuar, 100).click();
-        UtilWeb.waitForSeconds(80);
+        UtilWeb.waitForSeconds(60);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
