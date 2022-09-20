@@ -47,7 +47,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
 
-    @FindBy(tagName = "submit")
+    @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
 
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
@@ -287,11 +287,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(buttonValidarContrato, 200);
         js().scrollElementTop(buttonValidarContrato);
         waitUntilElementIsClickable(buttonValidarContrato, 200);
-        click(buttonValidarContrato, 30);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
+        click(buttonValidarContrato, 30);UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
     public void clicBotonContinuar() {
+
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
@@ -299,6 +299,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //   click(btnContinuar,50);
         waitUntilElementIsClickable(buttonContinuar, 500);
         click(buttonContinuar, 50);
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(buttonContinuar, 100).click();
+        UtilWeb.waitForSeconds(60);
+
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -318,7 +322,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 100).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-
+        UtilWeb.waitForSeconds(3);//
     }
     /*
     public boolean validarMensajeExitoso() {

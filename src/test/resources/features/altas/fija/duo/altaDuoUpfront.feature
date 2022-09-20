@@ -58,4 +58,4 @@ Característica: Alta Duo por tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar | nombrePlan                       |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ |  CAJAMARCA   | CE            | 1000000145 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | Dúo Movistar Voz Internet RA 500 Mbps |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | AMITEL MIRAFLORES | CE            | 1000000145 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | Dúo Movistar Voz Internet RA 500 Mbps |
