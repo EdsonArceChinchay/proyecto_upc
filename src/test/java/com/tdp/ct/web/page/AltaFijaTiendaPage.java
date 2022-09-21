@@ -50,7 +50,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public String nombresCompletosCliente() {

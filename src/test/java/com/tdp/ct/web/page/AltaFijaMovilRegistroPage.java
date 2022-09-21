@@ -80,7 +80,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
