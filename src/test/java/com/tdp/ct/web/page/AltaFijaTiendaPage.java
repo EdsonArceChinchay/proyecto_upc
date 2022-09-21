@@ -50,7 +50,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public String nombresCompletosCliente() {
@@ -61,9 +61,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija) {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsVisible(esperalistaPlanFija, 100);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
@@ -109,9 +109,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -129,9 +129,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
@@ -161,9 +161,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void botonConfirmarAgendamiento() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -181,10 +181,10 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(30);
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(10);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -199,17 +199,16 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         click(btnDescargar);
     }
 
     public void cambiarPestanaPrincipal() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(2);
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(1,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         tabs = new ArrayList<String>(driver().getWindowHandles());
         driver().switchTo().window(tabs.get(0));
         UtilWeb.waitForSeconds(1);
@@ -222,19 +221,18 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         UtilWeb.waitForSeconds(100);
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 1000);
-        click(boton,20);
+        waitUntilElementIsClickable(boton, 1500);
+        click(boton,50);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -245,10 +243,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
-        UtilWeb.waitForSeconds(10);
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
         waitUntilElementIsVisible(btnbloque, 500);
         js().scrollElementTop(btnbloque);
@@ -256,10 +253,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnGuardarCambios() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(1);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -268,15 +264,17 @@ public class AltaFijaTiendaPage extends WebBase {
         click(btnGuardar);
     }
 
-    public void clickBtnReintentar() {
-//        UtilWeb.waitForSeconds(3);
-//        boolean elementoExistente1, elementoExistente2;
-//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-//       elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')])")).size() != 0;
-//        if (elementoExistente1 || elementoExistente2 ) {
-//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-//            btnReintentar.click();
-//            UtilWeb.waitForSeconds(2);
-//        }
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
     }
 }
