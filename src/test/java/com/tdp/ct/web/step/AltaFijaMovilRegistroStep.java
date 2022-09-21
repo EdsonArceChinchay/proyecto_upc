@@ -122,10 +122,12 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotBefore
     public void clicValidarContrato() {
+        UtilWeb.waitForSeconds(10);
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
 
     public void ingresarDatosValidacionSolicitada(DataTable datos) {
+        UtilWeb.waitForSeconds(5);
         page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
     }
 
