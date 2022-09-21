@@ -112,9 +112,9 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsVisible(buttonContinuar, 600);
         js().scrollElementTop(buttonContinuar);
         waitUntilElementIsClickable(buttonContinuar, 600);
@@ -140,24 +140,24 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
     }
 
-    public void clickBtnReintentar() {
-//        UtilWeb.waitForSeconds(3);
-//        boolean elementoExistente1, elementoExistente2;
-//        elementoExistente1 = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-//        elementoExistente2 = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() != 0;
-//        if (elementoExistente1 || elementoExistente2) {
-//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-//            btnReintentar.click();
-//            UtilWeb.waitForSeconds(2);
-//        }
-
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        } else {
+            System.out.println("No se encontro el modal error");
+        }
     }
 
+
     public void clicBotonAceptar() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(5);
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsVisible((WebElement) clicBotonAceptar, 150);
         js().scrollElementTop((WebElement) clicBotonAceptar);
         ((WebElement) clicBotonAceptar).click();
