@@ -80,7 +80,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
     protected WebElement iconPlus;
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
@@ -287,7 +287,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(buttonValidarContrato, 1200);
         js().scrollElementTop(buttonValidarContrato);
         waitUntilElementIsClickable(buttonValidarContrato, 1200);
-        click(buttonValidarContrato, 30);UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
+        click(buttonValidarContrato, 50);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
     public void clicBotonContinuar() {
@@ -661,7 +662,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(scrollorden, 500);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        modalError(3,btnReintentar,"Click al elemento Reintentar");
+        modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
         existe = waitUntilElementIsVisible(msjExitoso, 600).isDisplayed();
