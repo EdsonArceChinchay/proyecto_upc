@@ -298,11 +298,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //    waitUntilElementIsClickable(btnContinuar,500);
         //   click(btnContinuar,50);
         waitUntilElementIsClickable(buttonContinuar, 500);
-        click(buttonContinuar, 50);
+        click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(buttonContinuar, 100).click();
-        UtilWeb.waitForSeconds(60);
-
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
@@ -311,7 +308,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 20);
+        waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
@@ -320,7 +317,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 100).click();
+        waitUntilElementIsVisible(element, 100);
+        click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(3);//
     }
