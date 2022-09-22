@@ -56,7 +56,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement msjExitoso;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
-    @FindBy(xpath = "//*[@type='button']//*[contains(text(),'Validar contrato')]")
+    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
@@ -283,10 +283,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonValidarContrato, 1200);
+        waitUntilElementIsVisible(buttonValidarContrato, 1500);
         js().scrollElementTop(buttonValidarContrato);
-        waitUntilElementIsClickable(buttonValidarContrato, 1200);
-        click(buttonValidarContrato, 50);
+        click(buttonValidarContrato, 300);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
@@ -295,8 +294,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //    waitUntilElementIsClickable(btnContinuar,500);
-        //   click(btnContinuar,50);
         waitUntilElementIsClickable(buttonContinuar, 500);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);

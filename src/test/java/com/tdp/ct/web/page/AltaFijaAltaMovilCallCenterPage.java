@@ -235,7 +235,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void oferta() {
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 120).click();
+        waitUntilElementIsClickable(oferta, 500).click();
         //click(oferta, 10);
 
     }
