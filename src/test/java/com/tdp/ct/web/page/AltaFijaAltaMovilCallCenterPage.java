@@ -111,7 +111,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
         click(ConjHab);
-        clear(ConjHab);
+//        clear(ConjHab);
         type(ConjHab, hab);
     }
 
