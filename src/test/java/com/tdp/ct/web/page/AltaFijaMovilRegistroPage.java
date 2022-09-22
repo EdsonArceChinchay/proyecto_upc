@@ -146,9 +146,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void moverToElementIniciarRegistro() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(5);
     }
 
     public void clicIniciarRegistro() {
@@ -703,7 +702,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(1);
         System.out.println("Entro al metodo 2");
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;

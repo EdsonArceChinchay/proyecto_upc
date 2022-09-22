@@ -129,9 +129,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
