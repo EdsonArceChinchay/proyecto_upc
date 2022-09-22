@@ -19,6 +19,8 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes Plan Nuevo
     Y        selecciono el tipo "Postpago"
+#    Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
+#    Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono el plan "POSTPAGO" y presiono Seleccionar Oferta
     Y        valido que se haya seleccionado el plan "Plan Ilimitado Mi Movistar" correctamente
 #      Y        presiono la opcion Añadir equipo en el card del plan actual
@@ -27,7 +29,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 #               |Sin permanencia|Al Contado|HUAWEI P10 NEGRO|
 #      Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        presiono el boton "Cambiar Plan"
-    Y        valido que se presente el detalle de el plan
+#    Y        valido que se presente el detalle de el plan
 #      Y        presiono el boton con shadow Iniciar Registro
     Y         doy click en iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
