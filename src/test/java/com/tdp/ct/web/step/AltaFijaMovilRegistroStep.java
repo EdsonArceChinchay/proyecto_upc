@@ -122,7 +122,6 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotBefore
     public void clicValidarContrato() {
-        UtilWeb.waitForSeconds(10);
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
 

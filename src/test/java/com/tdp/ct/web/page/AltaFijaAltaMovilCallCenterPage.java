@@ -96,7 +96,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -108,9 +108,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void conjuntoHabitacional(String hab) {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
         click(ConjHab);
+//        clear(ConjHab);
         type(ConjHab, hab);
     }
 
@@ -131,7 +132,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoEntrega(String tipEntrega) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(5);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -225,18 +226,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(30);//10
+        UtilWeb.waitForSeconds(8);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 120);
-        click(oferta, 10);
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(1,btnReintentar,"Click al elemento Reitentar");
+        waitUntilElementIsClickable(oferta, 500).click();
+        //click(oferta, 10);
 
     }
 
@@ -255,20 +255,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void seleccionarOferta() {
         modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(1);
     }
 
     public void irAMovistarTotal() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }

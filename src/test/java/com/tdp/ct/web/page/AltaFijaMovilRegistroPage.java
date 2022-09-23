@@ -56,7 +56,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement msjExitoso;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
-    @FindBy(xpath = "//*[@type='button']//*[contains(text(),'Validar contrato')]")
+    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
@@ -146,9 +146,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void moverToElementIniciarRegistro() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(5);
     }
 
     public void clicIniciarRegistro() {
@@ -284,10 +283,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonValidarContrato, 1200);
+        waitUntilElementIsVisible(buttonValidarContrato, 1500);
         js().scrollElementTop(buttonValidarContrato);
-        waitUntilElementIsClickable(buttonValidarContrato, 1200);
-        click(buttonValidarContrato, 50);
+        click(buttonValidarContrato, 300);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
@@ -296,8 +294,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //    waitUntilElementIsClickable(btnContinuar,500);
-        //   click(btnContinuar,50);
         waitUntilElementIsClickable(buttonContinuar, 500);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
@@ -635,19 +631,19 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicRegistrarVenta() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        waitUntilElementIsVisible(buttonCerrarModal, 100).click();
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(10);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        JavascriptExecutor jse = (JavascriptExecutor) driver();
+        jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
-        scrollByJavaScriptToFinal();
-        UtilWeb.waitForSeconds(1);
-        WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Registrar venta')]");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("button")).click();
-        UtilWeb.waitForSeconds(3);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        waitUntilElementIsClickable(boton, 150);
+        click(boton,50);
+        UtilWeb.waitForSeconds(5);
     }
 
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
@@ -701,7 +697,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(1);
         System.out.println("Entro al metodo 2");
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
