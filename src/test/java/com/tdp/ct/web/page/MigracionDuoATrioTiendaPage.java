@@ -54,7 +54,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement btnEntendido;
 
 
-    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
     protected WebElement btnCambiarPlan;
 
 
@@ -149,7 +149,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
             case "CAMBIAR PLAN":
                 js().scrollElementTop(btnCambiarPlan);
-                waitUntilElementIsClickable(btnCambiarPlan, 50).click();
+                waitUntilElementIsVisible(btnCambiarPlan, 50);
+                click(btnCambiarPlan,10);
                 UtilWeb.waitForSeconds(1);
                 break;
         }

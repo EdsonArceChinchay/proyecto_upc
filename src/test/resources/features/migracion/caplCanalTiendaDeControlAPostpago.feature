@@ -58,3 +58,5 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
+
+#    1598886623
