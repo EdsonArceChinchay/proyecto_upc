@@ -66,4 +66,4 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12002288888 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS | HBO    | correo@gmail.com |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000223888 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS | HBO    | correo@gmail.com |
