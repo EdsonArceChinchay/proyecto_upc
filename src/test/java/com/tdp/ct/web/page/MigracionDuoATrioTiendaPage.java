@@ -148,8 +148,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 break;
 
             case "CAMBIAR PLAN":
-                js().scrollElementTop(btnCambiarPlan);
                 waitUntilElementIsVisible(btnCambiarPlan, 50);
+                js().scrollElementTop(btnCambiarPlan);
                 click(btnCambiarPlan,10);
                 UtilWeb.waitForSeconds(1);
                 break;
