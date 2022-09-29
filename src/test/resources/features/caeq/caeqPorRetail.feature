@@ -28,13 +28,11 @@ Característica: Caeq Por Retail FE DITO WEB
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
-    Y        doy clic en consultar cliente nuevo
-    Y        doy click en el boton consultar
     #Y        presiono el boton descargar contrato
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | cliente                         |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | CE           | 1042465085  | Jasmin Pinedo       |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                    | CE           | 1042465085 | Jasmin Pinedo       |
