@@ -55,6 +55,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
+
+    @FindBy(xpath = "//div[contains(text(),'no se ha concretado')]")
+    protected WebElement msjFallo;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
