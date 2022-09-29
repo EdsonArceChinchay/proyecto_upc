@@ -20,7 +20,7 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
+    Y        verifico la direccion "LINCE,LIMA ,LIMA PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
 #    Y        selecciono plan Movistar Total para ver las ofertas
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
@@ -49,4 +49,4 @@ Característica: Migracion de Trio a MT por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 75447343  | correo@gmail.com | discapacitado  | ROSA        | RUFINO      | BELLAVISTA  | Trío          |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42465007  | correo@gmail.com | discapacitado  | MARIA       | SANTOS      | CASCAS      | Trío          |

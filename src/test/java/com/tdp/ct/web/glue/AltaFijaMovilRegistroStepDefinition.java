@@ -167,11 +167,11 @@ public class AltaFijaMovilRegistroStepDefinition {
 
 
 //CAMBIOS PARA RETAIL
-    @Y("ingreso los datos del cliente a registrar")
-    public void completoLosDatosDelClienteARegistrar(DataTable datos) {
-        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
-        altaFijaMovilRegistroStep.clicEnCrearCliente();
-    }
+@Y("ingreso los datos del cliente a registrar")
+public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+    altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
+    altaFijaMovilRegistroStep.clicEnCrearCliente();
+}
 
     @Y("completo los datos del cliente")
     public void completoLosDatosDelCliente(DataTable datosCliente) {
