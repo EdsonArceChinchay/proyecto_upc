@@ -23,7 +23,7 @@
             <artifactId>web-automation</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>datatable</artifactId>
             <version>3.5.0</version>
@@ -34,7 +34,7 @@
             <artifactId>cucumber-java</artifactId>
             <version>6.10.2</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -452,7 +453,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean esperarLoadingIsNotVisible(String xpath, int segundos) {
         boolean retorno;
         try {
-            WebDriverWait webDriverWait = new WebDriverWait(driver(), segundos);
+            WebDriverWait webDriverWait = new WebDriverWait(driver(), Duration.ofSeconds(segundos));
             webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpath)));
             retorno = true;
         } catch (Exception e) {
