@@ -1,9 +1,9 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Por Retail FE DITO WEB
+Característica: Caeq Por Tienda FE DITO WEB
 
-  @CaeqPorRetail
+  @CaeqPorTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
