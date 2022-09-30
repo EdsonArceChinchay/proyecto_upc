@@ -25,8 +25,13 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 #    Y        selecciono el tipo de plan movil "Postpago"
 #    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/99.9"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/99.9"
+#    Y        selecciono el plan movil "Postpago"
+#    Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/69.9 II"
+#    Y        doy click en el boton seleccionar oferta
+#    Y        selecciono el nombre del plan "<nombrePlan>"
+#    Y         doy click en el boton seleccionar la oferta
+    Y        selecciono el tipo de plan movil "Postpago"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/99.9"
 #    Y        selecciono el plan "POSTPAGO" y presiono Seleccionar Oferta
 #    Y        valido que se haya seleccionado el plan "Plan Ilimitado Mi Movistar" correctamente
 #      Y        presiono la opcion Añadir equipo en el card del plan actual
@@ -34,7 +39,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 #               |permanencia    |tipoPago  |equipoName      |
 #               |Sin permanencia|Al Contado|HUAWEI P10 NEGRO|
 #      Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+#    Y        doy click en en el boton "Cambiar Plan"
 #    Y        presiono el boton "Cambiar Plan"
 #    Y        valido que se presente el detalle de el plan
 #      Y        presiono el boton con shadow Iniciar Registro
@@ -53,7 +58,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton descargar contrato
+#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
