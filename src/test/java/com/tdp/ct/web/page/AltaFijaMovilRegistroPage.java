@@ -168,9 +168,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(2, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(1, btnReintentar, "Click al elemento Reintentar");
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -527,11 +528,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void crearCliente() {
-        //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
-        //UtilWeb.waitForSeconds(10);
     }
 
     public void esperarBtnDatosCliente() {
@@ -702,7 +701,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         UtilWeb.waitForSeconds(1);
-        System.out.println("Entro al metodo 2");
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
         if (elementoExistente) {
@@ -711,6 +709,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             click(btnCerrar);
             UtilWeb.waitForSeconds(2);
             click(metodoRepedito);
+        }
+        else{
+            System.out.println("No se encontro el modal error 2");
+
         }
     }
 
