@@ -48,6 +48,7 @@ public class AltaPuraMTcallCenterStep {
     public void clicBotonContinuar(){
         UtilWeb.waitForSeconds(15);
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
+        UtilWeb.waitForSeconds(15);
     }
 
     @ScreenShotBefore
