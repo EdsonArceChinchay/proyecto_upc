@@ -41,7 +41,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
-    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
@@ -129,9 +129,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
@@ -231,7 +230,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 1500);
+        waitUntilElementIsVisible(boton, 2500);
         click(boton,50);
         UtilWeb.waitForSeconds(5);
     }

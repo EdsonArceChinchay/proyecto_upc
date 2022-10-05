@@ -126,6 +126,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void ingresarDatosValidacionSolicitada(DataTable datos) {
+        UtilWeb.waitForSeconds(5);
         page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
     }
 

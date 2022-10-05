@@ -53,6 +53,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
 
+
+    @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    protected WebElement btnCambiarPlan;
+
+
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
 
@@ -116,29 +121,37 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
                 js().scrollElementTop(btnActualizarDir);
-                waitUntilElementIsClickable(btnActualizarDir, 5).click();
+                waitUntilElementIsClickable(btnActualizarDir, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
 
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
-                waitUntilElementIsClickable(btnConfirmarDir, 5).click();
+                waitUntilElementIsClickable(btnConfirmarDir, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
-                waitUntilElementIsClickable(btnBuscar, 5).click();
+                waitUntilElementIsClickable(btnBuscar, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
-                waitUntilElementIsClickable(btnIngCord, 5).click();
+                waitUntilElementIsClickable(btnIngCord, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
             case "ENTENDIDO":
                 js().scrollElementTop(btnEntendido);
-                waitUntilElementIsClickable(btnEntendido, 5).click();
+                waitUntilElementIsClickable(btnEntendido, 50).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+
+            case "CAMBIAR PLAN":
+                UtilWeb.waitForSeconds(5);
+//                waitUntilElementIsVisible(btnCambiarPlan, 50);
+                js().scrollElementTop(btnCambiarPlan);
+                click(btnCambiarPlan,10);
                 UtilWeb.waitForSeconds(1);
                 break;
         }

@@ -40,11 +40,11 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
-    Y        presiono el boton descargar contrato
+#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan         |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Preplan            |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

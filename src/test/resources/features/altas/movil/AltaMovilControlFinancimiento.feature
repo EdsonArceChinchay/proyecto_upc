@@ -54,9 +54,9 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
+  # Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000000003 | Postpago  |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445052 | Postpago  |

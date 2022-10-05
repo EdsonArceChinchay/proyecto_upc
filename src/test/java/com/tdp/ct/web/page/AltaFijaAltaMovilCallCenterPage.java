@@ -42,13 +42,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     public void manzana(String manzana) {
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(5);
         WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
-        click(Mz);
+        click(Mz,5);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
     }
@@ -61,14 +61,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoVivienda(String tipoVivienda) {
-        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[2]");
+        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
         click(listElementPLan);
         UtilWeb.waitForSeconds(8);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
-            if (elements.getText().equals(tipoVivienda)) {
-                UtilWeb.waitForSeconds(8);
+//            System.out.println(elements.getText() + " "+ tipoVivienda);
+            if (elements.getText().contains(tipoVivienda.toUpperCase().trim())) {
+                UtilWeb.waitForSeconds(4);
+//                js().scrollElementTop(elements);
                 click(elements, 30);
             }
         }
@@ -94,23 +96,25 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoConjuntoHabitacional(String tipoConjunto) {
         UtilWeb.waitForSeconds(5);
-        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
-            if (elements.getText().equals(tipoConjunto)) {
+            if (elements.getText().contains(tipoConjunto)) {
                 UtilWeb.waitForSeconds(5);
+//                js().scrollElementTop(elements);
                 click(elements, 30);
             }
         }
     }
 
     public void conjuntoHabitacional(String hab) {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
         click(ConjHab);
+//        clear(ConjHab);
         type(ConjHab, hab);
     }
 
@@ -131,7 +135,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoEntrega(String tipEntrega) {
         WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(5);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -225,19 +229,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(30);//10
+        UtilWeb.waitForSeconds(8);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 120);
-        click(oferta, 10);
-
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(1,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        waitUntilElementIsClickable(oferta, 500).click();
     }
 
     public void listaOfertas(String planOfertas) {
@@ -255,20 +257,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void seleccionarOferta() {
         modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(1);
     }
 
     public void irAMovistarTotal() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }
@@ -276,7 +275,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
         UtilWeb.waitForSeconds(timeOnSeconds);
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
         if (elementoExistente) {
             webElement.click();
             if (message.isEmpty()) message = "Dio click al elemento";
