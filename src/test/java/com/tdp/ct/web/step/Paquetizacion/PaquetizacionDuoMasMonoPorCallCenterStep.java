@@ -11,12 +11,13 @@ public class PaquetizacionDuoMasMonoPorCallCenterStep {
     @Autowired
     private StepPages page;
     @ScreenShotAfter
-    public void clickMonoYDuo() {
-        page.paquetizacionDuoMasMonoPorCallCenterPage().clickMonoYDuo();
+    public void clickMonoYDuo(String mono, String duo) {
+        page.paquetizacionDuoMasMonoPorCallCenterPage().clickMonoYDuo(mono,duo);
     }
      @ScreenShotBefore
      @ScreenShotAfter
     public void botonContinuar() {
         page.paquetizacionDuoMasMonoPorCallCenterPage().clickBotonContinuar();
     }
+
 }

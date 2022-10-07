@@ -19,7 +19,7 @@ Característica: Paquetizacion Duo mas Mono Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el mono y duo a paquetizar
+    Y        selecciono el servicio mono "5010011527" y  el servicio duo "14340749 " a paquetizar
     Y        presiono el boton Mostrar ofertas
     Y        doy click en el boton continuar
     Y        valido que este en la pagina de ofertas sugeridas
@@ -39,6 +39,6 @@ Característica: Paquetizacion Duo mas Mono Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlan | nombrePlan                                     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 123456774 | Trio     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 |
       

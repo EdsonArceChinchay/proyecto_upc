@@ -11,14 +11,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"json:target/build/report/cucumber.json", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+@CucumberOptions(plugin = {"json:target/build/report/cucumber.json",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@CambioVelocidadDuo+SvaRepetidorCallCenter"
+        tags = "@LoginExitoso"
+
 
 )
-public class Runner {
+
+class Runner {
 
     @BeforeClass
     public static void beforeExecution() {

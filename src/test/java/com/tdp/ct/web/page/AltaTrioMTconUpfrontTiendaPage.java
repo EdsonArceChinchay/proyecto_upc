@@ -50,6 +50,8 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//div[3]/app-footer-item/div/div[2]/div[3]/div/button")
     protected WebElement btnMovistarTotal;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public void clickBotonLineaNueva() {
         js().scrollElementTop(btnLineaNueva);
@@ -77,7 +79,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonIniciarRegistro() {
-        waitUntilElementIsVisible(btnIniciarRegistro, 20);
+        waitUntilElementIsVisible(btnIniciarRegistro, 50);
         click(btnIniciarRegistro);
     }
 
@@ -90,7 +92,9 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        UtilWeb.waitForSeconds(5);
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
@@ -163,5 +167,19 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         //  waitUntilElementIsVisible(btnConfirmar, 10);
         waitUntilElementIsClickable(btnMovistarTotal, 10);
         click(btnMovistarTotal);
+    }
+
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
     }
 }

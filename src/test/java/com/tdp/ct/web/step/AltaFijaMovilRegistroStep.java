@@ -126,6 +126,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void ingresarDatosValidacionSolicitada(DataTable datos) {
+        UtilWeb.waitForSeconds(5);
         page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
     }
 
@@ -249,5 +250,9 @@ public class AltaFijaMovilRegistroStep {
 
     public void clicEnAgregarRepetidor() {
         page.altaFijaMovilRegistroPage().agregarRepetidor();
+    }
+    public void clicEnAgregarSVAMT() {
+        page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
+
     }
 }

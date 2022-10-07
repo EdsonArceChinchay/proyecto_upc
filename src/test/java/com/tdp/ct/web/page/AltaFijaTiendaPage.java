@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.checkerframework.checker.guieffect.qual.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -40,7 +41,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
-    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
@@ -60,9 +61,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija) {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsVisible(esperalistaPlanFija, 100);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
@@ -108,9 +109,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -128,9 +129,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
@@ -160,9 +160,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void botonConfirmarAgendamiento() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -180,17 +180,16 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(70);
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(10);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[1]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 200);
-        click(boton);
-        UtilWeb.waitForSeconds(20);
+        waitUntilElementIsClickable(boton, 500).click();
+        UtilWeb.waitForSeconds(10);
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-success > app-modal-pdf > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
@@ -199,18 +198,16 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarPdf() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(7);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         click(btnDescargar);
     }
 
     public void cambiarPestanaPrincipal() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(2);
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(1,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         tabs = new ArrayList<String>(driver().getWindowHandles());
         driver().switchTo().window(tabs.get(0));
         UtilWeb.waitForSeconds(1);
@@ -223,46 +220,41 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(200);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(100);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 1000);
-        click(boton);
-        UtilWeb.waitForSeconds(15);
+        waitUntilElementIsVisible(boton, 2500);
+        click(boton,50);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void doyClickEnAñadirSVA() {
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsVisible(btnSVA, 50);
-        click(btnSVA);
+        waitUntilElementIsVisible(btnSVA, 100);
+        js().scrollElementTop(btnSVA);
+        click(btnSVA,10);
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(1);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsVisible(btnbloque, 50);
-        click(btnbloque);
+        waitUntilElementIsVisible(btnbloque, 500);
+        js().scrollElementTop(btnbloque);
+        click(btnbloque,10);
     }
 
     public void doyClickEnGuardarCambios() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        UtilWeb.waitForSeconds(1);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
@@ -271,13 +263,17 @@ public class AltaFijaTiendaPage extends WebBase {
         click(btnGuardar);
     }
 
-    public void clickBtnReintentar() {
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
         if (elementoExistente) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
         }
     }
 }

@@ -14,6 +14,7 @@ import java.util.logging.Level;
 
 public class AltaPuraMTcallCenterPage extends WebBase {
 
+    public Object clicBotonAceptar;
     @FindBy(xpath = "//button[@class = 'button_step']")
     protected WebElement btnConfirmaUbicacion;
 
@@ -22,9 +23,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
-    //@FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
+
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public void btnConfirmarUbicacion() {
         click(btnConfirmaUbicacion, 10);
@@ -109,17 +112,19 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        UtilWeb.waitForSeconds(5);
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        waitUntilElementIsVisible(buttonContinuar, 600);
         js().scrollElementTop(buttonContinuar);
-        waitUntilElementIsVisible(buttonContinuar, 10).click();
-        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(buttonContinuar, 600);
+        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clickCierrePopup(){
-       // UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(8);//inhabilitado
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
@@ -135,4 +140,29 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
     }
 
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        } else {
+            System.out.println("No se encontro el modal error");
+        }
+    }
+
+
+    public void clicBotonAceptar() {
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        waitUntilElementIsVisible((WebElement) clicBotonAceptar, 150);
+        js().scrollElementTop((WebElement) clicBotonAceptar);
+        ((WebElement) clicBotonAceptar).click();
+        UtilWeb.waitForSeconds(2);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en aceptar");
+        UtilWeb.waitForSeconds(10);
+    }
 }

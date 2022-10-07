@@ -49,8 +49,14 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().ingresarCorreoVerif(verifCorreo);
     }
 
+    @ScreenShotAfter
+    public void clicBotonAceptar(){
+        UtilWeb.waitForSeconds(10);
+        page.altaPuraMTcallCenterPage().clicBotonAceptar();
+    }
     @ScreenShotBefore
     public void clicBotonContinuar(){
+        UtilWeb.waitForSeconds(15);
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
     }
 

@@ -1,0 +1,69 @@
+#language:es
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+
+Característica: Busqueda de direccion por coordenadas DITO WEB
+
+  @ConsultarDireccionCoordenadas @Coordenadasorrectas
+  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion: <direccion> por coordenadas
+    Dado     que abro la pagina de movistar
+    Cuando   presiono el boton Iniciar Sesion
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
+    Y        presiono el boton Continuar hacia el home
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
+    Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Perez Lopez | femenino |
+    Y        selecciono el boton Linea Nueva Hogar
+    Y        presiono el boton Mostrar ofertas
+    Entonces me muestra la pantalla para ingresar la direccion
+    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
+    Y        doy click en en el boton "Buscar"
+    Y        valido que la direccion sea "<direccion>"
+    Ejemplos:
+      | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | longitud      | latitud       | direccion                |
+      | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 1415246326 | -77.03498486  | -12.09465486  | CAMINO REAL 155          |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 1234523742 | -77.03839379  | -12.08616934  | JULIO CESAR TELLO 460    |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 5421536244 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
+      | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 1123456753 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 1059822100 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
+      | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 1415246326 | -77.00525705  | -12.11851901  | PRINCIPAL 728            |
+
+  @ConsultarDireccionCoordenadas  @CoordenadasIcorrectas
+  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo que me muestre un mensaje de error cuando ingreso coordenadas incorrectas
+    Dado     que abro la pagina de movistar
+    Cuando   presiono el boton Iniciar Sesion
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
+    Y        presiono el boton Continuar hacia el home
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
+    Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Perez Lopez | femenino |
+    Y        selecciono el boton Linea Nueva Hogar
+    Y        presiono el boton Mostrar ofertas
+    Entonces me muestra la pantalla para ingresar la direccion
+    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
+    Y        doy click en en el boton "Buscar"
+    Y        valido que que me muestre el mensajde de error "La direccion esta incompleta. Agregar detalles adicionales."
+    Y        doy click en en el boton "Entendido"
+    Ejemplos:
+      | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento    | longitud     | latitud      |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 167834523742 | -77.03498486 | 0-            |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 148021536244 | 12           | -            |
+      | usuario externo | djormeno     | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 145123456753 | -70-70       | -12.11851901 |
+      | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 149915246326 | .            | 9000         |

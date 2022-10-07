@@ -10,9 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class PaquetizacionDuoMasMonoPorCallCenterStepDefinition {
     @Autowired
     private PaquetizacionDuoMasMonoPorCallCenterStep paquetizacionDuoMasMonoPorCallCenterStep;
-    @Y("selecciono el mono y duo a paquetizar")
-    public void selecciono_el_mono_y_duo_a_paquetizar(){
-        paquetizacionDuoMasMonoPorCallCenterStep.clickMonoYDuo();
+    @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
+    public void selecciono_el_mono_y_duo_a_paquetizar(String mono,String duo){
+        paquetizacionDuoMasMonoPorCallCenterStep.clickMonoYDuo(mono,duo);
     }
 
     @Y("doy click en el boton continuar")

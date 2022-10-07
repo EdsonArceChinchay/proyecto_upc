@@ -25,7 +25,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='cont-button']")
     protected WebElement btnBuscar;
 
-    @FindBy(xpath = "//app-footer-offert-lma/div[1]/div/div/div[2]/app-footer-item-lma/div/div[2]/div[3]/button")
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
     protected WebElement lblLineaNueva;
 
     @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
@@ -40,7 +40,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 /*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
     protected WebElement inputText;*/
 
-    @FindBy(xpath = "//tdp-st-button[@type=\"button\"]")
+    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement btnIniciar;
 
     @FindBy(css= "body > app-root > app-delivery > div.info-user span")
@@ -48,7 +48,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='option-boxes']//div")
     protected List<WebElement> listPago;
-
 
     @FindBy(css = "div.cont-autocomplete")
     protected WebElement lblItem;
@@ -59,6 +58,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath= "/html/body/app-root/app-success/div[3]/div/img")
     protected WebElement btnDetallePedido;
 
+    @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
+    protected WebElement btnCerrar;
 
     public void BtonOpciones() {
         waitUntilElementIsVisible(BtnOpciones, 10);
@@ -120,7 +121,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
-        waitUntilElementIsVisible(lblSeleccionarOferta, 10);
+        waitUntilElementIsVisible(lblSeleccionarOferta, 40);//10
         click(lblSeleccionarOferta, 10);
 
     }
@@ -143,12 +144,14 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(20);//3
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
-        waitUntilElementIsClickable(btnIniciar,100).click();
-        System.out.println("paso por aqui" + btnIniciar.getText());
+        waitUntilElementIsClickable(btnIniciar,150).click();
+       // System.out.println("paso por aqui" + btnIniciar.getText());
+        clickBtnCerrarModalError(btnIniciar);
+
     }
 
     public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
@@ -246,7 +249,19 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void ValidoQuePresenteDetallePedido() {
         click(btnDetallePedido);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);//1
+    }
+
+    public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
+        if (elementoExistente) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
+            System.out.println("Entro al metodo de Cerrar");
+            click(btnCerrar);
+            UtilWeb.waitForSeconds(2);
+            click(metodoRepedito);
+        }
     }
 }
 

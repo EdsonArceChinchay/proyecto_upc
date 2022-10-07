@@ -1,5 +1,7 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
+import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
@@ -31,4 +33,8 @@ public class StepPages{
     public AltaMovilSVATiendaPage altaMovilSVATiendaPage(){return new AltaMovilSVATiendaPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
     public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
+    public ConsultaDireccionPorCoordenasPage consultaDireccionPorCoordenasPage(){return new ConsultaDireccionPorCoordenasPage(); };
+    public CaeqPorRetailPage caeqPorRetailPage(){return new CaeqPorRetailPage();}
+    public CambioDeEquipoConCambioDeSimPage cambioDeEquipoConCambioDeSimPage(){ return new CambioDeEquipoConCambioDeSimPage();}
+
 }
