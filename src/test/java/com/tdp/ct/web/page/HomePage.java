@@ -43,6 +43,7 @@ public class HomePage extends WebBase {
 
     public void seleccionoTipoDocumento(String tipoDocumento){
         WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
+        js().scrollElementTop(documentoList);
         click(documentoList);
         String valueTipoDocumento="";
         SearchContext context=sh().getContext(documentoList);

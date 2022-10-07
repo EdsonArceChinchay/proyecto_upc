@@ -213,4 +213,11 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
+
+    @Y("doy click en agregar repetidor")
+    public void doyClickEnAgregarRepetidor() {
+        altaFijaMovilRegistroStep.clicEnAgregarSVA();
+        altaFijaMovilRegistroStep.clicEnAgregarRepetidor();
+        altaFijaMovilRegistroStep.clicGuardarCambios();
+    }
 }

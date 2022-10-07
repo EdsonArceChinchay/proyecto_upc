@@ -62,6 +62,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
+    @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
+    protected WebElement buttonRepetidor;
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -668,5 +670,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.waitForSeconds(2);
         }
 
+    }
+
+    public void agregarRepetidor() {
+        js().scrollElementTop(buttonRepetidor);
+        waitUntilElementIsVisible(buttonRepetidor, 10);
+        click(buttonRepetidor);
+        UtilWeb.waitForSeconds(5);
     }
 }
