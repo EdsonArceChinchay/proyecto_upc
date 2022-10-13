@@ -19,7 +19,7 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
     protected WebElement btnIrMovistarTotal;
 
-    @FindBy(xpath = "//app-register/body/div[2]/form/div[7]/button/span")
+    @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
     protected WebElement btnFinalizarRegistro;
 
     public void seleccionoPlanMovistarTotal() {
