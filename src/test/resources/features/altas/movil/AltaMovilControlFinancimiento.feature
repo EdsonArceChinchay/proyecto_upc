@@ -58,5 +58,5 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445056 | Postpago  |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445056 | Postpago  |

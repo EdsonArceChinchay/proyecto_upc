@@ -40,4 +40,4 @@ Característica: Migracion de duo a Trio + sva
 	Y        valido que se muestre el detalle del pedido
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | ggonzalesgg | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102313471 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+	  | usuario externo | ggonzalesgg | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102313471 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
