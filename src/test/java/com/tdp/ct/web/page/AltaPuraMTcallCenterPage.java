@@ -76,14 +76,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         type(inputMzElement, manzana);*/
     }
 
-    public void ingresoDireccionTT(String direccion){
-        String getDireccion = "form div:nth-child(3) div:nth-child(2) tdp-st-input-text;input";
-        UtilWeb.waitForSeconds(3);
-        WebElement direccionElement = js().getWebElement(getDireccion);
-        click(direccionElement);
-        type(direccionElement, direccion);
-    }
-
     public void ingresarReferencia(String referencia){
         String getReferencia = "form div:nth-child(4) div:nth-child(2) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(3);
@@ -153,16 +145,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
     }
 
-
-    public void clicBotonAceptar() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible((WebElement) clicBotonAceptar, 150);
-        js().scrollElementTop((WebElement) clicBotonAceptar);
-        ((WebElement) clicBotonAceptar).click();
-        UtilWeb.waitForSeconds(2);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en aceptar");
-        UtilWeb.waitForSeconds(10);
+    public void ingresarTelefono(String telefono) {
+        WebElement direccionElement = find().getElementByXPath("//*[@formcontrolname='contactNumber']");
+        js().scrollElementTop(direccionElement);
+        click(direccionElement,5);
+        type(direccionElement, telefono);
     }
 }

@@ -29,8 +29,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -42,8 +42,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Ccallo|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
@@ -54,8 +54,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
-            | nombreMadre   | nombrePadre   | distritoNac   |
-            | <nombreMadre> | <nombrePadre> | <distritoNac> |
+      | nombreMadre   | nombrePadre   | distritoNac   |
+      | <nombreMadre> | <nombrePadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -66,8 +66,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | nombrePlan       | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | 500 Mbps + 95 Gb | KATTIA      | PEDRO      | MIRAFLORES   |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan       | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | 500 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular
@@ -93,8 +93,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Huancari|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -106,8 +106,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote |vivienda     |nombreVivienda  |piso | int  | conjunto            | conjHabit  |
-      | A  | 1    |EDIFICIO     |Familia Ccallo|1   | 1   | URBANIZACION POPULAR  | conjunto b |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -130,7 +130,7 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                     | tipoDocumento | documento | departamento | provincia | distrito | direccion                     | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ |  CANAL ONLINE-CALL CENTER GSS    | DNI           | 43078337  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | 70 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 43078337  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | 70 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 
