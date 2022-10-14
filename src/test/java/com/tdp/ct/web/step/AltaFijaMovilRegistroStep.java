@@ -250,7 +250,11 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().agregoSVAINTERNET(svaInternet);
     }
 
+    public void clicEnAgregarRepetidor() {
+        page.altaFijaMovilRegistroPage().agregarRepetidor();
+    }
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
+
     }
 }
