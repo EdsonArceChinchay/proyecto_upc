@@ -34,8 +34,8 @@ public class AltaPuraMTcallCenterStepDefinition {
     }
 
     @E("ingreso telefono del titular {string}")
-    public void ingresoTelefonoDelTitular(String direccion) {
-        altaPuraMTcallCenterStep.ingresoDireccionTT(direccion);
+    public void ingresoTelefonoDelTitular(String telefono) {
+        altaPuraMTcallCenterStep.ingresoTelefono(telefono);
     }
 
     @E("ingreso instrucciones de delivery {string}")

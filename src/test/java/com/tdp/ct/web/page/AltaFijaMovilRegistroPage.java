@@ -69,6 +69,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
+    @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
+    protected WebElement buttonRepetidor;
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -168,9 +170,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(2, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(1, btnReintentar, "Click al elemento Reintentar");
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -528,11 +531,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void crearCliente() {
-        //waitUntilElementIsClickable(buttonCrearCliente, 10);
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
-        //UtilWeb.waitForSeconds(10);
     }
 
     public void esperarBtnDatosCliente() {
@@ -703,7 +704,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         UtilWeb.waitForSeconds(1);
-        System.out.println("Entro al metodo 2");
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
         if (elementoExistente) {
@@ -713,6 +713,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.waitForSeconds(2);
             click(metodoRepedito);
         }
+        else{
+            System.out.println("No se encontro el modal error 2");
+
+        }
     }
 
 
@@ -720,6 +724,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonAgregarSVAMT);
         waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
         click(buttonAgregarSVAMT);
+        UtilWeb.waitForSeconds(5);
+    }
+
+    public void agregarRepetidor() {
+        js().scrollElementTop(buttonRepetidor);
+        waitUntilElementIsVisible(buttonRepetidor, 10);
+        click(buttonRepetidor);
         UtilWeb.waitForSeconds(5);
     }
 }

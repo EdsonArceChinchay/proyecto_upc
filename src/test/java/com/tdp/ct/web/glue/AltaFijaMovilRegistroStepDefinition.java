@@ -214,6 +214,14 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 
+
+    @Y("doy click en agregar repetidor")
+    public void doyClickEnAgregarRepetidor() {
+        altaFijaMovilRegistroStep.clicEnAgregarSVA();
+        altaFijaMovilRegistroStep.clicEnAgregarRepetidor();
+        altaFijaMovilRegistroStep.clicGuardarCambios();
+    }
+
     @Y("doy click en agregar SVA MT {string}")
     public void doyCLickEnAgregarSVA(String String) {
         altaFijaMovilRegistroStep.clicEnAgregarSVAMT();
@@ -221,5 +229,6 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
         altaFijaMovilRegistroStep.clicGuardarCambios();
 
     }
+
 
 }
