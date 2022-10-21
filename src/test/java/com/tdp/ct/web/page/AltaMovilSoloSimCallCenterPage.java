@@ -52,7 +52,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(ofertasSugeridas, 600);//300
+        waitUntilElementIsVisible(ofertasSugeridas, 300);//300
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -64,27 +64,25 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void listaTipoPlanMovil(String planMovil) {
-        UtilWeb.waitForSeconds(4);
-        clickElementInAList(listaTipoPlanMovil, planMovil);
+        clickElementInAList(listaTipoPlanMovil, planMovil,4);
     }
 
     public void listaPlanMovil(String planMovil) {
         clickBtnReintentar();
         clickBtnReintentar();
-        clickBtnReintentar();
         System.out.println("Ofertas : " + listaPlanMovil.size());
-        UtilWeb.waitForSeconds(2);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        for (int i = 0; i < 2; i++) {
-            boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            if (elementoExistente) {
-                click(btnRight);
-                UtilWeb.waitForSeconds(1);
-            }
-        }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-        UtilWeb.waitForSeconds(3);
+//        UtilWeb.waitForSeconds(2);
+//        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+//        for (int i = 0; i < 2; i++) {
+//            boolean elementoExistente;
+//            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+//            if (elementoExistente) {
+//                click(btnRight);
+//                UtilWeb.waitForSeconds(1);
+//            }
+//        }
+//        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+//        UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
         for (int i = 0; i < listaPlanMovil.size(); i++) {
             System.out.println(listaPlanMovil.get(i).getText());
@@ -105,9 +103,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void botonSeleccionarOfeta() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
         js().scrollElementTop(botonSeleccionarOferta);
         click(botonSeleccionarOferta, 10);
     }

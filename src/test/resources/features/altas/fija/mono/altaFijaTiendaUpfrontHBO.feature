@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija por tienda + SVA
+Característica: Alta fija por tienda mas Hbo
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaTiendaSVA
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  @AltaFijaTiendaHBO
+  Esquema del escenario: Alta fija por tienda mas Hbo
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
