@@ -22,15 +22,12 @@ Característica: Migracion salto 0 canal Tienda
     Y        doy click en en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
-    #Y        seleccion plan nuevo para ver las ofertas
-    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    #Y        selecciono el plan "<planTrio>"
     Cuando   doy clic a iniciar registro
-    #Y        valido que muestre la pantalla de Agendamiento
-    #Y        ingreso datos de agendamiento <987654321> y doy clic en continuar
+    Y        valido que muestre la pantalla de Agendamiento
+    #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
     #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
-    #Y        presiono el boton confirmar agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -42,4 +39,4 @@ Característica: Migracion salto 0 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042465048 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CE            | 7241133112 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
