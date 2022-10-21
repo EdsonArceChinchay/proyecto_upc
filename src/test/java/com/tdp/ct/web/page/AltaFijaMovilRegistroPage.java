@@ -303,6 +303,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsClickable(buttonContinuar, 500);
+        js().scrollElementTop(buttonContinuar);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
