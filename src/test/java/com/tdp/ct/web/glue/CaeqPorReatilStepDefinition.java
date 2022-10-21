@@ -26,6 +26,4 @@ public class CaeqPorReatilStepDefinition {
     public void doyClicEnConsultarClienteNuevo() {
         caeqPorReatilStep.btnConsultarClienteNuevo();
     }
-
-
 }
