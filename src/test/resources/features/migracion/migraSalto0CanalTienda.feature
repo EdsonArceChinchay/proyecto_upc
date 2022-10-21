@@ -22,7 +22,7 @@ Característica: Migracion salto 0 canal Tienda
     Y        doy click en en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
-    Cuando   doy clic a iniciar registro
+    Cuando   doy clic en iniciar registro
     Y        valido que muestre la pantalla de Agendamiento
     #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
     #Y        valido que me encuentre en la pantalla agendamiento
