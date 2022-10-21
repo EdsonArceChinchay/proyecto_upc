@@ -17,7 +17,6 @@ Característica: Cambio velocidad Upseel 30Mb + SVA por canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "AV,CAMINO REAL,155,SAN ISIDRO,LIMA ,LIMA,PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
@@ -40,5 +39,5 @@ Característica: Cambio velocidad Upseel 30Mb + SVA por canal Call Center
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|DÚO INTERNET ESTÁNDAR HD RA 100 MBPS|tester@tester.com|
 
