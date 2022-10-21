@@ -69,6 +69,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
+    @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
+    protected WebElement buttonRepetidor;
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -308,9 +310,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);
@@ -318,8 +317,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSiAcepto() {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 100);
         click(element,10);
@@ -655,9 +652,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsVisible(scrollorden, 500);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
@@ -723,6 +717,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonAgregarSVAMT);
         waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
         click(buttonAgregarSVAMT);
+        UtilWeb.waitForSeconds(5);
+    }
+
+    public void agregarRepetidor() {
+        js().scrollElementTop(buttonRepetidor);
+        waitUntilElementIsVisible(buttonRepetidor, 10);
+        click(buttonRepetidor);
         UtilWeb.waitForSeconds(5);
     }
 }
