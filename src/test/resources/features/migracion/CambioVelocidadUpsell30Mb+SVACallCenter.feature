@@ -39,7 +39,7 @@ Característica: Cambio de velocidad upsell dúo 30mb HFC añadir SVA (repetidor
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Recomendados|RA 100 MBPS|tester@tester.com|
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
@@ -57,7 +57,12 @@ Característica: Cambio de velocidad upsell dúo 30mb HFC añadir SVA (repetidor
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en en el boton "Actualizar direccion"
+    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
+    Y        doy click en en el boton "Buscar"
+    Y        presiono el boton consultar cobertura
+    Y        doy click en en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -78,6 +83,6 @@ Característica: Cambio de velocidad upsell dúo 30mb HFC añadir SVA (repetidor
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
+      | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|longitud|latitud|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|-77.07222|-12.08367|
 
