@@ -1,9 +1,9 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Por Retail FE DITO WEB
+Característica: Caeq Por Tienda FE DITO WEB
 
-  @CaeqPorRetail
+  @CaeqPorTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -34,5 +34,5 @@ Característica: Caeq Por Retail FE DITO WEB
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | cliente                         |
-      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                    | CE           | 1042465085 | Jasmin Pinedo       |
+      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
+      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |

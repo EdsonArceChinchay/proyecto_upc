@@ -88,6 +88,7 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
             click(btnPostpago, 2);
             UtilWeb.waitForSeconds(5);
             seleccionarBotonSiguiente();
+            UtilWeb.waitForSeconds(10);
 
         }
         public void seleccionarBotonSiguiente(){
