@@ -1,9 +1,9 @@
 #language:es
 
-Característica: Cambio de velocidad upsell dúo 30mb HFC añadir SVA (repetidor wifi), CEX, canal call center
+Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
   @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter
-  Esquema del escenario: Cambio velocidad Upseel 30Mb + SVA por canal Call Center
+  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 30mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -39,11 +39,11 @@ Característica: Cambio de velocidad upsell dúo 30mb HFC añadir SVA (repetidor
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Recomendados|RA 100 MBPS|tester@tester.com|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
-  Esquema del escenario: Cambio velocidad Upseel 50Mb + SVA por canal Call Center, cambio de dirección X,Y
+  Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
