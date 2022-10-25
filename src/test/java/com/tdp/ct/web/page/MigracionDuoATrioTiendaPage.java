@@ -66,7 +66,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsClickable(cartillaHogar, 20).click();
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);

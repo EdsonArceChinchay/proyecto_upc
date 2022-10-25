@@ -64,4 +64,4 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Y        valido que se muestre el detalle del pedido
 
 
-#    1598886623
+#    1598886623  1598886623

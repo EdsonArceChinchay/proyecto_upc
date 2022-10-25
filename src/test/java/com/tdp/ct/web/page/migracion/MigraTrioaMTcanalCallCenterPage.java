@@ -58,6 +58,6 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     public void clickFinalizarRegistro() {
         waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
-        waitUntilElementIsVisible(esperarOrden, 30);
+       // waitUntilElementIsVisible(esperarOrden, 30);
     }
 }
