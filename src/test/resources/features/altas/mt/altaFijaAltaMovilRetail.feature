@@ -15,7 +15,7 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -34,8 +34,8 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO      | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
 
     Entonces me muestra la pantalla de ofertas sugeridos
@@ -66,6 +66,6 @@ Característica: Alta Fija + Alta Movil por Retail
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | nombrePlan         |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000023 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
+      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo | nishuizas   | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000023 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
 
