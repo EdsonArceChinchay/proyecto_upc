@@ -58,4 +58,4 @@ Característica: Caeq Mas Capl Mas Casi por call center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465131 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465133 | Postpago | Plan Movil Movistar Total ilim 26 GB |
