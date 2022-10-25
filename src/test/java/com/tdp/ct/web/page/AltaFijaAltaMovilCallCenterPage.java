@@ -128,6 +128,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void btnConfirmarUbicacion() {
+        UtilWeb.waitForSeconds(5);//
         waitUntilElementIsVisible(btnConfirmarUbicacion, 100).click();
         UtilWeb.waitForSeconds(15);
     }

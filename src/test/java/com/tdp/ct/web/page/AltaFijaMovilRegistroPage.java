@@ -309,6 +309,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
+        UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);
