@@ -6,7 +6,7 @@ Característica: Alta Fija + Alta Movil por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilCallCenterSinProductosDeliveryExpress
+  @AltaFijaMovilCallCenterDeliveryExpress
   Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery express
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
