@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.page.Caeq.CaeqMasCaplMasCasiPage;
 import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
 import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
@@ -38,6 +39,7 @@ public class StepPages{
     public ConsultaDireccionPorCoordenasPage consultaDireccionPorCoordenasPage(){return new ConsultaDireccionPorCoordenasPage(); };
     public CaeqPorRetailPage caeqPorRetailPage(){return new CaeqPorRetailPage();}
     public CambioDeEquipoConCambioDeSimPage cambioDeEquipoConCambioDeSimPage(){ return new CambioDeEquipoConCambioDeSimPage();}
+    public CaeqMasCaplMasCasiPage caeqMasCaplMasCasiPage(){return new CaeqMasCaplMasCasiPage();}
     public MigraSalto0RetailPage migraSalto0RetailPage(){return new MigraSalto0RetailPage();}
     public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage(){ return new MigraSalto0CanalTiendaPage();}
 }
