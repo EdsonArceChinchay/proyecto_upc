@@ -130,7 +130,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(30);//1
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
@@ -156,6 +156,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(1);
                 break;
         }
+
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
