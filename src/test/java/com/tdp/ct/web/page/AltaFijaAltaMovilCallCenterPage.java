@@ -128,7 +128,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void btnConfirmarUbicacion() {
-        UtilWeb.waitForSeconds(5);//
+        UtilWeb.waitForSeconds(8);//5
         waitUntilElementIsVisible(btnConfirmarUbicacion, 100).click();
         UtilWeb.waitForSeconds(15);
     }
@@ -231,13 +231,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(8);//10
+        UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
+        UtilWeb.waitForSeconds(10);//10
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");

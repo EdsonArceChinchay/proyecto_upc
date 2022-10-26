@@ -106,7 +106,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(lblCartillaCambiar);
         waitUntilElementIsVisible(lblCartillaCambiar, 10);
-        click(lblCartillaCambiar, 10);
+        click(lblCartillaCambiar, 18);//12
     }
 
     public void scrollUp() {
