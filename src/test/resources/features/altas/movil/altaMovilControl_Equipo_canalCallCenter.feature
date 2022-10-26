@@ -1,17 +1,15 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
-  sin cobertura por canal Call Center
+Característica: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
 
      # Realizar una Alta movil Postpago (linea + equipo) con
-     #Delivery en Tambo sin cobertura por canal Call Center
+     #Delivery Regular  por canal Call Center
 
-  @AltaMovilPostPagoDeliveryCallCenter
+  @AltaCEXControlEquipoLineaCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
     Dado  presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
@@ -57,8 +55,8 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "earce@gmail.com"
+    Y        ingreso nuevamente el correo electronico "earce@gmail.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
