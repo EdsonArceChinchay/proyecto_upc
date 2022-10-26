@@ -28,7 +28,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "Control"
-    Y        selecciono un plan movil "RV Plan Mi Movistar S/55.9"
+    Y        selecciono un plan movil "Plan Mi Movistar Total 72 Gb"
 #    Y        selecciono la oferta de plan movil "Control"
 #    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
 #    Y        selecciono el boton de iniciar registro
