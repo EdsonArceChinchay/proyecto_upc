@@ -66,8 +66,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan       | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | 100 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 500 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular
