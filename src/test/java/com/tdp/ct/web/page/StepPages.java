@@ -1,8 +1,10 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
+import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
+import com.tdp.ct.web.step.Paquetizacion.AltaMovilSoloLineaRetailCeStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -30,5 +32,6 @@ public class StepPages{
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage(){return new AltaMovilControlFinancimientoPage();}
     public AltaMovilSVATiendaPage altaMovilSVATiendaPage(){return new AltaMovilSVATiendaPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
+    public AltaMovilSoloLineaRetailPage altaMovilSoloLineaRetailPage(){return new AltaMovilSoloLineaRetailPage();}
     public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
 }

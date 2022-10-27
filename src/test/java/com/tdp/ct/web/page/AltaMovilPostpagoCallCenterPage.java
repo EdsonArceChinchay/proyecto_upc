@@ -63,7 +63,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void BtonOpciones() {
         waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
-        waitUntilElementIsVisible(BtnOpciones, 5);
+        waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
         UtilWeb.waitForSeconds(10);
