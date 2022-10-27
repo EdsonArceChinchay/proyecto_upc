@@ -14,6 +14,7 @@ import java.util.logging.Level;
 
 public class AltaPuraMTcallCenterPage extends WebBase {
 
+    public Object clicBotonAceptar;
     @FindBy(xpath = "//button[@class = 'button_step']")
     protected WebElement btnConfirmaUbicacion;
 
@@ -22,9 +23,11 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
-    //@FindBy(xpath = "(//div[@class='icon-content']/span[@class = 'stl-icon-cerrar']/img)[2]")
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
+
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
 
     public void btnConfirmarUbicacion() {
         click(btnConfirmaUbicacion, 10);
@@ -73,14 +76,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         type(inputMzElement, manzana);*/
     }
 
-    public void ingresoDireccionTT(String direccion){
-        String getDireccion = "form div:nth-child(3) div:nth-child(2) tdp-st-input-text;input";
-        UtilWeb.waitForSeconds(3);
-        WebElement direccionElement = js().getWebElement(getDireccion);
-        click(direccionElement);
-        type(direccionElement, direccion);
-    }
-
     public void ingresarReferencia(String referencia){
         String getReferencia = "form div:nth-child(4) div:nth-child(2) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(3);
@@ -109,17 +104,19 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        UtilWeb.waitForSeconds(5);
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        waitUntilElementIsVisible(buttonContinuar, 600);
         js().scrollElementTop(buttonContinuar);
-        waitUntilElementIsVisible(buttonContinuar, 10).click();
-        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(buttonContinuar, 600);
+        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-
-        UtilWeb.waitForSeconds(60);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clickCierrePopup(){
-       // UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(8);//inhabilitado
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
@@ -135,4 +132,23 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
     }
 
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        } else {
+            System.out.println("No se encontro el modal error");
+        }
+    }
+
+    public void ingresarTelefono(String telefono) {
+        WebElement direccionElement = find().getElementByXPath("//*[@formcontrolname='contactNumber']");
+        js().scrollElementTop(direccionElement);
+        click(direccionElement,5);
+        type(direccionElement, telefono);
+    }
 }

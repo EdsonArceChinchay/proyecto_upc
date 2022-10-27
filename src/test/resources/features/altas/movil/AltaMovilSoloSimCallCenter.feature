@@ -7,7 +7,7 @@ Característica: Alta Movil Solo Sim Por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCalCenter
+  @AltaMovilSoloSimCallCenter
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -23,13 +23,19 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
+    #Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
 #    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
+    Y        selecciono el plan_movil Postpago
+    Y        selecciono el boton de eleccion de planes
+    #Y        selecciono el plan "Postpago" que desea
+    #Y        doy click en el boton Siguiente
+    #Y        valido que este en la pagina de ofertas sugeridas
+    #Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
     #Y        valido que este en la seccion de registro "<nombrePlan>"
@@ -38,7 +44,7 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
-    Y        ingreso la referencia de la direccion "casa verde"
+    Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
@@ -62,11 +68,12 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | Postpago      | Plan Ilimitado Mi Movistar S/65.9 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000021 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |

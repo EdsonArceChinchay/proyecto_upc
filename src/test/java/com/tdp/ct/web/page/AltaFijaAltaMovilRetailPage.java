@@ -45,20 +45,20 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaMovil(){
         js().scrollElementTop(btnMovil);
-        waitUntilElementIsClickable(btnMovil,30);
+        waitUntilElementIsClickable(btnMovil,15);//30
         click(btnMovil);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);//1
     }
 
     public void mostrarOfertas(){
-        waitUntilElementIsVisible(btnMostrar,10);
+        waitUntilElementIsVisible(btnMostrar,90);//50
         click(btnMostrar);
-       UtilWeb.waitForSeconds(12);
+        UtilWeb.waitForSeconds(12);
         //UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionarDepa(String tipoDepa){
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         click(depaList);
         UtilWeb.waitForSeconds(2);
@@ -100,7 +100,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void btnConsultar(){
 
         //waitUntilElementIsVisible(btnConsulta,8);
-        //UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
     }

@@ -193,7 +193,6 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
         waitUntilElementIsVisible(buttonContinuar, 10).click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-
         UtilWeb.waitForSeconds(20);
     }
 }

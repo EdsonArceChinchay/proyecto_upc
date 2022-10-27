@@ -23,7 +23,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
       | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "<planMovil>" que desea
+    Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
@@ -54,9 +54,9 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
+  # Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000000003 | Postpago  |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445056 | Postpago  |

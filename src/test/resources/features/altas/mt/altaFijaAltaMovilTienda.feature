@@ -18,6 +18,10 @@ Característica: Alta Fija + Alta Movil por Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos | genero   |
+      | Luisa   | Cabello   | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -44,15 +48,11 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user        | password     |
-      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Entonces valido que me muestre el boton con el texto de identidad validada
+    Y        doy click en datos del cliente
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1990 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -61,5 +61,5 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | DNI           | 47325165  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 26 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1049965122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |

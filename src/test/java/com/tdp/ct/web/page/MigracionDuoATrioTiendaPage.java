@@ -23,6 +23,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
 
+    @FindBy(css = "body > div.tdp-container.pt-16 > div.tdp-row.add_aling_center > div.tdp-col-md-6.tdp-col-lg-4.ng-star-inserted > app-mt-card > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3.ng-star-inserted > div.tdp-col-2.ng-star-inserted > img")
+    protected WebElement btnOpcionPlanNuevoMT;
+
     @FindBy(xpath = "//div[@class='tdp-col-md-2 ng-star-inserted']")
     protected List<WebElement> listPlanesNuevos;
 
@@ -41,6 +44,20 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
     protected WebElement btnActualizarDir;
 
+    @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
+    protected WebElement btnBuscar;
+
+    @FindBy(xpath = "(//*[contains(text(),'Ingresar coordenadas')])[1]")
+    protected WebElement btnIngCord;
+
+    @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
+    protected WebElement btnEntendido;
+
+
+    @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    protected WebElement btnCambiarPlan;
+
+
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
 
@@ -49,7 +66,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsClickable(cartillaHogar,20).click();
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);
@@ -59,7 +77,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void seleccionPlanNuevoParaVerLasOfertas() {
 
         UtilWeb.waitForSeconds(4);
-        waitUntilElementIsClickable(btnOpcionPlanNuevo,60).click();
+        waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
         UtilWeb.waitForSeconds(4);
     }
 
@@ -99,18 +117,43 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void doyClickEnEnElBoton(String btn) {
-        String btnEsperado=btn.toUpperCase().trim();
+        String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
                 js().scrollElementTop(btnActualizarDir);
-                waitUntilElementIsClickable(btnActualizarDir, 5).click();
+                waitUntilElementIsClickable(btnActualizarDir, 50).click();
+                UtilWeb.waitForSeconds(1);
                 break;
 
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
-                waitUntilElementIsClickable(btnConfirmarDir, 5).click();
+                waitUntilElementIsClickable(btnConfirmarDir, 50).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "BUSCAR":
+                js().scrollElementTop(btnBuscar);
+                waitUntilElementIsClickable(btnBuscar, 50).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "INGRESAR COORDENADAS":
+                js().scrollElementTop(btnIngCord);
+                waitUntilElementIsClickable(btnIngCord, 50).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+            case "ENTENDIDO":
+                js().scrollElementTop(btnEntendido);
+                waitUntilElementIsClickable(btnEntendido, 50).click();
+                UtilWeb.waitForSeconds(1);
+                break;
+
+            case "CAMBIAR PLAN":
+                UtilWeb.waitForSeconds(5);
+//                waitUntilElementIsVisible(btnCambiarPlan, 50);
+                js().scrollElementTop(btnCambiarPlan);
+                click(btnCambiarPlan,10);
+                UtilWeb.waitForSeconds(1);
                 break;
         }
     }
