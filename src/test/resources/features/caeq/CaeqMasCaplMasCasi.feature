@@ -24,8 +24,8 @@ Característica: Caeq Mas Capl Mas Casi por call center
     Y        presiona el boton anadir equipo
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-              |permanencia    |tipoPago  |equipoName      |
-               |12 meses      |Al Contado|HUAWEI P10 NEGRO|
+      | permanencia | tipoPago   | equipoName       |
+      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en en el boton "Cambiar Plan"
     Y        Selecciono boton Cambiar Chip
@@ -38,7 +38,7 @@ Característica: Caeq Mas Capl Mas Casi por call center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Lopez | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | 1    | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -52,10 +52,10 @@ Característica: Caeq Mas Capl Mas Casi por call center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
+#    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465131 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 6765454324 | Postpago | Plan Movil Movistar Total ilim 26 GB |
