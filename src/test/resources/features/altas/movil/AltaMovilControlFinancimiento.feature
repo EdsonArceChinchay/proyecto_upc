@@ -26,9 +26,9 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan movil "Control"
-    Y        selecciono un plan movil "Plan Mi Movistar Total 72 Gb"
+ #   Y        selecciono tipo de oferta
+ #   Y        selecciono el tipo de plan movil "Control"
+   #  Y        selecciono un plan movil "Plan Mi Movistar Total 72 Gb"
 #    Y        selecciono la oferta de plan movil "Control"
 #    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
 #    Y        selecciono el boton de iniciar registro
@@ -42,7 +42,7 @@ Característica: Alta Movil Control con un financiamiento por tienda
 #    Y        selecciono el boton Linea Nueva Movil
 #    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
 #    Y        selecciono un equipo movil
-#    Y        selecciono en linea Nueva
+    Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
