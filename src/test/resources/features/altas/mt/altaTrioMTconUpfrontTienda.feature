@@ -99,10 +99,10 @@ Característica: Alta Trio MT - Upfront Tienda
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    #Entonces me muestra la pantalla de ofertas sugeridos
-   # Y        selecciono tipo de oferta
+    Entonces me muestra la pantalla de ofertas sugeridos
+    Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido el detalle de la seleccion
+    #Y         valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

@@ -270,9 +270,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void irAMovistarTotal() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
-        UtilWeb.waitForSeconds(1);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        waitUntilElementIsVisible(botoneraIrA.get(1), 10).click();
+        UtilWeb.waitForSeconds(3);
     }
 
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
