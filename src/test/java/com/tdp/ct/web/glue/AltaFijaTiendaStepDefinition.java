@@ -80,4 +80,14 @@ public class AltaFijaTiendaStepDefinition {
   public void doyClickEnGuardarCambios() {
     altaFijaTiendaStep.doyClickEnGuardarCambios();
   }
+
+  @Y("ingreso los datos de agendamiento para trio")
+  public void ingresoLosDatosDeAgendamientoParaTrio() {
+    altaFijaTiendaStep.ingresarDatosAgendamientoParaTrio();
+  }
+
+  @Y("doy clic en el boton validar identidad representante legal")
+  public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
+    altaFijaTiendaStep.clickBotonValidarRepreLegal();
+  }
 }
