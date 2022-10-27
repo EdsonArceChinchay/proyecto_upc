@@ -130,7 +130,7 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042445061 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | HD 500 Mbps + 95Gb | correo@gmail.com |
+      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan         | correo           |
+      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042345061 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | HD 500 Mbps + 95Gb | correo@gmail.com |
 
 
