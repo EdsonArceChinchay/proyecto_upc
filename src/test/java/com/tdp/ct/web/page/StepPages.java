@@ -4,10 +4,12 @@ import com.tdp.ct.web.page.Caeq.CaeqMasCaplMasCasiPage;
 import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
 import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
+import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
 import com.tdp.ct.web.page.migracion.MigraSalto0RetailPage;
 import com.tdp.ct.web.page.migracion.MigraSalto0CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
+import com.tdp.ct.web.step.Paquetizacion.AltaMovilSoloLineaRetailCeStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -35,6 +37,7 @@ public class StepPages{
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage(){return new AltaMovilControlFinancimientoPage();}
     public AltaMovilSVATiendaPage altaMovilSVATiendaPage(){return new AltaMovilSVATiendaPage();}
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {return new PaquetizacionDuoMasMonoPorCallCenterPage();}
+    public AltaMovilSoloLineaRetailPage altaMovilSoloLineaRetailPage(){return new AltaMovilSoloLineaRetailPage();}
     public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage(){return new MigracionMonoADuoSVATiendaPage();}
     public ConsultaDireccionPorCoordenasPage consultaDireccionPorCoordenasPage(){return new ConsultaDireccionPorCoordenasPage(); };
     public CaeqPorRetailPage caeqPorRetailPage(){return new CaeqPorRetailPage();}
