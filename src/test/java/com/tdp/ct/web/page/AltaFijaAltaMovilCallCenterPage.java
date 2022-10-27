@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
-    @FindBy(xpath = "//*[contains(text(),'Consultar cobertura') or contains(text(),'Consultar ubicación')]")
+    @FindBy(xpath = "//app-root/app-delivery/div[2]/app-steps/div[1]/tdp-st-card[2]/div/div[2]/form/div[12]/div/button")
     protected WebElement btnConfirmarUbicacion;
     @FindBy(xpath = "(//button[@class='button_step'])")
     protected WebElement btnConfirmarDelivery;
