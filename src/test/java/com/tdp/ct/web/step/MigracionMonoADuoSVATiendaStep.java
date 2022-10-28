@@ -18,4 +18,17 @@ public class MigracionMonoADuoSVATiendaStep {
     public void seleccionarboton(){
         page.MigracionMonoADuoSVATiendaPage().seleccionarboton();
     }
+
+    public void clicEnAgregarSVA() {
+        page.MigracionMonoADuoSVATiendaPage().clicEnAgregarSVA();
+
+    }
+
+    public void agregoSVATV(String Bloques) {
+        page.MigracionMonoADuoSVATiendaPage().SeleccionoBloques(Bloques);
+    }
+
+    public void clicGuardarCambios() {
+        page.MigracionMonoADuoSVATiendaPage().clickGuardarCambios();
+    }
 }

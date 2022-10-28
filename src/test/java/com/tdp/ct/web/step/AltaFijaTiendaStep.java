@@ -95,5 +95,14 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().doyClickEnGuardarCambios();
 
     }
+
+    @ScreenShotAfter
+    public void ingresarDatosAgendamientoParaTrio() {
+        page.altaFijaTiendaPage().ingresarDatosAgendamientoParaTrio();
+    }
+
+    @ScreenShotBefore
+    public void clickBotonValidarRepreLegal() {page.altaFijaTiendaPage().clickValidarRepreLegal();
+    }
 }
 
