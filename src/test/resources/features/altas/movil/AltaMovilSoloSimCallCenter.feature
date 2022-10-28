@@ -47,9 +47,9 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton confirmar ubicacion
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
