@@ -89,6 +89,7 @@ public class AltaMovilControlFinancimientoStepDefinition {
         altaMovilControlFinancimientoStep.seleccionoElPlanQueDesea(planMovil);
     }
 
+
     @Y("doy click en el boton Siguiente")
     public void doyClickEnBotonSiguiente() {
         altaMovilControlFinancimientoStep.doyClickEnBotonSiguiente();

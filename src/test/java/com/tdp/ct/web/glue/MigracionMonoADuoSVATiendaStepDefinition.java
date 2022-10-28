@@ -26,8 +26,6 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     public void doyClickEnCambiarPlanHogar() {
         MigracionMonoADuoSVATiendaStep.seleccionarboton();
     }
-
-
     @Y("doy clic en agregar sva {string}")
     public void doyClicEnAgregarSva(String Bloques) {
         MigracionMonoADuoSVATiendaStep.clicEnAgregarSVA();

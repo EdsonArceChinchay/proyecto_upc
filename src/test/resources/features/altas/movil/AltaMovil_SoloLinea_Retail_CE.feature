@@ -1,13 +1,14 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Movil Control con un financiamiento por tienda
+Característica: Alta Movil Postpago solo chip Retail
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilFinaciamientoTienda_CE
-  Esquema del escenario: Realizar una alta movil Control con un financiamiento, metodo de entrega por tienda
+  @MVP_Alta_movil_SoloSim_CanalRetail
+  Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -19,30 +20,15 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos | genero    |
-      | Jbac    | Lozano    | masculino |
+      | nombres  |    apellidos   | genero   |
+      | Teresita | Collasos Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
-    Y        valido que este en la pagina de ofertas sugeridas
- #   Y        selecciono tipo de oferta
- #   Y        selecciono el tipo de plan movil "Control"
-   #  Y        selecciono un plan movil "Plan Mi Movistar Total 72 Gb"
-#    Y        selecciono la oferta de plan movil "Control"
-#    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
-#    Y        selecciono el boton de iniciar registro
-#    Y        selecciono tipo de oferta alta movil
-#      | Ofertas_Sugeridas |
-#      | PLAN MOVIL        |
-#    Y        selecciono la campania
-#      | Tipo_Ofertas |
-#      | Control      |
-#    Y        selecciono el boton de Seleccionar Oferta
-#    Y        selecciono el boton Linea Nueva Movil
-#    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
-#    Y        selecciono un equipo movil
-    Y        selecciono en linea Nueva
+    Y         selecciono el boton de eleccion de planes
+    Y        seleccion oferta Postpago
+    Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -53,12 +39,12 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-  # Y        presiono el boton descargar contrato
+    Y        presiono continuar
+    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+ #   Entonces visualizo en pantalla el mensaje de exito de la venta generada
+ #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445071 | Postpago  |
+      | tipoUsuario     | userName     |   password   |  msgHome   |  tipoDocumento | documento  |       nombrePlan                        |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1000000006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
 
