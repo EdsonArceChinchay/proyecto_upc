@@ -42,6 +42,7 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
+
     public void seleccionaPrepago() {
         UtilWeb.waitForSeconds(3);
         click(selecPrepago);
