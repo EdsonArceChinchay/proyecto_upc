@@ -164,6 +164,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonIniciarRegistro, 5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
+        UtilWeb.waitForSeconds(15);//
     }
 
     public boolean validarPantallaAgendamiento() {
@@ -303,12 +304,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsClickable(buttonContinuar, 500);
+        js().scrollElementTop(buttonContinuar);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
     }
 
     public void visualizarContratoEnPantalla() {
+        UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);

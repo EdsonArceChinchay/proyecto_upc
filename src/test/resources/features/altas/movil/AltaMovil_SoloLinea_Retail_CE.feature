@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Movil Prepago solo chip Tienda
+Característica: Alta Movil Postpago solo chip Retail
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilPrepagoSoloChipTienda_CE
+  @MVP_Alta_movil_SoloSim_CanalRetail
   Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -15,19 +15,19 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres  |    apellidos   | genero   |
+      | Teresita | Collasos Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "Prepago" que desea
+    Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono la oferta de plan movil "<oferta>"
+    Y         selecciono el boton de eleccion de planes
+    Y        seleccion oferta Postpago
     Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
@@ -40,11 +40,11 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
-#    Y        presiono el boton descargar contrato
+    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+ #   Entonces visualizo en pantalla el mensaje de exito de la venta generada
+ #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464941 | PLAN PREPAGO | Preplan    |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | tipoUsuario     | userName     |   password   |  msgHome   |  tipoDocumento | documento  |       nombrePlan                        |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1000000006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
+

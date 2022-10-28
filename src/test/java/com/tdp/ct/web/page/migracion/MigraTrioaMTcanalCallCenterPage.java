@@ -47,6 +47,7 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     }
 
     public void clickBtnIrMovistarTotal() {
+        UtilWeb.waitForSeconds(80);//15
         waitUntilElementIsVisible(btnIrMovistarTotal, 150);
         click(btnIrMovistarTotal);
     }
@@ -58,6 +59,6 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     public void clickFinalizarRegistro() {
         waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
-        waitUntilElementIsVisible(esperarOrden, 30);
+       // waitUntilElementIsVisible(esperarOrden, 30);
     }
 }

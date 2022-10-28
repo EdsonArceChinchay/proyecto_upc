@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
-    @FindBy(xpath = "(//div[@class='tdp-row'])[3]")
+    @FindBy(xpath = "//app-root/app-delivery/div[2]/app-steps/div[1]/tdp-st-card[2]/div/div[2]/form/div[12]/div/button")
     protected WebElement btnConfirmarUbicacion;
     @FindBy(xpath = "(//button[@class='button_step'])")
     protected WebElement btnConfirmarDelivery;
@@ -128,7 +128,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void btnConfirmarUbicacion() {
-        waitUntilElementIsVisible(btnConfirmarUbicacion, 100).click();
+        UtilWeb.waitForSeconds(8);//5
+        waitUntilElementIsVisible(btnConfirmarUbicacion, 150).click();
         UtilWeb.waitForSeconds(15);
     }
 
@@ -193,6 +194,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 //        modalError(3,btnReintentar,"Click al elemento Reitentar");
 //        modalError(3,btnReintentar,"Click al elemento Reitentar");
 //        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(30);//10
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
@@ -229,13 +231,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(8);//10
+        UtilWeb.waitForSeconds(20);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
+        UtilWeb.waitForSeconds(10);//10
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");
@@ -267,9 +270,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void irAMovistarTotal() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
-        UtilWeb.waitForSeconds(1);
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        waitUntilElementIsVisible(botoneraIrA.get(1), 10).click();
+        UtilWeb.waitForSeconds(3);
     }
 
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {

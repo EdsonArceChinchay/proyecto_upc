@@ -66,7 +66,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsClickable(cartillaHogar, 20).click();
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);
@@ -105,7 +106,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(lblCartillaCambiar);
         waitUntilElementIsVisible(lblCartillaCambiar, 10);
-        click(lblCartillaCambiar, 10);
+        click(lblCartillaCambiar, 18);//12
     }
 
     public void scrollUp() {
@@ -129,7 +130,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(30);//1
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
@@ -155,6 +156,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(1);
                 break;
         }
+
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
