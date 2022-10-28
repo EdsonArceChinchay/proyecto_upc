@@ -28,4 +28,10 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     }
 
 
+    @Y("doy clic en agregar sva {string}")
+    public void doyClicEnAgregarSva(String Bloques) {
+        MigracionMonoADuoSVATiendaStep.clicEnAgregarSVA();
+        MigracionMonoADuoSVATiendaStep.agregoSVATV(Bloques);
+        MigracionMonoADuoSVATiendaStep.clicGuardarCambios();
+    }
 }
