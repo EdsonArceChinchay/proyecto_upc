@@ -46,5 +46,5 @@ Característica: Alta Movil Prepago solo chip Tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464941 | PLAN PREPAGO | Preplan    |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042464941 | PLAN PREPAGO | Preplan    |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
