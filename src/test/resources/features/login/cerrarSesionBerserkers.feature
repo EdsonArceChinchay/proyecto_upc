@@ -17,12 +17,12 @@ Característica: Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        doy click en Atras
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor                 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | vsiguass    | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | djormeno    | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | nishuizas   | $t3l3f0n1c4$ | Bienvenid@ | TALARA                       |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | djormeno    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | nishuizas   | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
 
   @CerrarSesionBerserker  @CierroSesion
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cerrar sesion
@@ -38,12 +38,12 @@ Característica: Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor                 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | vsiguass    | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | djormeno    | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    |
-      | usuario externo | nishuizas   | $t3l3f0n1c4$ | Bienvenid@ | TALARA                       |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | djormeno    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    |
+      | usuario externo | nishuizas   | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
 
 
   @CerrarSesionBerserker  @CierroSesionDespuesConsultar
@@ -64,6 +64,6 @@ Característica: Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                    | CE            | 123456735 |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA                    | CE            | 123456735 |

@@ -58,5 +58,5 @@ Característica: Alta trio MT con Upfront 70mb
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
