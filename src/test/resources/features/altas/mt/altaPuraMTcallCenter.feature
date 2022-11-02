@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
 Característica: Alta Fija Pura MT por Call Center
 
@@ -70,5 +70,5 @@ Característica: Alta Fija Pura MT por Call Center
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan      | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1044504957 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 500 Mbps + 95 Gb | correo@gmail.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1044204957 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 500 Mbps + 95 Gb | correo@gmail.com |
 

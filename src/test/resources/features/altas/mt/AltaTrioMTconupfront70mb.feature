@@ -1,12 +1,12 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROP35
 
-Característica: Alta trio MT con Upfront 80mb
+Característica: Alta trio MT con Upfront 70mb
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltatrioMTconUpfront80mb
+  @AltatrioMTconUpfront70mb
   Esquema del escenario: Alta trio MT con Upfront 80mb
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

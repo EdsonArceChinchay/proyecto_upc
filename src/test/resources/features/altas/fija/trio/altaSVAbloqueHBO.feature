@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @DROP35
 
 Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROP35
 
-Característica: Busqueda Inicial FE DITO WEB
+Característica: Busqueda Inicial CE, DNI y RUC DITO WEB
 
   @BusquedaInicial
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

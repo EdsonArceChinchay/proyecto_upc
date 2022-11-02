@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROP35
 
 Característica: Busqueda de direccion por coordenadas DITO WEB
 

@@ -1,5 +1,5 @@
 #language:es
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @DROP35
 
   Característica: Alta de Mono con instalación FTTH por Canal tienda
 

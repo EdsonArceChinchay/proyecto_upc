@@ -1,6 +1,6 @@
 #language:es
 @carlos
-@BERSERKERS @DoneDevOps @DoneDevOpsPI15
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15 @DROP35
 
 Característica: Alta Movil por Combo Proactivo
 

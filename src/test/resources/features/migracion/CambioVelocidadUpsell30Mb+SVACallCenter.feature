@@ -42,6 +42,7 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
       | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
 
 
+
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar

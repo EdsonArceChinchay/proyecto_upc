@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @DROP35_Upfront
 
 Característica: Alta Trio MT - Upfront Tienda
 

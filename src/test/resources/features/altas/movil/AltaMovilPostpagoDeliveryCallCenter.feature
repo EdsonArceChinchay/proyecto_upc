@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @DROP35
 
 Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center

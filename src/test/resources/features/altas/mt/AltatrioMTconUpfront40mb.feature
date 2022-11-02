@@ -1,10 +1,10 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta trio MT con Upfront 30mb
+Característica: Alta trio MT con Upfront 40mb
 
-  @AltatrioMTconUpfront30mb
-  Esquema del escenario: Alta trio MT con Upfront 30mb
+  @AltatrioMTconUpfront40mb
+  Esquema del escenario: Alta trio MT con Upfront 40mb
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -55,8 +55,8 @@ Característica: Alta trio MT con Upfront 30mb
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
 
 
 
