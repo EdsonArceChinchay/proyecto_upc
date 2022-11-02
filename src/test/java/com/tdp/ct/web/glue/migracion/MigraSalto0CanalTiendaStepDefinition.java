@@ -17,10 +17,17 @@ public class MigraSalto0CanalTiendaStepDefinition {
     public void validoQueMuestreLaPantallaDeAgendamiento() {
         migraSalto0CanalTiendaStep.validoPantallaAgendamiento();
     }
-
+    /*
     @Y("ingreso datos de agendamiento <{int}> y doy clic en continuar")
     public void ingresoDatosDeAgendamientoYDoyClicEnContinuar(String Contacto) {
         migraSalto0CanalTiendaStep.ingresoDatosAgendamiento(Contacto);
+        migraSalto0CanalTiendaStep.clicBotonConfirmarAgendamiento();
+    }
+     */
+
+    @Y("ingreso datos de agendamiento {string} y doy clic en continuar")
+    public void ingresoDatosDeAgendamientoYDoyClicEnContinuar(String contacto) {
+        migraSalto0CanalTiendaStep.ingresoDatosAgendamiento(contacto);
         migraSalto0CanalTiendaStep.clicBotonConfirmarAgendamiento();
     }
 }
