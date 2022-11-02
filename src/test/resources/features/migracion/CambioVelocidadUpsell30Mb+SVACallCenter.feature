@@ -3,7 +3,7 @@
 Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
   @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter
-  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 30mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -34,12 +34,12 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|2323232323 |Duo|RA 100 MBPS|tester@tester.com|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|1042465022 |Duo|RA 100 MBPS|tester@tester.com|
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
