@@ -1,13 +1,11 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta trio MT con Upfront 80mb
+Característica: Alta trio MT con Upfront 40mb
 
-  Antecedentes:
+  @AltatrioMTconUpfront40mb
+  Esquema del escenario: Alta trio MT con Upfront 40mb
     Dado     que abro la pagina de movistar
-
-  @AltatrioMTconUpfront80mb
-  Esquema del escenario: Alta trio MT con Upfront 80mb
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -18,7 +16,6 @@ Característica: Alta trio MT con Upfront 80mb
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -35,7 +32,7 @@ Característica: Alta trio MT con Upfront 80mb
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
-	#Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -53,10 +50,14 @@ Característica: Alta trio MT con Upfront 80mb
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-	#Y        presiono el boton descargar contrato
+    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
+
+
+
+

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
 Característica: Alta Movil Control con un financiamiento por tienda
 
@@ -59,6 +59,6 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042445067 | Postpago  |
+      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1042445078 | Postpago  |
 

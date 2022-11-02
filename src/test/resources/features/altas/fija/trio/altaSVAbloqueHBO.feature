@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @DROP35
 
 Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 
@@ -67,5 +67,5 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
 
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042445066 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS | HBO    | correo@gmail.com |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042445072 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS | HBO    | correo@gmail.com |
 

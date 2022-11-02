@@ -15,6 +15,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
     protected WebElement btnRenovarPlan;
 
+
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")
     protected WebElement btnSelectOferta;
 
@@ -37,12 +38,13 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void clickBtnCardPlanActual(){
         click(btnCardPlanActual);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void clickBtnRenovarPlan(){
         waitUntilElementIsVisible(btnRenovarPlan,10);
         click(btnRenovarPlan);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void clickSelectOferta() {
@@ -69,7 +71,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void scrollToVerBtnDetalles(){
         js().scrollElementTop(find().getElementByCss(".button-offer:nth-child(1)"));
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clickBtnVerDetalle(){
