@@ -20,7 +20,7 @@ Característica: Alta Movil Postpago solo chip Retail
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres  |    apellidos   | genero   |
+      | nombres  | apellidos      | genero   |
       | Teresita | Collasos Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -45,6 +45,6 @@ Característica: Alta Movil Postpago solo chip Retail
  #   Entonces visualizo en pantalla el mensaje de exito de la venta generada
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     |   password   |  msgHome   |  tipoDocumento | documento  |       nombrePlan                        |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1000000006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
 
