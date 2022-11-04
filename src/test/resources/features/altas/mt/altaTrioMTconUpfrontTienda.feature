@@ -107,16 +107,16 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "2pm-7pm"
-    E        ingreso telefono del titular "998877665"
-    E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+#    Y        presiono Consultar ubicacion
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+#    Y        Consulto ubicacion
+#    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+#    Y        selecciono horario "2pm-7pm"
+#    E        ingreso telefono del titular "998877665"
+#    E        ingreso instrucciones de delivery "cerca al parque"
+#    Y        doy clic en confirmar delivery
     E         ingreso correo de verificacion "<correo>"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
