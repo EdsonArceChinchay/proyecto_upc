@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP35_Upfront @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP35_Upfront
 
 Característica: Alta Duo por tienda
 
@@ -58,4 +58,4 @@ Característica: Alta Duo por tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1001000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA 70 Mbps |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1002000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA 70 Mbps |
