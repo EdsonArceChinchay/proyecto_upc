@@ -28,10 +28,10 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
-#    Y        valido que este en la pagina de ofertas sugeridas
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-    Y        selecciono el plan_movil Postpago
-    Y        selecciono el boton de eleccion de planes
+#    Y        selecciono el plan_movil Postpago
+#    Y        selecciono el boton de eleccion de planes
     #Y        selecciono el plan "Postpago" que desea
     #Y        doy click en el boton Siguiente
     #Y        valido que este en la pagina de ofertas sugeridas
