@@ -60,8 +60,8 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en finalizar registro
-    #Y        doy click en Finalizar registro
+#    Y        doy clic en finalizar registro
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 

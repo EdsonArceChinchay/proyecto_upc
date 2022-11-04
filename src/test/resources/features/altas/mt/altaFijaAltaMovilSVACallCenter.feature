@@ -61,12 +61,12 @@ Característica: Alta Fija + Alta Movil+ SVA por Call Center
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en finalizar registro
-    #Y        doy click en Finalizar registro
+#    Y        doy clic en finalizar registro
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |sva|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 500 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |PACK ANTIVIRUS MCAFEE|
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 100 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |PACK ANTIVIRUS MCAFEE|
 
