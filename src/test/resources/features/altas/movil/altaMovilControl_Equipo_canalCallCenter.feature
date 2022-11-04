@@ -22,8 +22,8 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Entonces ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Edson     | Arce | masculino |
+      | nombres | apellidos | genero    |
+      | Edson   | Arce      | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Postpago
@@ -47,7 +47,7 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1  | 11    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A1 | 11   | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -69,6 +69,6 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                                         | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/ 74.9 IV | Control  | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Al Contado |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                               | planMovil | timpoPermanencia | nombreEquipo                  | tipoPago   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1090454045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/ 74.9 IV | Control   | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Al Contado |
 

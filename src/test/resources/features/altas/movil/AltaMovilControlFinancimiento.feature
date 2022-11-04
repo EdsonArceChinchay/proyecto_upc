@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Movil Control con un financiamiento por tienda
 
@@ -60,5 +60,5 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1042445078 | Postpago  |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 4042445078 | Postpago  |
 

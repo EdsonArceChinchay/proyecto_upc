@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Fija por tienda
 
@@ -62,7 +62,7 @@ Característica: Alta Fija por tienda
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042465060 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1032464060 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA 100 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | Dúo Internet Estándar HD RA 100 Mbps| discapacitado   | SORAYA      | FIDEL       | LIMA        |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | Trío Movistar Voz Internet Estandar HD RA 100 Mbps| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
 

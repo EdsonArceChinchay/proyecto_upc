@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Migracion de Trio a MT por Canal Call Center
 
@@ -66,4 +66,4 @@ Característica: Migracion de Trio a MT por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42464702  | correo@gmail.com | discapacitado  | ELISA       | MARIO       | OCOBAMBA    | Trío          |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42465007  | correo@gmail.com | discapacitado  | MARIA       | SANTOS      | CASCAS      | Trío          |

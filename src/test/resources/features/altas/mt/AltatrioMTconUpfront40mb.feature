@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta trio MT con Upfront 40mb
 
@@ -56,7 +56,7 @@ Característica: Alta trio MT con Upfront 40mb
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1025600045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
 
 
 

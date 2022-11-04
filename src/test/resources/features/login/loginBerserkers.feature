@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Login - FE DITO WEB
 
@@ -12,7 +12,7 @@ Característica: Login - FE DITO WEB
     Y ingreso el password "<password>"
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y valido que se presente la tienda "<tiendaAsesor>"
+#    Y valido que se presente la tienda "<tiendaAsesor>"
     Ejemplos:
       | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 |
       | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
