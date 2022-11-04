@@ -20,7 +20,7 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
+    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
