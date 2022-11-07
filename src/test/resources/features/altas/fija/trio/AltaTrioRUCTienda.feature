@@ -66,6 +66,6 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | Bienvenid@ | RUC            | 20494113911     |1| DNI | 75448030|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 100 MBPS|discapacitado|
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20494113911     |1| DNI | 75448030|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 100 MBPS|discapacitado|
 
 
