@@ -44,5 +44,5 @@ Característica: Alta Fija migracion deco HD a Smart HD
 
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           | decoficador |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 856575426 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           | decoficador |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 9856575426 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |

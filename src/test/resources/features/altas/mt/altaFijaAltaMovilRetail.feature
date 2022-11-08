@@ -37,7 +37,6 @@ Característica: Alta Fija + Alta Movil por Retail
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-
     Entonces me muestra la pantalla de ofertas sugeridos
     #Y        selecciono el tipo de oferta "<tipoOferta>"
     #Y        selecciono el tipo de plan "<tipoPlan>"
@@ -54,7 +53,7 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+      | 12/12/1990 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -63,9 +62,7 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
-
-
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000323 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1022010323 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
 

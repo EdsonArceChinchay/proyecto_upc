@@ -18,8 +18,8 @@ Característica: Alta MT MAS SVA
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Juan   | Ortiz Lopez | masculino |
+      | nombres | apellidos   | genero    |
+      | Juan    | Ortiz Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -56,6 +56,6 @@ Característica: Alta MT MAS SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1041524632 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA 40 MBPS |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1121524632 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA 40 MBPS |
 

@@ -53,8 +53,8 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
       | numdoc   | user        | password     |
       | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | ZARAGOZA | GREGORIO | ACOCRO |
+      | nombreMadre | nombrePadre | distritoNac |
+      | ZARAGOZA    | GREGORIO    | ACOCRO      |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -65,7 +65,7 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | Bienvenid@ | RUC            | 20494113911     |1| DNI | 75448030|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 100 MBPS|discapacitado|
+      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                      | tipoValidacion |
+      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | Bienvenid@   | RUC           | 20494113911 | 1   | DNI             | 75448030       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 100 MBPS | discapacitado  |
 
 

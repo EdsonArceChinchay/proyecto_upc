@@ -72,7 +72,7 @@ Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery 
     Y        valido que se muestre el detalle del pedido
 	Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                                         | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV | Postpago  | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000400045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV | Postpago  | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria

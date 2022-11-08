@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
 Característica: Migracion de Duo a Trio por el canal Tienda
 
@@ -20,7 +20,7 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
+    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
@@ -38,5 +38,5 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464956 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464956 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

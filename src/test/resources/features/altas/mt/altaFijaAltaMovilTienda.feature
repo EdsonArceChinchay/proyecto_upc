@@ -57,9 +57,9 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
-
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1049965122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1022365122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |

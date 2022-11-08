@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 
@@ -44,5 +44,5 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | sva                   |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | RA 120 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | sva                         |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | RA 100 MBPS | Seguridad Total Residencial |

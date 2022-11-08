@@ -12,12 +12,12 @@ Característica: Login - FE DITO WEB
     Y ingreso el password "<password>"
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y valido que se presente la tienda "<tiendaAsesor>"
+#    Y valido que se presente la tienda "<tiendaAsesor>"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
-      | usuario externo | lterrazosce  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL            |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA                       |
+      | tipoUsuario     | userName     | password       | msgHome    | tiendaAsesor                 |
+      | usuario externo | jpachaot     | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
+      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
