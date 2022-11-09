@@ -8,13 +8,13 @@
       Dado     que abro la pagina de movistar
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
-      Y        ingreso el usuario "ggonzalesgg"
-      Y        ingreso el password "Telefonica2021"
+      Y        ingreso el usuario "lterrazosce"
+      Y        ingreso el password "$t3l3f0n1c4$"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1000000006"
+      Y        ingreso el documento "1042464940"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar

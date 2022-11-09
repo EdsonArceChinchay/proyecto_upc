@@ -39,13 +39,17 @@ public class MigraSalto0CanalTiendaPage extends WebBase {
     }
 
     public void ingresoDatosAgendamiento(String contacto) {
+        WebElement ingresaNum = find().getElementByCss("//tdp-st-input-text[@formcontrolname=\"contactNumber1\"]");
+        click(ingresaNum);
+        type(ingresaNum, contacto);
         //js().scrollElementTop(datosAgendamiento);
-        //type(ingresarContacto, contacto);
+        /*type(ingresarContacto, contacto);
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys(contacto);
         UtilWeb.waitForSeconds(2);
+         */
     }
 
     public void clicBotonConfirmarAgendamiento() {
