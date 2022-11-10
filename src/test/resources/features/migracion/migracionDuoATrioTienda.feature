@@ -20,7 +20,7 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
+    Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
@@ -29,6 +29,8 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

@@ -200,7 +200,7 @@ public class AltaFijaMovilRegistroStep {
     @ScreenShotAfter
     public void clicEnCrearCliente() {
         page.altaFijaMovilRegistroPage().crearCliente();
-        UtilWeb.waitForSeconds(100);
+        UtilWeb.waitForSeconds(30);//100
     }
     @ScreenShotBefore
     @ScreenShotAfter
