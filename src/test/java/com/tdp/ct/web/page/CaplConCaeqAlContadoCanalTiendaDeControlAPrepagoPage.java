@@ -8,11 +8,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy( xpath = "(//*[@class=\"detailHogar\"])")
+    @FindBy(xpath = "(//*[@class=\"detailHogar\"])")
     protected WebElement btnCardPlanActual;
 
-//    @FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
-    @FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
+    //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
+//@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
+    @FindBy(xpath = "(//tdp-st-button)[1]")
     protected WebElement btnRenovarPlan;
 
 
@@ -31,75 +32,82 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
     protected WebElement btnConShadowIniciarRegistro;
 
-    public void esperarBtnCardPlanActual(){
+    public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
     }
 
-    public void clickBtnCardPlanActual(){
+    public void clickBtnCardPlanActual() {
         click(btnCardPlanActual);
         UtilWeb.waitForSeconds(10);
     }
 
-    public void clickBtnRenovarPlan(){
-        waitUntilElementIsVisible(btnRenovarPlan,10);
+    public void clickBtnRenovarPlan() {
+        waitUntilElementIsVisible(btnRenovarPlan, 10);
         click(btnRenovarPlan);
         UtilWeb.waitForSeconds(10);
     }
 
     public void clickSelectOferta() {
-        waitUntilElementIsVisible(btnSelectOferta,10);
+        waitUntilElementIsVisible(btnSelectOferta, 10);
         btnSelectOferta.click();
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarPlanSelected(String plan){
+    public void validarPlanSelected(String plan) {
         waitUntilElementIsVisible(lblNewPlanName, 10);
         String getPlanName = lblNewPlanName.getText().toLowerCase();
-        Assertions.assertTrue(getPlanName.contains(plan.toLowerCase()), "El plan obtenido: "+ getPlanName +" no coincide con lo esperado "+plan.toLowerCase());
+        Assertions.assertTrue(getPlanName.contains(plan.toLowerCase()), "El plan obtenido: " + getPlanName + " no coincide con lo esperado " + plan.toLowerCase());
     }
 
-    public void esperarBtnAddEquipoInCard(){
+    public void esperarBtnAddEquipoInCard() {
         js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clickBtnAddEquipoInCard(){
+    public void clickBtnAddEquipoInCard() {
         click(btnAddEquipoInCard);
         UtilWeb.waitForSeconds(5);
     }
 
-    public void scrollToVerBtnDetalles(){
+    public void scrollToVerBtnDetalles() {
         js().scrollElementTop(find().getElementByCss(".button-offer:nth-child(1)"));
         UtilWeb.waitForSeconds(5);
     }
 
-    public void clickBtnVerDetalle(){
+    public void clickBtnVerDetalle() {
         String btnVerOfertas = ".btn-detail tdp-st-button;button";
         WebElement element = js().getWebElement(btnVerOfertas);
         element.click();
     }
 
-    public void validarFeatures(){
+    public void clickBtnVerDetalle(String nroServicio) {
+        WebElement btnVerDetalle = find().getElementByXPath("//div[@class='card']//*[contains(text(),'" + nroServicio + "')]//following::div[@class='detailHogar'][1]");
+        waitUntilElementIsVisible(btnVerDetalle, 10);
+        js().scrollElementTop(btnVerDetalle);
+        btnVerDetalle.click();
+    }
+
+    public void validarFeatures() {
         Assertions.assertFalse(caracteristicasContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
         UtilWeb.waitForSeconds(1);
     }
 
-    public void clickBtnSelectEquipo(){
+    public void clickBtnSelectEquipo() {
         String btnSelect = ".cont-btn tdp-st-button;button";
         WebElement element = js().getWebElement(btnSelect);
         element.click();
     }
 
-    public void clickBtnConShadowIniciarRegistro(){
-        System.out.println("Paso por aquiu");
+    public void clickBtnConShadowIniciarRegistro() {
+        System.out.println("Paso por aqui");
         UtilWeb.waitForSeconds(5);
-        waitUntilElementIsClickable(btnConShadowIniciarRegistro,20);
+        waitUntilElementIsClickable(btnConShadowIniciarRegistro, 20);
         click(btnConShadowIniciarRegistro);
         System.out.println("dio cliick");
     }
 
-    public void writeEmail(String email){
+    public void writeEmail(String email) {
         UtilWeb.waitForSeconds(4);
         WebElement element1 = find().getElementByXPath("//*[@formcontrolname='mail']");
         WebElement ele1 = sh().getWebElement(element1, "input");
