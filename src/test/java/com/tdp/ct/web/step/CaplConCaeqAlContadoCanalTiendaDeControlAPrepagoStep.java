@@ -68,6 +68,11 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle();
     }
 
+    @ScreenShotBefore
+    public void clickBtnVerDetalle(String nroServicio) {
+        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle(nroServicio);
+    }
+
     public void validarFeatures() {
         page.caplConCaeqAlContadoCanalTiendaPage().validarFeatures();
     }
