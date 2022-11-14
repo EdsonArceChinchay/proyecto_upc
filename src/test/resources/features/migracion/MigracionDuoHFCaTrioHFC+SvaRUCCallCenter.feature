@@ -35,14 +35,24 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
     #Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
+    Y        ingreso los datos de agendamiento para RUC
+    #Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        doy clic en el boton validar identidad representante legal
+   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+   # Y        ingreso los datos del supervisor
+    #  | numdoc   | user        | password     |
+    #  | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombreMadre   | nombrePadre   | distritoNac   |
+      | DEYSI | JOSE | SULLANA |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
+    Y       doy click en Finalizar registro
+   # Y        doy click en el boton de continuar
   #  Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido

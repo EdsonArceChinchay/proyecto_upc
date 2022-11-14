@@ -53,7 +53,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[6]/button")
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -280,7 +280,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
     }
 
-    public void ingresarDatosAgendamientoParaTrio() {
+    public void ingresarDatosAgendamientoParaRUC() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

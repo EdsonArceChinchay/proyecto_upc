@@ -42,7 +42,7 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento para trio
+    Y        ingreso los datos de agendamiento para RUC
    #Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
