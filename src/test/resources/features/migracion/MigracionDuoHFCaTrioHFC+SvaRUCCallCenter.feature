@@ -1,24 +1,29 @@
 #language:es
 
-Característica: Migracion de Mono HFC a Duo FTTH Call Center
+Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionMonoDuoCallCenter
-  Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 150Mb Hacia FTTH , con CEX, en canal call center, web front end, flujo no biométrico
+  @migracionDuoTrioRUCCallCenter
+  Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
+    Y        selecciono el ID de Cliente nro "<nro>"
+    Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
+    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
+    #Y        valido que me traiga los servicios contratados por el cliente
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
@@ -26,6 +31,8 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
+    Y        doy click en agregar "<sva>"
+    #Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -41,5 +48,5 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Duo           | RA 70 MBPS |
+      | tipoUsuario     | userName    | password     | msgHome      | tipoDocumento | documento|nro |tipoDocRepLegal|numDocRepLegal | correo            | tipoPlanHogar | plan        | sva                   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA 70 MBPS | Seguridad Total Residencial |
