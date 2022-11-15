@@ -41,4 +41,4 @@ Característica: Migracion Duo A Trio HFC a HFC canal Call Center
 	Y        valido que se muestre el detalle del pedido
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                  | tipoDocumento | documento | correo            |   tipoPlanHogar | plan                                               |
-	  | usuario externo | jpachaoce   | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 128888888 | tester@tester.com |   Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+	  | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 128888888 | tester@tester.com |   Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
