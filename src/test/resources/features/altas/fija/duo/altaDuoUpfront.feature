@@ -57,5 +57,5 @@ Característica: Alta Duo por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1002000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA 1000 Mbps |
+      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1002000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA 100 Mbps |

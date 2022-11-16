@@ -14,7 +14,7 @@
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "10300324940"
+      Y        ingreso el documento "1042464910"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar
