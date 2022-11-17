@@ -61,4 +61,4 @@ Característica: Alta fija Duo por tienda - DROP
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935701 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 1000 MBPS |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935705 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 1000 MBPS |

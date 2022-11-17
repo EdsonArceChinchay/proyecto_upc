@@ -61,4 +61,4 @@ Característica:  Alta fija Mono por tienda - DROP
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                 |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935701 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA D22 |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935704 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA D22 |
