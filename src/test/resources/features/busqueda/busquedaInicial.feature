@@ -26,11 +26,11 @@ Característica: Busqueda Inicial CE, DNI y RUC DITO WEB
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  | LUIGI GUSTAVO REYNOSO DEXTRE    |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 123456742 | Cuatro De Dos                   |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | DNI           | 09822102  | JONNY RAUL NAVARRO ESPEJO       |
-      | usuario externo | djormeno    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123456753 | Cinco De Tres                   |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123456753 | Cinco De Tres                   |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | DNI           | 09822100  | GIOVANNA MARIBEL OCOLA ASENCIO  |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 123456775 | Primero De Tercero              |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456758 | Cinco De Ocho                   |
-      | usuario externo | djormeno    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | DNI           | 09822078  | CARLOS ALBERTO VALDIVIA ALVAREZ |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | DNI           | 09822078  | CARLOS ALBERTO VALDIVIA ALVAREZ |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456776 | Primero De Segundo              |
 
   @BusquedaInicial         @BusquedaInicialRUC
