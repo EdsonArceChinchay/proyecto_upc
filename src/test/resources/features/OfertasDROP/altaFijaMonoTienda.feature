@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
 
-Característica:  Alta fija Mono con plan por tienda - DROP
+Característica:  Alta fija Mono por tienda - DROP
 
   Antecedentes:
     Dado     que abro la pagina de movistar
