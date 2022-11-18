@@ -58,4 +58,4 @@ Característica: Alta Duo por tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1002000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA 100 Mbps |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1002000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA D22 1000 Mbps |
