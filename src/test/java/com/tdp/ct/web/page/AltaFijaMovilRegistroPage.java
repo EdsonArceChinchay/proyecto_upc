@@ -164,6 +164,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonIniciarRegistro, 5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
+        UtilWeb.waitForSeconds(15);//
     }
 
     public boolean validarPantallaAgendamiento() {
@@ -310,6 +311,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
+        UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);

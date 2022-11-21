@@ -5,7 +5,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -64,7 +63,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void BtonOpciones() {
         waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
-        waitUntilElementIsVisible(BtnOpciones, 5);
+        waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
         UtilWeb.waitForSeconds(10);

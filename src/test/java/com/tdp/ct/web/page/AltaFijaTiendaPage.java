@@ -2,7 +2,6 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.checkerframework.checker.guieffect.qual.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -13,7 +12,6 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 
 public class AltaFijaTiendaPage extends WebBase {
@@ -52,6 +50,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
+
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
+    protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
         waitUntilElementIsVisible(nombresCompletosCliente, 10);
@@ -230,7 +231,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 2500);
+        waitUntilElementIsVisible(boton, 5000);
         click(boton,50);
         UtilWeb.waitForSeconds(5);
     }
@@ -275,5 +276,55 @@ public class AltaFijaTiendaPage extends WebBase {
         else {
             System.out.println("No se encontro el modal error");
         }
+    }
+
+    public void ingresarDatosAgendamientoParaRUC() {
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+//         Calendario
+        boolean elementoExistenteDias;
+        elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
+        if (elementoExistenteDias) {
+            System.out.println("paso aqui 1");
+            List<WebElement> listaDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']"));
+            click(listaDias.get(0));
+            System.out.println("paso aqui 2 " + listaDias.get(0).getText());
+        }
+
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
+        if (elementoExistente) {
+            System.out.println("paso aqui 1");
+            List<WebElement> listaHorario = driver().findElements(By.xpath("(//div[@class='contHours'])/div"));
+            click(listaHorario.get(0));
+            System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
+        }
+        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        js().scrollElementTop(buttonConfirmar);
+        WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
+        WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
+        WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
+
+        SearchContext context = sh().getContext(rootInput);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys("Edson");
+        UtilWeb.waitForSeconds(2);
+
+        SearchContext context1 = sh().getContext(rootInput1);
+        context1.findElement(By.cssSelector("div > div > div > input")).sendKeys("Arce");
+        UtilWeb.waitForSeconds(2);
+
+        SearchContext context2 = sh().getContext(rootInput2);
+        context2.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
+        UtilWeb.waitForSeconds(2);
+
+    }
+
+    public void clickValidarRepreLegal() {
+        js().scrollElementTop(btnValidaLegal);
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(btnValidaLegal,30);
+        click(btnValidaLegal);
+        UtilWeb.waitForSeconds(4);
     }
 }
