@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Fija + Alta Movil por Tienda
 

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity
 
 Característica: Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
