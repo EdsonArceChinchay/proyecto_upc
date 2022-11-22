@@ -64,5 +64,5 @@ Característica: Alta Fija + Alta Movil por Retail
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022010324 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022010514 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 500 Mbps + 95 Gb |
 
