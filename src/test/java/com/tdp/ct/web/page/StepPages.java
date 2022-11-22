@@ -6,10 +6,9 @@ import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
-import com.tdp.ct.web.page.migracion.MigraSalto0RetailPage;
 import com.tdp.ct.web.page.migracion.MigraSalto0CanalTiendaPage;
+import com.tdp.ct.web.page.migracion.MigraSalto0RetailPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
-import com.tdp.ct.web.step.Paquetizacion.AltaMovilSoloLineaRetailCeStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -45,4 +44,5 @@ public class StepPages{
     public CaeqMasCaplMasCasiPage caeqMasCaplMasCasiPage(){return new CaeqMasCaplMasCasiPage();}
     public MigraSalto0RetailPage migraSalto0RetailPage(){return new MigraSalto0RetailPage();}
     public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage(){ return new MigraSalto0CanalTiendaPage();}
+
 }
