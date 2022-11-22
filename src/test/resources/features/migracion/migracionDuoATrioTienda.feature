@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @Sanity
 
 Característica: Migracion de Duo a Trio por el canal Tienda
 
