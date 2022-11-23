@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil por Tienda
+Caracter�stica: Alta Fija + Alta Movil por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -62,4 +62,4 @@ Característica: Alta Fija + Alta Movil por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1049965122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1049965122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
