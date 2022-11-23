@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Caracter’stica: Alta Fija + Alta Movil por Tienda
+Característica: Alta Fija + Alta Movil por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -57,9 +57,9 @@ Caracter’stica: Alta Fija + Alta Movil por Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
-
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432112 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 500 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
