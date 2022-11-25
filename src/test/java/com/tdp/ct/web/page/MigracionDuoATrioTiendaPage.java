@@ -65,6 +65,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "//*[@type='button' and @class='close']")
+    protected WebElement btnClosePopUp;
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
         UtilWeb.waitForSeconds(5);
@@ -183,6 +186,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             btnReintentar.click();
             UtilWeb.waitForSeconds(2);
         }
+
+    }
+
+    public void cierroPopupDeAviso() {
+        click(btnClosePopUp,10);
 
     }
 }

@@ -17,9 +17,11 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
+    Y        cierro popup de aviso
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
+    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        presiono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -50,9 +52,11 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
+    Y        cierro popup de aviso
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
+    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        presiono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion

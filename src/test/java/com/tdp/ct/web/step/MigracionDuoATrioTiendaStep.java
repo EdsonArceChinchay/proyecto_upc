@@ -46,4 +46,8 @@ public class MigracionDuoATrioTiendaStep {
     public void doyClickEnEnElBoton(String btn) {
         page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(btn);
     }
+
+    public void cierroPopupDeAviso() {
+        page.migracionDuoATrioTiendaPage().cierroPopupDeAviso();
+    }
 }
