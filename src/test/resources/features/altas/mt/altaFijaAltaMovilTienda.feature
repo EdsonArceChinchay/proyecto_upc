@@ -18,7 +18,6 @@ Característica: Alta Fija + Alta Movil por Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de aviso
     Y        cierro popup de error
     Y        ingreso los datos del cliente extranjero a registrar
       | nombres | apellidos | genero   |
