@@ -18,7 +18,7 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de aviso
+#    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "AV,CAMINO REAL,155,SAN ISIDRO ,LIMA , LIMA ,PE" actual del servicio
