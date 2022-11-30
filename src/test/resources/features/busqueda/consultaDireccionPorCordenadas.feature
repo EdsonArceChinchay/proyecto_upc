@@ -34,7 +34,7 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 5421536244 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 1123456753 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 1999822100 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 1415246326 | -77.00525705  | -12.11851901  | PRINCIPAL 728            |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 1916646326 | -77.00525705  | -12.11851901  | PRINCIPAL 728            |
 
   @ConsultarDireccionCoordenadas  @CoordenadasIcorrectas
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo que me muestre un mensaje de error cuando ingreso coordenadas incorrectas
