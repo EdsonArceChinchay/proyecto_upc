@@ -52,4 +52,9 @@ public class MigracionDuoATrioTiendaStepDefinition {
     public void doyClickEnEnElBoton(String btn) {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
     }
+
+    @Y("cierro popup de aviso")
+    public void cierroPopupDeAviso() {
+        migracionDuoATrioTiendaStep.cierroPopupDeAviso();
+    }
 }

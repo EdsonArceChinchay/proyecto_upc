@@ -2,7 +2,6 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.checkerframework.checker.guieffect.qual.UI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -13,7 +12,6 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 
 public class AltaFijaTiendaPage extends WebBase {
@@ -53,7 +51,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[6]/button")
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -233,7 +231,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 5000);
+        waitUntilElementIsVisible(boton, 7000);
         click(boton,50);
         UtilWeb.waitForSeconds(5);
     }
@@ -280,7 +278,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
     }
 
-    public void ingresarDatosAgendamientoParaTrio() {
+    public void ingresarDatosAgendamientoParaRUC() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

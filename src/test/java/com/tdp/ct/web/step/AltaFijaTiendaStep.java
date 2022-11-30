@@ -97,8 +97,8 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotAfter
-    public void ingresarDatosAgendamientoParaTrio() {
-        page.altaFijaTiendaPage().ingresarDatosAgendamientoParaTrio();
+    public void ingresarDatosAgendamientoParaRUC() {
+        page.altaFijaTiendaPage().ingresarDatosAgendamientoParaRUC();
     }
 
     @ScreenShotBefore
