@@ -59,8 +59,8 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                        | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000100043 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000100043 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
