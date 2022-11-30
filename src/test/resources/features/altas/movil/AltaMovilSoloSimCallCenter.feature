@@ -23,8 +23,8 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
-    Y        cierro popup de aviso
-    #Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
+#    Y        cierro popup de aviso
+    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
