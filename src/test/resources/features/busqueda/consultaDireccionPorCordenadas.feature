@@ -29,8 +29,8 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
     Y        valido que la direccion sea "<direccion>"
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | longitud      | latitud       | direccion                |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 161529632 | -77.03498486  | -12.09465486  | CAMINO REAL 155          |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 123459374 | -77.03839379  | -12.08616934  | JULIO CESAR TELLO 460    |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 191529632 | -77.03498486  | -12.09465486  | CAMINO REAL 155          |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 193459374 | -77.03839379  | -12.08616934  | JULIO CESAR TELLO 460    |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 542153624 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 112345675 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 199982210 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
