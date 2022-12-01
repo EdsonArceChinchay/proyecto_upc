@@ -51,7 +51,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[6]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
