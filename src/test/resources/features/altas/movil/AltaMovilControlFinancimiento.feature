@@ -60,5 +60,5 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 10000066666 | Postpago  |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1200006555 | Postpago  |
 

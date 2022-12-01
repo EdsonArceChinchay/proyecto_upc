@@ -34,10 +34,11 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
+<<<<<<< HEAD:src/test/resources/features/migracion/CambioVelocidadUpsell40Mb+SVACallCenter.feature
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com |
 
@@ -85,4 +86,3 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |
-

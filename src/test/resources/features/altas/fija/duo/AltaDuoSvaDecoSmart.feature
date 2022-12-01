@@ -1,12 +1,12 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP35_Upfront
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
 
-Característica: Alta Duo por tienda
+Característica: Alta Duo por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaDuo_Upfront
+  @AltaDuo_SvaDecoSmart
   Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -20,8 +20,8 @@ Característica: Alta Duo por tienda
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos    | genero   |
+      | Lana    | Grey Khalifa | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -33,7 +33,7 @@ Característica: Alta Duo por tienda
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR |  parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -42,8 +42,8 @@ Característica: Alta Duo por tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "Angel.mf@gmail.com"
+    Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
@@ -52,10 +52,7 @@ Característica: Alta Duo por tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1002000246 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | Dúo Movistar Voz Internet RA D22 1000 Mbps |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                            |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA 1000 MBPS |

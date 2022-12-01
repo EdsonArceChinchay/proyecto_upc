@@ -25,7 +25,7 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "<sva>"
+    Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

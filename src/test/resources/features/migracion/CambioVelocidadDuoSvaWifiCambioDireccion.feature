@@ -1,33 +1,34 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Migracion de duo a Trio + sva
+Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
 
-  Antecedentes:
+  @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
+  Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
-
-  @MigracionduoTrioSVA
-  Esquema del escenario:Migracion de duo a Trio + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-	#Y       verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en en el boton "Actualizar direccion"
+    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
+    Y        doy click en en el boton "Buscar"
+    Y        presiono el boton consultar cobertura
+    Y        doy click en en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "<sva>"
+    Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -38,9 +39,11 @@ Característica: Migracion de duo a Trio + sva
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 102040173 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|longitud|latitud|
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|1029801212 |Duo|RA 100 MBPS|tester@tester.com|-77.07222|-12.08367|
+
+
