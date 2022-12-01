@@ -31,7 +31,8 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "<sva>"
+    Y        doy click en agregar SVA Linea "<sva>"
+   # Y        doy click en agregar "<sva>"
     #Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -59,4 +60,4 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
 
     Ejemplos:
       | tipoUsuario     | userName    | password     | msgHome      | tipoDocumento | documento|nro |tipoDocRepLegal|numDocRepLegal | correo            | tipoPlanHogar | plan        | sva                   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA 70 MBPS | Seguridad Total Residencial |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA 70 MBPS | Plan Multidestino 20 |

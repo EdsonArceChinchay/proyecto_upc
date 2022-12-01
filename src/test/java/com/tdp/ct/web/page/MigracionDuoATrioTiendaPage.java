@@ -180,4 +180,20 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
 
     }
+
+    public void agregoSVALinea(String svaLinea) {
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(4) .options-content .flex_100");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(svaLinea)) {
+                UtilWeb.waitForSeconds(2);
+                click(elements, 3);
+            }
+        }
+    }
 }

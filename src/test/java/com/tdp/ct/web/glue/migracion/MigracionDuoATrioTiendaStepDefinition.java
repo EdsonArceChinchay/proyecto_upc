@@ -15,6 +15,9 @@ public class MigracionDuoATrioTiendaStepDefinition {
   @Autowired
   private MigracionDuoATrioTiendaStep migracionDuoATrioTiendaStep;
 
+    @Autowired
+    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+
     @Y("selecciono la cartilla del plan activo")
     public void selecciono_la_cartilla_del_plan_Activo(){
         migracionDuoATrioTiendaStep.selecciono_la_cartilla_del_plan_Activo();
@@ -51,5 +54,13 @@ public class MigracionDuoATrioTiendaStepDefinition {
     @Y("doy click en en el boton {string}")
     public void doyClickEnEnElBoton(String btn) {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
+    }
+
+    @Y("doy click en agregar SVA Linea {string}")
+    public void doyClickEnAgregarSVALinea(String SvaLinea) {
+        altaFijaMovilRegistroStep.clicEnAgregarSVA();
+        migracionDuoATrioTiendaStep.agregoSVALinea(SvaLinea);
+        altaFijaMovilRegistroStep.clicGuardarCambios();
+
     }
 }
