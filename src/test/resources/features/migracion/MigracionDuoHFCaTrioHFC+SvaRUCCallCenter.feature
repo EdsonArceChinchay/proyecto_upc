@@ -42,7 +42,7 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic en el boton validar identidad representante legal
-   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
    # Y        ingreso los datos del supervisor
     #  | numdoc   | user        | password     |
     #  | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
@@ -60,4 +60,4 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
 
     Ejemplos:
       | tipoUsuario     | userName    | password     | msgHome      | tipoDocumento | documento|nro |tipoDocRepLegal|numDocRepLegal | correo            | tipoPlanHogar | plan        | sva                   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA 70 MBPS | Plan Multidestino 20 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |

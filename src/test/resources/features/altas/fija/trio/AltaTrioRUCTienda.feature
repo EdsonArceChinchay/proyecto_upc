@@ -38,7 +38,10 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
 #   Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono la oferta "<plan>"
+   #Y        doy click en Cambiar plan hogar
+    Y        selecciono en linea Nueva
+    #Y        selecciono el plan "<nombrePlan>"
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -52,6 +55,7 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     #Y        ingreso los datos del supervisor
      # | numdoc   | user        | password     |
      #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+    Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | DEYSI | JOSE | SULLANA |
@@ -60,12 +64,12 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 70 MBPS|discapacitado|
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|plan|
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
 
 
