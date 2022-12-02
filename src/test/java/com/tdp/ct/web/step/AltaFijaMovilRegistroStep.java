@@ -188,7 +188,6 @@ public class AltaFijaMovilRegistroStep {
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        UtilWeb.waitForSeconds(2);
         String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
         String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
         String genero=UtilWeb.getValueFromDataTable(datos,"genero");
