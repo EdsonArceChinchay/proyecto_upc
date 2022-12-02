@@ -35,7 +35,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
-    @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),' Validación no biométrica')])[1]")
     protected WebElement buttonDiscapacitado;
     @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
     protected WebElement buttonValBiometrica;
@@ -473,7 +473,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonAgregarSVA);
         waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void clicSVAHBO() {

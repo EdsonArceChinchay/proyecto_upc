@@ -325,6 +325,6 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsClickable(btnValidaLegal,30);
         click(btnValidaLegal);
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(8);
     }
 }
