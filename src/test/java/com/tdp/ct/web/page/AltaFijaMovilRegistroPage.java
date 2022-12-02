@@ -501,6 +501,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //CAMBIOS PARA RETAIL
     public void ingresarNombreClienteExtranjero(String nombre) {
+        UtilWeb.waitForSeconds(2);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);

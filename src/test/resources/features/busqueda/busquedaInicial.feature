@@ -51,10 +51,10 @@ Característica: Busqueda Inicial CE, DNI y RUC DITO WEB
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
     E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
-    Y        valido que me traiga los servicios contratados por el cliente
-    Y        doy click en el icono de Asesor
-    Y        doy click en Cerrar Sesion
-    Y        confirmo Cerrar Sesion
+#    Y        valido que me traiga los servicios contratados por el cliente
+#    Y        doy click en el icono de Asesor
+#    Y        doy click en Cerrar Sesion
+#    Y        confirmo Cerrar Sesion
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | cliente                    | nro | tipoDocRepLegal | numDocRepLegal |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | RUC           | 20514559911 | CHIFA HERMANOS S.A.C.      | 3   | DNI             | 75447585       |
