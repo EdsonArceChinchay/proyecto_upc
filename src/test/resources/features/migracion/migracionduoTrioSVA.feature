@@ -29,9 +29,9 @@ Característica: Migracion de duo a Trio + sva
     Y        valido que este en la seccion de registro
     Y        doy click en agregar "<sva>"
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
+    #Y        valido que me encuentre en la pantalla agendamiento
+    #Y        ingreso los datos de agendamiento
+    #Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -42,5 +42,5 @@ Característica: Migracion de duo a Trio + sva
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040173 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042465009 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
