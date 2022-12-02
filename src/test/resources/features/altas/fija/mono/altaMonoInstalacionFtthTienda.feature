@@ -25,7 +25,7 @@
       Entonces me muestra la pantalla para ingresar la direccion
       Y        completo los datos para consultar la cobertura
         |departamento|provincia|distrito|direccion                    |referencia|
-        |15          |1501     |150136  |Calle Condesa de Chinchon 107|parque    |
+        |15          |1501     |150116  |JIRON JULIO CESAR TELLO 460  |parque    |
       Y        presiono el boton Consultar Ubicacion
       Y        ingreso la informacion del lugar para la instalacion
         | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
