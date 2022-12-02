@@ -64,6 +64,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void listaTipoPlanMovil(String planMovil) {
+        UtilWeb.waitForSeconds(3);
         clickElementInAList(listaTipoPlanMovil, planMovil,10);
     }
 

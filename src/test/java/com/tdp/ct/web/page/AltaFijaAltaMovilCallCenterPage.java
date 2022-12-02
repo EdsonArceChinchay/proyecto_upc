@@ -243,6 +243,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsClickable(oferta, 500).click();
+        UtilWeb.waitForSeconds(5);//
     }
 
     public void listaOfertas(String planOfertas) {

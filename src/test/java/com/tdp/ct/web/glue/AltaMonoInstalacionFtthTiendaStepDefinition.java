@@ -29,6 +29,7 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
         altaMonoHfcTiendaStep.scrollToBtnCrearCliente();
         altaMonoHfcTiendaStep.crearCliente();
+
     }
 
     @Entonces("valido que se presente la pantalla con el titulo {string}")

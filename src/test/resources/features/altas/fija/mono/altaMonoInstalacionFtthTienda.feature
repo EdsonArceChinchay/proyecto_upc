@@ -14,7 +14,7 @@
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1042464910"
+      Y        ingreso el documento "1042464884"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar
@@ -25,7 +25,7 @@
       Entonces me muestra la pantalla para ingresar la direccion
       Y        completo los datos para consultar la cobertura
         |departamento|provincia|distrito|direccion                    |referencia|
-        |15          |1501     |150136  |Calle Condesa de Chinchon 107|parque    |
+        |15          |1501     |150116  |JIRON JULIO CESAR TELLO 460  |parque    |
       Y        presiono el boton Consultar Ubicacion
       Y        ingreso la informacion del lugar para la instalacion
         | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
