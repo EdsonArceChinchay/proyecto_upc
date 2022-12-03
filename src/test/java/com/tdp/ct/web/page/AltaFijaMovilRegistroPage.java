@@ -292,7 +292,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(20);
-        waitUntilElementIsVisible(buttonValidarContrato, 1500);
+        waitUntilElementIsVisible(buttonValidarContrato, 90);
         //js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato, 300);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
@@ -303,7 +303,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsClickable(buttonContinuar, 500);
+        waitUntilElementIsClickable(buttonContinuar, 90);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
