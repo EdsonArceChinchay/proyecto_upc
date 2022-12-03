@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CaeqPorRetailPage extends WebBase {
-    @FindBy(xpath = "//app-oferta/div[4]/div[2]/div[1]/div[2]/div[1]/div[4]/div/div")
+    @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement btnAnadirE;
 
     @FindBy(css = "tdp-st-button[label=\"Seleccionar\"]")
@@ -21,7 +21,7 @@ public class CaeqPorRetailPage extends WebBase {
         UtilWeb.waitForSeconds(10);
         js().scrollElementTop(btnAnadirE);
         waitUntilElementIsClickable(btnAnadirE,20).click();
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
     }
 
     public void btnSeleecionar() {

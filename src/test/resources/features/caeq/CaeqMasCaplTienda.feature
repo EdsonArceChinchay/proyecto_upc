@@ -2,7 +2,7 @@
 
 Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
-  @CaeqCaplCasi
+  @CaeqMasCaplTienda
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -15,46 +15,30 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        cierro popup de error
-    #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    #Y        selecciono el boton Mostrar ofertas
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+    Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan movil "Postpago"
+    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/114.9 IV"
+    Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
-    Y        selecciono tipo de pago Al Contado
+    #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName       |
       | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en en el boton "Cambiar Plan"
-    Y        Selecciono boton Cambiar Chip
     Y        doy click en iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
-    Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
-    Y        ingreso la referencia de la direccion "conjunto b"
-    Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
-    Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
-    Y        ingreso el telefono de contacto "956756143"
-    Y        ingreso las instrucciones a considerar de la entrega "abc"
-    Y        doy clic en confirmar delivery
-    Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-#    Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome      | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 6765454324 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |

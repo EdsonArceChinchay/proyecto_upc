@@ -84,7 +84,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnSelectEquipo(){
-        String btnSelect = ".cont-btn tdp-st-button;button";
+        String btnSelect = ".cont-btn tdp-st-button";
         WebElement element = js().getWebElement(btnSelect);
         element.click();
     }
