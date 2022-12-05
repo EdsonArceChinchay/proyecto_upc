@@ -66,7 +66,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -83,9 +83,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(10);
         clickElementInAList(listaPlanFija, plaHogar);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
