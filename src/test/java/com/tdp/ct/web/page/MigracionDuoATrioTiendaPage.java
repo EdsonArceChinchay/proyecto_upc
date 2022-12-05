@@ -66,7 +66,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(15);
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -179,5 +179,21 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             UtilWeb.waitForSeconds(2);
         }
 
+    }
+
+    public void agregoSVALinea(String svaLinea) {
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(3) .flex_100");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(svaLinea)) {
+                UtilWeb.waitForSeconds(2);
+                click(elements, 3);
+            }
+        }
     }
 }

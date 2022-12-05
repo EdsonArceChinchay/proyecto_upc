@@ -26,8 +26,6 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    #Y        doy click en agregar "<sva>"
-    #Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -43,5 +41,5 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | sva                   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1029398899 | tester@tester.com | Duo           | RA 70 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Duo           | RA 70 MBPS |
