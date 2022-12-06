@@ -22,7 +22,7 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        ingreso los datos del cliente extranjero a registrar
       | nombres | apellidos | genero   |
       | Luisa   | Cabello   | femenino |
-    Y        cierro popup de aviso
+#    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
