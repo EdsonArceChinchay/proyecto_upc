@@ -47,4 +47,4 @@ Característica: Alta Combo Prepago por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | nishuizas    | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464886 | Prepago preplan |
+      | usuario externo | nishuizas    | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |
