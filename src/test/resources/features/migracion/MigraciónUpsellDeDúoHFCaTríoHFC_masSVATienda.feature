@@ -18,11 +18,10 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-   # Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    #Y        selecciono tipo de oferta
+    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    #Y        selecciono el plan "<planTrio>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Y        doy click en agregar repetidor
@@ -41,5 +40,5 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome      | tiendaAsesor        | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$   | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042464993 | tester@tester.com | Duo            | RA 70 MBPS  |
+      | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor        | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
+      | usuario externo | lterrazosce | Telefonica2021  | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 156128901 | tester@tester.com  | Duo            | RA 70 MBPS  |
