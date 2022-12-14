@@ -38,7 +38,7 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-<<<<<<< HEAD:src/test/resources/features/migracion/CambioVelocidadUpsell40Mb+SVACallCenter.feature
+
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com |
 
