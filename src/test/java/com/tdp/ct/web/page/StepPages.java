@@ -44,5 +44,6 @@ public class StepPages{
     public CaeqMasCaplMasCasiPage caeqMasCaplMasCasiPage(){return new CaeqMasCaplMasCasiPage();}
     public MigraSalto0RetailPage migraSalto0RetailPage(){return new MigraSalto0RetailPage();}
     public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage(){ return new MigraSalto0CanalTiendaPage();}
+    public PortabilidadPage portabilidadPage(){ return new PortabilidadPage();}
 
 }
