@@ -33,7 +33,7 @@
       Y        presiono el boton Consultar Cobertura
       Y        selecciono tipo de oferta
       Y        selecciono el tipo de plan fija "Mono"
-      Y        selecciono el plan "INTERNET MOVISTAR RA 100"
+      Y        selecciono el plan "INTERNET MOVISTAR RA D22 100"
       Cuando   doy clic a iniciar registro
       Y        valido que me encuentre en la pantalla agendamiento
       Y        ingreso telefono de contacto
