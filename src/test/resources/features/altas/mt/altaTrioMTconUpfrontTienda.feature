@@ -117,7 +117,8 @@ Característica: Alta Trio MT - Upfront Tienda
 #    E        ingreso telefono del titular "998877665"
 #    E        ingreso instrucciones de delivery "cerca al parque"
 #    Y        doy clic en confirmar delivery
-    E         ingreso correo de verificacion "<correo>"
+    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
