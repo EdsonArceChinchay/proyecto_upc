@@ -79,7 +79,7 @@ public class HomePage extends WebBase {
         waitUntilElementIsVisible(btnconsultar,10);
         click(btnconsultar);
         waitUntilElementIsVisible(boton01,20);
-        UtilWeb.waitForSeconds(18);//10
+        UtilWeb.waitForSeconds(20);//10
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
