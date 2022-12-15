@@ -51,7 +51,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[6]/button")
+    @FindBy(className = ".mb-20:nth-child(6) .mat-focus-indicator")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -74,7 +74,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas) {
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;

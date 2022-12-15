@@ -22,12 +22,13 @@ Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "Postpago"
-    Y        escojo tipo de operador "MOVISTAR"
+    Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
+    Y         valido los servicios
 
 
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | numero |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 | 976709704|
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 | 920956355|
 
