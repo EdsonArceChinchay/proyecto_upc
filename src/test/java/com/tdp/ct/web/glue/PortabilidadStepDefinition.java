@@ -3,7 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.PortabilidadStep;
-import com.tdp.ct.web.step.ServiceTest;
+import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import io.cucumber.datatable.DataTable;
 
 import io.cucumber.java.es.Cuando;
