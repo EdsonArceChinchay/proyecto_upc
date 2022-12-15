@@ -31,9 +31,9 @@ Característica: Alta Fija por tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+#      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -60,9 +60,9 @@ Característica: Alta Fija por tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1281732450 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 150 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 105643211 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065490  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Duo      | Dúo Internet Estándar HD RA 100 Mbps| discapacitado   | SORAYA      | FIDEL       | LIMA        |
      # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 77065420  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema    | Trío     | Trío Movistar Voz Internet Estandar HD RA 100 Mbps| discapacitado   | YOLANDA     | RODRIGO     | SANTA ANITA |
 

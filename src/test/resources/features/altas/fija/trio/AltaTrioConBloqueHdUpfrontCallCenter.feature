@@ -19,9 +19,9 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | Juan    | Lopez Garcia | masculino |
+    #Y        ingreso los datos del cliente a registrar
+    #  | nombres | apellidos    | genero    |
+    #  | Juan    | Lopez Garcia | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -61,6 +61,6 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                        | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000100043 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1029392562 | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS| discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 

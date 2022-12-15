@@ -66,7 +66,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(15);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {

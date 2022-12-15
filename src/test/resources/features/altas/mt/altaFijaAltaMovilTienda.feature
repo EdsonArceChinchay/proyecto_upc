@@ -22,7 +22,7 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        ingreso los datos del cliente extranjero a registrar
       | nombres | apellidos | genero   |
       | Luisa   | Cabello   | femenino |
-    Y        cierro popup de aviso
+#    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -63,4 +63,4 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1597523368 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 500 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432120 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
