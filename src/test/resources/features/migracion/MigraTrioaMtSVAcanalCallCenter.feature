@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Trio a MT por Canal Call Center
+Característica: Migracion de Trio a MT SVA por Canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @migracionTrioAmtCallCenter
-  Esquema del escenario: Migracion de Trio a MT con CE  sin productos asociados sin biometria
+  Esquema del escenario: Migracion de Trio a MT SVA
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
