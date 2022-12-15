@@ -19,9 +19,9 @@ Característica: Alta Trio con bloque HD Upfront por Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | Juan    | Lopez Garcia | masculino |
+    #Y        ingreso los datos del cliente a registrar
+    #  | nombres | apellidos    | genero    |
+    #  | Juan    | Lopez Garcia | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
