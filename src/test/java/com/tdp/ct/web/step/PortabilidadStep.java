@@ -3,6 +3,7 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ public class PortabilidadStep {
 
     @ScreenShotBefore
     public void clickBotonPortabilidad() {
+        UtilWeb.waitForSeconds(10);
         page.portabilidadPage().clickBotonPortabilidad();
 
     }

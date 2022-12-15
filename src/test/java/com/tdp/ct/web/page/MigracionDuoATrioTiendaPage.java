@@ -85,7 +85,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
         UtilWeb.waitForSeconds(10);
         clickElementInAList(listaPlanFija, plaHogar);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {

@@ -1,0 +1,22 @@
+{
+  "receipt": "22",
+  "donor": "64",
+  "customerIdentification": {
+    "identificationType": "01",
+    "identificationNumber": "75102009"
+  },
+  "serviceType": "1",
+  "numbersAndPlansList": [
+    {
+      "number": "920956343",
+      "planType": "02",
+      "planTypeReceiver": "string"
+    }
+  ],
+  "observations": "",
+  "customerName": "VANESSA NAHOMI PALACIOS CARRANZA",
+  "customerEmail": "",
+  "customerContactPhone": "",
+  "customerFax": "",
+  "flag": ""
+}
