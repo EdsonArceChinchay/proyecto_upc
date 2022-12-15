@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import io.cucumber.datatable.DataTable;
 import org.junit.Test;
 import org.springframework.stereotype.Component;
 
@@ -19,5 +20,8 @@ public class ServiceTest {
                 .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/prevalidateportin/")
                 .then().statusCode(200).extract().path("previousConsultationId");
         System.out.println("previousConsultationId" + consultationId);
+    }
+
+    public void receiveMessage(DataTable dataTable) {
     }
 }

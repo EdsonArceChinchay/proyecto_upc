@@ -24,7 +24,11 @@ Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
     Y        escojo tipo de linea "Postpago"
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
-    Y         valido los servicios
+    Y        valido los servicios
+      | Telefono  | Fecha_Sig  | Fecha_FinMes |
+      | 920956355 | 2022-12-16 | 2022-12-31   |
+    Y         doy tiempo extra
+
 
 
 
