@@ -655,7 +655,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        waitUntilElementIsVisible(scrollorden, 500);
+        waitUntilElementIsVisible(scrollorden, 600);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
