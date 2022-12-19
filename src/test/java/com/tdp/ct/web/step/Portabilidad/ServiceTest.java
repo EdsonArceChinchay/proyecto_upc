@@ -2,6 +2,7 @@ package com.tdp.ct.web.step.Portabilidad;
 
 import com.jayway.jsonpath.JsonPath;
 import com.tdp.ct.web.legacy.datasession.SessionData;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import net.minidev.json.JSONArray;
@@ -15,6 +16,8 @@ import static io.restassured.RestAssured.given;
 
 @Component
 public class ServiceTest {
+
+    private static String consultation = "";
 
     public String readerJson(String path) {
         String jsonFile = System.getProperty("user.dir") + "/src/test/resources" + path;
@@ -33,9 +36,9 @@ public class ServiceTest {
         }
     }
 
-    public String preValidate() {
+    public void preValidate() {
         String body = readerJson("/features/Portabilidad/JsonRequest/preValidate.json");
-        String consultation = given()
+        String consultation1 = given()
                 .header("unica-application", "FrontEnd")
                 .header("unica-pid", "e7165d6c-3c53-4c0e-afd9-67a01b476855")
                 .header("unica-serviceid", "8dcf22a1-129d-4bf5-84f2-22f438bac469")
@@ -44,20 +47,19 @@ public class ServiceTest {
                 .body(body)
                 .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/prevalidateportin/")
                 .then().statusCode(200).extract().path("previousConsultationId");
-        System.out.println("previousConsultationId: " + consultation);
-        return consultation;
+        System.out.println("previousConsultationId: " + consultation1);
+
     }
 
     public void receiveMessage(DataTable dataTable) throws IOException {
         preValidate();
-        var telefono = UtilWeb.getValueFromDataTable(dataTable, "Telefono");
+        var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Portabilidad/JsonRequest/receive.json");
         String statusBody = Files.readString(filePath);
 
-        String consultation = preValidate();
 
         statusBody = statusBody.replace("{Code}", consultation);
         statusBody = statusBody.replace("{number}", telefono);

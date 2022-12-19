@@ -31,4 +31,9 @@ public class MigracionMonoADuoSVATiendaStep {
     public void clicGuardarCambios() {
         page.MigracionMonoADuoSVATiendaPage().clickGuardarCambios();
     }
+
+
+    public void seleccionarPlanMigrar(String plan) {
+        page.MigracionMonoADuoSVATiendaPage().seleccionarPlanMigrar(plan);
+        }
 }

@@ -88,12 +88,12 @@ public class AltaFijaTiendaPage extends WebBase {
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
-        for (int i = 0; i < listaOfertas.size(); i++) {
-            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-            if (ofertaObtenida.contains(ofertaEsperada)) {
-                UtilWeb.waitForSeconds(2);
+                for (int i = 0; i < listaOfertas.size(); i++) {
+                    String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
+                    System.out.println("Entro al for de las lista de ofertas");
+                    System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+                    if (ofertaObtenida.contains(ofertaEsperada)) {
+                        UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
             }

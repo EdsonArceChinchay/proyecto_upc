@@ -25,14 +25,18 @@ Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
     Y        valido los servicios
-      | Telefono  | Fecha_Sig  | Fecha_FinMes |
-      | 920956355 | 2022-12-16 | 2022-12-31   |
+      | telefono  | Fecha_Sig  | Fecha_FinMes |
+      | 920956351 | 2022-12-17 | 2022-12-31   |
     Y         doy tiempo extra
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y        doy tiempo extra
+
 
 
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | numero |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 | 920956355|
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  |numero |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 |920956351|
 
