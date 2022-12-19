@@ -21,15 +21,15 @@ Característica: Alta Combo Prepago por Retail
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres  | apellidos      | genero   |
-      | Jorge    | Blanco Llacza  | Masculino|
+      | nombres | apellidos     | genero    |
+      | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
+      | permanencia     | tipoPago   | equipoName               |
       | sin permanencia | Al Contado | HUAWEI P30 AZUL ELLE-L04 |
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
@@ -38,13 +38,13 @@ Característica: Alta Combo Prepago por Retail
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
-     | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-     | 12/12/2000 | soltero     | Alemania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
+      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | nishuizas    | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |

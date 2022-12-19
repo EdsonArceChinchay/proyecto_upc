@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @RegresionPangea
 Característica: Migracion de Mono HFC a Duo FTTH Call Center
 
   Antecedentes:
@@ -41,5 +41,5 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Duo           | RA 70 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Duo           | RA D22 70 MBPS |

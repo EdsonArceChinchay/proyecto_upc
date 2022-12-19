@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea
 
 Característica: Alta Duo Trio Call Center
   Quiero realizar una alta fija por call center
@@ -7,7 +7,7 @@ Característica: Alta Duo Trio Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaDuoPorCallCenter
+  @AltaPorCallCenter
   Esquema del escenario: Alta Duo Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -61,6 +61,6 @@ Característica: Alta Duo Trio Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10144009003 | Duo      | RA 100 MBPS |
-      #| usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Trío      | RA 100 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlan | nombrePlan  |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 114400913 | Duo      | RA D22 100 MBPS |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100014563 | Trío     | RA D22 100 MBPS |
