@@ -54,4 +54,13 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
 
     }
+
+    public void seleccionarPlanMigrar(String plan) {
+        UtilWeb.waitForSeconds(5);
+        String elemento = "//div[contains(@class, 'stl_negrita g-text--uppercase') and contains(., '" + plan + "')]";
+        WebElement elementPlan = find().getElementByXPath(elemento);
+        waitUntilElementIsVisible(elementPlan, 20).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
+
+    }
 }
