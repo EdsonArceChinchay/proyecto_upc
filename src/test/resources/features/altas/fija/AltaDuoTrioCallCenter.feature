@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Duo Trio Call Center
   Quiero realizar una alta fija por call center
@@ -62,5 +62,5 @@ Característica: Alta Duo Trio Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlan | nombrePlan  |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 114400913 | Duo      | RA D22 100 MBPS |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100014563 | Trío     | RA D22 100 MBPS |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 114400914 | Duo      | RA D22 100 MBPS |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100014564 | Trío     | RA D22 100 MBPS |

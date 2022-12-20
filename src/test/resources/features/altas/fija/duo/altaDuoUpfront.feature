@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @RegresionPangea
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
 
 Característica: Alta Duo por tienda
 
@@ -58,4 +58,4 @@ Característica: Alta Duo por tienda
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 110200241 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 110100241 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
