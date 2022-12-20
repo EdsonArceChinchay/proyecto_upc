@@ -93,14 +93,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         correoElement.sendKeys(Keys.DELETE);
         type(correoElement, verifCorreo);
 
-        String inputCorreo2 = "div form div:nth-child(4) tdp-st-input-text;input";
-        WebElement correoElement2 = js().getWebElement(inputCorreo2);
-        click(correoElement2);
-        correoElement2.sendKeys(Keys.CONTROL + "a");
-        correoElement2.sendKeys(Keys.DELETE);
-        type(correoElement2, verifCorreo);
-
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicBotonContinuar() {

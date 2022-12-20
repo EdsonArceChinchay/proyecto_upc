@@ -9,12 +9,12 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "lterrazosce"
-      Y        ingreso el password "$t3l3f0n1c4$"
+      Y        ingreso el password "Telefonica2021"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-      Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
+      #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1042464940"
+      Y        ingreso el documento "1042464884"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar
@@ -25,7 +25,7 @@
       Entonces me muestra la pantalla para ingresar la direccion
       Y        completo los datos para consultar la cobertura
         |departamento|provincia|distrito|direccion                    |referencia|
-        |15          |1501     |150136  |Calle Condesa de Chinchon 107|parque    |
+        |15          |1501     |150116  |JIRON JULIO CESAR TELLO 460  |parque    |
       Y        presiono el boton Consultar Ubicacion
       Y        ingreso la informacion del lugar para la instalacion
         | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -33,7 +33,7 @@
       Y        presiono el boton Consultar Cobertura
       Y        selecciono tipo de oferta
       Y        selecciono el tipo de plan fija "Mono"
-      Y        selecciono el plan "INTERNET MOVISTAR RA 100"
+      Y        selecciono el plan "INTERNET MOVISTAR RA D22 100"
       Cuando   doy clic a iniciar registro
       Y        valido que me encuentre en la pantalla agendamiento
       Y        ingreso telefono de contacto

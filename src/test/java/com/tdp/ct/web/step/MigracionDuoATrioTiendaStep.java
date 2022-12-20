@@ -50,4 +50,5 @@ public class MigracionDuoATrioTiendaStep {
     public void agregoSVALinea(String svaLinea) {page.migracionDuoATrioTiendaPage().agregoSVALinea(svaLinea);
 
     }
+
 }

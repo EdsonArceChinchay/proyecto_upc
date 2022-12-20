@@ -22,6 +22,7 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        ingreso los datos del cliente extranjero a registrar
       | nombres | apellidos | genero   |
       | Luisa   | Cabello   | femenino |
+#    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -51,15 +52,15 @@ Característica: Alta Fija + Alta Movil por Tienda
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1990 | Casado      | Albania      |
+      | 11/02/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
-
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1049965122 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432120 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |

@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Mono a Mono por el canal Call Center
+Característica: Migracion de Trio a trio  por el canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionMonoADuoSVATienda
-  Esquema del escenario: Migracion de Mono a Mono
+  @MigracionTrioATrioCallCenter
+  Esquema del escenario: Migracion de Trio a trio
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"

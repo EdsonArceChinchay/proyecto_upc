@@ -51,7 +51,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(className = ".mb-20:nth-child(6) .mat-focus-indicator")
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -74,7 +74,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas) {
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
@@ -88,12 +88,12 @@ public class AltaFijaTiendaPage extends WebBase {
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
-                for (int i = 0; i < listaOfertas.size(); i++) {
-                    String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-                    System.out.println("Entro al for de las lista de ofertas");
-                    System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-                    if (ofertaObtenida.contains(ofertaEsperada)) {
-                        UtilWeb.waitForSeconds(2);
+        for (int i = 0; i < listaOfertas.size(); i++) {
+            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
+            System.out.println("Entro al for de las lista de ofertas");
+            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            if (ofertaObtenida.contains(ofertaEsperada)) {
+                UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
             }
@@ -231,7 +231,7 @@ public class AltaFijaTiendaPage extends WebBase {
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 80);
+        waitUntilElementIsVisible(boton, 5000);
         click(boton,50);
         UtilWeb.waitForSeconds(5);
     }
@@ -325,6 +325,6 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsClickable(btnValidaLegal,30);
         click(btnValidaLegal);
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(4);
     }
 }
