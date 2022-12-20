@@ -44,5 +44,5 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                                     | sva                         |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464100 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 100 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan            | sva                         |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464100 | tester@tester.com | Duo           | RA D22 100 MBPS | Seguridad Total Residencial |
