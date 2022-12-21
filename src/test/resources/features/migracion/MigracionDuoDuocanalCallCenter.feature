@@ -28,9 +28,9 @@ Característica: Migracion Duo a Duo en canal CALL CENTER
 	Y        doy click en Cambiar plan hogar
 	Y        valido que este en la seccion de registro
 	Cuando   doy clic a iniciar registro
-	#Y        valido que me encuentre en la pantalla agendamiento
-	#Y        ingreso los datos de agendamiento
-	#Y        presiono el boton confirmar agendamiento
+	Y        valido que me encuentre en la pantalla agendamiento
+	Y        ingreso los datos de agendamiento
+	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "<correo>"
 	Y        ingreso nuevamente el correo electronico "<correo>"
 	Y        doy clic para validar contrato hogar
