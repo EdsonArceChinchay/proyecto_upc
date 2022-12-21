@@ -184,7 +184,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
             btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
+            UtilWeb.waitForSeconds(1);
         }
 
     }
