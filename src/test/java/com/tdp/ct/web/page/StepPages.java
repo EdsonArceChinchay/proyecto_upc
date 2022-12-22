@@ -10,6 +10,7 @@ import com.tdp.ct.web.page.migracion.MigraMTconCambioVelocidaCallCenterPage;
 import com.tdp.ct.web.page.migracion.MigraSalto0CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.MigraSalto0RetailPage;
 import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -46,4 +47,5 @@ public class StepPages{
     public MigraSalto0RetailPage migraSalto0RetailPage(){return new MigraSalto0RetailPage();}
     public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage(){ return new MigraSalto0CanalTiendaPage();}
     public MigraMTconCambioVelocidaCallCenterPage migraMTconCambioVelocidaCallCenterPage(){return new MigraMTconCambioVelocidaCallCenterPage();}
+    public SvaCallCenterPage svaCallCenterPage(){return new SvaCallCenterPage();}
 }
