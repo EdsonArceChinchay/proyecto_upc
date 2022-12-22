@@ -1,5 +1,4 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Migracion de Mono a Mono por el canal Call Center
 
@@ -23,12 +22,13 @@ Característica: Migracion de Mono a Mono por el canal Call Center
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Y        doy click en añadir SVA
     Y        doy click en agregar Bloque "<bloque>"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -44,5 +44,5 @@ Característica: Migracion de Mono a Mono por el canal Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | plan_hogar | nombrePlan                          |bloque|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | DNI            | 75102003 | tester@tester.com | Mono           | TV  | HBO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                          |bloque|
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Mono           | TV ESTÁNDAR DIGITAL RA D22  | HBO |

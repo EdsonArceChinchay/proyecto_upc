@@ -74,6 +74,7 @@ public class AltaFijaTiendaStepDefinition {
   @Y("doy click en agregar Bloque {string}")
   public void doyClickEnAgregarBloque(String Bloque) {
     altaFijaTiendaStep.doyClickEnAgregarBloque(Bloque);
+
   }
 
   @Y("doy click en Guardar cambios")
