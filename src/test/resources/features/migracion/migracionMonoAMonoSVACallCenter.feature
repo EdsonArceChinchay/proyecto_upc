@@ -43,6 +43,7 @@ Característica: Migracion de Mono a Mono por el canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
+
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                          |bloque|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123456744 | tester@tester.com | Mono           | TV ESTÁNDAR DIGITAL RA D22  | HBO |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Mono           | TV ESTÁNDAR DIGITAL RA D22  | HBO |

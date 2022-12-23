@@ -48,7 +48,15 @@ public class ServiceTest {
                 .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/prevalidateportin/")
                 .then().statusCode(200).extract().path("previousConsultationId");
         System.out.println("previousConsultationId: " + consultation1);
-
+        // Separa en 2 grupos el código recibido
+        String numero1 = consultation1.substring(0,8);
+        String numero2 = consultation1.substring(9,17);
+        // La segunda parte del código recibido le resta 1
+        int restaNumero2 = Integer.parseInt(numero2) - 1;
+        // convierte la segunda parte del código recibido en String
+        String numero2Correcto = String.valueOf(restaNumero2);
+        // Unimos para obtener el código correcto
+        consultation = numero1 + numero2Correcto;
     }
 
     public void receiveMessage(DataTable dataTable) throws IOException {
@@ -78,6 +86,4 @@ public class ServiceTest {
                 .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
     }
-
-
 }
