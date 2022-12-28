@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: Cerrar Sesion - FE DITO WEB
 
