@@ -61,5 +61,3 @@ Característica: Alta Movil Control con un financiamiento por tienda
 
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | planMovil |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 1264066171 | Postpago  |
-
-  l
