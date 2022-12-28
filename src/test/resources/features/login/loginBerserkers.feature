@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
 
 Característica: Login - FE DITO WEB
 

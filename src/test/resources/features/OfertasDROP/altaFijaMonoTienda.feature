@@ -6,7 +6,7 @@ Característica:  Alta fija Mono por tienda - DROP
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMonoTiendaDrop
+  @AltaFijaMonoTienda
   Esquema del escenario: Alta fija <tipoPlan> con plan <nombrePlan> por tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -60,5 +60,5 @@ Característica:  Alta fija Mono por tienda - DROP
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                 |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935704 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA D22 |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                     |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935704 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA D22 100 |

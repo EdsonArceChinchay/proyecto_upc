@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28
 Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplPorTiendaControlAPostpago
