@@ -27,9 +27,9 @@ Característica: Migracion de Trio a MT por Canal Call Center
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
     Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
-    #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
-    #Y        presiono el boton confirmar agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
 #    Entonces me muestra la pantalla para ingresar la direccion
 #    Y        selecciono el departamento donde sera la instalacion "15"
 #    Y        selecciono la provincia donde sera la instalacion "1501"

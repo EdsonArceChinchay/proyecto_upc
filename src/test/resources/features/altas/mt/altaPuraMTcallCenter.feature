@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Alta Fija Pura MT por Call Center
 
