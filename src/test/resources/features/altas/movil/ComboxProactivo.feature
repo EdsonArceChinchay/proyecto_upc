@@ -1,6 +1,6 @@
 #language:es
 @carlos
-@BERSERKERS @DoneDevOps @DoneDevOpsPI15
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15 @DROP35
 
 Característica: Alta Movil por Combo Proactivo
 
@@ -54,7 +54,7 @@ Característica: Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/149.9 | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso02
@@ -102,7 +102,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 10000444045 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso03
@@ -150,7 +150,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
 
   @AltaFijaMovilComboProactivo_Caso04
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
@@ -198,7 +198,7 @@ Característica: Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo     | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P10 NEGRO | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P10 NEGRO | Postpago  | 12 meses          | Financiado 18 cuotas |
 
   @AltaFijaMovilComboProactivo_Caso05
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
@@ -245,7 +245,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                   | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1007890045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso06
@@ -293,7 +293,7 @@ Característica: Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
 
   @AltaFijaMovilComboProactivo_Caso07
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero

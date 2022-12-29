@@ -39,4 +39,8 @@ public class PortabilidadStep {
     public void clickBotonConsultar() {
         page.portabilidadPage().clickBotonConsultar();
     }
+    @ScreenShotBefore
+    public void clickPortaMovil() {
+        page.portabilidadPage().clickPortaMovil();
+    }
 }

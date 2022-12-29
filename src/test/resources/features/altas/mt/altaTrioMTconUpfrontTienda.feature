@@ -107,17 +107,18 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "2pm-7pm"
-    E        ingreso telefono del titular "998877665"
-    E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
-    E         ingreso correo de verificacion "<correo>"
+#   Y        presiono Consultar ubicacion
+#   Y        ingreso la informacion del lugar de instalacion
+#      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+#    Y        Consulto ubicacion
+#    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+#    Y        selecciono horario "2pm-7pm"
+#    E        ingreso telefono del titular "998877665"
+#    E        ingreso instrucciones de delivery "cerca al parque"
+#    Y        doy clic en confirmar delivery
+    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -130,7 +131,7 @@ Característica: Alta Trio MT - Upfront Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042445068 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | HD 500 Mbps + 95Gb | correo@gmail.com |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1260008888 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 500 Mbps + 95 Gb | correo@gmail.com |
 
 

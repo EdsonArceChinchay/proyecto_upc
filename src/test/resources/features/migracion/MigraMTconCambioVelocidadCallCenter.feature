@@ -1,9 +1,9 @@
 #language:es
 
-Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+Característica: Migra MT con cambio de velocidad en canal call center
 
-  @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter
-  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+  @MigraMTcambioVelocidad
+  Esquema del escenario:  Realizar migra MT cambio de velocidad  canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -15,15 +15,13 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono la cartilla del plan activo
+    Y        selecciono la cartilla del plan MT
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    #Y        Selecciono una linea movil y mostrar ofertas
+    #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
-    Y        doy click en Cambiar plan hogar
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -34,11 +32,10 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|1042465022 |Duo|RA 100 MBPS|tester@tester.com|
 
-
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | nombrePlan          | correo            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 7241133711 | HD 200 Mbps + 95 Gb | tester@tester.com |

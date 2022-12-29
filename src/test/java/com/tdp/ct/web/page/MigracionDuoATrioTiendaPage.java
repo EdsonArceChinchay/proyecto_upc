@@ -57,6 +57,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
     protected WebElement btnCambiarPlan;
 
+    @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
+    protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
@@ -64,9 +66,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "//*[@type='button' and @class='close']")
+    protected WebElement btnClosePopUp;
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(5);
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -83,9 +88,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(4);
         clickElementInAList(listaPlanFija, plaHogar);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
@@ -135,7 +140,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
                 waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(10);
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
@@ -153,6 +158,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 //                waitUntilElementIsVisible(btnCambiarPlan, 50);
                 js().scrollElementTop(btnCambiarPlan);
                 click(btnCambiarPlan,10);
+                UtilWeb.waitForSeconds(1);
+                break;
+
+            case "RENOVAR PLAN":
+                js().scrollElementTop(btnRenovarPlan);
+                click(btnRenovarPlan,10);
                 UtilWeb.waitForSeconds(1);
                 break;
         }
@@ -176,7 +187,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
             btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
+            UtilWeb.waitForSeconds(1);
         }
 
     }

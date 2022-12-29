@@ -66,7 +66,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(15);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
@@ -143,7 +143,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(20);//3
+        UtilWeb.waitForSeconds(10);//3
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);

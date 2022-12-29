@@ -1,11 +1,13 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
 
-Característica: Alta trio MT con Upfront 30mb
+Característica: Alta fija Duo por tienda - DROP
 
-  @AltatrioMTconUpfront30mb
-  Esquema del escenario: Alta trio MT con Upfront 30mb
+  Antecedentes:
     Dado     que abro la pagina de movistar
+
+  @AltaFijaDuoTiendaDrop
+  Esquema del escenario: Alta fija <tipoPlan> con plan <nombrePlan> por tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -16,9 +18,10 @@ Característica: Alta trio MT con Upfront 30mb
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+    Y        cierro popup de error
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos | genero   |
+      | Juana   | Mendoza   | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -29,35 +32,33 @@ Característica: Alta trio MT con Upfront 30mb
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/10/1990 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
+    Y        doy clic en continuar
+#    Y        me muestra pantalla para Descargar contrato
+#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA 40 MBPS |
-
-
-
-
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935705 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 1000 MBPS |
