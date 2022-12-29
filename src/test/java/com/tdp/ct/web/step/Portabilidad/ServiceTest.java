@@ -49,7 +49,7 @@ public class ServiceTest {
                 .then().statusCode(200).extract().path("previousConsultationId");
         System.out.println("previousConsultationId: " + consultation1);
         // Separa en 2 grupos el código recibido
-        String numero1 = consultation1.substring(0,8);
+        String numero1 = consultation1.substring(0,9);
         String numero2 = consultation1.substring(9,17);
         // La segunda parte del código recibido le resta 1
         int restaNumero2 = Integer.parseInt(numero2) - 1;
@@ -57,6 +57,7 @@ public class ServiceTest {
         String numero2Correcto = String.valueOf(restaNumero2);
         // Unimos para obtener el código correcto
         consultation = numero1 + numero2Correcto;
+        System.out.println("Correct previousConsultationId: " + consultation);
     }
 
     public void receiveMessage(DataTable dataTable) throws IOException {

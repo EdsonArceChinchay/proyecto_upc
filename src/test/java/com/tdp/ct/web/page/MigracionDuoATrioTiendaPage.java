@@ -140,7 +140,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
                 waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(10);
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);

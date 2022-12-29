@@ -18,6 +18,11 @@ public class PortabilidadPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Portabilidad')]")
     protected WebElement btnPortabilidad;
 
+    @FindBy(xpath = "//button[contains(text(),'Portabilidad móvil')]")
+    protected WebElement btnPortaMovil;
+
+
+
 
     public void clickBotonPortabilidad() {
         waitUntilElementIsVisible(btnPortabilidad,10);
@@ -72,6 +77,16 @@ public class PortabilidadPage extends WebBase {
         waitUntilElementIsVisible(btnConsultar,10);
         js().scrollElementTop(btnConsultar);
         btnConsultar.click();
+        //click(btnConsultar);
+        //waitUntilElementIsVisible(boton01,20);
+        UtilWeb.waitForSeconds(5);
+
+    }
+
+    public void clickPortaMovil() {
+        waitUntilElementIsVisible(btnPortaMovil,20);
+        js().scrollElementTop(btnPortaMovil);
+        btnPortaMovil.click();
         //click(btnConsultar);
         //waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);

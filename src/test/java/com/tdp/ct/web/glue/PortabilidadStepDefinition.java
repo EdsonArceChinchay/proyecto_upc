@@ -57,4 +57,9 @@ public class PortabilidadStepDefinition {
     public void doyTiempoExtra() {
         UtilWeb.waitForSeconds(300);
     }
+
+    @Y("doy click en el boton Porta Movil")
+    public void doyClickEnElBotonPortaMovil() {
+        portabilidadStep.clickPortaMovil();
+    }
 }
