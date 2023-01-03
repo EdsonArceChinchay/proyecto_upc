@@ -1,12 +1,12 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
 
-Característica: Alta fija Trio por tienda - DROP
+Característica: Alta fija Trio por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaTrioTiendaDrop
+  @AltaFijaTrioTienda
   Esquema del escenario: Alta fija <tipoPlan> con plan <nombrePlan> por tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -61,4 +61,4 @@ Característica: Alta fija Trio por tienda - DROP
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935706 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 600 MBPS |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12315935716 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 600 MBPS |

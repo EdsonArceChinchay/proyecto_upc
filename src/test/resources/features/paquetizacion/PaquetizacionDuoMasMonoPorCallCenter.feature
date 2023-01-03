@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
 
 Característica: Paquetizacion Duo mas Mono Call Center
   Quiero realizar una paquetizacion por call center
@@ -40,5 +40,5 @@ Característica: Paquetizacion Duo mas Mono Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 40 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 50 |
       

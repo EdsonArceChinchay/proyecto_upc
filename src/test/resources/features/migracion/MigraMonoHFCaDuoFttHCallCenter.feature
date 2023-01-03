@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @RegresionPangea
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
 Característica: Migracion de Mono HFC a Duo FTTH Call Center
 
   Antecedentes:
