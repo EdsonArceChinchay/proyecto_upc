@@ -48,4 +48,5 @@ public class StepPages{
     public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage(){ return new MigraSalto0CanalTiendaPage();}
     public MigraMTconCambioVelocidaCallCenterPage migraMTconCambioVelocidaCallCenterPage(){return new MigraMTconCambioVelocidaCallCenterPage();}
     public SvaCallCenterPage svaCallCenterPage(){return new SvaCallCenterPage();}
+    public SvaBloqueHboaDuoPorTiendaPage svaBloqueHboaDuoPorTiendaPage(){return new SvaBloqueHboaDuoPorTiendaPage();}
 }
