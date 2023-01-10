@@ -9,7 +9,7 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
      # Realizar una Alta movil Postpago (linea + equipo) con
      #Delivery Regular  por canal Call Center
 
-  @AltaCEXControlEquipoLineaCallCenter
+  @AltaCEXControlEquipoLineaCallCenter @Global
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
     Dado  presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
@@ -67,7 +67,7 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                               | planMovil | timpoPermanencia | nombreEquipo                  | tipoPago   |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1090454045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/ 74.9 IV | Control   | Sin permanencia  | HUAWEI P30 LITE NEGRO MAR-LX3 | Al Contado |

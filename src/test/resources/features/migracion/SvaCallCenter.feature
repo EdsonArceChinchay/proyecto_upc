@@ -6,7 +6,7 @@
     Antecedentes:
       Dado     que abro la pagina de movistar
 
-    @SvaCallCenter
+    @SvaCallCenter @Global
     Esquema del escenario: Sva en el canal Call Center
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "<tipoUsuario>"

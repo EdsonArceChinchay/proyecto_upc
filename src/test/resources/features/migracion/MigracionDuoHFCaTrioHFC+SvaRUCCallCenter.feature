@@ -5,7 +5,7 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionDuoTrioRUCCallCenter
+  @migracionDuoTrioRUCCallCenter @Global
   Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
