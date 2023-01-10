@@ -1,12 +1,10 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
-
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigraMonoADuoSVATienda
+  @MigracionDuoADuoSVaCallcenter @Global
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -14,21 +12,19 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    #Y        selecciono tipo de oferta
+    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    #Y        selecciono el plan "<planTrio>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    #Y        doy click en agregar "<sva>"
-    Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -44,5 +40,5 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | sva                   |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | RA 120 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 156128901 | tester@tester.com  | Duo            | RA 70 MBPS  |

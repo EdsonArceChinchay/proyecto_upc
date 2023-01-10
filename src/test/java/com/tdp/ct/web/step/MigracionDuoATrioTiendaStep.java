@@ -47,7 +47,8 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(btn);
     }
 
-    public void cierroPopupDeAviso() {
-        page.migracionDuoATrioTiendaPage().cierroPopupDeAviso();
+    public void agregoSVALinea(String svaLinea) {page.migracionDuoATrioTiendaPage().agregoSVALinea(svaLinea);
+
     }
+
 }
