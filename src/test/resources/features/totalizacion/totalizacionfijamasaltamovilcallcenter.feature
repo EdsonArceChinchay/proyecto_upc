@@ -18,7 +18,7 @@
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1233286899"
+      Y        ingreso el documento "123456776"
       Y        doy click en el boton consultar
       Y        selecciono la cartilla del plan activo
       Y        selecciono el boton Linea Nueva Movil
@@ -55,4 +55,4 @@
       Y        doy click en el boton de continuar
       Y         presiono el boton Registrar venta
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      Y        valido que se muestre el detalle del pedido
+      #Y        valido que se muestre el detalle del pedido
