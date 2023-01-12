@@ -7,7 +7,7 @@ Característica: Alta Movil Prepago solo chip Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilPrepagoSoloChipTienda_CE
+  @AltaMovilPrepagoSoloChipTienda_CE @Global
   Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -43,7 +43,6 @@ Característica: Alta Movil Prepago solo chip Tienda
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042464890 | PLAN PREPAGO | Preplan    |

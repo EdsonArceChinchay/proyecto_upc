@@ -2,7 +2,7 @@
 
 Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
-  @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter
+  @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter @Global
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
