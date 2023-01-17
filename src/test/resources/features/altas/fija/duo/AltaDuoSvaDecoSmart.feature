@@ -6,7 +6,7 @@ Característica: Alta Duo por call center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaDuo_SvaDecoSmart
+  @AltaDuo_SvaDecoSmart @Global
   Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

@@ -88,6 +88,7 @@ public class AltaFijaTiendaStep {
     public void doyClickEnAgregarBloque(String bloque) {
         page.altaFijaTiendaPage().doyClickEnAgregarBloque(bloque);
 
+
     }
 
     @ScreenShotAfter

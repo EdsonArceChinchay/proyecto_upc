@@ -53,6 +53,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
 
+
     @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
     protected WebElement btnCambiarPlan;
 
@@ -139,7 +140,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
                 waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(10);
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
@@ -153,6 +154,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 break;
 
             case "CAMBIAR PLAN":
+                UtilWeb.waitForSeconds(5);
+//                waitUntilElementIsVisible(btnCambiarPlan, 50);
                 js().scrollElementTop(btnCambiarPlan);
                 click(btnCambiarPlan,10);
                 UtilWeb.waitForSeconds(1);
@@ -189,8 +192,19 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     }
 
-    public void cierroPopupDeAviso() {
-        click(btnClosePopUp,10);
-
+    public void agregoSVALinea(String svaLinea) {
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(3) .flex_100");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(svaLinea)) {
+                UtilWeb.waitForSeconds(2);
+                click(elements, 3);
+            }
+        }
     }
 }

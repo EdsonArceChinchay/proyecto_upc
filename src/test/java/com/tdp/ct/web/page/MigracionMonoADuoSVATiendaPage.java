@@ -22,12 +22,12 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
     protected WebElement buttonGuardarCambios;
     public void seleccionarboton(){
         System.out.println(1);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(40);
         System.out.println(1);
         for(WebElement element:listaBotones){
             if (element.getText().contains("Cambiar plan hogar")){
-                UtilWeb.waitForSeconds(2);
-                click(element,30);
+                UtilWeb.waitForSeconds(5);
+                click(element,40);
             }
         }
         UtilWeb.waitForSeconds(4);
@@ -52,6 +52,15 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
         waitUntilElementIsVisible(buttonGuardarCambios, 10);
         click(buttonGuardarCambios);
         UtilWeb.waitForSeconds(5);
+
+    }
+
+    public void seleccionarPlanMigrar(String plan) {
+        UtilWeb.waitForSeconds(5);
+        String elemento = "//div[contains(@class, 'stl_negrita g-text--uppercase') and contains(., '" + plan + "')]";
+        WebElement elementPlan = find().getElementByXPath(elemento);
+        waitUntilElementIsVisible(elementPlan, 20).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
 
     }
 }

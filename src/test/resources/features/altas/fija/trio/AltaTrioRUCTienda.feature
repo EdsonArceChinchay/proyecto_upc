@@ -38,7 +38,10 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
 #   Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono la oferta "<plan>"
+   #Y        doy click en Cambiar plan hogar
+    Y        selecciono en linea Nueva
+    #Y        selecciono el plan "<nombrePlan>"
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -49,12 +52,14 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user        | password     |
-      | 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+    #Y        ingreso los datos del supervisor
+     # | numdoc   | user        | password     |
+     #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+    Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre | nombrePadre | distritoNac |
-      | ZARAGOZA    | GREGORIO    | ACOCRO      |
+      | nombreMadre   | nombrePadre   | distritoNac   |
+    #  | DEYSI | JOSE | SULLANA |
+      | MARIBEL | RUBEN | SAN JUAN DE MIRAFLORES |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -65,7 +70,7 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                      | tipoValidacion |
-      | usuario externo | lterrazosce | $t3l3f0n1c4$ | Bienvenid@ | Bienvenid@   | RUC           | 20494113911 | 1   | DNI             | 75448030       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 100 MBPS | discapacitado  |
-
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|plan|
+      #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20547284501     |1| DNI | 75447652|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
 

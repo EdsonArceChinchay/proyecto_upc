@@ -35,7 +35,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
-    @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),' Validación no biométrica')])[1]")
     protected WebElement buttonDiscapacitado;
     @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
     protected WebElement buttonValBiometrica;
@@ -292,8 +292,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(20);
-        waitUntilElementIsVisible(buttonValidarContrato, 1500);
-        //js().scrollElementTop(buttonValidarContrato);
+        waitUntilElementIsVisible(buttonValidarContrato, 30);
+        js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato, 300);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
@@ -303,7 +303,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsClickable(buttonContinuar, 500);
+        waitUntilElementIsClickable(buttonContinuar, 90);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
@@ -473,7 +473,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonAgregarSVA);
         waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void clicSVAHBO() {

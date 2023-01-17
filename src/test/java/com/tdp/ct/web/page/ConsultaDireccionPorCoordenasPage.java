@@ -25,7 +25,7 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
         type(txtX, x.trim());
         UtilWeb.waitForSeconds(1);
         type(txtY, y.trim());
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void validoQueLaDireccionSea(String direccion) {
