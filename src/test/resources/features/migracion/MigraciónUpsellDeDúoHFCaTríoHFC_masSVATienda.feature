@@ -4,7 +4,7 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioSVATienda
+  @MigracionDuoATrioSVATienda @Global
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -18,7 +18,6 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-   # Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"

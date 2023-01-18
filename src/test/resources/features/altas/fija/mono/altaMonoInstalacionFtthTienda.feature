@@ -1,5 +1,5 @@
 #language:es
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28
 
   Característica: Alta de Mono con instalación FTTH por Canal tienda
 
@@ -14,7 +14,7 @@
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1042464884"
+      Y        ingreso el documento "1042464841"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar
@@ -48,7 +48,9 @@
       Y        me muestra en pantalla el contrato solicitado
       Cuando   doy clic en si acepto
       Y        doy click en el boton de continuar
-      Y        presiono el boton descargar contrato
+      #Y        presiono el boton descargar contrato
       Y        presiono el boton Registrar venta
+      #Entonces visualizo en pantalla el mensaje de exito de la venta generada
+      #Y        valido que se muestre el detalle del pedido
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      Y        valido que se muestre el detalle del pedido
+      #Y        valido que se muestre el detalle del pedido

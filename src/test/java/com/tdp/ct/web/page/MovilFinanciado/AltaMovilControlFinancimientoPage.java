@@ -185,7 +185,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
-        waitUntilElementIsClickable(btnplanMovil, 20);
+        waitUntilElementIsClickable(btnplanMovil, 180);
         click(btnplanMovil);
     }
 

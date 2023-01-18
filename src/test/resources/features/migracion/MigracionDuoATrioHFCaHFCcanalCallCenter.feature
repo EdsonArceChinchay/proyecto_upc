@@ -1,12 +1,12 @@
 
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 Característica: Migracion Duo A Trio HFC a HFC canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioHFCaHFCcanalCallCenter
+  @MigracionDuoATrioHFCaHFCcanalCallCenter @Global
   Esquema del escenario:Migracion Duo A Trio HFC a HFC
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"

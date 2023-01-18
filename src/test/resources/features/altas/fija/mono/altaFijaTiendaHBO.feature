@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28
 
 Característica: Alta fija por tienda mas Hbo
 
@@ -61,5 +61,5 @@ Característica: Alta fija por tienda mas Hbo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042464885 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 100 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042464878 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 100 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
 

@@ -1,12 +1,12 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigraMonoADuoSVATienda
+  @MigraMonoADuoSVATienda @Global
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

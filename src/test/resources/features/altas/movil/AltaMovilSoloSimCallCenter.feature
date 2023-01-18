@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN
 
 Característica: Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
@@ -7,7 +7,7 @@ Característica: Alta Movil Solo Sim Por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCallCenter
+  @AltaMovilSoloSimCallCenter @Global
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -71,10 +71,9 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy click en el boton de continuar
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100109512 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |

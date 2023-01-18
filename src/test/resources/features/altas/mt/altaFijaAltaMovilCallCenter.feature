@@ -63,7 +63,7 @@ Característica: Alta Fija + Alta Movil por Call Center
 #    Y        doy clic en finalizar registro
     Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |

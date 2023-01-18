@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
 
 Característica: Busqueda Inicial CE, DNI y RUC DITO WEB
 
