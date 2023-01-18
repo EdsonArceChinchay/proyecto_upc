@@ -53,4 +53,4 @@
       #Entonces visualizo en pantalla el mensaje de exito de la venta generada
       #Y        valido que se muestre el detalle del pedido
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      Y        valido que se muestre el detalle del pedido
+      #Y        valido que se muestre el detalle del pedido
