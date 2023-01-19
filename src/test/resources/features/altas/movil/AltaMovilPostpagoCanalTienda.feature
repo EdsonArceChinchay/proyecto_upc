@@ -7,7 +7,7 @@ Característica: Alta Movil Postpago Canal Tienda
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaMovilPostpagoEquipoCanalTienda
+  @AltaMovilPostpagoCanalTienda
   Esquema del escenario: Alta Movil Postpago
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"

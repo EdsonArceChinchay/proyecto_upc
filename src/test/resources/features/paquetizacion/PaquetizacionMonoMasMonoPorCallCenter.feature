@@ -40,5 +40,5 @@ Característica: Paquetizacion Mono mas Mono Call Center
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                          |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100777891  | Duo      | DÚO INTERNET ESTÁNDAR HD RA 70 MBPS |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100777891  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
 
