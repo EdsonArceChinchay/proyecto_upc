@@ -39,6 +39,7 @@ Característica: Alta Movil Postpago Canal Tienda
 	Y        valido que este en la seccion completa los datos solicitados
 	Y        ingreso un correo electronico "estelalopez@mail.com"
 	Y        ingreso nuevamente el correo electronico "estelalopez@mail.com"
+	Y        doy click en datos del cliente
 	Y        selecciono completar los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito      | direccion         |
 	  | 26/07/1985 | soltero     | Alemania     | LIMA         | LIMA      | SAN MIGUEL    | CALLE SAN MARTIN  |
