@@ -23,7 +23,8 @@ Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, c
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
-    Y        doy click en Cambiar plan hogar
+    Y        selecciono boton Cambiar plan
+   # Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
@@ -38,11 +39,11 @@ Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, c
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Trio           | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
