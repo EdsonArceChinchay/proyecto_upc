@@ -1,16 +1,15 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
 Característica: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
 
-     # Realizar una Alta movil Postpago (linea + equipo) con
-     #Delivery Regular  por canal Call Center
-
-  @AltaCEXControlEquipoLineaCallCenter @Global
-  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
+  @AltaControlEquipoCallCenter @MVP06 @Global
+  Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
     Dado  presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "<userName>"

@@ -1,11 +1,14 @@
 #language:es
-Característica: Migracion de Mono a Duo + sva por el canal Tienda
+
+  # CREADOR: Angel Medina
+
+Característica: Migracion de Duo a Duo + sva por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoADuoSVaCallcenter @Global
-  Esquema del escenario: Migracion de Mono a Duo con CE + sva
+  @MigracionDuoADuoSVaCallcenter @MVP09 @Global
+  Esquema del escenario: Migracion (duo a duo) + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

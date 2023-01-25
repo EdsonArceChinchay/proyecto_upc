@@ -6,7 +6,7 @@ Característica: Migracion de Mono a Mono por el canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionMonoMonoCallCenter @Global
+  @MigracionMonoMonoCallCenter
   Esquema del escenario: Migracion de Mono a Mono
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
