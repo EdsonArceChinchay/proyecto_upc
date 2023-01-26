@@ -43,7 +43,7 @@ Característica: Alta Movil Postpago Canal Tienda
 	Y        selecciono completar los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito      | direccion           |
 	  | 26/07/1985 | soltero     | Alemania     | LIMA         | LIMA      | SAN MIGUEL    | CALLE SAN MARTIN 399|
-	Y        doy click en el boton confirmar
+	#Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
