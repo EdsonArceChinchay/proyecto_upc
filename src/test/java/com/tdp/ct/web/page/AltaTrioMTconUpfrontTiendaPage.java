@@ -92,9 +92,9 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        //modalError(2,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(2,btnReintentar,"Click al elemento Reitentar");
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
