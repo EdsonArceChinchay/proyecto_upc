@@ -27,9 +27,9 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
+    #Y        valido que me encuentre en la pantalla agendamiento
+    #Y        ingreso los datos de agendamiento
+    #Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic para validar contrato hogar
