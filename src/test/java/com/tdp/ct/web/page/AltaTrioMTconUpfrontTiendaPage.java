@@ -92,16 +92,18 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
+        //modalError(2,btnReintentar,"Click al elemento Reitentar");
+        //modalError(3,btnReintentar,"Click al elemento Reitentar");
+        //modalError(2,btnReintentar,"Click al elemento Reitentar");
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
+        System.out.println("el boton confirmar 1");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
         UtilWeb.waitForSeconds(30);
+        System.out.println("el boton confirmar 3");
     }
 
     public void validoDetalleDeInstalacion() {
