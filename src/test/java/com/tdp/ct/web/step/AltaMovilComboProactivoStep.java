@@ -15,8 +15,8 @@ public class AltaMovilComboProactivoStep {
 
     public void completoDatosCliente(DataTable datosCliente) {
         String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
         String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
+        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
         String departamento=UtilWeb.getValueFromDataTable(datosCliente,"departamento");
         String provincia=UtilWeb.getValueFromDataTable(datosCliente,"provincia");
         String distrito=UtilWeb.getValueFromDataTable(datosCliente,"distrito");
