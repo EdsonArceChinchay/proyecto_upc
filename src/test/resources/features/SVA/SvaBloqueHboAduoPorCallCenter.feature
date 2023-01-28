@@ -7,7 +7,7 @@ Característica: Sva bloque HBO a duo por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @svaBloqueHboDuoPorTienda
+  @svaBloqueHboDuoPorCallCenter
   Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo a un usuario con CE
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
