@@ -42,4 +42,5 @@ Característica: Migracion de Duo a Trio por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-      | usuario externo | evillanuevag |  $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432110 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432110 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
