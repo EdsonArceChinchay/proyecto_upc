@@ -6,7 +6,7 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigraMonoADuoSVATienda @Global
+  @MigraMonoADuoCallCenter @Global
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -42,5 +42,5 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | sva                         |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | RA 120 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan            | sva                         |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 169927003 | tester@tester.com | Duo           | RA D22 100 MBPS | Seguridad Total Residencial |
