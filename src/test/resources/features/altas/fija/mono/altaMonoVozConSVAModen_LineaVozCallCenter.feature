@@ -31,7 +31,7 @@ Característica: Alta Mono Linea Voz Tienda
 	  | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
 	Y        presiono el boton Consultar Cobertura
 	Y        selecciono tipo de oferta
-	Y        selecciono el tipo de plan fija "Mono"
+	Y        selecciono el tipo de plan fija "Trío"
 	Y        selecciono el plan "TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS"
 	Y doy click en agregar Modem
 	Y        doy click en agregar SVA Linea "Plan Multidestino 20"
