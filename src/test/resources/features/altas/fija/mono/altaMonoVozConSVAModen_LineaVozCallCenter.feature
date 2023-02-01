@@ -33,8 +33,8 @@ Característica: Alta Mono Linea Voz Tienda
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
-	Y doy click en agregar Modem
 	Y        doy click en agregar SVA Linea "Plan Multidestino 20"
+	Y doy click en agregar Modem
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso telefono de contacto
@@ -55,4 +55,4 @@ Característica: Alta Mono Linea Voz Tienda
 
 	Ejemplos:
 	  | nombrePlan                                         | tipoPlan |
-	  | RA D22 200 Mbps | Trío     |
+	  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS | Trío     |
