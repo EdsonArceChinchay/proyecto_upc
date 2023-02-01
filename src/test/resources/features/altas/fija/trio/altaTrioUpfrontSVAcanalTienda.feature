@@ -3,7 +3,7 @@
 
 Característica: Alta Trio upfront SVA canal tienda
 
-  @AltaTrioUpfrontSVA
+  @AltaTrioUpfrontSVATienda
   Esquema del escenario: Alta Trio upfront SVA canal tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
