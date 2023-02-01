@@ -31,8 +31,8 @@ Característica: Alta Mono Linea Voz Tienda
 	  | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
 	Y        presiono el boton Consultar Cobertura
 	Y        selecciono tipo de oferta
-	Y        selecciono el tipo de plan fija "Trío"
-	Y        selecciono el plan "Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps"
+	Y        selecciono el tipo de plan fija "<tipoPlan>"
+	Y        selecciono el plan "<nombrePlan>"
 	Y doy click en agregar Modem
 	Y        doy click en agregar SVA Linea "Plan Multidestino 20"
 	Cuando   doy clic a iniciar registro
@@ -52,3 +52,7 @@ Característica: Alta Mono Linea Voz Tienda
 	Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
+
+  Ejemplos:
+	|nombrePlan|tipoPlan|
+	|     Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps     |    Trío    |
