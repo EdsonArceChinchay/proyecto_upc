@@ -55,4 +55,4 @@ Característica: Alta Mono Linea Voz Tienda
 
 	Ejemplos:
 	  | nombrePlan                                         | tipoPlan |
-	  | Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps | Trío     |
+	  | RA D22 200 Mbps | Trío     |
