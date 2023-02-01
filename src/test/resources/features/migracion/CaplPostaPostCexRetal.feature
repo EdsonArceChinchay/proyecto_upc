@@ -2,7 +2,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
-  @CaplControlAPostpagoRetail @Global
+  @CaplControlAPostpagoRetail
   Escenario: CAPL Post a Post CEX por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

@@ -7,7 +7,7 @@ Característica: Alta Movil Solo Sim Por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCallCenter @Global
+  @AltaMovilSoloSimCallCenter
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

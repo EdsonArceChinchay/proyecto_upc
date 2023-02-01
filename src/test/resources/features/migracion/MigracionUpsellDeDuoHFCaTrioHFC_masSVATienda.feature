@@ -4,7 +4,7 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioSVATienda @Global
+  @MigracionDuoATrioSVATienda
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

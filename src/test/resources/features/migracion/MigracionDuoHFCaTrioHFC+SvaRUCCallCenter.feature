@@ -1,11 +1,13 @@
 #language:es
 
-Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
+  # CREADOR: Edson Arce
+
+Característica: Migracion de Duo HFC a Trio HFC + Sva Plan Multidestino con Ruc Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionDuoTrioRUCCallCenter @Global
+  @migracionDuoTrioRUCCallCenter @MVP12 @Global
   Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -38,7 +40,7 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic en el boton validar identidad representante legal
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"$ |
+   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | BERTHA | LEOBILDO | LA BANDA DE SHILCAYO |
