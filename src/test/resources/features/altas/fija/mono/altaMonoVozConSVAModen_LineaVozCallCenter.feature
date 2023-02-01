@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2
 
 Característica: Alta Mono Linea Voz Tienda
 
@@ -32,7 +32,7 @@ Característica: Alta Mono Linea Voz Tienda
 	Y        presiono el boton Consultar Cobertura
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "Trío"
-	Y        selecciono el plan "TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS"
+	Y        selecciono el plan "Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps"
 	Y doy click en agregar Modem
 	Y        doy click en agregar SVA Linea "Plan Multidestino 20"
 	Cuando   doy clic a iniciar registro
