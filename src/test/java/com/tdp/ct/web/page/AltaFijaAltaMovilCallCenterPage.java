@@ -120,6 +120,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
+        js().scrollElementTop(btnConsultarCobertura);
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
@@ -206,6 +207,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void confirmarCorreo(String correo) {
+        UtilWeb.waitForSeconds(4);//
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");

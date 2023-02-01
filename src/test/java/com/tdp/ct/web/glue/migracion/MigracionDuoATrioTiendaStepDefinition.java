@@ -63,4 +63,10 @@ public class MigracionDuoATrioTiendaStepDefinition {
         altaFijaMovilRegistroStep.clicGuardarCambios();
 
     }
+
+    @Y("doy click en agregar Modem")
+    public void doyClickEnAgregarModem() {
+        migracionDuoATrioTiendaStep.doyClickEnAgregarModem();
+        altaFijaMovilRegistroStep.clicGuardarCambios();
+    }
 }

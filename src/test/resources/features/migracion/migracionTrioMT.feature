@@ -6,7 +6,7 @@ Característica: Migracion de Trio a MT + SVA
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionTrioMT
+  @migracionTrioMTcanalTienda
   Esquema del escenario: Migracion de Trio a MT + SVA en el canal tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -34,7 +34,7 @@ Característica: Migracion de Trio a MT + SVA
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 

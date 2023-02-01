@@ -51,4 +51,7 @@ public class MigracionDuoATrioTiendaStep {
 
     }
 
+    public void doyClickEnAgregarModem() {
+        page.migracionDuoATrioTiendaPage().doyClickEnAgregarModem();
+    }
 }
