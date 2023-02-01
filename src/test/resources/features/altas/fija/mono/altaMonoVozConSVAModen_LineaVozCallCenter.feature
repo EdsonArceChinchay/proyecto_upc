@@ -4,7 +4,7 @@
 Característica: Alta Mono Linea Voz Tienda
 
   @AltaMonoLineaVoz_Modem_svaLineaCallCenter
-  Escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
+  Esquema del escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
 	Dado     que abro la pagina de movistar
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "usuario externo"
@@ -53,6 +53,6 @@ Característica: Alta Mono Linea Voz Tienda
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
 
-  Ejemplos:
-	|nombrePlan|tipoPlan|
-	|     Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps     |    Trío    |
+	Ejemplos:
+	  | nombrePlan                                         | tipoPlan |
+	  | Trío Mov. Voz Internet Estandar HD RA D22 200 Mbps | Trío     |
