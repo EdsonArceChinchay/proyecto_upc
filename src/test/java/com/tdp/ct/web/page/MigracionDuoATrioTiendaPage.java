@@ -68,6 +68,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@type='button' and @class='close']")
     protected WebElement btnClosePopUp;
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-adicionales/div/div[3]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/tdp-st-checkbox")
+    protected WebElement agregarModem;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
@@ -206,5 +208,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 click(elements, 3);
             }
         }
+    }
+
+    public void doyClickEnAgregarModem() {
+        UtilWeb.waitForSeconds(3);
+        agregarModem.click();
+
+
     }
 }
