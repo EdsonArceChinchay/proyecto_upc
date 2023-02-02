@@ -247,7 +247,7 @@ public class AltaFijaTiendaPage extends WebBase {
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsVisible(btnbloque, 500);
+        waitUntilElementIsVisible(btnbloque, 10);
         js().scrollElementTop(btnbloque);
         click(btnbloque,10);
     }
