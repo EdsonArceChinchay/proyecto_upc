@@ -57,5 +57,5 @@ Característica: Alta Mono Linea Voz Tienda
     #Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
-	  | nombrePlan             | tipoPlan | bloque |
-	  | ESTANDAR HD RA D22 200 | Trío     | HBO    |
+	  | tipoPlan | nombrePlan   | bloque |
+	  | Trío     | D22 200 MBPS | HBO    |
