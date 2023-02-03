@@ -40,8 +40,8 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
 	Entonces doy click en Agregar Sva
-	Y        doy click en agregar Bloque "<bloque>"
 	Y        elegimos sva repetidor
+	Y        doy click en agregar Bloque "<bloque>"
 	Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
 	Cuando   doy clic a iniciar registro
