@@ -62,10 +62,10 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija) {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(esperalistaPlanFija, 10);
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(5,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+       waitUntilElementIsVisible(esperalistaPlanFija, 5);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
