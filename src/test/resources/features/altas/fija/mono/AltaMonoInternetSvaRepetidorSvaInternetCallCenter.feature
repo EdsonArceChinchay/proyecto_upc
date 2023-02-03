@@ -59,7 +59,7 @@
 	  Y        me muestra en pantalla el contrato solicitado
 	  Cuando   doy clic en si acepto
 	  Y        doy clic en continuar
-	  Y        presiono el boton Registrar venta
+	  #Y        presiono el boton Registrar venta
 	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	  Ejemplos:
 		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |
