@@ -12,6 +12,9 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
 
+    @FindBy(xpath = "//div[1]/div[2]/div[2]/div/tdp-st-icon-button[1]")
+    protected WebElement sva_repetidor;
+
     public void agregarsva() {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonAgregarSVA);
@@ -35,4 +38,11 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
             }
         }
     }
+    public void elegimossvarepetidor() {
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(sva_repetidor,30);
+        click(sva_repetidor);
+        UtilWeb.waitForSeconds(2);
+    }
+
 }

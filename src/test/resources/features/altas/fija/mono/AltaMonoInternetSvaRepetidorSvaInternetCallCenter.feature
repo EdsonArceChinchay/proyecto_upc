@@ -39,11 +39,10 @@
 	  Y        selecciono el tipo de plan fija "<tipoPlan>"
 	  Y        selecciono el plan "<nombrePlan>"
 	  Y        valido que este en la seccion de registro
-	  #Y        selecciono el plan "<nombrePlan>"
-	  #Y        valido que este en la seccion de registro
 	  Entonces doy click en Agregar Sva
 	  Y        agrego "<svainternet>"
-	  Y        elegimos sva
+	  Y        elegimos sva repetidor
+	  Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
 	  Cuando   doy clic a iniciar registro
 	  Y        valido que me encuentre en la pantalla agendamiento
@@ -60,7 +59,7 @@
 	  Y        me muestra en pantalla el contrato solicitado
 	  Cuando   doy clic en si acepto
 	  Y        doy clic en continuar
-	  Y        presiono el boton Registrar venta
+	  #Y        presiono el boton Registrar venta
 	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	  Ejemplos:
 		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |
