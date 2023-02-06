@@ -3,6 +3,13 @@
 
 Característica: Alta Mono Linea Voz Modem sva linea Call center
 
+
+
+
+  Antecedentes:
+	Dado     que abro la pagina de movistar
+
+
   @AltaMonoLineaVoz_Modem_svaLineaCallCenter__11
   Esquema del escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
 	Dado     que abro la pagina de movistar
