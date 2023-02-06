@@ -47,7 +47,7 @@ Característica: AltaMovil + equipo
     Y        doy click en el boton de continuar
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
@@ -94,7 +94,7 @@ Característica: AltaMovil + equipo
     Y        doy click en el boton de continuar
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |

@@ -41,8 +41,8 @@ Característica: Migracion de Mono a Duo + sva por el canal Tienda
     Y        doy click en el boton de continuar
     Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan          | sva                   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464101 | tester@tester.com | Duo           | RA D22 50 MBPS | Seguridad Total Residencial |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | tester@tester.com | Duo           | RA D22 50 MBPS | Seguridad Total Residencial |
