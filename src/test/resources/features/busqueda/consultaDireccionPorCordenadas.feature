@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28 @SanityN
 
 Característica: Busqueda de direccion por coordenadas DITO WEB
 

@@ -308,6 +308,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonContinuar, 60);
         UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
+        UtilWeb.waitForSeconds(20);
     }
 
     public void visualizarContratoEnPantalla() {
