@@ -13,7 +13,7 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        presiono el boton Continuar hacia el home
 	Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 	Cuando   selecciono el tipo de documento "CE"
-	  Y        ingreso el documento "1029392827"
+	Y        ingreso el documento "1029392827"
 	Y        doy click en el boton consultar
 	#Y        cierro popup de error
 #	Y        ingreso los datos del cliente extranjero a registrar
@@ -57,8 +57,8 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
     #Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
-	  | tipoPlan | nombrePlan   | bloque |svaInternet|
-	  | Trío     | D22 50 MBPS | HBO    |PACK ANTIVIRUS MCAFEE|
+	  | tipoPlan | nombrePlan  | bloque | svaInternet           |
+	  | Trío     | D22 50 MBPS | HBO    | PACK ANTIVIRUS MCAFEE |
 
 #
 
@@ -77,8 +77,8 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        doy click en el boton consultar
 	Y        cierro popup de error
 	Y        ingreso los datos del cliente extranjero a registrar
-	  | nombres            | apellidos      | genero   |
-	  | Elizabeth Marisol  | Lopez Barrios  | femenino |
+	  | nombres           | apellidos     | genero   |
+	  | Elizabeth Marisol | Lopez Barrios | femenino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -89,8 +89,8 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        ingreso la referencia de la direccion "<referencia>"
 	Y        presiono el boton Consultar ubicacion
 	Y        ingreso la informacion del lugar de instalacion
-	  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-	  | D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+	  | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+	  | D  | 11   | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
 	Y        presiono el boton consultar cobertura
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -117,8 +117,8 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque |svaInternet|svaLinea|
-		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo     | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS  |  HBO   |PACK ANTIVIRUS MCAFEE|Plan Multidestino 20|
+	  | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | bloque | svaInternet           | svaLinea             |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | PACK ANTIVIRUS MCAFEE | Plan Multidestino 20 |
 
 
 
