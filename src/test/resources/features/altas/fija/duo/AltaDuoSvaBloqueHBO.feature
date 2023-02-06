@@ -57,4 +57,4 @@ Característica: Alta Duo SVA HBO por call center
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | bloque | tipoPlan | svaInternet           |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 150 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
