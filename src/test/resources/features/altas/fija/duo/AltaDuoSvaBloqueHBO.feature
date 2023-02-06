@@ -18,10 +18,10 @@ Característica: Alta Duo SVA HBO por call center
 	Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	Y        ingreso el documento "<documento>"
 	Y        doy click en el boton consultar
-	Y        cierro popup de error
-	Y        ingreso los datos del cliente a registrar
-	  | nombres | apellidos    | genero   |
-	  | Lana    | Grey Khalifa | femenino |
+	#Y        cierro popup de error
+#	Y        ingreso los datos del cliente a registrar
+#	  | nombres | apellidos    | genero   |
+#	  | Lana    | Grey Khalifa | femenino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -31,9 +31,9 @@ Característica: Alta Duo SVA HBO por call center
 	Y        ingreso la direccion donde sera la instalacion "<direccion>"
 	Y        ingreso la referencia de la direccion "<referencia>"
 	Y        presiono el boton Consultar ubicacion
-	Y        ingreso la informacion del lugar de instalacion
+	Y        ingreso la informacion del lugar para la instalacion
 	  | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-	  | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+	  | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
 	Y        presiono el boton consultar cobertura
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -45,10 +45,10 @@ Característica: Alta Duo SVA HBO por call center
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "Angel.mf@gmail.com"
 	Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
-	Y        doy click en datos del cliente
-	Y        completo los datos solicitados
-	  | fechaNac   | nacionalidad | estado_civil |
-	  | 12/12/1980 | Alemania     | Casado       |
+#	Y        doy click en datos del cliente
+#	Y        completo los datos solicitados
+#	  | fechaNac   | nacionalidad | estado_civil |
+#	  | 12/12/1980 | Alemania     | Casado       |
 	Y        doy clic para validar contrato Movil
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
@@ -57,4 +57,4 @@ Característica: Alta Duo SVA HBO por call center
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | bloque | tipoPlan | svaInternet           |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |

@@ -6,10 +6,6 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 
 
 
-  Antecedentes:
-	Dado     que abro la pagina de movistar
-
-
   @AltaMonoLineaVoz_Modem_svaLineaCallCenter__11
   Esquema del escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
 	Dado     que abro la pagina de movistar
@@ -40,21 +36,17 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
-	Y        doy click en agregar "<svaInternet>"
-	Y        doy click en añadir SVA
-	Y        doy click en agregar Bloque "<bloque>"
-	Y        doy click en Guardar cambios
+	Y doy click en agregar Modem
+#	Y        doy click en agregar "<svaInternet>"
+#	Y        doy click en añadir SVA
+#	Y        doy click en agregar Bloque "<bloque>"
+#	Y        doy click en Guardar cambios
 	#Y doy click en agregar Modem
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso telefono de contacto
 	Y        presiono el boton Confirmar agendamiento
 	Y        ingreso email "prueba@prueba.com" y lo repito
-	Y        doy click en datos del cliente
-	Y        ingreso los datos del cliente
-	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 12/12/1999 | Casado      | Albania      |
-	Y        doy click en el boton confirmar
 	Y        presiono la opcion validar contrato
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
@@ -112,10 +104,10 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "tester.1.2.3@tester.com"
 	Y        ingreso nuevamente el correo electronico "tester.1.2.3@tester.com"
-	Y        doy click en datos del cliente
-	Y        ingreso los datos del cliente
-	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 12/12/1994 | Casado      | Albania      |
+#	Y        doy click en datos del cliente
+#	Y        ingreso los datos del cliente
+#	  | fechaNac   | estadoCivil | nacionalidad |
+#	  | 12/12/1994 | Casado      | Albania      |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
