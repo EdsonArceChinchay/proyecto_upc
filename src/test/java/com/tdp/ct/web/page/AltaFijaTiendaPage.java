@@ -237,15 +237,19 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAñadirSVA() {
-        waitUntilElementIsVisible(btnSVA, 100);
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(btnSVA, 5);
         js().scrollElementTop(btnSVA);
         click(btnSVA,10);
+        UtilWeb.waitForSeconds(10);
+
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(10);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
         waitUntilElementIsVisible(btnbloque, 10);
         js().scrollElementTop(btnbloque);
@@ -253,9 +257,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnGuardarCambios() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+//        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
         UtilWeb.waitForSeconds(1);

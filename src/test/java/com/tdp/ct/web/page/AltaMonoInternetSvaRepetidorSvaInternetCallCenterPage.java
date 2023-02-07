@@ -16,7 +16,7 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     protected WebElement sva_repetidor;
 
     public void agregarsva() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         js().scrollElementTop(buttonAgregarSVA);
         waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
