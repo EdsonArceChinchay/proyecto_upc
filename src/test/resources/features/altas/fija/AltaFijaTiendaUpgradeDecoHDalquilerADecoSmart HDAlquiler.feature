@@ -17,6 +17,10 @@ Característica: Alta Fija migracion deco HD a Smart HD
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+	#Y        cierro popup de error
+	Y        ingreso los datos del cliente a registrar
+	  | nombres | apellidos   | genero   |
+	  | Ana     | Lopez Lopez | femenino |
     Y        selecciono agregar sva fija
     Y         seleccionamos agregar decodificador Smart HD
     Y        seleccionamos guardar cambios
