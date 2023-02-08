@@ -23,20 +23,18 @@ Característica: Alta Fija Mono Internet por Retail
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
-    Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton Mostrar ofertas
-    Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | EDIFICIO | casa      |
-    Y        presiono el boton consultar cobertura
-    Y        selecciono tipo de oferta
+	Y        selecciono el boton Linea Nueva Hogar
+	Y        selecciono el boton Mostrar ofertas
+	Entonces me muestra la pantalla para ingresar la direccion
+	Y        completo los datos para consultar la cobertura
+	  | departamento | provincia | distrito | direccion                   | referencia |
+	  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+	Y        presiono el boton Consultar Ubicacion
+	Y        ingreso la informacion del lugar para la instalacion
+	  | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+	  | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+	Y        presiono el boton Consultar Cobertura
+	Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy clic a iniciar registro
