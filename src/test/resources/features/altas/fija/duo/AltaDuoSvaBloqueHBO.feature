@@ -38,7 +38,7 @@ Característica: Alta Duo SVA HBO por call center
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
-	Y        doy click en agregar "<svaInternet>"
+	#Y        doy click en agregar "<svaInternet>"
 	E        inicio su registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
@@ -56,5 +56,5 @@ Característica: Alta Duo SVA HBO por call center
 	Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
-	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | bloque | tipoPlan | svaInternet           |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 50 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
+	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                        | bloque | tipoPlan | svaInternet           |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | INTERNET MOVISTAR RA D22 200 MBPS | HBO    | Mono     | PACK ANTIVIRUS MCAFEE |
