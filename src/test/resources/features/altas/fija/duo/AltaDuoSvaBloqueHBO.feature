@@ -19,9 +19,9 @@ Característica: Alta Duo SVA HBO por call center
 	Y        ingreso el documento "<documento>"
 	Y        doy click en el boton consultar
 	#Y        cierro popup de error
-#	Y        ingreso los datos del cliente a registrar
-#	  | nombres | apellidos    | genero   |
-#	  | Lana    | Grey Khalifa | femenino |
+	Y        ingreso los datos del cliente a registrar
+	  | nombres | apellidos    | genero   |
+	  | Lana    | Grey Khalifa | femenino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -57,4 +57,4 @@ Característica: Alta Duo SVA HBO por call center
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                        | bloque | tipoPlan | svaInternet           |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | INTERNET MOVISTAR RA D22 200 MBPS | HBO    | Mono     | PACK ANTIVIRUS MCAFEE |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo     | PACK ANTIVIRUS MCAFEE |
