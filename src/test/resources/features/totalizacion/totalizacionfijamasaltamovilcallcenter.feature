@@ -16,7 +16,7 @@
       Y        ingreso el password "$t3l3f0n1c4$"
       Y        presiono el boton Continuar hacia el home
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-      Y        valido que se presente la tienda "Tiendas Franquicia Prueba"
+      Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
       Y        ingreso el documento "102762222"
       Y        doy click en el boton consultar
