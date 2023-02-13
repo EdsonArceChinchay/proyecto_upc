@@ -26,6 +26,17 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     public void doyClickEnCambiarPlanHogar() {
         MigracionMonoADuoSVATiendaStep.seleccionarboton();
     }
+    @Y("doy clic en agregar sva {string}")
+    public void doyClicEnAgregarSva(String Bloques) {
+        MigracionMonoADuoSVATiendaStep.clicEnAgregarSVA();
+        MigracionMonoADuoSVATiendaStep.agregoSVATV(Bloques);
+        MigracionMonoADuoSVATiendaStep.clicGuardarCambios();
+    }
 
+    @Y("selecciono la opcion a escoger {string}")
+    public void seleccionoLaOpcionAMigrar(String plan) {
+        MigracionMonoADuoSVATiendaStep.seleccionarPlanMigrar(plan);
+        altaFijaTiendaStep.clickSeleccionarOferta();
 
+    }
 }

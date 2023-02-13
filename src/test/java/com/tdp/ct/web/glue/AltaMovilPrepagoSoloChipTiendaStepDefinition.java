@@ -20,7 +20,7 @@ public class AltaMovilPrepagoSoloChipTiendaStepDefinition {
     @Y("selecciono la oferta de plan movil {string}")
     public void seleccionoLaOfertaDePlanMovil(String oferta) {
         altaMovilPrepagoSoloChipTiendaStep.clickSeleccionarOferta(oferta);
-        //altaFijaTiendaStep.clickSeleccionarOferta();
+       //altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
     @Y("selecciono plan prepago {string}")

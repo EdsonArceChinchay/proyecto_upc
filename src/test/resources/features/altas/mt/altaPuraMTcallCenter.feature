@@ -3,11 +3,9 @@
 
 Característica: Alta Fija Pura MT por Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaPuraMTcallCenterCE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,9 +30,9 @@ Característica: Alta Fija Pura MT por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     #        Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -46,20 +44,22 @@ Característica: Alta Fija Pura MT por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "2pm-7pm"
     E        ingreso telefono del titular "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    E         ingreso correo de verificacion "<correo>"
+    Y        selecciono el metodo de pago "Contra entrega"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
 #    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
+      | 10/12/1990 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -68,7 +68,6 @@ Característica: Alta Fija Pura MT por Call Center
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan   | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464957 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 1 Gb + 95 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoOferta     | nombrePlan       | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 123408466 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com |
 

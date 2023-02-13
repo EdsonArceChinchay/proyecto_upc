@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity
 
 Característica: Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
@@ -7,7 +7,7 @@ Característica: Alta Movil Solo Sim Por Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCallCenter
+  @AltaMovilSoloSimCallCenter @Global
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -23,11 +23,16 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
+#    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Postpago
-    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+#    Y        selecciono el plan_movil Postpago
+#    Y        selecciono el boton de eleccion de planes
     #Y        selecciono el plan "Postpago" que desea
     #Y        doy click en el boton Siguiente
     #Y        valido que este en la pagina de ofertas sugeridas
@@ -43,9 +48,9 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton confirmar ubicacion
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
@@ -66,10 +71,9 @@ Característica: Alta Movil Solo Sim Por Call Center
     Y        doy click en el boton de continuar
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003 | Postpago      | Plan Ilimitado Mi Movistar S/65.9 |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |

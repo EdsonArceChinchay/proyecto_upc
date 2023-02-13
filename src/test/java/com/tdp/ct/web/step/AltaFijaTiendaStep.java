@@ -3,6 +3,7 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ public class AltaFijaTiendaStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void validarNombresCompletosCliente(String nombreCompleto) {
-
+        UtilWeb.waitForSeconds(30);
         Assert.assertTrue("No existe el nombre del cliente", page.altaFijaTiendaPage().nombresCompletosCliente()
                 .contains(nombreCompleto));
     }
@@ -87,12 +88,22 @@ public class AltaFijaTiendaStep {
     public void doyClickEnAgregarBloque(String bloque) {
         page.altaFijaTiendaPage().doyClickEnAgregarBloque(bloque);
 
+
     }
 
     @ScreenShotAfter
     public void doyClickEnGuardarCambios() {
         page.altaFijaTiendaPage().doyClickEnGuardarCambios();
 
+    }
+
+    @ScreenShotAfter
+    public void ingresarDatosAgendamientoParaRUC() {
+        page.altaFijaTiendaPage().ingresarDatosAgendamientoParaRUC();
+    }
+
+    @ScreenShotBefore
+    public void clickBotonValidarRepreLegal() {page.altaFijaTiendaPage().clickValidarRepreLegal();
     }
 }
 

@@ -57,6 +57,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
     protected WebElement btnCambiarPlan;
 
+    @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
+    protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
@@ -64,9 +66,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "//*[@type='button' and @class='close']")
+    protected WebElement btnClosePopUp;
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        waitUntilElementIsClickable(cartillaHogar, 20).click();
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
         UtilWeb.waitForSeconds(10);
@@ -105,7 +111,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(lblCartillaCambiar);
         waitUntilElementIsVisible(lblCartillaCambiar, 10);
-        click(lblCartillaCambiar, 10);
+        click(lblCartillaCambiar, 18);//12
     }
 
     public void scrollUp() {
@@ -129,12 +135,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
                 waitUntilElementIsClickable(btnConfirmarDir, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(30);//1
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
                 waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(10);
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
@@ -154,7 +160,14 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 click(btnCambiarPlan,10);
                 UtilWeb.waitForSeconds(1);
                 break;
+
+            case "RENOVAR PLAN":
+                js().scrollElementTop(btnRenovarPlan);
+                click(btnRenovarPlan,10);
+                UtilWeb.waitForSeconds(1);
+                break;
         }
+
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
@@ -174,8 +187,24 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
             btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
+            UtilWeb.waitForSeconds(1);
         }
 
+    }
+
+    public void agregoSVALinea(String svaLinea) {
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(3) .flex_100");
+        click(listElementPLan);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(svaLinea)) {
+                UtilWeb.waitForSeconds(2);
+                click(elements, 3);
+            }
+        }
     }
 }

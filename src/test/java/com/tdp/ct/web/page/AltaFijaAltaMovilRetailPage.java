@@ -18,7 +18,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div[3]/button")
+    @FindBy(xpath = "//*[contains(text(),'Mostrar Ofertas')]")
     protected WebElement btnMostrar;
 
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
@@ -36,7 +36,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(15);
         waitUntilElementIsClickable(btnHogar,30);
         click(btnHogar);
         waitUntilElementIsVisible(btnMovil,5);
@@ -99,7 +99,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void btnConsultar(){
 
-        //waitUntilElementIsVisible(btnConsulta,8);
+        waitUntilElementIsVisible(btnConsulta,8);
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);

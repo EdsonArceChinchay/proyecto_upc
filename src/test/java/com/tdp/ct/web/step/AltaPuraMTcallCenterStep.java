@@ -35,11 +35,6 @@ public class AltaPuraMTcallCenterStep {
     }
 
     @ScreenShotAfter
-    public void ingresoDireccionTT(String direccion){
-        page.altaPuraMTcallCenterPage().ingresoDireccionTT(direccion);
-    }
-
-    @ScreenShotAfter
     public void ingresarReferencia(String  referencia){
         page.altaPuraMTcallCenterPage().ingresarReferencia(referencia);
     }
@@ -49,15 +44,11 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().ingresarCorreoVerif(verifCorreo);
     }
 
-    @ScreenShotAfter
-    public void clicBotonAceptar(){
-        UtilWeb.waitForSeconds(10);
-        page.altaPuraMTcallCenterPage().clicBotonAceptar();
-    }
     @ScreenShotBefore
     public void clicBotonContinuar(){
         UtilWeb.waitForSeconds(15);
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
+        UtilWeb.waitForSeconds(150);//15
     }
 
     @ScreenShotBefore
@@ -65,4 +56,8 @@ public class AltaPuraMTcallCenterStep {
         page.altaPuraMTcallCenterPage().clickCierrePopup();
     }
 
+    @ScreenShotAfter
+    public void ingresoTelefono(String telefono) {
+       page.altaPuraMTcallCenterPage().ingresarTelefono(telefono);
+    }
 }

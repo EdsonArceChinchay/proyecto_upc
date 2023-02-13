@@ -74,10 +74,21 @@ public class AltaFijaTiendaStepDefinition {
   @Y("doy click en agregar Bloque {string}")
   public void doyClickEnAgregarBloque(String Bloque) {
     altaFijaTiendaStep.doyClickEnAgregarBloque(Bloque);
+
   }
 
   @Y("doy click en Guardar cambios")
   public void doyClickEnGuardarCambios() {
     altaFijaTiendaStep.doyClickEnGuardarCambios();
+  }
+
+  @Y("ingreso los datos de agendamiento para RUC")
+  public void ingresoLosDatosDeAgendamientoParaRUC() {
+    altaFijaTiendaStep.ingresarDatosAgendamientoParaRUC();
+  }
+
+  @Y("doy clic en el boton validar identidad representante legal")
+  public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
+    altaFijaTiendaStep.clickBotonValidarRepreLegal();
   }
 }

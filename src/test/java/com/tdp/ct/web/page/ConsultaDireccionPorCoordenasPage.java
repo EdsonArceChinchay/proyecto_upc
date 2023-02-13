@@ -14,7 +14,7 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
     @FindBy(xpath = "(//*[@formcontrolname='latitude'])[1]")
     protected WebElement txtY;
 
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='direction']")
+    @FindBy(xpath = "//*[@formcontrolname='direction' or contains(@class,'text-adress-info')]")
     protected WebElement txtDireccion;
 
     @FindBy(xpath = "//mat-dialog-content//p[contains(@class,'modal-description')]")
@@ -25,14 +25,14 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
         type(txtX, x.trim());
         UtilWeb.waitForSeconds(1);
         type(txtY, y.trim());
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void validoQueLaDireccionSea(String direccion) {
         UtilWeb.waitForSeconds(30);
         String direccionObtenida = txtDireccion.getText().trim().toUpperCase();
         String direccionEsperada = direccion.trim().toUpperCase();
-//        Assertions.assertTrue(direccionObtenida.contains(direccionEsperada), "La direccion esperada: " + direccionEsperada + ", es diferente a la obtenida: " + direccionObtenida);
+       Assertions.assertTrue(direccionObtenida.contains(direccionEsperada), "La direccion esperada: " + direccionEsperada + ", es diferente a la obtenida: " + direccionObtenida);
 
     }
 
