@@ -41,7 +41,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     public void completarIdCall(String idCall) {
 
-        WebElement rootInputConfirmarCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[2]");
+        WebElement rootInputConfirmarCorreo = find().getElementByCss("tdp-st-input-text[formcontrolname=\"callID\"]");
         SearchContext context3 = sh().getContext(rootInputConfirmarCorreo);
         context3.findElement(By.cssSelector("div > div > div > input")).sendKeys(idCall);
 
