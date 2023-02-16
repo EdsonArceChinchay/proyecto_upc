@@ -40,9 +40,9 @@
       Y        selecciono el tipo de plan fija "<tipoPlan>"
       Y        selecciono el plan "<nombrePlan>"
       Y        valido que este en la seccion de registro
+      Y        doy click en agregar SVA Linea "<svaLinea>"
       Entonces doy click en Agregar Sva
       Y        elegimos sva repetidor
-      Y        doy click en agregar SVA Linea "<svaLinea>"
       Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
       Cuando   doy clic a iniciar registro
