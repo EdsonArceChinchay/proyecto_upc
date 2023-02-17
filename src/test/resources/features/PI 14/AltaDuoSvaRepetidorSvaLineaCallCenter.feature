@@ -64,4 +64,4 @@
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
       Ejemplos:
         | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                      | svaLinea              |
-        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058933148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 25 |
+        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058938148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 25 |
