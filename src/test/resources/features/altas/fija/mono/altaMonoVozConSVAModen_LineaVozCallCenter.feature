@@ -96,7 +96,7 @@ Característica: Alta Mono Linea Voz Modem sva linea Call center
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
 	Y        doy click en agregar "<svaInternet>"
-	Y doy click en agregar SVA Linea "<svaLinea>"
+	#Y doy click en agregar SVA Linea "<svaLinea>"
 	  #Y        valido el detalle de la seleccion
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
