@@ -19,7 +19,7 @@ Característica: Migracion salto 0 canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro

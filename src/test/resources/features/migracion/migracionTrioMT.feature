@@ -21,7 +21,7 @@ Característica: Migracion de Trio a MT + SVA
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        doy click en agregar SVA MT "<sva MT>"
     Cuando   doy clic a iniciar registro

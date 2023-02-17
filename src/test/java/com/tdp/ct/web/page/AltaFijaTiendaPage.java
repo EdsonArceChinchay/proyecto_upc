@@ -164,6 +164,9 @@ public class AltaFijaTiendaPage extends WebBase {
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;

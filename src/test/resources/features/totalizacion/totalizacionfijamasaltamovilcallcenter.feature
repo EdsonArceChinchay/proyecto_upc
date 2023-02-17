@@ -9,7 +9,7 @@
 
     @totalizaciontriomasaltamovil
 
-    Escenario: scenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
+    Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "jpachaot"
