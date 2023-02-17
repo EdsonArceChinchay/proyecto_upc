@@ -1,27 +1,27 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF
+@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
 
-Característica: Alta Fija por tienda
+Característica: Alta Trio Upfront call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaTienda
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  @AltaTrio_Upfront
+  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos | genero   |
-      | Felipa  | Mendoza   | femenino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -32,34 +32,30 @@ Característica: Alta Fija por tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-#      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1993 | Casado      | Albania      |
-    Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 01/12/1990 | Alemania     | Casado       |
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-#    Y        me muestra pantalla para Descargar contrato
-#    Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton de continuar
+    #Y        presiono el boton descargar contrato
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1567432126 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Mono     | RA D22     | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
-
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                 | referencia | plan_hogar | nombrePlan                                |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460  | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |

@@ -145,6 +145,8 @@ public class StepPages {
         return new SvaCallCenterPage();
     }
 
+    public AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage(){ return  new AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage();}
+
     public SvaBloqueHboaDuoPorTiendaPage svaBloqueHboaDuoPorTiendaPage() {
         return new SvaBloqueHboaDuoPorTiendaPage();
     }
@@ -154,6 +156,7 @@ public class StepPages {
     }
 
     public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
+
 }
 
 

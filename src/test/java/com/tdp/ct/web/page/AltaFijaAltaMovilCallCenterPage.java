@@ -120,6 +120,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
+        js().scrollElementTop(btnConsultarCobertura);
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
@@ -232,18 +233,18 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(20);//10
+        UtilWeb.waitForSeconds(5);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
-        UtilWeb.waitForSeconds(20);//10
+        UtilWeb.waitForSeconds(3);//10
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 500).click();
+        waitUntilElementIsClickable(oferta, 10).click();
         UtilWeb.waitForSeconds(5);//
     }
 
