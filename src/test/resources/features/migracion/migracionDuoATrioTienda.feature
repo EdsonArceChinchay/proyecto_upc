@@ -25,6 +25,10 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton "Confirmar direccion"
 #    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
     Y        doy click en en el boton "Confirmar direccion"
+#    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
+    Y        doy click en el boton "Confirmar direccion"
+#    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
+#    Y        doy click en en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
