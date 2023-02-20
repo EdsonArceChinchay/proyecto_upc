@@ -43,7 +43,7 @@ Característica: Alta mono voz + sva Linea  en Canal Call Center
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "testing-1@tester.com"
 	Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
-	Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
+	#Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
 	Y        doy click en validar identidad del titular
 	Y        ingreso los datos solicitados para la validacion del cliente
 	  | nombreMadre   | nombrePadre   | distritoNac   |
@@ -53,8 +53,9 @@ Característica: Alta mono voz + sva Linea  en Canal Call Center
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en Finalizar registro
+	#Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	Ejemplos:
 	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  DNI           | 75411211   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  CARMEN    |  SANTOS    | TRUJILLO  |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  DNI           | 71235849   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |

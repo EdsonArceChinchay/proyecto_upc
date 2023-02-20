@@ -56,8 +56,8 @@ Característica: Alta mono + sva  en Canal Retail
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy clic en continuar
-	#Y        presiono el boton Registrar venta
+	Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
 	  | tipoUsuario     | userName   | password     | msgHome     |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                       |    svaInternet              |
-	  | usuario externo |  nishuizas | $t3l3f0n1c4$ |  Bienvenid@ |  CE            | 1000103148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     |INTERNET MOVISTAR RA D22 100 MBPS | Seguridad Total Residencial |
+	  | usuario externo |  nishuizas | $t3l3f0n1c4$ |  Bienvenid@ |  CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     |INTERNET MOVISTAR RA D22 100 MBPS | Seguridad Total Residencial |
