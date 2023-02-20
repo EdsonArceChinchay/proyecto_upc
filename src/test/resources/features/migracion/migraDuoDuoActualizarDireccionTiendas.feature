@@ -1,12 +1,12 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
 
-Característica: Migracion de Duo a Trio - Actualizar Dirección, por el canal Tienda
+Característica: Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionDuoATrioActualizarDireccionTiendas
+  @migracionDuoTrioActualizarDireccionTiendas
   Esquema del escenario: Migracion de Duo a Trio con CE  sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -50,4 +50,4 @@ Característica: Migracion de Duo a Trio - Actualizar Dirección, por el canal T
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
 
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042465127 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042465127 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | DÚO INTERNET ESTÁNDAR HD RA D22 200 MBPS |
