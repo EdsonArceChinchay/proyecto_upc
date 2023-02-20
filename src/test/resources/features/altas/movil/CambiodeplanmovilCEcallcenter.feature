@@ -21,7 +21,7 @@ Característica: cambio de plan movil en call center
     Y        ingreso el documento "1026435768"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del servicio "650027714"
-    Y        doy click en en el boton "Renovar plan"
+    Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y selecciono boton Cambiar plan
     Y  doy click en iniciar registro
