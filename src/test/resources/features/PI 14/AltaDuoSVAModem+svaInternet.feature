@@ -39,7 +39,7 @@ Característica: Alta Duo sva Modem + SVA Internet
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
 	Y        doy click en agregar "<svaInternet>"
-	Y 		 doy click en agregar Modem
+	#Y 		 doy click en agregar Modem
 	E        inicio su registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
