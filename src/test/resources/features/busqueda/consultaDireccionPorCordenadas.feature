@@ -23,9 +23,9 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
     Y        selecciono el boton Linea Nueva Hogar
     Y        presiono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
-    Y        doy click en en el boton "Buscar"
+    Y        doy click en el boton "Buscar"
     Y        valido que la direccion sea "<direccion>"
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | longitud      | latitud       | direccion                |
@@ -56,11 +56,11 @@ Característica: Busqueda de direccion por coordenadas DITO WEB
     Y        selecciono el boton Linea Nueva Hogar
     Y        presiono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
-    Y        doy click en en el boton "Buscar"
+    Y        doy click en el boton "Buscar"
     Y        valido que que me muestre el mensajde de error "<mensaje>"
-    Y        doy click en en el boton "Entendido"
+    Y        doy click en el boton "Entendido"
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | longitud     | latitud      | mensaje                                                               |
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA            |
