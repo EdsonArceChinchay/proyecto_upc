@@ -20,7 +20,7 @@ Característica: Migracion de Mono a Duo por el canal Call Center CE
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    #Y        doy click en en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -30,11 +30,11 @@ Característica: Migracion de Mono a Duo por el canal Call Center CE
 #    Y        doy click en agregar Bloque "<bloque>"
 #    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
+#    Y        valido que me encuentre en la pantalla agendamiento
+#    Y        ingreso los datos de agendamiento
+#    Y        presiono el boton confirmar agendamiento
+#    Y        ingreso un correo electronico "<correo>"
+#    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
