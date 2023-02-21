@@ -16,8 +16,12 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
+<<<<<<< HEAD
         tags = "@CambiodeplanmovilCEcallcenter"
 
+=======
+        tags = "@DoneDevOps"
+>>>>>>> af17752249d39df8afa707f8e81f6e6916634df9
 )
 
 class Runner {
