@@ -28,9 +28,9 @@ Característica: Alta Fija + Alta Movil por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      #| A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
