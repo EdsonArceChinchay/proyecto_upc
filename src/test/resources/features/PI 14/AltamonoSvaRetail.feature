@@ -27,7 +27,7 @@ Característica: Alta mono + sva  en Canal Retail
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
 	Y        selecciono el departamento donde sera la instalacion "<departamento>"
-	Y        selecciono la provincia donde sera la inst3alacion "<provincia>"
+	Y        selecciono la provincia donde sera la instalacion "<provincia>"
 	Y        selecciono el distrito donde sera la instalacion "<distrito>"
 	Y        ingreso la direccion donde sera la instalacion "<direccion>"
 	Y        ingreso la referencia de la direccion "<referencia>"
