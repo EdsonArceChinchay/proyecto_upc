@@ -2,13 +2,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Duo Sva Repetidor + Sva Línea Call Center
+Característica: Alta Duo Sva Linea + Sva bloque Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaDuoSvaRepetidorSvaLineaCallCenter
-  Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center
+  @AltaDuoSvaLineaSvaBloqueCallCenter
+  Esquema del escenario: Alta Duo Sva Linea + Sva bloque Call Center
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
