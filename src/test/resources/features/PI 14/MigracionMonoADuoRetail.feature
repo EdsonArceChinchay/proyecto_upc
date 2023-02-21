@@ -20,7 +20,7 @@
 	 Y        selecciono la cartilla del plan activo
 	 Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-	# Y        doy click en en el boton "Confirmar direccion"
+	 Y        doy click en el boton "Confirmar direccion"
 	 Y        selecciono tipo de oferta
 	 Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
 	 Y        selecciono la oferta "<plan>"
@@ -33,8 +33,8 @@
 	 Y        valido que me encuentre en la pantalla agendamiento
 	 Y        ingreso los datos de agendamiento
 	 Y        presiono el boton confirmar agendamiento
-	 Y        ingreso un correo electronico "<correo>"
-	 Y        ingreso nuevamente el correo electronico "<correo>"
+#	 Y        ingreso un correo electronico "<correo>"
+#	 Y        ingreso nuevamente el correo electronico "<correo>"
 	 Y        doy clic para validar contrato hogar
 	 Y        me muestra en pantalla el contrato solicitado
 	 Cuando   doy clic en si acepto
@@ -46,4 +46,4 @@
 
 	 Ejemplos:
 	   | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                                     | bloque |
-	   | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+	   | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
