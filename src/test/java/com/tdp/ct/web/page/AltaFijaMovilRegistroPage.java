@@ -139,7 +139,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-
     public void clicIrAMovistarTotal() {
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
