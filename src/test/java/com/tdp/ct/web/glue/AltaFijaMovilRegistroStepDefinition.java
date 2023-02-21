@@ -41,7 +41,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaAltaMovilRetailStep.writeConjHab(conj);
     }
 
-
     @Entonces("me muestra la pantalla de ofertas sugeridos")
     public void meMuestraLaPantallaDeOfertasSugeridos() {
         altaFijaMovilRegistroStep.mostrarDetalleOfertasSugeridas();
@@ -126,6 +125,7 @@ public class AltaFijaMovilRegistroStepDefinition {
             altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos);
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }
+            UtilWeb.waitForSeconds(5);
             altaFijaMovilRegistroStep.clicEnConfirmar();
     }
     @Entonces("valido que me muestre el boton con el texto de identidad validada")

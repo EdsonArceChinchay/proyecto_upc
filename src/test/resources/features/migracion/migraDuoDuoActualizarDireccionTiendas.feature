@@ -19,7 +19,7 @@ Característica: Migracion de Duo a Duo - Actualizar Dirección, por el canal Ti
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR,JULIO CESAR TELLO,469,LINCE ,LIMA , LIMA ,PE" actual del servicio
+    Y        verifico la direccion "JR,JULIO CESAR TELLO,469,LINCE,LIMA ,LIMA,PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la direccion donde sera la instalacion "JOSE LEAL 500"
     Y        ingreso la referencia de la direccion "Inkafarma"
