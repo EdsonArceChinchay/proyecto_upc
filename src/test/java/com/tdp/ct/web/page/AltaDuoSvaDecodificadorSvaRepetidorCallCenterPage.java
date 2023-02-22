@@ -15,9 +15,8 @@ public class AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage extends WebBase {
         System.out.println("aqui");
         //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
         String decodificador = "//div[text()=' Cuota mensual : S/"+string+" " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
-        System.out.println(decodificador);
         WebElement deco = find().getElementByXPath(decodificador);
-        waitUntilElementIsVisible(deco, 10).click();
+        deco.click();
         UtilWeb.waitForSeconds(3);
 
     }

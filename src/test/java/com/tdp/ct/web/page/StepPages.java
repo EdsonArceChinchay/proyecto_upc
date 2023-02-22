@@ -34,6 +34,7 @@ public class StepPages {
     public AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage() {
         return new AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage();
     }
+
     public AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage() {
         return new AltaFijaAltaMovilCallCenterPage();
     }

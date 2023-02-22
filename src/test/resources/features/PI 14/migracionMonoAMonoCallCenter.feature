@@ -30,9 +30,9 @@ Característica: Migracion de Mono a Duo por el canal Call Center CE
 #    Y        doy click en agregar Bloque "<bloque>"
 #    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
-#    Y        valido que me encuentre en la pantalla agendamiento
-#    Y        ingreso los datos de agendamiento
-#    Y        presiono el boton confirmar agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
 #    Y        ingreso un correo electronico "<correo>"
 #    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -46,4 +46,4 @@ Característica: Migracion de Mono a Duo por el canal Call Center CE
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                          |bloque|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Mono           | TV ESTÁNDAR DIGITAL RA D22  | HBO |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1029392827 | tester@tester.com | Mono           | TV HOGAR DIGITAL RA D22  | HBO |
