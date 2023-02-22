@@ -41,7 +41,7 @@
 	  Y        valido que este en la seccion de registro
 	  Entonces doy click en Agregar Sva
 	  Y        agrego "<svainternet>"
-	  Y        elegimos sva repetidor
+	  Y        elegimos sva repetidor "<svarepetidor>"
 	  Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
 	  Cuando   doy clic a iniciar registro
@@ -62,5 +62,5 @@
 	  #Y        presiono el boton Registrar venta
 	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	  Ejemplos:
-		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |
-		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 200 MBPS |  PACK ANTIVIRUS MCAFEE |
+		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |  svarepetidor           |
+		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 200 MBPS |  PACK ANTIVIRUS MCAFEE |Repetidor WIFI PLUS Venta|
