@@ -1,12 +1,12 @@
  #language:es
 
- Característica: Migracion de Mono a Mono por el canal Call Center CE
+ Característica: Migracion de Mono a DUO por el canal Call Retail CE
 
    Antecedentes:
 	 Dado     que abro la pagina de movistar
 
    @MigracionMonoADuoCallCenter
-   Esquema del escenario: Migracion de Mono a Duo en canal call center
+   Esquema del escenario: Migracion de Mono a Duo en canal Retail
 	 Cuando   presiono el boton Iniciar Sesion
 	 Y        selecciono el tipo de usuario "<tipoUsuario>"
 	 Y        ingreso el usuario "<userName>"
@@ -33,8 +33,8 @@
 	 Y        valido que me encuentre en la pantalla agendamiento
 	 Y        ingreso los datos de agendamiento
 	 Y        presiono el boton confirmar agendamiento
-	 Y        ingreso un correo electronico "<correo>"
-	 Y        ingreso nuevamente el correo electronico "<correo>"
+#	 Y        ingreso un correo electronico "<correo>"
+#	 Y        ingreso nuevamente el correo electronico "<correo>"
 	 Y        doy clic para validar contrato hogar
 	 Y        me muestra en pantalla el contrato solicitado
 	 Cuando   doy clic en si acepto
@@ -46,4 +46,4 @@
 
 	 Ejemplos:
 	   | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                                     | bloque |
-	   | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+	   | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
