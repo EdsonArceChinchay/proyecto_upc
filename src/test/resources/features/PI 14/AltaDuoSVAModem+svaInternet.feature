@@ -46,11 +46,11 @@ Característica: Alta Duo sva Modem + SVA Internet
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "Angel.mf@gmail.com"
 	Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
-#	Y        doy click en datos del cliente
-#	Y        completo los datos solicitados
-#	  | fechaNac   | nacionalidad | estado_civil |
-#	  | 12/12/1980 | Alemania     | Casado       |
-	Y        doy clic para validar contrato Movil
+	Y        doy click en datos del cliente
+	Y        completo los datos solicitados
+	  | fechaNac   | nacionalidad | estado_civil |
+	  | 12/12/1980 | Alemania     | Casado       |
+	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
