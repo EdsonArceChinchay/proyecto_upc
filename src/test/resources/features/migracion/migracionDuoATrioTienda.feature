@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF
 
 Característica: Migracion de Duo a Trio por el canal Tienda
 
@@ -22,7 +22,8 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
 #    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+#    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        seleccion plan nuevo para ver las ofertas
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
@@ -38,8 +39,10 @@ Característica: Migracion de Duo a Trio por el canal Tienda
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
+
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464952 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |

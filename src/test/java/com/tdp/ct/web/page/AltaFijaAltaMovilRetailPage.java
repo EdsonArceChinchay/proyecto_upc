@@ -18,7 +18,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
 
-    @FindBy(xpath = "//*[contains(text(),'Mostrar ofertas')]")
+
+    @FindBy(xpath = "//*[contains(text(),'Mostrar')]")
+
     protected WebElement btnMostrar;
 
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
@@ -26,7 +28,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
-
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
     private String inputCorreo;
 
 
@@ -51,10 +54,24 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void mostrarOfertas(){
+        System.out.println("3");
         waitUntilElementIsVisible(btnMostrar,90);//50
         click(btnMostrar);
         UtilWeb.waitForSeconds(12);
         //UtilWeb.waitForSeconds(2);
+    }
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
     }
 
     public void seleccionarDepa(String tipoDepa){

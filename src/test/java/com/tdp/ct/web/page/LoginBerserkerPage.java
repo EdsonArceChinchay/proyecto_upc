@@ -59,7 +59,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnIniciarSesion() {
-        waitUntilElementIsVisible(btnIniciarSesion, 15);
+        waitUntilElementIsVisible(btnIniciarSesion, 10);
         click(btnIniciarSesion);
         waitUntilElementIsVisible(tipoUsuario, 10);
     }

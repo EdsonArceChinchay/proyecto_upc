@@ -19,7 +19,7 @@ Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, c
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -61,12 +61,12 @@ Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, c
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Actualizar direccion"
-    Y        doy click en en el boton "Ingresar coordenadas"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
-    Y        doy click en en el boton "Buscar"
+    Y        doy click en el boton "Buscar"
     Y        presiono el boton consultar cobertura
-    Y        doy click en en el boton "Entendido"
+    Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

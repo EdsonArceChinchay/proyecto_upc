@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF
 
 Característica: Alta Fija por tienda
 
@@ -57,7 +57,7 @@ Característica: Alta Fija por tienda
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+#    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |

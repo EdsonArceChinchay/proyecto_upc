@@ -29,7 +29,7 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
       | permanencia | tipoPago   | equipoName       |
       | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
