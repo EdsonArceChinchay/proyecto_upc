@@ -40,7 +40,7 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
 	Entonces doy click en Agregar Sva
-	Y        elegimos sva repetidor
+	Y        elegimos sva "<decodificador>"
 	Y        doy click en agregar Bloque "<bloque>"
 	Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
@@ -62,5 +62,5 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 |  HBO   |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque |decodificador|
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1022208148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 |  HBO   |25.90        |

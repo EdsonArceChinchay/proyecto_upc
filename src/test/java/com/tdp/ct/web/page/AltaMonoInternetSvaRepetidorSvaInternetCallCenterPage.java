@@ -38,11 +38,13 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
             }
         }
     }
-    public void elegimossvarepetidor() {
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsClickable(sva_repetidor,30);
-        click(sva_repetidor);
-        UtilWeb.waitForSeconds(2);
+    public void elegimossvarepetidor(String string) {
+        System.out.println("aqui");
+        String decodificador = "//div[text()='"+string+"']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
+        WebElement deco = find().getElementByXPath(decodificador);
+        deco.click();
+        UtilWeb.waitForSeconds(3);
+
     }
 
 }

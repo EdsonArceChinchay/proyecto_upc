@@ -17,7 +17,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
-    //*[contains(text(),'Mostrar ofertas')] --antiguo
+
     @FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
     protected WebElement btnMostrar;
 
@@ -52,7 +52,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void mostrarOfertas(){
-
+        System.out.println("3");
         waitUntilElementIsVisible(btnMostrar,90);//50
         click(btnMostrar);
         UtilWeb.waitForSeconds(12);
