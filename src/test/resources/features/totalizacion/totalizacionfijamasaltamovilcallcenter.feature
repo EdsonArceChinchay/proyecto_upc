@@ -18,13 +18,13 @@
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "102762222"
+      Y        ingreso el documento "102762221"
       Y        doy click en el boton consultar
       Y        selecciono la cartilla del plan activo
       Y        selecciono el boton Linea Nueva Movil
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
-      #Y        doy click en en el boton "Confirmar direccion"
+      Y        doy click en el boton "Confirmar direccion"
       Entonces me muestra la pantalla de ofertas sugeridos
       Y        luego doy click en la cartilla ir a Movistar Total
       Cuando   doy clic a iniciar registro

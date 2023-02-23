@@ -264,11 +264,13 @@ public class AltaFijaTiendaPage extends WebBase {
 //        modalError(3,btnReintentar,"Click al elemento Reitentar");
 //        modalError(3,btnReintentar,"Click al elemento Reitentar");
         JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
+        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        //jse.executeScript("window.scrollBy(0,400)");//250
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
-        waitUntilElementIsVisible(btnGuardar, 10);
-        click(btnGuardar);
+        btnGuardar.click();
+        //waitUntilElementIsVisible(btnGuardar, 15);
+        //click(btnGuardar);
     }
 
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {

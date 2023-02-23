@@ -1,13 +1,14 @@
-#language: es
+#language:es
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
+Característica: Alta Duo Sva Linea + Sva bloque Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaMonoTVSvaDecodificadorSvaBloqueCallCenter
-  Esquema del escenario: Alta Mono TV Sva Decodificador + Sva Bloque
+  @AltaDuoSvaLineaSvaBloqueCallCenter
+  Esquema del escenario: Alta Duo Sva Linea + Sva bloque Call Center
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
@@ -20,8 +21,8 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	Y        doy click en el boton consultar
 	Y        cierro popup de error
 	Y        ingreso los datos del cliente extranjero a registrar
-	  | nombres            | apellidos      | genero   |
-	  | Elizabeth Marisol  | Lopez Barrios  | femenino |
+	  | nombres  | apellidos      | genero    |
+	  | Elvis    | Lopez Barrios  | masculino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -39,8 +40,8 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
+	Y        doy click en agregar SVA Linea "<svaLinea>"
 	Entonces doy click en Agregar Sva
-	Y        elegimos sva "<decodificador>"
 	Y        doy click en agregar Bloque "<bloque>"
 	Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
@@ -48,12 +49,12 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
 	Y        presiono el boton confirmar agendamiento
-	Y        ingreso un correo electronico "tester.1.2.3@tester.com"
-	Y        ingreso nuevamente el correo electronico "tester.1.2.3@tester.com"
+	Y        ingreso un correo electronico "1tester@tester.com"
+	Y        ingreso nuevamente el correo electronico "1tester@tester.com"
 	Y        doy click en datos del cliente
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 12/12/1994 | Casado      | Albania      |
+	  | 08/09/1994 | Casado      | Albania      |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
@@ -62,5 +63,5 @@ Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque |decodificador|
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1022208148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 |  HBO   |25.90        |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                      | svaLinea              | bloque |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058908648 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 20 |  FOX   |
