@@ -1,12 +1,12 @@
  #language:es
 
- Característica: Migracion de Mono a Mono por el canal Call Center CE
+ Característica: Migracion de Mono a DUO por el canal Call Retail CE
 
    Antecedentes:
 	 Dado     que abro la pagina de movistar
 
    @MigracionMonoADuoCallCenter
-   Esquema del escenario: Migracion de Mono a Duo en canal call center
+   Esquema del escenario: Migracion de Mono a Duo en canal Retail
 	 Cuando   presiono el boton Iniciar Sesion
 	 Y        selecciono el tipo de usuario "<tipoUsuario>"
 	 Y        ingreso el usuario "<userName>"

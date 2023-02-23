@@ -43,7 +43,7 @@ Característica: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 	Y        valido que este en la seccion de registro
 	Entonces doy click en Agregar Sva
 	Y        elegimos sva "<decodificador>"
-	#Y        elegimos sva repetidor
+	Y        elegimos sva repetidor "<svarepetidor>"
 	Y        doy click en Guardar cambios
 	#Y        valido el detalle de la seleccion
 	Cuando   doy clic a iniciar registro
@@ -64,5 +64,5 @@ Característica: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                              |decodificador |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 100 MBPS| 25.90        |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                              |decodificador | svarepetidor              |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 100 MBPS| 25.90        | Repetidor WIFI PLUS Venta |

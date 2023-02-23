@@ -24,7 +24,7 @@
       Y        selecciono el boton Linea Nueva Movil
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
-      #Y        doy click en en el boton "Confirmar direccion"
+      Y        doy click en el boton "Confirmar direccion"
       Entonces me muestra la pantalla de ofertas sugeridos
       Y        luego doy click en la cartilla ir a Movistar Total
       Cuando   doy clic a iniciar registro

@@ -26,8 +26,8 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void elegimossvarepetidor (){
-        page.AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage().elegimossvarepetidor();
+    public void elegimossvarepetidor (String string){
+        page.AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage().elegimossvarepetidor(string);
     }
 
 }
