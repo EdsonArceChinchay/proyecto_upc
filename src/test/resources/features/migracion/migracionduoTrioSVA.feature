@@ -9,7 +9,7 @@ Característica: Migracion de duo a Trio + sva CEX canal Tienda
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionduoTrioSVA @MVP07 @Global
+  @MigracionduoTrioSVA @MVP07 @Global @General
   Esquema del escenario:Migracion de duo a Trio + sva
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"

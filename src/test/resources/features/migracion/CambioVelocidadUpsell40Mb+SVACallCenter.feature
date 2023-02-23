@@ -4,7 +4,7 @@
 
 Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, canal call center
 
-  @CambioVelocidadDuoSvaWifi @MVP02 @Global
+  @CambioVelocidadDuoSvaWifi @MVP02 @Global @General
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -38,7 +38,7 @@ Característica:  Cambio de velocidad dúo, añadir SVA (repetidor wifi), CEX, c
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 

@@ -5,7 +5,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: CAPL Prepago a postpago S/99.90 canal tienda
 
-  @CaplPrepagoPospago @MVP05 @Global
+  @CaplPrepagoPospago @MVP05 @Global @General
   Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

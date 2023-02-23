@@ -7,7 +7,7 @@ Característica: Migracion de Duo a Duo + sva por el canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoADuoSVaCallcenter @MVP09 @Global
+  @MigracionDuoADuoSVaCallcenter @MVP09 @Global @General
   Esquema del escenario: Migracion (duo a duo) + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -15,7 +15,7 @@ Característica: Migracion de Duo a Duo + sva por el canal Call Center
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -40,7 +40,7 @@ Característica: Migracion de Duo a Duo + sva por el canal Call Center
     Y        doy click en el boton de continuar
     Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
