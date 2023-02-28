@@ -19,7 +19,6 @@ Característica: Alta Movil Solo Sim Por Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
