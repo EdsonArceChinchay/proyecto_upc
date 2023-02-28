@@ -57,4 +57,4 @@ Característica: Alta Fija Mono Internet por Retail
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan   |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 10000112006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1000011233 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
