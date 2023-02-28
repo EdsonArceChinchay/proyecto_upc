@@ -21,7 +21,7 @@ Característica: Migracion Duo a Duo en canal CALL CENTER
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
 	Y        verifico la direccion "LINCE ,LIMA , LIMA" actual del servicio
-	Y        doy click en en el boton "Confirmar direccion"
+	Y        doy click en el boton "Confirmar direccion"
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
 	Y        selecciono el plan "<plan>"

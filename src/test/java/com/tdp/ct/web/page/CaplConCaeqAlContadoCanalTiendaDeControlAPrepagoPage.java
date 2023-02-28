@@ -13,7 +13,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
     //@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
-    @FindBy(xpath = "(//tdp-st-button)[1]")
+    @FindBy(xpath = "/html/body/app-root/app-park/div[3]/app-modal-detallemovil/tdp-st-modal/div[3]/div/div[1]/button")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")

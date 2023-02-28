@@ -68,6 +68,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@type='button' and @class='close']")
     protected WebElement btnClosePopUp;
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-adicionales/div/div[3]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/tdp-st-checkbox")
+    protected WebElement agregarModem;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
@@ -194,7 +196,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void agregoSVALinea(String svaLinea) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(3) .flex_100");
+       // UtilWeb.waitForSeconds(5);
+        WebElement listElementPLan = find().getElementByCss("tdp-st-select[label='Elige SVA']");
         click(listElementPLan);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
@@ -206,5 +209,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 click(elements, 3);
             }
         }
+    }
+
+    public void doyClickEnAgregarModem() {
+        UtilWeb.waitForSeconds(3);
+        agregarModem.click();
+
+
     }
 }

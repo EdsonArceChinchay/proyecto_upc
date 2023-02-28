@@ -22,7 +22,7 @@ Característica: Migracion de duo a Trio + sva
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
 	#Y       verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
-	Y        doy click en en el boton "Confirmar direccion"
+	Y        doy click en el boton "Confirmar direccion"
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
 	Y        selecciono la oferta "<plan>"
@@ -44,4 +44,4 @@ Característica: Migracion de duo a Trio + sva
 	Y        valido que se muestre el detalle del pedido
 	Ejemplos:
 	  | tipoUsuario     | userName    | password         | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | lterrazosce | Telefonica2021   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040173 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 150 Mbps |
+	  | usuario externo | lterrazosce | Telefonica2021   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040173 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |

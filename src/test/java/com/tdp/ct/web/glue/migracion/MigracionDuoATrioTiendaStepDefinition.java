@@ -51,7 +51,7 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.verificoLaDireccionActualDelServicio(dir);
     }
 
-    @Y("doy click en en el boton {string}")
+    @Y("doy click en el boton {string}")
     public void doyClickEnEnElBoton(String btn) {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
     }
@@ -62,5 +62,12 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.agregoSVALinea(SvaLinea);
         altaFijaMovilRegistroStep.clicGuardarCambios();
 
+    }
+
+    @Y("doy click en agregar Modem")
+    public void doyClickEnAgregarModem() {
+        altaFijaMovilRegistroStep.clicEnAgregarSVA();
+        migracionDuoATrioTiendaStep.doyClickEnAgregarModem();
+        altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 }

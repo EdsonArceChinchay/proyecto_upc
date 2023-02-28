@@ -6,10 +6,7 @@ import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
-import com.tdp.ct.web.page.migracion.MigraMTconCambioVelocidaCallCenterPage;
-import com.tdp.ct.web.page.migracion.MigraSalto0CanalTiendaPage;
-import com.tdp.ct.web.page.migracion.MigraSalto0RetailPage;
-import com.tdp.ct.web.page.migracion.MigraTrioaMTcanalCallCenterPage;
+import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,6 +29,10 @@ public class StepPages {
 
     public AltaFijaMovilRegistroPage altaFijaMovilRegistroPage() {
         return new AltaFijaMovilRegistroPage();
+    }
+
+    public AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage() {
+        return new AltaDuoSvaDecodificadorSvaRepetidorCallCenterPage();
     }
 
     public AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage() {
@@ -148,6 +149,8 @@ public class StepPages {
         return new SvaCallCenterPage();
     }
 
+    public AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage(){ return  new AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage();}
+
     public SvaBloqueHboaDuoPorTiendaPage svaBloqueHboaDuoPorTiendaPage() {
         return new SvaBloqueHboaDuoPorTiendaPage();
     }
@@ -155,6 +158,9 @@ public class StepPages {
     public PortabilidadPage portabilidadPage() {
         return new PortabilidadPage();
     }
+
+    public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
+
 }
 
 

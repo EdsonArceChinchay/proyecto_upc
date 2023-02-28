@@ -24,7 +24,7 @@ public class SvaCallCenterPage extends WebBase{
     @FindBy(xpath = "(//div/div/tdp-st-button)[2]")
     protected WebElement agregarsva;
 
-    @FindBy(xpath = "//div/div/tdp-st-icon-button[1]")
+    @FindBy(xpath = "//div[1]/div[2]/div[2]/div/tdp-st-icon-button[1]")
     protected WebElement sva_repetidor;
 
     @FindBy(xpath = "//button[contains(text(),' Guardar cambios ')]")
