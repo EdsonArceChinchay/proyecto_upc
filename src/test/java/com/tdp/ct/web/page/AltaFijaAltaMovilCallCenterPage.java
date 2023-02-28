@@ -120,6 +120,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(btnConsultarCobertura);
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
