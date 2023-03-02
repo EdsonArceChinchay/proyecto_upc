@@ -2,13 +2,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: cambio de plan movil en call center
+Característica: cambio de plan movil en Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @CambiodeplanmovilCERetail
-  Escenario: cambio de plan movil en call center sin biometria
+  Escenario: cambio de plan movil en Retail sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "nishuizas"
