@@ -120,6 +120,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(btnConsultarCobertura);
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
@@ -233,7 +234,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(5);//10
+        UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
@@ -244,7 +245,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 10).click();
+        waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//
     }
 
@@ -279,17 +280,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-        }
-        else {
-            System.out.println("No se encontro el modal error");
-        }
+//        UtilWeb.waitForSeconds(timeOnSeconds);
+//
+//        boolean isDisplayed = find().getElementByXPath("//*[contains(text(),'Reintentar')]").isDisplayed();
+////        boolean elementoExistente;
+////        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
+//        if (isDisplayed) {
+//            webElement.click();
+//            if (message.isEmpty()) {
+//                message = "Dio click al elemento";
+//                System.out.println(message);
+//            }
+//        } else {
+//            System.out.println("No se encontro el modal error");
+//        }
+
     }
 
 }

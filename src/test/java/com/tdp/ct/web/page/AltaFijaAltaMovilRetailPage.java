@@ -21,8 +21,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 //    @FindBy(xpath = "//*[contains(text(),'Mostrar')]")
 
     //*[contains(text(),'Mostrar ofertas')] --antiguo
-    @FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
+    //@FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
 
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
 
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
@@ -59,7 +60,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         System.out.println("3");
         waitUntilElementIsVisible(btnMostrar,90);//50
         click(btnMostrar);
-        UtilWeb.waitForSeconds(12);
+        UtilWeb.waitForSeconds(6);
         //UtilWeb.waitForSeconds(2);
     }
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
