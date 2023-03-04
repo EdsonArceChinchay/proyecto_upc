@@ -16,7 +16,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        selecciono la cartilla del plan activo
+    Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "JR, Julio Cesar tello, 469, LINCE, LIMA , LIMA, PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
