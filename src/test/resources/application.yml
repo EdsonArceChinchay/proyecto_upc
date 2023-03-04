@@ -4,7 +4,7 @@
 #
 webdriver:
   browser: chrome #chrome, safari, firefox, edge
-<<<<<<< HEAD
+
   path: drivers/chrome/chromedriver
   headless: on
   headless.dimension: --window-size=1400,600
