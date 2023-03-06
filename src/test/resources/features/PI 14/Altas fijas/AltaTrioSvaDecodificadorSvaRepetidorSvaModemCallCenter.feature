@@ -2,13 +2,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
+Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaTrioSvaModemSvaBloqueRetail
-  Esquema del escenario: Alta Trio con sva Modem + sva Bloque Canal Retail
+  @AltaTrioSvaDecodificadorSvaRepetidorSvaModemCallCenter
+  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
@@ -22,7 +22,7 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
 	Y        cierro popup de error
 	Y        ingreso los datos del cliente extranjero a registrar
 	  | nombres  | apellidos    | genero    |
-	  | Luis     | Lopez        | masculino |
+	  | Yeny     | Veliz Ramos  | masculino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -42,7 +42,8 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
 	Y        valido que este en la seccion de registro
 	Y        doy click en agregar Modem
 	Entonces doy click en Agregar Sva
-	Y        doy click en agregar Bloque "<bloque>"
+	Y        elegimos sva "<decodificador>"
+	Y        elegimos sva repetidor "<svarepetidor>"
 	Y        doy click en Guardar cambios
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
@@ -53,7 +54,7 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
 	Y        doy click en datos del cliente
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 08/09/1994 | Casado      | Albania      |
+	  | 27/08/1994 | Casado      | Albania      |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
@@ -62,5 +63,5 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
 	#Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                        | bloque          |
-	  | usuario externo |  nishuizas| $t3l3f0n1c4$ | Bienvenid@ |  CE            | 10000486488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Bloque estelar  |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                       | decodificador |svarepetidor              |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 10000506488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MB  | 14.90         |    REP. SMART WIFI Venta |

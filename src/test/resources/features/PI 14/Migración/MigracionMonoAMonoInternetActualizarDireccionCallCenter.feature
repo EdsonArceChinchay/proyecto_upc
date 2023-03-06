@@ -5,8 +5,8 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionMonoAMonoActualizarDireccion_CallCenter
-  Esquema del escenario: Migracion de Mono internet a Mono interner con Actualizar Direccion en canal call center
+  @MigracionMonoInternetAMonoInternetActualizarDireccion_CallCenter
+  Esquema del escenario: Migracion de Mono internet a Mono interner con Actualizar Direccion en canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -18,9 +18,9 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR, Julio Cesar tello, 469, LINCE, LIMA , LIMA, PE" actual del servicio
+    Y        verifico la direccion "AV, CORONEL JOSE LEAL, 500, LINCE, LIMA , LIMA, PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
-    Y        ingreso la direccion donde sera la instalacion "JOSE LEAL 500"
+    Y        ingreso la direccion donde sera la instalacion "Julio Cesar Tello 469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
