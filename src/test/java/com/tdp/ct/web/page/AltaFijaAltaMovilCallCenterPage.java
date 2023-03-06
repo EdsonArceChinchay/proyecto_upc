@@ -2,9 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -120,6 +118,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(btnConsultarCobertura);
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
@@ -233,18 +232,18 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(5);//10
+        UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void oferta() {
-        UtilWeb.waitForSeconds(3);//10
+        UtilWeb.waitForSeconds(6);//10
         modalError(2,btnReintentar,"Click al elemento Reitentar");
         modalError(1,btnReintentar,"Click al elemento Reitentar");
         modalError(2,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 10).click();
+        waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//
     }
 
@@ -266,7 +265,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         buttonSeleccionarOferta.click();
     }
 
@@ -279,17 +278,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-        }
-        else {
-            System.out.println("No se encontro el modal error");
-        }
+//        UtilWeb.waitForSeconds(timeOnSeconds);
+//
+//        boolean isDisplayed = find().getElementByXPath("//*[contains(text(),'Reintentar')]").isDisplayed();
+////        boolean elementoExistente;
+////        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
+//        if (isDisplayed) {
+//            webElement.click();
+//            if (message.isEmpty()) {
+//                message = "Dio click al elemento";
+//                System.out.println(message);
+//            }
+//        } else {
+//            System.out.println("No se encontro el modal error");
+//        }
+
     }
 
 }

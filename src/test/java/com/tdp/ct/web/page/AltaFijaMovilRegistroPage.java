@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
+import org.codehaus.groovy.transform.SourceURIASTTransformation;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -138,7 +139,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(1);
     }
-
 
     public void clicIrAMovistarTotal() {
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
@@ -671,9 +671,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void agregoSVAINTERNET(String svaInternet) {
-        js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan = find().getElementByCss("app-adicionales tdp-st-select");
-        click(listElementPLan);
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+        listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));

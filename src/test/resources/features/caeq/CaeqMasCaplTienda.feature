@@ -26,10 +26,10 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Y        presiona el boton anadir equipo
     #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
@@ -42,5 +42,5 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome      | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
+      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |

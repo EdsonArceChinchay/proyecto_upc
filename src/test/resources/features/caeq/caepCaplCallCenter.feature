@@ -22,10 +22,10 @@ Característica: Caeq Mas Capl por call center
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P30 AZUL ELLE-L04 |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -34,8 +34,8 @@ Característica: Caeq Mas Capl por call center
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Tello  | 2    | 3   | URBANIZACION POPULAR | Julio |
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | Julio     |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"

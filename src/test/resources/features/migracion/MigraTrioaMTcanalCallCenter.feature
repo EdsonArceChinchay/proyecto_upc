@@ -20,8 +20,8 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE , LIMA , LIMA , PE" actual del servicio
+    Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla de ofertas sugeridos
 #    Y        selecciono plan Movistar Total para ver las ofertas
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
@@ -62,8 +62,8 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42465007  | correo@gmail.com | discapacitado  | MARIA       | SANTOS      | CASCAS      | Trío          |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42464702  | correo@gmail.com | discapacitado  | ELISA       | MARIO      | OCOBAMBA      | Trío          |

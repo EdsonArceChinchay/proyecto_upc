@@ -24,10 +24,10 @@ Característica: Caeq Mas Capl Mas Casi por call center
     Y        presiona el boton anadir equipo
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     Y        Selecciono boton Cambiar Chip
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
