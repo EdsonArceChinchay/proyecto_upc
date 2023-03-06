@@ -2,7 +2,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Realizar CAPL de prepago a postpago con equipo
 
-  @CAPLprepadoApostpago @Global
+  @CAPLprepadoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

@@ -1,12 +1,14 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
 Característica: Migracion de Mono a Mono por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionMonoAMonoSVACallCenter @Global
-  Esquema del escenario: Migracion de Mono a Mono
+  @MigracionMonoAMonoSVACallCenter @MVP19  @Global
+  Esquema del escenario: Migracion (mono a mono) + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -1,8 +1,10 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
 Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
-  @CaeqMasCaplTienda
+  @CaeqMasCaplTienda @MVP20 @Global
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

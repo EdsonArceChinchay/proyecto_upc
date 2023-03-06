@@ -1,14 +1,13 @@
 #language:es
   #angel medina
 
-Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
-  Quiero realizar una portabilidad por call center
+Característica: Portabilidad Solo Chip Prepago DNI Canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @PortabilidadSoloChipPrepago @Global
-  Esquema del escenario: Portabilidad solo chip postpago y permanencia 12 meses con DNI, en canal call center y delivery Tambo con direccion de Lima sin cobertura, validar que solo figure la opcion de tienda,web front end. (NEGATIVO)
+  @PortabilidadSoloChipPrepago @MVP17 @Global
+  Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal tienda,web front end, flujo biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

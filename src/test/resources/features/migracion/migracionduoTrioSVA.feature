@@ -1,13 +1,15 @@
 #language:es
 
+	# CREADOR: Angel Medina
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
 
-Característica: Migracion de duo a Trio + sva
+Característica: Migracion de duo a Trio + sva CEX canal Tienda
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionduoTrioSVA
+  @MigracionduoTrioSVA @MVP07 @Global
   Esquema del escenario:Migracion de duo a Trio + sva
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
