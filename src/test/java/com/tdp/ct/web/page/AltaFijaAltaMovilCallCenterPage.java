@@ -265,7 +265,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(3);
         buttonSeleccionarOferta.click();
     }
 
