@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
 
-Característica: Migracion de duo a Trio + sva
+Característica: AT-DT065_Migracion de duo a Trio + sva
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

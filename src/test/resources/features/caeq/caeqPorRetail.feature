@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT048
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Por Tienda FE DITO WEB
+Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
 
   @CaeqPorTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT086
 
-Característica: Paquetizacion Mono mas Mono Call Center
+Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
   Quiero realizar una paquetizacion por call center
 
   Antecedentes:

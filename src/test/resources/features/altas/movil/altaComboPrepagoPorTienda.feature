@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AT-DT022
-Característica: Alta Combo Prepago por Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
+Característica: AT-DT022_Alta Combo Prepago por Tienda
   Yo como asesor de Tienda
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
 

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @AT-DT013
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1
 
-Característica: Alta Mono Linea Voz Tienda
+Característica: AT-DT013_Alta Mono Linea Voz Tienda
 
   @AltaMonoLineaVozTienda
   Escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE

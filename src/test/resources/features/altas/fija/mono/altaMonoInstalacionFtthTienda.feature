@@ -1,7 +1,7 @@
 #language:es
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @AT-DT011
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28
 
-  Característica: Alta de Mono con instalación FTTH por Canal tienda
+  Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
     @AltaMonoFtthTienda
     Escenario: Realizar una Alta de Mono con instalación FTTH por Canal tienda

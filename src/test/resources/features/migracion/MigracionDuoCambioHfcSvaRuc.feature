@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @AT-DT062
-Característica: Migracion de Duo HFC Cambio de tegnologia
+@BERSERKERS @DoneDevOps
+Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT040
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Alta trio MT con Upfront 70mb
+Característica: AT-DT040_Alta trio MT con Upfront 70mb
 
   Antecedentes:
     Dado     que abro la pagina de movistar

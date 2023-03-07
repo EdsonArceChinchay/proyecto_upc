@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @AT-DT064
-Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
+Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

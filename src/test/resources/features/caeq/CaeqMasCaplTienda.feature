@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @AT-DT047
-Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
+@BERSERKERS @DoneDevOps
+Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
   @CaeqMasCaplTienda
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico

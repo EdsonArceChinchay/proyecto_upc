@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT037
 
-Característica: Alta Fija  MT SVA por Call Center
+Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 
   @AltaMTSVAcallCenterCE
   Esquema del escenario: Alta  MT SVA por call center con nuevo cliente con documento CE

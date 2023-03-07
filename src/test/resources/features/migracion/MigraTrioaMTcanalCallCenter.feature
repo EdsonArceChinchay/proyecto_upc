@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT080
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Migracion de Trio a MT por Canal Call Center
+Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

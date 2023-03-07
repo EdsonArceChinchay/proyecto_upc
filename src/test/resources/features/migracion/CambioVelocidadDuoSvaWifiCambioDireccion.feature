@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps  @AT-DT054
-Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
+@BERSERKERS @DoneDevOps
+Característica:  AT-DT054_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección @Global
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y

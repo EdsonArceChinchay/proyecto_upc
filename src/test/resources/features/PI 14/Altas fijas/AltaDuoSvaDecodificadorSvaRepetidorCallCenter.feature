@@ -1,8 +1,8 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT087
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
+Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

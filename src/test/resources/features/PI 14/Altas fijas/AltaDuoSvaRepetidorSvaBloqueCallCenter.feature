@@ -1,8 +1,8 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT090
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Duo Sva Repetidor + Sva Bloque Call Center
+Característica: AT-DT090_Alta Duo Sva Repetidor + Sva Bloque Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

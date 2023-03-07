@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @AT-DT024
-Característica: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
+@BERSERKERS @DoneDevOps
+Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
 
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @AT-DT010
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28
 
-Característica: Alta fija por tienda mas Hbo
+Característica: AT-DT010_Alta fija por tienda mas Hbo
 
   Antecedentes:
     Dado     que abro la pagina de movistar

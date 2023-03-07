@@ -1,7 +1,7 @@
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT063
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: Migracion Duo a Duo en canal CALL CENTER
+Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

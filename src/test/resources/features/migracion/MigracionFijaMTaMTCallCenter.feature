@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT066
 
-Característica: Migracion de MT a MT
+Característica: AT-DT066_Migracion de MT a MT
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

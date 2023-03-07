@@ -1,6 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @AT-DT105
-Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
+  #tambo
+@BERSERKERS @DoneDevOps
+Característica: AT-DT105_Portabilidad Solo Chip call Center (Negativo)
   Quiero realizar una portabilidad por call center
 
   Antecedentes:

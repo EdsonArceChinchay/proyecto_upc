@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28 @AT-DT074
-Característica: Migracion de Mono HFC a Duo FTTH Call Center
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
+Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

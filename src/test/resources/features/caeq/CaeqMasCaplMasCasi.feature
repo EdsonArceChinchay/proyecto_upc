@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT046
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Mas Capl Mas Casi por call center
+Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
 
   @CaeqCaplCasi
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @AT-DT055
-Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+Característica:  AT-DT055_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
   @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter @Global
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center

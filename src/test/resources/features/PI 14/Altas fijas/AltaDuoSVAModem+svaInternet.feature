@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT089
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Alta Duo sva Modem + SVA Internet
+Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

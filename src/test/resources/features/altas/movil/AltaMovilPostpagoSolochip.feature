@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Movil Postpago solo chip Retail
+Característica: AT-DT027_Alta Movil Postpago solo chip Retail
 
 
   Antecedentes:

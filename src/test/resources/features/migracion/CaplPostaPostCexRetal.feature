@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT057
-Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+Característica: AT-DT057_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplControlAPostpagoRetail @Global
   Escenario: CAPL Post a Post CEX por canal Retail

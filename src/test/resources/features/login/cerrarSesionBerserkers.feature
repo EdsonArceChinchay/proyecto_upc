@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @AT-DT052
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
 
-Característica: Cerrar Sesion - FE DITO WEB
+Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
 
   @CerrarSesionBerserker @CanceloCerrarSesion
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cancelar la accion de cerrar sesion

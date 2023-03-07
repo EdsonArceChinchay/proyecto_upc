@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT039
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta trio MT con Upfront 40mb
+Característica: AT-DT039_Alta trio MT con Upfront 40mb
 
   @AltatrioMTconUpfront40mb
   Esquema del escenario: Alta trio MT con Upfront 40mb

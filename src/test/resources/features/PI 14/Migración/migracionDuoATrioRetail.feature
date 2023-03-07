@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28  @SanityF @AT-DT102
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28  @SanityF
 
-Característica: Migracion de Duo a Trio por el canal Retail
+Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar

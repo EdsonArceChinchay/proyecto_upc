@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
 
-Característica: Alta Duo por call center
+Característica: AT-DT005_Alta Duo por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
