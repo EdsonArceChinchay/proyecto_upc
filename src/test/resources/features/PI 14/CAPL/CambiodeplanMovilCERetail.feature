@@ -1,6 +1,6 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT099
 
 Característica: cambio de plan movil en Retail
 

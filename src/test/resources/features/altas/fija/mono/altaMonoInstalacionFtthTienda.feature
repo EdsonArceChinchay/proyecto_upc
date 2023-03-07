@@ -1,5 +1,5 @@
 #language:es
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @AT-DT011
 
   Característica: Alta de Mono con instalación FTTH por Canal tienda
 

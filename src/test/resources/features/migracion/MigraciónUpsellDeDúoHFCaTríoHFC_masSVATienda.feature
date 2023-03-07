@@ -1,4 +1,5 @@
 #language:es
+@BERSERKERS @DoneDevOps @AT-DT071
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 
   Antecedentes:

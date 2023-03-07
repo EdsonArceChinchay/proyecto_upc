@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop @AT-DT083
 
 Característica:  Alta fija Mono por tienda - DROP
 

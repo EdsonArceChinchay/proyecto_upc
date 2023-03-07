@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT093
 
 Característica: Alta mono voz + sva Linea  en Canal Call Center
 

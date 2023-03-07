@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT087
 
 Característica: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 

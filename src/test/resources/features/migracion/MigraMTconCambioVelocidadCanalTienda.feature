@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT076
 Característica: Migra MT con cambio de velocidad en canal Tienda
 
   @MigraMTcambioVelocidadTienda

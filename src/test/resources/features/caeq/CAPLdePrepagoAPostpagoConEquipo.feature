@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT051
 Característica: Realizar CAPL de prepago a postpago con equipo
 
   @CAPLprepadoApostpago @Global

@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT047
 Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
   @CaeqMasCaplTienda

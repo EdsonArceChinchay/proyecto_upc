@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT008
 
 Característica: Alta Fija por tienda + SVA
 

@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT062
 Característica: Migracion de Duo HFC Cambio de tegnologia
 
   Antecedentes:

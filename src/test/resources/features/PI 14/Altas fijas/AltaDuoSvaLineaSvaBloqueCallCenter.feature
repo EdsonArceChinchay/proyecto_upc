@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT088
 
 Característica: Alta Duo Sva Linea + Sva bloque Call Center
 

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT026
 
 Característica: Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center

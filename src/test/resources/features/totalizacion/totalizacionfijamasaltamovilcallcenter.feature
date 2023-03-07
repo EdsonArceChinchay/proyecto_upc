@@ -1,6 +1,6 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT110
 
   Característica: totalizacion servicio fijo mas alta movil por canal call center
 

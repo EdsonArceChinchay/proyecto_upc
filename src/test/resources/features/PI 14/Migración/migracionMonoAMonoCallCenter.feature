@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT103
 Característica: Migracion de Mono a Duo por el canal Call Center CE
 
   Antecedentes:

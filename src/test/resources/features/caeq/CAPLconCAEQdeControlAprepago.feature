@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT050
 Característica: CAPL con CAEQ por canal Tienda de un Control a Prepago
 
   @CaplconCaeqTienda

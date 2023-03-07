@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
 
 Característica: Migracion de duo a Trio + sva
 

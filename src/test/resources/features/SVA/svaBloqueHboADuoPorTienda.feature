@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @AT-DT108
 
 Característica: sva bloque hbo a duo por Tienda
   Yo como asesor de Tienda
