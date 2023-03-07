@@ -1,14 +1,14 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Prepago Call center CE
+Característica: Alta Movil Prepago + Equipo Call center
 
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaMovilPrepagoCallCenter1
-  Esquema del escenario: Alta movil Prepago por call center
+  @AltaMovilPrepago+EquipoCallCenter
+  Esquema del escenario: Alta movil Prepago + Equipo por call center
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
@@ -29,6 +29,12 @@ Característica: Alta Movil Prepago Call center CE
 	Y        doy click en el boton Siguiente
 	Y        selecciono la oferta de plan movil "<oferta>"
 	Y        selecciono un plan movil "<nombrePlan>"
+	Y        selecciono añadir equipos
+	Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+	Y        ingreso el tipo de pago "<tipoPago>"
+	Y        busco el equipo "<nombreEquipo>"
+	Y        doy click en el boton seleccionar
+	Y        selecciono la cartilla Linea Nueva
 	Y        selecciono el boton de iniciar registro
 	Y        selecciono el departamento donde sera la instalacion "<departamento>"
 	Y        selecciono la provincia donde sera la instalacion "<provincia>"
@@ -36,9 +42,9 @@ Característica: Alta Movil Prepago Call center CE
 	Y        ingreso la direccion donde sera la instalacion "<direccion>"
 	Y        ingreso la referencia de la direccion "<referencia>"
 	Y        presiono el boton Consultar ubicacion
-   Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+	Y        ingreso la informacion del lugar de instalacion
+	  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+	  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
 	Y        presiono el boton consultar cobertura
 	Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
 	Y        selecciono el horario de entrega "2pm-7pm"
@@ -59,6 +65,6 @@ Característica: Alta Movil Prepago Call center CE
 	Y        doy click en el boton de continuar
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                                | referencia |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  |
+	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                                | referencia | timpoPermanencia | nombreEquipo                  | tipoPago             |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

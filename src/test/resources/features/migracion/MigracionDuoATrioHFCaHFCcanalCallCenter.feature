@@ -1,7 +1,7 @@
 
 #language: es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
-Característica: Migracion Duo A Trio HFC a HFC canal Call Center
+Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

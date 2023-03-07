@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF
 
-Característica: Migracion de Duo a Trio por el canal Tienda
+Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Control con un financiamiento por tienda
+Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -60,6 +60,6 @@ Característica: Alta Movil Control con un financiamiento por tienda
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | planMovil |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1024264224 | Postpago  |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1004268024 | Postpago  |
 
 

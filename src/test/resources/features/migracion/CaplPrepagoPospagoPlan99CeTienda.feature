@@ -1,9 +1,8 @@
 #language:es
-
-  # CREADOR: Angel Medina
-
+ # CREADOR: Angel Medina
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: CAPL Prepago a postpago S/99.90 canal tienda
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+
 
   @CaplPrepagoPospago @MVP05 @Global @General
   Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico

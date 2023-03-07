@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Alta Duo SVA HBO por call center
+Característica: AT-DT004_Alta Duo SVA HBO por call center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

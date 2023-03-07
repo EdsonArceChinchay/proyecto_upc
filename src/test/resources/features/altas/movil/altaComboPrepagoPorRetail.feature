@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
 
-Característica: Alta Combo Prepago por Retail
+Característica: AT-DT021_Alta Combo Prepago por Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
 

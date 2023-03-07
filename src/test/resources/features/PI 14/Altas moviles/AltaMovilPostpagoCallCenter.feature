@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Movil Postpago CALL CENTER
+Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 
 
   Antecedentes:

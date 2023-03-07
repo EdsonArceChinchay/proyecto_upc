@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT036
 
-Característica: Alta Fija + Alta Movil por Tienda
+Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -62,5 +62,5 @@ Característica: Alta Fija + Alta Movil por Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | evillanuevag| $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432124 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com | discapacitado  | JENNY       | RAFAEL      | ATE         |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          | correo
+      | usuario externo | evillanuevag| $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432124   | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com

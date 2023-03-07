@@ -1,6 +1,6 @@
 #language:es
-
-Característica: Migra MT con cambio de velocidad en canal Tienda
+@BERSERKERS @DoneDevOps
+Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
 
   @MigraMTcambioVelocidadTienda
   Esquema del escenario:  Realizar migra MT cambio de velocidad  canal Tienda

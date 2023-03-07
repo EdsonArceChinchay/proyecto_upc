@@ -1,7 +1,9 @@
 #language:es
   #angel medina
-
-Característica: Portabilidad Solo Chip Prepago DNI Canal Tienda
+  #tambo
+@BERSERKERS @DoneDevOps
+Característica: AT-DT106_Portabilidad Solo Chip Prepago Tienda
+  Quiero realizar una portabilidad por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

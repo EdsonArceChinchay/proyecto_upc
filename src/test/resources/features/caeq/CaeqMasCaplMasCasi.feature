@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Mas Capl Mas Casi por call center
+Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
 
   @CaeqCaplCasi
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -24,8 +24,8 @@ Característica: Caeq Mas Capl Mas Casi por call center
     Y        presiona el boton anadir equipo
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        Selecciono boton Cambiar Chip

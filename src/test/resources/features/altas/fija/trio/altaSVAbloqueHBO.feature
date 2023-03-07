@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28
 
-Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -66,6 +66,6 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1002284626 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 120200208 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
 
 

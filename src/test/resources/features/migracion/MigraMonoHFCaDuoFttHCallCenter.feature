@@ -1,9 +1,8 @@
 #language:es
+  # CREADOR: Edson Arce
 @BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
 
-  # CREADOR: Edson Arce
-
-Característica: Migracion de Mono HFC a Duo FTTH Call Center
+Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

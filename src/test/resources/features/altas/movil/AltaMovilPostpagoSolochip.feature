@@ -4,7 +4,11 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Movil Postpago CEX solo chip Retail
+
+
+Característica: AT-DT027_Alta Movil Postpago solo chip Retail
+
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar

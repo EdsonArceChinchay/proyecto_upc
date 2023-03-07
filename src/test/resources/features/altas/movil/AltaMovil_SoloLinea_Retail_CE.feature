@@ -1,10 +1,11 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
+
   # CREADOR: Angel Medina
 
 
-Característica: Alta Movil Postpago solo chip Retail con CEX
+Característica: AT-DT031_Alta Movil Postpago solo chip Retail
 
 
   Antecedentes:

@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
 
-Característica: Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
+Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

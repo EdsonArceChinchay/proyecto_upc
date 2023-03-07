@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
 
-Característica: Alta Duo por tienda
+Característica: AT-DT006_Alta Duo por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

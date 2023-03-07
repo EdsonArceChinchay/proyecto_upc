@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Prepago solo chip Tienda
+Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
 
 
   Antecedentes:

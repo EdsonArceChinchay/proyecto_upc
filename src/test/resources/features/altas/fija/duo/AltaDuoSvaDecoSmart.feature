@@ -4,7 +4,9 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
 
-Característica: Alta Duo + deco smart por call center
+
+Característica: AT-DT005_Alta Duo por call center
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar

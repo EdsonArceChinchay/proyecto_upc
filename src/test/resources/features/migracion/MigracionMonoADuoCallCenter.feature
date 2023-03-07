@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Mono a Duo + sva por el canal Tienda
+Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

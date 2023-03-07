@@ -1,8 +1,8 @@
 #language:es
-
   # CREADOR: Edson Arce
 
-Característica: Migracion de Mono a Mono por el canal Call Center
+@BERSERKERS @DoneDevOps
+Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

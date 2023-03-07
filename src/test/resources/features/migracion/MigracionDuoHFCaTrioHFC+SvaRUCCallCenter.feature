@@ -1,8 +1,11 @@
 #language:es
 
+
   # CREADOR: Edson Arce
 
-Característica: Migracion de Duo HFC a Trio HFC + Sva Plan Multidestino con Ruc Call Center
+@BERSERKERS @DoneDevOps @AT-DT064
+Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar

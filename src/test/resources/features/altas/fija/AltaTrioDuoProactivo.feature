@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta Trio por el canal Proactivo
+Característica: AT-DT003_Alta Trio por el canal Proactivo
 
   Antecedentes:
     Dado     que abro la pagina de movistar
