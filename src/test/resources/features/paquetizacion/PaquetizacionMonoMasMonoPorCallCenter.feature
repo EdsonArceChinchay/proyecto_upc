@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT086
 
 Característica: Paquetizacion Mono mas Mono Call Center
   Quiero realizar una paquetizacion por call center

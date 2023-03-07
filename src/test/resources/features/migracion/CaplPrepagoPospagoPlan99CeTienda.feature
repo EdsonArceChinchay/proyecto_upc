@@ -1,4 +1,9 @@
 #language:es
+<<<<<<< HEAD
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT058
+Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
   # CREADOR: Angel Medina
 

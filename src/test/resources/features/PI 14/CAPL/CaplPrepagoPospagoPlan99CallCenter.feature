@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT101
 Característica: Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1

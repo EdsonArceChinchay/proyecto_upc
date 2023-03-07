@@ -1,7 +1,11 @@
 #language:es
+<<<<<<< HEAD
 
   # CREADOR: Edson Arce
 
+=======
+@BERSERKERS @DoneDevOps @AT-DT047
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
   @CaeqMasCaplTienda @MVP20 @Global

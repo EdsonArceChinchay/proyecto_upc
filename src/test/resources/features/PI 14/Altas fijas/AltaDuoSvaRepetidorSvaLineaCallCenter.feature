@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT091
 
   Característica: Alta Duo Sva Repetidor + Sva Línea Call Center
 

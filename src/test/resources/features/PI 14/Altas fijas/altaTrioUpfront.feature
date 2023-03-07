@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
+@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE @AT-DT095
 
 Característica: Alta Trio Upfront call center
 

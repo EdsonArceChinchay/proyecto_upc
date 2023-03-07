@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT079
 
 Característica: Migracion Salto 0 Por Canal Retail
 

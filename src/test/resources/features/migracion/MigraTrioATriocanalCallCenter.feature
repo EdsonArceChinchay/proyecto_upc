@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT082
 
 Característica: Migracion de Trio a trio  por el canal Call Center
 

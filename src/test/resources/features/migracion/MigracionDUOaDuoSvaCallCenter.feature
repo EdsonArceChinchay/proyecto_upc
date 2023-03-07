@@ -1,8 +1,13 @@
 #language:es
+<<<<<<< HEAD
 
   # CREADOR: Angel Medina
 
 Característica: Migracion de Duo a Duo + sva por el canal Call Center
+=======
+@BERSERKERS @DoneDevOps @AT-DT059
+Característica: Migracion de Mono a Duo + sva por el canal Tienda
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
   Antecedentes:
     Dado     que abro la pagina de movistar

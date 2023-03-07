@@ -1,8 +1,14 @@
 #language:es
+<<<<<<< HEAD
 
   # CREADOR: Edson Arce
 
 Característica: Portabilidad Solo Chip Call Center Delivery en Tambo (Negativo)
+=======
+@BERSERKERS @DoneDevOps @AT-DT105
+Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
+  Quiero realizar una portabilidad por call center
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
   Antecedentes:
     Dado     que abro la pagina de movistar

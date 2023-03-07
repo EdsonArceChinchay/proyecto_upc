@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT067
 
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 

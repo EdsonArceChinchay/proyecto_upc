@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT089
 
 Característica: Alta Duo sva Modem + SVA Internet
 

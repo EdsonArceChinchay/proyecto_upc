@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT025
 
 Característica: Alta Movil Postpago Canal Tienda
 

@@ -1,6 +1,6 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @v
 
 Característica: Alta mono + sva  en Canal Retail
 

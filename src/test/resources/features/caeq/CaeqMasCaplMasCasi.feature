@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT046
 
 Característica: Caeq Mas Capl Mas Casi por call center
 

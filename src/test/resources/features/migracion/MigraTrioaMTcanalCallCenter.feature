@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT080
 
 Característica: Migracion de Trio a MT por Canal Call Center
 

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT004
 
 Característica: Alta Duo SVA HBO por call center
 

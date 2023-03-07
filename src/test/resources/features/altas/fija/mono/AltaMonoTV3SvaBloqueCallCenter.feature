@@ -1,5 +1,5 @@
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT014
 
 Característica: Alta Mono TV 3 Sva Bloque Call Center
 

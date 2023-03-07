@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @AT-DT017
 
 Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
 

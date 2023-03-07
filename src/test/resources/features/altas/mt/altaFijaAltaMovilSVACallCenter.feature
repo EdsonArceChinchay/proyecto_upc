@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035
 
 Característica: Alta Fija + Alta Movil+ SVA por Call Center
 

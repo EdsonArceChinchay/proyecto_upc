@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT097
 
 Característica: Alta Movil Prepago Call center
 

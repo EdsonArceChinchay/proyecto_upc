@@ -1,8 +1,12 @@
 #language:es
 
+<<<<<<< HEAD
 	# CREADOR: Angel Medina
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
 Característica: Migracion de duo a Trio + sva CEX canal Tienda
 

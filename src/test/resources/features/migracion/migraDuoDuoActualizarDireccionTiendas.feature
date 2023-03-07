@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3 @AT-DT072
 
 Característica: Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
 

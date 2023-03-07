@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @AT-DT018
 
 Característica: Alta Trio con bloque HD Upfront por Call Center
 

@@ -1,8 +1,12 @@
 #language:es
+<<<<<<< HEAD
 
   # CREADOR: Angel Medina
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
 Característica: Alta Duo + deco smart por call center
 

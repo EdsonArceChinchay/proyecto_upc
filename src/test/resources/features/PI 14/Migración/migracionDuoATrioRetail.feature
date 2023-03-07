@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28  @SanityF @AT-DT102
 
 Característica: Migracion de Duo a Trio por el canal Retail
 

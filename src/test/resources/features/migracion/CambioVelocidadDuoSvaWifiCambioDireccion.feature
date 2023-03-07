@@ -1,7 +1,11 @@
 #language:es
+<<<<<<< HEAD
 
   # CREADOR: Edson Arce
 
+=======
+@BERSERKERS @DoneDevOps  @AT-DT054
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
 
   @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global

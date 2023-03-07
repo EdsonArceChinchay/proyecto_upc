@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @AT-DT013
 
 Característica: Alta Mono Linea Voz Tienda
 

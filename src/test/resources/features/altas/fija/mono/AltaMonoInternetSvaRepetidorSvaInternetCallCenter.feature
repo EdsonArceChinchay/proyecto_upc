@@ -1,5 +1,5 @@
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT012
 
   Característica: Alta Mono Internet Sva Repetidor + Sva Internet Canal Call Center
 

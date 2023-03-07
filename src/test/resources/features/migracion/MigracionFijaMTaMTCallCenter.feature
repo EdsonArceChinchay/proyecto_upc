@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT066
 
 Característica: Migracion de MT a MT
 

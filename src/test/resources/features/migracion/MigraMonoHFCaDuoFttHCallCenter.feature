@@ -1,8 +1,12 @@
 #language:es
+<<<<<<< HEAD
 @BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
 
   # CREADOR: Edson Arce
 
+=======
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28 @AT-DT074
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 Característica: Migracion de Mono HFC a Duo FTTH Call Center
 
   Antecedentes:
