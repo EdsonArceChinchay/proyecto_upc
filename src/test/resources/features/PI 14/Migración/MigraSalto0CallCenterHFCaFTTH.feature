@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT104
 
 Característica: Migracion salto 0 HFC FTTH canal Call Center
 

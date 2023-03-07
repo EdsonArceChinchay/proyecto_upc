@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT075
 Característica: Migra MT con cambio de velocidad en canal call center
 
   @MigraMTcambioVelocidad

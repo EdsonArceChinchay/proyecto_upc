@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT068
 
 Característica: Migracion de Mono a Duo + sva por el canal Tienda
 

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AT-DT021
 
 Característica: Alta Combo Prepago por Retail
   Yo como asesor de Retail

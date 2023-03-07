@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop @AT-DT084
 
 Característica: Alta fija Trio por tienda
 

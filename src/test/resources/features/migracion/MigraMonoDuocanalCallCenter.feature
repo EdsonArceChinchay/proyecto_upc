@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT073
 
 Característica: Migracion de Mono a Mono por el canal Call Center
 

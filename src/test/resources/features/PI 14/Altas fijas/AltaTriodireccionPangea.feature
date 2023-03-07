@@ -1,6 +1,6 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT094
 
 Característica: Alta trio con direccion pangea
 

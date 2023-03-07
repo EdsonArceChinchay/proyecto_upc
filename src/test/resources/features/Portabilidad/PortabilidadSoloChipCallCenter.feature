@@ -1,5 +1,5 @@
 #language:es
-
+@BERSERKERS @DoneDevOps @AT-DT105
 Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
 

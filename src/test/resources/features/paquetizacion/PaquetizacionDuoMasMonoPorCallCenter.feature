@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @AT-DT085
 
 Característica: Paquetizacion Duo mas Mono Call Center
   Quiero realizar una paquetizacion por call center

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT049
 
 Característica: Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
 

@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @Sanity28
+@BERSERKERS @DoneDevOps @Sanity28 @AT-DT020
 
 Característica: Alta Trio upfront SVA canal tienda
 

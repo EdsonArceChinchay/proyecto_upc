@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @AT-DT007
 
 Característica: Alta Fija Mono Internet por Retail
 

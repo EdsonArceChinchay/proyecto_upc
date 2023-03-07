@@ -1,5 +1,5 @@
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT015
 
 Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 
