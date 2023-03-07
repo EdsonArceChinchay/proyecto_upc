@@ -74,7 +74,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas) {
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
@@ -82,7 +82,7 @@ public class AltaFijaTiendaPage extends WebBase {
             if (elementoExistente) {
                 System.out.println("dio click");
                 click(btnRight);
-                UtilWeb.waitForSeconds(1);
+                UtilWeb.waitForSeconds(3);
             }
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
