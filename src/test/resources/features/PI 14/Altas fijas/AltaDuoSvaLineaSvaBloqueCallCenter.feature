@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Duo Sva Linea + Sva bloque Call Center
+Característica: AT-DT088_Alta Duo Sva Linea + Sva bloque Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
