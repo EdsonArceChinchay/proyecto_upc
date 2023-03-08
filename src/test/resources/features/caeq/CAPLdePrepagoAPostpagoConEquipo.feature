@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT051
-Característica: Realizar CAPL de prepago a postpago con equipo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
 
   @CAPLprepadoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA

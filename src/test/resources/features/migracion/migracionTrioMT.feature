@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @AT-DT070
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28
 
-Característica: Migracion de Trio a MT + SVA
+Característica: AT-DT070_Migracion de Trio a MT + SVA
 
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT077
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: Migracion salto 0 canal Call Center
+Característica: AT-DT077_Migracion salto 0 canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

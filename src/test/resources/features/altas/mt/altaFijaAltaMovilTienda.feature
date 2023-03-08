@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT036
 
-Característica: Alta Fija + Alta Movil por Tienda
+Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

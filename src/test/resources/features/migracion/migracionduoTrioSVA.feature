@@ -1,19 +1,26 @@
 #language:es
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	# CREADOR: Angel Medina
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
 =======
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
 >>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+	# CREADOR: Angel Medina
 
-Característica: Migracion de duo a Trio + sva CEX canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+
+Característica: AT-DT065_Migracion de duo a Trio + sva
+
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionduoTrioSVA @MVP07 @Global
+  @MigracionduoTrioSVA @MVP07 @Global @General
   Esquema del escenario:Migracion de duo a Trio + sva
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"

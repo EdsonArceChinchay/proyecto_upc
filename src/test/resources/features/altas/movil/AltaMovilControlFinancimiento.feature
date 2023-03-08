@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT023
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Control con un financiamiento por tienda
+Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

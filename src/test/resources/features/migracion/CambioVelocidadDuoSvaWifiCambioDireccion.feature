@@ -1,5 +1,6 @@
 #language:es
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   # CREADOR: Edson Arce
 
@@ -7,8 +8,17 @@
 @BERSERKERS @DoneDevOps  @AT-DT054
 >>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
+=======
 
-  @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global
+
+  # CREADOR: Edson Arce
+
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+
+@BERSERKERS @DoneDevOps
+Característica:  AT-DT054_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
+
+  @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global @General
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

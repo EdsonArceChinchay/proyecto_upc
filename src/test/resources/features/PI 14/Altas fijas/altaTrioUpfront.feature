@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE @AT-DT095
+@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
 
-Característica: Alta Trio Upfront call center
+Característica: AT-DT095_Alta Trio Upfront call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

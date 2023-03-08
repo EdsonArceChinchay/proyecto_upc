@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AT-DT016
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2
 
-Característica: Alta Mono Linea Voz Modem sva linea Call center
+Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
 
 
 

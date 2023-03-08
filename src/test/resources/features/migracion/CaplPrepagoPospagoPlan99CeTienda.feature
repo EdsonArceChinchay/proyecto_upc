@@ -1,5 +1,6 @@
 #language:es
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT058
 Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
@@ -7,10 +8,14 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 
   # CREADOR: Angel Medina
 
+=======
+ # CREADOR: Angel Medina
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: CAPL Prepago a postpago S/99.90 canal tienda
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
-  @CaplPrepagoPospago @MVP05 @Global
+
+  @CaplPrepagoPospago @MVP05 @Global @General
   Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

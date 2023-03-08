@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT078
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: Migracion salto 0 canal Tienda
+Característica: AT-DT078_Migracion salto 0 canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

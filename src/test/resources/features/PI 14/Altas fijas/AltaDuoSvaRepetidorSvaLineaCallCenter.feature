@@ -1,8 +1,8 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AT-DT091
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-  Característica: Alta Duo Sva Repetidor + Sva Línea Call Center
+  Característica: AT-DT091_Alta Duo Sva Repetidor + Sva Línea Call Center
 
     Antecedentes:
       Dado     que abro la pagina de movistar

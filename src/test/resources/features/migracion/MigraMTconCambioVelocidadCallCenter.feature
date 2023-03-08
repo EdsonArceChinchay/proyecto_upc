@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @AT-DT075
-Característica: Migra MT con cambio de velocidad en canal call center
+@BERSERKERS @DoneDevOps
+Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
 
   @MigraMTcambioVelocidad
   Esquema del escenario:  Realizar migra MT cambio de velocidad  canal call center

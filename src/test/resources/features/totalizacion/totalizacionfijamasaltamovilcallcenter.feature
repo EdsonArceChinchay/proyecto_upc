@@ -1,8 +1,8 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT110
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-  Característica: totalizacion servicio fijo mas alta movil por canal call center
+  Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center
 
     Antecedentes:
       Dado     que abro la pagina de movistar

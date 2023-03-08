@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @AT-DT103
-Característica: Migracion de Mono a Duo por el canal Call Center CE
+Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar

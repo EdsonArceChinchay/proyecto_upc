@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop @AT-DT084
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AltaFijaTiendaDrop
 
-Característica: Alta fija Trio por tienda
+Característica: AT-DT084_Alta fija Trio por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -1,14 +1,24 @@
 #language:es
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   # CREADOR: Angel Medina
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
+<<<<<<< HEAD
 =======
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
 >>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
-Característica: Alta Movil Postpago CEX solo chip Retail
+
+
+Característica: AT-DT027_Alta Movil Postpago solo chip Retail
+
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar

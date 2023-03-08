@@ -1,7 +1,7 @@
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT109
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-  Característica: Flujo de sva en el canal Call Center
+  Característica: AT-DT109_Flujo de sva en el canal Call Center
 
     Antecedentes:
       Dado     que abro la pagina de movistar

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT079
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion Salto 0 Por Canal Retail
+Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar

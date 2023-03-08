@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT041
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Trio MT - Upfront Tienda
+Característica: AT-DT041_Alta Trio MT - Upfront Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

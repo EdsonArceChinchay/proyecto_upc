@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT073
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Mono a Mono por el canal Call Center
+Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

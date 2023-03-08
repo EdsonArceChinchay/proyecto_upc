@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorCallCenter @AT-DT107
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorCallCenter
 
-Característica: Sva bloque HBO a duo por Call Center
+Característica: AT-DT107_Sva bloque HBO a duo por Call Center
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 
   Antecedentes:

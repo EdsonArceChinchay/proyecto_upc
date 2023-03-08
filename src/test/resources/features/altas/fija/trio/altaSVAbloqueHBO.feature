@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @AT-DT017
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28
 
-Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

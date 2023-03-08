@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT104
 
-Característica: Migracion salto 0 HFC FTTH canal Call Center
+Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
