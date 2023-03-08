@@ -2,13 +2,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
+Característica: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaTrioSvaDecodificadorSvaRepetidorSvaModemCallCenter
-  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
+  @AltaTrioSvaInternetSvalineaCallCenter
+  Esquema del escenario: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
@@ -22,7 +22,7 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	Y        cierro popup de error
 	Y        ingreso los datos del cliente extranjero a registrar
 	  | nombres  | apellidos    | genero    |
-	  | Yeny     | Veliz Ramos  | masculino |
+	  | Luciana  | Ramos        | femenino  |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -40,10 +40,9 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	Y        selecciono el tipo de plan fija "<tipoPlan>"
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
-	Y        doy click en agregar Modem
+	Y        doy click en agregar SVA Linea "<svaLinea>"
 	Entonces doy click en Agregar Sva
-	Y        elegimos sva "<decodificador>"
-	Y        elegimos sva repetidor "<svarepetidor>"
+	Y        agrego "<svainternet>"
 	Y        doy click en Guardar cambios
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
@@ -54,7 +53,7 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	Y        doy click en datos del cliente
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 27/08/1994 | Casado      | Albania      |
+	  | 27/08/1978 | Casado      | Albania      |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
@@ -63,5 +62,5 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	#Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                       | decodificador |svarepetidor              |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1060122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MB  | 14.90         |    REP. SMART WIFI Venta |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                        | svaLinea             |  svainternet           |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1062122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino 20 |  PACK ANTIVIRUS MCAFEE |
