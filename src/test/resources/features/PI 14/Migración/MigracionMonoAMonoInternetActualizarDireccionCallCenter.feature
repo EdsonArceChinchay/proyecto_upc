@@ -28,7 +28,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    Y        selecciono el plan "<nombrePlan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
@@ -45,5 +45,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlanHogar    | plan
+      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlanHogar    | nombrePlan
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464839  | Mono             | INTERNET MOVISTAR RA D22 600
