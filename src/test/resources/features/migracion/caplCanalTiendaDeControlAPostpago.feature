@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28
-Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplPorTiendaControlAPostpago
   Escenario: CAPL con Caeq al contado con canal Tienda de un Control a Postpago exitoso

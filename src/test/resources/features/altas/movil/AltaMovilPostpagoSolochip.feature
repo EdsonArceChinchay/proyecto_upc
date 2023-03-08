@@ -1,14 +1,30 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
-Característica: Alta Movil Postpago solo chip Retail
+  # CREADOR: Angel Medina
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+<<<<<<< HEAD
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+
+
+
+Característica: AT-DT027_Alta Movil Postpago solo chip Retail
+
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MVP_Alta_Postpago_sim_CanalRetail @Global
-  Esquema del escenario: Alta movil Postpago solo chip
+  @MVP_Alta_Postpago_sim_CanalRetail @MVP13 @Global
+  Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -1,14 +1,18 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta Movil Postpago solo chip Retail
+
+  # CREADOR: Angel Medina
+
+
+Característica: AT-DT031_Alta Movil Postpago solo chip Retail
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MVP_Alta_movil_SoloSim_CanalRetail
-  Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
+  @MVP_Alta_movil_SoloSim_CanalRetail @MVP01 @Global
+  Esquema del escenario: Realizar alta móvil solo línea postpago en canal retail, en web FE, con CEX, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

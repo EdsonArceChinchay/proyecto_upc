@@ -19,6 +19,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnMovil;
 
 
+    //*[contains(text(),'Mostrar ofertas')] --antiguo
+    //@FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
+
+
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
 

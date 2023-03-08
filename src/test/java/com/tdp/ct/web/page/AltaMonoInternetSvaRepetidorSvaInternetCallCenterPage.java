@@ -24,9 +24,9 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     }
 
     public void agregarsvainternet(String string) {
-        js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan = find().getElementByCss("app-adicionales tdp-st-select");
-        click(listElementPLan);
+        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+        listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));

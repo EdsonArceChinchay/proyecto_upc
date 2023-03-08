@@ -1,9 +1,22 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT058
 Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
 
-  @CaplPrepagoPospago @Global
-  Escenario: CAPL con Caeq al contado con canal Tienda de un Control a Postpago exitoso
+  # CREADOR: Angel Medina
+
+=======
+ # CREADOR: Angel Medina
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+
+
+  @CaplPrepagoPospago @MVP05 @Global @General
+  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"

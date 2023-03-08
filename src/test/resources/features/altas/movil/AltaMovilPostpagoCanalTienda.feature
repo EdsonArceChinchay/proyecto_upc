@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: Alta Movil Postpago Canal Tienda
+Característica: AT-DT025_Alta Movil Postpago Canal Tienda
 
 
   Antecedentes:

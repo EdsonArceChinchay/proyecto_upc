@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-  Característica: totalizacion servicio fijo mas alta movil por canal call center
+  Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center
 
     Antecedentes:
       Dado     que abro la pagina de movistar
@@ -18,7 +18,7 @@
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "102762221"
+      Y        ingreso el documento "109084827"
       Y        doy click en el boton consultar
       Y        selecciono la cartilla del plan activo
       Y        selecciono el boton Linea Nueva Movil

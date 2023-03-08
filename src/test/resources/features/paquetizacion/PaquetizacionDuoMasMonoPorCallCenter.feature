@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
 
-Característica: Paquetizacion Duo mas Mono Call Center
+Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
   Quiero realizar una paquetizacion por call center
 
   Antecedentes:

@@ -1,13 +1,28 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
-Característica: Alta Duo por call center
+  # CREADOR: Angel Medina
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
+<<<<<<< HEAD
+=======
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+
+
+Característica: AT-DT005_Alta Duo por call center
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaDuo_SvaDecoSmart @Global
-  Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
+  @AltaDuo_SvaDecoSmart @MVP15 @Global
+  Esquema del escenario: Alta de dúo internet y añadir sva (deco smart) con CEX, en canal call center, web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038
 
-Característica: Alta Fija Pura MT por Call Center
+Característica: AT-DT038_Alta Fija Pura MT por Call Center
 
   @AltaPuraMTcallCenterCE
   Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE

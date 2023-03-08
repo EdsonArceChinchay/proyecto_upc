@@ -1,8 +1,22 @@
 #language:es
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+  # CREADOR: Edson Arce
+=======
+@BERSERKERS @DoneDevOps @AT-DT055
 Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
 
-  @CambioVelocidadDuo30Mb+SvaRepetidorCallCenter @Global
+
+  # CREADOR: Edson Arce
+
+@BERSERKERS @DoneDevOps @AT-DT055
+Característica:  AT-DT055_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
+
+  @CambioVelocidadDuoSvaWifi @MVP02 @Global @General
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -21,7 +35,8 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
-    Y        doy click en Cambiar plan hogar
+    Y        selecciono boton Cambiar plan
+   # Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
@@ -35,12 +50,12 @@ Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, 
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Trio           | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección

@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Trio a trio  por el canal Call Center
+Característica: AT-DT082_Migracion de Trio a trio  por el canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar

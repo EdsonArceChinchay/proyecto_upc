@@ -1,11 +1,28 @@
 #language:es
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+  # CREADOR: Edson Arce
+
+Característica: Migracion de Duo HFC a Trio HFC + Sva Plan Multidestino con Ruc Call Center
+=======
+@BERSERKERS @DoneDevOps @AT-DT064
 Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+
+
+  # CREADOR: Edson Arce
+
+@BERSERKERS @DoneDevOps @AT-DT064
+Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
+
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionDuoTrioRUCCallCenter @Global
+  @migracionDuoTrioRUCCallCenter @MVP12 @Global
   Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -38,7 +55,15 @@ Característica: Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic en el boton validar identidad representante legal
+<<<<<<< HEAD
+<<<<<<< HEAD
+   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"$ |
+=======
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+>>>>>>> 4bb6376920e07ef58069c4764802a137624779f2
+=======
+   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"$ |
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | BERTHA | LEOBILDO | LA BANDA DE SHILCAYO |

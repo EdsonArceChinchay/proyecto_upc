@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT002
 
-Característica: Alta Fija migracion deco HD a Smart HD
+Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
   Antecedentes:
     Dado     que abro la pagina de movistar

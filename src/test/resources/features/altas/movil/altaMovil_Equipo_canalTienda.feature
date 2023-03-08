@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: AltaMovil + equipo
+Característica: AT-DT030_AltaMovil + equipo
 
   Antecedentes:
     Dado     que abro la pagina de movistar

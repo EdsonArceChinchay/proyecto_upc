@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Prepago Call center
+Característica: AT-DT097_Alta Movil Prepago Call center
 
 
   Antecedentes:

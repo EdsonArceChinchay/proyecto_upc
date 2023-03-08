@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: CAPL con CAEQ por canal Tienda de un Control a Prepago
+Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
   @CaplconCaeqTienda
   Esquema del escenario: CAPL con CAEQ por canal Tienda de un Control a Prepago

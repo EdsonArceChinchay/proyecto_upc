@@ -1,7 +1,7 @@
 #language: es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-  Característica: Alta Mono Internet Sva Repetidor + Sva Internet Canal Call Center
+  Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet Canal Call Center
 
 	Antecedentes:
 	  Dado     que abro la pagina de movistar

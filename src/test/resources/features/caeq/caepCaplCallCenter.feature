@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Caeq Mas Capl por call center
+Característica: AT-DT045_Caeq Mas Capl por call center
   Yo como asesor de call center
   Quiero hacer un cambio de equipo mas cambio de plan a un usuario con parque movil
 

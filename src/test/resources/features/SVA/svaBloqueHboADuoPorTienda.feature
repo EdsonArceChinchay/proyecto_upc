@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda
 
-Característica: sva bloque hbo a duo por Tienda
+Característica: AT-DT108_sva bloque hbo a duo por Tienda
   Yo como asesor de Tienda
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 

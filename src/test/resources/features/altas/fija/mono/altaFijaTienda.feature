@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF
 
-Característica: Alta Fija por tienda
+Característica: AT-DT009_Alta Fija por tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

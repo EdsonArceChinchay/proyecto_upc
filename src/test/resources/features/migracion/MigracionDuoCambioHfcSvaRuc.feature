@@ -1,12 +1,29 @@
 #language:es
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+  # CREADOR: Angel Medina
+
+Característica: Migracion de Duo HFC Cambio de tecnologia con RUC
+=======
+@BERSERKERS @DoneDevOps @AT-DT062
 Característica: Migracion de Duo HFC Cambio de tegnologia
+>>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
+=======
+
+
+  # CREADOR: Angel Medina
+
+@BERSERKERS @DoneDevOps
+Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
+
+>>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionRucCambioTegnologia
-  Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
+  @MigracionRucCambioTegnologia @MVP11 @Global
+  Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

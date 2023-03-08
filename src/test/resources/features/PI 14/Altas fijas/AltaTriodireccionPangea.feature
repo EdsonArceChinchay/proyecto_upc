@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: Alta trio con direccion pangea
+Característica: AT-DT094_Alta trio con direccion pangea
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -18,7 +18,7 @@ Característica: Alta trio con direccion pangea
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1002668218"
+    Y        ingreso el documento "102268208"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar

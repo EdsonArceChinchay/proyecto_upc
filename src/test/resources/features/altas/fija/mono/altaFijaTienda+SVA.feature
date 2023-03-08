@@ -1,7 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
-
-Característica: Alta Fija por tienda + SVA
+Característica: AT-DT008_Alta Fija por tienda + SVA
 
   Antecedentes:
     Dado     que abro la pagina de movistar
