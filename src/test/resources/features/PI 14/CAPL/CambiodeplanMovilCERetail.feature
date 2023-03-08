@@ -17,7 +17,7 @@ Característica: cambio de plan movil en Retail
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "TALARA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "123219318"
+    Y        ingreso el documento "1632547893"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del servicio "650025986"
     Y        doy click en el boton "Renovar plan"
