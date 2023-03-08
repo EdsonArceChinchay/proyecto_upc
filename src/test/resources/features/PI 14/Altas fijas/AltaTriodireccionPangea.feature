@@ -1,8 +1,8 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT094
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: Alta trio con direccion pangea
+Característica: AT-DT094_Alta trio con direccion pangea
 
   Antecedentes:
     Dado     que abro la pagina de movistar

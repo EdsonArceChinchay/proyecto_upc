@@ -1,6 +1,6 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @AT-DT101
-Característica: Realizar un CAPL al contado con canal Call Center de un Control a Postpago
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1
   Escenario: CAPL con Caeq al contado con canal Tienda de un Control CE

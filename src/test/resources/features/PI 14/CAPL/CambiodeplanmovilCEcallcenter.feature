@@ -1,8 +1,8 @@
 #language: es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT099
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: cambio de plan movil en call center
+Característica: AT-DT099_cambio de plan movil en call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -18,7 +18,7 @@ Característica: cambio de plan movil en call center
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "156128901"
+    Y        ingreso el documento "1632547894"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del servicio "650023093"
     Y        doy click en el boton "Renovar plan"

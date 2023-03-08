@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>CucumberRerpot</td>
+              <td>1</td>
+            <td>28 feb. 2023, 17:03</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilCallCenterStepDefinition.ingreso_nuevamente_el_correo_electronico(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5592874600">5s 592ms</td>
+              <td class="duration" data-value="5592874600">5s 592ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilCallCenterStepDefinition.ingreso_un_correo_electronico(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="34687196700">34s 687ms</td>
+              <td class="duration" data-value="34687196700">34s 687ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilCallCenterStepDefinition.presiono_el_boton_Consultar_covertura()</td>
+              <td>1</td>
+              <td class="duration" data-value="39740632000">39s 740ms</td>
+              <td class="duration" data-value="39740632000">39s 740ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilCallCenterStepDefinition.selecciono_tipo_de_oferta()</td>
+              <td>1</td>
+              <td class="duration" data-value="19057815200">19s 057ms</td>
+              <td class="duration" data-value="19057815200">19s 057ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.ingresoLaDireccionDondeSeraLaInstalacion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="555293700">555ms</td>
+              <td class="duration" data-value="555293700">555ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.ingresoLaReferenciaDeLaDireccion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="514014600">514ms</td>
+              <td class="duration" data-value="514014600">514ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.presionoElBotonConsultarUbicacion()</td>
+              <td>1</td>
+              <td class="duration" data-value="5663155100">5s 663ms</td>
+              <td class="duration" data-value="5663155100">5s 663ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.seleccionoElBotonLineaNuevaHogar()</td>
+              <td>1</td>
+              <td class="duration" data-value="17468142000">17s 468ms</td>
+              <td class="duration" data-value="17468142000">17s 468ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.seleccionoElBotonMostrarOfertas()</td>
+              <td>1</td>
+              <td class="duration" data-value="12310834300">12s 310ms</td>
+              <td class="duration" data-value="12310834300">12s 310ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.seleccionoElDepartamentoDondeSeraLaInstalacion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="7373357000">7s 373ms</td>
+              <td class="duration" data-value="7373357000">7s 373ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.seleccionoElDistritoDondeSeraLaInstalacion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3489776200">3s 489ms</td>
+              <td class="duration" data-value="3489776200">3s 489ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaAltaMovilRetailStepDefinition.seleccionoLaProvinciaDondeSeraLaInstalacion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3293557400">3s 293ms</td>
+              <td class="duration" data-value="3293557400">3s 293ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.completoLosDatosDelClienteARegistrar(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="37988830700">37s 988ms</td>
+              <td class="duration" data-value="37988830700">37s 988ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.doyClicEnSiAcepto()</td>
+              <td>1</td>
+              <td class="duration" data-value="3364736900">3s 364ms</td>
+              <td class="duration" data-value="3364736900">3s 364ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.doyClicParaValidarContratoMovil()</td>
+              <td>1</td>
+              <td class="duration" data-value="35706551200">35s 706ms</td>
+              <td class="duration" data-value="35706551200">35s 706ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.doyClickEnDatosDelCliente()</td>
+              <td>1</td>
+              <td class="duration" data-value="4345774100">4s 345ms</td>
+              <td class="duration" data-value="4345774100">4s 345ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.meMuestraEnPantallaElContratoSolicitado()</td>
+              <td>1</td>
+              <td class="duration" data-value="8894991300">8s 894ms</td>
+              <td class="duration" data-value="8894991300">8s 894ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.meMuestraLaPantallaParaIngresarLaDireccion()</td>
+              <td>1</td>
+              <td class="duration" data-value="1273992600">1s 273ms</td>
+              <td class="duration" data-value="1273992600">1s 273ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.validoQueMeEncuentreEnLaPantallaAgendamiento()</td>
+              <td>1</td>
+              <td class="duration" data-value="13976362200">13s 976ms</td>
+              <td class="duration" data-value="13976362200">13s 976ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaMovilRegistroStepDefinition.visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada()</td>
+              <td>1</td>
+              <td class="duration" data-value="4409930000">4s 409ms</td>
+              <td class="duration" data-value="4409930000">4s 409ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaRetailStepDefinition.completoLosDatosSolicitados(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="44445691700">44s 445ms</td>
+              <td class="duration" data-value="44445691700">44s 445ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaRetailStepDefinition.inicioSuRegistro()</td>
+              <td>1</td>
+              <td class="duration" data-value="3378952600">3s 378ms</td>
+              <td class="duration" data-value="3378952600">3s 378ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaTiendaStepDefinition.ingreso_los_datos_de_agendamiento()</td>
+              <td>1</td>
+              <td class="duration" data-value="2325429800">2s 325ms</td>
+              <td class="duration" data-value="2325429800">2s 325ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaTiendaStepDefinition.presiono_el_boton_Registrar_venta()</td>
+              <td>1</td>
+              <td class="duration" data-value="120826780100">2m 826ms</td>
+              <td class="duration" data-value="120826780100">2m 826ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaTiendaStepDefinition.presiono_el_boton_confirmar_agendamiento()</td>
+              <td>1</td>
+              <td class="duration" data-value="29007783100">29s 007ms</td>
+              <td class="duration" data-value="29007783100">29s 007ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaTiendaStepDefinition.selecciono_el_plan(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="42446844500">42s 446ms</td>
+              <td class="duration" data-value="42446844500">42s 446ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaFijaTiendaStepDefinition.selecciono_el_tipo_de_plan_fija(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10586393700">10s 586ms</td>
+              <td class="duration" data-value="10586393700">10s 586ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaPuraMTcallCenterStepDefinition.cierroPopupDeError()</td>
+              <td>1</td>
+              <td class="duration" data-value="10273064600">10s 273ms</td>
+              <td class="duration" data-value="10273064600">10s 273ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.AltaPuraMTcallCenterStepDefinition.doyClickEnElBotonDeContinuar()</td>
+              <td>1</td>
+              <td class="duration" data-value="235677652900">3m 55s 677ms</td>
+              <td class="duration" data-value="235677652900">3m 55s 677ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.HomeStepDefinition.doyClickEnElBotonConsultar()</td>
+              <td>1</td>
+              <td class="duration" data-value="41741495100">41s 741ms</td>
+              <td class="duration" data-value="41741495100">41s 741ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.HomeStepDefinition.ingresoElDocumento(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="318508700">318ms</td>
+              <td class="duration" data-value="318508700">318ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.HomeStepDefinition.seleccionoElTipoDeDocumento(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2390499400">2s 390ms</td>
+              <td class="duration" data-value="2390499400">2s 390ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.ingresoElPassword(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1189908700">1s 189ms</td>
+              <td class="duration" data-value="1189908700">1s 189ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.ingresoElUsuario(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1216110800">1s 216ms</td>
+              <td class="duration" data-value="1216110800">1s 216ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.presionoElBotonContinuarHaciaElHome()</td>
+              <td>1</td>
+              <td class="duration" data-value="16703964400">16s 703ms</td>
+              <td class="duration" data-value="16703964400">16s 703ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.presionoElBotonIniciarSesion()</td>
+              <td>1</td>
+              <td class="duration" data-value="3502907800">3s 502ms</td>
+              <td class="duration" data-value="3502907800">3s 502ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.queAbroLaPaginaDeMovistar()</td>
+              <td>1</td>
+              <td class="duration" data-value="37216548300">37s 216ms</td>
+              <td class="duration" data-value="37216548300">37s 216ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.seleccionoElTipoDeUsuario(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1236698900">1s 236ms</td>
+              <td class="duration" data-value="1236698900">1s 236ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.glue.LoginBerserkersStepDefinition.validoElLoginExitosoMedianteElMensaje(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1170614200">1s 170ms</td>
+              <td class="duration" data-value="1170614200">1s 170ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.hooks.Hooks.afterScenario()</td>
+              <td>1</td>
+              <td class="duration" data-value="2620923000">2s 620ms</td>
+              <td class="duration" data-value="2620923000">2s 620ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.hooks.Hooks.handleScenario(io.cucumber.java.Scenario)</td>
+              <td>1</td>
+              <td class="duration" data-value="966200">000ms</td>
+              <td class="duration" data-value="966200">000ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.hooks.Hooks.setUp()</td>
+              <td>1</td>
+              <td class="duration" data-value="5914538500">5s 914ms</td>
+              <td class="duration" data-value="5914538500">5s 914ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.tdp.ct.web.hooks.Hooks.tearDown()</td>
+              <td>1</td>
+              <td class="duration" data-value="16726600">016ms</td>
+              <td class="duration" data-value="16726600">016ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>43</td>
+            <td>43</td>
+            <td class="duration">14m 33s 916ms</td>
+            <td class="duration">20s 323ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

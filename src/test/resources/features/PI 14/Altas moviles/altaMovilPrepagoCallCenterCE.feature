@@ -1,7 +1,7 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT098
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Prepago Call center CE
+Característica: AT-DT098_Alta Movil Prepago Call center CE
 
 
   Antecedentes:
