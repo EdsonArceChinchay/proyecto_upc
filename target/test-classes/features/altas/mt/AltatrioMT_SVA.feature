@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta MT MAS SVA
+Característica: AT-DT042_Alta MT MAS SVA
 
   @AltatrioMT_SVA
   Esquema del escenario: Alta trio MT MAS SVA

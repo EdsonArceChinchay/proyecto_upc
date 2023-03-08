@@ -1,12 +1,14 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
+@BERSERKERS @DoneDevOps @AT-DT105
 Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
-
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @PortabilidadSoloChip @Global
+  @PortabilidadSoloChip @MVP16 @Global
   Esquema del escenario: Portabilidad solo chip postpago y permanencia 12 meses con DNI, en canal call center y delivery Tambo con direccion de Lima sin cobertura, validar que solo figure la opcion de tienda,web front end. (NEGATIVO)
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

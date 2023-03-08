@@ -2,7 +2,7 @@
 @carlos
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15 @DROP35
 
-Característica: Alta Movil por Combo Proactivo
+Característica: AT-DT032_Alta Movil por Combo Proactivo
 
   Antecedentes:
 

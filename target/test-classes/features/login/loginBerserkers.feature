@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF
 
-Característica: Login - FE DITO WEB
+Característica: AT-DT053_Login - FE DITO WEB
 
   @LoginBerserker @LoginExitoso
   Esquema del escenario: Usuario realiza login exitoso: Canal online - Call center Gss, Tienda San Miguel, Talara

@@ -1,13 +1,12 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
-
-Característica: Migracion de duo a Trio + sva
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @AT-DT065
+Característica: AT-DT065_Migracion de duo a Trio + sva
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionduoTrioSVA
+  @MigracionduoTrioSVA @MVP07 @Global @General
   Esquema del escenario:Migracion de duo a Trio + sva
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -44,4 +43,4 @@ Característica: Migracion de duo a Trio + sva
 	Y        valido que se muestre el detalle del pedido
 	Ejemplos:
 	  | tipoUsuario     | userName    | password         | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | lterrazosce | Telefonica2021   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040173 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+	  | usuario externo | lterrazosce | Telefonica2021   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 192920952 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |

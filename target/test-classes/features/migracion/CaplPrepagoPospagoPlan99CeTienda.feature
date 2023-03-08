@@ -1,9 +1,11 @@
 #language:es
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
-  @CaplPrepagoPospago @Global
-  Escenario: CAPL con Caeq al contado con canal Tienda de un Control a Postpago exitoso
+
+  @CaplPrepagoPospago @MVP05 @Global @General
+  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"

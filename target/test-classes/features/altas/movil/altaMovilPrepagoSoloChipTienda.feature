@@ -1,13 +1,13 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: Alta Movil Prepago solo chip Tienda
+Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilPrepagoSoloChipTienda_CE @Global
+  @AltaMovilPrepagoSoloChipTienda_CE
   Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

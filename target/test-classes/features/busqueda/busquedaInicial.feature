@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
 
-Característica: Busqueda Inicial CE, DNI y RUC DITO WEB
+Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 
   @BusquedaInicial
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

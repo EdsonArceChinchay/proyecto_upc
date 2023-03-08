@@ -1,11 +1,15 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
+
+@BERSERKERS @DoneDevOps @AT-DT019
 Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaTrioRuCTienda
+  @AltaTrioRuCTienda @MVP10 @Global
   Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

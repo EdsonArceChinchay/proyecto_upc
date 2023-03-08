@@ -1,7 +1,7 @@
 #language:es
   @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28
 
-  Característica: Alta de Mono con instalación FTTH por Canal tienda
+  Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
     @AltaMonoFtthTienda
     Escenario: Realizar una Alta de Mono con instalación FTTH por Canal tienda
@@ -14,7 +14,7 @@
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "1042464881"
+      Y        ingreso el documento "1042464814"
       Y        doy click en el boton consultar
       Y        cierro popup de error
       Y        ingreso los datos del cliente extranjero a registrar

@@ -1,19 +1,8 @@
 #language:es
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   # CREADOR: Angel Medina
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
-<<<<<<< HEAD
-=======
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
->>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
-=======
->>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
-
 
 Característica: AT-DT005_Alta Duo por call center
 

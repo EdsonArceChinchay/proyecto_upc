@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta Fija + Alta Movil por Call Center
+Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

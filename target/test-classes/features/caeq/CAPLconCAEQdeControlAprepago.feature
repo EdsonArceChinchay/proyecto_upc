@@ -1,6 +1,6 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: CAPL con CAEQ por canal Tienda de un Control a Prepago
+Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
   @CaplconCaeqTienda
   Esquema del escenario: CAPL con CAEQ por canal Tienda de un Control a Prepago
@@ -22,10 +22,10 @@ Característica: CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      |permanencia    |tipoPago  |equipoName      |
-      |12 meses       |Al Contado|HUAWEI P10 NEGRO|
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
     Y         doy click en iniciar registro
     Y        ingreso email "tester_qa@gmail.com" y lo confirmo
@@ -37,5 +37,5 @@ Característica: CAPL con CAEQ por canal Tienda de un Control a Prepago
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password       |
-      | usuario externo | evillanuevag  | $t3l3f0n1c4$ |
+      | tipoUsuario     | userName     | password     |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ |

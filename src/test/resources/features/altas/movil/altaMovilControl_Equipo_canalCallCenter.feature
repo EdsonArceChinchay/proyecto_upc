@@ -1,14 +1,4 @@
 #language:es
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-  # CREADOR: Edson Arce
-
-=======
-@BERSERKERS @DoneDevOps @AT-DT024
->>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
-Característica: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
-=======
 
 
   # CREADOR: Edson Arce
@@ -16,8 +6,6 @@ Característica: Alta control con equipo al contado con CEX, en canal call cente
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
-
->>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   Antecedentes:
     Dado     que abro la pagina de movistar

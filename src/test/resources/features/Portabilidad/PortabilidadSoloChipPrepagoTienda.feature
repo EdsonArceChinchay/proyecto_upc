@@ -1,21 +1,9 @@
 #language:es
   #angel medina
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-Característica: Portabilidad Solo Chip Prepago DNI Canal Tienda
-=======
 @BERSERKERS @DoneDevOps @AT-DT106
 Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
->>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
-=======
   #tambo
-@BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Solo Chip Prepago Tienda
-  Quiero realizar una portabilidad por call center
->>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
-
   Antecedentes:
     Dado     que abro la pagina de movistar
 

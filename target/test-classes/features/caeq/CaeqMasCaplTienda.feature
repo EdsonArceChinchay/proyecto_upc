@@ -1,8 +1,12 @@
 #language:es
 
+  # CREADOR: Edson Arce
+
+@BERSERKERS @DoneDevOps @AT-DT047
 Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
-  @CaeqMasCaplTienda
+
+  @CaeqMasCaplTienda @MVP20 @Global
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -24,8 +28,8 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Y        presiona el boton anadir equipo
     #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | HUAWEI P30 |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
@@ -40,5 +44,5 @@ Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome      | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
+      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |

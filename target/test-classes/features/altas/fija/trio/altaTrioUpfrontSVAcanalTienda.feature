@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @Sanity28
 
-Característica: Alta Trio upfront SVA canal tienda
+Característica: AT-DT020_Alta Trio upfront SVA canal tienda
 
   @AltaTrioUpfrontSVATienda
   Esquema del escenario: Alta Trio upfront SVA canal tienda

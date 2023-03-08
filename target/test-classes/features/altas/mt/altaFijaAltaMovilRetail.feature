@@ -1,7 +1,7 @@
 #language:es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Fija + Alta Movil por Retail
+Característica: AT-DT034_Alta Fija + Alta Movil por Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar

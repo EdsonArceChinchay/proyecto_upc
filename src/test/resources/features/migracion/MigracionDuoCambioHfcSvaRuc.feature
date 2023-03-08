@@ -1,23 +1,7 @@
 #language:es
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-  # CREADOR: Angel Medina
-
-Característica: Migracion de Duo HFC Cambio de tecnologia con RUC
-=======
 @BERSERKERS @DoneDevOps @AT-DT062
 Característica: Migracion de Duo HFC Cambio de tegnologia
->>>>>>> 555beea0be65bc959f8b0e12d82448473ba083d9
-=======
-
-
-  # CREADOR: Angel Medina
-
-@BERSERKERS @DoneDevOps
-Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
-
->>>>>>> 9e3602de27a813ae282a57d006ab512b6e5b94d5
 
   Antecedentes:
     Dado     que abro la pagina de movistar

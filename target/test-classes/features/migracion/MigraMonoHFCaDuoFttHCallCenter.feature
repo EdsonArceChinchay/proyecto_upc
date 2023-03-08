@@ -1,11 +1,11 @@
 #language:es
-@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
-Característica: Migracion de Mono HFC a Duo FTTH Call Center
 
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28 @AT-DT074
+Característica: Migracion de Mono HFC a Duo FTTH Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionMonoDuoCallCenter
+  @migracionMonoHFCDuoFtthCallCenter @MVP18 @Global @General
   Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, en canal call center, web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

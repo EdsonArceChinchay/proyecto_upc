@@ -1,7 +1,7 @@
 #language: es
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
-Característica: Alta Mono TV Sva Decodificador + Sva Bloque Call Center
+Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
