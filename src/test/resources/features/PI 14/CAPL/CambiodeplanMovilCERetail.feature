@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: AT-DT099_cambio de plan movil en Retail
+Característica: AT-DT100_cambio de plan movil en Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar

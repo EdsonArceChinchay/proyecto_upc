@@ -2,7 +2,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @v
 
-Característica: Alta mono + sva  en Canal Retail
+Característica: AT-DT092_Alta mono + sva  en Canal Retail
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
