@@ -56,6 +56,7 @@ Característica: AT-DT004_Alta Duo SVA HBO por call center
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
+	  Y        presiono el boton Registrar venta
 	Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:

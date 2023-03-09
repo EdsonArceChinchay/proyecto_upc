@@ -108,7 +108,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright='search']");
         click(Input);
         type(Input, buscarE);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         click(lblItem);
     }
 

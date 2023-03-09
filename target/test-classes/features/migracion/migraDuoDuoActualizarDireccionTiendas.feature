@@ -46,4 +46,4 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
 
     Ejemplos:
       | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | evillanuevag    | $t3l3f0n1c4$      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042465127 | tester@tester.com  | Duo            | HD RA D22 200 MBPS  |
+      | usuario externo | evillanuevag    | #o2Wy23oA1458      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042465127 | tester@tester.com  | Duo            | HD RA D22 200 MBPS  |
