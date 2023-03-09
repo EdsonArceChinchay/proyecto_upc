@@ -41,7 +41,7 @@ Característica: AT-DT090_Alta Duo Sva Repetidor + Sva Bloque Call Center
 	Y        selecciono el plan "<nombrePlan>"
 	Y        valido que este en la seccion de registro
 	Entonces doy click en Agregar Sva
-	Y        elegimos sva repetidor
+	Y        elegimos sva repetidor "<svarepetidor>"
 	Y        doy click en agregar Bloque "<bloque>"
 	Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
@@ -63,5 +63,5 @@ Característica: AT-DT090_Alta Duo Sva Repetidor + Sva Bloque Call Center
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                             |bloque |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058943148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 50 MBPS| HBO   |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                             |bloque |svarepetidor                  |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058943148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 50 MBPS| HBO   |  Repetidor WIFI PLUS Venta   |
