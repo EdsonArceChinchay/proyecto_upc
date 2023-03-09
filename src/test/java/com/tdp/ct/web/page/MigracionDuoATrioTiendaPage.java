@@ -68,7 +68,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@type='button' and @class='close']")
     protected WebElement btnClosePopUp;
-    @FindBy(xpath = "//app-root/app-alta-fija-page/app-adicionales/div/div[3]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/tdp-st-checkbox")
+    @FindBy(xpath = "//div[text()='MÓDEM']/parent::div/../descendant-or-self::tdp-st-checkbox[1]")
     protected WebElement agregarModem;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
