@@ -9,7 +9,7 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "$t3l3f0n1c4$"
+      Y        ingreso el password "#o2Wy23oA1458"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"

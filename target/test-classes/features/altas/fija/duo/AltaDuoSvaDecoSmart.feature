@@ -56,8 +56,13 @@ Característica: AT-DT005_Alta Duo por call center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+<<<<<<< HEAD
     Y        doy clic en Registrar venta
    # Y        valido que se muestre el detalle del pedido
+=======
+    Y        presiono el boton Registrar venta
+    Y        valido que se muestre el detalle del pedido
+>>>>>>> 7c3e34618493a6afb74fd38dbc416b35acec4408
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                                |

@@ -78,3 +78,4 @@ Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en 
       #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | Bienvenid@ | RUC            | 20547284501     |1| DNI | 75447652|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|
 
+

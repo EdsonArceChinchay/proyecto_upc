@@ -10,7 +10,6 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
   @AltaDuosvaDecodificadorsvaRepetidorCallCenter
   Esquema del escenario: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 	Cuando   presiono el boton Iniciar Sesion
-	Y        elijo una opcion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
 	Y        ingreso el password "<password>"
