@@ -51,7 +51,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[7]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -314,6 +314,7 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
+        WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
 
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("Edson");
@@ -325,6 +326,10 @@ public class AltaFijaTiendaPage extends WebBase {
 
         SearchContext context2 = sh().getContext(rootInput2);
         context2.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
+        UtilWeb.waitForSeconds(2);
+
+        SearchContext context3 = sh().getContext(rootInput3);
+        context3.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
         UtilWeb.waitForSeconds(2);
 
     }

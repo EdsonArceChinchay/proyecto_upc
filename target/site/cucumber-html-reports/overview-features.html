@@ -51,9 +51,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                39,
-                0,
-                0,
+                34,
+                1,
+                11,
                 0,
                 0
             ],
@@ -94,7 +94,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 39) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 46) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -107,8 +107,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                1,
-                0
+                0,
+                1
             ],
             backgroundColor: [
                 "#00B000",
@@ -157,8 +157,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                   1,
-                   0
+                   0,
+                   1
                ],
                backgroundColor: [
                 "#00B000",
@@ -234,7 +234,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>CucumberRerpot</td>
               <td>1</td>
-            <td>28 feb. 2023, 17:03</td>
+            <td>09 mar. 2023, 12:34</td>
     </tr>
   </tbody>
 </table>
@@ -329,54 +329,54 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-PI-2014-AltaTrioUpfrontCanalRetail-feature.html">Alta Trio Upfront canal Retail</a></td>
+        <td class="tagname"><a href="report-feature_file-src-test-resources-features-altas-fija-trio-AltaTrioRUCTienda-feature.html">Alta Tr&iacute;o familiar 100 Mbps tecnolog&iacute;a FTTH + SVA con ruc en tienda, financiado 100 % con flujo biom&eacute;trico</a></td>
         
-        <td      class="passed"    >39</td>
+        <td      class="passed"    >34</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >11</td>
         <td >0</td>
         <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">39</td>
+        <td class="total">46</td>
 
-        <td  class="passed"    >1</td>
         <td >0</td>
+        <td  class="failed"    >1</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="865363667100">14m 25s 363ms</td>
-        <td class="passed">Passed</td>
+        <td class="duration" data-value="476702829900">7m 56s 702ms</td>
+        <td class="failed">Failed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
       <td></td>
-            <td>39</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>39</td>
-
+            <td>34</td>
       <td>1</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>46</td>
+
       <td>0</td>
       <td>1</td>
+      <td>1</td>
 
-      <td class="duration">14m 25s 363ms</td>
+      <td class="duration">7m 56s 702ms</td>
       <td>1</td>
     </tr>
     <tr>
       <td></td>
-            <td>100.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
+            <td>73.91%</td>
+      <td>2.17%</td>
+      <td>23.91%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
+      <td>0.00%</td>
       <td>100.00%</td>
+      <td></td>
+      <td></td>
       <td>0.00%</td>
-      <td></td>
-      <td></td>
-      <td>100.00%</td>
     </tr>
   </tfoot>
 </table>
