@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Alta Trio Upfront con Nuevo Cliente Extranjero
--------------------------------------------------------------------------------
-Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 875.573 s - in Alta Trio Upfront con Nuevo Cliente Extranjero

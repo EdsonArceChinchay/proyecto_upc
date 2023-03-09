@@ -27,7 +27,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlanHogar>"
+    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro

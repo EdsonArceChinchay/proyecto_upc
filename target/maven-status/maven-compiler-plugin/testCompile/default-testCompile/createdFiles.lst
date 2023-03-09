@@ -16,7 +16,6 @@ com\tdp\ct\web\runner\Runner.class
 com\tdp\ct\web\step\AltaMovilComboProactivoStep.class
 com\tdp\ct\web\page\Paquetizacion\AltaMovilSoloLineaRetailPage.class
 com\tdp\ct\web\page\AltaMovilSVATiendaPage.class
-com\tdp\ct\web\glue\AltaDuoSvaDecodificadorSvaRepetidorCallCenterStepDefinition.class
 com\tdp\ct\web\page\AltaFijaAltaMovilCallCenterPage.class
 com\tdp\ct\web\step\migracion\MigraSalto0CanalTiendaStep.class
 com\tdp\ct\web\page\Caeq\CaeqMasCaplMasCasiPage.class
@@ -40,7 +39,6 @@ com\tdp\ct\web\glue\CaeqPorReatilStepDefinition.class
 com\tdp\ct\web\glue\CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition.class
 com\tdp\ct\web\glue\migracion\MigraSalto0CanalTiendaStepDefinition.class
 com\tdp\ct\web\page\AltaTrioDuoProactivoPage.class
-com\tdp\ct\web\step\AltaDuoSvaDecodificadorSvaRepetidorCallCenterStep.class
 com\tdp\ct\web\step\AltaFijaAltaMovilRetailStep.class
 com\tdp\ct\web\page\LoginBerserkerPage.class
 com\tdp\ct\web\glue\Paquetizacion\PaquetizacionDuoMasMonoPorCallCenterStepDefinition.class
