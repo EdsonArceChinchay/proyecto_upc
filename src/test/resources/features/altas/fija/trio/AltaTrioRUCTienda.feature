@@ -3,8 +3,8 @@
   # CREADOR: Edson Arce
 
 
-@BERSERKERS @DoneDevOps @AT-DT019
-Característica: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+@BERSERKERS @DoneDevOps
+Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
 
   Antecedentes:
     Dado     que abro la pagina de movistar
