@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @DROP
 
 Característica: AT-DT070_Migracion de Trio a MT + SVA
 

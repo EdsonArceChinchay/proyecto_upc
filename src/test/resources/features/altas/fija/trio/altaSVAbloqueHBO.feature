@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP
 
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 

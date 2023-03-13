@@ -48,7 +48,11 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    //@FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+
+    //*[contains(text(),'Reintentar') 
+
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
     @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[7]/button")

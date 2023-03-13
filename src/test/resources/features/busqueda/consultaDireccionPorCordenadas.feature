@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28 @DROP
 
 Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
 
