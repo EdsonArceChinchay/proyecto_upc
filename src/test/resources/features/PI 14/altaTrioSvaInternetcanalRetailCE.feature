@@ -3,7 +3,7 @@
 
 Característica: Alta Trio SVA Internet canal Retail
 
-  @AltaTrioSVARetail
+  @AltaTrioSVARetailCE
   Esquema del escenario: Alta Trio SVA canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
