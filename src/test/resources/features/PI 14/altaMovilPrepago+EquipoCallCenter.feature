@@ -27,8 +27,9 @@ Característica: Alta Movil Prepago + Equipo Call center
 	Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan "Prepago" que desea
 	Y        doy click en el boton Siguiente
-	Y        selecciono la oferta de plan movil "<oferta>"
-	Y        selecciono un plan movil "<nombrePlan>"
+	Y        selecciono el plan movil "<planMovil>"
+	Y        selecciono la opcion "<tipoPlanes>"
+	Y        doy click en el boton seleccionar oferta
 	Y        selecciono añadir equipos
 	Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
 	Y        ingreso el tipo de pago "<tipoPago>"
@@ -65,6 +66,6 @@ Característica: Alta Movil Prepago + Equipo Call center
 	Y        doy click en el boton de continuar
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                                | referencia | timpoPermanencia | nombreEquipo                  | tipoPago             |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
+	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes  | departamento | provincia | distrito | direccion                                | referencia | timpoPermanencia | nombreEquipo                  | tipoPago             |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | RV Plan Ilimitado Mi Movistar S/ 74.9 IV  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
