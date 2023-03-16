@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP
 
 Característica: AT-DT078_Migracion salto 0 canal Tienda
 

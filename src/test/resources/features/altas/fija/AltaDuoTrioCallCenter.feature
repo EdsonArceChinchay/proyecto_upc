@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 
 Característica: AT-DT001_Alta Duo Trio Call Center
   Quiero realizar una alta fija por call center
