@@ -1,13 +1,13 @@
 #language:es
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS
 
 Característica: Alta Trio con  sva Internet CANAL RETAIL
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @AltaTrioSvaInternetRetail
+  @AltaTrioSvaInternetRetail_Carlos
   Esquema del escenario: Alta Trio con sva Internet CANAL Retail
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
