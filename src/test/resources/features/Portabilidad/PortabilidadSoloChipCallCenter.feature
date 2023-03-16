@@ -2,8 +2,8 @@
 
   # CREADOR: Edson Arce
 
-@BERSERKERS @DoneDevOps @AT-DT105
-Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
+@BERSERKERS @DoneDevOps
+Característica: AT-DT105_Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
   Antecedentes:
     Dado     que abro la pagina de movistar

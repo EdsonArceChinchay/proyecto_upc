@@ -1,7 +1,7 @@
 #language:es
   #angel medina
-@BERSERKERS @DoneDevOps @AT-DT106
-Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
+@BERSERKERS @DoneDevOps
+Característica: AT-DT106_Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
   #tambo
   Antecedentes:

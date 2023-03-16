@@ -2,8 +2,8 @@
 
   # CREADOR: Angel Medina
 
-@BERSERKERS @DoneDevOps @AT-DT059
-Característica: Migracion de Mono a Duo + sva por el canal Tienda
+@BERSERKERS @DoneDevOps
+Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

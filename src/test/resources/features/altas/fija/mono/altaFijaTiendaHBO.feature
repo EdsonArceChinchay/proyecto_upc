@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
 
 Característica: AT-DT010_Alta fija por tienda mas Hbo
 

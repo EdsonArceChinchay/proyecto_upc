@@ -1,8 +1,8 @@
 #language:es
 
   # CREADOR: Edson Arce
-@BERSERKERS @DoneDevOps @AT-DT055
-Característica:  Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+@BERSERKERS @DoneDevOps
+Característica:  AT-DT055_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
 
   @CambioVelocidadDuoSvaWifi @MVP02 @Global @General

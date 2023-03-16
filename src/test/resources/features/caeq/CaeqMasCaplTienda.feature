@@ -2,8 +2,8 @@
 
   # CREADOR: Edson Arce
 
-@BERSERKERS @DoneDevOps @AT-DT047
-Característica: CAEQ + capl permanencia 12 meses con CEX Canal Tienda
+@BERSERKERS @DoneDevOps
+Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
 
   @CaeqMasCaplTienda @MVP20 @Global

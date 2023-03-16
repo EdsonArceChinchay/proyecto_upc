@@ -1,7 +1,7 @@
 #language:es
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
 
   @CaplPrepagoPospago @MVP05 @Global @General
