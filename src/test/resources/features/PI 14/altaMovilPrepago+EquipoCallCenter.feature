@@ -27,7 +27,6 @@ Característica: Alta Movil Prepago + Equipo Call center
 	Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan_movil Prepago
 	Y        selecciono el boton de eleccion de planes
-	Y        selecciono el plan movil "<planMovil>"
 	Y        selecciono la opcion "<tipoPlanes>"
 	Y        doy click en el boton seleccionar oferta
 	Y        selecciono añadir equipos
