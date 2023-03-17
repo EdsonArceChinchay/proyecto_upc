@@ -25,7 +25,7 @@ Característica: Alta Movil Prepago + Equipo Call center
 	  | Ana     | Lopez Lopez | femenino |
 	Y        selecciono el boton Linea Nueva Movil
 	Y        selecciono el boton Mostrar ofertas
-	Y        selecciono el plan "Prepago" que desea
+	Y        selecciono el plan_movil Prepago
 	Y        selecciono el boton de eleccion de planes
 	Y        selecciono el plan movil "<planMovil>"
 	Y        selecciono la opcion "<tipoPlanes>"
