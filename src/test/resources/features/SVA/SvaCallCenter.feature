@@ -37,4 +37,4 @@
 
       Ejemplos:
         | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                  | tipoDocumento | documento | correo           |
-        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 189792360 | correo@gmail.com |
+        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 120906347 | correo@gmail.com |
