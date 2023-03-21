@@ -6,7 +6,7 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigraMonoADuoSVATienda
+  @MigraMonoDuoSVATienda
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

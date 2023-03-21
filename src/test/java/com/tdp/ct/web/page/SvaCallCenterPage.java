@@ -43,7 +43,7 @@ public class SvaCallCenterPage extends WebBase{
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsClickable(agregarsva,30);
         click(agregarsva);
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(8);
     }
 
     public void elegir_sva(){
