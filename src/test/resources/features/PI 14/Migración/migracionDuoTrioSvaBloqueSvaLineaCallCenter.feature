@@ -45,5 +45,5 @@
 	 Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	 Ejemplos:
-	   | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento   | correo               | tipoPlanHogar | plan                                    | bloque          |svaLinea                |
-	   | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ |  CE            |  1042465120 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar |  Plan Multidestino 20  |
+	   | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento   | correo               | tipoPlanHogar  | plan                                              | bloque          |svaLinea                |
+	   | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ |  CE            |  1042465120 | tester_123@tester.com |  Trío         | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Bloque estelar |  Plan Multidestino 20  |
