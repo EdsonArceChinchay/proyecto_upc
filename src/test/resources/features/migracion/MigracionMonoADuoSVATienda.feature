@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP
 
 Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
@@ -44,5 +44,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan          | sva                   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | tester@tester.com | Duo           | RA D22 50 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   |
+      | usuario externo | evillanuevag  | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123178888  | tester@tester.com | Duo           | RA 1D D22 50 MBPS | HBO      |

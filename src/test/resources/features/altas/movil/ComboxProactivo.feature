@@ -1,6 +1,6 @@
 #language:es
 @carlos
-@BERSERKERS @DoneDevOps @DoneDevOpsPI15 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15
 
 Característica: AT-DT032_Alta Movil por Combo Proactivo
 

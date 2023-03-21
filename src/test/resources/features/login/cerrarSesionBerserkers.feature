@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP
 
 Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
 

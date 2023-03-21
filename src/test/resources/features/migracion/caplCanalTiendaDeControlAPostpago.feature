@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28 @DROP
 Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplPorTiendaControlAPostpago

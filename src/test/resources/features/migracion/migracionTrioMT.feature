@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @DROP
 
 Característica: AT-DT070_Migracion de Trio a MT + SVA
 
@@ -25,9 +25,9 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        doy click en agregar SVA MT "<sva MT>"
     Cuando   doy clic a iniciar registro
-	#Y        valido que me encuentre en la pantalla agendamiento
-	#Y        ingreso los datos de agendamiento
-	#Y        presiono el boton confirmar agendamiento
+	Y        valido que me encuentre en la pantalla agendamiento
+	Y        ingreso los datos de agendamiento
+	Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
