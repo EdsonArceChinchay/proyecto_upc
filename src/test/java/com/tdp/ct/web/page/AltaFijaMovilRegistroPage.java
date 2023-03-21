@@ -288,9 +288,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(20, btnReintentar, "Click al elemento Reintentar");
+        modalError(20, btnReintentar, "Click al elemento Reintentar");
+        modalError(20, btnReintentar, "Click al elemento Reintentar");
+        modalError(20, btnReintentar, "Click al elemento Reintentar");
+        modalError(20, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(20);
         waitUntilElementIsVisible(buttonValidarContrato, 30);
         js().scrollElementTop(buttonValidarContrato);
@@ -700,14 +702,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
             System.out.println("Dio click en cerrar - modal error ");
             click(btnCerrar);
-            UtilWeb.waitForSeconds(2);
+            UtilWeb.waitForSeconds(10);
             click(metodoRepedito);
         }
         else{
