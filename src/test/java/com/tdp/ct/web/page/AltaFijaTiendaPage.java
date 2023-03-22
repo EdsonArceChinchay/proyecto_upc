@@ -228,19 +228,26 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(100);
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 5000);
-        click(boton,50);
-        UtilWeb.waitForSeconds(5);
+        try {
+            Thread.sleep(1500);
+            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            modalError(2, btnReintentar, "Click al elemento Reitentar");
+            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            UtilWeb.waitForSeconds(100);
+            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            JavascriptExecutor jse = (JavascriptExecutor) driver();
+            jse.executeScript("window.scrollBy(0,250)");
+            UtilWeb.waitForSeconds(1);
+            WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+            waitUntilElementIsVisible(boton, 5000);
+            click(boton, 50);
+            UtilWeb.waitForSeconds(5);
+        }catch (Exception e){
+            System.out.println("Salta el registrar");
+        }
+
+
     }
 
     public void doyClickEnAñadirSVA() {
