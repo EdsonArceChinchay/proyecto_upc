@@ -1,10 +1,10 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP @prueba
+@BERSERKERS @DoneDevOps @Sanity28
 
-Característica: AT-DT042_Alta MT MAS SVA
+Característica: Alta Trio SVA Internet canal Retail
 
-  @AltatrioMT_SVA
-  Esquema del escenario: Alta trio MT MAS SVA
+  @AltaTrioSVARetail
+  Esquema del escenario: Alta Trio SVA canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -29,15 +29,15 @@ Característica: AT-DT042_Alta MT MAS SVA
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+    #Y        ingreso la informacion del lugar de instalacion
+      #| mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#    Y        selecciono el nombre de plan movistar total
-    E        inicio su registro
+    Y        doy click en agregar "<sva>"
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -56,6 +56,6 @@ Característica: AT-DT042_Alta MT MAS SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042464882 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName    | password       | msgHome     | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan    | sva           |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@   | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA D22 50 MBPS | PACK ANTIVIRUS MCAFEE |
 
