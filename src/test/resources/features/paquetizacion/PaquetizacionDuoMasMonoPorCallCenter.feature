@@ -19,7 +19,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el servicio mono "5010011527" y  el servicio duo "14340749 " a paquetizar
+    Y        selecciono el servicio mono "5010007041" y  el servicio duo "14339051" a paquetizar
     Y        presiono el boton Mostrar ofertas
     Y        doy click en el boton continuar
     Y        doy click en el boton "Confirmar direccion"
@@ -41,5 +41,4 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | Trío Mov. Voz Internet Estandar RA 1D D22 50 Mbps |
-      
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 76268961   | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |

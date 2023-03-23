@@ -76,6 +76,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas) {
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
