@@ -546,7 +546,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicDatosDeCliente() {
         UtilWeb.waitForSeconds(2);
         click(buttonDatosDeCliente);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(8);
     }
 
     public void ingresarFechaNac(String fechaNac) {
