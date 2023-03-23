@@ -191,9 +191,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
-//        modalError(3,btnReintentar,"Click al elemento Reitentar");
-//        modalError(3,btnReintentar,"Click al elemento Reitentar");
-//        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         UtilWeb.waitForSeconds(30);//10
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);

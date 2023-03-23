@@ -22,6 +22,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        selecciono el servicio mono "5010011527" y  el servicio duo "14340749 " a paquetizar
     Y        presiono el boton Mostrar ofertas
     Y        doy click en el boton continuar
+    Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -39,6 +40,6 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR RA 50 |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | Trío Mov. Voz Internet Estandar RA 1D D22 50 Mbps |
       

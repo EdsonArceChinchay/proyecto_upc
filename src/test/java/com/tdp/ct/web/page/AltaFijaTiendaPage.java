@@ -91,12 +91,14 @@ public class AltaFijaTiendaPage extends WebBase {
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
+        boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
             System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
+                encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
@@ -110,6 +112,11 @@ public class AltaFijaTiendaPage extends WebBase {
                 }
 
             }
+        }
+        if(encontroElemento || listaOfertas.size()>0){
+            UtilWeb.waitForSeconds(2);
+            int cont = listaOfertas.size() - 1;
+            click(listaOfertas.get(cont));
         }
     }
 
