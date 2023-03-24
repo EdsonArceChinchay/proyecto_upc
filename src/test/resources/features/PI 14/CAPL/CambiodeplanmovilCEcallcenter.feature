@@ -18,7 +18,7 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1632547894"
+    Y        ingreso el documento "1632547898"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del servicio "650023093"
     Y        doy click en el boton "Renovar plan"
