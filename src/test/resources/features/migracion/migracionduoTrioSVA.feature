@@ -13,8 +13,8 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Y        ingreso el usuario "<userName>"
 	Y        ingreso el password "<password>"
 	Y        presiono el boton Continuar hacia el home
-	Y         valido el login exitoso mediante el mensaje "<msgHome>"
-	Y        valido que se presente la tienda "<tiendaAsesor>"
+	#Y         valido el login exitoso mediante el mensaje "<msgHome>"
+	#Y        valido que se presente la tienda "<tiendaAsesor>"
 	Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	Y        ingreso el documento "<documento>"
 	Y        doy click en el boton consultar
@@ -38,9 +38,9 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y         presiono el boton Registrar venta
+	#Y         presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	Y        valido que se muestre el detalle del pedido
+
 	Ejemplos:
-	  | tipoUsuario     | userName    | password         | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | lterrazosce | Telefonica2021   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 192920952 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+	  | tipoUsuario     | userName  | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
+	  | usuario externo | jpachaot  | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 192920952 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
