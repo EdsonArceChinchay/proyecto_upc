@@ -1,6 +1,18 @@
 #language:es
 
-  # CREADOR: Angel Medina
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT059
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center

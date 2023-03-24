@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT074
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
 Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
   Antecedentes:

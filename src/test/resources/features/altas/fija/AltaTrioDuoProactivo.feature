@@ -36,9 +36,10 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el nombre del plan "<nombrePlan>"
-    Y         doy click en el boton seleccionar la oferta
-    Y         selecciono la cartilla Linea Nueva
+    Y        selecciono el plan "<nombrePlan>"
+    #Y        selecciono el nombre del plan "<nombrePlan>"
+    #Y         doy click en el boton seleccionar la oferta
+    #Y         selecciono la cartilla Linea Nueva
     Y        selecciono en iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -60,7 +61,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10001234560 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 600 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10001234561 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Trío     | D22 50 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
   @AltaDuoProactivo
@@ -93,9 +94,10 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el nombre del plan "<nombrePlan>"
-    Y         doy click en el boton seleccionar la oferta
-    Y         selecciono la cartilla Linea Nueva
+    Y        selecciono el plan "<nombrePlan>"
+    #Y        selecciono el nombre del plan "<nombrePlan>"
+    #Y         doy click en el boton seleccionar la oferta
+    #Y         selecciono la cartilla Linea Nueva
     Y        selecciono en iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -116,6 +118,6 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10004454006 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa crema | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 10004454007 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      |  RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
