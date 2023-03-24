@@ -16,11 +16,9 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-<<<<<<< HEAD
+
         tags = "@totalizaciontriomasaltamovil"
-=======
-        tags = "@prueba"
->>>>>>> 74c8dac38a4bd028228197541e692f96e9dca05c
+
 
 )
 
