@@ -43,7 +43,7 @@ public class SvaCallCenterPage extends WebBase{
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsClickable(agregarsva,30);
         click(agregarsva);
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(8);
     }
 
     public void elegir_sva(){
@@ -51,6 +51,7 @@ public class SvaCallCenterPage extends WebBase{
         waitUntilElementIsClickable(sva_repetidor,30);
         click(sva_repetidor);
         UtilWeb.waitForSeconds(2);
+        js().scrollElementTop(guardar);
         click(guardar);
 
     }
