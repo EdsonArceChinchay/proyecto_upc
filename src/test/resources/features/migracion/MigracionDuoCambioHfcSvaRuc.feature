@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT062
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 
