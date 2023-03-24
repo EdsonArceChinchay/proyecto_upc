@@ -157,9 +157,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
         click(buttonIniciarRegistro, 5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
@@ -169,12 +169,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarPantallaAgendamiento() {
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(2, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(1, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
