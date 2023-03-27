@@ -1,10 +1,21 @@
 #language:es
 
-  # CREADOR: Edson Arce
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT105
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Edson Arce
+##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Solo Chip Call Center Delivery en Tambo
-  Quiero realizar una portabilidad por call center
+Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 

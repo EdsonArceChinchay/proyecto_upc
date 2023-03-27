@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT064
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
   Antecedentes:

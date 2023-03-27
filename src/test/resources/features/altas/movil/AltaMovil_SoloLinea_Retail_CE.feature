@@ -1,11 +1,24 @@
 #language:es
+
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT031
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Angel Medina
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
 
-  # CREADOR: Angel Medina
 
-
-Característica: AT-DT031_Alta Movil Postpago solo chip Retail
+Característica: AT-DT031_Alta Movil Postpago CEX Retail
 
 
   Antecedentes:

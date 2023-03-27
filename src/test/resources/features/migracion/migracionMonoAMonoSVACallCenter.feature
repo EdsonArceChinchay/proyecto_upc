@@ -1,6 +1,18 @@
 #language:es
 
-  # CREADOR: Edson Arce
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT069
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
