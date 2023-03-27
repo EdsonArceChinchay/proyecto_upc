@@ -20,7 +20,7 @@ Característica: AT-DT099_cambio de plan movil en call center
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1632547898"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650023093"
+    Y        selecciono el boton Ver detalle del servicio "650027772"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y selecciono boton Cambiar plan

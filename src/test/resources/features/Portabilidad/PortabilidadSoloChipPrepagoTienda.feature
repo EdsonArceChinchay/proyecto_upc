@@ -1,5 +1,19 @@
 #language:es
-  #angel medina
+
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT106
+##GDAP:
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT106_Portabilidad Solo Chip Call Center Delivery en Tambo
   Quiero realizar una portabilidad por call center
