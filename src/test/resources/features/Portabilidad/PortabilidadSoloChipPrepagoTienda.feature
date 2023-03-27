@@ -15,8 +15,7 @@
 ##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Solo Chip Call Center Delivery en Tambo
-  Quiero realizar una portabilidad por call center
+Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
   #tambo
   Antecedentes:
     Dado     que abro la pagina de movistar

@@ -15,7 +15,7 @@
 ##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica:  AT-DT055_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
 
 
   @CambioVelocidadDuoSvaWifi @MVP02 @Global @General

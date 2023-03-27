@@ -18,7 +18,7 @@
 
 
 
-Característica: AT-DT031_Alta Movil Postpago solo chip Retail
+Característica: AT-DT031_Alta Movil Postpago CEX Retail
 
 
   Antecedentes:

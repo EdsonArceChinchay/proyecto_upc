@@ -15,7 +15,7 @@
 ##FECMOD: 24/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
-Característica: AT-DT027_Alta Movil Postpago solo chip Retail
+Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
