@@ -21,7 +21,7 @@ public class SvaCallCenterPage extends WebBase{
     @FindBy(xpath = "//div[@class='detailHogar']")
     protected WebElement detalle;
 
-    @FindBy (xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[3]/div/button")/*(xpath = "(//div/div/tdp-st-button)[2]")*/
+    @FindBy (xpath = "(//div/div/tdp-st-button)[2]")
     protected WebElement agregarsva;
 
     @FindBy(xpath = "//div[1]/div[2]/div[2]/div/tdp-st-icon-button[1]")

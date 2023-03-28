@@ -44,5 +44,5 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	Ejemplos:
-	  | tipoUsuario     | userName  | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | jpachaot  | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 192920952 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+	  | tipoUsuario     | userName  | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
+	  | usuario externo | jpachaot  | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 253462454  | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS |
