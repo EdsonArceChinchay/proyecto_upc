@@ -22,7 +22,7 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
-    Y        luego doy click en la cartilla i r a Movistar Total
+    Y        luego doy click en la cartilla ir a Movistar Total
     Y        doy click en agregar SVA MT "<sva MT>"
     Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
