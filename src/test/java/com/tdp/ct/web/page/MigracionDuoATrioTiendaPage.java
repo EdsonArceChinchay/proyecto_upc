@@ -90,7 +90,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(8);
         clickElementInAList(listaPlanFija, plaHogar);
         UtilWeb.waitForSeconds(1);
     }
@@ -117,13 +117,19 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(4);
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(10);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void doyClickEnEnElBoton(String btn) {
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
@@ -132,7 +138,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 waitUntilElementIsClickable(btnActualizarDir, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
-
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
@@ -214,7 +219,20 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void doyClickEnAgregarModem() {
         UtilWeb.waitForSeconds(3);
         agregarModem.click();
-
-
     }
+
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
+    }
+
 }

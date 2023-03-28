@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP @prueba
 
 Característica: AT-DT042_Alta MT MAS SVA
 

@@ -1,13 +1,12 @@
-#language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP
-
-Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
+#language: es
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigraMonoDuoSVATienda
-  Esquema del escenario: Migracion de Mono a Duo con CE + sva
+  @MigraDuoATrioSvaRepetSvaBloqueCallCenter
+  Esquema del escenario:Migracion Duo A Trio + SVAs
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -25,7 +24,10 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en añadir SVA
+    Y        doy click en agregar Bloque "<bloque>"
+    Y        elegimos sva repetidor "<svarepetidor>"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -40,5 +42,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   |
-      | usuario externo | jpachaot  | #$t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123178888  | tester@tester.com | Duo           | RA 1D D22 50 MBPS | HBO      |
+      | tipoUsuario     | userName    | password       | msgHome     | tipoDocumento | documento | correo            |   tipoPlanHogar | plan                                              |bloque| svarepetidor        |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@  | CE            | 128888888 | tester@tester.com |   Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |HBO  | REP. SMART WIFI Venta|

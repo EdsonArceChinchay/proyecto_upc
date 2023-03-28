@@ -1,6 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @DROP
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
   Antecedentes:
