@@ -240,6 +240,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         try {
+
             WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
             int contador = 0;
             int segEsperaBucles = 10;
@@ -248,6 +249,7 @@ public class AltaFijaTiendaPage extends WebBase {
             while (!boton.isDisplayed() && contador < reintentoBucles ){
                 UtilWeb.waitForSeconds(segEsperaBucles);
                 contador++;
+                System.out.println(contador);
             }
             //Thread.sleep(1500);
             modalError(3, btnReintentar, "Click al elemento Reitentar");
