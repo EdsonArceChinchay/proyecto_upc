@@ -21,7 +21,7 @@ public class SvaCallCenterPage extends WebBase{
     @FindBy(xpath = "//div[@class='detailHogar']")
     protected WebElement detalle;
 
-    @FindBy(xpath = "(//div/div/tdp-st-button)[2]")
+    @FindBy (xpath = "(//div/div/tdp-st-button)[2]")
     protected WebElement agregarsva;
 
     @FindBy(xpath = "//div[1]/div[2]/div[2]/div/tdp-st-icon-button[1]")
@@ -41,6 +41,7 @@ public class SvaCallCenterPage extends WebBase{
 
     public void agregar_sva_fija(){
         UtilWeb.waitForSeconds(2);
+        js().scrollElementTop(agregarsva);
         waitUntilElementIsClickable(agregarsva,30);
         click(agregarsva);
         UtilWeb.waitForSeconds(8);

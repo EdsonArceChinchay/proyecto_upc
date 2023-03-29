@@ -288,11 +288,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        modalError(20, btnReintentar, "Click al elemento Reintentar");
-        modalError(20, btnReintentar, "Click al elemento Reintentar");
-        modalError(20, btnReintentar, "Click al elemento Reintentar");
-        modalError(20, btnReintentar, "Click al elemento Reintentar");
-        modalError(20, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(20);
         waitUntilElementIsVisible(buttonValidarContrato, 30);
         js().scrollElementTop(buttonValidarContrato);
