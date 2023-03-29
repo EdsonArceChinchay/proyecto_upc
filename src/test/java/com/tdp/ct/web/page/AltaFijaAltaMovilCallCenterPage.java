@@ -193,7 +193,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(30);//10
+        UtilWeb.waitForSeconds(20);//10
         waitUntilElementIsVisible(esperarCorreo, 50);
         UtilWeb.waitForSeconds(3);
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");

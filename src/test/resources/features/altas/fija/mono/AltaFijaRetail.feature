@@ -1,5 +1,5 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP @LocalDrop
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP
 
 Característica: AT-DT007_Alta Fija Mono Internet por Retail
 

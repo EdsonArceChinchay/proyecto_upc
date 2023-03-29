@@ -66,7 +66,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("Aqui");
         click(BtnOpciones, 30);
-        UtilWeb.waitForSeconds(305);//10
+        UtilWeb.waitForSeconds(30);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
@@ -87,6 +87,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionarTiempo(String tiempoP) {
+        UtilWeb.waitForSeconds(10);
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
         click(listElementPLan);

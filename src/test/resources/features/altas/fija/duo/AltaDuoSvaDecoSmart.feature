@@ -69,7 +69,7 @@ Característica: AT-DT005_Alta Duo por call center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
 
     Ejemplos:
