@@ -290,10 +290,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
-
             }
         }
-        if(encontroElemento || listaOfertas.size()>0){
+        if(!encontroElemento && listaOfertas.size()>0){
+            System.out.println("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));

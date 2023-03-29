@@ -117,10 +117,10 @@ public class AltaFijaTiendaPage extends WebBase {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
-
             }
         }
-        if(encontroElemento || listaOfertas.size()>0){
+        if(!encontroElemento && listaOfertas.size()>0){
+            System.out.println("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
@@ -243,9 +243,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         UtilWeb.waitForSeconds(20);
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(10, btnReintentar, "Click al elemento Reitentar");
+        modalError(10, btnReintentar, "Click al elemento Reitentar");
+        modalError(10, btnReintentar, "Click al elemento Reitentar");
         try {
             //WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
             int contador = 0;
