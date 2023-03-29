@@ -4,6 +4,7 @@
 Característica: AT-DT070_Migracion de Trio a MT + SVA
 
   Antecedentes:
+    #Cliente Tiene que tener un score alto (9990)
     Dado     que abro la pagina de movistar
 
   @migracionTrioMTcanalTienda
