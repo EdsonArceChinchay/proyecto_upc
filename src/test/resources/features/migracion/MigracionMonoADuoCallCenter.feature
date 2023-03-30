@@ -1,4 +1,18 @@
 #language:es
+
+ ##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT067
+##GDAP: GDAP-607
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Tienda

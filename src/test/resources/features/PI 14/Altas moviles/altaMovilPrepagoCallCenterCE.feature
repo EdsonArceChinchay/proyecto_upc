@@ -1,4 +1,18 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT098
+##GDAP: GDAP-1150
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
 Característica: AT-DT098_Alta Movil Prepago Call center CE

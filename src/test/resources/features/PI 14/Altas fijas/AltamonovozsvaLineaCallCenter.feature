@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT093
+##GDAP: GDAP-1139
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
 Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
