@@ -57,6 +57,11 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
+    protected WebElement btnReintentarFinal;
+
+
+
     @FindBy (xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
 
@@ -242,20 +247,34 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        UtilWeb.waitForSeconds(20);
-        modalError(10, btnReintentar, "Click al elemento Reitentar");
-        modalError(10, btnReintentar, "Click al elemento Reitentar");
-        modalError(10, btnReintentar, "Click al elemento Reitentar");
+//        UtilWeb.waitForSeconds(20);
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        System.out.println("Entra al primer try");
         try {
-            //WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+            boolean buttonFound = false;
             int contador = 0;
-            int segEsperaBucles = 10;
-            int reintentoBucles = 3;
-            while (!btnRegistrarVenta.isDisplayed() && contador < reintentoBucles ){
-                UtilWeb.waitForSeconds(segEsperaBucles);
-                contador++;
-                System.out.println(contador);
+            int reintentoBucles = 15;
+            while (!buttonFound && contador <= reintentoBucles ){
+                System.out.println("Entra al while");
+                System.out.println("Entra al segundo try");
+                try {
+                    JavascriptExecutor jse = (JavascriptExecutor) driver();
+                    jse.executeScript("window.scrollBy(0,250)");
+                    UtilWeb.waitForSeconds(1);
+                    waitUntilElementIsVisible(btnRegistrarVenta, 2);
+                    buttonFound = true;
+                    System.out.println("Sale del segundo try");
+                }catch (Exception e){
+                    System.out.println("Espera 20 seg");
+                    UtilWeb.waitForSeconds(20);
+                    modalError(15, btnReintentarFinal, "Click al elemento Reitentar");
+                    contador++;
+                    System.out.println(contador+" vez");
+                }
             }
+            System.out.println("Sale del while");
             //Thread.sleep(1500);
 //            modalError(3, btnReintentar, "Click al elemento Reitentar");
 //            modalError(2, btnReintentar, "Click al elemento Reitentar");
@@ -263,14 +282,14 @@ public class AltaFijaTiendaPage extends WebBase {
             //UtilWeb.waitForSeconds(100);
 //            modalError(3, btnReintentar, "Click al elemento Reitentar");
 //            modalError(3, btnReintentar, "Click al elemento Reitentar");
-            JavascriptExecutor jse = (JavascriptExecutor) driver();
-            jse.executeScript("window.scrollBy(0,250)");
-            UtilWeb.waitForSeconds(1);
 //            WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
 //            waitUntilElementIsVisible(boton, 5000);
             click(btnRegistrarVenta, 10);
-            UtilWeb.waitForSeconds(5);
-        }catch (Exception e){
+            System.out.println("Hace click en el boton Registrar Venta");
+//            UtilWeb.waitForSeconds(5);
+        }
+        catch (Exception e){
+            System.out.println("Salió del primer try");
             System.out.println("Salta el registrar");
         }
 
