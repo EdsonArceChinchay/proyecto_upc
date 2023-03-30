@@ -1,4 +1,18 @@
-#language: es
+#language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT012
+##GDAP: GDAP-1069
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP
 
   Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet Canal Call Center
