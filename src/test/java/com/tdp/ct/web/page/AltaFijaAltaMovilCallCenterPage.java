@@ -194,15 +194,41 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(30);//10
-        waitUntilElementIsVisible(esperarCorreo, 50);
-        UtilWeb.waitForSeconds(3);
+
+        boolean buttonFound = false;
+        int contador = 0;
+        int reintentoBucles = 3;
+        while (!buttonFound && contador <= reintentoBucles){
+            System.out.println("Entra al while");
+            try {
+                System.out.println("Entra al try");
+                waitUntilElementIsVisible(esperarCorreo,2);
+                buttonFound = true;
+            }catch (Exception e){
+                System.out.println("Entra al catch");
+                UtilWeb.waitForSeconds(6);
+                contador++;
+                System.out.println(contador+" vez");
+            }
+        }
+        System.out.println("Sale del while");
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");
         correoElectronico.sendKeys(Keys.DELETE);
         type(correoElectronico, correo);
+        System.out.println("Se escribió el correo");
         UtilWeb.waitForSeconds(1);
+
+//        UtilWeb.waitForSeconds(30);//10
+//        waitUntilElementIsVisible(esperarCorreo, 50);
+//        UtilWeb.waitForSeconds(3);
+//        WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
+//        click(correoElectronico);
+//        correoElectronico.sendKeys(Keys.CONTROL + "a");
+//        correoElectronico.sendKeys(Keys.DELETE);
+//        type(correoElectronico, correo);
+//        UtilWeb.waitForSeconds(1);
     }
 
     public void confirmarCorreo(String correo) {

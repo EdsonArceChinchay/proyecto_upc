@@ -68,5 +68,5 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |sva|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 100 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |PACK ANTIVIRUS MCAFEE|
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406725  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 200 Mbps + 95 Gb | KATTIA      | PEDRO       | MIRAFLORES  |PACK ANTIVIRUS MCAFEE|
 
