@@ -48,12 +48,12 @@
 	  Y        valido que me encuentre en la pantalla agendamiento
 	  Y        ingreso los datos de agendamiento
 	  Y        presiono el boton confirmar agendamiento
-	  Y        ingreso un correo electronico "tester_1_2_3@tester.com"
-	  Y        ingreso nuevamente el correo electronico "tester_1_2_3@tester.com"
+	  Y        ingreso un correo electronico "hola@gmail.com"
+	  Y        ingreso nuevamente el correo electronico "hola@gmail.com"
 	  Y        doy click en datos del cliente
 	  Y        ingreso los datos del cliente
 		| fechaNac   | estadoCivil | nacionalidad |
-		| 12/12/1994 | Casado      | Albania      |
+		| 01/01/1990 | Casado      | Albania      |
 	  Y        doy click en el boton confirmar
 	  Y        doy clic para validar contrato hogar
 	  Y        me muestra en pantalla el contrato solicitado
@@ -62,5 +62,5 @@
 	  #Y        presiono el boton Registrar venta
 	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	  Ejemplos:
-		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |  svarepetidor           |
-		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 100 MBPS |  PACK ANTIVIRUS MCAFEE |Repetidor WIFI PLUS Venta|
+		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |  svarepetidor            |
+		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 150 MBPS |  PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |

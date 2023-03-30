@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
@@ -22,7 +23,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> btnHorario;
     @FindBy(xpath = "//app-register/body/div[2]/form/div[10]/button")
     protected WebElement btnFinalizarRegistro;
-
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
     @FindBy(xpath = "//div[@class='stl_plan_valor']")
@@ -31,17 +31,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
-
     @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
-
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
     @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
+    @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
+    protected WebElement btnRight;
 
     public void manzana(String manzana) {
         UtilWeb.waitForSeconds(5);
@@ -194,7 +193,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -278,13 +276,52 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void listaOfertas(String planOfertas) {
         UtilWeb.waitForSeconds(4);
-        System.out.println("paso por aqui");
+        String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("cantidad de la lista : " + listaOfertas.size());
-        for (WebElement element : listaOfertas) {
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        /*for (WebElement element : listaOfertas) {
             System.out.println("lista de ofertas" + element.getText());
             if (element.getText().contains(planOfertas)) {
                 click(element);
             }
+        }*/
+        for (int i = 0; i < 2; i++) {
+            boolean elementoExistente;
+            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            if (elementoExistente) {
+                System.out.println("dio click");
+                click(btnRight);
+                UtilWeb.waitForSeconds(3);
+            }
+        }
+        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        UtilWeb.waitForSeconds(3);
+        boolean encontroElemento = false;
+        //-------------------------------------------------------//
+        for (int i = 0; i < listaOfertas.size(); i++) {
+            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
+            System.out.println("Entro al for de las lista de ofertas");
+            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            if (ofertaObtenida.contains(ofertaEsperada)) {
+                encontroElemento = true;
+                UtilWeb.waitForSeconds(2);
+                click(listaOfertas.get(i));
+                break;
+            }
+            if (i == 2 || i == 5 || i == 8) {
+                boolean elementoExistente;
+                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                if (elementoExistente) {
+                    btnRight.click();
+                    UtilWeb.waitForSeconds(1);
+                }
+            }
+        }
+        if(!encontroElemento && listaOfertas.size()>0){
+            System.out.println("No encontro elemento en la lista");
+            UtilWeb.waitForSeconds(2);
+            int cont = listaOfertas.size() - 1;
+            click(listaOfertas.get(cont));
         }
         UtilWeb.waitForSeconds(1);
     }
