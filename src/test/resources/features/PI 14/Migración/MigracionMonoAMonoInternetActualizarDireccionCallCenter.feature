@@ -1,5 +1,18 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-1164
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 Característica: Migracion de Mono internet a Mono internet con Actualizar Direccion por el canal Call Center
 
   Antecedentes:
