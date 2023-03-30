@@ -301,6 +301,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             try {
                 System.out.println("Entra al try");
                 waitUntilElementIsVisible(buttonValidarContrato,2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Validar Contrato");
                 buttonFound = true;
             }catch (Exception e){
                 System.out.println("Entra al catch");
@@ -315,7 +316,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato);
 //        click(buttonValidarContrato, 300);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
 
     public void clicBotonContinuar() {
