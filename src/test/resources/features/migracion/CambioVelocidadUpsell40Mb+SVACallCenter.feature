@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT055
-##GDAP:
+##GDAP: GDAP-673
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Edson Arce
-##FECMOD: 24/03/2023
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA

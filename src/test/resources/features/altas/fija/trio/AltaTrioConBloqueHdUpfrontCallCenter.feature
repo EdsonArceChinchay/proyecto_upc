@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT018
+##GDAP: GDAP-591
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP
 
 Característica: AT-DT018_Alta Trio con bloque HD Upfront por Call Center
@@ -18,7 +32,7 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront por Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Garcia | masculino |
@@ -39,6 +53,8 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront por Call Center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
+    Y        doy click en Agregar Sva
+    Y         seleccionamos agregar Bloque HBO
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

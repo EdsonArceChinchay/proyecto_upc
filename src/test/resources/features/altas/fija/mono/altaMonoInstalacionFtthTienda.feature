@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT011
+##GDAP: GDAP-582
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
   @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda

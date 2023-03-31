@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-1247
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS
 
 Característica: Alta Trio con  sva Internet CANAL RETAIL
