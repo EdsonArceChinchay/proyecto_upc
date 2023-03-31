@@ -1,5 +1,19 @@
  #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-569
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
  Característica: Migracion de Mono a DUO +SVA por el canal  Retail CE
 
    Antecedentes:

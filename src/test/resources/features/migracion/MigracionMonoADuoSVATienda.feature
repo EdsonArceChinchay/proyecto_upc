@@ -1,4 +1,19 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT068
+##GDAP: GDAP-889
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP
 
 Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda

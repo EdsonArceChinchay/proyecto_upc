@@ -182,6 +182,5 @@
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.06" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.4" level="project" />
-    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-http-jdk-client:4.5.0" level="project" />
   </component>
 </module>
