@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT057
+##GDAP: GDAP-601
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: AT-DT057_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 

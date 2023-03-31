@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT029
+##GDAP: GDAP-961
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP
 
 Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
