@@ -292,10 +292,29 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        UtilWeb.waitForSeconds(20);
-        waitUntilElementIsVisible(buttonValidarContrato, 30);
+
+        boolean buttonFound = false;
+        int contador = 0;
+        int reintentoBucles = 3;
+        while (!buttonFound && contador <= reintentoBucles){
+            System.out.println("Entra al while");
+            try {
+                System.out.println("Entra al try");
+                waitUntilElementIsVisible(buttonValidarContrato,2);
+                buttonFound = true;
+            }catch (Exception e){
+                System.out.println("Entra al catch");
+                UtilWeb.waitForSeconds(6);
+                contador++;
+                System.out.println(contador+" vez");
+            }
+        }
+        System.out.println("Sale del while");
+//        UtilWeb.waitForSeconds(20);
+//        waitUntilElementIsVisible(buttonValidarContrato, 30);
         js().scrollElementTop(buttonValidarContrato);
-        click(buttonValidarContrato, 300);
+        click(buttonValidarContrato);
+//        click(buttonValidarContrato, 300);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic validar contrato");
     }
 
@@ -304,12 +323,31 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         modalError(3, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsClickable(buttonContinuar, 90);
+
+        boolean buttonFound = false;
+        int contador = 0;
+        int reintentoBucles = 3;
+        while (!buttonFound && contador <= reintentoBucles){
+            System.out.println("Entra al while");
+            try {
+                System.out.println("Entra al try");
+                waitUntilElementIsVisible(buttonContinuar,2);
+                buttonFound = true;
+            }catch (Exception e){
+                System.out.println("Entra al catch");
+                UtilWeb.waitForSeconds(6);
+                contador++;
+                System.out.println(contador+" vez");
+            }
+        }
+        System.out.println("Sale del while");
+//        waitUntilElementIsClickable(buttonContinuar, 90);
         js().scrollElementTop(buttonContinuar);
-        click(buttonContinuar, 60);
-        UtilWeb.waitForSeconds(5);
+//        click(buttonContinuar, 60);
+        click(buttonContinuar);
+//        UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void visualizarContratoEnPantalla() {

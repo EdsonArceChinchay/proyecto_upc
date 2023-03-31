@@ -28,9 +28,9 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-      #| A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -67,7 +67,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406721  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 100 Mbps + 95 Gb | KARIM       | JUAN        | PIURA       |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406721  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 200 Mbps + 95 Gb | KARIM       | JUAN        | PIURA       |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular

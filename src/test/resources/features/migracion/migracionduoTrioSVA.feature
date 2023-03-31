@@ -28,7 +28,7 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Y        doy click en Cambiar plan hogar
 	Y        valido que este en la seccion de registro
 	#Y        doy click en agregar "<sva>"
-	Y        doy click en el boton Agregar sva fija
+	Y        doy click en Agregar Sva
 	Y        seleccionamos agregar Bloque HBO
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento

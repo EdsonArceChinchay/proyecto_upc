@@ -3,6 +3,9 @@
 
 Característica: AT-DT039_Alta trio MT con Upfront 40mb
 
+  Antecedentes:
+  #Cliente Tiene que tener un score alto (9990) y no estar refinanciado
+
   @AltatrioMTconUpfront40mb
   Esquema del escenario: Alta trio MT con Upfront 40mb
     Dado     que abro la pagina de movistar
