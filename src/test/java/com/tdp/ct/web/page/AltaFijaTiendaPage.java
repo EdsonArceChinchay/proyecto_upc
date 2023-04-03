@@ -266,8 +266,8 @@ public class AltaFijaTiendaPage extends WebBase {
                     buttonFound = true;
                     System.out.println("Sale del segundo try");
                 }catch (Exception e){
-                    System.out.println("Espera 5 seg");
-                    UtilWeb.waitForSeconds(5);
+                    System.out.println("Espera 4 seg");
+                    UtilWeb.waitForSeconds(4);
                     contador++;
                     System.out.println(contador+" vez");
                 }
