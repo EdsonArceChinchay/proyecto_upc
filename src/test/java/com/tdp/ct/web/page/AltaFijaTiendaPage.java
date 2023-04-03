@@ -250,12 +250,11 @@ public class AltaFijaTiendaPage extends WebBase {
 //        UtilWeb.waitForSeconds(20);
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
         System.out.println("Entra al primer try");
         try {
             boolean buttonFound = false;
             int contador = 0;
-            int reintentoBucles = 4;
+            int reintentoBucles = 2;
             while (!buttonFound && contador <= reintentoBucles ){
                 System.out.println("Entra al while");
                 System.out.println("Entra al segundo try");
@@ -269,7 +268,6 @@ public class AltaFijaTiendaPage extends WebBase {
                 }catch (Exception e){
                     System.out.println("Espera 5 seg");
                     UtilWeb.waitForSeconds(5);
-                    modalError(2, btnReintentarFinal, "Click al elemento Reitentar");
                     contador++;
                     System.out.println(contador+" vez");
                 }
