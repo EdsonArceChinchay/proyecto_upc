@@ -105,5 +105,8 @@ public class AltaFijaTiendaStep {
     @ScreenShotBefore
     public void clickBotonValidarRepreLegal() {page.altaFijaTiendaPage().clickValidarRepreLegal();
     }
+
+    public void clickBotonRegistrarVenta() {page.altaFijaTiendaPage().clickBotonRegistrarVenta();
+    }
 }
 
