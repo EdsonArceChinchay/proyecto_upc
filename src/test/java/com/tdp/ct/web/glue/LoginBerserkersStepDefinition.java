@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Objects;
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
@@ -36,12 +38,13 @@ public class LoginBerserkersStepDefinition {
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
         System.out.println(env);
-        String urlMovistar = urldevMovistar;
-        if(env.compareTo("cert")==0){
-            urlMovistar = urlqaMovistar;
-        }
-        else if (env.compareTo("prod")==0) {
-            urlMovistar = urlprodMovistar;
+        String urlMovistar = urlqaMovistar;
+        if(Objects.nonNull(env)){
+            if (env.compareTo("dev") == 0) {
+                urlMovistar = urldevMovistar;
+            } else if (env.compareTo("prod") == 0) {
+                urlMovistar = urlprodMovistar;
+            }
         }
         manager.navigateTo(urlMovistar);
         Thread.sleep(3000);
