@@ -27,7 +27,7 @@ url:
   qa:
     movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
   dev:
-      movistar: https://wa-berserkers-devmesa.azurewebsites.net/parque
+      movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
   prod:
     movistar: https://ventas.movistar.com.pe/inicio
 
