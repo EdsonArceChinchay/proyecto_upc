@@ -5,7 +5,7 @@
 webdriver:
   browser: chrome #chrome, safari, firefox, edge
   path: drivers/chrome/chromedriver.exe
-  headless: on
+  headless: off
   headless.dimension: --window-size=1400,600
   pageload: EAGER
 
@@ -24,7 +24,12 @@ jxray:
 ### URL - SITES ###
 ###################
 url:
-  movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
+  qa:
+    movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
+  dev:
+      movistar: https://wa-berserkers-devmesa.azurewebsites.net/parque
+  prod:
+    movistar: https://ventas.movistar.com.pe/inicio
 
 
 ###################

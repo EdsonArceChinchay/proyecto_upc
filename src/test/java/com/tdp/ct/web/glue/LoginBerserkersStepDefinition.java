@@ -17,8 +17,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
-    @Value("${url.movistar}")
-    private String urlMovistar;
+    @Value("${url.prod.movistar}")
+    private String urlprodMovistar;
+
+    @Value("${url.dev.movistar}")
+    private String urldevMovistar;
+
+    @Value("${url.qa.movistar}")
+    private String urlqaMovistar;
 
     @Autowired
     private LoginBerserkerStep loginBerserkerStep;
@@ -28,6 +34,15 @@ public class LoginBerserkersStepDefinition {
 
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
+        String env = System.getProperty("environment");
+        System.out.println(env);
+        String urlMovistar = urldevMovistar;
+        if(env.compareTo("cert")==0){
+            urlMovistar = urlqaMovistar;
+        }
+        else if (env.compareTo("prod")==0) {
+            urlMovistar = urlprodMovistar;
+        }
         manager.navigateTo(urlMovistar);
         Thread.sleep(3000);
     }
