@@ -77,4 +77,4 @@
 	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	  Ejemplos:
 		| tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |  svainternet           |  svarepetidor            |
-		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 150 MBPS |  PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |
+		| usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 100 MBPS |  PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |
