@@ -52,7 +52,7 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 	Y        selecciono tipo de oferta
 	Y        selecciono un plan Movistar Total "<nombrePlan>"
 	#Y        valido el detalle de la seleccion
-	#Y        doy click en agregar "<sva>"
+	Y        doy click en agregar "<sva>"
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
@@ -80,7 +80,7 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y        presiono el boton Registrar venta
+	Y        presiono en el boton de Registrar Venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoOferta     | nombrePlan       | correo           |

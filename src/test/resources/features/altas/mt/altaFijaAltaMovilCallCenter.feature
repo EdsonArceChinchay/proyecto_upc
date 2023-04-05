@@ -67,9 +67,10 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | <nombreMadre> | <nombrePadre> | <distritoNac> |
+    Y        doy click en el boton confirmar validacion
+    #Y        ingreso los datos solicitados para la validacion del cliente
+    #  | nombreMadre   | nombrePadre   | distritoNac   |
+    #  | <nombreMadre> | <nombrePadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

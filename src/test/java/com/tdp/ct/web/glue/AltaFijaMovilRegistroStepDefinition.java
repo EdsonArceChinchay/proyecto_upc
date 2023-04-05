@@ -230,5 +230,9 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     }
 
+    @Y("doy click en el boton confirmar validacion")
+    public void doyClickEnElBotonConfirmarValidacion() {
+        altaFijaMovilRegistroStep.clicConfirmarCliente();
+    }
 
 }

@@ -71,6 +71,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        boolean existeLista = depaList.getSize().getHeight() != 0;
+        System.out.println("Existe Lista de Departamento: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+        }
         click(depaList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(depaList);
@@ -84,6 +89,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         boolean existeLista = provinciaList.getSize().getHeight() != 0;
         System.out.println("Existe Lista de Provincia: " + existeLista);
         if (!existeLista){
+            driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
         }
         click(provinciaList);

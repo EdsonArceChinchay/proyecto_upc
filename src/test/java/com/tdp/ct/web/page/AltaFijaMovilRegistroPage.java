@@ -238,7 +238,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonValidarIdentidad);
         waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
@@ -619,11 +619,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicConfirmarCliente() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void datosClienteValidado() {
