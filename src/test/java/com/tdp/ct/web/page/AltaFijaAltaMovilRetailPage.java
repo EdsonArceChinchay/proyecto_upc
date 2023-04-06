@@ -28,7 +28,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     private String inputCorreo;
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement AnadirEquipos;
-    private String DEPARTAMENTO = "1501";
+    private String DEPARTAMENTO = "15";
+    private String PROVINCIA = "1501";
 
 
     public void altaHogar(){
@@ -101,6 +102,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        boolean existeLista = distritoList.getSize().getHeight() != 0;
+        System.out.println("Existe Lista de Distrito: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            seleccionarProvincia(PROVINCIA);
+        }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
