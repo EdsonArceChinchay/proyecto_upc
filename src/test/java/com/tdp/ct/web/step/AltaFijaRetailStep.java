@@ -55,7 +55,7 @@ public class AltaFijaRetailStep {
         page.altaMovilPrepagoSoloChipTiendaPage().selecEstadoCivil(estadoCivil);
 
         scenario.printFullView();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
 
         page.altaMovilPrepagoSoloChipTiendaPage().clickConfirmar();
         UtilWeb.waitForSeconds(10);
