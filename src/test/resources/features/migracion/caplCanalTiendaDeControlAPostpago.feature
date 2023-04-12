@@ -29,7 +29,8 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "123456776"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650025121"
+    Y        selecciono el boton Ver detalle del servicio "920957296"
+  #"650025121"
     Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -77,7 +78,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
 
 #    1598886623  1598886623

@@ -1,4 +1,19 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT102
+##GDAP: GDAP-963
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
 
 Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail

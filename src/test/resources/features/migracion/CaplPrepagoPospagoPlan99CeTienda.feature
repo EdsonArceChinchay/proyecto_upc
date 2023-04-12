@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT058
-##GDAP:
+##GDAP: GDAP-606
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
-##FECMOD: 24/03/2023
+##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago

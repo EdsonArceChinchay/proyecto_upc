@@ -238,7 +238,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonValidarIdentidad);
         waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
@@ -288,10 +288,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        modalError(5, btnReintentar, "Click al elemento Reintentar");
 
         boolean buttonFound = false;
         int contador = 0;
@@ -619,11 +619,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicConfirmarCliente() {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void datosClienteValidado() {
@@ -696,13 +696,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        waitUntilElementIsVisible(scrollorden, 600);
+        waitUntilElementIsVisible(scrollorden, 150);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
-        existe = waitUntilElementIsVisible(msjExitoso, 600).isDisplayed();
+        existe = waitUntilElementIsVisible(msjExitoso, 150).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

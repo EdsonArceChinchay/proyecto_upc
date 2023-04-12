@@ -1,6 +1,20 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT071
+##GDAP: GDAP-960
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
 @BERSERKERS @DoneDevOps
-Característica: AT-DT071_Migracion de Mono a Duo + sva por el canal Tienda
+Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

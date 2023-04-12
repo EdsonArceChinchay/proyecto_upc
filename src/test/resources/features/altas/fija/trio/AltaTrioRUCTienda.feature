@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT019
-##GDAP:
+##GDAP: GDAP-965
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
-##FECMOD: 24/03/2023
+##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico

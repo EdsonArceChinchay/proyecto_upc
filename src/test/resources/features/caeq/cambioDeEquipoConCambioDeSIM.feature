@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT049
+##GDAP: GDAP-590
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WEB

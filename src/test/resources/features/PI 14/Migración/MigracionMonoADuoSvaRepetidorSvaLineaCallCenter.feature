@@ -1,5 +1,19 @@
  #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-988
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
  Característica: Migracion de Mono a DUO por el canal Call Retail CE
 
    Antecedentes:

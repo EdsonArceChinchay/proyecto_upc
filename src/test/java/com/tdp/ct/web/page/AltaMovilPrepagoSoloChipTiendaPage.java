@@ -107,17 +107,17 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
     }
 
     public void selecEstadoCivil(String estadoCivil) {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(4);
         WebElement estadoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(estadoList);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(4);
 
         SearchContext contextEstado = sh().getContext(estadoList).findElement(By.cssSelector("div > div:nth-child(2) > ul"));
         List<WebElement> lista = contextEstado.findElements(By.className("mdc-list-item"));
         for (WebElement element : lista) {
             if (element.getText().contains(estadoCivil)) {
-                UtilWeb.waitForSeconds(1);
-                click(element, 2);
+                UtilWeb.waitForSeconds(2);
+                click(element, 3);
             }
         }
     }

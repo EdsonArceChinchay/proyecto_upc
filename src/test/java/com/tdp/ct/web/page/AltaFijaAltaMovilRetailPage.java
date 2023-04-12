@@ -14,18 +14,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
-
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
-
-
-    //*[contains(text(),'Mostrar ofertas')] --antiguo
-    //@FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
-
-
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
 
@@ -34,10 +26,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
     private String inputCorreo;
-
-
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement AnadirEquipos;
+    private String DEPARTAMENTO = "15";
+    private String PROVINCIA = "1501";
 
 
     public void altaHogar(){
@@ -80,6 +72,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        boolean existeLista = depaList.getSize().getHeight() != 0;
+        System.out.println("Existe Lista de Departamento: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+        }
         click(depaList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(depaList);
@@ -88,7 +85,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void seleccionarProvincia(String tipoProvincia){
+        System.out.println(DEPARTAMENTO);
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        boolean existeLista = provinciaList.getSize().getHeight() != 0;
+        System.out.println("Existe Lista de Provincia: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+        }
         click(provinciaList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(provinciaList);
@@ -98,6 +102,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        boolean existeLista = distritoList.getSize().getHeight() != 0;
+        System.out.println("Existe Lista de Distrito: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            seleccionarProvincia(PROVINCIA);
+        }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
