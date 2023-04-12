@@ -74,5 +74,3 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | RUC           | 20514559911 | CHIFA HERMANOS S.A.C.      | 3   | DNI             | 75447585       |
 #      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                  | RUC           | 20450685446 | ANDEAN SOUTH EIRL          | 2   | CE              | 6172834231     |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TALARA                       | RUC           | 20409258566 | INVERSIONES PAPER E.I.R.L. | 1   | DNI             | 75447441       |
-
-

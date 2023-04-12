@@ -110,6 +110,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void conjuntoHabitacional(String hab) {
         UtilWeb.waitForSeconds(2);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
+        js().scrollElementTop(ConjHab);
         click(ConjHab);
 //        clear(ConjHab);
         type(ConjHab, hab);
