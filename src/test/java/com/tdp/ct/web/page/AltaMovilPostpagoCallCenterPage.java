@@ -36,6 +36,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='button-filter-section']//button")
     protected List<WebElement> listPlan;
 
+    @FindBy(xpath = "//div[@class='card-option-ofert-content']")
+    protected List<WebElement> listaOfertas;
+
 /*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
     protected WebElement inputText;*/
 
@@ -129,6 +132,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     //RV Plan Ilimitado Mi Movistar S/149.9
     public void seleccionarPlan(String tipoPlan) {
+        System.out.println("cantidad de la lista : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
         String elemento = "//div[contains(text(),'" + tipoPlan + "')]/../../../div";
         WebElement elementPlan = find().getElementByXPath(elemento);
@@ -171,7 +175,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 //click(elements, 3);
                 break;
         }
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
     }
 
 
@@ -248,6 +252,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido() {
+        UtilWeb.waitForSeconds(30);
         click(btnDetallePedido);
         UtilWeb.waitForSeconds(2);//1
     }

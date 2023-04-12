@@ -68,7 +68,8 @@ Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y        valido que se muestre el detalle del pedido
+	Y 		visualizo en pantalla el mensaje de exito de la venta generada
+	#Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                        | bloque | tipoPlan | svaInternet           |

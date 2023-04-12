@@ -179,7 +179,7 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
 
     }
 
@@ -247,7 +247,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-//        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         System.out.println("Entra al primer try");

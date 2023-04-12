@@ -110,6 +110,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void conjuntoHabitacional(String hab) {
         UtilWeb.waitForSeconds(2);
         WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
+        js().scrollElementTop(ConjHab);
         click(ConjHab);
 //        clear(ConjHab);
         type(ConjHab, hab);
@@ -256,9 +257,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(15, btnReintentar, "Click al elemento Reintentar");
-        modalError(15, btnReintentar, "Click al elemento Reintentar");
-        modalError(15, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
