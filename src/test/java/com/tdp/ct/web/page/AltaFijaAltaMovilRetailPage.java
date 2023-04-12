@@ -2,12 +2,10 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.logging.Level;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
@@ -30,7 +28,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement AnadirEquipos;
     private String DEPARTAMENTO = "15";
     private String PROVINCIA = "1501";
-
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
+    protected WebElement btnEntendido;
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
@@ -72,10 +71,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
-        boolean existeLista = depaList.getSize().getHeight() != 0;
+        boolean existeLista = depaList.isEnabled();
         System.out.println("Existe Lista de Departamento: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
+            depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+            UtilWeb.waitForSeconds(4);
         }
         click(depaList);
         UtilWeb.waitForSeconds(2);
@@ -85,13 +86,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void seleccionarProvincia(String tipoProvincia){
-        System.out.println(DEPARTAMENTO);
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
-        boolean existeLista = provinciaList.getSize().getHeight() != 0;
+        boolean existeLista = provinciaList.isEnabled();
         System.out.println("Existe Lista de Provincia: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
+            provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         }
         click(provinciaList);
         UtilWeb.waitForSeconds(2);
@@ -102,12 +103,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
-        boolean existeLista = distritoList.getSize().getHeight() != 0;
+        boolean existeLista = distritoList.isEnabled();
         System.out.println("Existe Lista de Distrito: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
             seleccionarProvincia(PROVINCIA);
+            distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
@@ -129,11 +131,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-
         waitUntilElementIsVisible(btnConsulta,8);
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
+        reintarPopPup();
+        reintarPopPup();
+        reintarPopPup();
     }
 
     public void writeManzana(String manzana){
@@ -176,7 +180,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void consultaCobertura(){
-
         click(cobertura);
         UtilWeb.waitForSeconds(3);
     }
@@ -197,10 +200,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
-
     public void reintarPopPup(){
         boolean btnReintentarboolean;
+        boolean modalExiste;
         btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
         if (btnReintentarboolean) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
             WebElement btnReintentar= find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
@@ -208,7 +212,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             btnReintentar.click();
             UtilWeb.waitForSeconds(3);
         }
-
+        if (modalExiste){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
+        }
     }
 
 }

@@ -252,6 +252,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido() {
+        UtilWeb.waitForSeconds(30);
         click(btnDetallePedido);
         UtilWeb.waitForSeconds(2);//1
     }

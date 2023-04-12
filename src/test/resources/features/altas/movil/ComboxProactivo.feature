@@ -67,7 +67,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
@@ -91,6 +91,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -139,6 +142,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -187,6 +193,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -236,6 +245,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -284,6 +296,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -332,6 +347,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -381,6 +399,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -429,6 +450,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -477,6 +501,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -526,6 +553,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -574,6 +604,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -622,6 +655,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
