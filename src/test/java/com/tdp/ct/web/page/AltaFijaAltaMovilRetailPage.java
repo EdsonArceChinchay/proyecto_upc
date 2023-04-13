@@ -2,30 +2,20 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.logging.Level;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
-
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
-
-
-    //*[contains(text(),'Mostrar ofertas')] --antiguo
-    //@FindBy(xpath = "//div[@class=\"show-offerts\"]/button")
-
-
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
 
@@ -34,11 +24,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
     private String inputCorreo;
-
-
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement AnadirEquipos;
-
+    private String DEPARTAMENTO = "15";
+    private String PROVINCIA = "1501";
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
+    protected WebElement btnEntendido;
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
@@ -50,6 +41,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void altaMovil(){
+        UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
         waitUntilElementIsClickable(btnMovil,15);//30
         click(btnMovil);
@@ -80,6 +72,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        boolean existeLista = depaList.isEnabled();
+        System.out.println(depaList);
+        System.out.println("Existe Lista de Departamento: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+            UtilWeb.waitForSeconds(4);
+        }
         click(depaList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(depaList);
@@ -89,6 +89,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void seleccionarProvincia(String tipoProvincia){
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        boolean existeLista = provinciaList.isEnabled();
+        System.out.println(provinciaList);
+        System.out.println("Existe Lista de Provincia: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        }
         click(provinciaList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(provinciaList);
@@ -98,6 +106,15 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        boolean existeLista = distritoList.isEnabled();
+        System.out.println(distritoList);
+        System.out.println("Existe Lista de Distrito: " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            seleccionarProvincia(PROVINCIA);
+            distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
@@ -118,11 +135,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-
         waitUntilElementIsVisible(btnConsulta,8);
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
+        reintarPopPup();
+        reintarPopPup();
     }
 
     public void writeManzana(String manzana){
@@ -165,7 +183,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void consultaCobertura(){
-
         click(cobertura);
         UtilWeb.waitForSeconds(3);
     }
@@ -186,10 +203,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
-
     public void reintarPopPup(){
         boolean btnReintentarboolean;
+        boolean modalExiste;
         btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
         if (btnReintentarboolean) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
             WebElement btnReintentar= find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
@@ -197,7 +215,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             btnReintentar.click();
             UtilWeb.waitForSeconds(3);
         }
-
+        if (modalExiste){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
+        }
     }
 
 }

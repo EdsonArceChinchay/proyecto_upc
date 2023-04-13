@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT017
+##GDAP: GDAP-979
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP
 
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda

@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT045
+##GDAP: GDAP-713
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: AT-DT045_Caeq Mas Capl por call center

@@ -1,5 +1,19 @@
 
 #language: es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT060
+##GDAP: GDAP-727
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
 

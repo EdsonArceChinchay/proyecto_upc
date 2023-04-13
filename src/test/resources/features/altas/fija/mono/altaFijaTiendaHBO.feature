@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT010
+##GDAP: GDAP-997
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP @LocalDrop
 
 Característica: AT-DT010_Alta fija por tienda mas Hbo

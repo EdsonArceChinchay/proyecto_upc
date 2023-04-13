@@ -1,4 +1,19 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT061
+##GDAP: GDAP-604
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF @DROP
 
 Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
@@ -44,4 +59,4 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 |

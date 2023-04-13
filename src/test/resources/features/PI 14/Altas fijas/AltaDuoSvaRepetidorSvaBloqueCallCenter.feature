@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT090
+##GDAP: GDAP-1136
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
 Característica: AT-DT090_Alta Duo Sva Repetidor + Sva Bloque Call Center

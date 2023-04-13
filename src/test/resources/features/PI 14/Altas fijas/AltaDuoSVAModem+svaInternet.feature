@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT089
+##GDAP: GDAP-1107
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
@@ -54,7 +68,8 @@ Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y        valido que se muestre el detalle del pedido
+	Y 		visualizo en pantalla el mensaje de exito de la venta generada
+	#Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                        | bloque | tipoPlan | svaInternet           |

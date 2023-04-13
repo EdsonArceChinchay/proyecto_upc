@@ -1,4 +1,18 @@
 #language: es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT109
+##GDAP: GDAP-728
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
   Característica: AT-DT109_Flujo de sva en el canal Call Center

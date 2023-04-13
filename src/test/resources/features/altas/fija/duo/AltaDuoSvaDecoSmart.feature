@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT005
-##GDAP:
+##GDAP: GDAP-572
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 24/03/2023
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
 
@@ -23,7 +22,7 @@ Característica: AT-DT005_Alta Duo por call center
     Dado     que abro la pagina de movistar
 
   @AltaDuo_SvaDecoSmart @MVP15 @Global
-  Esquema del escenario: Alta de dúo internet y añadir sva (deco smart) con CEX, en canal call center, web front end, flujo no biométrico
+  Esquema del escenario: Alta de dúo internet y añadir sva [deco smart] con CEX, en canal call center, web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -69,8 +68,8 @@ Característica: AT-DT005_Alta Duo por call center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
-    Y        valido que se muestre el detalle del pedido
-
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                                |

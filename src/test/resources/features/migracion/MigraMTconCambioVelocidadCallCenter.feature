@@ -1,4 +1,19 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT075
+##GDAP: GDAP-603
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
 

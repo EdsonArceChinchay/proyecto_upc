@@ -1,4 +1,18 @@
-#language: es
+#language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT
+##GDAP: GDAP-1167
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Center
 

@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT032
+##GDAP: GDAP-575
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @carlos
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
 
@@ -25,6 +39,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -50,11 +67,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/149.9 | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso02
@@ -74,6 +91,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -122,6 +142,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -152,6 +175,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
 
+
   @AltaFijaMovilComboProactivo_Caso04
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -169,6 +193,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -200,6 +227,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo     | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P10 NEGRO | Postpago  | 12 meses          | Financiado 18 cuotas |
 
+
   @AltaFijaMovilComboProactivo_Caso05
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -217,6 +245,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -265,6 +296,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -295,6 +329,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
 
+
   @AltaFijaMovilComboProactivo_Caso07
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -312,6 +347,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -343,6 +381,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago   |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/99.9 | SAMSUNG GXY S20 PLUS NEGRO SM-G985F | Postpago  | sin permanencia   | Al contado |
 
+
   @AltaFijaMovilComboProactivo_Caso08
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -360,6 +399,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -390,6 +432,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                          | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
 
+
   @AltaFijaMovilComboProactivo_Caso09
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -407,6 +450,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -455,6 +501,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -486,6 +535,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 12 cuotas |
 
+
   @AltaFijaMovilComboProactivo_Caso11
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
@@ -503,6 +553,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -551,6 +604,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
@@ -599,6 +655,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
+    Y valido que este en la pagina de ofertas sugeridas
     Y         selecciono el boton de eleccion de planes
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"

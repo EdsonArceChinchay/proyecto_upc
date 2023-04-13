@@ -1,5 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP @LocalDrop
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT007
+##GDAP: GDAP-576
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP
 
 Característica: AT-DT007_Alta Fija Mono Internet por Retail
 

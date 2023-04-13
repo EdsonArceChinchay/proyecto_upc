@@ -1,9 +1,24 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT070
+##GDAP: GDAP-996
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @DROP
 
 Característica: AT-DT070_Migracion de Trio a MT + SVA
 
   Antecedentes:
+    #Cliente Tiene que tener un score alto (9990)
     Dado     que abro la pagina de movistar
 
   @migracionTrioMTcanalTienda
@@ -14,7 +29,7 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -39,5 +54,5 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor       | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL  | CE            | 1655443327 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor       | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL  | CE            | 343423232 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |

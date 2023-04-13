@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT054
-##GDAP:
+##GDAP: GDAP-599
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Edson Arce
-##FECMOD: 24/03/2023
+##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA

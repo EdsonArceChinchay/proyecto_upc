@@ -1,18 +1,17 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT019
-##GDAP:
+##GDAP: GDAP-965
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
-##FECMOD: 24/03/2023
+##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
@@ -85,8 +84,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento |documento|nro|tipoDocRepLegal|numDocRepLegal|cliente   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan  |tipoValidacion|plan|
-      #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@ | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | Bienvenid@ | RUC            | 20547284501     |1| DNI | 75447652|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|
-
-
+      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente           | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                               |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | Bienvenid@   | RUC           | 20547284501 | 1   | DNI             | 75447652       | ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS |
+      #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|

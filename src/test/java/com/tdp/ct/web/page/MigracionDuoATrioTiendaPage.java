@@ -120,13 +120,14 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         modalError(20,btnReintentar,"Click al elemento Reitentar");
         modalError(20,btnReintentar,"Click al elemento Reitentar");
         modalError(20,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(30);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
     public void doyClickEnEnElBoton(String btn) {
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         modalError(10,btnReintentar,"Click al elemento Reitentar");
         String btnEsperado = btn.toUpperCase().trim();

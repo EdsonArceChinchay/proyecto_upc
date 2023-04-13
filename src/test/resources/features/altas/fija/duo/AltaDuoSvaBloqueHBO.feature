@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT004
+##GDAP: GDAP-1094
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
 Característica: AT-DT004_Alta Duo SVA HBO por call center
@@ -48,17 +62,17 @@ Característica: AT-DT004_Alta Duo SVA HBO por call center
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "Angel.mf@gmail.com"
 	Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
-#	Y        doy click en datos del cliente
-#	Y        completo los datos solicitados
-#	  | fechaNac   | nacionalidad | estado_civil |
-#	  | 12/12/1980 | Alemania     | Casado       |
+	Y        doy click en datos del cliente
+	Y        completo los datos solicitados
+	  | fechaNac   | nacionalidad | estado_civil |
+	  | 12/12/1980 | Alemania     | Casado       |
 	Y        doy clic para validar contrato Movil
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
 	  Y        presiono el boton Registrar venta
-	Y        valido que se muestre el detalle del pedido
-
+#	Y        valido que se muestre el detalle del pedido
+	  Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                        | bloque | tipoPlan | svaInternet           |bloque|
 	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo     | PACK ANTIVIRUS MCAFEE |HBO|

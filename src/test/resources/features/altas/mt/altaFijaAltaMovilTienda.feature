@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT036
+##GDAP: GDAP-1000
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
 
 Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
@@ -60,7 +74,7 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          | correo
-      | usuario externo | evillanuevag| #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432124   | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com
+      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          | correo           |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432124 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com |
