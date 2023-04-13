@@ -41,6 +41,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void altaMovil(){
+        UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
         waitUntilElementIsClickable(btnMovil,15);//30
         click(btnMovil);
@@ -72,6 +73,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         boolean existeLista = depaList.isEnabled();
+        System.out.println(depaList);
         System.out.println("Existe Lista de Departamento: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
@@ -88,6 +90,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarProvincia(String tipoProvincia){
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         boolean existeLista = provinciaList.isEnabled();
+        System.out.println(provinciaList);
         System.out.println("Existe Lista de Provincia: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
@@ -104,6 +107,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         boolean existeLista = distritoList.isEnabled();
+        System.out.println(distritoList);
         System.out.println("Existe Lista de Distrito: " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
@@ -135,7 +139,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
-        reintarPopPup();
         reintarPopPup();
         reintarPopPup();
     }
