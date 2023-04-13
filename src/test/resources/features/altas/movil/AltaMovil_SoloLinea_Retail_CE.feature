@@ -56,11 +56,10 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
-    Y        presiono el boton descargar contrato
+  #  Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
- #   Entonces visualizo en pantalla el mensaje de exito de la venta generada
+   Entonces visualizo en pantalla el mensaje de exito de la venta generada
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
+      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento   | nombrePlan                              |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
-
