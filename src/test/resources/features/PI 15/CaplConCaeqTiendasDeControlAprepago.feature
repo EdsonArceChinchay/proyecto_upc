@@ -1,8 +1,20 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+##APP: DITO
+##MODULO:
+##CREADOR: PATRICIA CABELLO
+##CODIGO: AT-DT050
+##GDAP: GDAP-1380
+##SPRINT CREADO: SP1
+##FUNCIONALIDAD: REALIZAR UN CAMBIO DE PLAN Y CAMBIO DE EQUIPO A UN CE CON MOVIL AL CONTADO  Y PASARLO A PREPAGO
+##FRECUENCIA: NO ESPECIFICA
+##TAG : @DITO
+##DATA: REUSABLE
+##ENCARGADO: Patricia
+##FECMOD: 13/04/2023
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15SP1
 Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
-  @CaplconCaeqTienda
+  @CaplconCaeqTiendaControlAprepago
   Esquema del escenario: CAPL con CAEQ por canal Tienda de un Control a Prepago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -38,4 +50,4 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
     Ejemplos:
       | tipoUsuario     | userName     | password     |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ |
+      | usuario externo | evillanuevag | #o2Wy23oA1458|
