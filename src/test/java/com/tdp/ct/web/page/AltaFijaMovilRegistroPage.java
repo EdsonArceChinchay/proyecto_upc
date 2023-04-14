@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
@@ -161,11 +163,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonIniciarRegistro, 20);
-        click(buttonIniciarRegistro, 5);
+        //waitUntilElementIsVisible(buttonIniciarRegistro, 20);
+        esperaProgresiva(4,5,buttonIniciarRegistro);
+        click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(15);//
+        UtilWeb.waitForSeconds(5);//
     }
 
     public boolean validarPantallaAgendamiento() {
@@ -176,8 +179,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
-        UtilWeb.waitForSeconds(1);
+        //boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
+        //UtilWeb.waitForSeconds(1);
+        esperaProgresiva(12,5,labelAgendamiento);
+        boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
     }
@@ -292,7 +297,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(8, btnReintentar, "Click al elemento Reintentar");
         modalError(8, btnReintentar, "Click al elemento Reintentar");
         modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
 
         boolean buttonFound = false;
         int contador = 0;
@@ -697,7 +702,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        waitUntilElementIsVisible(scrollorden, 120);
+        //waitUntilElementIsVisible(scrollorden, 120);
+        esperaProgresiva(10,20,scrollorden);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         modalError(3, btnReintentar, "Click al elemento Reintentar");

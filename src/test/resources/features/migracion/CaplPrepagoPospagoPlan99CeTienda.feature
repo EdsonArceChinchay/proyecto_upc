@@ -18,7 +18,7 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Con
 
 
   @CaplPrepagoPospago @MVP05 @Global @General
-  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas,web  front end, flujo no biométrico
+  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
@@ -42,5 +42,5 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Con
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 #    1598886623

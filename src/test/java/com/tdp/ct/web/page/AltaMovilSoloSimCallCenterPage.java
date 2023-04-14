@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
@@ -52,7 +54,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(ofertasSugeridas, 200);//300
+        esperaProgresiva(20,10,ofertasSugeridas);
+        //waitUntilElementIsVisible(ofertasSugeridas, 200);//300
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {

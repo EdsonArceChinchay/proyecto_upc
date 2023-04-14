@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static java.awt.event.KeyEvent.*;
 
 public class HomePage extends WebBase {
@@ -76,10 +77,12 @@ public class HomePage extends WebBase {
 
     }
     public void clickBotonConsultar(){
-        waitUntilElementIsVisible(btnconsultar,10);
+        //waitUntilElementIsVisible(btnconsultar,10);
+        esperaProgresiva(3,5,btnconsultar);
         click(btnconsultar);
-        waitUntilElementIsVisible(boton01,20);
-        UtilWeb.waitForSeconds(10);//10
+        //waitUntilElementIsVisible(boton01,20);
+        esperaProgresiva(3,5,boton01);
+        UtilWeb.waitForSeconds(5);//10
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {

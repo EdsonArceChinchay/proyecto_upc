@@ -9,6 +9,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//app-root/app-delivery/div[2]/app-steps/div[1]/tdp-st-card[2]/div/div[2]/form/div[12]/div/button")
@@ -268,11 +270,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void oferta() {
-        UtilWeb.waitForSeconds(10);//10
+        //UtilWeb.waitForSeconds(10);//10
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsClickable(oferta, 100).click();
+        esperaProgresiva(10,10,oferta);
+        click(oferta);
+        //waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//
     }
 

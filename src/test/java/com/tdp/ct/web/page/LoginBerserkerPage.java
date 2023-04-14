@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class LoginBerserkerPage extends WebBase {
 
     @FindBy(css = ".welcome-container .content .title-desc button")
@@ -81,9 +83,12 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-        UtilWeb.waitForSeconds(8);//5
+/*        UtilWeb.waitForSeconds(8);//5
         click(btnContinuar);
-        waitUntilElementIsVisible(msgHome, 100);
+        waitUntilElementIsVisible(msgHome, 100);*/
+        esperaProgresiva(6,5,btnContinuar);
+        click(btnContinuar);
+        esperaProgresiva(10,10,msgHome);
     }
 
     public void clickBtnContinuar() {
