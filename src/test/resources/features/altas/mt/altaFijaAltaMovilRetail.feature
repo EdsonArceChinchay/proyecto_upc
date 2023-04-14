@@ -77,6 +77,6 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000009111 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
+      | tipoUsuario     | userName   | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo |evillanuevag| $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000009111 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
 
