@@ -127,9 +127,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void doyClickEnEnElBoton(String btn) {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":

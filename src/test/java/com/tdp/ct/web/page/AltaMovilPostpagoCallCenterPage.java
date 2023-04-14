@@ -9,11 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
-
 
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
@@ -63,6 +63,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
 
+    @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
+    protected WebElement btnRight;
+
     public void BtonOpciones() {
         waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
@@ -106,8 +109,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         }
     }
 
-
-
     public void BuscarEquipo(String buscarE) {
         WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright='search']");
         click(Input);
@@ -126,25 +127,68 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         js().scrollElementTop(lblSeleccionarOferta);
         waitUntilElementIsVisible(lblSeleccionarOferta, 40);//10
         click(lblSeleccionarOferta, 10);
-
     }
-
 
     //RV Plan Ilimitado Mi Movistar S/149.9
     public void seleccionarPlan(String tipoPlan) {
-        System.out.println("cantidad de la lista : " + listaOfertas.size());
+        /*System.out.println("cantidad de la lista : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
         String elemento = "//div[contains(text(),'" + tipoPlan + "')]/../../../div";
         WebElement elementPlan = find().getElementByXPath(elemento);
         waitUntilElementIsVisible(elementPlan, 20).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", tipoPlan);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", tipoPlan);*/
+        UtilWeb.waitForSeconds(4);
+        String ofertaEsperada = tipoPlan.trim().toUpperCase();
+        System.out.println("cantidad de la lista : " + listaOfertas.size());
+        UtilWeb.waitForSeconds(5);
+
+        for (int i = 0; i < 2; i++) {
+            boolean elementoExistente;
+            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            if (elementoExistente) {
+                System.out.println("dio click");
+                click(btnRight);
+                UtilWeb.waitForSeconds(3);
+            }
+        }
+
+        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        UtilWeb.waitForSeconds(3);
+        boolean encontroElemento = false;
+
+        for (int i = 0; i < listaOfertas.size(); i++) {
+            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
+            System.out.println("Entro al for de las lista de ofertas");
+            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            if (ofertaObtenida.contains(ofertaEsperada)) {
+                encontroElemento = true;
+                UtilWeb.waitForSeconds(2);
+                click(listaOfertas.get(i));
+                break;
+            }
+            if (i == 2 || i == 5 || i == 8) {
+                boolean elementoExistente;
+                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                if (elementoExistente) {
+                    btnRight.click();
+                    UtilWeb.waitForSeconds(1);
+                }
+            }
+        }
+
+        if(!encontroElemento && listaOfertas.size()>0){
+            System.out.println("No encontro elemento en la lista");
+            UtilWeb.waitForSeconds(2);
+            int cont = listaOfertas.size() - 1;
+            click(listaOfertas.get(cont));
+        }
+        UtilWeb.waitForSeconds(1);
     }
 
     public void doyClickEnElBotonSeleccionar() {
         js().scrollElementTop(btnSeleccionar);
         waitUntilElementIsVisible(btnSeleccionar, 5);
         click(btnSeleccionar, 10);
-
     }
 
     public void doyClickEnIniciarRegistro() {
@@ -155,11 +199,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsClickable(btnIniciar,150).click();
        // System.out.println("paso por aqui" + btnIniciar.getText());
         clickBtnCerrarModalError(btnIniciar);
-
     }
 
     public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
-
         boolean existe = waitUntilElementIsVisible(titleDelivery, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de delivery de la linea nueva", existe);
@@ -178,7 +220,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(20);
     }
 
-
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
@@ -193,7 +234,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
         }
         UtilWeb.waitForSeconds(1);
-
     }
 
     public void seleccionamosElHorarioDeEntrega(String horario) {
@@ -209,7 +249,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 //                click(elements,30);
 //            }
 //        }
-
     }
 
     public void ingresarFechaNac(String fechaNac) {
@@ -235,7 +274,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionarEstadoCivil(String estadoCivil) {
-
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
         System.out.println("Dio click en lista de estado");
@@ -268,8 +306,5 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             click(metodoRepedito);
         }
     }
+
 }
-
-
-
-

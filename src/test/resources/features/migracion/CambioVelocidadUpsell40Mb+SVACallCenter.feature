@@ -18,7 +18,7 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
 
 
   @CambioVelocidadDuoSvaWifi @MVP02 @Global @General
-  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
+  Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA [repetidor wifi], CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
