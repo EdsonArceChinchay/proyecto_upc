@@ -123,8 +123,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(btnConsultarCobertura, 150).click();//100
-        UtilWeb.waitForSeconds(30);
+        waitUntilElementIsVisible(btnConsultarCobertura, 100).click();//100
+        UtilWeb.waitForSeconds(20);
     }
 
     public void btnConfirmarUbicacion() {
@@ -191,9 +191,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -257,10 +257,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
+        //modalError(7, btnReintentar, "Click al elemento Reintentar");
         UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -269,9 +269,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         UtilWeb.waitForSeconds(10);//10
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
         waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//
     }

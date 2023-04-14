@@ -184,10 +184,10 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void botonConfirmarAgendamiento() {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -201,6 +201,7 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("paso aqui 2");
         } else {
             click(buttonConfirmar);
+            System.out.println("paso aqui 3");
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(5);
@@ -247,7 +248,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
@@ -255,7 +256,7 @@ public class AltaFijaTiendaPage extends WebBase {
         try {
             boolean buttonFound = false;
             int contador = 0;
-            int reintentoBucles = 2;
+            int reintentoBucles = 3;
             while (!buttonFound && contador <= reintentoBucles ){
                 System.out.println("Entra al while");
                 System.out.println("Entra al segundo try");
@@ -291,7 +292,6 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("Salió del primer try");
             System.out.println("Salta el registrar");
         }
-
 
     }
 
@@ -392,7 +392,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void clickValidarRepreLegal() {
         js().scrollElementTop(btnValidaLegal);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         waitUntilElementIsClickable(btnValidaLegal,30);
         click(btnValidaLegal);
         UtilWeb.waitForSeconds(4);

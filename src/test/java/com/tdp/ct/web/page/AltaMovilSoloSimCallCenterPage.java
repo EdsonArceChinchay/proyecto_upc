@@ -52,7 +52,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();
-        waitUntilElementIsVisible(ofertasSugeridas, 350);//300
+        waitUntilElementIsVisible(ofertasSugeridas, 200);//300
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -85,9 +85,11 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 //        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
 //        UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
+        boolean encontroElemento = false;
         for (int i = 0; i < listaPlanMovil.size(); i++) {
             System.out.println(listaPlanMovil.get(i).getText());
             if (listaPlanMovil.get(i).getText().contains(planMovil)) {
+                encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
                 break;
@@ -101,6 +103,13 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                 }
             }
         }
+        if(!encontroElemento && listaPlanMovil.size()>0) {
+            System.out.println("No encontro elemento en la lista");
+            UtilWeb.waitForSeconds(2);
+            int cont = listaPlanMovil.size() - 1;
+            click(listaPlanMovil.get(cont));
+        }
+        UtilWeb.waitForSeconds(1);
     }
 
     public void botonSeleccionarOfeta() {

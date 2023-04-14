@@ -41,6 +41,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void altaMovil(){
+        UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
         waitUntilElementIsClickable(btnMovil,15);//30
         click(btnMovil);
@@ -72,7 +73,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         boolean existeLista = depaList.isEnabled();
-        System.out.println("Existe Lista de Departamento: " + existeLista);
+        System.out.println("Existe Lista de" + depaList.getText() + ": " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
             depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
@@ -88,7 +89,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarProvincia(String tipoProvincia){
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         boolean existeLista = provinciaList.isEnabled();
-        System.out.println("Existe Lista de Provincia: " + existeLista);
+        System.out.println("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
@@ -104,7 +105,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         boolean existeLista = distritoList.isEnabled();
-        System.out.println("Existe Lista de Distrito: " + existeLista);
+        System.out.println("Existe Lista de" + distritoList.getText() + ": " + existeLista);
         if (!existeLista){
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
@@ -131,11 +132,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-        waitUntilElementIsVisible(btnConsulta,8);
         UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(btnConsulta,5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
-        reintarPopPup();
         reintarPopPup();
         reintarPopPup();
     }
