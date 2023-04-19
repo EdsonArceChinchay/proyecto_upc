@@ -34,8 +34,8 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName              |
-      | 12 meses    | Al Contado | ZTE BLADE A5 2020 NEGRO |
+      | permanencia | tipoPago   | equipoName                    |
+      | 12 meses    | Al Contado | XIAOMI REDMI NOTE 9 PRO VERDE |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
