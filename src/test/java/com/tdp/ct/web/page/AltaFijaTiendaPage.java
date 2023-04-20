@@ -75,7 +75,7 @@ public class AltaFijaTiendaPage extends WebBase {
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
@@ -85,7 +85,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(3);
             }
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
@@ -110,7 +110,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
@@ -118,7 +118,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(10);*/
     }
 
 
@@ -132,7 +132,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void datosAgendamiento() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
         elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
@@ -151,7 +151,7 @@ public class AltaFijaTiendaPage extends WebBase {
             click(listaHorario.get(0));
             System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
@@ -184,7 +184,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        /*modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         UtilWeb.waitForSeconds(10);
@@ -197,7 +197,7 @@ public class AltaFijaTiendaPage extends WebBase {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-success > app-modal-pdf > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(1);*/
 
     }
 
