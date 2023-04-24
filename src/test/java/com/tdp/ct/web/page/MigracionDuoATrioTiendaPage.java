@@ -127,9 +127,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void doyClickEnEnElBoton(String btn) {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
@@ -224,7 +224,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
         UtilWeb.waitForSeconds(timeOnSeconds);
         boolean elementoExistente;
+        boolean modalExiste;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
         if (elementoExistente) {
             webElement.click();
             if (message.isEmpty()) message = "Dio click al elemento";
@@ -232,6 +234,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
         else {
             System.out.println("No se encontro el modal error");
+        }
+        if (modalExiste) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
         }
     }
 

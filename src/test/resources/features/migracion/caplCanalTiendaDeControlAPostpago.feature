@@ -48,7 +48,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
 #    Y        selecciono el nombre del plan "<nombrePlan>"
 #    Y         doy click en el boton seleccionar la oferta
     Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/114.9"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
 #    Y        selecciono el plan "POSTPAGO" y presiono Seleccionar Oferta
 #    Y        valido que se haya seleccionado el plan "Plan Ilimitado Mi Movistar" correctamente
 #      Y        presiono la opcion Añadir equipo en el card del plan actual

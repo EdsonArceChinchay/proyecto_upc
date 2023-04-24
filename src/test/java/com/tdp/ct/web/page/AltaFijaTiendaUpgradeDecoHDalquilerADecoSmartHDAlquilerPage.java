@@ -6,10 +6,14 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 
 public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends WebBase {
@@ -30,11 +34,13 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
 
 
     public void selecciono_agregar_sva_fija() {
+        esperaProgresiva(3,5,lblVerDetalle);
+        //UtilWeb.waitForSeconds(5);
+        click(lblVerDetalle);
+        //UtilWeb.waitForSeconds(5);
+        esperaProgresiva(3,5,btnAgregarSva);
+        click(btnAgregarSva);
         UtilWeb.waitForSeconds(5);
-        click(lblVerDetalle,5);
-        UtilWeb.waitForSeconds(5);
-        click(btnAgregarSva,5);
-        UtilWeb.waitForSeconds(40);
 
     }
 
@@ -52,10 +58,14 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
     }
 
     public void seleccionamosAgregarDecodificador() {
-        UtilWeb.waitForSeconds(5);
+        /*UtilWeb.waitForSeconds(5);
+        waitUntilElementIsVisible(iconPlus, 10);
         WebElement element = sh().getWebElement(iconPlus, "button");
         element.click();
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(5);*/
+        WebElement element = sh().getWebElement(iconPlus, "button");
+        esperaProgresiva(6,5,element);
+        element.click();
     }
 
     public void scrollTo() {
