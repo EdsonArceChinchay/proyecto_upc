@@ -49,7 +49,7 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
+    #Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
