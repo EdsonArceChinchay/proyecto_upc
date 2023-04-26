@@ -1,7 +1,15 @@
 package com.tdp.ct.web.utils;
 
+import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.base.methods.WebDriverDom;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.sql.Driver;
+import java.util.logging.Level;
 
 public class Addons {
 
@@ -25,5 +33,148 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
         contador++;
         }
         while(bOK == false && contador < reintentosMax);
+}
+
+    public static void reintentaModalError(WebDriver driver, int reintentos, int segEspera, WebElement elGatillo, WebBase webBase, String xpathElOk) {
+        int count = 1;
+        boolean flag = false;
+
+        while (count<=reintentos) {
+            UtilWeb.waitForSeconds(segEspera);
+            System.out.println("--------------- ingreso al try -----------------");
+
+            Boolean isVisible = false;
+            try {
+                boolean elementoExistente;
+                elementoExistente = driver.findElements(By.xpath(xpathElOk)).size() != 0;
+                if (elementoExistente) {
+                    isVisible = true;
+                    /*WebElement elOk = driver.findElement(By.xpath(xpathElOk));
+                    isVisible = elOk.isDisplayed();*/
+                }
+
+            } catch (NoSuchElementException e) {
+                System.out.println("error del elemento Ok exeption try catch: NoSuchElementException");
+            }
+
+            System.out.println("continua con el flujo");
+
+            if (!isVisible) {
+                System.out.println("elemento Ok no se muestra");
+
+                try {
+                    boolean elementoExistente;
+                    String xpathReintentar = "//*[contains(text(),'Reintentar')]";
+                    elementoExistente = driver.findElements(By.xpath(xpathReintentar)).size() != 0;
+
+                    if (elementoExistente) {
+                        int total = driver.findElements(By.xpath(xpathReintentar)).size();
+                        WebElement el;
+
+                        if (total>1) {
+                            el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
+                        } else {
+                            el = driver.findElement(By.xpath(xpathReintentar));
+                        }
+
+                        System.out.println("modal error encontrado");
+                        flag = el.isDisplayed();
+
+                        if (flag) {
+                            el.click();
+                            System.out.println("click a reintentar");
+
+                            if (elGatillo!=null)
+                                webBase.waitUntilElementIsVisible(elGatillo, 10).click();
+
+                        }
+                    } else {
+                        System.out.println("No se encontro el modal error");
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("error del elemento Reintentar exeption try catch: " + e.getMessage());
+                }
+
+            } else {
+                System.out.println("elemento Ok es visible");
+                //count = reintentos;
+                break;
+            }
+            System.out.println("--------------- fin -----------------");
+            count++;
         }
+    }
+
+    public static void btnCerrarModalError(WebDriver driver, int reintentos, int segEspera, WebElement elGatillo, WebBase webBase, String xpathElOk) {
+        int count = 1;
+        boolean flag = false;
+
+        while (count<=reintentos) {
+            UtilWeb.waitForSeconds(segEspera);
+            System.out.println("--------------- ingreso al try -----------------");
+
+            Boolean isVisible = false;
+            try {
+                boolean elementoExistente;
+                elementoExistente = driver.findElements(By.xpath(xpathElOk)).size() != 0;
+                if (elementoExistente) {
+                    isVisible = true;
+                }
+
+            } catch (NoSuchElementException e) {
+                System.out.println("error del elemento Ok exeption try catch: NoSuchElementException");
+            }
+
+            System.out.println("continua con el flujo");
+
+            if (!isVisible) {
+                System.out.println("elemento Ok no se muestra");
+
+                try {
+                    boolean elementoExistente;
+                    String xpathCerrarModalVisita = "//mat-dialog-container//img[@alt='icon-close']";
+                    elementoExistente = driver.findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+
+                    if (elementoExistente) {
+                        int total = driver.findElements(By.xpath(xpathCerrarModalVisita)).size();
+                        WebElement btnCerrar;
+
+                        if (total>1) {
+                            btnCerrar = driver.findElement(By.xpath("(//mat-dialog-container//img[@alt='icon-close'])["+(total)+"]"));
+                        } else {
+                            btnCerrar = driver.findElement(By.xpath(xpathCerrarModalVisita));
+                        }
+
+                        System.out.println("modal visita encontrado");
+                        flag = btnCerrar.isDisplayed();
+
+                        if (flag) {
+                            btnCerrar.click();
+                            System.out.println("click a cerrar modal");
+
+                            if (elGatillo!=null) {
+                                webBase.waitUntilElementIsVisible(elGatillo, 10).click();
+                                System.out.println("click al gatillo");
+                            }
+
+                        }
+                    } else {
+                        System.out.println("No se encontro el modal visita");
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("error del elemento Reintentar exeption try catch: " + e.getMessage());
+                }
+
+            } else {
+                System.out.println("elemento Ok es visible");
+                //count = reintentos;
+                break;
+            }
+            System.out.println("--------------- fin -----------------");
+            count++;
+        }
+    }
+
 }

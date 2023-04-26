@@ -22,11 +22,11 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
     protected WebElement buttonGuardarCambios;
     public void seleccionarboton(){
         System.out.println(1);
-        UtilWeb.waitForSeconds(40);
+        UtilWeb.waitForSeconds(4);
         System.out.println(1);
         for(WebElement element:listaBotones){
             if (element.getText().contains("Cambiar plan hogar")){
-                UtilWeb.waitForSeconds(5);
+                //UtilWeb.waitForSeconds(5);
                 click(element,40);
             }
         }
