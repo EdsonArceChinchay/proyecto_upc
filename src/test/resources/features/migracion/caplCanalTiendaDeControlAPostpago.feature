@@ -27,9 +27,9 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        valido que se presente la tienda "CAJAMARCA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "123456776"
+    Y        ingreso el documento "1042464783"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "920957296"
+    Y        selecciono el boton Ver detalle del servicio "920956610"
   #"650025121"
     Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan

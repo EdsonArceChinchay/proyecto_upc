@@ -73,4 +73,4 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1002560046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1002560049 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |

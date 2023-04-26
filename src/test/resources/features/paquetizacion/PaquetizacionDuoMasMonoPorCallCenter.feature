@@ -62,4 +62,4 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                        | nombrePadre | nombreMadre | distritoNac |
       #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 76268961   | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465000 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 102040469 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
