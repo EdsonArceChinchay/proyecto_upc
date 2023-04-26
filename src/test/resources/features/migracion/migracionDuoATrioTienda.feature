@@ -59,4 +59,4 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 253462454 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 |
