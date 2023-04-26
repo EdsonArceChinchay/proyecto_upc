@@ -164,13 +164,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         /*modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");*/
-        //waitUntilElementIsVisible(buttonIniciarRegistro, 20);
+        waitUntilElementIsVisible(buttonIniciarRegistro, 20);
 
         String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
         //buttonIniciarRegistro
         Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
 
-        //esperaProgresiva(4,5,buttonIniciarRegistro);
+        esperaProgresiva(4,5,buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
@@ -194,7 +194,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
         Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
 
-        //esperaProgresiva(12,5,labelAgendamiento);
+        esperaProgresiva(12,5,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
