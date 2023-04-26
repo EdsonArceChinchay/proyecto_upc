@@ -61,8 +61,6 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
     protected WebElement btnReintentarFinal;
 
-
-
     @FindBy (xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
 
@@ -139,9 +137,9 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");*/
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
@@ -412,7 +410,7 @@ public class AltaFijaTiendaPage extends WebBase {
         js().scrollElementTop(btnValidaLegal);
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsClickable(btnValidaLegal,30);
-        //click(btnValidaLegal);
+        click(btnValidaLegal);
         UtilWeb.waitForSeconds(4);
     }
 

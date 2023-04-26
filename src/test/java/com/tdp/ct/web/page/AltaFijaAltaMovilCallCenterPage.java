@@ -279,11 +279,11 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         //UtilWeb.waitForSeconds(10);//10
-//        modalError(8,btnReintentar,"Click al elemento Reitentar");
-//        modalError(8,btnReintentar,"Click al elemento Reitentar");
-//        modalError(8,btnReintentar,"Click al elemento Reitentar");
-//        esperaProgresiva(10,10,oferta);
-        UtilWeb.waitForSeconds(2);
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        esperaProgresiva(10,10,oferta);
+        //UtilWeb.waitForSeconds(2);
         click(oferta);
         //waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//
