@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.sql.Driver;
+import java.util.List;
 import java.util.logging.Level;
 
 public class Addons {
@@ -72,7 +73,15 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
                         WebElement el;
 
                         if (total>1) {
-                            el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
+                            //el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
+                            List<WebElement> lista = driver.findElements(By.xpath(xpathReintentar));
+                            el = lista.get(lista.size()-1);
+                            System.out.println("-----------");
+                            for (WebElement l: lista) {
+                                System.out.println(l);
+                            }
+                            webBase.js().scrollElementTop(el);
+                            System.out.println("-----------");
                         } else {
                             el = driver.findElement(By.xpath(xpathReintentar));
                         }
