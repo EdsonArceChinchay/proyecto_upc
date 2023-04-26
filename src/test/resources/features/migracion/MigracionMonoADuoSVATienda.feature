@@ -56,4 +56,4 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   |
-      | usuario externo | jpachaot  | #$t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123178888  | tester@tester.com | Duo           | RA 1D D22 50 MBPS | HBO      |
+      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123178888  | tester@tester.com | Duo           | RA D22 | HBO      |

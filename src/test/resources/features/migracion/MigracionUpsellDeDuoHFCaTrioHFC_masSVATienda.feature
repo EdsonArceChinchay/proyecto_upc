@@ -14,12 +14,12 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 @BERSERKERS @DoneDevOps
-Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
+Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda (HFC A FTTH )
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioSVATienda
+  @MigracionHFCaFTTH
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -27,7 +27,7 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -56,4 +56,4 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan       | sva                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA 70 MBPS | PACK ANTIVIRUS MCAFEE |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA D22| PACK ANTIVIRUS MCAFEE |

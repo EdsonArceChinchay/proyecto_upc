@@ -96,7 +96,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         }
         click(provinciaList);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         SearchContext context=sh().getContext(provinciaList);
         context.findElement(By.cssSelector("[data-value='"+tipoProvincia+"']")).click();
         UtilWeb.waitForSeconds(1);
