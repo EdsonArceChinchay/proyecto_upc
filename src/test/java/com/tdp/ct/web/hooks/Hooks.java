@@ -5,6 +5,8 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import io.cucumber.java.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.utils.Addons.guardarCodigoHTML;
+
 public class Hooks {
 
     @Autowired
@@ -26,7 +28,7 @@ public class Hooks {
     @Before(order = 0)
     public void setUp() {
        //System.setProperty("webdriver.http.factory", "jdk-http-client");
-        manager.setUpDriver();
+       manager.setUpDriver();
     }
 
     @Before(order = 1)
@@ -41,6 +43,7 @@ public class Hooks {
 
     @After(order = 1)
     public void tearDown() {
+        //guardarCodigoHTML(manager.getDriver());
         scenario.shotWhenFail();
     }
 

@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
 
@@ -101,6 +102,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public boolean validarPantallaIngresarDireccion() {
+        esperaProgresiva(driver(),2,5,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -110,6 +112,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         modalError(3, btnReintentar, "Click al elemento Reitentar");
         modalError(3, btnReintentar, "Click al elemento Reitentar");
+
         boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
@@ -124,7 +127,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //String elemento = "(//span[contains(text(),'" + oferta + "')]/../../following-sibling::*//img)[1]";
         String elemento = "(//div/span/text()[contains(translate(., 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '" + oferta + "')]/../../../following-sibling::*//img)[1]";
         WebElement elementOferta = find().getElementByXPath(elemento);
-
+        esperaProgresiva(driver(),2,5,elementOferta);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando la oferta >>> {0}", oferta);
         elementOferta.click();
     }
@@ -134,6 +137,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //String elemento = "//div[contains(text(),'" + plan + "')]/../../../div";
         String elemento = "//div[text()='" + plan + "']/../..";
         WebElement elementPlan = find().getElementByXPath(elemento);
+        esperaProgresiva(driver(),2,5,elementPlan);
         waitUntilElementIsVisible(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
         js().scrollElementTop(find().getElementByCss("div.block_scroll"));
@@ -150,6 +154,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void validarDetalleSeleccion() {
+        esperaProgresiva(driver(),2,5,titlePlan);
         waitUntilElementIsVisible(titlePlan, 500);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
@@ -161,16 +166,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
-        /*modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");*/
-        waitUntilElementIsVisible(buttonIniciarRegistro, 20);
-
-        String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
-        //buttonIniciarRegistro
-        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
-
-        esperaProgresiva(4,5,buttonIniciarRegistro);
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        //waitUntilElementIsVisible(buttonIniciarRegistro, 20);
+        esperaProgresiva(driver(),4,5,buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
@@ -178,23 +178,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaAgendamiento() {
-        /*clickBtnCerrarModalError(buttonIniciarRegistro);
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");*/
+        clickBtnCerrarModalError(buttonIniciarRegistro);
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");
         //boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         //UtilWeb.waitForSeconds(1);
-
-        String elXpath2 = "//span[contains(text(),'Agendamiento')]";
-        Addons.btnCerrarModalError(driver(), 4, 4, buttonIniciarRegistro, this, elXpath2);
-
-        String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
-        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
-
-        esperaProgresiva(12,5,labelAgendamiento);
+        esperaProgresiva(driver(),5,5,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
@@ -210,7 +203,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicConfirmarAgendamiento() {
-        UtilWeb.waitForSeconds(4);
+        //UtilWeb.waitForSeconds(4);
+        esperaProgresiva(driver(),5,5,buttonConfirmar);
         waitUntilElementIsClickable(buttonConfirmar, 10);
         click(buttonConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
@@ -221,7 +215,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         boolean existe;
         try {
             WebElement element = find().getElementByXPath("//app-modal-detalle//div/h1[contains(text(),'Detalles')]");
-            waitUntilElementIsVisible(element, 5);
+            esperaProgresiva(driver(),5,5,element);
+            //waitUntilElementIsVisible(element, 5);
             element.isDisplayed();
             existe = true;
         } catch (NoSuchElementException ex) {
@@ -239,14 +234,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void completarCorreo(String correo) {
-        UtilWeb.waitForSeconds(2);
+        //UtilWeb.waitForSeconds(2);
         scrollByJavaScriptToPrincipio();
-        UtilWeb.waitForSeconds(3);
+        //UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[1]");
+        esperaProgresiva(driver(),5,5,rootInputCorreo);
         SearchContext context1 = sh().getContext(rootInputCorreo);
         context1.findElement(By.cssSelector("div > div > div > input")).sendKeys(correo);
 
         WebElement rootInputConfirmarCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[2]");
+        esperaProgresiva(driver(),5,5,rootInputConfirmarCorreo);
         SearchContext context2 = sh().getContext(rootInputConfirmarCorreo);
         context2.findElement(By.cssSelector("div > div > div > input")).sendKeys(correo);
 
@@ -254,18 +251,21 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarIdentidadTitular() {
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
         js().scrollElementTop(buttonValidarIdentidad);
+        esperaProgresiva(driver(),5,5,buttonValidarIdentidad);
         waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
         UtilWeb.waitForSeconds(1);
         if (tipoValidacion.equalsIgnoreCase("discapacitado")) {
+            esperaProgresiva(driver(),5,5,buttonDiscapacitado);
             waitUntilElementIsVisible(buttonDiscapacitado, 5).click();
 
         } else {
+            esperaProgresiva(driver(),5,5,buttonValBiometrica);
             waitUntilElementIsVisible(buttonValBiometrica, 5).click();
         }
         UtilWeb.waitForSeconds(1);
@@ -280,6 +280,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiguiente() {
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        esperaProgresiva(driver(),5,5,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
@@ -288,6 +289,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicEnConfirmar() {
         UtilWeb.waitForSeconds(5);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        esperaProgresiva(driver(),5,5,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -307,14 +309,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        /*modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");*/
-
-        String elXpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]";
-        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
-
+        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -343,9 +342,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicBotonContinuar() {
 
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
         int contador = 0;
@@ -365,6 +365,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         System.out.println("Sale del while");
 //        waitUntilElementIsClickable(buttonContinuar, 90);
+        esperaProgresiva(driver(),5,5,buttonContinuar);
         js().scrollElementTop(buttonContinuar);
 //        click(buttonContinuar, 60);
         click(buttonContinuar);
@@ -376,6 +377,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
+        esperaProgresiva(driver(),5,5,element);
         waitUntilElementIsVisible(element, 50);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
@@ -383,7 +385,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        waitUntilElementIsVisible(element, 100);
+        esperaProgresiva(driver(),3,10,element);
+        waitUntilElementIsVisible(element, 50);
+        waitUntilElementIsClickable(element,25);
         click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(3);//
@@ -418,7 +422,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void ingresarDNISupervisor(String numdoc) {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        revisarModalError(driver());
+        esperaProgresiva(driver(),5,5,selectTipoDoc);
         waitUntilElementIsClickable(selectTipoDoc, 30).click();
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
@@ -429,7 +435,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void IngresarUsuarioSupervisor(String user) {
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
         SearchContext context = sh().getContext(rootInputCorreo);
@@ -453,10 +460,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-        modalError(2, btnReintentar, "Click al elemento Reitentar");
-        modalError(2, btnReintentar, "Click al elemento Reitentar");
-        modalError(2, btnReintentar, "Click al elemento Reitentar");
+        //modalError(2, btnReintentar, "Click al elemento Reitentar");
+        //modalError(2, btnReintentar, "Click al elemento Reitentar");
+        //modalError(2, btnReintentar, "Click al elemento Reitentar");
         //   waitUntilElementIsVisible(lblPreguntas, 30);
+        revisarModalError(driver());
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
         if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu padre')]"))) {
@@ -566,6 +574,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void ingresarNombreClienteExtranjero(String nombre) {
         UtilWeb.waitForSeconds(2);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
+        esperaProgresiva(driver(),5,1,rootElement);
+        revisarModalError(driver());
         SearchContext context = sh().getContext(rootElement);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
         UtilWeb.waitForSeconds(1);
@@ -719,12 +729,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(10,20,scrollorden);
+        esperaProgresiva(driver(),5,20,scrollorden);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        modalError(3, btnReintentar, "Click al elemento Reintentar");
+        revisarModalError(driver());
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
+        esperaProgresiva(driver(),5,20,msjExitoso);
         existe = waitUntilElementIsVisible(msjExitoso, 120).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());

@@ -33,6 +33,7 @@ public class LoginBerserkerStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickBtnContinuarHaciaHome();
     }

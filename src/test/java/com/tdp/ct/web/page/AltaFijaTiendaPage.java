@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static org.assertj.core.api.BDDAssertions.and;
 
 
@@ -68,7 +69,8 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
-        waitUntilElementIsVisible(nombresCompletosCliente, 10);
+       // waitUntilElementIsVisible(nombresCompletosCliente, 10);
+        esperaProgresiva(driver(),5,5,nombresCompletosCliente);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         return getText(nombresCompletosCliente);
@@ -90,7 +92,8 @@ public class AltaFijaTiendaPage extends WebBase {
 
         //WebElement element = listaOfertas.get(0);
         String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
-        Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
@@ -199,7 +202,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
         String elXpath = "//button[contains(text(),'Confirmar')]";
         //buttonConfirmar
-        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
 
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
@@ -266,7 +269,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
         String elXpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button";
         //btnRegistrarVenta
-        Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
 
         System.out.println("Entra al primer try");
         try {
