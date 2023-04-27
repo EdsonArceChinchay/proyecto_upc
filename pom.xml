@@ -30,17 +30,23 @@
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>-->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>4.3.0</version>
-        </dependency>
+
     <!--    <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-http-jdk-client</artifactId>
             <version>4.5.0</version>
          </dependency>
     -->
+    
+    
+    <!--
+    -- Si da error local, usar temporalmente.
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.3.0</version>
+        </dependency>  
+     -->
         </dependencies>
     <build>
         <plugins>
