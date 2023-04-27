@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
 import org.openqa.selenium.*;
@@ -160,10 +161,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
+        /*modalError(10, btnReintentar, "Click al elemento Reintentar");
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        //waitUntilElementIsVisible(buttonIniciarRegistro, 20);
+        modalError(10, btnReintentar, "Click al elemento Reintentar");*/
+        waitUntilElementIsVisible(buttonIniciarRegistro, 20);
+
+        String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
+        //buttonIniciarRegistro
+        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
+
         esperaProgresiva(4,5,buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
@@ -172,15 +178,22 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaAgendamiento() {
-        clickBtnCerrarModalError(buttonIniciarRegistro);
+        /*clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
         clickBtnCerrarModalError(buttonIniciarRegistro);
         modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
+        modalError(10, btnReintentar, "Click al elemento Reintentar");*/
         //boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         //UtilWeb.waitForSeconds(1);
+
+        String elXpath2 = "//span[contains(text(),'Agendamiento')]";
+        Addons.btnCerrarModalError(driver(), 4, 4, buttonIniciarRegistro, this, elXpath2);
+
+        String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
+        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
+
         esperaProgresiva(12,5,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -294,10 +307,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
+        /*modalError(8, btnReintentar, "Click al elemento Reintentar");
         modalError(8, btnReintentar, "Click al elemento Reintentar");
         modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");*/
+
+        String elXpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]";
+        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
 
         boolean buttonFound = false;
         int contador = 0;

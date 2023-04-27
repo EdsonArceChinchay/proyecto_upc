@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -193,9 +194,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
+        /*modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");*/
+
+        String elXpath = "//body/div[2]/form/div[1]/h1";
+        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -259,10 +264,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
-        modalError(8, btnReintentar, "Click al elemento Reintentar");
+//        modalError(8, btnReintentar, "Click al elemento Reintentar");
+//        modalError(8, btnReintentar, "Click al elemento Reintentar");
+//        modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(7, btnReintentar, "Click al elemento Reintentar");
+        String elXpath = "(//div[@class='tdp-col-md-6 tdp-col-lg-4'])[2]//img[@src='assets/images/icon_glove.svg']";
+        Addons.reintentaModalError(driver(), 6, 4, oferta, this, elXpath);
+
         UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -275,6 +283,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         esperaProgresiva(10,10,oferta);
+        //UtilWeb.waitForSeconds(2);
         click(oferta);
         //waitUntilElementIsClickable(oferta, 100).click();
         UtilWeb.waitForSeconds(5);//

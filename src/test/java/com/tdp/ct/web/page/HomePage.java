@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -79,6 +80,7 @@ public class HomePage extends WebBase {
     public void clickBotonConsultar(){
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(3,5,btnconsultar);
+        //UtilWeb.waitForSeconds(1);
         click(btnconsultar);
         //waitUntilElementIsVisible(boton01,20);
         esperaProgresiva(3,5,boton01);
@@ -106,6 +108,9 @@ public class HomePage extends WebBase {
     }
 
     public void seleccionoElIDDeClienteNro(String nro) {
+        String elXpath = "(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]";
+        Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+
         WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]");
         waitUntilElementIsVisible(nroItem, 10).click();
         UtilWeb.waitForSeconds(1);

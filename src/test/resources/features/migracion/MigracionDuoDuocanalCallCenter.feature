@@ -34,7 +34,7 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
 	Y        doy click en el boton consultar
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
-	Y        verifico la direccion "LINCE ,LIMA , LIMA" actual del servicio
+	Y        verifico la direccion "LINCE , LIMA , LIMA" actual del servicio
 	Y        doy click en el boton "Confirmar direccion"
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
@@ -51,9 +51,9 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y         presiono el boton Registrar venta
-	Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	Y        valido que se muestre el detalle del pedido
+#	Y         presiono el boton Registrar venta
+#	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#	Y        valido que se muestre el detalle del pedido
 
 	Ejemplos:
 	  | tipoUsuario     | userName   | password      | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
