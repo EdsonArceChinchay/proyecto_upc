@@ -57,7 +57,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"

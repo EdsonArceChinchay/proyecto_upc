@@ -32,7 +32,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/114.9"
+    Y        selecciono la opcion "Plan Súmate Plus RPM S/ 154.92 II"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     #Y        ingreso el tiempo de permanencia"12 meses"

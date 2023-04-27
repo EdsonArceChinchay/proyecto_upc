@@ -122,7 +122,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 10000444045 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 10000444046 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso03

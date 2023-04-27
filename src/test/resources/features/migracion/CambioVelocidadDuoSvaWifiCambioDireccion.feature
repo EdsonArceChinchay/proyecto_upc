@@ -18,7 +18,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
 
 
   @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global @General
-  Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
+  Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva [alta de repetidor wiffi financiado] con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -59,7 +59,5 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario | userName | password |msgHome|tiendaAsesor|tipoDocumento|documento|tipoPlanHogar|plan |correo|longitud|latitud|
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ |Bienvenid@  |CANAL ONLINE-CALL CENTER GSS|CE|1029801212 |Duo|RA D22 200 MBPS|tester@tester.com|-77.07222|-12.08367|
-
-
+      | tipoUsuario     | userName | password      | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud  | latitud   |
+      | usuario externo | jpachaot |  $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1029801212 | Duo           | RA D22 200 MBPS | tester@tester.com | -77.07222 | -12.08367 |

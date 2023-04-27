@@ -45,8 +45,8 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | longitud      | latitud       | direccion                |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 691529632 | -77.03498486  | -12.09465486  | CAMINO REAL 155          |
       | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 693459354 | -77.03839379  | -12.08616934  | JULIO CESAR TELLO 460    |
-      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 642153634 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
- #     | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 612345675 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
+ #     | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 642153634 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 612345675 | -76.91650597  | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
  #     | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 699982210 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
  #     | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 691664632 | -77.00525705  | -12.11851901  | AV PRINCIPAL 722           |
 

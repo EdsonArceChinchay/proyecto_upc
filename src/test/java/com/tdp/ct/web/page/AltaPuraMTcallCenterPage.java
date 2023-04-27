@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
@@ -97,9 +98,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
         int contador = 0;

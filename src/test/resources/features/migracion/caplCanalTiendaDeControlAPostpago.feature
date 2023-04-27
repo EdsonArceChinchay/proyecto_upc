@@ -27,9 +27,9 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        valido que se presente la tienda "CAJAMARCA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "123456776"
+    Y        ingreso el documento "1042464783"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "920957296"
+    Y        selecciono el boton Ver detalle del servicio "920956610"
   #"650025121"
     Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
@@ -48,7 +48,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
 #    Y        selecciono el nombre del plan "<nombrePlan>"
 #    Y         doy click en el boton seleccionar la oferta
     Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/114.9"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
 #    Y        selecciono el plan "POSTPAGO" y presiono Seleccionar Oferta
 #    Y        valido que se haya seleccionado el plan "Plan Ilimitado Mi Movistar" correctamente
 #      Y        presiono la opcion Añadir equipo en el card del plan actual

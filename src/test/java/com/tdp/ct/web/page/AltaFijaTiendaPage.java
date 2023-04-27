@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static org.assertj.core.api.BDDAssertions.and;
 
 
@@ -60,16 +62,15 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
     protected WebElement btnReintentarFinal;
 
-
-
     @FindBy (xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[7]/button")
+    @FindBy(xpath = "//button/span[contains(text(), 'Validar identidad del Rep. Legal')]/..")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
-        waitUntilElementIsVisible(nombresCompletosCliente, 10);
+       // waitUntilElementIsVisible(nombresCompletosCliente, 10);
+        esperaProgresiva(driver(),5,5,nombresCompletosCliente);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         return getText(nombresCompletosCliente);
@@ -86,8 +87,14 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas) {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+//        modalError(10,btnReintentar,"Click al elemento Reitentar");
+//        modalError(10,btnReintentar,"Click al elemento Reitentar");
+
+        //WebElement element = listaOfertas.get(0);
+        String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+
+
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
@@ -136,12 +143,15 @@ public class AltaFijaTiendaPage extends WebBase {
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
+
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
         UtilWeb.waitForSeconds(10);*/
+        //UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
     }
 
 
@@ -184,12 +194,17 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void botonConfirmarAgendamiento() {
+        /*modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");*/
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
+
+        String elXpath = "//button[contains(text(),'Confirmar')]";
+        //buttonConfirmar
+        //Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -248,10 +263,15 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        UtilWeb.waitForSeconds(10);
+        /*UtilWeb.waitForSeconds(10);
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");*/
+
+        String elXpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button";
+        //btnRegistrarVenta
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+
         System.out.println("Entra al primer try");
         try {
             boolean buttonFound = false;

@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -73,7 +74,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
+
+        String elXpath = "div:nth-child(1) > app-card-line";
+        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -125,11 +130,17 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
-
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
+    protected WebElement btnMostrar;
     public void doyClickEnEnElBoton(String btn) {
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
-        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+
+        String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
+        //btnConfirmarDir
+        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
@@ -178,9 +189,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
+        String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
+        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
+        /*clickBtnReintentar();
         clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        clickBtnReintentar();*/
         String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);

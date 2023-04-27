@@ -20,7 +20,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Dado     que abro la pagina de movistar
 
   @MigracionDuoADuoSVaCallcenter @MVP09 @Global @General
-  Esquema del escenario: Migracion (duo a duo) + sva en canal CALL CENTER
+  Esquema del escenario: Migracion [duo a duo] + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -55,5 +55,5 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 156128901 | tester@tester.com  | Duo            | RA 70 MBPS  |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar  | plan        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 156128901 | tester@tester.com | Duo            | RA 70 MBPS  |
