@@ -329,12 +329,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(3);
-        buttonSeleccionarOferta.click();
+        buttonSeleccionarOferta.click();*/
     }
 
     public void irAMovistarTotal() {

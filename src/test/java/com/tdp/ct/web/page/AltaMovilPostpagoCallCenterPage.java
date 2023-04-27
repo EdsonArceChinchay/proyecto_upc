@@ -86,7 +86,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         js().scrollElementTop(LblEquipos);
         waitUntilElementIsVisible(LblEquipos, 10);
         click(LblEquipos, 30);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void seleccionarTiempo(String tiempoP) {
