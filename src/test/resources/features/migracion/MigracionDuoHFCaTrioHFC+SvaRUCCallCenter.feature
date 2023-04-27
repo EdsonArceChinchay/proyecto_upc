@@ -1,12 +1,21 @@
 #language:es
 
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT064
+##GDAP: GDAP-888
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 31/03/2023
 
-  # CREADOR: Edson Arce
-
-@BERSERKERS @DoneDevOps @AT-DT064
+@BERSERKERS @DoneDevOps
 Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
-
-
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -43,7 +52,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic en el boton validar identidad representante legal
-   # Y        elijo el tipo de validacion a realizar "<tipoValidacion>"$ |
+    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | BERTHA | LEOBILDO | LA BANDA DE SHILCAYO |

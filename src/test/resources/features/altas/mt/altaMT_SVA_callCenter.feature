@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT037
+##GDAP: GDAP-1006
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT037
 
 Característica: AT-DT037_Alta Fija  MT SVA por Call Center
@@ -38,7 +52,7 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 	Y        selecciono tipo de oferta
 	Y        selecciono un plan Movistar Total "<nombrePlan>"
 	#Y        valido el detalle de la seleccion
-	#Y        doy click en agregar "<sva>"
+	Y        doy click en agregar "<sva>"
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
 	Y        ingreso los datos de agendamiento
@@ -46,7 +60,7 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 	Y        presiono Consultar ubicacion
 	Y        ingreso la informacion del lugar de instalacion
 	  | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-	  | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+	  | A  | 1    | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 	Y        Consulto ubicacion
 	Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
 	Y        selecciono horario "2pm-7pm"
@@ -66,9 +80,9 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
-	Y        presiono el boton Registrar venta
+	Y        presiono en el boton de Registrar Venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | tipoOferta     | nombrePlan       | correo           |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | PACK ANTIVIRUS MCAFEE | CE            | 123408466 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com |
+	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan       | correo           |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | PACK ANTIVIRUS MCAFEE | CE            | 123408466 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com |
 

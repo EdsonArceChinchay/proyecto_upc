@@ -1,5 +1,19 @@
 #language: es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT110
+##GDAP: GDAP-1152
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
   Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center

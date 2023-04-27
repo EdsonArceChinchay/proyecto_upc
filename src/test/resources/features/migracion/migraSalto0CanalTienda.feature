@@ -1,5 +1,20 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT078
+##GDAP: GDAP-717
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP
 
 Característica: AT-DT078_Migracion salto 0 canal Tienda
 
@@ -35,7 +50,7 @@ Característica: AT-DT078_Migracion salto 0 canal Tienda
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |

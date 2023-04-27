@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT013
+##GDAP: GDAP-992
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1
 
 Característica: AT-DT013_Alta Mono Linea Voz Tienda
@@ -8,8 +22,8 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "lterrazosce"
-    Y        ingreso el password "Telefonica2021"
+    Y        ingreso el usuario "evillanuevag"
+    Y        ingreso el password "#o2Wy23oA1458"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"

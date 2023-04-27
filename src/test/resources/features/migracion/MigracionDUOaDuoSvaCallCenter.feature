@@ -1,12 +1,20 @@
 #language:es
-
-
-  # CREADOR: Angel Medina
-
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT059
+##GDAP: GDAP-1169
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Tienda
-
+Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

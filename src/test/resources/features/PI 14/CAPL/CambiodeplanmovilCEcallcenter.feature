@@ -1,5 +1,19 @@
 #language: es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT099
+##GDAP: GDAP-1147
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
 Característica: AT-DT099_cambio de plan movil en call center
@@ -18,9 +32,9 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "156128901"
+    Y        ingreso el documento "1632547919"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650023093"
+    Y        selecciono el boton Ver detalle del servicio "650028171"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y selecciono boton Cambiar plan

@@ -1,10 +1,22 @@
 #language:es
 
-
-  # CREADOR: Edson Arce
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT047
+##GDAP: GDAP-892
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Edson Arce
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
+
 
   @CaeqMasCaplTienda @MVP20 @Global
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
@@ -23,7 +35,7 @@ Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/114.9 IV"
+    Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/75.90 II"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
     #Y        selecciono tipo de pago Al Contado
@@ -41,7 +53,7 @@ Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |

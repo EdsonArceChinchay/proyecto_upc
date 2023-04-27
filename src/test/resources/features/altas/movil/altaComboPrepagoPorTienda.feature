@@ -1,4 +1,18 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT022
+##GDAP: GDAP-716
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
 Característica: AT-DT022_Alta Combo Prepago por Tienda
   Yo como asesor de Tienda
@@ -48,5 +62,5 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
     #Y        valido que se muestre el detalle del pedido
     #Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE         | 1042464882 | Prepago preplan |
+      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento  | nombrePlan      |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 1042464882 | Prepago preplan |

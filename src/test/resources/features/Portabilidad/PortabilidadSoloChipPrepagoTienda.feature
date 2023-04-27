@@ -1,10 +1,22 @@
 #language:es
-  #angel medina
-  #tambo
-@BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Solo Chip Prepago Tienda
-  Quiero realizar una portabilidad por call center
 
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT106
+##GDAP: GDAP-964
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps
+Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
+  #tambo
   Antecedentes:
     Dado     que abro la pagina de movistar
 

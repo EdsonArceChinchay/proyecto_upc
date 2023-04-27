@@ -1,6 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT002
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT002
+##GDAP: GDAP-579
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
   Antecedentes:
@@ -17,7 +30,7 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-	#Y        cierro popup de error
+	Y        cierro popup de error
     Y        selecciono agregar sva fija
     Y         seleccionamos agregar decodificador Smart HD
     Y        seleccionamos guardar cambios
@@ -45,4 +58,4 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           | decoficador |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102010112 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040478 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |

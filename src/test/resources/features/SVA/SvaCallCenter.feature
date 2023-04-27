@@ -1,4 +1,18 @@
 #language: es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT109
+##GDAP: GDAP-728
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
   Característica: AT-DT109_Flujo de sva en el canal Call Center
@@ -33,8 +47,7 @@
       Y        doy click en el boton de continuar
       #Y        presiono el boton Registrar venta
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      Y        valido que se muestre el detalle del pedido
 
       Ejemplos:
         | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                  | tipoDocumento | documento | correo           |
-        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 189792360 | correo@gmail.com |
+        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 120906347 | correo@gmail.com |

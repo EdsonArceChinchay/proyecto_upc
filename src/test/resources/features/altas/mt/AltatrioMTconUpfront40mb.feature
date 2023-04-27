@@ -1,7 +1,24 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT039
+##GDAP: GDAP-593
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 
 Característica: AT-DT039_Alta trio MT con Upfront 40mb
+
+  Antecedentes:
+  #Cliente Tiene que tener un score alto (9990) y no estar refinanciado
 
   @AltatrioMTconUpfront40mb
   Esquema del escenario: Alta trio MT con Upfront 40mb
@@ -56,7 +73,7 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1025600045 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA D22 50 MBPS |
+      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1025600046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA D22 50 MBPS |
 
 
 

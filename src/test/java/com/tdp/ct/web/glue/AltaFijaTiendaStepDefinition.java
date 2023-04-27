@@ -91,4 +91,9 @@ public class AltaFijaTiendaStepDefinition {
   public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
     altaFijaTiendaStep.clickBotonValidarRepreLegal();
   }
+
+  @Y("presiono en el boton de Registrar Venta")
+  public void presionoEnElBotonDeRegistrarVenta() {
+    altaFijaTiendaStep.clickBotonRegistrarVenta();
+  }
 }

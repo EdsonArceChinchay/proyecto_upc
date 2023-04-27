@@ -1,11 +1,21 @@
 #language:es
-
-
-  # CREADOR: Edson Arce
-
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT054
+##GDAP: GDAP-599
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Edson Arce
+##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica:  AT-DT054_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center , Cambiar Direccion por coordinadas X,Y
+Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
+
 
   @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global @General
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y

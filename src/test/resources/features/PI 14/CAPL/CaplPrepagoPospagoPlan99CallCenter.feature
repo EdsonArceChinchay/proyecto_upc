@@ -1,4 +1,18 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT101
+##GDAP: GDAP-962
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 

@@ -1,4 +1,4 @@
-package com.tdp.ct.web.glue;
+package com.tdp.ct.web.glue.migracion;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;

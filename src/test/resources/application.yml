@@ -24,7 +24,12 @@ jxray:
 ### URL - SITES ###
 ###################
 url:
-  movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
+  qa:
+    movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
+  dev:
+      movistar: https://wa-berserkers-certimesa.azurewebsites.net/parque
+  prod:
+    movistar: https://ventas.movistar.com.pe/inicio
 
 
 ###################

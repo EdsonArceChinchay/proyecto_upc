@@ -100,12 +100,31 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
         modalError(5, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonContinuar, 600);
+
+        boolean buttonFound = false;
+        int contador = 0;
+        int reintentoBucles = 3;
+        while (!buttonFound && contador <= reintentoBucles){
+            System.out.println("Entra al while");
+            try {
+                System.out.println("Entra al try");
+                waitUntilElementIsVisible(buttonContinuar,2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Continuar");
+                buttonFound = true;
+            }catch (Exception e){
+                System.out.println("Entra al catch");
+                UtilWeb.waitForSeconds(6);
+                contador++;
+                System.out.println(contador+" vez");
+            }
+        }
+        UtilWeb.logger(this.getClass()).log(Level.INFO,"Sale del While");
+//        waitUntilElementIsVisible(buttonContinuar, 100);
         js().scrollElementTop(buttonContinuar);
-        waitUntilElementIsClickable(buttonContinuar, 600);
-        click(buttonContinuar,20);
+//        waitUntilElementIsClickable(buttonContinuar, 100);
+        click(buttonContinuar);
+//        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        UtilWeb.waitForSeconds(5);
     }
 
     public void clickCierrePopup(){

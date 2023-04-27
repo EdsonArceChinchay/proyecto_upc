@@ -29,5 +29,10 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterStep {
     public void elegimossvarepetidor (String string){
         page.AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage().elegimossvarepetidor(string);
     }
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void elegimossva (String string){
+        page.AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage().seleccionardecodificador(string);
+    }
 
 }

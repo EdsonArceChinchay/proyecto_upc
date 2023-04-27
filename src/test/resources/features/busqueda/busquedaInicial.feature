@@ -1,5 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT043
+##GDAP: GDAP-596
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP
 
 Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 
@@ -25,12 +39,12 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | cliente                         |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  | LUIGI GUSTAVO REYNOSO DEXTRE    |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 123456742 | Cuatro De Dos                   |
-      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | DNI           | 09822102  | JONNY RAUL NAVARRO ESPEJO       |
+      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | DNI           | 09822102  | MCONewFirstName1887 MCONewLastName1887 |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123456753 | Cinco De Tres                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | DNI           | 09822100  | GIOVANNA MARIBEL OCOLA ASENCIO  |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | DNI           | 09822100  | MCONewFirstName1885 MCONewLastName1885 |
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 123456775 | Primero De Tercero              |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456758 | Cinco De Ocho                   |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | DNI           | 09822078  | CARLOS ALBERTO VALDIVIA ALVAREZ |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | DNI           | 09822078  | MCONewFirstName1872 MCONewLastName1872 |
       | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456776 | Primero De Segundo              |
 
   @BusquedaInicial         @BusquedaInicialRUC
@@ -60,5 +74,3 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
       | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | RUC           | 20514559911 | CHIFA HERMANOS S.A.C.      | 3   | DNI             | 75447585       |
 #      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                  | RUC           | 20450685446 | ANDEAN SOUTH EIRL          | 2   | CE              | 6172834231     |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TALARA                       | RUC           | 20409258566 | INVERSIONES PAPER E.I.R.L. | 1   | DNI             | 75447441       |
-
-

@@ -1,5 +1,19 @@
 #language: es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT094
+##GDAP: GDAP-1146
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
 Característica: AT-DT094_Alta trio con direccion pangea
@@ -18,7 +32,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "102268208"
+    Y        ingreso el documento "166268248"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar

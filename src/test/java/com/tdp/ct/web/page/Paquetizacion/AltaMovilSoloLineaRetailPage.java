@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AltaMovilSoloLineaRetailPage extends WebBase {
 
-    @FindBy(xpath = "//div/button[@class='button-filter active ng-star-inserted']")
+    @FindBy(xpath = "//button[contains(text(),'Postpago')]")
     private WebElement ofertaPost;
 
     public void     buscarOfertaRetail(){

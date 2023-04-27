@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-1185
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO: MARIA SANCHEZ
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
 Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
@@ -42,8 +56,8 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	Y        valido que este en la seccion de registro
 	Y        doy click en agregar Modem
 	Entonces doy click en Agregar Sva
-	Y        elegimos sva "<decodificador>"
 	Y        elegimos sva repetidor "<svarepetidor>"
+	Y        elegimos sva "<decodificador>"
 	Y        doy click en Guardar cambios
 	Cuando   doy clic a iniciar registro
 	Y        valido que me encuentre en la pantalla agendamiento
@@ -54,7 +68,7 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	Y        doy click en datos del cliente
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 27/08/1994 | Casado      | Albania      |
+	  | 15/09/1985 | Casado      | Albania      |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
@@ -63,5 +77,5 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
 	#Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                       | decodificador |svarepetidor              |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 10000506488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MB  | 14.90         |    REP. SMART WIFI Venta |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                                       | decodificador |svarepetidor                |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1060122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MB  |  9.90         |  Repetidor WIFI PLUS Venta |

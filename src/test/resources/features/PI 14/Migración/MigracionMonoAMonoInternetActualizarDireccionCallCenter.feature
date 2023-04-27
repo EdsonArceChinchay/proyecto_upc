@@ -1,5 +1,18 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-1164
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 Característica: Migracion de Mono internet a Mono internet con Actualizar Direccion por el canal Call Center
 
   Antecedentes:
@@ -18,17 +31,17 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "AV, CORONEL JOSE LEAL, 500, LINCE, LIMA , LIMA, PE" actual del servicio
+    Y        verifico la direccion "JR, Julio Cesar tello, 469, LINCE, LIMA , LIMA, PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
-    Y        ingreso la direccion donde sera la instalacion "Julio Cesar Tello 469"
+    Y        ingreso la direccion donde sera la instalacion "Jose Leal 500"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    Y        selecciono el plan "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
@@ -45,5 +58,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlan      | nombrePlan
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464839  | Mono          | INTERNET MOVISTAR RA D22 100
+      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlanHogar | plan
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464839  | Mono          | INTERNET MOVISTAR RA D22 600

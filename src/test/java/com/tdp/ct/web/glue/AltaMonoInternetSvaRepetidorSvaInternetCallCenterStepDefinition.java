@@ -26,6 +26,9 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterStepDefinition {
     public void elegimossvarepetidor(String string) {
         altaMonoInternetSvaRepetidorSvaInternetCallCenterStep.elegimossvarepetidor(string);
     }
-
+    @Y("elegimos sva {string}")
+    public void elegimossva(String string) {
+        altaMonoInternetSvaRepetidorSvaInternetCallCenterStep.elegimossva(string);
+    }
 
 }

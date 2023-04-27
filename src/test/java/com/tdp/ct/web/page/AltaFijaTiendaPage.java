@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static org.assertj.core.api.BDDAssertions.and;
+
 
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
@@ -48,10 +50,22 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    //@FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+
+    //*[contains(text(),'Reintentar') 
+
+    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[5]/button")
+    @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
+    protected WebElement btnReintentarFinal;
+
+
+
+    @FindBy (xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
+    protected WebElement btnRegistrarVenta;
+
+    @FindBy(xpath = "/html/body/app-root/app-register/body/div[2]/form/div[7]/button")
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
@@ -62,16 +76,18 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaPlanFija(String planFija) {
-//        modalError(3,btnReintentar,"Click al elemento Reitentar");
-//        modalError(5,btnReintentar,"Click al elemento Reitentar");
-//        modalError(3,btnReintentar,"Click al elemento Reitentar");
-       waitUntilElementIsVisible(esperalistaPlanFija, 5);
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+       waitUntilElementIsVisible(esperalistaPlanFija, 10);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
     }
 
     public void listaOfertas(String planOfertas) {
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
+        modalError(10,btnReintentar,"Click al elemento Reitentar");
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
@@ -87,12 +103,14 @@ public class AltaFijaTiendaPage extends WebBase {
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
+        boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
             System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
+                encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
@@ -104,8 +122,13 @@ public class AltaFijaTiendaPage extends WebBase {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
-
             }
+        }
+        if(!encontroElemento && listaOfertas.size()>0){
+            System.out.println("No encontro elemento en la lista");
+            UtilWeb.waitForSeconds(2);
+            int cont = listaOfertas.size() - 1;
+            click(listaOfertas.get(cont));
         }
     }
 
@@ -156,17 +179,17 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
 
     }
 
     public void botonConfirmarAgendamiento() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        modalError(8,btnReintentar,"Click al elemento Reitentar");
+        //modalError(10,btnReintentar,"Click al elemento Reitentar");
+        //modalError(10,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
@@ -178,6 +201,7 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("paso aqui 2");
         } else {
             click(buttonConfirmar);
+            System.out.println("paso aqui 3");
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(5);
@@ -224,19 +248,51 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(2,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(100);
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsVisible(boton, 5000);
-        click(boton,50);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        System.out.println("Entra al primer try");
+        try {
+            boolean buttonFound = false;
+            int contador = 0;
+            int reintentoBucles = 3;
+            while (!buttonFound && contador <= reintentoBucles ){
+                System.out.println("Entra al while");
+                System.out.println("Entra al segundo try");
+                try {
+                    JavascriptExecutor jse = (JavascriptExecutor) driver();
+                    jse.executeScript("window.scrollBy(0,250)");
+                    UtilWeb.waitForSeconds(1);
+                    waitUntilElementIsVisible(btnRegistrarVenta, 2);
+                    buttonFound = true;
+                    System.out.println("Sale del segundo try");
+                }catch (Exception e){
+                    System.out.println("Espera 4 seg");
+                    UtilWeb.waitForSeconds(4);
+                    contador++;
+                    System.out.println(contador+" vez");
+                }
+            }
+            System.out.println("Sale del while");
+            //Thread.sleep(1500);
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            modalError(2, btnReintentar, "Click al elemento Reitentar");
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            //UtilWeb.waitForSeconds(100);
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+//            waitUntilElementIsVisible(boton, 5000);
+            click(btnRegistrarVenta);
+            System.out.println("Hace click en el boton Registrar Venta");
+//            UtilWeb.waitForSeconds(5);
+        }
+        catch (Exception e){
+            System.out.println("Salió del primer try");
+            System.out.println("Salta el registrar");
+        }
+
     }
 
     public void doyClickEnAñadirSVA() {
@@ -314,6 +370,7 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
+        WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
 
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("Edson");
@@ -327,13 +384,67 @@ public class AltaFijaTiendaPage extends WebBase {
         context2.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
         UtilWeb.waitForSeconds(2);
 
+        SearchContext context3 = sh().getContext(rootInput3);
+        context3.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
+        UtilWeb.waitForSeconds(2);
+
     }
 
     public void clickValidarRepreLegal() {
         js().scrollElementTop(btnValidaLegal);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
         waitUntilElementIsClickable(btnValidaLegal,30);
         click(btnValidaLegal);
         UtilWeb.waitForSeconds(4);
+    }
+
+    public void clickBotonRegistrarVenta() {
+//        UtilWeb.waitForSeconds(20);
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        System.out.println("Entra al primer try");
+        try {
+            boolean buttonFound = false;
+            int contador = 0;
+            int reintentoBucles = 15;
+            while (!buttonFound && contador <= reintentoBucles ){
+                System.out.println("Entra al while");
+                System.out.println("Entra al segundo try");
+                try {
+                    JavascriptExecutor jse = (JavascriptExecutor) driver();
+                    jse.executeScript("window.scrollBy(0,250)");
+                    UtilWeb.waitForSeconds(1);
+                    waitUntilElementIsVisible(btnRegistrarVenta, 2);
+                    buttonFound = true;
+                    System.out.println("Sale del segundo try");
+                }catch (Exception e){
+                    System.out.println("Espera 20 seg");
+                    UtilWeb.waitForSeconds(20);
+                    modalError(15, btnReintentarFinal, "Click al elemento Reitentar");
+                    contador++;
+                    System.out.println(contador+" vez");
+                }
+            }
+            System.out.println("Sale del while");
+            //Thread.sleep(1500);
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            modalError(2, btnReintentar, "Click al elemento Reitentar");
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+            //UtilWeb.waitForSeconds(100);
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            modalError(3, btnReintentar, "Click al elemento Reitentar");
+//            WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+//            waitUntilElementIsVisible(boton, 5000);
+            click(btnRegistrarVenta);
+            System.out.println("Hace click en el boton Registrar Venta");
+//            UtilWeb.waitForSeconds(5);
+        }
+        catch (Exception e){
+            System.out.println("Salió del primer try");
+            System.out.println("Salta el registrar");
+        }
+
+
     }
 }

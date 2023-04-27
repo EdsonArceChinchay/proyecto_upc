@@ -1,4 +1,17 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT091
+##GDAP: GDAP-1108
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
@@ -42,7 +55,7 @@
       Y        valido que este en la seccion de registro
       Y        doy click en agregar SVA Linea "<svaLinea>"
       Entonces doy click en Agregar Sva
-      Y        elegimos sva repetidor
+      Y        elegimos sva repetidor "<svarepetidor>"
       Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
       Cuando   doy clic a iniciar registro
@@ -63,5 +76,5 @@
 	  #Y        presiono el boton Registrar venta
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
       Ejemplos:
-        | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                      | svaLinea              |
-        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058938148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 25 |
+        | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                      | svaLinea              |svarepetidor              |
+        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058938148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 25 |Repetidor WIFI PLUS Venta |

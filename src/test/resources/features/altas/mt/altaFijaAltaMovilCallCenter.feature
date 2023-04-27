@@ -1,5 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT033
+##GDAP: GDAP-573
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 
 Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
 
@@ -28,9 +42,9 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-      #| A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -53,6 +67,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
+    #Y        doy click en el boton confirmar validacion
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
@@ -67,7 +82,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406721  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 100 Mbps + 95 Gb | KARIM       | JUAN        | PIURA       |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 71406721  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | HD 200 Mbps + 95 Gb | KARIM       | JUAN        | PIURA       |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular

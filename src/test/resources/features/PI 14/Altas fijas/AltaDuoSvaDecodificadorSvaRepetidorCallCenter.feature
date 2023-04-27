@@ -1,5 +1,19 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT087
+##GDAP: GDAP-1137
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
 Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
@@ -10,7 +24,6 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
   @AltaDuosvaDecodificadorsvaRepetidorCallCenter
   Esquema del escenario: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 	Cuando   presiono el boton Iniciar Sesion
-	Y        elijo una opcion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
 	Y        ingreso el usuario "<userName>"
 	Y        ingreso el password "<password>"

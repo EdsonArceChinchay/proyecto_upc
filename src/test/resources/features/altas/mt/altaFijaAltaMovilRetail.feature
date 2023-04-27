@@ -1,5 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT034
+##GDAP: GDAP-574
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
 
 Característica: AT-DT034_Alta Fija + Alta Movil por Retail
 
@@ -59,10 +73,10 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo | vsiguass  | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1022000011 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
+      | tipoUsuario     | userName   | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo |evillanuevag| #o2Wy23oA1458 | Bienvenid@ | CE            | 1000009111 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
 

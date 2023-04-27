@@ -1,5 +1,19 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT026
+##GDAP: GDAP-586
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP
 
 Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center
@@ -73,7 +87,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
    # Y        valido que se muestre el detalle del pedido
 	Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                               | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000410045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV  | Postpago  | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV  | Postpago  | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria

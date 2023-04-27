@@ -1,5 +1,20 @@
 #language:es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO:
+##GDAP: GDAP-1238
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO: MARIA SANCHEZ
+##FECMOD: 30/03/2023
+
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
 Característica: Alta Trio con sva Decodificador + sva Repetidor Canal Retail

@@ -1,5 +1,19 @@
 #language:es
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT011
+##GDAP: GDAP-582
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
@@ -9,7 +23,7 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "$t3l3f0n1c4$"
+      Y        ingreso el password "#o2Wy23oA1458"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
@@ -24,12 +38,12 @@
       Y        selecciono el boton Mostrar ofertas
       Entonces me muestra la pantalla para ingresar la direccion
       Y        completo los datos para consultar la cobertura
-        |departamento|provincia|distrito|direccion                    |referencia|
-        |15          |1501     |150116  |JIRON JULIO CESAR TELLO 460  |parque    |
+        | departamento | provincia | distrito | direccion                   | referencia |
+        | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
       Y        presiono el boton Consultar Ubicacion
       Y        ingreso la informacion del lugar para la instalacion
-        | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-        | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+        | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+        | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
       Y        presiono el boton Consultar Cobertura
       Y        selecciono tipo de oferta
       Y        selecciono el tipo de plan fija "Mono"

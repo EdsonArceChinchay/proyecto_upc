@@ -1,14 +1,20 @@
 #language:es
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT027
+##GDAP: GDAP-1151
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Angel Medina
+##FECMOD: 30/03/2023
 
-  # CREADOR: Angel Medina
-
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
-
-
-
-Característica: AT-DT027_Alta Movil Postpago solo chip Retail
-
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
+Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

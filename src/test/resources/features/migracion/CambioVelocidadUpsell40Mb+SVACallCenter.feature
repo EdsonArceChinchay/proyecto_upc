@@ -1,10 +1,21 @@
 #language:es
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT055
+##GDAP: GDAP-673
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Edson Arce
+##FECMOD: 30/03/2023
 
+@BERSERKERS @DoneDevOps
+Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
 
-  # CREADOR: Edson Arce
-
-@BERSERKERS @DoneDevOps @AT-DT055
-Característica:  AT-DT055_Cambio de velocidad dúo HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
 
   @CambioVelocidadDuoSvaWifi @MVP02 @Global @General
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA (repetidor wifi), CEX, canal call center
