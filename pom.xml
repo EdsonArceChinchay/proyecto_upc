@@ -39,8 +39,8 @@
     -->
     
     
+    <!--      Si da error local, usar temporalmente.   -->
     <!--
-    -- Si da error local, usar temporalmente.
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
