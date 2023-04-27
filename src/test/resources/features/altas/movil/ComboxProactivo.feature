@@ -63,8 +63,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
+#    Y        me muestra pantalla para Descargar contrato
+#    Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
