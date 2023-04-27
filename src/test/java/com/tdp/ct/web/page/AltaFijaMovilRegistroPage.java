@@ -41,7 +41,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonValidarIdentidad;
     @FindBy(xpath = "(//button[contains(text(),' Validación no biométrica')])[1]")
     protected WebElement buttonDiscapacitado;
-    @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
+    //@FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
+    @FindBy(xpath = "//button[@class='btn btnSecond' and contains(text(), 'Validación biométrica')]")
     protected WebElement buttonValBiometrica;
     @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
     protected WebElement selectTipoDoc;
@@ -167,10 +168,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(buttonIniciarRegistro, 20);
 
         String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
-        //buttonIniciarRegistro
         Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
 
-        esperaProgresiva(4,5,buttonIniciarRegistro);
+        //esperaProgresiva(4,5,buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
@@ -192,9 +192,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.btnCerrarModalError(driver(), 4, 4, buttonIniciarRegistro, this, elXpath2);
 
         String elXpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']";
-        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
+        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath2);
 
-        esperaProgresiva(12,5,labelAgendamiento);
+        //esperaProgresiva(12,5,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
@@ -263,10 +263,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void seleccionoTipoValidacion(String tipoValidacion) {
         UtilWeb.waitForSeconds(1);
         if (tipoValidacion.equalsIgnoreCase("discapacitado")) {
-            waitUntilElementIsVisible(buttonDiscapacitado, 5).click();
+            waitUntilElementIsVisible(buttonDiscapacitado, 10).click();
 
         } else {
-            waitUntilElementIsVisible(buttonValBiometrica, 5).click();
+            waitUntilElementIsVisible(buttonValBiometrica, 10).click();
         }
         UtilWeb.waitForSeconds(1);
     }
@@ -719,7 +719,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(10,20,scrollorden);
+        esperaProgresiva(20,10,scrollorden);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         modalError(3, btnReintentar, "Click al elemento Reintentar");

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.sql.Driver;
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -39,6 +40,7 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
     public static void reintentaModalError(WebDriver driver, int reintentos, int segEspera, WebElement elGatillo, WebBase webBase, String xpathElOk) {
         int count = 1;
         boolean flag = false;
+        boolean flag2 = false;
 
         while (count<=reintentos) {
             UtilWeb.waitForSeconds(segEspera);
@@ -73,15 +75,17 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
                         WebElement el;
 
                         if (total>1) {
-                            //el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
-                            List<WebElement> lista = driver.findElements(By.xpath(xpathReintentar));
-                            el = lista.get(lista.size()-1);
+                            el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
+                            /*List<WebElement> lista = driver.findElements(By.xpath(xpathReintentar+"/.."));
                             System.out.println("-----------");
+                            el = null;
                             for (WebElement l: lista) {
+                                el = l;
+                                el = l.findElement(By.xpath(xpathReintentar));
+                                webBase.js().scrollElementTop(el);
                                 System.out.println(l);
                             }
-                            webBase.js().scrollElementTop(el);
-                            System.out.println("-----------");
+                            System.out.println("-----------");*/
                         } else {
                             el = driver.findElement(By.xpath(xpathReintentar));
                         }
@@ -91,11 +95,14 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
 
                         if (flag) {
                             el.click();
+                            flag = false;
                             System.out.println("click a reintentar");
 
                             if (elGatillo!=null)
                                 webBase.waitUntilElementIsVisible(elGatillo, 10).click();
 
+                        } else {
+                            System.out.println("Reintentar no se muestra");
                         }
                     } else {
                         System.out.println("No se encontro el modal error");
@@ -103,6 +110,43 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
 
                 } catch (Exception e) {
                     System.out.println("error del elemento Reintentar exeption try catch: " + e.getMessage());
+                }
+
+                try {
+                    boolean elementoExistente;
+                    String xpathEntendido = "//*[contains(text(),'Entendido')]";
+                    elementoExistente = driver.findElements(By.xpath(xpathEntendido)).size() != 0;
+
+                    if (elementoExistente) {
+                        int total = driver.findElements(By.xpath(xpathEntendido)).size();
+                        WebElement el;
+
+                        if (total>1) {
+                            el = driver.findElement(By.xpath("(//*[contains(text(),'Entendido')])["+(total)+"]"));
+                        } else {
+                            el = driver.findElement(By.xpath(xpathEntendido));
+                        }
+
+                        System.out.println("modal entendido encontrado");
+                        flag2 = el.isDisplayed();
+
+                        if (flag2) {
+                            el.click();
+                            flag2 = false;
+                            System.out.println("click a entendido");
+
+                            if (elGatillo!=null){
+                                webBase.waitUntilElementIsVisible(elGatillo, 10).click();
+                                System.out.println("");
+                            }
+
+                        }
+                    } else {
+                        System.out.println("No se encontro el modal entendido");
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("error del elemento entendido exeption try catch: " + e.getMessage());
                 }
 
             } else {

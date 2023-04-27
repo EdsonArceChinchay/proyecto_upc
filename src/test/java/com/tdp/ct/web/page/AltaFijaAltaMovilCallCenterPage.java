@@ -45,6 +45,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
+    protected WebElement btnMostrar;
+
     public void manzana(String manzana) {
         UtilWeb.waitForSeconds(5);
         WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
@@ -269,7 +272,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 //        modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(7, btnReintentar, "Click al elemento Reintentar");
         String elXpath = "(//div[@class='tdp-col-md-6 tdp-col-lg-4'])[2]//img[@src='assets/images/icon_glove.svg']";
-        Addons.reintentaModalError(driver(), 6, 4, oferta, this, elXpath);
+        Addons.reintentaModalError(driver(), 6, 4, btnMostrar, this, elXpath);
 
         UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
@@ -279,10 +282,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         //UtilWeb.waitForSeconds(10);//10
+        /*modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
         modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");
-        esperaProgresiva(10,10,oferta);
+        esperaProgresiva(10,10,oferta);*/
+
+        String elXpath = "(//img[@src='assets/images/icon_glove.svg'])[2]";
+        Addons.reintentaModalError(driver(), 6, 4, null, this, elXpath);
+
         //UtilWeb.waitForSeconds(2);
         click(oferta);
         //waitUntilElementIsClickable(oferta, 100).click();
