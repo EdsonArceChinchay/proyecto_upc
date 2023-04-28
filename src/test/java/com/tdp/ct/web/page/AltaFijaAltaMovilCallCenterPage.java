@@ -299,6 +299,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(7, btnReintentar, "Click al elemento Reintentar");
+
+        revisarModalError(driver());
+
         UtilWeb.waitForSeconds(2);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");

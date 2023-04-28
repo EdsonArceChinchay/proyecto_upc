@@ -143,14 +143,16 @@ public class AltaFijaTiendaPage extends WebBase {
     public void seleccionarOferta() {
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");*/
+
+        revisarModalError(driver());
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(10);*/
+        UtilWeb.waitForSeconds(10);
         //UtilWeb.waitForSeconds(10);
         UtilWeb.waitForSeconds(3);
     }

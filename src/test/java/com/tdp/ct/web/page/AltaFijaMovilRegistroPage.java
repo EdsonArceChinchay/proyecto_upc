@@ -190,7 +190,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(10, btnReintentar, "Click al elemento Reintentar");
         //boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         //UtilWeb.waitForSeconds(1);
-
+        
         revisarModalError(driver());
 
         esperaProgresiva(driver(),5,5,labelAgendamiento);
