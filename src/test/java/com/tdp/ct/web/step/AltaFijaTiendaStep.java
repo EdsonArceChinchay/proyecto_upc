@@ -17,7 +17,7 @@ public class AltaFijaTiendaStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void validarNombresCompletosCliente(String nombreCompleto) {
-        UtilWeb.waitForSeconds(20);
+        //UtilWeb.waitForSeconds(20);
         Assert.assertTrue("No existe el nombre del cliente", page.altaFijaTiendaPage().nombresCompletosCliente()
                 .contains(nombreCompleto));
     }

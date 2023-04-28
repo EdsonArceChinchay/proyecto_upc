@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static org.assertj.core.api.BDDAssertions.and;
 
 
@@ -68,7 +69,8 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement btnValidaLegal;
 
     public String nombresCompletosCliente() {
-        waitUntilElementIsVisible(nombresCompletosCliente, 10);
+       // waitUntilElementIsVisible(nombresCompletosCliente, 10);
+        esperaProgresiva(driver(),5,5,nombresCompletosCliente);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         return getText(nombresCompletosCliente);
@@ -90,12 +92,13 @@ public class AltaFijaTiendaPage extends WebBase {
 
         //WebElement element = listaOfertas.get(0);
         String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
-        Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
@@ -105,7 +108,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(3);
             }
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         boolean encontroElemento = false;
         //-------------------------------------------------------//
@@ -137,7 +140,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
 
@@ -146,6 +149,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
+        UtilWeb.waitForSeconds(10);*/
         //UtilWeb.waitForSeconds(10);
         UtilWeb.waitForSeconds(3);
     }
@@ -161,7 +165,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void datosAgendamiento() {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
         elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
@@ -180,7 +184,7 @@ public class AltaFijaTiendaPage extends WebBase {
             click(listaHorario.get(0));
             System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
@@ -199,7 +203,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
         String elXpath = "//button[contains(text(),'Confirmar')]";
         //buttonConfirmar
-        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
 
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
@@ -219,7 +223,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void descargarContrato() {
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        /*modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         UtilWeb.waitForSeconds(10);
@@ -232,7 +236,7 @@ public class AltaFijaTiendaPage extends WebBase {
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-success > app-modal-pdf > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(1);*/
 
     }
 
@@ -266,7 +270,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
         String elXpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button";
         //btnRegistrarVenta
-        Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
 
         System.out.println("Entra al primer try");
         try {

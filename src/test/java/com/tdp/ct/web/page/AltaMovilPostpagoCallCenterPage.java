@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
@@ -89,7 +92,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         js().scrollElementTop(LblEquipos);
         waitUntilElementIsVisible(LblEquipos, 10);
         click(LblEquipos, 30);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void seleccionarTiempo(String tiempoP) {
@@ -192,11 +195,13 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        UtilWeb.waitForSeconds(10);//3
+        //UtilWeb.waitForSeconds(3);//3
+        esperaProgresiva(driver(),5,3,btnIniciar);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
-        waitUntilElementIsClickable(btnIniciar,150).click();
+        btnIniciar.click();
+       // waitUntilElementIsClickable(btnIniciar,150).click();
        // System.out.println("paso por aqui" + btnIniciar.getText());
         clickBtnCerrarModalError(btnIniciar);
     }

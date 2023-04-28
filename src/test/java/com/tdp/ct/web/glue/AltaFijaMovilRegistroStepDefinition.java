@@ -39,6 +39,7 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaAltaMovilRetailStep.writeInt(interior);
         altaFijaAltaMovilRetailStep.seleccionarConjunto(habitacion);
         altaFijaAltaMovilRetailStep.writeConjHab(conj);
+
     }
 
     @Entonces("me muestra la pantalla de ofertas sugeridos")

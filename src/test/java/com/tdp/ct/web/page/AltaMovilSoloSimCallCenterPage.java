@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.checkerframework.common.value.qual.EnsuresMinLenIf;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import com.tdp.ct.web.utils.Addons.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.text.SimpleDateFormat;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
@@ -47,14 +49,16 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     public void botonMostrarOfertasRapido() {
         clickBtnReintentar();
-        waitUntilElementIsVisible(btnMostrarOfertas, 60).click();
+        esperaProgresiva(driver(),5,5,btnMostrarOfertas);
+        waitUntilElementIsVisible(btnMostrarOfertas, 10).click();
     }
 
     public void ofertasSugeridas() {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        esperaProgresiva(20,10,ofertasSugeridas);
+        //clickBtnReintentar();
+        //clickBtnReintentar();
+        //clickBtnReintentar();
+        revisarModalError(driver());
+        esperaProgresiva(driver(),5,10,ofertasSugeridas);
         //waitUntilElementIsVisible(ofertasSugeridas, 200);//300
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
@@ -68,12 +72,14 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(3);
+        esperaProgresivaLoading(driver(), 3,5,"loading-offer");
         clickElementInAList(listaTipoPlanMovil, planMovil,10);
     }
 
     public void listaPlanMovil(String planMovil) {
-        clickBtnReintentar();
-        clickBtnReintentar();
+        revisarModalError(driver());
+        //clickBtnReintentar();
+        //clickBtnReintentar();
         System.out.println("Ofertas : " + listaPlanMovil.size());
 //        UtilWeb.waitForSeconds(2);
 //        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -128,11 +134,14 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void completaDatosSolicitados() {
-        waitUntilElementIsVisible(completaDatosSolicitados, 20);
+        //waitUntilElementIsVisible(completaDatosSolicitados, 20);
+        esperaProgresiva(driver(),5,5,completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 
+
     public void clickBtnReintentar() {
+        //NECESITA REFACTORIZAR: ELIMINAR
         UtilWeb.waitForSeconds(2);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;

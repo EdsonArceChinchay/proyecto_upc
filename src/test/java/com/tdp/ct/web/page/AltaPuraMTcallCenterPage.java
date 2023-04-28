@@ -98,13 +98,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        /*modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");*/
-
-        String elxpath = "//span[contains(text(),'Continuar')]/..";
-        //buttonContinuar
-        Addons.reintentaModalError(driver(), 4, 4, null, this, elxpath);
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
         int contador = 0;
