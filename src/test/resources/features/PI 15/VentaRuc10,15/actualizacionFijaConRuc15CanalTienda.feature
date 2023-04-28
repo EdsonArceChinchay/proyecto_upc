@@ -14,13 +14,13 @@
 ##FECMOD: 25/04/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Actualizacion fija todo los planes con ruc 15 canal Call Center
+Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @ActualizacionRuc15CallCenter
-  Esquema del escenario: Actualizacion fija todo los planes con ruc 15 canal Call Center
+  @ActualizacionRuc15Tienda
+  Esquema del escenario: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -37,5 +37,5 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Call Center
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE           | 7241133112 |15112233440|
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento |ruc     |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE           | 7241133112 |15112233441|
