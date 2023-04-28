@@ -46,108 +46,112 @@ public static void esperaProgresiva(int reintentosMax, int segundosEspera, WebEl
             UtilWeb.waitForSeconds(segEspera);
             System.out.println("--------------- ingreso al try -----------------");
 
+            try {
+                boolean elementoExistente;
+                String xpathReintentar = "//*[contains(text(),'Reintentar')]";
+                elementoExistente = driver.findElements(By.xpath(xpathReintentar)).size() != 0;
+
+                if (elementoExistente) {
+                    int total = driver.findElements(By.xpath(xpathReintentar)).size();
+                    WebElement el;
+
+                    if (total>1) {
+                        el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
+                        /*List<WebElement> lista = driver.findElements(By.xpath(xpathReintentar+"/.."));
+                        System.out.println("-----------");
+                        el = null;
+                        for (WebElement l: lista) {
+                            el = l;
+                            el = l.findElement(By.xpath(xpathReintentar));
+                            webBase.js().scrollElementTop(el);
+                            System.out.println(l);
+                        }
+                        System.out.println("-----------");*/
+                    } else {
+                        el = driver.findElement(By.xpath(xpathReintentar));
+                    }
+
+                    System.out.println("modal error encontrado");
+                    flag = el.isDisplayed();
+
+                    if (flag) {
+                        el.click();
+                        System.out.println("click a reintentar");
+
+                        if (elGatillo!=null)
+                            webBase.waitUntilElementIsVisible(elGatillo, 10).click();
+
+                    } else {
+                        System.out.println("Reintentar no se muestra");
+                    }
+                } else {
+                    System.out.println("No se encontro el modal error");
+                }
+
+            } catch (Exception e) {
+                System.out.println("error del elemento Reintentar exeption try catch: " + e.getMessage());
+            }
+
+            System.out.println("continua con el modal entendido");
+
+            try {
+                boolean elementoExistente;
+                String xpathEntendido = "//*[contains(text(),'Entendido')]";
+                elementoExistente = driver.findElements(By.xpath(xpathEntendido)).size() != 0;
+
+                if (elementoExistente) {
+                    int total = driver.findElements(By.xpath(xpathEntendido)).size();
+                    WebElement el;
+
+                    if (total>1) {
+                        el = driver.findElement(By.xpath("(//*[contains(text(),'Entendido')])["+(total)+"]"));
+                    } else {
+                        el = driver.findElement(By.xpath(xpathEntendido));
+                    }
+
+                    System.out.println("modal entendido encontrado");
+                    flag2 = el.isDisplayed();
+
+                    if (flag2) {
+                        el.click();
+                        System.out.println("click a entendido");
+
+                        if (elGatillo!=null){
+                            webBase.waitUntilElementIsVisible(elGatillo, 10).click();
+                            System.out.println("");
+                        }
+
+                    }
+                } else {
+                    System.out.println("No se encontro el modal entendido");
+                }
+
+            } catch (Exception e) {
+                System.out.println("error del elemento entendido exeption try catch: " + e.getMessage());
+            }
+
+            System.out.println("continua con el elemento xpathElOk");
+
             Boolean isVisible = false;
             try {
                 boolean elementoExistente;
                 elementoExistente = driver.findElements(By.xpath(xpathElOk)).size() != 0;
                 if (elementoExistente) {
                     isVisible = true;
-                    /*WebElement elOk = driver.findElement(By.xpath(xpathElOk));
-                    isVisible = elOk.isDisplayed();*/
+                /*WebElement elOk = driver.findElement(By.xpath(xpathElOk));
+                isVisible = elOk.isDisplayed();*/
                 }
-
             } catch (NoSuchElementException e) {
                 System.out.println("error del elemento Ok exeption try catch: NoSuchElementException");
             }
 
-            System.out.println("continua con el flujo");
-
             if (!isVisible) {
                 System.out.println("elemento Ok no se muestra");
 
-                try {
-                    boolean elementoExistente;
-                    String xpathReintentar = "//*[contains(text(),'Reintentar')]";
-                    elementoExistente = driver.findElements(By.xpath(xpathReintentar)).size() != 0;
-
-                    if (elementoExistente) {
-                        int total = driver.findElements(By.xpath(xpathReintentar)).size();
-                        WebElement el;
-
-                        if (total>1) {
-                            el = driver.findElement(By.xpath("(//*[contains(text(),'Reintentar')])["+(total)+"]"));
-                            /*List<WebElement> lista = driver.findElements(By.xpath(xpathReintentar+"/.."));
-                            System.out.println("-----------");
-                            el = null;
-                            for (WebElement l: lista) {
-                                el = l;
-                                el = l.findElement(By.xpath(xpathReintentar));
-                                webBase.js().scrollElementTop(el);
-                                System.out.println(l);
-                            }
-                            System.out.println("-----------");*/
-                        } else {
-                            el = driver.findElement(By.xpath(xpathReintentar));
-                        }
-
-                        System.out.println("modal error encontrado");
-                        flag = el.isDisplayed();
-
-                        if (flag) {
-                            el.click();
-                            flag = false;
-                            System.out.println("click a reintentar");
-
-                            if (elGatillo!=null)
-                                webBase.waitUntilElementIsVisible(elGatillo, 10).click();
-
-                        } else {
-                            System.out.println("Reintentar no se muestra");
-                        }
-                    } else {
-                        System.out.println("No se encontro el modal error");
-                    }
-
-                } catch (Exception e) {
-                    System.out.println("error del elemento Reintentar exeption try catch: " + e.getMessage());
-                }
-
-                try {
-                    boolean elementoExistente;
-                    String xpathEntendido = "//*[contains(text(),'Entendido')]";
-                    elementoExistente = driver.findElements(By.xpath(xpathEntendido)).size() != 0;
-
-                    if (elementoExistente) {
-                        int total = driver.findElements(By.xpath(xpathEntendido)).size();
-                        WebElement el;
-
-                        if (total>1) {
-                            el = driver.findElement(By.xpath("(//*[contains(text(),'Entendido')])["+(total)+"]"));
-                        } else {
-                            el = driver.findElement(By.xpath(xpathEntendido));
-                        }
-
-                        System.out.println("modal entendido encontrado");
-                        flag2 = el.isDisplayed();
-
-                        if (flag2) {
-                            el.click();
-                            flag2 = false;
-                            System.out.println("click a entendido");
-
-                            if (elGatillo!=null){
-                                webBase.waitUntilElementIsVisible(elGatillo, 10).click();
-                                System.out.println("");
-                            }
-
-                        }
-                    } else {
-                        System.out.println("No se encontro el modal entendido");
-                    }
-
-                } catch (Exception e) {
-                    System.out.println("error del elemento entendido exeption try catch: " + e.getMessage());
-                }
+            } else if (flag || flag2) {
+                System.out.println("modal error o entendido visibles");
+                flag = false;
+                flag2 = false;
 
             } else {
                 System.out.println("elemento Ok es visible");

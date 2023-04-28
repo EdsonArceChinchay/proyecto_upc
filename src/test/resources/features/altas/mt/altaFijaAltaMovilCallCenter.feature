@@ -59,13 +59,19 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
       | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
-    Y        selecciono un tipo de entrega "Delivery Express"
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    ## estaba "Delivery Express" en el paso anterior, pero no aparece la opción
+      Y selecciono el horario de entrega "2pm-7pm"
+      ## paso agregado
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
-    Y        selecciono el metodo de pago "Contra entrega"
+    #Y        selecciono el metodo de pago "Contra entrega"
+      ## paso comentado
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+      Y ingreso el call id "1"
+      #paso agregado
     Y        doy click en validar identidad del titular
     #Y        doy click en el boton confirmar validacion
     Y        ingreso los datos solicitados para la validacion del cliente

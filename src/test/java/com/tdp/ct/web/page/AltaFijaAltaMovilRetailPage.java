@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
@@ -83,7 +84,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(depaList);
         context.findElement(By.cssSelector("[data-value='"+tipoDepa+"']")).click();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionarProvincia(String tipoProvincia){
@@ -99,7 +100,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(10);
         SearchContext context=sh().getContext(provinciaList);
         context.findElement(By.cssSelector("[data-value='"+tipoProvincia+"']")).click();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void seleccionarDistrito(String tipoDistrito){
@@ -116,7 +117,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
         context.findElement(By.cssSelector("[data-value='"+tipoDistrito+"']")).click();
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void writeDireccion(String direc){
@@ -136,8 +137,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         waitUntilElementIsVisible(btnConsulta,5);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
-        reintarPopPup();
-        reintarPopPup();
+        /*reintarPopPup();
+        reintarPopPup();*/
+
+        String elXpath = "(//div[@class='_col'])[1]/tdp-st-input-text";
+        Addons.reintentaModalError(driver(), 4, 6, null, this, elXpath);
     }
 
     public void writeManzana(String manzana){

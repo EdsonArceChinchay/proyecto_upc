@@ -123,6 +123,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 boolean elementoExistente;
                 elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
                 if (elementoExistente) {
+                    System.out.println("dio click segundo for");
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
@@ -201,7 +202,6 @@ public class AltaFijaTiendaPage extends WebBase {
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
 
         String elXpath = "//button[contains(text(),'Confirmar')]";
-        //buttonConfirmar
         Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
 
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

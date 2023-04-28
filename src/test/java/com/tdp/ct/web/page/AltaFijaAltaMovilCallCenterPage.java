@@ -126,9 +126,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void btnConsultarCobertura() {
         UtilWeb.waitForSeconds(3);
         js().scrollElementTop(btnConsultarCobertura);
+        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");*/
+
+        String elXpath = "//button[@type='submit']";
+        Addons.reintentaModalError(driver(), 4, 6, null, this, elXpath);
+
         waitUntilElementIsVisible(btnConsultarCobertura, 100).click();//100
         UtilWeb.waitForSeconds(20);
     }
@@ -271,8 +275,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 //        modalError(8, btnReintentar, "Click al elemento Reintentar");
 //        modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(7, btnReintentar, "Click al elemento Reintentar");
-        String elXpath = "(//div[@class='tdp-col-md-6 tdp-col-lg-4'])[2]//img[@src='assets/images/icon_glove.svg']";
-        Addons.reintentaModalError(driver(), 6, 4, btnMostrar, this, elXpath);
+        //String elXpath = "(//div[@class='tdp-col-md-6 tdp-col-lg-4'])[2]//img[@src='assets/images/icon_glove.svg']";
+        String elXpath = "(//div[@class='card'])[2]//img[@src='assets/images/icon_glove.svg']";
+        Addons.reintentaModalError(driver(), 10, 6, btnMostrar, this, elXpath);
 
         UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();

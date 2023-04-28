@@ -313,7 +313,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         modalError(8, btnReintentar, "Click al elemento Reintentar");*/
 
         String elXpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]";
-        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+        Addons.reintentaModalError(driver(), 10, 8, null, this, elXpath);
 
         boolean buttonFound = false;
         int contador = 0;

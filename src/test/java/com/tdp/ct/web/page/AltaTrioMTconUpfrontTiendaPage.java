@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -95,6 +96,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         //modalError(2,btnReintentar,"Click al elemento Reitentar");
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //modalError(2,btnReintentar,"Click al elemento Reitentar");
+
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
@@ -102,6 +104,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         click(btnConfirmar);
         System.out.println("el boton confirmar 1");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
+
+        String elXpath = "//button[contains(text(),'Confirmar')]";
+        Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+
         UtilWeb.waitForSeconds(30);
         System.out.println("el boton confirmar 3");
     }

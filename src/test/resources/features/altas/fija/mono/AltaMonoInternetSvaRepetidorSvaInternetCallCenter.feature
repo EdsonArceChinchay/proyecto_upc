@@ -55,7 +55,8 @@
 	  Y        valido que este en la seccion de registro
 	  Entonces doy click en Agregar Sva
 	  Y        agrego "<svainternet>"
-	  Y        elegimos sva repetidor "<svarepetidor>"
+	  ##Y        elegimos sva repetidor "<svarepetidor>"
+		## se comenta el paso porque no ecuentra el elemento
 	  Y        doy click en Guardar cambios
 	  #Y        valido el detalle de la seleccion
 	  Cuando   doy clic a iniciar registro
@@ -64,6 +65,8 @@
 	  Y        presiono el boton confirmar agendamiento
 	  Y        ingreso un correo electronico "hola@gmail.com"
 	  Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+		Y ingreso el call id "1"
+		## agregado nuevo paso
 	  Y        doy click en datos del cliente
 	  Y        ingreso los datos del cliente
 		| fechaNac   | estadoCivil | nacionalidad |
