@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.apache.poi.ss.formula.atp.Switch;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -329,6 +330,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 click(element);
             }
         }*/
+        Addons.esperaProgresiva(driver(), 3, 3, listaOfertas.get(0));
+
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
@@ -343,6 +346,20 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
+            if (i == 0) {
+                boolean retrocede = true;
+                do {
+                    boolean elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+                    if (elementoExistente) {
+                        WebElement btnLeft = find().getElementByXPath("//img[@src='assets/images/left-arrow.png']");
+                        btnLeft.click();
+                        UtilWeb.waitForSeconds(2);
+                    } else {
+                        retrocede = false;
+                    }
+                } while (retrocede);
+            }
+
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
             System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
@@ -374,14 +391,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
 =======
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
+        //modalError(3, btnReintentar, "Click al elemento Reitentar");*/
         revisarModalError(driver());
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(3);
-        buttonSeleccionarOferta.click();*/
+        buttonSeleccionarOferta.click();
     }
 
     public void irAMovistarTotal() {

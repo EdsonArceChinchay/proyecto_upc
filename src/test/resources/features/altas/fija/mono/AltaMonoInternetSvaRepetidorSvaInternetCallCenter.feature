@@ -32,7 +32,7 @@
 	  Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	  Y        ingreso el documento "<documento>"
 	  Y        doy click en el boton consultar
-	  Y        cierro popup de error
+	  ##Y        cierro popup de error
 	  Y        ingreso los datos del cliente extranjero a registrar
 		| nombres         | apellidos      | genero   |
 		| Esther Marisol  | Lopez Bernardo | femenino |
