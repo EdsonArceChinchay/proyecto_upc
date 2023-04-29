@@ -38,4 +38,4 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE           | 7241133112 |15112233441|
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE           | 7241133112 |15112233442|
