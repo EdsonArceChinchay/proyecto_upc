@@ -110,6 +110,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void validarMsgHome(String msg) {
+        Addons.revisarModalError(driver());
         String expectedMsg = msg.trim().toLowerCase();
         String actualMsg = msgHome.getText().trim().toLowerCase();
         Assertions.assertTrue(actualMsg.contains(expectedMsg), "El mensaje obtenido: " + actualMsg + ", no coincide con lo esperado " + expectedMsg);

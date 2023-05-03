@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static org.assertj.core.api.BDDAssertions.and;
 
 
@@ -91,9 +92,9 @@ public class AltaFijaTiendaPage extends WebBase {
 //        modalError(10,btnReintentar,"Click al elemento Reitentar");
 
         //WebElement element = listaOfertas.get(0);
-        String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
+        //String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
         //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
-
+        revisarModalError(driver());
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
         System.out.println("Ofertas : " + listaOfertas.size());
@@ -142,14 +143,16 @@ public class AltaFijaTiendaPage extends WebBase {
     public void seleccionarOferta() {
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");*/
+
+        revisarModalError(driver());
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
         eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(10);*/
+        UtilWeb.waitForSeconds(10);
         //UtilWeb.waitForSeconds(10);
         UtilWeb.waitForSeconds(3);
     }
@@ -201,9 +204,10 @@ public class AltaFijaTiendaPage extends WebBase {
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
         //modalError(10,btnReintentar,"Click al elemento Reitentar");
 
-        String elXpath = "//button[contains(text(),'Confirmar')]";
+        //String elXpath = "//button[contains(text(),'Confirmar')]";
         //buttonConfirmar
         //Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
+        revisarModalError(driver());
 
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
@@ -268,9 +272,10 @@ public class AltaFijaTiendaPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");*/
 
-        String elXpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button";
+        //String elXpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button";
         //btnRegistrarVenta
         //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
+        revisarModalError(driver());
 
         System.out.println("Entra al primer try");
         try {
@@ -284,7 +289,7 @@ public class AltaFijaTiendaPage extends WebBase {
                     JavascriptExecutor jse = (JavascriptExecutor) driver();
                     jse.executeScript("window.scrollBy(0,250)");
                     UtilWeb.waitForSeconds(1);
-                    waitUntilElementIsVisible(btnRegistrarVenta, 2);
+                    waitUntilElementIsVisible(btnRegistrarVenta, 10);
                     buttonFound = true;
                     System.out.println("Sale del segundo try");
                 }catch (Exception e){
