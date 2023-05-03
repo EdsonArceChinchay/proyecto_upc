@@ -184,6 +184,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarPantallaAgendamiento() {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
+        clickBtnCerrarModalError(buttonIniciarRegistro);
         //modalError(10, btnReintentar, "Click al elemento Reintentar");
         //clickBtnCerrarModalError(buttonIniciarRegistro);
         //modalError(10, btnReintentar, "Click al elemento Reintentar");
@@ -320,9 +321,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(16);
         Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
-        UtilWeb.waitForSeconds(8);
         Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
