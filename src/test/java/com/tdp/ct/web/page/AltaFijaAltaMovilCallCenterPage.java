@@ -58,10 +58,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void lote(String lote) {
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(4);
         WebElement Lte = find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
         esperaProgresiva(driver(),3,5,Lte);
         click(Lte);
+        Lte.sendKeys(Keys.CONTROL + "a");
+        Lte.sendKeys(Keys.DELETE);
         type(Lte, lote);
     }
 
@@ -226,6 +228,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         revisarModalError(driver());
+
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -390,7 +393,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void seleccionarOferta() {
 
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
-=======
         //modalError(3, btnReintentar, "Click al elemento Reitentar");*/
         revisarModalError(driver());
 

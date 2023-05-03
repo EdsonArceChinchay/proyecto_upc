@@ -83,7 +83,8 @@ public class HomePage extends WebBase {
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         //UtilWeb.waitForSeconds(1);
-        click(btnconsultar);
+        btnConsultar.click();
+        //click(btnconsultar);
         //waitUntilElementIsVisible(boton01,20);
         esperaProgresiva(driver(),3,5,boton01);
         UtilWeb.waitForSeconds(5);//10

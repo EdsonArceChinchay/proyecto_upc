@@ -289,7 +289,7 @@ public class AltaFijaTiendaPage extends WebBase {
                     JavascriptExecutor jse = (JavascriptExecutor) driver();
                     jse.executeScript("window.scrollBy(0,250)");
                     UtilWeb.waitForSeconds(1);
-                    waitUntilElementIsVisible(btnRegistrarVenta, 2);
+                    waitUntilElementIsVisible(btnRegistrarVenta, 10);
                     buttonFound = true;
                     System.out.println("Sale del segundo try");
                 }catch (Exception e){

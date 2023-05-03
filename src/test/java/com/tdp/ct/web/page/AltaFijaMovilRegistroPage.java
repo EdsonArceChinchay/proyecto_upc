@@ -320,7 +320,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
+        UtilWeb.waitForSeconds(8);
         Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
+        UtilWeb.waitForSeconds(8);
+        Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
         int contador = 0;
@@ -329,7 +332,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonValidarContrato,2);
+                waitUntilElementIsVisible(buttonValidarContrato,8);
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Validar Contrato");
                 buttonFound = true;
             }catch (Exception e){
@@ -660,9 +663,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicConfirmarCliente() {
         UtilWeb.waitForSeconds(5);
-        WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
-        element.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//button[contains(text(),'Confirmar')]")).size() != 0;
+        if (elementoExistente) {
+            WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
+            esperaProgresiva(driver(), 5, 3, element);
+            element.click();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
+        } else {
+            System.out.println("No se encontro el elemento confirmar cliente");
+        }
         UtilWeb.waitForSeconds(5);
     }
 

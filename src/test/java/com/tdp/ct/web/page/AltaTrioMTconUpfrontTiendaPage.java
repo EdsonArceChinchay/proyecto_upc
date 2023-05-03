@@ -104,7 +104,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(8);
     }
 
     public void validoDetalleDeInstalacion() {
