@@ -4,6 +4,7 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -46,9 +47,9 @@ public class AltaPuraMTcallCenterStep {
 
     @ScreenShotBefore
     public void clicBotonContinuar(){
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
-        UtilWeb.waitForSeconds(15);//15
+        //UtilWeb.waitForSeconds(15);//15
     }
 
     @ScreenShotBefore

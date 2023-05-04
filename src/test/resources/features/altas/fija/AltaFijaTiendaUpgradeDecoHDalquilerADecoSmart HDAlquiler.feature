@@ -30,7 +30,7 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-	Y        cierro popup de error
+	##Y        cierro popup de error
     Y        selecciono agregar sva fija
     Y         seleccionamos agregar decodificador Smart HD
     Y        seleccionamos guardar cambios

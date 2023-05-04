@@ -39,6 +39,7 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaAltaMovilRetailStep.writeInt(interior);
         altaFijaAltaMovilRetailStep.seleccionarConjunto(habitacion);
         altaFijaAltaMovilRetailStep.writeConjHab(conj);
+
     }
 
     @Entonces("me muestra la pantalla de ofertas sugeridos")
@@ -123,8 +124,10 @@ public class AltaFijaMovilRegistroStepDefinition {
         UtilWeb.waitForSeconds(10);
         for(int i=0;i<3;i++){
             altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos);
+            System.out.println("-- click en siguiente --");
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }
+        System.out.println("----- termino preguntas ----------");
             UtilWeb.waitForSeconds(5);
             altaFijaMovilRegistroStep.clicEnConfirmar();
     }

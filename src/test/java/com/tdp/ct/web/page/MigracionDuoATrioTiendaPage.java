@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(css = "div:nth-child(1) > app-card-line")
@@ -76,8 +78,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
 
-        String elXpath = "div:nth-child(1) > app-card-line";
-        Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+        //String elXpath = "div:nth-child(1) > app-card-line";
+        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+        revisarModalError(driver());
 
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
@@ -137,9 +140,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         //modalError(5,btnReintentar,"Click al elemento Reitentar");
         //modalError(5,btnReintentar,"Click al elemento Reitentar");
 
-        String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
+        //String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
         //btnConfirmarDir
-        Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+        revisarModalError(driver());
 
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
@@ -189,11 +193,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
-        String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
-        Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
+        //String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
+        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
         /*clickBtnReintentar();
         clickBtnReintentar();
         clickBtnReintentar();*/
+        revisarModalError(driver());
+
         String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
