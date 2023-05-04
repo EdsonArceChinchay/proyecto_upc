@@ -312,7 +312,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;

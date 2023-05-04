@@ -140,7 +140,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
+        modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
         modalError(3,btnReintentar,"Click al elemento Reitentar");
 
@@ -149,7 +149,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);
         buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(10);*/
+        UtilWeb.waitForSeconds(10);
         //UtilWeb.waitForSeconds(10);
         UtilWeb.waitForSeconds(3);
     }

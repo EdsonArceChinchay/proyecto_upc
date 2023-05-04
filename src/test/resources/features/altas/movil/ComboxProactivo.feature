@@ -22,7 +22,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilComboProactivo_HappyPath
+  @AltaFijaMovilComboProactivo_HappyPath @prueba1
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -58,7 +58,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
+      | 12/12/1980 | Casado     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,7 +71,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/114.9 | ZTE BLADE A5 2020 NEGRO | Postpago  | Sin permanencia   | Al Contado |
 
 
   @AltaFijaMovilComboProactivo_Caso02
