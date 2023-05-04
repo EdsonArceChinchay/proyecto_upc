@@ -164,11 +164,13 @@ public class Addons {
                 boolean bReintentar = true;
                 int contador = 0;
                 int reintentosMax = 3;
+                int segundosEspera = 3;
                 do {
+                        UtilWeb.waitForSeconds(1);
                         LOGGER.log(Level.INFO, "revisarModalError #" + (contador+1) + "/" + reintentosMax);
-                        UtilWeb.waitForSeconds(2);
                         bExisteModal = driver.findElements(By.xpath("//mat-dialog-actions")).size() != 0;
                         if (bExisteModal) {
+                                UtilWeb.waitForSeconds(segundosEspera*contador);
                                 //UtilWeb.waitForSeconds(10); // MODIFICAR 2 ########################
                                 WebElement btnReintentar;
                                 WebElement btnEntendido;

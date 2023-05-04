@@ -32,7 +32,7 @@
 	  Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	  Y        ingreso el documento "<documento>"
 	  Y        doy click en el boton consultar
-	  Y        cierro popup de error
+	  ##Y        cierro popup de error
 	  Y        ingreso los datos del cliente extranjero a registrar
 		| nombres         | apellidos      | genero   |
 		| Esther Marisol  | Lopez Bernardo | femenino |
@@ -64,6 +64,8 @@
 	  Y        presiono el boton confirmar agendamiento
 	  Y        ingreso un correo electronico "hola@gmail.com"
 	  Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+		##Y ingreso el call id "1"
+      	## agregado nuevo paso
 	  Y        doy click en datos del cliente
 	  Y        ingreso los datos del cliente
 		| fechaNac   | estadoCivil | nacionalidad |
