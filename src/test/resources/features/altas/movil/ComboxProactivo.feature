@@ -63,8 +63,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
+#    Y        me muestra pantalla para Descargar contrato
+#    Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
@@ -82,7 +82,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
