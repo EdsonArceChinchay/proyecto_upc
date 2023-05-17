@@ -184,6 +184,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarPantallaAgendamiento() {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
+        clickBtnCerrarModalError(buttonIniciarRegistro);
         //modalError(10, btnReintentar, "Click al elemento Reintentar");
         //clickBtnCerrarModalError(buttonIniciarRegistro);
         //modalError(10, btnReintentar, "Click al elemento Reintentar");
@@ -318,11 +319,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
+        modalError(8, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(16);
         Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
-        UtilWeb.waitForSeconds(8);
         Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
@@ -747,15 +747,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),5,20,scrollorden);
+        esperaProgresiva(driver(),3,15,scrollorden);
         js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         //modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
-        esperaProgresiva(driver(),5,20,msjExitoso);
-        existe = waitUntilElementIsVisible(msjExitoso, 120).isDisplayed();
+        esperaProgresiva(driver(),3,15,msjExitoso);
+        existe = waitUntilElementIsVisible(msjExitoso, 50).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
