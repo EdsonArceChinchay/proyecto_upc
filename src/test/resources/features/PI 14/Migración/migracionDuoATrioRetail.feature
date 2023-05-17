@@ -59,4 +59,4 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
 
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 7241133113 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464833 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
