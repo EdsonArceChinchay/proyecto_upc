@@ -220,8 +220,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void agregoSVALinea(String svaLinea) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-       // UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(5);
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA LÍNEA')]/../descendant-or-self::tdp-st-select");
+        js().scrollElementTop(listElementPLan);
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);

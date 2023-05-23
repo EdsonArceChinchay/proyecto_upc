@@ -33,6 +33,10 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
 	Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	Y        ingreso el documento "<documento>"
 	Y        doy click en el boton consultar
+	  Y        cierro popup de error
+	  Y        ingreso los datos del cliente a registrar
+		  | nombres | apellidos   | genero   |
+		  | Ana     | Lopez Lopez | femenino |
 	Y        selecciono el boton Linea Nueva Hogar
 	Y        selecciono el boton Mostrar ofertas
 	Entonces me muestra la pantalla para ingresar la direccion
@@ -58,18 +62,24 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
 	Y        ingreso un correo electronico "testing-1@tester.com"
 	Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
 	#Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
-	Y        doy click en validar identidad del titular
-	Y        ingreso los datos solicitados para la validacion del cliente
-	  | nombreMadre   | nombrePadre   | distritoNac   |
-	  | <nombreMadre> | <nombrePadre> | <distritoNac> |
+#	Y        doy click en validar identidad del titular
+#	Y        ingreso los datos solicitados para la validacion del cliente
+#	  | nombreMadre   | nombrePadre   | distritoNac   |
+#	  | <nombreMadre> | <nombrePadre> | <distritoNac> |
 	#Entonces valido que me muestre el boton con el texto de identidad validada
+	  Y        doy click en datos del cliente
+	  Y        ingreso los datos del cliente
+		  | fechaNac   | estadoCivil | nacionalidad |
+		  | 12/12/1980 | Casado      | Alemania     |
+	  Y       doy click en el boton confirmar
 	Y        doy clic para validar contrato Movil
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
-	Y        doy click en Finalizar registro
+	#Y        doy click en Finalizar registro
+	  Y        doy click en el boton de continuar
 	#Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 	Ejemplos:
 	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  DNI           | 71235849   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 1101000012   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |

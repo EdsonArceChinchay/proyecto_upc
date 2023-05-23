@@ -77,4 +77,4 @@
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
       Ejemplos:
         | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                      | svaLinea              |svarepetidor              |
-        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058938148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD RA |  Plan Multidestino 25 |Repetidor WIFI PLUS Venta |
+        | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1101000012 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA |  Plan Multidestino 25 |Repetidor WIFI PLUS Venta |
