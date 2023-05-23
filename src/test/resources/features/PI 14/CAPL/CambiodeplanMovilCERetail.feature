@@ -35,12 +35,12 @@ Característica: AT-DT100_cambio de plan movil en Retail
     Y        selecciono el boton Ver detalle del servicio "650030388"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y selecciono boton Cambiar plan
-    Y  doy click en iniciar registro
+    Y       selecciono boton Cambiar plan
+    Y         doy click en iniciar registro
     Y        ingreso email "brettavoitteiyu-3241@yopmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
-    Y  doy clic en si acepto
+    Y         doy clic en si acepto
     Y        doy click en el boton de continuar
     Y  presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

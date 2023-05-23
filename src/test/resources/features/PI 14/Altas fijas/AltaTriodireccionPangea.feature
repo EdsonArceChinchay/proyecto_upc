@@ -45,7 +45,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150132"
-    Y        ingreso la direccion donde sera la instalacion "jr las calendulas 1756"
+    Y        ingreso la direccion donde sera la instalacion "JR LAS CALENDULAS 586"
     Y        ingreso la referencia de la direccion "casa naranja"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
