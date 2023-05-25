@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
