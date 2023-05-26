@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-
+##GDAP: GDAP-1382
 ##SPRINT CREADO: P15-SP3
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -31,11 +31,11 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>" y actualizo
+    Y        ingreso el ruc "<ruc>", digito verificador "<digito>" y actualizo
     Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
 
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento |ruc         |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE           | 1026435768 |171026435768|
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento |ruc |digito|
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | DNI           | 70756041 |17  |3     |
