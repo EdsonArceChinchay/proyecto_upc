@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROPG2
 
 Característica: AT-DT007_Alta Fija Mono Internet por Retail
 
@@ -46,7 +46,7 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
 	Y        presiono el boton Consultar Ubicacion
 	Y        ingreso la informacion del lugar para la instalacion
 	  | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-	  | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+	  | A  | 1    | EDIFICIO | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
 	Y        presiono el boton Consultar Cobertura
 	Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -71,4 +71,4 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000011233 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |

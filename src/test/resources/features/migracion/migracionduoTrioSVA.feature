@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROPG
 Característica: AT-DT065_Migracion de duo a Trio + sva
 
   Antecedentes:
@@ -50,7 +50,7 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Y        presiono el boton confirmar agendamiento
 	Y        ingreso un correo electronico "<correo>"
 	Y        ingreso nuevamente el correo electronico "<correo>"
-	Y        doy clic para validar contrato hogar
+	#Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado
 	Cuando   doy clic en si acepto
 	Y        doy click en el boton de continuar
@@ -59,4 +59,4 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 
 	Ejemplos:
 	  | tipoUsuario     | userName  | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-	  | usuario externo | jpachaot  | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 253462454  | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS |
+	  | usuario externo | jpachaot  | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102313498  | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS |

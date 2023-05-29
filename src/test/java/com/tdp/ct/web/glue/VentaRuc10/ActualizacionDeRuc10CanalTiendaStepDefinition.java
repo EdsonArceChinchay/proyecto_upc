@@ -25,4 +25,5 @@ public class ActualizacionDeRuc10CanalTiendaStepDefinition {
         actualizacionDeRuc10CanalTiendaStep.validoMensajeActualizacionCorrecta();
         actualizacionDeRuc10CanalTiendaStep.clickBotonEntendido();
     }
+
 }
