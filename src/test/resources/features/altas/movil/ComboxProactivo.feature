@@ -12,6 +12,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
+##OBS: Solo el primer escenario se refactorizó
 
 @carlos
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
@@ -686,4 +687,4 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                  | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |
