@@ -7,6 +7,7 @@ import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
 import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
 import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc10CanalTiendaPage;
+import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc17CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
 
@@ -159,6 +160,7 @@ public class StepPages {
 
     public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
     public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage(){return new ActualizacionDeRuc10CanalTiendaPage();}
+    public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage(){return new ActualizacionDeRuc17CanalTiendaPage();}
 
 }
 

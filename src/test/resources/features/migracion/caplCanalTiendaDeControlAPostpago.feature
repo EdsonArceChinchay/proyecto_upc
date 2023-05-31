@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28 @DROPG1
 Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplPorTiendaControlAPostpago

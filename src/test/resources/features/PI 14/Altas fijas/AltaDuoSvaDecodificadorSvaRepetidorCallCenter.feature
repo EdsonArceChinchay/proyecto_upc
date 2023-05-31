@@ -78,4 +78,4 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
 	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                              |decodificador | svarepetidor              |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 100 MBPS| 25.90        | Repetidor WIFI PLUS Venta |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 | 25.90        | Repetidor WIFI PLUS Venta |
