@@ -78,4 +78,4 @@ Característica: AT-DT090_Alta Duo Sva Repetidor + Sva Bloque Call Center
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
 	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                             |bloque |svarepetidor                  |
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1058943148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 50 MBPS| HBO   |  Repetidor WIFI PLUS Venta   |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 50 MBPS| HBO   |  Repetidor WIFI PLUS Venta   |

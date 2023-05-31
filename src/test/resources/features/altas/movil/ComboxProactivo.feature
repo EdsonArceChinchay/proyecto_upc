@@ -22,7 +22,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilComboProactivo_HappyPath @prueba1
+  @AltaFijaMovilComboProactivo_HappyPath @prueba1 @DROPG2
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -71,7 +71,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/114.9 | ZTE BLADE A5 2020 NEGRO | Postpago  | Sin permanencia   | Al Contado |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | ZTE BLADE A5 2020 NEGRO | Postpago  | Sin permanencia   | Al Contado |
 
 
   @AltaFijaMovilComboProactivo_Caso02

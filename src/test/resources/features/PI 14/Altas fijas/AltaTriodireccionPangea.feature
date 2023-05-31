@@ -23,55 +23,54 @@ Característica: AT-DT094_Alta trio con direccion pangea
 
   @Altatriopangea
 
-  Escenario: Alta trio Por Call Center con direccion pangea
+  Esquema del escenario: Escenario: Alta trio Por Call Center con direccion pangea
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "jpachaot"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
-    Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "166268248"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | Juan    | Lopez Anibal | masculino |
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150132"
-    Y        ingreso la direccion donde sera la instalacion "JR LAS CALENDULAS 586"
-    Y        ingreso la referencia de la direccion "casa naranja"
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-      #| mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda | nombreVivienda    | piso | int | conjunto             | conjHabit  |
+      | D  | 11   | EDIFICIO | Familia Barrios   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
-    Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono en linea Nueva
-    #Y        selecciono tipo de oferta
-    #Y        selecciono el tipo de plan fija "Trío"
-    #Y        selecciono el plan "TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22"
-    Y        valido que este en la seccion de registro
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el plan "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "testing-1@tester.com"
+    Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Alemania     |
+      | 02/10/1980 | Divorciado      | Alemania     |
     Y       doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
+    Ejemplos:
+      | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
+      | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 1101000015   | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22  | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |

@@ -70,7 +70,7 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
 	  Y        doy click en datos del cliente
 	  Y        ingreso los datos del cliente
 		  | fechaNac   | estadoCivil | nacionalidad |
-		  | 12/12/1980 | Casado      | Alemania     |
+		  | 02/10/1980 | Casado      | Alemania     |
 	  Y       doy click en el boton confirmar
 	Y        doy clic para validar contrato Movil
 	Y        me muestra en pantalla el contrato solicitado
@@ -82,4 +82,4 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
 
 	Ejemplos:
 	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 1101000012   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 1101000013   | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA  | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |

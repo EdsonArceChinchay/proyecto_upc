@@ -21,6 +21,7 @@ public class ActualizacionDeRuc10CanalTiendaPage extends WebBase {
     protected WebElement mensaje;
     @FindBy(xpath = "(//button[contains(text(),'Entendido')])[2]")
     protected WebElement Entendido;
+
     public void seleccionoBotonVerDetalle() {
         //String btnVerOfertas = ".btn-detail tdp-st-button;button";
        // WebElement element = js().getWebElement(btnVerOfertas);
