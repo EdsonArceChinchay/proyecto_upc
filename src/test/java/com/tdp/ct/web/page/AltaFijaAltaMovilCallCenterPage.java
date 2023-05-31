@@ -228,7 +228,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         revisarModalError(driver());
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
