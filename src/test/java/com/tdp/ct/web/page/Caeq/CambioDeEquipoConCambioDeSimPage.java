@@ -26,7 +26,7 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
     }
 
     public void seleccionoelbotonCambiodeChip() {
-        waitUntilElementIsVisible(btnCambiarChip,20);
+        waitUntilElementIsVisible(btnCambiodeChip,20);
         click(btnCambiodeChip);
     }
 
