@@ -10,8 +10,8 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO
+##FECMOD: 31/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
 
@@ -76,5 +76,5 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque Call Cente
 	  #Y        presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
 	Ejemplos:
-	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque |decodificador|
-	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 1022208148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 |  HBO   |25.90        |
+	  | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                | bloque |decodificador|
+	  | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            | 123200000  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA M23|  HBO   |25.90        |
