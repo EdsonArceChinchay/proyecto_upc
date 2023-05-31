@@ -1,12 +1,26 @@
 #language: es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT109
+##GDAP: GDAP-728
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-  Característica: Flujo de sva en el canal Call Center
+  Característica: AT-DT109_Flujo de sva en el canal Call Center
 
     Antecedentes:
       Dado     que abro la pagina de movistar
 
-    @SvaCallCenter @Global
+    @SvaCallCenter
     Esquema del escenario: Sva en el canal Call Center
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -33,8 +47,7 @@
       Y        doy click en el boton de continuar
       #Y        presiono el boton Registrar venta
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      Y        valido que se muestre el detalle del pedido
 
       Ejemplos:
-        | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                  | tipoDocumento | documento    | correo           |
-        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 100212312426 | correo@gmail.com |
+        | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                  | tipoDocumento | documento | correo           |
+        | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 120906347 | correo@gmail.com |

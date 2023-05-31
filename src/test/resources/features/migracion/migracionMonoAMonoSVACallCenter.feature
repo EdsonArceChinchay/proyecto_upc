@@ -1,12 +1,26 @@
 #language:es
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT069
+##GDAP: GDAP-1141
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 30/03/2023
 
-Característica: Migracion de Mono a Mono por el canal Call Center
+@BERSERKERS @DoneDevOps
+Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionMonoAMonoSVACallCenter @Global
-  Esquema del escenario: Migracion de Mono a Mono
+  @MigracionMonoAMonoSVACallCenter @MVP19  @Global @General
+  Esquema del escenario: Migracion (mono a mono) + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -20,7 +34,7 @@ Característica: Migracion de Mono a Mono por el canal Call Center
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

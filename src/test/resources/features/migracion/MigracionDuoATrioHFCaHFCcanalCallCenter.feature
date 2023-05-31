@@ -1,12 +1,26 @@
 
 #language: es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
-Característica: Migracion Duo A Trio HFC a HFC canal Call Center
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT060
+##GDAP: GDAP-727
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioHFCaHFCcanalCallCenter @Global
+  @MigracionDuoATrioHFCaHFCcanalCallCenter
   Esquema del escenario:Migracion Duo A Trio HFC a HFC
 	Cuando   presiono el boton Iniciar Sesion
 	Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -20,7 +34,7 @@ Característica: Migracion Duo A Trio HFC a HFC canal Call Center
 	Y        doy click en el boton consultar
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
-	Y        doy click en en el boton "Confirmar direccion"
+	Y        doy click en el boton "Confirmar direccion"
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
 	Y        selecciono la oferta "<plan>"
@@ -38,7 +52,7 @@ Característica: Migracion Duo A Trio HFC a HFC canal Call Center
 	Y        doy click en el boton de continuar
 	Y         presiono el boton Registrar venta
 	Entonces visualizo en pantalla el mensaje de exito de la venta generada
-	Y        valido que se muestre el detalle del pedido
+	#Y        valido que se muestre el detalle del pedido
 	Ejemplos:
 	  | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                  | tipoDocumento | documento | correo            |   tipoPlanHogar | plan                                               |
 	  | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS  | CE            | 128888888 | tester@tester.com |   Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

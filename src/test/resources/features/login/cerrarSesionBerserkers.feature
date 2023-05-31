@@ -1,7 +1,21 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT052
+##GDAP: GDAP-598
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 
-Característica: Cerrar Sesion - FE DITO WEB
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG1
+
+Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
 
   @CerrarSesionBerserker @CanceloCerrarSesion
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cancelar la accion de cerrar sesion

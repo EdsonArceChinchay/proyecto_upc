@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
@@ -68,10 +71,17 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@type='button' and @class='close']")
     protected WebElement btnClosePopUp;
+    @FindBy(xpath = "//div[text()='MÓDEM']/parent::div/../descendant-or-self::tdp-st-checkbox[1]")
+    protected WebElement agregarModem;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
+
+        //String elXpath = "div:nth-child(1) > app-card-line";
+        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+        revisarModalError(driver());
+
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -88,7 +98,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(8);
         clickElementInAList(listaPlanFija, plaHogar);
         UtilWeb.waitForSeconds(1);
     }
@@ -115,13 +125,26 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        UtilWeb.waitForSeconds(4);
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        modalError(20,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(30);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
-
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
+    protected WebElement btnMostrar;
     public void doyClickEnEnElBoton(String btn) {
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+
+        //String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
+        //btnConfirmarDir
+        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+        revisarModalError(driver());
+
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
@@ -130,7 +153,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 waitUntilElementIsClickable(btnActualizarDir, 50).click();
                 UtilWeb.waitForSeconds(1);
                 break;
-
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
@@ -171,9 +193,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
+        //String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
+        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
+        /*clickBtnReintentar();
         clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        clickBtnReintentar();*/
+        revisarModalError(driver());
+
         String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
@@ -194,8 +220,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void agregoSVALinea(String svaLinea) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-        WebElement listElementPLan = find().getElementByCss(".services-section:nth-child(2) .section-content:nth-child(3) .flex_100");
-        click(listElementPLan);
+        UtilWeb.waitForSeconds(5);
+        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA LÍNEA')]/../descendant-or-self::tdp-st-select");
+        js().scrollElementTop(listElementPLan);
+        listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
@@ -207,4 +235,31 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             }
         }
     }
+
+    public void doyClickEnAgregarModem() {
+        UtilWeb.waitForSeconds(3);
+        agregarModem.click();
+    }
+
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        boolean modalExiste;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
+        if (modalExiste) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
+        }
+    }
+
 }

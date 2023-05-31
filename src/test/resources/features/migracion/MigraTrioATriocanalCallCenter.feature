@@ -1,7 +1,22 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT082
+##GDAP: GDAP-724
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Trio a trio  por el canal Call Center
+Característica: AT-DT082_Migracion de Trio a trio  por el canal Call Center
 
   Antecedentes:
 	Dado     que abro la pagina de movistar
@@ -21,7 +36,7 @@ Característica: Migracion de Trio a trio  por el canal Call Center
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
 	Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-	Y        doy click en en el boton "Confirmar direccion"
+	Y        doy click en el boton "Confirmar direccion"
 	Y        selecciono tipo de oferta
 	Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
 	Y        selecciono la oferta "<plan>"

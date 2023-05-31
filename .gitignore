@@ -3,6 +3,10 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Chrome drivers
+drivers/chrome/**
+!drivers/chrome/.gitkeep
+
 # Node artifact files
 node_modules/
 dist/
@@ -47,6 +51,3 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
-*.iml
-/drivers

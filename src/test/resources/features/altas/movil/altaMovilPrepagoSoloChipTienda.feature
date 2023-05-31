@@ -1,13 +1,27 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT028
+##GDAP: GDAP-587
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 
-Característica: Alta Movil Prepago solo chip Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
+
+Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilPrepagoSoloChipTienda_CE @Global
+  @AltaMovilPrepagoSoloChipTienda_CE
   Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -45,5 +59,5 @@ Característica: Alta Movil Prepago solo chip Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1042464890 | PLAN PREPAGO | Preplan    |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042354781 | PLAN PREPAGO | Preplan    |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

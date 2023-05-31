@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
@@ -41,7 +42,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     public void completarIdCall(String idCall) {
 
-        WebElement rootInputConfirmarCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[2]");
+        WebElement rootInputConfirmarCorreo = find().getElementByCss("tdp-st-input-text[formcontrolname=\"callID\"]");
         SearchContext context3 = sh().getContext(rootInputConfirmarCorreo);
         context3.findElement(By.cssSelector("div > div > div > input")).sendKeys(idCall);
 
@@ -97,31 +98,57 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        waitUntilElementIsVisible(buttonContinuar, 600);
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
+
+        boolean buttonFound = false;
+        int contador = 0;
+        int reintentoBucles = 3;
+        while (!buttonFound && contador <= reintentoBucles){
+            System.out.println("Entra al while");
+            try {
+                System.out.println("Entra al try");
+                waitUntilElementIsVisible(buttonContinuar,2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Continuar");
+                buttonFound = true;
+            }catch (Exception e){
+                System.out.println("Entra al catch");
+                UtilWeb.waitForSeconds(6);
+                contador++;
+                System.out.println(contador+" vez");
+            }
+        }
+        UtilWeb.logger(this.getClass()).log(Level.INFO,"Sale del While");
+//        waitUntilElementIsVisible(buttonContinuar, 100);
         js().scrollElementTop(buttonContinuar);
-        waitUntilElementIsClickable(buttonContinuar, 600);
-        click(buttonContinuar,20);
+//        waitUntilElementIsClickable(buttonContinuar, 100);
+        click(buttonContinuar);
+//        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        UtilWeb.waitForSeconds(5);
     }
 
     public void clickCierrePopup(){
-        UtilWeb.waitForSeconds(8);//inhabilitado
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        UtilWeb.waitForSeconds(3);//inhabilitado
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
         elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() !=0;
         if (elementoExistente){
+            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
             System.out.println("Se cierra Popup de error");
-            UtilWeb.waitForSeconds(3);
-            click(cierrePopUoError);
-            UtilWeb.waitForSeconds(2);
+            //UtilWeb.waitForSeconds(3);
+            try {
+                click(cierrePopUoError);
+
+            } catch (Exception e) {
+                System.out.println("error al hacer click");
+            }
+            //UtilWeb.waitForSeconds(2);
         }else {
             System.out.println("no se encontró mensaje de error");
-            UtilWeb.waitForSeconds(2);
+            //UtilWeb.waitForSeconds(2);
         }
     }
 

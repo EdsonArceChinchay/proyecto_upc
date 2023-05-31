@@ -3,8 +3,11 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.logging.Level;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
@@ -13,7 +16,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
     //@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
-    @FindBy(xpath = "(//tdp-st-button)[1]")
+    @FindBy(xpath = "/html/body/app-root/app-park/div[3]/app-modal-detallemovil/tdp-st-modal/div[3]/div/div[1]/button")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")
@@ -31,17 +34,26 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
     protected WebElement btnConShadowIniciarRegistro;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
+    protected WebElement btnEntendido;
+
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
+
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
     }
 
     public void clickBtnCardPlanActual() {
+        UtilWeb.waitForSeconds(2);
         click(btnCardPlanActual);
         UtilWeb.waitForSeconds(10);
     }
 
     public void clickBtnRenovarPlan() {
+        modalError(3, btnReintentar, "Click al elemento Reitentar");
+        modalError(3, btnReintentar, "Click al elemento Reitentar");
         waitUntilElementIsVisible(btnRenovarPlan, 10);
         click(btnRenovarPlan);
         UtilWeb.waitForSeconds(10);
@@ -120,4 +132,23 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         type(ele2, email);
         UtilWeb.waitForSeconds(1);
     }
+
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        boolean modalExiste;
+        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        if (modalExiste) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
+        }
+    }
+
 }

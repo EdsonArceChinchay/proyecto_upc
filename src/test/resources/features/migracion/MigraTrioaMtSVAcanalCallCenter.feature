@@ -1,7 +1,22 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT081
+##GDAP: GDAP-998
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Trio a MT por Canal Call Center
+Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -21,7 +36,7 @@ Característica: Migracion de Trio a MT por Canal Call Center
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla de ofertas sugeridos
 #    Y        selecciono plan Movistar Total para ver las ofertas
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta

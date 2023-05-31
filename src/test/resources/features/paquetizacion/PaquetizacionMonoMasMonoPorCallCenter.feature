@@ -1,7 +1,22 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: Paquetizacion Mono mas Mono Call Center
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT086
+##GDAP: GDAP-729
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT086
+
+Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
   Quiero realizar una paquetizacion por call center
 
   Antecedentes:
@@ -40,5 +55,5 @@ Característica: Paquetizacion Mono mas Mono Call Center
 
 	Ejemplos:
 	  | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                          |
-	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100777891  | Duo      | DÚO INTERNET ESTÁNDAR HD RA 70 MBPS |
+	  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100777891  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
 

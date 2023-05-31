@@ -1,15 +1,29 @@
 #language: es
 
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT110
+##GDAP: GDAP-1152
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-  Característica: totalizacion servicio fijo mas alta movil por canal call center
+  Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center
 
     Antecedentes:
       Dado     que abro la pagina de movistar
 
     @totalizaciontriomasaltamovil
 
-    Escenario: scenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
+    Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "jpachaot"
@@ -18,13 +32,13 @@
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
-      Y        ingreso el documento "123456776"
+      Y        ingreso el documento "109084827"
       Y        doy click en el boton consultar
       Y        selecciono la cartilla del plan activo
       Y        selecciono el boton Linea Nueva Movil
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
-      #Y        doy click en en el boton "Confirmar direccion"
+      Y        doy click en el boton "Confirmar direccion"
       Entonces me muestra la pantalla de ofertas sugeridos
       Y        luego doy click en la cartilla ir a Movistar Total
       Cuando   doy clic a iniciar registro

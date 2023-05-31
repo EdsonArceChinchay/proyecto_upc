@@ -1,7 +1,22 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT077
+##GDAP: GDAP-718
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: Migracion salto 0 canal Call Center
+Característica: AT-DT077_Migracion salto 0 canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -19,7 +34,7 @@ Característica: Migracion salto 0 canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro

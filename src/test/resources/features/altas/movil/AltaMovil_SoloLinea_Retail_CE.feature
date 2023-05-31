@@ -1,14 +1,30 @@
 #language:es
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT031
+##GDAP: GDAP-959
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Angel Medina
+##FECMOD: 24/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
 
-Característica: Alta Movil Postpago solo chip Retail
+
+
+Característica: AT-DT031_Alta Movil Postpago CEX Retail
 
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MVP_Alta_movil_SoloSim_CanalRetail
-  Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
+  @MVP_Alta_movil_SoloSim_CanalRetail @MVP01 @Global
+  Esquema del escenario: Realizar alta móvil solo línea postpago en canal retail, en web FE, con CEX, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -35,16 +51,15 @@ Característica: Alta Movil Postpago solo chip Retail
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/12/1980 | Casado     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
-    Y        presiono el boton descargar contrato
+  #  Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
- #   Entonces visualizo en pantalla el mensaje de exito de la venta generada
+   Entonces visualizo en pantalla el mensaje de exito de la venta generada
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
-
+      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento   | nombrePlan                              |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |

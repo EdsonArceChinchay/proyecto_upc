@@ -1,11 +1,25 @@
 #language:es
-@BERSERKERS @DoneDevOps @RegresionPangea
-Característica: Migracion de Mono HFC a Duo FTTH Call Center
 
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT074
+##GDAP: GDAP-726
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
+Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migracionMonoDuoCallCenter
+  @migracionMonoHFCDuoFtthCallCenter @MVP18 @Global @General
   Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, en canal call center, web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -20,7 +34,7 @@ Característica: Migracion de Mono HFC a Duo FTTH Call Center
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

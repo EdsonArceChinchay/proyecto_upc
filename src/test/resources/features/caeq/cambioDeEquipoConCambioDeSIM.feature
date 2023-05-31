@@ -1,7 +1,21 @@
 #language:es
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT049
+##GDAP: GDAP-590
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
+Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
 
   @CambioEquipoConCambioSIM
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -38,4 +52,4 @@ Característica: Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |

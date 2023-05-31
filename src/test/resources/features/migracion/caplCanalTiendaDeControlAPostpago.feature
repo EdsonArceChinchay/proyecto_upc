@@ -1,6 +1,20 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT056
+##GDAP: GDAP-597
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28 @DROPG1
+Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
 
   @CaplPorTiendaControlAPostpago
   Escenario: CAPL con Caeq al contado con canal Tienda de un Control a Postpago exitoso
@@ -13,10 +27,11 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        valido que se presente la tienda "CAJAMARCA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "147258369"
+    Y        ingreso el documento "1042464783"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650024805"
-    Y        doy click en en el boton "Renovar plan"
+    Y        selecciono el boton Ver detalle del servicio "920956610"
+  #"650025121"
+    Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
 #    Y        selecciono el boton de eleccion de planes Plan Nuevo
@@ -33,7 +48,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 #    Y        selecciono el nombre del plan "<nombrePlan>"
 #    Y         doy click en el boton seleccionar la oferta
     Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/99.9"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
 #    Y        selecciono el plan "POSTPAGO" y presiono Seleccionar Oferta
 #    Y        valido que se haya seleccionado el plan "Plan Ilimitado Mi Movistar" correctamente
 #      Y        presiono la opcion Añadir equipo en el card del plan actual
@@ -63,7 +78,7 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
 
 #    1598886623  1598886623

@@ -1,12 +1,27 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT073
+##GDAP: GDAP-722
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion de Mono a Mono por el canal Call Center
+Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionMonoMonoCallCenter @Global
+  @MigracionMonoMonoCallCenter
   Esquema del escenario: Migracion de Mono a Mono
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -21,7 +36,7 @@ Característica: Migracion de Mono a Mono por el canal Call Center
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "JR,POMALCA,290,SAN MIGUEL" actual del servicio
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

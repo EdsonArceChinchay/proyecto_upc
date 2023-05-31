@@ -2,16 +2,21 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static java.awt.event.KeyEvent.*;
 
 public class HomePage extends WebBase {
@@ -40,8 +45,6 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[@class='validation']//tdp-st-select")
     protected WebElement listaDocumentos;
 
-
-
     public void seleccionoTipoDocumento(String tipoDocumento){
         UtilWeb.waitForSeconds(2);
         WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
@@ -69,6 +72,7 @@ public class HomePage extends WebBase {
 
     }
 
+
     public void ingresoDocumento(String documento){
         WebElement document= find().getElementByCss("#doc");
         click(document);
@@ -76,10 +80,14 @@ public class HomePage extends WebBase {
 
     }
     public void clickBotonConsultar(){
-        waitUntilElementIsVisible(btnconsultar,10);
-        click(btnconsultar);
-        waitUntilElementIsVisible(boton01,20);
-        UtilWeb.waitForSeconds(20);//10
+        //waitUntilElementIsVisible(btnconsultar,10);
+        esperaProgresiva(driver(),3,5,btnconsultar);
+        //UtilWeb.waitForSeconds(1);
+        btnConsultar.click();
+        //click(btnconsultar);
+        //waitUntilElementIsVisible(boton01,20);
+        esperaProgresiva(driver(),3,5,boton01);
+        UtilWeb.waitForSeconds(5);//10
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
@@ -103,6 +111,9 @@ public class HomePage extends WebBase {
     }
 
     public void seleccionoElIDDeClienteNro(String nro) {
+        String elXpath = "(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]";
+        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+
         WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]");
         waitUntilElementIsVisible(nroItem, 10).click();
         UtilWeb.waitForSeconds(1);

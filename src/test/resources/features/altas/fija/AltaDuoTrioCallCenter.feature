@@ -1,7 +1,22 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Alta Duo Trio Call Center
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT001
+##GDAP: GDAP-570
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG1
+
+Característica: AT-DT001_Alta Duo Trio Call Center
   Quiero realizar una alta fija por call center
 
   Antecedentes:
@@ -62,5 +77,5 @@ Característica: Alta Duo Trio Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlan | nombrePlan  |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 114400914 | Duo      | RA D22 100 MBPS |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 114400915 | Duo      | RA D22 100 MBPS |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100014564 | Trío     | RA D22 100 MBPS |

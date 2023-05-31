@@ -1,14 +1,26 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT027
+##GDAP: GDAP-1151
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Angel Medina
+##FECMOD: 30/03/2023
 
-Característica: Alta Movil Postpago solo chip Retail
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
+Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MVP_Alta_Postpago_sim_CanalRetail @Global
-  Esquema del escenario: Alta movil Postpago solo chip
+  @MVP_Alta_Postpago_sim_CanalRetail @MVP13 @Global
+  Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

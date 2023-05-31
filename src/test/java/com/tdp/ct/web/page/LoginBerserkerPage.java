@@ -2,19 +2,26 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class LoginBerserkerPage extends WebBase {
 
-    @FindBy(css = ".welcome-container .content .title-desc button")
+    //FindBy(css = ".welcome-container .content .title-desc button")
+    @FindBy(xpath = "//button[text()='Iniciar sesion']")
     protected WebElement btnIniciarSesion;
 
     @FindBy(id = "procedencia_usuario")
@@ -59,12 +66,14 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnIniciarSesion() {
-        waitUntilElementIsVisible(btnIniciarSesion, 15);
+        //waitUntilElementIsVisible(btnIniciarSesion, 10);
+        Addons.esperaProgresiva(driver(),10,5,btnIniciarSesion);
         click(btnIniciarSesion);
-        waitUntilElementIsVisible(tipoUsuario, 10);
+        waitUntilElementIsVisible(tipoUsuario, 5);
     }
 
     public void selectTipoUsuario(String usuario) {
+        esperaProgresiva(driver(),3,5,tipoUsuario);
         Select usuarioSelect = new Select(tipoUsuario);
         usuarioSelect.selectByVisibleText(usuario);
         UtilWeb.waitForSeconds(1);
@@ -81,9 +90,13 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-        UtilWeb.waitForSeconds(5);
+
+ /*        click(btnContinuar);
+        waitUntilElementIsVisible(msgHome, 100);*/
+        esperaProgresiva(driver(),3,5,btnContinuar);
         click(btnContinuar);
-        waitUntilElementIsVisible(msgHome, 100);
+        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(),3,6,msgHome);
     }
 
     public void clickBtnContinuar() {
@@ -97,6 +110,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void validarMsgHome(String msg) {
+        Addons.revisarModalError(driver());
         String expectedMsg = msg.trim().toLowerCase();
         String actualMsg = msgHome.getText().trim().toLowerCase();
         Assertions.assertTrue(actualMsg.contains(expectedMsg), "El mensaje obtenido: " + actualMsg + ", no coincide con lo esperado " + expectedMsg);

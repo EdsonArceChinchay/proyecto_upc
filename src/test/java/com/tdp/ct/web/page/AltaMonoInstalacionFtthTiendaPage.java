@@ -34,6 +34,9 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
+    protected WebElement btnEntendido;
+
     public void scrollToBtnCrearCliente() {
         js().scrollElementTop(find().getElementByCss("div.consulta"));
     }
@@ -115,10 +118,18 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     public void clickBtnReintentar() {
         boolean elementoExistente;
+        boolean modalExiste;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
             btnReintentar.click();
+            UtilWeb.waitForSeconds(2);
+        }
+
+        if (modalExiste){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
             UtilWeb.waitForSeconds(2);
         }
 

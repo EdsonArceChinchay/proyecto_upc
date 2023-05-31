@@ -25,7 +25,7 @@ public class CaeqPorRetailPage extends WebBase {
     }
 
     public void btnSeleecionar() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         js().scrollElementTop(botonSeleecionar);
         //waitUntilElementIsVisible(botonSeleecionar,10);
         click(botonSeleecionar);

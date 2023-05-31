@@ -1,14 +1,29 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT058
+##GDAP: GDAP-606
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 31/03/2023
 
-  @CaplPrepagoPospago @Global
-  Escenario: CAPL con Caeq al contado con canal Tienda de un Control a Postpago exitoso
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+
+
+  @CaplPrepagoPospago @MVP05 @Global @General
+  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "lterrazosce"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el password "Telefonica2021"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -27,7 +42,5 @@ Característica: Realizar un CAPL al contado con canal Tienda de un Control a Po
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
-
+    #Y        valido que se muestre el detalle del pedido
 #    1598886623

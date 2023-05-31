@@ -1,13 +1,28 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE
+##CREADOR: Angel Medina
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT005
+##GDAP: GDAP-572
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO: Angel Medina
+##FECMOD: 30/03/2023
 
-Característica: Alta Duo por call center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
+
+Característica: AT-DT005_Alta Duo por call center
+
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaDuo_SvaDecoSmart @Global
-  Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
+  @AltaDuo_SvaDecoSmart @MVP15 @Global
+  Esquema del escenario: Alta de dúo internet y añadir sva [deco smart] con CEX, en canal call center, web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -52,7 +67,10 @@ Característica: Alta Duo por call center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        valido que se muestre el detalle del pedido
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que se muestre el detalle del pedido
+
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                            |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA 1000 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                                |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |

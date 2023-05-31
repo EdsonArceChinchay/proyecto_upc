@@ -1,8 +1,22 @@
 #language:es
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: Realizar CAPL de prepago a postpago con equipo
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT051
+##GDAP: GDAP-714
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
 
-  @CAPLprepadoApostpago @Global
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
+
+  @CAPLprepadoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -18,7 +32,7 @@ Característica: Realizar CAPL de prepago a postpago con equipo
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/114.9"
+    Y        selecciono la opcion "Plan Súmate Plus RPM S/ 154.92 II"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     #Y        ingreso el tiempo de permanencia"12 meses"
@@ -33,7 +47,7 @@ Característica: Realizar CAPL de prepago a postpago con equipo
              |permanencia    |tipoPago  |equipoName      |
              |12 meses       |Al Contado|HUAWEI P10 NEGRO|
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en en el boton "Cambiar Plan"
+    Y        doy click en el boton "Cambiar Plan"
     #Y        presiono el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
     Y         doy click en iniciar registro

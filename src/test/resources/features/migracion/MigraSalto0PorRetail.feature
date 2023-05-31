@@ -1,7 +1,22 @@
 #language:es
+
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT079
+##GDAP: GDAP-721
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: Migracion Salto 0 Por Canal Retail
+Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -20,7 +35,7 @@ Característica: Migracion Salto 0 Por Canal Retail
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        Seleccinar boton migrar a fibra
     Cuando   doy clic en iniciar registro

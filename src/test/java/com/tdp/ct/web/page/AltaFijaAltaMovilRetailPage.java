@@ -2,86 +2,136 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
-
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
-
-    @FindBy(xpath = "//*[contains(text(),'Mostrar Ofertas')]")
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
 
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
-
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
+    protected WebElement btnReintentar;
     private String inputCorreo;
-
-
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement AnadirEquipos;
-
+    private String DEPARTAMENTO = "15";
+    private String PROVINCIA = "1501";
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
+    protected WebElement btnEntendido;
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
-        UtilWeb.waitForSeconds(15);
-        waitUntilElementIsClickable(btnHogar,30);
+        //UtilWeb.waitForSeconds(15);
+        //waitUntilElementIsClickable(btnHogar,30);
+        esperaProgresiva(driver(),5,5,btnHogar);
         click(btnHogar);
-        waitUntilElementIsVisible(btnMovil,5);
-        UtilWeb.waitForSeconds(2);
+        //waitUntilElementIsVisible(btnMovil,5);
+        //UtilWeb.waitForSeconds(2);
     }
 
-    public void altaMovil(){
+    public void altaMovil() {
+        UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
-        waitUntilElementIsClickable(btnMovil,15);//30
+        //waitUntilElementIsClickable(btnMovil,15);//30
+        esperaProgresiva(driver(),5,5,btnMovil);
         click(btnMovil);
-        UtilWeb.waitForSeconds(2);//1
+        //UtilWeb.waitForSeconds(2);//1
     }
 
     public void mostrarOfertas(){
-        waitUntilElementIsVisible(btnMostrar,90);//50
+        System.out.println("3");
+        //waitUntilElementIsVisible(btnMostrar,90);//50
+        esperaProgresiva(driver(),8,5,btnMostrar);
         click(btnMostrar);
-        UtilWeb.waitForSeconds(12);
+        //UtilWeb.waitForSeconds(6);
         //UtilWeb.waitForSeconds(2);
+    }
+    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
+        UtilWeb.waitForSeconds(timeOnSeconds);
+        boolean elementoExistente;
+        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
+        if (elementoExistente) {
+            webElement.click();
+            if (message.isEmpty()) message = "Dio click al elemento";
+            System.out.println(message);
+        }
+        else {
+            System.out.println("No se encontro el modal error");
+        }
     }
 
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,depaList);
+
+        boolean existeLista = depaList.isEnabled();
+        System.out.println("Existe Lista de" + depaList.getText() + ": " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+            UtilWeb.waitForSeconds(4);
+        }
         click(depaList);
         UtilWeb.waitForSeconds(2);
+        By byItem = By.cssSelector("[data-value='"+tipoDepa+"']");
         SearchContext context=sh().getContext(depaList);
-        context.findElement(By.cssSelector("[data-value='"+tipoDepa+"']")).click();
+        esperaProgresiva(driver(),3,5,depaList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarProvincia(String tipoProvincia){
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,provinciaList);
+        boolean existeLista = provinciaList.isEnabled();
+        System.out.println("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        }
         click(provinciaList);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         SearchContext context=sh().getContext(provinciaList);
-        context.findElement(By.cssSelector("[data-value='"+tipoProvincia+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoProvincia+"']");
+        esperaProgresiva(driver(),3,5,provinciaList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,distritoList);
+        boolean existeLista = distritoList.isEnabled();
+        System.out.println("Existe Lista de" + distritoList.getText() + ": " + existeLista);
+        if (!existeLista){
+            driver().navigate().refresh();
+            seleccionarDepa(DEPARTAMENTO);
+            seleccionarProvincia(PROVINCIA);
+            distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
-        context.findElement(By.cssSelector("[data-value='"+tipoDistrito+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoDistrito+"']");
+        esperaProgresiva(driver(),3,5,distritoList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -98,11 +148,15 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-
-        waitUntilElementIsVisible(btnConsulta,8);
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
+        //waitUntilElementIsVisible(btnConsulta,5);
+        esperaProgresiva(driver(),5,5,btnConsulta);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
+        revisarModalError(driver());
+        //revisarModalEntendido(driver());
+        //reintarPopPup();
+        //reintarPopPup();
     }
 
     public void writeManzana(String manzana){
@@ -135,7 +189,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         WebElement conjuntoList= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
         click(conjuntoList);
         SearchContext context=sh().getContext(conjuntoList);
-        context.findElement(By.cssSelector("[data-value='"+tipoConjunto+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoConjunto+"']");
+        esperaProgresiva(driver(),3,5,conjuntoList, byItem, context);
+        context.findElement(byItem).click();
     }
 
     public void writeConjHab(String hab){
@@ -145,7 +201,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void consultaCobertura(){
-
         click(cobertura);
         UtilWeb.waitForSeconds(3);
     }
@@ -166,10 +221,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
-
     public void reintarPopPup(){
         boolean btnReintentarboolean;
+        boolean modalExiste;
         btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
         if (btnReintentarboolean) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
             WebElement btnReintentar= find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
@@ -177,7 +233,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             btnReintentar.click();
             UtilWeb.waitForSeconds(3);
         }
-
+        if (modalExiste){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
+            btnEntendido.click();
+            UtilWeb.waitForSeconds(2);
+        }
     }
 
 }

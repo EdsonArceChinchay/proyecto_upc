@@ -1,12 +1,25 @@
 #language:es
 
-Característica: Portabilidad Solo Chip Call Center Delivery en Tambo
-  Quiero realizar una portabilidad por call center
+##CREADOR: Edson Arce
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT105
+##GDAP: GDAP-893
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
+##TAG : BERSERKERS
+##DATA: UNICA VEZ
+##ENCARGADO: Edson Arce
+##FECMOD: 30/03/2023
 
+@BERSERKERS @DoneDevOps
+Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @PortabilidadSoloChip @Global
+  @PortabilidadSoloChip @MVP16 @Global
   Esquema del escenario: Portabilidad solo chip postpago y permanencia 12 meses con DNI, en canal call center y delivery Tambo con direccion de Lima sin cobertura, validar que solo figure la opcion de tienda,web front end. (NEGATIVO)
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

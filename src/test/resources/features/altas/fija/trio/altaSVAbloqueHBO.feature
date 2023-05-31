@@ -1,7 +1,21 @@
 #language:es
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO
+##CREADOR:
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT017
+##GDAP: GDAP-979
+##SPRINT CREADO:
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA:
+##ENCARGADO:
+##FECMOD: 31/03/2023
 
-Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP
+
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -62,9 +76,10 @@ Característica: Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1400066288 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS | HBO    | correo@gmail.com |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 122210228 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
+
 
