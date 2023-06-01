@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])")
@@ -119,6 +121,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void writeEmail(String email) {
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(4);
         WebElement element1 = find().getElementByXPath("//*[@formcontrolname='mail']");
         WebElement ele1 = sh().getWebElement(element1, "input");
