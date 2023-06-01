@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28
 
 Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
 
-  @ConsultarDireccionCoordenadas @Coordenadasorrectas @SanityF
+  @ConsultarDireccionCoordenadas @Coordenadasorrectas @SanityF @DROPG1
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion: <direccion> por coordenadas
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

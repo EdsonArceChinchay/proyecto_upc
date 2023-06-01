@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 
 Característica: AT-DT034_Alta Fija + Alta Movil por Retail
 
@@ -78,5 +78,5 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
 
     Ejemplos:
       | tipoUsuario     | userName   | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo |evillanuevag| #o2Wy23oA1458 | Bienvenid@ | CE            | 1000009111 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
+      | usuario externo |evillanuevag| #o2Wy23oA1458 | Bienvenid@ | CE            | 1000009112 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
 

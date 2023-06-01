@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG3
 
 Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
   Quiero realizar una paquetizacion por call center

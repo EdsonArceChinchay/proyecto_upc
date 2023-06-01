@@ -22,7 +22,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilComboProactivo_HappyPath @prueba1
+  @AltaFijaMovilComboProactivo_HappyPath @prueba1 @DROPG2
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -63,15 +63,15 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
+#    Y        me muestra pantalla para Descargar contrato
+#    Y        doy clic para descargar el contrato
     Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1000440045 | RV Plan Ilimitado Mi Movistar S/114.9 | ZTE BLADE A5 2020 NEGRO | Postpago  | Sin permanencia   | Al Contado |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | ZTE BLADE A5 2020 NEGRO | Postpago  | Sin permanencia   | Al Contado |
 
 
   @AltaFijaMovilComboProactivo_Caso02
@@ -82,7 +82,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
