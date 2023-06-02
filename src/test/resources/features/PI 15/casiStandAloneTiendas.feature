@@ -1,21 +1,21 @@
 #language:es
-##CREADOR:
+##CREADOR: Moises Llamoca
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO:
+##CODIGO:AT-DT112
 ##GDAP:
 ##SPRINT CREADO: SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
+##DATA:Reusable
+##ENCARGADO:Brandon
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
 
-Característica: AT-DT107_Sva CASI Stand Alone por Tiendas
+Característica: AT-DT112_CASI Stand Alone por Tiendas
   Quiero realizar un CASI a un cliente con parque movil a un usuario con CE
 
   Antecedentes:
@@ -35,8 +35,8 @@ Característica: AT-DT107_Sva CASI Stand Alone por Tiendas
     Y        cierro popup de error
     Cuando   doy click en ver detalle
     #Y        doy click en el boton Agregar sva fija
-    Y        selecciono el boton Cambiar Chip
-    Y         seleccionamos agregar Bloque HBO
+    #Y        selecciono el boton Cambiar Chip
+    #Y         seleccionamos agregar Bloque HBO
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
