@@ -12,6 +12,9 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
     @FindBy (css = "div.actions-button > div:nth-child(2) > tdp-st-button")
     protected WebElement btnCambiarChip;
 
+    @FindBy (xpath = "//button[contains(text(),'Cambio de chip')]")
+    protected WebElement btnCambiodeChip;
+
     public void seleccionoTipoPagoAlContado() {
         waitUntilElementIsVisible(btnAlContado,20);
         click(btnAlContado);
@@ -20,6 +23,11 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
     public void SeleccionarBotonCambiarChip() {
         waitUntilElementIsVisible(btnCambiarChip,20);
         click(btnCambiarChip);
+    }
+
+    public void seleccionoelbotonCambiodeChip() {
+        waitUntilElementIsVisible(btnCambiodeChip,20);
+        click(btnCambiodeChip);
     }
 
 }

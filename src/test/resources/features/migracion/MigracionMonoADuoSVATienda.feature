@@ -40,7 +40,8 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en agregar SVA Linea "<sva>"
+    #Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -51,9 +52,9 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y         presiono el boton Registrar venta
+    Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   |
-      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 123178888  | tester@tester.com | Duo           | RA D22 | HBO      |
+      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   | sva |
+      | usuario externo | evillanuevag  | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839  | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 | HBO      | Plan Multidestino 20 |

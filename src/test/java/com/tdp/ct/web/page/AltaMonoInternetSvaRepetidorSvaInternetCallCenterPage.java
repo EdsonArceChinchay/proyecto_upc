@@ -49,7 +49,7 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     }
 
     public void seleccionardecodificador(String string){
-        System.out.println("AQUI");
+
         String decodificador = "//div[text()=' Cuota mensual : S/"+string+" " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
         WebElement deco = find().getElementByXPath(decodificador);
         js().scrollElementTop(deco);
