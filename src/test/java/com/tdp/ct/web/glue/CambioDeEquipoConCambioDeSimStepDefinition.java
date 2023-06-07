@@ -20,4 +20,9 @@ public class CambioDeEquipoConCambioDeSimStepDefinition {
     public void seleccionoelbotonCambiodeChip() {
         cambioDeEquipoConCambioDeSimStep.seleccionoelbotonCambiodeChip();
     }
+
+    @Y("cierro pop up de Cliente Exonerado")
+    public void cierroPopUpDeClienteExonerado() {
+        cambioDeEquipoConCambioDeSimStep.cierroPopUpDeClienteExonerado();
+    }
 }
