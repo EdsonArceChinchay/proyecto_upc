@@ -45,6 +45,9 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[@class='validation']//tdp-st-select")
     protected WebElement listaDocumentos;
 
+    @FindBy(xpath = "//img[@class='close']")
+    protected WebElement botonX;
+
     public void seleccionoTipoDocumento(String tipoDocumento){
         UtilWeb.waitForSeconds(2);
         WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
@@ -168,5 +171,9 @@ public class HomePage extends WebBase {
 
     public void doyClickEnValidarRepresentaLegal() {
         waitUntilElementIsVisible(btnValidar,10).click();
+    }
+
+    public void clickXPopUpCU() {
+        waitUntilElementIsClickable(botonX,20).click();
     }
 }

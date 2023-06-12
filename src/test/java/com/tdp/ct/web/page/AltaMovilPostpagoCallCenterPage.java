@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
@@ -97,6 +98,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionarTiempo(String tiempoP) {
         UtilWeb.waitForSeconds(10);
+        revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
         click(listElementPLan);
