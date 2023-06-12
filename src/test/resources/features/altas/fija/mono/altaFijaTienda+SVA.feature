@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG4
 Característica: AT-DT008_Alta Fija por tienda + SVA
 
   Antecedentes:

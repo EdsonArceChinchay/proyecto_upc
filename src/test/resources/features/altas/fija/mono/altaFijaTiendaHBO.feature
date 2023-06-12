@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7 @LocalDrop
 
 Característica: AT-DT010_Alta fija por tienda mas Hbo
 

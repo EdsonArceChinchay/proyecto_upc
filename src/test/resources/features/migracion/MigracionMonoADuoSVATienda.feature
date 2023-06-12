@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROPG3
 
 Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
@@ -40,8 +40,8 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar SVA Linea "<sva>"
-    #Y         doy clic en agregar sva "<Bloque>"
+    #Y        doy click en agregar SVA Linea "<sva>"
+    Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

@@ -15,13 +15,13 @@
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
-Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Tienda
+Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
 
-  @MigraMonoADuoSVATienda
+  @MigraMonoADuoSVACanalCenter
 
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
@@ -43,6 +43,7 @@ Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
+    Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -58,5 +59,5 @@ Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan            | sva                         |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 169927003 | tester@tester.com | Duo           | RA D22 100 MBPS | Seguridad Total Residencial |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan            | sva                         | Bloque|
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | Seguridad Total Residencial | HBO|

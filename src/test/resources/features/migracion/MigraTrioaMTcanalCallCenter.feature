@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG5
 
 Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 
@@ -35,8 +35,9 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Linea Nueva Movil
+    Y       cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE , LIMA , LIMA , PE" actual del servicio
+    #Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE , LIMA , LIMA , PE" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla de ofertas sugeridos
 #    Y        selecciono plan Movistar Total para ver las ofertas

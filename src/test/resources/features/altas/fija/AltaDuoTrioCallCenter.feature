@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG5
 
 Característica: AT-DT001_Alta Duo Trio Call Center
   Quiero realizar una alta fija por call center

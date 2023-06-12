@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP @prueba
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG4 @prueba
 
 Característica: AT-DT042_Alta MT MAS SVA
 

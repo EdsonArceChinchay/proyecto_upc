@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity28 @DROPG1
 
 Característica: AT-DT070_Migracion de Trio a MT + SVA
 
