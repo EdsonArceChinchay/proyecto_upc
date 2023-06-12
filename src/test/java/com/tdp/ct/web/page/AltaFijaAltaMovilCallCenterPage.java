@@ -227,6 +227,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
         //modalError(5, btnReintentar, "Click al elemento Reitentar");
+        this.scrollDown();
         revisarModalError(driver());
 
         boolean buttonFound = false;
@@ -247,6 +248,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         }
         System.out.println("Sale del while");
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
+        waitUntilElementIsVisible(correoElectronico, 10);
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");
         correoElectronico.sendKeys(Keys.DELETE);
