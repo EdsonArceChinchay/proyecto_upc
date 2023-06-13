@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG2
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG6
 
 Característica: AT-DT039_Alta trio MT con Upfront 40mb
 
