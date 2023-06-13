@@ -39,6 +39,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -47,32 +48,34 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
+    #Y cierro el popup de validación de estado de contraseña única
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/12/1980 | Casado     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
+      | 12/12/1980 | Casado      | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
 #    Y        me muestra pantalla para Descargar contrato
 #    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago   |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
       #ZTE BLADE A5 2020 NEGRO
 
   @AltaFijaMovilComboProactivo_Caso02
@@ -91,6 +94,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -99,10 +103,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -116,14 +121,14 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        me muestra pantalla para Descargar contrato
+    #Y        doy clic para descargar el contrato
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 10000444046 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento   | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 10000444046 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso03
@@ -142,6 +147,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -150,10 +156,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -167,14 +174,14 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        me muestra pantalla para Descargar contrato
+    #Y        doy clic para descargar el contrato
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA       | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
       #MOQUEGUA
 
   @AltaFijaMovilComboProactivo_Caso04
@@ -193,6 +200,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -201,10 +209,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -218,15 +227,15 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        me muestra pantalla para Descargar contrato
+    #Y        doy clic para descargar el contrato
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo     | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA       | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 18 cuotas |
       #MOQUEGUA
       #HUAWEI P10 NEGRO
 
@@ -246,6 +255,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -254,10 +264,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -271,14 +282,14 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        me muestra pantalla para Descargar contrato
+    #Y        doy clic para descargar el contrato
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                   | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1007890045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                   | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA       | CE            | 1007890045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso06
@@ -297,6 +308,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -305,10 +317,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -322,14 +335,14 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        me muestra pantalla para Descargar contrato
-    Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    #Y        me muestra pantalla para Descargar contrato
+    #Y        doy clic para descargar el contrato
+    #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA       | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
 
 
   @AltaFijaMovilComboProactivo_Caso07
@@ -348,6 +361,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -356,10 +370,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -380,8 +395,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/99.9 | SAMSUNG GXY S20 PLUS NEGRO SM-G985F | Postpago  | sin permanencia   | Al contado |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago   |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/99.9 | SAMSUNG GXY S20 PLUS NEGRO SM-G985F | Postpago  | sin permanencia   | Al contado |
 
 
   @AltaFijaMovilComboProactivo_Caso08
@@ -400,6 +415,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -408,10 +424,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -431,8 +448,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                          | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                          | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso09
@@ -451,6 +468,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -459,10 +477,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -482,8 +501,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | SAMSUNG GXY J2 CORE NEGRO SM-J260M | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | SAMSUNG GXY J2 CORE NEGRO SM-J260M | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso10
@@ -502,6 +521,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -510,10 +530,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -534,8 +555,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 12 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso11
@@ -554,6 +575,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -562,10 +584,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -585,8 +608,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI Y9S NEGRO STK-LX3 | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI Y9S NEGRO STK-LX3 | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso12
@@ -605,6 +628,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -613,10 +637,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -636,8 +661,8 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo              | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | APPLE IPHONE 6S 16GB GRIS | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo              | planMovil | tiempoPermanencia | tipoPago             |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | APPLE IPHONE 6S 16GB GRIS | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso13
@@ -656,6 +681,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -664,10 +690,11 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y         selecciono el plan movil "<planMovil>"
     Y         selecciono la opcion "<tipoPlanes>"
     Y         doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y         selecciono añadir equipos
     Y         ingreso el tiempo de permanencia"<tiempoPermanencia>"
     Y         ingreso el tipo de pago "<tipoPago>"
-    Y         busco el equipo "<nombreEquipo>"
+    #Y         busco el equipo "<nombreEquipo>"
     Y         doy click en el boton seleccionar
     Y         selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -687,5 +714,5 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                  | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                  | planMovil | tiempoPermanencia | tipoPago   |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |

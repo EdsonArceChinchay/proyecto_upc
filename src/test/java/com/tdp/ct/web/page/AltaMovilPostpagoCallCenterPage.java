@@ -22,7 +22,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    @FindBy(xpath = "//div[@class='add_Product']")
+    //@FindBy(xpath = "//div[@class='add_Product']")
+    @FindBy(xpath = "//button[contains(text(),'Agregar Equipo')]")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
@@ -40,7 +41,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='button-filter-section']//button")
     protected List<WebElement> listPlan;
 
-    @FindBy(xpath = "//div[@class='card-option-ofert-content']")
+    //@FindBy(xpath = "//div[@class='card-option-ofert-content']")
+    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
     protected List<WebElement> listaOfertas;
 
 /*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
