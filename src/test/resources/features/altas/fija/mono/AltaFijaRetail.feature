@@ -71,4 +71,4 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |

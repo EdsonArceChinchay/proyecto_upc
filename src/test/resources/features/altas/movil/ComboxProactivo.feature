@@ -72,7 +72,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
       #ZTE BLADE A5 2020 NEGRO
 
   @AltaFijaMovilComboProactivo_Caso02
@@ -123,7 +123,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | MOQUEGUA     | CE            | 10000444046 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 10000444046 | RV Plan Ilimitado Mi Movistar S/75.90 II | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso03
@@ -174,7 +174,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                           | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1004440045 | RV Plan Ilimitado Mi Movistar S/114.9 | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Postpago  | 12 meses          | Al contado |
       #MOQUEGUA
 
   @AltaFijaMovilComboProactivo_Caso04
@@ -226,7 +226,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                               | nombreEquipo     | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000936045 | RV Plan Ilimitado Mi Movistar S/55.9 III | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 18 cuotas |
       #MOQUEGUA
       #HUAWEI P10 NEGRO
 
@@ -278,7 +278,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                   | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1007890045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1007890045 | RV Plan Ilimitado Mi Movistar S/85.9 | SAMSUNG GXY A20 NEGRO SM-A205G | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso06
@@ -329,7 +329,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                              | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1078980045 | RV Plan Ilimitado Mi Movistar S/65.9 II | IPHONE XS MAX MT532LZ/A 256GB GRIS | Postpago  | sin permanencia   | Al contado |
 
 
   @AltaFijaMovilComboProactivo_Caso07
@@ -381,7 +381,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                        | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/99.9 | SAMSUNG GXY S20 PLUS NEGRO SM-G985F | Postpago  | sin permanencia   | Al contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/99.9 | SAMSUNG GXY S20 PLUS NEGRO SM-G985F | Postpago  | sin permanencia   | Al contado |
 
 
   @AltaFijaMovilComboProactivo_Caso08
@@ -432,7 +432,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                          | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Postpago  | sin permanencia   | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso09
@@ -483,7 +483,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo                       | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | SAMSUNG GXY J2 CORE NEGRO SM-J260M | Postpago  | sin permanencia   | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/114.9 | SAMSUNG GXY J2 CORE NEGRO SM-J260M | Postpago  | sin permanencia   | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso10
@@ -535,7 +535,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | 12 meses          | Financiado 12 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso11
@@ -586,7 +586,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI Y9S NEGRO STK-LX3 | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | HUAWEI Y9S NEGRO STK-LX3 | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso12
@@ -637,7 +637,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo              | planMovil | tiempoPermanencia | tipoPago             |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | APPLE IPHONE 6S 16GB GRIS | Postpago  | 12 meses          | Financiado 18 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/149.9 | APPLE IPHONE 6S 16GB GRIS | Postpago  | 12 meses          | Financiado 18 cuotas |
 
 
   @AltaFijaMovilComboProactivo_Caso13
@@ -688,4 +688,4 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                           | nombreEquipo                  | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA     | CE            | 1000000045 | RV Plan Ilimitado Mi Movistar S/85.9 | HUAWEI P30 LITE NEGRO MAR-LX3 | Postpago  | sin permanencia   | Al contado |

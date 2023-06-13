@@ -38,4 +38,4 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE           | 7241133113 |10112233440|
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE           | 7241133113 |10112233440|

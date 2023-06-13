@@ -13,7 +13,7 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 24/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG8
 
 
 
@@ -62,4 +62,4 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |

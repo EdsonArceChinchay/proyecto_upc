@@ -52,4 +52,4 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WE
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |

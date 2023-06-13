@@ -52,4 +52,4 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
     Ejemplos:
       | tipoUsuario     | userName     | password     |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 |
+      | usuario externo | evillanuevag | $Telefonica2020$ |

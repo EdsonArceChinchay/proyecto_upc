@@ -69,4 +69,4 @@ Antecedentes:
 
 	Ejemplos:
 	  | tipoUsuario     | userName     | password      | msgHome   | tiendaAsesor      | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
-	  | usuario externo | evillanuevag | #o2Wy23oA1458 |Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539137  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS
+	  | usuario externo | evillanuevag | $Telefonica2020$ |Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539137  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS

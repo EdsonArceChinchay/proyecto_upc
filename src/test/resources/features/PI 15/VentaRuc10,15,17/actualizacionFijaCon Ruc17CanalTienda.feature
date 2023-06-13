@@ -38,4 +38,4 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento |ruc |digito|
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | DNI           | 70756041 |17  |3     |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | DNI           | 70756041 |17  |3     |
