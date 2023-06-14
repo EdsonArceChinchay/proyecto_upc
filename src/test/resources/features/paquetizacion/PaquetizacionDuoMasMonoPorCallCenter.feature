@@ -33,6 +33,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro pop up de CU
     Y        selecciono el servicio mono "5010007041" y  el servicio duo "14339051" a paquetizar
     #Y        selecciono el servicio mono "5010001527" y  el servicio duo "14340749" a paquetizar
     Y        selecciono el boton Mostrar ofertas

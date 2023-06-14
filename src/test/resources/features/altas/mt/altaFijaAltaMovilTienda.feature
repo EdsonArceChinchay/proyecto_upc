@@ -39,6 +39,7 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 #    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -77,4 +78,4 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          | correo           |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432129 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432129 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com |

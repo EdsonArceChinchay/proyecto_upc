@@ -33,7 +33,7 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-#    Y        cierro el popup de contraseña Única
+    Y        cierro el popup de contraseña Única
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -60,4 +60,4 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Ejemplos:
     
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                      |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | usuario externo | evillanuevag |  $Telefonica2099% | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |

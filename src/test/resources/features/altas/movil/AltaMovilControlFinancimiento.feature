@@ -36,6 +36,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
       | nombres | apellidos | genero    |
       | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -73,6 +74,6 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | planMovil |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE            | 1024268428 | Postpago  |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1024268428 | Postpago  |
 
 

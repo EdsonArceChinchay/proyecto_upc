@@ -37,6 +37,7 @@ Característica: AT-DT030_AltaMovil + equipo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
@@ -65,7 +66,7 @@ Característica: AT-DT030_AltaMovil + equipo
     Ejemplos:
 
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE            | 1012454446 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1012454446 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 
   @AltaMovil_Equipo_tienda_2 @Sanity28
   Esquema del escenario: Alta Movil con Equipo con canal Tienda con documento CE
@@ -84,6 +85,7 @@ Característica: AT-DT030_AltaMovil + equipo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
