@@ -56,7 +56,7 @@
       Y        doy click en datos del cliente
       Y        ingreso los datos del cliente
         | fechaNac   | estadoCivil | nacionalidad |
-        | 12/12/1980 | Casado      | Albania      |
+        | 12/12/1980 | Casado      | Aruba      |
       Y        doy click en el boton confirmar
       Y        presiono la opcion validar contrato
       Y        me muestra en pantalla el contrato solicitado
