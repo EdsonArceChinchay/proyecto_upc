@@ -23,7 +23,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Dado     que abro la pagina de movistar
 
-  @AltaFijaMovilComboProactivo_HappyPath @prueba1 @DROPG6
+  @AltaFijaMovilComboProactivo_HappyPath @prueba1 @DROP-G07
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

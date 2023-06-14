@@ -13,7 +13,7 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 24/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG8
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05
 
 
 

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
 
 Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
 

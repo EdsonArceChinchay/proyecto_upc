@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROPG6
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06
 
 Característica: AT-DT108_sva bloque hbo a duo por Tienda
   Yo como asesor de Tienda
