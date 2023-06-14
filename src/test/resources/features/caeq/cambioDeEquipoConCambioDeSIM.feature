@@ -30,7 +30,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WE
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y        cierro el popup de contraseña Única
     Y        cierro popup de error
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"

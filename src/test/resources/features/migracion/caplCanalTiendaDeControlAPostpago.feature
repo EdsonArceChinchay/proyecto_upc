@@ -29,7 +29,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464935"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del servicio "920955203"
   #"650025121"
     Y        doy click en el boton "Renovar plan"

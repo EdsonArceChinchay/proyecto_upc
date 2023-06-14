@@ -32,7 +32,7 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y        cierro el popup de contraseña Única
     Y        cierro popup de error
     Cuando   doy click en ver detalle
     Y        selecciono el boton Cambiar Chip
