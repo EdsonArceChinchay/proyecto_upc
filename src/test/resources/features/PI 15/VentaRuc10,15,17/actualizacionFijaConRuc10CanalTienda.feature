@@ -30,6 +30,7 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
     Y        ingreso el ruc "<ruc>" y actualizo
     Y        valido el mensaje de la actualizacion de ruc correcta
@@ -38,4 +39,4 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE           | 7241133113 |10112233440|
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE           | 7241133113 |10112233440|

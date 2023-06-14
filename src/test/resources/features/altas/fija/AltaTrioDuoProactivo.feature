@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG6
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
 
 Característica: AT-DT003_Alta Trio por el canal Proactivo
 
@@ -75,7 +75,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Trío     | D22 50 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Trío     | D22 50 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 
   @AltaDuoProactivo
@@ -132,6 +132,6 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      |  RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      |  RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 

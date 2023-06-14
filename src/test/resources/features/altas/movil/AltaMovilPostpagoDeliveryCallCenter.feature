@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROPG7
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03
 
 Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center
@@ -42,6 +42,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan_movil Postpago
     Y        selecciono el boton de eleccion de planes

@@ -32,6 +32,7 @@ Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y       cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"

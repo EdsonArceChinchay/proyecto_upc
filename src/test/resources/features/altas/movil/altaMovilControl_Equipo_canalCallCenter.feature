@@ -38,6 +38,7 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
       | nombres | apellidos | genero    |
       | Edson   | Arce      | masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Postpago
     Y        selecciono el boton de eleccion de planes

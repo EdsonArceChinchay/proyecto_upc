@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROPG1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G05
 Característica: AT-DT065_Migracion de duo a Trio + sva
 
   Antecedentes:
@@ -32,6 +32,7 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
 	Cuando   selecciono el tipo de documento "<tipoDocumento>"
 	Y        ingreso el documento "<documento>"
 	Y        doy click en el boton consultar
+	Y 		 cierro pop up de CU
 	Y        selecciono la cartilla del plan activo
 	Y        selecciono el boton Mostrar ofertas
 	#Y       verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio

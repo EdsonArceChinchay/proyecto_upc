@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG5
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G06
 
 Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 

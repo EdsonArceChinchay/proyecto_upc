@@ -32,8 +32,8 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Y        cierro pop up de CU
     Cuando   doy click en ver detalle
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
@@ -49,4 +49,4 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  |  correo           |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
