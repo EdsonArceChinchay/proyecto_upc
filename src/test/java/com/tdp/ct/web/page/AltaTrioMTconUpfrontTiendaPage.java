@@ -16,7 +16,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div")
+    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div")
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva')]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
@@ -57,6 +58,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     protected WebElement btnReintentar;
 
     public void clickBotonLineaNueva() {
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnLineaNueva);
         waitUntilElementIsVisible(btnLineaNueva, 15);
         click(btnLineaNueva);

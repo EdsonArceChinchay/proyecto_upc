@@ -31,6 +31,7 @@ Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro pop up de CU
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes

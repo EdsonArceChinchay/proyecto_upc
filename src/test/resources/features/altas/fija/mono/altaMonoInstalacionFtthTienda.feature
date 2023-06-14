@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP @LocalDrop
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROPG4 @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
@@ -23,7 +23,7 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "#o2Wy23oA1458"
+      Y        ingreso el password "$Telefonica2020$"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"

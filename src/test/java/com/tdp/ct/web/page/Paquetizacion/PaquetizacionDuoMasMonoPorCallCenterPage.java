@@ -19,6 +19,7 @@ public class PaquetizacionDuoMasMonoPorCallCenterPage extends WebBase {
 
 
     public void clickMonoYDuo(String mono , String duo) {
+        UtilWeb.waitForSeconds(2);
         WebElement btnDuo = find().getElementByXPath("//*[@class='card']//*[contains(text(),'"+duo.trim()+"')]");
         waitUntilElementIsVisible(btnDuo,30);
         js().scrollElementTop(btnDuo);

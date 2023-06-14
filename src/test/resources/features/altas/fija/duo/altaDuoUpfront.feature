@@ -71,4 +71,4 @@ Característica: AT-DT006_Alta Duo por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 1042464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |

@@ -13,7 +13,7 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 24/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG8
 
 
 
@@ -39,6 +39,7 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
       | nombres  | apellidos      | genero   |
       | Teresita | Collasos Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -62,4 +63,4 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |

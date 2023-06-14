@@ -30,6 +30,7 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro pop up de CU
     Y        cierro popup de error
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"

@@ -70,4 +70,9 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.doyClickEnAgregarModem();
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
+
+    @Y("cierro el popup de contraseña Única")
+    public void cierroElPopupDeContraseñaÚnica() {
+        migracionDuoATrioTiendaStep.cerrarPopupCU();
+    }
 }

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROPG7
 
 Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
@@ -39,6 +39,7 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente

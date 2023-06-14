@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP @prueba
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG4 @prueba
 
 Característica: AT-DT042_Alta MT MAS SVA
 
@@ -71,5 +71,5 @@ Característica: AT-DT042_Alta MT MAS SVA
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042464882 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1042464882 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
 
