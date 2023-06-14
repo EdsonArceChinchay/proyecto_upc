@@ -65,7 +65,7 @@ Característica: AT-DT010_Alta fija por tienda mas Hbo
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1994 | Casado      | Albania      |
+      | 12/12/1994 | Casado      | Aruba      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
