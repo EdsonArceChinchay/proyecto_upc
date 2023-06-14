@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROPG2
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01
 
 Característica: AT-DT007_Alta Fija Mono Internet por Retail
 

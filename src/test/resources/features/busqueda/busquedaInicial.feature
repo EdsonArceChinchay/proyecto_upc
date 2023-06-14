@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
 
 Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 

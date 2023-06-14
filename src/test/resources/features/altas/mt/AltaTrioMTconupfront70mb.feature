@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROPG7
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROP-G03
 
 Característica: AT-DT040_Alta trio MT con Upfront 70mb
 

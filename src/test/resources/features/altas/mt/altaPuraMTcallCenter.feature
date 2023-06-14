@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROPG1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
 Característica: AT-DT038_Alta Fija Pura MT por Call Center
 
