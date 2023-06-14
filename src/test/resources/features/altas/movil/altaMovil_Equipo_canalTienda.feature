@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G03
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 
 Característica: AT-DT030_AltaMovil + equipo
 
@@ -43,10 +43,11 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    Y        busco el equipo "<nombreEquipo>"
+    #Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -55,7 +56,8 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
+      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
+    #ABANCAY
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -65,7 +67,7 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
       | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1012454446 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 
   @AltaMovil_Equipo_tienda_2 @Sanity28
@@ -91,10 +93,11 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
+    Y         doy click en el boton linea nueva
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    Y        busco el equipo "<nombreEquipo>"
+    #Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -113,5 +116,6 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10342164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 10342164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+    #TIENDA SAN MIGUEL

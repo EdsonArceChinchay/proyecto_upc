@@ -269,6 +269,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionoNacionalidad(String nacionalidad) {
         WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
+        js().scrollElementTop(listNacionalidad);
+        UtilWeb.waitForSeconds(1);
         click(listNacionalidad);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listNacionalidad);
@@ -285,6 +287,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void seleccionarEstadoCivil(String estadoCivil) {
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
+
         System.out.println("Dio click en lista de estado");
         UtilWeb.waitForSeconds(3);
         SearchContext contexPlan=sh().getContext(generoList);
