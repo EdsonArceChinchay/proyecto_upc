@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G03
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7
 
 Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
@@ -73,7 +73,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | planMovil |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | planMovil |
       | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1024268428 | Postpago  |
 
 
