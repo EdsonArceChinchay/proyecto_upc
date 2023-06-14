@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG4
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG5
 
 Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
 
