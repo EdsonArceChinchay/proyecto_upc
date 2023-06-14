@@ -75,8 +75,9 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
 
     Ejemplos:
       | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | tipoPlanes                            | nombreEquipo             | planMovil | tiempoPermanencia | tipoPago   |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
+      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464655 | RV Plan Ilimitado Mi Movistar S/114.9 | HUAWEI P30 AZUL ELLE-L04 | Postpago  | Sin permanencia   | Al Contado |
       #ZTE BLADE A5 2020 NEGRO
+      #1042464815
 
   @AltaFijaMovilComboProactivo_Caso02
   Esquema del escenario: Alta  movil Combo Proactivo con Nuevo Cliente Extranjero
@@ -398,7 +399,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
     #Y        doy clic para descargar el contrato
     #Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    # Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
 

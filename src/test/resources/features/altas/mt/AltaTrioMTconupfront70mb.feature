@@ -32,7 +32,7 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -62,7 +62,7 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
+      | 12/12/1980 | Afganistan   | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -72,5 +72,5 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | CAJAMARCA    | CE            | 1002560049 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
+      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
