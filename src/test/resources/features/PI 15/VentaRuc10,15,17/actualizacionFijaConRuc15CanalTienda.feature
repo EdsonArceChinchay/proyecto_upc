@@ -30,7 +30,7 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y       cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
     Y        ingreso el ruc "<ruc>" y actualizo
     Y        valido el mensaje de la actualizacion de ruc correcta

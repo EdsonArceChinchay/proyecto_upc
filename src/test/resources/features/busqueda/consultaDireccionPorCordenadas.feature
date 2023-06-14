@@ -17,7 +17,7 @@
 
 Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
 
-  @ConsultarDireccionCoordenadas @Coordenadasorrectas @SanityF @DROPG5
+  @ConsultarDireccionCoordenadas @Coordenadasorrectas @SanityF @DROP-G07
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar la direccion: <direccion> por coordenadas
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

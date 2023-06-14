@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROPG4 @LocalDrop
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG4
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
 
 Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 

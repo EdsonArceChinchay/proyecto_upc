@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROPG7
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
 
 Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center

@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROPG3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G08
 
 Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
@@ -32,7 +32,7 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"

@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROPG6
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06
 
 Característica: AT-DT108_sva bloque hbo a duo por Tienda
   Yo como asesor de Tienda
@@ -34,7 +34,7 @@ Característica: AT-DT108_sva bloque hbo a duo por Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro pop up de CU
+    Y        cierro el popup de contraseña Única
     Y        cierro popup de error
     Cuando   doy click en ver detalle
     Y        doy click en el boton Agregar sva fija
