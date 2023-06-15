@@ -32,7 +32,7 @@ Característica: AT-DT100_cambio de plan movil en Retail
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1632547921"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del servicio "650028178"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
