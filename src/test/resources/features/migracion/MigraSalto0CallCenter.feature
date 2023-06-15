@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROPG5
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
 
 Característica: AT-DT077_Migracion salto 0 canal Call Center
 

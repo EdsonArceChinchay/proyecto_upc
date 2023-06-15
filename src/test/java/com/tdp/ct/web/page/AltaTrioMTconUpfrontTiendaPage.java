@@ -16,8 +16,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
-    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div")
-    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva')]")
+    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div") @class='btnCard' and
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")

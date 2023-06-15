@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROPG4 @LocalDrop
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
@@ -23,7 +23,7 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "$Telefonica2020$"
+      Y        ingreso el password "$Telefonica2099%"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
@@ -56,7 +56,7 @@
       Y        doy click en datos del cliente
       Y        ingreso los datos del cliente
         | fechaNac   | estadoCivil | nacionalidad |
-        | 12/12/1980 | Casado      | Albania      |
+        | 12/12/1980 | Casado      | Aruba      |
       Y        doy click en el boton confirmar
       Y        presiono la opcion validar contrato
       Y        me muestra en pantalla el contrato solicitado

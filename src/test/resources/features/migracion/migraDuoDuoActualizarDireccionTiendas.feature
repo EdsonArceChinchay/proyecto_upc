@@ -31,6 +31,7 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "JR,JULIO CESAR TELLO,469,LINCE,LIMA ,LIMA,PE" actual del servicio
@@ -60,4 +61,4 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
 
     Ejemplos:
       | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | evillanuevag    | $Telefonica2020$      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042465127 | tester@tester.com  | Duo            | HD RA D22 200 MBPS  |
+      | usuario externo | evillanuevag    | $Telefonica2099%      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042465127 | tester@tester.com  | Duo            | HD RA D22 200 MBPS  |

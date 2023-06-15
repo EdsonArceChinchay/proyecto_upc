@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROPG7
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
 
 Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
@@ -77,7 +77,7 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
+      | 12/12/1980 | Divorciado  | Aruba     |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

@@ -56,9 +56,21 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         waitUntilElementIsVisible(btnMostrarOfertas, 10).click();
     }
     public void cerrarPopUpEstadoCU(){
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsVisible(cerrarPopUpEstadoCU, 10).click();
-        UtilWeb.waitForSeconds(1);
+//        UtilWeb.waitForSeconds(1);
+//        waitUntilElementIsVisible(cerrarPopUpEstadoCU, 10).click();
+//        UtilWeb.waitForSeconds(1);
+        try {
+            if (cerrarPopUpEstadoCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarPopUpEstadoCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
     }
 
     public void ofertasSugeridas() {

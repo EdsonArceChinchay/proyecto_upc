@@ -99,9 +99,22 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
     public void cerrarPopupCU(){
-        UtilWeb.waitForSeconds(1);
-        waitUntilElementIsClickable(cerrarCU, 10).click();
-        UtilWeb.waitForSeconds(1);
+//        UtilWeb.waitForSeconds(1);
+//        waitUntilElementIsClickable(cerrarCU, 10).click();
+        UtilWeb.waitForSeconds(4);
+        try {
+            if (cerrarCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
+
     }
 
 
