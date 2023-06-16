@@ -38,6 +38,7 @@ Característica: AT-DT098_Alta Movil Prepago Call center CE
 	  | nombres | apellidos   | genero   |
 	  | Ana     | Lopez Lopez | femenino |
 	Y        selecciono el boton Linea Nueva Movil
+	  Y cierro el popup de validación de estado de contraseña única
 	Y        selecciono el boton Mostrar ofertas
 	Y        selecciono el plan "Prepago" que desea
 	Y        doy click en el boton Siguiente

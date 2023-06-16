@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP @LocalDrop
+  @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop
 
   Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
 
@@ -23,7 +23,7 @@
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "#o2Wy23oA1458"
+      Y        ingreso el password "$Telefonica2099%"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
@@ -41,9 +41,9 @@
         | departamento | provincia | distrito | direccion                   | referencia |
         | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
       Y        presiono el boton Consultar Ubicacion
-      Y        ingreso la informacion del lugar para la instalacion
-        | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-        | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      #Y        ingreso la informacion del lugar para la instalacion
+       # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+        #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
       Y        presiono el boton Consultar Cobertura
       Y        selecciono tipo de oferta
       Y        selecciono el tipo de plan fija "Mono"
@@ -56,7 +56,7 @@
       Y        doy click en datos del cliente
       Y        ingreso los datos del cliente
         | fechaNac   | estadoCivil | nacionalidad |
-        | 12/12/1980 | Casado      | Albania      |
+        | 12/12/1980 | Casado      | Aruba      |
       Y        doy click en el boton confirmar
       Y        presiono la opcion validar contrato
       Y        me muestra en pantalla el contrato solicitado

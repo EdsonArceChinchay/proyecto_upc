@@ -425,9 +425,10 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void clickBotonRegistrarVenta() {
 //        UtilWeb.waitForSeconds(20);
+        /*modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");*/
+        revisarModalError(driver());
         System.out.println("Entra al primer try");
         try {
             boolean buttonFound = false;

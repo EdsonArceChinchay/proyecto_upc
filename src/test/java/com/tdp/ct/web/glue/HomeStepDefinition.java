@@ -62,4 +62,9 @@ public class HomeStepDefinition {
     public void doyClickEnValidarRepresentaLegal() {
         homeStep.doyClickEnValidarRepresentaLegal();
     }
+
+    @Y("cierro pop up de CU")
+    public void cierroPopUpDeCU() {
+        homeStep.clickXPopUpCU();
+    }
 }
