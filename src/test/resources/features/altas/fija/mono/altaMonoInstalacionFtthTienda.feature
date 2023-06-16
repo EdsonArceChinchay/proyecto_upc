@@ -41,9 +41,9 @@
         | departamento | provincia | distrito | direccion                   | referencia |
         | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
       Y        presiono el boton Consultar Ubicacion
-      Y        ingreso la informacion del lugar para la instalacion
-        | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-        | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      #Y        ingreso la informacion del lugar para la instalacion
+       # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+        #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
       Y        presiono el boton Consultar Cobertura
       Y        selecciono tipo de oferta
       Y        selecciono el tipo de plan fija "Mono"
