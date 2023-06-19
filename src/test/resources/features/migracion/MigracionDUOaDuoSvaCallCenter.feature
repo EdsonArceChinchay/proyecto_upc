@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
-##FECMOD: 30/03/2023
+##FECMOD: 13/06/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
@@ -34,10 +34,9 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
-    #Y        selecciono tipo de oferta
-    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    #Y        selecciono el plan "<planTrio>"
-    Y        doy click en Cambiar plan hogar
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
@@ -46,14 +45,15 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
+    #Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 156128901 | tester@tester.com | Duo            | RA 70 MBPS  |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar  | nombrePlan                                |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1985485677 | tester@tester.com | Duo            | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
