@@ -63,7 +63,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 02/10/1980 | Divorciado      | Alemania     |
+      | 02/10/1980 | Divorciado      | Cuba     |
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
