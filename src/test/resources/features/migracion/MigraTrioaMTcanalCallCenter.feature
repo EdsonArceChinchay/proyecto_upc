@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G06
 
 Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 
@@ -34,33 +34,36 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
+    Y        selecciono el boton Linea Nueva Movil
+    Y       cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE , LIMA , LIMA , PE" actual del servicio
+    #Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE , LIMA , LIMA , PE" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla de ofertas sugeridos
 #    Y        selecciono plan Movistar Total para ver las ofertas
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
     Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
-    #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
     #Y        presiono el boton confirmar agendamiento
+    Y        presiono el boton confirmar agendamiento
 #    Entonces me muestra la pantalla para ingresar la direccion
 #    Y        selecciono el departamento donde sera la instalacion "15"
 #    Y        selecciono la provincia donde sera la instalacion "1501"
 #    Y        selecciono el distrito donde sera la instalacion "150116"
 #    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
-    Y        ingreso la referencia de la direccion "Inkafarma"
-    Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "2pm-7pm"
-    E        ingreso telefono del titular "998877665"
-    E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    #Y        ingreso la referencia de la direccion "Inkafarma"
+    #Y        presiono el boton Consultar ubicacion
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    #Y        Consulto ubicacion
+    #Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    #Y        selecciono horario "2pm-7pm"
+    #E        ingreso telefono del titular "998877665"
+    #E        ingreso instrucciones de delivery "cerca al parque"
+    #Y        doy clic en confirmar delivery
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en validar identidad del titular

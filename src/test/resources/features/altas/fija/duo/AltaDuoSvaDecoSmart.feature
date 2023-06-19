@@ -73,4 +73,4 @@ Característica: AT-DT005_Alta Duo por call center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                                |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |

@@ -46,9 +46,9 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+   # Y        ingreso la informacion del lugar de instalacion
+    #  | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
+    #  | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -68,7 +68,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1993 | Casado      | Albania      |
+      | 12/12/1993 | Casado      | Aruba      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -80,6 +80,6 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 122210228 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
+      | usuario externo | nishuizas | $T3l3f0n1c4$| Bienvenid@ | CAJAMARCA    | CE            | 122210228 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
 
 

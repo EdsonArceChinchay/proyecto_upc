@@ -39,6 +39,7 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -77,6 +78,6 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo |evillanuevag| #o2Wy23oA1458 | Bienvenid@ | CE            | 1000009112 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1000009112 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
 

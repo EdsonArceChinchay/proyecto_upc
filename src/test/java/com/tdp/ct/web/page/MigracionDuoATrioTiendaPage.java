@@ -74,6 +74,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//div[text()='MÓDEM']/parent::div/../descendant-or-self::tdp-st-checkbox[1]")
     protected WebElement agregarModem;
 
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/app-banner-cu/div/div/div[1]/img[2]")
+    protected WebElement cerrarCU;
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
@@ -94,6 +97,24 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
         UtilWeb.waitForSeconds(4);
+    }
+    public void cerrarPopupCU(){
+//        UtilWeb.waitForSeconds(1);
+//        waitUntilElementIsClickable(cerrarCU, 10).click();
+        UtilWeb.waitForSeconds(4);
+        try {
+            if (cerrarCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
+
     }
 
 

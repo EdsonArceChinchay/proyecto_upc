@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
@@ -21,7 +22,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    @FindBy(xpath = "//div[@class='add_Product']")
+    //@FindBy(xpath = "//div[@class='add_Product']")
+    @FindBy(xpath = "//button[contains(text(),'Agregar Equipo')]")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
@@ -39,7 +41,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='button-filter-section']//button")
     protected List<WebElement> listPlan;
 
-    @FindBy(xpath = "//div[@class='card-option-ofert-content']")
+    //@FindBy(xpath = "//div[@class='card-option-ofert-content']")
+    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
     protected List<WebElement> listaOfertas;
 
 /*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
@@ -97,6 +100,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionarTiempo(String tiempoP) {
         UtilWeb.waitForSeconds(10);
+        revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
         click(listElementPLan);
@@ -265,6 +269,8 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionoNacionalidad(String nacionalidad) {
         WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
+        js().scrollElementTop(listNacionalidad);
+        UtilWeb.waitForSeconds(1);
         click(listNacionalidad);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listNacionalidad);
@@ -281,6 +287,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void seleccionarEstadoCivil(String estadoCivil) {
         WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
         click(generoList);
+
         System.out.println("Dio click en lista de estado");
         UtilWeb.waitForSeconds(3);
         SearchContext contexPlan=sh().getContext(generoList);

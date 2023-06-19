@@ -31,6 +31,7 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"

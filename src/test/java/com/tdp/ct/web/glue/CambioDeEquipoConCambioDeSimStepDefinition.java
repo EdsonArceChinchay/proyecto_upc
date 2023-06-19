@@ -12,9 +12,17 @@ public class CambioDeEquipoConCambioDeSimStepDefinition {
     public void seleccionoBotonCambiarChip() {
         cambioDeEquipoConCambioDeSimStep.SeleccionarBotonCambiarChip();
     }
-
     @Y("selecciono tipo de pago Al Contado")
     public void seleccionoTipoDePagoAlContado() {
         cambioDeEquipoConCambioDeSimStep.seleccionoTipoPagoAlContado();
+    }
+    @Y("selecciono el boton Cambiar Chip")
+    public void seleccionoelbotonCambiodeChip() {
+        cambioDeEquipoConCambioDeSimStep.seleccionoelbotonCambiodeChip();
+    }
+
+    @Y("cierro pop up de Cliente Exonerado")
+    public void cierroPopUpDeClienteExonerado() {
+        cambioDeEquipoConCambioDeSimStep.cierroPopUpDeClienteExonerado();
     }
 }

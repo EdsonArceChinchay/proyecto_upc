@@ -1,30 +1,28 @@
 #language:es
-
-##CREADOR:
+##CREADOR: Moises Llamoca
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT108
-##GDAP: GDAP-1105
-##SPRINT CREADO:
+##CODIGO:AT-DT112
+##GDAP:
+##SPRINT CREADO: SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 31/03/2023
+##DATA:Reusable
+##ENCARGADO:Brandon
+##FECMOD: 30/05/2023
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06
+@BERSERKERS @DoneDevOps @casiStandAloneTiendas
 
-Característica: AT-DT108_sva bloque hbo a duo por Tienda
-  Yo como asesor de Tienda
-  Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
+Característica: AT-DT112_CASI Stand Alone por Tiendas
+  Quiero realizar un CASI a un cliente con parque movil a un usuario con CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @svaBloqueHboDuoPorTienda
-  Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo a un usuario con CE y productos asociados sin biometria
+  @casiStandAloneTiendas
+  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -37,8 +35,8 @@ Característica: AT-DT108_sva bloque hbo a duo por Tienda
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
     Cuando   doy click en ver detalle
-    Y        doy click en el boton Agregar sva fija
-    Y         seleccionamos agregar Bloque HBO
+    Y        selecciono el boton Cambiar Chip
+    Y        cierro pop up de Cliente Exonerado
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -50,7 +48,5 @@ Característica: AT-DT108_sva bloque hbo a duo por Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                        | sva | correo           |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1042464833 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS | HBO  | prueba@prueba.com |
-
-
+      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  |  correo           |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
