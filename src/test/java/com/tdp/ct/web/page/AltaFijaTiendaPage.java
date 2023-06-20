@@ -222,7 +222,7 @@ public class AltaFijaTiendaPage extends WebBase {
             click(buttonConfirmar);
             System.out.println("paso aqui 3");
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        driver().manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(5);
     }
 
