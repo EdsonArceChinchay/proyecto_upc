@@ -45,7 +45,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -55,5 +55,5 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar  | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1985485677 | tester@tester.com | Duo            | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar  | nombrePlan                                |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1854264859  | tester@tester.com | Duo            | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
