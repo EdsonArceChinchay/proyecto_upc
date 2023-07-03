@@ -51,5 +51,8 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   }
 
 
-
+    @Y("cierro el popup de validación de estado de contraseña única")
+    public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
+    altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
+    }
 }

@@ -4,7 +4,6 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import io.cucumber.java.*;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import static com.tdp.ct.web.utils.Addons.guardarCodigoHTML;
 
 public class Hooks {
@@ -27,8 +26,8 @@ public class Hooks {
 
     @Before(order = 0)
     public void setUp() {
-    //   System.setProperty("webdriver.http.factory", "jdk-http-client");
-       manager.setUpDriver();
+        //System.setProperty("webdriver.http.factory", "jdk-http-client");
+        manager.setUpDriver();
     }
 
     @Before(order = 1)

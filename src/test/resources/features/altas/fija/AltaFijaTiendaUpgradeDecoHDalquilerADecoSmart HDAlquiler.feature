@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG2
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01
 Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
   Antecedentes:

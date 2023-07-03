@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROPG1
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
 Característica: AT-DT038_Alta Fija Pura MT por Call Center
 
@@ -36,6 +36,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
       | Lucia   | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"

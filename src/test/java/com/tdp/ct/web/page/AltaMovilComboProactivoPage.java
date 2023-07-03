@@ -92,7 +92,6 @@ public class AltaMovilComboProactivoPage extends WebBase {
 
     public void seleccionarProvincia(String provincia) {
         WebElement listProvincia = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='province']");
-        js().scrollElementTop(listProvincia);
         click(listProvincia);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listProvincia);
@@ -108,8 +107,10 @@ public class AltaMovilComboProactivoPage extends WebBase {
 
     public void seleccionarDistrito(String distrito) {
         WebElement listDistrito = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='district']");
-        click(listDistrito);
         js().scrollElementTop(listDistrito);
+        WebElement listProvincia = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='province']");
+        js().scrollElementTop(listProvincia);
+        click(listDistrito);
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listDistrito);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));

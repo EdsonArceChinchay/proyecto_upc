@@ -19,8 +19,8 @@ public class AltaDuoTrioCallCenterStepDefinition {
 
   @Y("presiono el boton Mostrar ofertas")
   public void presiono_el_boton_Mostrar_ofertas(){
+
     altaMovilSoloSimCallCenterStep.clickBotonMostrarOfertasRapido();
   }
-
 
 }

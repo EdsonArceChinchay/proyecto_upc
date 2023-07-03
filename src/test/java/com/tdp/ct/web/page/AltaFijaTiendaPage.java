@@ -222,7 +222,7 @@ public class AltaFijaTiendaPage extends WebBase {
             click(buttonConfirmar);
             System.out.println("paso aqui 3");
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        driver().manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -425,9 +425,10 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void clickBotonRegistrarVenta() {
 //        UtilWeb.waitForSeconds(20);
+        /*modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalError(5, btnReintentar, "Click al elemento Reitentar");
+        modalError(5, btnReintentar, "Click al elemento Reitentar");*/
+        revisarModalError(driver());
         System.out.println("Entra al primer try");
         try {
             boolean buttonFound = false;

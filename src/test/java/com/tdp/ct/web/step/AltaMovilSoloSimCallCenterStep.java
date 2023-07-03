@@ -17,6 +17,9 @@ public class AltaMovilSoloSimCallCenterStep {
     public void clickBotonMostrarOfertasRapido(){
         page.altaMovilSoloSimCallCenterPage().botonMostrarOfertasRapido();
     }
+    public void cerrarPopUpEstadoCU(){
+        page.altaMovilSoloSimCallCenterPage().cerrarPopUpEstadoCU();
+    }
 
     public void validarOfertasSugeridas(){
         page.altaMovilSoloSimCallCenterPage().ofertasSugeridas();

@@ -47,10 +47,30 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
+    @FindBy(xpath = "/html/body/div/div[4]/div/mat-dialog-container/app-modal-uniquepass-park/div/div/img")
+    protected WebElement cerrarPopUpEstadoCU;
+
     public void botonMostrarOfertasRapido() {
         clickBtnReintentar();
         esperaProgresiva(driver(),5,5,btnMostrarOfertas);
         waitUntilElementIsVisible(btnMostrarOfertas, 10).click();
+    }
+    public void cerrarPopUpEstadoCU(){
+//        UtilWeb.waitForSeconds(1);
+//        waitUntilElementIsVisible(cerrarPopUpEstadoCU, 10).click();
+//        UtilWeb.waitForSeconds(1);
+        try {
+            if (cerrarPopUpEstadoCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarPopUpEstadoCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
     }
 
     public void ofertasSugeridas() {

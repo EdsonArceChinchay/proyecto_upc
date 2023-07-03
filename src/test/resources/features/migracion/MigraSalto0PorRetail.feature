@@ -33,6 +33,7 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
@@ -53,4 +54,4 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 1042465048 | prueba@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 123456778 | prueba@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

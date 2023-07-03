@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7
 
 Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
@@ -36,6 +36,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
       | nombres | apellidos | genero    |
       | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -72,7 +73,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | planMovil |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 1024268428 | Postpago  |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1024268428 | Postpago  |
 
 
