@@ -30,4 +30,8 @@ public class SvaCallCenterStep {
     public void elegir_sva(){
         page.svaCallCenterPage().elegir_sva();
     }
+    @ScreenShotAfter
+    public void clickSvaMovistarTvApp(String movistarTv) {
+        page.svaCallCenterPage().clickSvaMovistarTvApp(movistarTv);
+    }
 }
