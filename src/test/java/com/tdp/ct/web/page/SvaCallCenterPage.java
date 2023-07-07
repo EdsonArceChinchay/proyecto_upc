@@ -30,7 +30,7 @@ public class SvaCallCenterPage extends WebBase{
     @FindBy(xpath = "//button[contains(text(),' Guardar cambios ')]")
     protected WebElement guardar;
 
-    @FindBy(css = "div.container-actions > div.actions-content > div > tdp-st-checkbox")
+    @FindBy(xpath = "//div[text()='MOVISTAR TV APP']/parent::div/../descendant-or-self::tdp-st-checkbox")
     protected WebElement movistarTvApp;
 
     public void ver_detalle(){
@@ -60,7 +60,7 @@ public class SvaCallCenterPage extends WebBase{
 
     }
 
-    public void clickSvaMovistarTvApp(String movistarTv) {
+    public void clickSvaMovistarTvApp() {
         UtilWeb.waitForSeconds(10);
        //WebElement btnbloque = find().getElementByCss("div.container-actions > div.actions-content > div > tdp-st-checkbox");
         //waitUntilElementIsVisible(btnbloque, 10);
