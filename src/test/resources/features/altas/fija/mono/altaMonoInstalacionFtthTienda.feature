@@ -22,8 +22,8 @@
       Dado     que abro la pagina de movistar
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
-      Y        ingreso el usuario "evillanuevag"
-      Y        ingreso el password "$Telefonica2099%"
+      Y        ingreso el usuario "nishuizas"
+      Y        ingreso el password "$T3l3f0n1c4$"
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
@@ -39,7 +39,7 @@
       Entonces me muestra la pantalla para ingresar la direccion
       Y        completo los datos para consultar la cobertura
         | departamento | provincia | distrito | direccion                   | referencia |
-        | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+        | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
       Y        presiono el boton Consultar Ubicacion
       #Y        ingreso la informacion del lugar para la instalacion
        # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
