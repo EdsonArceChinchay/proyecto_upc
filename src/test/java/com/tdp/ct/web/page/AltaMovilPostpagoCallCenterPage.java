@@ -270,14 +270,15 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void seleccionoNacionalidad(String nacionalidad) {
         WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
         js().scrollElementTop(listNacionalidad);
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(4);//1
         click(listNacionalidad);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(3);//2
         SearchContext contexPlan=sh().getContext(listNacionalidad);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
         for(WebElement elements:lista){
             System.out.println(elements.getText());
             if(elements.getText().equals(nacionalidad)){
+                System.out.println("5");
                 UtilWeb.waitForSeconds(2);
                 waitUntilElementIsClickable(elements,30).click();
             }

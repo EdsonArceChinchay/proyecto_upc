@@ -53,7 +53,7 @@ Característica: Alta Duo + Sva Movistar Tv App canal tienda
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
     Entonces doy click en Agregar Sva
-    Y        doy click en agregar Movistar TV App "<movistarTv>"
+    Y        doy click en agregar Movistar TV App
     Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -73,5 +73,5 @@ Característica: Alta Duo + Sva Movistar Tv App canal tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                              |bloque |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ |  CE            | 1020303001 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS|Movistar tv App |
+      | tipoUsuario     | userName     | password      | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                              |
+      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ |  CE            | 1020303001 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS|
