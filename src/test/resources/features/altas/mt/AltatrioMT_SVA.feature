@@ -57,10 +57,10 @@ Característica: AT-DT042_Alta MT MAS SVA
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
-    #Y        doy click en datos del cliente
-    #Y        completo los datos solicitados
-     # | fechaNac   | nacionalidad | estado_civil |
-     # | 12/12/1980 | Aruba     | Casado       |
+    Y        doy click en datos del cliente
+    Y        completo los datos solicitados
+     | fechaNac   | nacionalidad | estado_civil |
+     | 12/12/1980 | Aruba     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
