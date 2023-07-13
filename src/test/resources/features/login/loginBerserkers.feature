@@ -17,7 +17,7 @@
 
 Característica: AT-DT053_Login - FE DITO WEB
 
-  @LoginBerserker @LoginExitoso
+  @LoginBerserker @LoginExitoso @jbac_Test
   Esquema del escenario: Usuario realiza login exitoso: Canal online - Call center Gss, Tienda San Miguel, Talara
     Dado que abro la pagina de movistar
     Cuando presiono el boton Iniciar Sesion
