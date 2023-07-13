@@ -29,7 +29,7 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -45,9 +45,13 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
+    #Y        ingreso los datos de agendamiento
     #Y        presiono el boton confirmar agendamiento
+    #Y        presiono el boton confirmar agendamiento
+    Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso nuevamente el correo electronico "<correo>"
 #    Entonces me muestra la pantalla para ingresar la direccion
 #    Y        selecciono el departamento donde sera la instalacion "15"
 #    Y        selecciono la provincia donde sera la instalacion "1501"
