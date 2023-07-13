@@ -40,7 +40,7 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        doy click en el boton Consultar Portabilidad
     Y        valido los servicios
       | telefono  | Fecha_Sig  | Fecha_FinMes |
-      | 920956347 | 2022-12-24 | 2022-12-31   |
+      | 920956347 | 2023-01-24 | 2023-01-31   |
     Y        doy tiempo extra
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente

@@ -17,7 +17,7 @@
 
 Característica: AT-DT053_Login - FE DITO WEB
 
-  @LoginBerserker @LoginExitoso
+  @LoginBerserker @LoginExitoso @jbac_Test
   Esquema del escenario: Usuario realiza login exitoso: Canal online - Call center Gss, Tienda San Miguel, Talara
     Dado que abro la pagina de movistar
     Cuando presiono el boton Iniciar Sesion
@@ -32,7 +32,6 @@ Característica: AT-DT053_Login - FE DITO WEB
       | usuario externo | jpachaot     | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
       #| usuario externo | lterrazosce  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL            |
       #| usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA                       |
-
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
