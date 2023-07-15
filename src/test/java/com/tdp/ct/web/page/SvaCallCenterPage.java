@@ -30,6 +30,9 @@ public class SvaCallCenterPage extends WebBase{
     @FindBy(xpath = "//button[contains(text(),' Guardar cambios ')]")
     protected WebElement guardar;
 
+    @FindBy(xpath = "//div[text()='MOVISTAR TV APP']/parent::div/../descendant-or-self::tdp-st-checkbox")
+    protected WebElement movistarTvApp;
+
     public void ver_detalle(){
         js().scrollElementTop(detalle);
         UtilWeb.waitForSeconds(2);
@@ -55,5 +58,13 @@ public class SvaCallCenterPage extends WebBase{
         js().scrollElementTop(guardar);
         click(guardar);
 
+    }
+
+    public void clickSvaMovistarTvApp() {
+        UtilWeb.waitForSeconds(10);
+       //WebElement btnbloque = find().getElementByCss("div.container-actions > div.actions-content > div > tdp-st-checkbox");
+        //waitUntilElementIsVisible(btnbloque, 10);
+        js().scrollElementTop(movistarTvApp);
+        click(movistarTvApp);
     }
 }

@@ -1,6 +1,6 @@
 #language: es
 
-##CREADOR:
+##CREADOR: Henry salas
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
@@ -34,8 +34,10 @@
       Cuando   selecciono el tipo de documento "CE"
       Y        ingreso el documento "109084827"
       Y        doy click en el boton consultar
+      Y        cierro el popup de contraseña Única
       Y        selecciono la cartilla del plan activo
       Y        selecciono el boton Linea Nueva Movil
+      Y cierro el popup de validación de estado de contraseña única
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
       Y        doy click en el boton "Confirmar direccion"

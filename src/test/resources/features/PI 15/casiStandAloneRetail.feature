@@ -4,25 +4,25 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO:AT-DT112
-##GDAP:
-##SPRINT CREADO: SP4
+##CODIGO:AT-DT113
+##GDAP:GDAP-1386
+##SPRINT CREADO: SP5
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:Reusable
 ##ENCARGADO:Brandon
-##FECMOD: 30/05/2023
+##FECMOD: 15/06/2023
 
-@BERSERKERS @DoneDevOps @casiStandAloneTiendas
+@BERSERKERS @DoneDevOps @casiStandAloneRetail
 
-Característica: AT-DT112_CASI Stand Alone por Tiendas
-  Quiero realizar un CASI a un cliente con parque movil a un usuario con CE
+Característica: AT-DT113_CASI Stand Alone por Retail
+  Quiero realizar un CASI a un cliente con CE y parque movil
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @casiStandAloneTiendas
-  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con CE
+  @casiStandAloneRetail
+  Esquema del escenario: Cambio de Simcard a un cliente con CE y parque movil
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -38,6 +38,7 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
       | nombres | apellidos     | genero    |
       | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente

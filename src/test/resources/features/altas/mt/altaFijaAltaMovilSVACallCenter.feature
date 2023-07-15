@@ -34,6 +34,7 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Y        doy click en el boton consultar
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"

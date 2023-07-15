@@ -3,6 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tdp.ct</groupId>
     <artifactId>automation-web-berserkers</artifactId>
+    <!--    Utilizar en la rama Develop-->
+    <!--  <version>1.0.0-SNAPSHOT</version>-->
+    <!--    Utilizar en la rama release/certificaation-->
     <version>1.0.0</version>
     <description>Template from Continuous Testing Framework</description>
     <properties>
@@ -18,32 +21,18 @@
             <artifactId>web-automation</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>datatable</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
-        </dependency>-->
+        <!--        <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-http-jdk-client</artifactId>
+                    <version>4.5.0</version>
+                </dependency>-->
+        <!--      Si da error local, usar temporalmente.   -->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-http-jdk-client</artifactId>
-            <version>4.5.0</version>
+            <artifactId>selenium-api</artifactId>
+            <version>4.3.0</version>
         </dependency>
-
-        <!--      Si da error local, usar temporalmente.   -->
-
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-api</artifactId>
-                <version>4.3.0</version>
-            </dependency>
 
     </dependencies>
     <build>
@@ -117,4 +106,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

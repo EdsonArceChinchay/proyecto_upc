@@ -28,4 +28,8 @@ public class SvaCallCenterStepDefinition {
         svaCallCenterStep.elegir_sva();
     }
 
+    @Y("doy click en agregar Movistar TV App")
+    public void doyClickEnAgregarMovistarTVApp() {
+        svaCallCenterStep.clickSvaMovistarTvApp();
+    }
 }
