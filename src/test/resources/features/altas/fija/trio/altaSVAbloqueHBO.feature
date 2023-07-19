@@ -68,7 +68,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1993 | Casado      | Aruba      |
+      | 12/12/1993 | Casado      | Angola      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
