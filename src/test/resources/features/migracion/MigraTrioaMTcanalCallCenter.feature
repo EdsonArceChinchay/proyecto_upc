@@ -29,7 +29,6 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -44,30 +43,27 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
     Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
+    #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento
     #Y        presiono el boton confirmar agendamiento
-    #Y        presiono el boton confirmar agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
-#    Entonces me muestra la pantalla para ingresar la direccion
+    #Y        ingreso un correo electronico "<correo>"
+    #Y        ingreso nuevamente el correo electronico "<correo>"
+    #Entonces me muestra la pantalla para ingresar la direccion
 #    Y        selecciono el departamento donde sera la instalacion "15"
 #    Y        selecciono la provincia donde sera la instalacion "1501"
 #    Y        selecciono el distrito donde sera la instalacion "150116"
 #    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
-    #Y        ingreso la referencia de la direccion "Inkafarma"
-    #Y        presiono el boton Consultar ubicacion
+    Y        ingreso la referencia de la direccion "Inkafarma"
+    Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    #Y        Consulto ubicacion
-    #Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    #Y        selecciono horario "2pm-7pm"
-    #E        ingreso telefono del titular "998877665"
-    #E        ingreso instrucciones de delivery "cerca al parque"
-    #Y        doy clic en confirmar delivery
+    Y        Consulto ubicacion
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    Y        selecciono horario "2pm-7pm"
+    E        ingreso telefono del titular "998877665"
+    E        ingreso instrucciones de delivery "cerca al parque"
+    Y        doy clic en confirmar delivery
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en validar identidad del titular
@@ -88,4 +84,4 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42464702  | correo@gmail.com | discapacitado  | ELISA       | MARIO      | OCOBAMBA      | Trío          |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42464765  | correo@gmail.com | discapacitado  | ROSA       | MANUEL      | TRUJILLO      | Trío          |
