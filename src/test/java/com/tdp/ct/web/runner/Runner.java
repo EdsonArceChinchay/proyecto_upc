@@ -6,7 +6,6 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,8 +15,7 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@migracionTrioAmtCallCenter"
-
+        tags = "@CaplconCaeqCanalRetailPostpagoAprepago"
 
 )
 

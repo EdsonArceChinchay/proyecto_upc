@@ -30,10 +30,10 @@ Característica: AT-DT100_cambio de plan movil en Retail
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente la tienda "TALARA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1632547921"
+    Y        ingreso el documento "1632547954"
     Y        doy click en el boton consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del servicio "650028178"
+    Y        selecciono el boton Ver detalle del servicio "650029890"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y       selecciono boton Cambiar plan
