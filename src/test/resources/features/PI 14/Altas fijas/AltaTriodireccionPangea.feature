@@ -1,6 +1,6 @@
 #language: es
 
-##CREADOR:
+##CREADOR: Henry
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
@@ -73,4 +73,4 @@ Característica: AT-DT094_Alta trio con direccion pangea
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-      | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 1101000015   | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22  | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
+      | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 166268244   | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22  | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
