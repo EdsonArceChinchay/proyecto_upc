@@ -12,7 +12,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 31/07/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
@@ -30,18 +30,18 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        ingreso el password "$t3l3f0n1c4$"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
+    #Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1632547955"
+    Y        ingreso el documento "126659555"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650029891"
+    Y        selecciono el boton Ver detalle del servicio "650026192"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y selecciono boton Cambiar plan
-    Y  doy click en iniciar registro
-    Y        ingreso email "brettavoitteiyu-3241@yopmail.com" y lo confirmo
+    Y        selecciono boton Cambiar plan
+    Y        doy click en iniciar registro
+    Y        ingreso email "auto-3241@yopmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
-    Y  doy clic en si acepto
+    Y        doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
