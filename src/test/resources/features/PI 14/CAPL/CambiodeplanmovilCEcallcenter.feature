@@ -30,7 +30,7 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        ingreso el password "$t3l3f0n1c4$"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
+    Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1632547955"
     Y        doy click en el boton consultar
