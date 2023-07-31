@@ -1,6 +1,6 @@
 #language: es
 
-##CREADOR:
+##CREADOR: Henry
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
