@@ -64,7 +64,7 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Max Call center
 	Y        doy click en datos del cliente
 	Y        ingreso los datos del cliente
 	  | fechaNac   | estadoCivil | nacionalidad |
-	  | 15/09/1994 | Casado      | Angola       |
+	  | 15/09/1993 | Casado      | Angola       |
 	Y        doy click en el boton confirmar
 	Y        doy clic para validar contrato hogar
 	Y        me muestra en pantalla el contrato solicitado

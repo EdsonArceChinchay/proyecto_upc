@@ -3,10 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -120,8 +117,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright='search']");
         click(Input);
         type(Input, buscarE);
-        UtilWeb.waitForSeconds(5);
-        click(lblItem);
+        UtilWeb.waitForSeconds(10);
+        Input.sendKeys(Keys.ENTER);
+        //click(lblItem);
     }
 
     public void seleccionoLaCartillaLineaNueva() {

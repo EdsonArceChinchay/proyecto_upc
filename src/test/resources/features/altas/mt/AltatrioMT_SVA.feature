@@ -57,10 +57,10 @@ Característica: AT-DT042_Alta MT MAS SVA
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
-    #Y        doy click en datos del cliente
-    #Y        completo los datos solicitados
-     # | fechaNac   | nacionalidad | estado_civil |
-     # | 12/12/1980 | Aruba     | Casado       |
+    Y        doy click en datos del cliente
+    Y        completo los datos solicitados
+    | fechaNac   | nacionalidad | estado_civil |
+    | 12/12/1980 | Aruba     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,5 +71,5 @@ Característica: AT-DT042_Alta MT MAS SVA
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464722 | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464714 | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
 

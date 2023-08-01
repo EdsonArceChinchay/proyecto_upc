@@ -1,6 +1,6 @@
 #language: es
 
-##CREADOR:
+##CREADOR: Henry salas
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
