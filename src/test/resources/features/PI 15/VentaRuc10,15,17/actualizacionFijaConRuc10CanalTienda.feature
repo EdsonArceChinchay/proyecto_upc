@@ -19,7 +19,7 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @ActualizacionRuc10Tienda
+  @ActualizacionRucs10Tienda
   Esquema del escenario: Actualizacion fija todo los planes con ruc 10 canal Tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -38,5 +38,5 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
 
 
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE           | 7241133113 |10112233440|
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento |ruc     |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE           | 7241133113 |10112233440|

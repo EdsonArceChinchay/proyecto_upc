@@ -26,4 +26,8 @@ public class ActualizacionDeRuc10CanalTiendaStepDefinition {
         actualizacionDeRuc10CanalTiendaStep.clickBotonEntendido();
     }
 
+    @Y("selecciono una direccion sugerida")
+    public void seleccionoUnaDireccionSugerida() {
+        actualizacionDeRuc10CanalTiendaStep.seleccionoDireccionSugerida();
+    }
 }
