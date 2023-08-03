@@ -80,6 +80,6 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                     | bloque | correo           |
-      | usuario externo | nishuizas | $T3l3f0n1c4$| Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
+      | usuario externo | nishuizas | $T3l3f0n1c4$| Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD  | HBO    | correo@gmail.com |
 
 
