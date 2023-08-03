@@ -22,6 +22,10 @@ public class ActualizacionDeRuc10CanalTiendaPage extends WebBase {
     @FindBy(xpath = "(//button[contains(text(),'Entendido')])[2]")
     protected WebElement Entendido;
 
+    @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[1]")
+    protected WebElement direccionSugerida;
+
+
     public void seleccionoBotonVerDetalle() {
         //String btnVerOfertas = ".btn-detail tdp-st-button;button";
        // WebElement element = js().getWebElement(btnVerOfertas);
@@ -53,5 +57,10 @@ public class ActualizacionDeRuc10CanalTiendaPage extends WebBase {
     public void clickBotonEntendido() {
         click(Entendido);
         UtilWeb.waitForSeconds(5);
+    }
+
+    public void seleccionoDireccionSugerida() {
+        UtilWeb.waitForSeconds(3);
+        click(direccionSugerida);
     }
 }
