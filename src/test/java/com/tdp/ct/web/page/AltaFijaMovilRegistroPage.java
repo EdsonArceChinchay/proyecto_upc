@@ -839,4 +839,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonRepetidor);
         UtilWeb.waitForSeconds(5);
     }
+
+    public void scrollDown() {
+        UtilWeb.waitForSeconds(4);
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 }

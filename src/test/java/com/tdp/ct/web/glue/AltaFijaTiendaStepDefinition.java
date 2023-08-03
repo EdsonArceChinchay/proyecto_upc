@@ -96,4 +96,9 @@ public class AltaFijaTiendaStepDefinition {
   public void presionoEnElBotonDeRegistrarVenta() {
     altaFijaTiendaStep.clickBotonRegistrarVenta();
   }
+
+  @Y("selecciono el boton Linea Nueva")
+  public void seleccionoElBotonLineaNueva() {
+    altaFijaTiendaStep.clickListaBotones();
+  }
 }
