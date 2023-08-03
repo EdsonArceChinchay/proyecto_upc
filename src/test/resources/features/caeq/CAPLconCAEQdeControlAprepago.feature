@@ -26,7 +26,7 @@ Característica: AT-DT050_CAPL con CAEQ por canal Call Center de un Control a Pr
     Y        presiono el boton Continuar hacia el home
     #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042464934"
+    Y        ingreso el documento "1042465133"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -36,8 +36,8 @@ Característica: AT-DT050_CAPL con CAEQ por canal Call Center de un Control a Pr
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | OPPO RENO 7 AZUL |
+      | permanencia    | tipoPago   | equipoName                              |
+      | Sin permanencia| Al Contado | SAMSUNG GXY A34 VERDE SMA346M 128GB C/P |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan

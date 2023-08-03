@@ -34,4 +34,8 @@ public class ActualizacionDeRuc10CanalTiendaStep {
     public void clickBotonEntendido() {
         page.actualizacionDeRuc10CanalTiendaPage().clickBotonEntendido();
     }
+    @ScreenShotAfter
+    public void seleccionoDireccionSugerida() {
+        page.actualizacionDeRuc10CanalTiendaPage().seleccionoDireccionSugerida();
+    }
 }
