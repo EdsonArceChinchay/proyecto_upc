@@ -14,9 +14,9 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT050_CAPL con CAEQ por canal Call Center de un Control a Prepago
+Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
-  @CaplconCaeqCallCenter
+  @CaplconCaeqTienda
   Esquema del escenario: CAPL con CAEQ por canal Call Center de un Control a Prepago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -52,4 +52,4 @@ Característica: AT-DT050_CAPL con CAEQ por canal Call Center de un Control a Pr
 
     Ejemplos:
       | tipoUsuario     | userName   | password     |
-      | usuario externo | jpachaot   | $t3l3f0n1c4$ |
+      | usuario externo | nishuizas  | $T3l3f0n1c4$ |
