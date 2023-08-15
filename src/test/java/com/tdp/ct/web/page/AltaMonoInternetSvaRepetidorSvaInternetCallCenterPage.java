@@ -3,23 +3,25 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
 public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBase{
 
-    @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
+    @FindBy(xpath = "//button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
 
     @FindBy(xpath = "//div[1]/div[2]/div[2]/div/tdp-st-icon-button[1]")
     protected WebElement sva_repetidor;
 
     public void agregarsva() {
-        UtilWeb.waitForSeconds(10);
-        js().scrollElementTop(buttonAgregarSVA);
-        waitUntilElementIsVisible(buttonAgregarSVA, 10);
-        click(buttonAgregarSVA);
+        UtilWeb.waitForSeconds(5);
+        WebElement sva = find().getElementByXPath("//button[contains(text(),'SVA')]");
+        js().scrollElementTop(sva);
+        sva.click();
+        System.out.println("4");
         UtilWeb.waitForSeconds(20);
     }
 
