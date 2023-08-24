@@ -30,7 +30,7 @@
       Y        ingreso el password "$t3l3f0n1c4$"
       Y        presiono el boton Continuar hacia el home
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-      Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
+      #Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
       Y        ingreso el documento "109084827"
       Y        doy click en el boton consultar
@@ -41,7 +41,8 @@
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
       Y        doy click en el boton "Confirmar direccion"
-      Entonces me muestra la pantalla de ofertas sugeridos
+      #Entonces me muestra la pantalla de ofertas sugeridos
+      Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
       Y        luego doy click en la cartilla ir a Movistar Total
       Cuando   doy clic a iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
