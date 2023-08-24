@@ -89,4 +89,29 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnCerrarSesion();
     }
 
+    public void validarNomPlan(String nomPlan) {
+        page.loginBerserkerPage().validarNomPlan(nomPlan);
+    }
+
+    public void scrollDown() {
+        page.altaFijaMovilRegistroPage().scrollDown();
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        page.loginBerserkerPage().validarVelocidadInternet(mbpsBB);
+
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        page.loginBerserkerPage().validarPrecioDescuento(precDesc);
+
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        page.loginBerserkerPage().validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
+    }
 }

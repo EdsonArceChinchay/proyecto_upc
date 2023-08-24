@@ -1,43 +1,38 @@
-#language: es
-
-##CREADOR: Henry
+#language:es
+##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT094
-##GDAP: GDAP-1146
-##SPRINT CREADO:
+##CODIGO:
+##GDAP: GDAP-
+##SPRINT CREADO: SPRINT 1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: Eloy Milla
+##FECMOD: 10/07/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI16
 
-Característica: AT-DT094_Alta trio con direccion pangea
-
+Característica: Alta Duo con direccion sugerida por Canal Tiendas
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @Altatriopangea
-
-  Esquema del escenario: Escenario: Alta trio Por Call Center con direccion pangea
+  @AltaDuoDireccionSugeridaTienda
+  Esquema del escenario: Alta Duo con direccion sugerida
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos    | genero   |
+      | Miguel  | Mejia        | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -47,30 +42,28 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-   # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | lote | vivienda | nombreVivienda    | piso | int | conjunto             | conjHabit  |
-    #  | D  | 11   | EDIFICIO | Familia Barrios   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        selecciono una direccion sugerida
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "testing-1@tester.com"
-    Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
+    Y        ingreso telefono de contacto
+    Y        presiono el boton Confirmar agendamiento
+    Y        ingreso email "prueba@gmail.com" y lo repito
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 02/10/1980 | Divorciado      | Angola     |
-    Y       doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+      | fechaNac   | nacionalidad | estadoCivil  |
+      | 12/12/1980 | Albania      | Casado       |
+    Y        doy click en el boton confirmar
+    Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-      | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 166268244   | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22  | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
+      | tipoUsuario     | userName   | password        | msgHome   | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
+      | usuario externo |evillanuevag| $Telefonica2099%|Bienvenid@ | CE            | 123453910 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
