@@ -10,8 +10,8 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: Edwin De la Cruz
+##FECMOD: 31/08/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
 
@@ -31,12 +31,10 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR,JULIO CESAR TELLO,469,LINCE,LIMA ,LIMA,PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
-    Y        ingreso la direccion donde sera la instalacion "JOSE LEAL 500"
+    Y        ingreso la direccion donde sera la instalacion "JULIO CESAR TELLO,469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
@@ -55,10 +53,8 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password        | msgHome      | tiendaAsesor          | tipoDocumento | documento  | correo            | tipoPlanHogar  | plan        |
-      | usuario externo | evillanuevag    | $Telefonica2099%      | Bienvenid@   | TIENDA SAN MIGUEL   | CE            | 1042465127 | tester@tester.com  | Duo            | HD RA D22 200 MBPS  |
+      | tipoUsuario     | userName   | password       | msgHome      |  tipoDocumento | documento  | correo             | tipoPlanHogar  | plan                |
+      | usuario externo | nishuizas  | $T3l3f0n1c4$%  | Bienvenid@   |  CE            | 1042465127 | tester@tester.com  | Duo            | HD RA M23 200 MBPS  |
