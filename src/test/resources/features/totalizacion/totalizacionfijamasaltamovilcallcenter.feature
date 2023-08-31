@@ -4,7 +4,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: REFACTORIZADO 24/08/2023 OK
 ##CODIGO: AT-DT110
 ##GDAP: GDAP-1152
 ##SPRINT CREADO:
@@ -30,7 +30,6 @@
       Y        ingreso el password "$t3l3f0n1c4$"
       Y        presiono el boton Continuar hacia el home
       Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-      Y        valido que se presente la tienda "CANAL ONLINE-CALL CENTER GSS"
       Cuando   selecciono el tipo de documento "CE"
       Y        ingreso el documento "109084827"
       Y        doy click en el boton consultar
@@ -41,22 +40,19 @@
       Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
       Y        doy click en el boton "Confirmar direccion"
-      Entonces me muestra la pantalla de ofertas sugeridos
+      Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
       Y        luego doy click en la cartilla ir a Movistar Total
       Cuando   doy clic a iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento
     #Y        presiono el boton confirmar agendamiento
      # Entonces  me muestra la pantalla para ingresar la direccion
-   Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
-    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+      Y        selecciono el departamento donde sera la instalacion "15"
+      Y        selecciono la provincia donde sera la instalacion "1501"
+      Y        selecciono el distrito donde sera la instalacion "150116"
+      Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
       Y        ingreso la referencia de la direccion "Inkafarma"
       Y        presiono el boton Consultar ubicacion
-      Y        ingreso la informacion del lugar de instalacion
-        | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-        | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
       Y        Consulto ubicacion
       Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
       Y        selecciono horario "2pm-7pm"
@@ -71,4 +67,4 @@
       Y        doy click en el boton de continuar
       Y         presiono el boton Registrar venta
       Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      #Y        valido que se muestre el detalle del pedido
+      Y        valido que se muestre el detalle del pedido
