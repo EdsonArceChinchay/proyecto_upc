@@ -29,7 +29,6 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -37,6 +36,7 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
+    #Y        cierro el popup de Detail
     Y        valido que este en la pagina de ofertas sugeridas
     Y        Seleccinar boton migrar a fibra
     Cuando   doy clic en iniciar registro
@@ -53,5 +53,5 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TALARA       | CE            | 123456778 | prueba@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
+      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 123456778 | prueba@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

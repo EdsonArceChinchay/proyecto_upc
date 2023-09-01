@@ -13,7 +13,7 @@ import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
 
-    @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
+    @FindBy(xpath = "//div[@class=\"contenedor_park add_pointer\"]")
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
@@ -36,12 +36,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
-        //UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(15);
         //waitUntilElementIsClickable(btnHogar,30);
-        esperaProgresiva(driver(),5,5,btnHogar);
+        //esperaProgresiva(driver(),5,5,btnHogar);
         click(btnHogar);
         //waitUntilElementIsVisible(btnMovil,5);
-        //UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void altaMovil() {
