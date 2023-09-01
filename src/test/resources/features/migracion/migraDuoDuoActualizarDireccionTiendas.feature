@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: Edwin De la Cruz
-##FECMOD: 31/08/2023
+##FECMOD: 01/09/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
 
@@ -40,7 +40,7 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Y        presiono el boton consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
-    Y        seleccion plan nuevo para ver las ofertas
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
     Cuando   doy clic a iniciar registro
@@ -57,4 +57,4 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
 
     Ejemplos:
       | tipoUsuario     | userName   | password       | msgHome      |  tipoDocumento | documento  | correo             | tipoPlanHogar  | plan                |
-      | usuario externo | nishuizas  | $T3l3f0n1c4$  | Bienvenid@   |  CE            | 1042465127 | tester@tester.com  | Duo            | HD RA M23 200 MBPS  |
+      | usuario externo | nishuizas  | $T3l3f0n1c4$   | Bienvenid@   |  CE            | 1042465127 | tester@tester.com  | Duo            | HD RA M23 200 MBPS  |
