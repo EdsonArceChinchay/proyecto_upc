@@ -10,8 +10,8 @@
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO: Edson Arce
-##FECMOD: 30/03/2023
+##ENCARGADO: Maria Sanchez
+##FECMOD: 31/08/2023
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
@@ -40,24 +40,18 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-    Y        doy click en añadir SVA
+    Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                          |bloque|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Mono           | TV ESTÁNDAR DIGITAL RA D22  | HBO |
+      | tipoUsuario     | userName | password     | msgHome    |  tipoDocumento | documento    | correo            | tipoPlanHogar  | plan                    |bloque   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE            |  123456766   | tester@tester.com | Mono           | TV HOGAR DIGITAL RA M23 | FOX     |

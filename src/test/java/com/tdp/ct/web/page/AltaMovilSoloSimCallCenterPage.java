@@ -47,7 +47,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "/html/body/div/div[4]/div/mat-dialog-container/app-modal-uniquepass-park/div/div/img")
+    @FindBy(xpath = "//*[@id=\"mat-mdc-dialog-1\"]/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
 
     public void botonMostrarOfertasRapido() {
