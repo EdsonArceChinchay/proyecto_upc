@@ -16,4 +16,8 @@ public class MigraSalto0RetailStep {
     public void clicIniciarRegistro() {
         page.migraSalto0RetailPage().ClicIniciarRegistro();
     }
+
+    public void clickBotonEntendido() {
+        page.migraSalto0RetailPage().clickBotonEntendido();
+    }
 }
