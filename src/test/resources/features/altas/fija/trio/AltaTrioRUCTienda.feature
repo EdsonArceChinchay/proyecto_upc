@@ -27,7 +27,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -45,9 +44,9 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+     # | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
 #   Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -56,7 +55,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
    #Y        doy click en Cambiar plan hogar
     Y        selecciono en linea Nueva
     #Y        selecciono el plan "<nombrePlan>"
-    Y        doy click en agregar repetidor
+    #Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
@@ -84,6 +83,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente           | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                               |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | Bienvenid@   | RUC           | 20547284501 | 1   | DNI             | 75447652       | ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente           | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                               |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS |
       #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 460 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
