@@ -55,4 +55,9 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
     altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
     }
+
+  @Y("doy click en Entendido para visualizar las ofertas")
+  public void doyClickEnEntendidoParaVisualizarLasOfertas() {
+    altaMovilSoloSimCallCenterStep.botonentendidoOfertas();
+  }
 }

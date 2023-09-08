@@ -39,5 +39,8 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().completaDatosSolicitados();
     }
 
+    public void botonentendidoOfertas(){
+        page.altaMovilSoloSimCallCenterPage().botonentendidoOfertas();
+    }
 }
 

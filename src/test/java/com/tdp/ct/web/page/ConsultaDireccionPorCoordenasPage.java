@@ -20,6 +20,8 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-content//p[contains(@class,'modal-description')]")
     protected WebElement txtMsjError;
 
+    @FindBy(xpath = "//button[contains(text(),\"Aceptar\")]")
+    protected WebElement btnerror;
 
     public void ingresoLasCoordenadasDeLogitudyLatitud(String x, String y) {
         type(txtX, x.trim());
@@ -42,5 +44,10 @@ public class ConsultaDireccionPorCoordenasPage extends WebBase {
         String mensajeEsperado = msj.trim().toUpperCase();
         Assertions.assertTrue(mensajeObtenido.contains(mensajeEsperado), "El mensaje esperado: " + mensajeEsperado + ", es diferente a la obtenido: " + mensajeObtenido);
         UtilWeb.waitForSeconds(1);
+    }
+
+    public void doyClickAceptarEnElModalDeError() {
+        waitUntilElementIsVisible(btnerror, 10);
+        waitUntilElementIsClickable(btnerror, 15).click();
     }
 }
