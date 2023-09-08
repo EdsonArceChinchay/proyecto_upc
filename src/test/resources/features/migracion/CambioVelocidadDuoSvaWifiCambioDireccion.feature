@@ -17,7 +17,7 @@
 Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
 
 
-  @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global @General
+  @CambioVelocidadDuoSvaCallCenterCambioDireccion @MVP08 @Global @General
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva [alta de repetidor wiffi financiado] con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
