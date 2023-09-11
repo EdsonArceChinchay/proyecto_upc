@@ -42,5 +42,5 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Con
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
