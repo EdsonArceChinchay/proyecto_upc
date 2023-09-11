@@ -33,11 +33,12 @@ public class AltaMonoInstalacionFtthTiendaStep {
 
     public void scrollDirecCompleta(){ page.altaMonoFtthTiendaPage().scrollDirecCompleta(); }
 
-    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda, String piso, String interior, String tipoConjH, String conjH){
+    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda,String bloque, String piso, String interior, String tipoConjH, String conjH){
         page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
         page.altaFijaAltaMovilCallCenterPage().lote(lote);
         page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
         page.altaFijaAltaMovilCallCenterPage().nombreVivienda(nomVivienda);
+        page.altaFijaAltaMovilCallCenterPage().bloque(bloque);
         page.altaFijaAltaMovilCallCenterPage().piso(piso);
         page.altaFijaAltaMovilCallCenterPage().interior(interior);
         page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(tipoConjH);

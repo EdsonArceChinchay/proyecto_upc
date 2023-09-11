@@ -27,4 +27,10 @@ public class ConsultaDireccionPorCoordenasStep {
         page.consultaDireccionPorCoordenasPage().validoQueQueMeMuestreElMensajdeDeError(msj);
 
     }
+
+    @ScreenShotAfter
+    public void doyClickAceptarEnElModalDeError() {
+        page.consultaDireccionPorCoordenasPage().doyClickAceptarEnElModalDeError();
+
+    }
 }
