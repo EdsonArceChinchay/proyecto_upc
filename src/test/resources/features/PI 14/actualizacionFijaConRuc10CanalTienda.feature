@@ -5,8 +5,8 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT063
-##GDAP: GDAP-723
+##CODIGO:
+##GDAP: GDAP-1291
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -15,7 +15,7 @@
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 
-Característica: AT-DT063_ Actualizacion fija con ruc 10 canal Tienda
+Característica: Actualizacion fija con ruc 10 canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar

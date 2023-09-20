@@ -10,14 +10,14 @@
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
-##ENCARGADO: Edson Arce
-##FECMOD: 31/03/2023
+##ENCARGADO: Maria Sanchez
+##FECMOD: 08/09/2023
 
 @BERSERKERS @DoneDevOps
 Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
 
 
-  @CambioVelocidadDuoSvaCallCenterCambioDirección @MVP08 @Global @General
+  @CambioVelocidadDuoSvaCallCenterCambioDireccion @MVP08 @Global @General
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva [alta de repetidor wiffi financiado] con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -36,6 +36,14 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
     Y        doy click en el boton "Buscar"
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
+      | M  | 1    | EDIFICIO     | VIVA           | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        presiono el boton consultar cobertura
+    Y        doy click Aceptar en el modal de error
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
+      | M  | 1    | EDIFICIO     | VIVA           | B      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
@@ -57,7 +65,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+
     Ejemplos:
-      | tipoUsuario     | userName | password      | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud  | latitud   |
-      | usuario externo | jpachaot |  $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1029801212 | Duo           | RA D22 200 MBPS | tester@tester.com | -77.07222 | -12.08367 |
+      | tipoUsuario     | userName | password         | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
+      | usuario externo | vsiguass |  #o2Wy23oA1458Z% | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |
