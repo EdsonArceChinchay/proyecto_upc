@@ -44,13 +44,8 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-<<<<<<< HEAD
     # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
     # | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-=======
-    #  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-    #  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
->>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -64,11 +59,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-<<<<<<< HEAD
       | 12/12/1980 | Casado      | Aruba      |
-=======
-      | 12/12/1980 | Casado      | Aruba        |
->>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Cuando   doy clic en si acepto
@@ -79,11 +70,8 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-<<<<<<< HEAD
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | HD RA M23 600 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
-=======
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464813 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | RA M23 100 MBPS |
->>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
+
 
 
   @AltaDuoProactivo
@@ -139,10 +127,6 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-<<<<<<< HEAD
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      |  RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
-=======
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Duo      | RA M23 150 MBPS |
->>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
 
 
