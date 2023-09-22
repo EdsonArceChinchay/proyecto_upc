@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1
-
 Característica: AT-DT013_Alta Mono Linea Voz Tienda
 
   @AltaMonoLineaVozTienda
@@ -23,7 +22,7 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "evillanuevag"
-    Y        ingreso el password "$Telefonica2020$"
+    Y        ingreso el password "$t3l3f0n1c4$"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -31,14 +30,14 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos   | genero   |
-      | Carlos  | Armando     | masculino |
+      | nombres | apellidos | genero    |
+      | Carlos  | Armando   | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
-      |departamento|provincia|distrito|direccion                    |referencia|
-      |15          |1501     |150116  |JIRON JULIO CESAR TELLO 460  |parque    |
+      | departamento | provincia | distrito | direccion                   | referencia |
+      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |

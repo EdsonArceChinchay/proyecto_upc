@@ -56,7 +56,7 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Trio           | RA D22 150 MBPS | tester@tester.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Trio           | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
@@ -101,4 +101,4 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |

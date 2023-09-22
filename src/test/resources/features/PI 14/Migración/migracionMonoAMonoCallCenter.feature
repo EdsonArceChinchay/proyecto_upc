@@ -35,7 +35,7 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-	Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -60,5 +60,5 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                          |bloque|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 77654579 | prueba@prueba.com | Mono           | INTERNET MOVISTAR RA M23 600 MBPS  | HBO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                              | bloque |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS | HBO    |

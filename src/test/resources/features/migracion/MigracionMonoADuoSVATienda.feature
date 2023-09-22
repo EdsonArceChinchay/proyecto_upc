@@ -57,5 +57,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan              | Bloque   | sva |
-      | usuario externo | evillanuevag  | $Telefonica2099% | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839  | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA  | HBO      | Plan Multidestino 20 |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                        | Bloque | sva                  |
+      | usuario externo |          | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | HBO    | Plan Multidestino 20 |

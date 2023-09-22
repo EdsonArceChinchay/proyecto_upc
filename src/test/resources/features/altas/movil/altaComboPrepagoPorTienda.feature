@@ -34,8 +34,8 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos     | genero    |
-      | Jose   | Black Label | Masculino |
+      | nombres | apellidos   | genero    |
+      | Jose    | Black Label | Masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -63,5 +63,5 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
     #Y        valido que se muestre el detalle del pedido
     #Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento  | nombrePlan      |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464882 | Prepago preplan |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464882 | Prepago preplan |

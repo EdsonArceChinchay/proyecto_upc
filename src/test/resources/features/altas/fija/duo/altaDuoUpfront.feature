@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-
 Característica: AT-DT006_Alta Duo por tienda
 
   Antecedentes:
@@ -70,5 +69,5 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
