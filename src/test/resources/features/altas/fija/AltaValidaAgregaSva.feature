@@ -12,8 +12,7 @@
 ##DATA:
 ##ENCARGADO: Romina Torres - CATÁLOGO
 ##FECMOD: 02/08/2023
-
-
+@BERSERKERS @DoneDevOps
 Característica: Agregar SVA - Planes: Monos, dúos, trios
 
   Antecedentes:

@@ -13,6 +13,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
+@BERSERKERS @DoneDevOps
 Característica: Migracion de Mono internet a Mono internet con Actualizar Direccion por el canal Call Center
 
   Antecedentes:
@@ -58,5 +59,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlanHogar | plan
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464839  | Mono          | INTERNET MOVISTAR RA D22 600
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA D22 600

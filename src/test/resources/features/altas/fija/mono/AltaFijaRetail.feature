@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01
-
 Característica: AT-DT007_Alta Fija Mono Internet por Retail
 
 
@@ -37,18 +36,18 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
-	Y        selecciono el boton Linea Nueva Hogar
-	Y        selecciono el boton Mostrar ofertas
-	Entonces me muestra la pantalla para ingresar la direccion
-	Y        completo los datos para consultar la cobertura
-	  | departamento | provincia | distrito | direccion                   | referencia |
-	  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
-	Y        presiono el boton Consultar Ubicacion
-	Y        ingreso la informacion del lugar para la instalacion
-	  | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-	  | A  | 1    | EDIFICIO | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
-	Y        presiono el boton Consultar Cobertura
-	Y        selecciono tipo de oferta
+    Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Mostrar ofertas
+    Entonces me muestra la pantalla para ingresar la direccion
+    Y        completo los datos para consultar la cobertura
+      | departamento | provincia | distrito | direccion                   | referencia |
+      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+    Y        presiono el boton Consultar Ubicacion
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+    Y        presiono el boton Consultar Cobertura
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy clic a iniciar registro
@@ -70,5 +69,5 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan   |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan      |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |

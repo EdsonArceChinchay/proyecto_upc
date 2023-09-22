@@ -14,7 +14,6 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
-
 Característica: Actualizacion fija con ruc 10 canal Tienda
 
   Antecedentes:
@@ -27,7 +26,7 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -53,10 +52,10 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan        |ruc     |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE           | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS |10112233440|
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
