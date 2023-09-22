@@ -16,6 +16,7 @@
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
+
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -64,6 +65,6 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  |numero |tipoPlanMovil|nombrePlan|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 |920956347| Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102009  | 920956347 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 

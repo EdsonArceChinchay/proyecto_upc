@@ -36,8 +36,8 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia    | tipoPago   | equipoName                              |
-      | Sin permanencia| Al Contado | SAMSUNG GXY A34 VERDE SMA346M 128GB C/P |
+      | permanencia     | tipoPago   | equipoName                              |
+      | Sin permanencia | Al Contado | SAMSUNG GXY A34 VERDE SMA346M 128GB C/P |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
@@ -51,5 +51,5 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password     |
-      | usuario externo | nishuizas  | $T3l3f0n1c4$ |
+      | tipoUsuario     | userName  | password     |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ |

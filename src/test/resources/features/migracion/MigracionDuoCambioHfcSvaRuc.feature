@@ -54,8 +54,8 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        doy clic en el boton validar identidad representante legal
     #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
-      | BERTHA | LEOBILDO | LA BANDA DE SHILCAYO |
+      | nombreMadre | nombrePadre | distritoNac          |
+      | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -64,8 +64,8 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 #    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password     | msgHome      | tipoDocumento | documento|nro |tipoDocRepLegal|numDocRepLegal | correo            | tipoPlanHogar | plan        | sva                   |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan           | sva                  |
      # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20100323002  |1   |DNI            |75447576 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | TRIO          | RA D22 50 MBPS | Plan Multidestino 20 |
       #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20491354918  |1   |DNI            |75447902 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
     #  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@  | RUC            | 20462949040  |1   |DNI            |75447445 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |

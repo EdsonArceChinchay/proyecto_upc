@@ -16,6 +16,7 @@
 
 @BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
 Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
+
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -55,5 +56,5 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo            | tipoPlanHogar | plan            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo            | tipoPlanHogar | plan            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |

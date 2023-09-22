@@ -56,5 +56,5 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento      | correo            | tipoPlanHogar | plan                              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            |  302010065403  | tester@tester.com | Mono          | INTERNET MOVISTAR RA D22 150 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento    | correo            | tipoPlanHogar | plan                              |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 302010065403 | tester@tester.com | Mono          | INTERNET MOVISTAR RA D22 150 MBPS |

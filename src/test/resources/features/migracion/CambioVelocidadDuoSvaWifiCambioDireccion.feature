@@ -67,5 +67,5 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password         | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
-      | usuario externo | vsiguass |  #o2Wy23oA1458Z% | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |
+      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
+      | usuario externo | vsiguass | #o2Wy23oA1458Z% | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |

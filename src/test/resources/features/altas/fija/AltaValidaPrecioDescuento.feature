@@ -13,6 +13,7 @@
 ##ENCARGADO: Romina Torres - CATÁLOGO
 ##FECMOD: 02/08/2023
 
+@BERSERKERS @DoneDevOps
 Característica: Validar precio de descuento BB - Planes: Duos, trios
 
   Antecedentes:
