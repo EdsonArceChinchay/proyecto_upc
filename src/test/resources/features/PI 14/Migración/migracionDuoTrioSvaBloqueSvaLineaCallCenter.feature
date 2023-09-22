@@ -15,7 +15,6 @@
 ##FECMOD: 30/03/2023
 
  @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
-
  Característica: migracion duo a trio sva Bloque + sva Linea CANAL CALL CENTER
 
    Antecedentes:

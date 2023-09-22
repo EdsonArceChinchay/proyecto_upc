@@ -14,7 +14,6 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT104
-
 Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 
   Antecedentes:

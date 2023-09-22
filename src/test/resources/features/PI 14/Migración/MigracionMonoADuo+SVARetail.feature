@@ -14,6 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
+ @BERSERKERS @DoneDevOps
  Característica: Migracion de Mono a DUO +SVA por el canal  Retail CE
 
    Antecedentes:

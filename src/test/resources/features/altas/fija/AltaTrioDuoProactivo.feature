@@ -129,3 +129,4 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      | RA D22 100 MBPS | discapacitado | ODELIA | CIPRIANO | EL AGUSTINO |
 
 
+
