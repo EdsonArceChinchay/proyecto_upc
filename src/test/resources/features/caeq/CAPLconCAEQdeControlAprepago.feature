@@ -1,4 +1,4 @@
- c#language:es
+#language:es
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
