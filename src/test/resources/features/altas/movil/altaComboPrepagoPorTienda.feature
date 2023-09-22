@@ -37,7 +37,7 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
       | nombres | apellidos   | genero    |
       | Jose    | Black Label | Masculino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente

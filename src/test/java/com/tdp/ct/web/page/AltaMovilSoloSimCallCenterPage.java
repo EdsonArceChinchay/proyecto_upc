@@ -41,7 +41,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div[3]/button")/*(xpath = "//button[contains(text(),'Mostrar ofertas')]")*/
+    @FindBy(xpath = "//div[@class='show-offerts']/button[contains(text(),'Mostrar ofertas')]")
     protected WebElement btnMostrarOfertas;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")

@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity @Sanity28
-
 Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
 
   @ConsultarDireccionCoordenadas @Coordenadasorrectas @SanityF @DROP-G07
