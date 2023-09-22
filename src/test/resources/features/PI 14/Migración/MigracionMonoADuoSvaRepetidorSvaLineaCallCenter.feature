@@ -13,7 +13,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
-
+ @BERSERKERS @DoneDevOps
  Característica: Migracion de Mono a DUO por el canal Call Retail CE
 
    Antecedentes:

@@ -15,7 +15,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @Sanity28
-
 Característica: Alta Trio SVA Internet canal Retail
 
   @AltaTrioSVARetail

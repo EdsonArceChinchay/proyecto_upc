@@ -15,7 +15,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
-
 Característica: Alta Movil Prepago + Equipo Call center
 
 

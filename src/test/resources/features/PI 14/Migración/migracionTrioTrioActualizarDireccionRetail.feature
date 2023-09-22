@@ -12,7 +12,6 @@
 ##ENCARGADO: MOISES
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP5
-
 Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por el canal Retail
 
   Antecedentes:
