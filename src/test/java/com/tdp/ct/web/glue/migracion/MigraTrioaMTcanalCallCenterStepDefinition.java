@@ -30,4 +30,5 @@ public class MigraTrioaMTcanalCallCenterStepDefinition {
     public void doyClickEnFinalizarRegistro() {
         migraTrioaMTcanalCallCenterStep.clickFinalizarRegistro();
     }
+
 }

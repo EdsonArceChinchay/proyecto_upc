@@ -15,6 +15,7 @@ public class MigraTrioaMTcanalCallCenterStep {
         page.migraTrioaMTcanalCallCenterPage().seleccionoPlanMovistarTotal();
 
     }
+
     public void scrollUp() {
         page.migracionDuoATrioTiendaPage().scrollUp();
     }
@@ -23,16 +24,20 @@ public class MigraTrioaMTcanalCallCenterStep {
     public void seleccionoPlandeOferta() {
         page.migraTrioaMTcanalCallCenterPage().seleccionoPlandeOferta();
     }
+
     @ScreenShotBefore
     public void clickBotonSeleccionarOferta() {
         page.migraTrioaMTcanalCallCenterPage().clickBotonSeleccionarOferta();
     }
+
     @ScreenShotBefore
     public void clickBtnIrMovistarTotal() {
         page.migraTrioaMTcanalCallCenterPage().clickBtnIrMovistarTotal();
     }
+
     @ScreenShotBefore
     public void clickFinalizarRegistro() {
         page.migraTrioaMTcanalCallCenterPage().clickFinalizarRegistro();
     }
+
 }

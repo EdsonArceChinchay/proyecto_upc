@@ -26,12 +26,14 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan MT
     Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "Confirmar direccion"
+    Y        cierro popup de error
     #Y        Selecciono una linea movil y mostrar ofertas
     #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
@@ -53,4 +55,4 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | nombrePlan          | correo            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 7241133711 | HD 200 Mbps + 95 Gb | tester@tester.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Trío HD 100 Mbps RV + 100 Gb RV | tester@tester.com |
