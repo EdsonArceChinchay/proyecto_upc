@@ -15,7 +15,6 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
-
 Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 
   Antecedentes:
