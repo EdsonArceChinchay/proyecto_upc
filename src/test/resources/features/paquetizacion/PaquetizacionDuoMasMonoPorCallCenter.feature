@@ -51,9 +51,9 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
-            | nombrePadre   | nombreMadre   | distritoNac   |
-            | <nombrePadre> | <nombreMadre> | <distritoNac> |
-   Entonces valido que me muestre el boton con el texto de identidad validada
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
+    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -61,6 +61,6 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                                        | nombrePadre | nombreMadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 76268961   | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
-      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 102040469 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                                        | nombrePadre | nombreMadre | distritoNac |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 76268961  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102040469 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |

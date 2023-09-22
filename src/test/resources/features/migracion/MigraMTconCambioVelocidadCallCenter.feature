@@ -54,5 +54,6 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | nombrePlan          | correo            |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Trío HD 100 Mbps RV + 100 Gb RV | tester@tester.com |
+

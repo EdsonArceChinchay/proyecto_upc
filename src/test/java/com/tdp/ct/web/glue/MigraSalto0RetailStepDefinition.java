@@ -17,4 +17,9 @@ public class MigraSalto0RetailStepDefinition {
     public void doyClicEnIniciarRegistro() {
         migraSalto0RetailStep.clicIniciarRegistro();
     }
+
+    @Y("cierro el popup de Detail")
+    public void cierroElPopupDeDetail() {
+        migraSalto0RetailStep.clickBotonEntendido();
+    }
 }

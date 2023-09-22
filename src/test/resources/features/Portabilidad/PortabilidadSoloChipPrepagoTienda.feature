@@ -58,7 +58,7 @@ Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1  | 11    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A1 | 11   | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -77,6 +77,6 @@ Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento |numero  |tipoPlanMovil|nombrePlan|
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI            | 75102009 |920956351| Postpago   | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102009  | 920956351 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 

@@ -85,10 +85,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void nombreVivienda(String nomVivienda) {
-        WebElement Nvivienda = find().getElementByXPath("(//div[@class='tdp-col-12'])[7]/tdp-st-input-text");
+        WebElement Nvivienda = find().getElementByXPath("(//div[@class='tdp-col-12'])[6]/tdp-st-input-text");
         esperaProgresiva(driver(),3,5,Nvivienda);
         waitUntilElementIsClickable(Nvivienda, 15).click();
         type(Nvivienda, nomVivienda);
+    }
+
+    public void bloque(String bloque) {
+        WebElement Nbloque = find().getElementByXPath("(//div[@class='step-row-3 tdp-mb-3'])/tdp-st-input-text");
+        esperaProgresiva(driver(),3,5,Nbloque);
+        waitUntilElementIsClickable(Nbloque, 15).click();
+        type(Nbloque, bloque);
     }
 
     public void piso(String piso) {
@@ -124,7 +131,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void conjuntoHabitacional(String hab) {
         //UtilWeb.waitForSeconds(2);
-        WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[9]/tdp-st-input-text");
+        WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[8]/tdp-st-input-text");
         esperaProgresiva(driver(),3,5,ConjHab);
         js().scrollElementTop(ConjHab);
         click(ConjHab);

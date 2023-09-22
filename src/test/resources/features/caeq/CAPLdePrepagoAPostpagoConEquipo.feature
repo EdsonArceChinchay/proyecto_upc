@@ -44,8 +44,8 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
     #Y        selecciono el boton de Seleccionar Oferta
     #Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-             |permanencia    |tipoPago  |equipoName      |
-             |12 meses       |Al Contado|HUAWEI P10 NEGRO|
+      | permanencia | tipoPago   | equipoName       |
+      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     #Y        presiono el boton "Cambiar Plan"
@@ -61,5 +61,5 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ |
+      | tipoUsuario     | userName | password        |
+      | usuario externo | vsiguass | #o2Wy23oA1458Z% |

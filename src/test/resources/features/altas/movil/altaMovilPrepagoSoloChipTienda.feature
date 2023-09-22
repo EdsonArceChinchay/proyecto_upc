@@ -14,9 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
-
 Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
-
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -61,6 +59,6 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
       | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042354781 | PLAN PREPAGO | Preplan    |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

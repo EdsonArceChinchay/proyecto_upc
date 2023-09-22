@@ -10,18 +10,17 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: MARIA SANCHEZ
+##FECMOD: 21/09/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
-
 Característica: AT-DT003_Alta Trio por el canal Proactivo
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @AltaTrioProactivo
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  Esquema del escenario: Alta fija por tienda con C sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -45,15 +44,17 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
+<<<<<<< HEAD
     # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
     # | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+=======
+    #  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+    #  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+>>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    #Y        selecciono el nombre del plan "<nombrePlan>"
-    #Y         doy click en el boton seleccionar la oferta
-    #Y         selecciono la cartilla Linea Nueva
     Y        selecciono en iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -63,23 +64,30 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
+<<<<<<< HEAD
       | 12/12/1980 | Casado      | Aruba      |
+=======
+      | 12/12/1980 | Casado      | Aruba        |
+>>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-   # Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+<<<<<<< HEAD
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | HD RA M23 600 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+=======
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464813 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | RA M23 100 MBPS |
+>>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
 
 
   @AltaDuoProactivo
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  Esquema del escenario: Alta fija por tienda con C sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -102,9 +110,9 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    #Y        ingreso la informacion del lugar de instalacion
+    #  | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+    #  | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -121,17 +129,20 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Albania      |
+      | 12/12/1980 | Casado      | Aruba        |
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+<<<<<<< HEAD
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      |  RA D22 100 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+=======
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Duo      | RA M23 150 MBPS |
+>>>>>>> 5912f86d4a71829b6093156c0d36caca1b0d8d52
 
 

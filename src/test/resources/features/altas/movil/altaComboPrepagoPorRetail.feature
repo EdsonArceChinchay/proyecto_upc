@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
-
 Característica: AT-DT021_Alta Combo Prepago por Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
@@ -62,4 +61,4 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |

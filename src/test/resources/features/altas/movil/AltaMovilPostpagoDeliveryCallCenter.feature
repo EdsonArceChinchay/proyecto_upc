@@ -14,20 +14,18 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03
-
 Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-
      # Realizar una Alta movil Postpago (linea + equipo) con
      #Delivery en Tambo sin cobertura por canal Call Center
 
   @AltaMovilPostPagoDeliveryCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
-    Dado  presiono el boton Iniciar Sesion
+    Dado     presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
@@ -44,7 +42,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
     Y        selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-	Y        selecciono el plan_movil Postpago
+    Y        selecciono el plan_movil Postpago
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
@@ -65,10 +63,10 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1  | 11    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A1 | 11   | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-	Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-	Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    Y        selecciono el horario de entrega "2pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
@@ -86,9 +84,9 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
    # Y        valido que se muestre el detalle del pedido
-	Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                               | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | jpachaot  | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV  | Postpago  | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+    Ejemplos:
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                              | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV | Postpago  | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -149,7 +147,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | APPLE IPHONE 6S 16GB GRIS | Al contado |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | APPLE IPHONE 6S 16GB GRIS | Al contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso03
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -210,7 +208,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | SAMSUNG GXY A20 NEGRO SM-A205G | Financiado 18 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | SAMSUNG GXY A20 NEGRO SM-A205G | Financiado 18 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso04
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -270,7 +268,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/149.9 | Postpago  | 12 meses | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Financiado 12 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/149.9 | Postpago  | 12 meses | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Financiado 12 cuotas |
 #
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso05
@@ -331,7 +329,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/85.9 | Postpago  | 12 meses  | HUAWEI P30 AZUL ELLE-L04 | Financiado 12 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/85.9 | Postpago  | 12 meses  | HUAWEI P30 AZUL ELLE-L04 | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso06
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -391,7 +389,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/55.9 III | Postpago  | 12 meses  | IPHONE XS MAX MT532LZ/A 256GB GRIS | Financiado 12 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/55.9 III | Postpago  | 12 meses  | IPHONE XS MAX MT532LZ/A 256GB GRIS | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso07
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -451,7 +449,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/75.90 II | Postpago  | 12 meses  | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Al contado |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/75.90 II | Postpago  | 12 meses  | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Al contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso08
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -511,7 +509,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 | Postpago  | Sin permanencia  | HUAWEI P10 NEGRO | Financiado 12 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 | Postpago  | Sin permanencia  | HUAWEI P10 NEGRO | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso09
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -572,4 +570,4 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/65.9 II | Postpago  | 12 meses | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Financiado 12 cuotas |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/65.9 II | Postpago  | 12 meses | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Financiado 12 cuotas |
