@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
-
 Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
 
   @CerrarSesionBerserker @CanceloCerrarSesion
