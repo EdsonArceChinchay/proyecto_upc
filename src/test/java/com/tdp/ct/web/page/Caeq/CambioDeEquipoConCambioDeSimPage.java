@@ -15,7 +15,7 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
     @FindBy (xpath = "//button[contains(text(),'Cambio de chip')]")
     protected WebElement btnCambiodeChip;
 
-    @FindBy (xpath = "(//img[@alt='icon-close'])[2]")
+    @FindBy (xpath = "//*[contains(text(),'CONTINUAR')]")
     protected WebElement btnClienteExonerado;
 
     public void seleccionoTipoPagoAlContado() {
