@@ -57,7 +57,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement btnEntendido;
 
 
-    @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
 
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")

@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 25/09/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
@@ -26,7 +26,7 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        presiono el boton Continuar hacia el home
     #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042465117"
+    Y        ingreso el documento "1042464930"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -39,6 +39,8 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
       | permanencia     | tipoPago   | equipoName                              |
       | Sin permanencia | Al Contado | SAMSUNG GXY A34 VERDE SMA346M 128GB C/P |
     Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        cierro pop up de Cliente Exonerado
+    #Y        doy click en el boton continuar
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
     Y        doy click en iniciar registro
