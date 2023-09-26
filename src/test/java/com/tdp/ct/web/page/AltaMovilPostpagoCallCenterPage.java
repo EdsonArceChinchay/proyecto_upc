@@ -60,7 +60,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
     protected WebElement btnConfirmar;
 
-    @FindBy(xpath= "/html/body/app-root/app-success/app-order-detail-fe/div/div/img")
+    @FindBy(xpath= "/html/body/app-root/app-success/app-order-detail-fe/div/div[1]")
     protected WebElement btnDetallePedido;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")

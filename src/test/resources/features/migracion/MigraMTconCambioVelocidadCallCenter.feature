@@ -36,8 +36,9 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Y        cierro popup de error
     #Y        Selecciono una linea movil y mostrar ofertas
     #Y        selecciono el boton Mostrar ofertas
-    Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    #Y        selecciono tipo de oferta
+    #Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el nombre de plan movistar total
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -50,10 +51,12 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
+    #    Y        presiono el boton descargar contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Trío HD 100 Mbps RV + 100 Gb RV | tester@tester.com |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 95 Gb RV | tester@tester.com |
 
