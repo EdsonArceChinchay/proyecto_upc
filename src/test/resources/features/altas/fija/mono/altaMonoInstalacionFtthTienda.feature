@@ -41,8 +41,8 @@ Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
       | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
     Y        presiono el boton Consultar Ubicacion
       #Y        ingreso la informacion del lugar para la instalacion
-       # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-        #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+       # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+        #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"

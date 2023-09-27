@@ -53,7 +53,7 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -63,5 +63,5 @@ Característica: AT-DT022_Alta Combo Prepago por Tienda
     #Y        valido que se muestre el detalle del pedido
     #Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464882 | Prepago preplan |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1042464882 | Prepago preplan |

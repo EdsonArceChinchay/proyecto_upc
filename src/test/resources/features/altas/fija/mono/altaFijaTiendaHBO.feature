@@ -47,7 +47,7 @@ Característica: AT-DT010_Alta fija por tienda mas Hbo
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

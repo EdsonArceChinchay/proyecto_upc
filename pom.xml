@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tdp.ct</groupId>
     <artifactId>automation-web-berserkers</artifactId>
-
     <version>1.0.0</version>
 
     <!--    Utilizar en la rama Develop-->
@@ -25,8 +24,6 @@
             <artifactId>web-automation</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-
         <!--        <dependency>
                     <groupId>org.seleniumhq.selenium</groupId>
                     <artifactId>selenium-http-jdk-client</artifactId>
@@ -34,7 +31,6 @@
                 </dependency> -->
 
         <!--      Si da error local, usar temporalmente.   -->
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
@@ -113,5 +109,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -62,8 +62,8 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"

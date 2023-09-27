@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.apache.poi.hssf.record.PageBreakRecord;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -267,35 +268,34 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionoNacionalidad(String nacionalidad) {
         WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
-        js().scrollElementTop(listNacionalidad);
-        UtilWeb.waitForSeconds(4);//1
-        click(listNacionalidad);
+        UtilWeb.waitForSeconds(2);
+        click(listNacionalidad,5);
         UtilWeb.waitForSeconds(3);//2
         SearchContext contexPlan=sh().getContext(listNacionalidad);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
-            if(elements.getText().equals(nacionalidad)){
-                System.out.println("5");
-                UtilWeb.waitForSeconds(2);
+            System.out.println(elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()));
+            if(elements.getText().trim().equals(nacionalidad.trim())){
+                js().scrollElementTop(elements);
                 waitUntilElementIsClickable(elements,30).click();
+                break;
             }
         }
     }
 
     public void seleccionarEstadoCivil(String estadoCivil) {
-        WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
-        click(generoList);
-
+        WebElement estadoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
+        UtilWeb.waitForSeconds(2);
+        click(estadoList,5);
         System.out.println("Dio click en lista de estado");
         UtilWeb.waitForSeconds(3);
-        SearchContext contexPlan=sh().getContext(generoList);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        SearchContext contexPlan=sh().getContext(estadoList);
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println("Elementos del Estado Civil: "+elements.getText());
+            System.out.println(elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()));
             if(elements.getText().trim().equals(estadoCivil.trim())){
-                UtilWeb.waitForSeconds(2);
                 click(elements,30);
+                break;
             }
         }
     }

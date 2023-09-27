@@ -26,7 +26,7 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042464867"
+    Y        ingreso el documento "1023560867"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente extranjero a registrar
@@ -37,7 +37,7 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
-      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |

@@ -48,8 +48,8 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
