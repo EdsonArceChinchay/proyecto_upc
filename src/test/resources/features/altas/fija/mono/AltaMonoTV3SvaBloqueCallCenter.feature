@@ -45,8 +45,8 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | 11   | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -77,4 +77,4 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque | bloque1 | bloque2        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 | HBO    | FOX     | Bloque estelar |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 | HBO    | FOX     | Bloque estelar |

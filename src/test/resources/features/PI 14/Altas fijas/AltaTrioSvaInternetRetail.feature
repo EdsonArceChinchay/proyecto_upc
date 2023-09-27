@@ -47,8 +47,8 @@ Característica: Alta Trio con  sva Internet CANAL RETAIL
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | 11   | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

@@ -37,7 +37,7 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
-      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
@@ -98,8 +98,8 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | 11   | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -127,7 +127,7 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | bloque | svaInternet           | svaLinea             |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | PACK ANTIVIRUS MCAFEE | Plan Multidestino 20 |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | PACK ANTIVIRUS MCAFEE | Plan Multidestino 20 |
 
 
 

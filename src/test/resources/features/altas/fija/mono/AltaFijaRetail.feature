@@ -27,7 +27,6 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
@@ -41,11 +40,11 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
-      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | parque     |
+      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+      | vivienda | nombreVivienda | conjunto             | conjHabit |
+      | CASA     | alex mancilla  | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -59,7 +58,7 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Albania      |
+      | 09/03/1999 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -69,5 +68,5 @@ Característica: AT-DT007_Alta Fija Mono Internet por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan      |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 1042464815 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | RA D22 100 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan               |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA D22 |

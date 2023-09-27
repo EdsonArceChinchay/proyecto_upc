@@ -44,8 +44,8 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -69,4 +69,4 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539137 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539137 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS

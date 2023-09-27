@@ -47,8 +47,8 @@ Característica: AT-DT084_Alta fija Trio por tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -76,4 +76,4 @@ Característica: AT-DT084_Alta fija Trio por tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 600 MBPS |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 600 MBPS |
