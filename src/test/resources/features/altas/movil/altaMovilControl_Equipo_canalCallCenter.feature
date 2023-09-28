@@ -58,8 +58,8 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | 11   | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"

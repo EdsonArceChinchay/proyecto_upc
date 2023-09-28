@@ -63,7 +63,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
@@ -182,7 +182,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | 70 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 200 Mbps RA + 95 Gb RA | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 

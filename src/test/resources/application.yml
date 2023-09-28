@@ -25,7 +25,7 @@ jxray:
 ###################
 url:
   qa:
-    movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/parque
+    movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/inicio
   dev:
     movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
   prod:

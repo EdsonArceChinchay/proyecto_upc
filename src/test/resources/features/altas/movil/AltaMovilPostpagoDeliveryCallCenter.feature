@@ -62,8 +62,8 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | 11   | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A1 | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -85,8 +85,8 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
    # Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                              | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 IV | Postpago  | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                             | planMovil | timpoPermanencia | nombreEquipo | tipoPago   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 V | Postpago  | Sin permanencia  | IPHONE 13    | Al Contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -124,7 +124,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -185,7 +185,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -246,7 +246,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -307,7 +307,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -367,7 +367,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -427,7 +427,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -487,7 +487,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -547,7 +547,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"

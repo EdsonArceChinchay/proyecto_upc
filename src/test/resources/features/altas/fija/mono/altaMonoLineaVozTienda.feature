@@ -40,8 +40,8 @@ Característica: AT-DT013_Alta Mono Linea Voz Tienda
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
