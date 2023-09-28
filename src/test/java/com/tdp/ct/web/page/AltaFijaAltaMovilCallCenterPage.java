@@ -47,6 +47,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnReintentar;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+    @FindBy(xpath = "//*[@formcontrolname='deliveryType']")
+    protected WebElement deliveryType;
+    @FindBy(xpath = "//*[@formcontrolname='medioPago']")
+    protected WebElement pageType;
 
     public void manzana(String manzana) {
         if (manzana != null) {
@@ -68,10 +72,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             UtilWeb.waitForSeconds(4);
             WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
             esperaProgresiva(driver(), 3, 5, Lte);
-                click(Lte);
-                Lte.sendKeys(Keys.CONTROL + "a");
-                Lte.sendKeys(Keys.DELETE);
-                type(Lte, lote);
+            click(Lte);
+            Lte.sendKeys(Keys.CONTROL + "a");
+            Lte.sendKeys(Keys.DELETE);
+            type(Lte, lote);
         }
     }
 
@@ -80,18 +84,18 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             UtilWeb.waitForSeconds(1);
             WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
             esperaProgresiva(driver(), 3, 5, listElementPLan);
-                waitUntilElementIsClickable(listElementPLan, 10).click();
+            waitUntilElementIsClickable(listElementPLan, 10).click();
 
-                String[][] selectOptions = {
-                        {"BLK", "BLOCK"},
-                        {"CC", "CENTRO COMERCIAL"},
-                        {"CASA", "CASA"},
-                        {"ED", "EDIFICIO"},
-                        {"MCDO", "MERCADO"}
-                };
-                String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda, selectOptions);
-                UtilWeb.waitForSeconds(2);
-                seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
+            String[][] selectOptions = {
+                    {"BLK", "BLOCK"},
+                    {"CC", "CENTRO COMERCIAL"},
+                    {"CASA", "CASA"},
+                    {"ED", "EDIFICIO"},
+                    {"MCDO", "MERCADO"}
+            };
+            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda, selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
 
         }
     }
@@ -100,17 +104,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         if (nomVivienda != null) {
             WebElement Nvivienda = find().getElementByXPath("//*[@formcontrolname='houseName' or @name='houseName']");
             esperaProgresiva(driver(), 3, 5, Nvivienda);
-                waitUntilElementIsClickable(Nvivienda, 15).click();
-                type(Nvivienda, nomVivienda);
-                    }
+            waitUntilElementIsClickable(Nvivienda, 15).click();
+            type(Nvivienda, nomVivienda);
+        }
     }
 
     public void bloque(String bloque) {
         if (bloque != null) {
             WebElement Nbloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
             esperaProgresiva(driver(), 3, 5, Nbloque);
-                waitUntilElementIsClickable(Nbloque, 15).click();
-                type(Nbloque, bloque);
+            waitUntilElementIsClickable(Nbloque, 15).click();
+            type(Nbloque, bloque);
 
         }
     }
@@ -180,16 +184,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoEntrega(String tipEntrega) {
-        scrollDown();
         revisarModalError(driver());
-        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='deliveryType']"); //"(//tdp-st-select)[1]");
-        esperaProgresiva(driver(), 3, 5, listElementPLan);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        waitUntilElementIsClickable(listElementPLan, 5);
-        listElementPLan = find().getElementByXPath("//*[@formcontrolname='deliveryType']"); //"(//tdp-st-select)[1]");
-        click(listElementPLan);
+        esperaProgresiva(driver(), 3, 5, deliveryType);
+        scrollDown();
+        click(deliveryType);
         UtilWeb.waitForSeconds(1);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
+        SearchContext contexPlan = sh().getContext(deliveryType);
 
         String[][] deliveryOptions = {
                 {"Express", "Delivery Express"},
@@ -227,13 +228,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoPago(String tipoPago) {
-        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
-        esperaProgresiva(driver(), 3, 5, listElementPLan);
-        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
-        click(listElementPLan);
+//        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        esperaProgresiva(driver(), 3, 5, pageType);
+//        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        click(pageType);
         String[][] selectOptions = {
                 {"1", "Contra entrega"},
-                {"2", "xxx2"}
+                {"2", "Pago Efectivo"}
         };
         String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
         UtilWeb.waitForSeconds(2);
