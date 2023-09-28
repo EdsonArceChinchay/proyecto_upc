@@ -84,6 +84,6 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
     Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408466 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                 | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408466 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
 

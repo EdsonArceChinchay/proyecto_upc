@@ -89,5 +89,5 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                 | sva                   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Trío HD 1 Gb RA + 95 Gb RA | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan            | sva                   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 1 Gb RA + 95 Gb RA | PACK ANTIVIRUS MCAFEE |

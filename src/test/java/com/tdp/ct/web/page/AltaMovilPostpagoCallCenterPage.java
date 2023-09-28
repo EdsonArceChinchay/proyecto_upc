@@ -20,20 +20,19 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    //@FindBy(xpath = "//div[@class='add_Product']")
-    @FindBy(xpath = "//app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[3]")
+    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo')])[1]")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
     protected WebElement btnBuscar;
 
-    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement lblLineaNueva;
 
     @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement lblSeleccionarOferta;
 
-    @FindBy(xpath = "//tdp-st-button[@class='tdp-st-button-l hydrated']")
+    @FindBy(xpath = "(//tdp-st-button[@class='tdp-st-button-l hydrated' and @label='Seleccionar'])[1]")
     protected WebElement btnSeleccionar;
 
     @FindBy(xpath = "//div[@class='button-filter-section']//button")
@@ -192,9 +191,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnElBotonSeleccionar() {
+        esperaProgresiva(driver(),5,3,btnSeleccionar);
         js().scrollElementTop(btnSeleccionar);
-        waitUntilElementIsVisible(btnSeleccionar, 5);
-        click(btnSeleccionar, 10);
+        click(btnSeleccionar);
     }
 
     public void doyClickEnIniciarRegistro() {
