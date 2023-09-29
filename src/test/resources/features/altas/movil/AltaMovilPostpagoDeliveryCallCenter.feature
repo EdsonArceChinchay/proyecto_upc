@@ -86,7 +86,7 @@ Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con 
    # Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                             | planMovil | timpoPermanencia | nombreEquipo | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 V | Postpago  | Sin permanencia  | IPHONE 13    | Al Contado |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1022420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 V | Postpago  | Sin permanencia  | IPHONE 13    | Al Contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
