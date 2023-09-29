@@ -182,7 +182,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 200 Mbps RA + 95 Gb RA | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | 200 Mbps RV + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 

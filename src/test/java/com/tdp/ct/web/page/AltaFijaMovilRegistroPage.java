@@ -167,33 +167,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicIniciarRegistro() {
-        /*modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");
-        modalError(10, btnReintentar, "Click al elemento Reintentar");*/
-        //waitUntilElementIsVisible(buttonIniciarRegistro, 20);
-
         revisarModalError(driver());
-
         esperaProgresiva(driver(),4,5,buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(5);//
+        UtilWeb.waitForSeconds(5);
     }
 
     public boolean validarPantallaAgendamiento() {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        //modalError(10, btnReintentar, "Click al elemento Reintentar");
-        //clickBtnCerrarModalError(buttonIniciarRegistro);
-        //modalError(10, btnReintentar, "Click al elemento Reintentar");
-        //clickBtnCerrarModalError(buttonIniciarRegistro);
-        //modalError(10, btnReintentar, "Click al elemento Reintentar");
-        //modalError(10, btnReintentar, "Click al elemento Reintentar");
-        //boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
-        //UtilWeb.waitForSeconds(1);
-
         esperaProgresiva(driver(),5,5,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());

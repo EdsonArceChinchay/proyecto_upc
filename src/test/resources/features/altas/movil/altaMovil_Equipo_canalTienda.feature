@@ -105,8 +105,8 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
+      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | JR Julio Cesar Tello 469 |
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -117,5 +117,5 @@ Característica: AT-DT030_AltaMovil + equipo
     Ejemplos:
 
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10342164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10042164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
     #TIENDA SAN MIGUEL
