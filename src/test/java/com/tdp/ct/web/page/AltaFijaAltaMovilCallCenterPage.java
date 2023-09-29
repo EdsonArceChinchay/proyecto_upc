@@ -35,8 +35,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
-    @FindBy(xpath = "//button[@class='btnCard']")
-    protected List<WebElement> botoneraIrA;
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Ir a movistar total')]")
+    protected WebElement btnIrAMovistar;
+
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
     @FindBy(xpath = "(//div[@class='title'])/span")
@@ -93,7 +94,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                     {"ED", "EDIFICIO"},
                     {"MCDO", "MERCADO"}
             };
-            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda, selectOptions);
+            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
 
@@ -410,8 +411,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void irAMovistarTotal() {
         revisarModalError(driver());
-        waitUntilElementIsVisible(botoneraIrA.get(1), 10).click();
-        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
+        btnIrAMovistar.click();
+        UtilWeb.waitForSeconds(5);
     }
 
 
