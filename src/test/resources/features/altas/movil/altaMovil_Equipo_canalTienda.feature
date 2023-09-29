@@ -13,13 +13,13 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda
 Característica: AT-DT030_AltaMovil + equipo
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovil_Equipo_tienda @Sanity28
+  @AltaMovil_Equipo_tienda_1 @Sanity28
   Esquema del escenario: Alta Movil con Equipo con canal Tienda con documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -55,7 +55,7 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
+      | 12/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
     #ABANCAY
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -66,8 +66,8 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 
 
   @AltaMovil_Equipo_tienda_2 @Sanity28
@@ -85,7 +85,7 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | Luiza   | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -116,6 +116,6 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 10342164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10342164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
     #TIENDA SAN MIGUEL

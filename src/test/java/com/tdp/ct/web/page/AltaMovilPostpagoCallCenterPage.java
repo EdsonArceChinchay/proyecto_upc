@@ -20,7 +20,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
-    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo')])[1]")
+    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
 
     @FindBy(xpath = "//div[@class='cont-button']")
