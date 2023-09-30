@@ -35,8 +35,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
-    @FindBy(xpath = "//button[@class='btnCard']")
-    protected List<WebElement> botoneraIrA;
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Ir a movistar total')]")
+    protected WebElement btnIrAMovistar;
+
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
     @FindBy(xpath = "(//div[@class='title'])/span")
@@ -47,132 +48,150 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnReintentar;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+    @FindBy(xpath = "//*[@formcontrolname='deliveryType']")
+    protected WebElement deliveryType;
+    @FindBy(xpath = "//*[@formcontrolname='medioPago']")
+    protected WebElement pageType;
 
     public void manzana(String manzana) {
+        if (manzana != null) {
+            bloque(manzana);
+/*            WebElement Mz = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
+            esperaProgresiva(driver(), 3, 5, Mz);
+                click(Mz, 5);
+                Mz.sendKeys(Keys.CONTROL + "a");
+                Mz.sendKeys(Keys.DELETE);
+                type(Mz, manzana);
+            */
 
-        WebElement Mz = find().getElementByXPath("(//div[@class='_col'])[1]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,Mz);
-        click(Mz, 5);
-        UtilWeb.waitForSeconds(1);
-        type(Mz, manzana);
+        }
+
     }
 
     public void lote(String lote) {
-        UtilWeb.waitForSeconds(4);
-        WebElement Lte = find().getElementByXPath("(//div[@class='_col'])[2]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,Lte);
-        click(Lte);
-        Lte.sendKeys(Keys.CONTROL + "a");
-        Lte.sendKeys(Keys.DELETE);
-        type(Lte, lote);
+        if (lote != null) {
+            UtilWeb.waitForSeconds(4);
+            WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
+            esperaProgresiva(driver(), 3, 5, Lte);
+            click(Lte);
+            Lte.sendKeys(Keys.CONTROL + "a");
+            Lte.sendKeys(Keys.DELETE);
+            type(Lte, lote);
+        }
     }
 
     public void tipoVivienda(String tipoVivienda) {
-        //UtilWeb.waitForSeconds(4);
-        UtilWeb.waitForSeconds(1);
-        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
-        esperaProgresiva(driver(),3,5,listElementPLan);
-        waitUntilElementIsClickable(listElementPLan, 10).click();
+        if (tipoVivienda != null) {
+            UtilWeb.waitForSeconds(1);
+            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
+            esperaProgresiva(driver(), 3, 5, listElementPLan);
+            waitUntilElementIsClickable(listElementPLan, 10).click();
 
-        String[][] selectOptions = {
-                {"ED", "EDIFICIO"},
-                {"CC", "CENTRO COMERCIAL"}
-        };
-        String sCodeTipoVivienda= buscarValorOpcion(tipoVivienda,selectOptions);
-        UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "houseType",sCodeTipoVivienda);
+            String[][] selectOptions = {
+                    {"BLK", "BLOCK"},
+                    {"CC", "CENTRO COMERCIAL"},
+                    {"CASA", "CASA"},
+                    {"ED", "EDIFICIO"},
+                    {"MCDO", "MERCADO"}
+            };
+            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
 
+        }
     }
 
     public void nombreVivienda(String nomVivienda) {
-        WebElement Nvivienda = find().getElementByXPath("(//div[@class='tdp-col-12'])[6]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,Nvivienda);
-        waitUntilElementIsClickable(Nvivienda, 15).click();
-        type(Nvivienda, nomVivienda);
+        if (nomVivienda != null) {
+            WebElement Nvivienda = find().getElementByXPath("//*[@formcontrolname='houseName' or @name='houseName']");
+            esperaProgresiva(driver(), 3, 5, Nvivienda);
+            waitUntilElementIsClickable(Nvivienda, 15).click();
+            type(Nvivienda, nomVivienda);
+        }
     }
 
     public void bloque(String bloque) {
-        WebElement Nbloque = find().getElementByXPath("(//div[@class='step-row-3 tdp-mb-3'])/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,Nbloque);
-        waitUntilElementIsClickable(Nbloque, 15).click();
-        type(Nbloque, bloque);
+        if (bloque != null) {
+            WebElement Nbloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
+            esperaProgresiva(driver(), 3, 5, Nbloque);
+            waitUntilElementIsClickable(Nbloque, 15).click();
+            type(Nbloque, bloque);
+
+        }
     }
 
     public void piso(String piso) {
-        WebElement Npiso = find().getElementByXPath("(//div[@class='_col'])[3]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,Npiso);
-        waitUntilElementIsClickable(Npiso, 15).click();
-        type(Npiso, piso);
+        if (piso != null) {
+            WebElement Npiso = find().getElementByXPath("//*[@formcontrolname='floor' or @name='floor']");
+            esperaProgresiva(driver(), 3, 5, Npiso);
+            waitUntilElementIsClickable(Npiso, 15).click();
+            Npiso.sendKeys(Keys.CONTROL + "a");
+            Npiso.sendKeys(Keys.DELETE);
+            type(Npiso, piso);
+        }
     }
 
     public void interior(String inte) {
-        WebElement NInterior = find().getElementByXPath("(//div[@class='_col'])[4]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,NInterior);
-        waitUntilElementIsClickable(NInterior, 15).click();
-        type(NInterior, inte);
+        if (inte != null) {
+            WebElement NInterior = find().getElementByXPath("//*[@formcontrolname='inside' or @name='inside']");
+            esperaProgresiva(driver(), 3, 5, NInterior);
+            waitUntilElementIsClickable(NInterior, 15).click();
+            type(NInterior, inte);
+        }
     }
 
     public void tipoConjuntoHabitacional(String tipoConjunto) {
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        UtilWeb.waitForSeconds(1);
-        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
-        esperaProgresiva(driver(),3,5,listElementPLan);
-        waitUntilElementIsClickable(listElementPLan, 10).click();
+        if (tipoConjunto != null) {
+            JavascriptExecutor jse = (JavascriptExecutor) driver();
+            UtilWeb.waitForSeconds(1);
+            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
+            esperaProgresiva(driver(), 3, 5, listElementPLan);
+            waitUntilElementIsClickable(listElementPLan, 10).click();
 
-        String[][] selectOptions = {
-                {"UR", "URBANIZACION RESIDENCIAL"},
-                {"UP", "URBANIZACION POPULAR"}
-        };
-        String sCodigo= buscarValorOpcion(tipoConjunto,selectOptions);
-        seleccionarValueComboShadow(driver(),"housingComplexe",sCodigo );
+            String[][] selectOptions = {
+                    {"UR", "URBANIZACION RESIDENCIAL"},
+                    {"UP", "URBANIZACION POPULAR"}
+            };
+            String sCodigo = buscarValorOpcion(tipoConjunto, selectOptions);
+            seleccionarValueComboShadow(driver(), "housingComplexe", sCodigo);
 
-
+        }
     }
 
     public void conjuntoHabitacional(String hab) {
-        //UtilWeb.waitForSeconds(2);
-        WebElement ConjHab = find().getElementByXPath("(//div[@class='tdp-col-12'])[8]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,ConjHab);
-        js().scrollElementTop(ConjHab);
-        click(ConjHab);
-//        clear(ConjHab);
-        type(ConjHab, hab);
+        if (hab != null) {
+            WebElement ConjHab = find().getElementByXPath("//*[@formcontrolname='housingComplexName' or @name='housingComplexName']");
+            esperaProgresiva(driver(), 3, 5, ConjHab);
+            js().scrollElementTop(ConjHab);
+            click(ConjHab);
+            ConjHab.sendKeys(Keys.CONTROL + "a");
+            ConjHab.sendKeys(Keys.DELETE);
+            type(ConjHab, hab);
+        }
     }
 
 
     public void btnConsultarCobertura() {
-       // UtilWeb.waitForSeconds(3);
-        esperaProgresiva(driver(),5,3,btnConsultarCobertura);
+        esperaProgresiva(driver(), 5, 3, btnConsultarCobertura);
         js().scrollElementTop(btnConsultarCobertura);
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
         revisarModalError(driver());
-        esperaProgresiva(driver(),5,5,btnConsultarCobertura);
+        esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
         btnConsultarCobertura.click();
-        //waitUntilElementIsVisible(btnConsultarCobertura, 100).click();//100
-        //UtilWeb.waitForSeconds(20);
     }
 
     public void btnConfirmarUbicacion() {
-        //UtilWeb.waitForSeconds(8);//5
-        esperaProgresiva(driver(),5,5,btnConfirmarUbicacion);
+        esperaProgresiva(driver(), 5, 5, btnConfirmarUbicacion);
         btnConfirmarUbicacion.click();
-        //waitUntilElementIsVisible(btnConfirmarUbicacion, 150).click();
-       // UtilWeb.waitForSeconds(15);
     }
 
     public void tipoEntrega(String tipEntrega) {
-        scrollDown();
         revisarModalError(driver());
-        WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='deliveryType']"); //"(//tdp-st-select)[1]");
-        esperaProgresiva(driver(),3,5,listElementPLan);
-        esperaProgresivaLoading(driver(),3,5,"loadingCard");
-        waitUntilElementIsClickable(listElementPLan, 5);
-        listElementPLan = find().getElementByXPath("//*[@formcontrolname='deliveryType']"); //"(//tdp-st-select)[1]");
-        click(listElementPLan);
+        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
+        esperaProgresiva(driver(), 3, 5, deliveryType);
+        scrollDown();
+        click(deliveryType);
         UtilWeb.waitForSeconds(1);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
+        SearchContext contexPlan = sh().getContext(deliveryType);
 
         String[][] deliveryOptions = {
                 {"Express", "Delivery Express"},
@@ -180,8 +199,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 {"R48h", "Delivery Regular 48 horas"},
                 {"R72h", "Delivery Regular 72 horas"}
         };
-        String sCodigo= buscarValorOpcion(tipEntrega,deliveryOptions);
-        seleccionarValueComboShadow(driver(),"deliveryType",sCodigo );
+        String sCodigo = buscarValorOpcion(tipEntrega, deliveryOptions);
+        seleccionarValueComboShadow(driver(), "deliveryType", sCodigo);
 
     }
 
@@ -192,48 +211,41 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void txtTelefono(String telefono) {
         WebElement txtTel = find().getElementByXPath("(//tdp-st-input-text)[1]");
-        esperaProgresiva(driver(),3,5,txtTel);
+        esperaProgresiva(driver(), 3, 5, txtTel);
         click(txtTel);
         type(txtTel, telefono);
     }
 
     public void txtInstrucciones(String instrucciones) {
         WebElement txtInstr = find().getElementByXPath("(//tdp-st-input-text)[2]");
-        esperaProgresiva(driver(),5,5,txtInstr);
+        esperaProgresiva(driver(), 5, 5, txtInstr);
         click(txtInstr);
         type(txtInstr, instrucciones);
     }
 
     public void btnConfirmarDelivery() {
-        esperaProgresiva(driver(),3,5,btnConfirmarDelivery);
+        esperaProgresiva(driver(), 3, 5, btnConfirmarDelivery);
         click(btnConfirmarDelivery, 5);
-        //UtilWeb.waitForSeconds(8);
     }
 
     public void tipoPago(String tipoPago) {
-        //UtilWeb.waitForSeconds(4);//
-        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
-        esperaProgresiva(driver(),3,5,listElementPLan);
-        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
-        click(listElementPLan);
-
-        //UtilWeb.waitForSeconds(300); //QUITAR
+//        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        esperaProgresiva(driver(), 3, 5, pageType);
+//        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
+        click(pageType);
         String[][] selectOptions = {
                 {"1", "Contra entrega"},
-                {"2", "xxx2"}
+                {"2", "Pago Efectivo"}
         };
-        String sCodigoValue= buscarValorOpcion(tipoPago,selectOptions);
+        String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
         UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "medioPago",sCodigoValue);
+        seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
     }
 
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
     protected WebElement esperarCorreo;
 
     public void correo(String correo) {
-        //modalError(5, btnReintentar, "Click al elemento Reitentar");
-        //modalError(5, btnReintentar, "Click al elemento Reitentar");
-        //modalError(5, btnReintentar, "Click al elemento Reitentar");
         this.scrollDown();
         revisarModalError(driver());
         boolean buttonFound = false;
@@ -274,9 +286,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void confirmarCorreo(String correo) {
-        //UtilWeb.waitForSeconds(4);//
         WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[2]/tdp-st-input-text");
-        esperaProgresiva(driver(),3,5,correoElectronico);
+        esperaProgresiva(driver(), 3, 5, correoElectronico);
         click(correoElectronico);
         correoElectronico.sendKeys(Keys.CONTROL + "a");
         correoElectronico.sendKeys(Keys.DELETE);
@@ -286,34 +297,27 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConfirmar2() {
-        esperaProgresiva(driver(),3,5,btnConfirmar2);
+        esperaProgresiva(driver(), 3, 5, btnConfirmar2);
         click(btnConfirmar2, 5);
         UtilWeb.waitForSeconds(4);
     }
 
     public void btnFinalizarRegistro() {
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
         revisarModalError(driver());
         waitUntilElementIsVisible(btnFinalizarRegistro, 30);
         UtilWeb.waitForSeconds(120);
         click(btnFinalizarRegistro, 10);
         UtilWeb.waitForSeconds(2);
     }
-    public void scrollDown(){
+
+    public void scrollDown() {
         UtilWeb.waitForSeconds(2);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
+
     public void scrollUp() {
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(7, btnReintentar, "Click al elemento Reintentar");
-
         revisarModalError(driver());
-
         UtilWeb.waitForSeconds(2);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -322,12 +326,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         revisarModalError(driver());
-        //modalError(8,btnReintentar,"Click al elemento Reitentar");
-        //modalError(8,btnReintentar,"Click al elemento Reitentar");
-        esperaProgresiva(driver(),5, 10, oferta);
+        esperaProgresiva(driver(), 5, 10, oferta);
         click(oferta);
-        //waitUntilElementIsClickable(oferta, 100).click();
-        UtilWeb.waitForSeconds(5);//
+        UtilWeb.waitForSeconds(5);
     }
 
     public void listaOfertas(String planOfertas) {
@@ -399,9 +400,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-
-        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");*/
         revisarModalError(driver());
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
@@ -412,12 +410,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void irAMovistarTotal() {
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
         revisarModalError(driver());
-        waitUntilElementIsVisible(botoneraIrA.get(1), 10).click();
-        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
+        btnIrAMovistar.click();
+        UtilWeb.waitForSeconds(5);
     }
 
 

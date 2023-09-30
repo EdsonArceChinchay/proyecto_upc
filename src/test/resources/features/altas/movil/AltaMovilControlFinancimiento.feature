@@ -63,7 +63,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+      | 12/08/1990 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -73,6 +73,6 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Ejemplos:
 
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1024268437 | Postpago  |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1024268237 | Postpago  |
 
 

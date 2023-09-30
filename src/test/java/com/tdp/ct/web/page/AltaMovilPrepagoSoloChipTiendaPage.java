@@ -96,7 +96,7 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
         click(nacList);
 
         UtilWeb.waitForSeconds(2);
-        SearchContext contextNacionalidad = sh().getContext(nacList).findElement(By.cssSelector("div > div:nth-child(2) > ul"));
+        SearchContext contextNacionalidad = sh().getContext(nacList).findElement(By.cssSelector("div > ul > li"));
         List<WebElement> lista = contextNacionalidad.findElements(By.className("mdc-list-item"));
         for (WebElement element : lista) {
             if (element.getText().contains(nacionalidad)) {

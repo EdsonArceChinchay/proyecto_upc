@@ -62,8 +62,8 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -89,5 +89,5 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                 | sva                   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Trío HD 1 Gb RA + 95 Gb RA | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan            | sva                   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 1 Gb RA + 95 Gb RA | PACK ANTIVIRUS MCAFEE |

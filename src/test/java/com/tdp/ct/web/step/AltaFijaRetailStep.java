@@ -50,9 +50,12 @@ public class AltaFijaRetailStep {
         var nacionalidad = getValueFromDataTable(dataTable, "nacionalidad");
         var estadoCivil = getValueFromDataTable(dataTable, "estado_civil");
 
-        page.altaMovilPrepagoSoloChipTiendaPage().ingresarFechaNacimiento(fechNacimiento);
+/*      page.altaMovilPrepagoSoloChipTiendaPage().ingresarFechaNacimiento(fechNacimiento);
         page.altaMovilPrepagoSoloChipTiendaPage().ingresarNacionalidad(nacionalidad);
-        page.altaMovilPrepagoSoloChipTiendaPage().selecEstadoCivil(estadoCivil);
+        page.altaMovilPrepagoSoloChipTiendaPage().selecEstadoCivil(estadoCivil);*/
+        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechNacimiento);
+        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
+        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
 
         scenario.printFullView();
         UtilWeb.waitForSeconds(2);

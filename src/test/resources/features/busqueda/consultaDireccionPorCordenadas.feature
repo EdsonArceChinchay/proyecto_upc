@@ -73,10 +73,10 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
     Y        doy click en el boton "Buscar"
     Y        valido que que me muestre el mensajde de error "<mensaje>"
-    Y        doy click en el boton "Entendido"
+
     Ejemplos:
       | tipoUsuario     | userName     | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento   | longitud     | latitud      | mensaje                                                               |
       | usuario externo | evillanuevag | $t3l3f0n1c4$    | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA            |
       | usuario externo | vsiguass     | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                    | C             | 64802153624 | 12           | -            | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$    | Bienvenid@ | CAJAMARCA                 | C             | 64512345675 | -70-70       | -12.11851901 | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
+      | usuario externo | jpachaot     | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64512345675 | -70-70       | -12.11851901 | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
       | usuario externo | jpachaot     | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64991524632 | .            | 9000         | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
