@@ -35,7 +35,7 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | Fernada     | Lopez Lance | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -61,8 +61,8 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+      | 01/12/1990 | Angola   | Soltero     |
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
@@ -71,4 +71,4 @@ Característica: AT-DT006_Alta Duo por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | INKAFARMA  | Duo        | Dúo Movistar Voz Internet RA D22 100 Mbps |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 0029877545 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET ESTANDAR HD RA S23 200 MBPS |
