@@ -12,8 +12,7 @@
 ##DATA:
 ##ENCARGADO: Romina Torres - CATÁLOGO
 ##FECMOD: 02/08/2023
-
-
+@BERSERKERS @DoneDevOps
 Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
 
   Antecedentes:

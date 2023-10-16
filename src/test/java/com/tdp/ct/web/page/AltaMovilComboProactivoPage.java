@@ -21,7 +21,7 @@ public class AltaMovilComboProactivoPage extends WebBase {
     protected WebElement lblDireccion;
     @FindBy(xpath = "//app-resumen-page/div/div[4]/div/div[3]/div/button")
     protected WebElement lblSva;
-    @FindBy(xpath = "//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
+    @FindBy(xpath = "//*[contains(text(),'Confirmar')]")
     protected WebElement lblConsultar;
 
 

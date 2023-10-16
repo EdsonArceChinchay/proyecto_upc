@@ -56,8 +56,8 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+     # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "2pm-7pm"
@@ -83,5 +83,5 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | DNI           | 42464765  | correo@gmail.com | discapacitado  | ROSA       | MANUEL      | TRUJILLO      | Trío          |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 42464765  | correo@gmail.com | discapacitado  | ROSA        | MANUEL      | TRUJILLO    | Trío          |

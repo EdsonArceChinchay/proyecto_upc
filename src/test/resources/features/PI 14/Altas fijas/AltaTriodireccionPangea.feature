@@ -63,7 +63,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 02/10/1980 | Divorciado      | Angola     |
+      | 02/10/1980 | Divorciado  | Angola       |
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -72,5 +72,5 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    |  tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia              | tipoPlan | nombrePlan                    |svaLinea                |nombreMadre |nombrePadre |distritoNac|
-      | usuario externo |  jpachaot | $t3l3f0n1c4$ | Bienvenid@ |  CE           | 166268244   | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22  | Plan Multidestino 20   |  ROSA      |   GORGONIO | SANTIAGO  |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                                | svaLinea             | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |

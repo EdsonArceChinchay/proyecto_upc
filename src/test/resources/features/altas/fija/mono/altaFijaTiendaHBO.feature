@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop
-
 Característica: AT-DT010_Alta fija por tienda mas Hbo
 
   Antecedentes:
@@ -48,7 +47,7 @@ Característica: AT-DT010_Alta fija por tienda mas Hbo
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | -conjunto b |
+      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -75,6 +74,6 @@ Característica: AT-DT010_Alta fija por tienda mas Hbo
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion               | referencia | tipoPlan | nombrePlan                   | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
       | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 100 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
 

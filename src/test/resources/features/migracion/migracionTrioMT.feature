@@ -40,9 +40,9 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        doy click en agregar SVA MT "<sva MT>"
     Cuando   doy clic a iniciar registro
-	Y        valido que me encuentre en la pantalla agendamiento
-	Y        ingreso los datos de agendamiento
-	Y        presiono el boton confirmar agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -54,5 +54,5 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor       | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | TIENDA SAN MIGUEL  | CE            | 343423232 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 343423232 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |

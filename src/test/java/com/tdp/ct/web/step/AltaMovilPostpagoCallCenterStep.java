@@ -84,7 +84,6 @@ public class AltaMovilPostpagoCallCenterStep {
         String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
         String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
 
-
         page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
         page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
         page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);

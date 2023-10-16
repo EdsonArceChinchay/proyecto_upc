@@ -48,5 +48,5 @@ Característica: AT-DT113_CASI Stand Alone por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  |  correo           |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |

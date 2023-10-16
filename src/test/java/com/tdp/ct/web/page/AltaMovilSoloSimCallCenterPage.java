@@ -41,7 +41,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div[3]/button")/*(xpath = "//button[contains(text(),'Mostrar ofertas')]")*/
+    @FindBy(xpath = "//div[@class='show-offerts']/button[contains(text(),'Mostrar ofertas')]")
     protected WebElement btnMostrarOfertas;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
@@ -49,6 +49,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//*[@id=\"mat-mdc-dialog-1\"]/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
+
+    @FindBy(xpath = "//button[contains(text(),\" Entendido\")]")
+    protected WebElement btnEntendido;
 
     public void botonMostrarOfertasRapido() {
         clickBtnReintentar();
@@ -170,6 +173,11 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             UtilWeb.waitForSeconds(2);
         }
 
+    }
+
+    public void botonentendidoOfertas(){
+        UtilWeb.waitForSeconds(10);
+        click(btnEntendido,10);
     }
 
 

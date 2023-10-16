@@ -1,12 +1,12 @@
 #language:es
-##CREADOR:
+##CREADOR: MOISES LLAMOCA
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT116
 ##GDAP:GDAP-1412
-##SPRINT CREADO:
+##SPRINT CREADO:PI16 SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
@@ -32,8 +32,8 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero    |
-      | Moises  | Llanos      | masculino |
+      | nombres | apellidos | genero    |
+      | Moises  | Llanos    | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y       cierro el popup de validación de estado de contraseña única
@@ -47,8 +47,8 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+     # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
     #Y        selecciono tipo de oferta
     #Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -68,7 +68,7 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Aruba     | Casado       |
+      | 12/12/1980 | Aruba        | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -78,6 +78,6 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password   | msgHome      | tipoDocumento  | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ |  CE            | 1042464677 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan        |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1042464677 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
 

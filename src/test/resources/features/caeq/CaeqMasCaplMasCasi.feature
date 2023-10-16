@@ -47,12 +47,12 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
-    Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -71,5 +71,5 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 6765454324 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 6765454324 | Postpago | Plan Movil Movistar Total ilim 26 GB |

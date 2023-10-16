@@ -26,4 +26,10 @@ public class ConsultaDireccionPorCoordenasStepDefinition {
     public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
         consultaDireccionPorCoordenasStep.validoQueQueMeMuestreElMensajdeDeError(msj);
     }
+
+
+    @Y("doy click Aceptar en el modal de error")
+    public void doyClickAceptarEnElModalDeError() {
+        consultaDireccionPorCoordenasStep.doyClickAceptarEnElModalDeError();
+    }
 }

@@ -47,8 +47,8 @@ Característica: AT-DT095_Alta Trio Upfront call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -72,5 +72,5 @@ Característica: AT-DT095_Alta Trio Upfront call center
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                 | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460  | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
