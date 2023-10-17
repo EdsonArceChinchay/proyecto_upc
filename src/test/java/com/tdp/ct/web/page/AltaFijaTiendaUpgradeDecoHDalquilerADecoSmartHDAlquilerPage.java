@@ -34,11 +34,11 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
 
 
     public void selecciono_agregar_sva_fija() {
-        esperaProgresiva(3,5,lblVerDetalle);
+        esperaProgresiva(driver(),3,5,lblVerDetalle);
         //UtilWeb.waitForSeconds(5);
         click(lblVerDetalle);
         //UtilWeb.waitForSeconds(5);
-        esperaProgresiva(3,5,btnAgregarSva);
+        esperaProgresiva(driver(),3,5,btnAgregarSva);
         click(btnAgregarSva);
         UtilWeb.waitForSeconds(5);
 
@@ -64,7 +64,7 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
         element.click();
         UtilWeb.waitForSeconds(5);*/
         WebElement element = sh().getWebElement(iconPlus, "button");
-        esperaProgresiva(6,5,element);
+        esperaProgresiva(driver(),6,5,element);
         element.click();
     }
 

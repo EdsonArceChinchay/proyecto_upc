@@ -13,8 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7
 Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
   Antecedentes:
@@ -36,6 +35,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
       | nombres | apellidos | genero    |
       | Jbac    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -63,7 +63,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/08/1990 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -72,7 +72,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | planMovil |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 1024268020 | Postpago  |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1024268237 | Postpago  |
 
 

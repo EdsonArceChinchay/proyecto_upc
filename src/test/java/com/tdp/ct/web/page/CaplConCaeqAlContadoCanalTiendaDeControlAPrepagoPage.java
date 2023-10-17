@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])")
@@ -16,7 +18,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
     //@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
-    @FindBy(xpath = "/html/body/app-root/app-park/div[3]/app-modal-detallemovil/tdp-st-modal/div[3]/div/div[1]/button")
+    @FindBy(xpath = "//button[contains(text(),'Renovar')]")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")
@@ -93,8 +95,9 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnVerDetalle(String nroServicio) {
+        UtilWeb.waitForSeconds(10);
         WebElement btnVerDetalle = find().getElementByXPath("//div[@class='card']//*[contains(text(),'" + nroServicio + "')]//following::div[@class='detailHogar'][1]");
-        waitUntilElementIsVisible(btnVerDetalle, 10);
+        waitUntilElementIsVisible(btnVerDetalle, 20);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
     }
@@ -119,6 +122,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void writeEmail(String email) {
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(4);
         WebElement element1 = find().getElementByXPath("//*[@formcontrolname='mail']");
         WebElement ele1 = sh().getWebElement(element1, "input");

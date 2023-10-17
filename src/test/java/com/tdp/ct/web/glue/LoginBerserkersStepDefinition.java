@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.IOException;
 import java.util.Objects;
 
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
@@ -37,7 +38,7 @@ public class LoginBerserkersStepDefinition {
         String env = System.getProperty("environment");
         System.out.println(env);
         String urlMovistar = urlqaMovistar;
-        if(Objects.nonNull(env)){
+        if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {
                 urlMovistar = urldevMovistar;
             } else if (env.compareTo("prod") == 0) {
@@ -105,9 +106,9 @@ public class LoginBerserkersStepDefinition {
 
     @Y("me logueo con las credenciales en la aplicacion")
     public void meLogueoConLasCredencialesEnLaAplicacion(DataTable credenciales) {
-        String tipoUsuario= UtilWeb.getValueFromDataTable(credenciales,"tipoUsuario");
-        String userName= UtilWeb.getValueFromDataTable(credenciales,"userName");
-        String password= UtilWeb.getValueFromDataTable(credenciales,"password");
+        String tipoUsuario = UtilWeb.getValueFromDataTable(credenciales, "tipoUsuario");
+        String userName = UtilWeb.getValueFromDataTable(credenciales, "userName");
+        String password = UtilWeb.getValueFromDataTable(credenciales, "password");
         loginBerserkerStep.clickBtnIniciarSesion();
         loginBerserkerStep.selectTipoUsuario(tipoUsuario);
         loginBerserkerStep.writeUserName(userName);
@@ -133,6 +134,32 @@ public class LoginBerserkersStepDefinition {
     @Y("confirmo Cerrar Sesion")
     public void confirmoCerrarSesion() {
         loginBerserkerStep.confirmoCerrarSesion();
+    }
+
+    @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
+    public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
+        loginBerserkerStep.validarNomPlan(nomPlan);
+    }
+
+    @Y("valido la velocidad de internet {string}")
+    public void validoLaVelocidadDeInternet(String mbpsBB) {
+        loginBerserkerStep.scrollDown();
+        loginBerserkerStep.validarVelocidadInternet(mbpsBB);
+    }
+
+    @Y("valido el precio de descuento del componente Internet {string}")
+    public void validoElPrecioDeDescuentoDelComponenteInternet(String precDesc) {
+        loginBerserkerStep.validarPrecioDescuento(precDesc);
+    }
+
+    @Y("valido el nombre del SVA de contenido externo {string}")
+    public void validoElNombreDelSVADeContenidoExterno(String nomsvaTV) {
+        loginBerserkerStep.validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    @Y("valido el precio de descuento del componente TV {string}")
+    public void validoElPrecioDeDescuentoDelComponenteTV(String pDescTV) {
+        loginBerserkerStep.validarPrecioDescuentoTV(pDescTV);
     }
 
 

@@ -2,15 +2,18 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.*;
+
 public class AltaFijaAltaMovilRetailPage extends WebBase {
 
-    @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
+    @FindBy(xpath = "//div[@class=\"contenedor_park add_pointer\"]")
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
@@ -34,25 +37,28 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(15);
-        waitUntilElementIsClickable(btnHogar,30);
+        //waitUntilElementIsClickable(btnHogar,30);
+        //esperaProgresiva(driver(),5,5,btnHogar);
         click(btnHogar);
-        waitUntilElementIsVisible(btnMovil,5);
-        UtilWeb.waitForSeconds(2);
+        //waitUntilElementIsVisible(btnMovil,5);
+        UtilWeb.waitForSeconds(5);
     }
 
-    public void altaMovil(){
+    public void altaMovil() {
         UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
-        waitUntilElementIsClickable(btnMovil,15);//30
+        //waitUntilElementIsClickable(btnMovil,15);//30
+        esperaProgresiva(driver(),5,5,btnMovil);
         click(btnMovil);
-        UtilWeb.waitForSeconds(2);//1
+        //UtilWeb.waitForSeconds(2);//1
     }
 
     public void mostrarOfertas(){
         System.out.println("3");
-        waitUntilElementIsVisible(btnMostrar,90);//50
+        //waitUntilElementIsVisible(btnMostrar,90);//50
+        esperaProgresiva(driver(),8,5,btnMostrar);
         click(btnMostrar);
-        UtilWeb.waitForSeconds(6);
+        //UtilWeb.waitForSeconds(6);
         //UtilWeb.waitForSeconds(2);
     }
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
@@ -72,6 +78,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void seleccionarDepa(String tipoDepa){
         UtilWeb.waitForSeconds(4);//2
         WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,depaList);
+
         boolean existeLista = depaList.isEnabled();
         System.out.println("Existe Lista de" + depaList.getText() + ": " + existeLista);
         if (!existeLista){
@@ -81,13 +89,16 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         }
         click(depaList);
         UtilWeb.waitForSeconds(2);
+        By byItem = By.cssSelector("[data-value='"+tipoDepa+"']");
         SearchContext context=sh().getContext(depaList);
-        context.findElement(By.cssSelector("[data-value='"+tipoDepa+"']")).click();
+        esperaProgresiva(driver(),3,5,depaList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarProvincia(String tipoProvincia){
         WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,provinciaList);
         boolean existeLista = provinciaList.isEnabled();
         System.out.println("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
         if (!existeLista){
@@ -96,14 +107,17 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         }
         click(provinciaList);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(10);
         SearchContext context=sh().getContext(provinciaList);
-        context.findElement(By.cssSelector("[data-value='"+tipoProvincia+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoProvincia+"']");
+        esperaProgresiva(driver(),3,5,provinciaList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarDistrito(String tipoDistrito){
         WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        esperaProgresiva(driver(),3,5,distritoList);
         boolean existeLista = distritoList.isEnabled();
         System.out.println("Existe Lista de" + distritoList.getText() + ": " + existeLista);
         if (!existeLista){
@@ -115,7 +129,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         click(distritoList);
         UtilWeb.waitForSeconds(2);
         SearchContext context=sh().getContext(distritoList);
-        context.findElement(By.cssSelector("[data-value='"+tipoDistrito+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoDistrito+"']");
+        esperaProgresiva(driver(),3,5,distritoList, byItem, context);
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -132,12 +148,15 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar(){
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(btnConsulta,5);
+        //UtilWeb.waitForSeconds(5);
+        //waitUntilElementIsVisible(btnConsulta,5);
+        esperaProgresiva(driver(),5,5,btnConsulta);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
-        reintarPopPup();
-        reintarPopPup();
+        revisarModalError(driver());
+        //revisarModalEntendido(driver());
+        //reintarPopPup();
+        //reintarPopPup();
     }
 
     public void writeManzana(String manzana){
@@ -170,7 +189,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         WebElement conjuntoList= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
         click(conjuntoList);
         SearchContext context=sh().getContext(conjuntoList);
-        context.findElement(By.cssSelector("[data-value='"+tipoConjunto+"']")).click();
+        By byItem = By.cssSelector("[data-value='"+tipoConjunto+"']");
+        esperaProgresiva(driver(),3,5,conjuntoList, byItem, context);
+        context.findElement(byItem).click();
     }
 
     public void writeConjHab(String hab){

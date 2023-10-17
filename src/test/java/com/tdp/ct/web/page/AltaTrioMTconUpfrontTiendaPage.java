@@ -11,9 +11,13 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div")
+    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div") @class='btnCard' and
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
@@ -54,6 +58,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     protected WebElement btnReintentar;
 
     public void clickBotonLineaNueva() {
+        UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnLineaNueva);
         waitUntilElementIsVisible(btnLineaNueva, 15);
         click(btnLineaNueva);
@@ -98,12 +103,11 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
         //  waitUntilElementIsVisible(btnConfirmar, 10);
+        esperaProgresiva(driver(), 3,5,btnConfirmar);
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
-        System.out.println("el boton confirmar 1");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(30);
-        System.out.println("el boton confirmar 3");
+        UtilWeb.waitForSeconds(8);
     }
 
     public void validoDetalleDeInstalacion() {

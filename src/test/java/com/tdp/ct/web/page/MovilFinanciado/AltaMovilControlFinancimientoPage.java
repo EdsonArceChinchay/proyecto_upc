@@ -8,6 +8,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaMovilControlFinancimientoPage extends WebBase {
 
 
@@ -26,7 +28,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement btnAgregarEquipo;
     @FindBy(xpath ="//div[6]/div[1]/div/div[2]/div[3]/tdp-st-button")
     protected WebElement btnSeleccionarEquipo;
-    @FindBy(xpath ="//div[3]/div[2]/div/div/div/tdp-st-button")
+    @FindBy(xpath ="//*[contains(@label,'Iniciar Registro') or contains(text(),'Iniciar Registro')]")
     protected WebElement btnIniciarRegistro;
     //Validate
     @FindBy(xpath ="//div[2]/form/div[1]/h1")
@@ -185,12 +187,14 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
-        waitUntilElementIsClickable(btnplanMovil, 180);
+        esperaProgresiva(driver(),3,5,btnplanMovil);
+        waitUntilElementIsClickable(btnplanMovil, 10);
         click(btnplanMovil);
     }
 
     public void clickEnBotonSiguiente() {
-        waitUntilElementIsClickable(btnSiguiente, 20);
+        esperaProgresiva(driver(),3,5,btnSiguiente);
+        //waitUntilElementIsClickable(btnSiguiente, 20);
         click(btnSiguiente);
     }
 }

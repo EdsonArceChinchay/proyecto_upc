@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
 
 Característica: AT-DT039_Alta trio MT con Upfront 40mb
 
@@ -46,10 +46,10 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
+    #Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -62,19 +62,19 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+      | 12/12/1980 | Albania      | Casado       |
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton descargar contrato
+    #Y        presiono el boton descargar contrato
+      ## paso comentado
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | vsiguass | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1025600046 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Inkafarma  | Trío     | RA D22 50 MBPS |
-
+      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
+      | usuario externo | vsiguass | #o2Wy23oA1458Z% | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Trío     | RA D22 50 MBPS |
 
 
 

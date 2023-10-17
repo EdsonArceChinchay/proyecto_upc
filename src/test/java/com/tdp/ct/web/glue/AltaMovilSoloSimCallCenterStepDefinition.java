@@ -51,5 +51,13 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   }
 
 
+    @Y("cierro el popup de validación de estado de contraseña única")
+    public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
+    altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
+    }
 
+  @Y("doy click en Entendido para visualizar las ofertas")
+  public void doyClickEnEntendidoParaVisualizarLasOfertas() {
+    altaMovilSoloSimCallCenterStep.botonentendidoOfertas();
+  }
 }

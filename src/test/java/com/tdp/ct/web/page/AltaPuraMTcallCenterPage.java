@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
@@ -97,9 +98,10 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
-        modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        //modalError(5, btnReintentar, "Click al elemento Reintentar");
+        Addons.revisarModalError(driver());
 
         boolean buttonFound = false;
         int contador = 0;
@@ -128,19 +130,25 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clickCierrePopup(){
-        UtilWeb.waitForSeconds(8);//inhabilitado
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        UtilWeb.waitForSeconds(3);//inhabilitado
+        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
         elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() !=0;
         if (elementoExistente){
+            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
             System.out.println("Se cierra Popup de error");
-            UtilWeb.waitForSeconds(3);
-            click(cierrePopUoError);
-            UtilWeb.waitForSeconds(2);
+            //UtilWeb.waitForSeconds(3);
+            try {
+                click(cierrePopUoError);
+
+            } catch (Exception e) {
+                System.out.println("error al hacer click");
+            }
+            //UtilWeb.waitForSeconds(2);
         }else {
             System.out.println("no se encontró mensaje de error");
-            UtilWeb.waitForSeconds(2);
+            //UtilWeb.waitForSeconds(2);
         }
     }
 

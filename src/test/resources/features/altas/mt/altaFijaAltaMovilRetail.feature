@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 
 Característica: AT-DT034_Alta Fija + Alta Movil por Retail
 
@@ -39,6 +39,7 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -48,8 +49,8 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+     # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     #Y        selecciono el tipo de oferta "<tipoOferta>"
@@ -77,6 +78,6 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          |
-      | usuario externo |evillanuevag| #o2Wy23oA1458 | Bienvenid@ | CE            | 1000009111 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | MOVISTAR TOTAL | HD 100 Mbps + 95 Gb |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan              |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000009112 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | MOVISTAR TOTAL | 100 MBPS RA + 100 GB RA |
 

@@ -36,8 +36,8 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | HUAWEI P30 |
+      | permanencia | tipoPago   | equipoName                     |
+      | 12 meses    | Al Contado | XIAOMI MI 11 LITE VERDE C/PACK |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
@@ -48,8 +48,8 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | Julio     |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -67,5 +67,5 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042465134 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465134 | Postpago | Plan Movil Movistar Total ilim 26 GB |

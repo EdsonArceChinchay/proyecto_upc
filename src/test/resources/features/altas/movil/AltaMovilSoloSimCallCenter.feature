@@ -13,8 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
 Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
   Quiero realizar una alta movil solo sin por call center
 
@@ -39,6 +38,7 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -57,12 +57,12 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
-    Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 460"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "2pm-7pm"
@@ -76,7 +76,7 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
+      | 12/12/1980 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -85,14 +85,14 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 100109513 | Postpago      | RV Plan Ilimitado Mi Movistar  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Preplan                                  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 121219514 | Postpago      | RV Plan Ilimitado Mi Movistar |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Prepago       | Preplan                                  |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9  |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90  |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |

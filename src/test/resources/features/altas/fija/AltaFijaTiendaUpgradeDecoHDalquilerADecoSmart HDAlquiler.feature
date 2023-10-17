@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01
 Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
   Antecedentes:
@@ -30,7 +30,7 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-	Y        cierro popup de error
+	##Y        cierro popup de error
     Y        selecciono agregar sva fija
     Y         seleccionamos agregar decodificador Smart HD
     Y        seleccionamos guardar cambios
@@ -57,5 +57,5 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           | decoficador |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040478 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           | decoficador |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464837 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps | SMART HD    |

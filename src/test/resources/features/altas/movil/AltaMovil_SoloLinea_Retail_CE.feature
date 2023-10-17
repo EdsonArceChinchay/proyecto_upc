@@ -13,12 +13,8 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 24/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35
-
-
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05
 Característica: AT-DT031_Alta Movil Postpago CEX Retail
-
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -39,6 +35,7 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
       | nombres  | apellidos      | genero   |
       | Teresita | Collasos Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -51,15 +48,15 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/12/1980 | Casado      | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
   #  Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
-   Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CE            | 10004544006 | RV Plan Ilimitado Mi Movistar S/69.9 II |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

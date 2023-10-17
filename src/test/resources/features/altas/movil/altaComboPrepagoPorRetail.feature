@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
-
 Característica: AT-DT021_Alta Combo Prepago por Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
@@ -38,6 +37,7 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
       | nombres | apellidos     | genero    |
       | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -53,7 +53,7 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

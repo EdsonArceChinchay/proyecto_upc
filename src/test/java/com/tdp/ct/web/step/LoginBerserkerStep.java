@@ -36,6 +36,7 @@ public class LoginBerserkerStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickBtnContinuarHaciaHome();
     }
@@ -91,6 +92,7 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnCerrarSesion();
     }
 
+<<<<<<< HEAD
     public void ingresoCaptcha() throws IOException, InterruptedException {
         Thread.sleep(2000);
         page.captchaPage().obtenerCaptcha();
@@ -102,4 +104,31 @@ public class LoginBerserkerStep {
 
 
     }
+
+    public void validarNomPlan(String nomPlan) {
+        page.loginBerserkerPage().validarNomPlan(nomPlan);
+    }
+
+    public void scrollDown() {
+        page.altaFijaMovilRegistroPage().scrollDown();
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        page.loginBerserkerPage().validarVelocidadInternet(mbpsBB);
+
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        page.loginBerserkerPage().validarPrecioDescuento(precDesc);
+
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        page.loginBerserkerPage().validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
+    }
+
 }

@@ -12,7 +12,6 @@
 ##ENCARGADO: MOISES
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP5
-
 Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por el canal Retail
 
   Antecedentes:
@@ -31,9 +30,9 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "JR, JULIO CESAR TELLO, 469, LINCE, LIMA , LIMA, PE" actual del servicio
+    Y        verifico la direccion "AV, CORONEL JOSE LEAL, 500, LINCE, LIMA , LIMA, PE" actual del servicio
     Y        doy click en el boton "Actualizar direccion"
-    Y        ingreso la direccion donde sera la instalacion "Jose leal 500"
+    Y        ingreso la direccion donde sera la instalacion "Julio cesar tello 469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
@@ -43,9 +42,9 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
     Cuando   doy clic a iniciar registro
-    #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
-    #        presiono el boton confirmar agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy clic para validar contrato hogar
@@ -57,5 +56,5 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome     | tipoDocumento | documento   | tipoPlanHogar | plan |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464835  | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan                                               |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464835 | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |

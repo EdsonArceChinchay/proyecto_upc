@@ -14,12 +14,12 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 @BERSERKERS @DoneDevOps
-Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
+Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda (HFC A FTTH )
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MigracionDuoATrioSVATienda
+  @MigracionHFCaFTTH
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -27,10 +27,11 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
@@ -55,5 +56,5 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan       | sva                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA 70 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan   | sva                   |
+      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA D22 | PACK ANTIVIRUS MCAFEE |

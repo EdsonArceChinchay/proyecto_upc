@@ -46,9 +46,9 @@ Característica: AT-DT095_Alta Trio Upfront call center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -59,7 +59,7 @@ Característica: AT-DT095_Alta Trio Upfront call center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
@@ -72,5 +72,5 @@ Característica: AT-DT095_Alta Trio Upfront call center
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                 | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460  | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |

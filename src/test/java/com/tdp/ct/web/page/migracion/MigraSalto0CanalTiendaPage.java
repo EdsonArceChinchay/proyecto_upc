@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class MigraSalto0CanalTiendaPage extends WebBase {
 
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
@@ -32,6 +34,7 @@ public class MigraSalto0CanalTiendaPage extends WebBase {
     }
 
     public boolean validoPantallaAgendamiento() {
+        revisarModalError(driver());
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());

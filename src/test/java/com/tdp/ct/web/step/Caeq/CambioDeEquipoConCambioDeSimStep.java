@@ -20,4 +20,16 @@ public class CambioDeEquipoConCambioDeSimStep {
     public void seleccionoTipoPagoAlContado() {
         page.cambioDeEquipoConCambioDeSimPage().seleccionoTipoPagoAlContado();
     }
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void seleccionoelbotonCambiodeChip() {
+        page.cambioDeEquipoConCambioDeSimPage().seleccionoelbotonCambiodeChip();
+
+    }
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void cierroPopUpDeClienteExonerado(){
+        page.cambioDeEquipoConCambioDeSimPage().cierroPopUpDeClienteExonerado();
+
+    }
 }

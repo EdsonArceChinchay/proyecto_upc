@@ -13,10 +13,8 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
 Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
-
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -38,6 +36,9 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
+    Y       cierro el popup de validación de estado de contraseña única
+    #Y        cierro pop up de Cliente Exonerado
+    #Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -49,7 +50,7 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 460 |
+      | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -58,6 +59,6 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | CAJAMARCA    | CE            | 1042354781 | PLAN PREPAGO | Preplan    |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

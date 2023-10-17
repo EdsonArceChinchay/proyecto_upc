@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
@@ -54,7 +57,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement btnEntendido;
 
 
-    @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
 
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
@@ -71,9 +74,17 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//div[text()='MÓDEM']/parent::div/../descendant-or-self::tdp-st-checkbox[1]")
     protected WebElement agregarModem;
 
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/app-banner-cu/div/div/div[1]/img[2]")
+    protected WebElement cerrarCU;
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         js().scrollElementTop(cartillaHogar);
-        UtilWeb.waitForSeconds(5);
+        //UtilWeb.waitForSeconds(5);
+
+        //String elXpath = "div:nth-child(1) > app-card-line";
+        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
+        revisarModalError(driver());
+
         waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
@@ -86,6 +97,24 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
         UtilWeb.waitForSeconds(4);
+    }
+    public void cerrarPopupCU(){
+//        UtilWeb.waitForSeconds(1);
+//        waitUntilElementIsClickable(cerrarCU, 10).click();
+        UtilWeb.waitForSeconds(4);
+        try {
+            if (cerrarCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
+
     }
 
 
@@ -125,11 +154,18 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
-
+    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
+    protected WebElement btnMostrar;
     public void doyClickEnEnElBoton(String btn) {
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+        //modalError(5,btnReintentar,"Click al elemento Reitentar");
+
+        //String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
+        //btnConfirmarDir
+        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+        revisarModalError(driver());
+
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "ACTUALIZAR":
@@ -178,9 +214,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
+        //String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
+        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
+        /*clickBtnReintentar();
         clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+        clickBtnReintentar();*/
+        revisarModalError(driver());
+
         String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
@@ -201,8 +241,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void agregoSVALinea(String svaLinea) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
-       // UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(5);
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA LÍNEA')]/../descendant-or-self::tdp-st-select");
+        js().scrollElementTop(listElementPLan);
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);

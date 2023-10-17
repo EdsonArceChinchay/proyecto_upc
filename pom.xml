@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tdp.ct</groupId>
     <artifactId>automation-web-berserkers</artifactId>
-    <version> 1.0.0</version>
+<!--    <version>1.0.0</version>-->
+    <!--    Utilizar en la rama Develop-->
+      <version>1.0.0</version>
+    <!--    Utilizar en la rama release/certificaation-->
+
     <description>Template from Continuous Testing Framework</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,23 +24,17 @@
             <version>1.0.0</version>
         </dependency>
         <!-- <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>datatable</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
-        </dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-http-jdk-client</artifactId>
+            <version>4.5.0</version>
+        </dependency>  -->
+        <!--      Si da error local, usar temporalmente.   -->
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.8.0</version>
-            <scope>test</scope>
-        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-http-jdk-client</artifactId>-->
-<!--            <version>4.5.0</version>-->
-<!--         </dependency>-->
-        </dependencies>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
 
 Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 
@@ -39,6 +39,7 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 #    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -48,8 +49,8 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
+      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     #Y        selecciono el tipo de oferta "<tipoOferta>"
@@ -76,5 +77,5 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan          | correo           |
-      | usuario externo | evillanuevag | #o2Wy23oA1458 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567432124 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | INKAFARMA  | MOVISTAR TOTAL | HD 200 Mbps + 95 Gb | correo@gmail.com |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | HD 500 Mbps RA + 95 Gb RA | correo@gmail.com |

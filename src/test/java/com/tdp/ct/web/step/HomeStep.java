@@ -64,4 +64,8 @@ public class HomeStep {
     public void doyClickEnValidarRepresentaLegal() {
         page.homePage().doyClickEnValidarRepresentaLegal();
     }
+
+    public void clickXPopUpCU() {
+        page.homePage().clickXPopUpCU();
+    }
 }

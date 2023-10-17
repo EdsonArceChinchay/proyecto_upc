@@ -53,9 +53,9 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     public void clickBtnConsultarCobertura() {
         click(btnConsultarCobertura);
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+//        clickBtnReintentar();
+//        clickBtnReintentar();
+//        clickBtnReintentar();
     }
 
     public void validarOfertasSugeridasView(String title) {
