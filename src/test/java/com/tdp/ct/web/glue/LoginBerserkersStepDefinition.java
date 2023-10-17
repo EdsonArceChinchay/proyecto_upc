@@ -36,7 +36,7 @@ public class LoginBerserkersStepDefinition {
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
-        System.out.println(env);
+        System.out.println("Enviroment: " + env);
         String urlMovistar = urlqaMovistar;
         if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {

@@ -113,14 +113,9 @@ public class LoginBerserkerPage extends WebBase {
  /*        click(btnContinuar);
         waitUntilElementIsVisible(msgHome, 100);*/
         String env = System.getProperty("environment");
+        System.out.println("Enviroment: " + env);
         if (Objects.nonNull(env)) {
             if(env.compareTo("prod") == 0) {
-                try {
-                    System.out.println("Ingresar Captcha Manualmente");
-                    Thread.sleep(10000); //quitar
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
                 esperaProgresiva(driver(), 3, 5, btnContinuarProd);
                 click(btnContinuarProd);
             }

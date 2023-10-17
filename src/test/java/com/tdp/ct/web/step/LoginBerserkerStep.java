@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @Component
 public class LoginBerserkerStep {
@@ -120,12 +121,20 @@ public class LoginBerserkerStep {
     }
 
     public void ingresoCaptcha() throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        page.captchaPage().obtenerCaptcha();
-        UtilWeb.waitForSeconds(4);
+        String env = System.getProperty("environment");
+        System.out.println("Enviroment: " + env);
+        if (Objects.nonNull(env)) {
+            if (env.compareTo("prod") == 0) {
+                Thread.sleep(2000);
+                page.captchaPage().obtenerCaptcha();
+                UtilWeb.waitForSeconds(4);
 
-        page.captchaPage().decodificarCaptcha();
-        UtilWeb.waitForSeconds(4);
+                page.captchaPage().decodificarCaptcha();
+                UtilWeb.waitForSeconds(4);
+            }
+
+        }
+
 
 
 
