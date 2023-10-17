@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -35,6 +36,9 @@ public class LoginBerserkerPage extends WebBase {
 
     @FindBy(id = "continue")
     protected WebElement btnContinuar;
+
+    @FindBy(name = "btnpruebavalidate")
+    protected WebElement btnContinuarProd;
 
     @FindBy(css = ".message-welcome span")
     protected WebElement msgHome;
@@ -108,8 +112,19 @@ public class LoginBerserkerPage extends WebBase {
 
  /*        click(btnContinuar);
         waitUntilElementIsVisible(msgHome, 100);*/
-        esperaProgresiva(driver(),3,5,btnContinuar);
-        click(btnContinuar);
+        String env = System.getProperty("environment");
+        System.out.println("Enviroment: " + env);
+        if (Objects.nonNull(env)) {
+            if(env.compareTo("prod") == 0) {
+                esperaProgresiva(driver(), 3, 5, btnContinuarProd);
+                click(btnContinuarProd);
+            }
+        }else{
+            esperaProgresiva(driver(), 3, 5, btnContinuar);
+            click(btnContinuar);
+        }
+
+
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(),3,6,msgHome);
     }

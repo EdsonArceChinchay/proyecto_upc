@@ -188,18 +188,28 @@ public class AltaFijaMovilRegistroStep {
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
-        String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
-        String genero=UtilWeb.getValueFromDataTable(datos,"genero");
-        page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
-        page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
-        page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+        if(page.altaFijaMovilRegistroPage().esNuevoClienteRegistrado()){
+            String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
+            String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
+            String genero=UtilWeb.getValueFromDataTable(datos,"genero");
+            page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
+            page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
+            page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        page.altaFijaMovilRegistroPage().crearCliente();
-        //UtilWeb.waitForSeconds(30);//100
+        if(page.altaFijaMovilRegistroPage().esNuevoClienteRegistrado()){
+            page.altaFijaMovilRegistroPage().crearCliente();
+            //UtilWeb.waitForSeconds(30);//100
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+
     }
     @ScreenShotBefore
     @ScreenShotAfter
