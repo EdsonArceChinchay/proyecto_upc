@@ -163,6 +163,8 @@ public class StepPages {
     public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage(){return new ActualizacionDeRuc17CanalTiendaPage();}
     public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage(){return new AltaValidacionPrecioDescuentoPage();}
 
+    public CaptchaPage captchaPage(){ return new CaptchaPage();}
+
 }
 
 

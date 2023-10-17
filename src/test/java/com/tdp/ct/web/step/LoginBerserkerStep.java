@@ -3,8 +3,12 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.Objects;
 
 @Component
 public class LoginBerserkerStep {
@@ -89,6 +93,20 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnCerrarSesion();
     }
 
+
+    public void ingresoCaptcha() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        page.captchaPage().obtenerCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+        page.captchaPage().decodificarCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+
+
+    }
+
+
     public void validarNomPlan(String nomPlan) {
         page.loginBerserkerPage().validarNomPlan(nomPlan);
     }
@@ -114,4 +132,8 @@ public class LoginBerserkerStep {
     public void validarPrecioDescuentoTV(String pDescTV) {
         page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
     }
+    
+
+
+
 }

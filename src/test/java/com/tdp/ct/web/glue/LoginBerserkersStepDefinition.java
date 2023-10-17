@@ -5,15 +5,13 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.es.Cuando;
-import io.cucumber.java.es.Dado;
-import io.cucumber.java.es.Entonces;
-import io.cucumber.java.es.Y;
+import io.cucumber.java.es.*;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
 import java.util.Objects;
 
 
@@ -38,7 +36,7 @@ public class LoginBerserkersStepDefinition {
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
-        System.out.println(env);
+        System.out.println("Enviroment: " + env);
         String urlMovistar = urlqaMovistar;
         if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {
@@ -165,4 +163,8 @@ public class LoginBerserkersStepDefinition {
     }
 
 
+    @E("ingreso el captcha")
+    public void ingresoElCaptcha() throws IOException, InterruptedException {
+        loginBerserkerStep.ingresoCaptcha();
+    }
 }

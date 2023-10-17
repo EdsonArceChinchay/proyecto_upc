@@ -101,6 +101,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class=\"buttonG cls-top\"]")
     protected WebElement buttonAgregarSVAMT;
 
+    @FindBy(css =".text-info")
+    protected WebElement nombreClienteUserData;
+
 
     public boolean validarPantallaIngresarDireccion() {
         esperaProgresiva(driver(),2,5,titleLugarInstalacion);
@@ -565,6 +568,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonTurnoAgendamientoActivo);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a en turno agendamiento");
         UtilWeb.waitForSeconds(4);
+    }
+
+    public boolean esNuevoClienteRegistrado(){
+        //En el formulario de Dito
+        //<div _ngcontent-ggn-c60="" class="text-info">Nombre: Prueba QAN VEINTICUATRO</div>
+        if(nombreClienteUserData.getText().length()>8){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     //CAMBIOS PARA RETAIL
