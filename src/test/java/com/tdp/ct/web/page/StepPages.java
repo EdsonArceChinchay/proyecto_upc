@@ -160,6 +160,8 @@ public class StepPages {
     public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
     public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage(){return new ActualizacionDeRuc10CanalTiendaPage();}
 
+    public CaptchaPage captchaPage(){ return new CaptchaPage();}
+
 }
 
 
