@@ -31,6 +31,8 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan MT
     Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "Confirmar direccion"
+    #Y        cierro el popup de Detail
     #Y        Selecciono una linea movil y mostrar ofertas
     #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
@@ -46,10 +48,10 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  | nombrePlan          | correo            |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 7241133711 | HD 200 Mbps + 95 Gb | tester@tester.com |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan                 | correo            |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |

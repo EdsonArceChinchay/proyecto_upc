@@ -2,15 +2,18 @@ package com.tdp.ct.web.page.migracion;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import static com.tdp.ct.web.utils.Addons.revisarModalEntendido;
 
 public class MigraSalto0RetailPage extends WebBase {
     @FindBy(xpath = "(//div/button[@class=\"btnCard\"])[2]")
     WebElement BtnMigrarFibra;
     @FindBy(xpath = "//div/button[@class=\"btnStart\"]")
     WebElement BotonIniciarRegistro;
-    @FindBy(xpath = "//mat-dialog-actions/button[contains(text(),'Entendido')]")
+    @FindBy(xpath = "(//mat-dialog-actions/button[contains(text(),'Entendido')])[1]")
     WebElement btnEntendido;
     public void SeleccionarBtnMigrarFibra() {
         waitUntilElementIsVisible(BtnMigrarFibra,60);
@@ -25,9 +28,8 @@ public class MigraSalto0RetailPage extends WebBase {
     }
 
     public void clickBotonEntendido() {
-        UtilWeb.waitForSeconds(10);
-        click(btnEntendido);
-        UtilWeb.waitForSeconds(5);
-        click(btnEntendido);
+        waitUntilElementIsClickable(btnEntendido,20).click();
+       //revisarModalEntendido(driver());
+
     }
 }
