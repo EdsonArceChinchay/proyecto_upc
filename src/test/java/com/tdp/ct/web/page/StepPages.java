@@ -162,6 +162,8 @@ public class StepPages {
     public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage(){return new ActualizacionDeRuc10CanalTiendaPage();}
     public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage(){return new ActualizacionDeRuc17CanalTiendaPage();}
 
+    public CaptchaPage captchaPage(){ return new CaptchaPage();}
+
 }
 
 
