@@ -93,6 +93,19 @@ public class LoginBerserkerStep {
     }
 
 
+    public void ingresoCaptcha() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        page.captchaPage().obtenerCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+        page.captchaPage().decodificarCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+
+
+    }
+
+
     public void validarNomPlan(String nomPlan) {
         page.loginBerserkerPage().validarNomPlan(nomPlan);
     }
@@ -119,16 +132,7 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
     }
 
-    public void ingresoCaptcha() throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        page.captchaPage().obtenerCaptcha();
-        UtilWeb.waitForSeconds(4);
-
-        page.captchaPage().decodificarCaptcha();
-        UtilWeb.waitForSeconds(4);
 
 
-
-    }
 
 }
