@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -14,6 +15,9 @@ public class AltaFijaMovilRegistroStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private Cliente cliente;
 
     @ScreenShotAfter
     public void validarPantallaIngresarDireccion() {
@@ -184,11 +188,14 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
     }
 
+    public void verificarClienteNuevo(){
+        cliente.setClienteNuevo(page.altaFijaMovilRegistroPage().esNuevoCliente());
+    }
 
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        if(page.altaFijaMovilRegistroPage().esNuevoClienteRegistrado()){
+        if(cliente.isClienteNuevo()){
             String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
             String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
             String genero=UtilWeb.getValueFromDataTable(datos,"genero");
@@ -203,7 +210,7 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        if(page.altaFijaMovilRegistroPage().esNuevoClienteRegistrado()){
+        if(cliente.isClienteNuevo()){
             page.altaFijaMovilRegistroPage().crearCliente();
             //UtilWeb.waitForSeconds(30);//100
         }else{

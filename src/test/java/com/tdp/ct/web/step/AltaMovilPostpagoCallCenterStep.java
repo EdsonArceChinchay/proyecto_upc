@@ -1,4 +1,5 @@
 package com.tdp.ct.web.step;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
@@ -13,6 +14,8 @@ public class AltaMovilPostpagoCallCenterStep {
 
     @Autowired
     private  StepPages page;
+
+
 
     @ScreenShotBefore
     public void BtonOpciones() {
@@ -80,13 +83,15 @@ public class AltaMovilPostpagoCallCenterStep {
     }
     @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-        String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
-        String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
+            String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
+            String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
+            String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
 
-        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
-        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
-        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
+            page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
+            page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
+            page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
+
+
 
     }
     @ScreenShotAfter

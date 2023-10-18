@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -16,8 +17,13 @@ public class LoginBerserkerStep {
     @Autowired
     private StepPages page;
 
+    @Autowired
+    private Cliente cliente;
+
+
     @ScreenShotBefore
     public void clickBtnIniciarSesion() {
+        cliente.setClienteTest("Test Cliente");
         page.loginBerserkerPage().clickBtnIniciarSesion();
     }
 
