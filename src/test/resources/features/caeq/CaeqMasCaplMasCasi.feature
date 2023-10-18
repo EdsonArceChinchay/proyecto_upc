@@ -55,7 +55,7 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
       | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "956756143"
     Y        ingreso las instrucciones a considerar de la entrega "abc"
     Y        doy clic en confirmar delivery

@@ -52,7 +52,7 @@ Característica: AT-DT045_Caeq Mas Capl por call center
       | A  | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "952696748"
     Y        ingreso las instrucciones a considerar de la entrega "abc"
     Y        doy clic en confirmar delivery
