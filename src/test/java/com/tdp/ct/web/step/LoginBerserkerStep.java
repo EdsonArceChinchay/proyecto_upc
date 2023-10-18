@@ -100,6 +100,19 @@ public class LoginBerserkerStep {
     }
 
 
+    public void ingresoCaptcha() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        page.captchaPage().obtenerCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+        page.captchaPage().decodificarCaptcha();
+        UtilWeb.waitForSeconds(4);
+
+
+
+    }
+
+
     public void validarNomPlan(String nomPlan) {
         page.loginBerserkerPage().validarNomPlan(nomPlan);
     }
@@ -125,25 +138,8 @@ public class LoginBerserkerStep {
     public void validarPrecioDescuentoTV(String pDescTV) {
         page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
     }
-
-    public void ingresoCaptcha() throws IOException, InterruptedException {
-        String env = System.getProperty("environment");
-        System.out.println("Enviroment: " + env);
-        if (Objects.nonNull(env)) {
-            if (env.compareTo("prod") == 0) {
-                Thread.sleep(2000);
-                page.captchaPage().obtenerCaptcha();
-                UtilWeb.waitForSeconds(4);
-
-                page.captchaPage().decodificarCaptcha();
-                UtilWeb.waitForSeconds(4);
-            }
-
-        }
+    
 
 
-
-
-    }
 
 }
