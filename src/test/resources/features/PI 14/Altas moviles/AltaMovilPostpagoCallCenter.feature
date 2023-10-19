@@ -12,7 +12,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 19/10/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 
 Característica: AT-DT096_Alta Movil Postpago CALL CENTER
