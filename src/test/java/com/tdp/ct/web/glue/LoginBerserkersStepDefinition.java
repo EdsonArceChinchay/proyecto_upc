@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.datatable.DataTable;

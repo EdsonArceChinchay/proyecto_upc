@@ -570,7 +570,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
-    public boolean esNuevoClienteRegistrado(){
+    public boolean esNuevoCliente(){
         //En el formulario de Dito
         //<div _ngcontent-ggn-c60="" class="text-info">Nombre: Prueba QAN VEINTICUATRO</div>
         if(nombreClienteUserData.getText().length()>8){

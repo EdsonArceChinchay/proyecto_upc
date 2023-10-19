@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
@@ -17,6 +18,9 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Autowired
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+
+    @Autowired
+    private Cliente cliente;
 
 
     @Entonces("me muestra la pantalla para ingresar la direccion")
@@ -172,6 +176,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 //CAMBIOS PARA RETAIL
 @Y("ingreso los datos del cliente a registrar")
 public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+    altaFijaMovilRegistroStep.verificarClienteNuevo();
     altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
     altaFijaMovilRegistroStep.clicEnCrearCliente();
 }
@@ -185,8 +190,12 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
-        altaFijaMovilRegistroStep.esperarBtnDatosCliente();
-        altaFijaMovilRegistroStep.clicDatosDelCliente();
+        if(cliente.isClienteNuevo()) {
+            altaFijaMovilRegistroStep.esperarBtnDatosCliente();
+            altaFijaMovilRegistroStep.clicDatosDelCliente();
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
     }
 
     @Y("me muestra pantalla para Descargar contrato")

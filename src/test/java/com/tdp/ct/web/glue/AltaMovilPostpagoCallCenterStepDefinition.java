@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
@@ -18,6 +19,9 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
   @Autowired
   private AltaMovilPostpagoCallCenterStep altaMovilPostpagoCallCenterStep;
+
+  @Autowired
+  private Cliente cliente;
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
@@ -95,7 +99,11 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
     @Y("ingreso los datos del cliente")
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-      altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
+      if(cliente.isClienteNuevo()){
+        altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
+      }else{
+        System.out.println("Skip. Cliente Registrado en Dito");
+      }
     }
 
     @Y("valido que se muestre el detalle del pedido")

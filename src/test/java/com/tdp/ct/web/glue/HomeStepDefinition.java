@@ -1,6 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.step.HomeStep;
 import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
@@ -13,8 +14,12 @@ public class HomeStepDefinition {
     @Autowired
     private HomeStep homeStep;
 
+    @Autowired
+    private Cliente cliente;
+
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String tipoDocumento) {
+        System.out.println("Cliente: " +  cliente.getClienteTest());
         homeStep.seleccionoTipoDocumento(tipoDocumento);
     }
 
