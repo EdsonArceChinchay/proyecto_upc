@@ -105,6 +105,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    #Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"

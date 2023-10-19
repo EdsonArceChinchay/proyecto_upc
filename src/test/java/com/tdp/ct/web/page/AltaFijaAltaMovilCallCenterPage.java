@@ -70,13 +70,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void lote(String lote) {
         if (lote != null) {
-            UtilWeb.waitForSeconds(4);
+            /*UtilWeb.waitForSeconds(4);
             WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
             esperaProgresiva(driver(), 3, 5, Lte);
             click(Lte);
             Lte.sendKeys(Keys.CONTROL + "a");
             Lte.sendKeys(Keys.DELETE);
-            type(Lte, lote);
+            type(Lte, lote);*/
         }
     }
 
