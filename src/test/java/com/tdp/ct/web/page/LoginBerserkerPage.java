@@ -110,21 +110,13 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickBtnContinuarHaciaHome() {
 
- /*        click(btnContinuar);
-        waitUntilElementIsVisible(msgHome, 100);*/
-        String env = System.getProperty("environment");
-        System.out.println("Enviroment: " + env);
-        if (Objects.nonNull(env)) {
-            if(env.compareTo("prod") == 0) {
-                esperaProgresiva(driver(), 3, 5, btnContinuarProd);
-                click(btnContinuarProd);
-            }
+        if(Addons.esEntornoProductivo()){
+            esperaProgresiva(driver(), 3, 5, btnContinuarProd);
+            click(btnContinuarProd);
         }else{
             esperaProgresiva(driver(), 3, 5, btnContinuar);
             click(btnContinuar);
         }
-
-
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(),3,6,msgHome);
     }

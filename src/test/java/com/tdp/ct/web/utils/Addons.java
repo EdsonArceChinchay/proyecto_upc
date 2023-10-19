@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -301,5 +302,19 @@ public class Addons {
 
         }
 
+        public static boolean esEntornoProductivo(){
+                String env = System.getProperty("environment");
+                System.out.println("Enviroment: " + env);
+                if (Objects.nonNull(env)) {
+                        if (env.compareTo("dev") == 0) {
+                               return false;
+                        } else if (env.compareTo("prod") == 0) {
+                                return true;
+                        }else{
+                                return false;
+                        }
+                }
+                return false;
+        }
 
 }
