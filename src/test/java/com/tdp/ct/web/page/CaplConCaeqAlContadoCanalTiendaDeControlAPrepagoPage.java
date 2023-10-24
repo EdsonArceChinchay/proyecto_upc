@@ -7,8 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
@@ -49,16 +51,20 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void clickBtnCardPlanActual() {
         UtilWeb.waitForSeconds(2);
+
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        js().scrollElementTop(btnCardPlanActual);
         click(btnCardPlanActual);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clickBtnRenovarPlan() {
-        modalError(3, btnReintentar, "Click al elemento Reitentar");
-        modalError(3, btnReintentar, "Click al elemento Reitentar");
-        waitUntilElementIsVisible(btnRenovarPlan, 10);
+        //modalError(3, btnReintentar, "Click al elemento Reitentar");
+        //modalError(3, btnReintentar, "Click al elemento Reitentar");
+        //waitUntilElementIsVisible(btnRenovarPlan, 10);
+        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         click(btnRenovarPlan);
-        UtilWeb.waitForSeconds(10);
+        //UtilWeb.waitForSeconds(10);
     }
 
     public void clickSelectOferta() {
@@ -81,6 +87,21 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     public void clickBtnAddEquipoInCard() {
         click(btnAddEquipoInCard);
         UtilWeb.waitForSeconds(5);
+    }
+
+    public int contadorResultadosBusquedaEquipos(){
+        List<WebElement> elementos;
+
+        int contador = 0;
+        try{
+            UtilWeb.waitForSeconds(5);
+            elementos = driver().findElements(By.className("_item-device"));
+            contador = elementos.size();
+            System.out.println("Cantidad de Equipos: " + contador);
+        }catch(Exception e){
+            System.out.println("NO HAY EQUIPOS EN LA BUSQUEDA");
+        }
+        return contador;
     }
 
     public void scrollToVerBtnDetalles() {

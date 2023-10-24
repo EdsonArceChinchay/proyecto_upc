@@ -30,7 +30,7 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    #Y        cierro popup de error
     #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     #Y        selecciono el boton Mostrar ofertas
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
@@ -39,7 +39,8 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | HUAWEI P30 |
+      | 12 meses    | Al Contado | SAMSUNG    |
+    Y valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        Selecciono boton Cambiar Chip
@@ -71,5 +72,5 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 6765454324 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |

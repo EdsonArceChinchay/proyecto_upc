@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static java.awt.event.KeyEvent.*;
 
 public class HomePage extends WebBase {
@@ -89,8 +90,10 @@ public class HomePage extends WebBase {
         btnConsultar.click();
         //click(btnconsultar);
         //waitUntilElementIsVisible(boton01,20);
+
         esperaProgresiva(driver(),3,5,boton01);
-        UtilWeb.waitForSeconds(5);//10
+        revisarModalError(driver());
+        UtilWeb.waitForSeconds(1);
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {

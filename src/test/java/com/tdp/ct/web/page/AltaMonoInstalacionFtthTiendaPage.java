@@ -11,6 +11,9 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     @FindBy(css = "h1.title")
@@ -59,10 +62,13 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarOfertasSugeridasView(String title) {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        waitUntilElementIsVisible(titleOfertas, 300);
+        //clickBtnReintentar();
+        //clickBtnReintentar();
+        //clickBtnReintentar();
+        revisarModalError(driver());
+
+        //waitUntilElementIsVisible(titleOfertas, 300);
+        esperaProgresiva(driver(), 3, 5, titleOfertas);
         UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();

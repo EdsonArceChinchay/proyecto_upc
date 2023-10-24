@@ -6,6 +6,7 @@ import com.tdp.ct.web.step.CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
@@ -18,7 +19,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
 
     @Y("selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan")
     public void seleccionoElBtnVerDetalleDelPlanActualYPresionoElBtnRenovarPlan() {
-        caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
+        //caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
         caplConCaeqAlContadoCanalTiendaStep.clickBtnCardPlanActual();
         caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
     }

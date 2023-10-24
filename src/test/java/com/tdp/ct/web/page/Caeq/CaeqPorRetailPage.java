@@ -5,6 +5,8 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement btnAnadirE;
@@ -18,10 +20,12 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "(//div/button[@class=\"buttonG\"])[3]")
     protected  WebElement botonConsultaClienteNuevo;
     public void btnAnadirEquipo() {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(), 3, 5, btnAnadirE);
         js().scrollElementTop(btnAnadirE);
-        waitUntilElementIsClickable(btnAnadirE,20).click();
-        UtilWeb.waitForSeconds(10);
+        click(btnAnadirE);
+        //waitUntilElementIsClickable(btnAnadirE,20).click();
+        UtilWeb.waitForSeconds(1);
     }
 
     public void btnSeleecionar() {
