@@ -23,10 +23,11 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "jpachaot"
     Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042464725"
+    Y        ingreso el documento "1042465138"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
