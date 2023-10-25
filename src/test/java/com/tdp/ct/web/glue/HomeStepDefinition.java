@@ -72,4 +72,5 @@ public class HomeStepDefinition {
     public void cierroPopUpDeCU() {
         homeStep.clickXPopUpCU();
     }
+
 }
