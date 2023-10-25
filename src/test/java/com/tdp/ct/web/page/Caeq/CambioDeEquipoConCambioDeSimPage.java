@@ -21,6 +21,7 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
 
     public void seleccionoTipoPagoAlContado() {
         Addons.esperaProgresiva(driver(), 3, 5, btnAlContado);
+        Addons.revisarModalError(driver());
         //waitUntilElementIsVisible(btnAlContado,10);
         js().scrollElementTop(btnAlContado);
         click(btnAlContado);

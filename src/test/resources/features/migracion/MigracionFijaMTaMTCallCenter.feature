@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT066
 
-Característica: AT-DT066_Migracion de MT a MT
+Característica: AT-DT066_Migracion de MT a MT en Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar

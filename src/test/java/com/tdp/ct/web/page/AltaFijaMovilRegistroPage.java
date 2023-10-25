@@ -310,7 +310,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         //Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(16);
+        //UtilWeb.waitForSeconds(16);
         Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
         Addons.revisarModalError(driver());
 
