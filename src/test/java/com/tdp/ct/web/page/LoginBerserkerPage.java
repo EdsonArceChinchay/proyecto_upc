@@ -88,7 +88,8 @@ public class LoginBerserkerPage extends WebBase {
         //waitUntilElementIsVisible(btnIniciarSesion, 10);
         Addons.esperaProgresiva(driver(),10,5,btnIniciarSesion);
         click(btnIniciarSesion);
-        waitUntilElementIsVisible(tipoUsuario, 5);
+        Addons.esperaProgresiva(driver(),10,5,tipoUsuario);
+        //waitUntilElementIsVisible(tipoUsuario, 5);
     }
 
     public void selectTipoUsuario(String usuario) {
