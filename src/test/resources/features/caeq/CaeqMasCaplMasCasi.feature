@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 24/10/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
@@ -30,9 +30,6 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        cierro popup de error
-    #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    #Y        selecciono el boton Mostrar ofertas
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
@@ -40,10 +37,10 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName |
       | 12 meses    | Al Contado | SAMSUNG    |
-    Y valido que existan resultados busqueda de equipos
+    Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
-    Y        Selecciono boton Cambiar Chip
+    #Y        Selecciono boton Cambiar Chip
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"

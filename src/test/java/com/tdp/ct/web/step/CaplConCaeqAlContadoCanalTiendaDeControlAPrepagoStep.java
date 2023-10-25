@@ -59,6 +59,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.altaMovilPostpagoCallCenterPage().BuscarEquipo(modelo);
     }
 
+    @ScreenShotAfter
     public int contadorResultadosBusquedaEquipos(){
         return page.caplConCaeqAlContadoCanalTiendaPage().contadorResultadosBusquedaEquipos();
     }

@@ -63,6 +63,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         //modalError(3, btnReintentar, "Click al elemento Reitentar");
         //waitUntilElementIsVisible(btnRenovarPlan, 10);
         esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        revisarModalError(driver());
         click(btnRenovarPlan);
         //UtilWeb.waitForSeconds(10);
     }
@@ -129,9 +130,37 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnSelectEquipo() {
-        String btnSelect = ".cont-btn tdp-st-button;button";
+        //pendiente revisar
+        //String btnSelect = ".cont-btn tdp-st-button;button";
+        String btnSelect = ".cont-btn tdp-st-button";
+
+        //WebElement element = js().getWebElement(btnSelect);
+        System.out.println("clickBtnSelectEquipo 0");
+        js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
         WebElement element = js().getWebElement(btnSelect);
         element.click();
+       /*
+        System.out.println("clickBtnSelectEquipo 0.5");
+        System.out.println("data: " + element.getText());
+        System.out.println("clickBtnSelectEquipo 1");
+
+        try {
+            Thread.sleep(50000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        List<WebElement> elements = js().getWebElements(btnSelect);
+        System.out.println("clickBtnSelectEquipo 2");
+        for (WebElement elemento: elements) {
+            try{
+                System.out.println("TagName: " + elemento.getTagName());
+                System.out.println("Text: " + elemento.getText());
+                elemento.click();
+            }catch(Exception e){
+                System.out.println("error: " + e.getStackTrace());
+            }
+        }
+        System.out.println("clickBtnSelectEquipo OK");*/
     }
 
     public void clickBtnConShadowIniciarRegistro() {
