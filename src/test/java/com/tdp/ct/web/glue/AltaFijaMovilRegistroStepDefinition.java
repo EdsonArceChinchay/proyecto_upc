@@ -4,6 +4,7 @@ import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
+import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
@@ -76,7 +77,13 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("valido que me encuentre en la pantalla agendamiento")
     public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
-        altaFijaMovilRegistroStep.validarPantallaAgendamiento();
+        if(Addons.esEntornoProductivo())
+        {
+            System.out.println("Entorno Productivo");
+
+        } else{
+            altaFijaMovilRegistroStep.validarPantallaAgendamiento();
+        }
     }
 
     @Y("escojo un turno de agendamiento")
@@ -216,6 +223,11 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
+    }
+
+    @Entonces("visualizo en pantalla el mensaje de exito de la venta finalizada")
+    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaFinalizada() {
+        altaFijaMovilRegistroStep.validarVentaFinalizada();
     }
 
 

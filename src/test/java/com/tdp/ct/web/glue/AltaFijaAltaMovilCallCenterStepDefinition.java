@@ -48,6 +48,11 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     altaFijaAltaMovilCallCenterStep.clickConsultarCobertura();
   }
 
+  @Y("presiono el boton consultar cobertura nueva")
+  public void presiono_el_boton_Consultar_covertura_nueva() {
+    altaFijaAltaMovilCallCenterStep.clickConsultarCoberturaNueva();
+  }
+
   @Y("selecciono tipo de oferta")
   public void selecciono_tipo_de_oferta() {
     altaFijaAltaMovilCallCenterStep.scrollUp();
