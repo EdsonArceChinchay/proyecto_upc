@@ -103,7 +103,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         //UtilWeb.waitForSeconds(4);
         esperaProgresiva(driver(), 3,5,btnOpcionPlanNuevo);
         //waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
-        btnOpcionPlanNuevo.click()
+        btnOpcionPlanNuevo.click();
         UtilWeb.waitForSeconds(1);
     }
     public void cerrarPopupCU(){

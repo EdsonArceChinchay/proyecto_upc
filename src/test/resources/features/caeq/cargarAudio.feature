@@ -25,12 +25,14 @@
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "jpachaot"
       Y        ingreso el password "$t3l3f0n1c4$"
+      E        ingreso el captcha
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        me dirijo a la bandeja de Back Office
       Y        busco por el documento "1075255161"
       Y        selecciono la solicitud "FE1000142653"
       Y        cargo el audio en la web
+      Y        apruebo la solicitud
 
 
 
