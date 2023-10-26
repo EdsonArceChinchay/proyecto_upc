@@ -32,4 +32,8 @@ public class BandejaBackOfficeStep {
     public void cargarAudio(){
         page.bandejaBackOfficePage().cargarAudio();
     }
+    @ScreenShotAfter
+    public void aprueboSolicitud() {
+        page.bandejaBackOfficePage().aprueboSolicitud();
+    }
 }

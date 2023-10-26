@@ -33,4 +33,9 @@ public class BandejaBackOfficeStepDefinition {
     public void seleccionoLaSolicitud(String solicitud) {
         bandejaBackOfficeStep.seleccionoSolicitud(solicitud);
     }
+
+    @Y("apruebo la solicitud")
+    public void aprueboSolicitud() {
+        bandejaBackOfficeStep.aprueboSolicitud();
+    }
 }
