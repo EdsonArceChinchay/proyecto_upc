@@ -154,10 +154,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(30);
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(5);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
