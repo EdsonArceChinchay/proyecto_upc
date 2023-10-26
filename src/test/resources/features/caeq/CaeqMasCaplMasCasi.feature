@@ -24,6 +24,7 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "<tiendaAsesor>"
