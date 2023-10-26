@@ -77,13 +77,8 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("valido que me encuentre en la pantalla agendamiento")
     public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
-        if(Addons.esEntornoProductivo())
-        {
-            System.out.println("Entorno Productivo");
 
-        } else{
             altaFijaMovilRegistroStep.validarPantallaAgendamiento();
-        }
     }
 
     @Y("escojo un turno de agendamiento")
