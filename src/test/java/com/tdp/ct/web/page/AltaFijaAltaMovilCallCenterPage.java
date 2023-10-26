@@ -179,6 +179,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         btnConsultarCobertura.click();
     }
 
+    public void btnConsultarCoberturaNueva() {
+        UtilWeb.waitForSeconds(2);
+        js().scrollElementTop(btnConsultarCobertura);
+        btnConsultarCobertura.click();
+    }
+
     public void btnConfirmarUbicacion() {
         esperaProgresiva(driver(), 5, 5, btnConfirmarUbicacion);
         btnConfirmarUbicacion.click();

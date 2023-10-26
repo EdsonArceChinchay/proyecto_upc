@@ -12,9 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -107,6 +110,46 @@ public class LoginBerserkerPage extends WebBase {
     public void writePassword(String pass) {
         type(inputPassword, pass);
         UtilWeb.waitForSeconds(1);
+    }
+
+    public void writePasswordProduccion() {
+
+        String filePath = "src/test/resources/login.properties"; // Reemplaza con la ruta real
+
+        // Crea un objeto Properties
+        Properties properties = new Properties();
+
+        try {
+            // Carga el archivo de propiedades
+            FileInputStream fileInput = new FileInputStream(filePath);
+            properties.load(fileInput);
+            fileInput.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(Addons.esEntornoProductivo()){
+            // Obtiene el valor de la propiedad "produccion.password"
+            String produccionPassword = properties.getProperty("produccion.password");
+
+            // Imprime el valor obtenido
+            System.out.println("Valor de produccion.password: " + produccionPassword);
+
+            type(inputPassword, produccionPassword);
+            UtilWeb.waitForSeconds(1);
+        }else{
+            // Obtiene el valor de la propiedad "produccion.password"
+            String certificacionPassword = properties.getProperty("certificacion.password");
+
+            // Imprime el valor obtenido
+            System.out.println("Valor de certificacion.password: " + certificacionPassword);
+
+            type(inputPassword, certificacionPassword);
+            UtilWeb.waitForSeconds(1);
+        }
+
+
+
     }
 
     public void clickBtnContinuarHaciaHome() {
