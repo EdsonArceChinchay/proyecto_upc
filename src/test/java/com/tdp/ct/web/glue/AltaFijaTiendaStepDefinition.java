@@ -28,6 +28,11 @@ public class AltaFijaTiendaStepDefinition {
     altaFijaTiendaStep.seleccionarListaPLanFija(planFija);
   }
 
+  @Y("selecciono el tipo de plan fija elegido {string}")
+  public void selecciono_el_tipo_de_plan_fija_elegido(String planFija){
+    altaFijaTiendaStep.seleccionarListaPLanFijaMultiple(planFija);
+  }
+
   @Y("doy clic para validar contrato hogar")
   public void doy_clic_para_validar_contrato_hogar(){
     altaFijaMovilRegistroStep.clicValidarContrato();
@@ -36,6 +41,14 @@ public class AltaFijaTiendaStepDefinition {
   @Y("selecciono el plan {string}")
   public void selecciono_el_plan(String nombrePlan){
     altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
+    altaFijaTiendaStep.clickSeleccionarOferta();
+    altaFijaTiendaStep.clickListaBotones();
+
+  }
+
+  @Y("selecciono el plan para envio orden {string}")
+  public void selecciono_el_plan_nuevo(String nombrePlan){
+    altaFijaTiendaStep.seleccionarListaOfertasNuevo(nombrePlan);
     altaFijaTiendaStep.clickSeleccionarOferta();
     altaFijaTiendaStep.clickListaBotones();
 

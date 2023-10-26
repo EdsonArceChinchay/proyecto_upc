@@ -165,7 +165,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void moverToElementIniciarRegistro() {
-        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,3,buttonIniciarRegistro);
         js().scrollElementTop(buttonIniciarRegistro);
     }
 
@@ -748,6 +748,23 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //waitUntilElementIsVisible(scrollorden, 120);
         esperaProgresiva(driver(),3,15,scrollorden);
         js().scrollElementTop(scrollorden);
+        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
+        revisarModalError(driver());
+        //modalError(3, btnReintentar, "Click al elemento Reintentar");
+        boolean existe = false;
+        //scrollByJavaScriptToPrincipio();
+        esperaProgresiva(driver(),3,15,msjExitoso);
+        existe = waitUntilElementIsVisible(msjExitoso, 50).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        return existe;
+    }
+
+    public boolean validarVentaFinalizada() {
+        //waitUntilElementIsVisible(scrollorden, 120);
+        //esperaProgresiva(driver(),3,15,scrollorden);
+        //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         //modalError(3, btnReintentar, "Click al elemento Reintentar");

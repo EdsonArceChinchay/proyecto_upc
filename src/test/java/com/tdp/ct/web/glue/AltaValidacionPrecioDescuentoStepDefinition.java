@@ -5,7 +5,10 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Objects;
+
+import static com.tdp.ct.web.step.AltaValidacionPrecioDescuentoStep.getValuesFromDataTable;
 
 public class AltaValidacionPrecioDescuentoStepDefinition {
 
@@ -73,6 +76,25 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
     @Y("escojo el plan {string}")
     public void escojoPlan(String plan) {
         altaValidacionPrecioDescuentoStep.escojoPlan(plan);
+    }
+
+    @Y("selecciono los planes fijos:")
+    public void escojoPlanFijo(DataTable dataTable) {
+        List<String> escenario = getValuesFromDataTable(dataTable, "escenario");
+        List<String> planes = getValuesFromDataTable(dataTable, "nombrePlan");
+        List<String> precios = getValuesFromDataTable(dataTable, "precio");
+        List<String> beneficioPlanes = getValuesFromDataTable(dataTable, "beneficioPlan");
+        List<String> descuentosPlanes = getValuesFromDataTable(dataTable, "descuentoPlan");
+
+        altaValidacionPrecioDescuentoStep.escojoPlanMultiple(escenario,planes,precios,beneficioPlanes,descuentosPlanes);
+
+    }
+
+    @Y("Doy click en el boton cerrar")
+    public void cerrarVentana() {
+
+        altaValidacionPrecioDescuentoStep.cerrarVentana();
+
     }
 
 }

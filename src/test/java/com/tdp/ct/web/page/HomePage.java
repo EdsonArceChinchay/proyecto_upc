@@ -2,26 +2,21 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static java.awt.event.KeyEvent.*;
 
 public class HomePage extends WebBase {
-
+    @FindBy(xpath = "/html/body/app-root/app-inicio/div/div/div[1]/div[1]/div/img")
+    protected WebElement backOfficeButton;
     @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[3]/div[1]")
     protected WebElement boton01;
 
@@ -163,8 +158,6 @@ public class HomePage extends WebBase {
             }
         }
         Assertions.assertTrue(existe, "no se encontro: " + tipoDocEsperado);
-
-
     }
 
     public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
@@ -178,5 +171,13 @@ public class HomePage extends WebBase {
 
     public void clickXPopUpCU() {
         waitUntilElementIsClickable(botonX,20).click();
+    }
+
+    public void clickBackOffice() {
+        click(backOfficeButton);
+        waitUntilElementIsVisible(find().getElementByXPath("/html/body/app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"),5);
+    }
+    public void buscarOrden() {
+
     }
 }

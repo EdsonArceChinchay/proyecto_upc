@@ -53,6 +53,10 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().btnConsultarCobertura();
     }
 
+    public void clickConsultarCoberturaNueva() {
+        page.altaFijaAltaMovilCallCenterPage().btnConsultarCoberturaNueva();
+    }
+
     public void seleccionarTipoEntrega(String tipEntrega) {
         page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
     }

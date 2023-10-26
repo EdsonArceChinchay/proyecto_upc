@@ -22,7 +22,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
-    @FindBy(css = "div:nth-child(1) > app-card-line")
+    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[4]/div[1]/app-card-line")
+    @FindBy(xpath = "//app-card-line[1]")
     protected WebElement cartillaHogar;
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
@@ -79,7 +80,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement cerrarCU;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
+
         esperaProgresiva(driver(), 3,5,cartillaHogar);
+
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
 
@@ -215,6 +218,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(1);
                 break;
         }
+        revisarModalError(driver());
 
     }
 
