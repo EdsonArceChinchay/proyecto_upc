@@ -21,7 +21,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
-    @FindBy(css = "div:nth-child(1) > app-card-line")
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[4]/div[3]/app-card-mt")
     protected WebElement cartillaHogar;
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;

@@ -28,8 +28,8 @@
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        me dirijo a la bandeja de Back Office
-      Y        busco por el documento "1042465138"
-      Y        selecciono la solicitud "FE1000142116"
+      Y        busco por el documento "1075255161"
+      Y        selecciono la solicitud "FE1000142653"
       Y        cargo el audio en la web
 
 
