@@ -83,16 +83,22 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
 
+    @FindBy(css = "span.c-anim-btn")
+    protected WebElement btnInicio;
+
     public String getMsgErrorCredential() {
         return msgErrorCredential.getText().trim().toLowerCase();
     }
 
+    public void regresarPaginaInicio(){
+        esperaProgresiva(driver(),3,5,btnInicio);
+        WebElement divElement = btnInicio.findElement(By.xpath("./.."));
+        divElement.click();
+        esperaProgresiva(driver(),3,5,msgHome);
+    }
     public void clickBtnIniciarSesion() {
-        //waitUntilElementIsVisible(btnIniciarSesion, 10);
-        Addons.esperaProgresiva(driver(),10,5,btnIniciarSesion);
+        Addons.esperaProgresiva(driver(),3,5,btnIniciarSesion);
         click(btnIniciarSesion);
-        Addons.esperaProgresiva(driver(),10,5,tipoUsuario);
-        //waitUntilElementIsVisible(tipoUsuario, 5);
     }
 
     public void selectTipoUsuario(String usuario) {

@@ -23,14 +23,16 @@
       Dado     que abro la pagina de movistar
       Cuando   presiono el boton Iniciar Sesion
       Y        selecciono el tipo de usuario "usuario externo"
-      Y        ingreso el usuario "jpachaot"
-      Y        ingreso el password "$t3l3f0n1c4$"
+      Y        ingreso el usuario "vsiguass"
+      Y        ingreso el password "#o2Wy23oA1458Z%"
       E        ingreso el captcha
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        me dirijo a la bandeja de Back Office
-      Y        busco por el documento "1075255161"
-      Y        selecciono la solicitud "FE1000142653"
+      #Dado regreso a la pagina de inicio
+      Y        busco por el documento "1075255158"
+      Y        selecciono la solicitud "FE1000142686"
+     #Y        selecciono la solicitud
       Y        cargo el audio en la web
       Y        apruebo la solicitud
 

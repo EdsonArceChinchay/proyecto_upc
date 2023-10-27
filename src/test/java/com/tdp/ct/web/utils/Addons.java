@@ -355,14 +355,7 @@ public class Addons {
                 }
 
         }
-        public static String obtenerRutaAbsoluta(String sRuta) {
-                File archivo = new File(sRuta);
-                if (archivo != null) {
-                        return archivo.getAbsolutePath().toString();
-                } else {
-                        return null;
-                }
-        }
+
         public static boolean esEntornoProductivo(){
                 String env = System.getProperty("environment");
                 System.out.println("Enviroment: " + env);

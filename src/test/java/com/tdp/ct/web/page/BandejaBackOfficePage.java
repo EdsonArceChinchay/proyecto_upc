@@ -11,7 +11,7 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.obtenerRutaAbsoluta;
+import static com.tdp.ct.web.utils.Helper.obtenerRutaAbsoluta;
 
 public class BandejaBackOfficePage extends WebBase{
     @FindBy(xpath = "/html/body/app-root/app-success-simple/div[2]/button")
