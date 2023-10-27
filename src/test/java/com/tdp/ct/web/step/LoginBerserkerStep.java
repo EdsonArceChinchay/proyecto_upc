@@ -143,8 +143,8 @@ public class LoginBerserkerStep {
     public void validarPrecioDescuentoTV(String pDescTV) {
         page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
     }
-    
 
-
-
+    public void regresarPaginaInicio() {
+        page.loginBerserkerPage().regresarPaginaInicio();
+    }
 }

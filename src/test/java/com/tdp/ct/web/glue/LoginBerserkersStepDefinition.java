@@ -37,6 +37,10 @@ public class LoginBerserkersStepDefinition {
     @Autowired
     private WebDriverManager manager;
 
+    @Dado("regreso a la pagina de inicio")
+    public void regresoPaginaInicio() throws InterruptedException{
+        loginBerserkerStep.regresarPaginaInicio();
+    }
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
@@ -50,7 +54,7 @@ public class LoginBerserkersStepDefinition {
             }
         }
         manager.navigateTo(urlMovistar);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @Cuando("presiono el boton Iniciar Sesion")

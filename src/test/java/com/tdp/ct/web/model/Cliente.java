@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 public class Cliente {
     @Setter @Getter private boolean clienteNuevo;
     @Setter @Getter String clienteTest;
+    @Setter @Getter String numeroSolicitud;
 
     public Cliente(){
 

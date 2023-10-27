@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
@@ -80,6 +81,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
 
+        esperaProgresiva(driver(), 3,5,cartillaHogar);
+
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
 
@@ -87,18 +90,21 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
         revisarModalError(driver());
 
-        waitUntilElementIsClickable(cartillaHogar, 40).click();
+        //waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
-        UtilWeb.waitForSeconds(10);
+        cartillaHogar.click();
+        UtilWeb.waitForSeconds(1);
 
     }
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
-
-        UtilWeb.waitForSeconds(4);
-        waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
-        UtilWeb.waitForSeconds(4);
+        revisarModalError(driver());
+        //UtilWeb.waitForSeconds(4);
+        esperaProgresiva(driver(), 3,5,btnOpcionPlanNuevo);
+        //waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
+        btnOpcionPlanNuevo.click();
+        UtilWeb.waitForSeconds(1);
     }
     public void cerrarPopupCU(){
 //        UtilWeb.waitForSeconds(1);
@@ -148,10 +154,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(30);
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(5);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
