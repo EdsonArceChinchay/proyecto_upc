@@ -11,6 +11,7 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.obtenerRutaAbsoluta;
 
 public class BandejaBackOfficePage extends WebBase{
     @FindBy(xpath = "/html/body/app-root/app-success-simple/div[2]/button")
@@ -59,7 +60,7 @@ public class BandejaBackOfficePage extends WebBase{
 
     public void cargarAudio() {
         if(etiquetaCargando.getText().equals("PENDIENTE AUDIO")){
-            fileRuta.sendKeys("C://Almacenar//Audio//FE-1000044792.mp3");
+            fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(1);
             esperaProgresiva(driver(),3,5,etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente","CARGADO",etiquetaCargado.getText());
