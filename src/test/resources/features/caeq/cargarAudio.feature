@@ -22,6 +22,15 @@
       Dado que abro la pagina de movistar
       Dado     que abro la pagina de movistar
       Cuando   presiono el boton Iniciar Sesion
+      Y        selecciono el tipo de usuario "usuario interno"
+      Y        ingreso el usuario "csalvatierrac"
+      Y        ingreso el password "Tele#HxzE&a61"
+      Y        ingreso el captcha
+      Y        presiono el boton Continuar hacia el home
+      Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+      Y        me dirijo a la bandeja de Back Office
+      Y        busco por el documento "1100000815"
+      Y        selecciono la solicitud "FE1030881872"
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "vsiguass"
       Y        ingreso el password "#o2Wy23oA1458Z%"
