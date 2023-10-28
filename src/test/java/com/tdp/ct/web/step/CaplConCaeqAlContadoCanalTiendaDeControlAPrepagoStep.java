@@ -21,7 +21,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnRenovarPlan() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
     }

@@ -279,6 +279,8 @@ public class AltaFijaMovilRegistroStep {
     }
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
-
+    }
+    public void guardoNumeroSolicitud() {
+        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
     }
 }

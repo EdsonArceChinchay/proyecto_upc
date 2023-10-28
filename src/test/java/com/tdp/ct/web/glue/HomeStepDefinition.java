@@ -25,6 +25,7 @@ public class HomeStepDefinition {
 
     @Y("ingreso el documento {string}")
     public void ingresoElDocumento(String documento) {
+        cliente.setNumeroDocumento(documento);
         homeStep.ingresoDocumento(documento);
     }
 

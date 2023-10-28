@@ -1,8 +1,10 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import groovy.xml.StreamingDOMBuilder;
 import io.cucumber.datatable.DataTable;
 import org.apache.commons.math3.analysis.function.Add;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
@@ -10,6 +12,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.Duration;
 import java.util.List;
@@ -18,9 +21,11 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-
+    @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
+    protected WebElement numeroSolicitud;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
@@ -104,6 +109,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(css =".text-info")
     protected WebElement nombreClienteUserData;
 
+    @Autowired
+    private Cliente cliente;
 
     public boolean validarPantallaIngresarDireccion() {
         esperaProgresiva(driver(),2,5,titleLugarInstalacion);
@@ -378,11 +385,23 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         esperaProgresiva(driver(),5,5,element);
-        waitUntilElementIsVisible(element, 50);
+        waitUntilElementIsVisible(element, 30);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
-
+    public void guardoNumeroSolicitud() {
+        String textoNumeroSolicitud = numeroSolicitud.getText();
+        String numeroSolicitud = extraerNumeroSolicitud(textoNumeroSolicitud);
+        if (numeroSolicitud != null){
+            if (cliente == null){
+                cliente = new Cliente();
+            }
+            cliente.setNumeroSolicitud(numeroSolicitud);
+            System.out.println("Número de solicitud: "+numeroSolicitud);
+        }else{
+            System.out.println("No se encontro número de solicitud en el contrato.");
+        }
+    }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         esperaProgresiva(driver(),3,10,element);

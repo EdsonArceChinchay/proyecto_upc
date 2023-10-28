@@ -62,26 +62,22 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void validarOfertasSugeridasView(String title) {
-        //clickBtnReintentar();
-        //clickBtnReintentar();
-        //clickBtnReintentar();
         revisarModalError(driver());
 
-        //waitUntilElementIsVisible(titleOfertas, 300);
         esperaProgresiva(driver(), 3, 5, titleOfertas);
-        UtilWeb.waitForSeconds(4);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
 
     public void scrollToBtnPlanNuevo() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(titleOfertas);
     }
 
     public void clickBtnPlanNuevo() {
-        waitUntilElementIsVisible(btnPlanNuevo, 100);
+       // waitUntilElementIsVisible(btnPlanNuevo, 100);
+        esperaProgresiva(driver(),3,5,btnPlanNuevo);
         click(btnPlanNuevo);
         UtilWeb.waitForSeconds(2);
     }

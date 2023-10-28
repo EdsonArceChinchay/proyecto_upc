@@ -11,10 +11,10 @@ public class Cliente {
     @Setter @Getter private boolean clienteNuevo;
     @Setter @Getter String clienteTest;
     @Setter @Getter String numeroSolicitud;
+    @Setter @Getter String numeroDocumento;
 
     public Cliente(){
 
     }
-
 
 }

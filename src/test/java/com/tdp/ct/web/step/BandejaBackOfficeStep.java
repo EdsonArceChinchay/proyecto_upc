@@ -1,6 +1,7 @@
 package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.CaptchaBase.Util;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.checkerframework.checker.units.qual.A;
@@ -11,6 +12,8 @@ public class BandejaBackOfficeStep {
 
     @Autowired
     private StepPages page;
+    @Autowired
+    private Cliente cliente;
 
     @ScreenShotAfter
     public void clickBackOffice() {
@@ -21,8 +24,8 @@ public class BandejaBackOfficeStep {
         page.bandejaBackOfficePage().ingresoDocumento(documento);
         page.bandejaBackOfficePage().buscoDocumento();
     }
-    public void seleccionoSolicitud(String solicitud){
-        page.bandejaBackOfficePage().seleccionoSolicitud(solicitud);
+    public void seleccionoSolicitud(String numeroSolicitud){
+        page.bandejaBackOfficePage().seleccionoSolicitud(numeroSolicitud);
     }
     @ScreenShotAfter
     public void abrirPopUpCargaAudio() {
@@ -33,7 +36,7 @@ public class BandejaBackOfficeStep {
         page.bandejaBackOfficePage().cargarAudio();
     }
     @ScreenShotAfter
-    public void aprueboSolicitud() {
+    public void aprueboSolicitud() throws InterruptedException {
         page.bandejaBackOfficePage().aprueboSolicitud();
     }
 }

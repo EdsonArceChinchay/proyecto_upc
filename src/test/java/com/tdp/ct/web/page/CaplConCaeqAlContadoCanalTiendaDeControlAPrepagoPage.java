@@ -15,7 +15,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy(xpath = "(//*[@class=\"detailHogar\"])")
+    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[2]")
     protected WebElement btnCardPlanActual;
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
@@ -50,7 +50,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnCardPlanActual() {
-        UtilWeb.waitForSeconds(2);
 
         esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
         js().scrollElementTop(btnCardPlanActual);
@@ -59,13 +58,10 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnRenovarPlan() {
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //modalError(3, btnReintentar, "Click al elemento Reitentar");
-        //waitUntilElementIsVisible(btnRenovarPlan, 10);
-        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        js().scrollElementTop(btnRenovarPlan);
         click(btnRenovarPlan);
-        //UtilWeb.waitForSeconds(10);
     }
 
     public void clickSelectOferta() {

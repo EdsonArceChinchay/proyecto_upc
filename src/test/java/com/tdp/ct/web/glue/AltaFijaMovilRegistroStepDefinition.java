@@ -259,4 +259,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
         altaFijaMovilRegistroStep.clicConfirmarCliente();
     }
 
+    @Y("guardo el numero de solicitud")
+    public void guardoElNumeroDeSolicitud() { altaFijaMovilRegistroStep.guardoNumeroSolicitud();
+    }
 }
