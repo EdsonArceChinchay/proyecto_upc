@@ -77,11 +77,6 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.writePassword(pass);
     }
 
-    @Y("ingreso la contraseña")
-    public void ingresoElPasswordProduccion() {
-        loginBerserkerStep.writePasswordProduccion();
-    }
-
     @Y("presiono el boton Continuar hacia el home")
     public void presionoElBotonContinuarHaciaElHome() {
         loginBerserkerStep.clickBtnContinuarHaciaHome();

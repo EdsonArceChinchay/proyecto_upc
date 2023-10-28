@@ -263,13 +263,6 @@ public class AltaFijaMovilRegistroStep {
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void validarVentaFinalizada() {
-        Assert.assertTrue("No mostro pantalla de venta exitosa",
-                page.altaFijaMovilRegistroPage().validarVentaFinalizada());
-    }
-
     public void agregoSVAINTERNET(String svaInternet) {
         page.altaFijaMovilRegistroPage().agregoSVAINTERNET(svaInternet);
     }

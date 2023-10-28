@@ -81,14 +81,11 @@ public class HomePage extends WebBase {
     public void clickBotonConsultar(){
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
-        //UtilWeb.waitForSeconds(1);
         btnConsultar.click();
-        //click(btnconsultar);
-        //waitUntilElementIsVisible(boton01,20);
 
         esperaProgresiva(driver(),3,5,boton01);
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(1);
+        //UtilWeb.waitForSeconds(1);
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {

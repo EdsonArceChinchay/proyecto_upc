@@ -100,12 +100,12 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     #Ingresar el beneficio aplicado al plan, en caso no se valide el beneficio dejar vacio.
     #Ingresar el Descuento aplicado al plan, en caso no se valide el descuento dejar vacio.
     #El campo ID puede ser llenado en caso de que se encunetre activo se utilizara en caso contrario se saltara el paso.
-  Esquema del escenario: Validar planes Beneficios y Descuento Mono Cliente Nuevo Existente - Documento CE
+  Esquema del escenario: Validar planes Beneficios y Descuento Mono Cliente Nuevo/Existente - Documento CE
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso la contraseña
-    Y        ingreso el captcha
+    Y        ingreso el password "<password>"
+    #Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -121,20 +121,18 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar para la instalacion
-    #  | mz | lote | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
-    #  | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura nueva
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija elegido "<tipoPlan>"
-    Y        selecciono los planes fijos:
-      |   escenario | nombrePlan                        | precio                    | beneficioPlan                     | descuentoPlan |
-  | 020 Mono| Internet Movistar RA S23 600 MB   | S/ 169.9                  | Bono 1000 Mbps/500 Mbps x 6 meses  | DESCUENTO 1              |
-  | 020 Mono| Internet Movistar RA S23 400 MB   | S/ 99.9                  | Bono 200 Mbps/200 Mbps x 6 meses | DESCUENTO 2             |
-    Y        Doy click en el boton cerrar
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija elegido "<tipoPlan>"
-    Y        selecciono el plan para envio orden "<nombrePlan>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        escojo el plan "<nombrePlan>"
+    Y        Valido que el beneficio sea "<beneficioPlan>"
+    Y        Valido que el descuento aplicado sea "<descuentoPlan>"
+    Y        selecciono el boton Linea Nueva
+    Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
+    Y        valido el precio establecido sea "<precio>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -150,7 +148,6 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-
-      | tipoUsuario     | userName | msgHome    | tipoDocumento | documento  | nombre              | apellido           | genero    | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                      | precio   | tipoPlan | beneficioPlan                     | descuentoPlan | Call ID |
-      | usuario externo | jpachaot | Bienvenid@ | CE            | 856575424  | MCONewFirstName1405 | MCONewLastName1405 | Femenino  | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | Internet Movistar RA S23 100 MB | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               | 1234    |
-      #| usuario interno | jpachaot | Bienvenid@ | CE            | 1022233148 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | Internet Movistar RA S23 1000 MB | S/ 79.90 | Mono     | Bono 200 Mbps/200 Mbps x 6 meses  |               | 123     |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | nombre              | apellido           | genero    | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                      | precio   | tipoPlan | beneficioPlan                     | descuentoPlan | Call ID |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1022233148 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | Internet Movistar RA S23 100 MB | S/ 79.90 | Mono     | Bono 200 Mbps/200 Mbps x 6 meses  |               | 123     |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 856575424  | MCONewFirstName1405 | MCONewLastName1405 | Femenino  | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | Internet Movistar RA S23 200 MB | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               | 1234    |

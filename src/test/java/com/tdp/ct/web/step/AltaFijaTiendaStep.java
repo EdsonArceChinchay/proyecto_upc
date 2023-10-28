@@ -30,20 +30,8 @@ public class AltaFijaTiendaStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void seleccionarListaPLanFijaMultiple(String planFija) {
-        page.altaFijaTiendaPage().listaPlanFijaMultiple(planFija);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
     public void seleccionarListaOfertas(String ofertas) {
         page.altaFijaTiendaPage().listaOfertas(ofertas);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void seleccionarListaOfertasNuevo(String ofertas) {
-        page.altaFijaTiendaPage().listaOfertasNuevo(ofertas);
     }
 
     @ScreenShotBefore

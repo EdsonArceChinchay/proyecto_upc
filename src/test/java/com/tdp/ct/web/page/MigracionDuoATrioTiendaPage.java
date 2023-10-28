@@ -48,7 +48,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
     protected WebElement btnActualizarDir;
-
+    //*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
     protected WebElement btnBuscar;
 
@@ -58,6 +58,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
 
+    @FindBy(xpath = "//*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]")
+    protected WebElement btnMantenerPlan;
 
     @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
@@ -165,69 +167,62 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
     public void doyClickEnEnElBoton(String btn) {
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-
-        //String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
-        //btnConfirmarDir
-        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
         revisarModalError(driver());
 
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
+            case "MANTENER PLAN":
+                esperaProgresiva(driver(), 3, 5,btnMantenerPlan);
+                js().scrollElementTop(btnMantenerPlan);
+                btnMantenerPlan.click();
+                break;
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
                 js().scrollElementTop(btnActualizarDir);
-                waitUntilElementIsClickable(btnActualizarDir, 50).click();
-                UtilWeb.waitForSeconds(1);
+                esperaProgresiva(driver(), 3, 5,btnActualizarDir);
+                btnActualizarDir.click();
                 break;
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
                 js().scrollElementTop(btnConfirmarDir);
-                waitUntilElementIsClickable(btnConfirmarDir, 50).click();
-                UtilWeb.waitForSeconds(30);//1
+                esperaProgresiva(driver(),3,5,btnConfirmarDir);
+                btnConfirmarDir.click();
                 break;
             case "BUSCAR":
                 js().scrollElementTop(btnBuscar);
-                waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(10);
+                esperaProgresiva(driver(),3,5,btnBuscar);
+                btnBuscar.click();
+
                 break;
             case "INGRESAR COORDENADAS":
                 js().scrollElementTop(btnIngCord);
-                waitUntilElementIsClickable(btnIngCord, 50).click();
-                UtilWeb.waitForSeconds(1);
+                esperaProgresiva(driver(),3,5,btnIngCord);
+                btnIngCord.click();
                 break;
             case "ENTENDIDO":
                 js().scrollElementTop(btnEntendido);
-                waitUntilElementIsClickable(btnEntendido, 50).click();
-                UtilWeb.waitForSeconds(1);
+                esperaProgresiva(driver(),3,5,btnEntendido);
+                btnEntendido.click();
                 break;
 
             case "CAMBIAR PLAN":
-                UtilWeb.waitForSeconds(5);
-//                waitUntilElementIsVisible(btnCambiarPlan, 50);
                 js().scrollElementTop(btnCambiarPlan);
-                click(btnCambiarPlan,10);
-                UtilWeb.waitForSeconds(1);
+                esperaProgresiva(driver(),3,5,btnCambiarPlan);
+                btnCambiarPlan.click();
                 break;
 
             case "RENOVAR PLAN":
                 js().scrollElementTop(btnRenovarPlan);
-                click(btnRenovarPlan,10);
-                UtilWeb.waitForSeconds(1);
+                esperaProgresiva(driver(),3,5,btnRenovarPlan);
+                btnRenovarPlan.click();
                 break;
         }
+        UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
 
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
-        //String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
-        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
-        /*clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();*/
         revisarModalError(driver());
 
         String direccionEsperada = dir.toUpperCase().trim();

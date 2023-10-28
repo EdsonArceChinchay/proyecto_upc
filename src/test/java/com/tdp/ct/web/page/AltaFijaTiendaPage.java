@@ -3,18 +3,13 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -50,6 +45,7 @@ public class AltaFijaTiendaPage extends WebBase {
     protected WebElement nombresCompletosCliente;
 
     @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva') or @class='btnCard' and contains(text(),'Línea Nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
+
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
@@ -57,9 +53,6 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
-
-    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
-    protected WebElement btnLeft;
 
     //@FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
 
@@ -93,14 +86,6 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
-    }
-
-    public void listaPlanFijaMultiple(String planFija) {
-        //modalError(5, btnReintentar, "Click al elemento Reitentar");
-        modalErrorMultiple(5, btnReintentar, "Click al elemento Reitentar");
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(esperalistaPlanFija, 1);
-        clickElementInAList(listaPlanFija, planFija);
     }
 
     public void listaOfertas(String planOfertas) {
@@ -156,287 +141,6 @@ public class AltaFijaTiendaPage extends WebBase {
         }
     }
 
-    public void listaOfertasNuevo(String planOfertas) {
-//        modalError(10,btnReintentar,"Click al elemento Reitentar");
-//        modalError(10,btnReintentar,"Click al elemento Reitentar");
-
-        //WebElement element = listaOfertas.get(0);
-        //String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
-        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
-        revisarModalError(driver());
-
-        for (int i = 0; i < 2; i++) {
-            boolean elementoExistente;
-            UtilWeb.waitForSeconds(1);
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            if (elementoExistente) {
-                System.out.println("dio click right");
-                click(btnRight);
-                UtilWeb.waitForSeconds(2);
-            }
-        }
-
-        UtilWeb.waitForSeconds(2);
-        boolean elementoExistenteRight;
-        boolean elementoExistenteleft;
-        elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-
-        int contador = 0;
-        int contadorMax =4;
-        while (elementoExistenteRight && contador<contadorMax)
-        {
-            if (btnRight != null) {
-                click(btnRight);
-                UtilWeb.waitForSeconds(2);
-                System.out.println("dio click right while");
-            } else {
-                System.out.println("El elemento btnRight no existe o es nulo.");
-            }
-
-            UtilWeb.waitForSeconds(2);
-            elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            contador++;
-        }
-        UtilWeb.waitForSeconds(2);
-        contador = 0;
-        elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
-        while (elementoExistenteleft && contador<contadorMax)
-        {
-
-            if (btnLeft != null) {
-                click(btnLeft);
-                UtilWeb.waitForSeconds(2);
-                System.out.println("dio click left while");
-            } else {
-                System.out.println("El elemento btnleft no existe o es nulo.");
-            }
-
-            UtilWeb.waitForSeconds(2);
-            elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
-            contador++;
-        }
-
-        String ofertaEsperada = planOfertas.trim().toUpperCase();
-        System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
-        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-        UtilWeb.waitForSeconds(3);
-        boolean encontroElemento = false;
-        //-------------------------------------------------------//
-        for (int i = 0; i < listaOfertas.size(); i++) {
-            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-            if (ofertaObtenida.contains(ofertaEsperada)) {
-                encontroElemento = true;
-                UtilWeb.waitForSeconds(2);
-                click(listaOfertas.get(i));
-                break;
-            }
-            if (i == 2 || i == 5 || i == 8) {
-                boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-                if (elementoExistente) {
-                    btnRight.click();
-                    UtilWeb.waitForSeconds(1);
-                }
-            }
-        }
-        if (!encontroElemento && listaOfertas.size() > 0) {
-            System.out.println("No encontro elemento en la lista");
-            UtilWeb.waitForSeconds(2);
-            int cont = listaOfertas.size() - 1;
-            click(listaOfertas.get(cont));
-        }
-        Assert.assertTrue(encontroElemento);
-    }
-
-    public void listaOfertasMultiple(List<String> escenario, List<String> planes, List<String> precios, List<String> beneficiosPlan, List<String> descuentosPlan) {
-
-        revisarModalError(driver());
-
-        System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
-
-        UtilWeb.waitForSeconds(3);
-        boolean encontroElemento = false;
-        //-------------------------------------------------------//
-
-        String escenarioNombre = escenario.get(0).trim().toUpperCase();
-
-        for (int j = 0; j < planes.size(); j++) {
-            String ofertaEsperada = planes.get(j).trim().toUpperCase();
-            String precioEsperado = precios.get(j).trim().toUpperCase();
-            String beneficioEsperado = beneficiosPlan.get(j).trim().toUpperCase();
-            String descuentoEsperado = descuentosPlan.get(j).trim().toUpperCase();
-            System.out.println("Busqueda del Plan: " + ofertaEsperada);
-            boolean encontroPrecio = false;
-            boolean encontroBeneficio = false;
-            boolean encontroDescuentos = false;
-
-            for (int i = 0; i < listaOfertas.size(); i++) {
-                String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-                System.out.println("Entro al for de las lista de ofertas");
-                System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-                if (ofertaObtenida.contains(ofertaEsperada)) {
-                    encontroElemento = true;
-                    UtilWeb.waitForSeconds(2);
-                    click(listaOfertas.get(i));
-                    scrollAndPerformAction(driver(),buttonSeleccionarOferta,ofertaEsperada,escenarioNombre);
-                    UtilWeb.waitForSeconds(2);
-
-                    WebElement container = driver().findElement(By.cssSelector("div.offert-card-container.select"));
-
-                    // Encuentra todos los elementos <div> descendientes dentro del contenedor
-                    List<WebElement> divElements = container.findElements(By.tagName("div"));
-                    System.out.println("Textos: ");
-                    for (WebElement divElement : divElements) {
-                        // Imprime o almacena el contenido de cada elemento <div>
-
-                        String textoCodigo = divElement.getText().trim().toUpperCase();
-                        System.out.println(textoCodigo);
-
-                        if (textoCodigo.contains(precioEsperado))
-                        {
-                            encontroPrecio = true;
-                        }
-
-                        if (textoCodigo.contains(beneficioEsperado))
-                        {
-                            encontroBeneficio = true;
-                        }
-
-                        if (textoCodigo.contains(descuentoEsperado))
-                        {
-                            encontroDescuentos = true;
-                        }
-
-                    }
-                    break;
-                }
-                if (i == 2 || i == 5 || i == 8) {
-                    boolean elementoExistente;
-                    elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-                    if (elementoExistente) {
-                        btnRight.click();
-                        UtilWeb.waitForSeconds(1);
-                    }
-                }
-            }
-
-            System.out.println("---------Inicia Validacion para el Plan: "+ ofertaEsperada +" ---------");
-
-            if(encontroPrecio)
-            {
-                System.out.println("El Precio " + precioEsperado + " fue ENCONTRADO.");
-
-            } else{
-
-                System.out.println("El Precio " + precioEsperado + " NO FUE ENCONTRADO.");
-
-            }
-
-            if(encontroBeneficio)
-            {
-                System.out.println("El Beneficio " + beneficioEsperado + " fue ENCONTRADO.");
-
-            } else{
-
-                System.out.println("El Beneficio " + beneficioEsperado + " NO FUE ENCONTRADO.");
-
-            }
-
-            if(encontroDescuentos)
-            {
-                System.out.println("El Descuento " + descuentoEsperado + " fue ENCONTRADO.");
-
-            } else{
-
-                System.out.println("El Descuento " + descuentoEsperado + " NO FUE ENCONTRADO.");
-
-            }
-
-            System.out.println("---------Fin Validacion para el Plan: "+ ofertaEsperada +" ---------");
-
-
-        }
-
-        if (!encontroElemento && listaOfertas.size() > 0) {
-            System.out.println("No encontro elemento en la lista");
-            UtilWeb.waitForSeconds(2);
-            int cont = listaOfertas.size() - 1;
-            click(listaOfertas.get(cont));
-        }
-
-    }
-
-    public static void takeScreenshot(WebDriver driver, String screenshotName, String escenarioNombre) {
-        try {
-            // Tomar la captura de pantalla como un archivo
-            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-            LocalDate fechaActual = LocalDate.now();
-
-            // Crea un formateador para el formato "dd-MM-yy"
-            DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd-MM-yy");
-
-            // Formatea la fecha en el formato deseado
-            String fechaFormateada = fechaActual.format(formateador);
-
-            // Carpeta para almacenar las capturas de pantalla
-            String screenshotsDir = "screenshots" + "/" + fechaFormateada+ "/"+ escenarioNombre; // Carpeta "screenshots" en el directorio de trabajo
-            String screenshotPath = screenshotsDir + "/" + screenshotName + ".png";
-
-            // Verificar si la imagen ya existe en la ruta
-            if (Files.exists(Paths.get(screenshotPath))) {
-                // Eliminar la imagen existente
-                Files.delete(Paths.get(screenshotPath));
-            }
-
-            // Copiar el archivo de la captura de pantalla a la ruta especificada
-            FileUtils.copyFile(src, new File(screenshotPath));
-            System.out.println("Screenshot guardado en: " + screenshotPath);
-        } catch (IOException e) {
-            System.out.println("Error al tomar el screenshot: " + e.getMessage());
-        }
-    }
-
-    public static void scrollAndPerformAction(WebDriver driver, WebElement element, String screenshotName, String escenarioNombre) {
-        // Captura la posición de desplazamiento inicial
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        // Captura una screenshot al inicio
-        takeScreenshot(driver, "antes_" + screenshotName,escenarioNombre);
-
-        // Realiza el desplazamiento para llevar el elemento al final  de la vista
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-
-        // Captura una screenshot después de la acción
-        takeScreenshot(driver, "despues_" + screenshotName,escenarioNombre);
-
-        // Encontrar el elemento inicial
-        WebElement button = driver.findElement(By.cssSelector("button.button-filter.btnActive"));
-
-        // Desplazar hacia el elemento inicial
-
-        js.executeScript("arguments[0].scrollIntoView(true);", button);
-
-    }
-
-    public void cerrarVentanaOfertas() {
-        UtilWeb.waitForSeconds(1);
-        List<WebElement> elementos = driver().findElements(By.xpath("//img[@src='assets/images/ico_cerrar.svg']"));
-        System.out.println("Elementos " + elementos.size());
-        if (elementos.size() >= 3) {
-            WebElement segundoElemento = elementos.get(1); // El segundo elemento (0-indexed)
-            segundoElemento.click();
-        } else {
-            System.out.println("No se encontraron suficientes elementos.");
-        }
-        UtilWeb.waitForSeconds(1);
-    }
-
     public void seleccionarOferta() {
         /*modalError(3,btnReintentar,"Click al elemento Reitentar");
         modalError(5,btnReintentar,"Click al elemento Reitentar");
@@ -467,7 +171,6 @@ public class AltaFijaTiendaPage extends WebBase {
         //modalError(3,btnReintentar,"Click al elemento Reitentar");
         //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
-        UtilWeb.waitForSeconds(2);
         boolean elementoExistenteDias;
         elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
         if (elementoExistenteDias) {
@@ -490,7 +193,7 @@ public class AltaFijaTiendaPage extends WebBase {
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(10);
 
     }
 
@@ -624,20 +327,6 @@ public class AltaFijaTiendaPage extends WebBase {
             webElement.click();
             if (message.isEmpty()) message = "Dio click al elemento";
             System.out.println(message);
-        } else {
-            System.out.println("No se encontro el modal error");
-        }
-    }
-
-    public void modalErrorMultiple(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-            modalErrorMultiple(timeOnSeconds,webElement,message);
         } else {
             System.out.println("No se encontro el modal error");
         }
