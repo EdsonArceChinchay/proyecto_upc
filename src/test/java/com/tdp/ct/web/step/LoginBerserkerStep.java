@@ -42,11 +42,6 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().writePassword(pass);
     }
 
-    @ScreenShotAfter
-    public void writePasswordProduccion() {
-        page.loginBerserkerPage().writePasswordProduccion();
-    }
-
     @ScreenShotBefore
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {

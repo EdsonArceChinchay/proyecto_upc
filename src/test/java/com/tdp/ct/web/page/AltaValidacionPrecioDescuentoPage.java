@@ -97,39 +97,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         }
     }
 
-    public void validacionClienteNuevoProduccion(String nombre, String apellido, String genero, Integer maxReintentos) {
-
-        int contador =0;
-        boolean encontrado = false;
-        while (contador < maxReintentos && !encontrado) {
-            if (isVisible(regClienteNew)) {
-                click(nombreRegis);
-                nombreRegis.sendKeys(nombre);
-                click(apellidoRegis);
-                apellidoRegis.sendKeys(apellido);
-
-                click(generolist);
-                SearchContext context = sh().getContext(generolist);
-                String dataValue = "";
-                if (genero.equalsIgnoreCase("femenino")) {
-                    dataValue = "F";
-                } else {
-                    dataValue = "M";
-                }
-                context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-                UtilWeb.waitForSeconds(1);
-                encontrado = true;
-                click(btnCrearCliente);
-
-            }
-            UtilWeb.waitForSeconds(1);
-            System.out.println("Cantidad de veces bucle Cliente nuevo "+contador);
-            contador++;
-        }
-
-
-    }
-
     public void comprueboCliente(String nombre, String apellido) {
         String nombreGet = infCliente.getText().replace("Nombre: ", "");
         String nombreCliente = nombre + " " + apellido;
