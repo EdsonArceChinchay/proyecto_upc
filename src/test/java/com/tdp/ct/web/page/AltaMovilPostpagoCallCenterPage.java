@@ -306,6 +306,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        //No deberia usarse este metodo. Deberia usarse revisarmodalerror()
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
         if (elementoExistente) {
