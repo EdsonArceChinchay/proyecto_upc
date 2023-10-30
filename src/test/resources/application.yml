@@ -4,7 +4,7 @@
 #
 webdriver:
   browser: chrome #chrome, safari, firefox, edge
-  path: drivers/chrome/chromedriver
+  path: drivers/chrome/chromedriver.exe
   headless: on
   headless.dimension: --window-size=1400,600
   pageload: EAGER
@@ -25,7 +25,7 @@ jxray:
 ###################
 url:
   qa:
-    movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
+    movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/inicio
   dev:
       movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
   prod:

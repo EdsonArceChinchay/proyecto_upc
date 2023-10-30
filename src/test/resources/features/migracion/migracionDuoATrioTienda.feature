@@ -33,17 +33,14 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
-#    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
-    Y        selecciono el boton Mostrar ofertas
+    Y         selecciono el boton Mostrar ofertas
 #    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
-#    Y        doy click en el boton "Confirmar direccion"
     Y        doy click en el boton "Confirmar direccion"
-    Y        seleccion plan nuevo para ver las ofertas
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el plan "<planTrio>"
-    Cuando   doy clic a iniciar registro
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el plan "<nombrePlan>"
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -59,5 +56,5 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
 
     Ejemplos:
     
-      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                      |
-      | usuario externo | evillanuevag |  $Telefonica2099% | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | plan_hogar | nombrePlan                                      |
+      | usuario externo | nishuizas |  $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 16087222 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO CATV IPTV HD 1000 MBPS|

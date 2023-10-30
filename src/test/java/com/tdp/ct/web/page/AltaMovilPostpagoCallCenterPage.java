@@ -276,7 +276,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         for(WebElement elements:lista){
             System.out.println(elements.getText());
             if(elements.getText().equals(nacionalidad)){
-                System.out.println("5");
                 UtilWeb.waitForSeconds(2);
                 waitUntilElementIsClickable(elements,30).click();
             }
@@ -288,14 +287,17 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         click(generoList);
 
         System.out.println("Dio click en lista de estado");
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(5);
         SearchContext contexPlan=sh().getContext(generoList);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
         for(WebElement elements:lista){
             System.out.println("Elementos del Estado Civil: "+elements.getText());
             if(elements.getText().trim().equals(estadoCivil.trim())){
-                UtilWeb.waitForSeconds(2);
-                click(elements,30);
+                System.out.println("Son iguales "+ elements.getText().trim().equals(estadoCivil.trim()));
+                UtilWeb.waitForSeconds(5);
+                js().scrollElementTop(elements);
+                click(elements,2);
+                break;
             }
         }
     }

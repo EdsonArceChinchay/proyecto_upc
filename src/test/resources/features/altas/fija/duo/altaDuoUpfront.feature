@@ -61,7 +61,7 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Angola   | Soltero     |
+      | 01/12/1990 | Angola   | Casado    |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

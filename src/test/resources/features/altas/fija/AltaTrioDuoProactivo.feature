@@ -21,7 +21,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Dado     que abro la pagina de movistar
 
   @AltaTrioProactivo
-  Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
+  Esquema del escenario: Alta fija por tienda con CEX sin productos asociados sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -34,7 +34,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
-      | Juan    | Lopez Garcia | masculino |
+      | Juan    | Lopez Martin | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -44,9 +44,9 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+     # | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -61,22 +61,21 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Albania      |
-    Y       doy click en el boton confirmar
+    Y        completo los datos solicitados
+      | fechaNac   | nacionalidad | estado_civil |
+      | 01/12/1990 | Angola   | Casado    |
     Y        doy clic para validar contrato hogar
+    Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-   # Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Trío     | D22 50 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
-
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 0029877555 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 1000 MBPS | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
   @AltaDuoProactivo
   Esquema del escenario: Alta fija por tienda con DNI sin productos asociados sin biometria
