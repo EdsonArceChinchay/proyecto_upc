@@ -70,12 +70,16 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     protected WebElement btnRight;
 
     public void BtonOpciones() {
-        waitUntilElementIsVisible(BtnOpciones, 10);
+        revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,BtnOpciones);
+        revisarModalError(driver());
+        //waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
-        waitUntilElementIsVisible(BtnOpciones, 10);
-        System.out.println("Aqui");
-        click(BtnOpciones, 30);
-        UtilWeb.waitForSeconds(30);//10
+       // waitUntilElementIsVisible(BtnOpciones, 10);
+        System.out.println("BtonOpciones clic");
+        BtnOpciones.click();
+        //click(BtnOpciones, 30);
+        //UtilWeb.waitForSeconds(30);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
@@ -300,9 +304,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido() {
-        UtilWeb.waitForSeconds(30);
+        esperaProgresiva(driver(),3,5,btnDetallePedido);
         click(btnDetallePedido);
-        UtilWeb.waitForSeconds(2);//1
+
     }
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){

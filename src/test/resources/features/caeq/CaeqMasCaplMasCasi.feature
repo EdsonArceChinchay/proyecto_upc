@@ -71,4 +71,4 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |
+      | usuario interno | tierr24 | Telefonisss | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000815 | Postpago | Plan Movil Movistar Total ilim |

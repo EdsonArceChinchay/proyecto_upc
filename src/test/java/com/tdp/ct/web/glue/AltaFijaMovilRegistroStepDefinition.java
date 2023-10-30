@@ -248,6 +248,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     }
 
     @Y("guardo el numero de solicitud")
-    public void guardoElNumeroDeSolicitud() { altaFijaMovilRegistroStep.guardoNumeroSolicitud();
+    public void guardoElNumeroDeSolicitud() {
+        altaFijaMovilRegistroStep.guardoNumeroSolicitud();
     }
 }

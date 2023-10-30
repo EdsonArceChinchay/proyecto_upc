@@ -25,7 +25,7 @@ import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
-    protected WebElement numeroSolicitud;
+    protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
@@ -388,19 +388,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(element, 30);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
-    }
-    public void guardoNumeroSolicitud() {
-        String textoNumeroSolicitud = numeroSolicitud.getText();
-        String numeroSolicitud = extraerNumeroSolicitud(textoNumeroSolicitud);
-        if (numeroSolicitud != null){
-            if (cliente == null){
-                cliente = new Cliente();
-            }
-            cliente.setNumeroSolicitud(numeroSolicitud);
-            System.out.println("Número de solicitud: "+numeroSolicitud);
-        }else{
-            System.out.println("No se encontro número de solicitud en el contrato.");
-        }
     }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
@@ -861,5 +848,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    public String getNumeroSolicitud() {
+        String textoContrato = textoContratoCliente.getText();
+        return extraerNumeroSolicitud(textoContrato);
     }
 }

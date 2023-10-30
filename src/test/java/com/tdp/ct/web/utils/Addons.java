@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -379,6 +380,10 @@ public class Addons {
                         }
                 }
                 return false;
+        }
+
+        public static void reiniciaTimeout(WebDriver driver){
+                driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         }
 
 }

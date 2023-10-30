@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -45,7 +46,8 @@ public class HomePage extends WebBase {
     protected WebElement botonX;
 
     public void seleccionoTipoDocumento(String tipoDocumento){
-        UtilWeb.waitForSeconds(2);
+        //Addons.reiniciaTimeout(driver());
+        //UtilWeb.waitForSeconds(2);
         WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(documentoList);
         click(documentoList);

@@ -4,7 +4,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO: REFACTORIZADO 24/08/2023 OK
+##ESTADO: REFACTORIZADO
 ##CODIGO: AT-DT101
 ##GDAP: GDAP-962
 ##SPRINT CREADO:
@@ -49,7 +49,6 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        me dirijo a la bandeja de Back Office
    # Y        busco por el documento "102030401"
     Y         busco por el documento
-   # Y        selecciono la solicitud "numeroSolicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

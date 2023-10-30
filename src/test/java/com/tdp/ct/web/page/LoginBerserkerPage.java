@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -94,6 +96,7 @@ public class LoginBerserkerPage extends WebBase {
         esperaProgresiva(driver(),3,5,msgHome);
     }
     public void clickBtnIniciarSesion() {
+        Addons.reiniciaTimeout(driver());
         Addons.esperaProgresiva(driver(),3,5,btnIniciarSesion);
         click(btnIniciarSesion);
     }

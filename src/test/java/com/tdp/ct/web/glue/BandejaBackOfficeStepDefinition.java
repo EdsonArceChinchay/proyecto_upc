@@ -36,11 +36,6 @@ public class BandejaBackOfficeStepDefinition {
         bandejaBackOfficeStep.cargarAudio();
     }
 
-    @Y("selecciono la solicitud {string}")
-    public void seleccionoLaSolicitud(String numeroSolicitud) {
-        bandejaBackOfficeStep.seleccionoSolicitud(numeroSolicitud);
-    }
-
     @Y("selecciono la solicitud")
     public void seleccionoLaSolicitud() {
         System.out.println("NumSolicitud: " + cliente.getNumeroSolicitud());

@@ -274,6 +274,10 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
     public void guardoNumeroSolicitud() {
-        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+        //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+         String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
+         if(numeroSolicitud!=null) {
+             cliente.setNumeroSolicitud(numeroSolicitud);
+         }
     }
 }

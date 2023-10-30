@@ -46,6 +46,7 @@ public class BandejaBackOfficePage extends WebBase{
     public void clickBackOffice(){
         esperaProgresiva(driver(), 3, 5,btnBackOffice );
         click(btnBackOffice);
+        esperaProgresiva(driver(),3,3,btnBuscar);
         //waitUntilElementIsVisible(find().getElementByXPath("/html/body/app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
     }
     public void ingresoDocumento(String documento) {
