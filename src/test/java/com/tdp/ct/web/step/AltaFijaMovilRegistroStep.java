@@ -150,9 +150,11 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clicBotonContinuar() {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void visualizarContratoEnPantalla() {

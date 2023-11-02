@@ -3,6 +3,7 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.utils.Addons;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -85,5 +86,10 @@ public class AltaTrioMTconUpfrontTiendaStep {
 
     public void seleccionoElNombreDePlanMovistarTotal() {
         page.altaTrioMTconUpfrontTiendaPage().seleccionoElNombreDePlanMovistarTotal();
+    }
+
+    @ScreenShotAfter
+    public void scrollFinalPagina() {
+        page.altaTrioMTconUpfrontTiendaPage().scrollFinalPagina();
     }
 }

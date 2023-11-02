@@ -386,4 +386,8 @@ public class Addons {
                 driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         }
 
+    public static void scrollFinalPagina(WebDriver driver) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
 }

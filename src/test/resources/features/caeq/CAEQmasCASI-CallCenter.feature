@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 24/10/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI12
 
 Característica: Caeq Mas Casi por call center
 
@@ -76,5 +76,5 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                     |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102030401 | Postpago | Plan Movil Movistar Total ilim |

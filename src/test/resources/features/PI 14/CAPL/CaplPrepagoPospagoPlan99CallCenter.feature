@@ -4,7 +4,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO: REFACTORIZADO
+##ESTADO: LISTO
 ##CODIGO: AT-DT101
 ##GDAP: GDAP-962
 ##SPRINT CREADO:
@@ -12,8 +12,8 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 24/08/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
+##FECMOD: 02/11/2023
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5
 Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1
@@ -36,8 +36,10 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85.9 VI"
     Y        doy click en iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
+    Y        voy hasta el final de la pagina
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
@@ -47,12 +49,8 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-   # Y        busco por el documento "102030401"
     Y         busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
-
-
-#    1598886623

@@ -348,6 +348,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato);
 //        click(buttonValidarContrato, 300);
+        js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
 
@@ -386,7 +387,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         esperaProgresiva(driver(),5,5,element);
         //waitUntilElementIsVisible(element, 30);

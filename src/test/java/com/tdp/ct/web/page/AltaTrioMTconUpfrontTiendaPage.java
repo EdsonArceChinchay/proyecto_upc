@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -187,5 +188,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         else {
             System.out.println("No se encontro el modal error");
         }
+    }
+
+    public void scrollFinalPagina() {
+        Addons.scrollFinalPagina(driver());
+        UtilWeb.waitForSeconds(2);
     }
 }

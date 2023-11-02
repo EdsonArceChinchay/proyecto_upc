@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
+import com.tdp.ct.web.utils.Addons;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -53,6 +54,12 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         }
 
     }
+
+    @Y("voy hasta el final de la pagina")
+    public void voyHastaElFinalDeLaPagina() {
+        altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
+    }
+
 
     @Y("valido detalles de instalacion")
     public void validoDetallesDeInstalacion() {
