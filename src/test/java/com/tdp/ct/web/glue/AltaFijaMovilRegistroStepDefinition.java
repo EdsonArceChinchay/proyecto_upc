@@ -5,6 +5,8 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -22,6 +24,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Autowired
     private Cliente cliente;
 
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
     @Entonces("me muestra la pantalla para ingresar la direccion")
     public void meMuestraLaPantallaParaIngresarLaDireccion() {
@@ -152,6 +160,8 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("me muestra en pantalla el contrato solicitado")
     public void meMuestraEnPantallaElContratoSolicitado() {
         altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
+        System.out.println("Solicitud de Contrato: " + altaFijaMovilRegistroStep.getTextoSolicitud());
+        this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
     }
 
     @Cuando("doy clic en si acepto")

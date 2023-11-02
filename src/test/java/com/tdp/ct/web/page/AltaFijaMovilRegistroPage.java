@@ -389,17 +389,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         esperaProgresiva(driver(),5,5,element);
-        waitUntilElementIsVisible(element, 30);
+        //waitUntilElementIsVisible(element, 30);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
         //js().scrollElementTop(irFinalContrato);
     }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),3,10,element);
-        waitUntilElementIsVisible(element, 50);
-        waitUntilElementIsClickable(element,25);
-        click(element,10);
+        esperaProgresiva(driver(),3,5,element);
+        //waitUntilElementIsVisible(element, 50);
+        //waitUntilElementIsClickable(element,25);
+        element.click();
+        //click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(3);//
     }
@@ -858,5 +859,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public String getNumeroSolicitud() {
         String textoContrato = textoContratoCliente.getText();
         return extraerNumeroSolicitud(textoContrato);
+    }
+    public String getTextoSolicitud(){
+        return textoContratoCliente.getText();
     }
 }

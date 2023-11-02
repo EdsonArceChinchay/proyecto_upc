@@ -280,4 +280,8 @@ public class AltaFijaMovilRegistroStep {
              cliente.setNumeroSolicitud(numeroSolicitud);
          }
     }
+
+    public String getTextoSolicitud(){
+        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
+    }
 }

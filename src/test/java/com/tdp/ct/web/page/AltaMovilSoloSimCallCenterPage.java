@@ -77,12 +77,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void ofertasSugeridas() {
-        //clickBtnReintentar();
-        //clickBtnReintentar();
-        //clickBtnReintentar();
         revisarModalError(driver());
-        esperaProgresiva(driver(),5,10,ofertasSugeridas);
-        //waitUntilElementIsVisible(ofertasSugeridas, 200);//300
+        esperaProgresiva(driver(),3,5,ofertasSugeridas);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -102,8 +98,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     public void listaPlanMovil(String planMovil) {
         revisarModalError(driver());
-        //clickBtnReintentar();
-        //clickBtnReintentar();
         System.out.println("Ofertas : " + listaPlanMovil.size());
 //        UtilWeb.waitForSeconds(2);
 //        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -151,15 +145,16 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void paginaResumen() {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(2);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 
     public void completaDatosSolicitados() {
-        //waitUntilElementIsVisible(completaDatosSolicitados, 20);
-        esperaProgresiva(driver(),5,5,completaDatosSolicitados);
+        UtilWeb.waitForSeconds(2);
+        revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 
