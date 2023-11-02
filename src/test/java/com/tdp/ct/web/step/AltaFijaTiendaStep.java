@@ -75,6 +75,7 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clickRegistrarVenta() {
         page.altaFijaTiendaPage().registrarVenta();
     }

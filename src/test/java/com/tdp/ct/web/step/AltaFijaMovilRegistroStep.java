@@ -256,7 +256,6 @@ public class AltaFijaMovilRegistroStep {
     public void clicRegistrarVenta() {
         page.altaFijaMovilRegistroPage().clicRegistrarVenta();
     }
-    @ScreenShotBefore
     @ScreenShotAfter
     public void validarVentaGenerada() {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
