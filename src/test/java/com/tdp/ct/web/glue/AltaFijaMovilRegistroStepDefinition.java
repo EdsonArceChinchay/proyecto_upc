@@ -160,6 +160,10 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("me muestra en pantalla el contrato solicitado")
     public void meMuestraEnPantallaElContratoSolicitado() {
         altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
+    }
+
+    @Y("imprimo el texto del contrato solicitado")
+    public void imprimoElTextoDelContratoSolicitado() {
         System.out.println("Solicitud de Contrato: " + altaFijaMovilRegistroStep.getTextoSolicitud());
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
     }
