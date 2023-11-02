@@ -86,6 +86,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
+            js().scrollElementTop(subDetalles);
             click(subDetalles);
             System.out.println("si estaba abierto el detalle");
             UtilWeb.waitForSeconds(1);

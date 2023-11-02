@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
@@ -20,6 +21,7 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "(//div/button[@class=\"buttonG\"])[3]")
     protected  WebElement botonConsultaClienteNuevo;
     public void btnAnadirEquipo() {
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(), 3, 5, btnAnadirE);
         js().scrollElementTop(btnAnadirE);

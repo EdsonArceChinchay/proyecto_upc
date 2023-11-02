@@ -61,11 +61,19 @@ Característica: Caeq Mas Casi por call center
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        valido que se muestre el detalle del pedido
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y         busco por el documento
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
       | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | vsiguass | #o2Wy23oA1458Z% | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102030401 | Postpago | Plan Movil Movistar Total ilim |

@@ -24,6 +24,10 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
+    //@FindBy(xpath = "//app-modal-contract/tdp-st-modal/div[2]/p/text()[11]")
+    //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
+    //app-modal-contract/descendant::text()[12]
+    //protected WebElement irFinalContrato;
     @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
@@ -388,6 +392,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(element, 30);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
+        //js().scrollElementTop(irFinalContrato);
     }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");

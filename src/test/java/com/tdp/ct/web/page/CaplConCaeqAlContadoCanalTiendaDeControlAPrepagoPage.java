@@ -50,7 +50,8 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnCardPlanActual() {
-
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
         js().scrollElementTop(btnCardPlanActual);
         click(btnCardPlanActual);
@@ -135,6 +136,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
         WebElement element = js().getWebElement(btnSelect);
         element.click();
+        revisarModalError(driver());
        /*
         System.out.println("clickBtnSelectEquipo 0.5");
         System.out.println("data: " + element.getText());

@@ -168,7 +168,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement btnMostrar;
     public void doyClickEnEnElBoton(String btn) {
         revisarModalError(driver());
-
         String btnEsperado = btn.toUpperCase().trim();
         switch (btnEsperado) {
             case "MANTENER PLAN":
@@ -217,7 +216,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 btnRenovarPlan.click();
                 break;
         }
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
 
     }
