@@ -85,24 +85,27 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
+        UtilWeb.waitForSeconds(3);
         System.out.println("cantidad: " + listPlan.size());
         for (WebElement elements : listPlan) {
             System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(tipoPlan))
+            if (elements.getText().equals(tipoPlan)){
+                waitUntilElementIsClickable(elements,10);
                 click(elements, 30);
+            }
         }
     }
 
     public void seleccionarEquipo() {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(LblEquipos);
         waitUntilElementIsVisible(LblEquipos, 10);
         click(LblEquipos, 30);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionarTiempo(String tiempoP) {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
@@ -222,16 +225,24 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         return existe;
     }
 
+
     public void ingresoElTipoDePago(String pago) {
+        boolean tipoPagoEncontrado = false;
         System.out.println("cantidad: " + listPago.size());
         for (WebElement elements : listPago) {
             System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(pago))
-                waitUntilElementIsClickable(elements,30).click();
+            if (elements.getText().equals(pago)) {
+                System.out.println("Se encontro: " + pago);
+                waitUntilElementIsClickable(elements, 20).click();
+                tipoPagoEncontrado = true;
                 //click(elements, 3);
                 break;
+            }
         }
-        UtilWeb.waitForSeconds(20);
+        if(!tipoPagoEncontrado){
+            System.out.println("NO SE ENCONTRO EL TIPO DE PAGO: " + pago);
+        }
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {

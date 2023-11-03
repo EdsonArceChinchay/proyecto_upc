@@ -42,7 +42,7 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().BuscarEquipo(buscarE);
     }
 
-    @ScreenShotAfter
+    @ScreenShotBefore @ScreenShotAfter
     public  void seleccionoElPlanMovil(String tipoPlan) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElPlanMovil(tipoPlan);
     }
