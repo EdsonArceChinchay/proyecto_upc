@@ -150,9 +150,11 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clicBotonContinuar() {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void visualizarContratoEnPantalla() {
@@ -278,5 +280,9 @@ public class AltaFijaMovilRegistroStep {
          if(numeroSolicitud!=null) {
              cliente.setNumeroSolicitud(numeroSolicitud);
          }
+    }
+
+    public String getTextoSolicitud(){
+        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 }

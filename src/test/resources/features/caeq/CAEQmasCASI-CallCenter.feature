@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 24/10/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI12
 
 Característica: Caeq Mas Casi por call center
 
@@ -61,6 +61,7 @@ Característica: Caeq Mas Casi por call center
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
@@ -75,5 +76,5 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                     |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102030401 | Postpago | Plan Movil Movistar Total ilim |
