@@ -45,6 +45,8 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta

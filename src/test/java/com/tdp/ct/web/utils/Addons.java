@@ -116,7 +116,7 @@ public class Addons {
                                         //LOGGER.log(Level.INFO, "SEARCH:");
                                         WebElement splashElement = driver.findElement(by);
                                         String splashText = splashElement.getText();
-                                        if(splashText.length()> 0){
+                                        if(splashText.length()> 3 ){
                                                 bCargando = true;
                                         }
                                         if(bCargando) {
