@@ -13,7 +13,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 19/10/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11
 
 Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 

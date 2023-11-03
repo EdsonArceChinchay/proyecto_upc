@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
+import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
@@ -166,56 +167,48 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
+
     public void doyClickEnEnElBoton(String btn) {
+        UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
         String btnEsperado = btn.toUpperCase().trim();
+        WebElement botonEsperado = null;
         switch (btnEsperado) {
             case "MANTENER PLAN":
-                esperaProgresiva(driver(), 3, 5,btnMantenerPlan);
-                js().scrollElementTop(btnMantenerPlan);
-                btnMantenerPlan.click();
+                botonEsperado = btnMantenerPlan;
                 break;
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
-                js().scrollElementTop(btnActualizarDir);
-                esperaProgresiva(driver(), 3, 5,btnActualizarDir);
-                btnActualizarDir.click();
+                botonEsperado = btnActualizarDir;
                 break;
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
-                js().scrollElementTop(btnConfirmarDir);
-                esperaProgresiva(driver(),3,5,btnConfirmarDir);
-                btnConfirmarDir.click();
+                botonEsperado = btnConfirmarDir;
                 break;
             case "BUSCAR":
-                js().scrollElementTop(btnBuscar);
-                esperaProgresiva(driver(),3,5,btnBuscar);
-                btnBuscar.click();
-
+                botonEsperado = btnBuscar;
                 break;
             case "INGRESAR COORDENADAS":
-                js().scrollElementTop(btnIngCord);
-                esperaProgresiva(driver(),3,5,btnIngCord);
-                btnIngCord.click();
+                botonEsperado = btnIngCord;
                 break;
             case "ENTENDIDO":
-                js().scrollElementTop(btnEntendido);
-                esperaProgresiva(driver(),3,5,btnEntendido);
-                btnEntendido.click();
+                botonEsperado = btnEntendido;
                 break;
-
             case "CAMBIAR PLAN":
-                js().scrollElementTop(btnCambiarPlan);
-                esperaProgresiva(driver(),3,5,btnCambiarPlan);
-                btnCambiarPlan.click();
+                botonEsperado = btnCambiarPlan;
                 break;
-
             case "RENOVAR PLAN":
-                js().scrollElementTop(btnRenovarPlan);
-                esperaProgresiva(driver(),3,5,btnRenovarPlan);
-                btnRenovarPlan.click();
+                botonEsperado = btnRenovarPlan;
                 break;
         }
+        if(botonEsperado!=null){
+            esperaProgresiva(driver(), 3, 5,botonEsperado);
+            js().scrollElementTop(botonEsperado);
+            botonEsperado.click();
+        }else{
+           System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
+        }
+
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
 

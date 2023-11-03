@@ -167,17 +167,16 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void datosAgendamiento() {
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        revisarModalError(driver()); //Si aparecen popUp de errores, reintenta.
 //         Calendario
         boolean elementoExistenteDias;
+        esperaProgresiva(driver(),3,5,buttonConfirmar);
         elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
         if (elementoExistenteDias) {
-            System.out.println("paso aqui 1");
+            System.out.println("elementoExistenteDias: true");
             List<WebElement> listaDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']"));
             click(listaDias.get(0));
-            System.out.println("paso aqui 2 " + listaDias.get(0).getText());
+            System.out.println("listaDias: " + listaDias.get(0).getText());
         }
 
         boolean elementoExistente;
@@ -188,29 +187,17 @@ public class AltaFijaTiendaPage extends WebBase {
             click(listaHorario.get(0));
             System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
         }
-        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         SearchContext context = sh().getContext(rootInput);
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(2);
 
     }
 
     public void botonConfirmarAgendamiento() {
-        /*modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");
-        modalError(8,btnReintentar,"Click al elemento Reitentar");*/
-        //modalError(10,btnReintentar,"Click al elemento Reitentar");
-        //modalError(10,btnReintentar,"Click al elemento Reitentar");
-
-        //String elXpath = "//button[contains(text(),'Confirmar')]";
-        //buttonConfirmar
-        //Addons.reintentaModalError(driver(), 8, 4, null, this, elXpath);
         revisarModalError(driver());
-
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
         if (elementoExistente) {
@@ -223,8 +210,8 @@ public class AltaFijaTiendaPage extends WebBase {
             click(buttonConfirmar);
             System.out.println("paso aqui 3");
         }
-        driver().manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
     }
 
     public void descargarContrato() {

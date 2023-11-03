@@ -190,7 +190,7 @@ public class Addons {
                         boolean sinBtnReintentar = false;
                         boolean sinBtnEntendido = false;
                         boolean  modal2SinError = false;
-                        UtilWeb.waitForSeconds(1);
+                        UtilWeb.waitForSeconds(3);
                         LOGGER.log(Level.INFO, "revisarModalError #" + (contador+1) + "/" + reintentosMax);
                         bExisteModal = driver.findElements(By.xpath("//mat-dialog-actions")).size() != 0;
                         System.out.println();

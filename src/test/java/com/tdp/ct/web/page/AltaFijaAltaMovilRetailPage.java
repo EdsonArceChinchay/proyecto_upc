@@ -7,6 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
@@ -19,6 +23,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnMovil;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
+
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
 
@@ -54,11 +59,16 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void mostrarOfertas(){
-        System.out.println("3");
-        //waitUntilElementIsVisible(btnMostrar,90);//50
-        esperaProgresiva(driver(),8,5,btnMostrar);
+
+        esperaProgresiva(driver(),5,5,btnMostrar);
+
+        //Espera que desaparesca el cargando del la Deuda
+        By loaderCard = By.cssSelector("app-deuda img.stl_loader");
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
+
         click(btnMostrar);
-        //UtilWeb.waitForSeconds(6);
+        //
         //UtilWeb.waitForSeconds(2);
     }
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {

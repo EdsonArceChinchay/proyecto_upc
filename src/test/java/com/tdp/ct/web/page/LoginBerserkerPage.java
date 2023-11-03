@@ -142,7 +142,9 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void validarMsgHome(String msg) {
+        UtilWeb.waitForSeconds(1);
         Addons.revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,msgHome);
         String expectedMsg = msg.trim().toLowerCase();
         String actualMsg = msgHome.getText().trim().toLowerCase();
         Assertions.assertTrue(actualMsg.contains(expectedMsg), "El mensaje obtenido: " + actualMsg + ", no coincide con lo esperado " + expectedMsg);
