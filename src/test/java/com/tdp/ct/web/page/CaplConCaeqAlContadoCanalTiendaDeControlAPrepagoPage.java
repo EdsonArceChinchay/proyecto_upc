@@ -15,7 +15,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[2]")
+    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
@@ -63,6 +63,8 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);
         click(btnRenovarPlan);
+        System.out.println("click renovar");
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clickSelectOferta() {

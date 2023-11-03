@@ -49,7 +49,7 @@ public class HomePage extends WebBase {
         //Addons.reiniciaTimeout(driver());
         //UtilWeb.waitForSeconds(2);
         WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
-        js().scrollElementTop(documentoList);
+        js().scrollElementTop(btnconsultar);
         click(documentoList);
         String valueTipoDocumento="";
         SearchContext context=sh().getContext(documentoList);

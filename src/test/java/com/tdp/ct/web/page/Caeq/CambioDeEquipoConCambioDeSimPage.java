@@ -43,7 +43,7 @@ public class CambioDeEquipoConCambioDeSimPage extends WebBase {
     public void cierroPopUpDeClienteExonerado(){
         Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
         //waitUntilElementIsVisible(btnClienteExonerado,40);
-        js().scrollElementTop(btnClienteExonerado); //validar
+        js().scrollElementTop(btnClienteExonerado);
         click(btnClienteExonerado);
 
     }
