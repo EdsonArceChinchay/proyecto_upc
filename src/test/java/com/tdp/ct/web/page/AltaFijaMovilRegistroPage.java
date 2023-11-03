@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
@@ -28,6 +29,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
     //app-modal-contract/descendant::text()[12]
     //protected WebElement irFinalContrato;
+    @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
+    protected WebElement cicloFacturacion;
+    @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
+    protected WebElement descargarContrato;
     @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
@@ -170,7 +175,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void validarDetalleSeleccion() {
         esperaProgresiva(driver(),2,5,titlePlan);
-        waitUntilElementIsVisible(titlePlan, 500);
+        waitUntilElementIsVisible(titlePlan, 30);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
     }
@@ -727,7 +732,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDescargarContrato() {
-        UtilWeb.waitForSeconds(7);
+        esperaProgresiva(driver(),5,5,descargarContrato);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
         js().scrollElementTop(rootElement);
@@ -759,8 +764,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),3,15,scrollorden);
-        js().scrollElementTop(scrollorden);
+        esperaProgresiva(driver(),3,15,cicloFacturacion);
+        js().scrollElementTop(cicloFacturacion);
+        //UtilWeb.waitForSeconds(5);
+        //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         //modalError(3, btnReintentar, "Click al elemento Reintentar");

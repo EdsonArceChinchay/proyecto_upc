@@ -17,6 +17,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
+    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
+    protected WebElement scrollorden;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
@@ -305,6 +307,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido() {
+        js().scrollElementTop(scrollorden);
         esperaProgresiva(driver(),3,5,btnDetallePedido);
         click(btnDetallePedido);
 

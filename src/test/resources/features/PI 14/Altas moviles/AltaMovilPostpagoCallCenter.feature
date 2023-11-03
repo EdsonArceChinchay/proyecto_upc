@@ -7,7 +7,7 @@
 ##ESTADO:
 ##CODIGO: AT-DT096
 ##GDAP: GDAP-588
-##SPRINT CREADO:
+##SPRINT CREADO
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
@@ -101,4 +101,4 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075255135  | Postpago      | Plan Ilimitado |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075266198  | Postpago      | Plan Ilimitado |
