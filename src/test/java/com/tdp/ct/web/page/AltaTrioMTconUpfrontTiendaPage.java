@@ -16,6 +16,8 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
+    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
+    protected WebElement buttonValidarContrato;
 
     //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div") @class='btnCard' and
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
@@ -108,7 +110,8 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(10);
+        esperaProgresiva(driver(),3,3,buttonValidarContrato);
     }
 
     public void validoDetalleDeInstalacion() {

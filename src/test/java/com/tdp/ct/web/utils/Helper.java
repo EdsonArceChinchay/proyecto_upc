@@ -1,6 +1,11 @@
 package com.tdp.ct.web.utils;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
 
 public class Helper {
 
@@ -25,6 +30,23 @@ public class Helper {
             return archivo.getAbsolutePath().toString();
         } else {
             return null;
+        }
+    }
+    public static void descargarPDFDesdeURL(String url, String carpetaDescarga) {
+        try {
+            URL pdfURL = new URL(url);
+            PDDocument document = PDDocument.load(pdfURL.openStream());
+
+            String nombreArchivo = url.substring(url.lastIndexOf("/") + 1);
+            String rutaArchivo = carpetaDescarga + "/" + nombreArchivo;
+
+            FileOutputStream archivoSalida = new FileOutputStream(rutaArchivo);
+            document.save(archivoSalida);
+            document.close();
+
+            System.out.println("PDF descargado en: " + rutaArchivo);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

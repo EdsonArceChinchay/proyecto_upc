@@ -255,11 +255,7 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void registrarVenta() {
-
-        //btnRegistrarVenta
-        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
         revisarModalError(driver());
-
         System.out.println("Entra al primer try");
         try {
             esperaProgresiva(driver(), 2, 5, btnRegistrarVenta);

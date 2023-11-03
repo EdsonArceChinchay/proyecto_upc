@@ -218,7 +218,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     }
 
     @Y("doy clic para descargar el contrato")
-    public void doyClicParaDescargarElContrato() {
+    public void doyClicParaDescargarElContrato() throws InterruptedException {
         altaFijaMovilRegistroStep.clicDescargarContrato();
     }
 
