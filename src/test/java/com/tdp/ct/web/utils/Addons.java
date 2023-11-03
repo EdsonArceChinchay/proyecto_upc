@@ -333,7 +333,7 @@ public class Addons {
                 long tiempoEjecucion = fin - inicio;
                 formatTiempo(tiempoEjecucion, "revisarModalEntendido");
         }
-        private static String obtenerRutaBaseProyecto() {
+        public static String obtenerRutaBaseProyecto() {
                 String rutaBase = "";
                 try {
                         rutaBase = System.getProperty("user.dir");

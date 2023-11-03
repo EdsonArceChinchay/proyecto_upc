@@ -251,7 +251,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
-    public void clicDescargarContrato() {
+    public void clicDescargarContrato() throws InterruptedException {
         page.altaFijaMovilRegistroPage().clicDescargarContrato();
     }
     @ScreenShotAfter
@@ -278,7 +278,10 @@ public class AltaFijaMovilRegistroStep {
         //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
+             System.out.println("Numero Solicitud:" + numeroSolicitud);
              cliente.setNumeroSolicitud(numeroSolicitud);
+         }else{
+             System.out.println("ERRO - Numero Solicitud - Null");
          }
     }
 

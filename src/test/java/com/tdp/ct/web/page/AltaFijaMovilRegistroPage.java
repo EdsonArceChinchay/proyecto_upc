@@ -15,13 +15,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
 import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
@@ -29,6 +30,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
     //app-modal-contract/descendant::text()[12]
     //protected WebElement irFinalContrato;
+    @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
+    protected WebElement cerrarPopUpContratos;
+    @FindBy(xpath = "(//*[@class=\"btn btnFirst\"])[1]")
+    protected WebElement contratoUno;
+    @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
+    protected WebElement contratoDos;
     @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
     protected WebElement cicloFacturacion;
     @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
@@ -605,6 +612,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(),5,5,rootElement);
         revisarModalError(driver());
         SearchContext context = sh().getContext(rootElement);
+        revisarModalError(driver());
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
         UtilWeb.waitForSeconds(1);
     }
@@ -731,8 +739,33 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return existe;
     }
 
-    public void clicDescargarContrato() {
-        esperaProgresiva(driver(),5,5,descargarContrato);
+    public void clicDescargarContrato() throws InterruptedException {
+        esperaProgresiva(driver(),3,12,descargarContrato);
+        click(descargarContrato);
+        esperaProgresiva(driver(),3,3,contratoUno);
+
+        String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+        File directorio = new File(rutabase);
+        if (!directorio.exists()) {
+            directorio.mkdirs();
+        }
+
+        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+        String pdfUrl = pdfElement.getAttribute("src");
+        System.out.println("Link PDF: " + pdfUrl);
+        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+
+        //click en el 2do boton
+        click(contratoDos);
+        UtilWeb.waitForSeconds(3);
+
+        WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+        String pdfUrl2 = pdfElement2.getAttribute("src");
+        System.out.println("Link PDF: " + pdfUrl2);
+        descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+        UtilWeb.waitForSeconds(5);
+        click(cerrarPopUpContratos);
+/*
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
         js().scrollElementTop(rootElement);
@@ -740,6 +773,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        */
 
     }
 
