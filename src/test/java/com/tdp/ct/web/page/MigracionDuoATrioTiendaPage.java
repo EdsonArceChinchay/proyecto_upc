@@ -12,7 +12,11 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +27,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
-    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[4]/div[1]/app-card-line")
+    @FindBy(xpath = "//app-card-mt[1]")
+    protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//app-card-line[1]")
     protected WebElement cartillaHogar;
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
@@ -279,4 +284,20 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
     }
 
+    public void seleccionoCartillaMovistarTotal() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(),4,5,cartillaMovistarTotal);
+        js().scrollElementTop(cartillaMovistarTotal);
+        revisarModalError(driver());
+        System.out.println("Selecciono la cartilla de Movistar Total");
+
+        try {
+            By loaderCard = By.cssSelector("app-deuda img.stl_loader");
+            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(15));
+            wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
+        }catch(Exception e){
+            System.out.println("Error: "+ e.getMessage());
+        }
+        click(cartillaMovistarTotal);
+    }
 }

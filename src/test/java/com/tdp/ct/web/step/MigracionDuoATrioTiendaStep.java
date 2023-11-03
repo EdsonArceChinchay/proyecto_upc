@@ -56,4 +56,7 @@ public class MigracionDuoATrioTiendaStep {
     }
     public void cerrarPopupCU(){page.migracionDuoATrioTiendaPage().cerrarPopupCU();
     }
+
+    public void seleccionoCartillaMovistarTotal() {page.migracionDuoATrioTiendaPage().seleccionoCartillaMovistarTotal();
+    }
 }

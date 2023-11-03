@@ -5,13 +5,13 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP:
+##GDAP:GDAP-1421
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 26/10/2023
+##FECMOD: 31/11/2023
 
 @BERSERKERS
 
@@ -32,7 +32,8 @@ Característica: Migracion de MT a MT en Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono la cartilla del plan activo
+    #Y        selecciono la cartilla del plan activo
+    Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"

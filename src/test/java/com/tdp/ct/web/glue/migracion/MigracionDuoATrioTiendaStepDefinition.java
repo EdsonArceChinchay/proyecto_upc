@@ -75,4 +75,8 @@ public class MigracionDuoATrioTiendaStepDefinition {
     public void cierroElPopupDeContraseñaÚnica() {
         migracionDuoATrioTiendaStep.cerrarPopupCU();
     }
+
+    @Y("Selecciono la cartilla del plan Motvistar Total")
+    public void seleccionoLaCartillaDelPlanMotvistarTotal() {migracionDuoATrioTiendaStep.seleccionoCartillaMovistarTotal();
+    }
 }
