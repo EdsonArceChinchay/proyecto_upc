@@ -57,20 +57,20 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         click(btnMovil);
         //UtilWeb.waitForSeconds(2);//1
     }
-
-    public void mostrarOfertas(){
-
-        esperaProgresiva(driver(),5,5,btnMostrar);
+    public void esperaCargaMontoDeuda(int tiempoEsperaMaximo){
         try {
             By loaderCard = By.cssSelector("app-deuda img.stl_loader");
-            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(15));
+            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(tiempoEsperaMaximo));
             wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
         }catch(Exception e){
             System.out.println("Error: "+ e.getMessage());
         }
+    }
+    public void mostrarOfertas(){
+        esperaProgresiva(driver(),5,5,btnMostrar);
+        esperaCargaMontoDeuda(60);
         revisarModalError(driver());
         click(btnMostrar);
-
     }
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
         UtilWeb.waitForSeconds(timeOnSeconds);
