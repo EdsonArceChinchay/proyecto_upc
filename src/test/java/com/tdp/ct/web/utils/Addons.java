@@ -7,10 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.test.context.jdbc.Sql;
 
 
 import java.io.File;
+import java.time.Duration;
 import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -389,5 +392,14 @@ public class Addons {
     public static void scrollFinalPagina(WebDriver driver) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+    public static void esperaCargaMontoDeuda(WebDriver driver, int tiempoEsperaMaximo){
+      try {
+         By loaderCard = By.cssSelector("app-deuda img.stl_loader");
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(tiempoEsperaMaximo));
+         wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
+      }catch(Exception e){
+          System.out.println("Error: "+ e.getMessage());
+      }
     }
 }

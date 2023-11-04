@@ -26,7 +26,6 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
-
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//app-card-line[1]")
@@ -290,14 +289,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js().scrollElementTop(cartillaMovistarTotal);
         revisarModalError(driver());
         System.out.println("Selecciono la cartilla de Movistar Total");
-
-        try {
-            By loaderCard = By.cssSelector("app-deuda img.stl_loader");
-            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(15));
-            wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
-        }catch(Exception e){
-            System.out.println("Error: "+ e.getMessage());
-        }
+        Addons.esperaCargaMontoDeuda(driver(),120);
         click(cartillaMovistarTotal);
     }
 }
