@@ -212,10 +212,8 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }else{
            System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
         }
-
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
-
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
