@@ -291,15 +291,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(listNacionalidad);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-<<<<<<< HEAD
-            System.out.println(elements.getText());
-            if(elements.getText().equals(nacionalidad)){
-                UtilWeb.waitForSeconds(2);
-=======
             System.out.println(elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()));
             if(elements.getText().trim().equals(nacionalidad.trim())){
                 js().scrollElementTop(elements);
->>>>>>> d161020ae9448874e09a6a0111575b8a4c6f9303
                 waitUntilElementIsClickable(elements,30).click();
                 break;
             }
@@ -311,26 +305,13 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         click(estadoList,5);
         System.out.println("Dio click en lista de estado");
-<<<<<<< HEAD
-        UtilWeb.waitForSeconds(5);
-        SearchContext contexPlan=sh().getContext(generoList);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
-=======
         UtilWeb.waitForSeconds(3);
         SearchContext contexPlan=sh().getContext(estadoList);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
->>>>>>> d161020ae9448874e09a6a0111575b8a4c6f9303
         for(WebElement elements:lista){
             System.out.println(elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()));
             if(elements.getText().trim().equals(estadoCivil.trim())){
-<<<<<<< HEAD
-                System.out.println("Son iguales "+ elements.getText().trim().equals(estadoCivil.trim()));
-                UtilWeb.waitForSeconds(5);
-                js().scrollElementTop(elements);
-                click(elements,2);
-=======
                 click(elements,30);
->>>>>>> d161020ae9448874e09a6a0111575b8a4c6f9303
                 break;
             }
         }

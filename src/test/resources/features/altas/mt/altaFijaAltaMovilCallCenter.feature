@@ -49,15 +49,9 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-     # | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-
     Y        ingreso la informacion del lugar de instalacion
       | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -68,15 +62,9 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
-
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-
     Y        ingreso la informacion del lugar de instalacion
       | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
@@ -96,10 +84,10 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     ##Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
-      | fechaNac   | nacionalidad | estadoCivil |
-      | 01/12/1990 | Angola   | Casado   |
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 12/12/1980 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
 #    Y        doy clic en finalizar registro
@@ -107,13 +95,13 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
       #paso comentado
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
+      ## pasos agregados
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$| Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 0653434232  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | av       | Dúo BA TV HD 1 Gb RA + 95 Gb RA | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
-
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03217025  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 200 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular
