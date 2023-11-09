@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-
+##GDAP: GDAP-1390
 ##SPRINT CREADO: SPRINT 1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -16,6 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16
 
 Característica: Alta Duo con direccion sugerida por Canal Tiendas
+
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -31,8 +32,8 @@ Característica: Alta Duo con direccion sugerida por Canal Tiendas
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero   |
-      | Miguel  | Mejia        | Masculino |
+      | nombres | apellidos | genero    |
+      | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -54,8 +55,8 @@ Característica: Alta Duo con direccion sugerida por Canal Tiendas
     Y        ingreso email "prueba@gmail.com" y lo repito
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
-      | fechaNac   | nacionalidad | estadoCivil  |
-      | 12/12/1980 | Albania      | Casado       |
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 12/12/1980 | Albania      | Casado      |
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
@@ -65,5 +66,5 @@ Característica: Alta Duo con direccion sugerida por Canal Tiendas
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password        | msgHome   | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
-      | usuario externo |evillanuevag| $Telefonica2099%|Bienvenid@ | CE            | 123453910 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 123453910 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS

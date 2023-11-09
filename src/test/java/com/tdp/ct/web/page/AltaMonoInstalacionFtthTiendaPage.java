@@ -11,6 +11,9 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     @FindBy(css = "h1.title")
@@ -53,29 +56,27 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     public void clickBtnConsultarCobertura() {
         click(btnConsultarCobertura);
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
+//        clickBtnReintentar();
+//        clickBtnReintentar();
+//        clickBtnReintentar();
     }
 
     public void validarOfertasSugeridasView(String title) {
-        clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();
-        waitUntilElementIsVisible(titleOfertas, 300);
-        UtilWeb.waitForSeconds(4);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, titleOfertas);
         js().scrollElementTop(find().getElementByXPath("//nav"));
         String actualTitle = titleOfertas.getText().toLowerCase();
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
 
     public void scrollToBtnPlanNuevo() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(titleOfertas);
     }
 
     public void clickBtnPlanNuevo() {
-        waitUntilElementIsVisible(btnPlanNuevo, 100);
+       // waitUntilElementIsVisible(btnPlanNuevo, 100);
+        esperaProgresiva(driver(),3,5,btnPlanNuevo);
         click(btnPlanNuevo);
         UtilWeb.waitForSeconds(2);
     }

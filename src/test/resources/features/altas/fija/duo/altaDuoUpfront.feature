@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-
 Característica: AT-DT006_Alta Duo por tienda
 
   Antecedentes:
@@ -46,7 +45,7 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -70,5 +69,10 @@ Característica: AT-DT006_Alta Duo por tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
+<<<<<<< HEAD
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                                | referencia | plan_hogar | nombrePlan                                |
       | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 0029877545 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET ESTANDAR HD RA S23 200 MBPS |
+=======
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                   |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DÚO MOVISTAR VOZ INTERNET RA |
+>>>>>>> d161020ae9448874e09a6a0111575b8a4c6f9303

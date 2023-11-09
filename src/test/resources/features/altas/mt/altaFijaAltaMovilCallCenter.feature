@@ -49,9 +49,15 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
+
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
      # | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -62,9 +68,15 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
+
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso el telefono de contacto "658745259"
@@ -98,8 +110,10 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
+
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
       | usuario externo | jpachaot | $t3l3f0n1c4$| Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 0653434232  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | av       | Dúo BA TV HD 1 Gb RA + 95 Gb RA | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+
 
 
   @AltaFijaMovilCallCenterSinProductosDeliveryRegular
@@ -131,8 +145,8 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -144,11 +158,11 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | 1    | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO | Familia Ccallo | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
@@ -180,7 +194,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan      | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | Casa       | 70 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03212011  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | 200 Mbps RV + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 

@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -15,9 +16,11 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
+    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
+    protected WebElement buttonValidarContrato;
 
     //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div") @class='btnCard' and
-    @FindBy(xpath = "//button[contains(text(),'Línea nueva')]")
+    @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
@@ -107,7 +110,8 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(8);
+        UtilWeb.waitForSeconds(10);
+        esperaProgresiva(driver(),3,3,buttonValidarContrato);
     }
 
     public void validoDetalleDeInstalacion() {
@@ -187,5 +191,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         else {
             System.out.println("No se encontro el modal error");
         }
+    }
+
+    public void scrollFinalPagina() {
+        Addons.scrollFinalPagina(driver());
+        UtilWeb.waitForSeconds(2);
     }
 }

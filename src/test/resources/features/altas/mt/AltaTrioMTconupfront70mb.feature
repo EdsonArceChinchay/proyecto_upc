@@ -46,8 +46,8 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
 	#Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -72,5 +72,5 @@ Característica: AT-DT040_Alta trio MT con Upfront 70mb
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password         | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | CASA       | Trío     | RA 70 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío     | RA 70 MBPS |

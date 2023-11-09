@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
-
 Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 
   @BusquedaInicial
@@ -36,16 +35,16 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento | cliente                         |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | DNI           | 41524632  | LUIGI GUSTAVO REYNOSO DEXTRE    |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 123456742 | Cuatro De Dos                   |
-      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | DNI           | 09822102  | MCONewFirstName1887 MCONewLastName1887 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | C             | 123456753 | Cinco De Tres                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL            | DNI           | 09822100  | MCONewFirstName1885 MCONewLastName1885 |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | C             | 123456775 | Primero De Tercero              |
-#      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456758 | Cinco De Ocho                   |
+      | tipoUsuario     | userName    | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento | cliente                                |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 41524632  | LUIGI GUSTAVO REYNOSO DEXTRE           |
+      | usuario externo | lterrazosce | Telefonica2021  | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 123456742 | Cuatro De Dos                          |
+      | usuario externo | vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                    | DNI           | 09822102  | MCONewFirstName1887 MCONewLastName1887 |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | CAJAMARCA                 | C             | 123456753 | Cinco De Tres                          |
+      | usuario externo | lterrazosce | Telefonica2021  | Bienvenid@ | TIENDA SAN MIGUEL         | DNI           | 09822100  | MCONewFirstName1885 MCONewLastName1885 |
+#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 123456775 | Primero De Tercero              |
+#      | usuario externo| vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                       | C             | 123456758 | Cinco De Ocho                   |
 #      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CAJAMARCA                    | DNI           | 09822078  | MCONewFirstName1872 MCONewLastName1872 |
-#      | usuario externo | vsiguass    | $t3l3f0n1c4$   | Bienvenid@ | TALARA                       | C             | 123456776 | Primero De Segundo              |
+#      | usuario externo| vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                       | C             | 123456776 | Primero De Segundo              |
 
   @BusquedaInicial         @BusquedaInicialRUC
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -70,7 +69,7 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 #    Y        doy click en Cerrar Sesion
 #    Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor                 | tipoDocumento | documento   | cliente                    | nro | tipoDocRepLegal | numDocRepLegal |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs | RUC           | 20514559911 | CHIFA HERMANOS S.A.C.      | 3   | DNI             | 75447585       |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento   | cliente               | nro | tipoDocRepLegal | numDocRepLegal |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | RUC           | 20514559911 | CHIFA HERMANOS S.A.C. | 3   | DNI             | 75447585       |
 #      | usuario externo | lterrazosce  | Telefonica2021 | Bienvenid@ | CAJAMARCA                  | RUC           | 20450685446 | ANDEAN SOUTH EIRL          | 2   | CE              | 6172834231     |
 #     | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TALARA                       | RUC           | 20409258566 | INVERSIONES PAPER E.I.R.L. | 1   | DNI             | 75447441       |

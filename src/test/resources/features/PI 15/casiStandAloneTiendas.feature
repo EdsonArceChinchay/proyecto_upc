@@ -1,13 +1,13 @@
 #language:es
 ##CREADOR: Moises Llamoca
 ##APP: DITO
-##MODULO:
+##MODULO: CASI
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:AT-DT112
-##GDAP:
+##GDAP: GDAP-1418
 ##SPRINT CREADO: SP4
-##FRECUENCIA:
+##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
 ##DATA:Reusable
 ##ENCARGADO:Brandon
@@ -48,5 +48,5 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento  |  correo           |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |

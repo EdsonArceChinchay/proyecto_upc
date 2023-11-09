@@ -1,11 +1,14 @@
 package com.tdp.ct.web.glue;
 
+import com.sun.source.tree.AssertTree;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaMonoInstalacionFtthTiendaStep;
 import com.tdp.ct.web.step.CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
+import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
@@ -18,7 +21,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
 
     @Y("selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan")
     public void seleccionoElBtnVerDetalleDelPlanActualYPresionoElBtnRenovarPlan() {
-        caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
+        //caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
         caplConCaeqAlContadoCanalTiendaStep.clickBtnCardPlanActual();
         caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
     }
@@ -48,6 +51,11 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         caplConCaeqAlContadoCanalTiendaStep.selectPermanencia(permanencia);
         caplConCaeqAlContadoCanalTiendaStep.selectTipoPago(tipoPago);
         caplConCaeqAlContadoCanalTiendaStep.writeModeloEquipo(equipoName);
+    }
+    @Y("valido que existan resultados busqueda de equipos")
+    public void validoQueExistanResultadosBusquedaDeEquipos(){
+        Assert.assertTrue("La cantidad de equipos es menor que 1", caplConCaeqAlContadoCanalTiendaStep.contadorResultadosBusquedaEquipos() >= 1);
+
     }
 
     @Y("presiono el boton Ver detalle valido contenido y selecciono")

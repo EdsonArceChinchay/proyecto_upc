@@ -15,7 +15,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF @DROP-G06
-
 Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
 
   Antecedentes:
@@ -55,6 +54,12 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
+<<<<<<< HEAD
     
       | tipoUsuario     | userName     | password      | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | plan_hogar | nombrePlan                                      |
       | usuario externo | nishuizas |  $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 16087222 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO CATV IPTV HD 1000 MBPS|
+=======
+
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+>>>>>>> d161020ae9448874e09a6a0111575b8a4c6f9303

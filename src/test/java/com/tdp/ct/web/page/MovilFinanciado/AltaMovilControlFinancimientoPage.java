@@ -28,7 +28,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement btnAgregarEquipo;
     @FindBy(xpath ="//div[6]/div[1]/div/div[2]/div[3]/tdp-st-button")
     protected WebElement btnSeleccionarEquipo;
-    @FindBy(xpath ="//div[3]/div[2]/div/div/div/tdp-st-button")
+    @FindBy(xpath ="//*[contains(@label,'Iniciar Registro') or contains(text(),'Iniciar Registro')]")
     protected WebElement btnIniciarRegistro;
     //Validate
     @FindBy(xpath ="//div[2]/form/div[1]/h1")

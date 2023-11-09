@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
 Característica: AT-DT038_Alta Fija Pura MT por Call Center
 
@@ -24,13 +24,14 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Lucia   | Perez Lopez | femenino |
@@ -46,8 +47,8 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+#      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     #        Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -59,18 +60,19 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "2pm-7pm"
+    Y        selecciono horario "3pm-7pm"
     E        ingreso telefono del titular "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
+    #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -78,11 +80,21 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y         busco por el documento
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464820 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460 PISO 1 UR RISSO | Inkafarma  | MOVISTAR TOTAL | 100 Mbps + 95 Gb | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan              | correo           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075255110f | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | 100 MBPS RA + 100 GB RA | correo@gmail.com |
 

@@ -9,6 +9,7 @@ import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPag
 import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc10CanalTiendaPage;
 import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc17CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.*;
+import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -161,6 +162,11 @@ public class StepPages {
     public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
     public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage(){return new ActualizacionDeRuc10CanalTiendaPage();}
     public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage(){return new ActualizacionDeRuc17CanalTiendaPage();}
+    public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage(){return new AltaValidacionPrecioDescuentoPage();}
+
+    public CaptchaPage captchaPage(){ return new CaptchaPage();}
+
+    public BandejaBackOfficePage bandejaBackOfficePage(){return new BandejaBackOfficePage();}
 
 }
 

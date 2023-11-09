@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -14,6 +15,9 @@ public class AltaFijaMovilRegistroStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private Cliente cliente;
 
     @ScreenShotAfter
     public void validarPantallaIngresarDireccion() {
@@ -146,9 +150,11 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotBefore
+    @ScreenShotAfter
     public void clicBotonContinuar() {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void visualizarContratoEnPantalla() {
@@ -184,22 +190,35 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
     }
 
+    public void verificarClienteNuevo(){
+        cliente.setClienteNuevo(page.altaFijaMovilRegistroPage().esNuevoCliente());
+    }
 
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
-        String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
-        String genero=UtilWeb.getValueFromDataTable(datos,"genero");
-        page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
-        page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
-        page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+        if(cliente.isClienteNuevo()){
+            String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
+            String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
+            String genero=UtilWeb.getValueFromDataTable(datos,"genero");
+            page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
+            page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
+            page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        page.altaFijaMovilRegistroPage().crearCliente();
-        //UtilWeb.waitForSeconds(30);//100
+        if(cliente.isClienteNuevo()){
+            page.altaFijaMovilRegistroPage().crearCliente();
+            //UtilWeb.waitForSeconds(30);//100
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+
     }
     @ScreenShotBefore
     @ScreenShotAfter
@@ -232,7 +251,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
-    public void clicDescargarContrato() {
+    public void clicDescargarContrato() throws InterruptedException {
         page.altaFijaMovilRegistroPage().clicDescargarContrato();
     }
     @ScreenShotAfter
@@ -254,6 +273,19 @@ public class AltaFijaMovilRegistroStep {
     }
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
+    }
+    public void guardoNumeroSolicitud() {
+        //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+         String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
+         if(numeroSolicitud!=null) {
+             System.out.println("Numero Solicitud:" + numeroSolicitud);
+             cliente.setNumeroSolicitud(numeroSolicitud);
+         }else{
+             System.out.println("ERRO - Numero Solicitud - Null");
+         }
+    }
 
+    public String getTextoSolicitud(){
+        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 }

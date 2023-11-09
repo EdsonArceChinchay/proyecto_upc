@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-1291
+##GDAP: GDAP-1293
 ##SPRINT CREADO: P15-SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -38,5 +38,5 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
 
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento |ruc     |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE           | 7241133113 |10112233440|
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | ruc         |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 7241133113 | 10112233440 |

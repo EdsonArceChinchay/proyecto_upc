@@ -7,18 +7,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
 
-    @FindBy(xpath = "(//*[@class=\"detailHogar\"])")
+    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
     //@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
-    @FindBy(xpath = "/html/body/app-root/app-park/div[3]/app-modal-detallemovil/tdp-st-modal/div[3]/div/div[1]/button")
+    @FindBy(xpath = "//button[contains(text(),'Renovar')]")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")
@@ -48,17 +50,21 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnCardPlanActual() {
-        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        js().scrollElementTop(btnCardPlanActual);
         click(btnCardPlanActual);
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clickBtnRenovarPlan() {
-        modalError(3, btnReintentar, "Click al elemento Reitentar");
-        modalError(3, btnReintentar, "Click al elemento Reitentar");
-        waitUntilElementIsVisible(btnRenovarPlan, 10);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        js().scrollElementTop(btnRenovarPlan);
         click(btnRenovarPlan);
-        UtilWeb.waitForSeconds(10);
+        System.out.println("click renovar");
+        UtilWeb.waitForSeconds(1);
     }
 
     public void clickSelectOferta() {
@@ -81,6 +87,21 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     public void clickBtnAddEquipoInCard() {
         click(btnAddEquipoInCard);
         UtilWeb.waitForSeconds(5);
+    }
+
+    public int contadorResultadosBusquedaEquipos(){
+        List<WebElement> elementos;
+
+        int contador = 0;
+        try{
+            UtilWeb.waitForSeconds(5);
+            elementos = driver().findElements(By.className("_item-device"));
+            contador = elementos.size();
+            System.out.println("Cantidad de Equipos: " + contador);
+        }catch(Exception e){
+            System.out.println("NO HAY EQUIPOS EN LA BUSQUEDA");
+        }
+        return contador;
     }
 
     public void scrollToVerBtnDetalles() {
@@ -108,9 +129,38 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnSelectEquipo() {
-        String btnSelect = ".cont-btn tdp-st-button;button";
+        //pendiente revisar
+        //String btnSelect = ".cont-btn tdp-st-button;button";
+        String btnSelect = ".cont-btn tdp-st-button";
+
+        //WebElement element = js().getWebElement(btnSelect);
+        System.out.println("clickBtnSelectEquipo 0");
+        js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
         WebElement element = js().getWebElement(btnSelect);
         element.click();
+        revisarModalError(driver());
+       /*
+        System.out.println("clickBtnSelectEquipo 0.5");
+        System.out.println("data: " + element.getText());
+        System.out.println("clickBtnSelectEquipo 1");
+
+        try {
+            Thread.sleep(50000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        List<WebElement> elements = js().getWebElements(btnSelect);
+        System.out.println("clickBtnSelectEquipo 2");
+        for (WebElement elemento: elements) {
+            try{
+                System.out.println("TagName: " + elemento.getTagName());
+                System.out.println("Text: " + elemento.getText());
+                elemento.click();
+            }catch(Exception e){
+                System.out.println("error: " + e.getStackTrace());
+            }
+        }
+        System.out.println("clickBtnSelectEquipo OK");*/
     }
 
     public void clickBtnConShadowIniciarRegistro() {

@@ -5,23 +5,30 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
+import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
-
-    @FindBy(css = "div:nth-child(1) > app-card-line")
+    @FindBy(xpath = "//app-card-mt[1]")
+    protected WebElement cartillaMovistarTotal;
+    @FindBy(xpath = "//app-card-line[1]")
     protected WebElement cartillaHogar;
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
@@ -46,7 +53,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
     protected WebElement btnActualizarDir;
-
+    //*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
     protected WebElement btnBuscar;
 
@@ -56,8 +63,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
 
+    @FindBy(xpath = "//*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]")
+    protected WebElement btnMantenerPlan;
 
-    @FindBy(xpath = "//app-footer-item//button[@class='btnCard' and contains(text(),'Cambiar Plan')]")
+    @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
 
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
@@ -78,6 +87,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement cerrarCU;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
+
+        esperaProgresiva(driver(), 3,5,cartillaHogar);
+
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
 
@@ -85,18 +97,21 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
         revisarModalError(driver());
 
-        waitUntilElementIsClickable(cartillaHogar, 40).click();
+        //waitUntilElementIsClickable(cartillaHogar, 40).click();
 //        waitUntilElementIsVisible(cartillaHogar, 5);
 //        click(cartillaHogar, 5);
-        UtilWeb.waitForSeconds(10);
+        cartillaHogar.click();
+        UtilWeb.waitForSeconds(1);
 
     }
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
-
-        UtilWeb.waitForSeconds(4);
-        waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
-        UtilWeb.waitForSeconds(4);
+        revisarModalError(driver());
+        //UtilWeb.waitForSeconds(4);
+        esperaProgresiva(driver(), 3,5,btnOpcionPlanNuevo);
+        //waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
+        btnOpcionPlanNuevo.click();
+        UtilWeb.waitForSeconds(1);
     }
     public void cerrarPopupCU(){
 //        UtilWeb.waitForSeconds(1);
@@ -146,79 +161,62 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        modalError(20,btnReintentar,"Click al elemento Reitentar");
-        UtilWeb.waitForSeconds(30);
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        UtilWeb.waitForSeconds(5);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
+
     public void doyClickEnEnElBoton(String btn) {
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        //modalError(5,btnReintentar,"Click al elemento Reitentar");
-
-        //String elXpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']";
-        //btnConfirmarDir
-        //Addons.reintentaModalError(driver(), 3, 5, btnMostrar, this, elXpath);
+        UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-
         String btnEsperado = btn.toUpperCase().trim();
+        WebElement botonEsperado = null;
         switch (btnEsperado) {
+            case "MANTENER PLAN":
+                botonEsperado = btnMantenerPlan;
+                break;
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
-                js().scrollElementTop(btnActualizarDir);
-                waitUntilElementIsClickable(btnActualizarDir, 50).click();
-                UtilWeb.waitForSeconds(1);
+                botonEsperado = btnActualizarDir;
                 break;
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
-                js().scrollElementTop(btnConfirmarDir);
-                waitUntilElementIsClickable(btnConfirmarDir, 50).click();
-                UtilWeb.waitForSeconds(30);//1
+                botonEsperado = btnConfirmarDir;
                 break;
             case "BUSCAR":
-                js().scrollElementTop(btnBuscar);
-                waitUntilElementIsClickable(btnBuscar, 50).click();
-                UtilWeb.waitForSeconds(10);
+                botonEsperado = btnBuscar;
                 break;
             case "INGRESAR COORDENADAS":
-                js().scrollElementTop(btnIngCord);
-                waitUntilElementIsClickable(btnIngCord, 50).click();
-                UtilWeb.waitForSeconds(1);
+                botonEsperado = btnIngCord;
                 break;
             case "ENTENDIDO":
-                js().scrollElementTop(btnEntendido);
-                waitUntilElementIsClickable(btnEntendido, 50).click();
-                UtilWeb.waitForSeconds(1);
+                botonEsperado = btnEntendido;
                 break;
-
             case "CAMBIAR PLAN":
-                UtilWeb.waitForSeconds(5);
-//                waitUntilElementIsVisible(btnCambiarPlan, 50);
-                js().scrollElementTop(btnCambiarPlan);
-                click(btnCambiarPlan,10);
-                UtilWeb.waitForSeconds(1);
+                botonEsperado = btnCambiarPlan;
                 break;
-
             case "RENOVAR PLAN":
-                js().scrollElementTop(btnRenovarPlan);
-                click(btnRenovarPlan,10);
-                UtilWeb.waitForSeconds(1);
+                botonEsperado = btnRenovarPlan;
                 break;
         }
-
+        if(botonEsperado!=null){
+            esperaProgresiva(driver(), 3, 5,botonEsperado);
+            js().scrollElementTop(botonEsperado);
+            botonEsperado.click();
+        }else{
+           System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
+        }
+        UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
     }
 
     public void verificoLaDireccionActualDelServicio(String dir) {
-        //String elXpath = "//div[@slot='modal_body']/div[2]/div/p[2]";
-        //Addons.reintentaModalError(driver(), 3, 4, null, this, elXpath);
-        /*clickBtnReintentar();
-        clickBtnReintentar();
-        clickBtnReintentar();*/
         revisarModalError(driver());
 
         String direccionEsperada = dir.toUpperCase().trim();
@@ -283,4 +281,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
     }
 
+    public void seleccionoCartillaMovistarTotal() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(),4,5,cartillaMovistarTotal);
+        js().scrollElementTop(cartillaMovistarTotal);
+        revisarModalError(driver());
+        System.out.println("Selecciono la cartilla de Movistar Total");
+        Addons.esperaCargaMontoDeuda(driver(),120);
+        click(cartillaMovistarTotal);
+    }
 }

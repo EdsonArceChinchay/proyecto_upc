@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.*;
 import io.cucumber.datatable.DataTable;
@@ -17,9 +18,17 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
   @Autowired
   private AltaFijaTiendaStep altaFijaTiendaStep;
 
+  @Autowired
+  private Cliente cliente;
+
   @Y("valido que muestre el nombre completo del cliente {string}")
   public void valido_que_muestre_el_nombre_completo_del_cliente(String data) {
-    altaFijaTiendaStep.validarNombresCompletosCliente(data);
+    if(!cliente.isClienteNuevo()){
+      altaFijaTiendaStep.validarNombresCompletosCliente(data);
+    }else{
+      System.out.println("Skip. Cliente Registrado en Dito");
+    }
+
   }
 
   @Y("valido que este en la pagina de ofertas sugeridas")
@@ -55,4 +64,9 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
     altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
     }
+
+  @Y("doy click en Entendido para visualizar las ofertas")
+  public void doyClickEnEntendidoParaVisualizarLasOfertas() {
+    altaMovilSoloSimCallCenterStep.botonentendidoOfertas();
+  }
 }

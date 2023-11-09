@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
-
 Característica: AT-DT005_Alta Duo por call center
 
 
@@ -47,8 +46,8 @@ Característica: AT-DT005_Alta Duo por call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR |  parque   |
+      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -72,5 +71,5 @@ Característica: AT-DT005_Alta Duo por call center
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | plan_hogar     | nombrePlan                                |
-      | usuario externo | evillanuevag | $Telefonica2099% | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460   | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |

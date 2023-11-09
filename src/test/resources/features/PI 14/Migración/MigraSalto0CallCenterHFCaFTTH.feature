@@ -13,19 +13,19 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AT-DT104
-
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI13 @AT-DT104
 Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migraSalto0HFC_FTTHCallCenter
+@migraSalto0HFC_FTTHCallCenter
   Esquema del escenario: Migracion salto 0 HFC FTTH con CE  por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -33,7 +33,7 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-	Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro
@@ -45,11 +45,19 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y         busco por el documento
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |

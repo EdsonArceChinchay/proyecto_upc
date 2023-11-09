@@ -46,8 +46,8 @@ Característica: Alta Trio Upfront canal Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -70,5 +70,5 @@ Característica: Alta Trio Upfront canal Retail
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                 | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 460  | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |

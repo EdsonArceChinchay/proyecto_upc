@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
-
 Característica: AT-DT053_Login - FE DITO WEB
 
   @LoginBerserker @LoginExitoso @jbac_Test
@@ -24,14 +23,15 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y selecciono el tipo de usuario "<tipoUsuario>"
     Y ingreso el usuario "<userName>"
     Y ingreso el password "<password>"
+    #E ingreso el captcha
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y valido que se presente la tienda "<tiendaAsesor>"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSs |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
       #| usuario externo | lterrazosce  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL            |
-      #| usuario externo | evillanuevag | $Telefonica2020$ | Bienvenid@ | TALARA                       |
+      #| usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA                       |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco

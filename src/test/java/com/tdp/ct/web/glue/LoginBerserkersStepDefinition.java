@@ -2,19 +2,21 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
+import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.es.Cuando;
-import io.cucumber.java.es.Dado;
-import io.cucumber.java.es.Entonces;
-import io.cucumber.java.es.Y;
+import io.cucumber.java.es.*;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
 import java.util.Objects;
+
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 
 @SpringBootTest(classes = WebAutomationApplication.class)
@@ -35,12 +37,16 @@ public class LoginBerserkersStepDefinition {
     @Autowired
     private WebDriverManager manager;
 
+    @Dado("regreso a la pagina de inicio")
+    public void regresoPaginaInicio() throws InterruptedException{
+        loginBerserkerStep.regresarPaginaInicio();
+    }
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
-        System.out.println(env);
+        System.out.println("Enviroment: " + env);
         String urlMovistar = urlqaMovistar;
-        if(Objects.nonNull(env)){
+        if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {
                 urlMovistar = urldevMovistar;
             } else if (env.compareTo("prod") == 0) {
@@ -48,7 +54,7 @@ public class LoginBerserkersStepDefinition {
             }
         }
         manager.navigateTo(urlMovistar);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @Cuando("presiono el boton Iniciar Sesion")
@@ -108,9 +114,9 @@ public class LoginBerserkersStepDefinition {
 
     @Y("me logueo con las credenciales en la aplicacion")
     public void meLogueoConLasCredencialesEnLaAplicacion(DataTable credenciales) {
-        String tipoUsuario= UtilWeb.getValueFromDataTable(credenciales,"tipoUsuario");
-        String userName= UtilWeb.getValueFromDataTable(credenciales,"userName");
-        String password= UtilWeb.getValueFromDataTable(credenciales,"password");
+        String tipoUsuario = UtilWeb.getValueFromDataTable(credenciales, "tipoUsuario");
+        String userName = UtilWeb.getValueFromDataTable(credenciales, "userName");
+        String password = UtilWeb.getValueFromDataTable(credenciales, "password");
         loginBerserkerStep.clickBtnIniciarSesion();
         loginBerserkerStep.selectTipoUsuario(tipoUsuario);
         loginBerserkerStep.writeUserName(userName);
@@ -138,5 +144,39 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.confirmoCerrarSesion();
     }
 
+    @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
+    public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
+        loginBerserkerStep.validarNomPlan(nomPlan);
+    }
 
+    @Y("valido la velocidad de internet {string}")
+    public void validoLaVelocidadDeInternet(String mbpsBB) {
+        loginBerserkerStep.scrollDown();
+        loginBerserkerStep.validarVelocidadInternet(mbpsBB);
+    }
+
+    @Y("valido el precio de descuento del componente Internet {string}")
+    public void validoElPrecioDeDescuentoDelComponenteInternet(String precDesc) {
+        loginBerserkerStep.validarPrecioDescuento(precDesc);
+    }
+
+    @Y("valido el nombre del SVA de contenido externo {string}")
+    public void validoElNombreDelSVADeContenidoExterno(String nomsvaTV) {
+        loginBerserkerStep.validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    @Y("valido el precio de descuento del componente TV {string}")
+    public void validoElPrecioDeDescuentoDelComponenteTV(String pDescTV) {
+        loginBerserkerStep.validarPrecioDescuentoTV(pDescTV);
+    }
+
+
+    @E("ingreso el captcha")
+    public void ingresoElCaptcha() throws IOException, InterruptedException {
+        if(Addons.esEntornoProductivo()){
+            loginBerserkerStep.ingresoCaptcha();
+        }else{
+            System.out.println("Skip. Certificacion no requiere captcha");
+        }
+    }
 }

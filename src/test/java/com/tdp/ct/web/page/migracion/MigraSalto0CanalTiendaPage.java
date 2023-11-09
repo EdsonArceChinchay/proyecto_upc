@@ -9,11 +9,12 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class MigraSalto0CanalTiendaPage extends WebBase {
 
-    @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
+    @FindBy(xpath = "//button[@class=\"btnCard\"  and contains(text(),\"Migrar a Fibra\")]")
     WebElement btnMigrafibra;
 
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
@@ -29,14 +30,14 @@ public class MigraSalto0CanalTiendaPage extends WebBase {
     protected WebElement ingresarContacto;
 
     public void seleccionoOpcionMigraFibra() {
-        waitUntilElementIsVisible(btnMigrafibra,100);
+        esperaProgresiva(driver(),3,5,btnMigrafibra);
         click(btnMigrafibra);
     }
 
     public boolean validoPantallaAgendamiento() {
         revisarModalError(driver());
-        boolean existe = waitUntilElementIsVisible(labelAgendamiento, 60).isDisplayed();
-        UtilWeb.waitForSeconds(1);
+        esperaProgresiva(driver(),3,5, labelAgendamiento);
+        boolean existe = waitUntilElementIsVisible(labelAgendamiento, 2).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
     }

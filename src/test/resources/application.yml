@@ -27,7 +27,7 @@ url:
   qa:
     movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/inicio
   dev:
-      movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
+    movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
   prod:
     movistar: https://ventas.movistar.com.pe/inicio
 

@@ -15,7 +15,6 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
-
 Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 
   Antecedentes:
@@ -23,7 +22,7 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 
   @migracionDuoATrioRetail
   Esquema del escenario: Migracion de Duo a Trio con CE Retail
-	Cuando   presiono el boton Iniciar Sesion
+    Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
@@ -57,7 +56,6 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 253462454 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
+      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 253462454 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA M23 600 MBPS |
 
