@@ -23,6 +23,7 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
