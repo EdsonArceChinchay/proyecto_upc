@@ -58,7 +58,7 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Albania      | Casado      |
+      | 12/12/1992 | Albania      | Casado      |
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
@@ -69,4 +69,4 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539137 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS
