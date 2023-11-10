@@ -4,7 +4,7 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT046
+##CODIGO:
 ##GDAP: GDAP-1423
 ##SPRINT CREADO:
 ##FRECUENCIA:
@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: AT-DT046_CAEQ contado con CE por canal Tienda
+Característica: CAEQ contado con CE por canal Tienda
 
   @CaeqContadoTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -36,7 +36,7 @@ Característica: AT-DT046_CAEQ contado con CE por canal Tienda
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | MOTOROLA |
+      | 12 meses    | Al Contado | MOTOROLA   |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
@@ -64,7 +64,5 @@ Característica: AT-DT046_CAEQ contado con CE por canal Tienda
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                     |
-      | usuario externo | nishuizas | $t3l3f0n1c4$| Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464674 | Postpago | Plan Movil Movistar Total ilim |
-    # 1042464674
-  #461960081
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464674 | Postpago | Plan Movil Movistar Total ilim |
