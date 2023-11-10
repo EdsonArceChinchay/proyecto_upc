@@ -240,7 +240,6 @@ public class Addons {
                                 }catch (Exception e){
                                         System.out.println("revisarModalError(E): " + e.getMessage());
                                 }
-
                         } else {
                                 modal1SinError = true;
                                 System.out.println("No se encontró el modal error (Reintentar / Entendido)");

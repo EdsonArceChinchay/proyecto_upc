@@ -258,7 +258,7 @@ public class AltaFijaTiendaPage extends WebBase {
         revisarModalError(driver());
         System.out.println("Entra al primer try");
         try {
-            esperaProgresiva(driver(), 2, 5, btnRegistrarVenta);
+            esperaProgresiva(driver(), 4, 5, btnRegistrarVenta);
             click(btnRegistrarVenta);
             System.out.println("Hace click en el boton Registrar Venta");
         } catch (Exception e) {

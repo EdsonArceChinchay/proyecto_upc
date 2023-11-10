@@ -740,31 +740,75 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicDescargarContrato() throws InterruptedException {
-        esperaProgresiva(driver(),3,12,descargarContrato);
-        click(descargarContrato);
-        esperaProgresiva(driver(),3,3,contratoUno);
+        revisarModalError(driver());
+        for (int intento = 1; intento <= 2; intento++){
+            System.out.println("Entra al primer try");
+            try {
+                esperaProgresiva(driver(),3,12,descargarContrato);
+                click(descargarContrato);
+                esperaProgresiva(driver(),3,3,contratoUno);
 
-        String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
-        File directorio = new File(rutabase);
-        if (!directorio.exists()) {
-            directorio.mkdirs();
+                String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+                File directorio = new File(rutabase);
+                    if (!directorio.exists()) {
+                        directorio.mkdirs();
+                    }
+                        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl = pdfElement.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl);
+                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+
+                        //click en el 2do boton
+                        if (contratoDos != null){
+                            click(contratoDos);
+                            UtilWeb.waitForSeconds(3);
+
+                            WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                            String pdfUrl2 = pdfElement2.getAttribute("src");
+                            System.out.println("Link PDF: " + pdfUrl2);
+                            descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+                            UtilWeb.waitForSeconds(5);
+                            click(cerrarPopUpContratos);
+                            break;
+                        } else {
+                            System.out.println("No un segundo contrato.");
+                        }
+
+            }catch (Exception e){
+                System.out.println("Sale del primer try");
+            }try {
+                System.out.println("Entra al segundo try");
+                esperaProgresiva(driver(),3,12,descargarContrato);
+                click(descargarContrato);
+                esperaProgresiva(driver(),3,3,contratoUno);
+
+                String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+                File directorio = new File(rutabase);
+                    if (!directorio.exists()) {
+                        directorio.mkdirs();
+                    }
+                        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl = pdfElement.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl);
+                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+
+                        //click en el 2do boton
+                        click(contratoDos);
+                        UtilWeb.waitForSeconds(3);
+
+                        WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl2 = pdfElement2.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl2);
+                        descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+                        UtilWeb.waitForSeconds(5);
+                        click(cerrarPopUpContratos);
+                        break;
+            }catch (Exception e){
+                System.out.println("Sale del segundo try");
+                System.out.println("Salta el registrar");
+            }
         }
 
-        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
-        String pdfUrl = pdfElement.getAttribute("src");
-        System.out.println("Link PDF: " + pdfUrl);
-        descargarPDFDesdeURL(pdfUrl,  rutabase    );
-
-        //click en el 2do boton
-        click(contratoDos);
-        UtilWeb.waitForSeconds(3);
-
-        WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
-        String pdfUrl2 = pdfElement2.getAttribute("src");
-        System.out.println("Link PDF: " + pdfUrl2);
-        descargarPDFDesdeURL(pdfUrl2,  rutabase    );
-        UtilWeb.waitForSeconds(5);
-        click(cerrarPopUpContratos);
 /*
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");

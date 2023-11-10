@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,10 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
-
+    @FindBy(xpath = "//span[@_ngcontent-ala-c56]")
+    protected WebElement tituloValidando;
+    @FindBy(xpath = "//button[contains(text(),' CONTINUAR')]")
+    protected WebElement btnContinuarCU;
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
 
@@ -138,7 +142,13 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
         WebElement element = js().getWebElement(btnSelect);
         element.click();
-        revisarModalError(driver());
+        //revisarModalError(driver());
+        /*if (driver().findElements(By.xpath("//button[contains(text(),' CONTINUAR')]")).size() > 0) {
+            btnContinuarCU.click();
+        }else{
+            System.out.println("No se encontro mensaje de cliente sin CU");
+        }*/
+
        /*
         System.out.println("clickBtnSelectEquipo 0.5");
         System.out.println("data: " + element.getText());

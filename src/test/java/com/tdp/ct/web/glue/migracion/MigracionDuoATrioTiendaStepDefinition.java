@@ -55,6 +55,10 @@ public class MigracionDuoATrioTiendaStepDefinition {
     public void doyClickEnEnElBoton(String btn) {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
     }
+    @Y("doy clic en el boton {string}")
+    public void doyClicEnElBoton(String button) {
+        migracionDuoATrioTiendaStep.doyClickEnEnElBoton(button);
+    }
 
     @Y("doy click en agregar SVA Linea {string}")
     public void doyClickEnAgregarSVALinea(String SvaLinea) {
