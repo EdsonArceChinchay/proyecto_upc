@@ -20,10 +20,12 @@ public class BandejaBackOfficeStep {
     page.bandejaBackOfficePage().clickBackOffice();
     }
 
+    @ScreenShotAfter
     public void ingresoDocumento(String documento) {
         page.bandejaBackOfficePage().ingresoDocumento(documento);
         page.bandejaBackOfficePage().buscoDocumento();
     }
+    @ScreenShotAfter
     public void seleccionoSolicitud(String numeroSolicitud){
         page.bandejaBackOfficePage().seleccionoSolicitud(numeroSolicitud);
     }
