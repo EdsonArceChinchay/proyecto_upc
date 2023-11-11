@@ -274,15 +274,16 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
-    public void guardoNumeroSolicitud() {
+    public String guardoNumeroSolicitud() {
         //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              System.out.println("Numero Solicitud:" + numeroSolicitud);
              cliente.setNumeroSolicitud(numeroSolicitud);
          }else{
-             System.out.println("ERRO - Numero Solicitud - Null");
+             System.out.println("ERROR - Numero Solicitud - Null");
          }
+         return numeroSolicitud;
     }
 
     public String getTextoSolicitud(){

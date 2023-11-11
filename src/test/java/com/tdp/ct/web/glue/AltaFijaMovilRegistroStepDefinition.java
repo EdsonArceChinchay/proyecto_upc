@@ -263,6 +263,6 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("guardo el numero de solicitud")
     public void guardoElNumeroDeSolicitud() {
-        altaFijaMovilRegistroStep.guardoNumeroSolicitud();
+        this.scenario.log(altaFijaMovilRegistroStep.guardoNumeroSolicitud());
     }
 }

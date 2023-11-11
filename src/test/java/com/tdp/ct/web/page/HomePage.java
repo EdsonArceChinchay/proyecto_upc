@@ -42,7 +42,8 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[@class='validation']//tdp-st-select")
     protected WebElement listaDocumentos;
 
-    @FindBy(xpath = "//img[@class='close']")
+    @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
+    ////div[@class='dialog-close']/img
     protected WebElement botonX;
 
     public void seleccionoTipoDocumento(String tipoDocumento){
@@ -84,7 +85,7 @@ public class HomePage extends WebBase {
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
-
+        Addons.esperaCargaMontoDeuda(driver(),60);
         esperaProgresiva(driver(),3,5,boton01);
         revisarModalError(driver());
         //UtilWeb.waitForSeconds(1);
@@ -169,7 +170,9 @@ public class HomePage extends WebBase {
     }
 
     public void clickXPopUpCU() {
-        waitUntilElementIsClickable(botonX,20).click();
+        esperaProgresiva(driver(),2,3,botonX);
+        botonX.click();
+        //waitUntilElementIsClickable(botonX,20).click();
     }
 
     public void clickBackOffice() {
