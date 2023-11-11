@@ -117,7 +117,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void clickBtnVerDetalle(String nroServicio) {
         UtilWeb.waitForSeconds(10);
-        WebElement btnVerDetalle = find().getElementByXPath("//div[@class='card']//*[contains(text(),'" + nroServicio + "')]//following::div[@class='detailHogar'][1]");
+        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[@class='detailHogar'][1]");
         waitUntilElementIsVisible(btnVerDetalle, 20);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();

@@ -21,8 +21,8 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "lterrazosce"
-    Y        ingreso el password "Telefonica2021"
+    Y        ingreso el usuario "nishuizas"
+    Y        ingreso el password "$t3l3f0n1c4$"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        valido que se presente la tienda "CAJAMARCA"
@@ -30,7 +30,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        ingreso el documento "1042464935"
     Y        doy click en el boton consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del servicio "920955203"
+    Y        selecciono el boton Ver detalle del servicio "650026046"
   #"650025121"
     Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
