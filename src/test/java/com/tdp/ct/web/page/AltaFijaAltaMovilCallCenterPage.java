@@ -70,13 +70,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void lote(String lote) {
         if (lote != null) {
-            UtilWeb.waitForSeconds(4);
+            /*UtilWeb.waitForSeconds(4);
             WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
             esperaProgresiva(driver(), 3, 5, Lte);
             click(Lte);
             Lte.sendKeys(Keys.CONTROL + "a");
             Lte.sendKeys(Keys.DELETE);
-            type(Lte, lote);
+            type(Lte, lote);*/
         }
     }
 
@@ -318,7 +318,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void scrollUp() {
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(2);//10
+        UtilWeb.waitForSeconds(10);//10
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");

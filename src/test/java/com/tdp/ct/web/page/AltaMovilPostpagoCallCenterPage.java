@@ -17,6 +17,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
+    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
+    protected WebElement scrollorden;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
 
@@ -70,33 +72,40 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     protected WebElement btnRight;
 
     public void BtonOpciones() {
-        waitUntilElementIsVisible(BtnOpciones, 10);
+        revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,BtnOpciones);
+        revisarModalError(driver());
+        //waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
-        waitUntilElementIsVisible(BtnOpciones, 10);
-        System.out.println("Aqui");
-        click(BtnOpciones, 30);
-        UtilWeb.waitForSeconds(30);//10
+       // waitUntilElementIsVisible(BtnOpciones, 10);
+        System.out.println("BtonOpciones clic");
+        BtnOpciones.click();
+        //click(BtnOpciones, 30);
+        //UtilWeb.waitForSeconds(30);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
+        UtilWeb.waitForSeconds(3);
         System.out.println("cantidad: " + listPlan.size());
         for (WebElement elements : listPlan) {
             System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(tipoPlan))
+            if (elements.getText().equals(tipoPlan)){
+                waitUntilElementIsClickable(elements,10);
                 click(elements, 30);
+            }
         }
     }
 
     public void seleccionarEquipo() {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
         js().scrollElementTop(LblEquipos);
         waitUntilElementIsVisible(LblEquipos, 10);
         click(LblEquipos, 30);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionarTiempo(String tiempoP) {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
@@ -197,8 +206,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnIniciarRegistro() {
-        //UtilWeb.waitForSeconds(3);//3
-        esperaProgresiva(driver(),5,3,btnIniciar);
+        UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
+        esperaProgresiva(driver(),5,5,btnIniciar);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         //js().scrollElementTop(btnIniciar);
@@ -215,16 +225,24 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         return existe;
     }
 
+
     public void ingresoElTipoDePago(String pago) {
+        boolean tipoPagoEncontrado = false;
         System.out.println("cantidad: " + listPago.size());
         for (WebElement elements : listPago) {
             System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(pago))
-                waitUntilElementIsClickable(elements,30).click();
+            if (elements.getText().equals(pago)) {
+                System.out.println("Se encontro: " + pago);
+                waitUntilElementIsClickable(elements, 20).click();
+                tipoPagoEncontrado = true;
                 //click(elements, 3);
                 break;
+            }
         }
-        UtilWeb.waitForSeconds(20);
+        if(!tipoPagoEncontrado){
+            System.out.println("NO SE ENCONTRO EL TIPO DE PAGO: " + pago);
+        }
+        UtilWeb.waitForSeconds(5);
     }
 
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
@@ -300,12 +318,14 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido() {
-        UtilWeb.waitForSeconds(30);
+        js().scrollElementTop(scrollorden);
+        esperaProgresiva(driver(),3,5,btnDetallePedido);
         click(btnDetallePedido);
-        UtilWeb.waitForSeconds(2);//1
+
     }
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
+        //No deberia usarse este metodo. Deberia usarse revisarmodalerror()
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
         if (elementoExistente) {

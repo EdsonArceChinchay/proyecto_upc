@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -35,6 +38,9 @@ public class LoginBerserkerPage extends WebBase {
 
     @FindBy(id = "continue")
     protected WebElement btnContinuar;
+
+    @FindBy(name = "btnpruebavalidate")
+    protected WebElement btnContinuarProd;
 
     @FindBy(css = ".message-welcome span")
     protected WebElement msgHome;
@@ -76,15 +82,23 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
 
+    @FindBy(css = "span.c-anim-btn")
+    protected WebElement btnInicio;
+
     public String getMsgErrorCredential() {
         return msgErrorCredential.getText().trim().toLowerCase();
     }
 
+    public void regresarPaginaInicio(){
+        esperaProgresiva(driver(),3,5,btnInicio);
+        WebElement divElement = btnInicio.findElement(By.xpath("./.."));
+        divElement.click();
+        esperaProgresiva(driver(),3,5,msgHome);
+    }
     public void clickBtnIniciarSesion() {
-        //waitUntilElementIsVisible(btnIniciarSesion, 10);
-        Addons.esperaProgresiva(driver(),10,5,btnIniciarSesion);
+        Addons.reiniciaTimeout(driver());
+        Addons.esperaProgresiva(driver(),3,5,btnIniciarSesion);
         click(btnIniciarSesion);
-        waitUntilElementIsVisible(tipoUsuario, 5);
     }
 
     public void selectTipoUsuario(String usuario) {
@@ -106,10 +120,13 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickBtnContinuarHaciaHome() {
 
- /*        click(btnContinuar);
-        waitUntilElementIsVisible(msgHome, 100);*/
-        esperaProgresiva(driver(),3,5,btnContinuar);
-        click(btnContinuar);
+        if(Addons.esEntornoProductivo()){
+            esperaProgresiva(driver(), 3, 5, btnContinuarProd);
+            click(btnContinuarProd);
+        }else{
+            esperaProgresiva(driver(), 3, 5, btnContinuar);
+            click(btnContinuar);
+        }
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(),3,6,msgHome);
     }
@@ -125,7 +142,9 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void validarMsgHome(String msg) {
+        UtilWeb.waitForSeconds(1);
         Addons.revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,msgHome);
         String expectedMsg = msg.trim().toLowerCase();
         String actualMsg = msgHome.getText().trim().toLowerCase();
         Assertions.assertTrue(actualMsg.contains(expectedMsg), "El mensaje obtenido: " + actualMsg + ", no coincide con lo esperado " + expectedMsg);

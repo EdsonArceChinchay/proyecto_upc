@@ -41,7 +41,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
 
-    @FindBy(xpath = "//div[@class='show-offerts']/button[contains(text(),'Mostrar ofertas')]")
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div/div[4]/button")
     protected WebElement btnMostrarOfertas;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
@@ -77,15 +77,12 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void ofertasSugeridas() {
-        //clickBtnReintentar();
-        //clickBtnReintentar();
-        //clickBtnReintentar();
         revisarModalError(driver());
-        esperaProgresiva(driver(),5,10,ofertasSugeridas);
-        //waitUntilElementIsVisible(ofertasSugeridas, 200);//300
+        esperaProgresiva(driver(),3,5,ofertasSugeridas);
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
+            js().scrollElementTop(subDetalles);
             click(subDetalles);
             System.out.println("si estaba abierto el detalle");
             UtilWeb.waitForSeconds(1);
@@ -94,15 +91,14 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void listaTipoPlanMovil(String planMovil) {
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(2);
+        revisarModalError(driver());
         esperaProgresivaLoading(driver(), 3,5,"loading-offer");
         clickElementInAList(listaTipoPlanMovil, planMovil,10);
     }
 
     public void listaPlanMovil(String planMovil) {
         revisarModalError(driver());
-        //clickBtnReintentar();
-        //clickBtnReintentar();
         System.out.println("Ofertas : " + listaPlanMovil.size());
 //        UtilWeb.waitForSeconds(2);
 //        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
@@ -150,15 +146,16 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void paginaResumen() {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(2);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 
     public void completaDatosSolicitados() {
-        //waitUntilElementIsVisible(completaDatosSolicitados, 20);
-        esperaProgresiva(driver(),5,5,completaDatosSolicitados);
+        UtilWeb.waitForSeconds(2);
+        revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 

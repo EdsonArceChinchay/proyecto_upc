@@ -55,6 +55,10 @@ public class MigracionDuoATrioTiendaStepDefinition {
     public void doyClickEnEnElBoton(String btn) {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(btn);
     }
+    @Y("doy clic en el boton {string}")
+    public void doyClicEnElBoton(String button) {
+        migracionDuoATrioTiendaStep.doyClickEnEnElBoton(button);
+    }
 
     @Y("doy click en agregar SVA Linea {string}")
     public void doyClickEnAgregarSVALinea(String SvaLinea) {
@@ -74,5 +78,9 @@ public class MigracionDuoATrioTiendaStepDefinition {
     @Y("cierro el popup de contraseña Única")
     public void cierroElPopupDeContraseñaÚnica() {
         migracionDuoATrioTiendaStep.cerrarPopupCU();
+    }
+
+    @Y("Selecciono la cartilla del plan Motvistar Total")
+    public void seleccionoLaCartillaDelPlanMotvistarTotal() {migracionDuoATrioTiendaStep.seleccionoCartillaMovistarTotal();
     }
 }

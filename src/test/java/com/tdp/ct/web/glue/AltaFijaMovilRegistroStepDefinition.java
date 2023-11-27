@@ -1,9 +1,12 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -18,6 +21,15 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Autowired
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
+    @Autowired
+    private Cliente cliente;
+
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
     @Entonces("me muestra la pantalla para ingresar la direccion")
     public void meMuestraLaPantallaParaIngresarLaDireccion() {
@@ -150,6 +162,12 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
     }
 
+    @Y("imprimo el texto del contrato solicitado")
+    public void imprimoElTextoDelContratoSolicitado() {
+        System.out.println("Solicitud de Contrato: " + altaFijaMovilRegistroStep.getTextoSolicitud());
+        this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
+    }
+
     @Cuando("doy clic en si acepto")
     public void doyClicEnSiAcepto() {
         altaFijaMovilRegistroStep.clicSiAcepto();
@@ -172,6 +190,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 //CAMBIOS PARA RETAIL
 @Y("ingreso los datos del cliente a registrar")
 public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+    altaFijaMovilRegistroStep.verificarClienteNuevo();
     altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
     altaFijaMovilRegistroStep.clicEnCrearCliente();
 }
@@ -185,8 +204,12 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
-        altaFijaMovilRegistroStep.esperarBtnDatosCliente();
-        altaFijaMovilRegistroStep.clicDatosDelCliente();
+        if(cliente.isClienteNuevo()) {
+            altaFijaMovilRegistroStep.esperarBtnDatosCliente();
+            altaFijaMovilRegistroStep.clicDatosDelCliente();
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
     }
 
     @Y("me muestra pantalla para Descargar contrato")
@@ -195,7 +218,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     }
 
     @Y("doy clic para descargar el contrato")
-    public void doyClicParaDescargarElContrato() {
+    public void doyClicParaDescargarElContrato() throws InterruptedException {
         altaFijaMovilRegistroStep.clicDescargarContrato();
     }
 
@@ -238,4 +261,8 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
         altaFijaMovilRegistroStep.clicConfirmarCliente();
     }
 
+    @Y("guardo el numero de solicitud")
+    public void guardoElNumeroDeSolicitud() {
+        this.scenario.log(altaFijaMovilRegistroStep.guardoNumeroSolicitud());
+    }
 }

@@ -68,4 +68,9 @@ public class HomeStep {
     public void clickXPopUpCU() {
         page.homePage().clickXPopUpCU();
     }
+
+    public void clickButtonBackOffice() {
+        page.homePage().clickBackOffice();
+        page.homePage().buscarOrden();
+    }
 }

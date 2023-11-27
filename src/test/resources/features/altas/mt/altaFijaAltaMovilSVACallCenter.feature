@@ -66,7 +66,7 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
       | A  | EDIFICIO | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "908123789"
     Y        ingreso las instrucciones a considerar de la entrega "Al frente de la farmacia central"
     Y        doy clic en confirmar delivery

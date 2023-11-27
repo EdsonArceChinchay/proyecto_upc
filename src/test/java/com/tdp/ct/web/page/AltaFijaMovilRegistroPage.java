@@ -1,8 +1,11 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import groovy.xml.StreamingDOMBuilder;
 import io.cucumber.datatable.DataTable;
 import org.apache.commons.math3.analysis.function.Add;
 import org.codehaus.groovy.transform.SourceURIASTTransformation;
@@ -10,17 +13,35 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
+import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-
+    //@FindBy(xpath = "//app-modal-contract/tdp-st-modal/div[2]/p/text()[11]")
+    //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
+    //app-modal-contract/descendant::text()[12]
+    //protected WebElement irFinalContrato;
+    @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
+    protected WebElement cerrarPopUpContratos;
+    @FindBy(xpath = "(//*[@class=\"btn btnFirst\"])[1]")
+    protected WebElement contratoUno;
+    @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
+    protected WebElement contratoDos;
+    @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
+    protected WebElement cicloFacturacion;
+    @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
+    protected WebElement descargarContrato;
+    @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
+    protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
@@ -101,6 +122,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class=\"buttonG cls-top\"]")
     protected WebElement buttonAgregarSVAMT;
 
+    @FindBy(css =".text-info")
+    protected WebElement nombreClienteUserData;
+
+    @Autowired
+    private Cliente cliente;
 
     public boolean validarPantallaIngresarDireccion() {
         esperaProgresiva(driver(),2,5,titleLugarInstalacion);
@@ -156,13 +182,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void validarDetalleSeleccion() {
         esperaProgresiva(driver(),2,5,titlePlan);
-        waitUntilElementIsVisible(titlePlan, 500);
+        waitUntilElementIsVisible(titlePlan, 30);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
         UtilWeb.waitForSeconds(2);
     }
 
     public void moverToElementIniciarRegistro() {
-        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,3,buttonIniciarRegistro);
         js().scrollElementTop(buttonIniciarRegistro);
     }
 
@@ -307,7 +333,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(8, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         //Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(16);
+        //UtilWeb.waitForSeconds(16);
         Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
         Addons.revisarModalError(driver());
 
@@ -334,6 +360,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato);
 //        click(buttonValidarContrato, 300);
+        js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
 
@@ -372,20 +399,21 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void visualizarContratoEnPantalla() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         esperaProgresiva(driver(),5,5,element);
-        waitUntilElementIsVisible(element, 50);
+        //waitUntilElementIsVisible(element, 30);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
+        //js().scrollElementTop(irFinalContrato);
     }
-
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),3,10,element);
-        waitUntilElementIsVisible(element, 50);
-        waitUntilElementIsClickable(element,25);
-        click(element,10);
+        esperaProgresiva(driver(),3,5,element);
+        //waitUntilElementIsVisible(element, 50);
+        //waitUntilElementIsClickable(element,25);
+        element.click();
+        //click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(3);//
     }
@@ -567,6 +595,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
+    public boolean esNuevoCliente(){
+        //En el formulario de Dito
+        //<div _ngcontent-ggn-c60="" class="text-info">Nombre: Prueba QAN VEINTICUATRO</div>
+        if(nombreClienteUserData.getText().length()>8){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     //CAMBIOS PARA RETAIL
     public void ingresarNombreClienteExtranjero(String nombre) {
         UtilWeb.waitForSeconds(3);
@@ -574,6 +612,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(),5,5,rootElement);
         revisarModalError(driver());
         SearchContext context = sh().getContext(rootElement);
+        revisarModalError(driver());
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
         UtilWeb.waitForSeconds(1);
     }
@@ -700,8 +739,77 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return existe;
     }
 
-    public void clicDescargarContrato() {
-        UtilWeb.waitForSeconds(7);
+    public void clicDescargarContrato() throws InterruptedException {
+        revisarModalError(driver());
+        for (int intento = 1; intento <= 2; intento++){
+            System.out.println("Entra al primer try");
+            try {
+                esperaProgresiva(driver(),3,12,descargarContrato);
+                click(descargarContrato);
+                esperaProgresiva(driver(),3,3,contratoUno);
+
+                String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+                File directorio = new File(rutabase);
+                    if (!directorio.exists()) {
+                        directorio.mkdirs();
+                    }
+                        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl = pdfElement.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl);
+                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+
+                        //click en el 2do boton
+                        if (contratoDos != null){
+                            click(contratoDos);
+                            UtilWeb.waitForSeconds(3);
+
+                            WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                            String pdfUrl2 = pdfElement2.getAttribute("src");
+                            System.out.println("Link PDF: " + pdfUrl2);
+                            descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+                            UtilWeb.waitForSeconds(5);
+                            click(cerrarPopUpContratos);
+                            break;
+                        } else {
+                            System.out.println("No un segundo contrato.");
+                        }
+
+            }catch (Exception e){
+                System.out.println("Sale del primer try");
+            }try {
+                System.out.println("Entra al segundo try");
+                esperaProgresiva(driver(),3,12,descargarContrato);
+                click(descargarContrato);
+                esperaProgresiva(driver(),3,3,contratoUno);
+
+                String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+                File directorio = new File(rutabase);
+                    if (!directorio.exists()) {
+                        directorio.mkdirs();
+                    }
+                        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl = pdfElement.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl);
+                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+
+                        //click en el 2do boton
+                        click(contratoDos);
+                        UtilWeb.waitForSeconds(3);
+
+                        WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                        String pdfUrl2 = pdfElement2.getAttribute("src");
+                        System.out.println("Link PDF: " + pdfUrl2);
+                        descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+                        UtilWeb.waitForSeconds(5);
+                        click(cerrarPopUpContratos);
+                        break;
+            }catch (Exception e){
+                System.out.println("Sale del segundo try");
+                System.out.println("Salta el registrar");
+            }
+        }
+
+/*
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-button[contains(@label,'Descargar contrato')]");
         js().scrollElementTop(rootElement);
@@ -709,6 +817,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.waitForSeconds(3);
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+        */
 
     }
 
@@ -733,8 +842,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),3,15,scrollorden);
-        js().scrollElementTop(scrollorden);
+        esperaProgresiva(driver(),3,15,cicloFacturacion);
+        js().scrollElementTop(cicloFacturacion);
+        //UtilWeb.waitForSeconds(5);
+        //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         //modalError(3, btnReintentar, "Click al elemento Reintentar");
@@ -829,5 +940,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    public String getNumeroSolicitud() {
+        String textoContrato = textoContratoCliente.getText();
+        return extraerNumeroSolicitud(textoContrato);
+    }
+    public String getTextoSolicitud(){
+        return textoContratoCliente.getText();
     }
 }

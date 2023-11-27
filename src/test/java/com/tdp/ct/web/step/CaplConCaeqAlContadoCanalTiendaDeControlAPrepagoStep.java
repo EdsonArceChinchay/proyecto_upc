@@ -21,7 +21,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clickBtnRenovarPlan() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
     }
@@ -46,10 +46,11 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnAddEquipoInCard();
     }
 
+    @ScreenShotAfter
     public void selectPermanencia(String dato) {
         page.altaMovilPostpagoCallCenterPage().seleccionarTiempo(dato);
     }
-
+    @ScreenShotAfter
     public void selectTipoPago(String tipoPago) {
         page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(tipoPago);
     }
@@ -59,6 +60,10 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.altaMovilPostpagoCallCenterPage().BuscarEquipo(modelo);
     }
 
+    @ScreenShotAfter
+    public int contadorResultadosBusquedaEquipos(){
+        return page.caplConCaeqAlContadoCanalTiendaPage().contadorResultadosBusquedaEquipos();
+    }
     public void scrollToVerBtnDetalles() {
         page.caplConCaeqAlContadoCanalTiendaPage().scrollToVerBtnDetalles();
     }

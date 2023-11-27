@@ -1,6 +1,8 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
+import com.tdp.ct.web.utils.Addons;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,6 +11,8 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     @Autowired
     private AltaTrioMTconUpfrontTiendaStep altaTrioMTconUpfrontTiendaStep;
 
+    @Autowired
+    private Cliente cliente;
 
     @Y("doy click en el boton linea nueva")
     public void doyClickEnElBotonLineaNueva() {
@@ -43,8 +47,19 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
 
     @Y("doy click en el boton confirmar")
     public void doyClickEnElBotonConfirmar() {
-        altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
+        if(cliente.isClienteNuevo()){
+            altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
+        }else{
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+
     }
+
+    @Y("voy hasta el final de la pagina")
+    public void voyHastaElFinalDeLaPagina() {
+        altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
+    }
+
 
     @Y("valido detalles de instalacion")
     public void validoDetallesDeInstalacion() {

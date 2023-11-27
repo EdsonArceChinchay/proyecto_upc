@@ -61,7 +61,7 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono el horario de entrega "2pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Ejemplos:

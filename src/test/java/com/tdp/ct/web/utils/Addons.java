@@ -7,10 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.test.context.jdbc.Sql;
 
 
 import java.io.File;
+import java.time.Duration;
+import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Driver;
@@ -18,6 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -103,16 +109,26 @@ public class Addons {
                                 //by = By.cssSelector(".splash");
                                 //by = By.xpath("//div[@class='splash']");
                                 //by = By.xpath("//tdp-loader[contains(@class, 'splash')]");
-                                by = By.tagName("tdp-loader");
-                                WebElement splashElement = driver.findElement(by);
-                                String splashText = splashElement.getText();
-                                if(splashText.length()> 0){
-                                        bCargando = true;
-                                }
-                                if(bCargando) {
-                                        LOGGER.log(Level.INFO, "Splash detectado: " + splashText + " #" + (contador + 1));
-                                        UtilWeb.waitForSeconds(segundosEspera);
-                                }
+                                //by = By.tagName("tdp-loader");
+                                //by = By.xpath("//tdp-loader/div[@class='splash']/div[@class='splash-title']");
+                                //by = By.xpath("//div[@class='splash-title']");
+
+                                by = By.cssSelector("tdp-loader");
+                                //List<WebElement> elements = driver.findElements(by);
+                                //if (!elements.isEmpty()){
+                                        //LOGGER.log(Level.INFO, "SEARCH:");
+                                        WebElement splashElement = driver.findElement(by);
+                                        String splashText = splashElement.getText();
+                                        if(splashText.length()> 3 ){
+                                                bCargando = true;
+                                        }
+                                        if(bCargando) {
+                                                LOGGER.log(Level.INFO, "Splash detectado: " + splashText + " #" + (contador + 1));
+                                                UtilWeb.waitForSeconds(segundosEspera * contador);
+                                        }
+                               // }else{
+                               //         LOGGER.log(Level.INFO, "NO hay Splash");
+                               // }
 
                         } catch (Exception e) {
                                 bCargando = false;
@@ -160,20 +176,33 @@ public class Addons {
                 }
         }
         public static void  revisarModalError(WebDriver driver) {
+/*
+    Se tiene como objetivo detectar avisos de Error,
+    y reintentar como máximo 2 veces el boton de error para permitir continuar.
+
+    Se está identificando diferentes modalidades de error.
+*/
                 boolean bExisteModal = false;
                 boolean bReintentar = true;
                 int contador = 0;
-                int reintentosMax = 3;
+                int reintentosMax = 2;
                 int segundosEspera = 3;
+
                 do {
-                        UtilWeb.waitForSeconds(1);
+                        boolean modal1SinError = false;
+                        boolean sinBtnReintentar = false;
+                        boolean sinBtnEntendido = false;
+                        boolean  modal2SinError = false;
+                        UtilWeb.waitForSeconds(3);
                         LOGGER.log(Level.INFO, "revisarModalError #" + (contador+1) + "/" + reintentosMax);
                         bExisteModal = driver.findElements(By.xpath("//mat-dialog-actions")).size() != 0;
+                        System.out.println();
+                        LOGGER.log(Level.INFO, "bExisteModal(Reintentar / Entendido): " + bExisteModal);
                         if (bExisteModal) {
                                 UtilWeb.waitForSeconds(segundosEspera*contador);
-                                //UtilWeb.waitForSeconds(10); // MODIFICAR 2 ########################
                                 WebElement btnReintentar;
                                 WebElement btnEntendido;
+
                                 try {
                                         //Busca un boton para Reintentar
                                         LOGGER.log(Level.INFO, "Buscando - btn Reintentar");
@@ -184,6 +213,7 @@ public class Addons {
                                                 System.out.println("################ CLIC en Reintentar");
                                                 LOGGER.log(Level.INFO,"CLIC en Reintentar");
                                         }else{
+                                                sinBtnReintentar = true;
                                                 LOGGER.log(Level.INFO,"btnReintentarEntendido.isEnabled() false");
                                         }
                                 }catch (Exception e){
@@ -200,14 +230,52 @@ public class Addons {
                                                 System.out.println("################ CLIC en Entendido");
                                                 LOGGER.log(Level.INFO,"CLIC en Entendido");
                                         }else{
+                                                sinBtnEntendido = true;
                                                 LOGGER.log(Level.INFO,"btnReintentarEntendido.isEnabled() false");
+                                        }
+                                        if(sinBtnReintentar && sinBtnEntendido){
+                                             modal1SinError = true;
                                         }
 
                                 }catch (Exception e){
                                         System.out.println("revisarModalError(E): " + e.getMessage());
                                 }
                         } else {
-                                System.out.println("No se encontró el modal error");
+                                modal1SinError = true;
+                                System.out.println("No se encontró el modal error (Reintentar / Entendido)");
+                                //break;
+                        }
+
+                        //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
+                        //Mostrando un boton: Continuar
+                        bExisteModal = driver.findElements(By.xpath("//app-modal-confirmation-financing")).size() != 0;
+                        LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + bExisteModal);
+                        if (bExisteModal) {
+                                WebElement btnContinuar;
+                                try {
+                                        //Busca un boton para Continuar
+                                        LOGGER.log(Level.INFO, "Buscando - btn Continuar");
+                                        btnContinuar = driver.findElement(By.xpath("//*[contains(text(),'Continuar')]"));
+                                        if(btnContinuar.isEnabled()) {
+                                                btnContinuar.click();
+                                                System.out.println("################ CLIC en Continuar");
+                                                LOGGER.log(Level.INFO,"CLIC en Continuar");
+                                        }else{
+                                                LOGGER.log(Level.INFO,"btnReintentarEntendidoContinuar.isEnabled() false");
+                                                modal2SinError = true;
+                                        }
+
+                                }catch (Exception e){
+                                        System.out.println("revisarModalError(E): " + e.getMessage());
+                                }
+                        } else {
+                                modal2SinError = true;
+                                System.out.println("No se encontró el modal error (Continuar)");
+
+                        }
+
+                        if(modal1SinError && modal2SinError) {
+                                //Si no hay formulario de error, sale del bucle.
                                 break;
                         }
 
@@ -267,7 +335,7 @@ public class Addons {
                 long tiempoEjecucion = fin - inicio;
                 formatTiempo(tiempoEjecucion, "revisarModalEntendido");
         }
-        private static String obtenerRutaBaseProyecto() {
+        public static String obtenerRutaBaseProyecto() {
                 String rutaBase = "";
                 try {
                         rutaBase = System.getProperty("user.dir");
@@ -301,5 +369,36 @@ public class Addons {
 
         }
 
+        public static boolean esEntornoProductivo(){
+                String env = System.getProperty("environment");
+                System.out.println("Enviroment: " + env);
+                if (Objects.nonNull(env)) {
+                        if (env.compareTo("dev") == 0) {
+                               return false;
+                        } else if (env.compareTo("prod") == 0) {
+                                return true;
+                        }else{
+                                return false;
+                        }
+                }
+                return false;
+        }
 
+        public static void reiniciaTimeout(WebDriver driver){
+                driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        }
+
+    public static void scrollFinalPagina(WebDriver driver) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+    public static void esperaCargaMontoDeuda(WebDriver driver, int tiempoEsperaMaximo){
+      try {
+         By loaderCard = By.cssSelector("app-deuda img.stl_loader");
+         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(tiempoEsperaMaximo));
+         wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
+      }catch(Exception e){
+          System.out.println("Error: "+ e.getMessage());
+      }
+    }
 }

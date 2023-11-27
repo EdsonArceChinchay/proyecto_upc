@@ -128,7 +128,7 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        Consulto ubicacion
 #    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-#    Y        selecciono horario "2pm-7pm"
+#    Y        selecciono horario "3pm-7pm"
 #    E        ingreso telefono del titular "998877665"
 #    E        ingreso instrucciones de delivery "cerca al parque"
 #    Y        doy clic en confirmar delivery
@@ -148,4 +148,4 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 142266229 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | 600 Mbps + 95 Gb | correo@gmail.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo BA 1 Gb RA + 95 Gb RA| correo@gmail.com |
