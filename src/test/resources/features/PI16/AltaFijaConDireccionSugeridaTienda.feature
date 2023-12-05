@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: Eloy Milla
-##FECMOD: 10/07/2023
+##FECMOD: 04/12/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16
 
@@ -56,15 +56,15 @@ Característica: Alta Duo con direccion sugerida por Canal Tiendas
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Albania      | Casado      |
+      | 12/08/1990 | Albania      | Casado      |
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 123453910 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
