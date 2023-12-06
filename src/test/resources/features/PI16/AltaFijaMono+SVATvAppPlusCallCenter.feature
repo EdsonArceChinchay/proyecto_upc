@@ -33,9 +33,9 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Plus Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos       | genero   |
-      | Helena  | Barrientos Soza | femenino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -73,6 +73,7 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Plus Call Center
     Y        doy clic en continuar
 	#Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | TV HOGAR DIGITAL RA M23 |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                               |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono      | Internet Movistar RA S23 200 Mbps |
