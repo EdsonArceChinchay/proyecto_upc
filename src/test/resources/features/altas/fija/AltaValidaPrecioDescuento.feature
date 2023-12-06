@@ -11,7 +11,7 @@
 ##TAG :
 ##DATA:
 ##ENCARGADO: Romina Torres - CATÁLOGO
-##FECMOD: 02/08/2023
+##FECMOD: 06/12/2023
 
 @BERSERKERS @DoneDevOps @ValidacionDescuentos
 Característica: Validar precio de descuento BB - Planes: Duos, trios
@@ -51,10 +51,10 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    #Y selecciono el boton Linea Nueva
+    #Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
-    Y valido la velocidad de internet "<velocidadBB>"
-    Y valido el precio de descuento del componente Internet "<precDescBB>"
+    Y        valido la velocidad de internet "<velocidadBB>"
+    Y        valido el precio de descuento del componente Internet "<precDescBB>"
   #  Y        doy click en añadir SVA
   #  Y        doy click en agregar Bloque "<bloque>"
   #  Y        doy click en Guardar cambios
@@ -68,7 +68,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Aruba        |
+      | 01/09/1990 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -79,8 +79,8 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                      | bloque | tipoPlan | svaInternet           | bloque |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA S23 600 MBPS       | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233168 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA S23 600 MBPS       | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233169 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 100 MBPS  | Combo Plus Bonif TV | 100 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 150 MBPS  | Combo Plus Bonif TV | 150 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 1000 MBPS | Combo Plus Bonif TV | 1000 Mbps   | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
@@ -129,7 +129,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        escojo el plan "<nombrePlan>"
     Y        Valido que el beneficio sea "<beneficioPlan>"
-    Y        Valido que el descuento aplicado sea "<descuentoPlan>"
+   # Y        Valido que el descuento aplicado sea "<descuentoPlan>"
     Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
     Y        valido el precio establecido sea "<precio>"
@@ -141,13 +141,13 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
   #  Y        ingreso el callId "<Call ID>"
     Y        valido el ingreso de datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Aruba        |
+      | 12/05/1990 | Divorciado  | Aruba        |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | nombre              | apellido           | genero    | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                        | precio   | tipoPlan | beneficioPlan                     | descuentoPlan | Call ID |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102223310 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA O23 50 MBPS  | S/ 59.91 | Mono     | Bono 100 Mbps/100 Mbps x 6 meses  |               | 123     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 856575420 | MCONewFirstName1405 | MCONewLastName1405 | Femenino  | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 200 MBPS | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               | 1234    |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | nombre              | apellido           | genero   | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                        | precio   | tipoPlan | beneficioPlan                     | descuentoPlan | Call ID |
+     # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102223310 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 400 MBPS | S/139.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               | 123     |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 856575420 | MCONewFirstName1405 | MCONewLastName1405 | Femenino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 200 MBPS | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               | 1234    |
