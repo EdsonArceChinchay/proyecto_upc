@@ -4,10 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tdp.ct</groupId>
     <artifactId>automation-web-berserkers</artifactId>
+
+    <!--   Este cambio de SNAPSHOT ya no es necesario-->
     <version>1.0.0-SNAPSHOT</version>
-    <!--    Utilizar en la rama Develop-->
-      <!-- <version>1.0.0</version>-->
-    <!--    Utilizar en la rama release/certificaation-->
+    <!--   Se ha automatizado para develop y release/certification -->
+
 
     <description>Template from Continuous Testing Framework</description>
     <properties>
@@ -23,11 +24,11 @@
             <artifactId>web-automation</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-http-jdk-client</artifactId>
             <version>4.5.0</version>
-        </dependency> -->
+        </dependency>
         <!--      Si da error local, usar temporalmente.   -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

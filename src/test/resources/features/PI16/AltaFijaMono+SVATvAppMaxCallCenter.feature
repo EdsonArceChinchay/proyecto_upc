@@ -33,9 +33,9 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Max Call center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos   | genero    |
-      | Elias   | Lopez Lopez | masculino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos    | genero    |
+      | Elias   | Zapata Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -65,7 +65,7 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Max Call center
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 15/09/1993 | Casado      | Angola       |
+      | 10/01/1993 | Casado      | Angola       |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -74,5 +74,5 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Max Call center
 	#Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1548788787 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA D22 200 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                        |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1548787786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA S23 200 MBPS |
