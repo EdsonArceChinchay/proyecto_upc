@@ -54,4 +54,4 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Ejemplos:
 
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan                 | correo            |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |

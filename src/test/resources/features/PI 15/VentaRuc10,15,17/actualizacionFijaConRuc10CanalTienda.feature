@@ -39,4 +39,4 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | ruc         |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 7241133113 | 10112233440 |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 7241133113 | 10112233440 |

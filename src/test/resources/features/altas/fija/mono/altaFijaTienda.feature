@@ -74,5 +74,5 @@ Característica: AT-DT009_Alta Fija por tienda
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
 

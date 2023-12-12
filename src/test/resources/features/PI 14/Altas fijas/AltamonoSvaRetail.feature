@@ -76,4 +76,4 @@ Característica: AT-DT092_Alta mono + sva  en Canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                 | bloque |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA D22 | FOX    |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA D22 | FOX    |

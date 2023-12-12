@@ -33,9 +33,9 @@ Característica: Alta Duo + Sva Movistar Tv App canal tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos     | genero    |
-      | Elvis   | Lopez Barrios | masculino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos       | genero    |
+      | Elvis   | Presley Barrios | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -65,7 +65,7 @@ Característica: Alta Duo + Sva Movistar Tv App canal tienda
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1994 | Casado      | Albania      |
+      | 12/10/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -74,5 +74,5 @@ Característica: Alta Duo + Sva Movistar Tv App canal tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                               |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1020303001 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS |
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                               |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS|

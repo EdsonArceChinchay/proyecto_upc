@@ -22,7 +22,7 @@ public class ActualizacionDeRuc10CanalTiendaPage extends WebBase {
     @FindBy(xpath = "(//button[contains(text(),'Entendido')])[2]")
     protected WebElement Entendido;
 
-    @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[1]")
+    @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
     protected WebElement direccionSugerida;
 
 
