@@ -54,4 +54,4 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
     Ejemplos:
       | tipoUsuario     | userName  | password     |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ |

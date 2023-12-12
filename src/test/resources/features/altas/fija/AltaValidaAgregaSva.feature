@@ -15,11 +15,9 @@
 @BERSERKERS @DoneDevOps
 Característica: Agregar SVA - Planes: Monos, dúos, trios
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaMonoBB
-  Esquema del escenario: Agregar SVA - Planes: Monos, dúos, trios
+  Esquema del escenario: Plan <tipoPlan> Oferta <nombrePlan> + SVA Movistar Tv App
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -50,16 +48,16 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y selecciono el boton Linea Nueva
+    #Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
   #  Y valido la velocidad de internet "<velocidadBB>"
-  #  Y valido el precio de descuento del componente Internet "<precDescBB>"
+    Y        valido el precio de descuento del componente Internet "<precDescBB>"
     Y        doy click en añadir SVA
     Y        doy click en agregar Movistar TV App
   #  Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios
 	#Y        doy click en agregar "<svaInternet>"
-    Y valido el precio de descuento del componente TV "<precDescTV>"
+   # Y        valido el precio de descuento del componente TV "<precDescTV>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -69,7 +67,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Aruba        |
+      | 12/01/1996 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -79,10 +77,10 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
 #	Y        valido que se muestre el detalle del pedido
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                        | precDescTV                                    | bloque | tipoPlan | svaInternet           | bloque |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | Internet Movistar RA D22 200 Mbps              | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Dscto Prom Movistar TV App INT S/80 x 2m      | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV HOGAR DIGITAL RA M23                        | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233150 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 600 MBPS | Combo Plus Bonif TV | 600 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV ESTÁNDAR DIGITAL RA M23                     | Combo Plus Bonif TV | 600 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022234148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS       | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO MOVISTAR VOZ ESTÁNDAR HD RA M23            | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | svaTV               | velocidadBB | precDescBB                      | precDescTV                               | bloque | tipoPlan | svaInternet           | bloque |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | INTERNET MOVISTAR RA S23 200 MBPS         | Combo Plus Bonif TV | 200 Mbps    | Descto Plan Internet 50% x 2 ms | Dscto Prom Movistar TV App INT S/80 x 2m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
+     # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV HOGAR DIGITAL RA M23                        | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
+   #   | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO INT TV VOZ RA S23 400 MBPS           | Combo Plus Bonif TV | 600 Mbps    | Descto Plan Internet 50% x 2 ms | Dscto Prom Movistar TV App INT S/80 x 2m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+     # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV ESTÁNDAR DIGITAL RA M23                     | Combo Plus Bonif TV | 600 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022234148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS | Combo Plus Bonif TV | 200 Mbps    | Descto Plan Internet 50% x 2 ms | Dscto Prom Movistar TV App INT S/80 x 2m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+     # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO MOVISTAR VOZ ESTÁNDAR HD RA M23           | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | Descuento Prom Movistar TV App TV S/9.90 x 2m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
