@@ -78,4 +78,4 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | HD 500 Mbps RA + 95 Gb RA | correo@gmail.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | HD 500 Mbps RA + 95 Gb RA | correo@gmail.com |

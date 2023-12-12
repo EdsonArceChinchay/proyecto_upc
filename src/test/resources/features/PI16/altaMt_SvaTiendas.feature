@@ -68,7 +68,7 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Aruba        | Casado       |
+      | 24/01/1996 | Aruba        | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -78,6 +78,6 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan        |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464677 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan        |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464677 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
 

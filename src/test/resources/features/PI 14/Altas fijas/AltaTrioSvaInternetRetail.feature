@@ -77,4 +77,4 @@ Característica: Alta Trio con  sva Internet CANAL RETAIL
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | svaInternet           | bloque         |
-      | usuario externo | nishuizas | $T3l3f0n1c4$ | Bienvenid@ | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | PACK ANTIVIRUS MCAFEE | Bloque estelar |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | PACK ANTIVIRUS MCAFEE | Bloque estelar |
