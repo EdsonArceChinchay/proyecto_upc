@@ -49,4 +49,4 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |

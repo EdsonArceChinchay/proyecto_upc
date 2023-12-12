@@ -49,4 +49,4 @@ Característica: AT-DT113_CASI Stand Alone por Retail
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464853 | prueba@prueba.com |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464725 | prueba@prueba.com |
