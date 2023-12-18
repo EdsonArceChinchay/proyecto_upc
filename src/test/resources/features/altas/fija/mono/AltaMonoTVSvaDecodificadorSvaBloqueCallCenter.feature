@@ -33,7 +33,7 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque Call Cente
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        presiono el boton de CASI
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres           | apellidos     | genero   |
       | Elizabeth Marisol | Lopez Barrios | femenino |
     Y        selecciono el boton Linea Nueva Hogar

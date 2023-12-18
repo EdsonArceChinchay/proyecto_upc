@@ -92,7 +92,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
     protected WebElement lblNumeroOrden;
-    @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
+    @FindBy(xpath = "//button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
@@ -139,6 +139,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         modalError(3, btnReintentar, "Click al elemento Reitentar");
         modalError(3, btnReintentar, "Click al elemento Reitentar");
+        esperaProgresiva(driver(),4,6,titleOfertasSugeridas);
 
         boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);

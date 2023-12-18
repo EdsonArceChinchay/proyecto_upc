@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 18/12/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05
 Característica: AT-DT008_Alta Fija por tienda + SVA
@@ -32,7 +32,7 @@ Característica: AT-DT008_Alta Fija por tienda + SVA
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero    |
       | Pedro   | Lopez Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
