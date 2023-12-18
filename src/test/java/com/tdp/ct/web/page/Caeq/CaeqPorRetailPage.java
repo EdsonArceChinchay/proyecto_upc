@@ -10,7 +10,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaeqPorRetailPage extends WebBase {
     //@FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
-    @FindBy(xpath = "(//div[contains(text(),\"Añadir equipo\")])[1]")
+    @FindBy(xpath = "(//div[contains(text(),\"Añadir equipo\")])[2]")
     protected WebElement btnAnadirE;
 
     @FindBy(css = "tdp-st-button[label=\"Seleccionar\"]")
