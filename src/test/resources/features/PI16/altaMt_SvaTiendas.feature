@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 29/08/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @prueba
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
 
 Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
 
@@ -36,8 +36,8 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
       | Moises  | Llanos    | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    Y       cierro el popup de validación de estado de contraseña única
-    #Y        cierro pop up de Cliente Exonerado
+    Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro pop up de Cliente Exonerado
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -50,15 +50,11 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
      # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
-    #Y        selecciono tipo de oferta
-    #Y        selecciono el tipo de plan fija "<tipoPlan>"
-    #Y        selecciono el plan "<nombrePlan>"
-    Y        selecciono el nombre de plan movistar total
-    #Y        luego doy click en la cartilla ir a Movistar Total
-    #E        inicio su registro
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Movistar TV App
-    Y        doy click en Guardar cambios
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        valido el detalle de la seleccion
+    Y        valido que este en la seccion de registro
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -78,6 +74,6 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan        |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464677 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464677 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 

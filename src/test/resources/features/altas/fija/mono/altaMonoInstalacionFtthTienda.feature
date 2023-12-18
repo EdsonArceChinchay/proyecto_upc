@@ -30,7 +30,7 @@ Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
     Y        ingreso el documento "1042464814"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar

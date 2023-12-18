@@ -77,10 +77,7 @@ public class AltaMovilPostpagoCallCenterStep {
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
-    @ScreenShotAfter
-    public void seleccionamosElHorarioDeEntrega(String horario) {
-        page.altaMovilPostpagoCallCenterPage().seleccionamosElHorarioDeEntrega(horario);
-    }
+
     @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
             String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");

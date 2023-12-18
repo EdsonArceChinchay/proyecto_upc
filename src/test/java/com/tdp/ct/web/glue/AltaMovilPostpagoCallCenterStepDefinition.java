@@ -92,11 +92,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
   }
 
-  @Y("seleccionamos el horario de entrega {string}")
-  public void seleccionamosElHorarioDeEntrega(String horario) {
-    altaMovilPostpagoCallCenterStep.seleccionamosElHorarioDeEntrega(horario);
-  }
-
     @Y("ingreso los datos del cliente")
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
       if(cliente.isClienteNuevo()){
