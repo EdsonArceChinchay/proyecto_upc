@@ -70,8 +70,8 @@ Característica: AT-DT004_Alta Duo SVA HBO por call center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
-#	Y        valido que se muestre el detalle del pedido
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #	Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           | bloque |
       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
