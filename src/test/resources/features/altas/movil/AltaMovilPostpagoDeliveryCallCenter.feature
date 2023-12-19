@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03
-Característica: AT-DT026_Realizar una Alta movil Postpago (linea + equipo) con Delivery en Tambo
+Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center
 
   Antecedentes:
