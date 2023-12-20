@@ -95,5 +95,15 @@ public class AltaMovilPostpagoCallCenterStep {
     public void ValidoQuePresenteDetallePedido() {
         page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();
     }
+
+    @ScreenShotAfter
+    public void ValidoQuePresenteDetallePedido(String service) {
+        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido(service);
+    }
+
+    public void doyClickenVerDetalleDelPedido() {
+        page.altaMovilPostpagoCallCenterPage().clickenVerDetalleDelPedido();
+
+    }
 }
 

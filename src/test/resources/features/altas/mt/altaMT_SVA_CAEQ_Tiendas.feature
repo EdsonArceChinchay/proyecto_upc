@@ -1,23 +1,23 @@
 #language:es
-##CREADOR: MOISES LLAMOCA
+##CREADOR: ANDRES MICHILOT
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT116
-##GDAP:GDAP-1412
-##SPRINT CREADO:PI16 SP4
+##GDAP:GDAP-##1
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 29/08/2023
+##FECMOD: 19/12/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
 
-Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
+Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
 
-  @AltaMt_SvaTiendas
+  @AltaMT_SVA_CAEQ_Tiendas
   Esquema del escenario: Alta MT mas SVA en Canal Tiendas
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -52,6 +52,12 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        valido el detalle de la seleccion
     Y        valido que este en la seccion de registro
     Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        selecciono añadir equipos
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia     | tipoPago   | equipoName |
+      | Sin permanencia | Al Contado | HUAWEI     |
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -79,11 +85,9 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464511 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1075288963 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 

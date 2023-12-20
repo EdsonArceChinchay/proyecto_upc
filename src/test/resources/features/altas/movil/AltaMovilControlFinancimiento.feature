@@ -54,6 +54,8 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
 
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
