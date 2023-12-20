@@ -147,5 +147,5 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan       | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo BA 1 Gb RA + 95 Gb RA| correo@gmail.com |
+      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo BA 1 Gb RA + 95 Gb RA | correo@gmail.com |

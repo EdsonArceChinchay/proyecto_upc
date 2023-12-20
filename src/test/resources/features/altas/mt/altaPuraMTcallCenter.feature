@@ -37,7 +37,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
       | Lucia   | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -90,7 +90,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

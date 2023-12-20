@@ -77,13 +77,9 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonIrMovistarTotal() {
-        UtilWeb.waitForSeconds(10);
-        waitUntilElementIsVisible(botoneraIrA.get(1), 15);
-        waitUntilElementIsClickable(botoneraIrA.get(1), 10);
+        esperaProgresiva(driver(),4,5,botoneraIrA.get(1));
         click(botoneraIrA.get(1));
         UtilWeb.waitForSeconds(1);
-        //waitUntilElementIsVisible(btnIrMovistarTotal,30);
-        //click(btnIrMovistarTotal);
     }
 
     public void clickBotonIniciarRegistro() {
