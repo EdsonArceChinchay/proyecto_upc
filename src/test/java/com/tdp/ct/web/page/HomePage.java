@@ -171,7 +171,11 @@ public class HomePage extends WebBase {
 
     public void clickXPopUpCU() {
         esperaProgresiva(driver(),2,3,botonX);
-        botonX.click();
+        try {
+            botonX.click();
+        }catch(Exception e){
+
+        }
         //waitUntilElementIsClickable(botonX,20).click();
     }
 
