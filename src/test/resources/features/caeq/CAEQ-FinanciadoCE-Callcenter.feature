@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps
 Característica: CAEQ Financiado con CE por Canal Callcenter
-
+#CAEQ DROP
   @CaeqFinanciadoCECallcenter
   Esquema del escenario: CAEQ Financiado con CE por Canal Callcenter
     Dado     que abro la pagina de movistar
