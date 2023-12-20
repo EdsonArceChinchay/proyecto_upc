@@ -53,9 +53,7 @@ Característica: Alta Duo + Sva Movistar canal Retail
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Movistar TV App
-    Y        doy click en Guardar cambios
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -71,8 +69,10 @@ Característica: Alta Duo + Sva Movistar canal Retail
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                               |
       | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS|
