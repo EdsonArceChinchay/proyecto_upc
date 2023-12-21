@@ -17,6 +17,7 @@ import java.util.logging.Logger;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         tags = "@MigracionMTaMT_Equipo_SVA_Tiendas"
+        //tags = "@DoneDevOps"
 )
 
 class Runner {
