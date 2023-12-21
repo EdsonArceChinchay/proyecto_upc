@@ -17,7 +17,7 @@
 Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1
-  Escenario: CAPL con Caeq al contado con canal Tienda de un Control CE
+  Escenario: CAPL con Caeq al contado con canal Call Center de un Control CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"

@@ -26,10 +26,7 @@ import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
 import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-    //@FindBy(xpath = "//app-modal-contract/tdp-st-modal/div[2]/p/text()[11]")
-    //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
-    //app-modal-contract/descendant::text()[12]
-    //protected WebElement irFinalContrato;
+
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
     protected WebElement cerrarPopUpContratos;
     @FindBy(xpath = "(//*[@class=\"btn btnFirst\"])[1]")
@@ -77,7 +74,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
-
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
@@ -116,12 +112,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
-
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
     @FindBy(xpath = "//button[@class=\"buttonG cls-top\"]")
     protected WebElement buttonAgregarSVAMT;
-
     @FindBy(css =".text-info")
     protected WebElement nombreClienteUserData;
 
@@ -139,9 +133,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         modalError(3, btnReintentar, "Click al elemento Reitentar");
         modalError(3, btnReintentar, "Click al elemento Reitentar");
-        esperaProgresiva(driver(),4,6,titleOfertasSugeridas);
-
-        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
+        esperaProgresiva(driver(),5,200,titleOfertasSugeridas);
+        esperaProgresiva(driver(),5,500,listaOfertasSugeridas.get(0));
+        boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
@@ -448,7 +442,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void ingresarDNISupervisor(String numdoc) {
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         esperaProgresiva(driver(),5,5,selectTipoDoc);
         waitUntilElementIsClickable(selectTipoDoc, 30).click();
@@ -486,10 +479,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar) {
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //   waitUntilElementIsVisible(lblPreguntas, 30);
         revisarModalError(driver());
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
@@ -567,10 +556,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicEnAgregarSVA() {
+        esperaProgresiva(driver(),3,6,buttonAgregarSVA);
         js().scrollElementTop(buttonAgregarSVA);
-        waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicSVAHBO() {
