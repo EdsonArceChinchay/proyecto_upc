@@ -776,8 +776,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                         }
 
             }catch (Exception e){
+                System.out.println("Error: " + e.getMessage());
                 System.out.println("Sale del primer try");
-            }try {
+            }
+
+            try {
                 System.out.println("Entra al segundo try");
                 esperaProgresiva(driver(),3,12,descargarContrato);
                 click(descargarContrato);
@@ -808,6 +811,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 System.out.println("Sale del segundo try");
                 System.out.println("Salta el registrar");
             }
+        }
+
+        try{
+            click(cerrarPopUpContratos);
+            System.out.println("cerrarPopUpContratos cierre");
+        }catch (Exception e){
+
         }
 
 /*
