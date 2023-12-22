@@ -123,7 +123,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     private Cliente cliente;
 
     public boolean validarPantallaIngresarDireccion() {
-        esperaProgresiva(driver(),2,5,titleLugarInstalacion);
+        esperaProgresiva(driver(),3,20,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -322,16 +322,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
-        //Addons.revisarModalError(driver());
-        //UtilWeb.waitForSeconds(16);
-        Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
+        Addons.esperaProgresiva(driver(), 4, 20, buttonValidarContrato);
         Addons.revisarModalError(driver());
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -339,7 +332,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonValidarContrato,8);
+                waitUntilElementIsClickable(buttonValidarContrato,8);
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Validar Contrato");
                 buttonFound = true;
             }catch (Exception e){
@@ -350,11 +343,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             }
         }
         System.out.println("Sale del while");
-//        UtilWeb.waitForSeconds(20);
-//        waitUntilElementIsVisible(buttonValidarContrato, 30);
         js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato);
-//        click(buttonValidarContrato, 300);
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
@@ -396,50 +386,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),5,5,element);
-        //waitUntilElementIsVisible(element, 30);
+        esperaProgresiva(driver(),5,6,element);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
         //js().scrollElementTop(irFinalContrato);
     }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),3,5,element);
-        //waitUntilElementIsVisible(element, 50);
-        //waitUntilElementIsClickable(element,25);
+        esperaProgresiva(driver(),4,10,element);
         element.click();
-        //click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-        UtilWeb.waitForSeconds(3);//
+        UtilWeb.waitForSeconds(3);
     }
-    /*
-    public boolean validarMensajeExitoso() {
-        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        boolean existe = false;
-        UtilWeb.waitForSeconds(10);
-        String loadingSplascargando = "//div[@class='splash ng-star-inserted']";
-        String labelCargando = "//div/h1[text()='Cargando']";
-        int segundos = 60;
-
-        if (esperarLoadingIsNotVisible(loadingSplascargando, segundos)) {
-            if (esperarLoadingIsNotVisible(labelCargando, 60)) {
-                UtilWeb.waitForSeconds(3);
-                scrollByJavaScriptToPrincipio();
-                existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
-                UtilWeb.waitForSeconds(1);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
-            } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
-            }
-        } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
-        }
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        return existe;
-    }
-
-     */
-
 
     public void ingresarDNISupervisor(String numdoc) {
         revisarModalError(driver());
@@ -454,7 +412,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void IngresarUsuarioSupervisor(String user) {
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");

@@ -36,6 +36,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
       | Luis    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro pop up de Cliente Exonerado
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente

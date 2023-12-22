@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 19/12/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
 
 Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
 
