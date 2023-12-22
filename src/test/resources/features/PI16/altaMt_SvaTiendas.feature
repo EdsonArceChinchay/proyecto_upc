@@ -26,14 +26,14 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "<tiendaAsesor>"
+    #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |
-      | Moises  | Llanos    | masculino |
+      | Felipe  | Llanos    | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -51,39 +51,27 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en agregar "Seguridad Total Residencial"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono el boton Consultar Ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-        #| mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-        #| A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
-    Y        ingreso un correo electronico "tester@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        ingreso un correo electronico "tester@mail.com"
+    Y        ingreso nuevamente el correo electronico "tester@mail.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 24/01/1996 | Aruba        | Casado       |
+      | 24/02/1996 | Aruba        | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
-
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464511 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 

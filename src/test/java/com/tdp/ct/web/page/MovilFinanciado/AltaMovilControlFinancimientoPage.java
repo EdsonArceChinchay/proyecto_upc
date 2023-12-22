@@ -22,7 +22,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement selectCampaniaOferta;
     @FindBy(xpath ="//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement btnSeleccionarOferta;
-    @FindBy(xpath ="//button[@class='btnCard']")
+    @FindBy(xpath ="//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
     @FindBy(xpath ="//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
     protected WebElement btnAgregarEquipo;
@@ -70,13 +70,11 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         click(btnSeleccionarOferta);
     }
     public void selectBtnLineaNueva() {
-        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(),3,5,btnLineaNueva);
         click(btnLineaNueva);
-        UtilWeb.waitForSeconds(2);
     }
     public void selectBtnAgregarEquipo() {
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(btnAgregarEquipo, 10);
+        esperaProgresiva(driver(),3,5,btnAgregarEquipo);
         click(btnAgregarEquipo);
         UtilWeb.waitForSeconds(5);
     }

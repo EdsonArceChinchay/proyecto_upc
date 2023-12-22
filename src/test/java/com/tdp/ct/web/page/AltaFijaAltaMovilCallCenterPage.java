@@ -326,9 +326,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 10, oferta);
+        esperaProgresiva(driver(), 5, 20, oferta);
         click(oferta);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void listaOfertas(String planOfertas) {
