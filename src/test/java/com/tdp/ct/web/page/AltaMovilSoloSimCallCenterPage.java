@@ -146,7 +146,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void paginaResumen() {
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
