@@ -39,7 +39,7 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
 #    Y        cierro popup de aviso
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
+    Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -100,5 +100,7 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075266100  | Postpago      | Plan Ilimitado |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente | tipoDocumento | documento | tipoPlanMovil | nombrePlan |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado  |
+     # | usuario interno |  |  | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro| CE            | 1100000824  | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+
