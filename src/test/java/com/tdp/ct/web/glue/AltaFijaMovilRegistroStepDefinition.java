@@ -133,9 +133,9 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(5);
         for(int i=0;i<3;i++){
-            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos);
+            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos,i);
             System.out.println("-- click en siguiente --");
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }

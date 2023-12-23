@@ -129,9 +129,9 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
 
-    public void ingresarDatosValidacionSolicitada(DataTable datos) {
-        UtilWeb.waitForSeconds(5);
-        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
+    public void ingresarDatosValidacionSolicitada(DataTable datos, Integer i) {
+
+        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos,i);
     }
 
     @ScreenShotBefore

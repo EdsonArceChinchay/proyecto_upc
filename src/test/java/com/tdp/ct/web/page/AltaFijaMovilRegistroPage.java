@@ -284,11 +284,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void ingresarDatosValidacionReniec(DataTable datos) {
+    public void ingresarDatosValidacionReniec(DataTable datos, Integer i) {
         String nomMadre = UtilWeb.getValueFromDataTable(datos, "nombreMadre");
         String nomPadre = UtilWeb.getValueFromDataTable(datos, "nombrePadre");
         String distritoNacimiento = UtilWeb.getValueFromDataTable(datos, "distritoNac");
-        validacionesCliente(nomMadre, nomPadre, distritoNacimiento);
+        validacionesCliente(nomMadre, nomPadre, distritoNacimiento,i);
     }
 
     public void clicSiguiente() {
@@ -435,37 +435,35 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     //OTROS metodos
-    public void validacionesCliente(String madre, String padre, String lugar) {
+    public void validacionesCliente(String madre, String padre, String lugar, Integer i) {
         revisarModalError(driver());
-        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu padre')]"))) {
+        if(i==0){
+            WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
+            esperaProgresiva(driver(),5,3,elementMadre);
+            System.out.println("Cual es el nombre de tu madre : " + true);
+            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
+            element.click();
+        }
+
+        if(i==1){
+            WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
+            esperaProgresiva(driver(),5,3,elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             element.click();
-        } else {
-            System.out.println("no existe pregunta nombre padre");
         }
 
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu madre')]"))) {
-            System.out.println("nCual es el nombre de tu madre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
-            element.click();
-        } else {
-            System.out.println("no existe pregunta nombre madre");
-        }
-
-        if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {
+        if(i==2){
+            WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
+            esperaProgresiva(driver(),5,3,elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             element.click();
-        } else {
-            System.out.println("no existe pregunta lugar de nacimiento");
         }
 
-
         UtilWeb.waitForSeconds(2);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+
     }
 
     public boolean isElementVisible(By nombre) {

@@ -11,8 +11,8 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 19/10/2023
+##ENCARGADO: VICTOR CARPIO
+##FECMOD: 23/12/2023
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11
 
 Característica: AT-DT096_Alta Movil Postpago CALL CENTER
@@ -37,7 +37,7 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 #    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
-      | Juan    | Lopez Anibal | masculino |
+      | QAN     | veinticuatro | masculino |
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Movil
@@ -101,6 +101,6 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente | tipoDocumento | documento | tipoPlanMovil | nombrePlan |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado  |
-     # | usuario interno |  |  | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro| CE            | 1100000824  | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
+      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro| CE            | 1100000824  | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 

@@ -135,9 +135,10 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         }
 
         System.out.println("Ofertas : " + listaPlanMovil.size());
-
+        int cont = listaPlanMovil.size() - 1;
         boolean encontroElemento = false;
         for (int i = 0; i < listaPlanMovil.size(); i++) {
+
             System.out.println("Oferta: "+i +" "+listaPlanMovil.get(i).getText());
             if (!encontroElemento && listaPlanMovil.get(i).getText().trim().equalsIgnoreCase(planMovil.trim()) ) {
                 encontroElemento = true;
@@ -158,14 +159,15 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                     UtilWeb.waitForSeconds(1);
                 }
             }
+
+            if(!encontroElemento && (i==cont || listaPlanMovil.get(i + 1).getText().trim().equals(""))) {
+                System.out.println("No encontro elemento en la lista");
+                UtilWeb.waitForSeconds(2);
+                click(listaPlanMovil.get(i));
+                break;
+            }
         }
 
-        if(!encontroElemento && listaPlanMovil.size()>0) {
-            System.out.println("No encontro elemento en la lista");
-            UtilWeb.waitForSeconds(2);
-            int cont = listaPlanMovil.size() - 1;
-            click(listaPlanMovil.get(cont));
-        }
         UtilWeb.waitForSeconds(1);
     }
 
