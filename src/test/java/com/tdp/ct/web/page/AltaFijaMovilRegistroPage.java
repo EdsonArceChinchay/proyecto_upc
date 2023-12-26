@@ -41,6 +41,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
+
+    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    protected WebElement titleRegistrarServicio;
+
+    @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
+    protected WebElement titleLugarInstalacionEntrega;
+
+    @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
+    protected WebElement titleVerificarLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
@@ -123,10 +132,34 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     private Cliente cliente;
 
     public boolean validarPantallaIngresarDireccion() {
-        esperaProgresiva(driver(),3,20,titleLugarInstalacion);
+        //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
+    public boolean validarPantallaRegistrarVenta() {
+
+        boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
+    public boolean validarPantallaIngresarDireccionEntrega() {
+
+        boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
+    public boolean validarPantallaVerificarDireccion() {
+        //esperaProgresiva(driver(),5,3,titleVerificarLugarInstalacion);
+        boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
         return existe;
     }
 
@@ -200,7 +233,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(),5,5,labelAgendamiento);
+        esperaProgresiva(driver(),7,3,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
@@ -689,7 +722,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         for (int intento = 1; intento <= 2; intento++){
             System.out.println("Entra al primer try");
             try {
-                esperaProgresiva(driver(),3,12,descargarContrato);
+                esperaProgresiva(driver(),6,5,descargarContrato);
                 click(descargarContrato);
                 esperaProgresiva(driver(),3,3,contratoUno);
 
@@ -697,10 +730,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 File directorio = new File(rutabase);
                     if (!directorio.exists()) {
                         directorio.mkdirs();
+                        System.out.println("Directorio Creado: ");
                     }
+                        System.out.println("RUTA BASE: " + rutabase);
                         WebElement pdfElement = driver().findElement(By.tagName("iframe"));
                         String pdfUrl = pdfElement.getAttribute("src");
-                        System.out.println("Link PDF: " + pdfUrl);
+                        System.out.println("Link PDF 1: " + pdfUrl);
                         descargarPDFDesdeURL(pdfUrl,  rutabase    );
 
                         //click en el 2do boton
@@ -710,7 +745,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
                             WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
                             String pdfUrl2 = pdfElement2.getAttribute("src");
-                            System.out.println("Link PDF: " + pdfUrl2);
+                            System.out.println("Link PDF 2: " + pdfUrl2);
                             descargarPDFDesdeURL(pdfUrl2,  rutabase    );
                             UtilWeb.waitForSeconds(5);
                             click(cerrarPopUpContratos);

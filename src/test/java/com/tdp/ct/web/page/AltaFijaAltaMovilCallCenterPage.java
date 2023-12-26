@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.apache.poi.ss.formula.atp.Switch;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
 import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
@@ -35,6 +37,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
+    @FindBy(xpath = "//div[@class='offer-option-title']/div[@class='general-title' and contains(text(), 'Seleccione un')]")
+    protected WebElement elementoSeleccionar;
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Ir a movistar total')]")
     protected WebElement btnIrAMovistar;
 
@@ -52,6 +56,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement deliveryType;
     @FindBy(xpath = "//*[@formcontrolname='medioPago']")
     protected WebElement pageType;
+
+    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
+    protected WebElement btnLeft;
 
     public void manzana(String manzana) {
         if (manzana != null) {
@@ -326,62 +333,77 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 20, oferta);
+        esperaProgresiva(driver(), 6, 4, oferta);
         click(oferta);
         UtilWeb.waitForSeconds(2);
     }
 
-    public void listaOfertas(String planOfertas) {
-        UtilWeb.waitForSeconds(4);
-        String ofertaEsperada = planOfertas.trim().toUpperCase();
-        System.out.println("cantidad de la lista : " + listaOfertas.size());
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        /*for (WebElement element : listaOfertas) {
-            System.out.println("lista de ofertas" + element.getText());
-            if (element.getText().contains(planOfertas)) {
-                click(element);
-            }
-        }*/
-        Addons.esperaProgresiva(driver(), 3, 3, listaOfertas.get(0));
+    public void listaOfertas(String planOfertas,ManageScenario scenario) {
 
-        for (int i = 0; i < 2; i++) {
-            boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            if (elementoExistente) {
-                System.out.println("dio click");
-                click(btnRight);
-                UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(), 5, 2, elementoSeleccionar);
+
+        boolean elementoExistenteRight;
+        boolean elementoExistenteleft;
+        elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+        int contador = 0;
+        int contadorMax =12;
+        while (elementoExistenteRight && contador<contadorMax)
+        {
+            if (btnRight != null) {
+                waitUntilElementIsClickable(btnRight, 3).click();
+                System.out.println("dio click right while");
+            } else {
+                System.out.println("El elemento btnRight no existe o es nulo.");
             }
+            try {
+                waitUntilElementIsVisible(btnRight,4);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnRight");
+            } catch (Exception e) {
+                System.out.println("El elemento btnRight ya no fue encontrado: ");
+            }
+            elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            contador++;
         }
-        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-        UtilWeb.waitForSeconds(3);
-        boolean encontroElemento = false;
-        //-------------------------------------------------------//
-        for (int i = 0; i < listaOfertas.size(); i++) {
-            if (i == 0) {
-                boolean retrocede = true;
-                do {
-                    boolean elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
-                    if (elementoExistente) {
-                        WebElement btnLeft = find().getElementByXPath("//img[@src='assets/images/left-arrow.png']");
-                        btnLeft.click();
-                        UtilWeb.waitForSeconds(2);
-                    } else {
-                        retrocede = false;
-                    }
-                } while (retrocede);
-            }
+        UtilWeb.waitForSeconds(2);
+        contador = 0;
+        elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+        while (elementoExistenteleft && contador<contadorMax)
+        {
+            if (btnLeft != null) {
+                waitUntilElementIsClickable(btnLeft, 3).click();
 
-            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-            if (ofertaObtenida.contains(ofertaEsperada)) {
-                encontroElemento = true;
-                UtilWeb.waitForSeconds(2);
-                click(listaOfertas.get(i));
-                break;
+                System.out.println("dio click left while");
+            } else {
+                System.out.println("El elemento btnleft no existe o es nulo.");
             }
-            if (i == 2 || i == 5 || i == 8) {
+            try {
+                waitUntilElementIsVisible(btnLeft,4);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnLeft");
+            } catch (Exception e) {
+                System.out.println("El elemento btnLeft ya no fue encontrado: ");
+            }
+            elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+            contador++;
+        }
+
+        System.out.println("Ofertas : " + listaOfertas.size());
+        int cont = listaOfertas.size() - 1;
+        boolean encontroElemento = false;
+
+        for (int i = 0; i < listaOfertas.size(); i++) {
+
+            System.out.println("Oferta: "+i +" "+listaOfertas.get(i).getText());
+            if (!encontroElemento && listaOfertas.get(i).getText().trim().equalsIgnoreCase(planOfertas.trim()) ) {
+                encontroElemento = true;
+                UtilWeb.waitForSeconds(1);
+                click(listaOfertas.get(i));
+
+            }
+            if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20) {
+                scenario.printFullView();
+                js().scrollElementTop(buttonSeleccionarOferta);
+                scenario.printFullView();
+                js().scrollElementTop(listaOfertas.get(i));
                 boolean elementoExistente;
                 elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
                 if (elementoExistente) {
@@ -389,13 +411,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                     UtilWeb.waitForSeconds(1);
                 }
             }
+
+            if(!encontroElemento && (i==cont || listaOfertas.get(i + 1).getText().trim().equals(""))) {
+                System.out.println("No encontro elemento en la lista");
+                UtilWeb.waitForSeconds(2);
+                click(listaOfertas.get(i));
+                break;
+            }
         }
-        if (!encontroElemento && listaOfertas.size() > 0) {
-            System.out.println("No encontro elemento en la lista");
-            UtilWeb.waitForSeconds(2);
-            int cont = listaOfertas.size() - 1;
-            click(listaOfertas.get(cont));
-        }
+
         UtilWeb.waitForSeconds(1);
     }
 

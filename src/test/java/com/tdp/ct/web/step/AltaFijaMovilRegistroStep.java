@@ -25,6 +25,21 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
+    public void validarPantallaRegistrarVenta() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaRegistrarVenta());
+    }
+
+    @ScreenShotAfter
+    public void validarPantallaIngresarDireccionEntrega() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaIngresarDireccionEntrega());
+    }
+
+    @ScreenShotAfter
+    public void validarPantallaVerificarDireccion() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaVerificarDireccion());
+    }
+
+    @ScreenShotAfter
     public void mostrarDetalleOfertasSugeridas() {
         Assert.assertTrue("La pantalla de ofertas sugeridas no cargo correctamente!!!",
                 page.altaFijaMovilRegistroPage().validarQueExistanOfertasSugeridas());

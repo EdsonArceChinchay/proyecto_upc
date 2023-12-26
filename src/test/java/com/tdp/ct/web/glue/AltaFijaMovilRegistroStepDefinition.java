@@ -36,6 +36,21 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarPantallaIngresarDireccion();
     }
 
+    @Entonces("me muestra la pantalla registrar venta")
+    public void meMuestraLaPantallaParaRegistrarVenta() {
+        altaFijaMovilRegistroStep.validarPantallaRegistrarVenta();
+    }
+
+    @Entonces("me muestra la pantalla para ingresar la direccion de entrega")
+    public void meMuestraLaPantallaParaIngresarLaDireccionEntrega() {
+        altaFijaMovilRegistroStep.validarPantallaIngresarDireccionEntrega();
+    }
+
+    @Entonces("me muestra la pantalla para verificar la direccion")
+    public void meMuestraLaPantallaParaVerificarLaDireccion() {
+        altaFijaMovilRegistroStep.validarPantallaVerificarDireccion();
+    }
+
     @Y("ingreso los datos del lugar de instalacion")
     public void ingresoLosDatosDelLugarDeInstalacion(DataTable dirInstalacion) {
 

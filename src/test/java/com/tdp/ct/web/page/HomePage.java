@@ -85,7 +85,7 @@ public class HomePage extends WebBase {
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
-        Addons.esperaCargaMontoDeuda(driver(),60);
+        Addons.esperaCargaMontoDeuda(driver(),20);
         esperaProgresiva(driver(),3,5,boton01);
         revisarModalError(driver());
         //UtilWeb.waitForSeconds(1);

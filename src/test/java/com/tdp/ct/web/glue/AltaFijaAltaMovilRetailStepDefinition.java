@@ -25,6 +25,14 @@ public class AltaFijaAltaMovilRetailStepDefinition {
         altaFijaAltaMovilRetailStep.btnHogar();
     }
 
+    @Y("selecciono el boton de la Linea Hogar Existente")
+    public void seleccionoElBotonLineaHogarExistente() {
+      altaFijaAltaMovilRetailStep.btnLineaExistente();
+    }
+
+
+
+
     @Y("selecciono el boton Linea Nueva Movil")
     public void seleccionoElBotonLineaNuevaMovil() {
         altaFijaAltaMovilRetailStep.btnMovil();
@@ -63,6 +71,11 @@ public class AltaFijaAltaMovilRetailStepDefinition {
   @Y("presiono el boton Consultar ubicacion")
   public void presionoElBotonConsultarUbicacion() {
     altaFijaAltaMovilRetailStep.btnConsulta();
+  }
+
+  @Y("presiono el boton Confirmar direccion")
+  public void presionoElBotonConfirmarDireccion() {
+    altaFijaAltaMovilRetailStep.btnConfirmarDireccion();
   }
 
   @Y("ingresamos la Manzana o bloque {string}")
