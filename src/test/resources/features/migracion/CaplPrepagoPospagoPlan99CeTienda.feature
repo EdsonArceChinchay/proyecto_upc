@@ -14,11 +14,11 @@
 ##FECMOD: 08/09/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
+Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Prepago a Postpago
 
 
   @CaplPrepagoPospago @MVP05 @Global @General
-  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas, web front end, flujo no biométrico
+  Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"

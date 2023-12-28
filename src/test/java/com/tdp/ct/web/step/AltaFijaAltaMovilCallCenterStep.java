@@ -4,6 +4,7 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,9 @@ public class AltaFijaAltaMovilCallCenterStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private ManageScenario scenario;
 
     public void ingresarManzana(String manzana) {
         page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
@@ -103,7 +107,7 @@ public class AltaFijaAltaMovilCallCenterStep {
     }
 
     public void seleccionarListaOferta(String listaOferta) {
-        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta);
+        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta,scenario);
     }
 
     public void clickSeleccionarOferta() {

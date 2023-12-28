@@ -105,4 +105,13 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     public void validoQueSeMuestreElDetalleDelPedido() {
     altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido();
     }
+
+  @Y("doy click en ver detalle del pedido")
+  public void doyClickenVerDetalleDelPedido() {
+    altaMovilPostpagoCallCenterStep.doyClickenVerDetalleDelPedido();
+  }
+  @Y("valido que se muestre el detalle del pedido del {string}")
+  public void validoQueSeMuestreElDetalleDelPedido(String service) {
+    altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido(service);
+  }
 }

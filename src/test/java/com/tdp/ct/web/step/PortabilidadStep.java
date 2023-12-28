@@ -15,7 +15,7 @@ public class PortabilidadStep {
 
     @ScreenShotBefore
     public void clickBotonPortabilidad() {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(20);
         page.portabilidadPage().clickBotonPortabilidad();
 
     }

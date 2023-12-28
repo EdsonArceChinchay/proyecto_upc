@@ -16,19 +16,23 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
-
     @FindBy(xpath = "//div[@class=\"contenedor_park add_pointer\"]")
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
+
+    @FindBy(css = "app-card-line .container")
+    protected WebElement btnLineaExistente;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
+    @FindBy(xpath = "//tdp-st-button[@label='Confirmar dirección']")
+    private WebElement btnConfirmarDireccion;
 
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
+
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
     private String inputCorreo;
@@ -55,9 +59,18 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         //UtilWeb.waitForSeconds(2);//1
     }
 
+    public void lineaExistente() {
+        UtilWeb.waitForSeconds(2);
+        js().scrollElementTop(btnLineaExistente);
+        //waitUntilElementIsClickable(btnMovil,15);//30
+        esperaProgresiva(driver(),5,5,btnLineaExistente);
+        click(btnLineaExistente);
+        //UtilWeb.waitForSeconds(2);//1
+    }
+
     public void mostrarOfertas(){
         esperaProgresiva(driver(),5,5,btnMostrar);
-        Addons.esperaCargaMontoDeuda(driver(),60);
+        Addons.esperaCargaMontoDeuda(driver(),20);
         revisarModalError(driver());
         click(btnMostrar);
     }
@@ -157,6 +170,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         //revisarModalEntendido(driver());
         //reintarPopPup();
         //reintarPopPup();
+    }
+
+    public void btnConfirmarDireccion(){
+        esperaProgresiva(driver(),5,5,btnConfirmarDireccion);
+        js().scrollElementTop(btnConfirmarDireccion);
+        click(btnConfirmarDireccion);
+        revisarModalError(driver());
     }
 
     public void writeManzana(String manzana){

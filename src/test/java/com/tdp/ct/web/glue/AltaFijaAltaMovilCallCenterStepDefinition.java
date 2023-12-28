@@ -165,4 +165,9 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   }
 
 
+  @Y("selecciono el plan {string} Movistar Total")
+  public void seleccionoUnPlanMovistarTotal(String nombrePlan) {
+    altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
+    altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
+  }
 }

@@ -97,9 +97,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionarEquipo() {
         UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,5,LblEquipos);
         js().scrollElementTop(LblEquipos);
-        waitUntilElementIsVisible(LblEquipos, 10);
-        click(LblEquipos, 30);
+        click(LblEquipos, 5);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -202,6 +202,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         esperaProgresiva(driver(),5,3,btnSeleccionar);
         js().scrollElementTop(btnSeleccionar);
         click(btnSeleccionar);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void doyClickEnIniciarRegistro() {
@@ -321,4 +322,14 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         }
     }
 
+    public void ValidoQuePresenteDetallePedido(String service) {
+        WebElement serviceText = find().getElementByXPath("//*[contains(text(),'"+service.trim()+"')]");
+        js().scrollElementTop(serviceText);
+    }
+
+    public void clickenVerDetalleDelPedido() {
+        js().scrollElementTop(scrollorden);
+        esperaProgresiva(driver(),3,5,btnDetallePedido);
+        click(btnDetallePedido);
+    }
 }

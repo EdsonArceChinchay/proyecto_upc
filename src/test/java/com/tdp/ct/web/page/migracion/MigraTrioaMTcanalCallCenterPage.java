@@ -6,6 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class MigraTrioaMTcanalCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//div[3]/app-mt-card/div[1]/div/div[1]/div[3]/img")
@@ -47,7 +49,9 @@ public class MigraTrioaMTcanalCallCenterPage extends WebBase {
     }
 
     public void clickBtnIrMovistarTotal() {
-        UtilWeb.waitForSeconds(80);//15
+        UtilWeb.waitForSeconds(15);//15
+        revisarModalError(driver());
+        revisarModalError(driver());
         waitUntilElementIsVisible(btnIrMovistarTotal, 150);
         click(btnIrMovistarTotal);
     }

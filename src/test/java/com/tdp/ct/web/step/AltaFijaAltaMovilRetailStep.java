@@ -19,6 +19,11 @@ public class AltaFijaAltaMovilRetailStep {
     }
 
     @ScreenShotAfter
+    public void btnLineaExistente() {
+        page.altaFijaAltaMovilRetailPage().lineaExistente();
+    }
+
+    @ScreenShotAfter
     public void btnMovil() {
         page.altaFijaAltaMovilRetailPage().altaMovil();
     }
@@ -56,6 +61,11 @@ public class AltaFijaAltaMovilRetailStep {
     @ScreenShotAfter
     public void btnConsulta() {
         page.altaFijaAltaMovilRetailPage().btnConsultar();
+    }
+
+    @ScreenShotAfter
+    public void btnConfirmarDireccion() {
+        page.altaFijaAltaMovilRetailPage().btnConfirmarDireccion();
     }
 
     @ScreenShotAfter
