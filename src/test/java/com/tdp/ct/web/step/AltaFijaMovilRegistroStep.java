@@ -4,6 +4,7 @@ import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
@@ -18,6 +19,9 @@ public class AltaFijaMovilRegistroStep {
 
     @Autowired
     private Cliente cliente;
+
+    @Autowired
+    private ManageScenario scenario;
 
     @ScreenShotAfter
     public void validarPantallaIngresarDireccion() {
@@ -267,7 +271,7 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void clicDescargarContrato() throws InterruptedException {
-        page.altaFijaMovilRegistroPage().clicDescargarContrato();
+        page.altaFijaMovilRegistroPage().clicDescargarContrato(scenario);
     }
     @ScreenShotAfter
     public void clicRegistrarVenta() {

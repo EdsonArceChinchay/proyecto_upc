@@ -66,6 +66,7 @@ public class BandejaBackOfficePage extends WebBase{
     }
 
     public void cargarAudio() {
+        esperaProgresiva(driver(),3,3,etiquetaCargando);
         if(etiquetaCargando.getText().equals("PENDIENTE AUDIO")){
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(1);
