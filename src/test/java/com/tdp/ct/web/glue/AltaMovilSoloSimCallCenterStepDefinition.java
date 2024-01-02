@@ -59,6 +59,11 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     altaMovilSoloSimCallCenterStep.validarCompletaDatosSolicitados();
   }
 
+  @Y("valido que este en la seccion Postpago o Prepago")
+  public void valido_que_este_en_seccion_Postpago_Prepago(){
+    altaMovilSoloSimCallCenterStep.validarSeleccionaPostpagoPrepago();
+  }
+
 
     @Y("cierro el popup de validación de estado de contraseña única")
     public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {

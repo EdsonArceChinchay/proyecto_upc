@@ -21,8 +21,11 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
 
-    @FindBy(css = "app-card-line .container")
+    @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaExistente;
+
+    @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
+    protected WebElement btnLineaMovilExistente;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
@@ -60,12 +63,49 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void lineaExistente() {
-        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(), 3, 5, btnLineaExistente);
         js().scrollElementTop(btnLineaExistente);
-        //waitUntilElementIsClickable(btnMovil,15);//30
-        esperaProgresiva(driver(),5,5,btnLineaExistente);
-        click(btnLineaExistente);
-        //UtilWeb.waitForSeconds(2);//1
+        String LineaExistente = btnLineaExistente.getText();
+
+        if (LineaExistente.contains("Activo") && LineaExistente.contains("Sin Deuda")) {
+            click(btnLineaExistente);
+        } else {
+            int i =2;
+            int reintentos =5;
+            boolean elementoExistente;
+            while (i<reintentos){
+                String selector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .container";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
+
+                if (elementoExistente) {
+
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains("Sin Deuda")) {
+                        click(elemento);
+                        break;
+                    } else{
+                        i++;
+                    }
+
+                }
+                else {
+                    System.out.println("No cumplen con la condicion");
+                    break;
+                }
+            }
+
+        }
+
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void lineaMovilExistente() {
+        esperaProgresiva(driver(), 3, 5, btnLineaMovilExistente);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnLineaMovilExistente);
+        js().scrollElementTop(btnLineaMovilExistente);
+        click(btnLineaMovilExistente);
+        UtilWeb.waitForSeconds(1);
     }
 
     public void mostrarOfertas(){

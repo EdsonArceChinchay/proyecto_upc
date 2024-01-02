@@ -30,7 +30,10 @@ public class AltaFijaAltaMovilRetailStepDefinition {
       altaFijaAltaMovilRetailStep.btnLineaExistente();
     }
 
-
+  @Y("selecciono el boton de la Linea Movil Existente")
+  public void seleccionoElBotonLineaMovilExistente() {
+    altaFijaAltaMovilRetailStep.btnLineaMovilExistente();
+  }
 
 
     @Y("selecciono el boton Linea Nueva Movil")

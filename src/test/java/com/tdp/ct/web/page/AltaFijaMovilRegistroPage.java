@@ -327,16 +327,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiguiente() {
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(),5,5,rootInputCorreo);
+        esperaProgresiva(driver(),3,3,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void clicEnConfirmar() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(),5,5,rootInputCorreo);
+        esperaProgresiva(driver(),3,3,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -474,7 +474,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         if(i==0){
             WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
-            esperaProgresiva(driver(),5,3,elementMadre);
+            esperaProgresiva(driver(),2,3,elementMadre);
             System.out.println("Cual es el nombre de tu madre : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
             element.click();
@@ -482,7 +482,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         if(i==1){
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
-            esperaProgresiva(driver(),5,3,elementPadre);
+            esperaProgresiva(driver(),2,3,elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             element.click();
@@ -490,7 +490,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         if(i==2){
             WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
-            esperaProgresiva(driver(),5,3,elementNacimiento);
+            esperaProgresiva(driver(),2,3,elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             element.click();
@@ -848,7 +848,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),3,15,cicloFacturacion);
+        esperaProgresiva(driver(),3,5,cicloFacturacion);
         js().scrollElementTop(cicloFacturacion);
         //UtilWeb.waitForSeconds(5);
         //js().scrollElementTop(scrollorden);
@@ -857,8 +857,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
-        esperaProgresiva(driver(),3,15,msjExitoso);
-        existe = waitUntilElementIsVisible(msjExitoso, 50).isDisplayed();
+        esperaProgresiva(driver(),3,5,msjExitoso);
+        existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

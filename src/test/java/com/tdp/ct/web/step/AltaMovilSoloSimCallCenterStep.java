@@ -45,6 +45,10 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().completaDatosSolicitados();
     }
 
+    public void validarSeleccionaPostpagoPrepago(){
+        page.altaMovilSoloSimCallCenterPage().validarSeleccionaPostpagoPrepago();
+    }
+
     public void botonentendidoOfertas(){
         page.altaMovilSoloSimCallCenterPage().botonentendidoOfertas();
     }

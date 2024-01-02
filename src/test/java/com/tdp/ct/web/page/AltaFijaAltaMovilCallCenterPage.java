@@ -350,13 +350,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         while (elementoExistenteRight && contador<contadorMax)
         {
             if (btnRight != null) {
-                waitUntilElementIsClickable(btnRight, 3).click();
+                esperaProgresiva(driver(), 3, 3, btnRight);
+                btnRight.click();
                 System.out.println("dio click right while");
             } else {
                 System.out.println("El elemento btnRight no existe o es nulo.");
             }
             try {
-                waitUntilElementIsVisible(btnRight,4);
+                waitUntilElementIsVisible(btnRight,5);
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnRight");
             } catch (Exception e) {
                 System.out.println("El elemento btnRight ya no fue encontrado: ");
@@ -370,14 +371,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         while (elementoExistenteleft && contador<contadorMax)
         {
             if (btnLeft != null) {
-                waitUntilElementIsClickable(btnLeft, 3).click();
+                waitUntilElementIsClickable(btnLeft, 8).click();
 
                 System.out.println("dio click left while");
             } else {
                 System.out.println("El elemento btnleft no existe o es nulo.");
             }
             try {
-                waitUntilElementIsVisible(btnLeft,4);
+                waitUntilElementIsVisible(btnLeft,5);
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnLeft");
             } catch (Exception e) {
                 System.out.println("El elemento btnLeft ya no fue encontrado: ");
@@ -399,7 +400,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 click(listaOfertas.get(i));
 
             }
-            if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20) {
+            if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
                 scenario.printFullView();
                 js().scrollElementTop(buttonSeleccionarOferta);
                 scenario.printFullView();

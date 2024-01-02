@@ -11,6 +11,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.logging.Level;
 
 
 import static com.tdp.ct.web.utils.Addons.*;
@@ -47,6 +48,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//button[contains(text(),\" Entendido\")]")
     protected WebElement btnEntendido;
+
+    @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
+    protected WebElement preguntaTipoPlan;
 
     public void botonMostrarOfertasRapido() {
         clickBtnReintentar();
@@ -107,13 +111,18 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         while (elementoExistenteRight && contador<contadorMax)
         {
             if (btnRight != null) {
-                click(btnRight);
-                UtilWeb.waitForSeconds(2);
+                esperaProgresiva(driver(), 3, 3, btnRight);
+                btnRight.click();
                 System.out.println("dio click right while");
             } else {
                 System.out.println("El elemento btnRight no existe o es nulo.");
             }
-            UtilWeb.waitForSeconds(2);
+            try {
+                waitUntilElementIsVisible(btnRight,5);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnRight");
+            } catch (Exception e) {
+                System.out.println("El elemento btnRight ya no fue encontrado: ");
+            }
             elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             contador++;
         }
@@ -123,13 +132,18 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         while (elementoExistenteleft && contador<contadorMax)
         {
             if (btnLeft != null) {
-                click(btnLeft);
-                UtilWeb.waitForSeconds(2);
+                waitUntilElementIsClickable(btnLeft, 8).click();
+
                 System.out.println("dio click left while");
             } else {
                 System.out.println("El elemento btnleft no existe o es nulo.");
             }
-            UtilWeb.waitForSeconds(2);
+            try {
+                waitUntilElementIsVisible(btnLeft,5);
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnLeft");
+            } catch (Exception e) {
+                System.out.println("El elemento btnLeft ya no fue encontrado: ");
+            }
             elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
             contador++;
         }
@@ -146,7 +160,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                 click(listaPlanMovil.get(i));
 
             }
-            if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14) {
+            if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
                 scenario.printFullView();
                 js().scrollElementTop(botonSeleccionarOferta);
                 scenario.printFullView();
@@ -188,6 +202,13 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(),3,5,completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
+    }
+
+    public void validarSeleccionaPostpagoPrepago() {
+        esperaProgresiva(driver(),3,3,preguntaTipoPlan);
+        boolean existe = waitUntilElementIsVisible(preguntaTipoPlan, 90).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina preguntaTipoPlan >>> {0}", existe);
     }
 
 
