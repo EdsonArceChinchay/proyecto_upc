@@ -148,14 +148,14 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         for(int i=0;i<3;i++){
             altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos,i);
             System.out.println("-- click en siguiente --");
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }
         System.out.println("----- termino preguntas ----------");
-            UtilWeb.waitForSeconds(5);
+            UtilWeb.waitForSeconds(3);
             altaFijaMovilRegistroStep.clicEnConfirmar();
     }
     @Entonces("valido que me muestre el boton con el texto de identidad validada")

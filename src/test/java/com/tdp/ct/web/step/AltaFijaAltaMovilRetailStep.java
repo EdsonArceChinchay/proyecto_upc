@@ -24,6 +24,11 @@ public class AltaFijaAltaMovilRetailStep {
     }
 
     @ScreenShotAfter
+    public void btnLineaMovilExistente() {
+        page.altaFijaAltaMovilRetailPage().lineaMovilExistente();
+    }
+
+    @ScreenShotAfter
     public void btnMovil() {
         page.altaFijaAltaMovilRetailPage().altaMovil();
     }

@@ -37,7 +37,7 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija
       | QAN     |  SESENTAYDOS | masculino |
    # Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Hogar
-    Y        selecciono el boton de la Linea Hogar Existente
+    Y        selecciono el boton de la Linea Movil Existente
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -86,5 +86,5 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente| tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
      # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
-      | usuario interno |  |  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1100000258 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV      | correo@gmail.com |
+      | usuario interno |   |  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1100000258 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV      | correo@gmail.com |
 

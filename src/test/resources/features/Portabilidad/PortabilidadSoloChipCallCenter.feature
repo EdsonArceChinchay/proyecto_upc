@@ -37,13 +37,13 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        doy click en el boton portabilidad
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
-    Y        escojo tipo de linea "Prepago"
-    Y        escojo tipo de operador "BITEL"
+    Y        escojo tipo de linea "<tipoLinea>"
+    Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
     #Y        valido los servicios
     #  | telefono  | Fecha_Sig  | Fecha_FinMes |
     #  | 920956347 | 2023-01-24 | 2023-01-31   |
-    Y        doy tiempo extra
+    Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
@@ -89,7 +89,6 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan                        | nombreMadre | nombrePadre | distritoNac |
-      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102009  | 920956347 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
-      | usuario interno |   |   | Bienvenid@ | ntt data qan call in venta cc | DNI           | 45770292  | 918416062 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA        | AVELINO      | ANCO HUALLO    |
+      | tipoUsuario     | userName        | password     | msgHome    | tiendaAsesor                  | tipoDocumento   | documento | numero  | tipoLinea  | operador    | tipoPlanMovil | nombrePlan                        | nombreMadre | nombrePadre | distritoNac |
+      | usuario interno |   |   | Bienvenid@ | ntt data qan call in venta cc | DNI           | 45770292  | 918416062 | Prepago     | BITEL     | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA        | AVELINO      | ANCO HUALLO    |
 
