@@ -4,6 +4,7 @@ import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
@@ -19,9 +20,27 @@ public class AltaFijaMovilRegistroStep {
     @Autowired
     private Cliente cliente;
 
+    @Autowired
+    private ManageScenario scenario;
+
     @ScreenShotAfter
     public void validarPantallaIngresarDireccion() {
         Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaIngresarDireccion());
+    }
+
+    @ScreenShotAfter
+    public void validarPantallaRegistrarVenta() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaRegistrarVenta());
+    }
+
+    @ScreenShotAfter
+    public void validarPantallaIngresarDireccionEntrega() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaIngresarDireccionEntrega());
+    }
+
+    @ScreenShotAfter
+    public void validarPantallaVerificarDireccion() {
+        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaVerificarDireccion());
     }
 
     @ScreenShotAfter
@@ -129,9 +148,9 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
 
-    public void ingresarDatosValidacionSolicitada(DataTable datos) {
-        UtilWeb.waitForSeconds(5);
-        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos);
+    public void ingresarDatosValidacionSolicitada(DataTable datos, Integer i) {
+
+        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos,i);
     }
 
     @ScreenShotBefore
@@ -252,7 +271,7 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void clicDescargarContrato() throws InterruptedException {
-        page.altaFijaMovilRegistroPage().clicDescargarContrato();
+        page.altaFijaMovilRegistroPage().clicDescargarContrato(scenario);
     }
     @ScreenShotAfter
     public void clicRegistrarVenta() {

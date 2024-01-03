@@ -8,6 +8,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class AltaMovilControlFinancimientoPage extends WebBase {
@@ -47,6 +49,9 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     @FindBy(xpath ="//*[contains(@label,'Siguiente')]")
     protected WebElement btnSiguiente;
+
+    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    protected WebElement titleRegistrarServicio;
 
     public void selectPlanActual() {
         click(planActual);
@@ -186,7 +191,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
         esperaProgresiva(driver(),3,5,btnplanMovil);
-        waitUntilElementIsClickable(btnplanMovil, 10);
+        waitUntilElementIsClickable(btnplanMovil, 50);
         click(btnplanMovil);
     }
 

@@ -36,6 +36,21 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarPantallaIngresarDireccion();
     }
 
+    @Entonces("me muestra la pantalla registrar venta")
+    public void meMuestraLaPantallaParaRegistrarVenta() {
+        altaFijaMovilRegistroStep.validarPantallaRegistrarVenta();
+    }
+
+    @Entonces("me muestra la pantalla para ingresar la direccion de entrega")
+    public void meMuestraLaPantallaParaIngresarLaDireccionEntrega() {
+        altaFijaMovilRegistroStep.validarPantallaIngresarDireccionEntrega();
+    }
+
+    @Entonces("me muestra la pantalla para verificar la direccion")
+    public void meMuestraLaPantallaParaVerificarLaDireccion() {
+        altaFijaMovilRegistroStep.validarPantallaVerificarDireccion();
+    }
+
     @Y("ingreso los datos del lugar de instalacion")
     public void ingresoLosDatosDelLugarDeInstalacion(DataTable dirInstalacion) {
 
@@ -133,14 +148,14 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(10);
+        UtilWeb.waitForSeconds(3);
         for(int i=0;i<3;i++){
-            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos);
+            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos,i);
             System.out.println("-- click en siguiente --");
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }
         System.out.println("----- termino preguntas ----------");
-            UtilWeb.waitForSeconds(5);
+            UtilWeb.waitForSeconds(3);
             altaFijaMovilRegistroStep.clicEnConfirmar();
     }
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
