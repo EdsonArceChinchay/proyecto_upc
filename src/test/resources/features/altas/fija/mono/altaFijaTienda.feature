@@ -10,8 +10,8 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: VICTOR CARPIO
+##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision
 Característica: AT-DT009_Alta Fija por tienda
@@ -25,6 +25,7 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -65,14 +66,16 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-#    Y        me muestra pantalla para Descargar contrato
-#    Y        presiono el boton descargar contrato
+    Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 #    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+      #| usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+      | usuario interno |  |  | Bienvenid@ | CAJAMARCA    | CE            | 1100000747 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Trio     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
+
 

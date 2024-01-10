@@ -157,6 +157,33 @@ public class Addons {
                 long tiempoEjecucion = fin - inicio;
                 formatTiempo(tiempoEjecucion, "esperaProgresiva");
         }
+
+        public static void esperaProgresivaReintentos(int reintentosMax, int segundosEspera, WebElement elemento) {
+                LOGGER.log(Level.INFO, "esperaProgresiva2(reintentosMax: " + reintentosMax + ", segundosEspera: " + segundosEspera + ", WebElement: " + elemento.toString() + ")");
+
+                int contador = 0;
+
+                do {
+                        UtilWeb.waitForSeconds(segundosEspera);
+                        LOGGER.log(Level.INFO, "Esperando " + segundosEspera + " segundos...");
+
+                        try {
+                                if (elemento.isDisplayed()) {
+                                        LOGGER.log(Level.INFO, "Elemento visible. Realizando clic...");
+                                        elemento.click();
+                                } else {
+                                        LOGGER.log(Level.INFO, "Elemento no visible. Saliendo del bucle.");
+                                        break;
+                                }
+                        } catch (NoSuchElementException e) {
+                                LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento #" + (contador + 1));
+                                break;
+                        }
+
+                        contador++;
+                } while (contador < reintentosMax);
+        }
+
         private static void formatTiempo(long tiempo, String  msg){
                 try{
                         if (tiempo < 60000) { // Menor a 1 minuto

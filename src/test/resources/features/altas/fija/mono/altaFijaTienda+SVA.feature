@@ -10,11 +10,11 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 18/12/2023
+##ENCARGADO: VICTOR CARPIO
+##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05
-Característica: AT-DT008_Alta Fija por tienda + SVA
+Característica: AT-DT008_Alta Fija por tienda + SVA Internet
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -25,6 +25,7 @@ Característica: AT-DT008_Alta Fija por tienda + SVA
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -33,8 +34,8 @@ Característica: AT-DT008_Alta Fija por tienda + SVA
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero    |
-      | Pedro   | Lopez Lopez | masculino |
+      | nombres | apellidos | genero   |
+      | Felipa  | Mendoza   | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -44,15 +45,13 @@ Característica: AT-DT008_Alta Fija por tienda + SVA
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | vivienda | nombreVivienda  | conjunto             | conjHabit |
-      | CASA     | Familia Barreto | URBANIZACION POPULAR | RISSO     |
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+#      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#	Y        valido que este en la seccion de registro
-#	Cuando   doy clic a iniciar registro
     Y        valido que este en la seccion de registro
     Y        doy click en agregar "<svaInternet>"
     Cuando   doy clic a iniciar registro
@@ -64,15 +63,17 @@ Característica: AT-DT008_Alta Fija por tienda + SVA
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1994 | Casado      | Albania      |
+      | 10/11/1996 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1007432126 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | RA D22 100 MBPS | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
-
+     # | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1007432126 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | RA D22 100 MBPS | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+      | usuario interno |  |  | Bienvenid@ | CAJAMARCA    | CE            | 1100000747 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio      | INTERNET MOVISTAR RA D22 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
