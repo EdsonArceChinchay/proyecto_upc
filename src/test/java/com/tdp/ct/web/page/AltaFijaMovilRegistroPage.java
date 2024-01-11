@@ -472,28 +472,35 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void validacionesCliente(String madre, String padre, String lugar, Integer i) {
         revisarModalError(driver());
 
-        if(i==0){
-            WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
-            esperaProgresiva(driver(),2,3,elementMadre);
-            System.out.println("Cual es el nombre de tu madre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
-            element.click();
-        }
 
-        if(i==1){
+        try {
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
-            esperaProgresiva(driver(),2,3,elementPadre);
+            esperaProgresiva(driver(), 2, 3, elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
-            element.click();
+            WebElement padreElement = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
+            padreElement.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No hay padre");
         }
 
-        if(i==2){
+        try {
+            WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
+            esperaProgresiva(driver(), 2, 3, elementMadre);
+            System.out.println("Cual es el nombre de tu madre : " + true);
+            WebElement madreElement = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
+            madreElement.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No hay madre");
+        }
+
+        try {
             WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
-            esperaProgresiva(driver(),2,3,elementNacimiento);
+            esperaProgresiva(driver(), 2, 3, elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
-            element.click();
+            WebElement lugarElement = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
+            lugarElement.click();
+        } catch (NoSuchElementException e) {
+            System.out.println("No hay nacimiento");
         }
 
         UtilWeb.waitForSeconds(2);
@@ -868,16 +875,31 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void agregoSVAINTERNET(String svaInternet) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
+        UtilWeb.waitForSeconds(10);
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+        esperaProgresiva(driver(),3,5,listElementPLan);
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        boolean encontrado=false;
         for (WebElement elements : lista) {
             System.out.println(elements.getText());
             if (elements.getText().equals(svaInternet)) {
                 UtilWeb.waitForSeconds(2);
                 click(elements, 3);
+                encontrado=true;
+            }
+        }
+        if (!encontrado) {
+            // Si el elemento específico no se encuentra, seleccionar el último elemento
+            if (!lista.isEmpty()) {
+                WebElement ultimoElemento = lista.get(lista.size() - 1);
+                UtilWeb.waitForSeconds(2);
+                click(ultimoElemento, 3);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el último elemento de la lista.");
+            } else {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "SVA NO ENCONTRADO y lista vacía.");
             }
         }
     }
