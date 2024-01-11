@@ -127,7 +127,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         click(buttonContinuar);
 //        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        Addons.esperaProgresivaReintentos(3,15,buttonContinuar);
+        Addons.esperaProgresivaReintentos(driver(),5,5,buttonContinuar);
         Addons.revisarModalError(driver());
     }
 

@@ -158,18 +158,21 @@ public class Addons {
                 formatTiempo(tiempoEjecucion, "esperaProgresiva");
         }
 
-        public static void esperaProgresivaReintentos(int reintentosMax, int segundosEspera, WebElement elemento) {
+        public static void esperaProgresivaReintentos(WebDriver driver, int reintentosMax, int segundosEspera, WebElement elemento) {
                 LOGGER.log(Level.INFO, "esperaProgresiva2(reintentosMax: " + reintentosMax + ", segundosEspera: " + segundosEspera + ", WebElement: " + elemento.toString() + ")");
 
                 int contador = 0;
 
                 do {
                         UtilWeb.waitForSeconds(segundosEspera);
+                        esperaProgresivaLoading(driver, 3, 5, "loadingCard");
+                        esperaProgresiva(driver, 3, 5, elemento);
                         LOGGER.log(Level.INFO, "Esperando " + segundosEspera + " segundos...");
 
                         try {
                                 if (elemento.isDisplayed()) {
                                         LOGGER.log(Level.INFO, "Elemento visible. Realizando clic...");
+                                        esperaProgresivaLoading(driver, 3, 5, "loadingCard");
                                         elemento.click();
                                 } else {
                                         LOGGER.log(Level.INFO, "Elemento no visible. Saliendo del bucle.");

@@ -81,7 +81,7 @@ public class AltaFijaTiendaPage extends WebBase {
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         modalError(5, btnReintentar, "Click al elemento Reitentar");
         //modalError(5,btnReintentar,"Click al elemento Reitentar");
-        waitUntilElementIsVisible(esperalistaPlanFija, 10);
+        waitUntilElementIsVisible(esperalistaPlanFija, 30);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
