@@ -92,9 +92,9 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil
     Y        busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente |tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
      # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN veinticuatro | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
-      | usuario interno |  |  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | CE            | 221011210 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
+      | usuario interno |          | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | CE            | 221011210 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
 

@@ -294,7 +294,7 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
     public String guardoNumeroSolicitud() {
-        //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+//        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              System.out.println("Numero Solicitud:" + numeroSolicitud);
