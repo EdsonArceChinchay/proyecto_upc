@@ -45,4 +45,9 @@ public class BandejaBackOfficeStepDefinition {
     public void aprueboSolicitud() throws InterruptedException {
         bandejaBackOfficeStep.aprueboSolicitud();
     }
+
+    @Y("busco por el codigo de expediente")
+    public void buscoPorElCodigoDeExpediente() {
+
+    }
 }

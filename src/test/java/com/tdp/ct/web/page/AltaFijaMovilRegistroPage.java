@@ -474,7 +474,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
 
 
-
         try {
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
             esperaProgresiva(driver(), 2, 3, elementPadre);
@@ -879,32 +878,35 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void agregoSVAINTERNET(String svaInternet) {
         //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
 
-
-//        WebElement listElementPLan = null;
+//TODO: CODIGO CAMBIADO
+        WebElement listElementPLan;
+//        boolean statusFind;
+//        int contadorFind = 0;
 //        do {
 //            try {
 //                listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+//                statusFind = false;
 //            } catch (Exception e) {
 //                UtilWeb.waitForSeconds(2);
+//                statusFind = true;
 //            }
-//
-//        }while ();
-
+//            contadorFind++;
+//        } while (statusFind && contadorFind < 5);
 
         UtilWeb.waitForSeconds(10);
-        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
-        esperaProgresiva(driver(),3,5,listElementPLan);
+        listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+        esperaProgresiva(driver(), 3, 5, listElementPLan);
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
-        boolean encontrado=false;
+        boolean encontrado = false;
         for (WebElement elements : lista) {
             System.out.println(elements.getText());
             if (elements.getText().equals(svaInternet)) {
                 UtilWeb.waitForSeconds(2);
                 click(elements, 3);
-                encontrado=true;
+                encontrado = true;
             }
         }
         if (!encontrado) {

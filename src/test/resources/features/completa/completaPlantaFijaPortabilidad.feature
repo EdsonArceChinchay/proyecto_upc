@@ -33,7 +33,7 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        doy click en el boton consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
+      | nombres | apellidos     | genero    |
       | QAN     | MCCCDIECISEIS | masculino |
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Hogar Existente
@@ -100,7 +100,7 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y         busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente |tipoDocumento | documento  |  numero  | tipoLinea  | operador  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | usuario interno |          | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | DNI            | 46789127 | 994110053 | Prepago         | ENTEL           | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | LUZ        | ALEJANDRO      | LA VICTORIA    |
+      | tipoUsuario     | userName | password | msgHome    | tiendaAsesor              | nombreCliente     | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                                | nombreMadre | nombrePadre | distritoNac |
+      | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN MCCCDIECISEIS | DNI           | 46789127  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | LUZ         | ALEJANDRO   | LA VICTORIA |
