@@ -13,6 +13,7 @@ public class Cliente {
     @Setter @Getter String numeroSolicitud;
     @Setter @Getter String numeroDocumento;
 
+
     public Cliente(){
 
     }

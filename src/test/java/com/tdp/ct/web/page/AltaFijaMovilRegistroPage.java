@@ -34,6 +34,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement contratoUno;
     @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
     protected WebElement contratoDos;
+    @FindBy(xpath = "//div[contains(text(), 'código de venta: ')]")
+    protected WebElement numeroSolicitud;
     @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
     protected WebElement cicloFacturacion;
     @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
@@ -859,6 +861,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //waitUntilElementIsVisible(scrollorden, 120);
         esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         js().scrollElementTop(cicloFacturacion);
+        //        TODO: GUARDAR LA VARIABLE EN CONTRATO
+     //   cliente.setNumeroSolicitud(numeroSolicitud.getText().replace("FE", "FE-"));
         //UtilWeb.waitForSeconds(5);
         //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);

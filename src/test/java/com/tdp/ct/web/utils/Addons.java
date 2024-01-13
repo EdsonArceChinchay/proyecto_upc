@@ -181,6 +181,9 @@ public class Addons {
                         } catch (NoSuchElementException e) {
                                 LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento #" + (contador + 1));
                                 break;
+                        } catch (ElementClickInterceptedException el){
+                                LOGGER.log(Level.WARNING, "No se puede dar click al elemento en el intento #" + (contador + 1));
+                                break;
                         }
 
                         contador++;
