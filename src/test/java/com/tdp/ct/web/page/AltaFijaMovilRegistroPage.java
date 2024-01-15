@@ -106,6 +106,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonGuardarCambios;
     @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
     protected WebElement buttonRepetidor;
+
+    @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
+    protected WebElement esperarCorreo;
     @FindBy(xpath = "//div[@class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -143,11 +146,40 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaRegistrarVenta() {
-        esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
-        boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
-        UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
-        return existe;
+        try {
+            esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
+            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
+            UtilWeb.waitForSeconds(1);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+            return existe;
+
+        } catch (TimeoutException ex) {
+
+            WebElement mensajeElemento = driver().findElement(By.className("success-title"));
+
+            // Obtener el texto del elemento
+            String mensajeTexto = mensajeElemento.getText();
+
+            // Verificar si el mensaje contiene la frase "ha sido cancelado"
+            if (mensajeTexto.contains("ha sido cancelado")) {
+                driver().navigate().back();
+                esperaProgresiva(driver(), 3, 5, esperarCorreo);
+                waitUntilElementIsVisible(esperarCorreo, 10);
+                waitUntilElementIsClickable(buttonValidarContrato, 10);
+                js().scrollElementTop(buttonValidarContrato);
+                click(buttonValidarContrato);
+                clicSiAcepto();
+                clicBotonContinuar();
+                return false;
+
+            } else {
+                System.out.println("El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
+                return false;
+            }
+
+        }
+
+
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
@@ -328,6 +360,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSiguiente() {
+
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
         esperaProgresiva(driver(), 3, 3, rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
@@ -336,14 +369,20 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicEnConfirmar() {
-        UtilWeb.waitForSeconds(3);
-        WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(), 3, 3, rootInputCorreo);
-        SearchContext context = sh().getContext(rootInputCorreo);
-        context.findElement(By.cssSelector("button")).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
-        UtilWeb.waitForSeconds(2);
+        try {
+            UtilWeb.waitForSeconds(3);
+            WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+            esperaProgresiva(driver(),3,3,rootInputCorreo);
+            SearchContext context = sh().getContext(rootInputCorreo);
+            context.findElement(By.cssSelector("button")).click();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
+            UtilWeb.waitForSeconds(2);
+        } catch (NoSuchElementException e) {
+            System.out.println("Ya dió Confirmar");
+        }
+
     }
+
 
     public void verificarIdentidadValidada() {
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
@@ -858,8 +897,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
+
         //waitUntilElementIsVisible(scrollorden, 120);
         esperaProgresiva(driver(), 3, 5, cicloFacturacion);
+
+        waitUntilElementIsVisible(scrollorden, 70);
+        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
+        esperaProgresiva(driver(),3,5,cicloFacturacion);
+        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
+
         js().scrollElementTop(cicloFacturacion);
         //        TODO: GUARDAR LA VARIABLE EN CONTRATO
      //   cliente.setNumeroSolicitud(numeroSolicitud.getText().replace("FE", "FE-"));
@@ -997,6 +1043,29 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public String getTextoSolicitud() {
+        int contadorReintentos = 0;
+        do {
+            // Esperar antes de intentar obtener el texto
+            UtilWeb.waitForSeconds(5);
+
+            // Obtener el texto del elemento
+            String texto = textoContratoCliente.getText();
+
+            // Verificar si el texto no está vacío o en blanco
+            if (!texto.trim().isEmpty()) {
+                System.out.println("Texto del contrato del cliente: " + texto);
+                break; // Salir del bucle si el texto no está vacío
+            } else {
+                System.out.println("Texto del contrato del cliente está vacío. Reintentando...");
+            }
+
+            contadorReintentos++;
+        } while (contadorReintentos < 4);  // Establecer el número máximo de reintentos
+
+        if (contadorReintentos == 4) {
+            System.out.println("Se alcanzó el número máximo de reintentos. No se pudo obtener un texto no vacío.");
+        }
+
         return textoContratoCliente.getText();
     }
 }

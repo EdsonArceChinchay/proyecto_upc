@@ -255,6 +255,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void correo(String correo) {
         this.scrollDown();
         revisarModalError(driver());
+        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
+        revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -262,6 +264,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
+                revisarModalError(driver());
                 waitUntilElementIsVisible(esperarCorreo, 2);
                 buttonFound = true;
             } catch (Exception e) {

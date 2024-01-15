@@ -36,7 +36,7 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
       | nombres | apellidos     | genero    |
       | QAN     | MCCCDIECISEIS | masculino |
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
-    Y        selecciono el boton de la Linea Hogar Existente
+    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
@@ -102,5 +102,8 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        cargo el audio en la web
 #    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tiendaAsesor              | nombreCliente     | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                                | nombreMadre | nombrePadre | distritoNac |
-      | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN MCCCDIECISEIS | DNI           | 46789127  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | LUZ         | ALEJANDRO   | LA VICTORIA |
+
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  |  numero  | tipoLinea  | operador  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | usuario interno |   |  | Bienvenid@ |  DNI            | 45770292 | 994110053 | Prepago         | ENTEL           | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | ELENA        | VICTOR      | LIMA    | 5064881603 |
+
+

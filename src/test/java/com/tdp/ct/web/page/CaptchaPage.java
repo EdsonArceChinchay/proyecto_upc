@@ -36,6 +36,7 @@ public class CaptchaPage extends WebBase {
     //public WebElement imgCaptcha;
 
     public void obtenerCaptcha() throws IOException {
+        UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Escribiendo captcha...");
 
         WebElement captchaElement =  driver().findElement(By.id("captcha"));

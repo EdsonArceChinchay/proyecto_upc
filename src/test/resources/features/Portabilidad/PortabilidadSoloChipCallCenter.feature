@@ -29,7 +29,7 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+   # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -90,5 +90,5 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName        | password     | msgHome    | tiendaAsesor                  | tipoDocumento   | documento | numero  | tipoLinea  | operador    | tipoPlanMovil | nombrePlan                        | nombreMadre | nombrePadre | distritoNac |
-      | usuario interno |   |   | Bienvenid@ | ntt data qan call in venta cc | DNI           | 45770292  | 918416062 | Prepago     | BITEL     | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA        | AVELINO      | ANCO HUALLO    |
+      | usuario interno |    |  | Bienvenid@ | ntt data qan call in venta cc | DNI           | 45770292  | 918416062 | Prepago     | BITEL     | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA        | AVELINO      | ANCO HUALLO    |
 

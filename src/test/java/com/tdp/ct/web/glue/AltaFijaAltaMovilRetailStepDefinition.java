@@ -25,9 +25,9 @@ public class AltaFijaAltaMovilRetailStepDefinition {
         altaFijaAltaMovilRetailStep.btnHogar();
     }
 
-    @Y("selecciono el boton de la Linea Hogar Existente")
-    public void seleccionoElBotonLineaHogarExistente() {
-      altaFijaAltaMovilRetailStep.btnLineaExistente();
+    @Y("selecciono el boton de la Linea Hogar Existente {string}")
+    public void seleccionoElBotonLineaHogarExistente(String numeroExistente) {
+      altaFijaAltaMovilRetailStep.btnLineaExistente(numeroExistente);
     }
 
   @Y("selecciono el boton de la Linea Movil Existente")

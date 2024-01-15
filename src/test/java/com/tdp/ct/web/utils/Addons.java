@@ -218,8 +218,8 @@ public class Addons {
                 boolean bExisteModal = false;
                 boolean bReintentar = true;
                 int contador = 0;
-                int reintentosMax = 2;
-                int segundosEspera = 3;
+                int reintentosMax = 5;
+                int segundosEspera = 15;
 
                 do {
                         boolean modal1SinError = false;
@@ -279,6 +279,7 @@ public class Addons {
                                 //break;
                         }
 
+
                         //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
                         //Mostrando un boton: Continuar
                         bExisteModal = driver.findElements(By.xpath("//app-modal-confirmation-financing")).size() != 0;
@@ -311,10 +312,41 @@ public class Addons {
                                 //Si no hay formulario de error, sale del bucle.
                                 break;
                         }
+                        boolean bCargando = false;
+                        try {
+                                LOGGER.log(Level.INFO, "Buscando Splash ...");
+                                By by;
+                                //by = By.cssSelector(".splash");
+                                //by = By.xpath("//div[@class='splash']");
+                                //by = By.xpath("//tdp-loader[contains(@class, 'splash')]");
+                                //by = By.tagName("tdp-loader");
+                                //by = By.xpath("//tdp-loader/div[@class='splash']/div[@class='splash-title']");
+                                //by = By.xpath("//div[@class='splash-title']");
 
+                                by = By.cssSelector("tdp-loader");
+                                //List<WebElement> elements = driver.findElements(by);
+                                //if (!elements.isEmpty()){
+                                //LOGGER.log(Level.INFO, "SEARCH:");
+                                WebElement splashElement = driver.findElement(by);
+                                String splashText = splashElement.getText();
+                                if(splashText.length()> 3 ){
+                                        bCargando = true;
+                                }
+                                if(bCargando) {
+                                        LOGGER.log(Level.INFO, "Splash detectado: " + splashText + " #" + (contador + 1));
+                                        UtilWeb.waitForSeconds(segundosEspera * contador);
+                                }
+                                // }else{
+                                //         LOGGER.log(Level.INFO, "NO hay Splash");
+                                // }
+
+                        } catch (Exception e) {
+                                bCargando = false;
+                                LOGGER.log(Level.INFO, "Splash notFound");
+                        }
                         contador++;
                         if (contador >= reintentosMax) {
-                            bReintentar = false;
+                                bReintentar = false;
                         }
                 } while (bReintentar);
 

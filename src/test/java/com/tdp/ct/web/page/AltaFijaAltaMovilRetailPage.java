@@ -62,12 +62,12 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         //UtilWeb.waitForSeconds(2);//1
     }
 
-    public void lineaExistente() {
+    public void lineaExistente(String numeroExistente) {
         esperaProgresiva(driver(), 3, 5, btnLineaExistente);
         js().scrollElementTop(btnLineaExistente);
         String LineaExistente = btnLineaExistente.getText();
 
-        if (LineaExistente.contains("Activo") && LineaExistente.contains("Sin Deuda")) {
+        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
             click(btnLineaExistente);
         } else {
             int i =2;
@@ -80,7 +80,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
                 if (elementoExistente) {
 
-                    if (elemento.getText().contains("Activo") && elemento.getText().contains("Sin Deuda")) {
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
                         click(elemento);
                         break;
                     } else{
@@ -112,6 +112,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(),5,5,btnMostrar);
         Addons.esperaCargaMontoDeuda(driver(),20);
         revisarModalError(driver());
+        esperaProgresiva(driver(),5,5,btnMostrar);
         click(btnMostrar);
     }
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
@@ -207,6 +208,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
         revisarModalError(driver());
+        UtilWeb.waitForSeconds(5);
         //revisarModalEntendido(driver());
         //reintarPopPup();
         //reintarPopPup();

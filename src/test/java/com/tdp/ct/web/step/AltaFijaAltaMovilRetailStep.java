@@ -19,8 +19,8 @@ public class AltaFijaAltaMovilRetailStep {
     }
 
     @ScreenShotAfter
-    public void btnLineaExistente() {
-        page.altaFijaAltaMovilRetailPage().lineaExistente();
+    public void btnLineaExistente(String numeroExistente) {
+        page.altaFijaAltaMovilRetailPage().lineaExistente(numeroExistente);
     }
 
     @ScreenShotAfter

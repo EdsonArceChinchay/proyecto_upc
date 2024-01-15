@@ -36,7 +36,7 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil
       | nombres | apellidos    | genero    |
       | QAN     | MCCCDIECISEIS | masculino |
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
-    Y        selecciono el boton de la Linea Hogar Existente
+    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -97,4 +97,5 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente |tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
      # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN veinticuatro | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
       | usuario interno |          | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | CE            | 221011210 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
+
 

@@ -78,6 +78,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void ofertasSugeridas() {
         revisarModalError(driver());
         esperaProgresiva(driver(),3,5,ofertasSugeridas);
+        revisarModalError(driver());
         boolean elementoExistente;
         elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
         if (elementoExistente) {
@@ -86,6 +87,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             System.out.println("si estaba abierto el detalle");
             UtilWeb.waitForSeconds(1);
         }
+        revisarModalError(driver());
         Assert.assertTrue("No esta presente el elemento", ofertasSugeridas.isDisplayed());
     }
 

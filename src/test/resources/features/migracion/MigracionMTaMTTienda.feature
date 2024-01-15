@@ -63,4 +63,4 @@ Característica: Migracion de MT a MT en Tienda
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | nombrePlan                                           |
-      | usuario interno |  |  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1100000763 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV |
+      | usuario interno |  |  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1100000311 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |

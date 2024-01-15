@@ -27,7 +27,6 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -35,7 +34,6 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero    |
       | QAN     | SESENTAYDOS | masculino |
-   # Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton de la Linea Movil Existente
     Y        cierro el popup de validación de estado de contraseña única
@@ -85,7 +83,7 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor              | nombreCliente   | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                               | correo           |
+      | tipoUsuario     | userName  | password      | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia |  nombrePlan                               |
      # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1000000003 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
-      | usuario interno | vcarpioat | Tele#jNzj&a97 | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1100000218 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV | correo@gmail.com |
+      | usuario interno |  |  | Bienvenid@ | CE            | 1100000273 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV |
 

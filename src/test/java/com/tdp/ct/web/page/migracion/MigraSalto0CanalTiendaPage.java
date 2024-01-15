@@ -37,6 +37,7 @@ public class MigraSalto0CanalTiendaPage extends WebBase {
     public boolean validoPantallaAgendamiento() {
         revisarModalError(driver());
         esperaProgresiva(driver(),3,5, labelAgendamiento);
+        revisarModalError(driver());
         boolean existe = waitUntilElementIsVisible(labelAgendamiento, 2).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
