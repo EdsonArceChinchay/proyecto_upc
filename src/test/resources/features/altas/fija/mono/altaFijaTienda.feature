@@ -45,9 +45,9 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-#      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | vivienda | nombreVivienda | piso | int | bloque | conjunto | conjHabit |
+      | 25 | 24   |          |                | 2    | 2   | 2      |          |           |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -74,8 +74,10 @@ Característica: AT-DT009_Alta Fija por tienda
 #    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      #| usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
-      | usuario interno |  | | Bienvenid@ | CAJAMARCA    | CE            | 1100000494 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Trio     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
-
-
+      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                            | referencia     | tipoPlan | nombrePlan               |
+  #    | usuario externo | nishuizas | $t3l3f0n1c4$  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+  #    | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000571 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+    #  | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+    #  | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000484 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+      | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000485 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+    #  | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000486 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |

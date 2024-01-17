@@ -74,5 +74,4 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
     public void escojoPlan(String plan) {
         altaValidacionPrecioDescuentoStep.escojoPlan(plan);
     }
-
 }

@@ -32,15 +32,17 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
     String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
     String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
+    String bloqueDir= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
     altaFijaAltaMovilCallCenterStep.ingresarManzana(manzana);
     altaFijaAltaMovilCallCenterStep.ingresarLote(lote);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(vivienda);
     altaFijaAltaMovilCallCenterStep.ingresarNombreVivienda(nombreVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarPiso(piso);
     altaFijaAltaMovilCallCenterStep.ingresarInterior(interior);
+    altaFijaAltaMovilCallCenterStep.ingresarBloque(bloqueDir);
+    altaFijaAltaMovilCallCenterStep.ingresarManzanaDir(manzana);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoConjuntoHabitacional(habitacion);
     altaFijaAltaMovilCallCenterStep.ingresarConjuntoHabitacional(conj);
-
   }
 
   @Y("presiono el boton consultar cobertura")

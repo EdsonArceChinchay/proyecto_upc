@@ -77,16 +77,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
                 String selector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .container";
                 WebElement elemento = driver().findElement(By.cssSelector(selector));
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
-
                 if (elementoExistente) {
-
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
                         click(elemento);
                         break;
                     } else{
                         i++;
                     }
-
                 }
                 else {
                     System.out.println("No cumplen con la condicion");

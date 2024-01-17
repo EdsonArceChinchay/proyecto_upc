@@ -908,7 +908,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         js().scrollElementTop(cicloFacturacion);
         //        TODO: GUARDAR LA VARIABLE EN CONTRATO
-     //   cliente.setNumeroSolicitud(numeroSolicitud.getText().replace("FE", "FE-"));
+//        cliente.setNumeroSolicitud(numeroSolicitud.getText().replace("FE", "FE-"));
         //UtilWeb.waitForSeconds(5);
         //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);

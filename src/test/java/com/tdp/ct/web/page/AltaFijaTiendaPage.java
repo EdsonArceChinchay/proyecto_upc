@@ -12,6 +12,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -109,6 +110,20 @@ public class AltaFijaTiendaPage extends WebBase {
                 UtilWeb.waitForSeconds(3);
             }
         }
+
+//TODO: Se necesita cambiar el codigo para buscr mas ofertas
+//        WebElement element;
+//        try {
+//            element = driver().findElement(By.xpath("//img[@src='assets/images/right-arrow.png']"));
+//        }catch (NoSuchElementException e){
+//
+//        }
+//
+//        do {
+//            click(btnRight);
+//            UtilWeb.waitForSeconds(3);
+//        } while (!element.isDisplayed());
+
         //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         boolean encontroElemento = false;
@@ -169,7 +184,7 @@ public class AltaFijaTiendaPage extends WebBase {
         revisarModalError(driver()); //Si aparecen popUp de errores, reintenta.
 //         Calendario
         boolean elementoExistenteDias;
-        esperaProgresiva(driver(),3,5,buttonConfirmar);
+        esperaProgresiva(driver(), 3, 5, buttonConfirmar);
         elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
         if (elementoExistenteDias) {
             System.out.println("elementoExistenteDias: true");
