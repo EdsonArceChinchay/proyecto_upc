@@ -1,40 +1,41 @@
 #language:es
-##CREADOR:
+
+##CREADOR:Andres Michilot
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT009
-##GDAP: GDAP-577
+##CODIGO:
+##GDAP: GDAP-##2
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 19/12/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision
-Característica: AT-DT009_Alta Fija por tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15
+
+Característica: Alta Duo + Sva Movistar canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaFijaTienda
-  Esquema del escenario: Alta fija por tienda con CE
+  @AltaDuoSvaRetail
+  Esquema del escenario: Alta Duo + Sva Movistar canal Retail
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos | genero   |
-      | Felipa  | Mendoza   | femenino |
+      | nombres | apellidos       | genero    |
+      | Elvis   | Presley Barrios | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -44,35 +45,34 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-#      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
+    Y        valido que este en la seccion de registro
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "tester_1@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester_1@tester.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 10/11/1996 | Casado      | Albania      |
+      | 12/10/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-#    Y        me muestra pantalla para Descargar contrato
-#    Y        presiono el boton descargar contrato
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        valido que se muestre el detalle del pedido
-
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 | discapacitado  | PATRICIA    | GERBER      | MARIANO     |
-
+      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                               |
+      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS|

@@ -5,20 +5,20 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT038
-##GDAP: GDAP-589
+##GDAP: GDAP-#QAN1
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: VICTOR CARPIO
+##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
-Característica: AT-DT038_Alta Fija Pura MT por Call Center
+Característica: AT-DT038_Completa Planta Fija Alta Movil
 
-  @AltaPuraMTcallCenterCE
-  Esquema del escenario: Alta pura MT por call center con nuevo cliente con documento CE
+  @CompletaPlantaFijaAltaMovil
+  Esquema del escenario: Completa Planta Fija Alta Movil con documento CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -27,30 +27,21 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Lucia   | Perez Lopez | femenino |
-    Y        selecciono el boton Linea Nueva Hogar
+      | nombres | apellidos    | genero    |
+      | QAN     | MCCCDIECISEIS | masculino |
+    #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
+    Y        selecciono el boton de la Linea Hogar Existente
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+    Entonces me muestra la pantalla para verificar la direccion
+    Y        presiono el boton Confirmar direccion
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
@@ -59,6 +50,13 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
+    Entonces me muestra la pantalla para ingresar la direccion de entrega
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    Y        ingreso la referencia de la direccion "<referencia>"
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
@@ -84,6 +82,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -95,6 +94,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | MBPS       | correo@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente |tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
+     # | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN veinticuatro | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
+      | usuario interno |  |  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | CE            | 221011210 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | correo@gmail.com |
 

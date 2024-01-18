@@ -92,11 +92,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
   }
 
-  @Y("seleccionamos el horario de entrega {string}")
-  public void seleccionamosElHorarioDeEntrega(String horario) {
-    altaMovilPostpagoCallCenterStep.seleccionamosElHorarioDeEntrega(horario);
-  }
-
     @Y("ingreso los datos del cliente")
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
       if(cliente.isClienteNuevo()){
@@ -110,4 +105,13 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     public void validoQueSeMuestreElDetalleDelPedido() {
     altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido();
     }
+
+  @Y("doy click en ver detalle del pedido")
+  public void doyClickenVerDetalleDelPedido() {
+    altaMovilPostpagoCallCenterStep.doyClickenVerDetalleDelPedido();
+  }
+  @Y("valido que se muestre el detalle del pedido del {string}")
+  public void validoQueSeMuestreElDetalleDelPedido(String service) {
+    altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido(service);
+  }
 }

@@ -19,7 +19,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     protected WebElement tituloValidando;
     @FindBy(xpath = "//button[contains(text(),' CONTINUAR')]")
     protected WebElement btnContinuarCU;
-    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
+    @FindBy(xpath = "(//*[@class=\"detailHogar\"])[2]")
     protected WebElement btnCardPlanActual;
 
     //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")

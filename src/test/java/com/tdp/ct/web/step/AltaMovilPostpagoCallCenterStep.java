@@ -77,10 +77,7 @@ public class AltaMovilPostpagoCallCenterStep {
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
-    @ScreenShotAfter
-    public void seleccionamosElHorarioDeEntrega(String horario) {
-        page.altaMovilPostpagoCallCenterPage().seleccionamosElHorarioDeEntrega(horario);
-    }
+
     @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
             String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
@@ -97,6 +94,16 @@ public class AltaMovilPostpagoCallCenterStep {
     @ScreenShotAfter
     public void ValidoQuePresenteDetallePedido() {
         page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();
+    }
+
+    @ScreenShotAfter
+    public void ValidoQuePresenteDetallePedido(String service) {
+        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido(service);
+    }
+
+    public void doyClickenVerDetalleDelPedido() {
+        page.altaMovilPostpagoCallCenterPage().clickenVerDetalleDelPedido();
+
     }
 }
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class PortabilidadPage extends WebBase {
 
 
@@ -26,8 +28,9 @@ public class PortabilidadPage extends WebBase {
 
     public void clickBotonPortabilidad() {
         waitUntilElementIsVisible(btnPortabilidad,10);
+        js().scrollElementTop(btnPortabilidad);
+        esperaProgresiva(driver(),5,5,btnPortabilidad);
         click(btnPortabilidad);
-        //waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -59,6 +62,7 @@ public class PortabilidadPage extends WebBase {
     public void esogerTipoOperador(String operador) {
         UtilWeb.waitForSeconds(4);//
         WebElement listElementPLan = find().getElementByCss(".tdp-col-sm-9:nth-child(5) .ng-pristine");
+        js().scrollElementTop(listElementPLan);
         click(listElementPLan);
         UtilWeb.waitForSeconds(4);//es 1
         SearchContext contexPlan = sh().getContext(listElementPLan);

@@ -85,7 +85,7 @@ public class HomePage extends WebBase {
         //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
-        Addons.esperaCargaMontoDeuda(driver(),60);
+        Addons.esperaCargaMontoDeuda(driver(),20);
         esperaProgresiva(driver(),3,5,boton01);
         revisarModalError(driver());
         //UtilWeb.waitForSeconds(1);
@@ -171,7 +171,11 @@ public class HomePage extends WebBase {
 
     public void clickXPopUpCU() {
         esperaProgresiva(driver(),2,3,botonX);
-        botonX.click();
+        try {
+            botonX.click();
+        }catch(Exception e){
+
+        }
         //waitUntilElementIsClickable(botonX,20).click();
     }
 

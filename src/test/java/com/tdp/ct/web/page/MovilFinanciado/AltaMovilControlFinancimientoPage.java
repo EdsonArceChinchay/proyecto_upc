@@ -8,6 +8,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class AltaMovilControlFinancimientoPage extends WebBase {
@@ -22,7 +24,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement selectCampaniaOferta;
     @FindBy(xpath ="//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement btnSeleccionarOferta;
-    @FindBy(xpath ="//button[@class='btnCard']")
+    @FindBy(xpath ="//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
     @FindBy(xpath ="//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
     protected WebElement btnAgregarEquipo;
@@ -48,6 +50,9 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     @FindBy(xpath ="//*[contains(@label,'Siguiente')]")
     protected WebElement btnSiguiente;
 
+    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    protected WebElement titleRegistrarServicio;
+
     public void selectPlanActual() {
         click(planActual);
     }
@@ -70,13 +75,11 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         click(btnSeleccionarOferta);
     }
     public void selectBtnLineaNueva() {
-        UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(),3,5,btnLineaNueva);
         click(btnLineaNueva);
-        UtilWeb.waitForSeconds(2);
     }
     public void selectBtnAgregarEquipo() {
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(btnAgregarEquipo, 10);
+        esperaProgresiva(driver(),3,5,btnAgregarEquipo);
         click(btnAgregarEquipo);
         UtilWeb.waitForSeconds(5);
     }
@@ -188,7 +191,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
         esperaProgresiva(driver(),3,5,btnplanMovil);
-        waitUntilElementIsClickable(btnplanMovil, 10);
+        waitUntilElementIsClickable(btnplanMovil, 50);
         click(btnplanMovil);
     }
 

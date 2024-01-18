@@ -62,7 +62,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
     protected WebElement btnConfirmar;
 
-    @FindBy(xpath= "/html/body/app-root/app-success/app-order-detail-fe/div/div[1]")
+    @FindBy(xpath= "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
     protected WebElement btnDetallePedido;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
@@ -71,17 +71,16 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
+    @FindBy(xpath = "//*[@class='data-service']//*[contains(text(),'Servicio')]")
+    protected WebElement orderDetail;
+
     public void BtonOpciones() {
         revisarModalError(driver());
         esperaProgresiva(driver(),3,5,BtnOpciones);
         revisarModalError(driver());
-        //waitUntilElementIsVisible(BtnOpciones, 10);
         js().scrollElementTop(BtnOpciones);
-       // waitUntilElementIsVisible(BtnOpciones, 10);
         System.out.println("BtonOpciones clic");
         BtnOpciones.click();
-        //click(BtnOpciones, 30);
-        //UtilWeb.waitForSeconds(30);//10
     }
 
     public void seleccionoElPlanMovil(String tipoPlan) {
@@ -98,9 +97,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void seleccionarEquipo() {
         UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,5,LblEquipos);
         js().scrollElementTop(LblEquipos);
-        waitUntilElementIsVisible(LblEquipos, 10);
-        click(LblEquipos, 30);
+        click(LblEquipos, 5);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -203,6 +202,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         esperaProgresiva(driver(),5,3,btnSeleccionar);
         js().scrollElementTop(btnSeleccionar);
         click(btnSeleccionar);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void doyClickEnIniciarRegistro() {
@@ -261,21 +261,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionamosElHorarioDeEntrega(String horario) {
-//        WebElement listElementHorario=find().getElementByCss("tdp-st-card:nth-child(3) > div > div._body > form > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1)");
-//        click(listElementHorario);
-//        UtilWeb.waitForSeconds(2);
-//        SearchContext contexPlan=sh().getContext(listElementHorario);
-//        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
-//        for(WebElement elements:lista){
-//            System.out.println(elements.getText());
-//            if(elements.getText().equals(horario)){
-//                UtilWeb.waitForSeconds(2);
-//                click(elements,30);
-//            }
-//        }
-    }
-
     public void ingresarFechaNac(String fechaNac) {
         WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
         SearchContext context = sh().getContext(rootElement);
@@ -321,7 +306,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         js().scrollElementTop(scrollorden);
         esperaProgresiva(driver(),3,5,btnDetallePedido);
         click(btnDetallePedido);
-
+        js().scrollElementTop(orderDetail);
     }
 
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
@@ -337,4 +322,14 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         }
     }
 
+    public void ValidoQuePresenteDetallePedido(String service) {
+        WebElement serviceText = find().getElementByXPath("//*[contains(text(),'"+service.trim()+"')]");
+        js().scrollElementTop(serviceText);
+    }
+
+    public void clickenVerDetalleDelPedido() {
+        js().scrollElementTop(scrollorden);
+        esperaProgresiva(driver(),3,5,btnDetallePedido);
+        click(btnDetallePedido);
+    }
 }

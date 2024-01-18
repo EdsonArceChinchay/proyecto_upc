@@ -51,6 +51,7 @@ Característica: AT-DT042_Alta MT MAS SVA
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
 #    Y        selecciono el nombre de plan movistar total
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

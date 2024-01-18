@@ -16,19 +16,26 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilRetailPage extends WebBase {
-
     @FindBy(xpath = "//div[@class=\"contenedor_park add_pointer\"]")
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
+
+    @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
+    protected WebElement btnLineaExistente;
+
+    @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
+    protected WebElement btnLineaMovilExistente;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-
     @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
     protected WebElement btnConsulta;
+    @FindBy(xpath = "//tdp-st-button[@label='Confirmar dirección']")
+    private WebElement btnConfirmarDireccion;
 
     @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
+
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
     private String inputCorreo;
@@ -42,11 +49,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void altaHogar(){
         js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(15);
-        //waitUntilElementIsClickable(btnHogar,30);
         //esperaProgresiva(driver(),5,5,btnHogar);
         click(btnHogar);
-        //waitUntilElementIsVisible(btnMovil,5);
-        UtilWeb.waitForSeconds(5);
     }
 
     public void altaMovil() {
@@ -58,9 +62,55 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         //UtilWeb.waitForSeconds(2);//1
     }
 
+    public void lineaExistente() {
+        esperaProgresiva(driver(), 3, 5, btnLineaExistente);
+        js().scrollElementTop(btnLineaExistente);
+        String LineaExistente = btnLineaExistente.getText();
+
+        if (LineaExistente.contains("Activo") && LineaExistente.contains("Sin Deuda")) {
+            click(btnLineaExistente);
+        } else {
+            int i =2;
+            int reintentos =5;
+            boolean elementoExistente;
+            while (i<reintentos){
+                String selector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .container";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
+
+                if (elementoExistente) {
+
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains("Sin Deuda")) {
+                        click(elemento);
+                        break;
+                    } else{
+                        i++;
+                    }
+
+                }
+                else {
+                    System.out.println("No cumplen con la condicion");
+                    break;
+                }
+            }
+
+        }
+
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void lineaMovilExistente() {
+        esperaProgresiva(driver(), 3, 5, btnLineaMovilExistente);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnLineaMovilExistente);
+        js().scrollElementTop(btnLineaMovilExistente);
+        click(btnLineaMovilExistente);
+        UtilWeb.waitForSeconds(1);
+    }
+
     public void mostrarOfertas(){
         esperaProgresiva(driver(),5,5,btnMostrar);
-        Addons.esperaCargaMontoDeuda(driver(),60);
+        Addons.esperaCargaMontoDeuda(driver(),20);
         revisarModalError(driver());
         click(btnMostrar);
     }
@@ -160,6 +210,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         //revisarModalEntendido(driver());
         //reintarPopPup();
         //reintarPopPup();
+    }
+
+    public void btnConfirmarDireccion(){
+        esperaProgresiva(driver(),5,5,btnConfirmarDireccion);
+        js().scrollElementTop(btnConfirmarDireccion);
+        click(btnConfirmarDireccion);
+        revisarModalError(driver());
     }
 
     public void writeManzana(String manzana){

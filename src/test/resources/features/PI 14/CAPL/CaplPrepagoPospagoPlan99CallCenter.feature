@@ -17,7 +17,7 @@
 Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1
-  Escenario: CAPL con Caeq al contado con canal Tienda de un Control CE
+  Escenario: CAPL con Caeq al contado con canal Call Center de un Control CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
@@ -27,7 +27,7 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "461960082"
+    Y        ingreso el documento "1042464638"
     Y        doy click en el boton consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"

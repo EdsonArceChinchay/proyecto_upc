@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import groovy.xml.StreamingDOMBuilder;
@@ -26,10 +27,7 @@ import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
 import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-    //@FindBy(xpath = "//app-modal-contract/tdp-st-modal/div[2]/p/text()[11]")
-    //app-modal-contract/tdp-st-modal/div[2]/p/text()[11]
-    //app-modal-contract/descendant::text()[12]
-    //protected WebElement irFinalContrato;
+
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
     protected WebElement cerrarPopUpContratos;
     @FindBy(xpath = "(//*[@class=\"btn btnFirst\"])[1]")
@@ -44,6 +42,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
+
+    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    protected WebElement titleRegistrarServicio;
+
+    @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
+    protected WebElement titleLugarInstalacionEntrega;
+
+    @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
+    protected WebElement titleVerificarLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
@@ -77,7 +84,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
-
     @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
@@ -92,7 +98,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
     protected WebElement lblNumeroOrden;
-    @FindBy(xpath = "//div[@class='container-btns']/button[contains(text(),'SVA')]")
+    @FindBy(xpath = "//button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
@@ -116,12 +122,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
-
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
     @FindBy(xpath = "//button[@class=\"buttonG cls-top\"]")
     protected WebElement buttonAgregarSVAMT;
-
     @FindBy(css =".text-info")
     protected WebElement nombreClienteUserData;
 
@@ -129,18 +133,43 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     private Cliente cliente;
 
     public boolean validarPantallaIngresarDireccion() {
-        esperaProgresiva(driver(),2,5,titleLugarInstalacion);
+        //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
         return existe;
     }
 
+    public boolean validarPantallaRegistrarVenta() {
+        esperaProgresiva(driver(),3,3,titleRegistrarServicio);
+        boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
+    public boolean validarPantallaIngresarDireccionEntrega() {
+        esperaProgresiva(driver(),4,3,titleLugarInstalacionEntrega);
+        boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
+    public boolean validarPantallaVerificarDireccion() {
+        esperaProgresiva(driver(),4,3,titleVerificarLugarInstalacion);
+        boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
+        return existe;
+    }
+
     public boolean validarQueExistanOfertasSugeridas() {
         modalError(3, btnReintentar, "Click al elemento Reitentar");
         modalError(3, btnReintentar, "Click al elemento Reitentar");
-
-        boolean existe = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 100).isDisplayed();
+        esperaProgresiva(driver(),5,200,titleOfertasSugeridas);
+        esperaProgresiva(driver(),5,500,listaOfertasSugeridas.get(0));
+        boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
@@ -205,7 +234,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(),5,5,labelAgendamiento);
+        esperaProgresiva(driver(),7,3,labelAgendamiento);
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;
@@ -289,25 +318,25 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void ingresarDatosValidacionReniec(DataTable datos) {
+    public void ingresarDatosValidacionReniec(DataTable datos, Integer i) {
         String nomMadre = UtilWeb.getValueFromDataTable(datos, "nombreMadre");
         String nomPadre = UtilWeb.getValueFromDataTable(datos, "nombrePadre");
         String distritoNacimiento = UtilWeb.getValueFromDataTable(datos, "distritoNac");
-        validacionesCliente(nomMadre, nomPadre, distritoNacimiento);
+        validacionesCliente(nomMadre, nomPadre, distritoNacimiento,i);
     }
 
     public void clicSiguiente() {
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(),5,5,rootInputCorreo);
+        esperaProgresiva(driver(),3,3,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void clicEnConfirmar() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(),5,5,rootInputCorreo);
+        esperaProgresiva(driver(),3,3,rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
         context.findElement(By.cssSelector("button")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -327,16 +356,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicValidarContrato() {
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
-        //modalError(8, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
-        //Addons.revisarModalError(driver());
-        //UtilWeb.waitForSeconds(16);
-        Addons.esperaProgresiva(driver(), 3, 5, buttonValidarContrato);
+        Addons.esperaProgresiva(driver(), 4, 20, buttonValidarContrato);
         Addons.revisarModalError(driver());
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -344,7 +366,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonValidarContrato,8);
+                waitUntilElementIsClickable(buttonValidarContrato,8);
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Validar Contrato");
                 buttonFound = true;
             }catch (Exception e){
@@ -355,11 +377,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             }
         }
         System.out.println("Sale del while");
-//        UtilWeb.waitForSeconds(20);
-//        waitUntilElementIsVisible(buttonValidarContrato, 30);
         js().scrollElementTop(buttonValidarContrato);
         click(buttonValidarContrato);
-//        click(buttonValidarContrato, 300);
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
@@ -401,53 +420,20 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),5,5,element);
-        //waitUntilElementIsVisible(element, 30);
+        esperaProgresiva(driver(),5,6,element);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
         //js().scrollElementTop(irFinalContrato);
     }
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(),3,5,element);
-        //waitUntilElementIsVisible(element, 50);
-        //waitUntilElementIsClickable(element,25);
+        esperaProgresiva(driver(),4,10,element);
         element.click();
-        //click(element,10);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-        UtilWeb.waitForSeconds(3);//
+        UtilWeb.waitForSeconds(3);
     }
-    /*
-    public boolean validarMensajeExitoso() {
-        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-        boolean existe = false;
-        UtilWeb.waitForSeconds(10);
-        String loadingSplascargando = "//div[@class='splash ng-star-inserted']";
-        String labelCargando = "//div/h1[text()='Cargando']";
-        int segundos = 60;
-
-        if (esperarLoadingIsNotVisible(loadingSplascargando, segundos)) {
-            if (esperarLoadingIsNotVisible(labelCargando, 60)) {
-                UtilWeb.waitForSeconds(3);
-                scrollByJavaScriptToPrincipio();
-                existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
-                UtilWeb.waitForSeconds(1);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
-            } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
-            }
-        } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
-        }
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        return existe;
-    }
-
-     */
-
 
     public void ingresarDNISupervisor(String numdoc) {
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         esperaProgresiva(driver(),5,5,selectTipoDoc);
         waitUntilElementIsClickable(selectTipoDoc, 30).click();
@@ -460,7 +446,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void IngresarUsuarioSupervisor(String user) {
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
@@ -484,41 +469,35 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     //OTROS metodos
-    public void validacionesCliente(String madre, String padre, String lugar) {
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //modalError(2, btnReintentar, "Click al elemento Reitentar");
-        //   waitUntilElementIsVisible(lblPreguntas, 30);
+    public void validacionesCliente(String madre, String padre, String lugar, Integer i) {
         revisarModalError(driver());
-        driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
 
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu padre')]"))) {
+        if(i==0){
+            WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
+            esperaProgresiva(driver(),2,3,elementMadre);
+            System.out.println("Cual es el nombre de tu madre : " + true);
+            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
+            element.click();
+        }
+
+        if(i==1){
+            WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
+            esperaProgresiva(driver(),2,3,elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             element.click();
-        } else {
-            System.out.println("no existe pregunta nombre padre");
         }
 
-        if (isElementVisible(By.xpath("//p[contains(text(),'el nombre de tu madre')]"))) {
-            System.out.println("nCual es el nombre de tu madre : " + true);
-            WebElement element = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
-            element.click();
-        } else {
-            System.out.println("no existe pregunta nombre madre");
-        }
-
-        if (isElementVisible(By.xpath("//p[contains(text(),'distrito naciste')]"))) {
+        if(i==2){
+            WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
+            esperaProgresiva(driver(),2,3,elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
             WebElement element = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             element.click();
-        } else {
-            System.out.println("no existe pregunta lugar de nacimiento");
         }
 
-
         UtilWeb.waitForSeconds(2);
-        driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+
     }
 
     public boolean isElementVisible(By nombre) {
@@ -566,10 +545,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void clicEnAgregarSVA() {
+        esperaProgresiva(driver(),3,6,buttonAgregarSVA);
         js().scrollElementTop(buttonAgregarSVA);
-        waitUntilElementIsVisible(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(20);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void clicSVAHBO() {
@@ -739,74 +718,101 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return existe;
     }
 
-    public void clicDescargarContrato() throws InterruptedException {
+    public void clicDescargarContrato(ManageScenario scenario) throws InterruptedException {
         revisarModalError(driver());
         for (int intento = 1; intento <= 2; intento++){
             System.out.println("Entra al primer try");
             try {
-                esperaProgresiva(driver(),3,12,descargarContrato);
+                esperaProgresiva(driver(),6,5,descargarContrato);
                 click(descargarContrato);
-                esperaProgresiva(driver(),3,3,contratoUno);
+                UtilWeb.waitForSeconds(2);
+                try {
+
+                    waitUntilElementIsVisible(contratoUno,40);
+                    UtilWeb.waitForSeconds(3);
+                    String nombreDelBoton = contratoUno.getText();
+                    UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el Boton contratoUno: " + nombreDelBoton);
+                } catch (Exception e) {
+                    System.out.println("El elemento contrato Uno ya no fue encontrado: ");
+                }
 
                 String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
                 File directorio = new File(rutabase);
                     if (!directorio.exists()) {
                         directorio.mkdirs();
+                        System.out.println("Directorio Creado: ");
                     }
+                        System.out.println("RUTA BASE: " + rutabase);
                         WebElement pdfElement = driver().findElement(By.tagName("iframe"));
-                        String pdfUrl = pdfElement.getAttribute("src");
-                        System.out.println("Link PDF: " + pdfUrl);
-                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
 
+                        esperaProgresiva(driver(),3,3,pdfElement);
+                        scenario.printFullView();
+                        String pdfUrl = pdfElement.getAttribute("src");
+                        System.out.println("Link PDF 1: " + pdfUrl);
+                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+                        scenario.printFullView();
                         //click en el 2do boton
                         if (contratoDos != null){
+                            String nombreDelBoton2 = contratoDos.getText();
+                            UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el Boton contratoDos: " + nombreDelBoton2);
                             click(contratoDos);
                             UtilWeb.waitForSeconds(3);
-
                             WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                            esperaProgresiva(driver(),3,3,pdfElement2);
+                            scenario.printFullView();
                             String pdfUrl2 = pdfElement2.getAttribute("src");
-                            System.out.println("Link PDF: " + pdfUrl2);
+                            System.out.println("Link PDF 2: " + pdfUrl2);
                             descargarPDFDesdeURL(pdfUrl2,  rutabase    );
-                            UtilWeb.waitForSeconds(5);
+                            UtilWeb.waitForSeconds(3);
                             click(cerrarPopUpContratos);
                             break;
-                        } else {
-                            System.out.println("No un segundo contrato.");
+                        }  else {
+                            System.out.println("No hay un segundo contrato.");
                         }
-
+                scenario.printFullView();
             }catch (Exception e){
+                System.out.println("Error: " + e.getMessage());
                 System.out.println("Sale del primer try");
-            }try {
-                System.out.println("Entra al segundo try");
-                esperaProgresiva(driver(),3,12,descargarContrato);
-                click(descargarContrato);
-                esperaProgresiva(driver(),3,3,contratoUno);
+            }
 
-                String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
-                File directorio = new File(rutabase);
-                    if (!directorio.exists()) {
-                        directorio.mkdirs();
-                    }
-                        WebElement pdfElement = driver().findElement(By.tagName("iframe"));
-                        String pdfUrl = pdfElement.getAttribute("src");
-                        System.out.println("Link PDF: " + pdfUrl);
-                        descargarPDFDesdeURL(pdfUrl,  rutabase    );
+            //    try {
+                //     System.out.println("Entra al segundo try");
+                //   esperaProgresiva(driver(),3,3,descargarContrato);
+                //    click(descargarContrato);
+                //  esperaProgresiva(driver(),3,3,contratoUno);
+
+                //  String rutabase = obtenerRutaBaseProyecto()+"\\target\\contrato-pdf\\";
+                //  File directorio = new File(rutabase);
+                //     if (!directorio.exists()) {
+                        //      directorio.mkdirs();
+                        //   }
+                //       WebElement pdfElement = driver().findElement(By.tagName("iframe"));
+                //        String pdfUrl = pdfElement.getAttribute("src");
+                //        System.out.println("Link PDF: " + pdfUrl);
+                //        descargarPDFDesdeURL(pdfUrl,  rutabase    );
 
                         //click en el 2do boton
-                        click(contratoDos);
-                        UtilWeb.waitForSeconds(3);
+                //         click(contratoDos);
+                //        UtilWeb.waitForSeconds(3);
 
-                        WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
-                        String pdfUrl2 = pdfElement2.getAttribute("src");
-                        System.out.println("Link PDF: " + pdfUrl2);
-                        descargarPDFDesdeURL(pdfUrl2,  rutabase    );
-                        UtilWeb.waitForSeconds(5);
-                        click(cerrarPopUpContratos);
-                        break;
-            }catch (Exception e){
-                System.out.println("Sale del segundo try");
-                System.out.println("Salta el registrar");
-            }
+                //       WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
+                //        String pdfUrl2 = pdfElement2.getAttribute("src");
+                //        System.out.println("Link PDF: " + pdfUrl2);
+                //          descargarPDFDesdeURL(pdfUrl2,  rutabase    );
+                //          UtilWeb.waitForSeconds(5);
+                //           click(cerrarPopUpContratos);
+                //            break;
+                //}catch (Exception e){
+                //     System.out.println("Sale del segundo try");
+                //    System.out.println("Salta el registrar");
+            //}
+        }
+
+        try{
+            click(cerrarPopUpContratos);
+            System.out.println("cerrarPopUpContratos cierre");
+        }catch (Exception e){
+
         }
 
 /*
@@ -842,7 +848,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarVentaGenerada() {
         //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),3,15,cicloFacturacion);
+        esperaProgresiva(driver(),3,5,cicloFacturacion);
         js().scrollElementTop(cicloFacturacion);
         //UtilWeb.waitForSeconds(5);
         //js().scrollElementTop(scrollorden);
@@ -851,8 +857,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         //modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
         //scrollByJavaScriptToPrincipio();
-        esperaProgresiva(driver(),3,15,msjExitoso);
-        existe = waitUntilElementIsVisible(msjExitoso, 50).isDisplayed();
+        esperaProgresiva(driver(),3,5,msjExitoso);
+        existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

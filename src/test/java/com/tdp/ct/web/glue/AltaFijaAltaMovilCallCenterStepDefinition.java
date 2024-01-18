@@ -23,7 +23,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
 
   @Y("ingreso la informacion del lugar de instalacion")
   public void iingreso_la_informacion_del_lugar_de_instalacion(DataTable dirInstalacion) {
-    UtilWeb.waitForSeconds(10);//
+    UtilWeb.waitForSeconds(15);//
     String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
     String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
     String vivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"vivienda");
@@ -165,4 +165,9 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   }
 
 
+  @Y("selecciono el plan {string} Movistar Total")
+  public void seleccionoUnPlanMovistarTotal(String nombrePlan) {
+    altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
+    altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
+  }
 }

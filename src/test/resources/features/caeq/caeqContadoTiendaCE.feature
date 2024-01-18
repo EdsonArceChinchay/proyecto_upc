@@ -55,7 +55,6 @@ Característica: CAEQ contado con CE por canal Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
-
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
       | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |

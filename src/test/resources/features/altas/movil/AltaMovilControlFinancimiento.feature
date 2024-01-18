@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7 @RegresionDitoC
 Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
   Antecedentes:
@@ -33,29 +33,14 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |
-      | Jbac    | Lozano    | masculino |
+      | Luis    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro pop up de Cliente Exonerado
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
- #   Y        selecciono tipo de oferta
- #   Y        selecciono el tipo de plan movil "Control"
-   #  Y        selecciono un plan movil "Plan Mi Movistar Total 72 Gb"
-#    Y        selecciono la oferta de plan movil "Control"
-#    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/55.9 "
-#    Y        selecciono el boton de iniciar registro
-#    Y        selecciono tipo de oferta alta movil
-#      | Ofertas_Sugeridas |
-#      | PLAN MOVIL        |
-#    Y        selecciono la campania
-#      | Tipo_Ofertas |
-#      | Control      |
-#    Y        selecciono el boton de Seleccionar Oferta
-#    Y        selecciono el boton Linea Nueva Movil
-#    Y        selecciono en agregar equipo y valido la pantalla de seleccionar equipo:"Seleccione un equipo"
-#    Y        selecciono un equipo movil
     Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
@@ -63,13 +48,15 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/08/1990 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+      | 12/08/1994 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
 
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
