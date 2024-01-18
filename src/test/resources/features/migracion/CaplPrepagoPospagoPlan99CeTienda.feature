@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
 Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Prepago a Postpago
-    
+
   @CaplPrepagoPospago @MVP05 @Global @RegreDito
   Escenario: CAPL de prepago a postpago plan S/99.90 con CEX en canal tiendas, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
