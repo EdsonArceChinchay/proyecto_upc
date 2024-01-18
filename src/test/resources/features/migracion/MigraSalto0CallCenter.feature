@@ -21,7 +21,7 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migraSalto0CallCenter
+  @migraSalto0CallCenter @RegreDito
   Esquema del escenario: Migracion salto 0 con CE  por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
