@@ -110,6 +110,10 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
     }
 
+    public void clickPrimeraOferta() {
+        page.altaFijaAltaMovilCallCenterPage().ofertaUno();
+    }
+
     public void clickOferta() {
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }

@@ -74,10 +74,10 @@ Característica: AT-DT009_Alta Fija por tienda
 #    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                            | referencia     | tipoPlan | nombrePlan               |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                            | referencia     | tipoPlan | nombrePlan               |
   #    | usuario externo | nishuizas | $t3l3f0n1c4$  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
-  #    | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000571 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+  #    | usuario interno |  |  | Bienvenid@ | CE            | 1100000571 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
     #  | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-    #  | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000484 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-      | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000485 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-    #  | usuario interno | shuancac | Tele##%xC&a56 | Bienvenid@ | CE            | 1100000486 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+    #  | usuario interno | | | Bienvenid@ | CE            | 1100000484 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000485 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+    #  | usuario interno | | | Bienvenid@ | CE            | 1100000486 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |

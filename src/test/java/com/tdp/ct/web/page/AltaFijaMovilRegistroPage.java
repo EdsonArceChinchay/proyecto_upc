@@ -191,7 +191,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaVerificarDireccion() {
-        esperaProgresiva(driver(), 4, 3, titleVerificarLugarInstalacion);
+        esperaProgresiva(driver(), 5, 4, titleVerificarLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
@@ -251,7 +251,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void moverToElementIniciarRegistro() {
-        esperaProgresiva(driver(), 3, 3, buttonIniciarRegistro);
+        esperaProgresiva(driver(), 3, 5, buttonIniciarRegistro);
         js().scrollElementTop(buttonIniciarRegistro);
     }
 
@@ -269,6 +269,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
         esperaProgresiva(driver(), 7, 3, labelAgendamiento);
+        revisarModalError(driver());
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
         return existe;

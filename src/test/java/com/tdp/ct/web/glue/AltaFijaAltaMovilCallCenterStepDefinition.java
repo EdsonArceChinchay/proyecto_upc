@@ -56,6 +56,12 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     altaFijaAltaMovilCallCenterStep.clickOferta();
   }
 
+  @Y("selecciono el primer tipo de oferta")
+  public void selecciono_el_primer_tipo_de_oferta() {
+    altaFijaAltaMovilCallCenterStep.scrollUp();
+    altaFijaAltaMovilCallCenterStep.clickPrimeraOferta();
+  }
+
   @Y("selecciono un plan Movistar Total {string}")
   public void selecciono_un_plan_movistar_total(String nombrePlan) {
     altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);

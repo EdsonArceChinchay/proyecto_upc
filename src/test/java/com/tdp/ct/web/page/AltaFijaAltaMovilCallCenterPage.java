@@ -33,6 +33,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
+    @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[1]")
+    protected WebElement ofertaUno;
     @FindBy(xpath = "//div[@class='stl_plan_valor']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
@@ -115,7 +117,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void bloque(String bloque) {
-       // WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='block' or @name='block']");
+        // WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='block' or @name='block']");
         if (bloque != null) {
             WebElement Nbloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
             esperaProgresiva(driver(), 3, 5, Nbloque);
@@ -127,8 +129,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void manzanaDir(String manzana) {
-        if (manzana != null) {
-            WebElement Nmanzana = find().getElementByXPath("//*[@formcontrolname='apple' or @name='apple']");
+        WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
+        if (Nmanzana != null) {
+//            WebElement Nmanzana = find().getElementByXPath("//*[@formcontrolname='apple' or @name='apple']");
             esperaProgresiva(driver(), 3, 5, Nmanzana);
             waitUntilElementIsClickable(Nmanzana, 15).click();
             Nmanzana.sendKeys(Keys.CONTROL + "a");
@@ -349,7 +352,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void oferta() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 6, 4, oferta);
+        revisarModalError(driver());
         click(oferta);
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void ofertaUno() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 6, 4, ofertaUno);
+        revisarModalError(driver());
+        click(ofertaUno);
         UtilWeb.waitForSeconds(2);
     }
 
