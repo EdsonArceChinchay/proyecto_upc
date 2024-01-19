@@ -19,7 +19,7 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-@migraSalto0HFC_FTTHCallCenter
+  @migraSalto0HFC_FTTHCallCenter
   Esquema del escenario: Migracion salto 0 HFC FTTH con CE  por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -60,5 +60,8 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464839 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 |
+#      Cliente con registro cancelado
+#      | usuario interno |  | | Bienvenid@ | CE            | 222107211 |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000212 |

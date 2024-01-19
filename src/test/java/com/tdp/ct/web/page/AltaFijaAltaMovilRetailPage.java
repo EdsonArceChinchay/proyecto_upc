@@ -23,6 +23,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaExistente;
+    @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
+    protected WebElement btnLineaCelularExistente;
 
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
@@ -46,7 +48,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
     protected WebElement btnEntendido;
 
-    public void altaHogar(){
+    public void altaHogar() {
         js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(15);
         //esperaProgresiva(driver(),5,5,btnHogar);
@@ -57,38 +59,72 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
         //waitUntilElementIsClickable(btnMovil,15);//30
-        esperaProgresiva(driver(),5,5,btnMovil);
+        esperaProgresiva(driver(), 5, 5, btnMovil);
         click(btnMovil);
         //UtilWeb.waitForSeconds(2);//1
     }
 
-    public void lineaExistente() {
+    public void lineaExistente(String numeroExistente) {
         esperaProgresiva(driver(), 3, 5, btnLineaExistente);
         js().scrollElementTop(btnLineaExistente);
         String LineaExistente = btnLineaExistente.getText();
 
-        if (LineaExistente.contains("Activo") && LineaExistente.contains("Sin Deuda")) {
+        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
             click(btnLineaExistente);
         } else {
-            int i =2;
-            int reintentos =5;
+            int i = 2;
+            int reintentos = 5;
             boolean elementoExistente;
-            while (i<reintentos){
+            while (i < reintentos) {
                 String selector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .container";
                 WebElement elemento = driver().findElement(By.cssSelector(selector));
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
-
                 if (elementoExistente) {
-
-                    if (elemento.getText().contains("Activo") && elemento.getText().contains("Sin Deuda")) {
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
                         click(elemento);
                         break;
-                    } else{
+                    } else {
                         i++;
                     }
-
+                } else {
+                    System.out.println("No cumplen con la condicion");
+                    break;
                 }
-                else {
+            }
+
+        }
+
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void lineaCelularExistente(String numeroExistente) {
+        esperaProgresiva(driver(), 3, 5, btnLineaCelularExistente);
+        js().scrollElementTop(btnLineaCelularExistente);
+        String LineaExistente = btnLineaCelularExistente.getText();
+        WebElement detalle;
+
+        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+            click(btnLineaCelularExistente);
+            detalle = driver().findElement(By.xpath("(//*[@class=\"detailHogar\"])[1]"));
+            click(detalle);
+        } else {
+            int i = 2;
+            int reintentos = 5;
+            boolean elementoExistente;
+            while (i < reintentos) {
+                String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                detalle = driver().findElement(By.xpath("(//*[@class=\"detailHogar\"])[" + i + "]"));
+                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
+                if (elementoExistente) {
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+                        click(elemento);
+                        click(detalle);
+                        break;
+                    } else {
+                        i++;
+                    }
+                } else {
                     System.out.println("No cumplen con la condicion");
                     break;
                 }
@@ -108,164 +144,166 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void mostrarOfertas(){
-        esperaProgresiva(driver(),5,5,btnMostrar);
-        Addons.esperaCargaMontoDeuda(driver(),20);
+    public void mostrarOfertas() {
+        esperaProgresiva(driver(), 5, 5, btnMostrar);
+        Addons.esperaCargaMontoDeuda(driver(), 20);
         revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 5, btnMostrar);
         click(btnMostrar);
     }
+
     public void modalError(int timeOnSeconds, WebElement webElement, String message) {
         UtilWeb.waitForSeconds(timeOnSeconds);
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() !=0;
+        elementoExistente = driver().findElements(By.xpath("//*[contains(text(),'Reintentar')]")).size() != 0;
         if (elementoExistente) {
             webElement.click();
             if (message.isEmpty()) message = "Dio click al elemento";
             System.out.println(message);
-        }
-        else {
+        } else {
             System.out.println("No se encontro el modal error");
         }
     }
 
-    public void seleccionarDepa(String tipoDepa){
+    public void seleccionarDepa(String tipoDepa) {
         UtilWeb.waitForSeconds(4);//2
-        WebElement depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
-        esperaProgresiva(driver(),3,5,depaList);
+        WebElement depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        esperaProgresiva(driver(), 3, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
         System.out.println("Existe Lista de" + depaList.getText() + ": " + existeLista);
-        if (!existeLista){
+        if (!existeLista) {
             driver().navigate().refresh();
-            depaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+            depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
             UtilWeb.waitForSeconds(4);
         }
         click(depaList);
         UtilWeb.waitForSeconds(2);
-        By byItem = By.cssSelector("[data-value='"+tipoDepa+"']");
-        SearchContext context=sh().getContext(depaList);
-        esperaProgresiva(driver(),3,5,depaList, byItem, context);
+        By byItem = By.cssSelector("[data-value='" + tipoDepa + "']");
+        SearchContext context = sh().getContext(depaList);
+        esperaProgresiva(driver(), 3, 5, depaList, byItem, context);
         context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarProvincia(String tipoProvincia){
-        WebElement provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
-        esperaProgresiva(driver(),3,5,provinciaList);
+    public void seleccionarProvincia(String tipoProvincia) {
+        WebElement provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        esperaProgresiva(driver(), 3, 5, provinciaList);
         boolean existeLista = provinciaList.isEnabled();
         System.out.println("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
-        if (!existeLista){
+        if (!existeLista) {
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
-            provinciaList= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+            provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         }
         click(provinciaList);
         UtilWeb.waitForSeconds(10);
-        SearchContext context=sh().getContext(provinciaList);
-        By byItem = By.cssSelector("[data-value='"+tipoProvincia+"']");
-        esperaProgresiva(driver(),3,5,provinciaList, byItem, context);
+        SearchContext context = sh().getContext(provinciaList);
+        By byItem = By.cssSelector("[data-value='" + tipoProvincia + "']");
+        esperaProgresiva(driver(), 3, 5, provinciaList, byItem, context);
         context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarDistrito(String tipoDistrito){
-        WebElement distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
-        esperaProgresiva(driver(),3,5,distritoList);
+    public void seleccionarDistrito(String tipoDistrito) {
+        WebElement distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        esperaProgresiva(driver(), 3, 5, distritoList);
         boolean existeLista = distritoList.isEnabled();
         System.out.println("Existe Lista de" + distritoList.getText() + ": " + existeLista);
-        if (!existeLista){
+        if (!existeLista) {
             driver().navigate().refresh();
             seleccionarDepa(DEPARTAMENTO);
             seleccionarProvincia(PROVINCIA);
-            distritoList= find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+            distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
-        SearchContext context=sh().getContext(distritoList);
-        By byItem = By.cssSelector("[data-value='"+tipoDistrito+"']");
-        esperaProgresiva(driver(),3,5,distritoList, byItem, context);
+        SearchContext context = sh().getContext(distritoList);
+        By byItem = By.cssSelector("[data-value='" + tipoDistrito + "']");
+        esperaProgresiva(driver(), 3, 5, distritoList, byItem, context);
         context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
-    public void writeDireccion(String direc){
-        WebElement Input= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
+    public void writeDireccion(String direc) {
+        WebElement Input = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
         click(Input);
         type(Input, direc);
     }
 
-    public void writeReferencia(String referencia){
-        WebElement Refer= find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
+    public void writeReferencia(String referencia) {
+        WebElement Refer = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
         click(Refer);
         type(Refer, referencia);
     }
 
-    public void btnConsultar(){
+    public void btnConsultar() {
         //UtilWeb.waitForSeconds(5);
         //waitUntilElementIsVisible(btnConsulta,5);
-        esperaProgresiva(driver(),5,5,btnConsulta);
+        esperaProgresiva(driver(), 5, 5, btnConsulta);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
         revisarModalError(driver());
+        UtilWeb.waitForSeconds(5);
         //revisarModalEntendido(driver());
         //reintarPopPup();
         //reintarPopPup();
     }
 
-    public void btnConfirmarDireccion(){
-        esperaProgresiva(driver(),5,5,btnConfirmarDireccion);
+    public void btnConfirmarDireccion() {
+        esperaProgresiva(driver(), 5, 5, btnConfirmarDireccion);
         js().scrollElementTop(btnConfirmarDireccion);
         click(btnConfirmarDireccion);
         revisarModalError(driver());
     }
 
-    public void writeManzana(String manzana){
+    public void writeManzana(String manzana) {
         UtilWeb.waitForSeconds(1);
-        WebElement Mz= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
+        WebElement Mz = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
         click(Mz);
         UtilWeb.waitForSeconds(1);
         type(Mz, manzana);
     }
 
-    public void writeLote(String lote){
-        WebElement Lte= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(2) > tdp-st-input-text");
+    public void writeLote(String lote) {
+        WebElement Lte = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(2) > tdp-st-input-text");
         click(Lte);
         type(Lte, lote);
     }
 
-    public void writePiso(String piso){
-        WebElement Npiso= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(1) > tdp-st-input-text");
+    public void writePiso(String piso) {
+        WebElement Npiso = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(1) > tdp-st-input-text");
         click(Npiso);
         type(Npiso, piso);
     }
 
-    public void writeInterior(String inte){
-        WebElement NInterior= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(2) > tdp-st-input-text");
+    public void writeInterior(String inte) {
+        WebElement NInterior = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(2) > tdp-st-input-text");
         click(NInterior);
         type(NInterior, inte);
     }
 
-    public void seleccionarConjuntoHabitacional(String tipoConjunto){
-        WebElement conjuntoList= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
+    public void seleccionarConjuntoHabitacional(String tipoConjunto) {
+        WebElement conjuntoList = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
         click(conjuntoList);
-        SearchContext context=sh().getContext(conjuntoList);
-        By byItem = By.cssSelector("[data-value='"+tipoConjunto+"']");
-        esperaProgresiva(driver(),3,5,conjuntoList, byItem, context);
+        SearchContext context = sh().getContext(conjuntoList);
+        By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
+        esperaProgresiva(driver(), 3, 5, conjuntoList, byItem, context);
         context.findElement(byItem).click();
     }
 
-    public void writeConjHab(String hab){
-        WebElement ConjHab= find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(7) > div > tdp-st-input-text");
+    public void writeConjHab(String hab) {
+        WebElement ConjHab = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(7) > div > tdp-st-input-text");
         click(ConjHab);
         type(ConjHab, hab);
     }
 
-    public void consultaCobertura(){
+    public void consultaCobertura() {
         click(cobertura);
         UtilWeb.waitForSeconds(3);
     }
 
-    public void tipearCorreo(String correo){
+    public void tipearCorreo(String correo) {
         inputCorreo = correo;
         String getCorreo = "div form div:nth-child(4) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(4);
@@ -281,19 +319,19 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.waitForSeconds(3);
     }
 
-    public void reintarPopPup(){
+    public void reintarPopPup() {
         boolean btnReintentarboolean;
         boolean modalExiste;
         btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
-        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
+        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
         if (btnReintentarboolean) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
-            WebElement btnReintentar= find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
+            WebElement btnReintentar = find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
             js().scrollElementTop(btnReintentar);
             btnReintentar.click();
             UtilWeb.waitForSeconds(3);
         }
-        if (modalExiste){
+        if (modalExiste) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
             btnEntendido.click();
             UtilWeb.waitForSeconds(2);

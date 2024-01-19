@@ -102,6 +102,7 @@ public class LoginBerserkerStep {
 
     public void ingresoCaptcha() throws IOException, InterruptedException {
         Thread.sleep(2000);
+        UtilWeb.waitForSeconds(4);
         page.captchaPage().obtenerCaptcha();
         UtilWeb.waitForSeconds(4);
 

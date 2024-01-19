@@ -89,9 +89,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement cerrarCU;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
-
+        revisarModalError(driver());
         esperaProgresiva(driver(), 3,5,cartillaHogar);
-
+        revisarModalError(driver());
         js().scrollElementTop(cartillaHogar);
         //UtilWeb.waitForSeconds(5);
 
@@ -208,7 +208,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 break;
         }
         if(botonEsperado!=null){
+            revisarModalError(driver());
             esperaProgresiva(driver(), 3, 5,botonEsperado);
+            revisarModalError(driver());
             js().scrollElementTop(botonEsperado);
             botonEsperado.click();
         }else{

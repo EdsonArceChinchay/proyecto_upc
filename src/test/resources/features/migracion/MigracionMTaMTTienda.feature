@@ -38,7 +38,10 @@ Característica: Migracion de MT a MT en Tienda
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
-    Y        luego doy click en la cartilla ir a Movistar Total
+#    Y        selecciono tipo de oferta
+    Y        selecciono el primer tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    #Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
 	#Y        valido que me encuentre en la pantalla agendamiento
 	#Y        ingreso los datos de agendamiento
@@ -53,10 +56,12 @@ Característica: Migracion de MT a MT en Tienda
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464680 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000311 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |

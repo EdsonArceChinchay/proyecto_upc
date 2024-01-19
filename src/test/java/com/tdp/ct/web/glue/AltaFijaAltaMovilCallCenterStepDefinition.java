@@ -32,15 +32,17 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
     String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
     String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
+    String bloqueDir= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
     altaFijaAltaMovilCallCenterStep.ingresarManzana(manzana);
     altaFijaAltaMovilCallCenterStep.ingresarLote(lote);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(vivienda);
     altaFijaAltaMovilCallCenterStep.ingresarNombreVivienda(nombreVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarPiso(piso);
     altaFijaAltaMovilCallCenterStep.ingresarInterior(interior);
+    altaFijaAltaMovilCallCenterStep.ingresarBloque(bloqueDir);
+    altaFijaAltaMovilCallCenterStep.ingresarManzanaDir(manzana);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoConjuntoHabitacional(habitacion);
     altaFijaAltaMovilCallCenterStep.ingresarConjuntoHabitacional(conj);
-
   }
 
   @Y("presiono el boton consultar cobertura")
@@ -52,6 +54,12 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   public void selecciono_tipo_de_oferta() {
     altaFijaAltaMovilCallCenterStep.scrollUp();
     altaFijaAltaMovilCallCenterStep.clickOferta();
+  }
+
+  @Y("selecciono el primer tipo de oferta")
+  public void selecciono_el_primer_tipo_de_oferta() {
+    altaFijaAltaMovilCallCenterStep.scrollUp();
+    altaFijaAltaMovilCallCenterStep.clickPrimeraOferta();
   }
 
   @Y("selecciono un plan Movistar Total {string}")

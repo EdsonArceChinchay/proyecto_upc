@@ -26,6 +26,13 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
     }
 
+    @Y("presiono el boton Renovar Plan")
+    public void presionoElBtnRenovarPlan() {
+        //caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
+//        caplConCaeqAlContadoCanalTiendaStep.clickBtnCardPlanActual();
+        caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
+    }
+
     @Y("selecciono el plan {string} y presiono Seleccionar Oferta")
     public void seleccionoElPlanYPresionoSeleccionarOferta(String plan) {
         altaMonoHfcTiendaStep.seleccionarPlan(plan);

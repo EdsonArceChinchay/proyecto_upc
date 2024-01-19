@@ -30,7 +30,9 @@ Característica: Caeq Mas Casi por call center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        selecciona el boton del numero de celular existente "<celular>"
+    Y        presiono el boton Renovar Plan
+#    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     Y        selecciono tipo de pago Al Contado
@@ -53,7 +55,7 @@ Característica: Caeq Mas Casi por call center
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "956756143"
+    Y        ingreso el telefono de contacto "984093119"
     Y        ingreso las instrucciones a considerar de la entrega "abc"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
@@ -76,5 +78,6 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102030401 | Postpago | Plan Movil Movistar Total ilim |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | celular   |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401 |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000273 | 984093119 |
