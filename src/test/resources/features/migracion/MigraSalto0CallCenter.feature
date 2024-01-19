@@ -46,6 +46,7 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
@@ -53,7 +54,7 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
