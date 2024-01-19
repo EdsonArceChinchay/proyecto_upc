@@ -13,14 +13,12 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7 @RegresionDitoC
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7 @RegresionLegacy
 Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaMovilFinaciamientoTienda_CE
   Esquema del escenario: Realizar una alta movil Control con un financiamiento, metodo de entrega por tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -41,6 +39,10 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan movil "Control"
+    Y        selecciono la opcion "RV Plan Mi Movistar S/65.9"
+    Y        doy click en el boton seleccionar oferta
     Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"

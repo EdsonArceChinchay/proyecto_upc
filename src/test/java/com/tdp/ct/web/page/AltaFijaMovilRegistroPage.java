@@ -359,6 +359,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         Addons.esperaProgresiva(driver(), 4, 20, buttonValidarContrato);
         Addons.revisarModalError(driver());
+        UtilWeb.waitForSeconds(5);
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -850,20 +851,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
-    protected WebElement scrollorden;
-
     public boolean validarVentaGenerada() {
-        //waitUntilElementIsVisible(scrollorden, 120);
-        esperaProgresiva(driver(),3,5,cicloFacturacion);
+        esperaProgresiva(driver(),3,20,cicloFacturacion);
         js().scrollElementTop(cicloFacturacion);
-        //UtilWeb.waitForSeconds(5);
-        //js().scrollElementTop(scrollorden);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         boolean existe = false;
-        //scrollByJavaScriptToPrincipio();
         esperaProgresiva(driver(),3,5,msjExitoso);
         existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
@@ -872,9 +865,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return existe;
     }
 
-
     public void agregoSVAINTERNET(String svaInternet) {
-        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         UtilWeb.waitForSeconds(10);
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
         esperaProgresiva(driver(),3,5,listElementPLan);

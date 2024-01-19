@@ -11,17 +11,15 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 20/12/2023
+##FECMOD: 19/01/2024
 
-@BERSERKERS
+@BERSERKERS @DoneDevOps @RegresionLegacy
 
-Característica: Migracion de MT a MT + Equipo + SVA en canal tiendas
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: Migracion de MT a MT + Alta Equipo Movil + SVA en el canal Tienda
 
   @MigracionMTaMT_Equipo_SVA_Tiendas
-  Esquema del escenario: Migracion de MT a MT  en el canal Tienda
+  Esquema del escenario: Migracion de MT a MT + Alta Equipo Movil + SVA en el canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -40,7 +38,7 @@ Característica: Migracion de MT a MT + Equipo + SVA en canal tiendas
     Y        doy click en el boton "Confirmar direccion"
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en agregar "Seguridad Total Residencial"
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName |
@@ -49,12 +47,6 @@ Característica: Migracion de MT a MT + Equipo + SVA en canal tiendas
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
-	#Y        valido que me encuentre en la pantalla agendamiento
-	#Y        ingreso los datos de agendamiento
-	#Y        presiono el boton confirmar agendamiento
-    #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
-    #Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -64,7 +56,9 @@ Característica: Migracion de MT a MT + Equipo + SVA en canal tiendas
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |

@@ -205,7 +205,7 @@ public class Addons {
 
                 }
         }
-        public static void  revisarModalError(WebDriver driver) {
+        public static void   revisarModalError(WebDriver driver) {
 /*
     Se tiene como objetivo detectar avisos de Error,
     y reintentar como máximo 2 veces el boton de error para permitir continuar.
@@ -236,8 +236,8 @@ public class Addons {
                                 try {
                                         //Busca un boton para Reintentar
                                         LOGGER.log(Level.INFO, "Buscando - btn Reintentar");
-                                        //btnReintentar = driver.findElement(By.xpath("//button[text()='Reintentar']"));
-                                        btnReintentar = driver.findElement(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]"));
+                                        List<WebElement> btnsReintentar= driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]"));
+                                        btnReintentar=btnsReintentar.get(btnsReintentar.size()-1);
                                         if(btnReintentar.isEnabled()){
                                                 btnReintentar.click();
                                                 System.out.println("################ CLIC en Reintentar");
@@ -253,8 +253,8 @@ public class Addons {
                                 try {
                                         //Busca un boton para Entendido
                                         LOGGER.log(Level.INFO, "Buscando - btn Entendido");
-                                        //btnEntendido = driver.findElement(By.xpath("//button[text()='Entendido']"));
-                                        btnEntendido = driver.findElement(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]"));
+                                        List<WebElement> btnsEntendido = driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]"));
+                                        btnEntendido=btnsEntendido.get(btnsEntendido.size()-1);
                                         if(btnEntendido.isEnabled()) {
                                                 btnEntendido.click();
                                                 System.out.println("################ CLIC en Entendido");
