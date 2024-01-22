@@ -65,4 +65,4 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 #      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 ||
 #      Cliente con registro cancelado
 #      | usuario interno |  | | Bienvenid@ | CE            | 222107211 |numeroExistente|
-      | usuario interno | csalvatierrac | Tele#Jo4s&a55 | Bienvenid@ | CE            | 1100000212 | 5010192732       |
+      | usuario interno |               | | Bienvenid@ | CE            | 1100000212 | 5010192732       |

@@ -56,5 +56,5 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName      | password      | tipoDocumento | documento  | EncontrarCelular |
-      | usuario interno | csalvatierrac | Tele#Jo4s&a55 | CE            | 1100000311 | 984685312        |
+      | usuario interno |               | | CE            | 1100000311 | 984685312        |
 

@@ -85,4 +85,4 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Ejemplos:
       | tipoUsuario     | userName      | password      | EncontrarCelular |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ |984594042|
-      | usuario interno | csalvatierrac | Tele#Jo4s&a55 | 984594042        |
+      | usuario interno |               | | 984594042        |
