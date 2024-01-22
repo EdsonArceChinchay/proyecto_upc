@@ -3,17 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -208,6 +205,18 @@ public class AltaFijaTiendaPage extends WebBase {
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
         UtilWeb.waitForSeconds(2);
 
+    }
+
+    public boolean verficarPantallaAgendamiento() {
+        revisarModalError(driver());
+        boolean existe = false;
+        try {
+//            existe = labelAgendamiento.isDisplayed();
+            existe = find().getElementByXPath("//span[contains(text(),'Agendamiento')]").isDisplayed();
+        } catch (NoSuchElementException e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Comprobando elemento");
+        }
+        return existe;
     }
 
     public void botonConfirmarAgendamiento() {

@@ -29,6 +29,16 @@ public class AltaFijaAltaMovilRetailStep {
     }
 
     @ScreenShotAfter
+    public void btnPlanMtExistente(String numeroExistente) {
+        page.altaFijaAltaMovilRetailPage().planMtExistente(numeroExistente);
+    }
+
+    @ScreenShotAfter
+    public void btnDetalleLineaCelularExistente(String numeroExistente) {
+        page.altaFijaAltaMovilRetailPage().detalleLineaCelularExistente(numeroExistente);
+    }
+
+    @ScreenShotAfter
     public void btnLineaMovilExistente() {
         page.altaFijaAltaMovilRetailPage().lineaMovilExistente();
     }

@@ -29,7 +29,7 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1100000788"
     Y        doy click en el boton consultar
-    Y        selecciona el boton del numero de celular existente "984594042"
+    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -77,12 +77,12 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ |
-      | usuario interno |          |          |
+      | tipoUsuario     | userName      | password      | EncontrarCelular |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ |984594042|
+      | usuario interno | csalvatierrac | Tele#Jo4s&a55 | 984594042        |

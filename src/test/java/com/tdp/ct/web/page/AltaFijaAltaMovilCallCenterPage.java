@@ -130,7 +130,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void manzanaDir(String manzana) {
         WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
-        if (Nmanzana != null) {
+        if (Nmanzana != null && Nmanzana.isEnabled()) {
 //            WebElement Nmanzana = find().getElementByXPath("//*[@formcontrolname='apple' or @name='apple']");
             esperaProgresiva(driver(), 3, 5, Nmanzana);
             waitUntilElementIsClickable(Nmanzana, 15).click();
@@ -376,7 +376,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         int contadorMax = 12;
         while (elementoExistenteRight && contador < contadorMax) {
             if (btnRight != null) {
-                esperaProgresiva(driver(), 3, 3, btnRight);
+                esperaProgresiva(driver(), 4, 3, btnRight);
                 btnRight.click();
                 System.out.println("dio click right while");
             } else {
@@ -386,7 +386,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 waitUntilElementIsVisible(btnRight, 5);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnRight");
             } catch (Exception e) {
-                System.out.println("El elemento btnRight ya no fue encontrado: ");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento btnRight ya no fue encontrado: ");
             }
             elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             contador++;

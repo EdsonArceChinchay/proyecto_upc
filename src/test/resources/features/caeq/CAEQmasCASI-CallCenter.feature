@@ -30,7 +30,7 @@ Característica: Caeq Mas Casi por call center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciona el boton del numero de celular existente "<celular>"
+    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -72,12 +72,14 @@ Característica: Caeq Mas Casi por call center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | celular   |
+      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | EncontrarCelular   |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401 |
-      | usuario interno |          |          | Bienvenid@ | CE            | 1100000273 | 984093119 |
+      | usuario interno | csalvatierrac | Tele#Jo4s&a55 | Bienvenid@ | CE            | 1100000273 | 984093119 |
+#      | usuario interno | csalvatierrac | Tele#Ep2L&a44 | Bienvenid@ | CE            | 1100000273 | 984093119 |
+#      | usuario interno | csalvatierrac | Tele#Ep2L&a44 | Bienvenid@ | CE            | 1100000273 | 984093119 |
