@@ -85,7 +85,6 @@ public class AltaFijaMovilRegistroStep {
     public void validarPantallaAgendamiento() {
         Assert.assertTrue("No se mostro pantalla de agendamiento",
                 page.altaFijaMovilRegistroPage().validarPantallaAgendamiento());
-
     }
 
     @ScreenShotAfter
@@ -294,7 +293,7 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
     public String guardoNumeroSolicitud() {
-        //page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+//        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              System.out.println("Numero Solicitud:" + numeroSolicitud);

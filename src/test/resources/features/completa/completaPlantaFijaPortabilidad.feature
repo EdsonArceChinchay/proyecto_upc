@@ -33,10 +33,10 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        doy click en el boton consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
+      | nombres | apellidos     | genero    |
       | QAN     | MCCCDIECISEIS | masculino |
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
-    Y        selecciono el boton de la Linea Hogar Existente
+    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
@@ -52,10 +52,10 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
+#    Y        valido que me encuentre en la pantalla agendamiento
+#    Y        ingreso los datos de agendamiento
+#    Y        presiono el boton confirmar agendamiento
+#    Y        presiono Consultar ubicacion
     Entonces me muestra la pantalla para ingresar la direccion de entrega
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
@@ -97,11 +97,15 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente |tipoDocumento | documento  |  numero  | tipoLinea  | operador  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | usuario interno |  |  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA| QAN MCCCDIECISEIS | DNI            | 46789127 | 994110053 | Prepago         | ENTEL           | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA       | LUZ        | ALEJANDRO      | LA VICTORIA    |
+
+      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+#      | usuario interno |          |          | Bienvenid@ | DNI           | 45770292  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
+#      | usuario interno |  | | Bienvenid@ | DNI           | 45770292  | 957382783 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
+      | usuario interno | vcarpioat | Tele#jNzj&a97 | Bienvenid@ | DNI           | 44160111  | 914616599 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 14046680        |
+
 

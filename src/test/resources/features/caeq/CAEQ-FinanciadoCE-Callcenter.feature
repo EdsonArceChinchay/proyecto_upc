@@ -27,9 +27,11 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042464674"
+    Y        ingreso el documento "1100000788"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
+    Y        presiono el boton Renovar Plan
+#    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     #Y        selecciono el boton de eleccion de planes
@@ -39,7 +41,7 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     #Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago             | equipoName |
-      | Sin permanencia | Financiado 12 cuotas | HONOR   |
+      | Sin permanencia | Financiado 12 cuotas | HONOR      |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     #Y        cierro pop up de Cliente Exonerado
@@ -75,11 +77,12 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ |
+      | tipoUsuario     | userName      | password      | EncontrarCelular |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ |984594042|
+      | usuario interno |               | | 984594042        |

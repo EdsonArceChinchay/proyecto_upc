@@ -17,7 +17,8 @@ public class Helper {
         if (indiceFE != -1) {
             int strpos = texto.substring(indiceFE).indexOf(".");
             if(strpos > 0){
-                return texto.substring(indiceFE).substring(0,strpos-1).replace("-","");
+//                return texto.substring(indiceFE).substring(0,strpos-1).replace("-","");
+                return texto.substring(indiceFE).substring(0,strpos).trim();
             }
             return texto.substring(indiceFE).replace("-","");
         }

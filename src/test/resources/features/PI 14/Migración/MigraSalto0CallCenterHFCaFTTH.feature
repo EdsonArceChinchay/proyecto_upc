@@ -19,7 +19,7 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-@migraSalto0HFC_FTTHCallCenter
+  @migraSalto0HFC_FTTHCallCenter
   Esquema del escenario: Migracion salto 0 HFC FTTH con CE  por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,7 +31,8 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono la cartilla del plan activo
+    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
+#    Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
@@ -54,11 +55,14 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464839 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | numeroExistente |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 ||
+#      Cliente con registro cancelado
+#      | usuario interno |  | | Bienvenid@ | CE            | 222107211 |numeroExistente|
+      | usuario interno |               | | Bienvenid@ | CE            | 1100000212 | 5010192732       |

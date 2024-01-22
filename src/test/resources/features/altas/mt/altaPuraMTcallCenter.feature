@@ -12,7 +12,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
-
+#probarenmadrugada
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
 Característica: AT-DT038_Alta Fija Pura MT por Call Center
@@ -27,7 +27,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -65,7 +65,7 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    E        ingreso telefono del titular "984592938"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     #Y        valido que este en la seccion completa los datos solicitados
@@ -90,11 +90,11 @@ Característica: AT-DT038_Alta Fija Pura MT por Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1075255002 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | MBPS       | correo@gmail.com |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
 

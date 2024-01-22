@@ -33,21 +33,22 @@ Característica: Migracion de MT a MT en Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        selecciono la cartilla del plan activo
-    Y        Selecciono la cartilla del plan Motvistar Total
+#    Y        selecciono la cartilla del plan activo
+    Y        selecciona el boton del numero del plan MT existente "<numeroMt>"
+#    Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
-    Y        selecciono tipo de oferta
+#    Y        selecciono tipo de oferta
+    Y        selecciono el primer tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
-	#Y        valido que me encuentre en la pantalla agendamiento
-	#Y        ingreso los datos de agendamiento
-	#Y        presiono el boton confirmar agendamiento
-    #Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso los datos de agendamiento
-    #Y        presiono el boton confirmar agendamiento
+    ######
+    Y        verifico si me encuentro en la pantalla de agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+    ######
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -62,5 +63,11 @@ Característica: Migracion de MT a MT en Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | nombrePlan                               |
-      | usuario interno |          |          | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1100000763 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío HD 100 Mbps RV + Ilimitado 95 Gb RV |
+      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     | numeroMt   |
+      | usuario interno |               | | Bienvenid@ | CE            | 1100000311 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV | 5010192666 |
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
+#      | usuario interno | | | Bienvenid@ | CE            | 222103292  | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000202 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
+
