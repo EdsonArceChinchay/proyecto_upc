@@ -1,25 +1,24 @@
 #language:es
-##CREADOR:CARLOS RUIZ
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT0
-##GDAP:  GDAP-
+##GDAP: GDAP-
 ##SPRINT CREADO: PI18_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:CARLOS RUIZ
-##FECMOD: 19/01/2024
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 22/01/2024
 
 @BERSERKERS @DoneDevOps
 
-Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con documento CE en Tienda
+Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento CE en tienda
 
-  # Se debe de validar que no tenga ordenes en vuelo antes de ejecutar el feature
-  @TotalizacionT
-  Esquema del escenario: Totalizacion Parque Fija Trio + Parque Movil con documento CE en Tienda
+  @CompletaFijaSVAT
+  Esquema del escenario: Completa Planta Movil + Alta Fija + Alta SVA con documento CE en tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -33,17 +32,28 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
-    Y        selecciono la cartilla del plan activo
     Y        selecciono el boton de la Linea Movil Existente
-    Y        cierro el popup de validación de estado de contraseña única
-    Y        cierro pop up de Cliente Exonerado
+    Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
-    Entonces me muestra la pantalla para verificar la direccion
-    Y        presiono el boton Confirmar direccion
+    Entonces me muestra la pantalla para ingresar la direccion
+    Y        selecciono el departamento donde sera la instalacion "15"
+    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "INKAFARMA"
+    Y        presiono el boton Consultar ubicacion
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+#      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
+    Y        doy click en agregar SVA Linea "Plan Multidestino 20"
     Cuando   doy clic a iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
@@ -58,4 +68,4 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo         |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547906 | Trío HD 400 Mbps RV + Ilimitado 135 Gb RA | test@gmail.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547911 | Trío HD 200 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |

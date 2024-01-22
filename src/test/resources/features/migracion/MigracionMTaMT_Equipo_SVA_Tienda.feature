@@ -11,14 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 19/01/2024
+##FECMOD: 22/01/2024
 
 @BERSERKERS @DoneDevOps @RegresionLegacy
 
-Característica: Migracion de MT a MT + Alta Equipo Movil + SVA en el canal Tienda
+Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documento CE el canal Tienda
 
   @MigracionMTaMT_Equipo_SVA_Tiendas
-  Esquema del escenario: Migracion de MT a MT + Alta Equipo Movil + SVA en el canal Tienda
+  Esquema del escenario: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documento CE el canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
