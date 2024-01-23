@@ -78,6 +78,7 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(),4,5,botoneraIrA.get(1));
+        revisarModalError(driver());
         click(botoneraIrA.get(1));
         UtilWeb.waitForSeconds(1);
     }
