@@ -55,6 +55,6 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName      | password      | tipoDocumento | documento  | EncontrarCelular |
-      | usuario interno |               | | CE            | 1100000311 | 984685312        |
+      | tipoUsuario     | userName | password | tipoDocumento | documento  | EncontrarCelular |
+      | usuario interno |          |          | CE            | 1100000310 | 984683790        |
 

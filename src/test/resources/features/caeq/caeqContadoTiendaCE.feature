@@ -58,12 +58,6 @@ Característica: CAEQ contado con CE por canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-<<<<<<< HEAD
       | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
 #      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464674 | 984683790|
       | usuario interno |          |          | Bienvenid@ | CE            | 1100000310 | 984683790        |
-=======
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |
-
->>>>>>> 62a92339eba03cadc4298c1f2cbcd66c7e7dd318
