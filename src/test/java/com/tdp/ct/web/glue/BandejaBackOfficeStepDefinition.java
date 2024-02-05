@@ -30,6 +30,19 @@ public class BandejaBackOfficeStepDefinition {
         bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
     }
 
+//    TODO: Buscar por tipo
+    @Y("busco por {string}")
+    public void buscoPorElTipoDocumento(String tipoDoc) {
+        switch (tipoDoc){
+            case "documento":
+                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
+                break;
+            case "solicitud":
+                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
+                break;
+        }
+    }
+
     @Y("cargo el audio en la web")
     public void cargoElAudioEnLaWeb() {
         bandejaBackOfficeStep.abrirPopUpCargaAudio();
@@ -44,5 +57,10 @@ public class BandejaBackOfficeStepDefinition {
     @Y("apruebo la solicitud")
     public void aprueboSolicitud() throws InterruptedException {
         bandejaBackOfficeStep.aprueboSolicitud();
+    }
+
+    @Y("busco por el codigo de expediente")
+    public void buscoPorElCodigoDeExpediente() {
+
     }
 }

@@ -23,7 +23,16 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
 
   @Y("ingreso la informacion del lugar de instalacion")
   public void iingreso_la_informacion_del_lugar_de_instalacion(DataTable dirInstalacion) {
-    UtilWeb.waitForSeconds(15);//
+/*
+    Si se muestra ERROR realacionado con:
+    - Caso 1: Dito solicita ingresar campo requerido, y la Automatización no lo registra
+    - Caso 2: La automatización intenta completar un campo y no se encuentra habilitado/visible en Dito
+
+    Se debe realizar lo siguiente, dentro del Feature:
+    - Caso 1: Agregar en el dataTable el Campo y su respectivo valor
+    - Caso 2: En el DataTable, dejar en blanco el valor, para que no sea considerado por la AUtomatización
+*/
+    UtilWeb.waitForSeconds(5);
     String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
     String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
     String vivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"vivienda");
@@ -32,15 +41,17 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
     String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
     String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
+    String bloqueDir= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
     altaFijaAltaMovilCallCenterStep.ingresarManzana(manzana);
     altaFijaAltaMovilCallCenterStep.ingresarLote(lote);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(vivienda);
     altaFijaAltaMovilCallCenterStep.ingresarNombreVivienda(nombreVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarPiso(piso);
     altaFijaAltaMovilCallCenterStep.ingresarInterior(interior);
+    altaFijaAltaMovilCallCenterStep.ingresarBloque(bloqueDir);
+    altaFijaAltaMovilCallCenterStep.ingresarManzanaDir(manzana);
     altaFijaAltaMovilCallCenterStep.seleccionarTipoConjuntoHabitacional(habitacion);
     altaFijaAltaMovilCallCenterStep.ingresarConjuntoHabitacional(conj);
-
   }
 
   @Y("presiono el boton consultar cobertura")
@@ -52,6 +63,12 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
   public void selecciono_tipo_de_oferta() {
     altaFijaAltaMovilCallCenterStep.scrollUp();
     altaFijaAltaMovilCallCenterStep.clickOferta();
+  }
+
+  @Y("selecciono el primer tipo de oferta")
+  public void selecciono_el_primer_tipo_de_oferta() {
+    altaFijaAltaMovilCallCenterStep.scrollUp();
+    altaFijaAltaMovilCallCenterStep.clickPrimeraOferta();
   }
 
   @Y("selecciono un plan Movistar Total {string}")

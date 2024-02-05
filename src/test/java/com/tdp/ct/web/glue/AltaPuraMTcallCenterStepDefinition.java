@@ -48,6 +48,7 @@ public class AltaPuraMTcallCenterStepDefinition {
         altaPuraMTcallCenterStep.ingresarCorreoVerif(verifCorreo);
     }
 
+//    TODO:
     @Y("doy click en el boton de continuar")
     public void doyClickEnElBotonDeContinuar() {
         altaPuraMTcallCenterStep.clicBotonContinuar();

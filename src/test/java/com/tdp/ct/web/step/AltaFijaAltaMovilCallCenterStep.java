@@ -42,6 +42,14 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().interior(interior);
     }
 
+    public void ingresarBloque(String bloque) {
+        page.altaFijaAltaMovilCallCenterPage().bloque(bloque);
+    }
+
+    public void ingresarManzanaDir(String manzana) {
+        page.altaFijaAltaMovilCallCenterPage().manzanaDir(manzana);
+    }
+
     public void seleccionarTipoConjuntoHabitacional(String data) {
         page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(data);
     }
@@ -100,6 +108,10 @@ public class AltaFijaAltaMovilCallCenterStep {
 
     public void scrollUp() {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
+    }
+
+    public void clickPrimeraOferta() {
+        page.altaFijaAltaMovilCallCenterPage().ofertaUno();
     }
 
     public void clickOferta() {

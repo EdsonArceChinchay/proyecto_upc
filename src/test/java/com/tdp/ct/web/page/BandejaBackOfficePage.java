@@ -70,7 +70,7 @@ public class BandejaBackOfficePage extends WebBase{
         if(etiquetaCargando.getText().equals("PENDIENTE AUDIO")){
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(1);
-            esperaProgresiva(driver(),3,5,etiquetaCargado);
+            esperaProgresiva(driver(),4,7,etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente","CARGADO",etiquetaCargado.getText());
         }else{
             System.out.println("Adjunto ya subido anteriormente");

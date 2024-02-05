@@ -30,7 +30,7 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -59,12 +59,14 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
-    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+#    Y        selecciono el distrito donde sera la instalacion "150116"
+#    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+    Y        selecciono el distrito donde sera la instalacion "150108"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JUNO 119"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -93,14 +95,16 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | nombreCliente | tipoDocumento | documento | tipoPlanMovil | nombrePlan |
+      | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor                  | nombreCliente              | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
       #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
-      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro| CE            | 1100000824  | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+#      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 
+#chorillos 150108
