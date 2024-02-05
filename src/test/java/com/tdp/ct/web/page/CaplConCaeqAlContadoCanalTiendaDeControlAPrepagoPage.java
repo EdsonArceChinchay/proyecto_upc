@@ -120,11 +120,13 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnVerDetalle(String nroServicio) {
-        UtilWeb.waitForSeconds(10);
-        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[@class='detailHogar'][1]");
-        waitUntilElementIsVisible(btnVerDetalle, 20);
+        UtilWeb.waitForSeconds(5);
+        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
+        esperaProgresiva(driver(), 3, 5, btnVerDetalle);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
+        revisarModalError(driver());
+
     }
 
     public void validarFeatures() {

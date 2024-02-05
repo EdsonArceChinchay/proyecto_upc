@@ -35,7 +35,9 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("selecciono el plan {string}")
     public void selecciono_el_plan(String nombrePlan) {
-        altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
+        altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
+       // altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
+        //altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
         altaFijaTiendaStep.clickSeleccionarOferta();
         altaFijaTiendaStep.clickListaBotones();
 

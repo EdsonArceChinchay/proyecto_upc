@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01
-Característica: AT-DT007_Alta Fija Mono Internet por Retail
+Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Retail
 
 
   Antecedentes:

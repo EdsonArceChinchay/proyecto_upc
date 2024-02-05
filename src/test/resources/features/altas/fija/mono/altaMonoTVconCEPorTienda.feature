@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1436
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -26,7 +26,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1013087101"
+    Y        ingreso el documento "1013087120"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
@@ -49,8 +49,9 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
-    Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "prueba@prueba.com" y lo repito
+    Y        presiono el boton confirmar agendamiento
+    Y        ingreso un correo electronico "test@mail.com"
+    Y        ingreso nuevamente el correo electronico "test@mail.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |

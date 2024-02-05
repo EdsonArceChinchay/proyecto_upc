@@ -47,28 +47,30 @@ public class BandejaBackOfficePage extends WebBase {
     public void clickBackOffice() {
         esperaProgresiva(driver(), 3, 5, btnBackOffice);
         click(btnBackOffice);
-        esperaProgresiva(driver(), 3, 3, btnBuscar);
+        esperaProgresiva(driver(), 3, 5, btnBuscar);
     }
 
     public void ingresoDocumento(String documento) {
+        UtilWeb.waitForSeconds(5);
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
+        esperaProgresiva(driver(), 3, 5, document);
         click(document);
         type(document, documento);
     }
 
     public void buscoDocumento() {
         btnBuscar.click();
-        esperaProgresiva(driver(), 3, 3, btnCargarAudio);
+        esperaProgresiva(driver(), 3, 20, btnCargarAudio);
 
     }
 
     public void abrirPopUpCargaAudio() {
+        esperaProgresiva(driver(), 3, 20, btnCargarAudio);
         btnCargarAudio.click();
-        UtilWeb.waitForSeconds(3);
     }
 
     public void cargarAudio() {
-        esperaProgresiva(driver(), 3, 3, etiquetaCargando);
+        esperaProgresiva(driver(), 3, 30, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(1);

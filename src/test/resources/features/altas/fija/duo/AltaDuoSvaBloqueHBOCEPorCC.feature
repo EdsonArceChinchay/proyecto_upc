@@ -14,13 +14,13 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT004_Alta Duo SVA HBO por call center
+Característica: AT-DT004_Alta Duo SVA HBO con documento CE en canal call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @AltaDuo_SvaHBO
-  Esquema del escenario: Alta Duo SVA HBO CALL CENTER
+  Esquema del escenario: Alta Duo SVA HBO con documento CE en canal call center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

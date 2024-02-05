@@ -14,13 +14,11 @@
 ##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05
-Característica: AT-DT008_Alta Fija por tienda + SVA Internet
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT008_Alta Fija + SVA Internet con documento CE por canal tienda
 
   @AltaFijaTiendaSVA
   Esquema del escenario: Alta fija por tienda con CE sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

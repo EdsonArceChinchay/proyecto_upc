@@ -16,13 +16,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
 
-Característica: Alta Duo + Sva Movistar canal Retail
+Característica: Alta Duo + Sva Movistar con documento CE en canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @AltaDuoSvaRetail
-  Esquema del escenario: Alta Duo + Sva Movistar canal Retail
+  Esquema del escenario: Alta Duo + Sva Movistar con documento CE en canal Retail
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
