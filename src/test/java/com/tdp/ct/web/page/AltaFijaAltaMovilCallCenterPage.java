@@ -80,8 +80,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
             esperaProgresiva(driver(), 3, 5, Lte);
             click(Lte);
-            Lte.sendKeys(Keys.CONTROL + "a");
-            Lte.sendKeys(Keys.DELETE);
+            //Lte.sendKeys(Keys.CONTROL + "a");
+            //Lte.sendKeys(Keys.DELETE);
             type(Lte, lote);
         }
     }
@@ -123,14 +123,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void manzanaDir(String manzana) {
-        WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
-        if (Nmanzana != null && Nmanzana.isEnabled()) {
-//            WebElement Nmanzana = find().getElementByXPath("//*[@formcontrolname='apple' or @name='apple']");
-            esperaProgresiva(driver(), 3, 5, Nmanzana);
-            waitUntilElementIsClickable(Nmanzana, 15).click();
-            Nmanzana.sendKeys(Keys.CONTROL + "a");
-            Nmanzana.sendKeys(Keys.DELETE);
-            type(Nmanzana, manzana);
+        if (manzana != null){
+            WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
+            if (Nmanzana != null && Nmanzana.isEnabled()) {
+                esperaProgresiva(driver(), 3, 5, Nmanzana);
+                waitUntilElementIsClickable(Nmanzana, 15).click();
+                type(Nmanzana, manzana);
+            }
         }
     }
 
