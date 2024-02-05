@@ -21,8 +21,8 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
     @FindBy(xpath = "//app-card-line/div/div[2]/img")
     protected WebElement lblVerDetalle;
 
-    @FindBy(xpath = "//tdp-st-modal/div[3]/form/div/div[2]/tdp-st-button")
-    protected WebElement btnAgregarSva;
+    @FindBy(xpath = "(//tdp-st-modal/div[3]/form/div/div[2]/tdp-st-button)")
+    protected List <WebElement> listBtnAgregarSva;
     @FindBy(xpath = "//button[@class='button-light-green']")
     protected WebElement btnGuardarCambios;
     @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
@@ -38,6 +38,7 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
         //UtilWeb.waitForSeconds(5);
         click(lblVerDetalle);
         //UtilWeb.waitForSeconds(5);
+        WebElement btnAgregarSva = listBtnAgregarSva.get(listBtnAgregarSva.size()-1);
         esperaProgresiva(driver(),3,5,btnAgregarSva);
         click(btnAgregarSva);
         UtilWeb.waitForSeconds(5);

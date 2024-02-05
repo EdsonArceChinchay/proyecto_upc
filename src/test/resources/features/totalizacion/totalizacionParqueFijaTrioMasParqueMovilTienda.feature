@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT0
-##GDAP:  GDAP-
+##GDAP:  GDAP-1429
 ##SPRINT CREADO: PI18_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -44,6 +44,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
     Cuando   doy clic a iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
@@ -58,4 +61,4 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo         |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547906 | Trío HD 400 Mbps RV + Ilimitado 135 Gb RA | test@gmail.com |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547906 | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |

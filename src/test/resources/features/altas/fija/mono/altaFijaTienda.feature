@@ -14,13 +14,11 @@
 ##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision
-Característica: AT-DT009_Alta Fija por tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
 
   @AltaFijaTienda
-  Esquema del escenario: Alta fija por tienda con CE
+  Esquema del escenario: Alta fija con documento CE en Canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

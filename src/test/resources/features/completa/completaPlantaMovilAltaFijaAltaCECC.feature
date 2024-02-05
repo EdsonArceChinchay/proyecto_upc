@@ -5,20 +5,20 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT0
-##GDAP: GDAP-1428
-##SPRINT CREADO: PI18_SP1
+##GDAP: GDAP-1434
+##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/01/2024
+##FECMOD: 02/02/2024
 
-@BERSERKERS @DoneDevOps
+@BERSERKERS @DoneDevOps @RegresionLegacy2
 
-Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento CE en tienda
+Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en Canal Call Center
 
-  @CompletaFijaSVAT
-  Esquema del escenario: Completa Planta Movil + Alta Fija + Alta SVA con documento CE en tienda
+  @CompletaMovilCC
+  Esquema del escenario: Completa Planta Movil + Alta Fija con documento CE en Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -49,7 +49,6 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
-    Y        doy click en agregar SVA Linea "Plan Multidestino 20"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -59,6 +58,8 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
@@ -66,6 +67,13 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                               | correo         |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547910 | Trío HD 200 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                               | correo         |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1632547925 | Trío HD 600 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |

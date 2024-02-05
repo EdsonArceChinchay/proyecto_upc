@@ -35,7 +35,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement oferta;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[1]")
     protected WebElement ofertaUno;
-    @FindBy(xpath = "//div[@class='stl_plan_valor']")
+    @FindBy(xpath = "//div[@class='stl_plan_valor' or @class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;

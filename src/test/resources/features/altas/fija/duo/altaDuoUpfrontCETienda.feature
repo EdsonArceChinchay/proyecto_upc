@@ -14,13 +14,12 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-Característica: AT-DT006_Alta Duo por tienda
+Característica: AT-DT006_Alta Duo con documento CE por canal Tienda
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
+# Antes de usar se debe le debe de dar score upfront al cliente
   @AltaDuo_Upfront
   Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

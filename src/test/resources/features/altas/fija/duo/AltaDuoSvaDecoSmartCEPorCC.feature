@@ -14,14 +14,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @AT-DT005
-Característica: AT-DT005_Alta Duo por call center
-
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT005_Alta Duo con documento CE en canal Call center
 
   @AltaDuo_SvaDecoSmart @MVP15 @Global
   Esquema del escenario: Alta de dúo internet y añadir sva [deco smart] con CEX, en canal call center, web front end, flujo no biométrico
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

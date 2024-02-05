@@ -407,7 +407,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsClickable(buttonValidarContrato, 8);
+                waitUntilElementIsClickable(buttonValidarContrato, 100);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Validar Contrato");
                 buttonFound = true;
             } catch (Exception e) {
@@ -419,18 +419,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         System.out.println("Sale del while");
         js().scrollElementTop(buttonValidarContrato);
+        UtilWeb.waitForSeconds(10);
         click(buttonValidarContrato);
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
 
     public void clicBotonContinuar() {
-
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
-
+        Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -448,12 +445,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             }
         }
         System.out.println("Sale del while");
-//        waitUntilElementIsClickable(buttonContinuar, 90);
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
-//        click(buttonContinuar, 60);
         click(buttonContinuar);
-//        UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -464,7 +458,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, element);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
-        //js().scrollElementTop(irFinalContrato);
     }
 
     public void clicSiAcepto() {
@@ -592,7 +585,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         return retorno;
     }
-
 
     public void clicEnAgregarSVA() {
         esperaProgresiva(driver(), 3, 6, buttonAgregarSVA);

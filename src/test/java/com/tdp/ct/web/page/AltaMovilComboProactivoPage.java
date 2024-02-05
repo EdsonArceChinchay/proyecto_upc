@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
 public class AltaMovilComboProactivoPage extends WebBase {
 
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Datos del Cliente')]")
@@ -24,8 +27,8 @@ public class AltaMovilComboProactivoPage extends WebBase {
     @FindBy(xpath = "//*[contains(text(),'Confirmar')]")
     protected WebElement lblConsultar;
 
-
-
+    @FindBy(xpath = "(//tdp-st-modal/div[3]/form/div/div[2]/tdp-st-button)")
+    protected List <WebElement> listBtnAgregarSva;
 
     public void clicConfirmarCliente() {
         UtilWeb.waitForSeconds(1);
@@ -145,7 +148,12 @@ public class AltaMovilComboProactivoPage extends WebBase {
     }
 
     public void seleccionoElBotonAgregarSva() {
-
+        revisarModalError(driver());
+        revisarModalError(driver());
+        WebElement btnAgregarSva = listBtnAgregarSva.get(listBtnAgregarSva.size()-1);
+        esperaProgresiva(driver(),3,5,btnAgregarSva);
+        click(btnAgregarSva);
+        UtilWeb.waitForSeconds(5);
 
     }
 }
