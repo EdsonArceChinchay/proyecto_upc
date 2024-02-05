@@ -183,7 +183,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
-        esperaProgresiva(driver(), 4, 3, titleLugarInstalacionEntrega);
+        esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -191,7 +191,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaVerificarDireccion() {
-        esperaProgresiva(driver(), 5, 4, titleVerificarLugarInstalacion);
+        esperaProgresiva(driver(), 6, 4, titleVerificarLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
@@ -283,7 +283,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-
     public void clicConfirmarAgendamiento() {
         //UtilWeb.waitForSeconds(4);
         esperaProgresiva(driver(), 5, 5, buttonConfirmar);
@@ -373,7 +372,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         try {
             UtilWeb.waitForSeconds(3);
             WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-            esperaProgresiva(driver(),3,3,rootInputCorreo);
+            esperaProgresiva(driver(), 3, 3, rootInputCorreo);
             SearchContext context = sh().getContext(rootInputCorreo);
             context.findElement(By.cssSelector("button")).click();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -904,7 +903,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         waitUntilElementIsVisible(scrollorden, 70);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(),3,5,cicloFacturacion);
+        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
 
         js().scrollElementTop(cicloFacturacion);

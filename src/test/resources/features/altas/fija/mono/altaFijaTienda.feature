@@ -46,8 +46,8 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda | piso | int | bloque | conjunto | conjHabit |
-      | 25 | 24   |          |                | 2    | 2   | 2      |          |           |
+      | mz | vivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
+      |    |          |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -71,13 +71,9 @@ Característica: AT-DT009_Alta Fija por tienda
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        valido que se muestre el detalle del pedido
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                                            | referencia     | tipoPlan | nombrePlan               |
-  #    | usuario externo | nishuizas | $t3l3f0n1c4$  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
-  #    | usuario interno |  |  | Bienvenid@ | CE            | 1100000571 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-    #  | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-    #  | usuario interno | | | Bienvenid@ | CE            | 1100000484 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-      | usuario interno |          |          | Bienvenid@ | CE            | 1100000485 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
-    #  | usuario interno | | | Bienvenid@ | CE            | 1100000486 | 15           | 1501      | 150119   | CL ATUSPARIA, MZ 25 LT 24 PISO 2 bloque 2 interior 2 | SANTA GENOVEVA | Trio     | INTERNET MOVISTAR RA D22 |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+      #| usuario interno | csalvatierrac |  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |

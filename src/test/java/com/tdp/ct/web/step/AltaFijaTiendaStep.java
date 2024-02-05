@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -48,12 +49,21 @@ public class AltaFijaTiendaStep {
 
     @ScreenShotBefore
     public void ingresarDatosAgendamiento() {
-        page.altaFijaTiendaPage().datosAgendamiento();
+        if (Parameters.estadoFlujo){
+            page.altaFijaTiendaPage().datosAgendamiento();
+        }
+    }
+
+    @ScreenShotBefore
+    public void verificarEstadoPantallaAgendamiento() {
+        Parameters.estadoFlujo = page.altaFijaTiendaPage().verficarPantallaAgendamiento();
     }
 
     @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento() {
-        page.altaFijaTiendaPage().botonConfirmarAgendamiento();
+        if (Parameters.estadoFlujo){
+            page.altaFijaTiendaPage().botonConfirmarAgendamiento();
+        }
     }
 
     @ScreenShotBefore

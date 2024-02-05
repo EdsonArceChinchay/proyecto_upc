@@ -80,8 +80,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
             esperaProgresiva(driver(), 3, 5, Lte);
             click(Lte);
-            Lte.sendKeys(Keys.CONTROL + "a");
-            Lte.sendKeys(Keys.DELETE);
+            //Lte.sendKeys(Keys.CONTROL + "a");
+            //Lte.sendKeys(Keys.DELETE);
             type(Lte, lote);
         }
     }
@@ -93,13 +93,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             esperaProgresiva(driver(), 3, 5, listElementPLan);
             waitUntilElementIsClickable(listElementPLan, 10).click();
 
-            String[][] selectOptions = {
-                    {"BLK", "BLOCK"},
-                    {"CC", "CENTRO COMERCIAL"},
-                    {"CASA", "CASA"},
-                    {"ED", "EDIFICIO"},
-                    {"MCDO", "MERCADO"}
-            };
+            String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
             String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
@@ -129,14 +123,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void manzanaDir(String manzana) {
-        WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
-        if (Nmanzana != null) {
-//            WebElement Nmanzana = find().getElementByXPath("//*[@formcontrolname='apple' or @name='apple']");
-            esperaProgresiva(driver(), 3, 5, Nmanzana);
-            waitUntilElementIsClickable(Nmanzana, 15).click();
-            Nmanzana.sendKeys(Keys.CONTROL + "a");
-            Nmanzana.sendKeys(Keys.DELETE);
-            type(Nmanzana, manzana);
+        if (manzana != null){
+            WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
+            if (Nmanzana != null && Nmanzana.isEnabled()) {
+                esperaProgresiva(driver(), 3, 5, Nmanzana);
+                waitUntilElementIsClickable(Nmanzana, 15).click();
+                type(Nmanzana, manzana);
+            }
         }
     }
 
@@ -170,10 +163,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             esperaProgresiva(driver(), 3, 5, listElementPLan);
             waitUntilElementIsClickable(listElementPLan, 10).click();
 
-            String[][] selectOptions = {
-                    {"UR", "URBANIZACION RESIDENCIAL"},
-                    {"UP", "URBANIZACION POPULAR"}
-            };
+            String[][] selectOptions = {{"UR", "URBANIZACION RESIDENCIAL"}, {"UP", "URBANIZACION POPULAR"}};
             String sCodigo = buscarValorOpcion(tipoConjunto, selectOptions);
             seleccionarValueComboShadow(driver(), "housingComplexe", sCodigo);
 
@@ -215,12 +205,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
         SearchContext contexPlan = sh().getContext(deliveryType);
 
-        String[][] deliveryOptions = {
-                {"Express", "Delivery Express"},
-                {"R24h", "Delivery Regular 24 horas"},
-                {"R48h", "Delivery Regular 48 horas"},
-                {"R72h", "Delivery Regular 72 horas"}
-        };
+        String[][] deliveryOptions = {{"Express", "Delivery Express"}, {"R24h", "Delivery Regular 24 horas"}, {"R48h", "Delivery Regular 48 horas"}, {"R72h", "Delivery Regular 72 horas"}};
         String sCodigo = buscarValorOpcion(tipEntrega, deliveryOptions);
         seleccionarValueComboShadow(driver(), "deliveryType", sCodigo);
 
@@ -255,10 +240,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, pageType);
 //        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(pageType);
-        String[][] selectOptions = {
-                {"1", "Contra entrega"},
-                {"2", "Pago Efectivo"}
-        };
+        String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
         String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
         UtilWeb.waitForSeconds(2);
         seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
@@ -347,12 +329,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
+        revisarModalError(driver());
     }
 
     public void oferta() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 6, 4, oferta);
         revisarModalError(driver());
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
         click(oferta);
         UtilWeb.waitForSeconds(2);
     }
@@ -376,7 +362,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         int contadorMax = 12;
         while (elementoExistenteRight && contador < contadorMax) {
             if (btnRight != null) {
-                esperaProgresiva(driver(), 3, 3, btnRight);
+                esperaProgresiva(driver(), 4, 3, btnRight);
                 btnRight.click();
                 System.out.println("dio click right while");
             } else {
@@ -386,7 +372,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 waitUntilElementIsVisible(btnRight, 5);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnRight");
             } catch (Exception e) {
-                System.out.println("El elemento btnRight ya no fue encontrado: ");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento btnRight ya no fue encontrado: ");
             }
             elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             contador++;
@@ -453,8 +439,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         revisarModalError(driver());
 
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
-        eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" +
-                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
+        eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" + ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(3);
         buttonSeleccionarOferta.click();
     }

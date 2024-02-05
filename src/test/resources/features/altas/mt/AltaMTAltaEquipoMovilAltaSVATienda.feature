@@ -5,20 +5,20 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1426
 ##SPRINT CREADO: PI17-SPPI
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 19/12/2023
+##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionDitoC
+@BERSERKERS @DoneDevOps @DoneDevOpsPI17 @RegresionLegacy
 
-Característica: AT-DT0 _ Alta MT + Alta equipo movil + SVA por Tienda
+Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
 
   @AltaMTEquipoSVA
-  Esquema del escenario: Alta MT + Alta equipo movil + SVA por Tienda
+  Esquema del escenario: Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

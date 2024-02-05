@@ -35,6 +35,16 @@ public class AltaFijaAltaMovilRetailStepDefinition {
     altaFijaAltaMovilRetailStep.btnLineaCelularExistente(numeroExistente.trim());
   }
 
+  @Y("selecciona el boton del numero del plan MT existente {string}")
+  public void seleccionaElBotonDelNumeroDelPlanMtExistente(String numeroExistente) {
+    altaFijaAltaMovilRetailStep.btnPlanMtExistente(numeroExistente.trim());
+  }
+
+  @Y("selecciona el boton de detalle del numero de celular existente {string}")
+  public void seleccionaElBotonDeDetalleDelNumeroDeCelularExistente(String numeroExistente) {
+    altaFijaAltaMovilRetailStep.btnDetalleLineaCelularExistente(numeroExistente.trim());
+  }
+
   @Y("selecciono el boton de la Linea Movil Existente")
   public void seleccionoElBotonLineaMovilExistente() {
     altaFijaAltaMovilRetailStep.btnLineaMovilExistente();
