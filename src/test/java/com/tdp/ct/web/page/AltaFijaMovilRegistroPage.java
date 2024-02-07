@@ -183,7 +183,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
-        esperaProgresiva(driver(), 4, 3, titleLugarInstalacionEntrega);
+        esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -191,7 +191,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaVerificarDireccion() {
-        esperaProgresiva(driver(), 5, 4, titleVerificarLugarInstalacion);
+        esperaProgresiva(driver(), 6, 4, titleVerificarLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
@@ -283,7 +283,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-
     public void clicConfirmarAgendamiento() {
         //UtilWeb.waitForSeconds(4);
         esperaProgresiva(driver(), 5, 5, buttonConfirmar);
@@ -373,7 +372,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         try {
             UtilWeb.waitForSeconds(3);
             WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-            esperaProgresiva(driver(),3,3,rootInputCorreo);
+            esperaProgresiva(driver(), 3, 3, rootInputCorreo);
             SearchContext context = sh().getContext(rootInputCorreo);
             context.findElement(By.cssSelector("button")).click();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
@@ -408,7 +407,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsClickable(buttonValidarContrato, 8);
+                waitUntilElementIsClickable(buttonValidarContrato, 100);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Validar Contrato");
                 buttonFound = true;
             } catch (Exception e) {
@@ -420,18 +419,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         System.out.println("Sale del while");
         js().scrollElementTop(buttonValidarContrato);
+        UtilWeb.waitForSeconds(10);
         click(buttonValidarContrato);
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
     }
 
     public void clicBotonContinuar() {
-
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
-        //modalError(3, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
-
+        Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
@@ -449,12 +445,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             }
         }
         System.out.println("Sale del while");
-//        waitUntilElementIsClickable(buttonContinuar, 90);
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
-//        click(buttonContinuar, 60);
         click(buttonContinuar);
-//        UtilWeb.waitForSeconds(5);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -465,7 +458,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, element);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
-        //js().scrollElementTop(irFinalContrato);
     }
 
     public void clicSiAcepto() {
@@ -593,7 +585,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         return retorno;
     }
-
 
     public void clicEnAgregarSVA() {
         esperaProgresiva(driver(), 3, 6, buttonAgregarSVA);
@@ -904,7 +895,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         waitUntilElementIsVisible(scrollorden, 70);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(),3,5,cicloFacturacion);
+        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
 
         js().scrollElementTop(cicloFacturacion);

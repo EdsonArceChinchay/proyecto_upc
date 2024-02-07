@@ -95,6 +95,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
         esperaProgresivaLoading(driver(), 3,5,"loading-offer");
+        UtilWeb.waitForSeconds(2);
         clickElementInAList(listaTipoPlanMovil, planMovil,10);
     }
 

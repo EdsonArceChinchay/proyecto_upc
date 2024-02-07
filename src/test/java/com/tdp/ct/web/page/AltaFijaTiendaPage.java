@@ -3,17 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -41,7 +38,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
-    protected WebElement buttonSeleccionarOferta;
+    protected List<WebElement> listBtnSeleccionarOferta;
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
@@ -89,12 +86,6 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas) {
-//        modalError(10,btnReintentar,"Click al elemento Reitentar");
-//        modalError(10,btnReintentar,"Click al elemento Reitentar");
-
-        //WebElement element = listaOfertas.get(0);
-        //String elXpath = "(//div[@class='stl_negrita g-text--uppercase'])[1]";
-        //Addons.reintentaModalError(driver(), 6, 5, null, this, elXpath);
         revisarModalError(driver());
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
@@ -111,20 +102,6 @@ public class AltaFijaTiendaPage extends WebBase {
             }
         }
 
-//TODO: Se necesita cambiar el codigo para buscr mas ofertas
-//        WebElement element;
-//        try {
-//            element = driver().findElement(By.xpath("//img[@src='assets/images/right-arrow.png']"));
-//        }catch (NoSuchElementException e){
-//
-//        }
-//
-//        do {
-//            click(btnRight);
-//            UtilWeb.waitForSeconds(3);
-//        } while (!element.isDisplayed());
-
-        //driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
         boolean encontroElemento = false;
         //-------------------------------------------------------//
@@ -156,19 +133,17 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
-        /*modalError(3,btnReintentar,"Click al elemento Reitentar");
-        modalError(5,btnReintentar,"Click al elemento Reitentar");
-        modalError(3,btnReintentar,"Click al elemento Reitentar");*/
-
         revisarModalError(driver());
-
-        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
-        eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
-                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(1);
-        buttonSeleccionarOferta.click();
-        UtilWeb.waitForSeconds(10);
-        //UtilWeb.waitForSeconds(10);
+//        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
+//        eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
+//                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
+       for (int i=0; i <listBtnSeleccionarOferta.size();i++)
+       {
+           if (listBtnSeleccionarOferta.get(i).isEnabled()){
+               js().scrollElementTop(listBtnSeleccionarOferta.get(i));
+               listBtnSeleccionarOferta.get(i).click();
+           }
+       }
         UtilWeb.waitForSeconds(3);
     }
 
@@ -208,6 +183,18 @@ public class AltaFijaTiendaPage extends WebBase {
         context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
         UtilWeb.waitForSeconds(2);
 
+    }
+
+    public boolean verficarPantallaAgendamiento() {
+        revisarModalError(driver());
+        boolean existe = false;
+        try {
+//            existe = labelAgendamiento.isDisplayed();
+            existe = find().getElementByXPath("//span[contains(text(),'Agendamiento')]").isDisplayed();
+        } catch (NoSuchElementException e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Comprobando elemento");
+        }
+        return existe;
     }
 
     public void botonConfirmarAgendamiento() {

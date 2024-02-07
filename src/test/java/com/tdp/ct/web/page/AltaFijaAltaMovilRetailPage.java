@@ -25,6 +25,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnLineaExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaCelularExistente;
+    @FindBy(css = ".stl_position_movil:nth-child(3) app-card-mt:nth-child(1) .contenedor_park_plan_MT")
+    protected WebElement btnPlanMtExistente;
 
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
@@ -101,8 +103,68 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, btnLineaCelularExistente);
         js().scrollElementTop(btnLineaCelularExistente);
         String LineaExistente = btnLineaCelularExistente.getText();
-        WebElement detalle;
+        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+            click(btnLineaCelularExistente);
+        } else {
+            int i = 2;
+            int reintentos = 5;
+            boolean elementoExistente;
+            while (i < reintentos) {
+                String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
+                if (elementoExistente) {
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+                        click(elemento);
+                        break;
+                    } else {
+                        i++;
+                    }
+                } else {
+                    System.out.println("No cumplen con la condicion");
+                    break;
+                }
+            }
+        }
 
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void planMtExistente(String numeroExistente) {
+        esperaProgresiva(driver(), 3, 5, btnPlanMtExistente);
+        js().scrollElementTop(btnPlanMtExistente);
+        String LineaExistente = btnPlanMtExistente.getText();
+        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+            click(btnPlanMtExistente);
+        } else {
+            int i = 2;
+            int reintentos = 5;
+            boolean elementoExistente;
+            while (i < reintentos) {
+                String selector = ".stl_position_movil:nth-child(3) app-card-line:nth-child(" + i + ") .contenedor_park_plan_MT";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
+                if (elementoExistente) {
+                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+                        click(elemento);
+                        break;
+                    } else {
+                        i++;
+                    }
+                } else {
+                    System.out.println("No cumplen con la condicion");
+                    break;
+                }
+            }
+        }
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void detalleLineaCelularExistente(String numeroExistente) {
+        esperaProgresiva(driver(), 3, 5, btnLineaCelularExistente);
+        js().scrollElementTop(btnLineaCelularExistente);
+        String LineaExistente = btnLineaCelularExistente.getText();
+        WebElement detalle;
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
             click(btnLineaCelularExistente);
             detalle = driver().findElement(By.xpath("(//*[@class=\"detailHogar\"])[1]"));
@@ -129,9 +191,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
                     break;
                 }
             }
-
         }
-
         UtilWeb.waitForSeconds(1);
     }
 

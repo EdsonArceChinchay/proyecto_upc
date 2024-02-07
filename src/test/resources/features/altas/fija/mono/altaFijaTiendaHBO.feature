@@ -14,13 +14,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop
-Característica: AT-DT010_Alta fija por tienda mas Hbo
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT010_Alta fija mas SVA HBO con documento CE en Canal Tienda
 
   @AltaFijaTiendaHBO
-  Esquema del escenario: Alta fija por tienda mas Hbo
+  Esquema del escenario: Alta fija mas SVA HBO con documento CE en Canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

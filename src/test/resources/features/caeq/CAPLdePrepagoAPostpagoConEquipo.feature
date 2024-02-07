@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
+Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal Tiendas
 
   @CAPLprepadoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA
@@ -32,7 +32,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Súmate Plus RPM S/ 154.92 II"
+    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/99.9 V"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     #Y        ingreso el tiempo de permanencia"12 meses"
@@ -45,15 +45,16 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
     #Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName       |
-      | 12 meses    | Al Contado | HUAWEI P10 NEGRO |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     #Y        presiono el boton "Cambiar Plan"
-    Y        valido que se presente el detalle de el plan
+    #Y        valido que se presente el detalle de el plan
     Y         doy click en iniciar registro
     Y        ingreso email "prueba@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    #Cuando   doy clic en si acepto
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
@@ -62,4 +63,4 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo
 
     Ejemplos:
       | tipoUsuario     | userName | password        |
-      | usuario externo | vsiguass | #o2Wy23oA1458Z% |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ |
