@@ -31,7 +31,7 @@ Característica: CAEQ contado con CE por canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    Y        selecciona el boton del numero de celular existente "984683790"
+    Y        selecciona el boton del numero de celular existente "650027636"
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
