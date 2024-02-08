@@ -61,3 +61,6 @@ Característica: AT-DT078_Migracion salto 0 canal Tienda
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
       | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
 #      | usuario interno |  |   | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+
+     # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+#      | usuario interno | nishuizas | $t3l3f0n1c4$   | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
