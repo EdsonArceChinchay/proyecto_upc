@@ -87,31 +87,36 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoVivienda(String tipoVivienda) {
-        if (tipoVivienda != null) {
+        WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='houseType']");
+        if (Nbloque != null) {
             UtilWeb.waitForSeconds(1);
-            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
-            esperaProgresiva(driver(), 3, 5, listElementPLan);
-            waitUntilElementIsClickable(listElementPLan, 10).click();
+//            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
+            if (tipoVivienda != null && Nbloque.isEnabled()) {
+                esperaProgresiva(driver(), 3, 5, Nbloque);
+                waitUntilElementIsClickable(Nbloque, 10).click();
 
-            String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
-            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
-            UtilWeb.waitForSeconds(2);
-            seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
-
+                String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
+                String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
+                UtilWeb.waitForSeconds(2);
+                seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
+            }
         }
     }
 
     public void nombreVivienda(String nomVivienda) {
-        if (nomVivienda != null) {
-            WebElement Nvivienda = find().getElementByXPath("//*[@formcontrolname='houseName' or @name='houseName']");
-            esperaProgresiva(driver(), 3, 5, Nvivienda);
-            waitUntilElementIsClickable(Nvivienda, 15).click();
-            type(Nvivienda, nomVivienda);
+        WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='houseName' or @name='houseName']");
+        if (Nbloque != null) {
+//            WebElement Nvivienda = find().getElementByXPath("//*[@formcontrolname='houseName' or @name='houseName']");
+            if (nomVivienda != null && Nbloque.isEnabled()) {
+                esperaProgresiva(driver(), 3, 5, Nbloque);
+                waitUntilElementIsClickable(Nbloque, 15).click();
+                type(Nbloque, nomVivienda);
+            }
         }
     }
 
     public void bloque(String bloque) {
-        // WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='block' or @name='block']");
+//         WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='block' or @name='block']");
         if (bloque != null) {
             WebElement Nbloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
             esperaProgresiva(driver(), 3, 5, Nbloque);
@@ -123,12 +128,19 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void manzanaDir(String manzana) {
-        if (manzana != null){
-            WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
-            if (Nmanzana != null && Nmanzana.isEnabled()) {
-                esperaProgresiva(driver(), 3, 5, Nmanzana);
-                waitUntilElementIsClickable(Nmanzana, 15).click();
+        WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
+        if (Nmanzana != null && manzana != null) {
+//            WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
+//            if (Nmanzana.isEnabled()) {
+//                esperaProgresiva(driver(), 3, 5, Nmanzana);
+//                waitUntilElementIsClickable(Nmanzana, 15).click();
+//                type(Nmanzana, manzana);
+//            }
+            try {
+                Nmanzana.click();
                 type(Nmanzana, manzana);
+            } catch (ElementNotInteractableException eni) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se puede interactuar con el elemento: " + eni.getMessage());
             }
         }
     }

@@ -26,13 +26,14 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "14353885"
+    Cuando   selecciono el boton Ver detalle del servicio "<servicio>"
     Y        selecciono el boton agregar sva
     Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro
@@ -60,5 +61,8 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120377222 | test@hotmail.com |
+      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor               | tipoDocumento | documento  | correo           | servicio   |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | CE            | 120377222  | test@hotmail.com | 14353885   |
+#      | usuario interno |          |              | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |
+#      | usuario interno |          |              | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000217 | test@hotmail.com | 5010192755 |
+#      | usuario interno |          |              | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 221011258  | test@hotmail.com | 5010194087 |

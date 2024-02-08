@@ -4,18 +4,18 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: REVISANDO-APROBACION DE SOLICITUD
 ##CODIGO: AT-DT093
 ##GDAP: GDAP-1139
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: CRISTIAN HUNGARO
+##FECMOD: 05/02/2024
+##COMENTARIO: FALTA QUE SE RESUELVAN LAS OBSERVACIONES
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
-
 Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
 
   Antecedentes:
@@ -27,6 +27,7 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -47,7 +48,7 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -77,9 +78,10 @@ Característica: AT-DT093_Alta mono voz + sva Linea  en Canal Call Center
     Cuando   doy clic en si acepto
 	#Y        doy click en Finalizar registro
     Y        doy click en el boton de continuar
-	#Y        presiono el boton Registrar venta
+	Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000013 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |
+      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             | nombreMadre | nombrePadre | distritoNac |
+     | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000013 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |
+#      | usuario interno | | | Bienvenid@ | CE            | 221011271 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |

@@ -3,15 +3,16 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: EN REVISION
 ##CODIGO: AT-DT048
 ##GDAP: GDAP-580
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 31/03/2023
+##ENCARGADO: CRISTIAN HUNGARO
+##FECMOD: 05/02/2024
+##COMENTARIO: FALTA COMPLETAR EL PEDIDO
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
@@ -24,6 +25,7 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -49,5 +51,9 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | tipoUsuario     | userName | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
+      | usuario externo | nishuizas   | $t3l3f0n1c4$  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000786 | Jasmin Pinedo |
+#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000788 | Jasmin Pinedo |
+#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000789 | Jasmin Pinedo |
+#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000787 | Jasmin Pinedo |

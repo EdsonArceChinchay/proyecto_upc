@@ -103,8 +103,8 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
 
     Ejemplos:
       | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor                  | nombreCliente              | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
 #      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
-      | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+#      | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 
 #chorillos 150108

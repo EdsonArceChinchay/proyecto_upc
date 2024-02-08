@@ -34,8 +34,8 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP    |
+      | permanencia | tipoPago   | equipoName                               |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
     Y        selecciono tipo de pago Al Contado
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
@@ -66,6 +66,7 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
+#    PRUEBAS EN CALL CENTER
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -75,5 +76,9 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
+      | tipoUsuario     | userName    | password      | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | usuario externo | jpachaot    | $t3l3f0n1c4$  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000273 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000808 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000806 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000755 | Postpago | Plan Movil Movistar Total ilim |

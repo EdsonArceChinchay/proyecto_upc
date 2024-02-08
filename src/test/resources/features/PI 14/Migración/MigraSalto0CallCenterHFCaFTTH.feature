@@ -61,8 +61,11 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | numeroExistente |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464839 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+
+#      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | numeroExistente |
 #      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 ||
 #      Cliente con registro cancelado
 #      | usuario interno |  | | Bienvenid@ | CE            | 222107211 |numeroExistente|
-      | usuario interno |               | | Bienvenid@ | CE            | 1100000212 | 5010192732       |
+#      | usuario interno |               | | Bienvenid@ | CE            | 1100000212 | 5010192732       |
