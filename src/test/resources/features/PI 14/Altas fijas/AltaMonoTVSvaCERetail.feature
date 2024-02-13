@@ -1,39 +1,42 @@
 #language:es
+
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT020
-##GDAP: GDAP-989
-##SPRINT CREADO:
+##CODIGO: AT-DT092
+##GDAP: GDAP-1140
+##SPRINT CREADO: PI14_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
-Característica: AT-DT020_Alta Trio upfront SVA canal tienda
+Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
 
-  @AltaTrioUpfrontSVATienda
-  Esquema del escenario: Alta Trio upfront SVA canal tienda
+  Antecedentes:
     Dado     que abro la pagina de movistar
+
+  @AltamonosvaRetail
+  Esquema del escenario: NUEVO - Alta mono + sva  en Canal Retail
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero    |
-      | Juan    | Ortiz Lopez | masculino |
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos | genero   |
+      | Helena  | Porras    | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -43,32 +46,34 @@ Característica: AT-DT020_Alta Trio upfront SVA canal tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-      #| mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        doy click en agregar "<sva>"
+    Y        valido que este en la seccion de registro
+    Entonces doy click en Agregar Sva
+    Y        doy click en agregar Bloque "<bloque>"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        ingreso un correo electronico "tester48582q@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester48582q@tester.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 18/08/1994 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-#    Y        presiono el boton descargar contrato
+    Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     | sva                   |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA D22 50 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                 | bloque |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA D22 | FOX    |

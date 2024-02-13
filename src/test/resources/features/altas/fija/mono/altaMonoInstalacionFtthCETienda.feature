@@ -3,26 +3,26 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT011
 ##GDAP: GDAP-582
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop
-Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija
+Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda
 
   @AltaMonoFtthTienda
   Escenario: Realizar una Alta de Mono con instalación FTTH por Canal tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "nishuizas"
-    Y        ingreso el password "$T3l3f0n1c4$"
+    Y        ingreso el usuario "userNameST"
+    Y        ingreso el password "passST"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
@@ -41,12 +41,12 @@ Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
       | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
     Y        presiono el boton Consultar Ubicacion
       #Y        ingreso la informacion del lugar para la instalacion
-       # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+       # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
         #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "INTERNET MOVISTAR RA D22 100"
+    Y        selecciono el plan "INTERNET MOVISTAR RA O23 100 MBPS"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
@@ -63,7 +63,6 @@ Característica: AT-DT011_Alta de Mono con instalación FTTH por Canal tienda
     Y        doy click en el boton de continuar
       #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
-      #Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      #Y        valido que se muestre el detalle del pedido
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-      #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"

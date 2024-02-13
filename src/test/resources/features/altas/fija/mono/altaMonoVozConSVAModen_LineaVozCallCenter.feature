@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija
 Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
 
   @AltaMonoLineaVoz_Modem_svaLineaCallCenter__11
@@ -21,8 +21,8 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "jpachaot"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNameCC"
+    Y        ingreso el password "passCC"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -40,18 +40,13 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | mz | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y doy click en agregar Modem
-#	Y        doy click en agregar "<svaInternet>"
-#	Y        doy click en añadir SVA
-#	Y        doy click en agregar Bloque "<bloque>"
-#	Y        doy click en Guardar cambios
-	#Y doy click en agregar Modem
+    Y        doy click en agregar Modem
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
@@ -59,11 +54,11 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Y        ingreso email "prueba@prueba.com" y lo repito
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoPlan | nombrePlan  | bloque | svaInternet           |
@@ -98,7 +93,7 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -121,13 +116,23 @@ Característica: AT-DT016_Alta Mono Linea Voz Modem sva linea Call center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-	  #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | bloque | svaInternet           | svaLinea             |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | PACK ANTIVIRUS MCAFEE | Plan Multidestino 20 |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1029392562 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS | HBO    | PACK ANTIVIRUS MCAFEE | Plan Multidestino 20 |
 
 
 

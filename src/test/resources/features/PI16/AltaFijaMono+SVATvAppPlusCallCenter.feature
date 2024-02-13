@@ -16,7 +16,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
 
-Característica: ALTA FIJA MONO + SVA Movistar Tv App Plus Call Center
+Característica: ALTA FIJA Mono Internet + SVA Movistar Tv App Plus Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -46,7 +46,7 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Plus Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -75,5 +75,5 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Plus Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                               |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono      | Internet Movistar RA S23 200 Mbps |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                        |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | Internet Movistar RA S23 200 Mbps |

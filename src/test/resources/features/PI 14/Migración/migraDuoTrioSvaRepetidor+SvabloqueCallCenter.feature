@@ -57,4 +57,4 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                              | bloque | svarepetidor          |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | HBO    | REP. SMART WIFI Venta |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | HBO    | REP. SMART WIFI Venta |

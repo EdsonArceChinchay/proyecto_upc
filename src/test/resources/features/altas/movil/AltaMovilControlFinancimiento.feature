@@ -63,7 +63,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
 
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1024268237 | Postpago  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | planMovil |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 | Postpago  |
 
 

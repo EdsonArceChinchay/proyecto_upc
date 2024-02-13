@@ -62,4 +62,4 @@
 
      Ejemplos:
        | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | Sva Linea            |
-       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA D22 50 MBPS | Plan Multidestino 20 |
+       | usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA D22 50 MBPS | Plan Multidestino 20 |

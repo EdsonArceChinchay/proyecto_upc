@@ -5,20 +5,20 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT038
-##GDAP: GDAP-#QAN3
+##GDAP: GDAP-#QAN1
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 31/12/2023
+##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
 
-Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
+Característica: AT-DT038_Completa Planta Fija Alta Movil con documento CE en Call Center
 
-  @CompletaPlantaFijaPortabilidad
-  Esquema del escenario: Completa Planta Fija Porta Directa Movil
+  @CompletaPlantaFijaAltaMovil
+  Esquema del escenario: Completa Planta Fija Alta Movil con documento CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -37,25 +37,19 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
       | QAN     | MCCCDIECISEIS | masculino |
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
-    Y        doy click en el boton portabilidad
+    Y        selecciono el boton Linea Nueva Movil
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
-    Y        escojo tipo de linea "<tipoLinea>"
-    Y        escojo tipo de operador "<operador>"
-    Y        doy click en el boton Consultar Portabilidad
-    Y        valido que este en la seccion Postpago o Prepago
-    Y        selecciono el plan "Postpago" que desea
-    Y        doy click en el boton Siguiente
     Entonces me muestra la pantalla para verificar la direccion
     Y        presiono el boton Confirmar direccion
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
-#    Y        valido que me encuentre en la pantalla agendamiento
-#    Y        ingreso los datos de agendamiento
-#    Y        presiono el boton confirmar agendamiento
-#    Y        presiono Consultar ubicacion
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+    Y        presiono Consultar ubicacion
     Entonces me muestra la pantalla para ingresar la direccion de entrega
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
@@ -64,8 +58,8 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
@@ -75,25 +69,23 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso el callId "910690021"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/12/1990 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy click en validar identidad del titular
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombrePadre   | nombreMadre   | distritoNac   |
-      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
-    Y        doy click en Finalizar registro
+    Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -102,10 +94,6 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-
-      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-#      | usuario interno |          |          | Bienvenid@ | DNI           | 45770292  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
-#      | usuario interno |  | | Bienvenid@ | DNI           | 45770292  | 957382783 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
-      | usuario interno | vcarpioat | Tele#jNzj&a97 | Bienvenid@ | DNI           | 44160111  | 914616599 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 14046680        |
-
-
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | numeroExistente |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000312 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 12776246        |
+#      | usuario interno |        | | Bienvenid@ | CE            | 1100000307 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 13998362        |

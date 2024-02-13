@@ -3,19 +3,19 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT017
 ##GDAP: GDAP-979
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija
 
-Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -47,7 +47,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
    # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
+    #  | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
     #  | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
@@ -79,7 +79,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
 
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD | HBO    | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD | HBO    | correo@gmail.com |
 
 

@@ -13,7 +13,7 @@
 ##ENCARGADO: Edson Arce
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps
+@BERSERKERS @DoneDevOps @AltaFija
 Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
 
   Antecedentes:
@@ -45,7 +45,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
      # | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
 #   Y        valido si el usuario aplica para upfront
@@ -70,9 +70,9 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
      #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
     Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre   | nombrePadre   | distritoNac   |
+      | nombreMadre | nombrePadre | distritoNac            |
     #  | DEYSI | JOSE | SULLANA |
-      | MARIBEL | RUBEN | SAN JUAN DE MIRAFLORES |
+      | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -83,6 +83,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente           | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                               |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ| 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS |
-      #| usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                               |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS |
+      #| usuario externo |userNameST | passST | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|

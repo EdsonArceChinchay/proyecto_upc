@@ -50,7 +50,7 @@ Característica: Caeq Mas Casi por call center
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"

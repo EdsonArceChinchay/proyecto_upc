@@ -1,19 +1,19 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
+##MODULO: ALTA FIJA
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-1433
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO: Carlos Ruiz
+##DATA: REUSABLE
+##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 25/01/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija
 Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
 
   @AltaMonoTVCC
@@ -75,5 +75,5 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1001128911 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL RA M23 |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              |
+      | usuario externo | userNameCC | passST   | Bienvenid@ | CE            | 1001128911 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL RA M23 |

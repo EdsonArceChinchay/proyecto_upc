@@ -58,4 +58,4 @@ Característica: AT-DT082_Migracion de Trio a trio  por el canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                                               |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464993 | tester@tester.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 300 MBPS |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464993 | tester@tester.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 300 MBPS |

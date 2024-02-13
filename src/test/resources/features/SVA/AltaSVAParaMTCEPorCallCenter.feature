@@ -17,11 +17,9 @@
 
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @SvaMTCC
   Esquema del escenario: Alta SVA a un MT con documento CE en canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -36,9 +34,6 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        selecciono el boton agregar sva
     Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro
-#    Y        valido que me encuentre en la pantalla agendamiento
-#    Y        ingreso los datos de agendamiento
-#    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -60,5 +55,5 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120377222 | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120377222 | test@hotmail.com |

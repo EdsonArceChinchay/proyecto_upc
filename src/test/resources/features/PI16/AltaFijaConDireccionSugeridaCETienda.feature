@@ -1,28 +1,26 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-991
-##SPRINT CREADO:
+##GDAP: GDAP-1390
+##SPRINT CREADO: PI16_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##DATA: REUSABLE
+##ENCARGADO: Eloy Milla
+##FECMOD: 04/12/2023
 
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
+@BERSERKERS @DoneDevOps @DoneDevOpsPI16
 
-Característica: Alta Trio Upfront canal Retail
+Característica: Alta Duo con direccion sugerida con documento CE por Canal Tiendas
 
-  Antecedentes:
+
+  @AltaDuoDireccionSugeridaTienda
+  Esquema del escenario: Alta Duo con direccion sugerida
     Dado     que abro la pagina de movistar
-
-  @AltaTrio_UpfrontCanalRetail
-  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,10 +30,9 @@ Característica: Alta Trio Upfront canal Retail
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos | genero    |
+      | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -45,30 +42,28 @@ Característica: Alta Trio Upfront canal Retail
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+    Y        selecciono una direccion sugerida
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso telefono de contacto
+    Y        presiono el boton Confirmar agendamiento
+    Y        ingreso email "prueba@gmail.com" y lo repito
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        ingreso los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 12/08/1990 | Albania      | Casado      |
+    Y        doy click en el boton confirmar
+    Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS

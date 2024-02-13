@@ -65,5 +65,5 @@ Característica: AT-DT025_Alta Movil Postpago Canal Tienda
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000112 | Postpago      | Plan Ilimitado Mi Movistar S/99.9 IV |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000112 | Postpago      | Plan Ilimitado Mi Movistar S/99.9 IV |

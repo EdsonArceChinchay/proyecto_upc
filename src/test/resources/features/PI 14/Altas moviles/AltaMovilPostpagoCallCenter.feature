@@ -4,25 +4,22 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT096
 ##GDAP: GDAP-588
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 23/12/2023
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11
 
-Característica: AT-DT096_Alta Movil Postpago CALL CENTER
-
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI14 @AltaMovil
+Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Center
 
   @MVP_Alta_Postpago_CALL_CENTER
   Esquema del escenario: Alta movil Postpago solo chip
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -47,12 +44,6 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-#    Y        selecciono el plan_movil Postpago
-#    Y        selecciono el boton de eleccion de planes
-    #Y        selecciono el plan "Postpago" que desea
-    #Y        doy click en el boton Siguiente
-    #Y        valido que este en la pagina de ofertas sugeridas
-    #Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
     #Y        valido que este en la seccion de registro "<nombrePlan>"
@@ -66,7 +57,7 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -100,10 +91,9 @@ Característica: AT-DT096_Alta Movil Postpago CALL CENTER
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
-
     Ejemplos:
       | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor                  | nombreCliente              | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      #| usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
+      #| usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
 #      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
       | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 

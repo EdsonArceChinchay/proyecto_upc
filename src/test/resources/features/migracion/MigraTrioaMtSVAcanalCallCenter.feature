@@ -47,8 +47,8 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A1 | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
@@ -69,5 +69,5 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 42465007  | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 42465007  | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |

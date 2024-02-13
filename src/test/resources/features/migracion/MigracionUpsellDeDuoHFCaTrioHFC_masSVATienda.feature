@@ -57,4 +57,4 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda (HFC
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan   | sva                   |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA D22 | PACK ANTIVIRUS MCAFEE |
+      | usuario externo |userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464993 | tester@tester.com | Trio          | RA D22 | PACK ANTIVIRUS MCAFEE |

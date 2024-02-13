@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
 Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
 
@@ -47,7 +47,7 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -78,4 +78,4 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                      | decodificador | svarepetidor              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 | 25.90         | Repetidor WIFI PLUS Venta |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 | 25.90         | Repetidor WIFI PLUS Venta |

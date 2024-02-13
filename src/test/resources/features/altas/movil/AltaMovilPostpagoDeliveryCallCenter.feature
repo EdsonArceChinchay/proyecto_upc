@@ -62,8 +62,8 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A1 | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -85,8 +85,8 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
    # Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                             | planMovil | timpoPermanencia | nombreEquipo | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1022420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 V | Postpago  | Sin permanencia  | IPHONE 13    | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                             | planMovil | timpoPermanencia | nombreEquipo | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1022420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 V | Postpago  | Sin permanencia  | IPHONE 13    | Al Contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso02
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -124,7 +124,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -147,7 +147,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | APPLE IPHONE 6S 16GB GRIS | Al contado |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | APPLE IPHONE 6S 16GB GRIS | Al contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso03
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -185,7 +185,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -208,7 +208,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | SAMSUNG GXY A20 NEGRO SM-A205G | Financiado 18 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/114.9 | Postpago  | 12 meses  | SAMSUNG GXY A20 NEGRO SM-A205G | Financiado 18 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso04
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -246,7 +246,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -268,7 +268,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/149.9 | Postpago  | 12 meses | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Financiado 12 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/149.9 | Postpago  | 12 meses | IPHONE 11 PRO MAX GRIS MWHJ2LZ/A 256GB | Financiado 12 cuotas |
 #
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso05
@@ -307,7 +307,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -329,7 +329,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/85.9 | Postpago  | 12 meses  | HUAWEI P30 AZUL ELLE-L04 | Financiado 12 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/85.9 | Postpago  | 12 meses  | HUAWEI P30 AZUL ELLE-L04 | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso06
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -367,7 +367,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -389,7 +389,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/55.9 III | Postpago  | 12 meses  | IPHONE XS MAX MT532LZ/A 256GB GRIS | Financiado 12 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/55.9 III | Postpago  | 12 meses  | IPHONE XS MAX MT532LZ/A 256GB GRIS | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso07
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -427,7 +427,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -449,7 +449,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/75.90 II | Postpago  | 12 meses  | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Al contado |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/75.90 II | Postpago  | 12 meses  | IPHONE 12 PRO MAX GRIS MGDC3LZ/A 256GB | Al contado |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso08
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -487,7 +487,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -509,7 +509,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Entonces visualizo en pantalla el mensaje de exito
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 | Postpago  | Sin permanencia  | HUAWEI P10 NEGRO | Financiado 12 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/99.9 | Postpago  | Sin permanencia  | HUAWEI P10 NEGRO | Financiado 12 cuotas |
 #
 #  @AltaMovilPostPagoDeliveryCallCenter_Caso09
 #  Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
@@ -547,7 +547,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        presiono el boton consultar cobertura
 #    Y        selecciono el tipo de entrega "Delivery Express"
@@ -570,4 +570,4 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                            | planMovil | timpoPermanencia | nombreEquipo                       | tipoPago   |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/65.9 II | Postpago  | 12 meses | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Financiado 12 cuotas |
+#      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar S/65.9 II | Postpago  | 12 meses | SAMSUNG GXY S10 NEGRO SM-G973FZ 128GB | Financiado 12 cuotas |

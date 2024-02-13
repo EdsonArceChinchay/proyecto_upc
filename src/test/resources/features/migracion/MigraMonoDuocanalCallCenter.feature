@@ -57,4 +57,4 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento    | correo            | tipoPlanHogar | plan                              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 302010065403 | tester@tester.com | Mono          | INTERNET MOVISTAR RA D22 150 MBPS |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 302010065403 | tester@tester.com | Mono          | INTERNET MOVISTAR RA D22 150 MBPS |

@@ -58,4 +58,4 @@ Característica: AT-DT047_CAEQ + capl permanencia 12 meses con CEX Canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | usuario externo |userNameST | passST | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |

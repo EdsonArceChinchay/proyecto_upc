@@ -58,5 +58,5 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
  #   Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 10094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

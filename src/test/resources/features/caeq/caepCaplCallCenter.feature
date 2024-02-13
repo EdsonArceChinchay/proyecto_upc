@@ -48,7 +48,7 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | EDIFICIO | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
@@ -68,4 +68,4 @@ Característica: AT-DT045_Caeq Mas Capl por call center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465134 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465134 | Postpago | Plan Movil Movistar Total ilim 26 GB |

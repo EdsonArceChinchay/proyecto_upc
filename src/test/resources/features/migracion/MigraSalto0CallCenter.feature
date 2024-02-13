@@ -61,4 +61,4 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464839 | correo@gmail.com |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042464839 | correo@gmail.com |

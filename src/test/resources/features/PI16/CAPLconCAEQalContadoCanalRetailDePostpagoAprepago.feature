@@ -39,8 +39,8 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        selecciono añadir equipos
     #Y        selecciono el boton Ver detalle del servicio "VIVO V21 NEGRO 5G C/PACK"
     E        ingreso permanencia, tipo de pago y equipo
-    | permanencia     | tipoPago   | equipoName                              |
-    | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+      | permanencia     | tipoPago   | equipoName               |
+      | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        presiono el boton seleccionar
     #Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
@@ -55,5 +55,5 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ |
+      | tipoUsuario     | userName    | password |
+      | usuario externo | userNameDLC | passDLC  |

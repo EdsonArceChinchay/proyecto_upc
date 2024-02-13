@@ -50,4 +50,4 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
 
     Ejemplos:
       | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | usuario externo | userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |

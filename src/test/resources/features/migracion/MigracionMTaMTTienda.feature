@@ -63,8 +63,8 @@ Característica: Migracion de MT a MT en Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     | numeroMt   |
-      | usuario interno |               | | Bienvenid@ | CE            | 1100000311 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV | 5010192666 |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     | numeroMt   |
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000311 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV | 5010192666 |
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||
 #      | usuario interno | | | Bienvenid@ | CE            | 222103292  | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV ||

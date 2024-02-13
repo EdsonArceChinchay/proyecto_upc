@@ -62,74 +62,69 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
 
+    @FindBy(xpath = "//*[@formcontrolname='lot' or @name='lot']")
+    protected WebElement inputLot;
+    @FindBy(xpath = "//*[@formcontrolname='houseType']")
+    protected WebElement inputHouseType;
+    @FindBy(xpath = "//*[@formcontrolname='houseName' or @name='houseName']")
+    protected WebElement inputHouseName;
+    @FindBy(xpath = "//*[@formcontrolname='block' or @name='block']")
+    protected WebElement inputBlock;
+
+    @FindBy(xpath = "//*[@formcontrolname='apple' or @name='apple']")
+    protected WebElement inputApple;
+
+
     public void manzana(String manzana) {
         if (manzana != null) {
             bloque(manzana);
-/*            WebElement Mz = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
-            esperaProgresiva(driver(), 3, 5, Mz);
-                click(Mz, 5);
-                Mz.sendKeys(Keys.CONTROL + "a");
-                Mz.sendKeys(Keys.DELETE);
-                type(Mz, manzana);
-            */
         }
     }
 
     public void lote(String lote) {
         if (lote != null) {
-            WebElement Lte = find().getElementByXPath("//*[@formcontrolname='lot' or @name='lot']");
-            esperaProgresiva(driver(), 3, 5, Lte);
-            click(Lte);
-            //Lte.sendKeys(Keys.CONTROL + "a");
-            //Lte.sendKeys(Keys.DELETE);
-            type(Lte, lote);
+            esperaProgresiva(driver(), 3, 5, inputLot);
+            click(inputLot);
+            type(inputLot, lote);
         }
     }
 
     public void tipoVivienda(String tipoVivienda) {
-        if (tipoVivienda != null) {
-            UtilWeb.waitForSeconds(1);
-            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='houseType']");
-            esperaProgresiva(driver(), 3, 5, listElementPLan);
-            waitUntilElementIsClickable(listElementPLan, 10).click();
-
+        boolean existe = validateInputAndLocator(tipoVivienda,inputHouseType);
+        if (existe) {
+            waitUntilElementIsClickable(inputHouseType, 10).click();
             String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
             String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
-
         }
     }
 
     public void nombreVivienda(String nomVivienda) {
-        if (nomVivienda != null) {
-            WebElement Nvivienda = find().getElementByXPath("//*[@formcontrolname='houseName' or @name='houseName']");
-            esperaProgresiva(driver(), 3, 5, Nvivienda);
-            waitUntilElementIsClickable(Nvivienda, 15).click();
-            type(Nvivienda, nomVivienda);
+        boolean existe = validateInputAndLocator(nomVivienda,inputHouseName);
+        if (existe) {
+            waitUntilElementIsClickable(inputHouseName, 15).click();
+            type(inputHouseName, nomVivienda);
         }
+
     }
 
     public void bloque(String bloque) {
-        // WebElement Nbloque = validarElementoPresente(driver(), "//*[@formcontrolname='block' or @name='block']");
-        if (bloque != null) {
-            WebElement Nbloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
-            esperaProgresiva(driver(), 3, 5, Nbloque);
-            waitUntilElementIsClickable(Nbloque, 15).click();
-            Nbloque.sendKeys(Keys.CONTROL + "a");
-            Nbloque.sendKeys(Keys.DELETE);
-            type(Nbloque, bloque);
+        boolean existe = validateInputAndLocator(bloque,inputBlock);
+        if (existe) {
+            js().scrollElementTop(inputBlock);
+            waitUntilElementIsClickable(inputBlock, 15).click();
+            inputBlock.sendKeys(Keys.CONTROL + "a");
+            inputBlock.sendKeys(Keys.DELETE);
+            type(inputBlock, bloque);
         }
     }
 
     public void manzanaDir(String manzana) {
-        if (manzana != null){
-            WebElement Nmanzana = validarElementoPresente(driver(), "//*[@formcontrolname='apple' or @name='apple']");
-            if (Nmanzana != null && Nmanzana.isEnabled()) {
-                esperaProgresiva(driver(), 3, 5, Nmanzana);
-                waitUntilElementIsClickable(Nmanzana, 15).click();
-                type(Nmanzana, manzana);
-            }
+        boolean existe = validateInputAndLocator(manzana,inputApple);
+        if (existe && inputApple.isSelected()) {
+            waitUntilElementIsClickable(inputApple, 15).click();
+            type(inputApple, manzana);
         }
     }
 
@@ -236,9 +231,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoPago(String tipoPago) {
-//        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         esperaProgresiva(driver(), 3, 5, pageType);
-//        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         click(pageType);
         String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
         String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
@@ -281,15 +274,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         System.out.println("Se escribió el correo");
         UtilWeb.waitForSeconds(1);
 
-//        UtilWeb.waitForSeconds(30);//10
-//        waitUntilElementIsVisible(esperarCorreo, 50);
-//        UtilWeb.waitForSeconds(3);
-//        WebElement correoElectronico = find().getElementByXPath("(//div[@class='cont-input-icon mb-20 tdp-col-lg-7 tdp-col-12'])[1]/tdp-st-input-text");
-//        click(correoElectronico);
-//        correoElectronico.sendKeys(Keys.CONTROL + "a");
-//        correoElectronico.sendKeys(Keys.DELETE);
-//        type(correoElectronico, correo);
-//        UtilWeb.waitForSeconds(1);
     }
 
     public void confirmarCorreo(String correo) {
@@ -449,6 +433,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
         btnIrAMovistar.click();
         UtilWeb.waitForSeconds(5);
+    }
+
+    public Boolean validateInputAndLocator(String input,WebElement element){
+        boolean existe= false;
+        if (input!=null){
+            try{
+                existe= element.isDisplayed() && element.isEnabled() ;
+            }
+            catch (NoSuchElementException e){
+                e.getMessage();
+            }
+        }
+
+        return existe;
+
     }
 
 

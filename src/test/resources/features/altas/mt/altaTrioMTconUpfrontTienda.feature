@@ -45,7 +45,7 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
 #    Y        ingreso la referencia de la direccion "<referencia>"
 #    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+#      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
 #      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
 #    Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
@@ -81,7 +81,7 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
 #
 #    Ejemplos:
 #      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | mz | lote | piso | int | conjunto | conjHabit | numContacto | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac            |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 12312342388 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 12312342388 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | a  | 2    | 2    | 1   | UR       | casa      | 942434295   | eloy.m@gmail.com | discapacitado  | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
 
 
   @AltaTriomt
@@ -111,8 +111,8 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -124,7 +124,7 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
     Y        presiono el boton confirmar agendamiento
 #   Y        presiono Consultar ubicacion
 #   Y        ingreso la informacion del lugar de instalacion
-#      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
 #    Y        Consulto ubicacion
 #    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -147,5 +147,5 @@ Característica: AT-DT041_Alta Trio MT - Upfront Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo BA 1 Gb RA + 95 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo BA 1 Gb RA + 95 Gb RA | correo@gmail.com |

@@ -112,21 +112,21 @@ public class HomePage extends WebBase {
     }
 
     public void seleccionoElIDDeClienteNro(String nro) {
-        String elXpath = "(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]";
-        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
-
+        UtilWeb.waitForSeconds(10);
         WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]");
-        waitUntilElementIsVisible(nroItem, 10).click();
+        esperaProgresiva(driver(),3,120,nroItem);
+        waitUntilElementIsClickable(nroItem,100);
+        nroItem.click();
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
-        waitUntilElementIsVisible(btnGuardar, 10).click();
+        esperaProgresiva(driver(),2,20,btnGuardar);
+        btnGuardar.click();
     }
 
     public void clickBtnConsultar() {
         waitUntilElementIsVisible(btnConsultar, 10);
         click(btnConsultar);
     }
-
 
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
         UtilWeb.waitForSeconds(5);
