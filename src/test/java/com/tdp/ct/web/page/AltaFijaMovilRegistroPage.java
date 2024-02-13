@@ -897,7 +897,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         boolean existe = false;
         esperaProgresiva(driver(), 3, 5, msjExitoso);
-        existe = waitUntilElementIsVisible(msjExitoso, 30).isDisplayed();
+        existe = waitUntilElementIsVisible(msjExitoso, 180).isDisplayed();
+        UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         return existe;

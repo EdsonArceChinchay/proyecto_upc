@@ -97,4 +97,5 @@ Característica: AT-DT038_Alta MT con nuevo cliente con documento CE por Call Ce
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
 

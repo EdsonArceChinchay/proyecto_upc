@@ -58,7 +58,7 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -92,9 +92,8 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor                  | nombreCliente              | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      #| usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal |CE            | 1075266100  | Postpago      | Plan Ilimitado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | nombreCliente     | tipoDocumento | documento  | tipoPlanMovil | nombrePlan     |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal | CE            | 1075266100 | Postpago      | Plan Ilimitado |
 #      | usuario interno |  | | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
-      | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
-
+#      | usuario interno |               || Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #chorillos 150108

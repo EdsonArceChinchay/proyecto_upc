@@ -24,13 +24,14 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "14353885"
+    Cuando   selecciono el boton Ver detalle del servicio "<servicio>"
     Y        selecciono el boton agregar sva
     Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Cuando   doy clic a iniciar registro

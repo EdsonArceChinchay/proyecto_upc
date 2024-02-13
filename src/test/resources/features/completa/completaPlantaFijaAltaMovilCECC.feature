@@ -69,8 +69,8 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil con documento CE en Ca
     #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso el callId "910690021"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso el callId "910690021"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -86,6 +86,9 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil con documento CE en Ca
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -96,4 +99,11 @@ Característica: AT-DT038_Completa Planta Fija Alta Movil con documento CE en Ca
     Ejemplos:
       | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | numeroExistente |
       | usuario interno |          |          | Bienvenid@ | CE            | 1100000312 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 12776246        |
-#      | usuario interno |        | | Bienvenid@ | CE            | 1100000307 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 13998362        |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 221011210  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 984685176       |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000312 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA |                 |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000200 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA |                 |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 221011316  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 14013112        |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000265 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 13095674        |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000328 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 13979978        |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000312 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 12776246        |
+#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000307 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 13998362        |

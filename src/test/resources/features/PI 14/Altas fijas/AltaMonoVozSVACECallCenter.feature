@@ -4,29 +4,28 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: REVISANDO-APROBACION DE SOLICITUD
 ##CODIGO: AT-DT093
 ##GDAP: GDAP-1139
-##SPRINT CREADO:
+##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##DATA: REUSABLE
+##ENCARGADO: CRISTIAN HUNGARO
+##FECMOD: 05/02/2024
+##COMENTARIO: FALTA QUE SE RESUELVAN LAS OBSERVACIONES
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
-
 Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltamonovozsvaLineaCallCenter
-  Esquema del escenario: Alta mono voz + sva Linea  en Canal Call Center
+  Esquema del escenario: Alta Mono voz + SVA con documento CE en Canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -47,8 +46,8 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -61,11 +60,6 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "testing-1@tester.com"
     Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
-#	Y        doy click en validar identidad del titular
-#	Y        ingreso los datos solicitados para la validacion del cliente
-#	  | nombreMadre   | nombrePadre   | distritoNac   |
-#	  | <nombreMadre> | <nombrePadre> | <distritoNac> |
-	#Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -73,12 +67,21 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y       doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
-	#Y        doy click en Finalizar registro
     Y        doy click en el boton de continuar
-	#Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1101000013 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000013 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

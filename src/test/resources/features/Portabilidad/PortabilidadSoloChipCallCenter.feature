@@ -89,7 +89,8 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                              | nombreMadre | nombrePadre | distritoNac |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento             | documento | numero    | tipoLinea | operador | tipoPlanMovil                     | nombrePlan                              | nombreMadre | nombrePadre | distritoNac |
+  #    | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI       | 75102009  | 920956347 | Postpago | Plan Ilimitado Mi Movistar S/69.9 |
 #      | usuario interno |          |          | Bienvenid@  | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-      | usuario interno |          |          | Bienvenid@ | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
+      | usuario interno |          |              | Bienvenid@ | DNI                       | 45770292  | 918416062 | Prepago   | BITEL    | Postpago                          | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
 

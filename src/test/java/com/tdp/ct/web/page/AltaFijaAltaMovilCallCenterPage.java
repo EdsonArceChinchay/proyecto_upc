@@ -90,7 +90,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoVivienda(String tipoVivienda) {
-        boolean existe = validateInputAndLocator(tipoVivienda,inputHouseType);
+        boolean existe = validateInputAndLocator(tipoVivienda, inputHouseType);
         if (existe) {
             waitUntilElementIsClickable(inputHouseType, 10).click();
             String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
@@ -101,7 +101,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void nombreVivienda(String nomVivienda) {
-        boolean existe = validateInputAndLocator(nomVivienda,inputHouseName);
+        boolean existe = validateInputAndLocator(nomVivienda, inputHouseName);
         if (existe) {
             waitUntilElementIsClickable(inputHouseName, 15).click();
             type(inputHouseName, nomVivienda);
@@ -110,7 +110,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(bloque,inputBlock);
+        boolean existe = validateInputAndLocator(bloque, inputBlock);
         if (existe) {
             js().scrollElementTop(inputBlock);
             waitUntilElementIsClickable(inputBlock, 15).click();
@@ -121,7 +121,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void manzanaDir(String manzana) {
-        boolean existe = validateInputAndLocator(manzana,inputApple);
+        boolean existe = validateInputAndLocator(manzana, inputApple);
         if (existe && inputApple.isSelected()) {
             waitUntilElementIsClickable(inputApple, 15).click();
             type(inputApple, manzana);
@@ -435,20 +435,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public Boolean validateInputAndLocator(String input,WebElement element){
-        boolean existe= false;
-        if (input!=null){
-            try{
-                existe= element.isDisplayed() && element.isEnabled() ;
-            }
-            catch (NoSuchElementException e){
+    public Boolean validateInputAndLocator(String input, WebElement element) {
+        boolean existe = false;
+        if (input != null) {
+            try {
+                existe = element.isDisplayed() && element.isEnabled();
+            } catch (NoSuchElementException e) {
                 e.getMessage();
             }
         }
-
         return existe;
-
     }
-
 
 }

@@ -77,3 +77,5 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                               | correo         |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1632547925 | Trío HD 600 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |
+#      | usuario interno || | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000307 | Trío HD 600 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |
+#      | usuario interno || | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000312 | Trío HD 600 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |

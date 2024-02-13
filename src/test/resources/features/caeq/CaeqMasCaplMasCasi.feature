@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
+Característica: AT-DT046_Caeq Mas Capl Mas Casi con documento CE por canal Call Center
 
   @CaeqCaplCasi
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -34,8 +34,8 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP    |
+      | permanencia | tipoPago   | equipoName                               |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
     Y        selecciono tipo de pago Al Contado
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
@@ -49,7 +49,7 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -61,19 +61,25 @@ Característica: AT-DT046_Caeq Mas Capl Mas Casi por call center
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000273 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000808 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000806 | Postpago | Plan Movil Movistar Total ilim |
+#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000755 | Postpago | Plan Movil Movistar Total ilim |
