@@ -3,15 +3,15 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT052
 ##GDAP: GDAP-598
-##SPRINT CREADO:
+##SPRINT CREADO: PI12_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
 Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
@@ -32,8 +32,6 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
       | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameSTCE | passSTCE | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameCC2  | passCC2  | Bienvenid@ | CAJAMARCA                 |
       | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
       | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
 
@@ -53,8 +51,6 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
       | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameSTCE | passSTCE | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameCC2  | passCC2  | Bienvenid@ | CAJAMARCA                 |
       | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
       | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
 

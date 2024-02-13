@@ -6,22 +6,20 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT017
 ##GDAP: GDAP-979
-##SPRINT CREADO:
+##SPRINT CREADO: PI
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija
 
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaSVABloqueHBO
   Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -37,7 +35,6 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
       | nombres | apellidos | genero    |
       | Juan    | Mendoza   | masculino |
     Y        selecciono el boton Linea Nueva Hogar
-#    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -76,7 +73,8 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |

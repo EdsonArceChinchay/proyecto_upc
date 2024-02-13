@@ -6,12 +6,12 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT009
 ##GDAP: GDAP-577
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 10/01/2024
+##FECMOD: 12/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision @AltaFija
 Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tienda

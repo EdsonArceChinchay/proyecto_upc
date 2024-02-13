@@ -6,22 +6,20 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT018
 ##GDAP: GDAP-591
-##SPRINT CREADO:
+##SPRINT CREADO: PI12_SP5
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija
 
 Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaTrioConBloqueHdUpfrontCallCenter
   Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -72,7 +70,8 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | tipoValidacion | nombreMadre | nombrePadre | distritoNac |

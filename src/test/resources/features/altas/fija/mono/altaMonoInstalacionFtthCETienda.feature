@@ -6,12 +6,12 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT011
 ##GDAP: GDAP-582
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 12/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija
 Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda

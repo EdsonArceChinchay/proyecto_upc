@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 25/01/2024
+##FECMOD: 12/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija
 Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center

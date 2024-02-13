@@ -1,19 +1,19 @@
 #language:es
-##CREADOR:
+##CREADOR:  CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-
-##SPRINT CREADO:
+##SPRINT CREADO: PI18_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 09/02/2024
+##DATA: REUSABLE
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija
 Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tienda
 
   @AltaMonoVozSVATienda

@@ -6,12 +6,12 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT007
 ##GDAP: GDAP-576
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 08/02/2024
+##FECMOD: 12/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01 @AltaFija
 Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Retail
