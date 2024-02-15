@@ -4,26 +4,22 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1238
-##SPRINT CREADO:
+##SPRINT CREADO: PI14_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: MARIA SANCHEZ
-##FECMOD: 30/03/2023
-
+##FECMOD: 14/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
-
-Característica: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail
   Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -81,5 +77,5 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                    | decodificador | svarepetidor          |
-      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CE            | 10000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                     | decodificador | svarepetidor          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | Trio Mov. Voz Int. Estandar HD RA O23 100 Mbps | 9.90          | REP. SMART WIFI Venta |

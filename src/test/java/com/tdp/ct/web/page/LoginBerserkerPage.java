@@ -3,22 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.time.Duration;
+import java.io.*;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
@@ -232,28 +224,41 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String param) {
-        String value;
+        String value = "";
         if (!param.isEmpty()) {
-            File archiveCredentials= new File("src/test/resources/features/login/credentials.txt");
+            File archiveCredentials = new File("src/test/resources/features/login/credentials.txt");
 
             Map<String, String> parametros = new HashMap<>();
-
             try (Scanner scanner = new Scanner(archiveCredentials)) {
                 while (scanner.hasNextLine()) {
                     String linea = scanner.nextLine();
                     String[] partes = linea.split("=");
-                    String nombreParametro = partes[0].trim();
-                    String valorParametro = partes[1].isEmpty() || partes[1].isBlank() || partes[1] == null ? " " : partes[1].trim();
-                    parametros.put(nombreParametro, valorParametro);
+                    if (partes.length == 2) {
+                        String nombreParametro = partes[0].trim();
+                        String valorParametro = partes[1].trim();
+                        parametros.put(nombreParametro, valorParametro);
+                    }
                 }
             } catch (Exception ex) {
                 System.out.println("Error al leer el archivo: " + ex.getMessage());
             }
-            value = parametros.get(param);
-        } else {
-            value = "";
+            value = (parametros.get(param) != null) ? parametros.get(param) : "";
         }
         return value;
     }
+
+//    public String readValues2(String param){
+//        File archivo = new File("https://everisgroup-my.sharepoint.com/personal/cruizato_emeal_nttdata_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments%2Fcredentials%2Etxt&parent=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments&ga=1");
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+//            String linea;
+//            while ((linea = br.readLine()) != null) {
+//                System.out.println(linea);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return "";
+//    }
 
 }

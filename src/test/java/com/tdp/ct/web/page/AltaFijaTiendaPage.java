@@ -309,8 +309,6 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void ingresarDatosAgendamientoParaRUC() {
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;

@@ -1,23 +1,22 @@
 #language: es
-
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT
 ##GDAP: GDAP-1435
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
+##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 30/01/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA
 
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
-  @SvaMTCC
+  @SvaMTCE_CC
   Esquema del escenario: Alta SVA a un MT con documento CE en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

@@ -1,5 +1,5 @@
 #language:es
-##CREADOR:  HENRY
+##CREADOR: HENRY
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
