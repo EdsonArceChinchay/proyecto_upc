@@ -55,5 +55,5 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100777891 | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100777891 | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
 

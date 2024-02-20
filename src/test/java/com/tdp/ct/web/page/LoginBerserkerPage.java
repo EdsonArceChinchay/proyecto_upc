@@ -3,21 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
+import java.io.*;
+import java.util.*;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
@@ -89,46 +82,47 @@ public class LoginBerserkerPage extends WebBase {
         return msgErrorCredential.getText().trim().toLowerCase();
     }
 
-    public void regresarPaginaInicio(){
-        esperaProgresiva(driver(),3,5,btnInicio);
+    public void regresarPaginaInicio() {
+        esperaProgresiva(driver(), 3, 5, btnInicio);
         WebElement divElement = btnInicio.findElement(By.xpath("./.."));
         divElement.click();
-        esperaProgresiva(driver(),3,5,msgHome);
+        esperaProgresiva(driver(), 3, 5, msgHome);
     }
+
     public void clickBtnIniciarSesion() {
         Addons.reiniciaTimeout(driver());
-        Addons.esperaProgresiva(driver(),3,5,btnIniciarSesion);
+        Addons.esperaProgresiva(driver(), 3, 5, btnIniciarSesion);
         click(btnIniciarSesion);
     }
 
     public void selectTipoUsuario(String usuario) {
-        esperaProgresiva(driver(),3,5,tipoUsuario);
+        esperaProgresiva(driver(), 3, 5, tipoUsuario);
         Select usuarioSelect = new Select(tipoUsuario);
         usuarioSelect.selectByVisibleText(usuario);
         UtilWeb.waitForSeconds(1);
     }
 
     public void writeUserName(String name) {
-        type(inputNameUsuario, name);
+        type(inputNameUsuario, readValues(name));
         UtilWeb.waitForSeconds(1);
     }
 
     public void writePassword(String pass) {
-        type(inputPassword, pass);
+        type(inputPassword, readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
 
     public void clickBtnContinuarHaciaHome() {
 
-        if(Addons.esEntornoProductivo()){
+        if (Addons.esEntornoProductivo()) {
             esperaProgresiva(driver(), 3, 5, btnContinuarProd);
             click(btnContinuarProd);
-        }else{
+        } else {
             esperaProgresiva(driver(), 3, 5, btnContinuar);
             click(btnContinuar);
         }
         UtilWeb.waitForSeconds(2);
-        esperaProgresiva(driver(),3,6,msgHome);
+        esperaProgresiva(driver(), 3, 6, msgHome);
     }
 
     public void clickBtnContinuar() {
@@ -144,7 +138,7 @@ public class LoginBerserkerPage extends WebBase {
     public void validarMsgHome(String msg) {
         UtilWeb.waitForSeconds(1);
         Addons.revisarModalError(driver());
-        esperaProgresiva(driver(),3,5,msgHome);
+        esperaProgresiva(driver(), 3, 5, msgHome);
         String expectedMsg = msg.trim().toLowerCase();
         String actualMsg = msgHome.getText().trim().toLowerCase();
         Assertions.assertTrue(actualMsg.contains(expectedMsg), "El mensaje obtenido: " + actualMsg + ", no coincide con lo esperado " + expectedMsg);
@@ -228,4 +222,43 @@ public class LoginBerserkerPage extends WebBase {
         Assertions.assertTrue(actualPrecioDescTV.contains(expectedPrecioDescTV), "El precio de descuento del componente TV: " + actualPrecioDescTV + ", no coincide con lo esperado " + expectedPrecioDescTV);
         UtilWeb.waitForSeconds(1);
     }
+
+    public String readValues(String param) {
+        String value = "";
+        if (!param.isEmpty()) {
+            File archiveCredentials = new File("src/test/resources/features/login/credentials.txt");
+
+            Map<String, String> parametros = new HashMap<>();
+            try (Scanner scanner = new Scanner(archiveCredentials)) {
+                while (scanner.hasNextLine()) {
+                    String linea = scanner.nextLine();
+                    String[] partes = linea.split("=");
+                    if (partes.length == 2) {
+                        String nombreParametro = partes[0].trim();
+                        String valorParametro = partes[1].trim();
+                        parametros.put(nombreParametro, valorParametro);
+                    }
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al leer el archivo: " + ex.getMessage());
+            }
+            value = (parametros.get(param) != null) ? parametros.get(param) : "";
+        }
+        return value;
+    }
+
+//    public String readValues2(String param){
+//        File archivo = new File("https://everisgroup-my.sharepoint.com/personal/cruizato_emeal_nttdata_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments%2Fcredentials%2Etxt&parent=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments&ga=1");
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+//            String linea;
+//            while ((linea = br.readLine()) != null) {
+//                System.out.println(linea);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return "";
+//    }
+
 }

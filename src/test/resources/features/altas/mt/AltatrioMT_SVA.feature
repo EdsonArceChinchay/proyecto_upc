@@ -44,7 +44,7 @@ Característica: AT-DT042_Alta MT MAS SVA
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+     # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -73,7 +73,7 @@ Característica: AT-DT042_Alta MT MAS SVA
 
     Ejemplos:
 
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan       |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | IPTV HD 600 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan       |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | IPTV HD 600 MBPS |
 
 

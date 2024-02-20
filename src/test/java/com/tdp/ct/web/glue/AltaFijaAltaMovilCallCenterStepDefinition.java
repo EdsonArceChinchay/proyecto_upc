@@ -35,7 +35,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     UtilWeb.waitForSeconds(5);
     String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
     String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
-    String vivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"vivienda");
+    String tipoVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"tipoVivienda");
     String nombreVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"nombreVivienda");
     String piso= UtilWeb.getValueFromDataTable(dirInstalacion,"piso");
     String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
@@ -44,7 +44,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     String bloqueDir= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
     altaFijaAltaMovilCallCenterStep.ingresarManzana(manzana);
     altaFijaAltaMovilCallCenterStep.ingresarLote(lote);
-    altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(vivienda);
+    altaFijaAltaMovilCallCenterStep.seleccionarTipoVivienda(tipoVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarNombreVivienda(nombreVivienda);
     altaFijaAltaMovilCallCenterStep.ingresarPiso(piso);
     altaFijaAltaMovilCallCenterStep.ingresarInterior(interior);

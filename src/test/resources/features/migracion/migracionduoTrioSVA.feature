@@ -15,13 +15,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G05
-Característica: AT-DT065_Migracion de duo a Trio + sva
+Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con documento CE por canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
-  @MigracionduoTrioSVA @MVP07 @Global @General
+  @MigracionduoTrioSVACC @MVP07 @Global @General
   Esquema del escenario:Migracion de duo a Trio + sva
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -51,13 +49,13 @@ Característica: AT-DT065_Migracion de duo a Trio + sva
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-	Y        doy clic para validar contrato hogar
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-	#Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464994 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                               |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464994 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 200 MBPS |

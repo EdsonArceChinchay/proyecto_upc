@@ -51,9 +51,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnEntendido;
 
     public void altaHogar() {
-        js().scrollElementTop(btnHogar);
         UtilWeb.waitForSeconds(15);
-        //esperaProgresiva(driver(),5,5,btnHogar);
+        esperaProgresiva(driver(),20,5,btnHogar);
+        js().scrollElementTop(btnHogar);
         click(btnHogar);
     }
 

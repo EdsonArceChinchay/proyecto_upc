@@ -1,11 +1,12 @@
 #language:es
+
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT089
-##GDAP: GDAP-1107
+##CODIGO: AT-DT095
+##GDAP: GDAP-990
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -13,15 +14,13 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
 
-Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
+Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Center
 
-  Antecedentes:
+  @AltaTrio_Upfront
+  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Dado     que abro la pagina de movistar
-
-  @AltaDuo_Sva_Modem_Sva_Internet
-  Esquema del escenario: Alta Duo SVA HBO CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,10 +31,10 @@ Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-	#Y        cierro popup de error
+    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero   |
-      | Lana    | Grey Khalifa | femenino |
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -45,32 +44,33 @@ Característica: AT-DT089_Alta Duo sva Modem + SVA Internet
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar para la instalacion
-      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-	#Y        doy click en agregar "<svaInternet>"
-    Y         doy click en agregar Modem
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "Angel.mf@gmail.com"
-    Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Alemania     | Casado       |
-    Y        doy clic para validar contrato hogar
+      | 01/12/1990 | Alemania     | Casado       |
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        visualizo en pantalla el mensaje de exito de la venta generada
-	#Y        valido que se muestre el detalle del pedido
-
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |

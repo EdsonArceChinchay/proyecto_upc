@@ -4,25 +4,23 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT087
 ##GDAP: GDAP-1137
-##SPRINT CREADO:
+##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 30/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
 
-Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA Repetidor con documento CE por canal Call Center
 
   @AltaDuosvaDecodificadorsvaRepetidorCallCenter
   Esquema del escenario: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -47,8 +45,8 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -72,10 +70,19 @@ Característica: AT-DT087_Alta Duo con sva Decodificador + sva Repetidor CALL CE
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-	  #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                      | decodificador | svarepetidor              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 | 25.90         | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                      | decodificador | svarepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA D22 | 25.90         | Repetidor WIFI PLUS Venta |

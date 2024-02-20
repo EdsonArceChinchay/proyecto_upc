@@ -14,10 +14,10 @@
 ##FECMOD: 03/11/2023
 
 @BERSERKERS @DoneDevOps
-Característica: CAEQ Financiado con CE por Canal Callcenter
+Característica: CAEQ Financiado con documento CE por Canal Call Center
 #CAEQ DROP
   @CaeqFinanciadoCECallcenter
-  Esquema del escenario: CAEQ Financiado con CE por Canal Callcenter
+  Esquema del escenario: CAEQ Financiado con documento CE por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -55,8 +55,8 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -83,6 +83,7 @@ Característica: CAEQ Financiado con CE por Canal Callcenter
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | 984594042        |
-#      | usuario interno |               | | 984594042        |
+      | tipoUsuario     | userName | password | EncontrarCelular |
+#      | usuario externo | userNameCC | passCC |984594042|
+      | usuario interno |          |          | 984594042        |
+

@@ -59,6 +59,6 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
+#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

@@ -21,8 +21,8 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Pre
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "nishuizas"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNamST"
+    Y        ingreso el password "passST"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"

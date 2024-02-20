@@ -7,10 +7,10 @@
 ##ESTADO:
 ##CODIGO: AT-DT001
 ##GDAP: GDAP-570
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
@@ -49,8 +49,8 @@ Característica: AT-DT001_Alta Duo Trio Call Center
     Y        ingreso la referencia de la direccion "casa naranja"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
@@ -63,19 +63,20 @@ Característica: AT-DT001_Alta Duo Trio Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Alemania     |
-    Y       doy click en el boton confirmar
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan      |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 114400915 | Duo      | RA D22 100 MBPS |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100014564 | Trío     | RA D22 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan      |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 114400915 | Duo      | RA D22 100 MBPS |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100014564 | Trío     | RA D22 100 MBPS |

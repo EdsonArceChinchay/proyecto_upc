@@ -3,25 +3,22 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT007
 ##GDAP: GDAP-576
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01 @AltaFija
 Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Retail
 
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaFijaPorRetail_CE
-  Esquema del escenario: Alta fija Retail con Nuevo Cliente Extranjero
+  Esquema del escenario: Alta Fija Mono Internet con documento CE en Canal Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -43,8 +40,8 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar Ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | vivienda | nombreVivienda | conjunto             | conjHabit |
-      | CASA     | alex mancilla  | URBANIZACION POPULAR | casa      |
+      | tipoVivienda | nombreVivienda | conjunto             | conjHabit |
+      | CASA         | alex mancilla  | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -66,7 +63,9 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan               |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA D22 |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                        |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA O23 100 MBPS |

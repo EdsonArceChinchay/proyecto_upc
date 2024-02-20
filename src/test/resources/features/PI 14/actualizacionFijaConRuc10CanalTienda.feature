@@ -58,4 +58,4 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |

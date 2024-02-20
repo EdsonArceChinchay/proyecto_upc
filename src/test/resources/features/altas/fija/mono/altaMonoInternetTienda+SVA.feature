@@ -3,18 +3,18 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT008
 ##GDAP: GDAP-578
-##SPRINT CREADO:
+##SPRINT CREADO: P11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 10/01/2024
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05
-Característica: AT-DT008_Alta Fija + SVA Internet con documento CE por canal tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05 @AltaFija
+Característica: AT-DT008_Alta Fija Internet + SVA  con documento CE por canal tienda
 
   @AltaFijaTiendaSVA
   Esquema del escenario: Alta fija por tienda con CE sin productos asociados sin biometria
@@ -44,7 +44,7 @@ Característica: AT-DT008_Alta Fija + SVA Internet con documento CE por canal ti
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+#      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
 #      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -71,7 +71,10 @@ Característica: AT-DT008_Alta Fija + SVA Internet con documento CE por canal ti
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+
     Ejemplos:
-      | tipoUsuario     | userName  | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan               | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
-  #    | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1007432126 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | RA D22 100 MBPS          | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
-      | usuario interno |           | | Bienvenid@ | CAJAMARCA    | CE            | 1100000494 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio     | INTERNET MOVISTAR RA D22 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1100000494 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA O23 100 MBPS | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+#      | usuario interno |           |              | Bienvenid@ | CAJAMARCA    | CE            | 1100000494 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio     | INTERNET MOVISTAR RA D22 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |

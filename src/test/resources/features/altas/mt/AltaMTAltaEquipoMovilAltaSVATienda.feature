@@ -79,5 +79,5 @@ Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento C
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 991000232 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 991000232 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |

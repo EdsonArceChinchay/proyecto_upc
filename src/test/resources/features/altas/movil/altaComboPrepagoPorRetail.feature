@@ -37,7 +37,7 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
       | nombres | apellidos     | genero    |
       | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -60,5 +60,5 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
     Y        presiono continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan      |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464887 | Prepago preplan |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | nombrePlan      |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464887 | Prepago preplan |

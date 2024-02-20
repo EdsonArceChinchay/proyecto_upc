@@ -1,28 +1,25 @@
 #language:es
-
 ##CREADOR:Andres Michilot
 ##APP: DITO
-##MODULO:
+##MODULO: ALTA FIJA
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
-##GDAP: GDAP-##2
-##SPRINT CREADO:
+##GDAP: GDAP-1438
+##SPRINT CREADO: PI15
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 19/12/2023
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI15
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15 @AltaFija @AltaDuo
 
-Característica: Alta Duo + Sva Movistar con documento CE en canal Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por canal Retail
 
   @AltaDuoSvaRetail
-  Esquema del escenario: Alta Duo + Sva Movistar con documento CE en canal Retail
+  Esquema del escenario: Alta Duo + SVA "<nombreSVA>" con documento CE por canal Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -46,14 +43,14 @@ Característica: Alta Duo + Sva Movistar con documento CE en canal Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en agregar "<nombreSVA>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -72,7 +69,9 @@ Característica: Alta Duo + Sva Movistar con documento CE en canal Retail
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                               |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS|
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                | nombreSVA             |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS | PACK ANTIVIRUS MCAFEE |

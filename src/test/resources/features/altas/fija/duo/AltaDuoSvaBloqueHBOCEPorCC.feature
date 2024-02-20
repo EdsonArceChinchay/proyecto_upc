@@ -1,26 +1,24 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
+##MODULO: ALTA FIJA
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT004
 ##GDAP: GDAP-1094
-##SPRINT CREADO:
+##SPRINT CREADO: PI12
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT004_Alta Duo SVA HBO con documento CE en canal call center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
+Característica: AT-DT004_Alta Duo Internet + TV mas SVA HBO con documento CE en canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
-  @AltaDuo_SvaHBO
+  @AltaDuoCC_SvaHBO
   Esquema del escenario: Alta Duo SVA HBO con documento CE en canal call center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -45,7 +43,7 @@ Característica: AT-DT004_Alta Duo SVA HBO con documento CE en canal call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -67,11 +65,20 @@ Característica: AT-DT004_Alta Duo SVA HBO con documento CE en canal call center
       | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #	Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           | bloque |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA O23 100 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |

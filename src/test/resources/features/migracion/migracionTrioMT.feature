@@ -55,4 +55,4 @@ Característica: AT-DT070_Migracion de Trio a MT + SVA
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 343423232 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 343423232 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     |

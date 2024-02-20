@@ -1,20 +1,20 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
+##MODULO: ALTA FIJA
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT006
 ##GDAP: GDAP-571
-##SPRINT CREADO:
+##SPRINT CREADO: PI12
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 12/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-Característica: AT-DT006_Alta Duo con documento CE por canal Tienda
+Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por canal Tienda
 
 # Antes de usar se debe le debe de dar score upfront al cliente
   @AltaDuo_Upfront
@@ -44,7 +44,7 @@ Característica: AT-DT006_Alta Duo con documento CE por canal Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -67,6 +67,9 @@ Característica: AT-DT006_Alta Duo con documento CE por canal Tienda
     #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                   |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DÚO MOVISTAR VOZ INTERNET RA |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA O23 100 MBPS |

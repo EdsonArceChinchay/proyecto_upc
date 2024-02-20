@@ -26,8 +26,8 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
   Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "jpachaot"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNameCC"
+    Y        ingreso el password "passCC"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -65,6 +65,12 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud

@@ -14,13 +14,13 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
-Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
+Característica:  AT-DT029_Alta Movil Solo Sim con documento CE por Call Center
   Quiero realizar una alta movil solo sin por call center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaMovilSoloSimCallCenter
+  @AltaMovilCECallCenter
   Esquema del escenario: Alta Movil Solo Sim Por Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -38,21 +38,14 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-#    Y        selecciono el plan_movil Postpago
-#    Y        selecciono el boton de eleccion de planes
-    #Y        selecciono el plan "Postpago" que desea
-    #Y        doy click en el boton Siguiente
-    #Y        valido que este en la pagina de ofertas sugeridas
-    #Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    #Y        valido que este en la seccion de registro "<nombrePlan>"
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -61,8 +54,8 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -80,19 +73,21 @@ Característica:  AT-DT029_Alta Movil Solo Sim Por Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 121219514 | Postpago      | RV Plan Ilimitado Mi Movistar |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Control       | RV Plan Mi Movistar S/27.9 III           |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Control       | RV Plan Mi Movistar S/35.9 III           |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Prepago       | Preplan                                  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Prepago       | Prepago con Tarifa Única                 |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/55.9  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Movistar ilim S/69.9   |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/75.90  |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/85.9     |
-#      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1000000003|Postpago      | RV Plan Ilimitado Mi Movistar S/149.9    |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 121219514 | Postpago      | RV Plan Ilimitado Mi Movistar |

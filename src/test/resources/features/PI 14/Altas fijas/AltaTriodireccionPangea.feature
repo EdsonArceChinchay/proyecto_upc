@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaFija
 
 Característica: AT-DT094_Alta trio con direccion pangea
 
@@ -48,7 +48,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
    # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | lote | vivienda | nombreVivienda    | piso | int | conjunto             | conjHabit  |
+    #  | mz | lote | tipoVivienda | nombreVivienda    | piso | int | conjunto             | conjHabit  |
     #  | D  | 11   | EDIFICIO | Familia Barrios   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -73,4 +73,4 @@ Característica: AT-DT094_Alta trio con direccion pangea
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                                | svaLinea             | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |

@@ -1,23 +1,23 @@
 #language:es
-##CREADOR: Edson Arce
+##CREADOR:  CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT019
-##GDAP: GDAP-965
-##SPRINT CREADO:
+##CODIGO: AT-DT
+##GDAP: GDAP-
+##SPRINT CREADO: PI18_SP3
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO: Edson Arce
-##FECMOD: 13/02/2024
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @AltaFija
-Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+@BERSERKERS @DoneDevOps @PI18_SP3 @TEST1
+Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX en canal Tienda
 
-  @AltaTrioRuCTienda @MVP10 @Global
-  Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+  @AltaTrioSVARucCETienda
+  Esquema del escenario: Alta Trío B2B Upfront con SVAs con representa legal CEX en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -32,7 +32,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
     E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
-    #Y        valido que me traiga los servicios contratados por el cliente
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -42,31 +41,22 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-     # | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
-#   Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono la oferta "<nombrePlan>"
     Y        selecciono en linea Nueva
+    Y        doy click en añadir SVA
+    Y        doy click en agregar Bloque "HBO"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy clic en el boton validar identidad representante legal
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    #Y        ingreso los datos del supervisor
-     # | numdoc   | user        | password     |
-     #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
     Y        doy click en el boton continuar
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre | nombrePadre | distritoNac            |
-    #  | DEYSI | JOSE | SULLANA |
-      | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -78,6 +68,5 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  |
-      #| usuario externo |userNameST | passST | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                                  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20450685446 | 2   | CE              | 6172834231     | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     |  TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS|

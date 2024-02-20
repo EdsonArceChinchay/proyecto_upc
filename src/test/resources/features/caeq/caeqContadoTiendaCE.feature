@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: CAEQ contado con CE por canal Tienda
+Característica: CAEQ contado con documento CE por canal Tienda
 
   @CaeqContadoTienda @RegreDito
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -59,9 +59,5 @@ Característica: CAEQ contado con CE por canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464674 | 984683790|
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000310 | 984683790        |
-
-   #   | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-    #  | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |
-
+#      | usuario externo | userNameST | passST | Bienvenid@  | CE            | 1042464674 | 984683790|
+      | usuario interno |          |          | Bienvenid@ | CE            | 1100000310 | 984683790        |

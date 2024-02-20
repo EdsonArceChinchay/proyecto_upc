@@ -41,13 +41,13 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        doy click en el boton "Buscar"
     Y        valido que la direccion sea "<direccion>"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | longitud     | latitud      | direccion                |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 691529632 | -77.03498486 | -12.09465486 | CAMINO REAL 155          |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 693459354 | -77.03839379 | -12.08616934 | JULIO CESAR TELLO 460    |
- #     | usuario externo| vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                       | C             | 642153634 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA                 | C             | 612345675 | -76.91650597 | -12.02665927 | JOSE CARLOS MARIATEGUI 2 |
- #     | usuario externo| vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 699982210 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
- #     | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 691664632 | -77.00525705  | -12.11851901  | AV PRINCIPAL 722           |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | longitud     | latitud      | direccion                |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 691529632 | -77.03498486 | -12.09465486 | CAMINO REAL 155          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 693459354 | -77.03839379 | -12.08616934 | JULIO CESAR TELLO 460    |
+ #     | usuario externo| userNameCC2 | passCC2 | Bienvenid@ | TALARA                       | C             | 642153634 | -77.072328892 | -12.083588836 | CONDESA DE CHINCHON 109  |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | CAJAMARCA                 | C             | 612345675 | -76.91650597 | -12.02665927 | JOSE CARLOS MARIATEGUI 2 |
+ #     | usuario externo| userNameCC2 | passCC2 | Bienvenid@ | TIENDA SAN MIGUEL            | C             | 699982210 | -77.05523368  | -12.0949854   | JAVIER PRADO OESTE 2291  |
+ #     | usuario externo |userNameCC | passCC| Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 691664632 | -77.00525705  | -12.11851901  | AV PRINCIPAL 722           |
 
   @ConsultarDireccionCoordenadas  @CoordenadasIcorrectas
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo que me muestre un mensaje de error cuando ingreso coordenadas incorrectas
@@ -75,8 +75,8 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        valido que que me muestre el mensajde de error "<mensaje>"
 
     Ejemplos:
-      | tipoUsuario     | userName     | password        | msgHome    | tiendaAsesor              | tipoDocumento | documento   | longitud     | latitud      | mensaje                                                               |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$    | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA            |
-      | usuario externo | vsiguass     | #o2Wy23oA1458Z% | Bienvenid@ | TALARA                    | C             | 64802153624 | 12           | -            | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64512345675 | -70-70       | -12.11851901 | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
-      | usuario externo | jpachaot     | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64991524632 | .            | 9000         | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | longitud     | latitud      | mensaje                                                               |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA            |
+      | usuario externo | userNameCC2 | passCC2  | Bienvenid@ | TALARA                    | C             | 64802153624 | 12           | -            | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64512345675 | -70-70       | -12.11851901 | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64991524632 | .            | 9000         | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |

@@ -3,27 +3,26 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT009
-##GDAP: GDAP-577
-##SPRINT CREADO:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT010
+##GDAP: GDAP-997
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 10/01/2024
+##DATA: REUSABLE
+##ENCARGADO:
+##FECMOD: 12/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision
-Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop @AltaFija
+Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Canal Tienda
 
-  @AltaFijaTienda
-  Esquema del escenario: Alta fija con documento CE en Canal Tienda
+  @AltaFijaTiendaHBO
+  Esquema del escenario: Alta fija mas SVA HBO con documento CE en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
-    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -31,10 +30,11 @@ Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos | genero   |
-      | Felipa  | Mendoza   | femenino |
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos   | genero    |
+      | Pedro   | Lopez Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
+    #Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -43,13 +43,19 @@ Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
-      |    |          |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
+#	Y        valido que este en la seccion de registro
+#	Cuando   doy clic a iniciar registro
+    Y        valido que este en la seccion de registro
+    Y        doy click en añadir SVA
+    Y        doy click en agregar Bloque "HBO"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -59,19 +65,18 @@ Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 10/11/1996 | Casado      | Albania      |
+      | 12/12/1994 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Entonces me muestra la pantalla registrar venta
-    Y        doy clic para descargar el contrato
+    Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               |
-     # | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
-      | usuario interno |           | | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion               | referencia | tipoPlan | nombrePlan                 | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanes          | svaInternet           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA M23 | discapacitado  | MARINA      | MARCIAL     | HUARMACA    | TV Estándar Digital | PACK ANTIVIRUS MCAFEE |
+

@@ -57,4 +57,4 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464952 | tester@tester.com | Duo           | RA 100 MBPS |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464952 | tester@tester.com | Duo           | RA 100 MBPS |

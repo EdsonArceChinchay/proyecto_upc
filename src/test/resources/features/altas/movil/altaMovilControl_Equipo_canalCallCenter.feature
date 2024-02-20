@@ -58,7 +58,7 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -81,5 +81,5 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                     | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar S/45.9 III | Control   | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                     | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar S/45.9 III | Control   | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |

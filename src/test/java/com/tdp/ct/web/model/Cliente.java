@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 
 @Component
 public class Cliente {
@@ -12,7 +14,7 @@ public class Cliente {
     @Setter @Getter String clienteTest;
     @Setter @Getter String numeroSolicitud;
     @Setter @Getter String numeroDocumento;
-
+    @Setter @Getter List <String> codigosDeOrdenes;
 
     public Cliente(){
 

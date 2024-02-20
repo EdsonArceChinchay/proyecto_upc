@@ -3,19 +3,19 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT116
 ##GDAP:GDAP-1412
 ##SPRINT CREADO: PI16_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 29/08/2023
+##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
 
-Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
+Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
 
   @AltaMt_SvaTiendas
   Esquema del escenario: Alta MT mas SVA en Canal Tiendas
@@ -73,9 +73,10 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
 #    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 #    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-  #    | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-      | usuario interno |          || Bienvenid@ | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-   #   | usuario interno || | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-   #   | usuario interno || | Bienvenid@ | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-   #   | usuario interno || | Bienvenid@ | CE            | 221011300 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+  | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+  | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011300 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP:  GDAP-1426
 ##SPRINT CREADO: PI18_SP1
@@ -56,6 +56,8 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
@@ -64,5 +66,5 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547903 | Trío HD 200 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547903 | Trío HD 200 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |

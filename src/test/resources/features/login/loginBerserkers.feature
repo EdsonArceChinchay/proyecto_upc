@@ -3,42 +3,42 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT053
 ##GDAP: GDAP-602
-##SPRINT CREADO:
+##SPRINT CREADO: PI11_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: NA
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
 Característica: AT-DT053_Login - FE DITO WEB
 
   @LoginBerserker @LoginExitoso @jbac_Test
-  Esquema del escenario: Usuario realiza login exitoso: Canal online - Call center Gss, Tienda San Miguel, Talara
+  Esquema del escenario: Usuario realiza login exitoso: canal Call Center, Tienda y Retail
     Dado que abro la pagina de movistar
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<tipoUsuario>"
     Y ingreso el usuario "<userName>"
     Y ingreso el password "<password>"
-    #E ingreso el captcha
+#    E ingreso el captcha
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y valido que se presente la tienda "<tiendaAsesor>"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      #| usuario externo | lterrazosce  | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL            |
-      #| usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | TALARA                       |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | nameStoreCC       |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
     Dado que abro la pagina de movistar
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "usuario externo"
-    Y ingreso el usuario "jpachaot"
+    Y ingreso el usuario "userNameCC"
     Y ingreso el password ""
     Y presiono el boton Continuar
     Entonces valido que se presente el mensaje de error "This information is required."
@@ -49,7 +49,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "usuario externo"
     Y ingreso el usuario ""
-    Y ingreso el password "$t3l3f0n1c4$"
+    Y ingreso el password "passCC"
     Y presiono el boton Continuar
     Entonces valido que se presente el mensaje de error "This information is required."
 
@@ -58,8 +58,8 @@ Característica: AT-DT053_Login - FE DITO WEB
     Dado que abro la pagina de movistar
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "usuario externo"
-    Y ingreso el usuario "jpachaot"
-    Y ingreso el password "$t3l3f0n1c4$$"
+    Y ingreso el usuario "userNameCC"
+    Y ingreso el password "passDLC"
     Y presiono el boton Continuar para intentar el ingreso
     Entonces valido que se presente el mensaje de credenciales incorrectas "Usuario y password incorrecto."
 

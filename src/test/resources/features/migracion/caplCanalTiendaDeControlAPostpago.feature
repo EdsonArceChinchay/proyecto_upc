@@ -21,8 +21,8 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "nishuizas"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNameST"
+    Y        ingreso el password "passST"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        valido que se presente la tienda "CAJAMARCA"

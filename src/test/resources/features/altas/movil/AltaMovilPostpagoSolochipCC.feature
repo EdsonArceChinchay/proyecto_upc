@@ -14,12 +14,12 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
-Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
+Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @MVP_Alta_Postpago_sim_CanalRetail @MVP13 @Global
+  @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -45,12 +45,6 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-#    Y        selecciono el plan_movil Postpago
-#    Y        selecciono el boton de eleccion de planes
-    #Y        selecciono el plan "Postpago" que desea
-    #Y        doy click en el boton Siguiente
-    #Y        valido que este en la pagina de ofertas sugeridas
-    #Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
     #Y        valido que este en la seccion de registro "<nombrePlan>"
@@ -62,8 +56,8 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -81,14 +75,25 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor               | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                        | nombreCliente             |
-    #  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Juan Lopez Anibal|
-      | usuario interno |               | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
-    #  | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Prueba QAN SESENTA|
-    #  | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Prueba QAN SESENTA|
-#      | usuario interno | || Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
+  | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
+  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+
+#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
+#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
+#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
+#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |

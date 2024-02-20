@@ -1,20 +1,20 @@
 #language:es
-##CREADOR:  HENRY
+##CREADOR: HENRY
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT023
 ##GDAP: GDAP-584
-##SPRINT CREADO:
+##SPRINT CREADO: PI12_SP5
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG7 @RegresionLegacy
-Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7 @RegresionLegacy
+Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE por canal Tienda
 
   @AltaMovilFinaciamientoTienda_CE
   Esquema del escenario: Realizar una alta movil Control con un financiamiento, metodo de entrega por tienda
@@ -63,10 +63,10 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |
 
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1024268237 | Postpago  |
-  #    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
+      #    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000256 | Postpago  |
    #   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000270 | Postpago  |

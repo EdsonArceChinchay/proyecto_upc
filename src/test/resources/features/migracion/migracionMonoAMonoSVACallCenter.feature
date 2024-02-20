@@ -54,4 +54,4 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                    | bloque |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL RA M23 | FOX    |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL RA M23 | FOX    |

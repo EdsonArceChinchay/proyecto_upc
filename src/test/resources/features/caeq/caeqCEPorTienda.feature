@@ -48,12 +48,12 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName | password      | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | nishuizas   | $t3l3f0n1c4$  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
-#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000786 | Jasmin Pinedo |
-#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000788 | Jasmin Pinedo |
-#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000789 | Jasmin Pinedo |
-#      | usuario interno | | | Bienvenid@ | CAJAMARCA    | CE            | 1100000787 | Jasmin Pinedo |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+#      | usuario interno |            |          | Bienvenid@ | CAJAMARCA    | CE            | 1100000786 | Jasmin Pinedo |
+#      | usuario interno |            |          | Bienvenid@ | CAJAMARCA    | CE            | 1100000788 | Jasmin Pinedo |
+#      | usuario interno |            |          | Bienvenid@ | CAJAMARCA    | CE            | 1100000789 | Jasmin Pinedo |
+#      | usuario interno |            |          | Bienvenid@ | CAJAMARCA    | CE            | 1100000787 | Jasmin Pinedo |

@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/01/2024
+##FECMOD: 08/02/2024
 
 @BERSERKERS @DoneDevOps
 
 Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento CE en tienda
 
-  @CompletaFijaSVAT
+  @CompletaFijaSVAT @TEST1
   Esquema del escenario: Completa Planta Movil + Alta Fija + Alta SVA con documento CE en tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -43,7 +43,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
-#      | mz | vivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
+#      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
 #      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -67,5 +67,5 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                               | correo         |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547910 | Trío HD 200 Mbps RV + Ilimitado 95 Gb RV | test@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | nombrePlan                                | correo         |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 123456368 | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |

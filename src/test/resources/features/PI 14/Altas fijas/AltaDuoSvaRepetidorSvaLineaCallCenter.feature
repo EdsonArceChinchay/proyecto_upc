@@ -13,15 +13,13 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
-Característica: AT-DT091_Alta Duo Sva Repetidor + Sva Línea Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea Call Center
 
   @AltaDuoSvaRepetidorSvaLineaCallCenter
   Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -46,8 +44,8 @@ Característica: AT-DT091_Alta Duo Sva Repetidor + Sva Línea Call Center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -71,10 +69,20 @@ Característica: AT-DT091_Alta Duo Sva Repetidor + Sva Línea Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-	  #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svarepetidor              |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svarepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

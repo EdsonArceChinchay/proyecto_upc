@@ -231,7 +231,6 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnCrearCliente() {
         if(cliente.isClienteNuevo()){
             page.altaFijaMovilRegistroPage().crearCliente();
-            //UtilWeb.waitForSeconds(30);//100
         }else{
             System.out.println("Skip. Cliente Registrado en Dito");
         }
@@ -304,6 +303,12 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public String getTextoSolicitud(){
+
         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
+    }
+
+    public String getCodigoOrden() {
+        return page.altaFijaMovilRegistroPage().getCodigoOrden();
+
     }
 }

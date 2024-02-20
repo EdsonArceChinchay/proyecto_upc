@@ -57,4 +57,4 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan                                               |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464835 | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CE            | 1042464835 | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |

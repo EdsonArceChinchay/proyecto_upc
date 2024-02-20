@@ -59,4 +59,4 @@
 
      Ejemplos:
        | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador |
-       | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 123456766 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | 9.90          |
+       | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 123456766 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | 9.90          |

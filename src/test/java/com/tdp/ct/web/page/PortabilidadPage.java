@@ -23,9 +23,6 @@ public class PortabilidadPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Portabilidad móvil')]")
     protected WebElement btnPortaMovil;
 
-
-
-
     public void clickBotonPortabilidad() {
         waitUntilElementIsVisible(btnPortabilidad,10);
         js().scrollElementTop(btnPortabilidad);
