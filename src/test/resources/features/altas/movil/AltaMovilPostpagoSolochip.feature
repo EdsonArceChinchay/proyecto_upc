@@ -25,6 +25,7 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -36,7 +37,7 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
 #    Y        cierro popup de aviso
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
+    Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -61,7 +62,7 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | mz | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -85,5 +86,9 @@ Característica: AT-DT027_Alta Movil Postpago solo chip Call Center
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName      | password      | msgHome    | tiendaAsesor               | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                        | nombreCliente             |
+    #  | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Juan Lopez Anibal|
+      | usuario interno |               | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
+    #  | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Prueba QAN SESENTA|
+    #  | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |Prueba QAN SESENTA|
+#      | usuario interno | || Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |

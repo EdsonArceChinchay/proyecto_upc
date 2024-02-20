@@ -104,7 +104,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnLineaCelularExistente);
         String LineaExistente = btnLineaCelularExistente.getText();
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+
             click(btnLineaCelularExistente);
+
         } else {
             int i = 2;
             int reintentos = 5;

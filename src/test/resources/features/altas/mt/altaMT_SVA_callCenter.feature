@@ -72,7 +72,7 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -85,8 +85,14 @@ Característica: AT-DT037_Alta Fija  MT SVA por Call Center
     Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                 | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408407 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#      | usuario interno ||| Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000773 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName    | password      | msgHome    | tiendaAsesor               | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                 | correo           |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | PACK ANTIVIRUS MCAFEE | CE            | 123408407 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+
+#      | usuario interno || | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+#      | usuario interno || | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+    #  | usuario interno || | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+      | usuario interno |             | | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+
+  #      | usuario interno ||| Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000773 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
 #      | usuario interno ||| Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000774 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
 #      | usuario interno ||| Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000775 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |

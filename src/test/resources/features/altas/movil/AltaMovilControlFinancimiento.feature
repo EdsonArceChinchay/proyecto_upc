@@ -23,6 +23,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -65,5 +66,7 @@ Característica: AT-DT023_Alta Movil Control con un financiamiento por tienda
 
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | planMovil |
       | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1024268237 | Postpago  |
-
-
+  #    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000256 | Postpago  |
+   #   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000270 | Postpago  |

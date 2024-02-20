@@ -73,5 +73,5 @@ Característica: AT-DT009_Alta fija con documento CE en Canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
-      #| usuario interno | csalvatierrac |  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+     # | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+      | usuario interno |           | | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |

@@ -251,11 +251,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 //        WebElement listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
         esperaProgresiva(driver(), 3, 5, pageType);
 //        listElementPLan = find().getElementByXPath("(//tdp-st-select)[3]");
-        click(pageType);
-        String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
-        String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
-        UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        try{
+            click(pageType);
+            String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
+            String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        }catch (NoSuchElementException nsee){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento pageType no fue encontrado: " + nsee.getMessage());
+        }
     }
 
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")

@@ -28,6 +28,7 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -81,5 +82,11 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                    | decodificador | svarepetidor          |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName   | password          | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                    | decodificador | svarepetidor          |
+#      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+
+      | usuario externo | jriobuenox | $Rio&Bueno2024$#. | Bienvenid@ | CE            | 1100000485 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS | 14.90          | REP. SMART WIFI Venta |
+#      | usuario externo | jriobuenox | $Rio&Bueno2024$#. | Bienvenid@ | CE            | 1100000486 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+#      | usuario externo | jriobuenox | $Rio&Bueno2024$#. | Bienvenid@ | CE            | 41485613   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+#      | usuario externo | jriobuenox | $Rio&Bueno2024$#. | Bienvenid@ | CE            | 44160111   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |
+#      | usuario externo | jriobuenox | $Rio&Bueno2024$#. | Bienvenid@ | CE            | 71756746   | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS | 9.90          | REP. SMART WIFI Venta |

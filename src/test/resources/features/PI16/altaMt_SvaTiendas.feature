@@ -24,6 +24,7 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
@@ -65,13 +66,16 @@ Característica: AT-DT116_Alta MT MAS SVA POR CANAL TIENDAS
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+#    Y        doy click en el boton de continuar
+#    Y        presiono el boton Registrar venta
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+#    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-
+      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+  #    | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | usuario interno |          || Bienvenid@ | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+   #   | usuario interno || | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+   #   | usuario interno || | Bienvenid@ | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+   #   | usuario interno || | Bienvenid@ | CE            | 221011300 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

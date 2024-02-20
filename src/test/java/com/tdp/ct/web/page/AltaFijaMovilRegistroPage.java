@@ -83,6 +83,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
+    @FindBy(xpath = "//span[contains(text(), 'Continuar')]")
+    protected WebElement buttonReContinuar;
 
     @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
@@ -448,6 +450,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
+        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -462,6 +465,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
+        waitUntilElementIsClickable(element, 30);
         esperaProgresiva(driver(), 4, 10, element);
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");

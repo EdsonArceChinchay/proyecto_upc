@@ -165,14 +165,14 @@ public class Addons {
 
         do {
             UtilWeb.waitForSeconds(segundosEspera);
-            esperaProgresivaLoading(driver, 3, 5, "loadingCard");
-            esperaProgresiva(driver, 3, 5, elemento);
+            esperaProgresivaLoading(driver, 5, 4, "loadingCard");
+            esperaProgresiva(driver, 5, 4, elemento);
             LOGGER.log(Level.INFO, "Esperando " + segundosEspera + " segundos...");
 
             try {
                 if (elemento.isDisplayed()) {
                     LOGGER.log(Level.INFO, "Elemento visible. Realizando clic...");
-                    esperaProgresivaLoading(driver, 3, 5, "loadingCard");
+                    esperaProgresivaLoading(driver, 9, 3, "loadingCard");
                     elemento.click();
                 } else {
                     LOGGER.log(Level.INFO, "Elemento no visible. Saliendo del bucle.");
