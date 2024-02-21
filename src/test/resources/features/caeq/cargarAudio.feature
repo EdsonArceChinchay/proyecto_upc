@@ -25,13 +25,13 @@
       Y        selecciono el tipo de usuario "usuario externo"
       Y        ingreso el usuario "userNameCC2"
       Y        ingreso el password "passCC2"
-      Y        ingreso el captcha
+     # Y        ingreso el captcha
       Y        presiono el boton Continuar hacia el home
       Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       Y        me dirijo a la bandeja de Back Office
       #Dado regreso a la pagina de inicio
-      Y        busco por el documento "1075255158"
-      #Y        selecciono la solicitud "numeroSolicitud"
+      Y        busco por el documento "120242514"
+      Y        selecciono la solicitud
       Y        cargo el audio en la web
       Y        apruebo la solicitud
 
