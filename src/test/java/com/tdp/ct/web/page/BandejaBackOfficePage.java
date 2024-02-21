@@ -34,14 +34,9 @@ public class BandejaBackOfficePage extends WebBase {
     protected WebElement fileRuta;
     @FindBy(xpath = "//*[@alt='icon_bandeja']")
     protected WebElement btnBackOffice;
-<<<<<<< HEAD
-    @FindBy(xpath = "//button[@class='buttonFound']")
-=======
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
->>>>>>> ec53ac9cd2840e2f88e53389edd79d7e3e045bc2
+
     protected WebElement btnBuscar;
-    //@FindBy(xpath = "//*[@id=\"offer-row_item\"]/div/div[3]/button")
-    //protected WebElement btnDetalle;
 
     @FindBy(xpath = "//tdp-st-button[@type='button']")
     protected WebElement btnCargarAudio;
@@ -64,13 +59,7 @@ public class BandejaBackOfficePage extends WebBase {
 
     public void buscoDocumento() {
         btnBuscar.click();
-<<<<<<< HEAD
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(),3,3,btnCargarAudio);
-        //waitUntilElementIsVisible(find().getElementByXPath("//*[@id=\"offer-row_item\"]/div/div[3]/button"),5 );
-=======
-        esperaProgresiva(driver(), 3, 20, btnCargarAudio);
->>>>>>> ec53ac9cd2840e2f88e53389edd79d7e3e045bc2
+        esperaProgresiva(driver(),3,20,btnCargarAudio);
 
     }
 
@@ -93,7 +82,7 @@ public class BandejaBackOfficePage extends WebBase {
     }
 
     public void seleccionoSolicitud(String numeroSolicitud) {
-<<<<<<< HEAD
+
 
         if (numeroSolicitud.equals("")||numeroSolicitud!=null) {
             System.out.println("no viene numero solicitud");
@@ -121,28 +110,6 @@ public class BandejaBackOfficePage extends WebBase {
         }
     }
     esperaProgresiva(driver(),3,3,btnCargarAudio);
-=======
-        esperaProgresiva(driver(), 3, 3, btnDetalle); //click(btnDetalle);
-        List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
-        System.out.println("Ver Detalle");
-        WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
-        js().scrollElementTop(verDetalleButton);
-        UtilWeb.waitForSeconds(1);
-        verDetalleButtons.get(verDetalleButtons.size() - 1).click();
-        //System.out.println("Botones: " + verDetalleButtons.size());
-        //String btnVerDetalle = "//span[contains(text(), '" + numeroSolicitud + "')]/ancestor::div[contains(@class, 'tdp-row')]//button[text()='Ver detalle']";
-        //   System.out.println("ver Detalle: " +  btnVerDetalle);
-        // WebElement solicitudElement = driver().findElement(By.xpath(btnVerDetalle));
-
-           /*if (solicitudElement != null) {
-                System.out.println("Clic Ver Detalle");
-                js().scrollElementTop(solicitudElement);
-                solicitudElement.click();
-            }else{
-                System.out.println("ver Detalle - no encontrado" );
-            }*/
-        esperaProgresiva(driver(), 3, 3, btnCargarAudio);
->>>>>>> ec53ac9cd2840e2f88e53389edd79d7e3e045bc2
     }
 
     public void aprueboSolicitud() {

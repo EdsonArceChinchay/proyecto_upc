@@ -31,11 +31,8 @@ Característica: CAEQ contado con CE por canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-<<<<<<< HEAD
     Y        selecciona el boton del numero de celular existente "650027636"
-=======
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
->>>>>>> ec53ac9cd2840e2f88e53389edd79d7e3e045bc2
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
@@ -62,9 +59,5 @@ Característica: CAEQ contado con CE por canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-#      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464674 | 984683790|
-      | usuario interno |          |          | Bienvenid@ | CE            | 1100000310 | 984683790        |
-   #   | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-    #  | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042464721 | Postpago | Plan Movil Movistar Total ilim |
-
+      | tipoUsuario     | userName | password      | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@  | CE            | 1042464674 | 984683790|
