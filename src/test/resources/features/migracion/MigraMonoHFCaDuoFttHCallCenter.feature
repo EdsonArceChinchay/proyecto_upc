@@ -57,4 +57,4 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo            | tipoPlanHogar | plan            |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |

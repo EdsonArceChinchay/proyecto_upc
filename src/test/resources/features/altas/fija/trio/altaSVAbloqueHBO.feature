@@ -3,25 +3,23 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT017
 ##GDAP: GDAP-979
-##SPRINT CREADO:
+##SPRINT CREADO: PI
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP
+@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija
 
-Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
   @AltaSVABloqueHBO
   Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -37,7 +35,6 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
       | nombres | apellidos | genero    |
       | Juan    | Mendoza   | masculino |
     Y        selecciono el boton Linea Nueva Hogar
-#    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -47,7 +44,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
    # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | vivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
+    #  | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
     #  | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
 #    Entonces me muestra la pantalla de ofertas sugeridos
@@ -76,10 +73,11 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO por Tienda
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD | HBO    | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD | HBO    | correo@gmail.com |
 
 

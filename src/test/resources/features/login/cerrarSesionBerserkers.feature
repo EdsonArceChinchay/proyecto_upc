@@ -3,15 +3,15 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT052
 ##GDAP: GDAP-598
-##SPRINT CREADO:
+##SPRINT CREADO: PI12_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
 Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
@@ -30,15 +30,13 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        doy click en Atras
     Ejemplos:
-      | tipoUsuario     | userName    | password        | msgHome    | tiendaAsesor              |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | lterrazosce | Telefonica2021  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | nishuizas   | $T3l3f0n1c4$    | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
 
   @CerrarSesionBerserker  @CierroSesion
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo cerrar sesion
+  Esquema del escenario: Como usuario <userName> del canal <tiendaAsesor> deseo cerrar sesion
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -51,12 +49,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password        | msgHome    | tiendaAsesor              |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | lterrazosce | Telefonica2021  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | vsiguass    | #o2Wy23oA1458Z% | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$    | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | nishuizas   | $T3l3f0n1c4$    | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
 
 
   @CerrarSesionBerserker  @CierroSesionDespuesConsultar
@@ -77,6 +73,6 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor              | tipoDocumento | documento |
-      | usuario externo | jpachaot    | $t3l3f0n1c4$   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 41524632  |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA                 | CE            | 123456735 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 41524632  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA                 | CE            | 123456735 |

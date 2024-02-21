@@ -44,7 +44,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-    # | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+    # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
     # | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -68,9 +68,9 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan         |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | HD RA M23 600 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan         |
+#      | usuario externo |userNameST | passST | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | HD RA M23 600 MBPS |
 
 
   @AltaDuoProactivo
@@ -98,7 +98,7 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-    #  | mz  | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+    #  | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
     #  | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -124,9 +124,9 @@ Característica: AT-DT003_Alta Trio por el canal Proactivo
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      | RA D22 100 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan      |
+#      | usuario externo |userNameST | passST | Bienvenid@ |  SAN MIGUEL    | DNI           | 75504508  | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | casa verde    | Internet RA 40 Mbps | discapacitado  | ELIZABETH   | JORGE       | LIMA        |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 460 | casa crema | Duo      | RA D22 100 MBPS |
 
 
 

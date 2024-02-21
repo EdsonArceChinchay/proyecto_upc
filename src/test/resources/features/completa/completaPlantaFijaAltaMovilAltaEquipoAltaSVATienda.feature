@@ -31,7 +31,6 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Hogar Existente
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -65,5 +64,5 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | nombrePlan                                | correo           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 153426984 | Trío HD 200 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | nombrePlan                                | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 153426984 | Trío HD 200 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |

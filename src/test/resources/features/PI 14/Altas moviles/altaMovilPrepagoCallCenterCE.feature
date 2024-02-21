@@ -1,28 +1,24 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT098
 ##GDAP: GDAP-1150
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
 
-Característica: AT-DT098_Alta Movil Prepago Call center CE
-
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
+Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Center
 
   @AltaMovilPrepagoCallCenter1
   Esquema del escenario: Alta movil Prepago por call center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -52,7 +48,7 @@ Característica: AT-DT098_Alta Movil Prepago Call center CE
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
       | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -70,10 +66,18 @@ Característica: AT-DT098_Alta Movil Prepago Call center CE
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  |

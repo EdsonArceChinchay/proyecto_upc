@@ -66,8 +66,8 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
 
 
   @AltaMovil_Equipo_tienda_2 @Sanity28
@@ -116,6 +116,6 @@ Característica: AT-DT030_AltaMovil + equipo
     #Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName    | password       | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
-      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10042164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10042164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
     #TIENDA SAN MIGUEL

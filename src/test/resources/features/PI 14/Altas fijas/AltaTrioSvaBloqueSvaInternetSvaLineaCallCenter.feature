@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
 Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
 
@@ -47,7 +47,7 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -78,4 +78,4 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | svaLinea             | bloque         | svainternet           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 10000486488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 10000486488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |

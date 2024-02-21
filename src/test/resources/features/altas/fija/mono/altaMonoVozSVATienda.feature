@@ -1,28 +1,28 @@
 #language:es
-##CREADOR:
+##CREADOR:  CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT013
-##GDAP: GDAP-992
-##SPRINT CREADO:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT0
+##GDAP: GDAP-
+##SPRINT CREADO: PI18_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 18/12/2023
+##DATA: REUSABLE
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC
-Característica: AT-DT013_Alta Mono Linea Voz + SVA Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija
+Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tienda
 
-  @AltaMonoLineaVozTienda
+  @AltaMonoVozSVATienda
   Escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "nishuizas"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNameST"
+    Y        ingreso el password "passST"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -50,7 +50,7 @@ Característica: AT-DT013_Alta Mono Linea Voz + SVA Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "prueba@prueba.com" y lo repito
+    Y        ingreso email "test@mail.com" y lo repito
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |

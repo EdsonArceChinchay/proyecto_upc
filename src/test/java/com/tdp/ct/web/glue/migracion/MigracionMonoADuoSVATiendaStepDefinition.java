@@ -1,6 +1,7 @@
 package com.tdp.ct.web.glue.migracion;
 
 import com.tdp.ct.web.WebAutomationApplication;
+import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.MigracionMonoADuoSVATiendaStep;
 import io.cucumber.java.es.Y;
@@ -13,12 +14,16 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
 
     @Autowired
     private MigracionMonoADuoSVATiendaStep MigracionMonoADuoSVATiendaStep;
+
+    @Autowired
+    private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
+
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
 
     @Y("selecciono la oferta {string}")
     public void seleccionoLaOferta(String oferta) {
-        altaFijaTiendaStep.seleccionarListaOfertas(oferta);
+        altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 

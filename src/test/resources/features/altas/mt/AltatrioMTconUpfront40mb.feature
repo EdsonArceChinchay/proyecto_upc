@@ -46,8 +46,8 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton consultar cobertura
     #Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -73,8 +73,8 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | vsiguass | #o2Wy23oA1458Z% | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Trío     | RA D22 50 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Trío     | RA D22 50 MBPS |
 
 
 

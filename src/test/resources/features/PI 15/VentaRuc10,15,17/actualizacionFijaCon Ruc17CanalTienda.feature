@@ -39,4 +39,4 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento | ruc | digito |
-      | usuario externo | evillanuevag | $t3l3f0n1c4$ | Bienvenid@ | DNI           | 70756041  | 17  | 3      |
+      | usuario externo | userNameDLC | passDLC | Bienvenid@ | DNI           | 70756041  | 17  | 3      |

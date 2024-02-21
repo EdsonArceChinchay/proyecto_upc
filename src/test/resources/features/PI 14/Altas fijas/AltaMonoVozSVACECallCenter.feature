@@ -1,38 +1,41 @@
 #language:es
-##CREADOR:Andres Michilot
+
+##CREADOR:
 ##APP: DITO
-##MODULO: ALTA FIJA
+##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO: ACTIVO
-##CODIGO:
-##GDAP: GDAP-1438
-##SPRINT CREADO: PI15
+##ESTADO: REVISANDO-APROBACION DE SOLICITUD
+##CODIGO: AT-DT093
+##GDAP: GDAP-1139
+##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 12/02/2024
+##ENCARGADO: CRISTIAN HUNGARO
+##FECMOD: 05/02/2024
+##COMENTARIO: FALTA QUE SE RESUELVAN LAS OBSERVACIONES
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI15 @AltaFija @AltaDuo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
+Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Center
 
-Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por canal Retail
-
-  @AltaDuoSvaRetail
-  Esquema del escenario: Alta Duo + SVA "<nombreSVA>" con documento CE por canal Retail
+  @AltamonovozsvaLineaCallCenter
+  Esquema del escenario: Alta Mono voz + SVA con documento CE en Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos       | genero    |
-      | Elvis   | Presley Barrios | masculino |
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -42,36 +45,43 @@ Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar "<nombreSVA>"
+    Y        doy click en agregar SVA Linea "<svaLinea>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester_1@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester_1@tester.com"
+    Y        ingreso un correo electronico "testing-1@tester.com"
+    Y        ingreso nuevamente el correo electronico "testing-1@tester.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/10/1994 | Casado      | Albania      |
-    Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+      | 02/10/1980 | Casado      | Alemania     |
+    Y       doy click en el boton confirmar
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    Y        doy clic para descargar el contrato
+    Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                | nombreSVA             |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000013 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

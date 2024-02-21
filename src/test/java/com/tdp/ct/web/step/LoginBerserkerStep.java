@@ -109,8 +109,6 @@ public class LoginBerserkerStep {
         page.captchaPage().decodificarCaptcha();
         UtilWeb.waitForSeconds(4);
 
-
-
     }
 
 

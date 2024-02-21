@@ -14,7 +14,7 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
 
   Antecedentes:
@@ -46,7 +46,7 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
@@ -77,4 +77,4 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | svaLinea              | svainternet           |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1059122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino  20 | PACK ANTIVIRUS MCAFEE |
+      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1059122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino  20 | PACK ANTIVIRUS MCAFEE |

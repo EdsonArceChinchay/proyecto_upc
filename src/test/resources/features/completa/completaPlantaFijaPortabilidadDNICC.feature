@@ -64,8 +64,8 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | CASA     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
@@ -103,7 +103,7 @@ Característica: AT-DT038_Completa Planta Fija Porta Directa Movil
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName      | password      | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | tipoUsuario     | userName  | password      | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | nombreMadre | nombrePadre | distritoNac | numeroExistente |
 #      | usuario interno |          |          | Bienvenid@ | DNI           | 45770292  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
 #      | usuario interno |  | | Bienvenid@ | DNI           | 45770292  | 957382783 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
       | usuario interno | vcarpioat | Tele#jNzj&a97 | Bienvenid@ | DNI           | 44160111  | 914616599 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 14046680        |

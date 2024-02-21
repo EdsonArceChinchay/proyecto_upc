@@ -58,7 +58,7 @@ Característica: Alta Movil Prepago + Equipo Call center
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | vivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
       | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -81,5 +81,5 @@ Característica: Alta Movil Prepago + Equipo Call center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | BMOBILE AX1082 NEGRO C/PACK | Financiado 12 cuotas |
-#      | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | BMOBILE AX1082 NEGRO C/PACK | Financiado 12 cuotas |
+#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

@@ -4,8 +4,8 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT020
-##GDAP: GDAP-989
+##CODIGO: AT-DT089
+##GDAP: GDAP-1107
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -13,12 +13,12 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @Sanity28
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija
 
-Característica: AT-DT020_Alta Trio upfront SVA canal tienda
+Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con documento CE por Canal Call Center
 
-  @AltaTrioUpfrontSVATienda
-  Esquema del escenario: Alta Trio upfront SVA canal tienda
+  @AltaDuo_Sva_Modem_Sva_Internet
+  Esquema del escenario: Alta Duo SVA HBO CALL CENTER
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -26,14 +26,14 @@ Característica: AT-DT020_Alta Trio upfront SVA canal tienda
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+	#Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero    |
-      | Juan    | Ortiz Lopez | masculino |
+      | nombres | apellidos    | genero   |
+      | Lana    | Grey Khalifa | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -43,32 +43,33 @@ Característica: AT-DT020_Alta Trio upfront SVA canal tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-      #| mz | vivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        doy click en agregar "<sva>"
-    Cuando   doy clic a iniciar registro
+	#Y        doy click en agregar "<svaInternet>"
+    Y        doy click en agregar Modem
+    E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        ingreso un correo electronico "Angel.mf@gmail.com"
+    Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
       | 12/12/1980 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-#    Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     | sva                   |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA D22 50 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |

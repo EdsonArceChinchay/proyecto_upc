@@ -61,4 +61,4 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                              | bloque |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS | HBO    |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS | HBO    |

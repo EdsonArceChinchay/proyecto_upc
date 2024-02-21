@@ -64,7 +64,7 @@ Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar Ubicacion
     #Y        ingreso la informacion del lugar de instalacion
-        #| mz | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
+        #| mz | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
         #| A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -88,6 +88,6 @@ Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1075288962 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1075288962 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 

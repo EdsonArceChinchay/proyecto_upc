@@ -80,14 +80,14 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaMonoHfcTiendaStep.scrollDirecCompleta();
         String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
         String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
-        String vivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"tipoVivienda");
+        String tipoVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"tipoVivienda");
         String nombreVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"nombreVivienda");
         String bloque= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
         String piso= UtilWeb.getValueFromDataTable(dirInstalacion,"piso");
         String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
         String tipoConjH= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
         String conjH= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
-        altaMonoHfcTiendaStep.writeDireccionInstalacion(manzana, lote, vivienda, nombreVivienda,bloque, piso, interior, tipoConjH, conjH);
+        altaMonoHfcTiendaStep.writeDireccionInstalacion(manzana, lote, tipoVivienda, nombreVivienda,bloque, piso, interior, tipoConjH, conjH);
     }
 
     @Y("presiono el boton Consultar Cobertura")

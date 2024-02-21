@@ -1,42 +1,43 @@
 #language:es
-
-##CREADOR:
+##CREADOR: MOISES LLAMOCA
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO:
-##GDAP: GDAP-991
-##SPRINT CREADO:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT116
+##GDAP:GDAP-1412
+##SPRINT CREADO: PI16_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
 
-Característica: Alta Trio Upfront canal Retail
+Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
 
-  Antecedentes:
+  @AltaMt_SvaTiendas
+  Esquema del escenario: Alta MT mas SVA en Canal Tiendas
     Dado     que abro la pagina de movistar
-
-  @AltaTrio_UpfrontCanalRetail
-  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos | genero    |
+      | Felipe  | Llanos    | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
+    Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro pop up de Cliente Exonerado
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -45,30 +46,32 @@ Característica: Alta Trio Upfront canal Retail
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | vivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
-    Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        valido el detalle de la seleccion
+    Y        valido que este en la seccion de registro
+    Y        doy click en agregar "Seguridad Total Residencial"
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "tester@mail.com"
+    Y        ingreso nuevamente el correo electronico "tester@mail.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
+      | 24/02/1996 | Aruba        | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo | nishuizas | $t3l3f0n1c4$ | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+

@@ -9,14 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.security.cert.X509Certificate;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.obtenerRutaAbsoluta;
 
 public class BandejaBackOfficePage extends WebBase {
-    @FindBy(xpath = "/html/body/app-root/app-success-simple/div[2]/button")
+    @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
     protected WebElement btnBandejaPrincipal;
     @FindBy(xpath = "//p[@class='codigo-small' and text()='Código de orden']")
     protected WebElement codigoOrden;
@@ -37,7 +36,6 @@ public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
 
     protected WebElement btnBuscar;
-
     @FindBy(xpath = "//tdp-st-button[@type='button']")
     protected WebElement btnCargarAudio;
     @Autowired

@@ -16,13 +16,13 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP
 
-Característica: AT-DT078_Migracion salto 0 canal Tienda
+Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
   @migraSalto0CanalTienda
-  Esquema del escenario: Migracion salto 0 con CE  por canal tienda
+  Esquema del escenario: Migracion salto 0 con documento CE por canal Tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -58,6 +58,7 @@ Característica: AT-DT078_Migracion salto 0 canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password       | msgHome    | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-     # | usuario externo | lterrazosce | Telefonica2021 | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
-      | usuario interno | nishuizas | $t3l3f0n1c4$   | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
+     # | usuario externo |userNameST | passST | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | usuario interno |          |          | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+

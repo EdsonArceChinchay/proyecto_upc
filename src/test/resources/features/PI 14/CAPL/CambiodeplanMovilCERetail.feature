@@ -24,8 +24,8 @@ Característica: AT-DT100_cambio de plan movil en Retail
   Escenario: cambio de plan movil en Retail sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "evillanuevag"
-    Y        ingreso el password "$t3l3f0n1c4$"
+    Y        ingreso el usuario "userNameDLC"
+    Y        ingreso el password "passDLC"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     #Y        valido que se presente la tienda "TALARA"
