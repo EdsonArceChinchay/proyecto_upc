@@ -14,7 +14,7 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 14/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy16
 Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail

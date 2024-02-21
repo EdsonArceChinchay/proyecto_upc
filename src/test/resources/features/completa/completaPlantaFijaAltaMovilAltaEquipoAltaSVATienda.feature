@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-1425
 ##SPRINT CREADO: PI18_SP1
@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @RegresionLegacy
+@BERSERKERS @DoneDevOps @RegresionLegacy @RegresionLegacy16
 
 Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo movil + SVA con documento CE en tienda
 
@@ -31,7 +31,7 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el boton de la Linea Hogar Existente
+    Y        selecciono el boton de la Linea Hogar Existente "14353026"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        cierro pop up de Cliente Exonerado
@@ -56,6 +56,8 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
