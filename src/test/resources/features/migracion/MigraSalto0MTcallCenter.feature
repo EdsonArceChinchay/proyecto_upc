@@ -62,5 +62,5 @@ Característica: Migracion salto 0 MT canal Call Center
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 120377222 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 | correo@gmail.com |
