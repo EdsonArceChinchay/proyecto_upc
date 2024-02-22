@@ -91,9 +91,10 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        apruebo la solicitud
     Ejemplos:
   | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+#  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+  | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100002127  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
+#  | usuario interno |    userNameQAN | passQAN    | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
 #  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
 #  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
 #  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |

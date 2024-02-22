@@ -476,8 +476,7 @@ public class Addons {
         try {
             resultado = driver.findElement(By.xpath(rutaElemento));
         } catch (NoSuchElementException e) {
-            //TODO:AGREGAR LA CONFIGURACION AL NO ENCONTRAR EL ELEMENTO
-            LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento #");
+            LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento");
         }
         return resultado;
     }

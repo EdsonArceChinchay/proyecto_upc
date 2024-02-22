@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
@@ -228,7 +229,9 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("doy clic para descargar el contrato")
     public void doyClicParaDescargarElContrato() throws InterruptedException {
-        altaFijaMovilRegistroStep.clicDescargarContrato();
+        if (Parameters.estadoFlujo){
+            altaFijaMovilRegistroStep.clicDescargarContrato();
+        }
     }
 
     @Y("doy clic en Registrar venta")

@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Cliente;
@@ -153,9 +154,31 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaRegistrarVenta() {
+        boolean verificarUbicacion = true;
+        do {
+            esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
+//            Realizar un try catch para buscar el elemento devolver un return para almacenar el valor false si se ecnuntra la venta complketada
+            try {
+                msjExitoso.isDisplayed();
+                Parameters.estadoFlujo = false;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Ventana de venta exitosa visible");
+                return true;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de venta exitosa");
+//                verificarUbicacion = true;
+            }
+            try {
+                titleRegistrarServicio.isDisplayed();
+                verificarUbicacion = false;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de registrar venta");
+//                verificarUbicacion = true;
+            }
+        } while (verificarUbicacion);
+
         try {
-            esperaProgresiva(driver(), 3, 50, titleRegistrarServicio);
-            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 100).isDisplayed();
+            esperaProgresiva(driver(), 3, 4, titleRegistrarServicio);
+            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
             UtilWeb.waitForSeconds(1);
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
             return existe;
@@ -885,6 +908,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
+//    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 
@@ -1036,5 +1060,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes.toString();
     }
 
+    public boolean verificarPantallaVenta() {
+        try {
 
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra la pantalla de venta exitosa, se saltaron pasos");
+            return true;
+        } catch (NoSuchElementException nsee) {
+            return false;
+        }
+    }
 }

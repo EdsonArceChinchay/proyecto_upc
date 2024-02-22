@@ -111,7 +111,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void bloque(String bloque) {
         boolean existe = validateInputAndLocator(bloque, inputBlock);
-        if (existe) {
+        if (existe && inputBlock.isSelected()) {
             js().scrollElementTop(inputBlock);
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
