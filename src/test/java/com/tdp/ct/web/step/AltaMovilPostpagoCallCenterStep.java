@@ -61,7 +61,7 @@ public class AltaMovilPostpagoCallCenterStep {
     }
     @ScreenShotBefore
     @ScreenShotAfter
-    public void doyClickEnIniciarRegistro() {
+    public void doyClickEnIniciarRegistro(){
         page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
     @ScreenShotAfter

@@ -31,7 +31,7 @@ Característica: Caeq Mas Casi por call center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
-    Y        presiono el boton Renovar Plan
+    Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
@@ -79,7 +79,7 @@ Característica: Caeq Mas Casi por call center
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
-#      | usuario interno |          |              | Bienvenid@ | CE            | 1100000273 | 984093119        |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
+      | usuario interno | userNameQAN |passQAN | Bienvenid@ | CE            | 1100000219 | 981805761|
 #      | usuario interno |           | | Bienvenid@ | CE            | 1100000273 | 984093119 |
 #      | usuario interno || | Bienvenid@ | CE            | 1100000273 | 984093119 |
