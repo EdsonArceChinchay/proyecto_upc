@@ -51,10 +51,6 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
 
-    //@FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-
-    //*[contains(text(),'Reintentar') 
-
     @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
@@ -134,9 +130,6 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void seleccionarOferta() {
         revisarModalError(driver());
-//        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
-//        eventFiringWebDriver.executeScript("document.querySelector('body > div.tdp-container.pt-16 > modal-plan-hogar > tdp-st-modal')" +
-//                ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
        for (int i=0; i <listBtnSeleccionarOferta.size();i++)
        {
            if (listBtnSeleccionarOferta.get(i).isEnabled()){
@@ -262,8 +255,8 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnAñadirSVA() {
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(btnSVA, 5);
+        UtilWeb.waitForSeconds(10);
+        waitUntilElementIsVisible(btnSVA, 100);
         js().scrollElementTop(btnSVA);
         click(btnSVA, 10);
         UtilWeb.waitForSeconds(10);
@@ -348,7 +341,7 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
 
         SearchContext context3 = sh().getContext(rootInput3);
-        context3.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
+        context3.findElement(By.cssSelector("div > div > div > input")).sendKeys("906701238");
         UtilWeb.waitForSeconds(2);
 
     }

@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06 @RegresionLegacy16
 
 Característica: AT-DT108_sva bloque hbo a duo por Tienda
   Yo como asesor de Tienda
@@ -44,10 +44,14 @@ Característica: AT-DT108_sva bloque hbo a duo por Tienda
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                        | sva | correo            |
