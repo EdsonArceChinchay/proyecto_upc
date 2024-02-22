@@ -77,7 +77,6 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija con documento CE en Ca
     Y        presiono el boton Registrar venta
 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Entonces
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"

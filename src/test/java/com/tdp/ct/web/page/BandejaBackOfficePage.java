@@ -34,6 +34,7 @@ public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//*[@alt='icon_bandeja']")
     protected WebElement btnBackOffice;
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
+
     protected WebElement btnBuscar;
     @FindBy(xpath = "//tdp-st-button[@type='button']")
     protected WebElement btnCargarAudio;
@@ -56,7 +57,7 @@ public class BandejaBackOfficePage extends WebBase {
 
     public void buscoDocumento() {
         btnBuscar.click();
-        esperaProgresiva(driver(), 3, 20, btnCargarAudio);
+        esperaProgresiva(driver(),3,20,btnCargarAudio);
 
     }
 
@@ -79,26 +80,34 @@ public class BandejaBackOfficePage extends WebBase {
     }
 
     public void seleccionoSolicitud(String numeroSolicitud) {
-        esperaProgresiva(driver(), 3, 3, btnDetalle); //click(btnDetalle);
-        List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
-        System.out.println("Ver Detalle");
-        WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
-        js().scrollElementTop(verDetalleButton);
-        UtilWeb.waitForSeconds(1);
-        verDetalleButtons.get(verDetalleButtons.size() - 1).click();
-        //System.out.println("Botones: " + verDetalleButtons.size());
-        //String btnVerDetalle = "//span[contains(text(), '" + numeroSolicitud + "')]/ancestor::div[contains(@class, 'tdp-row')]//button[text()='Ver detalle']";
-        //   System.out.println("ver Detalle: " +  btnVerDetalle);
-        // WebElement solicitudElement = driver().findElement(By.xpath(btnVerDetalle));
 
-           /*if (solicitudElement != null) {
-                System.out.println("Clic Ver Detalle");
-                js().scrollElementTop(solicitudElement);
-                solicitudElement.click();
-            }else{
-                System.out.println("ver Detalle - no encontrado" );
-            }*/
-        esperaProgresiva(driver(), 3, 3, btnCargarAudio);
+
+        if (numeroSolicitud.equals("")||numeroSolicitud!=null) {
+            System.out.println("no viene numero solicitud");
+            esperaProgresiva(driver(), 3, 3, btnDetalle); //click(btnDetalle);
+            List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
+            System.out.println("Ver Detalle");
+            WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
+            js().scrollElementTop(verDetalleButton);
+            UtilWeb.waitForSeconds(1);
+            verDetalleButtons.get(verDetalleButtons.size() - 1).click();
+        }
+    else{
+        List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
+        System.out.println("Botones: " + verDetalleButtons.size());
+        String btnVerDetalle = "//span[contains(text(), '" + numeroSolicitud + "')]/ancestor::div[contains(@class, 'tdp-row')]//*[text()='Ver detalle']";
+        System.out.println("ver Detalle: " +  btnVerDetalle);
+        WebElement solicitudElement = driver().findElement(By.xpath(btnVerDetalle));
+
+        if (solicitudElement != null) {
+            System.out.println("Clic Ver Detalle");
+            js().scrollElementTop(solicitudElement);
+            solicitudElement.click();
+        }else{
+            System.out.println("ver Detalle - no encontrado" );
+        }
+    }
+    esperaProgresiva(driver(),3,3,btnCargarAudio);
     }
 
     public void aprueboSolicitud() {

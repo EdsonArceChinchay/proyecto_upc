@@ -898,13 +898,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         revisarModalError(driver());
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
+        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        waitUntilElementIsClickable(boton, 1000);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 150);
-        click(boton, 50);
+        waitUntilElementIsClickable(boton, 1000);
+        click(boton);
         UtilWeb.waitForSeconds(5);
     }
 

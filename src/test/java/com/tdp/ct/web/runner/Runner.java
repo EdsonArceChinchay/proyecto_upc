@@ -16,22 +16,8 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-//        tags = "@AltaTrioSvaDecodificadorSvaRepetidorRetail"
-//        tags = "@AltaMt_SvaTiendas"
-        tags = "@CompletaPlantaMovilAltaFija"
-//        funciona
-//        tags = "@AltaMTSVAcallCenterCE"
+        tags = "@DoneDevOps"
 
-//        tags = "@AltaMt_SvaTiendas"
-//        tags = "@MVP_Alta_Postpago_sim_CanalRetail"
-//        tags = "@migraSalto0CanalTienda"
-//        tags = "@SvaMTCC"
-
-//        tags= "@CaeqCaplCasi"
-//        tags= "@CaeqPorTienda"
-//        tags= "@CompletaMovilCC"
-//        tags= "@AltamonovozsvaLineaCallCenter"
-//        tags = "@CaplPrepagoPospago1"
 )
 class Runner {
 
