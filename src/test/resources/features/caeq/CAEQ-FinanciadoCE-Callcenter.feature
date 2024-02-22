@@ -27,7 +27,7 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1100000529"
+    Y        ingreso el documento "1100000765"
     Y        doy click en el boton consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
@@ -85,4 +85,4 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Ejemplos:
       | tipoUsuario     | userName | password | EncontrarCelular |
   #    | usuario externo | userNameCC | passCC |984594042|
-       | usuario interno | userNameQAN | passQAN |994460680|
+       | usuario interno | userNameQAN | passQAN |985448456|

@@ -51,7 +51,7 @@ Característica: Caeq Mas Casi por call center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -78,6 +78,6 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
-      | usuario interno | userNameQAN |passQAN | Bienvenid@ | CE            | 1100000219 | 981805761|
+      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000219 | 981805761        |
