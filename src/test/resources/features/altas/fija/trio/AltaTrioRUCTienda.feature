@@ -46,7 +46,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
      # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
      # | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
-#   Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono la oferta "<nombrePlan>"

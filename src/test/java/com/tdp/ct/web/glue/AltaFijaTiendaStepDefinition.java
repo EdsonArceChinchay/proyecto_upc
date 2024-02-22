@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
@@ -70,7 +71,9 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton Registrar venta")
     public void presiono_el_boton_Registrar_venta() {
-        altaFijaTiendaStep.clickRegistrarVenta();
+        if (Parameters.estadoFlujo){
+            altaFijaTiendaStep.clickRegistrarVenta();
+        }
     }
 
 

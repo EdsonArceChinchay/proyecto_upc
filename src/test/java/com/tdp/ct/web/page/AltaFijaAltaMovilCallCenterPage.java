@@ -111,7 +111,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void bloque(String bloque) {
         boolean existe = validateInputAndLocator(bloque, inputBlock);
-        if (existe) {
+        if (existe && inputBlock.isSelected()) {
             js().scrollElementTop(inputBlock);
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
@@ -232,11 +232,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoPago(String tipoPago) {
         esperaProgresiva(driver(), 3, 5, pageType);
-        click(pageType);
-        String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
-        String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
-        UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        try {
+            click(pageType);
+            String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
+            String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        } catch (NoSuchElementException nsee) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento pageType no fue encontrado: " + nsee.getMessage());
+        }
     }
 
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")

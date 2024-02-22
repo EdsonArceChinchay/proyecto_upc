@@ -75,4 +75,5 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan                        |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA O23 100 MBPS |
-      #| usuario interno | csalvatierrac |  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+      #| usuario interno |  |  | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+#      | usuario interno |           | | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |

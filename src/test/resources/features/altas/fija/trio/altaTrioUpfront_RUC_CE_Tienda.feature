@@ -5,13 +5,13 @@
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1439
 ##SPRINT CREADO: PI18_SP3
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 12/02/2024
+##FECMOD: 20/02/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP3 @TEST1
 Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX en canal Tienda
@@ -56,9 +56,10 @@ Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en el boton continuar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        doy clic para descargar el contrato

@@ -8,8 +8,6 @@ webdriver:
   headless: off
   headless.dimension: --window-size=1400,600
   pageload: EAGER
-
-
 ###################
 ### JIRA - XRAY ###
 ###################
@@ -30,7 +28,6 @@ url:
     movistar: https://wa-berserkers-certimesa.azurewebsites.net/inicio
   prod:
     movistar: https://ventas.movistar.com.pe/inicio
-
 
 ###################
 ### TIMING - PAGES ###

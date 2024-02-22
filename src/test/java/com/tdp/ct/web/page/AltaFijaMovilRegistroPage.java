@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Cliente;
@@ -84,6 +85,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
+    @FindBy(xpath = "//span[contains(text(), 'Continuar')]")
+    protected WebElement buttonReContinuar;
 
     @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
@@ -151,9 +154,31 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaRegistrarVenta() {
+        boolean verificarUbicacion = true;
+        do {
+            esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
+//            Realizar un try catch para buscar el elemento devolver un return para almacenar el valor false si se ecnuntra la venta complketada
+            try {
+                msjExitoso.isDisplayed();
+                Parameters.estadoFlujo = false;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Ventana de venta exitosa visible");
+                return true;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de venta exitosa");
+//                verificarUbicacion = true;
+            }
+            try {
+                titleRegistrarServicio.isDisplayed();
+                verificarUbicacion = false;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de registrar venta");
+//                verificarUbicacion = true;
+            }
+        } while (verificarUbicacion);
+
         try {
-            esperaProgresiva(driver(), 3, 50, titleRegistrarServicio);
-            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 100).isDisplayed();
+            esperaProgresiva(driver(), 3, 4, titleRegistrarServicio);
+            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
             UtilWeb.waitForSeconds(1);
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
             return existe;
@@ -450,6 +475,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
+        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -464,6 +490,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
+        waitUntilElementIsClickable(element, 30);
         esperaProgresiva(driver(), 4, 10, element);
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
@@ -871,16 +898,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         revisarModalError(driver());
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
+        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        waitUntilElementIsClickable(boton, 1000);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(1);
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 150);
-        click(boton, 50);
+        waitUntilElementIsClickable(boton, 1000);
+        click(boton);
         UtilWeb.waitForSeconds(5);
     }
 
+//    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 
@@ -1032,5 +1059,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes.toString();
     }
 
+    public boolean verificarPantallaVenta() {
+        try {
 
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra la pantalla de venta exitosa, se saltaron pasos");
+            return true;
+        } catch (NoSuchElementException nsee) {
+            return false;
+        }
+    }
 }

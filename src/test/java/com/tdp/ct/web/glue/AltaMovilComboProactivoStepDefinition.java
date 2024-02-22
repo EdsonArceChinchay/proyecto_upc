@@ -1,5 +1,7 @@
 package com.tdp.ct.web.glue;
+
 import com.tdp.ct.web.WebAutomationApplication;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaMovilComboProactivoStep;
@@ -12,19 +14,26 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaMovilComboProactivoStepDefinition {
 
-  @Autowired
-  private AltaMovilComboProactivoStep altaMovilComboProactivoStep;
-  @Autowired
-  private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+    @Autowired
+    private AltaMovilComboProactivoStep altaMovilComboProactivoStep;
+    @Autowired
+    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+    @Autowired
+    private Cliente cliente;
 
-  @Y("selecciono completar los datos del cliente")
-  public void  selecciono_completar_los_datos_del_cliente(DataTable datosCliente) {
-     altaMovilComboProactivoStep.completoDatosCliente(datosCliente);
-    // altaMovilComboProactivoStep.clicConfirmarCliente();
-    //  altaFijaMovilRegistroStep.datosClienteValidado();
-     // altaMovilComboProactivoStep.clicConsultar();
+    @Y("selecciono completar los datos del cliente")
+    public void selecciono_completar_los_datos_del_cliente(DataTable datosCliente) {
+        if (cliente.isClienteNuevo()) {
+            altaMovilComboProactivoStep.completoDatosCliente(datosCliente);
+        } else {
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
 
-  }
+        // altaMovilComboProactivoStep.clicConfirmarCliente();
+        //  altaFijaMovilRegistroStep.datosClienteValidado();
+        // altaMovilComboProactivoStep.clicConsultar();
+
+    }
 
 
     @Y("selecciono el boton agregar sva")

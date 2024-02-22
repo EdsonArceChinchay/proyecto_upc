@@ -1,11 +1,13 @@
 package com.tdp.ct.web.utils;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import javax.swing.JOptionPane;
 
 public class Helper {
 

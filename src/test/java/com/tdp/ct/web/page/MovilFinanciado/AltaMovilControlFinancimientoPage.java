@@ -75,7 +75,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         click(btnSeleccionarOferta);
     }
     public void selectBtnLineaNueva() {
-        esperaProgresiva(driver(),3,5,btnLineaNueva);
+        esperaProgresiva(driver(),3,10,btnLineaNueva);
         click(btnLineaNueva);
     }
     public void selectBtnAgregarEquipo() {

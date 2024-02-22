@@ -69,12 +69,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
                 break;
         }
 
-        /*String inputMz = "div:nth-child(6) tdp-st-input-text;input";
-        UtilWeb.waitForSeconds(4);
-        WebElement inputMzElement = js().getWebElement(inputMz);
-        System.out.println(inputMzElement + "reconocio input");
-        click(inputMzElement);
-        type(inputMzElement, manzana);*/
     }
 
     public void ingresarReferencia(String referencia){
@@ -98,9 +92,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        //modalError(5, btnReintentar, "Click al elemento Reintentar");
-        //modalError(5, btnReintentar, "Click al elemento Reintentar");
-        //modalError(5, btnReintentar, "Click al elemento Reintentar");
         Addons.revisarModalError(driver());
 
         boolean buttonFound = false;

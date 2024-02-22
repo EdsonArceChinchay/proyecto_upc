@@ -23,6 +23,7 @@ Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -62,8 +63,10 @@ Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |
 
-
+      #    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000256 | Postpago  |
+   #   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
+#      | usuario interno | | | Bienvenid@ | CE            | 1100000270 | Postpago  |
