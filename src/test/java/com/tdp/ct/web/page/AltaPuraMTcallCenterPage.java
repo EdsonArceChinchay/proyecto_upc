@@ -93,7 +93,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     public void clicBotonContinuar() {
         Addons.revisarModalError(driver());
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;

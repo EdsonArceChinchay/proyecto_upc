@@ -110,14 +110,22 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(bloque, inputBlock);
-        if (existe && inputBlock.isSelected()) {
+        //boolean existe = validateInputAndLocator(bloque, inputBlock);
+        if (bloque != null) {
+            WebElement NBloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
+            esperaProgresiva(driver(), 3, 5, NBloque);
+            waitUntilElementIsClickable(NBloque, 15).click();
+            NBloque.sendKeys(Keys.CONTROL + "a");
+            NBloque.sendKeys(Keys.DELETE);
+            type(NBloque, bloque);
+        }
+
+        /*(existe && inputBlock.isSelected()) {
             js().scrollElementTop(inputBlock);
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);
-            type(inputBlock, bloque);
-        }
+            type(inputBlock, bloque);*/
     }
 
     public void manzanaDir(String manzana) {

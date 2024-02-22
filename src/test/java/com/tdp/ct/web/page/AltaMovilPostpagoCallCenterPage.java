@@ -210,7 +210,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
        int intentos = 4;
         for(int i=0;i<intentos;i++) {
             try {
-                esperaProgresiva(driver(), 5, 7, btnIniciar);
+                esperaProgresiva(driver(), 5, 8, btnIniciar);
                 JavascriptExecutor js = (JavascriptExecutor) driver();
                 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
                 btnIniciar.click();
