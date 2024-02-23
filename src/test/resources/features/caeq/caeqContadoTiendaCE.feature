@@ -31,7 +31,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    Y        selecciona el boton del numero de celular existente "650027636"
+#    Y        selecciona el boton del numero de celular existente "650027636"
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -60,4 +60,5 @@ Característica: CAEQ contado con documento CE por canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790|
+#      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
+      | usuario interno |userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |
