@@ -88,5 +88,6 @@ Característica: Caeq Mas Casi por call center
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000811 | 937736455        |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000218 | 968024403        |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000209 | 968640981        |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
       | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
 

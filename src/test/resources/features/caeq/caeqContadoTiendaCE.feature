@@ -59,6 +59,6 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
 #      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
-      | usuario interno |userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |
+      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |

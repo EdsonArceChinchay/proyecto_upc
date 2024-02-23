@@ -460,6 +460,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
+//        TODO: VALIDAR ESTADO DE LA VENTANA
         Addons.revisarModalError(driver());
         Addons.revisarModalError(driver());
         boolean buttonFound = false;

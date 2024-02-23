@@ -44,7 +44,7 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
+#    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
 #    PRUEBAS EN CALL CENTER
@@ -56,8 +56,10 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+      | tipoUsuario     | userName    | password | tipoDocumento | documento  | EncontrarCelular |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000314 | 981637356        |
+      | usuario interno | userNameQAN | passQAN  | CE            | 1100000240 | 983610461        |
 
 #      | usuario interno |          |              | CE            | 1100000317 | 981769530        |
 #      | usuario interno |          |              | CE            | 1100000273 | 984093119        |
