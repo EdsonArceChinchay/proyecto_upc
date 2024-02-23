@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 02/02/2024
+##FECMOD: 22/02/2024
 
-@BERSERKERS @DoneDevOps @RegresionLegacy2
+@BERSERKERS @DoneDevOps @RegresionLegacy
 
 Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en Canal Call Center
 
@@ -62,7 +62,6 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"

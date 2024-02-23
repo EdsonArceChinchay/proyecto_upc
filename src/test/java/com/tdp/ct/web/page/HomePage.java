@@ -82,13 +82,11 @@ public class HomePage extends WebBase {
 
     }
     public void clickBotonConsultar(){
-        //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
         Addons.esperaCargaMontoDeuda(driver(),50);
         esperaProgresiva(driver(),3,20,boton01);
         revisarModalError(driver());
-        //UtilWeb.waitForSeconds(1);
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
@@ -146,6 +144,8 @@ public class HomePage extends WebBase {
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         Boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
+        esperaProgresiva(driver(),2,5,listaDocumentos);
+        js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));

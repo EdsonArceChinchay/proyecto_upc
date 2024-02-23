@@ -72,10 +72,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
-    @FindBy(xpath = "(//button[contains(text(),' Validación no biométrica')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada') or contains(text(),'Validación no biométrica')])[1]")
     protected WebElement buttonDiscapacitado;
-    @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Validación biométrica'))[1]")
     protected WebElement buttonValBiometrica;
+
+    @FindBy(xpath = "(//button[contains(text(),'Validación biométrica')])[3]")
+    protected WebElement buttonValBiometrica3;
     @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
     protected WebElement selectTipoDoc;
     @FindBy(xpath = "//mat-option/span")
@@ -341,14 +344,19 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         if (tipoValidacion.equalsIgnoreCase("discapacitado")) {
             esperaProgresiva(driver(), 5, 5, buttonDiscapacitado);
-            waitUntilElementIsVisible(buttonDiscapacitado, 5).click();
-
+            waitUntilElementIsClickable(buttonDiscapacitado, 5).click();
         } else {
-            esperaProgresiva(driver(), 5, 5, buttonValBiometrica);
-            waitUntilElementIsVisible(buttonValBiometrica, 5).click();
+            if (buttonValBiometrica3.isEnabled())
+            {
+                waitUntilElementIsClickable(buttonValBiometrica3, 5).click();
+            }
+            else
+            {
+                waitUntilElementIsClickable(buttonValBiometrica, 5).click();
+            }
         }
         UtilWeb.waitForSeconds(1);
     }
@@ -457,7 +465,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(), 5, 6, element);
+        esperaProgresiva(driver(), 5, 100, element);
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }

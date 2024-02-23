@@ -25,9 +25,7 @@ public class HomeStep {
 
     @ScreenShotBefore
     public void clickBotonConsultar() {
-        //UtilWeb.waitForSeconds(10);
         page.homePage().clickBotonConsultar();
-        //UtilWeb.waitForSeconds(10);
     }
 
     @ScreenShotAfter

@@ -32,7 +32,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton consultar
     Cuando   selecciono el boton Ver detalle del servicio "14353885"
     Y        selecciono el boton agregar sva
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en agregar SVA Linea "Plan Multidestino 30"
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
