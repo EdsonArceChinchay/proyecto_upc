@@ -101,13 +101,11 @@ public class HomePage extends WebBase {
         datosClienteNatural = driver().findElements(By.xpath("//*[contains(@class,'info-user')]/div")).size() != 0;
         if (datosClienteNatural) {
             Nombre = txtNombre.getText().trim().toUpperCase();
-            System.out.println("Entro en Natural");
         }
         boolean datosClienteEmpresa;
         datosClienteEmpresa = driver().findElements(By.xpath("//app-client-info")).size() != 0;
         if (datosClienteEmpresa) {
             Nombre = txtNombreRuc.getText().trim().toUpperCase();
-            System.out.println("Entro en Ruc");
         }
         Assertions.assertTrue(Nombre.contains(expectedNombre), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNombre);
         Assertions.assertTrue(Nombre.contains(expectedTipoDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedTipoDocumento);
@@ -181,13 +179,6 @@ public class HomePage extends WebBase {
         } catch (Exception e) {
 
         }
-        //waitUntilElementIsClickable(botonX,20).click();
     }
-
-    public void clickBackOffice() {
-        click(backOfficeButton);
-        waitUntilElementIsVisible(find().getElementByXPath("//app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
-    }
-
 
 }

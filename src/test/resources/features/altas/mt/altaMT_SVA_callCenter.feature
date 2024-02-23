@@ -72,7 +72,6 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-#    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |

@@ -57,17 +57,17 @@ public class BandejaBackOfficePage extends WebBase {
 
     public void buscoDocumento() {
         btnBuscar.click();
-        esperaProgresiva(driver(),3,20,btnCargarAudio);
+        esperaProgresiva(driver(),5,5,btnCargarAudio);
 
     }
 
     public void abrirPopUpCargaAudio() {
-        esperaProgresiva(driver(), 3, 20, btnCargarAudio);
+        esperaProgresiva(driver(), 5, 5, btnCargarAudio);
         btnCargarAudio.click();
     }
 
     public void cargarAudio() {
-        esperaProgresiva(driver(), 3, 30, etiquetaCargando);
+        esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(1);
@@ -76,7 +76,6 @@ public class BandejaBackOfficePage extends WebBase {
         } else {
             System.out.println("Adjunto ya subido anteriormente");
         }
-
     }
 
     public void seleccionoSolicitud(String numeroSolicitud) {

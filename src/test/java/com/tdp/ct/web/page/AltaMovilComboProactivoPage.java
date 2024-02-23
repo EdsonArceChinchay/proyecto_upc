@@ -75,8 +75,6 @@ public class AltaMovilComboProactivoPage extends WebBase {
         }
     }
 
-
-
     public void seleccionarDepartamento(String departamento) {
         WebElement listDepartamento = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='department']");
         click(listDepartamento);
@@ -90,7 +88,6 @@ public class AltaMovilComboProactivoPage extends WebBase {
                 click(elements,30);
             }
         }
-
     }
 
     public void seleccionarProvincia(String provincia) {
@@ -124,7 +121,6 @@ public class AltaMovilComboProactivoPage extends WebBase {
                 click(elements,30);
             }
         }
-
     }
 
     public void seleccionarDireccion(String direccion) {
@@ -142,13 +138,9 @@ public class AltaMovilComboProactivoPage extends WebBase {
     public void clicConsultar() {
         js().scrollElementTop(lblSva);
         click(lblSva,10);
-
-
-
     }
 
     public void seleccionoElBotonAgregarSva() {
-        revisarModalError(driver());
         revisarModalError(driver());
         WebElement btnAgregarSva = listBtnAgregarSva.get(listBtnAgregarSva.size()-1);
         esperaProgresiva(driver(),3,5,btnAgregarSva);

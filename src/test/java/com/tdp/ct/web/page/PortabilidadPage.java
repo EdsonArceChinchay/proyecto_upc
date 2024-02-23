@@ -13,7 +13,6 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class PortabilidadPage extends WebBase {
 
-
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'Consultar')]")
     protected WebElement btnConsultar;
 
@@ -36,7 +35,6 @@ public class PortabilidadPage extends WebBase {
         WebElement document= find().getElementByCss(".tdp-col-sm-9:nth-child(1) .ng-pristine");
         click(document);
         type(document, numero);
-
     }
 
     public void escogerTipoLinea(String plan) {
@@ -53,7 +51,6 @@ public class PortabilidadPage extends WebBase {
                 click(elements, 30);
             }
         }
-
     }
 
     public void esogerTipoOperador(String operador) {
@@ -71,25 +68,19 @@ public class PortabilidadPage extends WebBase {
                 click(elements, 30);
             }
         }
-
     }
 
     public void clickBotonConsultar() {
-        waitUntilElementIsVisible(btnConsultar,10);
+        waitUntilElementIsClickable(btnConsultar,10);
         js().scrollElementTop(btnConsultar);
         btnConsultar.click();
-        //click(btnConsultar);
-        //waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);
-
     }
 
     public void clickPortaMovil() {
-        waitUntilElementIsVisible(btnPortaMovil,20);
+        waitUntilElementIsClickable(btnPortaMovil,20);
         js().scrollElementTop(btnPortaMovil);
         btnPortaMovil.click();
-        //click(btnConsultar);
-        //waitUntilElementIsVisible(boton01,20);
         UtilWeb.waitForSeconds(5);
 
     }

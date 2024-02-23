@@ -50,7 +50,7 @@ Característica: AT-DT038_Alta MT con nuevo cliente con documento CE por Call Ce
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+            Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        valido el detalle de la seleccion

@@ -233,16 +233,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 200, titleOfertasSugeridas);
-        esperaProgresiva(driver(), 5, 500, listaOfertasSugeridas.get(0));
+        esperaProgresiva(driver(), 6, 10, listaOfertasSugeridas.get(0));
         boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
 
     public void seleccionarOferta(String oferta) {
-        revisarModalError(driver());
         revisarModalError(driver());
         scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
@@ -461,7 +458,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        Addons.revisarModalError(driver());
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
@@ -916,8 +912,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicRegistrarVenta() {
         revisarModalError(driver());
-        revisarModalError(driver());
-        revisarModalError(driver());
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
         waitUntilElementIsClickable(boton, 1000);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
@@ -953,9 +947,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void agregoSVAINTERNET(String svaInternet) {
-
         WebElement listElementPLan;
-
         UtilWeb.waitForSeconds(10);
         listElementPLan = find().getElementByXPath("//tdp-st-select[@label='Elige SVA'] | //div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
         esperaProgresiva(driver(), 3, 5, listElementPLan);

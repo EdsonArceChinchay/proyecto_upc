@@ -17,7 +17,6 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
-
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
     @FindBy(xpath = "(//div[@class='title'])/span")
@@ -53,14 +52,11 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement preguntaTipoPlan;
 
     public void botonMostrarOfertasRapido() {
-        clickBtnReintentar();
+        revisarModalError(driver());
         esperaProgresiva(driver(),5,5,btnMostrarOfertas);
         waitUntilElementIsVisible(btnMostrarOfertas, 10).click();
     }
     public void cerrarPopUpEstadoCU(){
-//        UtilWeb.waitForSeconds(1);
-//        waitUntilElementIsVisible(cerrarPopUpEstadoCU, 10).click();
-//        UtilWeb.waitForSeconds(1);
         try {
             if (cerrarPopUpEstadoCU.isDisplayed()) {
                 System.out.println("Cierre Nuevo Popup....");
@@ -100,7 +96,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void listaPlanMovil(String planMovil,ManageScenario scenario) {
-
         revisarModalError(driver());
         scenario.printFullView();
         UtilWeb.waitForSeconds(2);

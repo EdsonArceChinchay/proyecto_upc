@@ -56,9 +56,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     public void clickBtnConsultarCobertura() {
         click(btnConsultarCobertura);
-//        clickBtnReintentar();
-//        clickBtnReintentar();
-//        clickBtnReintentar();
     }
 
     public void validarOfertasSugeridasView(String title) {
@@ -75,8 +72,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void clickBtnPlanNuevo() {
-       // waitUntilElementIsVisible(btnPlanNuevo, 100);
-        esperaProgresiva(driver(),3,5,btnPlanNuevo);
+        esperaProgresiva(driver(), 3, 5, btnPlanNuevo);
         click(btnPlanNuevo);
         UtilWeb.waitForSeconds(2);
     }
@@ -116,23 +112,5 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     public void scrollToViewAgendamiento() {
         js().scrollElementTop(find().getElementByCss("div.return"));
     }
-
-    public void clickBtnReintentar() {
-        boolean elementoExistente;
-        boolean modalExiste;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() !=0;
-        if (elementoExistente) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton reintentar");
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
-
-        if (modalExiste){
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
-            btnEntendido.click();
-            UtilWeb.waitForSeconds(2);
-        }
-
-    }
+    
 }

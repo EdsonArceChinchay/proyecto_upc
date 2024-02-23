@@ -21,9 +21,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     protected WebElement btnContinuarCU;
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
-
-    //@FindBy(css = ".div-botton div:nth-child(1) .btn-renovate-plan")
-    //@FindBy( xpath = "//*[@class='btn-renovate-plan btn-text btn-hover' and contains(text(),'Renovar')]")
     @FindBy(xpath = "//tdp-st-button[contains(@class, 'hydrated')]")
     protected WebElement btnRenovarPlan;
 
@@ -95,7 +92,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public int contadorResultadosBusquedaEquipos(){
         List<WebElement> elementos;
-
         int contador = 0;
         try{
             UtilWeb.waitForSeconds(5);
@@ -176,11 +172,9 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     }
 
     public void clickBtnConShadowIniciarRegistro() {
-        System.out.println("Paso por aqui");
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsClickable(btnConShadowIniciarRegistro, 20);
         click(btnConShadowIniciarRegistro);
-        System.out.println("dio cliick");
     }
 
     public void writeEmail(String email) {
@@ -197,24 +191,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         clear(ele2);
         type(ele2, email);
         UtilWeb.waitForSeconds(1);
-    }
-
-    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        boolean modalExiste;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-        }
-        if (modalExiste) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
-            btnEntendido.click();
-            UtilWeb.waitForSeconds(2);
-        }
     }
 
 }

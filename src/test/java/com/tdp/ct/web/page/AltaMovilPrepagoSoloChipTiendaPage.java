@@ -15,24 +15,18 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
 
     @FindBy(xpath = "(//div[contains(@class,'pt-4')]/div[@class='tdp-row'])[1]")
     protected List<WebElement> listOfert;
-
     @FindBy(xpath = "//div[@class='button-filter-section']/button[contains(text(),'Prepago')]")
     protected WebElement selecPrepago;
-
     @FindBy(xpath = "//div[contains(@class,'offert-card-title-prepaid')]")
     protected List<WebElement> listaPrepago;
-
     @FindBy(xpath = "//span[contains(text(),'MÓVIL NUEVO')]/../following-sibling::div[2]/div/button")
     protected WebElement lineaNueva;
-
     @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmar;
-
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
 
     public void seleccionarOferta(String oferta) {
-        //clickElementInAList(listOfert, oferta.toUpperCase());
         UtilWeb.waitForSeconds(10);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,400)");

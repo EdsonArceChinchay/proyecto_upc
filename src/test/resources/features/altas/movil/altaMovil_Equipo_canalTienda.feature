@@ -42,7 +42,7 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
-    Y         doy click en el boton linea nueva
+    Y        doy click en el boton linea nueva
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"

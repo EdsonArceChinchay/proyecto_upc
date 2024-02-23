@@ -31,7 +31,6 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Movil Existente
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
@@ -42,9 +41,6 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total

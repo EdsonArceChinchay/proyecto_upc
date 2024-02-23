@@ -57,4 +57,4 @@
 
      Ejemplos:
        | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                      |
-       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300015 | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA S23 300 MBPS|
+       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300015 | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA S23 300 MBPS |

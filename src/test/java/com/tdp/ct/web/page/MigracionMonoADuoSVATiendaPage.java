@@ -35,7 +35,7 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
 
     public void clicEnAgregarSVA() {
         js().scrollElementTop(buttonAgregarSVA);
-        waitUntilElementIsVisible(buttonAgregarSVA, 10);
+        waitUntilElementIsClickable(buttonAgregarSVA, 10);
         click(buttonAgregarSVA);
         UtilWeb.waitForSeconds(5);
 
@@ -49,7 +49,7 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
 
     public void clickGuardarCambios() {
         js().scrollElementTop(buttonGuardarCambios);
-        waitUntilElementIsVisible(buttonGuardarCambios, 10);
+        waitUntilElementIsClickable(buttonGuardarCambios, 10);
         click(buttonGuardarCambios);
         UtilWeb.waitForSeconds(5);
 
@@ -59,7 +59,7 @@ public class MigracionMonoADuoSVATiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         String elemento = "//div[contains(@class, 'stl_negrita g-text--uppercase') and contains(., '" + plan + "')]";
         WebElement elementPlan = find().getElementByXPath(elemento);
-        waitUntilElementIsVisible(elementPlan, 20).click();
+        waitUntilElementIsClickable(elementPlan, 20).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", plan);
 
     }

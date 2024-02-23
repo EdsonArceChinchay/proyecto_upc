@@ -14,12 +14,10 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
-
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
-
     @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
 
@@ -41,9 +39,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     //@FindBy(xpath = "//div[@class='card-option-ofert-content']")
     @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
     protected List<WebElement> listaOfertas;
-
-/*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
-    protected WebElement inputText;*/
 
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement btnIniciar;
@@ -125,7 +120,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         type(Input, buscarE);
         UtilWeb.waitForSeconds(10);
         Input.sendKeys(Keys.ENTER);
-        //click(lblItem);
     }
 
     public void seleccionoLaCartillaLineaNueva() {
@@ -222,15 +216,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 }
             }
         }
-       /* esperaProgresiva(driver(),5,7,btnIniciar);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-        js().scrollElementTop(btnIniciar);
-        btnIniciar.click();
-       // waitUntilElementIsClickable(btnIniciar,150).click();
-       // System.out.println("paso por aqui" + btnIniciar.getText());
-        clickBtnCerrarModalError(btnIniciar);*/
-
 
     public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         boolean existe = waitUntilElementIsVisible(titleDelivery, 60).isDisplayed();
@@ -249,7 +234,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 System.out.println("Se encontro: " + pago);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
-                //click(elements, 3);
                 break;
             }
         }
