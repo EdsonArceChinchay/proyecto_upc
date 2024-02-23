@@ -3,9 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,6 +23,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnLineaExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaCelularExistente;
+
+    @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .btn-try-again")
+    protected WebElement btnRefreshLineaCelularExistente;
+
     @FindBy(css = ".stl_position_movil:nth-child(3) app-card-mt:nth-child(1) .contenedor_park_plan_MT")
     protected WebElement btnPlanMtExistente;
 
@@ -52,7 +54,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void altaHogar() {
         UtilWeb.waitForSeconds(15);
-        esperaProgresiva(driver(),20,5,btnHogar);
+        esperaProgresiva(driver(), 20, 5, btnHogar);
         js().scrollElementTop(btnHogar);
         click(btnHogar);
     }
@@ -72,17 +74,24 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         String LineaExistente = btnLineaExistente.getText();
 
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+
+            refrescarLineaExistente(".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .btn-try-again");
             click(btnLineaExistente);
+
         } else {
             int i = 2;
             int reintentos = 5;
             boolean elementoExistente;
             while (i < reintentos) {
                 String selector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .container";
+                String refreshSelector = ".stl_position_movil:nth-child(1) app-card-line:nth-child(" + i + ") .btn-try-again";
                 WebElement elemento = driver().findElement(By.cssSelector(selector));
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
                 if (elementoExistente) {
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+
+                        refrescarLineaExistente(refreshSelector);
+
                         click(elemento);
                         break;
                     } else {
@@ -104,6 +113,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnLineaCelularExistente);
         String LineaExistente = btnLineaCelularExistente.getText();
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
+
+            refrescarLineaExistente(".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container");
+
             click(btnLineaCelularExistente);
         } else {
             int i = 2;
@@ -111,10 +123,14 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             boolean elementoExistente;
             while (i < reintentos) {
                 String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
+                String refreshSelector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .btn-try-again";
                 WebElement elemento = driver().findElement(By.cssSelector(selector));
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
                 if (elementoExistente) {
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+
+                        refrescarLineaExistente(refreshSelector);
+                        js().scrollElementTop(elemento);
                         click(elemento);
                         break;
                     } else {
@@ -398,4 +414,21 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         }
     }
 
+    public void refrescarLineaExistente(String ruta) {
+        boolean status = true;
+        WebElement elementoRefresh;
+        do {
+            try {
+                elementoRefresh = driver().findElement(By.cssSelector(ruta));
+                try {
+                    elementoRefresh.click();
+                    status = false;
+                } catch (ElementClickInterceptedException ecie) {
+                    waitUntilElementIsClickable(elementoRefresh, 3);
+                }
+            } catch (NoSuchElementException nsee) {
+                status = false;
+            }
+        } while (status);
+    }
 }

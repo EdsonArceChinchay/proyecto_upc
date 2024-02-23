@@ -110,14 +110,22 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(bloque, inputBlock);
-        if (existe) {
+        //boolean existe = validateInputAndLocator(bloque, inputBlock);
+        if (bloque != null) {
+            WebElement NBloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
+            esperaProgresiva(driver(), 3, 5, NBloque);
+            waitUntilElementIsClickable(NBloque, 15).click();
+            NBloque.sendKeys(Keys.CONTROL + "a");
+            NBloque.sendKeys(Keys.DELETE);
+            type(NBloque, bloque);
+        }
+
+        /*(existe && inputBlock.isSelected()) {
             js().scrollElementTop(inputBlock);
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);
-            type(inputBlock, bloque);
-        }
+            type(inputBlock, bloque);*/
     }
 
     public void manzanaDir(String manzana) {
@@ -232,11 +240,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoPago(String tipoPago) {
         esperaProgresiva(driver(), 3, 5, pageType);
-        click(pageType);
-        String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
-        String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
-        UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        try {
+            click(pageType);
+            String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
+            String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        } catch (NoSuchElementException nsee) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento pageType no fue encontrado: " + nsee.getMessage());
+        }
     }
 
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")

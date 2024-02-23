@@ -5,6 +5,9 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.tdp.ct.web.utils.Addons;
+
+import java.sql.Driver;
 
 @Component
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
@@ -22,7 +25,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     }
 
     @ScreenShotAfter
-    public void clickBtnRenovarPlan() {
+    public void clickBtnRenovarPlan(){
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
     }
 

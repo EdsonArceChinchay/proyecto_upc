@@ -31,7 +31,7 @@ Característica: Caeq Mas Casi por call center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
-    Y        presiono el boton Renovar Plan
+    Y        doy click en el boton "Renovar plan"
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
@@ -51,7 +51,7 @@ Característica: Caeq Mas Casi por call center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -78,8 +78,6 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
-#      | usuario interno |          |              | Bienvenid@ | CE            | 1100000273 | 984093119        |
-#      | usuario interno |           | | Bienvenid@ | CE            | 1100000273 | 984093119 |
-#      | usuario interno || | Bienvenid@ | CE            | 1100000273 | 984093119 |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
+      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000219 | 981805761        |

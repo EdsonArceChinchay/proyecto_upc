@@ -55,5 +55,10 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120377222 | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor               | tipoDocumento | documento  | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | CE            | 120377222  | test@hotmail.com |
+
+
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000217 | test@hotmail.com | 5010192755 |
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 221011258  | test@hotmail.com | 5010194087 |
