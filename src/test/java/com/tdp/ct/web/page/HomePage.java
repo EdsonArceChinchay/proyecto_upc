@@ -181,4 +181,9 @@ public class HomePage extends WebBase {
         }
     }
 
+    public void clickBackOffice() {
+        click(backOfficeButton);
+        waitUntilElementIsVisible(find().getElementByXPath("//app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
+    }
+
 }

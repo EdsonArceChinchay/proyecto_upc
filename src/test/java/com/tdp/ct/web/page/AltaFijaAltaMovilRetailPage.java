@@ -183,7 +183,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         WebElement detalle;
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
             click(btnLineaCelularExistente);
-            detalle = driver().findElement(By.xpath("(//*[@class=\"detailHogar\"])[1]"));
+            detalle = driver().findElement(By.cssSelector(".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .detailHogar"));
             click(detalle);
         } else {
             int i = 2;
@@ -192,11 +192,13 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
             while (i < reintentos) {
                 String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
                 WebElement elemento = driver().findElement(By.cssSelector(selector));
-                detalle = driver().findElement(By.xpath("(//*[@class=\"detailHogar\"])[" + i + "]"));
+                detalle = driver().findElement(By.cssSelector(".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .detailHogar"));
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
                 if (elementoExistente) {
+                    js().scrollElementTop(elemento);
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
                         click(elemento);
+                        js().scrollElementTop(detalle);
                         click(detalle);
                         break;
                     } else {

@@ -73,4 +73,18 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage extends
         WebElement btnSiguiente = find().getElementByCss(".modal_footer tdp-st-button");
         click(btnSiguiente, 10);
     }
+
+    public void scrollUp() {
+        UtilWeb.waitForSeconds(4);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,700)");
+    }
+
+    public void scrollTo() {
+        UtilWeb.waitForSeconds(4);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
+    }
 }

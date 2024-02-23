@@ -17,8 +17,6 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep {
     @Autowired
     private StepPages page;
 
-
-
     public void selecciono_agregar_sva_fija() {
         page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().selecciono_agregar_sva_fija();
 
@@ -35,21 +33,14 @@ public class AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerStep {
 
     public void seleccionamosAgregarDecodificador() {
         page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().seleccionamosAgregarDecodificador();
-
     }
 
     public void scrollTo() {
         page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().scrollTo();
-
-
     }
-
-
-
 
     public void scrollToUp() {
         page.altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage().scrollToUp();
-
     }
 
     public void seleccionoElPlan_movilPostpago() {

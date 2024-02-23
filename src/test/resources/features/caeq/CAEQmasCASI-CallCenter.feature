@@ -80,4 +80,14 @@ Característica: Caeq Mas Casi por call center
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000219 | 981805761        |
+#      | usuario interno |          |              | Bienvenid@ | CE            | 1100000273 | 984093119        |
+#      | usuario interno |           | | Bienvenid@ | CE            | 1100000273 | 984093119 |
+#      | usuario interno |           | | Bienvenid@ | CE            | 1100000314 | 984093119        |
+
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000219 | 981805761        |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000811 | 937736455        |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000218 | 968024403        |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000209 | 968640981        |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
+      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
+

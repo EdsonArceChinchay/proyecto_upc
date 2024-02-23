@@ -414,7 +414,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     }
 
-
     public void verificarIdentidadValidada() {
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         UtilWeb.waitForSeconds(3);
@@ -458,6 +457,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
+//        TODO: VALIDAR ESTADO DE LA VENTANA
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
@@ -479,7 +479,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-        buttonContinuar.sendKeys(Keys.ENTER);
+//        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -921,7 +921,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-//    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
+    //    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 

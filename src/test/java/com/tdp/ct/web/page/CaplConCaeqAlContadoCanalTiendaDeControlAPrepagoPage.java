@@ -21,7 +21,9 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     protected WebElement btnContinuarCU;
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
-    @FindBy(xpath = "//tdp-st-button[contains(@class, 'hydrated')]")
+
+
+    @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
     protected WebElement btnRenovarPlan;
 
     @FindBy(xpath = "//*[@label='Seleccionar Oferta']")

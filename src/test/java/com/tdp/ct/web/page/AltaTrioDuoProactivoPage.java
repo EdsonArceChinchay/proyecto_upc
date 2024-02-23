@@ -38,5 +38,11 @@ public class AltaTrioDuoProactivoPage extends WebBase {
         UtilWeb.waitForSeconds(10);
     }
 
+    public void scrollUp() {
+        UtilWeb.waitForSeconds(2);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,400)");
+    }
 }
 

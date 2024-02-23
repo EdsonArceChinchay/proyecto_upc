@@ -44,11 +44,11 @@ public class BandejaBackOfficePage extends WebBase {
     public void clickBackOffice() {
         esperaProgresiva(driver(), 3, 5, btnBackOffice);
         click(btnBackOffice);
-        esperaProgresiva(driver(), 3, 5, btnBuscar);
+        esperaProgresiva(driver(), 5, 5, btnBuscar);
     }
 
     public void ingresoDocumento(String documento) {
-        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(btnBuscar, 20);
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
         esperaProgresiva(driver(), 3, 5, document);
         click(document);
