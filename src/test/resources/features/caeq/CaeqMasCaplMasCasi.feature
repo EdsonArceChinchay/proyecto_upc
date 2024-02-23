@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: AT-DT046_Caeq Mas Capl Mas Casi con documento CE por canal Call Center
+Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call Center
 
   @CaeqCaplCasi
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

@@ -64,8 +64,8 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                           |
       | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465134 | Postpago | Plan Movil Movistar Total ilim 26 GB |

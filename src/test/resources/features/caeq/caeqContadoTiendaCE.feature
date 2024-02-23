@@ -45,7 +45,6 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        cierro pop up de CU
     Y        doy click en el boton "Mantener Plan"
     Y        doy click en iniciar registro
-    #Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
@@ -57,6 +56,8 @@ Característica: CAEQ contado con documento CE por canal Tienda
     #Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
 
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
