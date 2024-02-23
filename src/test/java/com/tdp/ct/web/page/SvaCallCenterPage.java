@@ -34,9 +34,8 @@ public class SvaCallCenterPage extends WebBase{
     protected WebElement movistarTvApp;
 
     public void ver_detalle(){
+        waitUntilElementIsClickable(detalle,50);
         js().scrollElementTop(detalle);
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsClickable(detalle,30);
         click(detalle);
         UtilWeb.waitForSeconds(5);
 

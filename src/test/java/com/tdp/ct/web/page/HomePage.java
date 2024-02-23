@@ -43,7 +43,6 @@ public class HomePage extends WebBase {
     protected WebElement listaDocumentos;
 
     @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
-    ////div[@class='dialog-close']/img
     protected WebElement botonX;
 
     public void seleccionoTipoDocumento(String tipoDocumento) {
@@ -84,14 +83,12 @@ public class HomePage extends WebBase {
 
     }
 
-    public void clickBotonConsultar() {
-        //waitUntilElementIsVisible(btnconsultar,10);
-        esperaProgresiva(driver(), 3, 5, btnconsultar);
+    public void clickBotonConsultar(){
+        esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
         Addons.esperaCargaMontoDeuda(driver(),50);
         esperaProgresiva(driver(),3,20,boton01);
         revisarModalError(driver());
-        //UtilWeb.waitForSeconds(1);
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
@@ -152,6 +149,8 @@ public class HomePage extends WebBase {
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         Boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
+        esperaProgresiva(driver(),2,5,listaDocumentos);
+        js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
@@ -187,10 +186,6 @@ public class HomePage extends WebBase {
 
     public void clickBackOffice() {
         click(backOfficeButton);
-        waitUntilElementIsVisible(find().getElementByXPath("/html/body/app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
-    }
-
-    public void buscarOrden() {
-
+        waitUntilElementIsVisible(find().getElementByXPath("//app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
     }
 }

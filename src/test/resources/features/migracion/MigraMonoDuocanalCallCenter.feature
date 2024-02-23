@@ -18,11 +18,9 @@
 
 Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @MigracionMonoMonoCallCenter
   Esquema del escenario: Migracion de Mono a Mono
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -52,7 +50,6 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:

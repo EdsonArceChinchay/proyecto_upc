@@ -6,23 +6,23 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-1236
+##GDAP: GDAP-1194
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
+##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
-Característica: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
+Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @AltaTrioSvaInternetSvalineaCallCenter
-  Esquema del escenario: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
+  @AltaTrioSvaRepetidorSvaModemCallCenter
+  Esquema del escenario: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -36,7 +36,7 @@ Característica: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
     Y        cierro popup de error
     Y        ingreso los datos del cliente extranjero a registrar
       | nombres | apellidos | genero   |
-      | Luciana | Ramos     | femenino |
+      | Olga    | Rivaguero | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -48,33 +48,41 @@ Característica: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
-    Y        doy click en agregar SVA Linea "<svaLinea>"
+    Y        doy click en agregar Modem
     Entonces doy click en Agregar Sva
-    Y        agrego "<svainternet>"
+    Y        elegimos sva repetidor "<svarepetidor>"
     Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester_12_45@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester_12_45@tester.com"
+    Y        ingreso un correo electronico "tester_1_2@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester_1_2@tester.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 27/08/1978 | Casado      | Albania      |
+      | 11/04/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-	#Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | svaLinea             | svainternet           |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1062122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino 20 | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                      | svarepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1067122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MB | Repetidor WIFI PLUS Venta |

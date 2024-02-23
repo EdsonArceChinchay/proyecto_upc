@@ -61,10 +61,10 @@ Característica: Migracion de MT a MT en Tienda
     Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-   #   | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | nombrePlan                                     |
-   #   | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464680 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     | numeroMt   |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV | 13963546 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | nombrePlan                                     |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464680 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |
+#      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     | numeroMt   |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV | 13963546 |
 #      | usuario interno |          |          | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
 #      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
 #      | usuario interno |          |          | Bienvenid@ | CE            | 222103292  | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |

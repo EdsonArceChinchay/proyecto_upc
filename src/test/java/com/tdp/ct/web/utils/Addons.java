@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.test.context.jdbc.Sql;
 
 
+import javax.swing.*;
 import java.io.File;
 import java.time.Duration;
 import java.util.List;

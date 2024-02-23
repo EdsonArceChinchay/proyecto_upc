@@ -61,7 +61,6 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Cuando   doy clic en si acepto
     Y       doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan           | sva                  |

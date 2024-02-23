@@ -58,7 +58,6 @@
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
      Y        valido que se muestre el detalle del pedido
 
-
      Ejemplos:
-       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | bloque |
-       | usuario externo | userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | bloque |
+       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |

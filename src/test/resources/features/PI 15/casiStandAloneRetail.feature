@@ -15,14 +15,12 @@
 
 @BERSERKERS @DoneDevOps @casiStandAloneRetail
 
-Característica: AT-DT113_CASI Stand Alone por Retail
+Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
   Quiero realizar un CASI a un cliente con CE y parque movil
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @casiStandAloneRetail
   Esquema del escenario: Cambio de Simcard a un cliente con CE y parque movil
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -48,5 +46,5 @@ Característica: AT-DT113_CASI Stand Alone por Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CE            | 1042464725 | prueba@prueba.com |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464725 | prueba@prueba.com |

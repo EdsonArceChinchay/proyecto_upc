@@ -15,14 +15,12 @@
 
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
 
-Característica: AT-DT112_CASI Stand Alone por Tiendas
-  Quiero realizar un CASI a un cliente con parque movil a un usuario con CE
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
+  Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
   @casiStandAloneTiendas
-  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con CE
+  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con documento CE por Canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -48,5 +46,5 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |
