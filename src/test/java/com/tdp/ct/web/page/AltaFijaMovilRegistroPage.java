@@ -158,6 +158,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarPantallaRegistrarVenta() {
         boolean verificarUbicacion = true;
+        int contadorEstado = 0;
         do {
             esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
 //            Realizar un try catch para buscar el elemento devolver un return para almacenar el valor false si se ecnuntra la venta complketada
@@ -173,11 +174,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             try {
                 titleRegistrarServicio.isDisplayed();
                 verificarUbicacion = false;
+                Parameters.estadoFlujo = true;
             } catch (NoSuchElementException nsee) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de registrar venta");
 //                verificarUbicacion = true;
             }
-        } while (verificarUbicacion);
+            contadorEstado++;
+        } while (verificarUbicacion && contadorEstado < 80);
 
         try {
             esperaProgresiva(driver(), 3, 4, titleRegistrarServicio);
@@ -371,12 +374,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             esperaProgresiva(driver(), 5, 5, buttonDiscapacitado);
             waitUntilElementIsClickable(buttonDiscapacitado, 5).click();
         } else {
-            if (buttonValBiometrica3.isEnabled())
-            {
+            if (buttonValBiometrica3.isEnabled()) {
                 waitUntilElementIsClickable(buttonValBiometrica3, 5).click();
-            }
-            else
-            {
+            } else {
                 waitUntilElementIsClickable(buttonValBiometrica, 5).click();
             }
         }
@@ -488,7 +488,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
         int intentos = 4;
-        for(int i=0;i<intentos;i++) {
+        for (int i = 0; i < intentos; i++) {
             try {
                 esperaProgresiva(driver(), 5, 7, element);
                 JavascriptExecutor js = (JavascriptExecutor) driver();

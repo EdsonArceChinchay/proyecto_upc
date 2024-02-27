@@ -46,7 +46,6 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("verifico si me encuentro en la pantalla de agendamiento")
     public void verifico_si_me_encuentro_en_la_pantalla_de_agendamiento() {
-//    TODO: AGREGAR LA VALIDACION DE SI APARECE LA PANTALLA DE AGENDAMIENTO
         altaFijaTiendaStep.verificarEstadoPantallaAgendamiento();
     }
 
