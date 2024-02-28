@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/02/2024
 
- @BERSERKERS @DoneDevOps
+ @BERSERKERS @DoneDevOps  @RegresionLegacy
  Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
 
    @MigracionMonoADuoRetail

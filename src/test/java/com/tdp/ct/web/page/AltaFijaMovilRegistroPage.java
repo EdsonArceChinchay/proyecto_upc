@@ -325,7 +325,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         try {
             WebElement element = find().getElementByXPath("//app-modal-detalle//div/h1[contains(text(),'Detalles')]");
             esperaProgresiva(driver(), 5, 5, element);
-            //waitUntilElementIsVisible(element, 5);
             element.isDisplayed();
             existe = true;
         } catch (NoSuchElementException ex) {
@@ -339,12 +338,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicConfirmarInstalacion() {
         WebElement element = find().getElementByXPath("//app-modal-detalle//div/button");
         element.click();
-        //   UtilWeb.waitForSeconds(2);
     }
 
     public void completarCorreo(String correo) {
         scrollByJavaScriptToPrincipio();
-        //UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[1]");
         esperaProgresiva(driver(), 5, 5, rootInputCorreo);
         SearchContext context1 = sh().getContext(rootInputCorreo);

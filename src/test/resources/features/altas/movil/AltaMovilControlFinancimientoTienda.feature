@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7 @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7
 Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE por canal Tienda
 
   @AltaMovilFinaciamientoTienda_CE

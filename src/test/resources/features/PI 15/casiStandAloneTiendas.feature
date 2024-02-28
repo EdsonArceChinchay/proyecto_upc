@@ -11,10 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA:Reusable
 ##ENCARGADO:Brandon
-##FECMOD: 30/05/2023
+##FECMOD: 26/02/2024
 
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
-
 Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
   Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
@@ -40,11 +39,14 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |

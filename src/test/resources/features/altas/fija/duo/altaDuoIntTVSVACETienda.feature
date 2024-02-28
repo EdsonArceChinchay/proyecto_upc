@@ -1,23 +1,22 @@
 #language:es
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO: ALTA FIJA
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT006
-##GDAP: GDAP-571
-##SPRINT CREADO: PI12
+##CODIGO: AT-DT
+##GDAP: GDAP-
+##SPRINT CREADO: PI18_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 12/02/2024
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 28/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy
+Característica: AT-DT _Alta Duo (Internet + TV) con documento CE por canal Tienda
 
-# Antes de usar se debe le debe de dar score upfront al cliente
-  @AltaDuo_Upfront
+  @AltaDuoIntTVCEST
   Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -32,8 +31,8 @@ Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por c
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos | genero    |
+      | FELIPE  | CRUZ ISLA | MASCULINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -47,6 +46,7 @@ Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por c
 #      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
@@ -59,7 +59,7 @@ Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por c
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
+      | 10/05/1995 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,5 +71,5 @@ Característica: AT-DT006_Alta Duo Voz + Internet Upfront con documento CE por c
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA O23 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                               |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET ESTANDAR HD RA O23 100 MBPS |

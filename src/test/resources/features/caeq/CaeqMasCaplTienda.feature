@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
@@ -7,7 +6,7 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT047
 ##GDAP: GDAP-892
-##SPRINT CREADO:
+##SPRINT CREADO:  PI_
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
@@ -16,7 +15,6 @@
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
-
 
   @CaeqMasCaplTienda @MVP20 @Global
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
@@ -41,8 +39,8 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        presiona el boton anadir equipo
     #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | HUAWEI P30 |
+      | permanencia | tipoPago             | equipoName                        |
+      | 12 meses    | Financiado 12 cuotas | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro
@@ -56,6 +54,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del sales
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:

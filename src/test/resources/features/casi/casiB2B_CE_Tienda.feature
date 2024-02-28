@@ -5,20 +5,20 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1658
 ##SPRINT CREADO: PI18_SP4
 ##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
 ##DATA:REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 23/02/2024
+##FECMOD: 26/02/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP4 @RegresionLegacy
-Característica: AT-DT112_CASI Stand Alone B2B con Representate Legal Extranjero en Canal Tienda
-  Quiero realizar un CASI a un cliente B2B con parque movil con Representate Legal Extranjero en Canal Tienda
+Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tienda
+  Quiero realizar un CASI a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
 
   @casiB2B_CETienda
-  Esquema del escenario: Cambio de Simcard a un cliente B2B con parque movil con Representate Legal Extranjero en Canal Tienda
+  Esquema del escenario: Cambio de Simcard a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

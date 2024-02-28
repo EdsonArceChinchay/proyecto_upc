@@ -40,11 +40,14 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464725 | prueba@prueba.com |

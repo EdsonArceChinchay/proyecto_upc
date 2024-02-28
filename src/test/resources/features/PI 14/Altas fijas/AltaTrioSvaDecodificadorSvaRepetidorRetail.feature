@@ -18,7 +18,7 @@
 Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail
-  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
+  Esquema del escenario: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -53,6 +53,7 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
     Entonces doy click en Agregar Sva
+#    Y        doy click en agregar Bloque "HBO"
     Y        elegimos sva "<decodificador>"
     Y        elegimos sva repetidor "<svarepetidor>"
     Y        doy click en Guardar cambios

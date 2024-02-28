@@ -87,4 +87,5 @@ public class ServiceTest {
                 .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
     }
+
 }

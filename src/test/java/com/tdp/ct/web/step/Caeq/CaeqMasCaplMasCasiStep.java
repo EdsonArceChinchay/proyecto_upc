@@ -13,4 +13,8 @@ public class CaeqMasCaplMasCasiStep {
     public void clickBotonCambiarPlan() {
         page.caeqMasCaplMasCasiPage().clickBotonCambiarPlan();
     }
+
+    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) {
+        page.caeqMasCaplMasCasiPage().validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ,valueCAPL,valueCASI);
+    }
 }

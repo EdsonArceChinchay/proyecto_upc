@@ -6,7 +6,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT099
-  ##GDAP: GDAP-1147
+##GDAP: GDAP-1147
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -22,7 +22,6 @@ Característica: AT-DT099_cambio de plan movil en call center
     Dado     que abro la pagina de movistar
 
   @CambiodeplanmovilCEcallcenter
-
   Escenario: cambio de plan movil en call center sin biometria
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario interno"
@@ -46,3 +45,5 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"

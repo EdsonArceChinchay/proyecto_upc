@@ -216,7 +216,6 @@ public class AltaFijaTiendaPage extends WebBase {
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-success > app-modal-pdf > tdp-st-modal')" +
                 ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(1);*/
-
     }
 
     public void descargarPdf() {
@@ -239,7 +238,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 10, btnRegistrarVenta);
+        esperaProgresiva(driver(), 6, 10, btnRegistrarVenta);
         click(btnRegistrarVenta);
     }
 
@@ -249,7 +248,6 @@ public class AltaFijaTiendaPage extends WebBase {
         js().scrollElementTop(btnSVA);
         click(btnSVA, 10);
         UtilWeb.waitForSeconds(10);
-
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
