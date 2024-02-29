@@ -14,7 +14,6 @@
 ##FECMOD: 07/11/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-
 Característica: CAEQ contado con documento CE por canal Tienda
 
   @CaeqContadoTienda @RegreDito

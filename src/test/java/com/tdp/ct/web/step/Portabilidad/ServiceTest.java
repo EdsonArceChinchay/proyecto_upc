@@ -1,11 +1,12 @@
 package com.tdp.ct.web.step.Portabilidad;
 
-import com.jayway.jsonpath.JsonPath;
-import com.tdp.ct.web.legacy.datasession.SessionData;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+
 import com.tdp.ct.web.service.util.UtilWeb;
+import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
+import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingException;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.datatable.DataTable;
-import net.minidev.json.JSONArray;
+import io.restassured.response.Response;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -88,4 +89,72 @@ public class ServiceTest {
                 .then().statusCode(201).extract().path("message");
     }
 
+    public class ApiResponse {
+        @JsonProperty("CAEQ")
+        private String caeqValue;
+
+        @JsonProperty("CAPL")
+        private String caplValue;
+
+        @JsonProperty("CASI")
+        private String casiValue;
+
+        public String getCaeqValue() {
+            return caeqValue;
+        }
+
+        public String getCaplValue() {
+            return caplValue;
+        }
+
+        public String getCasiValue() {
+            return casiValue;
+        }
+    }
+
+    public void getSalesLead(String codigoVenta) throws JsonProcessingException {
+        String FE= codigoVenta.trim();
+        if (!FE.isEmpty()) {
+            Response response = given()
+                    .header("UNICA-ServiceId", "550e8400-e29b-41d4-a716-446655440005")
+                    .header("UNICA-Application", "FrontendPlatform")
+                    .header("UNICA-PID", "550e8400-e29b-41d4-a716-446655440011")
+                    .header("UNICA-User", "UserFrontend")
+                    .contentType("application/json; charset=UTF-8")
+                    .when().get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE);
+
+
+
+           //Response apiResponse = response;// Realiza la llamada a la API con RestAssured
+
+            String responseBody = response.getBody().asString();
+            System.out.println("apiResponse = " + responseBody);
+            ObjectMapper objectMapper = new ObjectMapper();
+            ApiResponse apiResponse = objectMapper.readValue(responseBody, ApiResponse.class);
+
+            //ObjectMapper objectMapper = new ObjectMapper();
+          //ApiResponse mappedResponse = objectMapper.readValue(apiResponse.getBody().asString(), ApiResponse.class);
+        //   String xValue = apiResponse.getCaplValue();
+        //    System.out.println("xValue = " + xValue);
+           // objectMapper.readValue(response.getBody().asString());
+
+           // String CAEQ = response.extract().path("CAEQ");
+           // System.out.println("jsonResponse = " + jsonResponse);
+          // ObjectMapper objectMapper = new ObjectMapper();
+           // JsonNode jsonNode = objectMapper.readTree(response.toString());
+           // String CAEQ = jsonNode.get("CAEQ").asText();
+            //String CAPL = jsonNode.get("CAPL").asText();
+            //String CASI = jsonNode.get("CASI").asText();
+//            System.out.println("CASI = " + CASI);
+//            System.out.println("CAPL = " + CAPL);
+          //System.out.println("CAEQ = " + CAEQ);
+
+
+        }
+        {
+            System.out.println("No se envio el codigo de Venta");
+        }
+    }
+
 }
+
