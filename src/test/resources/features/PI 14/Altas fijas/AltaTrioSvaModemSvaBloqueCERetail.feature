@@ -5,36 +5,38 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT095
-##GDAP: GDAP-990
+##CODIGO:
+##GDAP: GDAP-1237
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
+##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
 
-Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Center
+Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
 
-  @AltaTrio_Upfront
-  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
+  Antecedentes:
     Dado     que abro la pagina de movistar
+
+  @AltaTrioSvaModemSvaBloqueRetail
+  Esquema del escenario: Alta Trio con sva Modem + sva Bloque Canal Retail
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+    Y        ingreso los datos del cliente extranjero a registrar
+      | nombres | apellidos | genero    |
+      | Luis    | Lopez     | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -46,31 +48,37 @@ Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Cent
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y        valido que este en la seccion de registro
+    Y        doy click en agregar Modem
+    Entonces doy click en Agregar Sva
+    Y        doy click en agregar Bloque "<bloque>"
+    Y        doy click en Guardar cambios
+    Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        ingreso un correo electronico "tester_12_45@tester.com"
+    Y        ingreso nuevamente el correo electronico "tester_12_45@tester.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        ingreso los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad |
+      | 08/09/1994 | Casado      | Albania      |
+    Y        doy click en el boton confirmar
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
+    Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | bloque         |
+      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1061122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Bloque estelar |

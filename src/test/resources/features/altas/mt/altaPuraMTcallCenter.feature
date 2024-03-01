@@ -50,7 +50,7 @@ Característica: AT-DT038_Alta MT con nuevo cliente con documento CE por Call Ce
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+            Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        valido el detalle de la seleccion
@@ -95,7 +95,8 @@ Característica: AT-DT038_Alta MT con nuevo cliente con documento CE por Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan |
+#      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000495 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
+      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100002129 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
 

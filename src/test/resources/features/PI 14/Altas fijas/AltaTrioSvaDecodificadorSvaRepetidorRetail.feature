@@ -14,16 +14,17 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 14/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy16
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
 Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail
-  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor Canal Retail
+  Esquema del escenario: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -52,6 +53,7 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en la seccion de registro
     Entonces doy click en Agregar Sva
+#    Y        doy click en agregar Bloque "HBO"
     Y        elegimos sva "<decodificador>"
     Y        elegimos sva repetidor "<svarepetidor>"
     Y        doy click en Guardar cambios
@@ -79,3 +81,9 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                     | decodificador | svarepetidor          |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | Trio Mov. Voz Int. Estandar HD RA O23 100 Mbps | 9.90          | REP. SMART WIFI Venta |
+
+#  | usuario externo |          | Bienvenid@ | CE      | 1100000485    | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS | 14.90      | REP. SMART WIFI Venta |
+#  | usuario externo |          | Bienvenid@ | CE      | 1100000486    | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS  | 9.90       | REP. SMART WIFI Venta |
+#  | usuario externo |          | Bienvenid@ | CE      | 41485613      | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS  | 9.90       | REP. SMART WIFI Venta |
+#  | usuario externo |          | Bienvenid@ | CE      | 44160111      | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS  | 9.90       | REP. SMART WIFI Venta |
+#  | usuario externo |          | Bienvenid@ | CE      | 71756746      | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS  | 9.90       | REP. SMART WIFI Venta |

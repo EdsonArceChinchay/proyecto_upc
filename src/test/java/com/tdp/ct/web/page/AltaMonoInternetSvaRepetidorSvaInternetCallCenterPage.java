@@ -5,10 +5,11 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 
 
-public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBase{
+public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
@@ -26,7 +27,6 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     }
 
     public void agregarsvainternet(String string) {
-        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
@@ -40,24 +40,21 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
             }
         }
     }
-    public void elegimossvarepetidor(String string) {
 
-        String repetidor = "//div[text()='"+string+"']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
+    public void elegimossvarepetidor(String string) {
+        String repetidor = "//div[text()='" + string + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
         WebElement deco = find().getElementByXPath(repetidor);
         js().scrollElementTop(deco);
         deco.click();
         UtilWeb.waitForSeconds(3);
-
     }
 
-    public void seleccionardecodificador(String string){
-
-        String decodificador = "//div[text()=' Cuota mensual : S/"+string+" " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
+    public void seleccionardecodificador(String string) {
+        String decodificador = "//div[text()=' Cuota mensual : S/" + string + " " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
         WebElement deco = find().getElementByXPath(decodificador);
         js().scrollElementTop(deco);
         deco.click();
         UtilWeb.waitForSeconds(3);
-
     }
 
 }

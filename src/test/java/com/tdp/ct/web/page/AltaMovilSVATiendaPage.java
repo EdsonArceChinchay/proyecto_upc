@@ -16,15 +16,13 @@ public class AltaMovilSVATiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         click(btnPrepago, 2);
         UtilWeb.waitForSeconds(5);
-       seleccionarBotonSiguiente();
-
+        seleccionarBotonSiguiente();
     }
-    public void seleccionarBotonSiguiente(){
+
+    public void seleccionarBotonSiguiente() {
         UtilWeb.waitForSeconds(5);
-    WebElement btnSiguiente=find().getElementByCss(".modal_footer tdp-st-button");
+        WebElement btnSiguiente = find().getElementByCss(".modal_footer tdp-st-button");
         click(btnSiguiente, 10);
-
-
-}
+    }
 
 }

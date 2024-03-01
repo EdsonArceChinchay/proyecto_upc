@@ -63,9 +63,8 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password        | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
-      | usuario externo | userNameCC2 | passCC2 | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
+      | usuario externo | userNameCC2 | passCC2  | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |

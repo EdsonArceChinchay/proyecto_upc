@@ -19,7 +19,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
 
-    //@FindBy(xpath = "/html/body/app-root/app-park/body/div/div/div[3]/div[1]/div/div") @class='btnCard' and
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement btnLineaNueva;
 
@@ -66,7 +65,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         waitUntilElementIsVisible(btnLineaNueva, 15);
         click(btnLineaNueva);
         UtilWeb.waitForSeconds(1);
-
     }
 
     public void clickBotonConsultarCobertura() {
@@ -97,12 +95,9 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void clickBotonConfirmar() {
-        //modalError(2,btnReintentar,"Click al elemento Reitentar");
-        //modalError(3,btnReintentar,"Click al elemento Reitentar");
-        //modalError(2,btnReintentar,"Click al elemento Reitentar");
+
         js().scrollElementTop(btnConfirmar);
         UtilWeb.waitForSeconds(5);
-        //  waitUntilElementIsVisible(btnConfirmar, 10);
         esperaProgresiva(driver(), 3,5,btnConfirmar);
         waitUntilElementIsClickable(btnConfirmar, 10);
         click(btnConfirmar);
@@ -169,25 +164,10 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     }
 
     public void seleccionoElNombreDePlanMovistarTotal() {
-        js().scrollElementTop(btnMovistarTotal);
         UtilWeb.waitForSeconds(5);
-        //  waitUntilElementIsVisible(btnConfirmar, 10);
+        js().scrollElementTop(btnMovistarTotal);
         waitUntilElementIsClickable(btnMovistarTotal, 10);
         click(btnMovistarTotal);
-    }
-
-    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-        }
-        else {
-            System.out.println("No se encontro el modal error");
-        }
     }
 
     public void scrollFinalPagina() {

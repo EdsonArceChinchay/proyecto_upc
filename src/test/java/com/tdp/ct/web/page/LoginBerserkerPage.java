@@ -113,7 +113,6 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-
         if (Addons.esEntornoProductivo()) {
             esperaProgresiva(driver(), 3, 5, btnContinuarProd);
             click(btnContinuarProd);
@@ -165,17 +164,17 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickIconoAsesor() {
-        waitUntilElementIsVisible(iconAsesor, 10).click();
+        waitUntilElementIsClickable(iconAsesor, 10).click();
 
     }
 
     public void clickBtnCerrarSesion() {
-        waitUntilElementIsVisible(btnCerrar, 10).click();
+        waitUntilElementIsClickable(btnCerrar, 10).click();
         UtilWeb.waitForSeconds(2);
     }
 
     public void clickBtnAtras() {
-        waitUntilElementIsVisible(btnAtras, 10).click();
+        waitUntilElementIsClickable(btnAtras, 10).click();
     }
 
 
@@ -246,19 +245,5 @@ public class LoginBerserkerPage extends WebBase {
         }
         return value;
     }
-
-//    public String readValues2(String param){
-//        File archivo = new File("https://everisgroup-my.sharepoint.com/personal/cruizato_emeal_nttdata_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments%2Fcredentials%2Etxt&parent=%2Fpersonal%2Fcruizato%5Femeal%5Fnttdata%5Fcom%2FDocuments&ga=1");
-//
-//        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-//            String linea;
-//            while ((linea = br.readLine()) != null) {
-//                System.out.println(linea);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return "";
-//    }
 
 }

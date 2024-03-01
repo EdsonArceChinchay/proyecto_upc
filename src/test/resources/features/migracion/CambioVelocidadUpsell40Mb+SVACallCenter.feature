@@ -50,13 +50,12 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton Registrar venta
-    #Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
     Ejemplos:
 
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Trio           | RA D22 150 MBPS | tester@tester.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Trio          | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
@@ -96,9 +95,8 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |

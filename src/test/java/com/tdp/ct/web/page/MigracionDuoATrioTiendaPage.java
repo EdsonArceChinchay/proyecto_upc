@@ -96,31 +96,18 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         esperaProgresiva(driver(), 3,5,cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(cartillaHogar);
-        //UtilWeb.waitForSeconds(5);
-
-        //String elXpath = "div:nth-child(1) > app-card-line";
-        //Addons.reintentaModalError(driver(), 2, 5, null, this, elXpath);
         revisarModalError(driver());
-
-        //waitUntilElementIsClickable(cartillaHogar, 40).click();
-//        waitUntilElementIsVisible(cartillaHogar, 5);
-//        click(cartillaHogar, 5);
         cartillaHogar.click();
         UtilWeb.waitForSeconds(1);
-
     }
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
         revisarModalError(driver());
-        //UtilWeb.waitForSeconds(4);
         esperaProgresiva(driver(), 3,5,btnOpcionPlanNuevo);
-        //waitUntilElementIsClickable(btnOpcionPlanNuevo, 60).click();
         btnOpcionPlanNuevo.click();
         UtilWeb.waitForSeconds(1);
     }
     public void cerrarPopupCU(){
-//        UtilWeb.waitForSeconds(1);
-//        waitUntilElementIsClickable(cerrarCU, 10).click();
         UtilWeb.waitForSeconds(4);
         try {
             if (cerrarCU.isDisplayed()) {
@@ -134,9 +121,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         } catch (Exception e) {
             System.out.println("No hay ningún popup.....");
         }
-
     }
-
 
     public void seleccionoElTipoDePlanHogar(String plaHogar) {
         UtilWeb.waitForSeconds(8);
@@ -155,7 +140,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         waitUntilElementIsVisible(lblSeleccionarOferta, 10);
         click(lblSeleccionarOferta, 10);
 
-
     }
 
     public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
@@ -166,9 +150,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void scrollUp() {
-        //modalError(20,btnReintentar,"Click al elemento Reitentar");
-        //modalError(20,btnReintentar,"Click al elemento Reitentar");
-        //modalError(20,btnReintentar,"Click al elemento Reitentar");
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(5);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -225,7 +207,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void verificoLaDireccionActualDelServicio(String dir) {
         revisarModalError(driver());
-
         String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
@@ -234,18 +215,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
 
-    public void clickBtnReintentar() {
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(1);
-        }
-
-    }
-
     public void agregoSVALinea(String svaLinea) {
-        //js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         UtilWeb.waitForSeconds(5);
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA LÍNEA')]/../descendant-or-self::tdp-st-select");
         js().scrollElementTop(listElementPLan);
@@ -265,27 +235,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public void doyClickEnAgregarModem() {
         UtilWeb.waitForSeconds(3);
         agregarModem.click();
-    }
-
-    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        boolean modalExiste;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() !=0;
-        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
-        }
-        else {
-            System.out.println("No se encontro el modal error");
-        }
-        if (modalExiste) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
-            btnEntendido.click();
-            UtilWeb.waitForSeconds(2);
-        }
     }
 
     public void seleccionoCartillaMovistarTotal() {

@@ -43,68 +43,70 @@ public class HomePage extends WebBase {
     protected WebElement listaDocumentos;
 
     @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
-    ////div[@class='dialog-close']/img
     protected WebElement botonX;
 
-    public void seleccionoTipoDocumento(String tipoDocumento){
+    public void seleccionoTipoDocumento(String tipoDocumento) {
         //Addons.reiniciaTimeout(driver());
         UtilWeb.waitForSeconds(2);
-        WebElement documentoList= find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
+        WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnconsultar);
         click(documentoList);
-        String valueTipoDocumento="";
-        SearchContext context=sh().getContext(documentoList);
+        String valueTipoDocumento = "";
+        SearchContext context = sh().getContext(documentoList);
         switch (tipoDocumento) {
-            case "CE": case "C":
-                valueTipoDocumento="C";
+            case "CE":
+            case "C":
+                valueTipoDocumento = "C";
                 break;
             case "DNI":
-                valueTipoDocumento="DNI";
+                valueTipoDocumento = "DNI";
                 break;
-            case "Pasaporte": case "P":
-                valueTipoDocumento="P";
+            case "Pasaporte":
+            case "P":
+                valueTipoDocumento = "P";
                 break;
             case "RUC":
-                valueTipoDocumento="RUC";
+                valueTipoDocumento = "RUC";
                 break;
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
         }
-        context.findElement(By.cssSelector("[data-value='"+valueTipoDocumento+"']")).click();
+        context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
 
     }
 
 
-    public void ingresoDocumento(String documento){
-        WebElement document= find().getElementByCss("#doc");
+    public void ingresoDocumento(String documento) {
+        WebElement document = find().getElementByCss("#doc");
         click(document);
         type(document, documento);
 
     }
+
     public void clickBotonConsultar(){
-        //waitUntilElementIsVisible(btnconsultar,10);
         esperaProgresiva(driver(),3,5,btnconsultar);
         btnConsultar.click();
         Addons.esperaCargaMontoDeuda(driver(),50);
         esperaProgresiva(driver(),3,20,boton01);
         revisarModalError(driver());
-        //UtilWeb.waitForSeconds(1);
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
         UtilWeb.waitForSeconds(2);
-        String Nombre="";
+        String Nombre = "";
         String expectedNombre = nombre.trim().toUpperCase();
         String expectedTipoDocumento = tipoDocumento.trim().toUpperCase();
         String expectedNroDocumento = nroDocumento.trim().toUpperCase();
         boolean datosClienteNatural;
         datosClienteNatural = driver().findElements(By.xpath("//*[contains(@class,'info-user')]/div")).size() != 0;
-        if(datosClienteNatural)  {Nombre=txtNombre.getText().trim().toUpperCase();
-            System.out.println("Entro en Natural");}
+        if (datosClienteNatural) {
+            Nombre = txtNombre.getText().trim().toUpperCase();
+        }
         boolean datosClienteEmpresa;
         datosClienteEmpresa = driver().findElements(By.xpath("//app-client-info")).size() != 0;
-        if(datosClienteEmpresa) {Nombre=txtNombreRuc.getText().trim().toUpperCase();
-            System.out.println("Entro en Ruc");}
+        if (datosClienteEmpresa) {
+            Nombre = txtNombreRuc.getText().trim().toUpperCase();
+        }
         Assertions.assertTrue(Nombre.contains(expectedNombre), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNombre);
         Assertions.assertTrue(Nombre.contains(expectedTipoDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedTipoDocumento);
         Assertions.assertTrue(Nombre.contains(expectedNroDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNroDocumento);
@@ -113,13 +115,13 @@ public class HomePage extends WebBase {
 
     public void seleccionoElIDDeClienteNro(String nro) {
         UtilWeb.waitForSeconds(10);
-        WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])["+nro.trim()+"]");
-        esperaProgresiva(driver(),3,120,nroItem);
-        waitUntilElementIsClickable(nroItem,100);
+        WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])[" + nro.trim() + "]");
+        esperaProgresiva(driver(), 3, 120, nroItem);
+        waitUntilElementIsClickable(nroItem, 100);
         nroItem.click();
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
-        esperaProgresiva(driver(),2,20,btnGuardar);
+        esperaProgresiva(driver(), 2, 20, btnGuardar);
         btnGuardar.click();
     }
 
@@ -136,9 +138,8 @@ public class HomePage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "El cliente SI tiene servicios contratados");
             js().scrollElementTop(find().getElementByXPath("//app-card-line"));
             UtilWeb.waitForSeconds(1);
-        }
-        else {
-            Assertions.assertTrue(serviciosContratados,"El Cliente NO tiene servicios contratados");
+        } else {
+            Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
 
         }
     }
@@ -146,6 +147,8 @@ public class HomePage extends WebBase {
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         Boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
+        esperaProgresiva(driver(),2,5,listaDocumentos);
+        js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
@@ -161,29 +164,26 @@ public class HomePage extends WebBase {
     }
 
     public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
-        waitUntilElementIsVisible(txtDocumento,10).click();
-        type(txtDocumento,numDoc);
+        waitUntilElementIsVisible(txtDocumento, 10).click();
+        type(txtDocumento, numDoc);
     }
 
     public void doyClickEnValidarRepresentaLegal() {
-        waitUntilElementIsVisible(btnValidar,10).click();
+        waitUntilElementIsVisible(btnValidar, 10).click();
     }
 
     public void clickXPopUpCU() {
-        esperaProgresiva(driver(),2,3,botonX);
+        esperaProgresiva(driver(), 2, 3, botonX);
         try {
             botonX.click();
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
-        //waitUntilElementIsClickable(botonX,20).click();
     }
 
     public void clickBackOffice() {
         click(backOfficeButton);
-        waitUntilElementIsVisible(find().getElementByXPath("/html/body/app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"),5);
+        waitUntilElementIsVisible(find().getElementByXPath("//app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
     }
-    public void buscarOrden() {
 
-    }
 }

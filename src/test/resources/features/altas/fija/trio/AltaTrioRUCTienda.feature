@@ -58,7 +58,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic en el boton validar identidad representante legal
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+   Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     #Y        ingreso los datos del supervisor
      # | numdoc   | user        | password     |
      #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |

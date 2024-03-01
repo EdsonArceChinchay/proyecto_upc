@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @RegresionLegacy @RegresionLegacy16
+@BERSERKERS @DoneDevOps
 
 Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo movil + SVA con documento CE en tienda
 

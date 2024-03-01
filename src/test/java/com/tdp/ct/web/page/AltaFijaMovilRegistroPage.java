@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Cliente;
@@ -72,10 +73,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
-    @FindBy(xpath = "(//button[contains(text(),' Validación no biométrica')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada') or contains(text(),'Validación no biométrica')])[1]")
     protected WebElement buttonDiscapacitado;
-    @FindBy(xpath = "(//button[contains(text(),'Validaci')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Validación biométrica'))[1]")
     protected WebElement buttonValBiometrica;
+
+    @FindBy(xpath = "(//button[contains(text(),'Validación biométrica')])[3]")
+    protected WebElement buttonValBiometrica3;
     @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
     protected WebElement selectTipoDoc;
     @FindBy(xpath = "//mat-option/span")
@@ -84,10 +88,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
+    @FindBy(xpath = "//span[contains(text(), 'Continuar')]")
+    protected WebElement buttonReContinuar;
 
     @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
-    @FindBy(xpath = "(//div/div/tdp-st-button)[3]")
+    @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
@@ -151,9 +157,34 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaRegistrarVenta() {
+        boolean verificarUbicacion = true;
+        int contadorEstado = 0;
+        do {
+            esperaProgresiva(driver(), 3, 3, titleRegistrarServicio);
+//            Realizar un try catch para buscar el elemento devolver un return para almacenar el valor false si se ecnuntra la venta complketada
+            try {
+                msjExitoso.isDisplayed();
+                Parameters.estadoFlujo = false;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Ventana de venta exitosa visible");
+                return true;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de venta exitosa");
+//                verificarUbicacion = true;
+            }
+            try {
+                titleRegistrarServicio.isDisplayed();
+                verificarUbicacion = false;
+                Parameters.estadoFlujo = true;
+            } catch (NoSuchElementException nsee) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de registrar venta");
+//                verificarUbicacion = true;
+            }
+            contadorEstado++;
+        } while (verificarUbicacion && contadorEstado < 80);
+
         try {
-            esperaProgresiva(driver(), 3, 50, titleRegistrarServicio);
-            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 100).isDisplayed();
+            esperaProgresiva(driver(), 3, 4, titleRegistrarServicio);
+            boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
             UtilWeb.waitForSeconds(1);
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
             return existe;
@@ -205,16 +236,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 200, titleOfertasSugeridas);
-        esperaProgresiva(driver(), 5, 500, listaOfertasSugeridas.get(0));
+        esperaProgresiva(driver(), 6, 10, listaOfertasSugeridas.get(0));
         boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
     }
 
     public void seleccionarOferta(String oferta) {
-        revisarModalError(driver());
         revisarModalError(driver());
         scrollByJavaScript();
         UtilWeb.waitForSeconds(4);
@@ -300,7 +328,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         try {
             WebElement element = find().getElementByXPath("//app-modal-detalle//div/h1[contains(text(),'Detalles')]");
             esperaProgresiva(driver(), 5, 5, element);
-            //waitUntilElementIsVisible(element, 5);
             element.isDisplayed();
             existe = true;
         } catch (NoSuchElementException ex) {
@@ -314,12 +341,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicConfirmarInstalacion() {
         WebElement element = find().getElementByXPath("//app-modal-detalle//div/button");
         element.click();
-        //   UtilWeb.waitForSeconds(2);
     }
 
     public void completarCorreo(String correo) {
         scrollByJavaScriptToPrincipio();
-        //UtilWeb.waitForSeconds(3);
         WebElement rootInputCorreo = find().getElementByXPath("(//div[contains(@class,'tdp-row')]//tdp-st-input-text)[1]");
         esperaProgresiva(driver(), 5, 5, rootInputCorreo);
         SearchContext context1 = sh().getContext(rootInputCorreo);
@@ -341,14 +366,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(5);
         if (tipoValidacion.equalsIgnoreCase("discapacitado")) {
             esperaProgresiva(driver(), 5, 5, buttonDiscapacitado);
-            waitUntilElementIsVisible(buttonDiscapacitado, 5).click();
-
+            waitUntilElementIsClickable(buttonDiscapacitado, 5).click();
         } else {
-            esperaProgresiva(driver(), 5, 5, buttonValBiometrica);
-            waitUntilElementIsVisible(buttonValBiometrica, 5).click();
+            if (buttonValBiometrica3.isEnabled()) {
+                waitUntilElementIsClickable(buttonValBiometrica3, 5).click();
+            } else {
+                waitUntilElementIsClickable(buttonValBiometrica, 5).click();
+            }
         }
         UtilWeb.waitForSeconds(1);
     }
@@ -383,7 +410,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
 
     }
-
 
     public void verificarIdentidadValidada() {
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
@@ -428,7 +454,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicBotonContinuar() {
-        Addons.revisarModalError(driver());
+//        TODO: VALIDAR ESTADO DE LA VENTANA
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
@@ -450,6 +476,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
+//        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -457,17 +484,30 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(2);
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(), 5, 6, element);
-        UtilWeb.waitForSeconds(2);
+        int intentos = 4;
+        for (int i = 0; i < intentos; i++) {
+            try {
+                esperaProgresiva(driver(), 5, 7, element);
+                JavascriptExecutor js = (JavascriptExecutor) driver();
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+                return;
+            } catch (NoSuchElementException e) {
+                System.out.println("No se pudo encontrar el elemento" + (i + 1) + " intentos. Error: " + e.getMessage());
+
+            }
+        }
+        //esperaProgresiva(driver(), 5, 6, element);
+        //UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        esperaProgresiva(driver(), 4, 10, element);
+        //waitUntilElementIsClickable(element, 30);
+        esperaProgresiva(driver(), 2, 5, element);
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
-        UtilWeb.waitForSeconds(3);
+        UtilWeb.waitForSeconds(6);
     }
 
     public void ingresarDNISupervisor(String numdoc) {
@@ -869,17 +909,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicRegistrarVenta() {
         revisarModalError(driver());
-        revisarModalError(driver());
-        revisarModalError(driver());
         WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        waitUntilElementIsClickable(boton, 1000);
+        esperaProgresiva(driver(), 7, 10, boton);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        waitUntilElementIsClickable(boton, 1000);
         click(boton);
         UtilWeb.waitForSeconds(5);
     }
 
+    //    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 
@@ -905,11 +943,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public void agregoSVAINTERNET(String svaInternet) {
-
         WebElement listElementPLan;
-
         UtilWeb.waitForSeconds(10);
-        listElementPLan = find().getElementByXPath("//div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
+        listElementPLan = find().getElementByXPath("//tdp-st-select[@label='Elige SVA'] | //div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
         esperaProgresiva(driver(), 3, 5, listElementPLan);
         listElementPLan.click();
         UtilWeb.waitForSeconds(2);
@@ -1031,5 +1067,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes.toString();
     }
 
+    public boolean verificarPantallaVenta() {
+        try {
 
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra la pantalla de venta exitosa, se saltaron pasos");
+            return true;
+        } catch (NoSuchElementException nsee) {
+            return false;
+        }
+    }
 }

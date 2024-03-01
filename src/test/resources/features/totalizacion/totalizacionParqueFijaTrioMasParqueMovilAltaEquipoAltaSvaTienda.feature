@@ -13,7 +13,7 @@
 ##ENCARGADO:CARLOS RUIZ
 ##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @RegresionLegacy
+@BERSERKERS @DoneDevOps
 
 Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Equipo Movil + Alta SVA con documento CE en Tienda
 

@@ -21,13 +21,13 @@ public class AltaTrioConBloqueHdUpfrontCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        esperaProgresiva(driver(), 3, 100, subDetalles);
+        esperaProgresiva(driver(), 5, 10, subDetalles);
         click(subDetalles);
     }
 
     public void lblAplicaUpFrom(){
         UtilWeb.waitForSeconds(1);
-        esperaProgresiva(driver(), 3, 30, lblAplicaUpFront);
+        esperaProgresiva(driver(), 4, 10, lblAplicaUpFront);
         Assert.assertTrue("el elemento no existe",lblAplicaUpFront.isDisplayed());
         UtilWeb.waitForSeconds(1);
         click(subDetalles,5);
@@ -40,6 +40,5 @@ public class AltaTrioConBloqueHdUpfrontCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
         type(callID, data);
     }
-
 
 }

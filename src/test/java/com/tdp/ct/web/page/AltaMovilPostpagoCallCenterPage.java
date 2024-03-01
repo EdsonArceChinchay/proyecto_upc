@@ -2,11 +2,10 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.utils.Addons;
 import org.apache.poi.hssf.record.PageBreakRecord;
+import org.junit.platform.commons.function.Try;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -14,14 +13,11 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
-
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
-
     @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
-
     @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
 
@@ -43,9 +39,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     //@FindBy(xpath = "//div[@class='card-option-ofert-content']")
     @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
     protected List<WebElement> listaOfertas;
-
-/*    @FindBy(css= "//tdp-st-input-text[@iconright=\"search\"]")
-    protected WebElement inputText;*/
 
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement btnIniciar;
@@ -127,7 +120,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         type(Input, buscarE);
         UtilWeb.waitForSeconds(10);
         Input.sendKeys(Keys.ENTER);
-        //click(lblItem);
     }
 
     public void seleccionoLaCartillaLineaNueva() {
@@ -205,18 +197,25 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void doyClickEnIniciarRegistro() {
+    public void doyClickEnIniciarRegistro(){
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
-        esperaProgresiva(driver(),5,7,btnIniciar);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-        //js().scrollElementTop(btnIniciar);
-        btnIniciar.click();
-       // waitUntilElementIsClickable(btnIniciar,150).click();
-       // System.out.println("paso por aqui" + btnIniciar.getText());
-        clickBtnCerrarModalError(btnIniciar);
-    }
+
+       int intentos = 4;
+        for(int i=0;i<intentos;i++) {
+            try {
+                esperaProgresiva(driver(), 5, 8, btnIniciar);
+                JavascriptExecutor js = (JavascriptExecutor) driver();
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+                btnIniciar.click();
+                clickBtnCerrarModalError(btnIniciar);
+                return;
+            } catch (NoSuchElementException e) {
+                System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
+
+                }
+            }
+        }
 
     public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         boolean existe = waitUntilElementIsVisible(titleDelivery, 60).isDisplayed();
@@ -235,7 +234,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 System.out.println("Se encontro: " + pago);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
-                //click(elements, 3);
                 break;
             }
         }

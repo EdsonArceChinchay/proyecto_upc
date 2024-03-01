@@ -59,6 +59,5 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName | password | msgHome    | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-     # | usuario externo |userNameST | passST | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
-      | usuario interno |          |          | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
-
+      | usuario externo |userNameST | passST | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+     # | usuario interno | userNameST | passST | Bienvenid@ | CE            | 222107211 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |

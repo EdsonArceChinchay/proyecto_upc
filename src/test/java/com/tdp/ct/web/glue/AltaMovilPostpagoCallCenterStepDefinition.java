@@ -72,7 +72,7 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
   }
 
   @Y("doy click en iniciar registro")
-  public void doyClickEnIniciarRegistro() {
+  public void doyClickEnIniciarRegistro() throws InterruptedException {
     altaMovilPostpagoCallCenterStep.doyClickEnIniciarRegistro();
   }
 

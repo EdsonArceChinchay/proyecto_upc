@@ -22,7 +22,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage = new AltaFijaAltaMovilCallCenterPage();
     AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
     AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
-
     WebDriverWait waitdefin = new WebDriverWait(driver(), Duration.ofSeconds(5));
 
     @FindBy(xpath = "//app-searchclient/div[@class='tdp-container clienteExtranjero']")

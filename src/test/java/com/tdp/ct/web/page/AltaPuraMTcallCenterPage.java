@@ -18,7 +18,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     public Object clicBotonAceptar;
     @FindBy(xpath = "//button[@class = 'button_step']")
     protected WebElement btnConfirmaUbicacion;
-
     private String tipoPago;
 
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
@@ -41,11 +40,9 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void completarIdCall(String idCall) {
-
         WebElement rootInputConfirmarCorreo = find().getElementByCss("tdp-st-input-text[formcontrolname=\"callID\"]");
         SearchContext context3 = sh().getContext(rootInputConfirmarCorreo);
         context3.findElement(By.cssSelector("div > div > div > input")).sendKeys(idCall);
-
         UtilWeb.waitForSeconds(1);
     }
 
@@ -71,7 +68,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     }
 
-    public void ingresarReferencia(String referencia){
+    public void ingresarReferencia(String referencia) {
         String getReferencia = "form div:nth-child(4) div:nth-child(2) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(3);
         WebElement referenciaElement = js().getWebElement(getReferencia);
@@ -79,7 +76,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         type(referenciaElement, referencia);
     }
 
-    public void ingresarCorreoVerif(String verifCorreo){
+    public void ingresarCorreoVerif(String verifCorreo) {
         String getCorreo = "div form div:nth-child(3) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(4);
         WebElement correoElement = js().getWebElement(getCorreo);
@@ -87,81 +84,58 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         correoElement.sendKeys(Keys.CONTROL + "a");
         correoElement.sendKeys(Keys.DELETE);
         type(correoElement, verifCorreo);
-
         UtilWeb.waitForSeconds(5);
     }
 
     public void clicBotonContinuar() {
         Addons.revisarModalError(driver());
-
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 3;
-        while (!buttonFound && contador <= reintentoBucles){
+        while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonContinuar,2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el boton Continuar");
+                waitUntilElementIsVisible(buttonContinuar, 2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Continuar");
                 buttonFound = true;
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Entra al catch");
                 UtilWeb.waitForSeconds(6);
                 contador++;
-                System.out.println(contador+" vez");
+                System.out.println(contador + " vez");
             }
         }
-        UtilWeb.logger(this.getClass()).log(Level.INFO,"Sale del While");
-//        waitUntilElementIsVisible(buttonContinuar, 100);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Sale del While");
         js().scrollElementTop(buttonContinuar);
-//        waitUntilElementIsClickable(buttonContinuar, 100);
         click(buttonContinuar);
-//        click(buttonContinuar,20);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
-        Addons.esperaProgresivaReintentos(driver(),5,5,buttonContinuar);
+        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
     }
 
-    public void clickCierrePopup(){
+    public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado
-        //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         boolean elementoExistente;
-        //elementoExistente = driver().findElements(By.xpath("(//div[@class='icon-content'])[2]")).size() !=0;
-        elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() !=0;
-        if (elementoExistente){
+        elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() != 0;
+        if (elementoExistente) {
             Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
             System.out.println("Se cierra Popup de error");
-            //UtilWeb.waitForSeconds(3);
             try {
                 click(cierrePopUoError);
 
             } catch (Exception e) {
                 System.out.println("error al hacer click");
             }
-            //UtilWeb.waitForSeconds(2);
-        }else {
-            System.out.println("no se encontró mensaje de error");
-            //UtilWeb.waitForSeconds(2);
-        }
-    }
-
-    public void modalError(int timeOnSeconds, WebElement webElement, String message) {
-        UtilWeb.waitForSeconds(timeOnSeconds);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            webElement.click();
-            if (message.isEmpty()) message = "Dio click al elemento";
-            System.out.println(message);
         } else {
-            System.out.println("No se encontro el modal error");
+            System.out.println("no se encontró mensaje de error");
         }
     }
 
     public void ingresarTelefono(String telefono) {
         WebElement direccionElement = find().getElementByXPath("//*[@formcontrolname='contactNumber']");
         js().scrollElementTop(direccionElement);
-        click(direccionElement,5);
+        click(direccionElement, 5);
         type(direccionElement, telefono);
     }
 }
