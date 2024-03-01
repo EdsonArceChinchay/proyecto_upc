@@ -3,22 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.apache.commons.math3.analysis.function.Add;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.time.Duration;
+import java.io.*;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
@@ -121,7 +113,6 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-
         if (Addons.esEntornoProductivo()) {
             esperaProgresiva(driver(), 3, 5, btnContinuarProd);
             click(btnContinuarProd);
@@ -173,17 +164,17 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickIconoAsesor() {
-        waitUntilElementIsVisible(iconAsesor, 10).click();
+        waitUntilElementIsClickable(iconAsesor, 10).click();
 
     }
 
     public void clickBtnCerrarSesion() {
-        waitUntilElementIsVisible(btnCerrar, 10).click();
+        waitUntilElementIsClickable(btnCerrar, 10).click();
         UtilWeb.waitForSeconds(2);
     }
 
     public void clickBtnAtras() {
-        waitUntilElementIsVisible(btnAtras, 10).click();
+        waitUntilElementIsClickable(btnAtras, 10).click();
     }
 
 
@@ -232,26 +223,25 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String param) {
-        String value;
+        String value = "";
         if (!param.isEmpty()) {
-            File archiveCredentials= new File("src/test/resources/features/login/credentials.txt");
+            File archiveCredentials = new File("src/test/resources/features/login/credentials.txt");
 
             Map<String, String> parametros = new HashMap<>();
-
             try (Scanner scanner = new Scanner(archiveCredentials)) {
                 while (scanner.hasNextLine()) {
                     String linea = scanner.nextLine();
                     String[] partes = linea.split("=");
-                    String nombreParametro = partes[0].trim();
-                    String valorParametro = partes[1].isEmpty() || partes[1].isBlank() || partes[1] == null ? " " : partes[1].trim();
-                    parametros.put(nombreParametro, valorParametro);
+                    if (partes.length == 2) {
+                        String nombreParametro = partes[0].trim();
+                        String valorParametro = partes[1].trim();
+                        parametros.put(nombreParametro, valorParametro);
+                    }
                 }
             } catch (Exception ex) {
                 System.out.println("Error al leer el archivo: " + ex.getMessage());
             }
-            value = parametros.get(param);
-        } else {
-            value = "";
+            value = (parametros.get(param) != null) ? parametros.get(param) : "";
         }
         return value;
     }

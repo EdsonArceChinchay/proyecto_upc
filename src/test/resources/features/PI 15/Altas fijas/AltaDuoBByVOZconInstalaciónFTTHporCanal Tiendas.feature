@@ -3,25 +3,23 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1384
 ##SPRINT CREADO: PI15_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: Patricia Cabello Huayta
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
 
-Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: Alta Duo BB y VOZ con instalación FTTH con documento CE por Canal Tiendas
 
   @AltaDuoBByVozFTTHCanalTiendas
   Esquema del escenario: Alta Duo SVA HBO CALL CENTER
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -45,7 +43,7 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
+      | A  | EDIFICIO     | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -62,11 +60,14 @@ Característica: Alta Duo BB y VOZ con instalación FTTH por Canal Tiendas
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan
-      | usuario externo | userNameDLC | passDLC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA M23 100 MBPS |

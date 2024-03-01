@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
@@ -45,7 +46,6 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("verifico si me encuentro en la pantalla de agendamiento")
     public void verifico_si_me_encuentro_en_la_pantalla_de_agendamiento() {
-//    TODO: AGREGAR LA VALIDACION DE SI APARECE LA PANTALLA DE AGENDAMIENTO
         altaFijaTiendaStep.verificarEstadoPantallaAgendamiento();
     }
 
@@ -70,7 +70,9 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton Registrar venta")
     public void presiono_el_boton_Registrar_venta() {
-        altaFijaTiendaStep.clickRegistrarVenta();
+        if (Parameters.estadoFlujo){
+            altaFijaTiendaStep.clickRegistrarVenta();
+        }
     }
 
 

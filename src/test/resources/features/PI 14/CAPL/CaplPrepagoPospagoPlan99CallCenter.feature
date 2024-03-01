@@ -14,10 +14,10 @@
 ##ENCARGADO:
 ##FECMOD: 02/11/2023
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5
-Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de un Control a Postpago
+Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a Postpago
 
   @CaplPrepagoPospago1
-  Esquema del escenario: CAPL con Caeq al contado con canal Call Center de un Control CE
+  Esquema del escenario: CAPL con canal Call Center de un Control CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -44,10 +44,9 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-#    PRUEBAS EN CALL CENTER
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -56,8 +55,10 @@ Característica: AT-DT101_Realizar un CAPL al contado con canal Call Center de u
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+      | tipoUsuario     | userName    | password | tipoDocumento | documento  | EncontrarCelular |
+#      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000314 | 981637356        |
+      | usuario interno | userNameQAN | passQAN  | CE            | 1100000240 | 983610461        |
 
 #      | usuario interno |          |              | CE            | 1100000317 | 981769530        |
 #      | usuario interno |          |              | CE            | 1100000273 | 984093119        |

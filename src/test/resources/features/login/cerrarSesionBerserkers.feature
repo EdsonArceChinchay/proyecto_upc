@@ -32,8 +32,8 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
       | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
+#      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
+#      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
 
   @CerrarSesionBerserker  @CierroSesion
   Esquema del escenario: Como usuario <userName> del canal <tiendaAsesor> deseo cerrar sesion

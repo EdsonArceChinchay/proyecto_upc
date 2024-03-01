@@ -22,19 +22,19 @@ Característica: AT-DT099_cambio de plan movil en call center
     Dado     que abro la pagina de movistar
 
   @CambiodeplanmovilCEcallcenter
-
   Escenario: cambio de plan movil en call center sin biometria
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "userNameCC"
-    Y        ingreso el password "passCC"
+    Y        selecciono el tipo de usuario "usuario interno"
+    Y        ingreso el usuario "userNameQAN"
+    Y        ingreso el password "passQAN"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     #Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "126659555"
+    Y        ingreso el documento "1100000795"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "650026192"
+    Y        selecciono el boton Ver detalle del servicio "995310043"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -48,6 +48,7 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
+<<<<<<< HEAD
     Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -56,3 +57,6 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+=======
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+>>>>>>> 9fa0b22a4482a7a8fed55f2ec3da5ee362998c32

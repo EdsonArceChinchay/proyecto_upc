@@ -11,18 +11,15 @@
 ##TAG : BERSERKERS
 ##DATA:Reusable
 ##ENCARGADO:Brandon
-##FECMOD: 30/05/2023
+##FECMOD: 26/02/2024
 
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
-
-Característica: AT-DT112_CASI Stand Alone por Tiendas
-  Quiero realizar un CASI a un cliente con parque movil a un usuario con CE
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
+  Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
   @casiStandAloneTiendas
-  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con CE
+  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con documento CE por Canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -42,11 +39,14 @@ Característica: AT-DT112_CASI Stand Alone por Tiendas
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |

@@ -1,28 +1,28 @@
 #language:es
 
-##CREADOR:
+##CREADOR: Eloy Milla
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT077
-##GDAP: GDAP-718
-##SPRINT CREADO:
+##CODIGO:
+##GDAP:1437
+##SPRINT CREADO: PI18 SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
+@BERSERKERS @DoneDevOps
 
-Característica: AT-DT077_Migracion salto 0 canal Call Center
+Característica: Migracion salto 0 MT canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migraSalto0CallCenter @RegreDito
-  Esquema del escenario: Migracion salto 0 con CE  por canal Call Center
+  @migraSalto0MTCallCenter @RegreDito
+  Esquema del escenario: Migracion salto 0 MT con CE  por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,7 +32,8 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono la cartilla del plan activo
+    Y        selecciono la cartilla del plan MT
+    #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
@@ -53,12 +54,12 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042464839 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 | correo@gmail.com |

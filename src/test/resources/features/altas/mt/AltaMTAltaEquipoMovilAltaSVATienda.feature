@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 19/01/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI17 @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI17
 
 Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
 

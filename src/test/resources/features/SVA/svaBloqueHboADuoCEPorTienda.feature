@@ -4,7 +4,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT108
 ##GDAP: GDAP-1105
 ##SPRINT CREADO:
@@ -12,19 +12,16 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 22/02/2024
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorTienda @DROP-G06
-
-Característica: AT-DT108_sva bloque hbo a duo por Tienda
+@BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy
+Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
   Yo como asesor de Tienda
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @svaBloqueHboDuoPorTienda
   Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo a un usuario con CE y productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -44,10 +41,14 @@ Característica: AT-DT108_sva bloque hbo a duo por Tienda
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                        | sva | correo            |

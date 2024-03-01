@@ -149,7 +149,9 @@ public class StepPages {
         return new SvaCallCenterPage();
     }
 
-    public AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage(){ return  new AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage();}
+    public AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage() {
+        return new AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage();
+    }
 
     public SvaBloqueHboaDuoPorTiendaPage svaBloqueHboaDuoPorTiendaPage() {
         return new SvaBloqueHboaDuoPorTiendaPage();
@@ -159,14 +161,29 @@ public class StepPages {
         return new PortabilidadPage();
     }
 
-    public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {return new MigraDuoTrioActualizarDireccionTiendasPage();}
-    public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage(){return new ActualizacionDeRuc10CanalTiendaPage();}
-    public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage(){return new ActualizacionDeRuc17CanalTiendaPage();}
-    public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage(){return new AltaValidacionPrecioDescuentoPage();}
+    public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {
+        return new MigraDuoTrioActualizarDireccionTiendasPage();
+    }
 
-    public CaptchaPage captchaPage(){ return new CaptchaPage();}
+    public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage() {
+        return new ActualizacionDeRuc10CanalTiendaPage();
+    }
 
-    public BandejaBackOfficePage bandejaBackOfficePage(){return new BandejaBackOfficePage();}
+    public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage() {
+        return new ActualizacionDeRuc17CanalTiendaPage();
+    }
+
+    public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage() {
+        return new AltaValidacionPrecioDescuentoPage();
+    }
+
+    public CaptchaPage captchaPage() {
+        return new CaptchaPage();
+    }
+
+    public BandejaBackOfficePage bandejaBackOfficePage() {
+        return new BandejaBackOfficePage();
+    }
 
 }
 

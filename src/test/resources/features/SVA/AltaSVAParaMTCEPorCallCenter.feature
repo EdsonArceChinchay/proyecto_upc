@@ -1,23 +1,22 @@
 #language: es
-
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT
 ##GDAP: GDAP-1435
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
+##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 30/01/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
-  @SvaMTCC
+  @SvaMTCE_CC
   Esquema del escenario: Alta SVA a un MT con documento CE en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -31,9 +30,9 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "<servicio>"
+    Cuando   selecciono el boton Ver detalle del servicio "14353885"
     Y        selecciono el boton agregar sva
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en agregar SVA Linea "Plan Multidestino 40"
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -56,5 +55,10 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120377222 | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor               | tipoDocumento | documento  | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | CE            | 120377222  | test@hotmail.com |
+
+
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000217 | test@hotmail.com | 5010192755 |
+#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 221011258  | test@hotmail.com | 5010194087 |

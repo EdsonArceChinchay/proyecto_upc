@@ -26,8 +26,8 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1100000788"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<numeroDocumento>"
     Y        doy click en el boton consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
@@ -74,6 +74,8 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -83,7 +85,12 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password | EncontrarCelular |
-#      | usuario externo | userNameCC | passCC |984594042|
-      | usuario interno |          |          | 984594042        |
+      | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
+      | usuario externo | userNameCC | passCC   | CE            | 1100000765      | 984594042        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
+#      Prueba error
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
 

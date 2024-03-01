@@ -52,7 +52,6 @@ Característica: AT-DT082_Migracion de Trio a trio  por el canal Call Center
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-	#Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
 

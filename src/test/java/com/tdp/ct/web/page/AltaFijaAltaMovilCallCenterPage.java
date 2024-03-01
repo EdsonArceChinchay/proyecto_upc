@@ -82,7 +82,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void lote(String lote) {
-        if (lote != null) {
+        boolean existe = validateInputAndLocator(lote, inputLot);
+        if (existe && inputBlock.isSelected()) {
             esperaProgresiva(driver(), 3, 5, inputLot);
             click(inputLot);
             type(inputLot, lote);
@@ -118,6 +119,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             inputBlock.sendKeys(Keys.DELETE);
             type(inputBlock, bloque);
         }
+       /* (bloque != null) {
+            WebElement NBloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
+            esperaProgresiva(driver(), 3, 5, NBloque);
+            waitUntilElementIsClickable(NBloque, 15).click();
+            NBloque.sendKeys(Keys.CONTROL + "a");
+            NBloque.sendKeys(Keys.DELETE);
+            type(NBloque, bloque);
+        }*/
+
+
     }
 
     public void manzanaDir(String manzana) {
@@ -232,11 +243,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoPago(String tipoPago) {
         esperaProgresiva(driver(), 3, 5, pageType);
-        click(pageType);
-        String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
-        String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
-        UtilWeb.waitForSeconds(2);
-        seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        try {
+            click(pageType);
+            String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
+            String sCodigoValue = buscarValorOpcion(tipoPago, selectOptions);
+            UtilWeb.waitForSeconds(2);
+            seleccionarValueComboShadow(driver(), "medioPago", sCodigoValue);
+        } catch (NoSuchElementException nsee) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento pageType no fue encontrado: " + nsee.getMessage());
+        }
     }
 
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")

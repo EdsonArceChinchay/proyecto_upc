@@ -1,46 +1,48 @@
 #language:es
 
-##CREADOR:
+##CREADOR:Eloy Milla
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD:
+##FUNCIONALIDAD:Migra
 ##ESTADO:
-##CODIGO: AT-DT077
-##GDAP: GDAP-718
-##SPRINT CREADO:
+##CODIGO:
+##GDAP:GDAP-1442
+##SPRINT CREADO:PI18 SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD:
+@BERSERKERS @DoneDevOps
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
-
-Característica: AT-DT077_Migracion salto 0 canal Call Center
+Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migraSalto0CallCenter @RegreDito
-  Esquema del escenario: Migracion salto 0 con CE  por canal Call Center
+
+  @MigraMonoVozATrioCallCenter
+
+  Esquema del escenario: Migracion de Mono voz a Trio por canal Call Center
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
-    Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono la opcion Migrar a fibra
-    Cuando   doy clic en iniciar registro
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    Y        selecciono la oferta "<plan>"
+    Y        doy click en Cambiar plan hogar
+    Y        valido que este en la seccion de registro
+    Cuando   doy clic a iniciar registro
     Y        valido que muestre la pantalla de Agendamiento
-    #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
-    #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
@@ -53,12 +55,11 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
-
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042464839 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300004 | tester@tester.com | TRÍO          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 150 MBPS |

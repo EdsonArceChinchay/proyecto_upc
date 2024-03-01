@@ -1,27 +1,24 @@
  #language:es
-
-##CREADOR:
+##CREADOR: CARLOS VICENTE
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1142
-##SPRINT CREADO:
+##SPRINT CREADO: PI14_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 22/02/2024
 
- @BERSERKERS @DoneDevOps
- Característica: Migracion de Mono a DUO por el canal Call Retail CE
+ @BERSERKERS @DoneDevOps  @RegresionLegacy
+ Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
 
-   Antecedentes:
+   @MigracionMonoADuoRetail
+   Esquema del escenario: Migracion de Mono Internet a DUO con documento CE por el Canal Retail
      Dado     que abro la pagina de movistar
-
-   @MigracionMonoADuoCallCenter
-   Esquema del escenario: Migracion de Mono a Duo en canal Retail
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<tipoUsuario>"
      Y        ingreso el usuario "<userName>"
@@ -41,24 +38,23 @@
      Y        selecciono la oferta "<plan>"
      Y        doy click en Cambiar plan hogar
      Y        valido que este en la seccion de registro
-#    Y        doy click en añadir SVA
-#    Y        doy click en agregar Bloque "<bloque>"
-#    Y        doy click en Guardar cambios
      Cuando   doy clic a iniciar registro
      Y        valido que me encuentre en la pantalla agendamiento
      Y        ingreso los datos de agendamiento
      Y        presiono el boton confirmar agendamiento
-#	 Y        ingreso un correo electronico "<correo>"
-#	 Y        ingreso nuevamente el correo electronico "<correo>"
+     Y        ingreso un correo electronico "<correo>"
+     Y        ingreso nuevamente el correo electronico "<correo>"
      Y        doy clic para validar contrato hogar
      Y        me muestra en pantalla el contrato solicitado
+     Y        imprimo el texto del contrato solicitado
+     Y        guardo el numero de solicitud
      Cuando   doy clic en si acepto
      Y        doy click en el boton de continuar
      Y         presiono el boton Registrar venta
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
-     Y        valido que se muestre el detalle del pedido
-
+     Y        doy click en ver detalle del pedido
+     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
      Ejemplos:
-       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | bloque |
-       | usuario externo | userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                      |
+       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300015 | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA S23 300 MBPS |

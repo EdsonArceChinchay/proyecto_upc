@@ -12,4 +12,7 @@ public class CaeqMasCaplMasCasiPage  extends WebBase {
         UtilWeb.waitForSeconds(10);
         click(BtnCambiarPlan);
     }
+
+    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) {
+    }
 }

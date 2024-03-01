@@ -5,13 +5,13 @@
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1439
 ##SPRINT CREADO: PI18_SP3
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 12/02/2024
+##FECMOD: 20/02/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP3 @TEST1
 Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX en canal Tienda
@@ -42,10 +42,10 @@ Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
-#   Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono la oferta "<plan>"
+    Y        selecciono la oferta "<nombrePlan>"
     Y        selecciono en linea Nueva
     Y        doy click en añadir SVA
     Y        doy click en agregar Bloque "HBO"
@@ -56,9 +56,10 @@ Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en el boton continuar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        doy clic para descargar el contrato
@@ -68,5 +69,5 @@ Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX
     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion | plan                                           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20450685446 | 2   | CE              | 6172834231     | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  | Trio Mov. Voz Int. Estandar HD RA O23 100 Mbps |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                                  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20450685446 | 2   | CE              | 6172834231     | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     |  TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS|
