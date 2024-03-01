@@ -16,9 +16,9 @@
 
 @BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
 
-Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Center
+Característica: AT-DT095_Alta Duo (Inter_Voz) Upfront con documento CE por canal Call Center
 
-  @AltaTrio_Upfront
+  @AltaDuo_InterVozUpfront
   Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -69,12 +69,6 @@ Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Cent
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
+      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan   |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo      | DUO MOVISTAR VOZ INTERNET RA O23 100 MBPS |
