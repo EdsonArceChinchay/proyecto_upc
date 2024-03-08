@@ -40,8 +40,6 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro
     Y        valido que muestre la pantalla de Agendamiento
-    #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
-    #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
@@ -61,5 +59,5 @@ Característica: Migracion salto 0 MT canal Call Center
 
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 |

@@ -1,25 +1,23 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO:ACTIVO
 ##CODIGO: AT-DT095
 ##GDAP: GDAP-990
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE
+@BERSERKERS @DoneDevOps  @AltaDuo_InterVozUpfront
+Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
 
-Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Center
-
-  @AltaTrio_Upfront
-  Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
+  @AltaDuo_InterVozUpfront
+  Esquema del escenario: Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -70,7 +68,16 @@ Característica: AT-DT095_Alta Trio Upfront con documento CE por canal Call Cent
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA O23 100 MBPS |
+

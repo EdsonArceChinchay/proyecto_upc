@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 27/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
 Característica:  AT-DT029_Alta Movil Solo Sim con documento CE por Call Center
@@ -53,9 +53,6 @@ Característica:  AT-DT029_Alta Movil Solo Sim con documento CE por Call Center
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -89,5 +86,5 @@ Característica:  AT-DT029_Alta Movil Solo Sim con documento CE por Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 121219514 | Postpago      | RV Plan Ilimitado Mi Movistar |
+      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@  | CE            | 121219510 | Postpago      | RV Plan Ilimitado Mi Movistar |

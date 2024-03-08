@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 08/032024
+##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
 Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por canal Tienda

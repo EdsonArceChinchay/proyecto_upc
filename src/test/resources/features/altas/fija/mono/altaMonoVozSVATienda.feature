@@ -54,7 +54,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 24/04/1990 | Casado      | Albania      |
+      | 24/04/1990 | Casado      | Aruba      |
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
