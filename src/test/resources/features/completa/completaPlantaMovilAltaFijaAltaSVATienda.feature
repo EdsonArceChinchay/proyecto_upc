@@ -64,8 +64,8 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | nombrePlan                                | correo         |
       | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 123456368 | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |

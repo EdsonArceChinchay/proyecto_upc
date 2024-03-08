@@ -1,24 +1,23 @@
 #language:es
-
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT061
-##GDAP: GDAP-604
-##SPRINT CREADO:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT0
+##GDAP: GDAP-1659
+##SPRINT CREADO: PI18_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 05/03/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityN @SanityF @DROP-G06
-Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18
+Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tienda
 
-  @migracionDuoATrioTienda
-  Esquema del escenario: Migracion de Duo a Trio con CE  sin productos asociados sin biometria
+  @migracionMonoATrioCeST
+  Esquema del escenario: Migracion de Mono a Trio con documento CE en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -34,28 +33,27 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-#    Y        verifico la direccion "JR,JULIO CESAR TELLO,169,LINCE,LIMA ,LIMA,PE" actual del servicio
-#    Y        doy click en el boton "Confirmar direccion"
+#    Y        verifico la direccion "" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
-    Y        seleccion plan nuevo para ver las ofertas
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "test.auto@gmail.com"
+    Y        ingreso nuevamente el correo electronico "test.auto@gmail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-
     Ejemplos:
-
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-      | usuario externo | userNameST | passST  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                                            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300014 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 1000 MBPS |

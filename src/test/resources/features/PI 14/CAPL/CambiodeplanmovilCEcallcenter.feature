@@ -46,4 +46,4 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

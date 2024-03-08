@@ -11,6 +11,8 @@ import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class AltaFijaMovilRegistroStep {
 
@@ -303,12 +305,11 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public String getTextoSolicitud(){
-
         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 
     public String getCodigoOrden() {
-        return page.altaFijaMovilRegistroPage().getCodigoOrden();
 
+        return page.altaFijaMovilRegistroPage().getCodigoOrden();
     }
 }

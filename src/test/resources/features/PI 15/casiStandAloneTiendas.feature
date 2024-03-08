@@ -46,7 +46,7 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |

@@ -1,8 +1,10 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -50,6 +52,8 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
+    protected WebElement btnLeft;
 
     @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
@@ -78,31 +82,61 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void listaOfertas(String planOfertas) {
+    public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
-        System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
-        for (int i = 0; i < 2; i++) {
-            boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            if (elementoExistente) {
-                System.out.println("dio click");
-                click(btnRight);
-                UtilWeb.waitForSeconds(3);
+
+        try {
+            boolean isBtnRigth;
+            isBtnRigth = btnRight.isDisplayed();
+        //driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            while (isBtnRigth)
+            {
+                UtilWeb.waitForSeconds(5);
+                System.out.println("Entro al while 1");
+                waitUntilElementIsClickable(btnRight,50);
+                btnRight.click();
+                System.out.println("dio click boton Derecho");
+                isBtnRigth = btnRight.isDisplayed();
+
             }
+            System.out.println("salio del while 1");
+        }
+        catch (NoSuchElementException e){
+               e.getMessage();
         }
 
-        UtilWeb.waitForSeconds(3);
+        try {
+            boolean isBtnLeft;
+            isBtnLeft = btnLeft.isDisplayed();
+           // isBtnLeft= driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+            while (isBtnLeft)
+            {
+                System.out.println("Entro al while 2");
+                waitUntilElementIsClickable(btnLeft,50);
+                btnLeft.click();
+                System.out.println("dio click isquierdo");
+                isBtnLeft = btnLeft.isDisplayed();
+
+            }
+            System.out.println("salio del while 2");
+
+        }
+        catch (NoSuchElementException e){
+            e.getMessage();
+        }
+
+        System.out.println("Ofertas : " + listaOfertas.size());
         boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
+            js().scrollElementTop(listaOfertas.get(i));
+            scenario.printFullView();
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
             System.out.println("Entro al for de las lista de ofertas");
             System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 encontroElemento = true;
-                UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
             }

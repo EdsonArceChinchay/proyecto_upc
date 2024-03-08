@@ -4,7 +4,9 @@ import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
+import io.cucumber.java.Scenario;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,9 @@ public class AltaFijaTiendaStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private ManageScenario scenario;
 
     @ScreenShotBefore
     @ScreenShotAfter
@@ -32,7 +37,7 @@ public class AltaFijaTiendaStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void seleccionarListaOfertas(String ofertas) {
-        page.altaFijaTiendaPage().listaOfertas(ofertas);
+        page.altaFijaTiendaPage().listaOfertas(ofertas, scenario);
     }
 
     @ScreenShotBefore

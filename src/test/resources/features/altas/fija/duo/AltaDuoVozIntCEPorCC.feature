@@ -11,10 +11,10 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 12/02/2024
+##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
-Característica: AT-DT005_Alta Duo Voz + Internet con documento CE en canal Call Center
+Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Call Center
 
   @AltaDuoCC @MVP15 @Global
   Esquema del escenario: Alta de dúo internet con CEX, en canal call center, web front end, flujo no biométrico
@@ -44,7 +44,7 @@ Característica: AT-DT005_Alta Duo Voz + Internet con documento CE en canal Call
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+      | A  | alex mancilla | CASA           | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
@@ -68,7 +68,9 @@ Característica: AT-DT005_Alta Duo Voz + Internet con documento CE en canal Call
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office

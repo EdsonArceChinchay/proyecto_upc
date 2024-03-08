@@ -36,7 +36,7 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
       #Y        verifico la direccion "JULIO CESAR TELLO,469" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
@@ -63,6 +63,8 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        ingreso nuevamente el correo electronico "PRUEBA@GMAIL.COM"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

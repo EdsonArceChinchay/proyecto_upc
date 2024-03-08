@@ -11,10 +11,10 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 12/02/2024
+##FECMOD: 08/032024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
-Característica: AT-DT004_Alta Duo Internet + TV mas SVA HBO con documento CE en canal Call Center
+Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en canal Call Center
 
   @AltaDuoCC_SvaHBO
   Esquema del escenario: Alta Duo SVA HBO con documento CE en canal call center
@@ -71,7 +71,9 @@ Característica: AT-DT004_Alta Duo Internet + TV mas SVA HBO con documento CE en
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -79,6 +81,7 @@ Característica: AT-DT004_Alta Duo Internet + TV mas SVA HBO con documento CE en
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                               | bloque | tipoPlan | svaInternet           |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA O23 100 MBPS | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |

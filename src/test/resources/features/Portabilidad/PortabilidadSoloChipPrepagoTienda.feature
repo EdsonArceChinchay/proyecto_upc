@@ -15,12 +15,12 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI
+Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI en canal Tienda
   #tambo
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @PortabilidadSoloChipPrepago @MVP17 @Global
+  @PortabilidadSoloChipPrepagoST @MVP17 @Global
   Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal tienda,web front end, flujo biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

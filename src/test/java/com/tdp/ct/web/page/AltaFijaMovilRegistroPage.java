@@ -425,7 +425,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicValidarContrato() {
         revisarModalError(driver());
-        Addons.esperaProgresiva(driver(), 4, 20, buttonValidarContrato);
+        Addons.esperaProgresiva(driver(), 6, 8, buttonValidarContrato);
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
@@ -551,7 +551,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
-            esperaProgresiva(driver(), 2, 3, elementPadre);
+            esperaProgresiva(driver(), 4, 5, elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
             WebElement padreElement = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             padreElement.click();
@@ -561,7 +561,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
-            esperaProgresiva(driver(), 2, 3, elementMadre);
+            esperaProgresiva(driver(), 4, 5, elementMadre);
             System.out.println("Cual es el nombre de tu madre : " + true);
             WebElement madreElement = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
             madreElement.click();
@@ -571,7 +571,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
-            esperaProgresiva(driver(), 2, 3, elementNacimiento);
+            esperaProgresiva(driver(), 4, 5, elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
             WebElement lugarElement = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             lugarElement.click();
@@ -1035,7 +1035,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         do {
             // Esperar antes de intentar obtener el texto
             UtilWeb.waitForSeconds(5);
-
             // Obtener el texto del elemento
             String texto = textoContratoCliente.getText();
 
@@ -1046,7 +1045,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             } else {
                 System.out.println("Texto del contrato del cliente está vacío. Reintentando...");
             }
-
             contadorReintentos++;
         } while (contadorReintentos < 4);  // Establecer el número máximo de reintentos
 
@@ -1063,13 +1061,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Codigo de Orden: " + orden.getText() + "A");
             listCodigosDeOrdenes.add("Codigo de Orden: " + orden.getText() + "A");
         });
-
+        //cliente.setCodigosDeOrdenes(listCodigosDeOrdenes);
         return listCodigosDeOrdenes.toString();
     }
 
     public boolean verificarPantallaVenta() {
         try {
-
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra la pantalla de venta exitosa, se saltaron pasos");
             return true;
         } catch (NoSuchElementException nsee) {

@@ -71,7 +71,7 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
