@@ -12,12 +12,11 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
 
-Característica: AT-DT077_Migracion salto 0 canal Call Center
-
+Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
   Antecedentes:
     Dado     que abro la pagina de movistar
 
@@ -39,8 +38,6 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro
     Y        valido que muestre la pantalla de Agendamiento
-    #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
-    #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
@@ -53,12 +50,11 @@ Característica: AT-DT077_Migracion salto 0 canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "solicitud"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
-
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042464839 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1234577999 |
