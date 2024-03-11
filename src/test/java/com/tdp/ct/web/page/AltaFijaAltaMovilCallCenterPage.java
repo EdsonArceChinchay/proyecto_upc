@@ -83,7 +83,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void lote(String lote) {
         boolean existe = validateInputAndLocator(lote, inputLot);
-        if (existe && inputBlock.isSelected()) {
+        if (existe && inputLot.isSelected()) {
             esperaProgresiva(driver(), 3, 5, inputLot);
             click(inputLot);
             type(inputLot, lote);
@@ -113,7 +113,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void bloque(String bloque) {
         boolean existe = validateInputAndLocator(bloque, inputBlock);
         if (existe) {
-            js().scrollElementTop(inputBlock);
+          //  js().scrollElementTop(inputBlock);
+            System.out.println("Ingreso a bloque si");
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);

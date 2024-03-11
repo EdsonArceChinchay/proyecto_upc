@@ -11,16 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 11/03/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
-Característica: AT-DT025_Alta Movil Postpago Canal Tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaMovil
+Característica: AT-DT025_Alta Movil Postpago por Canal Tienda
 
   @AltaMovilPostpagoCanalTienda
   Esquema del escenario: Alta Movil Postpago
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -55,15 +53,19 @@ Característica: AT-DT025_Alta Movil Postpago Canal Tienda
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito   | direccion            |
-      | 26/07/1985 | soltero     | Alemania     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 |
+      | 26/07/1995 | soltero     | Alemania     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 |
 	#Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        doy clic en Registrar venta
     Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1000000112 | Postpago      | Plan Ilimitado Mi Movistar S/99.9 IV |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1100000112 | Postpago      | Plan Ilimitado Mi Movistar S/99.9 IV |

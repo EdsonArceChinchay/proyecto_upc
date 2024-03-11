@@ -14,16 +14,14 @@
 ##ENCARGADO: Edson Arce
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps
+@BERSERKERS @DoneDevOps @AltaMovil
 Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaControlEquipoCallCenter @MVP06 @Global
   Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
+    Dado     que abro la pagina de movistar
     Dado     presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
@@ -76,10 +74,20 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                     | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar S/45.9 III | Control   | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |

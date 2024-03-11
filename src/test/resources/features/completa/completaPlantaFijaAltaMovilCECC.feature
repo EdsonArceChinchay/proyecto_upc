@@ -4,7 +4,7 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT038
+##CODIGO: AT-DT0
 ##GDAP: GDAP-#QAN1
 ##SPRINT CREADO:
 ##FRECUENCIA:
@@ -13,9 +13,9 @@
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 25/12/2023
 
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
 
-Característica: AT-DT038_Completa Planta Fija Alta Movil con documento CE en Call Center
+Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call Center
 
   @CompletaPlantaFijaAltaMovil
   Esquema del escenario: Completa Planta Fija Alta Movil con documento CE

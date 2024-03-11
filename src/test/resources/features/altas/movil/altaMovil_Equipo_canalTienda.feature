@@ -13,8 +13,8 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda
-Característica: AT-DT030_AltaMovil + equipo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovil
+Característica: AT-DT030_Alta Movil + Equipo con documento CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -36,7 +36,7 @@ Característica: AT-DT030_AltaMovil + equipo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
@@ -56,9 +56,10 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
       | 12/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
-    #ABANCAY
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono en el boton de Registrar Venta

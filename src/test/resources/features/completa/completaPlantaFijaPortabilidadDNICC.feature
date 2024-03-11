@@ -4,18 +4,18 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT038
-##GDAP: GDAP-
+##CODIGO: AT-DT0
+##GDAP: GDAP-1661
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 31/12/2023
+##FECMOD: 08/03/2024
 
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
 
-Característica: AT-DT038_Completa Movil ( Planta Fija + Porta Directa Movil) en canal Call Center
+Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en canal Call Center
 
   @CompletaPlantaFijaPortabilidadCC
   Esquema del escenario: Completa Planta Fija Porta Directa Movil

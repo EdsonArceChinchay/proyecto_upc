@@ -291,7 +291,7 @@ public class Addons {
                 try {
                     //Busca un boton para Continuar
                     LOGGER.log(Level.INFO, "Buscando - btn Continuar");
-                    btnContinuar = driver.findElement(By.xpath("//*[contains(text(),'Continuar')]"));
+                    btnContinuar = driver.findElement(By.xpath("//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]"));
                     if (btnContinuar.isEnabled()) {
                         btnContinuar.click();
                         System.out.println("################ CLIC en Continuar");

@@ -13,14 +13,12 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -39,7 +37,7 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -91,8 +89,8 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        apruebo la solicitud
     Ejemplos:
   | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-#  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
-  | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100002127  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+ # | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100002127  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
 
 #  | usuario interno |    userNameQAN | passQAN    | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
 #  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |

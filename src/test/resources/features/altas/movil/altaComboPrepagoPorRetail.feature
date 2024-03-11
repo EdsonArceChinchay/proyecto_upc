@@ -13,16 +13,14 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4
-Característica: AT-DT021_Alta Combo Prepago por Retail
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovil
+Característica: AT-DT021_Alta Combo Prepago con documento CE por Canal Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @altaComboPrepagoPorRetail
   Esquema del escenario: Alta movil prepago combo por retail con nuevo cliente con documento CE
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -56,9 +54,13 @@ Característica: AT-DT021_Alta Combo Prepago por Retail
       | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        presiono continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | nombrePlan      |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464887 | Prepago preplan |

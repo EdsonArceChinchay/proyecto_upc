@@ -15,14 +15,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
-Característica: Alta Movil Prepago + Equipo Call center
-
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: Alta Movil Prepago + Equipo por canal Call Center
 
   @AltaMovilPrepago+EquipoCallCenter
   Esquema del escenario: Alta movil Prepago + Equipo por call center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -38,7 +35,7 @@ Característica: Alta Movil Prepago + Equipo Call center
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
@@ -76,9 +73,20 @@ Característica: Alta Movil Prepago + Equipo Call center
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                | tipoPago             |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | BMOBILE AX1082 NEGRO C/PACK | Financiado 12 cuotas |

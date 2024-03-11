@@ -13,15 +13,13 @@
 ##ENCARGADO:
 ##FECMOD: 27/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04
-Característica:  AT-DT029_Alta Movil Solo Sim con documento CE por Call Center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
+Característica:  AT-DT029_Alta Movil Postpago con documento CE por Call Center
   Quiero realizar una alta movil solo sin por call center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaMovilCECallCenter
-  Esquema del escenario: Alta Movil Solo Sim Por Call Center
+  Esquema del escenario: Alta Movil Solo Sim con documento CE por Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

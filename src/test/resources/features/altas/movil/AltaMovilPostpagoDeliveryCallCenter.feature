@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovil
 Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en Tambo
   sin cobertura por canal Call Center
 
@@ -26,7 +26,7 @@ Característica: AT-DT026_Alta movil Postpago (linea + equipo) con Delivery en T
   @AltaMovilPostPagoDeliveryCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con DNI sin productos asociados sin biometria
     Dado     presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home

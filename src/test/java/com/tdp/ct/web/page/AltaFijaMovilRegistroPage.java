@@ -145,9 +145,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//*[contains(@class,'orden-big')]")
     protected List<WebElement> listCodigoOrden;
 
-    @Autowired
-    private Cliente cliente;
-
     public boolean validarPantallaIngresarDireccion() {
         //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -1026,7 +1023,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public String getNumeroSolicitud() {
-        String textoContrato = textoContratoCliente.getText();
+        String textoContrato =textoContratoCliente.getText();
         return extraerNumeroSolicitud(textoContrato);
     }
 
@@ -1055,14 +1052,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return textoContratoCliente.getText();
     }
 
-    public String getCodigoOrden() {
+    public List<String> getCodigoOrden() {
         List<String> listCodigosDeOrdenes = new ArrayList<String>();
         listCodigoOrden.forEach((orden) -> {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Codigo de Orden: " + orden.getText() + "A");
-            listCodigosDeOrdenes.add("Codigo de Orden: " + orden.getText() + "A");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Orden: " + orden.getText() + "A");
+            listCodigosDeOrdenes.add("Código de Orden: " + orden.getText() + "A");
         });
-        //cliente.setCodigosDeOrdenes(listCodigosDeOrdenes);
-        return listCodigosDeOrdenes.toString();
+        return listCodigosDeOrdenes;
     }
 
     public boolean verificarPantallaVenta() {

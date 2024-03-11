@@ -13,14 +13,12 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
-Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
+Característica: AT-DT028_Alta Movil Prepago solo chip con documento CE en Canal Tienda
 
   @AltaMovilPrepagoSoloChipTienda_CE
-  Esquema del escenario: Alta movil por call center con nuevo cliente con documento CE
+  Esquema del escenario: Alta Movil Prepago con nuevo cliente con documento CE en Canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -36,9 +34,7 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
-    Y       cierro el popup de validación de estado de contraseña única
-    #Y        cierro pop up de Cliente Exonerado
-    #Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -53,12 +49,15 @@ Característica: AT-DT028_Alta Movil Prepago solo chip Tienda
       | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        presiono continuar
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
       | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
-#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
