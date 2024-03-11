@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 08/032024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy @AltaDuo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacyUpfront @AltaDuo
 Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
 
   @AltaDuoIntTvSvaCeST

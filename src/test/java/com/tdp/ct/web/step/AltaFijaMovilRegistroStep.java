@@ -298,7 +298,7 @@ public class AltaFijaMovilRegistroStep {
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              System.out.println("Numero Solicitud:" + numeroSolicitud);
-             cliente.setNumeroSolicitud("[Código de Venta: "+ numeroSolicitud+"]");
+             cliente.setNumeroSolicitud(numeroSolicitud);
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }

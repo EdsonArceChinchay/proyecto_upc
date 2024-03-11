@@ -242,7 +242,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
-        this.scenario.log(cliente.getNumeroSolicitud());
+        this.scenario.log(""+cliente.getNumeroSolicitud());
         this.scenario.log(cliente.getCodigosDeOrdenes().toString());
     }
 

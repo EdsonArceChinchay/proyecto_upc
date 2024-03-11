@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 08/032024
+##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
 Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en canal Call Center
