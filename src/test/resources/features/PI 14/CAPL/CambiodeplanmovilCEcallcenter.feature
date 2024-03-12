@@ -21,22 +21,23 @@ Característica: AT-DT099_cambio de plan movil en call center
     Dado     que abro la pagina de movistar
 
   @CambiodeplanmovilCEcallcenter
-  Escenario: cambio de plan movil en call center sin biometria
+  Esquema del escenario: cambio de plan movil en call center sin biometria
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario interno"
-    Y        ingreso el usuario "userNameQAN"
-    Y        ingreso el password "passQAN"
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
-    Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1100000795"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "995310043"
+    Y        selecciono el boton Ver detalle del servicio "650026192"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
+    Y        valido que este en la seccion de registro
     Y        doy click en iniciar registro
     Y        ingreso email "auto-3241@yopmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
@@ -54,4 +55,9 @@ Característica: AT-DT099_cambio de plan movil en call center
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+    Ejemplos:
+
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE           | 126659555  |
+#
 
