@@ -77,7 +77,6 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        cierro popup de error

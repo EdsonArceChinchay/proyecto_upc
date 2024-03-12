@@ -49,6 +49,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
 #    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
 #    Y        presiono el boton descargar contrato

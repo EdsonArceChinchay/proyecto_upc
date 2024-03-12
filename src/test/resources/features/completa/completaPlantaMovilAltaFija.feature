@@ -68,7 +68,6 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
 

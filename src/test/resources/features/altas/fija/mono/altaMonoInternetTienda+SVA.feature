@@ -65,6 +65,7 @@ Característica: AT-DT008_Alta Fija Internet + SVA  con documento CE por canal t
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta

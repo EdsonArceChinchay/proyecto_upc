@@ -59,6 +59,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y       doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

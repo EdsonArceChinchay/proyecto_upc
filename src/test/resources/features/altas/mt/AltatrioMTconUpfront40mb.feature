@@ -65,6 +65,7 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
       | 12/12/1980 | Albania      | Casado       |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton descargar contrato

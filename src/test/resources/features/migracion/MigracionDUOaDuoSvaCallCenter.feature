@@ -48,6 +48,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

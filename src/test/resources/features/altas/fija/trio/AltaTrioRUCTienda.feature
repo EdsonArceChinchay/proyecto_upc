@@ -69,6 +69,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
       | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        doy clic para descargar el contrato
