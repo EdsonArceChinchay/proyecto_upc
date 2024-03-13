@@ -86,7 +86,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 150 MBPS  | Combo Plus Bonif TV | 150 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 1000 MBPS | Combo Plus Bonif TV | 1000 Mbps   | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 600 MBPS | Combo Plus Bonif TV | 600 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
-##
+##.
 
 
   @AltaMonoBeneficioDescuento
