@@ -14,7 +14,7 @@
 ##FECMOD: 06/12/2023
 
 @BERSERKERS @DoneDevOps @ValidacionDescuentos
-Característica: Validar precio de descuento BB - Planes: Duos, trios
+Característica: Validar precio de descuento BB - Planes: Duos, trios.
 
   Antecedentes:
     Dado     que abro la pagina de movistar
