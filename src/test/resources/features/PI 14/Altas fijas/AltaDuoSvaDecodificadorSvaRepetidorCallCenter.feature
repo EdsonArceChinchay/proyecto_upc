@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFij
 
 Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA Repetidor con documento CE por canal Call Center
 

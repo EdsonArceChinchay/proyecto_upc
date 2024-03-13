@@ -70,6 +70,7 @@ Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento C
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta

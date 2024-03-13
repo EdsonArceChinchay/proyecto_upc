@@ -43,6 +43,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WE
     #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton descargar contrato

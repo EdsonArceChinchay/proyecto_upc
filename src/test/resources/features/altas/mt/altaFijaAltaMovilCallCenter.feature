@@ -89,6 +89,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
 #    Y        doy clic en finalizar registro
     #Y        doy click en Finalizar registro
@@ -172,6 +173,7 @@ Característica: AT-DT033_Alta Fija + Alta Movil por Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     ##Y        doy clic en finalizar registro
       #paso comentado

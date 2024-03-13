@@ -54,15 +54,14 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
-#    Y        doy clic en continuar
-#    Y        presiono el boton Registrar venta
-#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        doy click en ver detalle del pedido
-#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE             | 102040170       | prueba@prueba.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE              | 102040170      | prueba@prueba.com |

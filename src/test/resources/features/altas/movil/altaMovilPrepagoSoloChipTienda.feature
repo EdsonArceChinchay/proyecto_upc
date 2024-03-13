@@ -50,7 +50,6 @@ Característica: AT-DT028_Alta Movil Prepago solo chip con documento CE en Canal
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        presiono continuar
 #    Y        presiono el boton descargar contrato

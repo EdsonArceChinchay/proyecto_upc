@@ -293,8 +293,7 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
-    public String guardoNumeroSolicitud() {
-//        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+    public void guardoNumeroSolicitud() {
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              System.out.println("Numero Solicitud:" + numeroSolicitud);
@@ -302,7 +301,6 @@ public class AltaFijaMovilRegistroStep {
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }
-         return numeroSolicitud;
     }
 
     public String getTextoSolicitud(){
