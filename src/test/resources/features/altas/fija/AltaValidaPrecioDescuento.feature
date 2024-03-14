@@ -90,7 +90,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
 
 
 
-$
+
   @AltaMonoBeneficioDescuento
     #Consideraciones del uso del script
     #Ingresar el usuario y su tipo de usuario
