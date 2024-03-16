@@ -426,7 +426,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 3;
+        int reintentoBucles = 4;
         while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
@@ -906,11 +906,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicRegistrarVenta() {
         revisarModalError(driver());
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        esperaProgresiva(driver(), 8, 9, boton);
+        WebElement btnRegistrarVenta = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        click(boton);
+        click(btnRegistrarVenta);
         UtilWeb.waitForSeconds(5);
     }
 

@@ -15,13 +15,11 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
 
-Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT036_Alta Fija + Alta Movil con documento CE por Canal Tienda
 
   @AltaFijaMovilTienda
   Esquema del escenario: Alta fija mas alta movil por Tienda con CE sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -39,7 +37,7 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
 #    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -53,9 +51,6 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
       | A  | EDIFICIO     | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
-    #Y        selecciono el tipo de oferta "<tipoOferta>"
-    #Y        selecciono el tipo de plan "<tipoPlan>"
-    #Y        valido el detalle de la seleccion
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Cuando   doy clic a iniciar registro
@@ -80,5 +75,5 @@ Característica: AT-DT036_Alta Fija + Alta Movil por Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | HD 500 Mbps RA + 95 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.comF |

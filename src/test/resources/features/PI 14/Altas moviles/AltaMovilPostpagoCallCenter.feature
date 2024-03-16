@@ -50,8 +50,6 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
-#    Y        selecciono el distrito donde sera la instalacion "150116"
-#    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        selecciono el distrito donde sera la instalacion "150108"
     Y        ingreso la direccion donde sera la instalacion "JIRON JUNO 119"
     Y        ingreso la referencia de la direccion "INKAFARMA"
@@ -95,6 +93,5 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal | CE            | 1075266100 | Postpago      | Plan Ilimitado |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro           | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
-
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100002133 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #chorillos 150108

@@ -15,7 +15,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @AltaMovil
-Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
+Característica: AT-DT024_Alta Movil Control con equipo al contado con CEX, en canal call center con delivery regular, flujo no biométrico
 
   @AltaControlEquipoCallCenter @MVP06 @Global
   Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico

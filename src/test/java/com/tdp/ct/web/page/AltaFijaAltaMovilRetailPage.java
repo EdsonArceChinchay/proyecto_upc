@@ -62,10 +62,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     public void altaMovil() {
         UtilWeb.waitForSeconds(2);
         js().scrollElementTop(btnMovil);
-        //waitUntilElementIsClickable(btnMovil,15);//30
         esperaProgresiva(driver(), 5, 5, btnMovil);
         click(btnMovil);
-        //UtilWeb.waitForSeconds(2);//1
     }
 
     public void lineaExistente(String numeroExistente) {
@@ -113,9 +111,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnLineaCelularExistente);
         String LineaExistente = btnLineaCelularExistente.getText();
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
-
             refrescarLineaExistente(".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container");
-
             click(btnLineaCelularExistente);
         } else {
             int i = 2;
@@ -128,7 +124,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
                 elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
                 if (elementoExistente) {
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
-
                         refrescarLineaExistente(refreshSelector);
                         js().scrollElementTop(elemento);
                         click(elemento);
@@ -142,7 +137,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
                 }
             }
         }
-
         UtilWeb.waitForSeconds(1);
     }
 
@@ -227,6 +221,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, btnMostrar);
         revisarModalError(driver());
         click(btnMostrar);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnMostrar.getText());
     }
 
     public void seleccionarDepa(String tipoDepa) {
@@ -302,11 +297,10 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void btnConsultar() {
-        //UtilWeb.waitForSeconds(5);
-        //waitUntilElementIsVisible(btnConsulta,5);
         esperaProgresiva(driver(), 5, 5, btnConsulta);
         js().scrollElementTop(btnConsulta);
         click(btnConsulta);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConsulta.getText());
         revisarModalError(driver());
         UtilWeb.waitForSeconds(5);
         //revisarModalEntendido(driver());
@@ -318,6 +312,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnConfirmarDireccion);
         js().scrollElementTop(btnConfirmarDireccion);
         click(btnConfirmarDireccion);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConfirmarDireccion.getText());
         revisarModalError(driver());
     }
 
@@ -364,6 +359,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
 
     public void consultaCobertura() {
         click(cobertura);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + cobertura.getText());
         UtilWeb.waitForSeconds(3);
     }
 
@@ -381,25 +377,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         type(correoElement2, correo);
 
         UtilWeb.waitForSeconds(3);
-    }
-
-    public void reintarPopPup() {
-        boolean btnReintentarboolean;
-        boolean modalExiste;
-        btnReintentarboolean = driver().findElements(By.xpath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]")).size() != 0;
-        modalExiste = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]")).size() != 0;
-        if (btnReintentarboolean) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Modal Reintentar");
-            WebElement btnReintentar = find().getElementByXPath("//*[contains(text(),'Reintentar') or contains(@class,'button-light-green ng-star-inserted')]");
-            js().scrollElementTop(btnReintentar);
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(3);
-        }
-        if (modalExiste) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al boton entendido");
-            btnEntendido.click();
-            UtilWeb.waitForSeconds(2);
-        }
     }
 
     public void refrescarLineaExistente(String ruta) {

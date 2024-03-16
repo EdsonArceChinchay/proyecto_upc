@@ -75,5 +75,5 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                                |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA O23 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |

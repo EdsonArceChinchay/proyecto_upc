@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035
 
-Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
+Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
