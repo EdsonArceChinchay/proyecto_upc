@@ -59,6 +59,6 @@ Característica: AT-DT099_cambio de plan movil en call center
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE           | 126659555  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE           | 1042464630  |
 #
 

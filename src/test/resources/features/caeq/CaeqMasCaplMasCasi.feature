@@ -46,9 +46,9 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+   #Y        ingreso la informacion del lugar de instalacion
+    #  | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+     # | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"

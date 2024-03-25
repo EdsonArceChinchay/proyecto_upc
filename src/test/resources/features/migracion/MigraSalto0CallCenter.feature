@@ -57,4 +57,4 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1234577999 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464612 |
