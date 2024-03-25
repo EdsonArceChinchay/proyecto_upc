@@ -206,7 +206,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void tipoEntrega(String tipEntrega) {
         revisarModalError(driver());
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(), 3, 5, deliveryType);
+        esperaProgresiva(driver(), 5, 6, deliveryType);
         scrollDown();
         click(deliveryType);
         UtilWeb.waitForSeconds(1);
@@ -243,7 +243,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoPago(String tipoPago) {
-        esperaProgresiva(driver(), 3, 5, pageType);
+        esperaProgresiva(driver(), 4, 5, pageType);
         try {
             click(pageType);
             String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};

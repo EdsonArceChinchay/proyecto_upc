@@ -152,7 +152,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         for (int i = 0; i < listaPlanMovil.size(); i++) {
 
             System.out.println("Oferta: "+i +" "+listaPlanMovil.get(i).getText());
-            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().equalsIgnoreCase(planMovil.trim()) ) {
+            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().toUpperCase().contains(planMovil.trim().toUpperCase()) ) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));

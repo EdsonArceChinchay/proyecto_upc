@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovil
-Característica: AT-DT030_Alta Movil + Equipo con documento CE
+Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar

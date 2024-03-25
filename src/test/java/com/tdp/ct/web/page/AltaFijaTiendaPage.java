@@ -85,21 +85,17 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
-
         try {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
-        //driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             while (isBtnRigth)
             {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight,10);
                 btnRight.click();
-                System.out.println("dio click boton Derecho");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton derecho " + btnRight);
                 isBtnRigth = btnRight.isDisplayed();
-
             }
-            System.out.println("salio del while 1");
         }
         catch (NoSuchElementException e){
                e.getMessage();
@@ -108,32 +104,26 @@ public class AltaFijaTiendaPage extends WebBase {
         try {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
-           // isBtnLeft= driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
             while (isBtnLeft)
             {
-                System.out.println("Entro al while 2");
-                waitUntilElementIsClickable(btnLeft,50);
                 btnLeft.click();
-                System.out.println("dio click isquierdo");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton izquierdo " + btnLeft);
                 isBtnLeft = btnLeft.isDisplayed();
-
             }
-            System.out.println("salio del while 2");
-
         }
         catch (NoSuchElementException e){
             e.getMessage();
         }
 
-        System.out.println("Ofertas : " + listaOfertas.size());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Cantidad de Ofertas : " + listaOfertas.size());
+
         boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             js().scrollElementTop(listaOfertas.get(i));
             scenario.printFullView();
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 encontroElemento = true;
                 click(listaOfertas.get(i));
@@ -149,10 +139,12 @@ public class AltaFijaTiendaPage extends WebBase {
             }
         }
         if (!encontroElemento && listaOfertas.size() > 0) {
-            System.out.println("No encontro elemento en la lista");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro oferta en la Lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: "+listaOfertas.get(cont).getText());
+
         }
     }
 
@@ -172,6 +164,7 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         waitUntilElementIsVisible(btnLineaNueva, 50);
         click(btnLineaNueva);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + btnLineaNueva.getText());
         UtilWeb.waitForSeconds(5);
     }
 
@@ -271,7 +264,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 10, btnRegistrarVenta);
+        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         click(btnRegistrarVenta);
     }
 

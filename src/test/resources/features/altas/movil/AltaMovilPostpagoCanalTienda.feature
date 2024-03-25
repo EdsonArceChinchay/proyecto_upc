@@ -14,7 +14,7 @@
 ##FECMOD: 11/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaMovil
-Característica: AT-DT025_Alta Movil Postpago por Canal Tienda
+Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
 
   @AltaMovilPostpagoCanalTienda
   Esquema del escenario: Alta Movil Postpago
@@ -61,7 +61,6 @@ Característica: AT-DT025_Alta Movil Postpago por Canal Tienda
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        doy clic en Registrar venta
-    Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
