@@ -59,7 +59,6 @@ Característica: AT-DT030_Alta Movil + Equipo con documento CE
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono en el boton de Registrar Venta
@@ -110,6 +109,7 @@ Característica: AT-DT030_Alta Movil + Equipo con documento CE
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | JR Julio Cesar Tello 469 |
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono en el boton de Registrar Venta

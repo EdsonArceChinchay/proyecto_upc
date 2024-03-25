@@ -55,7 +55,6 @@ Característica: AT-DT021_Alta Combo Prepago con documento CE por Canal Retail
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        presiono continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

@@ -32,14 +32,13 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton consultar
     Cuando   selecciono el boton Ver detalle del servicio "14353885"
     Y        selecciono el boton agregar sva
-    Y        doy click en agregar SVA Linea "Plan Multidestino 40"
+    Y        doy click en agregar SVA Linea "Plan Multidestino 20"
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

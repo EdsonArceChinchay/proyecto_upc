@@ -71,6 +71,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
 #    Y        presiono el boton Registrar venta

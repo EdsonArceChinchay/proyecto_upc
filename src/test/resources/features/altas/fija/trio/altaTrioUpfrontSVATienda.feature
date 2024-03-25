@@ -62,6 +62,7 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
       | 12/12/1980 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
 #    Y        presiono el boton descargar contrato

@@ -14,7 +14,7 @@
 ##FECMOD: 06/12/2023
 
 @BERSERKERS @DoneDevOps @ValidacionDescuentos
-Característica: Validar precio de descuento BB - Planes: Duos, trios
+Característica: Validar precio de descuento BB - Planes: Duos, trios.
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -72,6 +72,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
 #    Y        presiono el boton Registrar venta
@@ -85,6 +86,8 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 150 MBPS  | Combo Plus Bonif TV | 150 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 1000 MBPS | Combo Plus Bonif TV | 1000 Mbps   | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 #      | usuario externo | userNameCC | passCC | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 600 MBPS | Combo Plus Bonif TV | 600 Mbps    | Descuento Prom Internet S/13.5 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+## !
+
 
 
 
@@ -144,6 +147,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios
       | 12/05/1990 | Divorciado  | Aruba        |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 05/03/2024
+##FECMOD: 12/03/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy
 Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tienda
 
   @migracionMonoATrioCeST
@@ -47,13 +47,14 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                                            |
       | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300014 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 1000 MBPS |

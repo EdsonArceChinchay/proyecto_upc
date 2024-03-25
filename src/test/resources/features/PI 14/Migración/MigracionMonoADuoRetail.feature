@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/02/2024
+##FECMOD: 11/03/2024
 
  @BERSERKERS @DoneDevOps  @RegresionLegacy
  Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
@@ -35,7 +35,7 @@
      Y        doy click en el boton "Confirmar direccion"
      Y        selecciono tipo de oferta
      Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-     Y        selecciono la oferta "<plan>"
+     Y        selecciono el plan "<plan>"
      Y        doy click en Cambiar plan hogar
      Y        valido que este en la seccion de registro
      Cuando   doy clic a iniciar registro

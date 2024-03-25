@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 08/032024
+##FECMOD: 12/03/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacyUpfront @AltaDuo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy @AltaDuo
 Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
 
   @AltaDuoIntTvSvaCeST
@@ -58,6 +58,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
       | 10/05/1995 | Alemania     | Casado       |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta

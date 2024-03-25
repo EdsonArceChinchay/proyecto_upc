@@ -64,6 +64,7 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

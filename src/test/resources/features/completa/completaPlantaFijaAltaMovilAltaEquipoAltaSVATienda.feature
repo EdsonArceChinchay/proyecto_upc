@@ -57,7 +57,6 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta

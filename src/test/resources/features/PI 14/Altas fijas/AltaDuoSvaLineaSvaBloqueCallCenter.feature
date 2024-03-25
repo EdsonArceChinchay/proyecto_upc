@@ -71,7 +71,6 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

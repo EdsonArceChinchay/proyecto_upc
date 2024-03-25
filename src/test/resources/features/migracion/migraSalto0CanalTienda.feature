@@ -49,7 +49,6 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta

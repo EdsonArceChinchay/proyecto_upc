@@ -57,6 +57,7 @@ Característica: AT-DT013_Alta Mono Linea Voz con documento CE con Canal Tienda
     Y        doy click en el boton confirmar
     Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta

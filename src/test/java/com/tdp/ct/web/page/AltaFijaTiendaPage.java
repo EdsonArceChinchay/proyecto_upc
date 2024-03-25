@@ -92,9 +92,8 @@ public class AltaFijaTiendaPage extends WebBase {
         //driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
             while (isBtnRigth)
             {
-                UtilWeb.waitForSeconds(5);
-                System.out.println("Entro al while 1");
-                waitUntilElementIsClickable(btnRight,50);
+                esperaProgresiva(driver(), 4, 5, btnRight);
+                waitUntilElementIsClickable(btnRight,10);
                 btnRight.click();
                 System.out.println("dio click boton Derecho");
                 isBtnRigth = btnRight.isDisplayed();
