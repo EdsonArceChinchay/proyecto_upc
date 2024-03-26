@@ -67,5 +67,5 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464994 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 300 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464994 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO MOV. VOZ INT. ESTANDAR HD RA |

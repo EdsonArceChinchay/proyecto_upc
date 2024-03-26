@@ -68,6 +68,10 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
-      | usuario externo |userNameDLC | passDLC| Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                                        |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS |

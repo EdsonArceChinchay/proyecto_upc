@@ -296,7 +296,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(), 7, 3, labelAgendamiento);
+        esperaProgresiva(driver(), 7, 5, labelAgendamiento);
         revisarModalError(driver());
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());

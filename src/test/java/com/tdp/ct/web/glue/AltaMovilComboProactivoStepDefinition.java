@@ -39,7 +39,5 @@ public class AltaMovilComboProactivoStepDefinition {
     @Y("selecciono el boton agregar sva")
     public void seleccionoElBotonAgregarSva() {
         altaMovilComboProactivoStep.seleccionoElBotonAgregarSva();
-
-
     }
 }

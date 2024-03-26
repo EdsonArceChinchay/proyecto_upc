@@ -30,8 +30,8 @@ Característica: AT-DT053_Login - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      |
       | usuario externo | userNameCC  | passCC   | Bienvenid@ | nameStoreCC       |
-#      | usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
-#      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco

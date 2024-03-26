@@ -196,6 +196,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
         btnConsultarCobertura.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConsultarCobertura.getText());
+
     }
 
     public void btnConfirmarUbicacion() {

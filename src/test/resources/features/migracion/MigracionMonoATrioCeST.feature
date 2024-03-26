@@ -56,5 +56,5 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                                            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300014 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 1000 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                                  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300014 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA |

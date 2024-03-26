@@ -11,10 +11,10 @@ import java.util.List;
 @Component
 public class Cliente {
     @Setter @Getter private boolean clienteNuevo;
-    @Setter @Getter String clienteTest;
-    @Setter @Getter String numeroSolicitud;
-    @Setter @Getter String numeroDocumento;
-    @Setter @Getter List <String> codigosDeOrdenes;
+    @Setter @Getter private String clienteTest;
+    @Setter @Getter private String numeroSolicitud;
+    @Setter @Getter private String numeroDocumento;
+    @Setter @Getter private List <String> codigosDeOrdenes;
 
     public Cliente(){
 

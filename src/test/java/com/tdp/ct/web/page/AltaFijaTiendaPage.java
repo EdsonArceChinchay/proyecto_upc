@@ -161,11 +161,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones() {
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(btnLineaNueva, 50);
+        waitUntilElementIsClickable(btnLineaNueva, 50);
         click(btnLineaNueva);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + btnLineaNueva.getText());
-        UtilWeb.waitForSeconds(5);
     }
 
     public void datosAgendamiento() {
@@ -270,25 +268,25 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void doyClickEnAñadirSVA() {
         UtilWeb.waitForSeconds(10);
-        waitUntilElementIsVisible(btnSVA, 100);
+        waitUntilElementIsClickable(btnSVA, 100);
         js().scrollElementTop(btnSVA);
-        click(btnSVA, 10);
-        UtilWeb.waitForSeconds(10);
+        click(btnSVA);
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
         UtilWeb.waitForSeconds(10);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsVisible(btnbloque, 10);
+        waitUntilElementIsClickable(btnbloque, 100);
         js().scrollElementTop(btnbloque);
-        click(btnbloque, 10);
+        click(btnbloque);
     }
 
     public void doyClickEnGuardarCambios() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        UtilWeb.waitForSeconds(1);
+        //JavascriptExecutor jse = (JavascriptExecutor) driver();
+        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+      //  UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
+        js().scrollElementTop(btnGuardar);
         btnGuardar.click();
 
     }

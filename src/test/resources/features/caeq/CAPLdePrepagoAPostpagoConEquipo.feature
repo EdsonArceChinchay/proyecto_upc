@@ -54,7 +54,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        ingreso email "prueba@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
-    #Cuando   doy clic en si acepto
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta

@@ -70,5 +70,5 @@ Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                                  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20450685446 | 2   | CE              | 6172834231     | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     |  TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS|
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                     |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20450685446 | 2   | CE              | 6172834231     | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS |

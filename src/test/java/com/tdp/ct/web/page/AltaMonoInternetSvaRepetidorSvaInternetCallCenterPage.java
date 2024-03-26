@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 
 public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBase {
 
@@ -18,12 +20,11 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     protected WebElement sva_repetidor;
 
     public void agregarsva() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         WebElement sva = find().getElementByXPath("//button[contains(text(),'SVA')]");
+        waitUntilElementIsClickable(sva, 200);
         js().scrollElementTop(sva);
         sva.click();
-        System.out.println("4");
-        UtilWeb.waitForSeconds(20);
     }
 
     public void agregarsvainternet(String string) {

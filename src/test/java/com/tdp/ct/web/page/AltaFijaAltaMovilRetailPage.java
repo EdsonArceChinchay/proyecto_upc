@@ -34,7 +34,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnLineaMovilExistente;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
     protected WebElement btnMostrar;
-    @FindBy(xpath = "//div[1]/tdp-st-card[1]/div/div[2]/form/div[6]/div/button")
+    @FindBy(xpath = "//*[@class='button_step' and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsulta;
     @FindBy(xpath = "//tdp-st-button[@label='Confirmar dirección']")
     private WebElement btnConfirmarDireccion;
@@ -303,9 +303,6 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConsulta.getText());
         revisarModalError(driver());
         UtilWeb.waitForSeconds(5);
-        //revisarModalEntendido(driver());
-        //reintarPopPup();
-        //reintarPopPup();
     }
 
     public void btnConfirmarDireccion() {

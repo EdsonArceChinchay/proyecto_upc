@@ -41,7 +41,9 @@ Característica: AT-DT100_cambio de plan movil en Retail
     Y        ingreso email "brettavoitteiyu-3241@yopmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto
+    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

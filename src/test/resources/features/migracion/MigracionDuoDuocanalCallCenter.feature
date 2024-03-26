@@ -52,8 +52,8 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-	Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464952 | tester@tester.com | Duo           | RA 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464952 | tester@tester.com | Duo           | RA 100 MBPS |

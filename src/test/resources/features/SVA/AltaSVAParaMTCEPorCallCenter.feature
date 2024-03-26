@@ -30,9 +30,11 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "14353885"
+    Cuando   selecciono el boton Ver detalle del servicio "14351218"
     Y        selecciono el boton agregar sva
-    Y        doy click en agregar SVA Linea "Plan Multidestino 20"
+    Entonces doy click en Agregar Sva
+    Y        doy click en agregar Bloque "HBO"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -54,8 +56,8 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor               | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | CE            | 120377222  | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464951 | test@hotmail.com |
 
 
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |
