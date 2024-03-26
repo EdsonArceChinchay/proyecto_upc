@@ -69,4 +69,4 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
      # | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
       #| usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102030051 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464679 | Mono BA 1 Gb RV + 135 Gb RV | tester@tester.com |
+      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 135 Gb RV | tester@tester.com |
