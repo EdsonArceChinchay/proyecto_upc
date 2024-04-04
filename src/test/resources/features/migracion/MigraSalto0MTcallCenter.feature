@@ -6,7 +6,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP:1437
+##GDAP:GDAP-1437
 ##SPRINT CREADO: PI18 SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -16,7 +16,7 @@
 
 @BERSERKERS @DoneDevOps
 
-Caracter√≠stica: Migracion salto 0 MT canal Call Center
+Característica: Migracion salto 0 MT canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
