@@ -207,8 +207,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoEntrega(String tipEntrega) {
         revisarModalError(driver());
-        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(), 5, 6, deliveryType);
+        esperaProgresivaLoading(driver(), 4, 5, "loadingCard");
+        esperaProgresiva(driver(), 4, 6, deliveryType);
         scrollDown();
         click(deliveryType);
         UtilWeb.waitForSeconds(1);

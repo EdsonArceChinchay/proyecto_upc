@@ -59,8 +59,8 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password |
       | usuario externo | userNameST | passST   |

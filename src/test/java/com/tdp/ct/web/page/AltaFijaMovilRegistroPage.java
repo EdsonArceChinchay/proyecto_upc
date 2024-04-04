@@ -422,7 +422,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicValidarContrato() {
         revisarModalError(driver());
-        Addons.esperaProgresiva(driver(), 6, 8, buttonValidarContrato);
+        Addons.esperaProgresiva(driver(), 7, 8, buttonValidarContrato);
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;

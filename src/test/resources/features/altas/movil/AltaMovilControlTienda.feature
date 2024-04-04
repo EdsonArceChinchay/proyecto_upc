@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 13/02/2024
+##FECMOD: 03/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7 @AltaMovil
 Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
@@ -42,7 +42,7 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "Control"
-    Y        selecciono la opcion "RV Plan Mi Movistar S/65.9"
+    Y        selecciono la opcion "RV Plan Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro

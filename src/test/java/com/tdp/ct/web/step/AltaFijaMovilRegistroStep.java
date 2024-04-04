@@ -296,8 +296,7 @@ public class AltaFijaMovilRegistroStep {
     public void guardoNumeroSolicitud() {
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
-             System.out.println("Numero Solicitud:" + numeroSolicitud);
-             cliente.setNumeroSolicitud(numeroSolicitud);
+             this.cliente.setNumeroSolicitud(numeroSolicitud);
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }
@@ -310,7 +309,7 @@ public class AltaFijaMovilRegistroStep {
     public void getCodigoOrden() {
         List<String> codigoOrden =  page.altaFijaMovilRegistroPage().getCodigoOrden();
         if(codigoOrden!=null) {
-            cliente.setCodigosDeOrdenes(codigoOrden);
+            this.cliente.setCodigosDeOrdenes(codigoOrden);
         }else{
             System.out.println("ERROR - Codigo de Orden - Null");
         }

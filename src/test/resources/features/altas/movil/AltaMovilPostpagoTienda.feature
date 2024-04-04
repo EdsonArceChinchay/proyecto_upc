@@ -65,5 +65,5 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1100000112 | Postpago      | Plan Ilimitado Mi Movistar S/99.9 IV |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                 |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1100000112 | Postpago      | Plan Ilimitado Mi Movistar |

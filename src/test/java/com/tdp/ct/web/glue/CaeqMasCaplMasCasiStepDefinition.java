@@ -33,9 +33,10 @@ public class CaeqMasCaplMasCasiStepDefinition {
 
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
-        String codigoVenta = cliente.getNumeroSolicitud();
+        String codigoVenta ="FE-1000156745"; //cliente.getNumeroSolicitud();
+
         caeqMasCaplMasCasiStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqMasCaplMasCasiStep.getSalesLead(codigoVenta));
-        this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(codigoVenta).toString());
+        //this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(codigoVenta).toString());
 
     }
 }

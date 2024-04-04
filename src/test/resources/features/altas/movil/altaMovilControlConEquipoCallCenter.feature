@@ -88,5 +88,5 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CEX, en c
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                     | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar S/45.9 III | Control   | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes          | planMovil | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

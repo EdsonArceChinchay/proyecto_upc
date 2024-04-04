@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
-Característica: AT-DT028_Alta Movil Prepago documento CE en Canal Tienda
+Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
 
   @AltaMovilPrepagoSoloChipTienda_CE
   Esquema del escenario: Alta Movil Prepago con nuevo cliente con documento CE en Canal Tienda

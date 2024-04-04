@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovil
-Característica: AT-DT022_Alta Movil Prepago con documento CE por Canal Tienda
+Característica: AT-DT022_Alta Movil Prepago con equipo con documento CE por Canal Tienda
   Yo como asesor de Tienda
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
 
@@ -42,7 +42,7 @@ Característica: AT-DT022_Alta Movil Prepago con documento CE por Canal Tienda
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName               |
-      | sin permanencia | Al Contado | HUAWEI P30 AZUL ELLE-L04 |
+      | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        selecciono el boton de iniciar registro

@@ -180,7 +180,6 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("imprimo el texto del contrato solicitado")
     public void imprimoElTextoDelContratoSolicitado() {
-        System.out.println("Solicitud de Contrato: " + altaFijaMovilRegistroStep.getTextoSolicitud());
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
         altaFijaMovilRegistroStep.guardoNumeroSolicitud();
     }

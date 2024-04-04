@@ -49,9 +49,9 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WE
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
