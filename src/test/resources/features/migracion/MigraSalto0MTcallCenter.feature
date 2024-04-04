@@ -16,7 +16,7 @@
 
 @BERSERKERS @DoneDevOps
 
-Característica: Migracion salto 0 MT canal Call Center
+CaracterÃ­stica: Migracion salto 0 MT canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
