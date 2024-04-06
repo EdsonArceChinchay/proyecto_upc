@@ -38,9 +38,16 @@ Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono la oferta de plan movil "<oferta>"
-    Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono el boton de iniciar registro
+    Y        selecciono el plan movil "<oferta>"
+    Y        selecciono la opcion "<nombrePlan>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
+    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
@@ -70,6 +77,9 @@ Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Cen
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -78,5 +88,5 @@ Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

@@ -60,6 +60,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | nombrePlan      |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464887 | Prepago preplan |

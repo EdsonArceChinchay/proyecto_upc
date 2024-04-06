@@ -14,7 +14,7 @@
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP3 @@RegresionLegacyUpfront
-Característica: AT-DT0_ Alta Trío B2B Upfront con SVA con representa legal CEX en canal Tienda
+Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX en canal Tienda
 
   @AltaTrioSVARucCETienda
   Esquema del escenario: Alta Trío B2B Upfront con SVAs con representa legal CEX en canal Tienda

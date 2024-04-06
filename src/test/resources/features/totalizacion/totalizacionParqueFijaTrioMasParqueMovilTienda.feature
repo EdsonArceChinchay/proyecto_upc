@@ -45,9 +45,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        doy click en el boton Ir a movistar total
     Y        doy click en agregar "Seguridad Total Residencial"
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
+#    Y        valido que me encuentre en la pantalla agendamiento
+#    Y        ingreso los datos de agendamiento
+#    Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
@@ -63,4 +63,4 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo         |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1632547904 | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            |1632547941  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |

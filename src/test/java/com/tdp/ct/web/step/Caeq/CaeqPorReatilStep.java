@@ -10,8 +10,8 @@ public class CaeqPorReatilStep {
     @Autowired
     private StepPages page;
     @ScreenShotBefore
-    public void btnAnadirEquipo() {
-        page.caeqPorRetailPage().btnAnadirEquipo();
+    public void btnAnadirEquipo(int num) {
+        page.caeqPorRetailPage().btnAnadirEquipo(num);
     }
     @ScreenShotBefore
     public void btnSeleccionar() {

@@ -9,7 +9,11 @@ public class CaeqPorReatilStepDefinition {
     private CaeqPorReatilStep caeqPorReatilStep;
     @Y("presiona el boton anadir equipo")
     public void presionaElBotonAnadirEquipo() {
-        caeqPorReatilStep.btnAnadirEquipo();
+        caeqPorReatilStep.btnAnadirEquipo(2);
+    }
+    @Y("presiona el boton anadir equipo del mismo plan")
+    public void presionaElBotonAnadirEquipoDelMismoPlan() {
+        caeqPorReatilStep.btnAnadirEquipo(1);
     }
 
     @Y("presiono el boton seleccionar")

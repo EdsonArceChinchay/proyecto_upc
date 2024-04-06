@@ -285,7 +285,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicIniciarRegistro() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 4, 10, buttonIniciarRegistro);
+        esperaProgresiva(driver(), 6, 6, buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);

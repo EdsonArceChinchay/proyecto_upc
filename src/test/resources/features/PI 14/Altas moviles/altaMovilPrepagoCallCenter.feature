@@ -3,15 +3,15 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT097
 ##GDAP: GDAP-1144
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 04/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
 Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Center
@@ -46,10 +46,7 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
+    Y        presiono Consultar ubicacion
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -70,6 +67,9 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office

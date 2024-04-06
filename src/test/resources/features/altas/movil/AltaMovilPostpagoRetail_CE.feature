@@ -58,6 +58,7 @@ Característica: AT-DT031_Alta Movil Postpago CEX Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 10094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

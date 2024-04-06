@@ -1,23 +1,21 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1233
-##SPRINT CREADO: PI14
+##SPRINT CREADO: PI14_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 04/04/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+Característica: Alta Movil Prepago con equipo con documento CE por canal Call Center
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
-Característica: Alta Movil Prepago + Equipo por canal Call Center
-
-  @AltaMovilPrepago+EquipoCallCenter
+  @AltaMovilPrepagoEquipoCallCenter
   Esquema del escenario: Alta movil Prepago + Equipo por call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -54,9 +52,6 @@ Característica: Alta Movil Prepago + Equipo por canal Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -79,6 +74,7 @@ Característica: Alta Movil Prepago + Equipo por canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -87,6 +83,6 @@ Característica: Alta Movil Prepago + Equipo por canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | BMOBILE AX1082 NEGRO C/PACK | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
 #      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

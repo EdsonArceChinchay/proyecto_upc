@@ -37,8 +37,8 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        presiona el boton anadir equipo
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | MOTOROLA   |
+      | permanencia | tipoPago   | equipoName               |
+      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
@@ -56,8 +56,9 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-#      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
+  #    | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |

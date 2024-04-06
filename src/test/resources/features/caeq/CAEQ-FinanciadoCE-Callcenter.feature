@@ -11,13 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 03/11/2023
+##FECMOD: 06/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: CAEQ Financiado con documento CE por Canal Call Center
+Característica: CAEQ con documento CE por Canal Call Center
 #CAEQ DROP
-  @CaeqFinanciadoCECallcenter
-  Esquema del escenario: CAEQ Financiado con documento CE por Canal Call Center
+
+  @CaeqCECallcenter
+  Esquema del escenario: CAEQ con documento CE por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,17 +32,11 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        doy click en el boton consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
-#    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        presiona el boton anadir equipo
-    #Y        selecciono el boton de eleccion de planes
-    #Y        selecciono el plan movil "Prepago"
-    #Y        selecciono la opcion "Prepago con Tarifa Única"
-    #Y        doy click en el boton seleccionar oferta
-    #Y        selecciono añadir equipos
+    Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia     | tipoPago             | equipoName |
-      | Sin permanencia | Financiado 12 cuotas | HONOR      |
+      | permanencia     | tipoPago   | equipoName               |
+      | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     #Y        cierro pop up de Cliente Exonerado
@@ -54,9 +49,9 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+#      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -71,7 +66,6 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -85,7 +79,7 @@ Característica: CAEQ Financiado con documento CE por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 1100000765      | 984594042        |
+      | usuario externo | userNameCC | passCC   | CE            | 143625138       | 650028141        |
 #      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
 #      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
 #      Prueba error

@@ -36,16 +36,16 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     protected WebElement btnMostrar;
     @FindBy(xpath = "//*[@class='button_step' and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsulta;
-    @FindBy(xpath = "//tdp-st-button[@label='Confirmar dirección']")
+    @FindBy(xpath = "//*[@label='Confirmar dirección']")
     private WebElement btnConfirmarDireccion;
 
-    @FindBy(xpath = "/html/body/app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
+    @FindBy(xpath = "//app-root/app-address-mt/div[2]/app-address-form/div[1]/tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
     protected WebElement cobertura;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
     private String inputCorreo;
-    @FindBy(xpath = "/html/body/app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
+    @FindBy(xpath = "//app-root/app-alta-movil/app-oferta/div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[4]/div")
     protected WebElement AnadirEquipos;
     private String DEPARTAMENTO = "15";
     private String PROVINCIA = "1501";
@@ -309,7 +309,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnConfirmarDireccion);
         js().scrollElementTop(btnConfirmarDireccion);
         click(btnConfirmarDireccion);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConfirmarDireccion.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Confirmar Direccion" );
         revisarModalError(driver());
     }
 

@@ -70,9 +70,9 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton Registrar venta")
     public void presiono_el_boton_Registrar_venta() {
-        if (Parameters.estadoFlujo){
+      //  if (Parameters.estadoFlujo){
             altaFijaTiendaStep.clickRegistrarVenta();
-        }
+     //   }
     }
 
 

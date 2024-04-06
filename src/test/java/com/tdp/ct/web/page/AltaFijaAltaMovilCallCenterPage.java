@@ -192,11 +192,11 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void btnConsultarCobertura() {
         esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
-        js().scrollElementTop(btnConsultarCobertura);
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
+        js().scrollElementTop(btnConsultarCobertura);
         btnConsultarCobertura.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnConsultarCobertura.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Consultar Cobertura" );
 
     }
 
@@ -245,7 +245,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoPago(String tipoPago) {
-        esperaProgresiva(driver(), 4, 5, pageType);
+        esperaProgresiva(driver(), 5, 6, pageType);
+        UtilWeb.waitForSeconds(2);
         try {
             click(pageType);
             String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};

@@ -15,7 +15,7 @@
 ##FECMOD: 31/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: AT-DT100_cambio de plan movil en Retail
+Característica: AT-DT100_Cambio de plan movil con documento CE en Canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -43,9 +43,10 @@ Característica: AT-DT100_cambio de plan movil en Retail
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
+#    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"

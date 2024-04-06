@@ -21,15 +21,18 @@ public class CaeqPorRetailPage extends WebBase {
 
     @FindBy(xpath = "(//div/button[@class=\"buttonG\"])[3]")
     protected  WebElement botonConsultaClienteNuevo;
-    public void btnAnadirEquipo() {
+
+    public void btnAnadirEquipo(int num) {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
-        esperaProgresiva(driver(), 3, 5, btnAnadirE);
-        js().scrollElementTop(btnAnadirE);
-        click(btnAnadirE);
+        WebElement btnAñadirEquipo = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])["+num+"]");
+        esperaProgresiva(driver(), 3, 5, btnAñadirEquipo);
+        js().scrollElementTop(btnAñadirEquipo);
+        click(btnAñadirEquipo);
         //waitUntilElementIsClickable(btnAnadirE,20).click();
         UtilWeb.waitForSeconds(1);
     }
+
 
     public void btnSeleecionar() {
         UtilWeb.waitForSeconds(10);

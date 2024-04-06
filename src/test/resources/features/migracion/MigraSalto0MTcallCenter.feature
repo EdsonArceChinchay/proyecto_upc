@@ -49,6 +49,8 @@ Característica: Migracion salto 0 MT canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -56,8 +58,6 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
-
-
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 |
