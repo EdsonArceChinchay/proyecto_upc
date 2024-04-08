@@ -30,22 +30,23 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "14353885"
+    Cuando   selecciono el boton Ver detalle del servicio "14351218"
     Y        selecciono el boton agregar sva
-    Y        doy click en agregar SVA Linea "Plan Multidestino 40"
+    Entonces doy click en Agregar Sva
+    Y        doy click en agregar Bloque "HBO"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -55,8 +56,8 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor               | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA  | CE            | 120377222  | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464951 | test@hotmail.com |
 
 
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |

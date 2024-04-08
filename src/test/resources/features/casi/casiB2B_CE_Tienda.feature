@@ -41,26 +41,17 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-#    Y        doy clic en el boton validar identidad representante legal
-#    Y        elijo el tipo de validacion a realizar "biometrica"
-#    Y        doy click en el boton continuar
-#    Y        elijo el tipo de validacion a realizar "discapacitado"
-#    Y        ingreso los datos del supervisor
-#      | numdoc   | user     | password     |
-#      | 73261531 | vsiguass | $t3l3f0n1c4$ |
-#    Y        ingreso los datos solicitados para la validacion del cliente
-#      | nombreMadre | nombrePadre | distritoNac |
-#      | DEISY       | CESAR       | MALA        |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
+    #Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE             | 102040170       | prueba@prueba.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE              | 102040170      | prueba@prueba.com |

@@ -51,10 +51,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
 
-    @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Confirmar dirección']")
+    @FindBy(xpath = "//*[@label='Confirmar dirección' or contains(text(),'Confirmar dirección')]")
     protected WebElement btnConfirmarDir;
 
-    @FindBy(xpath = "//*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']")
+    @FindBy(xpath = " //*[@label='Actualizar dirección' or contains(text(),'Actualizar dirección')]")
     protected WebElement btnActualizarDir;
     //*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")

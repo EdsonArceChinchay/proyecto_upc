@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/02/2024
+##FECMOD: 11/03/2024
 
  @BERSERKERS @DoneDevOps  @RegresionLegacy
  Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
@@ -35,7 +35,7 @@
      Y        doy click en el boton "Confirmar direccion"
      Y        selecciono tipo de oferta
      Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-     Y        selecciono la oferta "<plan>"
+     Y        selecciono el plan "<plan>"
      Y        doy click en Cambiar plan hogar
      Y        valido que este en la seccion de registro
      Cuando   doy clic a iniciar registro
@@ -53,8 +53,10 @@
      Y         presiono el boton Registrar venta
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
      Y        doy click en ver detalle del pedido
-     Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
      Ejemplos:
-       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                      |
-       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300015 | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA S23 300 MBPS |
+       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                         |
+       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300015 | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA |

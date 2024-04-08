@@ -1,8 +1,10 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -50,6 +52,8 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
+    protected WebElement btnLeft;
 
     @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
@@ -78,31 +82,50 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void listaOfertas(String planOfertas) {
+    public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
-        System.out.println("Ofertas : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
-        for (int i = 0; i < 2; i++) {
-            boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
-            if (elementoExistente) {
-                System.out.println("dio click");
-                click(btnRight);
-                UtilWeb.waitForSeconds(3);
+        try {
+            boolean isBtnRigth;
+            isBtnRigth = btnRight.isDisplayed();
+            while (isBtnRigth)
+            {
+                esperaProgresiva(driver(), 4, 5, btnRight);
+                waitUntilElementIsClickable(btnRight,10);
+                btnRight.click();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton derecho " + btnRight);
+                isBtnRigth = btnRight.isDisplayed();
             }
         }
+        catch (NoSuchElementException e){
+               e.getMessage();
+        }
 
-        UtilWeb.waitForSeconds(3);
+        try {
+            boolean isBtnLeft;
+            isBtnLeft = btnLeft.isDisplayed();
+            while (isBtnLeft)
+            {
+                btnLeft.click();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton izquierdo " + btnLeft);
+                isBtnLeft = btnLeft.isDisplayed();
+            }
+        }
+        catch (NoSuchElementException e){
+            e.getMessage();
+        }
+
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Cantidad de Ofertas : " + listaOfertas.size());
+
         boolean encontroElemento = false;
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
+            js().scrollElementTop(listaOfertas.get(i));
+            scenario.printFullView();
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 encontroElemento = true;
-                UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;
             }
@@ -116,10 +139,12 @@ public class AltaFijaTiendaPage extends WebBase {
             }
         }
         if (!encontroElemento && listaOfertas.size() > 0) {
-            System.out.println("No encontro elemento en la lista");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro oferta en la Lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: "+listaOfertas.get(cont).getText());
+
         }
     }
 
@@ -136,10 +161,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones() {
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsVisible(btnLineaNueva, 50);
+        waitUntilElementIsClickable(btnLineaNueva, 50);
         click(btnLineaNueva);
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + btnLineaNueva.getText());
     }
 
     public void datosAgendamiento() {
@@ -238,31 +262,31 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 10, btnRegistrarVenta);
+        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         click(btnRegistrarVenta);
     }
 
     public void doyClickEnAñadirSVA() {
         UtilWeb.waitForSeconds(10);
-        waitUntilElementIsVisible(btnSVA, 100);
+        waitUntilElementIsClickable(btnSVA, 100);
         js().scrollElementTop(btnSVA);
-        click(btnSVA, 10);
-        UtilWeb.waitForSeconds(10);
+        click(btnSVA);
     }
 
     public void doyClickEnAgregarBloque(String bloque) {
         UtilWeb.waitForSeconds(10);
         WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsVisible(btnbloque, 10);
+        waitUntilElementIsClickable(btnbloque, 100);
         js().scrollElementTop(btnbloque);
-        click(btnbloque, 10);
+        click(btnbloque);
     }
 
     public void doyClickEnGuardarCambios() {
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        UtilWeb.waitForSeconds(1);
+        //JavascriptExecutor jse = (JavascriptExecutor) driver();
+        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+      //  UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
+        js().scrollElementTop(btnGuardar);
         btnGuardar.click();
 
     }

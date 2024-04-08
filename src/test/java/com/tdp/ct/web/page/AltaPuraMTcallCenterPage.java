@@ -108,8 +108,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Sale del While");
         js().scrollElementTop(buttonContinuar);
-        click(buttonContinuar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
     }

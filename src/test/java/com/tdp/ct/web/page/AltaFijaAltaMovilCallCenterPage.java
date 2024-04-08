@@ -35,7 +35,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement oferta;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[1]")
     protected WebElement ofertaUno;
-    @FindBy(xpath = "//div[@class='stl_plan_valor' or @class='stl_negrita g-text--uppercase']")
+    @FindBy(xpath = "//*[@class='stl_plan_valor' or @class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
@@ -83,7 +83,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void lote(String lote) {
         boolean existe = validateInputAndLocator(lote, inputLot);
-        if (existe && inputBlock.isSelected()) {
+        if (existe && inputLot.isSelected()) {
             esperaProgresiva(driver(), 3, 5, inputLot);
             click(inputLot);
             type(inputLot, lote);
@@ -113,7 +113,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void bloque(String bloque) {
         boolean existe = validateInputAndLocator(bloque, inputBlock);
         if (existe) {
-            js().scrollElementTop(inputBlock);
+          //  js().scrollElementTop(inputBlock);
+            System.out.println("Ingreso a bloque si");
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);
@@ -142,8 +143,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void piso(String piso) {
         if (piso != null) {
             WebElement Npiso = find().getElementByXPath("//*[@formcontrolname='floor' or @name='floor']");
-            esperaProgresiva(driver(), 3, 5, Npiso);
-            waitUntilElementIsClickable(Npiso, 15).click();
+            esperaProgresiva(driver(), 5, 6, Npiso);
+            waitUntilElementIsClickable(Npiso, 30).click();
             Npiso.sendKeys(Keys.CONTROL + "a");
             Npiso.sendKeys(Keys.DELETE);
             type(Npiso, piso);
@@ -190,11 +191,13 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
 
     public void btnConsultarCobertura() {
-        esperaProgresiva(driver(), 5, 3, btnConsultarCobertura);
-        js().scrollElementTop(btnConsultarCobertura);
+        esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
+        js().scrollElementTop(btnConsultarCobertura);
         btnConsultarCobertura.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Consultar Cobertura" );
+
     }
 
     public void btnConfirmarUbicacion() {
@@ -204,8 +207,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void tipoEntrega(String tipEntrega) {
         revisarModalError(driver());
-        esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(), 3, 5, deliveryType);
+        esperaProgresivaLoading(driver(), 4, 5, "loadingCard");
+        esperaProgresiva(driver(), 4, 6, deliveryType);
         scrollDown();
         click(deliveryType);
         UtilWeb.waitForSeconds(1);
@@ -242,7 +245,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void tipoPago(String tipoPago) {
-        esperaProgresiva(driver(), 3, 5, pageType);
+        esperaProgresiva(driver(), 5, 6, pageType);
+        UtilWeb.waitForSeconds(2);
         try {
             click(pageType);
             String[][] selectOptions = {{"1", "Contra entrega"}, {"2", "Pago Efectivo"}};
@@ -333,7 +337,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 4, oferta);
+        esperaProgresiva(driver(), 6, 5, oferta);
         revisarModalError(driver());
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -405,12 +409,15 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
             System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
             if (!encontroElemento && listaOfertas.get(i).getText().trim().equalsIgnoreCase(planOfertas.trim())) {
+                System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(1);
                 click(listaOfertas.get(i));
-
             }
+
             if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
+                System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
+
                 scenario.printFullView();
                 js().scrollElementTop(buttonSeleccionarOferta);
                 scenario.printFullView();

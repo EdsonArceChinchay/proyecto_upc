@@ -4,6 +4,7 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import jdk.jshell.execution.Util;
@@ -17,6 +18,9 @@ public class AltaValidacionPrecioDescuentoStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private ManageScenario scenario;
 
     @ScreenShotBefore
     @ScreenShotAfter
@@ -85,7 +89,7 @@ public class AltaValidacionPrecioDescuentoStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void escojoPlan(String plan) {
-        page.altaFijaTiendaPage().listaOfertas(plan);
+        page.altaFijaTiendaPage().listaOfertas(plan, scenario);
         page.altaFijaTiendaPage().seleccionarOferta();
     }
 }

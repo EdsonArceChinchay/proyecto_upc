@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 13/02/2024
+##FECMOD: 03/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7
-Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7 @AltaMovil
+Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
 
   @AltaMovilFinaciamientoTienda_CE
-  Esquema del escenario: Realizar una alta movil Control con un financiamiento, metodo de entrega por tienda
+  Esquema del escenario: Realizar una alta movil Control
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -42,7 +42,7 @@ Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "Control"
-    Y        selecciono la opcion "RV Plan Mi Movistar S/65.9"
+    Y        selecciono la opcion "RV Plan Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono en linea Nueva
     Y        selecciono el boton de iniciar registro
@@ -55,13 +55,13 @@ Característica: AT-DT023_Alta Movil Control con financiamiento con documento CE
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |

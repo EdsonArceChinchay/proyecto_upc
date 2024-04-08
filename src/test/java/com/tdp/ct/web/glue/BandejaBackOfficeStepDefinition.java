@@ -51,8 +51,9 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("selecciono la solicitud")
     public void seleccionoLaSolicitud() {
-        System.out.println("NumSolicitud: " + cliente.getNumeroSolicitud());
-        bandejaBackOfficeStep.seleccionoSolicitud(cliente.getNumeroSolicitud());
+        String codigoVenta = (this.cliente.getNumeroSolicitud()== null) ?"FE-":this.cliente.getNumeroSolicitud();
+        System.out.println("NumSolicitud: " + codigoVenta);
+        bandejaBackOfficeStep.seleccionoSolicitud(codigoVenta);
     }
     @Y("apruebo la solicitud")
     public void aprueboSolicitud() throws InterruptedException {

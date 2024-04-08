@@ -1,47 +1,44 @@
 #language:es
 
-##CREADOR:
+##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO:
-##GDAP: GDAP-1233
-##SPRINT CREADO: PI14
-##FRECUENCIA:
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
+##CODIGO: AT-DT024
+##GDAP: GDAP-886
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
-Característica: Alta Movil Prepago + Equipo Call center
+@BERSERKERS @DoneDevOps @AltaMovil
+Característica: AT-DT024_Alta Movil Control con equipo al contado con CEX, en canal call center con delivery regular, flujo no biométrico
 
-
-  Antecedentes:
+  @AltaControlEquipoCallCenter @MVP06 @Global
+  Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
-
-  @AltaMovilPrepago+EquipoCallCenter
-  Esquema del escenario: Alta movil Prepago + Equipo por call center
-    Cuando   presiono el boton Iniciar Sesion
+    Dado     presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+    Entonces ingreso los datos del cliente a registrar
+      | nombres | apellidos | genero    |
+      | Edson   | Arce      | masculino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Prepago
+    Y        selecciono el plan_movil Postpago
     Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
@@ -50,16 +47,14 @@ Característica: Alta Movil Prepago + Equipo Call center
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en iniciar registro
+    Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -67,8 +62,8 @@ Característica: Alta Movil Prepago + Equipo Call center
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "earce@gmail.com"
+    Y        ingreso nuevamente el correo electronico "earce@gmail.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -76,10 +71,20 @@ Característica: Alta Movil Prepago + Equipo Call center
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | BMOBILE AX1082 NEGRO C/PACK | Financiado 12 cuotas |
-#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes          | planMovil | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

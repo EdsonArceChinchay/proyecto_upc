@@ -5,19 +5,19 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1660
 ##SPRINT CREADO: PI18_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 29/02/2024
+##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy
-Característica: AT-DT _Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy @AltaDuo
+Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
 
   @AltaDuoIntTvSvaCeST
-  Esquema del escenario: Alta Duo (Internet + TV) + SVA por tienda con Nuevo Cliente Extranjero
+  Esquema del escenario: Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,8 +25,7 @@ Característica: AT-DT _Alta Duo (Internet + TV) + SVA con documento CE por cana
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "Tiendas Franquicia Prueba"
-          Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
@@ -42,34 +41,33 @@ Característica: AT-DT _Alta Duo (Internet + TV) + SVA con documento CE por cana
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso un correo electronico "test.auto@gmail.com"
+    Y        ingreso nuevamente el correo electronico "test.auto@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
       | 10/05/1995 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-   # Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del sales
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                               |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET ESTANDAR HD RA O23 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV |

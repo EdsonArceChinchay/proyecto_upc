@@ -1,46 +1,42 @@
 #language:es
-
-##CREADOR: Edson Arce
+##CREADOR:
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: ALTA
+##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT024
-##GDAP: GDAP-886
-##SPRINT CREADO:
-##FRECUENCIA: DIARIO
+##CODIGO:
+##GDAP: GDAP-1233
+##SPRINT CREADO: PI14_SP
+##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO: Edson Arce
-##FECMOD: 30/03/2023
+##ENCARGADO:
+##FECMOD: 04/04/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
+Característica: Alta Movil Prepago con equipo con documento CE por canal Call Center
 
-@BERSERKERS @DoneDevOps
-Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
-
-  Antecedentes:
+  @AltaMovilPrepagoEquipoCallCenter
+  Esquema del escenario: Alta movil Prepago + Equipo por call center
     Dado     que abro la pagina de movistar
-
-  @AltaControlEquipoCallCenter @MVP06 @Global
-  Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
-    Dado     presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Cuando   presiono el boton Iniciar Sesion
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Entonces ingreso los datos del cliente a registrar
-      | nombres | apellidos | genero    |
-      | Edson   | Arce      | masculino |
+    #Y        cierro popup de error
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Postpago
+    Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
@@ -49,17 +45,13 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
-    Entonces me muestra la pantalla de Delivery de linea nueva
+    Y        selecciono el boton de iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -67,8 +59,8 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "earce@gmail.com"
-    Y        ingreso nuevamente el correo electronico "earce@gmail.com"
+    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -76,10 +68,21 @@ Característica: AT-DT024_Alta control con equipo al contado con CEX, en canal c
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                     | planMovil | timpoPermanencia | nombreEquipo         | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar S/45.9 III | Control   | Sin permanencia  | BMOBILE AX1017 NEGRO | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |

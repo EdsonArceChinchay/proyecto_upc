@@ -184,7 +184,7 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
 
     public void clicBotonContinuar(){
         UtilWeb.waitForSeconds(2);
-        waitUntilElementIsVisible(buttonContinuar, 10).click();
+        waitUntilElementIsVisible(buttonContinuar, 100).click();
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(20);

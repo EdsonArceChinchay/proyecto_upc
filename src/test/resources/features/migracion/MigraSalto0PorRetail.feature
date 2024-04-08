@@ -46,6 +46,7 @@ Característica: AT-DT079_Migracion Salto 0 Por Canal Retail
     Y        ingreso email "pruebasqa@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta

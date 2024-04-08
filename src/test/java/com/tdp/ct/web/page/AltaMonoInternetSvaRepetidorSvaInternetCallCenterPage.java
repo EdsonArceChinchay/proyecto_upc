@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 
 public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBase {
 
@@ -18,12 +20,11 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     protected WebElement sva_repetidor;
 
     public void agregarsva() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         WebElement sva = find().getElementByXPath("//button[contains(text(),'SVA')]");
+        waitUntilElementIsClickable(sva, 200);
         js().scrollElementTop(sva);
         sva.click();
-        System.out.println("4");
-        UtilWeb.waitForSeconds(20);
     }
 
     public void agregarsvainternet(String string) {
@@ -42,19 +43,21 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
     }
 
     public void elegimossvarepetidor(String string) {
+        UtilWeb.waitForSeconds(3);
         String repetidor = "//div[text()='" + string + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
         WebElement deco = find().getElementByXPath(repetidor);
+        waitUntilElementIsClickable(deco,20);
         js().scrollElementTop(deco);
         deco.click();
-        UtilWeb.waitForSeconds(3);
     }
 
     public void seleccionardecodificador(String string) {
+        UtilWeb.waitForSeconds(3);
         String decodificador = "//div[text()=' Cuota mensual : S/" + string + " " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
         WebElement deco = find().getElementByXPath(decodificador);
+        waitUntilElementIsClickable(deco,20);
         js().scrollElementTop(deco);
         deco.click();
-        UtilWeb.waitForSeconds(3);
     }
 
 }

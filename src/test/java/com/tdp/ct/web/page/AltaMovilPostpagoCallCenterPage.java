@@ -101,7 +101,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan=find().getElementByCss(".comboPermanecia tdp-st-select");
-        click(listElementPLan);
+        waitUntilElementIsClickable(listElementPLan,40).click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
@@ -191,9 +191,9 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void doyClickEnElBotonSeleccionar() {
-        esperaProgresiva(driver(),5,3,btnSeleccionar);
+        esperaProgresiva(driver(),5,7,btnSeleccionar);
         js().scrollElementTop(btnSeleccionar);
-        click(btnSeleccionar);
+        waitUntilElementIsClickable(btnSeleccionar,10).click();
         UtilWeb.waitForSeconds(2);
     }
 

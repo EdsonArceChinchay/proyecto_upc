@@ -11,10 +11,10 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 02/04/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda
-Característica: AT-DT030_AltaMovil + equipo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovil
+Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -36,7 +36,7 @@ Característica: AT-DT030_AltaMovil + equipo
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
@@ -46,7 +46,7 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    #Y        busco el equipo "<nombreEquipo>"
+    Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -56,18 +56,18 @@ Característica: AT-DT030_AltaMovil + equipo
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
       | 12/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
-    #ABANCAY
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                  | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | XIAOMI REDMI NOTE 9 PRO VERDE | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M | Financiado 12 cuotas |
 
 
   @AltaMovil_Equipo_tienda_2 @Sanity28
@@ -87,17 +87,17 @@ Característica: AT-DT030_AltaMovil + equipo
       | nombres | apellidos   | genero   |
       | Luiza   | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan_movil Prepago
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
-    Y         doy click en el boton linea nueva
+    Y        doy click en el boton linea nueva
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    #Y        busco el equipo "<nombreEquipo>"
+    Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en iniciar registro
@@ -109,13 +109,16 @@ Característica: AT-DT030_AltaMovil + equipo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | JR Julio Cesar Tello 469 |
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10042164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | HUAWEI P30   | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor         | tipoDocumento | documento   | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo             | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA RAMBLA BRASIL | CE            | 10042164046 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | 12 meses         | VIVO V21 NEGRO 5G C/PACK | Financiado 12 cuotas |
     #TIENDA SAN MIGUEL

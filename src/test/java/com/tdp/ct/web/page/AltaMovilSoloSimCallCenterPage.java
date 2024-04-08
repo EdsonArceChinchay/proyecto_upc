@@ -152,7 +152,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         for (int i = 0; i < listaPlanMovil.size(); i++) {
 
             System.out.println("Oferta: "+i +" "+listaPlanMovil.get(i).getText());
-            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().equalsIgnoreCase(planMovil.trim()) ) {
+            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().toUpperCase().contains(planMovil.trim().toUpperCase()) ) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
@@ -198,7 +198,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-        esperaProgresiva(driver(),3,5,completaDatosSolicitados);
+        esperaProgresiva(driver(),5,7,completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 

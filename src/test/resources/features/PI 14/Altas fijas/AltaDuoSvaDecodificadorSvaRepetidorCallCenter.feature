@@ -14,7 +14,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFij
 
 Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA Repetidor con documento CE por canal Call Center
 
@@ -75,7 +75,7 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office

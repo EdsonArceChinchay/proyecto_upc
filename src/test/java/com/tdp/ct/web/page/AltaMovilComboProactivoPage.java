@@ -143,7 +143,7 @@ public class AltaMovilComboProactivoPage extends WebBase {
     public void seleccionoElBotonAgregarSva() {
         revisarModalError(driver());
         WebElement btnAgregarSva = listBtnAgregarSva.get(listBtnAgregarSva.size()-1);
-        esperaProgresiva(driver(),3,5,btnAgregarSva);
+        esperaProgresiva(driver(),5,5,btnAgregarSva);
         click(btnAgregarSva);
         UtilWeb.waitForSeconds(5);
 

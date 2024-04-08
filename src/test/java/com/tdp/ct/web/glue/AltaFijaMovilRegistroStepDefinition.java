@@ -180,8 +180,8 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("imprimo el texto del contrato solicitado")
     public void imprimoElTextoDelContratoSolicitado() {
-        System.out.println("Solicitud de Contrato: " + altaFijaMovilRegistroStep.getTextoSolicitud());
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
+        altaFijaMovilRegistroStep.guardoNumeroSolicitud();
     }
 
     @Cuando("doy clic en si acepto")
@@ -242,8 +242,8 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
-        this.scenario.log(altaFijaMovilRegistroStep.getCodigoOrden());
-
+        this.scenario.log("[Código de Venta: "+this.cliente.getNumeroSolicitud()+"]");
+        this.scenario.log(this.cliente.getCodigosDeOrdenes().toString());
     }
 
 
@@ -277,6 +277,6 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("guardo el numero de solicitud")
     public void guardoElNumeroDeSolicitud() {
-        this.scenario.log(altaFijaMovilRegistroStep.guardoNumeroSolicitud());
+        altaFijaMovilRegistroStep.guardoNumeroSolicitud();
     }
 }

@@ -4,19 +4,19 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT097
-##GDAP: GDAP-1144
+##CODIGO: AT-DT098
+##GDAP: GDAP-1150
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 04/04/2024
+##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
-Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Center
+Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Center
 
-  @AltaMovilPrepagoCallCenter
+  @AltaMovilPrepagoCallCenter1
   Esquema del escenario: Alta movil Prepago por call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -38,15 +38,25 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono la oferta de plan movil "<oferta>"
-    Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono el boton de iniciar registro
+    Y        selecciono el plan movil "<oferta>"
+    Y        selecciono la opcion "<nombrePlan>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
+    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -78,6 +88,5 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  |
-
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

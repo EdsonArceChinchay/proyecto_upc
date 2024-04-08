@@ -71,6 +71,7 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
       | 12/12/1990 | Alemania     | Casado       |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton descargar contrato

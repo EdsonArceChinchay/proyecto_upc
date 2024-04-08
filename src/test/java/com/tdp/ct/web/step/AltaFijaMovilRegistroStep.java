@@ -11,6 +11,8 @@ import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class AltaFijaMovilRegistroStep {
 
@@ -278,6 +280,7 @@ public class AltaFijaMovilRegistroStep {
     public void validarVentaGenerada() {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
+        getCodigoOrden();
     }
 
     public void agregoSVAINTERNET(String svaInternet) {
@@ -290,25 +293,25 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnAgregarSVAMT() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
-    public String guardoNumeroSolicitud() {
-//        page.altaFijaMovilRegistroPage().guardoNumeroSolicitud();
+    public void guardoNumeroSolicitud() {
          String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
-             System.out.println("Numero Solicitud:" + numeroSolicitud);
-             cliente.setNumeroSolicitud(numeroSolicitud);
+             this.cliente.setNumeroSolicitud(numeroSolicitud);
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }
-         return numeroSolicitud;
     }
 
     public String getTextoSolicitud(){
-
         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 
-    public String getCodigoOrden() {
-        return page.altaFijaMovilRegistroPage().getCodigoOrden();
-
+    public void getCodigoOrden() {
+        List<String> codigoOrden =  page.altaFijaMovilRegistroPage().getCodigoOrden();
+        if(codigoOrden!=null) {
+            this.cliente.setCodigosDeOrdenes(codigoOrden);
+        }else{
+            System.out.println("ERROR - Codigo de Orden - Null");
+        }
     }
 }

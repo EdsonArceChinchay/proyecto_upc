@@ -1,17 +1,21 @@
 package com.tdp.ct.web.step.Portabilidad;
 
-
 import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
-import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonProcessingException;
-import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.datatable.DataTable;
-import io.restassured.response.Response;
+import io.restassured.RestAssured;
+import io.restassured.config.SSLConfig;
+import org.apache.http.conn.ssl.X509HostnameVerifier;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.KeyStore;
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,6 +23,75 @@ import static io.restassured.RestAssured.given;
 public class ServiceTest {
 
     private static String consultation = "";
+
+    public String getTokenOnpremise(){
+        String token = given().header("Content-Type", "application/x-www-form-urlencoded")
+                .header("Cookie", "visid_incap_2970706=ZxBVFiCpR9Gpp63933baa8Ji1mQAAAAAQUIPAAAAAADJhwm1F2UhoUsEb6oKCIyE")
+                .body(bodyTokenOnpremise())
+                .when().post("https://apisd10.telefonica.com.pe/testing/bss/public/oauth2/token")
+                .then().statusCode(200).extract().path("access_token");
+        System.out.println("token = " + token);
+        return token;
+    }
+
+    public Map<String, String> bodyTokenOnpremise() {
+        Map<String, String> bodyMap = new HashMap<>();
+        bodyMap.put("Content-Type", "73b10ad6fa6ca966b048b65306b817b2");
+        bodyMap.put("grant_type", "password");
+        bodyMap.put("scope", "scope1");
+        bodyMap.put("username", "cs_ex_pr_gapim");
+        bodyMap.put("password", "May,09V,66");
+        return bodyMap;
+    }
+
+    public Map<String, String> headersOnpremiseBerserkers() {
+        Map<String, String> headerMap = new HashMap<>();
+        headerMap.put("Content-Type", "application/json; charset=UTF-8");
+        headerMap.put("UNICA-Application", "FrontendPlatform");
+        headerMap.put("UNICA-ServiceId", "1f994db3-477e-4c28-86df-0a840783fb08");
+        headerMap.put("UNICA-PID", "5f90e0ac-1a35-4985-a158-a62cc52220b3");
+        headerMap.put("UNICA-User", "UserFrontend");
+        headerMap.put("X-IBM-Client-Id", "73b10ad6fa6ca966b048b65306b817b2");
+        headerMap.put("Authorization", "Bearer " + getTokenOnpremise());
+        return headerMap;
+    }
+
+    public void testPfxKey() {
+        FileInputStream instream1 = null;
+        KeyStore keyStore = null;
+        org.apache.http.conn.ssl.SSLSocketFactory lSchemeSocketFactory = null;
+        try {
+            instream1 = new FileInputStream(new File("src/test/resources/certificado/apim-client-certificate.pfx"));
+            keyStore = KeyStore.getInstance("PKCS12");
+            keyStore.load(instream1, "pfxfilepwd".toCharArray());
+            X509HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
+            lSchemeSocketFactory = new org.apache.http.conn.ssl.SSLSocketFactory(keyStore, "D[e__G8VBTvZ1%wCW-s0");
+            lSchemeSocketFactory.setHostnameVerifier(hostnameVerifier);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        RestAssured.config = RestAssured.config().sslConfig(new SSLConfig().with().sslSocketFactory(lSchemeSocketFactory).and().allowAllHostnames());
+        System.out.println(
+                RestAssured.given().
+                        contentType("application/json").
+                        headers(
+                                "Accept-Encoding", "gzip,deflate"
+                        )
+                        .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com")
+                        .getStatusCode()
+        );
+    }
+
+
+    public Map<String, String> headersAksBerserkers() {
+        Map<String, String> headerMap = new HashMap<>();
+        headerMap.put("Content-Type", "application/json; charset=UTF-8");
+        headerMap.put("UNICA-Application", "FrontEnd");
+        headerMap.put("UNICA-ServiceId", "8dcf22a1-129d-4bf5-84f2-22f438bac469");
+        headerMap.put("UNICA-PID", "e7165d6c-3c53-4c0e-afd9-67a01b476855");
+        headerMap.put("UNICA-User", "UserFrontend");
+        return headerMap;
+    }
 
     public String readerJson(String path) {
         String jsonFile = System.getProperty("user.dir") + "/src/test/resources" + path;
@@ -38,20 +111,15 @@ public class ServiceTest {
     }
 
     public void preValidate() {
+
         String body = readerJson("/features/Portabilidad/JsonRequest/preValidate.json");
-        String consultation1 = given()
-                .header("unica-application", "FrontEnd")
-                .header("unica-pid", "e7165d6c-3c53-4c0e-afd9-67a01b476855")
-                .header("unica-serviceid", "8dcf22a1-129d-4bf5-84f2-22f438bac469")
-                .header("unica-user", "jpachaot")
-                .contentType("application/json; charset=UTF-8")
-                .body(body)
-                .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/prevalidateportin/")
+        String consultation1 = given().headers(headersAksBerserkers())
+                .body(body).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/prevalidateportin")
                 .then().statusCode(200).extract().path("previousConsultationId");
         System.out.println("previousConsultationId: " + consultation1);
         // Separa en 2 grupos el código recibido
-        String numero1 = consultation1.substring(0,9);
-        String numero2 = consultation1.substring(9,17);
+        String numero1 = consultation1.substring(0, 9);
+        String numero2 = consultation1.substring(9, 17);
         // La segunda parte del código recibido le resta 1
         int restaNumero2 = Integer.parseInt(numero2) - 1;
         // convierte la segunda parte del código recibido en String
@@ -70,7 +138,6 @@ public class ServiceTest {
         Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Portabilidad/JsonRequest/receive.json");
         String statusBody = Files.readString(filePath);
 
-
         statusBody = statusBody.replace("{Code}", consultation);
         statusBody = statusBody.replace("{number}", telefono);
         statusBody = statusBody.replace("{fechaSig}", fechaSig);
@@ -78,82 +145,44 @@ public class ServiceTest {
 
         System.out.println("Nuevo Body: " + statusBody);
 
-        String message = given()
-                .header("UNICA-ServiceId", "550e8400-e29b-41d4-a716-446655440005")
-                .header("UNICA-Application", "FrontendPlatform")
-                .header("UNICA-PID", "550e8400-e29b-41d4-a716-446655440011")
-                .header("UNICA-User", "UserFrontend")
-                .contentType("application/json; charset=UTF-8")
-                .body(statusBody)
-                .when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/ms-fesimple-portability-certi-preprod/fesimple/api/v1/portability/receivemessageportability")
+        String message = given().headers(headersAksBerserkers())
+                .body(statusBody).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
     }
 
-    public class ApiResponse {
-        @JsonProperty("CAEQ")
-        private String caeqValue;
+    public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {
+        testPfxKey();
+        String FE = codigoVenta.trim();
+        Map<String, String> parametros = new HashMap<>();
 
-        @JsonProperty("CAPL")
-        private String caplValue;
-
-        @JsonProperty("CASI")
-        private String casiValue;
-
-        public String getCaeqValue() {
-            return caeqValue;
-        }
-
-        public String getCaplValue() {
-            return caplValue;
-        }
-
-        public String getCasiValue() {
-            return casiValue;
-        }
-    }
-
-    public void getSalesLead(String codigoVenta) throws JsonProcessingException {
-        String FE= codigoVenta.trim();
         if (!FE.isEmpty()) {
-            Response response = given()
-                    .header("UNICA-ServiceId", "550e8400-e29b-41d4-a716-446655440005")
-                    .header("UNICA-Application", "FrontendPlatform")
-                    .header("UNICA-PID", "550e8400-e29b-41d4-a716-446655440011")
-                    .header("UNICA-User", "UserFrontend")
-                    .contentType("application/json; charset=UTF-8")
-                    .when().get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE);
+            String response = given().headers(headersAksBerserkers())
+                    .when()
+                    .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE)
+                    .getBody().asString();
+            System.out.println("response = " + response);
 
+            JSONObject jsonResponse = new JSONObject(response);
+            JSONArray additionalData = jsonResponse.getJSONArray("commercialOperation")
+                    .getJSONObject(0).getJSONArray("additionalData");
 
+            for (int i = 0; i < additionalData.length(); i++) {
+                try {
+                    String key = additionalData.getJSONObject(i).getString("key");
+                    String value = additionalData.getJSONObject(i).getString("value");
+                    if (key.equalsIgnoreCase("CAEQ") || key.equalsIgnoreCase("CAPL") || key.equalsIgnoreCase("CASI")) {
+                        parametros.put(key, value);
+                    }
 
-           //Response apiResponse = response;// Realiza la llamada a la API con RestAssured
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
 
-            String responseBody = response.getBody().asString();
-            System.out.println("apiResponse = " + responseBody);
-            ObjectMapper objectMapper = new ObjectMapper();
-            ApiResponse apiResponse = objectMapper.readValue(responseBody, ApiResponse.class);
-
-            //ObjectMapper objectMapper = new ObjectMapper();
-          //ApiResponse mappedResponse = objectMapper.readValue(apiResponse.getBody().asString(), ApiResponse.class);
-        //   String xValue = apiResponse.getCaplValue();
-        //    System.out.println("xValue = " + xValue);
-           // objectMapper.readValue(response.getBody().asString());
-
-           // String CAEQ = response.extract().path("CAEQ");
-           // System.out.println("jsonResponse = " + jsonResponse);
-          // ObjectMapper objectMapper = new ObjectMapper();
-           // JsonNode jsonNode = objectMapper.readTree(response.toString());
-           // String CAEQ = jsonNode.get("CAEQ").asText();
-            //String CAPL = jsonNode.get("CAPL").asText();
-            //String CASI = jsonNode.get("CASI").asText();
-//            System.out.println("CASI = " + CASI);
-//            System.out.println("CAPL = " + CAPL);
-          //System.out.println("CAEQ = " + CAEQ);
-
-
-        }
-        {
+        } else {
             System.out.println("No se envio el codigo de Venta");
         }
+        return parametros;
     }
 
 }

@@ -1,45 +1,42 @@
 #language:es
-##CREADOR: Angel Medina
+##CREADOR:
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: ALTA
-##ESTADO: ACTIVO
-##CODIGO: AT-DT027
-##GDAP: GDAP-1151
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT029
+##GDAP: GDAP-961
 ##SPRINT CREADO:
-##FRECUENCIA: DIARIO
+##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA: REUSABLE
-##ENCARGADO: Angel Medina
-##FECMOD: 30/03/2023
+##DATA:
+##ENCARGADO:
+##FECMOD: 03/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027
-Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por canal Call Center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
+Característica:  AT-DT029_Alta Movil Control con documento CE por Call Center
+  Quiero realizar una alta movil solo sin por call center
 
-  Antecedentes:
+  @AltaMovilCECallCenter
+  Esquema del escenario: Alta Movil Solo Sim con documento CE por Call Center
     Dado     que abro la pagina de movistar
-
-  @Alta_Postpago_sim_CC @MVP13 @Global
-  Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
-    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
 #    Y        cierro popup de aviso
-    Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
+    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
-    Y cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -47,7 +44,6 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    #Y        valido que este en la seccion de registro "<nombrePlan>"
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -55,9 +51,6 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -71,17 +64,18 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
+      | 12/12/1980 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        cierro popup de error
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -90,11 +84,9 @@ Característica: AT-DT027_Alta Movil Postpago solo chip con documento CE por can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-  | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                        |
-#  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
-  | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100002127  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@  | CE            | 100005100 | Postpago      | RV Plan Ilimitado Mi Movistar |
 
-#  | usuario interno |    userNameQAN | passQAN    | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
+#      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
+#      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219510 | Control       | RV Plan Mi Movistar |
+

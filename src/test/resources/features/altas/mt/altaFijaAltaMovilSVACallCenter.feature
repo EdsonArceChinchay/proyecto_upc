@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035
 
-Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
+Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
@@ -83,6 +83,7 @@ Característica: AT-DT035_Alta Fija + Alta Movil+ SVA por Call Center
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta

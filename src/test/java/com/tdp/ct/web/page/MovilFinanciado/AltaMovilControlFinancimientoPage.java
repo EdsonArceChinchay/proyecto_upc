@@ -89,7 +89,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         click(btnSeleccionarEquipo);
     }
     public void selectBtnIniciarRegistro() {
-        esperaProgresiva(driver(),3,5,btnIniciarRegistro);
+        esperaProgresiva(driver(),5,5,btnIniciarRegistro);
         js().scrollElementTop(btnIniciarRegistro);
         click(btnIniciarRegistro);
         UtilWeb.waitForSeconds(2);

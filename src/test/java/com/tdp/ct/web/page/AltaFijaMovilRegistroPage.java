@@ -145,9 +145,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//*[contains(@class,'orden-big')]")
     protected List<WebElement> listCodigoOrden;
 
-    @Autowired
-    private Cliente cliente;
-
     public boolean validarPantallaIngresarDireccion() {
         //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
@@ -288,7 +285,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicIniciarRegistro() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 4, 10, buttonIniciarRegistro);
+        esperaProgresiva(driver(), 6, 6, buttonIniciarRegistro);
         click(buttonIniciarRegistro);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
         clickBtnCerrarModalError(buttonIniciarRegistro);
@@ -299,7 +296,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(), 7, 3, labelAgendamiento);
+        esperaProgresiva(driver(), 7, 5, labelAgendamiento);
         revisarModalError(driver());
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -425,11 +422,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicValidarContrato() {
         revisarModalError(driver());
-        Addons.esperaProgresiva(driver(), 4, 20, buttonValidarContrato);
+        Addons.esperaProgresiva(driver(), 7, 8, buttonValidarContrato);
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 3;
+        int reintentoBucles = 4;
         while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
@@ -551,7 +548,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
-            esperaProgresiva(driver(), 2, 3, elementPadre);
+            esperaProgresiva(driver(), 4, 5, elementPadre);
             System.out.println("Cual es el nombre de tu padre : " + true);
             WebElement padreElement = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             padreElement.click();
@@ -561,7 +558,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
-            esperaProgresiva(driver(), 2, 3, elementMadre);
+            esperaProgresiva(driver(), 4, 5, elementMadre);
             System.out.println("Cual es el nombre de tu madre : " + true);
             WebElement madreElement = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
             madreElement.click();
@@ -571,7 +568,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
-            esperaProgresiva(driver(), 2, 3, elementNacimiento);
+            esperaProgresiva(driver(), 4, 5, elementNacimiento);
             System.out.println("En que distrito naciste : " + true);
             WebElement lugarElement = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             lugarElement.click();
@@ -909,11 +906,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicRegistrarVenta() {
         revisarModalError(driver());
-        WebElement boton = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        esperaProgresiva(driver(), 7, 10, boton);
+        WebElement btnRegistrarVenta = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
+        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        click(boton);
+        click(btnRegistrarVenta);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -1026,8 +1023,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public String getNumeroSolicitud() {
-        String textoContrato = textoContratoCliente.getText();
-        return extraerNumeroSolicitud(textoContrato);
+        String codeSale =extraerNumeroSolicitud(textoContratoCliente.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codeSale);
+        return codeSale;
     }
 
     public String getTextoSolicitud() {
@@ -1035,7 +1033,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         do {
             // Esperar antes de intentar obtener el texto
             UtilWeb.waitForSeconds(5);
-
             // Obtener el texto del elemento
             String texto = textoContratoCliente.getText();
 
@@ -1046,7 +1043,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             } else {
                 System.out.println("Texto del contrato del cliente está vacío. Reintentando...");
             }
-
             contadorReintentos++;
         } while (contadorReintentos < 4);  // Establecer el número máximo de reintentos
 
@@ -1057,19 +1053,17 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return textoContratoCliente.getText();
     }
 
-    public String getCodigoOrden() {
+    public List<String> getCodigoOrden() {
         List<String> listCodigosDeOrdenes = new ArrayList<String>();
         listCodigoOrden.forEach((orden) -> {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Codigo de Orden: " + orden.getText() + "A");
-            listCodigosDeOrdenes.add("Codigo de Orden: " + orden.getText() + "A");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Orden: " + orden.getText() + "A");
+            listCodigosDeOrdenes.add("Código de Orden: " + orden.getText() + "A");
         });
-
-        return listCodigosDeOrdenes.toString();
+        return listCodigosDeOrdenes;
     }
 
     public boolean verificarPantallaVenta() {
         try {
-
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra la pantalla de venta exitosa, se saltaron pasos");
             return true;
         } catch (NoSuchElementException nsee) {

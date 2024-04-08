@@ -63,6 +63,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | Casado      | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
 #    Y        me muestra pantalla para Descargar contrato
@@ -118,6 +119,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -172,6 +174,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -227,6 +230,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -282,6 +286,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -335,6 +340,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -389,6 +395,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     #Y        me muestra pantalla para Descargar contrato
@@ -444,6 +451,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato
@@ -498,6 +506,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato
@@ -551,6 +560,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato
@@ -606,6 +616,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato
@@ -659,6 +670,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato
@@ -712,6 +724,7 @@ Característica: AT-DT032_Alta Movil por Combo Proactivo
       | 12/12/1980 | soltero     | Albania      | APURIMAC     | ABANCAY   | ABANCAY  | CASA      |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        me muestra pantalla para Descargar contrato

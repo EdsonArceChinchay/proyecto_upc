@@ -4,7 +4,7 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT038
+##CODIGO: AT-DT
 ##GDAP: GDAP-#QAN2
 ##SPRINT CREADO:
 ##FRECUENCIA:
@@ -13,9 +13,9 @@
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 25/12/2023
 
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
 
-Característica: AT-DT038_Completa Planta Movil Alta Fija con documento CE en Canal Call Center
+Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Canal Call Center
 
   @CompletaPlantaMovilAltaFija
   Esquema del escenario: Completa Planta Movil Alta Fija con documento CE
@@ -68,7 +68,6 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija con documento CE en Ca
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
 
@@ -78,8 +77,8 @@ Característica: AT-DT038_Completa Planta Movil Alta Fija con documento CE en Ca
 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido del "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office

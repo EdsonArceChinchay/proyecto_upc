@@ -12,16 +12,14 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 23/12/2023
+##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
+Característica: AT-DT105_Portabilidad solo chip postpago en canal Call Center
 
-  Antecedentes:
+  @PortabilidadSoloChipCC @MVP16 @Global
+  Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
-
-  @PortabilidadSoloChip @MVP16 @Global
-  Esquema del escenario: Portabilidad solo chip postpago
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -40,9 +38,9 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
-    #Y        valido los servicios
-    #  | telefono  | Fecha_Sig  | Fecha_FinMes |
-    #  | 920956347 | 2023-01-24 | 2023-01-31   |
+    Y        valido los servicios
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2023-01-24 | 2023-01-31   |
     Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -57,9 +55,9 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+#    Y        ingreso la informacion del lugar de instalacion
+#      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
+#      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -77,6 +75,7 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     #Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -89,8 +88,8 @@ Característica: AT-DT105_Portabilidad Call Center validar opción de tienda
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                              | nombreMadre | nombrePadre | distritoNac |
-  #    | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI       | 75102009  | 920956347 | Postpago | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                              | nombreMadre | nombrePadre | distritoNac  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 75102008  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | EMERITA     | GONZALO     | LA ESPERANZA |
 #      | usuario interno |          |          | Bienvenid@  | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | DNI           | 45770292  | 993340032 | Prepago   | CLARO    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
+   #   | usuario interno | userNameQAN | passQAN  | Bienvenid@ | DNI           | 45770292  | 993340032 | Prepago   | CLARO    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
 

@@ -11,11 +11,10 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 12/02/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15 @AltaFija @AltaDuo
-
-Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por canal Retail
+Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por canal Retail
 
   @AltaDuoSvaRetail
   Esquema del escenario: Alta Duo + SVA "<nombreSVA>" con documento CE por canal Retail
@@ -42,9 +41,9 @@ Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | bloque | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | D  | 11     | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -64,14 +63,17 @@ Característica: AT-DT00_Alta Duo Voz + Internet mas Sva con documento CE por ca
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido del "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                | nombreSVA             |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA S23 600 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |
