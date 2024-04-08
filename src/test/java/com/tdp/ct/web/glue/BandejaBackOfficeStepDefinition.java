@@ -51,7 +51,7 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("selecciono la solicitud")
     public void seleccionoLaSolicitud() {
-        String codigoVenta = this.cliente.getNumeroSolicitud();
+        String codigoVenta = (this.cliente.getNumeroSolicitud()== null) ?"FE-":this.cliente.getNumeroSolicitud();
         System.out.println("NumSolicitud: " + codigoVenta);
         bandejaBackOfficeStep.seleccionoSolicitud(codigoVenta);
     }
