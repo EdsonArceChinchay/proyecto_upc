@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 12/02/2024
+##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @Mono
 Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda
 
   @AltaMonoFtthTienda

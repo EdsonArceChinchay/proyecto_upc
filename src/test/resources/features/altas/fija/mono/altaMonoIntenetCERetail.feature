@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 12/02/2024
+##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01 @AltaFija @Mono
 Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Retail
 
   @AltaFijaPorRetail_CE

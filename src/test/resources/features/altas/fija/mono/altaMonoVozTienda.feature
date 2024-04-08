@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:  MOISES LLAMOCA
-##FECMOD: 06/04/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @AltaFija
 Característica: AT-DT013_Alta Mono Linea Voz con documento CE con Canal Tienda

@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 12/02/2024
+##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Revision @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Mono @AltaFija
 Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tienda
 
   @AltaFijaTienda
@@ -56,7 +56,7 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        ingreso el call id "910690021"
+#    Y        ingreso el call id "910690021"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -77,7 +77,7 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan               |
-#      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA O23 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA |
 #      | usuario interno |            |          | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22          |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+ #     | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |

@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 13/02/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija
 Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tienda

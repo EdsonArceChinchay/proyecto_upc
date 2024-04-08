@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 12/03/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy @AltaDuo
 Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda

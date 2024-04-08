@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 13/02/2024
+##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @Mono
 Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Documento CE Canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter

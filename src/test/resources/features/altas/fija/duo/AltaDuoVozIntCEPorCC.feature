@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 08/03/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
 Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Call Center

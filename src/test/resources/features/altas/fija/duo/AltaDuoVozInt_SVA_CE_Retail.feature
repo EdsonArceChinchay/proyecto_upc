@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 12/02/2024
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15 @AltaFija @AltaDuo
 Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por canal Retail
