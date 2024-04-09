@@ -56,6 +56,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

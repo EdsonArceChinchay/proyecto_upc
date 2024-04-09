@@ -48,11 +48,16 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    Y        presiono el boton seleccionar
+    Y        selecciono boton mantener plan
+    Y        doy click en iniciar registro
+    #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

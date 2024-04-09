@@ -77,5 +77,6 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              |
-      | usuario externo | userNameCC | passST   | Bienvenid@ | CE            | 1001028010 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA M23 |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan          |
+      | usuario externo | userNameCC | passST   | Bienvenid@ | CE            | 1001028010 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL |
+

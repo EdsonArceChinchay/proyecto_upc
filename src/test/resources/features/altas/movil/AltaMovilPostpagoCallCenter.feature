@@ -35,7 +35,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
 #    Y        cierro popup de aviso
-    Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
+    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas

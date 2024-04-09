@@ -3,6 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class BandejaBackOfficeStepDefinition {
     private BandejaBackOfficeStep bandejaBackOfficeStep;
     @Autowired
     private Cliente cliente;
+
+    @Autowired
+    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {

@@ -14,10 +14,10 @@
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP3 @@RegresionLegacyUpfront
-Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX en canal Tienda
+Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX por canal Tienda
 
   @AltaTrioSVARucCETienda
-  Esquema del escenario: Alta Trío B2B Upfront con SVAs con representa legal CEX en canal Tienda
+  Esquema del escenario: Alta Trío B2B Upfront con SVAs con representa legal CEX por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

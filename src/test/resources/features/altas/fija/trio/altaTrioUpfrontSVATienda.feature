@@ -46,6 +46,7 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
       #| mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -69,8 +70,11 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
+    Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     | sva                   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA D22 50 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | sva                   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | PACK ANTIVIRUS MCAFEE |

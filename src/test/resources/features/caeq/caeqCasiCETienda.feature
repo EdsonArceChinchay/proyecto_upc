@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
+Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
 
   @CambioEquipoConCambioSIM
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
@@ -45,6 +45,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WE
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
     Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta

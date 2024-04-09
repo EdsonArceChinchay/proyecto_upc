@@ -44,7 +44,7 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -85,5 +85,5 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              | bloque | bloque1 | bloque2        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital RA D22 | HBO    | FOX     | Bloque estelar |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | bloque1 | bloque2        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital | HBO    | FOX     | Bloque estelar |

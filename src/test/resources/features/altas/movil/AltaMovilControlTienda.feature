@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 03/04/2024
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROPG7 @AltaMovil
 Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda

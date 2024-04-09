@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovil
 Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Call Center

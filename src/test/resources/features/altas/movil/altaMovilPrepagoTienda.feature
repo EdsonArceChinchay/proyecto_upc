@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
 Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda

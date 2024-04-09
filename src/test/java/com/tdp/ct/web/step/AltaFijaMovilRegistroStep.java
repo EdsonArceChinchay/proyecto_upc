@@ -281,6 +281,7 @@ public class AltaFijaMovilRegistroStep {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
         getCodigoOrden();
+        getCodigoVenta();
     }
 
     public void agregoSVAINTERNET(String svaInternet) {
@@ -294,13 +295,15 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
     }
     public void guardoNumeroSolicitud() {
-         String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
+        String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
          if(numeroSolicitud!=null) {
              this.cliente.setNumeroSolicitud(numeroSolicitud);
+             System.out.println("numeroSolicitud obtenido = " + cliente.getNumeroSolicitud());
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }
     }
+
 
     public String getTextoSolicitud(){
         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
@@ -314,4 +317,15 @@ public class AltaFijaMovilRegistroStep {
             System.out.println("ERROR - Codigo de Orden - Null");
         }
     }
+
+    public String getCodigoVenta() {
+        String codigoVenta =  page.altaFijaMovilRegistroPage().getCodigoVenta();
+        if(codigoVenta!=null) {
+            this.cliente.setNumeroSolicitud(codigoVenta);
+        }else{
+            System.out.println("ERROR - Codigo de Orden - Null");
+        }
+        return codigoVenta;
+    }
+
 }

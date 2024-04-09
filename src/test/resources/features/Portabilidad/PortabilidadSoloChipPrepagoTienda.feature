@@ -12,10 +12,10 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
-##FECMOD: 30/03/2023
+##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Solo Chip Prepago DNI en canal Tienda
+Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tienda
   #tambo
   Antecedentes:
     Dado     que abro la pagina de movistar

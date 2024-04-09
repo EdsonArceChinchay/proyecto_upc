@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 02/04/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovil
 Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
