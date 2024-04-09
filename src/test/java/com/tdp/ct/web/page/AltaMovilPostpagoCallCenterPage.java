@@ -328,6 +328,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void clickenVerDetalleDelPedido() {
         js().scrollElementTop(scrollorden);
         esperaProgresiva(driver(),3,5,btnDetallePedido);
+        js().scrollElementTop(btnDetallePedido);
         click(btnDetallePedido);
     }
 }

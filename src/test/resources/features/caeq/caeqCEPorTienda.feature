@@ -36,7 +36,7 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        cierro popup de error
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        presiona el boton anadir equipo
+    Y        presiona el boton anadir equipo del mismo plan
     Y        presiono el boton seleccionar
     Y        selecciono boton mantener plan
     Y         doy click en iniciar registro
