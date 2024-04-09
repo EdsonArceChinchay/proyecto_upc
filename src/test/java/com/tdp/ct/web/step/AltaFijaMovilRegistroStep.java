@@ -298,17 +298,12 @@ public class AltaFijaMovilRegistroStep {
          if(numeroSolicitud!=null) {
              this.cliente.setNumeroSolicitud(numeroSolicitud);
              System.out.println("numeroSolicitud obtenido = " + cliente.getNumeroSolicitud());
-
          }else{
              System.out.println("ERROR - Numero Solicitud - Null");
          }
     }
 
-    public String getCodigoDeVenta(){
-        String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
-        System.out.println("numeroSolicitud = " + numeroSolicitud);
-        return numeroSolicitud;
-    }
+
     public String getTextoSolicitud(){
         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }

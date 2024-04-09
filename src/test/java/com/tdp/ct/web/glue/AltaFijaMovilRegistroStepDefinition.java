@@ -247,7 +247,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + this.cliente.getNumeroSolicitud() + "]");
-        this.scenario.log("[Código de Venta 2: " + altaFijaMovilRegistroStep.getCodigoDeVenta() + "]");
+        System.out.println("this.cliente.getNumeroSolicitud() = " + this.cliente.getNumeroSolicitud());
         this.scenario.log(this.cliente.getCodigosDeOrdenes().toString());
     }
 
