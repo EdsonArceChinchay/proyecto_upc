@@ -147,6 +147,7 @@ public class HomePage extends WebBase {
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         Boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
+        String nombretipoDoc="";
         esperaProgresiva(driver(),2,5,listaDocumentos);
         js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
@@ -154,13 +155,15 @@ public class HomePage extends WebBase {
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
         UtilWeb.waitForSeconds(1);
         for (int i = 0; i < listaDoc.size(); i++) {
-            String nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
+              nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
             if (nombretipoDoc.contains(tipoDocEsperado)) {
+
                 existe = true;
                 listaDoc.get(i).click();
             }
+            System.out.println(nombretipoDoc +"nombre documento");
         }
-        Assertions.assertTrue(existe, "no se encontro: " + tipoDocEsperado);
+        Assertions.assertTrue(existe, "no se encontro: " + nombretipoDoc);
     }
 
     public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
