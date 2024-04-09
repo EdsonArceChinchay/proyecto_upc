@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
@@ -12,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
-##FECMOD: 30/03/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @AltaMovil
 Característica: AT-DT024_Alta Movil Control con equipo al contado con CEX, en canal call center con delivery regular, flujo no biométrico

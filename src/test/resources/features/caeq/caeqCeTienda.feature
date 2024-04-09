@@ -39,7 +39,7 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        presiona el boton anadir equipo
     Y        presiono el boton seleccionar
     Y        selecciono boton mantener plan
-    Y         doy click en iniciar registro
+    Y        doy click en iniciar registro
     #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

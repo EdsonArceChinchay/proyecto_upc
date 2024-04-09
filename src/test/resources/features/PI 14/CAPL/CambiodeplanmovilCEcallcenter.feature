@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 
-Característica: AT-DT099_cambio de plan movil en call center
+Característica: AT-DT099_Cambio de plan movil por Canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
