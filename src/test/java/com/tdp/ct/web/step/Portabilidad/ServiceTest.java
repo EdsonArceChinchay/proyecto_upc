@@ -18,68 +18,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 
 @Component
 public class ServiceTest {
 
     private static String consultation = "";
 
-    public String getTokenOnpremise(){
-        String token = given().header("Content-Type", "application/x-www-form-urlencoded")
-                .header("Cookie", "visid_incap_2970706=ZxBVFiCpR9Gpp63933baa8Ji1mQAAAAAQUIPAAAAAADJhwm1F2UhoUsEb6oKCIyE")
-                .body(bodyTokenOnpremise())
-                .when().post("https://apisd10.telefonica.com.pe/testing/bss/public/oauth2/token")
-                .then().statusCode(200).extract().path("access_token");
-        System.out.println("token = " + token);
-        return token;
-    }
-
-    public Map<String, String> bodyTokenOnpremise() {
-        Map<String, String> bodyMap = new HashMap<>();
-        bodyMap.put("Content-Type", "73b10ad6fa6ca966b048b65306b817b2");
-        bodyMap.put("grant_type", "password");
-        bodyMap.put("scope", "scope1");
-        bodyMap.put("username", "cs_ex_pr_gapim");
-        bodyMap.put("password", "May,09V,66");
-        return bodyMap;
-    }
-
-    public Map<String, String> headersOnpremiseBerserkers() {
-        Map<String, String> headerMap = new HashMap<>();
-        headerMap.put("Content-Type", "application/json; charset=UTF-8");
-        headerMap.put("UNICA-Application", "FrontendPlatform");
-        headerMap.put("UNICA-ServiceId", "1f994db3-477e-4c28-86df-0a840783fb08");
-        headerMap.put("UNICA-PID", "5f90e0ac-1a35-4985-a158-a62cc52220b3");
-        headerMap.put("UNICA-User", "UserFrontend");
-        headerMap.put("X-IBM-Client-Id", "73b10ad6fa6ca966b048b65306b817b2");
-        headerMap.put("Authorization", "Bearer " + getTokenOnpremise());
-        return headerMap;
-    }
-
     public void testPfxKey() {
-        FileInputStream instream1 = null;
-        KeyStore keyStore = null;
-        org.apache.http.conn.ssl.SSLSocketFactory lSchemeSocketFactory = null;
+
         try {
-            instream1 = new FileInputStream(new File("src/test/resources/certificado/apim-client-certificate.pfx"));
-            keyStore = KeyStore.getInstance("PKCS12");
-            keyStore.load(instream1, "pfxfilepwd".toCharArray());
-            X509HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
-            lSchemeSocketFactory = new org.apache.http.conn.ssl.SSLSocketFactory(keyStore, "D[e__G8VBTvZ1%wCW-s0");
-            lSchemeSocketFactory.setHostnameVerifier(hostnameVerifier);
-        } catch (Exception e) {
-            e.printStackTrace();
+            KeyStore keyStore = KeyStore.getInstance("PKCS12");
+            keyStore.load(new FileInputStream("src/test/resources/certificado/apim-client-certificate.pfx"), "D[e__G8VBTvZ1%wCW-s0".toCharArray());
+
+            SSLSocketFactory clientAuthFactory = new SSLSocketFactory(keyStore, "D[e__G8VBTvZ1%wCW-s0");
+            SSLConfig config = new SSLConfig().with().sslSocketFactory(clientAuthFactory).and().allowAllHostnames();
+
+            RestAssured.config = RestAssured.config().sslConfig(config);
+
+        } catch (Exception ex) {
+            System.out.println("Error al cargar el almacén de claves.");
+            ex.printStackTrace();
         }
-        RestAssured.config = RestAssured.config().sslConfig(new SSLConfig().with().sslSocketFactory(lSchemeSocketFactory).and().allowAllHostnames());
-        System.out.println(
-                RestAssured.given().
-                        contentType("application/json").
-                        headers(
-                                "Accept-Encoding", "gzip,deflate"
-                        )
-                        .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com")
-                        .getStatusCode()
-        );
     }
 
 

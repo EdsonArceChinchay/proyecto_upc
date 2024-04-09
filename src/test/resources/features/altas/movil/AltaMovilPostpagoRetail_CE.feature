@@ -11,10 +11,10 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 24/03/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
-Característica: AT-DT031_Alta Movil Postpago CEX Retail
+Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
 
   Antecedentes:
     Dado     que abro la pagina de movistar

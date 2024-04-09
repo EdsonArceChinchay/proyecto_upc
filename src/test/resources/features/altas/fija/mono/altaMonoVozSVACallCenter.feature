@@ -1,24 +1,23 @@
 #language:es
-##CREADOR:  HENRY 
+##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT017
-##GDAP: GDAP-979
-##SPRINT CREADO: PI
+##CODIGO: AT-DT016
+##GDAP: GDAP-1068
+##SPRINT CREADO: PI14_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 13/02/2024
+##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija
+Característica: AT-DT016_Alta Mono Linea Voz mas SVA por Canal Call center
 
-Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
-
-  @AltaSVABloqueHBO
-  Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria
+  @AltaMonoVozSVACC
+  Esquema del escenario: Alta Mono Voz con plan <nombrePlan> mas SVA con Documento CE por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,9 +30,9 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
-      | nombres | apellidos | genero    |
-      | Juan    | Mendoza   | masculino |
+    Y        ingreso los datos del cliente a registrar
+      | nombres | apellidos     | genero   |
+      | MARTIA  | PEREZ RAMIREZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -43,42 +42,42 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-    #  | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-    #  | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton consultar cobertura
-#    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-#    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#    Y        valido el detalle de la seleccion
     Y        valido que este en la seccion de registro
-    Y        doy click en añadir SVA
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
+    Y        doy click en agregar SVA Linea "Plan Multidestino 35"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        ingreso un correo electronico "tester@mail.com"
+    Y        ingreso nuevamente el correo electronico "tester@mail.com"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1993 | Casado      | Angola       |
+      | 01/10/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "solicitud"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                             | bloque | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 102210207 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD | HBO    | correo@gmail.com |
 
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan         |
+      | usuario externo | userNameCC | passST   | Bienvenid@ | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | LÍNEA CONTROL VOIP |
 

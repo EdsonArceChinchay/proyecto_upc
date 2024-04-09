@@ -29,7 +29,6 @@ import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
 import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
     protected WebElement cerrarPopUpContratos;
     @FindBy(xpath = "(//*[@class=\"btn btnFirst\"])[1]")
@@ -46,13 +45,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
-
     @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
     protected WebElement titleRegistrarServicio;
-
     @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
     protected WebElement titleLugarInstalacionEntrega;
-
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
@@ -77,7 +73,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonDiscapacitado;
     @FindBy(xpath = "(//button[contains(text(),'Validación biométrica'))[1]")
     protected WebElement buttonValBiometrica;
-
     @FindBy(xpath = "(//button[contains(text(),'Validación biométrica')])[3]")
     protected WebElement buttonValBiometrica3;
     @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
@@ -88,32 +83,22 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
     protected WebElement buttonContinuar;
-    @FindBy(xpath = "//span[contains(text(), 'Continuar')]")
-    protected WebElement buttonReContinuar;
-
-    @FindBy(xpath = "//button/Span[contains(text(),'Continuar')]")
-    protected WebElement btnContinuar;
     @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
     @FindBy(xpath = "//div[contains(text(),'ha sido exitoso')]")
     protected WebElement msjExitoso;
-
     @FindBy(xpath = "//div[contains(text(),'no se ha concretado')]")
     protected WebElement msjFallo;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
-
-    @FindBy(xpath = "//div[@class='codigo-venta ng-star-inserted']")
-    protected WebElement lblNumeroOrden;
     @FindBy(xpath = "//button[contains(text(),'SVA')]")
     protected WebElement buttonAgregarSVA;
     @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
     protected WebElement buttonGuardarCambios;
     @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
     protected WebElement buttonRepetidor;
-
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
     protected WebElement esperarCorreo;
     @FindBy(xpath = "//div[@class='boxHour active']")
@@ -126,22 +111,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement labelDatosDeCliente;
     @FindBy(xpath = "//div[contains(text(),'Descarga el contrato')]")
     protected WebElement titleDescargaContrato;
-
-    @FindBy(xpath = "//button[@class='_close']")
-    protected WebElement buttonCerrarModal;
-
-    @FindBy(css = ".services-section:nth-child(1) .section-container .row-content:nth-child(1) .actions-content .tdp-st-icon-button:nth-child(1)")
-    protected WebElement iconPlus;
-
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
     @FindBy(xpath = "//button[@class='buttonG cls-top']")
     protected WebElement buttonAgregarSVAMT;
     @FindBy(css = ".text-info")
     protected WebElement nombreClienteUserData;
-
     @FindBy(xpath = "//*[contains(@class,'orden-big')]")
     protected List<WebElement> listCodigoOrden;
 
@@ -192,7 +167,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
             // Obtener el texto del elemento
             String mensajeTexto = mensajeElemento.getText();
-
             // Verificar si el mensaje contiene la frase "ha sido cancelado"
             if (mensajeTexto.contains("ha sido cancelado")) {
                 driver().navigate().back();
@@ -209,10 +183,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 System.out.println("El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
                 return false;
             }
-
         }
-
-
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
@@ -1023,7 +994,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public String getNumeroSolicitud() {
-        String codeSale =extraerNumeroSolicitud(textoContratoCliente.getText());
+        String codeSale = extraerNumeroSolicitud(textoContratoCliente.getText());
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codeSale);
         return codeSale;
     }
@@ -1061,6 +1032,21 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         });
         return listCodigosDeOrdenes;
     }
+
+    public String getCodigoVenta() {
+        String codigoVenta = "";
+        WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
+        boolean elementoExistente = txtCodigoVenta.isDisplayed();
+        if (elementoExistente) {
+            codigoVenta = txtCodigoVenta.getText().trim();
+            if (codigoVenta.length()>13){
+                codigoVenta= codigoVenta.split(": ")[1];
+            }
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta );
+        }
+        return codigoVenta;
+    }
+
 
     public boolean verificarPantallaVenta() {
         try {

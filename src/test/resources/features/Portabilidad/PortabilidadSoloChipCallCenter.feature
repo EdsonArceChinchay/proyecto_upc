@@ -15,7 +15,7 @@
 ##FECMOD: 08/03/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad solo chip postpago en canal Call Center
+Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
 
   @PortabilidadSoloChipCC @MVP16 @Global
   Esquema del escenario: Portabilidad solo chip postpago en canal Call Center

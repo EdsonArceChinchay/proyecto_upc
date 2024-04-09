@@ -44,7 +44,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "LÍNEA MOVISTAR VOZ VOIP"
+    Y        selecciono el plan "LÍNEA TARIFA PLANA LOCAL VOIP"
     Y        doy click en agregar SVA Linea "Plan Multidestino 25"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

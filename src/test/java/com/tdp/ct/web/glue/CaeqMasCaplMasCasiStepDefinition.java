@@ -14,9 +14,6 @@ public class CaeqMasCaplMasCasiStepDefinition {
     private CaeqMasCaplMasCasiStep caeqMasCaplMasCasiStep;
 
     @Autowired
-    private ServiceTest serviceTest;
-
-    @Autowired
     private Cliente cliente;
 
     private Scenario scenario;
@@ -33,10 +30,9 @@ public class CaeqMasCaplMasCasiStepDefinition {
 
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
-        String codigoVenta ="FE-1000156745"; //cliente.getNumeroSolicitud();
-
+        String codigoVenta =cliente.getNumeroSolicitud();
         caeqMasCaplMasCasiStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqMasCaplMasCasiStep.getSalesLead(codigoVenta));
-        //this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(codigoVenta).toString());
+        this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(codigoVenta).toString());
 
     }
 }

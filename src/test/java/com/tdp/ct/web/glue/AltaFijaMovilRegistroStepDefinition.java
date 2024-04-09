@@ -55,12 +55,12 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("ingreso los datos del lugar de instalacion")
     public void ingresoLosDatosDelLugarDeInstalacion(DataTable dirInstalacion) {
 
-        String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
-        String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
-        String piso= UtilWeb.getValueFromDataTable(dirInstalacion,"piso");
-        String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
-        String habitacion= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
-        String conj= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
+        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
+        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
+        String piso = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
+        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String habitacion = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
+        String conj = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
         altaFijaAltaMovilRetailStep.writeMz(manzana);
         altaFijaAltaMovilRetailStep.writeLte(lote);
         altaFijaAltaMovilRetailStep.writePiso(piso);
@@ -107,6 +107,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void escojoUnTurnoDeAgendamiento() {
         altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
     }
+
     @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
     public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contacto) {
         altaFijaMovilRegistroStep.ingresarContacto(contacto);
@@ -116,6 +117,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void doyClicEnConfirmarAgendamiento() {
         altaFijaMovilRegistroStep.clicConfirmarAgendamiento();
     }
+
     @Entonces("me muestra el detalle de la instalacion")
     public void meMuestraElDetalleDeLaInstalacion() {
         altaFijaMovilRegistroStep.validarDetalleInstalacion();
@@ -150,15 +152,16 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
         UtilWeb.waitForSeconds(3);
-        for(int i=0;i<3;i++){
-            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos,i);
+        for (int i = 0; i < 3; i++) {
+            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos, i);
             System.out.println("-- click en siguiente --");
             altaFijaMovilRegistroStep.clicEnSiguiente();
         }
         System.out.println("----- termino preguntas ----------");
-            UtilWeb.waitForSeconds(3);
-            altaFijaMovilRegistroStep.clicEnConfirmar();
+        UtilWeb.waitForSeconds(3);
+        altaFijaMovilRegistroStep.clicEnConfirmar();
     }
+
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
     public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
         altaFijaMovilRegistroStep.validarIdentidadValidada();
@@ -168,6 +171,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void doyClicParaValidarContratoMovil() {
         altaFijaMovilRegistroStep.clicValidarContrato();
     }
+
     @Y("doy clic en continuar")
     public void doyClicEnContinuar() {
         altaFijaMovilRegistroStep.clicBotonContinuar();
@@ -181,6 +185,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("imprimo el texto del contrato solicitado")
     public void imprimoElTextoDelContratoSolicitado() {
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
+        this.scenario.log("[Código de Venta: " + this.cliente.getNumeroSolicitud() + "]");
         altaFijaMovilRegistroStep.guardoNumeroSolicitud();
     }
 
@@ -197,13 +202,13 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
 
-//CAMBIOS PARA RETAIL
-@Y("ingreso los datos del cliente a registrar")
-public void completoLosDatosDelClienteARegistrar(DataTable datos) {
-    altaFijaMovilRegistroStep.verificarClienteNuevo();
-    altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
-    altaFijaMovilRegistroStep.clicEnCrearCliente();
-}
+    //CAMBIOS PARA RETAIL
+    @Y("ingreso los datos del cliente a registrar")
+    public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+        altaFijaMovilRegistroStep.verificarClienteNuevo();
+        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
+        altaFijaMovilRegistroStep.clicEnCrearCliente();
+    }
 
     @Y("completo los datos del cliente")
     public void completoLosDatosDelCliente(DataTable datosCliente) {
@@ -214,10 +219,10 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
-        if(cliente.isClienteNuevo()) {
+        if (cliente.isClienteNuevo()) {
             altaFijaMovilRegistroStep.esperarBtnDatosCliente();
             altaFijaMovilRegistroStep.clicDatosDelCliente();
-        }else{
+        } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
     }
@@ -229,7 +234,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
 
     @Y("doy clic para descargar el contrato")
     public void doyClicParaDescargarElContrato() throws InterruptedException {
-        if (Parameters.estadoFlujo){
+        if (Parameters.estadoFlujo) {
             altaFijaMovilRegistroStep.clicDescargarContrato();
         }
     }
@@ -242,7 +247,7 @@ public void completoLosDatosDelClienteARegistrar(DataTable datos) {
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
-        this.scenario.log("[Código de Venta: "+this.cliente.getNumeroSolicitud()+"]");
+        this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getCodigoVenta() + "]");
         this.scenario.log(this.cliente.getCodigosDeOrdenes().toString());
     }
 

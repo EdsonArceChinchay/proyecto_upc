@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
-Característica: AT-DT049_Cambio de equipo con cambio de SIM x Tienda FE DITO WEB
+Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
 
   @CambioEquipoConCambioSIM
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>

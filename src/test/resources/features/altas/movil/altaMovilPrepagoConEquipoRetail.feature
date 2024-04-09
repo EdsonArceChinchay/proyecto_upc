@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovil
 Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal Retail
@@ -42,7 +42,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName               |
-      | sin permanencia | Al Contado | HUAWEI P30 AZUL ELLE-L04 |
+      | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        selecciono el boton de iniciar registro

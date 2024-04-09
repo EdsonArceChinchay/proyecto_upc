@@ -65,6 +65,7 @@ Característica: Caeq Mas Casi por call center
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido

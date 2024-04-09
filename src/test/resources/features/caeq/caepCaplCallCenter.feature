@@ -63,6 +63,7 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

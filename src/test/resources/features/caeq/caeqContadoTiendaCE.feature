@@ -50,6 +50,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
     #Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
