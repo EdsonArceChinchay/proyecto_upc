@@ -58,7 +58,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic en el boton validar identidad representante legal
-   Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     #Y        ingreso los datos del supervisor
      # | numdoc   | user        | password     |
      #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
@@ -77,8 +77,10 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                         | tipoValidacion |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS | discapacitado  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                         | tipoValidacion |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD | discapacitado  |
       #| usuario externo |userNameST | passST | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|

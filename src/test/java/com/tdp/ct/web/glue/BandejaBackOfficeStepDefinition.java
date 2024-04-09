@@ -38,6 +38,7 @@ public class BandejaBackOfficeStepDefinition {
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
                 break;
             case "solicitud":
+                System.out.println("cliente.getNumeroSolicitud() = " + cliente.getNumeroSolicitud());
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
                 break;
         }
