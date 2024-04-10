@@ -17,7 +17,7 @@
 Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
 
   @AltaMovilPostpagoCanalTienda
-  Esquema del escenario: Alta Movil Postpago
+  Esquema del escenario: Alta Movil Postpago con documento CE por Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

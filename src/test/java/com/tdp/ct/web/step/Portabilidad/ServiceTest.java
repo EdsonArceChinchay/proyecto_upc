@@ -71,7 +71,7 @@ public class ServiceTest {
     }
 
     public void preValidate() {
-
+        testPfxKey();
         String body = readerJson("/features/Portabilidad/JsonRequest/preValidate.json");
         String consultation1 = given().headers(headersAksBerserkers())
                 .body(body).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/prevalidateportin")
@@ -90,6 +90,7 @@ public class ServiceTest {
     }
 
     public void receiveMessage(DataTable dataTable) throws IOException {
+        testPfxKey();
         preValidate();
         var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");

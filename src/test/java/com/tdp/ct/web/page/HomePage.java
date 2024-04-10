@@ -16,9 +16,9 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class HomePage extends WebBase {
-    @FindBy(xpath = "/html/body/app-root/app-inicio/div/div/div[1]/div[1]/div/img")
+    @FindBy(xpath = "//app-root/app-inicio/div/div/div[1]/div[1]/div/img")
     protected WebElement backOfficeButton;
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[3]/div[1]")
+    @FindBy(xpath = "//app-root/app-park/body/div/div[1]/div[3]/div[1]")
     protected WebElement boton01;
 
     @FindBy(xpath = "//div[1]/form/div/div[3]/button")

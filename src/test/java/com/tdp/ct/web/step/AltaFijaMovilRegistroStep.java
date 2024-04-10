@@ -7,6 +7,7 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
+import org.json.JSONException;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -277,7 +278,7 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicRegistrarVenta();
     }
     @ScreenShotAfter
-    public void validarVentaGenerada() {
+    public void validarVentaGenerada() throws JSONException {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
         getCodigoOrden();
@@ -296,17 +297,19 @@ public class AltaFijaMovilRegistroStep {
     }
     public void guardoNumeroSolicitud() {
         String numeroSolicitud =  page.altaFijaMovilRegistroPage().getNumeroSolicitud();
-         if(numeroSolicitud!=null) {
-             this.cliente.setNumeroSolicitud(numeroSolicitud);
-             System.out.println("numeroSolicitud obtenido = " + cliente.getNumeroSolicitud());
-         }else{
-             System.out.println("ERROR - Numero Solicitud - Null");
-         }
+        if(numeroSolicitud!=null) {
+            cliente.setNumeroSolicitud(numeroSolicitud);
+            System.out.println("numeroSolicitud obtenido = " + cliente.getNumeroSolicitud());
+        }else{
+            System.out.println("ERROR - Numero Solicitud - Null");
+        }
     }
 
 
     public String getTextoSolicitud(){
-        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
+         String printContrato = page.altaFijaMovilRegistroPage().getTextoSolicitud();
+         guardoNumeroSolicitud();
+         return printContrato;
     }
 
     public void getCodigoOrden() {
@@ -318,10 +321,10 @@ public class AltaFijaMovilRegistroStep {
         }
     }
 
-    public String getCodigoVenta() {
+    public String getCodigoVenta() throws JSONException {
         String codigoVenta =  page.altaFijaMovilRegistroPage().getCodigoVenta();
         if(codigoVenta!=null) {
-            this.cliente.setNumeroSolicitud(codigoVenta);
+            cliente.setNumeroSolicitud(codigoVenta);
         }else{
             System.out.println("ERROR - Codigo de Orden - Null");
         }

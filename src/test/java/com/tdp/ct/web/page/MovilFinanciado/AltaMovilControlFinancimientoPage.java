@@ -190,7 +190,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
-        esperaProgresiva(driver(),3,5,btnplanMovil);
+        esperaProgresiva(driver(),5,5,btnplanMovil);
         waitUntilElementIsClickable(btnplanMovil, 50);
         click(btnplanMovil);
     }

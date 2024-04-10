@@ -11,6 +11,7 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -93,7 +94,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Cuando("doy clic a iniciar registro")
-    public void doyClicAIniciarRegistro() {
+    public void doyClicAIniciarRegistro()  {
         altaFijaMovilRegistroStep.moverToElementIniciarRegistro();
         altaFijaMovilRegistroStep.clicIniciarRegistro();
     }
@@ -183,10 +184,9 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Y("imprimo el texto del contrato solicitado")
-    public void imprimoElTextoDelContratoSolicitado() {
+    public void imprimoElTextoDelContratoSolicitado() throws JSONException {
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
-        this.scenario.log("[Código de Venta: " + this.cliente.getNumeroSolicitud() + "]");
-        altaFijaMovilRegistroStep.guardoNumeroSolicitud();
+        this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getCodigoVenta() + "]");
     }
 
     @Cuando("doy clic en si acepto")
@@ -245,7 +245,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
-    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
+    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() throws JSONException {
         altaFijaMovilRegistroStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getCodigoVenta() + "]");
         this.scenario.log(this.cliente.getCodigosDeOrdenes().toString());

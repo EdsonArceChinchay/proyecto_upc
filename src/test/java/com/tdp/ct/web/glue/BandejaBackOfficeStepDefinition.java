@@ -6,6 +6,7 @@ import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import io.cucumber.java.es.Y;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -36,13 +37,13 @@ public class BandejaBackOfficeStepDefinition {
 
 //    TODO: Buscar por tipo
     @Y("busco por {string}")
-    public void buscoPorElTipoDocumento(String tipoDoc) {
+    public void buscoPorElTipoDocumento(String tipoDoc) throws JSONException {
         switch (tipoDoc){
             case "documento":
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
                 break;
             case "solicitud":
-                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
+                bandejaBackOfficeStep.ingresoDocumento( altaFijaMovilRegistroStep.getCodigoVenta());
                 break;
         }
     }

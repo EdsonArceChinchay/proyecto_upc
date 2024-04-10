@@ -18,38 +18,43 @@ public class AltaMovilSoloSimCallCenterStep {
     @Autowired
     private ManageScenario scenario;
 
-    public void clickBotonMostrarOfertasRapido(){
+    public void clickBotonMostrarOfertasRapido() {
         page.altaMovilSoloSimCallCenterPage().botonMostrarOfertasRapido();
     }
-    public void cerrarPopUpEstadoCU(){
+
+    public void cerrarPopUpEstadoCU() {
         page.altaMovilSoloSimCallCenterPage().cerrarPopUpEstadoCU();
     }
 
-    public void validarOfertasSugeridas(){
+    public void validarOfertasSugeridas() {
         page.altaMovilSoloSimCallCenterPage().ofertasSugeridas();
     }
 
-    public void seleccionarListaTipoPlanMovil(String planMovil){page.altaMovilSoloSimCallCenterPage().listaTipoPlanMovil(planMovil);}
-
-    public void seleccionarListaPlanMovil(String planMovil){
-        page.altaMovilSoloSimCallCenterPage().listaPlanMovil(planMovil,scenario);
+    public void seleccionarListaTipoPlanMovil(String planMovil) {
+        page.altaMovilSoloSimCallCenterPage().listaTipoPlanMovil(planMovil);
     }
 
-    public void clickBotonSeleccionarOferta(){page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();}
+    public void seleccionarListaPlanMovil(String planMovil) {
+        page.altaMovilSoloSimCallCenterPage().listaPlanMovil(planMovil, scenario);
+    }
 
-    public void validarPaginaResumen(){
+    public void clickBotonSeleccionarOferta() {
+        page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();
+    }
+
+    public void validarPaginaResumen() {
         page.altaMovilSoloSimCallCenterPage().paginaResumen();
     }
 
-    public void validarCompletaDatosSolicitados(){
+    public void validarCompletaDatosSolicitados() {
         page.altaMovilSoloSimCallCenterPage().completaDatosSolicitados();
     }
 
-    public void validarSeleccionaPostpagoPrepago(){
+    public void validarSeleccionaPostpagoPrepago() {
         page.altaMovilSoloSimCallCenterPage().validarSeleccionaPostpagoPrepago();
     }
 
-    public void botonentendidoOfertas(){
+    public void botonentendidoOfertas() {
         page.altaMovilSoloSimCallCenterPage().botonentendidoOfertas();
     }
 }
