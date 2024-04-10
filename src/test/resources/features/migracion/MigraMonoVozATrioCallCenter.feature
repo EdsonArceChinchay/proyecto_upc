@@ -62,5 +62,5 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300005 | tester@tester.com | TRÍO          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | tester@tester.com | TRÍO          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 150 MBPS |
