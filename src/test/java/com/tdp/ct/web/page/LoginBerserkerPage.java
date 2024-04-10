@@ -84,7 +84,8 @@ public class LoginBerserkerPage extends WebBase {
 
     public void regresarPaginaInicio() {
         JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
         esperaProgresiva(driver(), 3, 5, btnInicio);
         WebElement divElement = btnInicio.findElement(By.xpath("./.."));
         js().scrollElementTop(divElement);
