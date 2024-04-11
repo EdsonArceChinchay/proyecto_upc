@@ -221,7 +221,7 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, btnMostrar);
         revisarModalError(driver());
         click(btnMostrar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: " + btnMostrar.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
     }
 
     public void seleccionarDepa(String tipoDepa) {

@@ -3,12 +3,15 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import io.cucumber.java.es.Y;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.logging.Level;
 
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class BandejaBackOfficeStepDefinition {
@@ -26,24 +29,37 @@ public class BandejaBackOfficeStepDefinition {
     public void meDirijoALaBandejaDeBackOffice() {
         bandejaBackOfficeStep.clickBackOffice();
     }
+
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
         bandejaBackOfficeStep.ingresoDocumento(documento);
     }
+
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
         bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
     }
 
-//    TODO: Buscar por tipo
+    //    TODO: Buscar por tipo
     @Y("busco por {string}")
-    public void buscoPorElTipoDocumento(String tipoDoc) throws JSONException {
-        switch (tipoDoc){
+    public void buscoPorElTipoDocumento(String tipoDoc) throws Exception {
+        switch (tipoDoc) {
             case "documento":
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Busco Numero de Documento");
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
                 break;
             case "solicitud":
-                 String codigoVenta = (altaFijaMovilRegistroStep.getCodigoVenta() == null)? cliente.getNumeroSolicitud(): altaFijaMovilRegistroStep.getCodigoVenta();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Busco Numero de Solicitud");
+                String codigoVenta ="";
+                try{
+                    codigoVenta = (altaFijaMovilRegistroStep.getCodigoVenta() == null) ? cliente.getNumeroSolicitud() : altaFijaMovilRegistroStep.getCodigoVenta();
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta);
+                }
+                catch ( Exception e)
+                { e.getMessage();
+                }
+                codigoVenta = (codigoVenta == "") ? cliente.getNumeroDocumento() : codigoVenta;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Numero: " + codigoVenta);
 
                 bandejaBackOfficeStep.ingresoDocumento(codigoVenta);
                 break;
@@ -58,10 +74,11 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("selecciono la solicitud")
     public void seleccionoLaSolicitud() {
-        String codigoVenta = (this.cliente.getNumeroSolicitud()== null) ?"FE-":this.cliente.getNumeroSolicitud();
+        String codigoVenta = (this.cliente.getNumeroSolicitud() == null) ? "FE-" : this.cliente.getNumeroSolicitud();
         System.out.println("NumSolicitud: " + codigoVenta);
         bandejaBackOfficeStep.seleccionoSolicitud(codigoVenta);
     }
+
     @Y("apruebo la solicitud")
     public void aprueboSolicitud() throws InterruptedException {
         bandejaBackOfficeStep.aprueboSolicitud();

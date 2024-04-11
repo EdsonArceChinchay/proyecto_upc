@@ -1,6 +1,7 @@
 package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
 import javax.swing.JOptionPane;
 
 public class Helper extends WebBase {
@@ -74,7 +76,9 @@ public class Helper extends WebBase {
 
     public static String getValueItemLocalStorage(WebDriver driver, String item, String Key) throws JSONException {
         String itemLocalStorage= getItemLocalStorage(getLocalStorage(driver),item);
+        System.out.println("itemLocalStorage = " + itemLocalStorage);
         JSONObject jsonObject = new JSONObject(itemLocalStorage);
+        System.out.println("jsonObject: " + jsonObject);
         String value = jsonObject.getString(Key);
 
         return value;
