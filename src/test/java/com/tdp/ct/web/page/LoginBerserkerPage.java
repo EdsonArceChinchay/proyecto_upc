@@ -75,7 +75,7 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
 
-    @FindBy(css = "span.c-anim-btn")
+    @FindBy(xpath = "//*[contains(text(),'Inicio')]")
     protected WebElement btnInicio;
 
     public String getMsgErrorCredential() {
@@ -87,9 +87,8 @@ public class LoginBerserkerPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
         esperaProgresiva(driver(), 3, 5, btnInicio);
-        WebElement divElement = btnInicio.findElement(By.xpath("./.."));
-        js().scrollElementTop(divElement);
-        divElement.click();
+        js().scrollElementTop(btnInicio);
+        btnInicio.click();
         esperaProgresiva(driver(), 5, 5, msgHome);
     }
 

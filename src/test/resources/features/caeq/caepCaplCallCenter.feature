@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 
@@ -36,8 +36,8 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                     |
-      | 12 meses    | Al Contado | XIAOMI MI 11 LITE VERDE C/PACK |
+      | permanencia | tipoPago   | equipoName               |
+      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        doy click en iniciar registro

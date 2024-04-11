@@ -34,7 +34,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        cierro popup de error
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        presiona el boton anadir equipo
+    Y        presiona el boton anadir equipo del mismo plan
     Y        selecciono tipo de pago Al Contado
     Y        presiono el boton seleccionar
     Y        selecciono boton mantener plan
