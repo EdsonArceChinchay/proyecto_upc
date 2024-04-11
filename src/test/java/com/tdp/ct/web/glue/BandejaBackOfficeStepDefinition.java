@@ -43,7 +43,8 @@ public class BandejaBackOfficeStepDefinition {
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
                 break;
             case "solicitud":
-                bandejaBackOfficeStep.ingresoDocumento( altaFijaMovilRegistroStep.getCodigoVenta());
+                String codigoVenta = altaFijaMovilRegistroStep.getCodigoVenta();
+                bandejaBackOfficeStep.ingresoDocumento(codigoVenta);
                 break;
         }
     }

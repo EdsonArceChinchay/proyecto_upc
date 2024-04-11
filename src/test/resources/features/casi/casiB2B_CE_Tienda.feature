@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 26/02/2024
+##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP4 @RegresionLegacy
 Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tienda

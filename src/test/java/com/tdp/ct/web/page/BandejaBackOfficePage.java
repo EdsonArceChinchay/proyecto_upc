@@ -53,6 +53,7 @@ public class BandejaBackOfficePage extends WebBase {
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
         esperaProgresiva(driver(), 3, 5, document);
         click(document);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Ingresa el numero de documento " + documento);
         type(document, documento);
     }
 

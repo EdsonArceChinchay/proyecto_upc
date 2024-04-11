@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 12/03/2024
+##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy
 Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tienda
