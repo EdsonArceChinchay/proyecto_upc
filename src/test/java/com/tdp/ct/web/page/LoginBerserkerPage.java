@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -16,7 +17,6 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class LoginBerserkerPage extends WebBase {
 
-    //FindBy(css = ".welcome-container .content .title-desc button")
     @FindBy(xpath = "//button[text()='Iniciar sesion']")
     protected WebElement btnIniciarSesion;
 
@@ -72,10 +72,10 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(css = "div.tdp-row.textBlue")
     protected WebElement svaTV;
 
-    @FindBy(xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
 
-    @FindBy(css = "span.c-anim-btn")
+    @FindBy(xpath = "//*[contains(text(),'Inicio')]")
     protected WebElement btnInicio;
 
     public String getMsgErrorCredential() {
@@ -83,10 +83,13 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void regresarPaginaInicio() {
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
         esperaProgresiva(driver(), 3, 5, btnInicio);
-        WebElement divElement = btnInicio.findElement(By.xpath("./.."));
-        divElement.click();
-        esperaProgresiva(driver(), 3, 5, msgHome);
+        js().scrollElementTop(btnInicio);
+        btnInicio.click();
+        esperaProgresiva(driver(), 5, 5, msgHome);
     }
 
     public void clickBtnIniciarSesion() {
@@ -184,8 +187,6 @@ public class LoginBerserkerPage extends WebBase {
         String actualNomPlan = nombrePlan.getText().trim().toLowerCase();
         Assertions.assertTrue(actualNomPlan.contains(expectedNomPlan), "El plan obtenido: " + actualNomPlan + ", no coincide con lo esperado " + expectedNomPlan);
         UtilWeb.waitForSeconds(1);
-
-
     }
 
     public void validarVelocidadInternet(String mbpsBB) {

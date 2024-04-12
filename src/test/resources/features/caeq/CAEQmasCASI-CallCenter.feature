@@ -78,7 +78,7 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento | EncontrarCelular |
 #      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
 #      | usuario interno |          |              | Bienvenid@ | CE            | 1100000273 | 984093119        |
 #      | usuario interno |           | | Bienvenid@ | CE            | 1100000273 | 984093119 |

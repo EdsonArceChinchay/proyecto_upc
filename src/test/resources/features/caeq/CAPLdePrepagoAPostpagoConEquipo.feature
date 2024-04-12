@@ -32,17 +32,9 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "Postpago"
-    Y        selecciono la opcion "Plan Ilimitado Mi Movistar S/99.9 V"
+    Y        selecciono la opcion "Plan Ilimitado Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
-    #Y        ingreso el tiempo de permanencia"12 meses"
-    #Y        ingreso el tipo de pago "Al Contado"
-    #Y        busco el equipo "HUAWEI P10 NEGRO"
-    #Y        doy click en el boton seleccionar
-    #Y        selecciono el tipo de plan movil "Postpago"
-    #Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/114.9"
-    #Y        selecciono el boton de Seleccionar Oferta
-    #Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName                               |
       | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |

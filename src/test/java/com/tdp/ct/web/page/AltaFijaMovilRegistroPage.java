@@ -1,21 +1,16 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.CaptchaBase.Parameters;
-import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import groovy.xml.StreamingDOMBuilder;
 import io.cucumber.datatable.DataTable;
-import org.apache.commons.math3.analysis.function.Add;
-import org.codehaus.groovy.transform.SourceURIASTTransformation;
+import org.json.JSONException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
 import java.time.Duration;
@@ -25,8 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
-import static com.tdp.ct.web.utils.Helper.extraerNumeroSolicitud;
+import static com.tdp.ct.web.utils.Helper.*;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
@@ -990,7 +984,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void scrollDown() {
         UtilWeb.waitForSeconds(4);
         JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
     }
 
     public String getNumeroSolicitud() {
@@ -1033,8 +1027,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes;
     }
 
-    public String getCodigoVenta() {
-        String codigoVenta = "";
+    public String getCodigoVenta() throws JSONException {
+    /*    String codigoVenta = "";
         WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
         boolean elementoExistente = txtCodigoVenta.isDisplayed();
         if (elementoExistente) {
@@ -1045,6 +1039,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta );
         }
         return codigoVenta;
+        */
+
+        String codigoVenta = getValueItemLocalStorage(driver(), "saleObject", "salesId");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta);
+
+        return codigoVenta.trim();
+
     }
 
 
@@ -1056,4 +1057,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             return false;
         }
     }
+
+
 }

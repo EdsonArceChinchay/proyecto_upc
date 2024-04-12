@@ -1,6 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.Caeq.CaeqMasCaplMasCasiStep;
 import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import io.cucumber.java.Before;
@@ -12,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CaeqMasCaplMasCasiStepDefinition {
     @Autowired
     private CaeqMasCaplMasCasiStep caeqMasCaplMasCasiStep;
+
+    @Autowired
+    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
     private Cliente cliente;
@@ -30,7 +34,8 @@ public class CaeqMasCaplMasCasiStepDefinition {
 
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
-        String codigoVenta =cliente.getNumeroSolicitud();
+        String codigoVenta = altaFijaMovilRegistroStep.getCodigoVenta();//cliente.getNumeroSolicitud();
+        this.scenario.log("[Código de Venta: " + codigoVenta + "]");
         caeqMasCaplMasCasiStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqMasCaplMasCasiStep.getSalesLead(codigoVenta));
         this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(codigoVenta).toString());
 

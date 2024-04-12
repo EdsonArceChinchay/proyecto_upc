@@ -25,7 +25,6 @@ public class CaeqMasCaplMasCasiStep {
 
     public Map<String,String> getSalesLead(String codigoVenta) throws JSONException {
         Map<String,String> valuesMovil;
-        //serviceTest.getTokenOnpremise();
         valuesMovil = serviceTest.getSalesLead(codigoVenta);
         return valuesMovil;
     }

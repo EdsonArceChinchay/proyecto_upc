@@ -78,6 +78,6 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tie
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan                        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102009  | 920956351 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameST | passST   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102010  | 920956351 | Prepago       | Preplan    | MONICA      | GINALDO     | SAO PAULO   |
 

@@ -60,4 +60,4 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 120377222 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 42721738009 |
