@@ -77,8 +77,7 @@ Característica: Alta Trio con sva Internet + sva linea CANAL CALL CENTER
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        me dirijo a la bandeja de Back Office    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

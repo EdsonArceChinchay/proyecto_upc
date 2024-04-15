@@ -42,26 +42,17 @@ public class BandejaBackOfficeStepDefinition {
 
     //    TODO: Buscar por tipo
     @Y("busco por {string}")
-    public void buscoPorElTipoDocumento(String tipoDoc) throws Exception {
-        switch (tipoDoc) {
+    public void buscoPorElTipoDocumento(String tipoDoc) {
+        String typeDocument = (bandejaBackOfficeStep.isNumber(tipoDoc))? "documento": "solicitud";
+        switch (typeDocument) {
+
             case "documento":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Busco Numero de Documento");
                 bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
                 break;
             case "solicitud":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Busco Numero de Solicitud");
-                String codigoVenta ="";
-                try{
-                    codigoVenta = (altaFijaMovilRegistroStep.getCodigoVenta() == null) ? cliente.getNumeroSolicitud() : altaFijaMovilRegistroStep.getCodigoVenta();
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta);
-                }
-                catch ( Exception e)
-                { e.getMessage();
-                }
-                codigoVenta = (codigoVenta == "") ? cliente.getNumeroDocumento() : codigoVenta;
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Numero: " + codigoVenta);
-
-                bandejaBackOfficeStep.ingresoDocumento(codigoVenta);
+                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
                 break;
         }
     }

@@ -41,4 +41,8 @@ public class BandejaBackOfficeStep {
     public void aprueboSolicitud() throws InterruptedException {
         page.bandejaBackOfficePage().aprueboSolicitud();
     }
+
+    public boolean isNumber(String tipoDoc) {
+        return page.bandejaBackOfficePage().isNumber(tipoDoc);
+    }
 }

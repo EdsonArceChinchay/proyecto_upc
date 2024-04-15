@@ -55,8 +55,7 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        me dirijo a la bandeja de Back Office    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

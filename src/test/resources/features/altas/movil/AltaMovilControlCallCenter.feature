@@ -18,7 +18,7 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por Call Center
   Quiero realizar una alta movil solo sin por call center
 
   @AltaMovilCECallCenter
-  Esquema del escenario: Alta Movil Solo Sim con documento CE por Call Center
+  Esquema del escenario: Alta Movil Control Solo Sim con documento CE por Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -79,14 +79,11 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
-      | usuario externo | userNameCC | passCC   | Bienvenid@  | CE            | 100005100 | Postpago      | RV Plan Ilimitado Mi Movistar |
-
-#      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
-#      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219510 | Control       | RV Plan Mi Movistar |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219511 | Control       | RV Plan Mi Movistar |
 
