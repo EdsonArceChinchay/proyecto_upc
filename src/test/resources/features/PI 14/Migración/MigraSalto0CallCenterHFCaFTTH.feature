@@ -53,7 +53,8 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office    Y        busco por "<documento>"
+    Y        me dirijo a la bandeja de Back Office
+Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

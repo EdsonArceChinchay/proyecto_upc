@@ -52,7 +52,8 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office    Y        busco por "<documento>"
+    Y        me dirijo a la bandeja de Back Office
+Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
