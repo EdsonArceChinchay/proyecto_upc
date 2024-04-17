@@ -936,7 +936,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         int contador = 0;
-        int reintentosMax = 3;
+        int reintentosMax = 5;
         int segundosEspera = 5;
         boolean bOK = false;
 

@@ -22,7 +22,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     protected WebElement btnConfirmaUbicacion;
     private String tipoPago;
 
-    @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
+    @FindBy(xpath = "//*[contains(text(),'Continuar')]/parent::button")
     protected WebElement buttonContinuar;
 
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
