@@ -75,7 +75,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected List<WebElement> listDocumentos;
     @FindBy(xpath = "//h4[contains(text(),'Validar identidad del titular')]")
     protected WebElement lblPreguntas;
-    @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
+    @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
@@ -420,16 +420,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 3;
+        int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonContinuar, 2);
+                waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
                 System.out.println("Entra al catch");
-                UtilWeb.waitForSeconds(6);
+                UtilWeb.waitForSeconds(5);
                 contador++;
                 System.out.println(contador + " vez");
             }
@@ -438,7 +438,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-//        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
