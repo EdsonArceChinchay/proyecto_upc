@@ -12,7 +12,7 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 08/04/2024
+##FECMOD: 16/04/2024
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
@@ -79,11 +79,13 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Cuando   doy clic en si acepto
     Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

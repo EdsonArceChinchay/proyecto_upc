@@ -66,7 +66,7 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |
 
-      #    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
+#    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000256 | Postpago  |
-   #   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
+#   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
 #      | usuario interno | | | Bienvenid@ | CE            | 1100000270 | Postpago  |

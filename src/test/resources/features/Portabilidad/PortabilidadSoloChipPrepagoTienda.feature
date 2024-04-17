@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
@@ -12,16 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
-##FECMOD: 08/04/2024
+##FECMOD: 16/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tienda
-  #tambo
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
 
-  @PortabilidadSoloChipPrepagoST @MVP17 @Global
-  Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal tienda,web front end, flujo biométrico
+  @PortabilidadSoloChipPrepagoCC
+  Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,7 +29,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tie
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y       cierro pop up de CU
+    Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
@@ -40,8 +37,8 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tie
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
     Y        valido los servicios
-      | telefono  | Fecha_Sig  | Fecha_FinMes |
-      | 920956351 | 2022-12-24 | 2022-12-31   |
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2022-12-24 | 2022-12-31   |
     Y        doy tiempo extra
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -49,35 +46,44 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Tie
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Entonces me muestra la pantalla de Delivery de linea nueva
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A1 | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        doy click en iniciar registro
+    Y        selecciono el departamento donde sera la instalacion "15"
+    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "INKAFARMA"
+    Y        presiono Consultar ubicacion
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "658745259"
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
+    Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en datos del cliente
-    Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
+    Y        doy click en validar identidad del titular
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
+    Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102010  | 920956351 | Prepago       | Preplan    | MONICA      | GINALDO     | SAO PAULO   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102020  | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 

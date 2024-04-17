@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 16/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
-Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Center
+Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por canal Call Center
 
-  @AltaMovilPrepagoCallCenter1
-  Esquema del escenario: Alta movil Prepago por call center
+  @AltaMovilPrepagoEquipoCallCenter
+  Esquema del escenario: Alta movil Prepago con Equipo por call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,15 +31,16 @@ Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Cen
     Y        doy click en el boton consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres        | apellidos    | genero   |
+      | MARIA MERCEDES | ZAPATA PEREZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono el plan movil "<oferta>"
-    Y        selecciono la opcion "<nombrePlan>"
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan movil "<planMovil>"
+    Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
@@ -83,10 +84,10 @@ Característica: AT-DT098_Alta Movil Prepago con documento CE por canal Call Cen
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil    | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

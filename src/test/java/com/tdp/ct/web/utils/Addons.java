@@ -284,7 +284,7 @@ public class Addons {
 
             //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
             //Mostrando un boton: Continuar
-            bExisteModal = driver.findElements(By.xpath("//app-modal-confirmation-financing")).size() != 0;
+            bExisteModal = driver.findElements(By.xpath("//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]")).size() != 0;
             LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + bExisteModal);
             if (bExisteModal) {
                 WebElement btnContinuar;
