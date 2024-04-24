@@ -12,8 +12,8 @@
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 30/01/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
   @SvaMTCE_CC

@@ -210,7 +210,7 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
     }
 
-    public void verificarClienteNuevo(){
+    public void verificarClienteNuevo() throws JSONException {
         cliente.setClienteNuevo(page.altaFijaMovilRegistroPage().esNuevoCliente());
     }
 

@@ -14,9 +14,7 @@
 ##FECMOD: 04/12/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16
-
 Característica: Alta Duo con direccion sugerida con documento CE por Canal Tiendas
-
 
   @AltaDuoDireccionSugeridaTienda
   Esquema del escenario: Alta Duo con direccion sugerida
@@ -66,5 +64,5 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS

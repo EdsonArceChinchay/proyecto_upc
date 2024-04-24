@@ -1,23 +1,22 @@
 #language:es
-
-##CREADOR: Edson Arce
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT105
-##GDAP: GDAP-893
-##SPRINT CREADO:
+##CODIGO: AT-DT
+##GDAP: GDAP-583
+##SPRINT CREADO: PI19_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 16/04/2024
+##DATA:
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 22/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
+Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
 
-  @PortaNormalPostCC @MVP16 @Global
+  @PortaDirectaPostCC
   Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -27,7 +26,8 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente la tienda "<tiendaAsesor>"
+#  Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -38,9 +38,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido los servicios
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
     Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -55,9 +52,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -90,8 +84,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 75102008  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
-#      | usuario interno |          |          | Bienvenid@  | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-   #   | usuario interno | userNameQAN | passQAN  | Bienvenid@ | DNI           | 45770292  | 993340032 | Prepago   | CLARO    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
 

@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps
 Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
 
-  @PortabilidadSoloChipPrepagoCC
+  @PortaNormalPreCC
   Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

@@ -1,22 +1,12 @@
 package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.html5.LocalStorage;
-import org.openqa.selenium.html5.WebStorage;
-import org.openqa.selenium.remote.Augmenter;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
-import java.util.logging.Level;
-import javax.swing.JOptionPane;
+
+import java.util.Properties;
 
 public class Helper extends WebBase {
 
@@ -27,23 +17,21 @@ public class Helper extends WebBase {
         int indiceFE = texto.indexOf("FE-");
         if (indiceFE != -1) {
             int strpos = texto.substring(indiceFE).indexOf(".");
-            if(strpos > 0){
+            if (strpos > 0) {
 //                return texto.substring(indiceFE).substring(0,strpos-1).replace("-","");
-                return texto.substring(indiceFE).substring(0,strpos).trim();
+                return texto.substring(indiceFE).substring(0, strpos).trim();
             }
-            return texto.substring(indiceFE).replace("-","");
+            return texto.substring(indiceFE).replace("-", "");
         }
         //}
         return null;
     }
+
     public static String obtenerRutaAbsoluta(String sRuta) {
         File archivo = new File(sRuta);
-        if (archivo != null) {
-            return archivo.getAbsolutePath().toString();
-        } else {
-            return null;
-        }
+        return archivo.getAbsolutePath().toString();
     }
+
     public static void descargarPDFDesdeURL(String url, String carpetaDescarga) {
         try {
             URL pdfURL = new URL(url);
@@ -62,29 +50,22 @@ public class Helper extends WebBase {
         }
     }
 
-    public static LocalStorage getLocalStorage(WebDriver driver) {
-        WebStorage webStorage = (WebStorage) new Augmenter().augment(driver);
-        LocalStorage localStorage = webStorage.getLocalStorage();
-        return localStorage;
 
+    public static String getValueConfig(String key) {
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream("src/test/resources/config.properties"));
+            return properties.getProperty(key);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-
-    public static String getItemLocalStorage(LocalStorage localStorage, String item){
-        String  itemLocalStorage = localStorage.getItem(item);
-        return itemLocalStorage;
-    }
-
-    public static String getValueItemLocalStorage(WebDriver driver, String item, String Key) throws JSONException {
-        String itemLocalStorage= getItemLocalStorage(getLocalStorage(driver),item);
-        System.out.println("itemLocalStorage = " + itemLocalStorage);
-        JSONObject jsonObject = new JSONObject(itemLocalStorage);
-        System.out.println("jsonObject: " + jsonObject);
-        String value = jsonObject.getString(Key);
-
-        return value;
-    }
-
-
-
 
 }
+
+
+
+
+
