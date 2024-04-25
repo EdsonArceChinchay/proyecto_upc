@@ -13,14 +13,12 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 21/09/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaTrio
 Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaTrioRetail
   Esquema del escenario: Alta fija por tienda con C sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Eloy Milla
 ##APP: DITO
 ##MODULO:

@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -14,8 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01 @AltaTrio
 Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
   Quiero realizar una alta fija por call center
 
@@ -79,7 +77,7 @@ Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

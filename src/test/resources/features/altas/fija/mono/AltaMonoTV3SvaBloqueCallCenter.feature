@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
 Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Center
 
   @AltaMonoTV3SvaBloqueCallCenter

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @Sanity28 @AltaFija
+@BERSERKERS @DoneDevOps @Sanity28 @AltaFija @AltaTrioUpfront
 Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tienda
 
   @AltaTrioUpfrontSVATienda

@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:Maria Sanchez
 ##APP: DITO
 ##MODULO:

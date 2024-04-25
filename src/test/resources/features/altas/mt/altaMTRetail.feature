@@ -14,15 +14,12 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
-
 Característica: AT-DT034_Alta Fija + Alta Movil por Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
 
   @AltaFijaMovilRetail_CE_Nuevo
   Esquema del escenario: Alta fija mas alta movil por Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -75,7 +72,7 @@ Característica: AT-DT034_Alta Fija + Alta Movil por Retail
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton descargar contrato
-    Y        presiono en el boton de Registrar Venta
+#    Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:

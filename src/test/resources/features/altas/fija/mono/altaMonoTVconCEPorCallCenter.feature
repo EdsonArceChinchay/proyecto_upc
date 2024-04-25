@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija @AltaMono
 Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
 
   @AltaMonoTVCC

@@ -14,7 +14,6 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-
 Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
 
   @AltaMt_SvaTiendas

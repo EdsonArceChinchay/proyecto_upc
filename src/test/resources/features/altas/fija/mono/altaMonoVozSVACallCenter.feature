@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija @AltaMono
 Característica: AT-DT016_Alta Mono Linea Voz mas SVA por Canal Call center
 
   @AltaMonoVozSVACC
