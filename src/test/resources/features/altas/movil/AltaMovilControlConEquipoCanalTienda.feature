@@ -1,5 +1,5 @@
 #language:es
-##CREADOR: 
+##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
