@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:Edwin De La Cruz
 ##APP: DITO
 ##MODULO:

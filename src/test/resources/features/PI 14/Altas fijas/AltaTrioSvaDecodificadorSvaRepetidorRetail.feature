@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -12,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: MARIA SANCHEZ
-##FECMOD: 14/02/2024
+##FECMOD: 25/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy @AltaTrio
 Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail

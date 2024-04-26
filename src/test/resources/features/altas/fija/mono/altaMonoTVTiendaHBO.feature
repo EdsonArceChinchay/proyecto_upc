@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Canal Tienda
 
   @AltaFijaTiendaHBO

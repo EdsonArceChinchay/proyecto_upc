@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -33,8 +32,8 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Y        doy click en el boton consultar
 #    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | QAN     | veinticuatro | masculino |
+      | nombres | apellidos      | genero    |
+      | MANUEL  | MENDOZA ZAPATA | MASCULINO |
 #    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton Linea Nueva Movil
@@ -85,14 +84,14 @@ Característica: AT-DT096_Alta Movil Postpago con documento CE por canal Call Ce
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | nombreCliente     | tipoDocumento | documento  | tipoPlanMovil | nombrePlan     |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | Juan Lopez Anibal | CE            | 1075266100 | Postpago      | Plan Ilimitado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | nombreCliente         | tipoDocumento | documento  | tipoPlanMovil | nombrePlan     |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | MANUEL MENDOZA ZAPATA | CE            | 1075266100 | Postpago      | Plan Ilimitado |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | QAN veinticuatro           | CE            | 1100000824 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100000791 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | ntt data qan call in venta cc | Prueba QAN DCC NOVENTAIUNO | CE            | 1100002133 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

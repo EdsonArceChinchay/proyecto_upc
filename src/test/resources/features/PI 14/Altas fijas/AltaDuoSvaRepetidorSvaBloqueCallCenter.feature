@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -14,8 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
 Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque con documento CE por canal Call Center
 
   @AltaDuoSvaRepetidorSvaBloqueCallCenter
@@ -75,10 +73,12 @@ Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

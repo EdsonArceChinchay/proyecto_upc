@@ -14,6 +14,7 @@ import java.io.*;
 import java.util.*;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Helper.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -168,7 +169,6 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickIconoAsesor() {
         waitUntilElementIsClickable(iconAsesor, 10).click();
-
     }
 
     public void clickBtnCerrarSesion() {
@@ -223,28 +223,9 @@ public class LoginBerserkerPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public String readValues(String param) {
-        String value = "";
-        if (!param.isEmpty()) {
-            File archiveCredentials = new File("src/test/resources/features/login/credentials.txt");
-
-            Map<String, String> parametros = new HashMap<>();
-            try (Scanner scanner = new Scanner(archiveCredentials)) {
-                while (scanner.hasNextLine()) {
-                    String linea = scanner.nextLine();
-                    String[] partes = linea.split("=");
-                    if (partes.length == 2) {
-                        String nombreParametro = partes[0].trim();
-                        String valorParametro = partes[1].trim();
-                        parametros.put(nombreParametro, valorParametro);
-                    }
-                }
-            } catch (Exception ex) {
-                System.out.println("Error al leer el archivo: " + ex.getMessage());
-            }
-            value = (parametros.get(param) != null) ? parametros.get(param) : "";
-        }
-        return value;
+    public String readValues(String key)
+    {
+        return getValueConfig("credential.user."+key)==null? "":getValueConfig("credential.user."+key);
     }
 
 }

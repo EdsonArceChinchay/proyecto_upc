@@ -82,7 +82,7 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

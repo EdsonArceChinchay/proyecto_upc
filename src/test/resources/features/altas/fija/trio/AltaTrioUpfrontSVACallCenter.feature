@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija @AltaTrioUpfront
 
 Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por Canal Call Center
 

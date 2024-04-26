@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -15,7 +14,7 @@
 ##FECMOD: 05/02/2024
 ##COMENTARIO: FALTA QUE SE RESUELVAN LAS OBSERVACIONES
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija  @AltaMono
 Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Center
 
   @AltamonovozsvaLineaCallCenter
@@ -74,10 +73,12 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

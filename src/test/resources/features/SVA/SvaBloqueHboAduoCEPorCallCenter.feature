@@ -11,18 +11,16 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 30/03/2024
 
-@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorCallCenter
+@BERSERKERS @DoneDevOps @svaBloqueHboDuoPorCallCenter @AltaSVA
 
 Característica: AT-DT107_Sva bloque HBO a duo por Call Center
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @svaBloqueHboDuoPorCallCenter
   Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo a un usuario con CE
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -35,7 +33,7 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Y        cierro popup de error
     Cuando   doy click en ver detalle
     Y        doy click en el boton Agregar sva fija
-    Y         seleccionamos agregar Bloque HBO
+    Y        seleccionamos agregar Bloque HBO
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

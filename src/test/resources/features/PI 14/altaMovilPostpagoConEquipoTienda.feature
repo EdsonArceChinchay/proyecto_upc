@@ -12,10 +12,10 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 04/04/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
-Característica: Alta Movil Prepago con equipo con documento CE por canal Call Center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
+Característica: Alta Movil postpago con equipo con documento CE por canal Call Center
 
-  @AltaMovilPrepagoEquipoCallCenter
+  @AltaMovilPostpagoEquipoCallCenter
   Esquema del escenario: Alta movil Prepago + Equipo por call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -35,8 +35,10 @@ Característica: Alta Movil Prepago con equipo con documento CE por canal Call C
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Prepago
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
+    Y        selecciono el plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
@@ -64,25 +66,19 @@ Característica: Alta Movil Prepago con equipo con documento CE por canal Call C
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Albania      |
+      | 01/10/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        doy clic en Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Prepago    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
-#      | usuario externo |userNameST | passST | Bienvenid@ | CAJAMARCA    | CE            | 1000000006 | PLAN PREPAGO | Prepago con Tarifa |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento   | planMovil           | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 10424647821 | RV Plan Mi Movistar | Postpago   | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

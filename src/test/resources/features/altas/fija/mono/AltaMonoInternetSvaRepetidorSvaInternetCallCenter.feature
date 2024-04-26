@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @Mono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija AltaMono
 Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Documento CE Canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter
@@ -79,7 +79,7 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

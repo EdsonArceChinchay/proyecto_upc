@@ -14,14 +14,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035
-
-Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT035_ Alta MT (Alta Fija + Alta Movil) + Alta SVA por canal Call Center
 
   @AltaFijaMovilSVACallCenter
   Esquema del escenario: Alta fija mas alta movil  + SVA por Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -38,7 +35,6 @@ Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
     #Y        valido que muestre el nombre completo del cliente "Jose Llamoca"
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    #Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -47,9 +43,6 @@ Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-       #| tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-       #| EDIFICIO | Familia Torres   | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -61,21 +54,16 @@ Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Perez  | 1    | 1   | URBANIZACION POPULAR | conjunto a |
     Y        presiono el boton confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso el telefono de contacto "908123789"
     Y        ingreso las instrucciones a considerar de la entrega "Al frente de la farmacia central"
     Y        doy clic en confirmar delivery
-    #Se agregaron los pasos
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola_mundo@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola_mundo@gmail.com"
-    #Se agregaron los pasos
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -86,9 +74,17 @@ Característica: AT-DT035_Alta Fija + Alta Movil + SVA por Call Center
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan            | sva                   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 1 Gb RA + 95 Gb RA | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | sva                   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1325049087 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Trío       | PACK ANTIVIRUS MCAFEE |

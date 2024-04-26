@@ -204,7 +204,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     //CAMBIOS PARA RETAIL
     @Y("ingreso los datos del cliente a registrar")
-    public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+    public void completoLosDatosDelClienteARegistrar(DataTable datos) throws JSONException {
         altaFijaMovilRegistroStep.verificarClienteNuevo();
         altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
         altaFijaMovilRegistroStep.clicEnCrearCliente();

@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:Maria Sanchez
 ##APP: DITO
 ##MODULO:
@@ -75,5 +74,5 @@ Característica: ALTA FIJA MONO + SVA Movistar Tv App Max Call center
 	#Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                        |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1548787786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA S23 200 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1548787786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA S23 200 MBPS |

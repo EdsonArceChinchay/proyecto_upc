@@ -38,8 +38,8 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        presiona el boton anadir equipo del mismo plan
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName               |
-      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU

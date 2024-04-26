@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -62,10 +61,10 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464994 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO MOV. VOZ INT. ESTANDAR HD RA |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464612 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO MOV. VOZ INT. ESTANDAR HD RA |

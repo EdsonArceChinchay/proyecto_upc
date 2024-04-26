@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija @AltaMono
 Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tienda
 
   @AltaMonoVozSVATienda

@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Eloy Milla
 ##APP: DITO
 ##MODULO:
@@ -54,10 +53,10 @@ Característica: Migracion salto 0 MT canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 42721738009 |

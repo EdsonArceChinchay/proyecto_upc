@@ -21,6 +21,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.LocalStorage.getValueItemLocalStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
@@ -75,7 +76,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected List<WebElement> listDocumentos;
     @FindBy(xpath = "//h4[contains(text(),'Validar identidad del titular')]")
     protected WebElement lblPreguntas;
-    @FindBy(xpath = "//*[@type='submit']//*[contains(text(),' Continuar ')]")
+    @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
@@ -420,16 +421,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 3;
+        int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonContinuar, 2);
+                waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
                 System.out.println("Entra al catch");
-                UtilWeb.waitForSeconds(6);
+                UtilWeb.waitForSeconds(5);
                 contador++;
                 System.out.println(contador + " vez");
             }
@@ -438,7 +439,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-//        buttonContinuar.sendKeys(Keys.ENTER);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
@@ -619,11 +619,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean esNuevoCliente() {
-        if (nombreClienteUserData.getText().length() > 8) {
-            return false;
-        } else {
-            return true;
-        }
+      return nombreClienteUserData.getText().length() <= 8;
+
     }
 
     //CAMBIOS PARA RETAIL
@@ -875,8 +872,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        click(btnRegistrarVenta);
         UtilWeb.waitForSeconds(5);
+        click(btnRegistrarVenta);
     }
 
     //    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
@@ -936,23 +933,20 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        int contador = 0;
-        int reintentosMax = 3;
+        int contador = 0, i=0;
+        int reintentosMax = 5;
         int segundosEspera = 5;
         boolean bOK = false;
 
         UtilWeb.waitForSeconds(1);
-
-        contador = 0;
         do {
             UtilWeb.waitForSeconds(segundosEspera * contador);
             try {
                 boolean elementoExistente;
                 elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
                 if (elementoExistente) {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error ");
                     click(btnCerrar);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error "+ i);
                     UtilWeb.waitForSeconds(10);
                     click(metodoRepedito);
                     bOK = true;

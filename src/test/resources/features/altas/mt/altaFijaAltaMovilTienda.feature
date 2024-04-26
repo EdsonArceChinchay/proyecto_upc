@@ -9,13 +9,12 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
-
-Característica: AT-DT036_Alta Fija + Alta Movil con documento CE por Canal Tienda
+Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
 
   @AltaFijaMovilTienda
   Esquema del escenario: Alta fija mas alta movil por Tienda con CE sin productos asociados sin biometria

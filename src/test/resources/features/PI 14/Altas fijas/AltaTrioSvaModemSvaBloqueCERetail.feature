@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -10,19 +9,16 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: MARIA SANCHEZ
-##FECMOD: 30/03/2023
+##FECMOD: 25/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
 Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaTrioSvaModemSvaBloqueRetail
   Esquema del escenario: Alta Trio con sva Modem + sva Bloque Canal Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -48,7 +44,7 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -76,8 +72,10 @@ Característica: Alta Trio con sva Modem + sva Bloque Canal Retail
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | bloque         |
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1061122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Bloque estelar |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                         | bloque         |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1061122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA | Bloque estelar |

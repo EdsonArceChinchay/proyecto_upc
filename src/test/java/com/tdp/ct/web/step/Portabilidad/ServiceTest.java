@@ -16,8 +16,11 @@ import java.nio.file.Path;
 import java.security.KeyStore;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Helper.getValueConfig;
 import static io.restassured.RestAssured.given;
+
 import org.apache.http.conn.ssl.SSLSocketFactory;
 
 @Component
@@ -26,12 +29,12 @@ public class ServiceTest {
     private static String consultation = "";
 
     public void testPfxKey() {
-
+        String password = getValueConfig("credential.certificate.password");
         try {
             KeyStore keyStore = KeyStore.getInstance("PKCS12");
-            keyStore.load(new FileInputStream("src/test/resources/certificado/apim-client-certificate.pfx"), "D[e__G8VBTvZ1%wCW-s0".toCharArray());
+            keyStore.load(new FileInputStream("src/test/resources/certificado/apim-client-certificate.pfx"), password.toCharArray());
 
-            SSLSocketFactory clientAuthFactory = new SSLSocketFactory(keyStore, "D[e__G8VBTvZ1%wCW-s0");
+            SSLSocketFactory clientAuthFactory = new SSLSocketFactory(keyStore, password);
             SSLConfig config = new SSLConfig().with().sslSocketFactory(clientAuthFactory).and().allowAllHostnames();
 
             RestAssured.config = RestAssured.config().sslConfig(config);
@@ -50,6 +53,14 @@ public class ServiceTest {
         headerMap.put("UNICA-ServiceId", "8dcf22a1-129d-4bf5-84f2-22f438bac469");
         headerMap.put("UNICA-PID", "e7165d6c-3c53-4c0e-afd9-67a01b476855");
         headerMap.put("UNICA-User", "UserFrontend");
+        return headerMap;
+    }
+
+    public Map<String, String> headersApimBerserkers() {
+        Map<String, String> headerMap = new HashMap<>();
+        headerMap.put("Ocp-Apim-Subscription-Key", "caa80390fcd14eddb4fec1013ec7f201");
+        headerMap.put("X-IBM-Client-Id", "c02a3410-1a23-4e3a-b812-b06f8886e004");
+        headerMap.put("X-IBM-Client-Secret", "F7mW4pU3gC7gM7hI3fQ1dU0gX1dX8tV4yJ2wE1sW3eT0aY0oD3");
         return headerMap;
     }
 
@@ -121,7 +132,7 @@ public class ServiceTest {
                     .when()
                     .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE)
                     .getBody().asString();
-            System.out.println("response = " + response);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Response del FE es: " + response);
 
             JSONObject jsonResponse = new JSONObject(response);
             JSONArray additionalData = jsonResponse.getJSONArray("commercialOperation")
@@ -134,17 +145,57 @@ public class ServiceTest {
                     if (key.equalsIgnoreCase("CAEQ") || key.equalsIgnoreCase("CAPL") || key.equalsIgnoreCase("CASI")) {
                         parametros.put(key, value);
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
         } else {
-            System.out.println("No se envio el codigo de Venta");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se envio el codigo de Venta");
         }
         return parametros;
     }
+
+
+
+    public String getCodeToken(DataTable dataTable, String codigoVenta) throws IOException {
+//String typeDocument, String numberDocument, String numberPhone
+
+        String idTransaction = getIdTransactionOfSaleslead(codigoVenta);
+        var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");
+        var numberDocument = UtilWeb.getValueFromDataTable(dataTable, "numberDocument");
+        var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
+
+        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Portabilidad/JsonRequest/movistarToken.json");
+        String statusBody = Files.readString(filePath);
+
+        statusBody = statusBody.replace("{typeDocument}", typeDocument);
+        statusBody = statusBody.replace("{numberDocument}", numberDocument);
+        statusBody = statusBody.replace("{idTransaction}", idTransaction);
+        statusBody = statusBody.replace("{numberPhone}", numberPhone);
+
+        System.out.println("Nuevo Body: " + statusBody);
+
+        String token = given().headers(headersAksBerserkers()).headers(headersApimBerserkers())
+                .body(statusBody).when().post("https://apimngr-genesis-cert.azure-api.net/api-ne-generartoken-movistartokenapi-op/v1/token")
+                .then().statusCode(200).extract().path("token");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Token: " + token);
+
+        return token;
+    }
+
+    private String getIdTransactionOfSaleslead(String codigoVenta) {
+        testPfxKey();
+        String FE = codigoVenta.trim();
+        String idTransaction = given().headers(headersAksBerserkers())
+                .when()
+                .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE)
+                .then().statusCode(200).extract().path("id");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "idTransaction: " + idTransaction);
+
+        return idTransaction;
+    }
+
 
 }
 

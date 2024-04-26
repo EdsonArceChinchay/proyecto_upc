@@ -35,10 +35,17 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia | tipoPago   | equipoName                               |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
     Y        selecciono tipo de pago Al Contado
-    Y        presiono el boton seleccionar
+    Y        valido que existan resultados busqueda de equipos
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    #Y        selecciono tipo de pago Al Contado
+    #Y        presiono el boton seleccionar
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono boton mantener plan
-    Y        Selecciono boton Cambiar Chip
+    #Y        Selecciono boton Cambiar Chip
     Y        doy click en iniciar registro
     #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
@@ -47,8 +54,8 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
-    Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton descargar contrato
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

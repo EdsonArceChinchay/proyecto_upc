@@ -14,7 +14,6 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-
 Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
 
   @AltaMt_SvaTiendas
@@ -74,8 +73,8 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-  | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-  | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 
 #  | usuario interno |          |          | Bienvenid@ | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
 #  | usuario interno |          |          | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

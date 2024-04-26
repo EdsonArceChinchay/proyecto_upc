@@ -30,10 +30,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        doy click en Atras
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
-      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TALARA                    |
 
   @CerrarSesionBerserker  @CierroSesion
   Esquema del escenario: Como usuario <userName> del canal <tiendaAsesor> deseo cerrar sesion
@@ -49,10 +49,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
-      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TALARA                    |
 
 
   @CerrarSesionBerserker  @CierroSesionDespuesConsultar

@@ -124,4 +124,15 @@ public class BandejaBackOfficePage extends WebBase {
         }
         UtilWeb.waitForSeconds(20);
     }
+
+    public boolean isNumber(String tipoDoc) {
+        boolean result;
+        try {
+            Integer.parseInt(tipoDoc);
+            result = true;
+        } catch (NumberFormatException excepcion) {
+            result = false;
+        }
+        return result;
+    }
 }

@@ -12,8 +12,8 @@
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 30/01/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
   @SvaMTCE_CC
@@ -50,7 +50,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
@@ -58,7 +58,6 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo           |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464951 | test@hotmail.com |
-
 
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000311 | test@hotmail.com | 5010192666 |
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000217 | test@hotmail.com | 5010192755 |

@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija @AltaMono
 Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
 
   @AltaMonoTVCC
@@ -71,7 +71,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

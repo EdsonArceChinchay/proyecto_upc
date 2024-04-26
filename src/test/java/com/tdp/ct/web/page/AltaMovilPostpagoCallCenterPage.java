@@ -14,7 +14,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
-    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
+    @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
@@ -130,18 +130,12 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);
-        waitUntilElementIsVisible(lblSeleccionarOferta, 40);//10
+        waitUntilElementIsClickable(lblSeleccionarOferta, 40);//10
         click(lblSeleccionarOferta, 10);
     }
 
-    //RV Plan Ilimitado Mi Movistar S/149.9
     public void seleccionarPlan(String tipoPlan) {
-        /*System.out.println("cantidad de la lista : " + listaOfertas.size());
-        UtilWeb.waitForSeconds(5);
-        String elemento = "//div[contains(text(),'" + tipoPlan + "')]/../../../div";
-        WebElement elementPlan = find().getElementByXPath(elemento);
-        waitUntilElementIsVisible(elementPlan, 20).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", tipoPlan);*/
+
         UtilWeb.waitForSeconds(4);
         String ofertaEsperada = tipoPlan.trim().toUpperCase();
         System.out.println("cantidad de la lista : " + listaOfertas.size());

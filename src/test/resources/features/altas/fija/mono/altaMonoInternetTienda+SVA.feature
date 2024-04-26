@@ -13,7 +13,7 @@
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05 @AltaFija @Mono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05 @AltaFija @AltaMono
 Característica: AT-DT008_Alta Fija Internet + SVA  con documento CE por canal tienda
 
   @AltaFijaTiendaSVA

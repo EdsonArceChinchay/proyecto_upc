@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -10,19 +9,16 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 25/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija
-
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
 Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaTrioSvaBloqueSvaInternetSvaLineaCallCenter
   Esquema del escenario: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -48,7 +44,7 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -75,8 +71,18 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy clic en continuar
-	  #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                                        | svaLinea             | bloque         | svainternet           |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 10000486488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                         | svaLinea             | bloque         | svainternet           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 10000486488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |

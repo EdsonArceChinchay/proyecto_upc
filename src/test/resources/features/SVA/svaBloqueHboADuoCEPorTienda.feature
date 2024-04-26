@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -14,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 22/02/2024
 
-@BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy
+@BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy @AltaSVA
 Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
   Yo como asesor de Tienda
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE

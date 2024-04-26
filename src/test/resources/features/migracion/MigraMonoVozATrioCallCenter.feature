@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:Eloy Milla
 ##APP: DITO
 ##MODULO:
@@ -56,11 +55,11 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                               |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | tester@tester.com | TRÍO          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA 150 MBPS |

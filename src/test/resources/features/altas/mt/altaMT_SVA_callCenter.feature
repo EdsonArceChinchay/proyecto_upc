@@ -89,14 +89,14 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-  | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                                | correo           |
-  | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408407 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                                | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408407 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000773 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000774 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
 #      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000775 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |

@@ -44,7 +44,7 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
 
-    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva') or @class='btnCard' and contains(text(),'Portabilidad móvil') or @class='btnCard' and contains(text(),'Línea Nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
+    @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva') or @class='btnCard' and contains(text(),'Portabilidad móvil') or contains(text(),'Portabilidad móvil')  or @class='btnCard' and contains(text(),'Línea Nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
@@ -93,7 +93,7 @@ public class AltaFijaTiendaPage extends WebBase {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight,10);
                 btnRight.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton derecho " + btnRight);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
             }
         }
@@ -107,7 +107,7 @@ public class AltaFijaTiendaPage extends WebBase {
             while (isBtnLeft)
             {
                 btnLeft.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton izquierdo " + btnLeft);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left ");
                 isBtnLeft = btnLeft.isDisplayed();
             }
         }
@@ -162,8 +162,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void listaBotones() {
         waitUntilElementIsClickable(btnLineaNueva, 50);
+        String nameButton = btnLineaNueva.getText();
         click(btnLineaNueva);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + btnLineaNueva.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + nameButton);
     }
 
     public void datosAgendamiento() {
@@ -282,9 +283,6 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void doyClickEnGuardarCambios() {
-        //JavascriptExecutor jse = (JavascriptExecutor) driver();
-        //jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-      //  UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
         js().scrollElementTop(btnGuardar);
         btnGuardar.click();

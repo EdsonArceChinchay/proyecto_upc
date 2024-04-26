@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @Mono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda
 
   @AltaMonoFtthTienda

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija @AltaMono
 Característica: AT-DT016_Alta Mono Linea Voz mas SVA por Canal Call center
 
   @AltaMonoVozSVACC
@@ -72,7 +72,7 @@ Característica: AT-DT016_Alta Mono Linea Voz mas SVA por Canal Call center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

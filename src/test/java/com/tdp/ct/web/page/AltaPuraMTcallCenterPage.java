@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaPuraMTcallCenterPage extends WebBase {
 
     public Object clicBotonAceptar;
@@ -20,7 +22,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     protected WebElement btnConfirmaUbicacion;
     private String tipoPago;
 
-    @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
+    @FindBy(xpath = "//*[contains(text(),'Continuar')]/parent::button")
     protected WebElement buttonContinuar;
 
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
@@ -91,24 +93,25 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 3;
+        int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
             System.out.println("Entra al while");
             try {
                 System.out.println("Entra al try");
-                waitUntilElementIsVisible(buttonContinuar, 2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Continuar");
+                waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
                 System.out.println("Entra al catch");
-                UtilWeb.waitForSeconds(6);
+                UtilWeb.waitForSeconds(5);
                 contador++;
                 System.out.println(contador + " vez");
             }
         }
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Sale del While");
+        esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
-        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
+        click(buttonContinuar);
+        //Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
     }
 

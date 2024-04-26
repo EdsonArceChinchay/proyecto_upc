@@ -13,7 +13,7 @@
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @Mono @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @AltaMono @AltaFija
 Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tienda
 
   @AltaFijaTienda

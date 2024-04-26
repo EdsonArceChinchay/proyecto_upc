@@ -1,48 +1,46 @@
 #language:es
-
-##CREADOR: Edson Arce
+##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT105
-##GDAP: GDAP-893
+##CODIGO: AT-DT106
+##GDAP: GDAP-964
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 08/04/2024
+##ENCARGADO: Angel Medina
+##FECMOD: 16/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
+Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
 
-  @PortabilidadSoloChipCC @MVP16 @Global
-  Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
+  @PortaNormalPreCC
+  Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
-    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente la tienda "<tiendaAsesor>"
+  # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
+    Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
-    Y        escojo tipo de linea "<tipoLinea>"
-    Y        escojo tipo de operador "<operador>"
+    Y        escojo tipo de linea "Postpago"
+    Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
     Y        valido los servicios
       | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
-    Y        valido que este en la seccion Postpago o Prepago
-    Y        selecciono el plan "Postpago" que desea
+      | <numero> | 2022-12-24 | 2022-12-31   |
+    Y        doy tiempo extra
+    Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
@@ -55,9 +53,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -72,24 +67,23 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "solicitud"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 75102008  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
-#      | usuario interno |          |          | Bienvenid@  | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-   #   | usuario interno | userNameQAN | passQAN  | Bienvenid@ | DNI           | 45770292  | 993340032 | Prepago   | CLARO    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102020  | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 

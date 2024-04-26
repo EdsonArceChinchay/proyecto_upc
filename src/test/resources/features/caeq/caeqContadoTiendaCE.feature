@@ -34,7 +34,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        presiona el boton anadir equipo
+    Y        presiona el boton anadir equipo del mismo plan
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName               |
