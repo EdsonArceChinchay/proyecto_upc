@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija AltaMono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @AltaMono
 Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Documento CE Canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter
