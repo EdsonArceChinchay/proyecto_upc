@@ -13,16 +13,12 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 25/04/2024
 
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-
 Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaTrioSvaBloqueSvaInternetCallCenter
   Esquema del escenario: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -14,8 +14,7 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
-Característica: AT-DT033_ Alta MT (Alta Fija + Alta Movil) por canal Call Center
-
+Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por canal Call Center
 
   @AltaFijaMovilCallCenterDeliveryExpress
   Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery express
@@ -30,15 +29,8 @@ Característica: AT-DT033_ Alta MT (Alta Fija + Alta Movil) por canal Call Cente
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | Juan    | Lopez Anibal | masculino |
-#    Y        cierro popup de aviso
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
-      ##lineas agregadas
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    #Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -69,22 +61,14 @@ Característica: AT-DT033_ Alta MT (Alta Fija + Alta Movil) por canal Call Cente
     Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
-      ## paso agregado
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    ##Y        doy click en validar identidad del titular
-    #Y        doy click en el boton confirmar validacion
-      ##paso descomentado y modificado, a veces aparece el modal y otras no.
-    ##Y        ingreso los datos solicitados para la validacion del cliente
-      ##| nombreMadre   | nombrePadre   | distritoNac   |
-      ##| <nombreMadre> | <nombrePadre> | <distritoNac> |
+    Y        doy click en validar identidad del titular
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombreMadre   | nombrePadre   | distritoNac   |
+      | <nombreMadre> | <nombrePadre> | <distritoNac> |
     ##Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Divorciado  | Alemania     |
-    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -94,6 +78,7 @@ Característica: AT-DT033_ Alta MT (Alta Fija + Alta Movil) por canal Call Cente
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -102,8 +87,8 @@ Característica: AT-DT033_ Alta MT (Alta Fija + Alta Movil) por canal Call Cente
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan          | nombreMadre | nombrePadre | distritoNac            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 03217025  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | HD 200 Mbps + 95 Gb | CARMEN      | FRANCISCO   | SAN JUAN DE LURIGANCHO |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 46325789  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |
 
 
 #  @AltaFijaMovilCallCenterSinProductosDeliveryRegular

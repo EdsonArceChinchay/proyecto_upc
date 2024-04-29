@@ -4,8 +4,8 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT039
-##GDAP: GDAP-593
+##CODIGO: AT-DT042
+##GDAP: GDAP-595
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -13,15 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @prueba
+Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Tienda
 
-Característica: AT-DT039_Alta trio MT con Upfront 40mb
-
-  Antecedentes:
-  #Cliente Tiene que tener un score alto (9990) y no estar refinanciado
-
-  @AltatrioMTconUpfront40mb
-  Esquema del escenario: Alta trio MT con Upfront 40mb
+  @AltatrioMT_SVA
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) con documento CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -29,13 +25,14 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        ingreso el password "<password>"
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y     valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
+    Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos   | genero    |
+      | Juan    | Ortiz Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -45,14 +42,15 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+    #Y        ingreso la informacion del lugar de instalacion
+     # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
     Y        presiono el boton consultar cobertura
-    #Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
+#    Y        selecciono el nombre de plan movistar total
+    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -62,20 +60,20 @@ Característica: AT-DT039_Alta trio MT con Upfront 40mb
     Y        doy click en datos del cliente
     Y        completo los datos solicitados
       | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Albania      | Casado       |
-    Y        doy clic para validar contrato hogar
+      | 12/12/1980 | Aruba        | Casado       |
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        presiono el boton Registrar venta
     #Y        presiono el boton descargar contrato
-      ## paso comentado
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Trío     | RA D22 50 MBPS |
 
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan       |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | IPTV HD 600 MBPS |
 
 

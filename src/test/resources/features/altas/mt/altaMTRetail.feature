@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
-Característica: AT-DT034_Alta Fija + Alta Movil por Retail
+Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Retail
 
 
   @AltaFijaMovilRetail_CE_Nuevo
