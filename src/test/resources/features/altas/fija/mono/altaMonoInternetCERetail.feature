@@ -70,5 +70,5 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan                        |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA O23 100 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan           |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA |

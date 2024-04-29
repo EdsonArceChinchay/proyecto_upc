@@ -84,6 +84,6 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanMovil | nombrePlan                    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219511 | Control       | RV Plan Mi Movistar |
 

@@ -83,5 +83,5 @@ Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100014564 | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100014564 | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

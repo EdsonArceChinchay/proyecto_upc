@@ -81,6 +81,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                         | tipoValidacion |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD | discapacitado  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
       #| usuario externo |userNameST | passST | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|

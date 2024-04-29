@@ -76,5 +76,5 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                 | bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA D22 | FOX    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan             | bloque |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA | FOX    |

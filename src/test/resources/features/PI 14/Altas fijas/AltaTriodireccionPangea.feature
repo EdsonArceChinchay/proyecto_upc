@@ -79,5 +79,5 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                                | svaLinea             | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRlÍO MOV. VOZ INTERNET ESTANDAR HD RA | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  | svaLinea             | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | ROSA        | GORGONIO    | SANTIAGO    |

@@ -77,5 +77,5 @@ Característica: Alta Trio con SVA Internet por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                         | svaInternet           | bloque         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA | PACK ANTIVIRUS MCAFEE | Bloque estelar |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque         |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque estelar |

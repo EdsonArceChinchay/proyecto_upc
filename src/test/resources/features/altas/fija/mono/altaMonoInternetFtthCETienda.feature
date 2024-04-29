@@ -46,7 +46,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "INTERNET MOVISTAR RA O23 100 MBPS"
+    Y        selecciono el plan "INTERNET MOVISTAR RA"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto

@@ -78,5 +78,5 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                         | svaLinea              | svainternet           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1059122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRÍO MOV. VOZ INTERNET ESTANDAR RA | Plan Multidestino  20 | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              | svainternet           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1059122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 | PACK ANTIVIRUS MCAFEE |
