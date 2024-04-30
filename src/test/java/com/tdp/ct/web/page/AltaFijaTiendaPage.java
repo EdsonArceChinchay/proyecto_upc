@@ -85,37 +85,34 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
+        int countMax = 15;
         try {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
-            int count= 0;
-            while (isBtnRigth || count==20)
-            {
+            int count = 0;
+            while (isBtnRigth && count <= countMax) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
-                waitUntilElementIsClickable(btnRight,10);
+                waitUntilElementIsClickable(btnRight, 5);
                 btnRight.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
             }
-        }
-        catch (NoSuchElementException e){
-               e.getMessage();
+        } catch (NoSuchElementException e) {
+            e.getMessage();
         }
 
         try {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
-            int count= 0;
-            while (isBtnLeft || count==20)
-            {
+            int count = 0;
+            while (isBtnLeft && count <= countMax) {
                 btnLeft.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left ");
                 isBtnLeft = btnLeft.isDisplayed();
                 count++;
             }
-        }
-        catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             e.getMessage();
         }
 
@@ -147,7 +144,7 @@ public class AltaFijaTiendaPage extends WebBase {
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: "+listaOfertas.get(cont).getText());
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: " + listaOfertas.get(cont).getText());
 
         }
     }
