@@ -23,6 +23,7 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "<tiendaAsesor>"

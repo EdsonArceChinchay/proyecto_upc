@@ -71,10 +71,7 @@ public class CaptchaPage extends WebBase {
 
     public void escribirCaptcha(String sCaptcha) {
         click(inputCaptcha);
-        //type(inputCaptcha, sCaptcha);
-        //txtCaptcha = driver().findElement(By.id("captcha"));
         type(inputCaptcha,sCaptcha);
-//        scenario.printFullView();
 
     }
 }

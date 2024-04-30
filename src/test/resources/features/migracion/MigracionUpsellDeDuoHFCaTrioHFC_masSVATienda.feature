@@ -24,6 +24,7 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda (HFC
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "<tiendaAsesor>"
