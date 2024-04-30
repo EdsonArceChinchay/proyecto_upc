@@ -16,7 +16,6 @@
 @BERSERKERS @DoneDevOps
 Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
 
-
   @CambioVelocidadDuoSvaCallCenterCambioDireccion @MVP08 @Global @General
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva [alta de repetidor wiffi financiado] con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
@@ -24,6 +23,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
