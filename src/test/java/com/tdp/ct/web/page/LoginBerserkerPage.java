@@ -64,10 +64,10 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
 
-    @FindBy(xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[1]/app-summary-detail/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span[2]")
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[1]/app-summary-detail/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span[2]")
     protected WebElement velocidadBB;
 
-    @FindBy(xpath = "/html/body/app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescBB;
 
     @FindBy(css = "div.tdp-row.textBlue")
@@ -117,13 +117,14 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-        if (Addons.esEntornoProductivo()) {
+//        if (Addons.esEntornoProductivo()) {
             esperaProgresiva(driver(), 3, 5, btnContinuarProd);
             click(btnContinuarProd);
-        } else {
-            esperaProgresiva(driver(), 3, 5, btnContinuar);
-            click(btnContinuar);
-        }
+//       } else {
+//            esperaProgresiva(driver(), 3, 5, btnContinuar);
+//            js().scrollElementTop(btnContinuar);
+//            click(btnContinuar);
+//        }
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(), 3, 6, msgHome);
     }

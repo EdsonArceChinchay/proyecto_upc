@@ -50,7 +50,7 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                        | sva | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464671 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS | HBO | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464671 | prueba@prueba.com |
 
 

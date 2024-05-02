@@ -85,18 +85,22 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
-        int countMax = 15;
+        int countMax = 10;
         try {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
             int count = 0;
-            while (isBtnRigth && count <= countMax) {
+            while (isBtnRigth ) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight, 5);
                 btnRight.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
+                if (count == countMax)
+                {
+                    break;
+                }
             }
         } catch (NoSuchElementException e) {
             e.getMessage();
@@ -106,11 +110,16 @@ public class AltaFijaTiendaPage extends WebBase {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
             int count = 0;
-            while (isBtnLeft && count <= countMax) {
+            while (isBtnLeft ) {
                 btnLeft.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left ");
                 isBtnLeft = btnLeft.isDisplayed();
                 count++;
+                if (count == countMax)
+                {
+                    break;
+                }
+
             }
         } catch (NoSuchElementException e) {
             e.getMessage();
