@@ -99,7 +99,8 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnCerrarSesion();
     }
 
-
+    @ScreenShotAfter
+    @ScreenShotBefore
     public void ingresoCaptcha() throws IOException, InterruptedException {
         Thread.sleep(2000);
         UtilWeb.waitForSeconds(4);
