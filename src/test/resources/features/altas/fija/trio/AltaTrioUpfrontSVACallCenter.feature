@@ -78,7 +78,7 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                                | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10003901234 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR HD RA | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10003901234 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
 
 

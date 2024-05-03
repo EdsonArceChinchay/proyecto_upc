@@ -34,6 +34,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -48,8 +49,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        presiono el boton consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -82,8 +82,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan     |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Trío     | RA D22 50 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono       |
 
 
 

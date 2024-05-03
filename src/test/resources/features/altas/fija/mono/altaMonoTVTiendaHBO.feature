@@ -81,6 +81,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan             | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV ESTÁNDAR DIGITAL RA | discapacitado  | MARINA      | MARCIAL     | HUARMACA    |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         | discapacitado  | MARINA      | MARCIAL     | HUARMACA    |
 
