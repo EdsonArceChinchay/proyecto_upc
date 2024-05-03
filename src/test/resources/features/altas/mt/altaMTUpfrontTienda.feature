@@ -4,40 +4,38 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO: AT-DT036
-##GDAP: GDAP-1000
+##CODIGO: AT-DT041
+##GDAP: GDAP-1066
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 29/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28
+Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Tienda
 
-Característica: AT-DT036_Alta Fija + Alta Movil con documento CE por Canal Tienda
-
-  @AltaFijaMovilTienda
-  Esquema del escenario: Alta fija mas alta movil por Tienda con CE sin productos asociados sin biometria
+  @AltaMTUpfrontTienda
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos | genero   |
-      | Luisa   | Cabello   | femenino |
-#    Y        cierro popup de aviso
+      | nombres | apellidos   | genero   |
+      | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    Y        cierro el popup de validación de estado de contraseña única
+    Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -47,33 +45,46 @@ Característica: AT-DT036_Alta Fija + Alta Movil con documento CE por Canal Tien
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-      | A  | EDIFICIO     | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
+    #Y         valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
+    Y        presiono Consultar ubicacion
+#   Y        ingreso la informacion del lugar de instalacion
+#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        Consulto ubicacion
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    Y        selecciono horario "3pm-7pm"
+    E        ingreso telefono del titular "998877665"
+    E        ingreso instrucciones de delivery "cerca al parque"
+    Y        doy clic en confirmar delivery
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 11/02/1990 | Casado      | Albania      |
+      | 12/12/1980 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.comF |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo        | correo@gmail.com |

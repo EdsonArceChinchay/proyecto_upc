@@ -14,9 +14,7 @@
 ##FECMOD: 04/12/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16
-
 Característica: Alta Duo con direccion sugerida con documento CE por Canal Tiendas
-
 
   @AltaDuoDireccionSugeridaTienda
   Esquema del escenario: Alta Duo con direccion sugerida
@@ -25,6 +23,7 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -64,7 +63,10 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS

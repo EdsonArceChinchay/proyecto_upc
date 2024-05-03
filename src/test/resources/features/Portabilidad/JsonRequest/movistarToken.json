@@ -1,0 +1,49 @@
+{
+  "HeaderIn": {
+    "country": "PE",
+    "lang": "es",
+    "entity": "TDP",
+    "system": "APPVentas",
+    "subsystem": "APPVentas",
+    "originator": "PE:TDP:APPVentas:APPVentas",
+    "sender": "BEVentas",
+    "userId": "80029019",
+    "wsId": "TEFSalesApp",
+    "wsIp": "169.54.245.69",
+    "operation": "crearToken",
+    "destination": "PE:TDP:APPVentas:APPVentas",
+    "pid": "60ae9a02-60ae-60ae-60ae-60ae9a02848b",
+    "execId": "60ae9a02-60ae-60ae-60ae-60ae9a02848b",
+    "timestamp": "2020-01-20T11:47:43.828+0000",
+    "msgType": "REQUEST",
+    "varArg": {
+      "arg": {
+        "key": "token",
+        "values": {
+          "value": "token"
+        }
+      }
+    }
+  },
+  "BodyIn": {
+    "contexto": "APPDPORTA",
+    "campos": [
+      {
+        "llave": "tipoDoc",
+        "valor": "{typeDocument}"
+      },
+      {
+        "llave": "numeroDoc",
+        "valor": "{numberDocument}"
+      },
+      {
+        "llave": "idTransaction",
+        "valor": "{idTransaction}"
+      },
+      {
+        "llave": "telefono",
+        "valor": "{numberPhone}"
+      }
+    ]
+  }
+}

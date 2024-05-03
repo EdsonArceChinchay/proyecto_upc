@@ -85,33 +85,43 @@ public class AltaFijaTiendaPage extends WebBase {
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
         revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
+        int countMax = 10;
         try {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
-            while (isBtnRigth)
-            {
+            int count = 0;
+            while (isBtnRigth ) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
-                waitUntilElementIsClickable(btnRight,10);
+                waitUntilElementIsClickable(btnRight, 5);
                 btnRight.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
+                count++;
+                if (count == countMax)
+                {
+                    break;
+                }
             }
-        }
-        catch (NoSuchElementException e){
-               e.getMessage();
+        } catch (NoSuchElementException e) {
+            e.getMessage();
         }
 
         try {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
-            while (isBtnLeft)
-            {
+            int count = 0;
+            while (isBtnLeft ) {
                 btnLeft.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left ");
                 isBtnLeft = btnLeft.isDisplayed();
+                count++;
+                if (count == countMax)
+                {
+                    break;
+                }
+
             }
-        }
-        catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             e.getMessage();
         }
 
@@ -131,19 +141,19 @@ public class AltaFijaTiendaPage extends WebBase {
             }
             if (i == 2 || i == 5 || i == 8) {
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
             }
         }
-        if (!encontroElemento && listaOfertas.size() > 0) {
+        if (!encontroElemento && !listaOfertas.isEmpty()) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro oferta en la Lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: "+listaOfertas.get(cont).getText());
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: " + listaOfertas.get(cont).getText());
 
         }
     }

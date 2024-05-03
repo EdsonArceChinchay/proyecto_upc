@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -12,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: MARIA SANCHEZ
-##FECMOD: 14/02/2024
+##FECMOD: 25/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy @AltaTrio
 Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento CE por Canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail
@@ -80,8 +79,8 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                        | decodificador | svarepetidor          |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | Trio Mov. Voz Int. Estandar HD RA | 9.90          | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                     | decodificador | svarepetidor          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | 9.90          | REP. SMART WIFI Venta |
 
 #  | usuario externo |          | Bienvenid@ | CE      | 1100000485    | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 100 MBPS | 14.90      | REP. SMART WIFI Venta |
 #  | usuario externo |          | Bienvenid@ | CE      | 1100000486    | 15        | 1501         | 150136    | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio       | TRIO MOV. VOZ INT. ESTANDAR HD RA O23 50 MBPS  | 9.90       | REP. SMART WIFI Venta |

@@ -7,6 +7,7 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.SearchContext;
@@ -37,13 +38,26 @@ public class CaptchaPage extends WebBase {
 
     public void obtenerCaptcha() throws IOException {
         UtilWeb.waitForSeconds(2);
+
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Escribiendo captcha...");
 
-        WebElement captchaElement =  driver().findElement(By.id("captcha"));
+        WebElement captchaElement = driver().findElement(By.id("captcha"));
+
         File captcha = captchaElement.getScreenshotAs(OutputType.FILE);
-        String path = System.getProperty("user.dir") + "\\captcha\\captcha.png";
-        //System.out.println("path: " + path);
-        FileHandler.copy(captcha, new File(path));
+
+        String path = System.getProperty("user.dir") + "/captcha/captcha.png";
+
+        //String path = "src/test/resources/captcha/captcha.png";
+
+        try {
+            // Copia el archivo de la captura de pantalla al destino especificado, sobrescribiendo si existe
+            FileUtils.copyFile(captcha, new File(path));
+            System.out.println("Captura de pantalla guardada en: " + path);
+        } catch (IOException e) {
+            System.out.println("¡Error al guardar la captura de pantalla!");
+            e.printStackTrace();
+        }
+
     }
 
     public void decodificarCaptcha() throws InterruptedException {
@@ -71,10 +85,7 @@ public class CaptchaPage extends WebBase {
 
     public void escribirCaptcha(String sCaptcha) {
         click(inputCaptcha);
-        //type(inputCaptcha, sCaptcha);
-        //txtCaptcha = driver().findElement(By.id("captcha"));
-        type(inputCaptcha,sCaptcha);
-//        scenario.printFullView();
+        type(inputCaptcha, sCaptcha);
 
     }
 }

@@ -13,18 +13,17 @@
 ##ENCARGADO: MARIA SANCHEZ
 ##FECMOD: 21/09/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaTrio
 Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @AltaTrioRetail
   Esquema del escenario: Alta fija por tienda con C sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -71,6 +70,6 @@ Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                        |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR HD RA |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor                 | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CANAL ONLINE-CALL CENTER GSS | CE            | 1042464816 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
 

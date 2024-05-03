@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 12/03/2024
 
-@BERSERKERS @DoneDevOps @PI18_SP3 @@RegresionLegacyUpfront
+@BERSERKERS @DoneDevOps @PI18_SP3 @@RegresionLegacyUpfront @AltaTrioUpfront
 Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX por canal Tienda
 
   @AltaTrioSVARucCETienda
@@ -23,6 +23,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX 
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"

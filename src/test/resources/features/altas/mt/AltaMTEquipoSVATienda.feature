@@ -6,7 +6,7 @@
 ##ESTADO:
 ##CODIGO: AT-DT
 ##GDAP: GDAP-1427
-##SPRINT CREADO: PI17-SPPI
+##SPRINT CREADO: PI17-SPI
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
@@ -14,8 +14,7 @@
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI17
-
-Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
+Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA con documento CE por Tienda
 
   @AltaMTEquipoSVA
   Esquema del escenario: Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
@@ -24,6 +23,7 @@ Característica: AT-DT0 _ Alta MT + Alta Equipo Movil + Alta SVA con documento C
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"

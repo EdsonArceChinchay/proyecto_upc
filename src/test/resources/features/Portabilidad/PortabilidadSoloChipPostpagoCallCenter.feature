@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
@@ -17,7 +16,7 @@
 @BERSERKERS @DoneDevOps
 Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
 
-  @PortabilidadSoloChipCC @MVP16 @Global
+  @PortaNormalPostCC @MVP16 @Global
   Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

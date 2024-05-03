@@ -23,6 +23,7 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -30,10 +31,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        doy click en Atras
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
-      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TALARA                    |
 
   @CerrarSesionBerserker  @CierroSesion
   Esquema del escenario: Como usuario <userName> del canal <tiendaAsesor> deseo cerrar sesion
@@ -42,6 +43,7 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -49,10 +51,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tiendaAsesor              |
-      | usuario externo | userNameCC   | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
-      | usuario externo | userNameDLC  | passDLC  | Bienvenid@ | CAJAMARCA                 |
-      | usuario externo | userNameST   | passST   | Bienvenid@ | TALARA                    |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA                 |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | TALARA                    |
 
 
   @CerrarSesionBerserker  @CierroSesionDespuesConsultar
@@ -62,6 +64,7 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"

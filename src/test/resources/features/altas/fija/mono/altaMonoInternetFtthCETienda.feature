@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @Mono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda
 
   @AltaMonoFtthTienda
@@ -46,7 +46,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "INTERNET MOVISTAR RA O23 100 MBPS"
+    Y        selecciono el plan "INTERNET MOVISTAR RA"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto

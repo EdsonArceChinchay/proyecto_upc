@@ -13,7 +13,7 @@
 ##ENCARGADO:  MOISES LLAMOCA
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @AltaFija
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @AltaFija @AltaMono
 Característica: AT-DT013_Alta Mono Linea Voz con documento CE con Canal Tienda
 
   @AltaMonoVozTienda

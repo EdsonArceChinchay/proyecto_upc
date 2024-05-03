@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR: Eloy Milla
 ##APP: DITO
 ##MODULO:
@@ -27,6 +26,7 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"

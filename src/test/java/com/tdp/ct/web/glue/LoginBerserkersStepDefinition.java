@@ -38,9 +38,10 @@ public class LoginBerserkersStepDefinition {
     private WebDriverManager manager;
 
     @Dado("regreso a la pagina de inicio")
-    public void regresoPaginaInicio() throws InterruptedException{
+    public void regresoPaginaInicio() throws InterruptedException {
         loginBerserkerStep.regresarPaginaInicio();
     }
+
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
@@ -173,10 +174,10 @@ public class LoginBerserkersStepDefinition {
 
     @E("ingreso el captcha")
     public void ingresoElCaptcha() throws IOException, InterruptedException {
-        if(Addons.esEntornoProductivo()){
+//        if (Addons.esEntornoProductivo()) {
             loginBerserkerStep.ingresoCaptcha();
-        }else{
-            System.out.println("Skip. Certificacion no requiere captcha");
-        }
+//        } else {
+//            System.out.println("Skip. Certificacion no requiere captcha");
+//        }
     }
 }

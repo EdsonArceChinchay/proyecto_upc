@@ -12,20 +12,19 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
+##FECMOD: 30/03/2024
 
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AltaSVA
 Característica: AT-DT109_Flujo de sva en el canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @SvaCallCenter
   Esquema del escenario: Sva en el canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -47,7 +46,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-      Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"

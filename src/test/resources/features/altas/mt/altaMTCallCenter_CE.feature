@@ -1,24 +1,24 @@
 #language:es
-##CREADOR: CARLOS VICENTE
+##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO: ACTIVO
-##CODIGO: AT-DT037
-##GDAP: GDAP-1006
-##SPRINT CREADO: PI14_SP1
+##ESTADO:
+##CODIGO: AT-DT038
+##GDAP: GDAP-589
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA: REUSABLE
+##DATA:
 ##ENCARGADO:
-##FECMOD: 13/02/2024
+##FECMOD: 08/02/2024
+#probarenmadrugada
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Call Center
 
-Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
-
-  @AltaMTSVAcallCenterCE
-  Esquema del escenario: Alta MT mas SVA por call center con nuevo cliente con documento CE
+  @AltaPuraMTcallCenterCE
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -27,11 +27,11 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro popup de error
+    #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Lucia   | Perez Lopez | femenino |
@@ -50,11 +50,10 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-	#Y        valido el detalle de la seleccion
-    Y        doy click en agregar "<sva>"
+    #Y        valido el detalle de la seleccion
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -62,13 +61,14 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
     Y        presiono Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    E        ingreso telefono del titular "984592938"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
+    #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -93,14 +93,9 @@ Característica: AT-DT037_Alta MT + SVA con documento CE por canal Call Center
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
-
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan                                | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 123408407 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Trío HD 400 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com |
-#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000773 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000774 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#      | usuario interno |            |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 1100000775 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011289  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011298  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011299  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | PACK ANTIVIRUS MCAFEE | CE            | 221011299  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | HD 100 Mbps RA + 100 Gb RA | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío       |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000495 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
+#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100002129 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS                                      |
+

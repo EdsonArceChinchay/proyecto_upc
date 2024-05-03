@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:Eloy Milla
 ##APP: DITO
 ##MODULO:
@@ -24,6 +23,7 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"

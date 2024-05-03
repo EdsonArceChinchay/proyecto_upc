@@ -25,14 +25,15 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-	##Y        cierro popup de error
+	#Y        cierro popup de error
     Y        selecciono agregar sva fija
-    Y         seleccionamos agregar decodificador Smart HD
+    Y        seleccionamos agregar decodificador Smart HD
     Y        seleccionamos guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

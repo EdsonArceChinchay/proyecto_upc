@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -24,6 +23,7 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
@@ -54,5 +54,5 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
 
     Ejemplos:
 
-      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | nombrePlan                 | correo            |
-      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | nombrePlan                 | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |

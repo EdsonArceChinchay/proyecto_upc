@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
 
-Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
+Característica: AT-DT116_Alta MT + Alta SVA + Equipo en canal Tiendas
 
   @AltaMT_SVA_CAEQ_Tiendas
   Esquema del escenario: Alta MT mas SVA en Canal Tiendas
@@ -24,6 +24,7 @@ Característica: AT-DT116_Alta MT MAS SVA CON CAEQ EN CANAL TIENDAS
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y     valido que se presente la tienda "<tiendaAsesor>"
