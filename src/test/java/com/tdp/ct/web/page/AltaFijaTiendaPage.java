@@ -111,7 +111,7 @@ public class AltaFijaTiendaPage extends WebBase {
             isBtnLeft = btnLeft.isDisplayed();
             while (isBtnLeft ) {
                 btnLeft.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left ");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left");
                 isBtnLeft = btnLeft.isDisplayed();
             }
         } catch (NoSuchElementException e) {
