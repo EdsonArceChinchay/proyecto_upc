@@ -38,7 +38,7 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    Y        selecciono el plan "<nombrePlan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     #Y        doy click en agregar SVA Linea "<sva>"
@@ -59,4 +59,4 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                        | Bloque | sva                  |
-      | usuario externo | userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | HBO    | Plan Multidestino 20 |
+      | usuario externo | userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    | Plan Multidestino 20 |
