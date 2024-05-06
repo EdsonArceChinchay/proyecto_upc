@@ -31,7 +31,7 @@ Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
       | Mariana | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar

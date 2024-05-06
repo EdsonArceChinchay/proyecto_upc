@@ -45,7 +45,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        presiono el boton Consultar Cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "TV HOGAR DIGITAL RA M23"
+    Y        selecciono el plan "TV HOGAR DIGITAL"
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

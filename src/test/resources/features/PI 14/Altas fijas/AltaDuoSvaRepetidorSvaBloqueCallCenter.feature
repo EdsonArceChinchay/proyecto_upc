@@ -31,7 +31,7 @@ Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque 
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos     | genero   |
       | Elvira  | Lopez Barrios | femenino |
     Y        selecciono el boton Linea Nueva Hogar

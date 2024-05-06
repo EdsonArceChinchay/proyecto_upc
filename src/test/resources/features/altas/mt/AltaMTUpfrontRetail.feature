@@ -35,6 +35,7 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -47,10 +48,9 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton consultar cobertura
-	#Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -74,5 +74,5 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío     | RA 70 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío       |
