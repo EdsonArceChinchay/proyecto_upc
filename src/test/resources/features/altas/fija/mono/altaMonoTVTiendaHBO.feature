@@ -31,7 +31,7 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero    |
       | Pedro   | Lopez Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar

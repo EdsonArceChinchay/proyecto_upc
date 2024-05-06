@@ -65,7 +65,6 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola_mundo@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola_mundo@gmail.com"
-    Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |

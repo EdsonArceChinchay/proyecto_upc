@@ -31,7 +31,7 @@ Característica: Alta Trio con SVA Internet + SVA Linea por canal Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero   |
       | Luciana | Ramos     | femenino |
     Y        selecciono el boton Linea Nueva Hogar

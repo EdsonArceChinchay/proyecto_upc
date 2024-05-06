@@ -70,11 +70,9 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-
     Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
-
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -82,12 +80,12 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | nombreCliente   | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                                | correo           | celularExistente |
+      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              | nombreCliente   | tipoDocumento | documento | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                                | correo           | celularExistente |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1100000235 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com | 947927627        |
 #      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 1100000810 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com | 920038777        |
       | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com | 995396095        |
