@@ -170,10 +170,14 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 break;
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
+            case "ACTUALIZAR DIRECCIÓN":
+
                 botonEsperado = btnActualizarDir;
                 break;
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
+            case "CONFIRMAR DIRECCIÓN":
+
                 botonEsperado = btnConfirmarDir;
                 break;
             case "BUSCAR":
