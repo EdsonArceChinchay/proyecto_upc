@@ -50,7 +50,12 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        selecciono el plan "<tipoPlan>" que desea
     Y        doy click en el boton Siguiente
     Entonces me muestra la pantalla para verificar la direccion
-    Y        presiono el boton Confirmar direccion
+    #Y        presiono el boton Confirmar direccion
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "casa"
+    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy clic en el boton "entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion

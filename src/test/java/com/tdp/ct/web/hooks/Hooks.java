@@ -27,7 +27,7 @@ public class Hooks {
 
     @Before(order = 0)
     public void setUp() {
-//        System.setProperty("webdriver.http.factory", "jdk-http-client");
+        //System.setProperty("webdriver.http.factory", "jdk-http-client");
         manager.setUpDriver();
     }
 
