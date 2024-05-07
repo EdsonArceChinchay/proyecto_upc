@@ -31,7 +31,7 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero   |
       | Helena  | Barrios   | femenino |
     Y        selecciono el boton Linea Nueva Hogar

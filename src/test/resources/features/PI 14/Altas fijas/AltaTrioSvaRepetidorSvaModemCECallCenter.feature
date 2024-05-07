@@ -31,7 +31,7 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente extranjero a registrar
+    Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero   |
       | Olga    | Rivaguero | femenino |
     Y        selecciono el boton Linea Nueva Hogar

@@ -23,6 +23,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "passST"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -37,12 +38,12 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
     Y         doy click en iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
-#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
