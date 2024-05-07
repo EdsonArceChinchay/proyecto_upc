@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:Reusable
 ##ENCARGADO:Brandon
-##FECMOD: 15/06/2023
+##FECMOD: 06/05/2024
 
 @BERSERKERS @DoneDevOps @casiStandAloneRetail
 
@@ -43,9 +43,9 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    #Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
