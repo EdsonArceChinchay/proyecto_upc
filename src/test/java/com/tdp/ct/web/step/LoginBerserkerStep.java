@@ -24,7 +24,7 @@ public class LoginBerserkerStep {
     @ScreenShotBefore
     public void clickBtnIniciarSesion() {
         cliente.setClienteTest("Test Cliente");
-        //page.loginBerserkerPage().clickBtnIniciarSesion();
+        page.loginBerserkerPage().clickBtnIniciarSesion();
     }
 
     @ScreenShotAfter
