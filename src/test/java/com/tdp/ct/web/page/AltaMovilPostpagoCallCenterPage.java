@@ -104,7 +104,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsClickable(listElementPLan,40).click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li"));
+        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > div > div > ul > li"));
         for(WebElement elements:lista){
             System.out.println(elements.getText());
             if(elements.getText().equals(tiempoP)){
@@ -115,7 +115,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
     public void BuscarEquipo(String buscarE) {
-        WebElement Input= find().getElementByXPath("//tdp-st-input-text[@iconright='search']");
+        WebElement Input= find().getElementByCss("div.search-input-content > tdp-st-input-text");
         click(Input);
         type(Input, buscarE);
         UtilWeb.waitForSeconds(10);
