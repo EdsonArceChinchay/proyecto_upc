@@ -285,9 +285,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void writeDireccion(String direc) {
-        WebElement Input = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
-        click(Input);
-        type(Input, direc);
+        WebElement inputDireccion = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
+        click(inputDireccion);
+        type(inputDireccion, direc);
     }
 
     public void writeReferencia(String referencia) {

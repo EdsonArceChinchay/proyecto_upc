@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 12/03/2024
+##FECMOD: 06/05/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G05 @RegresionLegacy
 Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con documento CE por canal Call Center
@@ -34,7 +34,11 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
 	#Y       verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

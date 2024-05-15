@@ -39,7 +39,12 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        cierro pop up de Cliente Exonerado
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para verificar la direccion
-    Y        presiono el boton Confirmar direccion
+    #Y        presiono el boton Confirmar direccion
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "casa"
+    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy clic en el boton "entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
@@ -63,5 +68,5 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo         |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            |1042464607  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            |1042464696  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | test@gmail.com |
 

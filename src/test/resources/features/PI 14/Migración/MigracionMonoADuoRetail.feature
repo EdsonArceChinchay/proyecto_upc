@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 11/03/2024
+##FECMOD: 06/05/2024
 
  @BERSERKERS @DoneDevOps  @RegresionLegacy
  Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
@@ -32,8 +32,11 @@
      Y        doy click en el boton consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-     Y        doy click en el boton "Confirmar direccion"
+     Y        doy click en el boton "ACTUALIZAR DIRECCION"
+     Y        ingreso la referencia de la direccion "."
+     Y        presiono el boton Consultar ubicacion
+     Y        presiono el boton consultar cobertura
+     Y        doy click en el boton "ENTENDIDO"
      Y        selecciono tipo de oferta
      Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
      Y        selecciono el plan "<plan>"
