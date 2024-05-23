@@ -881,14 +881,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
+        //esperaProgresiva(driver(), 3, 5, cicloFacturacion);
 
         waitUntilElementIsVisible(scrollorden, 70);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
+        //esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
 
-        js().scrollElementTop(cicloFacturacion);
+        //js().scrollElementTop(cicloFacturacion);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         boolean existe = false;

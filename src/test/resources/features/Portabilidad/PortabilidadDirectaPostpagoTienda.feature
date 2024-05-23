@@ -31,8 +31,8 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
+    Y        cierro el popup de contraseña Única
     Y        presiono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "<tipoLinea>"
@@ -45,6 +45,14 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        selecciono añadir equipos
+    Y        selecciono tipo de pago Al Contado
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia | tipoPago   | equipoName               |
+      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+    Y        valido que existan resultados busqueda de equipos
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        cierro pop up de CU
     Y        doy click en iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "jlopez@mail.com"
