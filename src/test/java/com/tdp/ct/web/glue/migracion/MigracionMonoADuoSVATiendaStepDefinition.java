@@ -23,7 +23,8 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
 
     @Y("selecciono la oferta {string}")
     public void seleccionoLaOferta(String oferta) {
-        altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(oferta);
+        altaFijaTiendaStep.seleccionarListaOfertas(oferta);
+        //altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
@@ -31,6 +32,7 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     public void doyClickEnCambiarPlanHogar() {
         MigracionMonoADuoSVATiendaStep.seleccionarboton();
     }
+
     @Y("doy clic en agregar sva {string}")
     public void doyClicEnAgregarSva(String Bloques) {
         MigracionMonoADuoSVATiendaStep.clicEnAgregarSVA();

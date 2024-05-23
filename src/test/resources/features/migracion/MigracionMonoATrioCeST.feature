@@ -35,6 +35,7 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
 #    Y        verifico la direccion "" actual del servicio
+#    Y        doy click en el boton "CONFIRMAR DIRECCION"
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion

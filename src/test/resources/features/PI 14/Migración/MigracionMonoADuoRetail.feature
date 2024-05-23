@@ -32,6 +32,7 @@
      Y        doy click en el boton consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
+#     Y        doy click en el boton "CONFIRMAR DIRECCION"
      Y        doy click en el boton "ACTUALIZAR DIRECCION"
      Y        ingreso la referencia de la direccion "."
      Y        presiono el boton Consultar ubicacion

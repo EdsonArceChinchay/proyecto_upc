@@ -366,6 +366,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         while (elementoExistenteRight && contador < contadorMax) {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 4, 3, btnRight);
+                //waitUntilElementIsClickable(btnRight,5);
                 btnRight.click();
                 System.out.println("dio click right while");
             } else {

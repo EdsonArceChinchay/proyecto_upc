@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G05 @RegresionLegacy
 Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con documento CE por canal Call Center
 
-  @MigracionduoTrioSVACC @MVP07 @Global @General
+  @MigracionduoTrioSVACC
   Esquema del escenario:Migracion de Duo a Trio + SVA por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -33,7 +33,7 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cierro pop up de CU
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-	#Y       verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
+#    Y        doy click en el boton "CONFIRMAR DIRECCION"
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
@@ -44,9 +44,9 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
-	#Y        doy click en agregar "<sva>"
-    Y        doy click en Agregar Sva
-    Y        seleccionamos agregar Bloque HBO
+    Y        doy click en añadir SVA
+    Y        doy click en agregar Bloque "Hot"
+    Y        doy click en Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -71,5 +71,5 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1074414006 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRIO MOV. VOZ INT. ESTANDAR HD RA |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 24000000023 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
