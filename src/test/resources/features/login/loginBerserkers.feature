@@ -40,6 +40,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y selecciono el tipo de usuario "usuario externo"
     Y ingreso el usuario "userNameCC"
     Y ingreso el password ""
+    E ingreso el captcha
     Y presiono el boton Continuar
     Entonces valido que se presente el mensaje de error "This information is required."
 
@@ -50,6 +51,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y selecciono el tipo de usuario "usuario externo"
     Y ingreso el usuario ""
     Y ingreso el password "passCC"
+    E ingreso el captcha
     Y presiono el boton Continuar
     Entonces valido que se presente el mensaje de error "This information is required."
 
@@ -60,6 +62,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y selecciono el tipo de usuario "usuario externo"
     Y ingreso el usuario "userNameCC"
     Y ingreso el password "passDLC"
+    E ingreso el captcha
     Y presiono el boton Continuar para intentar el ingreso
     Entonces valido que se presente el mensaje de credenciales incorrectas "Usuario y password incorrecto."
 

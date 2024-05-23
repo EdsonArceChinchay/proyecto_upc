@@ -262,7 +262,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(), 7, 5, labelAgendamiento);
+        esperaProgresiva(driver(), 2, 5, labelAgendamiento);
         revisarModalError(driver());
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -934,7 +934,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         int contador = 0, i=0;
-        int reintentosMax = 5;
+        int reintentosMax = 3;
         int segundosEspera = 5;
         boolean bOK = false;
 
@@ -947,7 +947,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 if (elementoExistente) {
                     click(btnCerrar);
                     UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error "+ i);
-                    UtilWeb.waitForSeconds(10);
+                    UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
                 } else {

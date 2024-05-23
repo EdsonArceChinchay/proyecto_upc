@@ -20,7 +20,6 @@ public class LoginBerserkerStep {
     @Autowired
     private Cliente cliente;
 
-
     @ScreenShotBefore
     public void clickBtnIniciarSesion() {
         cliente.setClienteTest("Test Cliente");
