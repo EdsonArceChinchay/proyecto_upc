@@ -36,27 +36,20 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement btnLeft;
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
-    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[2]/div/div[4]/button")
-    protected WebElement btnMostrarOfertas;
 
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
     protected WebElement btnReintentar;
 
-    @FindBy(xpath = "//*[@id=\"mat-mdc-dialog-1\"]/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
+    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
 
-    @FindBy(xpath = "//button[contains(text(),\" Entendido\")]")
+    @FindBy(xpath = "//button[contains(text(),'Entendido')]")
     protected WebElement btnEntendido;
 
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
 
-    public void botonMostrarOfertasRapido() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(),5,5,btnMostrarOfertas);
-        waitUntilElementIsVisible(btnMostrarOfertas, 10).click();
-    }
-    public void cerrarPopUpEstadoCU(){
+    public void cerrarPopUpEstadoCU() {
         try {
             if (cerrarPopUpEstadoCU.isDisplayed()) {
                 System.out.println("Cierre Nuevo Popup....");
@@ -73,10 +66,10 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     public void ofertasSugeridas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(),3,5,ofertasSugeridas);
+        esperaProgresiva(driver(), 3, 5, ofertasSugeridas);
         revisarModalError(driver());
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).isEmpty();
         if (elementoExistente) {
             js().scrollElementTop(subDetalles);
             click(subDetalles);
@@ -90,12 +83,12 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-        esperaProgresivaLoading(driver(), 3,5,"loading-offer");
+        esperaProgresivaLoading(driver(), 3, 5, "loading-offer");
         UtilWeb.waitForSeconds(2);
-        clickElementInAList(listaTipoPlanMovil, planMovil,10);
+        clickElementInAList(listaTipoPlanMovil, planMovil, 10);
     }
 
-    public void listaPlanMovil(String planMovil,ManageScenario scenario) {
+    public void listaPlanMovil(String planMovil, ManageScenario scenario) {
         revisarModalError(driver());
         scenario.printFullView();
         UtilWeb.waitForSeconds(2);
@@ -103,11 +96,10 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, inputElement);
         boolean elementoExistenteRight;
         boolean elementoExistenteleft;
-        elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+        elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
         int contador = 0;
-        int contadorMax =12;
-        while (elementoExistenteRight && contador<contadorMax)
-        {
+        int contadorMax = 12;
+        while (elementoExistenteRight && contador < contadorMax) {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 3, 3, btnRight);
                 btnRight.click();
@@ -116,19 +108,18 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                 System.out.println("El elemento btnRight no existe o es nulo.");
             }
             try {
-                waitUntilElementIsVisible(btnRight,5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnRight");
+                waitUntilElementIsVisible(btnRight, 5);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnRight");
             } catch (Exception e) {
                 System.out.println("El elemento btnRight ya no fue encontrado: ");
             }
-            elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             contador++;
         }
         UtilWeb.waitForSeconds(2);
         contador = 0;
-        elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
-        while (elementoExistenteleft && contador<contadorMax)
-        {
+        elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
+        while (elementoExistenteleft && contador < contadorMax) {
             if (btnLeft != null) {
                 waitUntilElementIsClickable(btnLeft, 8).click();
 
@@ -137,12 +128,12 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                 System.out.println("El elemento btnleft no existe o es nulo.");
             }
             try {
-                waitUntilElementIsVisible(btnLeft,5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Se muestra el btnLeft");
+                waitUntilElementIsVisible(btnLeft, 5);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnLeft");
             } catch (Exception e) {
                 System.out.println("El elemento btnLeft ya no fue encontrado: ");
             }
-            elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+            elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
             contador++;
         }
 
@@ -151,8 +142,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         boolean encontroElemento = false;
         for (int i = 0; i < listaPlanMovil.size(); i++) {
 
-            System.out.println("Oferta: "+i +" "+listaPlanMovil.get(i).getText());
-            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().toUpperCase().contains(planMovil.trim().toUpperCase()) ) {
+            System.out.println("Oferta: " + i + " " + listaPlanMovil.get(i).getText());
+            if (!encontroElemento && listaPlanMovil.get(i).getText().trim().toUpperCase().contains(planMovil.trim().toUpperCase())) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
@@ -165,14 +156,14 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
                 WebElement buscarButton = driver().findElement(By.cssSelector(".search-section .search-button"));
                 js().scrollElementTop(buscarButton);
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
             }
 
-            if(!encontroElemento && (i==cont || listaPlanMovil.get(i + 1).getText().trim().equals(""))) {
+            if (!encontroElemento && (i == cont || listaPlanMovil.get(i + 1).getText().trim().equals(""))) {
                 System.out.println("No encontro elemento en la lista");
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
@@ -198,33 +189,21 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-        esperaProgresiva(driver(),5,7,completaDatosSolicitados);
+        esperaProgresiva(driver(), 5, 7, completaDatosSolicitados);
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 
     public void validarSeleccionaPostpagoPrepago() {
-        esperaProgresiva(driver(),3,3,preguntaTipoPlan);
+        esperaProgresiva(driver(), 3, 3, preguntaTipoPlan);
         boolean existe = waitUntilElementIsVisible(preguntaTipoPlan, 90).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina preguntaTipoPlan >>> {0}", existe);
     }
 
 
-    public void clickBtnReintentar() {
-        //NECESITA REFACTORIZAR: ELIMINAR
-        UtilWeb.waitForSeconds(2);
-        boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]")).size() != 0;
-        if (elementoExistente) {
-            btnReintentar.click();
-            UtilWeb.waitForSeconds(2);
-        }
-
-    }
-
-    public void botonentendidoOfertas(){
+    public void botonentendidoOfertas() {
         UtilWeb.waitForSeconds(10);
-        click(btnEntendido,10);
+        click(btnEntendido, 10);
     }
 
 

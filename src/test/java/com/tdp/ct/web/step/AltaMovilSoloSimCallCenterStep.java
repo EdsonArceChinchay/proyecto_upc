@@ -18,10 +18,6 @@ public class AltaMovilSoloSimCallCenterStep {
     @Autowired
     private ManageScenario scenario;
 
-    public void clickBotonMostrarOfertasRapido() {
-        page.altaMovilSoloSimCallCenterPage().botonMostrarOfertasRapido();
-    }
-
     public void cerrarPopUpEstadoCU() {
         page.altaMovilSoloSimCallCenterPage().cerrarPopUpEstadoCU();
     }

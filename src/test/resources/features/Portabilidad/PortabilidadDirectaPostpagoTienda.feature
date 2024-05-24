@@ -33,7 +33,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        doy click en el boton consultar
     Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"

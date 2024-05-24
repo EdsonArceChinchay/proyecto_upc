@@ -32,7 +32,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        doy click en el boton consultar
     Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "Postpago"
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"

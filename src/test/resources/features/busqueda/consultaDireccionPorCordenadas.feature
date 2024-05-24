@@ -35,7 +35,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
@@ -69,7 +69,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
@@ -78,7 +78,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
 
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | longitud     | latitud      | mensaje                                                               |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA            |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL         | C             | 66783452374 | -77.03498486 | 0-           | LAS COORDENADAS SE ENCUENTRAN FUERA DEL RANGO DE COBERTURA.            |
       | usuario externo | userNameCC2 | passCC2  | Bienvenid@ | TALARA                    | C             | 64802153624 | 12           | -            | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
       | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64512345675 | -70-70       | -12.11851901 | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
       | usuario externo | userNameCC  | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | C             | 64991524632 | .            | 9000         | PROBLEMAS EN EL SERVICO, FAVOR DE COMUNICARTE CON EL AREA DE SOPORTE. |
