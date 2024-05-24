@@ -30,11 +30,8 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(id = "password")
     protected WebElement inputPassword;
 
-    @FindBy(id = "continue")
-    protected WebElement btnContinuar;
-
     @FindBy(name = "btnpruebavalidate")
-    protected WebElement btnContinuarProd;
+    protected WebElement btnContinuar;
 
     @FindBy(css = ".message-welcome span")
     protected WebElement msgHome;
@@ -117,14 +114,8 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickBtnContinuarHaciaHome() {
-//        if (Addons.esEntornoProductivo()) {
-            esperaProgresiva(driver(), 3, 5, btnContinuarProd);
-            click(btnContinuarProd);
-//       } else {
-//            esperaProgresiva(driver(), 3, 5, btnContinuar);
-//            js().scrollElementTop(btnContinuar);
-//            click(btnContinuar);
-//        }
+        esperaProgresiva(driver(), 3, 5, btnContinuar);
+        click(btnContinuar);
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(), 3, 6, msgHome);
     }
@@ -224,9 +215,8 @@ public class LoginBerserkerPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public String readValues(String key)
-    {
-        return getValueConfig("credential.user."+key)==null? "":getValueConfig("credential.user."+key);
+    public String readValues(String key) {
+        return getValueConfig("credential.user." + key) == null ? "" : getValueConfig("credential.user." + key);
     }
 
 }

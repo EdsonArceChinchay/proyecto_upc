@@ -32,7 +32,7 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        doy click en el boton consultar
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
-    Y        presiono el boton Mostrar ofertas
+    Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
