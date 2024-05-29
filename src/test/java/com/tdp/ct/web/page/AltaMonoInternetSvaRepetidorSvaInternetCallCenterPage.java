@@ -42,18 +42,18 @@ public class AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage extends WebBa
         }
     }
 
-    public void elegimossvarepetidor(String string) {
+    public void elegimossvarepetidor(String nameSva) {
         UtilWeb.waitForSeconds(3);
-        String repetidor = "//div[text()='" + string + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
+        String repetidor = "//*[contains(text(),'"+nameSva+"')]/parent::div/following-sibling::div//*[contains(@icon,'add')]";
         WebElement deco = find().getElementByXPath(repetidor);
         waitUntilElementIsClickable(deco,20);
         js().scrollElementTop(deco);
         deco.click();
     }
 
-    public void seleccionardecodificador(String string) {
+    public void seleccionardecodificador(String nameSva) {
         UtilWeb.waitForSeconds(3);
-        String decodificador = "//div[text()=' Cuota mensual : S/" + string + " " + "']/parent::div/../descendant-or-self::tdp-st-icon-button[1]";
+        String decodificador = "//*[contains(text(),'"+nameSva+"')]/parent::div/following-sibling::div//*[contains(@icon,'add')]";
         WebElement deco = find().getElementByXPath(decodificador);
         waitUntilElementIsClickable(deco,20);
         js().scrollElementTop(deco);

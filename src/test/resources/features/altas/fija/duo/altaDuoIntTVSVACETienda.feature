@@ -48,7 +48,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        selecciono el plan "<nombrePlan>"
     #Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Entonces doy click en Agregar Sva
-    Y        elegimos sva "<decodificador>"
+    #Y        elegimos sva "<decodificador>"
     Y        elegimos sva repetidor "<svarepetidor>"
     Y        doy click en Guardar cambios
     E        inicio su registro
@@ -75,4 +75,4 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | decodificador | svarepetidor              |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | 29.90         | REP. SMART WIFI Venta |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta   | REP. SMART WIFI Venta |
