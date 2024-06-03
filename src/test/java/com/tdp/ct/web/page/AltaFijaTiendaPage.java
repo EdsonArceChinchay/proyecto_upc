@@ -80,11 +80,15 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
     }
 
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
-        revisarModalError(driver());
         String ofertaEsperada = planOfertas.trim().toUpperCase();
+        revisarModalError(driver());
+        UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
+
         int countMax = 6;
         try {
             boolean isBtnRigth;
@@ -152,11 +156,13 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void seleccionarOferta() {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Seleccionar Oferta");
         revisarModalError(driver());
         for (int i = 0; i < listBtnSeleccionarOferta.size(); i++) {
             if (listBtnSeleccionarOferta.get(i).isEnabled()) {
                 js().scrollElementTop(listBtnSeleccionarOferta.get(i));
                 listBtnSeleccionarOferta.get(i).click();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click boton Seleccionar Oferta");
             }
         }
         UtilWeb.waitForSeconds(3);
@@ -164,6 +170,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones() {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Lista de Oferta");
         waitUntilElementIsClickable(btnLineaNueva, 50);
         String nameButton = btnLineaNueva.getText();
         click(btnLineaNueva);
@@ -175,7 +182,7 @@ public class AltaFijaTiendaPage extends WebBase {
 //         Calendario
         boolean elementoExistenteDias;
         esperaProgresiva(driver(), 3, 5, buttonConfirmar);
-        elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
+        elementoExistenteDias = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).isEmpty();
         if (elementoExistenteDias) {
             System.out.println("elementoExistenteDias: true");
             List<WebElement> listaDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']"));
@@ -184,7 +191,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
 
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='contHours']")).isEmpty();
         if (elementoExistente) {
             System.out.println("paso aqui 1");
             List<WebElement> listaHorario = driver().findElements(By.xpath("(//div[@class='contHours'])/div"));
@@ -214,7 +221,7 @@ public class AltaFijaTiendaPage extends WebBase {
     public void botonConfirmarAgendamiento() {
         revisarModalError(driver());
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='contHours']")).isEmpty();
         if (elementoExistente) {
             System.out.println("paso aqui 1");
             click(buttonConfirmar);
@@ -266,6 +273,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void registrarVenta() {
         revisarModalError(driver());
+        UtilWeb.waitForSeconds(10);
         esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         click(btnRegistrarVenta);
     }
@@ -296,7 +304,7 @@ public class AltaFijaTiendaPage extends WebBase {
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
         boolean elementoExistenteDias;
-        elementoExistenteDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).size() != 0;
+        elementoExistenteDias = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).isEmpty();
         if (elementoExistenteDias) {
             System.out.println("paso aqui 1");
             List<WebElement> listaDias = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']"));
@@ -305,7 +313,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
 
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//div[@class='contHours']")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='contHours']")).isEmpty();
         if (elementoExistente) {
             System.out.println("paso aqui 1");
             List<WebElement> listaHorario = driver().findElements(By.xpath("(//div[@class='contHours'])/div"));

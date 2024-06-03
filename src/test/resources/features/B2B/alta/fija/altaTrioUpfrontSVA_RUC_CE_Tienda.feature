@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 12/03/2024
 
-@BERSERKERS @DoneDevOps @PI18_SP3 @@RegresionLegacyUpfront @AltaTrioUpfront
+@BERSERKERS @DoneDevOps @PI18_SP3 @RegresionLegacyUpfront @AltaTrioUpfront
 Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representa legal CEX por canal Tienda
 
   @AltaTrioSVARucCETienda

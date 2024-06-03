@@ -219,6 +219,7 @@ public class Addons {
 */
         boolean bExisteModal = false;
         boolean bReintentar = true;
+        boolean isModal= false;
         int contador = 0;
         int reintentosMax = 5;
         int segundosEspera = 15;
@@ -230,10 +231,12 @@ public class Addons {
             boolean modal2SinError = false;
             UtilWeb.waitForSeconds(3);
             LOGGER.log(Level.INFO, "revisarModalError #" + (contador + 1) + "/" + reintentosMax);
-            bExisteModal = driver.findElements(By.xpath("//mat-dialog-actions")).size() != 0;
-            System.out.println();
+            bExisteModal = !driver.findElements(By.xpath("//mat-dialog-actions")).isEmpty();
+            isModal = !driver.findElements(By.xpath("//app-card-plan-error//*[contains(text(),'Reintentar')]")).isEmpty();
             LOGGER.log(Level.INFO, "bExisteModal(Reintentar / Entendido): " + bExisteModal);
-            if (bExisteModal) {
+            LOGGER.log(Level.INFO, "isModal: " + isModal);
+
+            if (bExisteModal || isModal) {
                 UtilWeb.waitForSeconds(segundosEspera * contador);
                 WebElement btnReintentar;
                 WebElement btnEntendido;
@@ -241,7 +244,7 @@ public class Addons {
                 try {
                     //Busca un boton para Reintentar
                     LOGGER.log(Level.INFO, "Buscando - btn Reintentar");
-                    List<WebElement> btnsReintentar= driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]"));
+                    List<WebElement> btnsReintentar= driver.findElements(By.xpath("//*[contains(text(),'Reintentar')]"));
                     btnReintentar=btnsReintentar.get(btnsReintentar.size()-1);
                     if (btnReintentar.isEnabled()) {
                         btnReintentar.click();
@@ -258,7 +261,7 @@ public class Addons {
                 try {
                     //Busca un boton para Entendido
                     LOGGER.log(Level.INFO, "Buscando - btn Entendido");
-                    List<WebElement> btnsEntendido = driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]"));
+                    List<WebElement> btnsEntendido = driver.findElements(By.xpath("//*[contains(text(),'Entendido')]"));
                     btnEntendido=btnsEntendido.get(btnsEntendido.size()-1);
                     if (btnEntendido.isEnabled()) {
                         btnEntendido.click();
@@ -284,7 +287,7 @@ public class Addons {
 
             //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
             //Mostrando un boton: Continuar
-            bExisteModal = driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]")).size() != 0;
+            bExisteModal = !driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]")).isEmpty();
             LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + bExisteModal);
             if (bExisteModal) {
                 WebElement btnContinuar;

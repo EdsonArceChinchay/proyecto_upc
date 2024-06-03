@@ -5,6 +5,7 @@ import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
+import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -25,6 +26,9 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Autowired
     private Cliente cliente;
+
+    @Autowired
+    private AltaFijaTiendaStep altaFijaTiendaStep;
 
     private Scenario scenario;
 
@@ -241,7 +245,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("doy clic en Registrar venta")
     public void doyClicEnRegistrarVenta() {
-        altaFijaMovilRegistroStep.clicRegistrarVenta();
+        altaFijaTiendaStep.clickRegistrarVenta();
     }
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
@@ -272,7 +276,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicEnAgregarSVAMT();
         altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
         altaFijaMovilRegistroStep.clicGuardarCambios();
-
     }
 
     @Y("doy click en el boton confirmar validacion")

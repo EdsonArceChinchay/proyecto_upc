@@ -619,7 +619,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean esNuevoCliente() {
-      return nombreClienteUserData.getText().length() <= 8;
+        return nombreClienteUserData.getText().length() <= 8;
 
     }
 
@@ -868,11 +868,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicRegistrarVenta() {
         revisarModalError(driver());
+        UtilWeb.waitForSeconds(10);
         WebElement btnRegistrarVenta = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
         esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
         JavascriptExecutor jse = (JavascriptExecutor) driver();
         jse.executeScript("window.scrollBy(0,250)");
-        UtilWeb.waitForSeconds(5);
         click(btnRegistrarVenta);
     }
 
@@ -881,11 +881,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
-        //esperaProgresiva(driver(), 3, 5, cicloFacturacion);
-
+        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         waitUntilElementIsVisible(scrollorden, 70);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
-        //esperaProgresiva(driver(), 3, 5, cicloFacturacion);
+        esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
 
         //js().scrollElementTop(cicloFacturacion);
@@ -933,7 +932,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        int contador = 0, i=0;
+        int contador = 0, i = 0;
         int reintentosMax = 3;
         int segundosEspera = 5;
         boolean bOK = false;
@@ -943,10 +942,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.waitForSeconds(segundosEspera * contador);
             try {
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
                 if (elementoExistente) {
                     click(btnCerrar);
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error "+ i);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error " + i);
                     UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
