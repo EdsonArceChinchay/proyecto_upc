@@ -707,7 +707,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void clicConfirmarCliente() {
         UtilWeb.waitForSeconds(5);
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//button[contains(text(),'Confirmar')]")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//button[contains(text(),'Confirmar')]")).isEmpty();
         if (elementoExistente) {
             WebElement element = find().getElementByXPath("//button[contains(text(),'Confirmar')]");
             esperaProgresiva(driver(), 5, 3, element);
@@ -980,11 +980,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
     }
 
-    public String getNumeroSolicitud() {
-        String codeSale = extraerNumeroSolicitud(textoContratoCliente.getText());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codeSale);
-        return codeSale;
-    }
 
     public String getTextoSolicitud() {
         int contadorReintentos = 0;
@@ -1011,7 +1006,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return textoContratoCliente.getText();
     }
 
-    public List<String> getCodigoOrden() {
+    public List<String> getOrderCode() {
         List<String> listCodigosDeOrdenes = new ArrayList<String>();
         listCodigoOrden.forEach((orden) -> {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Orden: " + orden.getText() + "A");
@@ -1020,7 +1015,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes;
     }
 
-    public String getCodigoVenta() throws JSONException {
+    public String getSalesCode() throws JSONException {
     /*    String codigoVenta = "";
         WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
         boolean elementoExistente = txtCodigoVenta.isDisplayed();
@@ -1033,10 +1028,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
         return codigoVenta;
         */
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
 
         String codigoVenta = getValueItemLocalStorage(driver(), "saleObject", "salesId");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta);
-
         return codigoVenta.trim();
 
     }
