@@ -72,4 +72,4 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | userNameDLC| passDLC   | Bienvenid@ | CE            | 156740000 | 15           | 1501     | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.com |
+      | usuario externo | userNameDLC| passDLC  | Bienvenid@ | CE            | 156710000 | 15           | 1501     | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.com |

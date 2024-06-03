@@ -887,7 +887,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, cicloFacturacion);
         esperaProgresivaLoading(driver(), 3, 5, "loadingCard");
 
-        //js().scrollElementTop(cicloFacturacion);
+        js().scrollElementTop(cicloFacturacion);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
         boolean existe = false;
