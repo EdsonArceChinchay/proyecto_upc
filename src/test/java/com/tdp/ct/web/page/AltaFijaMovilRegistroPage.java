@@ -1016,7 +1016,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
         String salesCode = null;
-        salesCode=getSalesCodeLocaStorage();
+        salesCode=getSalesCodeSessionStorage();
 
         if (salesCode == null) {
             salesCode=getSalesCodeContract();
@@ -1045,7 +1045,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
-    public String getSalesCodeLocaStorage(){
+    public String getSalesCodeSessionStorage(){
         String salesCode = null;
 
         try {
