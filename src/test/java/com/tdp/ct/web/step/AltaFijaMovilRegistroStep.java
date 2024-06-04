@@ -315,7 +315,7 @@ public class AltaFijaMovilRegistroStep {
         }else{
             System.out.println("ERROR - Codigo de Venta - Null");
         }
-        return codigoVenta==null? "":codigoVenta;
+        return codigoVenta==null? " ":codigoVenta;
     }
 
 }

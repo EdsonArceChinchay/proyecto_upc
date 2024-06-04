@@ -984,20 +984,17 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public String getTextoSolicitud() {
         int contadorReintentos = 0;
         do {
-            // Esperar antes de intentar obtener el texto
             UtilWeb.waitForSeconds(5);
-            // Obtener el texto del elemento
             String texto = textoContratoCliente.getText();
 
-            // Verificar si el texto no está vacío o en blanco
             if (!texto.trim().isEmpty()) {
                 System.out.println("Texto del contrato del cliente: " + texto);
-                break; // Salir del bucle si el texto no está vacío
+                break;
             } else {
                 System.out.println("Texto del contrato del cliente está vacío. Reintentando...");
             }
             contadorReintentos++;
-        } while (contadorReintentos < 4);  // Establecer el número máximo de reintentos
+        } while (contadorReintentos < 4);
 
         if (contadorReintentos == 4) {
             System.out.println("Se alcanzó el número máximo de reintentos. No se pudo obtener un texto no vacío.");
@@ -1016,23 +1013,24 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public String getSalesCode() throws JSONException {
-    /*    String codigoVenta = "";
-        WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
-        boolean elementoExistente = txtCodigoVenta.isDisplayed();
-        if (elementoExistente) {
-            codigoVenta = txtCodigoVenta.getText().trim();
-            if (codigoVenta.length()>13){
-                codigoVenta= codigoVenta.split(": ")[1];
-            }
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta );
-        }
-        return codigoVenta;
-        */
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
 
-        String codigoVenta = getValueItemLocalStorage(driver(), "saleObject", "salesId");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + codigoVenta);
-        return codigoVenta.trim();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
+        String salesCode = null;
+        salesCode=getSalesCodeLocaStorage();
+
+        if (salesCode == null) {
+            salesCode=getSalesCodeContract();
+
+        }
+         if(salesCode == null) {
+             salesCode= getSalesCodeFinalSales();
+        }
+
+        salesCode = (salesCode == null) ? null : salesCode.trim();
+
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + salesCode);
+
+        return salesCode;
 
     }
 
@@ -1046,5 +1044,50 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
     }
 
+
+    public String getSalesCodeLocaStorage(){
+        String salesCode = null;
+
+        try {
+            salesCode = getValueItemLocalStorage(driver(), "saleObject", "salesId");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of local storage: " + salesCode);
+
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Error - Get sales code of local storage " + e.getMessage());
+
+        }
+
+        return salesCode;
+    }
+
+    public String getSalesCodeContract(){
+        String salesCode = null;
+        try {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Get Text contract");
+            salesCode = "FE-" + getTextoSolicitud().trim().split("FE-", 10)[2];
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of text contract: " + salesCode);
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Get sales code of contract " + e.getMessage());
+        }
+        return salesCode;
+    }
+
+    public String getSalesCodeFinalSales(){
+        String salesCode = null;
+        try {
+            WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
+            boolean elementoExistente = txtCodigoVenta.isDisplayed();
+            if (elementoExistente) {
+                salesCode = txtCodigoVenta.getText().trim();
+                if (salesCode.length() > 13) {
+                    salesCode = salesCode.split(": ")[1];
+                }
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Get sales code of final sales: " + salesCode);
+            }
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Get sales code of final sales" + e.getMessage());
+        }
+        return salesCode;
+    }
 
 }
