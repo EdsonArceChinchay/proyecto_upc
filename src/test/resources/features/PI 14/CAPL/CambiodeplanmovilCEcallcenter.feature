@@ -33,7 +33,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el boton Ver detalle del servicio "920956624"
+    Y        selecciono el boton Ver detalle del servicio "920955629"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -60,6 +60,6 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042465079 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464930 |
 #
 
