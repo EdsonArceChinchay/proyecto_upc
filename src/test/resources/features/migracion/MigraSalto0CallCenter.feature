@@ -34,7 +34,14 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        doy click en el boton consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton "Confirmar direccion"
+    #Y        doy click en el boton "Confirmar direccion"
+    Entonces me muestra la pantalla para verificar la direccion
+    #Y        presiono el boton Confirmar direccion
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "casa"
+    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy clic en el boton "entendido"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la opcion Migrar a fibra
     Cuando   doy clic en iniciar registro
@@ -59,4 +66,4 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1234578003 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464946 |
