@@ -34,16 +34,37 @@ public class CaptchaPage extends WebBase {
     @FindBy(id = "captcha")
     protected WebElement imgCaptcha;
 
+    @FindBy(xpath = "//a[contains(@onclick,'generate')]")
+    protected  WebElement btnUpdateCaptcha;
+
     //public WebElement imgCaptcha;
 
     public void obtenerCaptcha() throws IOException {
         UtilWeb.waitForSeconds(2);
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Escribiendo captcha...");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get captcha...");
 
         WebElement captchaElement = driver().findElement(By.id("captcha"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "captchaElement..."+captchaElement.isDisplayed());
 
-        File captcha = captchaElement.getScreenshotAs(OutputType.FILE);
+        if(!captchaElement.isDisplayed())
+       {
+           updateCaptcha();
+       }
+        File captcha = null;
+        try {
+            captcha = captchaElement.getScreenshotAs(OutputType.FILE);
+            if (captcha==null){
+                updateCaptcha();
+            }
+
+        }
+        catch (Exception e)
+        {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Exception"+e.getMessage());
+
+        }
+
 
         String path = System.getProperty("user.dir") + "/captcha/captcha.png";
 
@@ -61,6 +82,8 @@ public class CaptchaPage extends WebBase {
     }
 
     public void decodificarCaptcha() throws InterruptedException {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Decoding captcha...");
+
         DebugHelper.setVerboseMode(true);
 
         ImageToText api = new ImageToText();
@@ -84,8 +107,15 @@ public class CaptchaPage extends WebBase {
     }
 
     public void escribirCaptcha(String sCaptcha) {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type captcha...");
         click(inputCaptcha);
         type(inputCaptcha, sCaptcha);
 
+    }
+
+    public void updateCaptcha(){
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Update captcha...");
+        btnUpdateCaptcha.click();
+        UtilWeb.waitForSeconds(5);
     }
 }

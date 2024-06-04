@@ -25,7 +25,7 @@
      Y        ingreso el password "<password>"
      E        ingreso el captcha
      Y        presiono el boton Continuar hacia el home
-     Y         valido el login exitoso mediante el mensaje "<msgHome>"
+     Y        valido el login exitoso mediante el mensaje "<msgHome>"
    # Y        valido que se presente la tienda "<tiendaAsesor>"
      Cuando   selecciono el tipo de documento "<tipoDocumento>"
      Y        ingreso el documento "<documento>"
@@ -52,7 +52,6 @@
      Y        doy clic para validar contrato hogar
      Y        me muestra en pantalla el contrato solicitado
      Y        imprimo el texto del contrato solicitado
-     Y        guardo el numero de solicitud
      Cuando   doy clic en si acepto
      Y        doy click en el boton de continuar
      Y        presiono el boton Registrar venta

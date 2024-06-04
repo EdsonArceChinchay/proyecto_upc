@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: NA
 ##ENCARGADO:
-##FECMOD: 13/04/2024
+##FECMOD: 25/05/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
 Característica: AT-DT053_Login - FE DITO WEB

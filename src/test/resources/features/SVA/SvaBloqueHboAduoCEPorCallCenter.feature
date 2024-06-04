@@ -14,7 +14,6 @@
 ##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @svaBloqueHboDuoPorCallCenter @AltaSVA
-
 Característica: AT-DT107_Sva bloque HBO a duo por Call Center
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 

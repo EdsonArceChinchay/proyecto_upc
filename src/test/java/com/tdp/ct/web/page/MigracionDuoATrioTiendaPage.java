@@ -199,13 +199,11 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         if(botonEsperado!=null){
             revisarModalError(driver());
             esperaProgresiva(driver(), 5, 5,botonEsperado);
-            revisarModalError(driver());
             js().scrollElementTop(botonEsperado);
             botonEsperado.click();
         }else{
            System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
         }
-        UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
     }
 
