@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal Tiendas
 
-  @CAPLprepadoApostpago
+  @CaplMasCaeqPrepagoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -35,7 +35,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        selecciono el plan movil "Postpago"
     Y        selecciono la opcion "Plan Ilimitado Mi Movistar"
     Y        doy click en el boton seleccionar oferta
-    Y        selecciono añadir equipos
+    Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName                               |
       | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
@@ -49,7 +49,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
