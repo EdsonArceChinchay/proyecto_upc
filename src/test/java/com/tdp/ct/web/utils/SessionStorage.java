@@ -19,13 +19,13 @@ public class SessionStorage {
         return SessionStorage.getItem(item);
     }
 
-    public static String getValueItemLocalStorage(WebDriver driver, String primaryKey, String Key) throws JSONException {
+    public static String getValueItemSessionStorage(WebDriver driver, String primaryKey, String Key) throws JSONException {
         String itemLocalStorage = getItemSessionStorage(driver, primaryKey);
         JSONObject jsonObject = new JSONObject(itemLocalStorage);
         return jsonObject.getString(Key);
     }
 
-    public static String setValueSessionLocalStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) throws JSONException {
+    public static String setValueSessionStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) throws JSONException {
         String itemLocalStorage = getItemSessionStorage(driver, primaryKey);
         JSONObject jsonObject = new JSONObject(itemLocalStorage);
         JSONArray parentObject1 = modifiedJson.getJSONArray(key);

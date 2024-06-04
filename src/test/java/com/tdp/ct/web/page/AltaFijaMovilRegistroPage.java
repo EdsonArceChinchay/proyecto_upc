@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
 import static com.tdp.ct.web.utils.LocalStorage.getValueItemLocalStorage;
+import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "(//*[@class=\"_close\"])[1]")
@@ -1049,7 +1050,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         String salesCode = null;
 
         try {
-            salesCode = getValueItemLocalStorage(driver(), "saleObject", "salesId");
+            salesCode = getValueItemSessionStorage(driver(), "saleObject", "salesId");
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of local storage: " + salesCode);
 
         } catch (Exception e) {
