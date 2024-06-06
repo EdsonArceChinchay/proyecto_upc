@@ -25,7 +25,7 @@ public class SessionStorage {
         return jsonObject.getString(Key);
     }
 
-    public static String setValueSessionStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) throws JSONException {
+    public static String setValueItemSessionStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) throws JSONException {
         String itemLocalStorage = getItemSessionStorage(driver, primaryKey);
         JSONObject jsonObject = new JSONObject(itemLocalStorage);
         JSONArray parentObject1 = modifiedJson.getJSONArray(key);

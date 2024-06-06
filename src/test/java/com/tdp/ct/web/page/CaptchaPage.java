@@ -37,9 +37,7 @@ public class CaptchaPage extends WebBase {
     @FindBy(xpath = "//a[contains(@onclick,'generate')]")
     protected  WebElement btnUpdateCaptcha;
 
-    //public WebElement imgCaptcha;
-
-    public void obtenerCaptcha() throws IOException {
+    public void getCaptcha() throws IOException {
         UtilWeb.waitForSeconds(2);
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Get captcha...");
@@ -56,19 +54,15 @@ public class CaptchaPage extends WebBase {
             captcha = captchaElement.getScreenshotAs(OutputType.FILE);
             if (captcha==null){
                 updateCaptcha();
+                captcha = captchaElement.getScreenshotAs(OutputType.FILE);
             }
-
         }
         catch (Exception e)
         {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Exception"+e.getMessage());
-
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Exception "+e.getMessage());
         }
 
-
         String path = System.getProperty("user.dir") + "/captcha/captcha.png";
-
-        //String path = "src/test/resources/captcha/captcha.png";
 
         try {
             // Copia el archivo de la captura de pantalla al destino especificado, sobrescribiendo si existe
@@ -81,7 +75,7 @@ public class CaptchaPage extends WebBase {
 
     }
 
-    public void decodificarCaptcha() throws InterruptedException {
+    public void decodeCaptcha() throws InterruptedException {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Decoding captcha...");
 
         DebugHelper.setVerboseMode(true);
@@ -103,10 +97,10 @@ public class CaptchaPage extends WebBase {
             DebugHelper.out("Result: " + api.getTaskSolution().getText(), DebugHelper.Type.SUCCESS);
             CAPTCHA = api.getTaskSolution().getText();
         }
-        escribirCaptcha(CAPTCHA);
+        typeCaptcha(CAPTCHA);
     }
 
-    public void escribirCaptcha(String sCaptcha) {
+    public void typeCaptcha(String sCaptcha) {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Type captcha...");
         click(inputCaptcha);
         type(inputCaptcha, sCaptcha);
