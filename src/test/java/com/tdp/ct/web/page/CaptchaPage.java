@@ -38,7 +38,7 @@ public class CaptchaPage extends WebBase {
     @FindBy(xpath = "//a[contains(@onclick,'generate')]")
     protected WebElement btnUpdateCaptcha;
 
-    public void getCaptcha() throws IOException, InterruptedException {
+    public void getCaptcha() throws InterruptedException {
 
         String path = System.getProperty("user.dir") + File.separator + "captcha";
 
@@ -71,7 +71,6 @@ public class CaptchaPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Screenshot save in: " + path);
         } catch (IOException e) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "¡Error save Screenshot! " + e.getMessage());
-
         }
 
         decodeCaptcha(path);

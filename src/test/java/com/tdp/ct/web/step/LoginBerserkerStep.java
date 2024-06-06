@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.Objects;
 
 @Component
 public class LoginBerserkerStep {
@@ -103,10 +102,7 @@ public class LoginBerserkerStep {
     public void ingresoCaptcha() throws IOException, InterruptedException {
         UtilWeb.waitForSeconds(4);
         page.captchaPage().getCaptcha();
-       // page.captchaPage().decodeCaptcha();
-        UtilWeb.waitForSeconds(4);
     }
-
 
     public void validarNomPlan(String nomPlan) {
         page.loginBerserkerPage().validarNomPlan(nomPlan);
@@ -118,12 +114,10 @@ public class LoginBerserkerStep {
 
     public void validarVelocidadInternet(String mbpsBB) {
         page.loginBerserkerPage().validarVelocidadInternet(mbpsBB);
-
     }
 
     public void validarPrecioDescuento(String precDesc) {
         page.loginBerserkerPage().validarPrecioDescuento(precDesc);
-
     }
 
     public void validarnombreSVAcontenido(String nomsvaTV) {
