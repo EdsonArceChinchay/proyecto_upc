@@ -34,16 +34,9 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Cuando   doy click en ver detalle
     Y        doy click en el boton Agregar sva fija
     Y         seleccionamos agregar Bloque HBO
-    #Y        elegimos sva
     Cuando   doy clic a iniciar registro
-#    Y        valido que me encuentre en la pantalla agendamiento
-#    Y        ingreso los datos de agendamiento
-#    Y        presiono el boton confirmar agendamiento
-#    Y        ingreso un correo electronico "<correo>"
-#    Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta

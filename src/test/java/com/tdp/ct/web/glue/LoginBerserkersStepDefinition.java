@@ -174,10 +174,6 @@ public class LoginBerserkersStepDefinition {
 
     @E("ingreso el captcha")
     public void ingresoElCaptcha() throws IOException, InterruptedException {
-//        if (Addons.esEntornoProductivo()) {
             loginBerserkerStep.ingresoCaptcha();
-//        } else {
-//            System.out.println("Skip. Certificacion no requiere captcha");
-//        }
     }
 }
