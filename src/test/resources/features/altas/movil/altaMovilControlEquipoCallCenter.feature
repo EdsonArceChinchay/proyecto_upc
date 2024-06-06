@@ -13,7 +13,7 @@
 ##ENCARGADO: Edson Arce
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @AltaMovil
+@BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por canal Call Center con delivery regular
 
   @AltaControlEquipoCallCenter @MVP06 @Global

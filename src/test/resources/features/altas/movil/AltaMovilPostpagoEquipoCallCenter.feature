@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovil
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovilEquipo
 Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Call Center
   sin cobertura por canal Call Center
 

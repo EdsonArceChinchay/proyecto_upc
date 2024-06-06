@@ -17,7 +17,7 @@
 Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
 
   @AltaMovilFinaciamientoTienda_CE
-  Esquema del escenario: Realizar una alta movil Control
+  Esquema del escenario: Alta Movil Control con documento CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -65,8 +65,3 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |
-
-#    | usuario interno | | | Bienvenid@ | CE            | 1100000255 | Postpago  |
-#      | usuario interno | | | Bienvenid@ | CE            | 1100000256 | Postpago  |
-#   | usuario interno | | | Bienvenid@ | CE            | 1100000259 | Postpago  |
-#      | usuario interno | | | Bienvenid@ | CE            | 1100000270 | Postpago  |
