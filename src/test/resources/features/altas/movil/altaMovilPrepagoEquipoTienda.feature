@@ -12,11 +12,10 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovilEquipo
 Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
 
-  @AltaMovil_Equipo_tienda_1 @Sanity28
+  @AltaMovil_Equipo_tienda @Sanity28
   Esquema del escenario: Alta Movil con Equipo con canal Tienda con documento CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -53,8 +52,8 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion |
-      | 12/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | CASA      |
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
+      | 20/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | JR JULIO CESAR TELLO 469 |
     Entonces doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

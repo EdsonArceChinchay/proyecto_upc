@@ -99,7 +99,7 @@ public class LoginBerserkerStep {
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void ingresoCaptcha() throws IOException, InterruptedException {
+    public void ingresoCaptcha() throws InterruptedException {
         UtilWeb.waitForSeconds(4);
         page.captchaPage().getCaptcha();
     }

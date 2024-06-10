@@ -1,18 +1,14 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.CaptchaBase.ImageToText;
-import com.tdp.ct.web.CaptchaBase.Util;
 import com.tdp.ct.web.Helper.DebugHelper;
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.File;
@@ -20,20 +16,13 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
 
 public class CaptchaPage extends WebBase {
 
     String CAPTCHA = null;
-    public WebElement txtCaptcha;
-
-    private ManageScenario scenario;
 
     @FindBy(xpath = "//div[@class='contentFake50Percent']/input[@class='textInput']")
     protected WebElement inputCaptcha;
-
-    @FindBy(id = "captcha")
-    protected WebElement imgCaptcha;
 
     @FindBy(xpath = "//a[contains(@onclick,'generate')]")
     protected WebElement btnUpdateCaptcha;
@@ -54,11 +43,14 @@ public class CaptchaPage extends WebBase {
 
         int retries = 0;
 
-        while (!captchaElement.isDisplayed() || retries == 5) {
+        while (!captchaElement.isDisplayed() ) {
             updateCaptcha();
             UtilWeb.waitForSeconds(retries);
             UtilWeb.logger(this.getClass()).log(Level.INFO, "captchaElement..." + captchaElement.isDisplayed() + " - retries: " + (retries + 1));
             retries++;
+            if (retries==5){
+                break;
+            }
         }
 
         try {
@@ -100,7 +92,13 @@ public class CaptchaPage extends WebBase {
             DebugHelper.out("Result: " + api.getTaskSolution().getText(), DebugHelper.Type.SUCCESS);
             CAPTCHA = api.getTaskSolution().getText();
         }
-        typeCaptcha(CAPTCHA);
+
+        if (CAPTCHA.length() == 4) {
+            typeCaptcha(CAPTCHA);
+        } else {
+            getCaptcha();
+        }
+
     }
 
     public void typeCaptcha(String sCaptcha) {
