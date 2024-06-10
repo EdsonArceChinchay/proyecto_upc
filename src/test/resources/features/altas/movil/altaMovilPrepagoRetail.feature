@@ -1,23 +1,23 @@
 #language:es
-##CREADOR: Angel Medina
+##CREADOR:
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: ALTA
+##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT031
-##GDAP: GDAP-959
-##SPRINT CREADO:
-##FRECUENCIA: DIARIO
+##CODIGO: AT-DT096
+##GDAP: GDAP-588
+##SPRINT CREADO: PI14
+##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO: Angel Medina
-##FECMOD: 09/04/2024
+##ENCARGADO:
+##FECMOD: 06/06/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
-Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
+@BERSERKERS @AltaMovil
+Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
 
-  @MVP_Alta_movil_SoloSim_CanalRetail @MVP01 @Global
-  Esquema del escenario: Alta Movil Postpago con documento CE por Canal Retail
+  @AltaMovilPrepagoRetail
+  Esquema del escenario: Alta movil prepago combo por retail con nuevo cliente con documento CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,33 +31,31 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        doy click en el boton consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres  | apellidos      | genero   |
-      | Teresita | Collasos Lopez | femenino |
+      | nombres | apellidos     | genero    |
+      | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "Postpago" que desea
+    Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono el boton de eleccion de planes
-    Y        seleccion oferta Postpago
+    Y        selecciono la oferta de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono el boton de iniciar registro
-    Y        ingreso un correo electronico "tester@tester.com"
-    Y        ingreso nuevamente el correo electronico "tester@tester.com"
+    Y        ingreso un correo electronico "prueba@prueba.com"
+    Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/1980 | Casado      | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        presiono continuar
-  #  Y        presiono el boton descargar contrato
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 12094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464887 | PLAN PREPAGO | Preplan    |

@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 16/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
 Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por canal Call Center
 
   @AltaMovilPrepagoEquipoCallCenter

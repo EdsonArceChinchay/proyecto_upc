@@ -16,6 +16,8 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
 import static com.tdp.ct.web.utils.LocalStorage.*;
+import static com.tdp.ct.web.utils.SessionStorage.getItemSessionStorage;
+import static com.tdp.ct.web.utils.SessionStorage.setValueItemSessionStorage;
 
 public class PortabilidadPage extends WebBase {
 
@@ -108,11 +110,11 @@ public class PortabilidadPage extends WebBase {
         String key = "PortaDirecta";
         String newValue = "A";
 
-        String jsonStr = getItemLocalStorage(driver(), primaryKey);
+        String jsonStr = getItemSessionStorage(driver(), primaryKey);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Before modified localStorage" + jsonStr);
         JSONObject jsonObject = modifyJsonValue(jsonStr, key, newValue);
-        setValueItemLocalStorage(driver(), primaryKey, secondaryKey, jsonObject);
-        jsonStr = getItemLocalStorage(driver(), primaryKey);
+        setValueItemSessionStorage(driver(), primaryKey, secondaryKey, jsonObject);
+        jsonStr = getItemSessionStorage(driver(), primaryKey);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "After modified localStorage" + jsonStr);
 
     }

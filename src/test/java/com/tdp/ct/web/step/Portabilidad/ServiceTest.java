@@ -159,7 +159,6 @@ public class ServiceTest {
 
 
     public String getCodeToken(DataTable dataTable, String codigoVenta) throws IOException {
-//String typeDocument, String numberDocument, String numberPhone
 
         String idTransaction = getIdTransactionOfSaleslead(codigoVenta);
         var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");

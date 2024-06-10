@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 26/04/2024
 
-@BERSERKERS @DoneDevOps
+@BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal Tienda
 
   @AltaMovilcontrolConEquipo

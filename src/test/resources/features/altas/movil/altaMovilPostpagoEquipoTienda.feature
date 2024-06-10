@@ -13,9 +13,9 @@
 ##ENCARGADO:
 ##FECMOD: 04/04/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
-Característica: Alta Movil postpago con equipo con documento CE por canal Call Center
+Característica: Alta Movil postpago con equipo con documento CE por canal Tienda
 
-  @AltaMovilPostpagoEquipoCallCenter
+  @AltaMovilPostpagoEquipoTienda
   Esquema del escenario: Alta movil Prepago + Equipo por call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -49,27 +49,13 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Call 
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        selecciono el boton de iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
-    Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
-    Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 01/10/1990 | Casado      | Albania      |
-    Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Y        selecciono completar los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
+      | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.Objects;
 
 @Component
 public class LoginBerserkerStep {
@@ -100,17 +99,10 @@ public class LoginBerserkerStep {
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void ingresoCaptcha() throws IOException, InterruptedException {
-        Thread.sleep(2000);
+    public void ingresoCaptcha() throws InterruptedException {
         UtilWeb.waitForSeconds(4);
-        page.captchaPage().obtenerCaptcha();
-        UtilWeb.waitForSeconds(4);
-
-        page.captchaPage().decodificarCaptcha();
-        UtilWeb.waitForSeconds(4);
-
+        page.captchaPage().getCaptcha();
     }
-
 
     public void validarNomPlan(String nomPlan) {
         page.loginBerserkerPage().validarNomPlan(nomPlan);
@@ -122,12 +114,10 @@ public class LoginBerserkerStep {
 
     public void validarVelocidadInternet(String mbpsBB) {
         page.loginBerserkerPage().validarVelocidadInternet(mbpsBB);
-
     }
 
     public void validarPrecioDescuento(String precDesc) {
         page.loginBerserkerPage().validarPrecioDescuento(precDesc);
-
     }
 
     public void validarnombreSVAcontenido(String nomsvaTV) {
