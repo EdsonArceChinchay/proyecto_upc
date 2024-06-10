@@ -1,23 +1,24 @@
-#language: es
-
+#language:es
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO:
-##GDAP: GDAP-1291
-##SPRINT CREADO: PI14
+##CODIGO: AT-DT072
+##GDAP: GDAP-1106
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: Actualizacion fija con ruc 10 canal Tienda
+##ENCARGADO: Edwin De la Cruz
+##FECMOD: 01/09/2023
 
-  @ActualizacionRuc10Tienda
-  Esquema del escenario: Actualizacion fija con ruc 10 canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
+
+Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
+
+  @migraDuoDuoActualizarDireccionTiendas
+  Esquema del escenario: Migracion de Duo a duo - Actualizar direccion, con CE  sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -29,24 +30,24 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>" y actualizo
-    Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la direccion donde sera la instalacion "JULIO CESAR TELLO,469"
+    Y        ingreso la referencia de la direccion "Inkafarma"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
+    Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
-    Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        ingreso un correo electronico "prueba@prueba.com"
+    Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -56,5 +57,5 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | tipoUsuario     | userName  | password     | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan               |
+      | usuario externo | userNameST | passST | Bienvenid@ | CE            | 1042465127 | tester@tester.com | Duo           | HD RA M23 200 MBPS |

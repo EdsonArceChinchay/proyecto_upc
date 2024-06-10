@@ -70,5 +70,5 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                                | correo         |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1632547925 | Trío HD 600 Mbps RV + Ilimitado 135 Gb RV | test@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan | correo         |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1632547925 | Trio       | test@gmail.com |

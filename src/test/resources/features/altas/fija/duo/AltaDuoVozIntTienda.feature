@@ -4,20 +4,20 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT018
-##GDAP: GDAP-591
-##SPRINT CREADO: PI12_SP5
+##CODIGO:
+##GDAP: GDAP-1384
+##SPRINT CREADO: PI15_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 13/02/2024
+##ENCARGADO: Patricia Cabello Huayta
+##FECMOD: 30/05/2023
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija @AltaTrioUpfront
-Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por Canal Call Center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI15
+Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
 
-  @AltaTrioConBloqueHdUpfrontCallCenter
-  Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
+  @AltaDuoBByVozFTTHCanalTiendas
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -26,14 +26,12 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos    | genero    |
-      | Juan    | Lopez Garcia | masculino |
+      | nombres | apellidos | genero    |
+      | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -43,41 +41,34 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        ingreso la informacion del lugar para la instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | A  | EDIFICIO     | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
     Y        presiono el boton consultar cobertura
-    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        doy click en Agregar Sva
-    Y        seleccionamos agregar Bloque HBO
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        ingreso el call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
+    Y        ingreso telefono de contacto
+    Y        presiono el boton Confirmar agendamiento
+    Y        ingreso email "prueba@gmail.com" y lo repito
     Y        doy click en datos del cliente
     Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Albania      |
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 12/12/1992 | Albania      | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        presiono la opcion validar contrato
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento   | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10003901234 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  | ODELIA      | CIPRIANO    | EL AGUSTINO |
-
-
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

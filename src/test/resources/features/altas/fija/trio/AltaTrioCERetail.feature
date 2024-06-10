@@ -17,7 +17,7 @@
 Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
 
   @AltaTrioRetail
-  Esquema del escenario: Alta fija por tienda con C sin productos asociados sin biometria
+  Esquema del escenario: Alta Trio con documento CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

@@ -14,7 +14,6 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija @AltaTrio
-
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
   @AltaSVABloqueHBO

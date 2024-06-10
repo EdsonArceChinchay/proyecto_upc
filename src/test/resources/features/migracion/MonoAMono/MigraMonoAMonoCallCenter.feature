@@ -1,23 +1,23 @@
-#language: es
-
+#language:es
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO:
-##GDAP: GDAP-1291
-##SPRINT CREADO: PI14
+##CODIGO: AT-DT073
+##GDAP: GDAP-722
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: Actualizacion fija con ruc 10 canal Tienda
+##FECMOD: 10/06/2024
 
-  @ActualizacionRuc10Tienda
-  Esquema del escenario: Actualizacion fija con ruc 10 canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11
+Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
+
+  @MigracionMonoMonoCallCenter
+  Esquema del escenario: Migracion de Mono a Mono
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,26 +25,24 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>" y actualizo
-    Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
+    #Y        verifico la direccion "JR,POMALCA,290,SAN MIGUEL" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el plan "<plan>"
+    Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
+    #Y        valido que me encuentre en la pantalla agendamiento
+    #Y        ingreso los datos de agendamiento
+    #Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -52,9 +50,8 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento    | correo            | tipoPlanHogar | plan                 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 302010065403 | tester@tester.com | Mono          | INTERNET MOVISTAR RA |
