@@ -20,13 +20,13 @@ public class PaquetizacionDuoMasMonoPorCallCenterPage extends WebBase {
 
     public void clickMonoYDuo(String mono , String duo) {
         UtilWeb.waitForSeconds(2);
-        WebElement btnDuo = find().getElementByXPath("//*[@class='card']//*[contains(text(),'"+duo.trim()+"')]");
+        WebElement btnDuo = find().getElementByXPath("//*[contains(text(),'"+duo.trim()+"')]");
         waitUntilElementIsVisible(btnDuo,30);
         js().scrollElementTop(btnDuo);
         click(btnDuo);
         System.out.println("click duo");
         UtilWeb.waitForSeconds(2);
-        WebElement btnMono = find().getElementByXPath("//*[@class='card']//*[contains(text(),'"+mono.trim()+"')]");
+        WebElement btnMono = find().getElementByXPath("//*[contains(text(),'"+mono.trim()+"')]");
         waitUntilElementIsVisible(btnMono,30);
         click(btnMono);
         System.out.println("click mono");

@@ -36,7 +36,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     #Y        selecciono el servicio mono "5010001527" y  el servicio duo "14340749" a paquetizar
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton continuar
-    Y        doy click en el boton "Confirmar direccion"
+    #Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
