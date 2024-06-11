@@ -21,9 +21,9 @@ public class BandejaBackOfficeStep {
     }
 
     @ScreenShotAfter
-    public void ingresoDocumento(String documento) {
-        page.bandejaBackOfficePage().ingresoDocumento(documento);
-        page.bandejaBackOfficePage().buscoDocumento();
+    public void typeDocument(String documento) {
+        page.bandejaBackOfficePage().typeDocument(documento);
+        page.bandejaBackOfficePage().clickButtonSearch();
     }
     @ScreenShotAfter
     public void seleccionoSolicitud(String numeroSolicitud){

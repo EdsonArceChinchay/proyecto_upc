@@ -14,7 +14,6 @@
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @RegresionLegacy
-
 Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en Canal Call Center
 
   @CompletaMovilCC
