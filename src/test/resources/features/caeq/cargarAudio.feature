@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 24/10/2024
+##FECMOD: 11/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
   Característica: Subir audio en canal Call Center
