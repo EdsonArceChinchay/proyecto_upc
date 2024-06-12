@@ -32,12 +32,12 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
-        bandejaBackOfficeStep.ingresoDocumento(documento);
+        bandejaBackOfficeStep.typeDocument(documento);
     }
 
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
-        bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
+        bandejaBackOfficeStep.typeDocument(cliente.getNumeroDocumento());
     }
 
     //    TODO: Buscar por tipo
@@ -49,11 +49,11 @@ public class BandejaBackOfficeStepDefinition {
             case "documento":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by document number");
                 String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : cliente.getNumeroDocumento();
-                bandejaBackOfficeStep.ingresoDocumento(numberCocument);
+                bandejaBackOfficeStep.typeDocument(numberCocument);
                 break;
             case "solicitud":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by request number");
-                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
+                bandejaBackOfficeStep.typeDocument(cliente.getNumeroSolicitud());
                 break;
         }
     }

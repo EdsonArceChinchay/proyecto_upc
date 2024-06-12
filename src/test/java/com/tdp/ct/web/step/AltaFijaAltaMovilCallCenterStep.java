@@ -81,10 +81,12 @@ public class AltaFijaAltaMovilCallCenterStep {
     public void ingresarTxtInstrucciones(String instrucciones) {
         page.altaFijaAltaMovilCallCenterPage().txtInstrucciones(instrucciones);
     }
+
     @ScreenShotAfter
     public void clickBtnConfirmarDelivery() {
         page.altaFijaAltaMovilCallCenterPage().btnConfirmarDelivery();
     }
+
     @ScreenShotBefore
     public void seleccionarTipoPago(String tipoPago) {
         page.altaFijaAltaMovilCallCenterPage().tipoPago(tipoPago);
@@ -119,12 +121,9 @@ public class AltaFijaAltaMovilCallCenterStep {
     }
 
     public void seleccionarListaOferta(String listaOferta) {
-        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta,scenario);
+        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta, scenario);
     }
 
-    public void clickSeleccionarOferta() {
-        page.altaFijaAltaMovilCallCenterPage().seleccionarOferta();
-    }
 
     public void clickIrAMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();

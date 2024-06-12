@@ -102,16 +102,13 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan                                | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Postpago | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
-#      | usuario interno |          |          | Bienvenid@ | DNI           | 45770292  | 994110053 | Prepago   | ENTEL    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
-#      | usuario interno |  | | Bienvenid@ | DNI           | 45770292  | 957382783 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 5064881603      |
- #     | usuario interno |               | | Bienvenid@ | DNI           | 44160111  | 914616599 | Prepago   | CLARO    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | ELENA       | VICTOR      | LIMA        | 14046680        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Postpago | Trío       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
 
 

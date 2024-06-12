@@ -1,23 +1,23 @@
-#language: es
-
-##CREADOR:
+#language:es
+##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO:
-##GDAP: GDAP-1291
-##SPRINT CREADO: PI14
-##FRECUENCIA:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
+##CODIGO: AT-DT074
+##GDAP: GDAP-726
+##SPRINT CREADO:
+##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
 ##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: Actualizacion fija con ruc 10 canal Tienda
 
-  @ActualizacionRuc10Tienda
-  Esquema del escenario: Actualizacion fija con ruc 10 canal Tienda
+@BERSERKERS @DoneDevOps @RegresionPangea @Sanity28
+Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
+
+  @migracionMonoHFCDuoFtthCallCenter @MVP18 @Global @General
+  Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, en canal call center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,20 +25,18 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>" y actualizo
-    Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
+    #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el plan "<plan>"
+    Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
@@ -52,9 +50,9 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo            | tipoPlanHogar | plan            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |

@@ -203,6 +203,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     public void btnConfirmarUbicacion() {
         esperaProgresiva(driver(), 5, 5, btnConfirmarUbicacion);
         btnConfirmarUbicacion.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Confirmar Ubicacion" );
+
     }
 
     public void tipoEntrega(String tipEntrega) {
@@ -356,17 +358,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
 
+        String expectedOffer = planOfertas.trim().toUpperCase();
         esperaProgresiva(driver(), 5, 2, elementoSeleccionar);
 
         boolean elementoExistenteRight;
         boolean elementoExistenteleft;
-        elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+        elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
         int contador = 0;
         int contadorMax = 12;
         while (elementoExistenteRight && contador < contadorMax) {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 4, 3, btnRight);
-                //waitUntilElementIsClickable(btnRight,5);
                 btnRight.click();
                 System.out.println("dio click right while");
             } else {
@@ -378,12 +380,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento btnRight ya no fue encontrado: ");
             }
-            elementoExistenteRight = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             contador++;
         }
         UtilWeb.waitForSeconds(2);
         contador = 0;
-        elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+        elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
         while (elementoExistenteleft && contador < contadorMax) {
             if (btnLeft != null) {
                 waitUntilElementIsClickable(btnLeft, 8).click();
@@ -398,7 +400,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             } catch (Exception e) {
                 System.out.println("El elemento btnLeft ya no fue encontrado: ");
             }
-            elementoExistenteleft = driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).size() != 0;
+            elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
             contador++;
         }
 
@@ -408,23 +410,24 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
         for (int i = 0; i < listaOfertas.size(); i++) {
 
-            System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
-            if (!encontroElemento && listaOfertas.get(i).getText().trim().equalsIgnoreCase(planOfertas.trim())) {
-                System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
+            String currentOffer =listaOfertas.get(i).getText().trim().toUpperCase();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
+            if (!encontroElemento && currentOffer.contains(expectedOffer)) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(1);
                 click(listaOfertas.get(i));
             }
 
             if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
-                System.out.println("Oferta: " + i + " " + listaOfertas.get(i).getText());
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
 
                 scenario.printFullView();
                 js().scrollElementTop(buttonSeleccionarOferta);
                 scenario.printFullView();
                 js().scrollElementTop(listaOfertas.get(i));
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
@@ -441,16 +444,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
         UtilWeb.waitForSeconds(1);
     }
-
-    public void seleccionarOferta() {
-        revisarModalError(driver());
-
-        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
-        eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" + ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
-        UtilWeb.waitForSeconds(3);
-        buttonSeleccionarOferta.click();
-    }
-
+    
     public void irAMovistarTotal() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 10, btnIrAMovistar);

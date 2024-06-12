@@ -1,23 +1,24 @@
-#language: es
-
+#language:es
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO:
-##CODIGO:
-##GDAP: GDAP-1291
-##SPRINT CREADO: PI14
+##CODIGO: AT-DT068
+##GDAP: GDAP-889
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: Actualizacion fija con ruc 10 canal Tienda
+##FECMOD: 31/03/2023
 
-  @ActualizacionRuc10Tienda
-  Esquema del escenario: Actualizacion fija con ruc 10 canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G08
+
+Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
+
+  @MigraMonoDuoSVATienda
+  Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,17 +31,16 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>" y actualizo
-    Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el plan "<plan>"
+    Y        selecciono el plan "<nombrePlan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
+    #Y        doy click en agregar SVA Linea "<sva>"
+    Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -52,9 +52,9 @@ Característica: Actualizacion fija con ruc 10 canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque | sva                  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    | Plan Multidestino 20 |

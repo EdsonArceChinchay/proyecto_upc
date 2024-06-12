@@ -32,39 +32,37 @@ public class BandejaBackOfficePage extends WebBase {
     protected WebElement etiquetaCargado;
     @FindBy(id = "fileDropRef")
     protected WebElement fileRuta;
-    @FindBy(xpath = "//*[@alt='icon_bandeja']")
+    @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
-
     protected WebElement btnBuscar;
     @FindBy(xpath = "//tdp-st-button[@type='button']")
     protected WebElement btnCargarAudio;
-    @Autowired
-    private Cliente cliente;
 
     public void clickBackOffice() {
         esperaProgresiva(driver(), 3, 5, btnBackOffice);
         click(btnBackOffice);
-        esperaProgresiva(driver(), 5, 5, btnBuscar);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
+        UtilWeb.waitForSeconds(5);
     }
 
-    public void ingresoDocumento(String documento) {
-        waitUntilElementIsClickable(btnBuscar, 20);
+    public void typeDocument(String documento) {
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
-        esperaProgresiva(driver(), 3, 5, document);
-        click(document);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Ingresa el numero de documento " + documento);
+        waitUntilElementIsClickable(document,20).click();
         type(document, documento);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number" + documento);
     }
 
-    public void buscoDocumento() {
+    public void clickButtonSearch() {
         btnBuscar.click();
-        esperaProgresiva(driver(),5,5,btnCargarAudio);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Search");
+        esperaProgresiva(driver(), 5, 5, btnCargarAudio);
     }
 
     public void abrirPopUpCargaAudio() {
         esperaProgresiva(driver(), 5, 5, btnCargarAudio);
         btnCargarAudio.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Upload Audio");
     }
 
     public void cargarAudio() {
@@ -80,19 +78,18 @@ public class BandejaBackOfficePage extends WebBase {
     }
 
     public void seleccionoSolicitud(String numeroSolicitud) {
-        String codigoVenta= numeroSolicitud.trim();
-        System.out.println("codigoVenta = " + codigoVenta);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: "+codigoVenta);
+        String codigoVenta = numeroSolicitud.trim();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code: " + codigoVenta);
 
-  //      if (codigoVenta.equals("")) {
-   //         System.out.println("no viene numero solicitud");
-            esperaProgresiva(driver(), 3, 3, btnDetalle);
-            List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
-            WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
-            js().scrollElementTop(verDetalleButton);
-            UtilWeb.waitForSeconds(1);
-            verDetalleButtons.get(verDetalleButtons.size() - 1).click();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click a Ver detalle " + codigoVenta);
+        //      if (codigoVenta.equals("")) {
+        //         System.out.println("no viene numero solicitud");
+        esperaProgresiva(driver(), 3, 3, btnDetalle);
+        List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
+        WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
+        js().scrollElementTop(verDetalleButton);
+        UtilWeb.waitForSeconds(1);
+        verDetalleButtons.get(verDetalleButtons.size() - 1).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click a Ver detalle " + codigoVenta);
 
 //        }
 //    else{
@@ -111,16 +108,17 @@ public class BandejaBackOfficePage extends WebBase {
 //            System.out.println("ver Detalle - no encontrado" );
 //        }
 //    }
-    esperaProgresiva(driver(),3,3,btnCargarAudio);
+        esperaProgresiva(driver(), 3, 3, btnCargarAudio);
     }
 
     public void aprueboSolicitud() {
         btnAprobar.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Approve");
         esperaProgresiva(driver(), 3, 3, btnBandejaPrincipal);
         if (etiquetaAprobado.getText().equals("APROBADO")) {
-            System.out.println("El registro móvil fue exitoso con código de orden: " + codigoOrden);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "El registro móvil fue exitoso con código de orden: " + codigoOrden);
         } else {
-            System.out.println("Hubo en error al enviar orden");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Hubo en error al enviar orden");
         }
         UtilWeb.waitForSeconds(20);
     }
