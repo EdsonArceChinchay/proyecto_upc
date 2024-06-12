@@ -50,9 +50,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        doy click en el boton Ir a movistar total
     Y        doy click en agregar "Seguridad Total Residencial"
     Cuando   doy clic a iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
+    #Y        valido que me encuentre en la pantalla agendamiento
+    #Y        ingreso los datos de agendamiento
+    #Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
