@@ -48,9 +48,9 @@ public class BandejaBackOfficePage extends WebBase {
 
     public void typeDocument(String documento) {
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
-        waitUntilElementIsClickable(document,20).click();
+        waitUntilElementIsClickable(document, 20).click();
         type(document, documento);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number" + documento);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number: " + documento);
     }
 
     public void clickButtonSearch() {
@@ -124,12 +124,16 @@ public class BandejaBackOfficePage extends WebBase {
     }
 
     public boolean isNumber(String tipoDoc) {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: ");
         boolean result;
         try {
-            Integer.parseInt(tipoDoc);
+            Long.parseLong(tipoDoc);
             result = true;
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: "+result);
+
         } catch (NumberFormatException excepcion) {
             result = false;
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: "+result);
         }
         return result;
     }
