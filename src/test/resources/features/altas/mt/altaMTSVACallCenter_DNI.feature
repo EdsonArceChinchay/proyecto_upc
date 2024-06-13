@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
 Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
 
-  90
+  @AltaMTSVACallCenter_DNI
   Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
