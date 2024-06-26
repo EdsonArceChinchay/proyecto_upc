@@ -57,6 +57,6 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 461960085 |
 
