@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
 Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
 
-  @AltaFijaMovilTienda
+  @AltaMtTienda
   Esquema del escenario: Alta fija mas alta movil por Tienda con CE sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
