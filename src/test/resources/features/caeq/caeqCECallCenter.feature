@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1422
 ##SPRINT CREADO:
@@ -12,10 +12,8 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 06/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: CAEQ con documento CE por Canal Call Center
-#CAEQ DROP
 
   @CaeqCECallcenter
   Esquema del escenario: CAEQ con documento CE por Canal Call Center
@@ -80,11 +78,5 @@ Característica: CAEQ con documento CE por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 143625138       | 650028141        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
-#      Prueba error
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
+      | usuario externo | userNameCC | passCC   | CE            | 1042464788      | 920956618        |
 

@@ -67,8 +67,8 @@ public class BandejaBackOfficePage extends WebBase {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
-            UtilWeb.waitForSeconds(1);
-            esperaProgresiva(driver(), 4, 7, etiquetaCargado);
+            UtilWeb.waitForSeconds(10);
+            esperaProgresiva(driver(), 5, 7, etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente", "CARGADO", etiquetaCargado.getText());
         } else {
             System.out.println("Adjunto ya subido anteriormente");
@@ -110,15 +110,16 @@ public class BandejaBackOfficePage extends WebBase {
     }
 
     public void approveRequest() {
+        UtilWeb.waitForSeconds(10);
         btnAprobar.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Approve");
-        esperaProgresiva(driver(), 3, 3, btnBandejaPrincipal);
+        esperaProgresiva(driver(), 5, 5, btnBandejaPrincipal);
+        UtilWeb.waitForSeconds(5);
         if (etiquetaAprobado.getText().equals("APROBADO")) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "El registro móvil fue exitoso con código de orden: " + codigoOrden);
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Hubo en error al enviar orden");
         }
-        UtilWeb.waitForSeconds(20);
     }
 
     public boolean isNumber(String tipoDoc) {
