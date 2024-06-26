@@ -109,6 +109,6 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Postpago | Trío       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trío       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
 
 
