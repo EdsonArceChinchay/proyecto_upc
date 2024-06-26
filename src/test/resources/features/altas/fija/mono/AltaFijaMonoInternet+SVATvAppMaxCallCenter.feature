@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 10/06/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI16
+@BERSERKERS @DoneDevOps @DoneDevOpsPI16 @AltaMono
 Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
 
   @AltaFijaMonoSVATvAppMaxCallCenter

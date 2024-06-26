@@ -12,7 +12,7 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovil_Equipo_tienda @AltaMovilEquipo
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovilEquipo
 Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
 
   @AltaMovil_Equipo_tienda @Sanity28

@@ -74,6 +74,6 @@ Característica: Alta Trio SVA Internet canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan        | sva                   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | RA 1D D22 50 MBPS | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | sva                   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | PACK ANTIVIRUS MCAFEE |
 

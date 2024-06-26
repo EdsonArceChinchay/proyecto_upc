@@ -12,7 +12,7 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 04/04/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovil
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
 Característica: Alta Movil postpago con equipo con documento CE por canal Tienda
 
   @AltaMovilPostpagoEquipoTienda

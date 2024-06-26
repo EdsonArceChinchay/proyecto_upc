@@ -1,13 +1,11 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -59,13 +57,13 @@ public class BandejaBackOfficePage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnCargarAudio);
     }
 
-    public void abrirPopUpCargaAudio() {
+    public void openPopUpUploadAudio() {
         esperaProgresiva(driver(), 5, 5, btnCargarAudio);
         btnCargarAudio.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Upload Audio");
     }
 
-    public void cargarAudio() {
+    public void uploadAudio() {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
             fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
@@ -77,8 +75,8 @@ public class BandejaBackOfficePage extends WebBase {
         }
     }
 
-    public void seleccionoSolicitud(String numeroSolicitud) {
-        String codigoVenta = numeroSolicitud.trim();
+    public void selectRequest(String numberRequest) {
+        String codigoVenta = numberRequest.trim();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code: " + codigoVenta);
 
         //      if (codigoVenta.equals("")) {
@@ -111,7 +109,7 @@ public class BandejaBackOfficePage extends WebBase {
         esperaProgresiva(driver(), 3, 3, btnCargarAudio);
     }
 
-    public void aprueboSolicitud() {
+    public void approveRequest() {
         btnAprobar.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Approve");
         esperaProgresiva(driver(), 3, 3, btnBandejaPrincipal);
@@ -129,12 +127,11 @@ public class BandejaBackOfficePage extends WebBase {
         try {
             Long.parseLong(tipoDoc);
             result = true;
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: "+result);
-
         } catch (NumberFormatException excepcion) {
             result = false;
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: "+result);
         }
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
         return result;
     }
+
 }
