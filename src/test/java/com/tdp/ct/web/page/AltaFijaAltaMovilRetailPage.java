@@ -58,7 +58,8 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
         js().scrollElementTop(btnHogar);
        if(btnHogar.isDisplayed()) {
            click(btnHogar);
-        }{
+        }
+       else {
            revisarModalError(driver());
             click(btnHogar);
         }
