@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 06/04/2024
+##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
 Característica: CAEQ con documento CE por Canal Call Center
 
@@ -78,5 +78,5 @@ Característica: CAEQ con documento CE por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 1042464788      | 920956618        |
+      | usuario externo | userNameCC | passCC   | CE            | 77654581      | 650023365        |
 
