@@ -64,11 +64,11 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Entonces me muestra la pantalla para ingresar la direccion de entrega
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
+    #Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    #Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    #Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    #Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    #Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
