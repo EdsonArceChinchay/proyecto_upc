@@ -55,7 +55,7 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        agrego "<svainternet>"
     Y        elegimos sva repetidor "<svarepetidor>"
     Y        doy click en Guardar cambios
-	  #Y        valido el detalle de la seleccion
+	  #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

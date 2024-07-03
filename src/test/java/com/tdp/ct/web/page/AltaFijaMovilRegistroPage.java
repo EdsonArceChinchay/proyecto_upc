@@ -21,7 +21,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
-import static com.tdp.ct.web.utils.LocalStorage.getValueItemLocalStorage;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
@@ -31,8 +30,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement contratoUno;
     @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
     protected WebElement contratoDos;
-    @FindBy(xpath = "//div[contains(text(), 'código de venta: ')]")
-    protected WebElement numeroSolicitud;
     @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
     protected WebElement cicloFacturacion;
     @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
@@ -47,16 +44,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement titleLugarInstalacionEntrega;
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
-    protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    @FindBy(xpath = "//span[@class='text-capitalize']")
-    protected WebElement titlePlan;
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement buttonIniciarRegistro;
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
@@ -241,12 +234,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarDetalleSeleccion() {
-        esperaProgresiva(driver(), 2, 5, titlePlan);
-        waitUntilElementIsVisible(titlePlan, 30);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
-        UtilWeb.waitForSeconds(2);
-    }
 
     public void moverToElementIniciarRegistro() {
         esperaProgresiva(driver(), 3, 20, buttonIniciarRegistro);
@@ -1008,7 +995,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes;
     }
 
-    public String getSalesCode() throws JSONException {
+    public String getSalesCode() {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
         String salesCode = null;

@@ -53,7 +53,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    #Y        valido el detalle de la seleccion
+    #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

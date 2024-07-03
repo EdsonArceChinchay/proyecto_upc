@@ -50,7 +50,6 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        doy clic en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido el detalle de la seleccion
     Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -89,7 +88,7 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trío       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trio       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
 
 

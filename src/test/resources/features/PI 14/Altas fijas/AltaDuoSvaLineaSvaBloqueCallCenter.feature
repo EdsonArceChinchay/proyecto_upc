@@ -55,7 +55,7 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios
-	  #Y        valido el detalle de la seleccion
+	  #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
