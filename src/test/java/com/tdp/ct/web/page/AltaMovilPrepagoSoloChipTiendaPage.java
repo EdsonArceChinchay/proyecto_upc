@@ -196,7 +196,7 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
 
     public void selectLineWithNumber(String number) {
         js().scrollElementTop(labelSelectService);
-        WebElement numberLine = find().getElementByXPath("//*[contains(text(),'"+number+"')]/ancestor::app-card-line");
+        WebElement numberLine = find().getElementByXPath("//*[contains(text(),'"+number+"')]/ancestor::div[contains(@class,'content')] | //*[contains(text(),'"+number+"')]");
         esperaProgresiva(driver(),3,5,numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
