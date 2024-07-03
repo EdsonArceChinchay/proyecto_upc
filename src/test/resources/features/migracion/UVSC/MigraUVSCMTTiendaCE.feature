@@ -41,6 +41,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        valido que se muestre la etiqueta "Fibra+Velocidad, COSTO 0"
     Y        luego doy click en la cartilla ir a Movistar Total
+
     Cuando   doy clic a iniciar registro
     Y        verifico si me encuentro en la pantalla de agendamiento
     Y        ingreso los datos de agendamiento

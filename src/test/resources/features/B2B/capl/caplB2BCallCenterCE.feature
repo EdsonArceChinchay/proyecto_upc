@@ -39,7 +39,9 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Cuando   selecciono el boton Ver detalle del servicio "650030665"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        selecciono boton Cambiar plan
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el tipo de plan movil "Postpago"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar"
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -62,5 +64,5 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |

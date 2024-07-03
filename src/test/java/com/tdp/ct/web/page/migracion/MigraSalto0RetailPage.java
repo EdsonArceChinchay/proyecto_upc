@@ -40,8 +40,11 @@ public class MigraSalto0RetailPage extends WebBase {
 
     public void validateTagUVSC(String value) {
         revisarModalError(driver());
-        WebElement tagUVSC = find().getElementByXPath("//*[contains(@class,'banner-upgrade') or contains(text(),'"+value+"')]");
+        WebElement tagUVSC = find().getElementByXPath("//*[contains(@class,'banner-upgrade') or contains(text(),'" + value + "')]");
         boolean hasTagUVSC = tagUVSC.isDisplayed();
-        Assertions.assertTrue(hasTagUVSC,"The tag UVSC no exist");
+        if (hasTagUVSC) {
+            js().scrollElementTop(tagUVSC);
+        }
+        Assertions.assertTrue(hasTagUVSC, "The tag UVSC no exist");
     }
 }
