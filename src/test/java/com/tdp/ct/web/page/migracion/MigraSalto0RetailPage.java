@@ -1,9 +1,7 @@
 package com.tdp.ct.web.page.migracion;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,14 +9,29 @@ import static com.tdp.ct.web.utils.Addons.*;
 
 public class MigraSalto0RetailPage extends WebBase {
 
-    @FindBy(xpath = "(//div/button[@class=\"btnCard\"])[2]")
-    WebElement BtnMigrarFibra;
+    @FindBy(xpath = "(//div/button[@class='btnCard'])[2]")
+    protected WebElement BtnMigrarFibra;
 
-    @FindBy(xpath = "//div/button[@class=\"btnStart\"]")
-    WebElement BotonIniciarRegistro;
+    @FindBy(xpath = "//div/button[@class='btnStart']")
+    protected WebElement BotonIniciarRegistro;
 
-    @FindBy(xpath = "(//mat-dialog-actions/button[contains(text(),'Entendido')])[1]")
-    WebElement btnEntendido;
+    @FindBy(css = "h1.title")
+    protected WebElement titleOffer;
+
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[1]")
+    protected WebElement currentHomePlanPrice;
+
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[2]")
+    protected WebElement currentMonthlyPlanPrice;
+
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[3]")
+    protected WebElement newHomePlanPrice;
+
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[4]")
+    protected WebElement newMonthlyPlanPrice;
+
+    @FindBy(xpath = "(//*[contains(@class,'border_upgrade')]//*[contains(@class,'separator')])[1]")
+    protected WebElement separator;
 
     public void SeleccionarBtnMigrarFibra() {
         esperaProgresiva(driver(), 3, 5, BtnMigrarFibra);
@@ -39,12 +52,23 @@ public class MigraSalto0RetailPage extends WebBase {
     }
 
     public void validateTagUVSC(String value) {
+        js().scrollElementTop(titleOffer);
         revisarModalError(driver());
         WebElement tagUVSC = find().getElementByXPath("//*[contains(@class,'banner-upgrade') or contains(text(),'" + value + "')]");
         boolean hasTagUVSC = tagUVSC.isDisplayed();
-        if (hasTagUVSC) {
-            js().scrollElementTop(tagUVSC);
-        }
         Assertions.assertTrue(hasTagUVSC, "The tag UVSC no exist");
+    }
+
+    public void validateCurrentAndNewPrice() {
+        js().scrollElementTop(separator);
+       boolean hasSameHomePlanPrice = compareTextWebElement(currentHomePlanPrice,newHomePlanPrice);
+        Assertions.assertTrue(hasSameHomePlanPrice,"Not the same home plan price");
+       boolean hasSameMonthlyPlanPrice =compareTextWebElement(currentMonthlyPlanPrice,newMonthlyPlanPrice);
+        Assertions.assertTrue(hasSameMonthlyPlanPrice,"Not the same monthly plan price");
+    }
+
+    public boolean compareTextWebElement(WebElement element1, WebElement element2)
+    {
+        return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
     }
 }

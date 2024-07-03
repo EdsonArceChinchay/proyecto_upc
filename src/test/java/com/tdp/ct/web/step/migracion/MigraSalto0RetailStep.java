@@ -22,9 +22,12 @@ public class MigraSalto0RetailStep {
         page.migraSalto0RetailPage().clickBotonEntendido();
     }
 
-    @ScreenShotBefore
     @ScreenShotAfter
     public void validateTagUVSC(String value) {
         page.migraSalto0RetailPage().validateTagUVSC(value);
+    }
+    @ScreenShotAfter
+    public void validateCurrentAndNewPrice() {
+        page.migraSalto0RetailPage().validateCurrentAndNewPrice();
     }
 }

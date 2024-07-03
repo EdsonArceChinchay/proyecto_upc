@@ -1,19 +1,18 @@
 #language:es
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP:GDAP-
 ##SPRINT CREADO: PI20_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
+##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 02/07/2024
-
-@BERSERKERS
+@BERSERKERS  @DoneDevOps @PI20_SP1 @MigraUVSC
 Característica: Migracion UVSC MT con documento CE canal Tienda
 
   @MigraUVSCTiendaCE
@@ -32,7 +31,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        doy click en el boton consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
+    #Y        verifico la direccion "" actual del servicio
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
@@ -40,6 +39,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        doy click en el boton "ENTENDIDO"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        valido que se muestre la etiqueta "Fibra+Velocidad, COSTO 0"
+    Y        valido que los precio de plan hogar y plan mensual sean los mismos
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
@@ -67,4 +67,4 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1002006013 | correo@gmail.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 9876188171 | correo@gmail.com |

@@ -27,4 +27,9 @@ public class MigraSalto0RetailStepDefinition {
     public void validoQueSeMuestreLaEtiqueta(String value) {
         migraSalto0RetailStep.validateTagUVSC(value);
     }
+
+    @Y("valido que los precio de plan hogar y plan mensual sean los mismos")
+    public void validoQueLosPrecioDePlanHogarYPlanMensualSeanLosMismos() {
+        migraSalto0RetailStep.validateCurrentAndNewPrice();
+    }
 }
