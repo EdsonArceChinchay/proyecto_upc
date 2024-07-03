@@ -1012,7 +1012,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
         String salesCode = null;
-        //salesCode = getSalesCodeSessionStorage();
+        salesCode = getSalesCodeSessionStorage();
 
         if (salesCode == null) {
             salesCode = getSalesCodeContract();

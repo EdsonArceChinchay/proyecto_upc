@@ -61,7 +61,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     public void validarOfertasSugeridasView(String title) {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, titleOfertas);
-        js().scrollElementTop(find().getElementByXPath("//nav"));
+        js().scrollElementTop(titleOfertas);
         String actualTitle = titleOfertas.getText().toLowerCase();
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }

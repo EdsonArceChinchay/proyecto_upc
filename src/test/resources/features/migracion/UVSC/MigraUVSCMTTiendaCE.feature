@@ -43,7 +43,9 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
-    Y        verifico si me encuentro en la pantalla de agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados

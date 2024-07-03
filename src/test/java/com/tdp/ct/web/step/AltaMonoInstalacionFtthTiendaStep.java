@@ -13,12 +13,16 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @Autowired
     private StepPages page;
 
-    public void scrollToBtnCrearCliente(){ page.altaMonoFtthTiendaPage().scrollToBtnCrearCliente(); }
+    public void scrollToBtnCrearCliente() {
+        page.altaMonoFtthTiendaPage().scrollToBtnCrearCliente();
+    }
 
     @ScreenShotBefore
-    public void crearCliente() { page.altaMonoFtthTiendaPage().crearCliente(); }
+    public void crearCliente() {
+        page.altaMonoFtthTiendaPage().crearCliente();
+    }
 
-    public void writeDireccion(String depa, String prov, String distrito, String direccion, String ref){
+    public void writeDireccion(String depa, String prov, String distrito, String direccion, String ref) {
         page.altaFijaAltaMovilRetailPage().seleccionarDepa(depa);
         page.altaFijaAltaMovilRetailPage().seleccionarProvincia(prov);
         page.altaFijaAltaMovilRetailPage().seleccionarDistrito(distrito);
@@ -27,13 +31,15 @@ public class AltaMonoInstalacionFtthTiendaStep {
     }
 
     @ScreenShotBefore
-    public void clickBtnConsultarUbicacion(){
+    public void clickBtnConsultarUbicacion() {
         page.altaFijaAltaMovilRetailPage().btnConsultar();
     }
 
-    public void scrollDirecCompleta(){ page.altaMonoFtthTiendaPage().scrollDirecCompleta(); }
+    public void scrollDirecCompleta() {
+        page.altaMonoFtthTiendaPage().scrollDirecCompleta();
+    }
 
-    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda,String bloque, String piso, String interior, String tipoConjH, String conjH){
+    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda, String bloque, String piso, String interior, String tipoConjH, String conjH) {
         page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
         page.altaFijaAltaMovilCallCenterPage().lote(lote);
         page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
@@ -46,45 +52,72 @@ public class AltaMonoInstalacionFtthTiendaStep {
     }
 
     @ScreenShotAfter
-    public void clickBtnConsultarCobertura(){ page.altaMonoFtthTiendaPage().clickBtnConsultarCobertura(); }
+    public void clickBtnConsultarCobertura() {
+        page.altaMonoFtthTiendaPage().clickBtnConsultarCobertura();
+    }
 
     @ScreenShotAfter
-    public void validarOfertasSugeridasView(String title){ page.altaMonoFtthTiendaPage().validarOfertasSugeridasView(title); }
+    public void validarOfertasSugeridasView(String title) {
+        page.altaMonoFtthTiendaPage().validarOfertasSugeridasView(title);
+    }
 
-    public void scrollToBtnPlanNuevo(){ page.altaMonoFtthTiendaPage().scrollToBtnPlanNuevo(); }
-
-    @ScreenShotBefore
-    public void clickBtnPlanNuevo(){ page.altaMonoFtthTiendaPage().clickBtnPlanNuevo(); }
-    @ScreenShotBefore
-    public void clickBtnTipoPlan(String plan){ page.altaMonoFtthTiendaPage().clickBtnTipoPlan(plan); }
-    @ScreenShotBefore
-    public void seleccionarPlan(String plan) { page.altaFijaMovilRegistroPage().seleccionarPlan(plan); }
+    public void scrollToBtnPlanNuevo() {
+        page.altaMonoFtthTiendaPage().scrollToBtnPlanNuevo();
+    }
 
     @ScreenShotBefore
-    public void clickSelectOferta() { page.altaFijaMovilRegistroPage().clicSeleccionarOferta(); }
-
-    public void esperarBtnLineaNueva(){ page.altaMonoFtthTiendaPage().esperarBtnLineaNueva(); }
+    public void clickBtnPlanNuevo() {
+        page.altaMonoFtthTiendaPage().clickBtnPlanNuevo();
+    }
 
     @ScreenShotBefore
-    public void clickBtnLineaNueva(String btnName){ page.altaMonoFtthTiendaPage().clickBtnLinea(btnName); }
+    public void clickBtnTipoPlan(String plan) {
+        page.altaMonoFtthTiendaPage().clickBtnTipoPlan(plan);
+    }
+
     @ScreenShotBefore
-    public void validarDetallePlan(){ page.altaMonoFtthTiendaPage().validarDetallePlan(); }
+    public void seleccionarPlan(String plan) {
+        page.altaFijaMovilRegistroPage().seleccionarPlan(plan);
+    }
 
-    public void moverToElementIniciarRegistro() { page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro(); }
+    @ScreenShotBefore
+    public void clickSelectOferta() {
+        page.altaFijaMovilRegistroPage().clicSeleccionarOferta();
+    }
 
-    public void scrollToViewAgendamiento(){ page.altaMonoFtthTiendaPage().scrollToViewAgendamiento(); }
+    public void esperarBtnLineaNueva() {
+        page.altaMonoFtthTiendaPage().esperarBtnLineaNueva();
+    }
+
+    @ScreenShotBefore
+    public void clickBtnLineaNueva(String btnName) {
+        page.altaMonoFtthTiendaPage().clickBtnLinea(btnName);
+    }
+
+    @ScreenShotBefore
+    public void validarDetallePlan() {
+        page.altaMonoFtthTiendaPage().validarDetallePlan();
+    }
+
+    public void moverToElementIniciarRegistro() {
+        page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
+    }
+
+    public void scrollToViewAgendamiento() {
+        page.altaMonoFtthTiendaPage().scrollToViewAgendamiento();
+    }
 
     @ScreenShotAfter
     public void validarPantallaAgendamiento() {
         Assert.assertTrue("No se mostro pantalla de agendamiento", page.altaFijaMovilRegistroPage().validarPantallaAgendamiento());
     }
 
-    public void ingresarDatosAgendamiento(){
+    public void ingresarDatosAgendamiento() {
         page.altaFijaTiendaPage().datosAgendamiento();
     }
 
     @ScreenShotBefore
-    public void clickBotonConfirmarAgendamiento(){
+    public void clickBotonConfirmarAgendamiento() {
         page.altaFijaTiendaPage().botonConfirmarAgendamiento();
     }
 

@@ -41,11 +41,6 @@ public class AltaFijaTiendaStepDefinition {
 
     }
 
-    @Y("verifico si me encuentro en la pantalla de agendamiento")
-    public void verifico_si_me_encuentro_en_la_pantalla_de_agendamiento() {
-        altaFijaTiendaStep.verificarEstadoPantallaAgendamiento();
-    }
-
     @Y("ingreso los datos de agendamiento")
     public void ingreso_los_datos_de_agendamiento() {
         altaFijaTiendaStep.ingresarDatosAgendamiento();

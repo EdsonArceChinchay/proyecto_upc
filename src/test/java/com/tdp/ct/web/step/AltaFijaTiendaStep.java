@@ -54,11 +54,6 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotBefore
-    public void verificarEstadoPantallaAgendamiento() {
-                page.altaFijaTiendaPage().verficarPantallaAgendamiento();
-    }
-
-    @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento() {
             page.altaFijaTiendaPage().botonConfirmarAgendamiento();
     }

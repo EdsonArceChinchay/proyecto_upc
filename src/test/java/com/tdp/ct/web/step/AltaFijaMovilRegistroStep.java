@@ -80,6 +80,7 @@ public class AltaFijaMovilRegistroStep {
     public void clicIniciarRegistro() {
         page.altaFijaMovilRegistroPage().clicIniciarRegistro();
     }
+    @ScreenShotAfter
     public void moverToElementIniciarRegistro() {
         page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
     }
