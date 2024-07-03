@@ -27,6 +27,8 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
     protected WebElement btnConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
+    @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
+    protected WebElement labelSelectService;
 
     public void seleccionarOferta(String oferta) {
         UtilWeb.waitForSeconds(10);
@@ -193,6 +195,7 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
     }
 
     public void selectLineWithNumber(String number) {
+        js().scrollElementTop(labelSelectService);
         WebElement numberLine = find().getElementByXPath("//*[contains(text(),'"+number+"')]/ancestor::app-card-line");
         esperaProgresiva(driver(),3,5,numberLine);
         js().scrollElementTop(numberLine);
