@@ -1,6 +1,7 @@
 package com.tdp.ct.web.step.migracion;
 
 import com.tdp.ct.web.page.StepPages;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,5 +20,10 @@ public class MigraSalto0RetailStep {
 
     public void clickBotonEntendido() {
         page.migraSalto0RetailPage().clickBotonEntendido();
+    }
+
+    @ScreenShotAfter
+    public void validateTagUVSC(String value) {
+        page.migraSalto0RetailPage().validateTagUVSC(value);
     }
 }

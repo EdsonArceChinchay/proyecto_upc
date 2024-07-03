@@ -22,4 +22,9 @@ public class MigraSalto0RetailStepDefinition {
     public void cierroElPopupDeDetail() {
         migraSalto0RetailStep.clickBotonEntendido();
     }
+
+    @Y("valido que se muestre la etiqueta {string}")
+    public void validoQueSeMuestreLaEtiqueta(String value) {
+        migraSalto0RetailStep.validateTagUVSC(value);
+    }
 }

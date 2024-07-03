@@ -38,6 +38,8 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        cierro popup de error
     Cuando   selecciono el boton Ver detalle del servicio "650028317"
     Y        doy click en el boton "Renovar plan"
+    Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+    Y        selecciono boton Cambiar plan
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
