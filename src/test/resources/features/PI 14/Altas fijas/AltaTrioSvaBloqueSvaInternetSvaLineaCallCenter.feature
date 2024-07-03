@@ -50,7 +50,7 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Y        doy click en agregar SVA Linea "<svaLinea>"
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"

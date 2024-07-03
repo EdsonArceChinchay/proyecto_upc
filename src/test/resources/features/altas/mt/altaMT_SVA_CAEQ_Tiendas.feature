@@ -51,7 +51,7 @@ Característica: AT-DT116_Alta MT + Alta SVA + Equipo en canal Tiendas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido el detalle de la seleccion
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo

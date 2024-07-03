@@ -49,7 +49,7 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Plus por canal Ca
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Movistar TV App
     Y        doy click en Guardar cambios

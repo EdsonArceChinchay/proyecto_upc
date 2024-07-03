@@ -39,7 +39,7 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     #Y        selecciono tipo de oferta
     #Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        selecciono el nombre de plan movistar total
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

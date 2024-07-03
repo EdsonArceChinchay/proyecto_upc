@@ -50,7 +50,7 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Entonces doy click en Agregar Sva
     Y        elegimos sva "<decodificador>"
     Y        elegimos sva repetidor "<svarepetidor>"

@@ -40,7 +40,7 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios

@@ -39,7 +39,7 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        luego doy click en la cartilla ir a Movistar Total
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios

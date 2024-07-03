@@ -37,7 +37,7 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
     Y        luego doy click en la cartilla ir a Movistar Total
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Y        doy click en agregar "Seguridad Total Residencial"
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
@@ -45,7 +45,7 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
       | Sin permanencia | Al Contado | SAMSUNG    |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        luego doy click en la cartilla ir a Movistar Total
-    Y        valido que este en la seccion de registro
+    Y        valido que este en resumen de la venta
     Cuando   doy clic a iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
