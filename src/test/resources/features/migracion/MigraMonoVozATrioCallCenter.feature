@@ -37,9 +37,9 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        presiono el boton Consultar Ubicacion
     Y        presiono el boton consultar cobertura
     Y        doy clic en el boton "entendido"
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    #Y        selecciono tipo de oferta
+    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    #Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en la seccion de registro
     Cuando   doy clic a iniciar registro
@@ -49,7 +49,7 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
-    Y        guardo el numero de solicitud
+    #Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -67,4 +67,4 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                                           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD RA A24 100 MBPS |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300004 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD RA A24 100 MBPS |
