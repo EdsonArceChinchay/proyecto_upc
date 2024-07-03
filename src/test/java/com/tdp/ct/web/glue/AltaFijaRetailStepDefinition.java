@@ -39,4 +39,9 @@ public class AltaFijaRetailStepDefinition {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
     }
+
+    @Y("selecciono la linea con numero {string}")
+    public void seleccionoLaLineaConNumero(String number) {
+        altaFijaRetailStep.selectLineWithNumber(number);
+    }
 }

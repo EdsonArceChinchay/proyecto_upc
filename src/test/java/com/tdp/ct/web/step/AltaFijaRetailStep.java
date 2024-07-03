@@ -64,5 +64,8 @@ public class AltaFijaRetailStep {
         UtilWeb.waitForSeconds(10);
     }
 
-
+    @ScreenShotAfter
+    public void selectLineWithNumber(String number) {
+        page.altaMovilPrepagoSoloChipTiendaPage().selectLineWithNumber(number);
+    }
 }

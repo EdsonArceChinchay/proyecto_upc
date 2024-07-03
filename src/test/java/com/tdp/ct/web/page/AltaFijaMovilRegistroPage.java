@@ -179,7 +179,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarPantallaIngresarDireccionEntrega() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
+        esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -926,12 +926,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
                 if (elementoExistente) {
                     click(btnCerrar);
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error " + i);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
                     UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error 2");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
                 }
 
             } catch (Exception e) {

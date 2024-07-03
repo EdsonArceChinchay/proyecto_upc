@@ -31,7 +31,7 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
-    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
+    Y        selecciono la linea con numero "<numeroExistente>"
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
@@ -88,7 +88,7 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac          | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trio       | MARIA       | FERNANDO    | JUSTO APU SAHUARAURA | 14352752        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 74587265  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
 
 
