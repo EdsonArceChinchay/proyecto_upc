@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovil
+@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovilEquipo
 Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar

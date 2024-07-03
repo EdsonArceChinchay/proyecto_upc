@@ -71,15 +71,10 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
-    public void validarDetalleSeleccion() {
-        page.altaFijaMovilRegistroPage().validarDetalleSeleccion();
-    }
-
-
-    @ScreenShotAfter
     public void clicIniciarRegistro() {
         page.altaFijaMovilRegistroPage().clicIniciarRegistro();
     }
+    @ScreenShotAfter
     public void moverToElementIniciarRegistro() {
         page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
     }

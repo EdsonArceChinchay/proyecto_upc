@@ -51,7 +51,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        selecciono la oferta "<plan>"
     Y        selecciono boton Cambiar plan
     #Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

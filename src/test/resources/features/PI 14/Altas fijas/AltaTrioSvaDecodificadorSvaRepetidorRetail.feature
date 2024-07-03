@@ -50,7 +50,7 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Entonces doy click en Agregar Sva
 #    Y        doy click en agregar Bloque "HBO"
     Y        elegimos sva "<decodificador>"
@@ -79,6 +79,6 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                     | decodificador | svarepetidor          |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | 9.90          | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion           | referencia             | tipoPlan | nombrePlan                     | decodificador | svarepetidor          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | 9.90          | REP. SMART WIFI Venta |
 

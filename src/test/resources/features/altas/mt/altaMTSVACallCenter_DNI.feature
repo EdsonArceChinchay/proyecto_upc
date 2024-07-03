@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
 Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
 
-  90
+  @AltaMTSVACallCenter_DNI
   Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -48,7 +48,7 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     #        Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-	#Y        valido el detalle de la seleccion
+	#Y        valido que este en el resumen de venta
     Y        doy click en agregar "<sva>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

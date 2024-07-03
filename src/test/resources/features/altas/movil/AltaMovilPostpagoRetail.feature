@@ -16,11 +16,9 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
 Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @MVP_Alta_movil_SoloSim_CanalRetail @MVP01 @Global
-  Esquema del escenario: Realizar alta móvil solo línea postpago en canal retail, en web FE, con CEX, flujo no biométrico
+  Esquema del escenario: Alta Movil Postpago con documento CE por Canal Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

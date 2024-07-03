@@ -91,11 +91,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicIrAMovistarTotal();
     }
 
-    @Y("valido el detalle de la seleccion")
-    public void validoElDetalleDeLaSeleccion() {
-        altaFijaMovilRegistroStep.validarDetalleSeleccion();
-    }
-
     @Cuando("doy clic a iniciar registro")
     public void doyClicAIniciarRegistro() {
         altaFijaMovilRegistroStep.moverToElementIniciarRegistro();

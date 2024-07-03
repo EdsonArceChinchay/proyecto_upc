@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1422
 ##SPRINT CREADO:
@@ -11,11 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 06/04/2024
-
+##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
 Característica: CAEQ con documento CE por Canal Call Center
-#CAEQ DROP
 
   @CaeqCECallcenter
   Esquema del escenario: CAEQ con documento CE por Canal Call Center

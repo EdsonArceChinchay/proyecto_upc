@@ -14,7 +14,6 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija @AltaTrio
-
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
   @AltaSVABloqueHBO
@@ -52,8 +51,8 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
     Y        selecciono tipo de oferta
 #    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        selecciono el plan "<nombrePlan>"
-#    Y        valido el detalle de la seleccion
-    Y        valido que este en la seccion de registro
+#    Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
     Y        doy click en añadir SVA
     Y        doy click en agregar Bloque "<bloque>"
     Y        doy click en Guardar cambios

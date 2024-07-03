@@ -7,39 +7,42 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 @Component
 public class BandejaBackOfficeStep {
 
     @Autowired
     private StepPages page;
-    @Autowired
-    private Cliente cliente;
 
     @ScreenShotAfter
     public void clickBackOffice() {
-    page.bandejaBackOfficePage().clickBackOffice();
+        page.bandejaBackOfficePage().clickBackOffice();
     }
 
     @ScreenShotAfter
-    public void ingresoDocumento(String documento) {
-        page.bandejaBackOfficePage().ingresoDocumento(documento);
-        page.bandejaBackOfficePage().buscoDocumento();
+    public void typeDocument(String documento) {
+        page.bandejaBackOfficePage().typeDocument(documento);
+        page.bandejaBackOfficePage().clickButtonSearch();
     }
+
     @ScreenShotAfter
-    public void seleccionoSolicitud(String numeroSolicitud){
-        page.bandejaBackOfficePage().seleccionoSolicitud(numeroSolicitud);
+    public void selectRequest(String numberRequest) {
+        page.bandejaBackOfficePage().selectRequest(numberRequest);
     }
+
     @ScreenShotAfter
-    public void abrirPopUpCargaAudio() {
-        page.bandejaBackOfficePage().abrirPopUpCargaAudio();
+    public void openPopUpUploadAudio() {
+        page.bandejaBackOfficePage().openPopUpUploadAudio();
     }
+
     @ScreenShotAfter
-    public void cargarAudio(){
-        page.bandejaBackOfficePage().cargarAudio();
+    public void uploadAudio() {
+        page.bandejaBackOfficePage().uploadAudio();
     }
+
     @ScreenShotAfter
-    public void aprueboSolicitud() throws InterruptedException {
-        page.bandejaBackOfficePage().aprueboSolicitud();
+    public void approveRequest()  {
+        page.bandejaBackOfficePage().approveRequest();
     }
 
     public boolean isNumber(String tipoDoc) {

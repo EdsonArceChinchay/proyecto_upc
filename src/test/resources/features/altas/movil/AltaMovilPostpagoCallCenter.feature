@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 30/03/2023
+##FECMOD: 06/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
@@ -45,7 +45,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    #Y        valido que este en la seccion de registro "<nombrePlan>"
+    #Y        valido que este en el resumen de venta "<nombrePlan>"
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -87,9 +87,3 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                 |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar |
- # | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100002127  | Postpago      | Plan Ilimitado Mi Movistar S/69.9 |
-
-#  | usuario interno |    userNameQAN | passQAN    | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000259 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000256 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN SESENTA        |
-#  | usuario interno |          |          | Bienvenid@ | PRUEBAS SIST CALL IN VENTA | CE            | 1100000524 | Postpago      | Plan Ilimitado Mi Movistar S/69.9 | Prueba QAN D VEINTICUATRO |

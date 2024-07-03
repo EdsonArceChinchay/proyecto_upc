@@ -50,7 +50,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

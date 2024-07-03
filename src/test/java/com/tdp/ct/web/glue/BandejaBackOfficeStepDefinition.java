@@ -7,7 +7,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import io.cucumber.java.es.Y;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -32,12 +31,12 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
-        bandejaBackOfficeStep.ingresoDocumento(documento);
+        bandejaBackOfficeStep.typeDocument(documento);
     }
 
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
-        bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroDocumento());
+        bandejaBackOfficeStep.typeDocument(cliente.getNumeroDocumento());
     }
 
     //    TODO: Buscar por tipo
@@ -49,31 +48,31 @@ public class BandejaBackOfficeStepDefinition {
             case "documento":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by document number");
                 String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : cliente.getNumeroDocumento();
-                bandejaBackOfficeStep.ingresoDocumento(numberCocument);
+                bandejaBackOfficeStep.typeDocument(numberCocument);
                 break;
             case "solicitud":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by request number");
-                bandejaBackOfficeStep.ingresoDocumento(cliente.getNumeroSolicitud());
+                bandejaBackOfficeStep.typeDocument(cliente.getNumeroSolicitud());
                 break;
         }
     }
 
     @Y("cargo el audio en la web")
     public void cargoElAudioEnLaWeb() {
-        bandejaBackOfficeStep.abrirPopUpCargaAudio();
-        bandejaBackOfficeStep.cargarAudio();
+        bandejaBackOfficeStep.openPopUpUploadAudio();
+        bandejaBackOfficeStep.uploadAudio();
     }
 
     @Y("selecciono la solicitud")
-    public void seleccionoLaSolicitud() {
-        String codigoVenta = (this.cliente.getNumeroSolicitud() == null) ? "FE-" : this.cliente.getNumeroSolicitud();
-        System.out.println("NumSolicitud: " + codigoVenta);
-        bandejaBackOfficeStep.seleccionoSolicitud(codigoVenta);
+    public void selectRequest() {
+        String salesCode = (this.cliente.getNumeroSolicitud() == null) ? "FE-" : this.cliente.getNumeroSolicitud();
+        System.out.println("numberRequest: " + salesCode);
+        bandejaBackOfficeStep.selectRequest(salesCode);
     }
 
     @Y("apruebo la solicitud")
-    public void aprueboSolicitud() throws InterruptedException {
-        bandejaBackOfficeStep.aprueboSolicitud();
+    public void aprueboSolicitud() {
+        bandejaBackOfficeStep.approveRequest();
     }
 
     @Y("busco por el codigo de expediente")

@@ -14,7 +14,6 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija @AltaTrioUpfront
-
 Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por Canal Call Center
 
   @AltaTrioConBloqueHdUpfrontCallCenter
@@ -72,7 +71,6 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"

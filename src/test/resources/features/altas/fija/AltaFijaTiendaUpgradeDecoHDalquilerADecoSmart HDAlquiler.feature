@@ -16,11 +16,9 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01
 Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @AltaFijaTiendaMigra_DECOHD_A_DECO_SMART
   Esquema del escenario: alta Fija migracion deco HD a Smart HD
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

@@ -21,7 +21,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
-import static com.tdp.ct.web.utils.LocalStorage.getValueItemLocalStorage;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
@@ -31,8 +30,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement contratoUno;
     @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
     protected WebElement contratoDos;
-    @FindBy(xpath = "//div[contains(text(), 'código de venta: ')]")
-    protected WebElement numeroSolicitud;
     @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
     protected WebElement cicloFacturacion;
     @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
@@ -47,16 +44,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement titleLugarInstalacionEntrega;
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
-    protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    @FindBy(xpath = "//span[@class='text-capitalize']")
-    protected WebElement titlePlan;
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement buttonIniciarRegistro;
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
@@ -115,6 +108,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//*[contains(@class,'orden-big')]")
     protected List<WebElement> listCodigoOrden;
+
+    public static String SALESCODE;
 
     public boolean validarPantallaIngresarDireccion() {
         //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
@@ -183,6 +178,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
+        revisarModalError(driver());
         esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
@@ -238,12 +234,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarDetalleSeleccion() {
-        esperaProgresiva(driver(), 2, 5, titlePlan);
-        waitUntilElementIsVisible(titlePlan, 30);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
-        UtilWeb.waitForSeconds(2);
-    }
 
     public void moverToElementIniciarRegistro() {
         esperaProgresiva(driver(), 3, 20, buttonIniciarRegistro);
@@ -867,18 +857,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     }
 
-    public void clicRegistrarVenta() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
-        WebElement btnRegistrarVenta = find().getElementByXPath("(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button");
-        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
-        JavascriptExecutor jse = (JavascriptExecutor) driver();
-        jse.executeScript("window.scrollBy(0,250)");
-        click(btnRegistrarVenta);
-    }
-
     //    TODO: VERIFICAR ERROR POR CAMBIO DE STEPS
-    @FindBy(xpath = "/html/body/app-root/app-success/div[2]/div[3]")
+    @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
 
     public boolean validarVentaGenerada() {
@@ -891,7 +871,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(cicloFacturacion);
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
         revisarModalError(driver());
-        boolean existe = false;
+        boolean existe;
         esperaProgresiva(driver(), 3, 5, msjExitoso);
         existe = waitUntilElementIsVisible(msjExitoso, 180).isDisplayed();
         UtilWeb.waitForSeconds(1);
@@ -983,13 +963,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
 
     public String getTextoSolicitud() {
+        String contract;
         int contadorReintentos = 0;
         do {
             UtilWeb.waitForSeconds(5);
-            String texto = textoContratoCliente.getText();
+            contract = textoContratoCliente.getText().trim();
 
-            if (!texto.trim().isEmpty()) {
-                System.out.println("Texto del contrato del cliente: " + texto);
+            if (!contract.isEmpty()) {
+                System.out.println("Texto del contrato del cliente: " + contract);
                 break;
             } else {
                 System.out.println("Texto del contrato del cliente está vacío. Reintentando...");
@@ -1001,7 +982,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("Se alcanzó el número máximo de reintentos. No se pudo obtener un texto no vacío.");
         }
 
-        return textoContratoCliente.getText();
+        setSalesCodeContract(contract);
+        return contract;
     }
 
     public List<String> getOrderCode() {
@@ -1013,23 +995,23 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes;
     }
 
-    public String getSalesCode() throws JSONException {
+    public String getSalesCode() {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
         String salesCode = null;
-        salesCode=getSalesCodeSessionStorage();
+        salesCode = getSalesCodeSessionStorage();
 
         if (salesCode == null) {
-            salesCode=getSalesCodeContract();
+            salesCode = getSalesCodeContract();
 
         }
-         if(salesCode == null) {
-             salesCode= getSalesCodeFinalSales();
+        if (salesCode == null) {
+            salesCode = getSalesCodeFinalSales();
         }
 
         salesCode = (salesCode == null) ? null : salesCode.trim();
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Venta: " + salesCode);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales Code: " + salesCode);
 
         return salesCode;
 
@@ -1046,34 +1028,40 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
-    public String getSalesCodeSessionStorage(){
+    public String getSalesCodeSessionStorage() {
         String salesCode = null;
 
         try {
             salesCode = getValueItemSessionStorage(driver(), "saleObject", "salesId");
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of local storage: " + salesCode);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of session storage: " + salesCode);
 
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Error - Get sales code of local storage " + e.getMessage());
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Error - Get sales code of session storage " + e.getMessage());
 
         }
 
         return salesCode;
     }
 
-    public String getSalesCodeContract(){
-        String salesCode = null;
+    public String getSalesCodeContract() {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get sales code of contract: " + SALESCODE);
+        return SALESCODE;
+    }
+
+
+    public void setSalesCodeContract(String contract) {
+
         try {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Get Text contract");
-            salesCode = "FE-" + getTextoSolicitud().trim().split("FE-", 10)[2];
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of text contract: " + salesCode);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Get sales code of contract: " + contract);
+            SALESCODE = "FE-" + ((contract.split("FE-")[1]).split("\\.")[0]);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of text contract: " + SALESCODE);
         } catch (Exception e) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Get sales code of contract " + e.getMessage());
         }
-        return salesCode;
+
     }
 
-    public String getSalesCodeFinalSales(){
+    public String getSalesCodeFinalSales() {
         String salesCode = null;
         try {
             WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));

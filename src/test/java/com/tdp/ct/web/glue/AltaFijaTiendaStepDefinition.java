@@ -35,17 +35,10 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("selecciono el plan {string}")
     public void selecciono_el_plan(String nombrePlan) {
-        //altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
-       // altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
         altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
         altaFijaTiendaStep.clickSeleccionarOferta();
         altaFijaTiendaStep.clickListaBotones();
 
-    }
-
-    @Y("verifico si me encuentro en la pantalla de agendamiento")
-    public void verifico_si_me_encuentro_en_la_pantalla_de_agendamiento() {
-        altaFijaTiendaStep.verificarEstadoPantallaAgendamiento();
     }
 
     @Y("ingreso los datos de agendamiento")
@@ -69,9 +62,7 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton Registrar venta")
     public void presiono_el_boton_Registrar_venta() {
-      //  if (Parameters.estadoFlujo){
             altaFijaTiendaStep.clickRegistrarVenta();
-     //   }
     }
 
 

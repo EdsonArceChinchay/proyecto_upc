@@ -14,7 +14,6 @@
 ##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-
 Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
 
   @CaeqCEPorTienda
@@ -50,7 +49,6 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        guardo el numero de solicitud
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
@@ -59,6 +57,6 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 461960085 |
 
