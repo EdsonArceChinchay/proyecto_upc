@@ -36,7 +36,7 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "650028317"
+    Cuando   selecciono el boton Ver detalle del servicio "650030665"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -63,4 +63,4 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20480829809 | 1   | CE              | 102040296      | prueba@prueba.com |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | prueba@prueba.com |
