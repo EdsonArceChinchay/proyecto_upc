@@ -50,7 +50,7 @@ Característica: AT-DT008_Alta Fija Internet + SVA  con documento CE por canal t
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar "<svaInternet>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

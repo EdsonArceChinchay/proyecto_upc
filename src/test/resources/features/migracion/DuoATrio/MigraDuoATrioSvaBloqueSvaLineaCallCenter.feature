@@ -38,7 +38,7 @@
      Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
      Y        selecciono la oferta "<plan>"
      Y        doy click en Cambiar plan hogar
-     Y        valido que este en resumen de la venta
+     Y        valido que este en el resumen de venta
      Y        doy click en agregar SVA Linea "<svaLinea>"
      Y        doy click en añadir SVA
      Y        doy click en agregar Bloque "<bloque>"

@@ -50,7 +50,7 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar SVA Linea "<svaLinea>"
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "<bloque>"

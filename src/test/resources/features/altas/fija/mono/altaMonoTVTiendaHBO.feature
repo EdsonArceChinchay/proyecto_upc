@@ -51,9 +51,9 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#	Y        valido que este en resumen de la venta
+#	Y        valido que este en el resumen de venta
 #	Cuando   doy clic a iniciar registro
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Y        doy click en añadir SVA
     Y        doy click en agregar Bloque "HBO"
     Y        doy click en Guardar cambios

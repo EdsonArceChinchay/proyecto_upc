@@ -47,7 +47,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaFijaTiendaStep.clickListaBotones();
     }
 
-    @Y("valido que este en resumen de la venta")
+    @Y("valido que este en el resumen de venta")
     public void valido_que_este_en_la_pagina_de_registro() {
         altaMovilSoloSimCallCenterStep.validarPaginaResumen();
     }

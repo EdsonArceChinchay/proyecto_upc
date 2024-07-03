@@ -38,7 +38,7 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento

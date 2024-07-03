@@ -42,7 +42,7 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

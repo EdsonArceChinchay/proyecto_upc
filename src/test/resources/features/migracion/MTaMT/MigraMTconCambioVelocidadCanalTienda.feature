@@ -37,7 +37,7 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

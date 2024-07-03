@@ -50,7 +50,7 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Entonces doy click en Agregar Sva
     Y        elegimos sva "<decodificador>"
     Y        doy click en agregar Bloque "<bloque>"

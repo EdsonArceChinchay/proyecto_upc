@@ -39,7 +39,7 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Cuando   selecciono el boton Ver detalle del servicio "650024739"
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

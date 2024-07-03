@@ -49,7 +49,7 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por ca
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en resumen de la venta
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar "<nombreSVA>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
