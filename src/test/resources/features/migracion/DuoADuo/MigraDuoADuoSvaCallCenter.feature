@@ -38,7 +38,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar repetidor
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

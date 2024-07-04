@@ -34,11 +34,8 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@type='submit']")
     protected WebElement btnConsultarCobertura;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
-    protected WebElement btnEntendido;
+    @FindBy(xpath = "//*[contains(@class,'detalle')]")
+    protected WebElement labelDetail;
 
     public void scrollToBtnCrearCliente() {
         js().scrollElementTop(find().getElementByCss("div.consulta"));
@@ -61,7 +58,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     public void validarOfertasSugeridasView(String title) {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, titleOfertas);
-        js().scrollElementTop(find().getElementByXPath("//nav"));
+        js().scrollElementTop(labelDetail);
         String actualTitle = titleOfertas.getText().toLowerCase();
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
@@ -90,7 +87,7 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
 
     public void esperarBtnLineaNueva() {
         UtilWeb.waitForSeconds(5);
-        boolean existe = find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").size() != 0;
+        boolean existe = !find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").isEmpty();
         if (existe) {
             js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
         }

@@ -49,8 +49,8 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido el detalle de la seleccion
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar "Seguridad Total Residencial"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

@@ -37,9 +37,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
     @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
 
@@ -183,6 +180,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        esperaProgresiva(driver(),3,5,paginaResumen);
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 

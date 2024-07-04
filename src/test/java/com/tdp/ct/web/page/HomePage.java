@@ -98,12 +98,12 @@ public class HomePage extends WebBase {
         String expectedTipoDocumento = tipoDocumento.trim().toUpperCase();
         String expectedNroDocumento = nroDocumento.trim().toUpperCase();
         boolean datosClienteNatural;
-        datosClienteNatural = driver().findElements(By.xpath("//*[contains(@class,'info-user')]/div")).size() != 0;
+        datosClienteNatural = !driver().findElements(By.xpath("//*[contains(@class,'info-user')]/div")).isEmpty();
         if (datosClienteNatural) {
             Nombre = txtNombre.getText().trim().toUpperCase();
         }
         boolean datosClienteEmpresa;
-        datosClienteEmpresa = driver().findElements(By.xpath("//app-client-info")).size() != 0;
+        datosClienteEmpresa = !driver().findElements(By.xpath("//app-client-info")).isEmpty();
         if (datosClienteEmpresa) {
             Nombre = txtNombreRuc.getText().trim().toUpperCase();
         }
@@ -133,7 +133,7 @@ public class HomePage extends WebBase {
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
         UtilWeb.waitForSeconds(5);
         boolean serviciosContratados;
-        serviciosContratados = driver().findElements(By.xpath("//app-card-line")).size() != 0;
+        serviciosContratados = !driver().findElements(By.xpath("//app-card-line")).isEmpty();
         if (serviciosContratados) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "El cliente SI tiene servicios contratados");
             js().scrollElementTop(find().getElementByXPath("//app-card-line"));

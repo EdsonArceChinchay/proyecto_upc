@@ -38,7 +38,7 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<nombrePlan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     #Y        doy click en agregar SVA Linea "<sva>"
     Y         doy clic en agregar sva "<Bloque>"
     Cuando   doy clic a iniciar registro

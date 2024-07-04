@@ -30,4 +30,6 @@ public class MigraSalto0CanalTiendaStepDefinition {
         migraSalto0CanalTiendaStep.ingresoDatosAgendamiento(contacto);
         migraSalto0CanalTiendaStep.clicBotonConfirmarAgendamiento();
     }
+
+
 }

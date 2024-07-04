@@ -16,8 +16,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
 import static com.tdp.ct.web.utils.LocalStorage.*;
-import static com.tdp.ct.web.utils.SessionStorage.getItemSessionStorage;
-import static com.tdp.ct.web.utils.SessionStorage.setValueItemSessionStorage;
+import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class PortabilidadPage extends WebBase {
 
@@ -122,7 +121,7 @@ public class PortabilidadPage extends WebBase {
     public String getValuePortaDirecta() throws JSONException {
         String primaryKey = "datosAgente";
         String key = "additionalData";
-        String valuePortaDirecta =getValueItemLocalStorage(driver(), primaryKey, key);
+        String valuePortaDirecta =getValueItemSessionStorage(driver(), primaryKey, key);
         valuePortaDirecta = (valuePortaDirecta == null) ? " {\"key\": \"PortaDirecta\", \"value\": \"A\"}" : valuePortaDirecta;
         return valuePortaDirecta;
     }

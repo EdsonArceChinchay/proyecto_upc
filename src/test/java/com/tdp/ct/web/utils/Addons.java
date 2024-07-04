@@ -217,9 +217,8 @@ public class Addons {
 
     Se está identificando diferentes modalidades de error.
 */
-        boolean bExisteModal = false;
         boolean bReintentar = true;
-        boolean isModal= false;
+        boolean isModalError= false;
         int contador = 0;
         int reintentosMax = 5;
         int segundosEspera = 15;
@@ -231,12 +230,10 @@ public class Addons {
             boolean modal2SinError = false;
             UtilWeb.waitForSeconds(3);
             LOGGER.log(Level.INFO, "revisarModalError #" + (contador + 1) + "/" + reintentosMax);
-            bExisteModal = !driver.findElements(By.xpath("//mat-dialog-actions")).isEmpty();
-            isModal = !driver.findElements(By.xpath("//app-card-plan-error//*[contains(text(),'Reintentar')]")).isEmpty();
-            LOGGER.log(Level.INFO, "bExisteModal(Reintentar / Entendido): " + bExisteModal);
-            LOGGER.log(Level.INFO, "isModal: " + isModal);
+            isModalError = !driver.findElements(By.xpath("//app-card-plan-error//*[contains(text(),'Reintentar')] | //mat-dialog-actions | //app-modal-confirmation-financing")).isEmpty();
+            LOGGER.log(Level.INFO, "bExisteModal(Reintentar / Entendido): " + isModalError);
 
-            if (bExisteModal || isModal) {
+            if (isModalError) {
                 UtilWeb.waitForSeconds(segundosEspera * contador);
                 WebElement btnReintentar;
                 WebElement btnEntendido;
@@ -287,14 +284,14 @@ public class Addons {
 
             //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
             //Mostrando un boton: Continuar
-            bExisteModal = !driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]")).isEmpty();
-            LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + bExisteModal);
-            if (bExisteModal) {
+            isModalError = !driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')] | //app-modal-confirmation-financing")).isEmpty();
+            LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + isModalError);
+            if (isModalError) {
                 WebElement btnContinuar;
                 try {
                     //Busca un boton para Continuar
                     LOGGER.log(Level.INFO, "Buscando - btn Continuar");
-                    btnContinuar = driver.findElement(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]"));
+                    btnContinuar = driver.findElement(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')] | //app-modal-confirmation-financing//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')]"));
                     if (btnContinuar.isEnabled()) {
                         btnContinuar.click();
                         System.out.println("################ CLIC en Continuar");

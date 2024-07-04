@@ -41,7 +41,7 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        valido que muestre la pantalla de Agendamiento
     Y        ingreso los datos de agendamiento

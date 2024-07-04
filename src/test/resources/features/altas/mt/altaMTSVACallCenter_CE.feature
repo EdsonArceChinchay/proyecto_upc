@@ -48,7 +48,7 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Y        valido el detalle de la seleccion
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar "<sva>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

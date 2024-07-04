@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.UUID;
 import java.util.logging.Level;
 
 
@@ -57,16 +58,14 @@ public class CaptchaPage extends WebBase {
 
             File captcha = captchaElement.getScreenshotAs(OutputType.FILE);
 
-            path = path + File.separator + createNameCaptcha() + ".png";
+            path = path + File.separator + createIDCaptcha() + ".png";
 
             FileUtils.copyFile(captcha, new File(path));
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Screenshot save in: " + path);
         } catch (IOException e) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "¡Error save Screenshot! " + e.getMessage());
         }
-
         decodeCaptcha(path);
-
     }
 
     public void decodeCaptcha(String path) throws InterruptedException {
@@ -113,10 +112,9 @@ public class CaptchaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public static String createNameCaptcha() {
-        int valor = (int) (Math.random() * 1000) + 1;
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        return String.valueOf(timestamp.getTime() + valor);
+    public static String createIDCaptcha() {
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
     }
 
     public void cleanFile(String path) {

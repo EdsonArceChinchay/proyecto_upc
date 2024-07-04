@@ -50,7 +50,7 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar Modem
     Entonces doy click en Agregar Sva
     Y        elegimos sva repetidor "<svarepetidor>"

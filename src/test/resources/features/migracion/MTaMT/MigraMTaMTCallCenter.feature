@@ -41,7 +41,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        luego doy click en la cartilla ir a Movistar Total
-    #Y        valido que este en la seccion de registro
+    #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     #Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

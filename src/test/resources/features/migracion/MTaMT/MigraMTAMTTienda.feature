@@ -44,7 +44,7 @@ Característica: Migracion de MT a MT en Tienda
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy clic a iniciar registro
-    Y        verifico si me encuentro en la pantalla de agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados

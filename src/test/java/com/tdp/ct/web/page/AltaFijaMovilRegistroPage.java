@@ -21,7 +21,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
-import static com.tdp.ct.web.utils.LocalStorage.getValueItemLocalStorage;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
@@ -31,8 +30,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement contratoUno;
     @FindBy(xpath = "(//*[@class=\"btn btnSecond\"])[1]")
     protected WebElement contratoDos;
-    @FindBy(xpath = "//div[contains(text(), 'código de venta: ')]")
-    protected WebElement numeroSolicitud;
     @FindBy(xpath = "//span[contains(text(),'Ciclo de facturación:')]")
     protected WebElement cicloFacturacion;
     @FindBy(xpath = "//div/tdp-st-button[contains(@label,'Descargar contrato')]")
@@ -47,16 +44,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement titleLugarInstalacionEntrega;
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
-    protected WebElement titleOfertasSugeridas;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    @FindBy(xpath = "//span[@class='text-capitalize']")
-    protected WebElement titlePlan;
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement buttonIniciarRegistro;
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
@@ -185,7 +178,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
-        esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -240,12 +234,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarDetalleSeleccion() {
-        esperaProgresiva(driver(), 2, 5, titlePlan);
-        waitUntilElementIsVisible(titlePlan, 30);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando pantalla del plan seleccionado");
-        UtilWeb.waitForSeconds(2);
-    }
 
     public void moverToElementIniciarRegistro() {
         esperaProgresiva(driver(), 3, 20, buttonIniciarRegistro);
@@ -938,12 +926,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
                 if (elementoExistente) {
                     click(btnCerrar);
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error " + i);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
                     UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error 2");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
                 }
 
             } catch (Exception e) {
@@ -1007,11 +995,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return listCodigosDeOrdenes;
     }
 
-    public String getSalesCode() throws JSONException {
+    public String getSalesCode() {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
         String salesCode = null;
-        //salesCode = getSalesCodeSessionStorage();
+        salesCode = getSalesCodeSessionStorage();
 
         if (salesCode == null) {
             salesCode = getSalesCodeContract();

@@ -1,12 +1,9 @@
 package com.tdp.ct.web.step;
 
-import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
-import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.java.Scenario;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,7 +20,6 @@ public class AltaFijaTiendaStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void validarNombresCompletosCliente(String nombreCompleto) {
-        //UtilWeb.waitForSeconds(20);
         Assert.assertTrue("No existe el nombre del cliente", page.altaFijaTiendaPage().nombresCompletosCliente()
                 .contains(nombreCompleto));
     }
@@ -54,21 +50,12 @@ public class AltaFijaTiendaStep {
 
     @ScreenShotBefore
     public void ingresarDatosAgendamiento() {
-        if (Parameters.estadoFlujo){
             page.altaFijaTiendaPage().datosAgendamiento();
-        }
-    }
-
-    @ScreenShotBefore
-    public void verificarEstadoPantallaAgendamiento() {
-        Parameters.estadoFlujo = page.altaFijaTiendaPage().verficarPantallaAgendamiento();
     }
 
     @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento() {
-        if (Parameters.estadoFlujo){
             page.altaFijaTiendaPage().botonConfirmarAgendamiento();
-        }
     }
 
     @ScreenShotBefore
@@ -103,14 +90,11 @@ public class AltaFijaTiendaStep {
     @ScreenShotAfter
     public void doyClickEnAgregarBloque(String bloque) {
         page.altaFijaTiendaPage().doyClickEnAgregarBloque(bloque);
-
-
     }
 
     @ScreenShotAfter
     public void doyClickEnGuardarCambios() {
         page.altaFijaTiendaPage().doyClickEnGuardarCambios();
-
     }
 
     @ScreenShotAfter
@@ -119,10 +103,12 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotBefore
-    public void clickBotonValidarRepreLegal() {page.altaFijaTiendaPage().clickValidarRepreLegal();
+    public void clickBotonValidarRepreLegal() {
+        page.altaFijaTiendaPage().clickValidarRepreLegal();
     }
     @ScreenShotBefore
-    public void clickBotonRegistrarVenta() {page.altaFijaTiendaPage().clickBotonRegistrarVenta();
+    public void clickBotonRegistrarVenta() {
+        page.altaFijaTiendaPage().clickBotonRegistrarVenta();
     }
 }
 

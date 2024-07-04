@@ -24,7 +24,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -42,7 +42,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento

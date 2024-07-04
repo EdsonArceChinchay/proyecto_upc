@@ -1,24 +1,24 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO: CASI
+##MODULO: CAPL
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
-##GDAP: GDAP-1658
-##SPRINT CREADO: PI18_SP4
+##GDAP: GDAP-
+##SPRINT CREADO: PI20_SP1
 ##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
 ##DATA:REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 11/04/2024
+##FECMOD: 02/07/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP4 @RegresionLegacy
-Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tienda
-  Quiero realizar un CASI a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
+Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Call Center
+  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
 
-  @casiB2B_CETienda
-  Esquema del escenario: Cambio de Simcard a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
+  @caplB2BCallCenterCE
+  Esquema del escenario: Cambio de Plan a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -36,9 +36,13 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "650024739"
-    Y        selecciono el boton Cambiar Chip
-    Y        cierro pop up de Cliente Exonerado
+    Cuando   selecciono el boton Ver detalle del servicio "650030665"
+    Y        doy click en el boton "Renovar plan"
+    Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el tipo de plan movil "Postpago"
+    Y        selecciono un plan movil "Plan Elige Todo"
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -46,13 +50,20 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE              | 102040170      | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |

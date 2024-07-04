@@ -42,7 +42,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
-    Y        valido que este en la seccion de registro
+    Y        valido que este en el resumen de venta
     Y        doy click en agregar SVA Linea "<sva>"
    # Y        doy click en agregar "<sva>"
     #Y         doy clic en agregar sva "<Bloque>"
