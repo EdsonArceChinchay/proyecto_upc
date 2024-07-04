@@ -180,6 +180,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public boolean validarPantallaIngresarDireccionEntrega() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
+        revisarModalError(driver());
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
