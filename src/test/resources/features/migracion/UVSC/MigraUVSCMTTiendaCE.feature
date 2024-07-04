@@ -46,8 +46,6 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
