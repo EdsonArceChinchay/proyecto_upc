@@ -32,6 +32,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton consultar
     Cuando   selecciono el boton Ver detalle del servicio "14351218"
     Y        selecciono el boton agregar sva
+    Y        valido que este en el resumen de venta
     Entonces doy click en Agregar Sva
     Y        doy click en agregar Bloque "HBO"
     Y        doy click en Guardar cambios

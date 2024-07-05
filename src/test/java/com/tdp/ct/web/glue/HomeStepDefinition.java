@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.lib.WebDriverManager;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.HomeStep;
 import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
@@ -15,17 +15,18 @@ public class HomeStepDefinition {
     private HomeStep homeStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String tipoDocumento) {
-        System.out.println("Cliente: " +  cliente.getClienteTest());
+        System.out.println("Cliente: " +  customer.getCustomerTest());
+        customer.setTypeDocument(tipoDocumento);
         homeStep.seleccionoTipoDocumento(tipoDocumento);
     }
 
     @Y("ingreso el documento {string}")
     public void ingresoElDocumento(String documento) {
-        cliente.setNumeroDocumento(documento);
+        Customer.setNumberDocument(documento);
         homeStep.ingresoDocumento(documento);
     }
 

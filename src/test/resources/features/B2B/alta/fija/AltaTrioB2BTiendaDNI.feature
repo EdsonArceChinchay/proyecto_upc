@@ -60,13 +60,12 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    #Y        ingreso los datos del supervisor
-     # | numdoc   | user        | password     |
-     #| 42770472 | rdelatorreg | $t3l3f0n1c4$ |
+    Y        ingreso los datos del supervisor
+      | numdoc   | user     | password     |
+      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac            |
-    #  | DEYSI | JOSE | SULLANA |
       | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
@@ -84,4 +83,3 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
       | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
-      #| usuario externo |userNameST | passST | Bienvenid@ | Bienvenid@  | RUC            | 20513763663     |1| DNI | 75448228|ANALY FLORES LOPEZ| 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | A | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 150 MBPS|discapacitado|RA D22 50 MBPS|

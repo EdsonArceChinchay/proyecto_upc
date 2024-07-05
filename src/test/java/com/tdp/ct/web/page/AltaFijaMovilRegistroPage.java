@@ -610,9 +610,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
-    public boolean esNuevoCliente() {
+    public boolean isNewCustomer() {
         return nombreClienteUserData.getText().length() <= 8;
-
     }
 
     //CAMBIOS PARA RETAIL

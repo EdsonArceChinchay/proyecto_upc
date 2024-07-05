@@ -97,7 +97,6 @@ public class CaptchaPage extends WebBase {
         } else {
             getCaptcha();
         }
-
     }
 
     public void typeCaptcha(String sCaptcha) {
@@ -119,7 +118,6 @@ public class CaptchaPage extends WebBase {
 
     public void cleanFile(String path) {
         File file = new File(path);
-
         if (file.isDirectory()) {
             File[] files = file.listFiles();
 

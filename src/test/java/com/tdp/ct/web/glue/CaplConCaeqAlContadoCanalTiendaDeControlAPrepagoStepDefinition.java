@@ -55,9 +55,9 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         String permanencia = UtilWeb.getValueFromDataTable(datos,"permanencia");
         String tipoPago =UtilWeb.getValueFromDataTable(datos,"tipoPago");
         String equipoName =UtilWeb.getValueFromDataTable(datos,"equipoName");
-        caplConCaeqAlContadoCanalTiendaStep.selectPermanencia(permanencia);
-        caplConCaeqAlContadoCanalTiendaStep.selectTipoPago(tipoPago);
+        caplConCaeqAlContadoCanalTiendaStep.selectTypeOfPayment(tipoPago);
         caplConCaeqAlContadoCanalTiendaStep.writeModeloEquipo(equipoName);
+        caplConCaeqAlContadoCanalTiendaStep.selectPermanency(permanencia);
     }
     @Y("valido que existan resultados busqueda de equipos")
     public void validoQueExistanResultadosBusquedaDeEquipos(){

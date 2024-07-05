@@ -1,7 +1,7 @@
 package com.tdp.ct.web.page.Caeq;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import org.json.JSONException;
@@ -19,7 +19,7 @@ public class CaeqMasCaplMasCasiPage extends WebBase {
     private ServiceTest serviceTest;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
 

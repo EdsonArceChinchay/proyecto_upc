@@ -1,6 +1,6 @@
 package com.tdp.ct.web.step;
 
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -21,7 +21,7 @@ public class AltaFijaMovilRegistroStep {
     private StepPages page;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Autowired
     private ManageScenario scenario;
@@ -145,7 +145,6 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void ingresarDatosValidacionSolicitada(DataTable datos, Integer i) {
-
         page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos,i);
     }
 
@@ -206,13 +205,13 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void verificarClienteNuevo() throws JSONException {
-        cliente.setClienteNuevo(page.altaFijaMovilRegistroPage().esNuevoCliente());
+        customer.setNewCustomer(page.altaFijaMovilRegistroPage().isNewCustomer());
     }
 
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        if(cliente.isClienteNuevo()){
+        if(customer.isNewCustomer()){
             String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
             String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
             String genero=UtilWeb.getValueFromDataTable(datos,"genero");
@@ -227,7 +226,7 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        if(cliente.isClienteNuevo()){
+        if(customer.isNewCustomer()){
             page.altaFijaMovilRegistroPage().crearCliente();
         }else{
             System.out.println("Skip. Cliente Registrado en Dito");
@@ -295,22 +294,22 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void getOrderCode() {
-        List<String> codigoOrden =  page.altaFijaMovilRegistroPage().getOrderCode();
-        if(codigoOrden!=null) {
-            this.cliente.setCodigosDeOrdenes(codigoOrden);
+        List<String> orderCode =  page.altaFijaMovilRegistroPage().getOrderCode();
+        if(orderCode!=null) {
+            this.customer.setOrdersCode(orderCode);
         }else{
             System.out.println("ERROR - Codigo de Orden - Null");
         }
     }
 
-    public String getSalesCode() throws JSONException {
-        String codigoVenta =  page.altaFijaMovilRegistroPage().getSalesCode();
-        if(codigoVenta!=null) {
-            cliente.setNumeroSolicitud(codigoVenta);
+    public String getSalesCode() {
+        String salesCode =  page.altaFijaMovilRegistroPage().getSalesCode();
+        if(salesCode!=null) {
+            customer.setSalesCode(salesCode);
         }else{
             System.out.println("ERROR - Codigo de Venta - Null");
         }
-        return codigoVenta==null? " ":codigoVenta;
+        return salesCode==null? " ":salesCode;
     }
 
 }

@@ -11,14 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 03/07/2024
-
+##FECMOD: 04/07/2024
 @BERSERKERS @DoneDevOps @PI20_SP1 @RegresionLegacy
-Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Call Center
-  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
+Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tienda
+  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
 
-  @caplB2BCallCenterCE
-  Esquema del escenario: Cambio de Plan a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
+  @caeqB2BTiendaDNI
+  Esquema del escenario: Cambio de equipo a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -36,34 +35,41 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "650030665"
-    Y        doy click en el boton "Renovar plan"
+    Cuando   selecciono el boton Ver detalle del servicio "920959541"
+    Y        doy click en el boton "Renovar plan / Equipo"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        selecciono el boton de eleccion de planes
-    Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Elige Todo"
+    Y        presiona el boton anadir equipo del mismo plan
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
+    Y        valido que existan resultados busqueda de equipos
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        cierro pop up de CU
+    Y        doy click en el boton "Mantener Plan"
     Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
+    Y        doy clic en el boton validar identidad representante legal
+    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+    Y        ingreso los datos del supervisor
+      | numdoc   | user     | password     |
+      | 73261531 | vsiguass | $t3l3f0n1c4$ |
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              | tipoValidacion | nombrePadre | nombreMadre | distritoNac |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20504127410 | 1   | DNI             | 75447902       | automation@mail.com | discapacitado  | LAZARO      | AURORA      | CALLAO      |

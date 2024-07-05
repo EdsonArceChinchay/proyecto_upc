@@ -115,6 +115,7 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickBtnContinuarHaciaHome() {
         esperaProgresiva(driver(), 3, 5, btnContinuar);
+        js().scrollElementTop(btnContinuar);
         click(btnContinuar);
         UtilWeb.waitForSeconds(2);
         esperaProgresiva(driver(), 3, 6, msgHome);

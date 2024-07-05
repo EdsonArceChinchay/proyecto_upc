@@ -1,14 +1,12 @@
 package com.tdp.ct.web.step;
 
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 
 @Component
 public class LoginBerserkerStep {
@@ -17,11 +15,11 @@ public class LoginBerserkerStep {
     private StepPages page;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @ScreenShotBefore
     public void clickBtnIniciarSesion() {
-        cliente.setClienteTest("Test Cliente");
+        customer.setCustomerTest("Test Cliente");
         page.loginBerserkerPage().clickBtnIniciarSesion();
     }
 
@@ -99,7 +97,7 @@ public class LoginBerserkerStep {
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void ingresoCaptcha() throws InterruptedException {
+    public void writeCaptcha() throws InterruptedException {
         UtilWeb.waitForSeconds(4);
         page.captchaPage().getCaptcha();
     }

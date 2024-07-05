@@ -2,21 +2,16 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
-import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
-import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.*;
-import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
 import java.util.Objects;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 
 @SpringBootTest(classes = WebAutomationApplication.class)
@@ -171,9 +166,8 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.validarPrecioDescuentoTV(pDescTV);
     }
 
-
     @E("ingreso el captcha")
-    public void ingresoElCaptcha() throws IOException, InterruptedException {
-            loginBerserkerStep.ingresoCaptcha();
+    public void ingresoElCaptcha() throws InterruptedException {
+        loginBerserkerStep.writeCaptcha();
     }
 }

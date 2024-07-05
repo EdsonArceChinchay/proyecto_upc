@@ -12,7 +12,6 @@
 ##DATA: UNICA VEZ
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 16/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
 
@@ -91,6 +90,3 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 75102008  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
-#      | usuario interno |          |          | Bienvenid@  | DNI           | 45770292  | 918416062 | Prepago   | BITEL    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-   #   | usuario interno | userNameQAN | passQAN  | Bienvenid@ | DNI           | 45770292  | 993340032 | Prepago   | CLARO    | Postpago      | RV Plan Ilimitado Mi Movistar S/ 69.9 V | SABINA      | AVELINO     | ANCO HUALLO |
-

@@ -96,7 +96,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void seleccionarTiempo(String tiempoP) {
+    public void selectPermanency(String timePermanency) {
         UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
@@ -104,14 +104,20 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsClickable(listElementPLan,40).click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > div > div > ul > li"));
+        //List<WebElement>lista= contexPlan.findElements(  By.cssSelector("div > div > ul > li"));
+        UtilWeb.waitForSeconds(2);
+        WebElement elementTimePermanency = contexPlan.findElement(By.xpath("//*[contains(text(),'"+timePermanency.trim()+"')]"));
+        elementTimePermanency.click();
+      /*  UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency "+ lista.size());
+
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
-            if(elements.getText().equals(tiempoP)){
+            String newTimePermanency =elements.getText().trim();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Time of permanency "+ newTimePermanency);
+            if(newTimePermanency.equalsIgnoreCase(timePermanency)){
                 UtilWeb.waitForSeconds(2);
                 click(elements,3);
             }
-        }
+        }*/
     }
 
     public void BuscarEquipo(String buscarE) {
@@ -143,7 +149,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             if (elementoExistente) {
                 System.out.println("dio click");
                 click(btnRight);
@@ -167,7 +173,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
             if (i == 2 || i == 5 || i == 8) {
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
@@ -175,7 +181,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
         }
 
-        if(!encontroElemento && listaOfertas.size()>0){
+        if(!encontroElemento && !listaOfertas.isEmpty()){
             System.out.println("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
@@ -206,7 +212,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 return;
             } catch (NoSuchElementException e) {
                 System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
-
                 }
             }
         }
@@ -219,20 +224,20 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     }
 
 
-    public void ingresoElTipoDePago(String pago) {
+    public void selectTypeOfPayment(String payment) {
         boolean tipoPagoEncontrado = false;
-        System.out.println("cantidad: " + listPago.size());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: "+ listPago.size());
         for (WebElement elements : listPago) {
-            System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(pago)) {
-                System.out.println("Se encontro: " + pago);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: "+ elements.getText());
+            if (elements.getText().equalsIgnoreCase(payment)) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Payment type found: "+ payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
                 break;
             }
         }
         if(!tipoPagoEncontrado){
-            System.out.println("NO SE ENCONTRO EL TIPO DE PAGO: " + pago);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No payment type found: "+ payment);
         }
         UtilWeb.waitForSeconds(5);
     }
@@ -304,7 +309,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
         //No deberia usarse este metodo. Deberia usarse revisarmodalerror()
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).isEmpty();
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
             System.out.println("Entro al metodo de Cerrar");

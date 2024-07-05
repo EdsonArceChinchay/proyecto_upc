@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.*;
 import io.cucumber.datatable.DataTable;
@@ -19,11 +19,11 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     private AltaFijaTiendaStep altaFijaTiendaStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Y("valido que muestre el nombre completo del cliente {string}")
     public void valido_que_muestre_el_nombre_completo_del_cliente(String data) {
-        if (!cliente.isClienteNuevo()) {
+        if (!customer.isNewCustomer()) {
             altaFijaTiendaStep.validarNombresCompletosCliente(data);
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");

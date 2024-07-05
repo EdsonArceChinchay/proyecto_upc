@@ -188,6 +188,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 7, completaDatosSolicitados);
+        revisarModalError(driver());
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 

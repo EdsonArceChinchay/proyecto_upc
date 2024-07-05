@@ -1,6 +1,6 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.java.es.Y;
@@ -12,7 +12,7 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     private AltaTrioMTconUpfrontTiendaStep altaTrioMTconUpfrontTiendaStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Y("doy click en el boton linea nueva")
     public void doyClickEnElBotonLineaNueva() {
@@ -47,7 +47,7 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
 
     @Y("doy click en el boton confirmar")
     public void doyClickEnElBotonConfirmar() {
-        if(cliente.isClienteNuevo()){
+        if(customer.isNewCustomer()){
             altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
         }else{
             System.out.println("Skip. Cliente Registrado en Dito");

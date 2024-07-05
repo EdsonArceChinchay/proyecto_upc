@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
@@ -23,7 +23,7 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     private AltaMovilPostpagoCallCenterStep altaMovilPostpagoCallCenterStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
@@ -40,7 +40,7 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
     @Y("ingreso el tiempo de permanencia{string}")
     public void ingresoElTiempoDePermanencia(String TiempoP) {
-        altaMovilPostpagoCallCenterStep.seleccionarTiempo(TiempoP);
+        altaMovilPostpagoCallCenterStep.selectPermanency(TiempoP);
     }
 
     @Y("busco el equipo {string}")
@@ -74,7 +74,7 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     }
 
     @Y("doy click en iniciar registro")
-    public void doyClickEnIniciarRegistro() throws InterruptedException {
+    public void doyClickEnIniciarRegistro() {
         altaMovilPostpagoCallCenterStep.doyClickEnIniciarRegistro();
     }
 
@@ -95,7 +95,7 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
 
     @Y("ingreso los datos del cliente")
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-        if (cliente.isClienteNuevo()) {
+        if (customer.isNewCustomer()) {
             altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");

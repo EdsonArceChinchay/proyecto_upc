@@ -18,6 +18,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 public class HomePage extends WebBase {
     @FindBy(xpath = "//app-root/app-inicio/div/div/div[1]/div[1]/div/img")
     protected WebElement backOfficeButton;
+
     @FindBy(xpath = "//app-root/app-park/body/div/div[1]/div[3]/div[1]")
     protected WebElement boton01;
 
@@ -83,11 +84,20 @@ public class HomePage extends WebBase {
 
     }
 
-    public void clickBotonConsultar(){
-        esperaProgresiva(driver(),3,5,btnconsultar);
+    public void clickBotonConsultar() {
+        esperaProgresiva(driver(), 3, 5, btnconsultar);
         btnConsultar.click();
-        Addons.esperaCargaMontoDeuda(driver(),50);
-        esperaProgresiva(driver(),3,20,boton01);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button search");
+        UtilWeb.waitForSeconds(10);
+        boolean isB2B =  !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
+        if (isB2B) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2B");
+        }
+        else{
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2C");
+            Addons.esperaCargaMontoDeuda(driver(), 50);
+            esperaProgresiva(driver(), 3, 20, boton01);
+        }
         revisarModalError(driver());
     }
 
@@ -115,13 +125,12 @@ public class HomePage extends WebBase {
 
     public void seleccionoElIDDeClienteNro(String nro) {
         UtilWeb.waitForSeconds(10);
-        WebElement nroItem = find().getElementByXPath("(//*[@class='table']/tbody/tr/td[1])[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 3, 120, nroItem);
-        waitUntilElementIsClickable(nroItem, 100);
+        WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
+        esperaProgresiva(driver(), 3, 5, nroItem);
+        waitUntilElementIsClickable(nroItem, 20);
         nroItem.click();
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
-        esperaProgresiva(driver(), 2, 20, btnGuardar);
         btnGuardar.click();
     }
 
@@ -147,21 +156,21 @@ public class HomePage extends WebBase {
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         Boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
-        String nombretipoDoc="";
-        esperaProgresiva(driver(),2,5,listaDocumentos);
+        String nombretipoDoc = "";
+        esperaProgresiva(driver(), 2, 5, listaDocumentos);
         js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
         UtilWeb.waitForSeconds(1);
         for (int i = 0; i < listaDoc.size(); i++) {
-              nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
+            nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
             if (nombretipoDoc.contains(tipoDocEsperado)) {
 
                 existe = true;
                 listaDoc.get(i).click();
             }
-            System.out.println(nombretipoDoc +"nombre documento");
+            System.out.println(nombretipoDoc + "nombre documento");
         }
         Assertions.assertTrue(existe, "no se encontro: " + nombretipoDoc);
     }

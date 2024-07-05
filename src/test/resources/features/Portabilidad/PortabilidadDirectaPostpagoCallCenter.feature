@@ -12,7 +12,6 @@
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
 

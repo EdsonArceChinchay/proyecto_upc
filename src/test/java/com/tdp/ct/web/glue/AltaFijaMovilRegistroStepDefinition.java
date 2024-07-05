@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.CaptchaBase.Parameters;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
@@ -24,7 +24,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
@@ -128,8 +128,8 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Y("completo los datos solicitados {string}")
-    public void completoLosDatosSolicitados(String correo) {
-        altaFijaMovilRegistroStep.completarCorreo(correo);
+    public void completoLosDatosSolicitados(String email) {
+        altaFijaMovilRegistroStep.completarCorreo(email);
     }
 
     @Y("doy click en validar identidad del titular")
@@ -199,12 +199,11 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 
-
     //CAMBIOS PARA RETAIL
     @Y("ingreso los datos del cliente a registrar")
-    public void completoLosDatosDelClienteARegistrar(DataTable datos) throws JSONException {
+    public void completoLosDatosDelClienteARegistrar(DataTable value) throws JSONException {
         altaFijaMovilRegistroStep.verificarClienteNuevo();
-        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
+        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(value);
         altaFijaMovilRegistroStep.clicEnCrearCliente();
     }
 
@@ -217,7 +216,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     @Y("doy click en datos del cliente")
     public void doyClickEnDatosDelCliente() {
-        if (cliente.isClienteNuevo()) {
+        if (customer.isNewCustomer()) {
             altaFijaMovilRegistroStep.esperarBtnDatosCliente();
             altaFijaMovilRegistroStep.clicDatosDelCliente();
         } else {
@@ -246,7 +245,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() throws JSONException {
         altaFijaMovilRegistroStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
-        this.scenario.log(this.cliente.getCodigosDeOrdenes().toString());
+        this.scenario.log(this.customer.getOrdersCode().toString());
     }
 
 
