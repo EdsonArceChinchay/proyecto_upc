@@ -11,10 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 19/12/2023
+##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04
-
 Característica: AT-DT116_Alta MT + Alta SVA + Equipo en canal Tiendas
 
   @AltaMT_SVA_CAEQ_Tiendas
@@ -51,8 +50,10 @@ Característica: AT-DT116_Alta MT + Alta SVA + Equipo en canal Tiendas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        valido que este en el resumen de venta
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en el boton Guardar cambios
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName |
@@ -87,8 +88,11 @@ Característica: AT-DT116_Alta MT + Alta SVA + Equipo en canal Tiendas
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1075288962 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

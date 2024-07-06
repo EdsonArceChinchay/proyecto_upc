@@ -83,7 +83,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         caplConCaeqAlContadoCanalTiendaStep.writeEmail(email);
     }
 
-    @Y("selecciono el boton Ver detalle del servicio {string}")
+    @Y("doy click en el boton Ver detalle del servicio {string}")
     public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
         caplConCaeqAlContadoCanalTiendaStep.clickBtnVerDetalle(nroServicio);
     }

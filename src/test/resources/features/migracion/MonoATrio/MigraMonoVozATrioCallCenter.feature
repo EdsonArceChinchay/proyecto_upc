@@ -49,7 +49,7 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
-
+    E        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -66,5 +66,5 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                                           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD RA A24 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD |

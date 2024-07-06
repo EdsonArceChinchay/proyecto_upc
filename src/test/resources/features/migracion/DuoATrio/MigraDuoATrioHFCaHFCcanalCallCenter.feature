@@ -16,12 +16,10 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @MigracionDuoATrioHFCaHFCcanalCallCenter
   Esquema del escenario:Migracion Duo A Trio HFC a HFC
     Cuando   presiono el boton Iniciar Sesion
+    Dado     que abro la pagina de movistar
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
@@ -53,5 +51,5 @@ Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                               |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 128888888 | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 128888888 | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar |

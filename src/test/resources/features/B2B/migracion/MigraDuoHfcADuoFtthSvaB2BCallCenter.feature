@@ -1,26 +1,24 @@
 #language:es
-##CREADOR: Edson Arce
+##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT064
-##GDAP: GDAP-888
+##CODIGO: AT-DT062
+##GDAP: GDAP-608
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE
-##ENCARGADO: Edson Arce
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
+Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 
-  Antecedentes:
+  @MigracionRucCambioTegnologia @MVP11 @Global
+  Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
     Dado     que abro la pagina de movistar
-
-  @migracionDuoTrioRUCCallCenter @MVP12 @Global
-  Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -37,15 +35,16 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton "Confirmar direccion"
+    #Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar SVA Linea "<sva>"
-   # Y        doy click en agregar "<sva>"
-    #Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "<sva>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
@@ -61,13 +60,9 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y       doy click en Finalizar registro
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan              | sva                  | tipoValidacion        |
-     # | usuario externo | userNameCC | passCC | Bienvenid@  | RUC            | 20513763663  |1   |DNI            |75448228 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | TRIO          | HD RA D22 50 MBPS | Plan Multidestino 20 | Validación biométrica |
-      #| usuario externo | userNameCC | passCC | Bienvenid@  | RUC            | 20491354918  |1   |DNI            |75447902 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
-    #  | usuario externo | userNameCC | passCC | Bienvenid@  | RUC            | 20462949040  |1   |DNI            |75447445 | tester@tester.com | TRIO           | RA D22 50 MBPS | Plan Multidestino 20 |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |

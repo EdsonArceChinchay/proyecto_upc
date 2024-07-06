@@ -33,7 +33,4 @@ public class MigracionMonoADuoSVATiendaStep {
     }
 
 
-    public void seleccionarPlanMigrar(String plan) {
-        page.MigracionMonoADuoSVATiendaPage().seleccionarPlanMigrar(plan);
-        }
 }

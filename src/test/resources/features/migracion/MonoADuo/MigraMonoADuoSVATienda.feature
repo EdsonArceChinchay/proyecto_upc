@@ -39,8 +39,10 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        selecciono el plan "<nombrePlan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    #Y        doy click en agregar SVA Linea "<sva>"
-    Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "<Bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -54,7 +56,10 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        doy click en el boton de continuar
     Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque | sva                  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    | Plan Multidestino 20 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |

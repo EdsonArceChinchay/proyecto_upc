@@ -15,7 +15,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
-import static com.tdp.ct.web.utils.LocalStorage.*;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class PortabilidadPage extends WebBase {

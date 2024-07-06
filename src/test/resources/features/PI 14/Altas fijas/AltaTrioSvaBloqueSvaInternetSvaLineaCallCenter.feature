@@ -51,11 +51,11 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar SVA Linea "<svaLinea>"
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        agrego "<svainternet>"
-    Y        doy click en Guardar cambios
+    Y       agrego SVA linea "<svaLinea>"
+    Entonces doy click en el boton Agregar SVA
+    Y        agrego SVA bloque "<bloque>"
+    Y        agrego SVA internet<svainternet>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

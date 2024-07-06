@@ -51,11 +51,11 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        agrego "<svainternet>"
-    Y        elegimos sva repetidor "<svarepetidor>"
-    Y        doy click en Guardar cambios
-	  #Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "<svainternet>"
+    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

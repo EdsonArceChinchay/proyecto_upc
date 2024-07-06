@@ -28,15 +28,10 @@ public class AltaMovilComboProactivoStepDefinition {
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
-
-        // altaMovilComboProactivoStep.clicConfirmarCliente();
-        //  altaFijaMovilRegistroStep.datosClienteValidado();
-        // altaMovilComboProactivoStep.clicConsultar();
-
     }
 
 
-    @Y("selecciono el boton agregar sva")
+    @Y("doy click en el boton Agregar SVA")
     public void seleccionoElBotonAgregarSva() {
         altaMovilComboProactivoStep.seleccionoElBotonAgregarSva();
     }

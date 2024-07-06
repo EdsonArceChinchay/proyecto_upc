@@ -19,7 +19,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonLineaNueva();
     }
 
-
     @Y("doy click en el boton consultar cobertura")
     public void doyClickEnElBotonConsultarCobertura() {
         altaTrioMTconUpfrontTiendaStep.clickBotonConsultarCobertura();

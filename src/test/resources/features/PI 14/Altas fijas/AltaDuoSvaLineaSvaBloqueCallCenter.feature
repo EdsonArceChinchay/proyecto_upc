@@ -51,11 +51,11 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar SVA Linea "<svaLinea>"
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
-	  #Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "<svaLinea>"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

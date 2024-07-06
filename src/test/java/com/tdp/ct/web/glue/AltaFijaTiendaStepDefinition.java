@@ -53,7 +53,6 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton descargar contrato")
     public void presiono_el_boton_descargar_contrato() {
-
         altaFijaTiendaStep.clickDescargarContrato();
         altaFijaTiendaStep.clickDescargarPdf();
         altaFijaTiendaStep.cambiarPestanaPrincipal();
@@ -65,21 +64,9 @@ public class AltaFijaTiendaStepDefinition {
             altaFijaTiendaStep.clickRegistrarVenta();
     }
 
-
     @Y("doy click en añadir SVA")
     public void doyClickEnAñadirSVA() {
         altaFijaTiendaStep.doyClickEnAñadirSVA();
-    }
-
-    @Y("doy click en agregar Bloque {string}")
-    public void doyClickEnAgregarBloque(String Bloque) {
-        altaFijaTiendaStep.doyClickEnAgregarBloque(Bloque);
-
-    }
-
-    @Y("doy click en Guardar cambios")
-    public void doyClickEnGuardarCambios() {
-        altaFijaTiendaStep.doyClickEnGuardarCambios();
     }
 
     @Y("ingreso los datos de agendamiento para RUC")

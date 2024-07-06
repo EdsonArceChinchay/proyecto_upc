@@ -41,9 +41,10 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
+    Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -53,7 +54,10 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                    | bloque |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL RA M23 | FOX    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan             | bloque |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL | HBO    |

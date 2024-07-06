@@ -88,16 +88,6 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnAgregarBloque(String bloque) {
-        page.altaFijaTiendaPage().doyClickEnAgregarBloque(bloque);
-    }
-
-    @ScreenShotAfter
-    public void doyClickEnGuardarCambios() {
-        page.altaFijaTiendaPage().doyClickEnGuardarCambios();
-    }
-
-    @ScreenShotAfter
     public void ingresarDatosAgendamientoParaRUC() {
         page.altaFijaTiendaPage().ingresarDatosAgendamientoParaRUC();
     }

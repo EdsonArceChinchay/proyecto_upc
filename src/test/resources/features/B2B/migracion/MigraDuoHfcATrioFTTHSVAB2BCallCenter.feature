@@ -1,24 +1,26 @@
 #language:es
-##CREADOR: Angel Medina
+##CREADOR: Edson Arce
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT062
-##GDAP: GDAP-608
+##CODIGO: AT-DT064
+##GDAP: GDAP-888
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
-##ENCARGADO: Angel Medina
+##DATA: REUSABLE
+##ENCARGADO: Edson Arce
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
+Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
 
-  @MigracionRucCambioTegnologia @MVP11 @Global
-  Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
+  Antecedentes:
     Dado     que abro la pagina de movistar
+
+  @migracionDuoTrioRUCCallCenter @MVP12 @Global
+  Esquema del escenario: Migración Upsell Dúo voz + internet 30mbps con tecnología HFC a Trío 50 Mbps con tecnología HFC + SVA pla multidestino, con ruc, en call center, con flujo biometrico
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -35,15 +37,16 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar SVA Linea "<sva>"
-   # Y        doy click en agregar "<sva>"
-    #Y         doy clic en agregar sva "<Bloque>"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "<sva>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
@@ -51,7 +54,6 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic en el boton validar identidad representante legal
-    #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
@@ -61,7 +63,8 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Cuando   doy clic en si acepto
     Y       doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan           | sva                  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | TRIO          | RA D22 50 MBPS | Plan Multidestino 20 |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                        | sva                  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | TRIO          | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 |

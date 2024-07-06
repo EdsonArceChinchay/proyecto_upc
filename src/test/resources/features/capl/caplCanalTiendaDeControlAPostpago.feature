@@ -30,7 +30,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        ingreso el documento "461960081"
     Y        doy click en el boton consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del servicio "650029862"
+    Y        doy click en el boton Ver detalle del servicio "650029862"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes

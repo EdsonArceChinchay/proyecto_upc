@@ -52,7 +52,7 @@ Característica: Alta Trio con sva Modem + sva Linea Canal Retail
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en agregar Modem
-    Y        doy click en agregar SVA Linea "<svaLinea>"
+    Y       agrego SVA linea "<svaLinea>"
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

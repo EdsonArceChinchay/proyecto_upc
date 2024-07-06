@@ -40,9 +40,10 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
+    Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion

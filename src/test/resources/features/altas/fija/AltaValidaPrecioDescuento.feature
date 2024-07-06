@@ -57,8 +57,8 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        valido la velocidad de internet "<velocidadBB>"
     Y        valido el precio de descuento del componente Internet "<precDescBB>"
   #  Y        doy click en añadir SVA
-  #  Y        doy click en agregar Bloque "<bloque>"
-  #  Y        doy click en Guardar cambios
+  #  Y        agrego SVA bloque "<bloque>"
+  #  Y        doy click en el boton Guardar cambios
 	#Y        doy click en agregar "<svaInternet>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento

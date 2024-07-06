@@ -60,7 +60,7 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(button);
     }
 
-    @Y("doy click en agregar SVA Linea {string}")
+    @Y("doy click en el boton Agregar SVA Linea {string}")
     public void doyClickEnAgregarSVALinea(String SvaLinea) {
         altaFijaMovilRegistroStep.clicEnAgregarSVA();
         migracionDuoATrioTiendaStep.agregoSVALinea(SvaLinea);

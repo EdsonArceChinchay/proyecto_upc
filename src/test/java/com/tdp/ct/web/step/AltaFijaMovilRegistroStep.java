@@ -51,6 +51,7 @@ public class AltaFijaMovilRegistroStep {
         Assert.assertTrue("La pantalla de ofertas sugeridas no cargo correctamente!!!",
                 page.altaFijaMovilRegistroPage().validarQueExistanOfertasSugeridas());
     }
+
     @ScreenShotAfter
     public void seleccionarOferta(String oferta) {
         page.altaFijaMovilRegistroPage().seleccionarOferta(oferta);
@@ -74,10 +75,12 @@ public class AltaFijaMovilRegistroStep {
     public void clicIniciarRegistro() {
         page.altaFijaMovilRegistroPage().clicIniciarRegistro();
     }
+
     @ScreenShotAfter
     public void moverToElementIniciarRegistro() {
         page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
     }
+
     @ScreenShotAfter
     public void validarPantallaAgendamiento() {
         Assert.assertTrue("No se mostro pantalla de agendamiento",
@@ -99,6 +102,7 @@ public class AltaFijaMovilRegistroStep {
         Assert.assertTrue("No se mostro modal de detalle de instalacion",
                 page.altaFijaMovilRegistroPage().validarDetalleInstalacion());
     }
+
     @ScreenShotAfter
     public void clicConfirmarInstalacion() {
         page.altaFijaMovilRegistroPage().clicConfirmarInstalacion();
@@ -106,7 +110,7 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void completarCorreo(String correo) {
-        page.altaFijaMovilRegistroPage().completarCorreo( correo);
+        page.altaFijaMovilRegistroPage().completarCorreo(correo);
     }
 
     @ScreenShotBefore
@@ -115,14 +119,14 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void seleccionoTipoValidacion(String tipoValidacion) {
-        page.altaFijaMovilRegistroPage().seleccionoTipoValidacion( tipoValidacion);
+        page.altaFijaMovilRegistroPage().seleccionoTipoValidacion(tipoValidacion);
     }
 
     public void ingresarDatosSupervisor(DataTable datos) {
 
-        String numdoc= UtilWeb.getValueFromDataTable(datos,"numdoc");
-        String user= UtilWeb.getValueFromDataTable(datos,"user");
-        String password= UtilWeb.getValueFromDataTable(datos,"password");
+        String numdoc = UtilWeb.getValueFromDataTable(datos, "numdoc");
+        String user = UtilWeb.getValueFromDataTable(datos, "user");
+        String password = UtilWeb.getValueFromDataTable(datos, "password");
 
         page.altaFijaMovilRegistroPage().ingresarDNISupervisor(numdoc);
         page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
@@ -131,7 +135,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotBefore
-    public void clicConfirmarUsuarioSupervisor(){
+    public void clicConfirmarUsuarioSupervisor() {
         page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
     }
 
@@ -145,7 +149,7 @@ public class AltaFijaMovilRegistroStep {
     }
 
     public void ingresarDatosValidacionSolicitada(DataTable datos, Integer i) {
-        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos,i);
+        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos, i);
     }
 
     @ScreenShotBefore
@@ -191,34 +195,37 @@ public class AltaFijaMovilRegistroStep {
     public void clicEnAgregarSVA() {
         page.altaFijaMovilRegistroPage().clicEnAgregarSVA();
     }
+
     @ScreenShotAfter
     public void clicSVAHBO() {
         page.altaFijaMovilRegistroPage().clicSVAHBO();
     }
+
     @ScreenShotAfter
     public void clicGuardarCambios() {
         page.altaFijaMovilRegistroPage().clicGuardarCambios();
     }
+
     @ScreenShotAfter
     public void escogerTurnoAgendamiento() {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
     }
 
-    public void verificarClienteNuevo() throws JSONException {
+    public void verificarClienteNuevo() {
         customer.setNewCustomer(page.altaFijaMovilRegistroPage().isNewCustomer());
     }
 
     //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        if(customer.isNewCustomer()){
-            String nombre=UtilWeb.getValueFromDataTable(datos,"nombres");
-            String apellidos=UtilWeb.getValueFromDataTable(datos,"apellidos");
-            String genero=UtilWeb.getValueFromDataTable(datos,"genero");
+        if (customer.isNewCustomer()) {
+            String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
+            String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
+            String genero = UtilWeb.getValueFromDataTable(datos, "genero");
             page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
             page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
             page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
-        }else{
+        } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
 
@@ -226,29 +233,35 @@ public class AltaFijaMovilRegistroStep {
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        if(customer.isNewCustomer()){
+        if (customer.isNewCustomer()) {
             page.altaFijaMovilRegistroPage().crearCliente();
-        }else{
+        } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
 
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void completarDatosClienteExtranjero(DataTable datosCliente) {
-        String fechaNac=UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-        String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
+        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
+        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
 
         page.altaFijaMovilRegistroPage().ingresarFechaNac(fechaNac);
         page.altaFijaMovilRegistroPage().seleccionoNacionalidad();
         page.altaFijaMovilRegistroPage().seleccionarEstadoCivil(estadoCivil);
 
     }
-    public void esperarBtnDatosCliente(){ page.altaFijaMovilRegistroPage().esperarBtnDatosCliente(); }
+
+    public void esperarBtnDatosCliente() {
+        page.altaFijaMovilRegistroPage().esperarBtnDatosCliente();
+    }
+
     @ScreenShotBefore
     public void clicDatosDelCliente() {
         page.altaFijaMovilRegistroPage().clicDatosDeCliente();
     }
+
     @ScreenShotBefore
     public void clicConfirmarCliente() {
         page.altaFijaMovilRegistroPage().clicConfirmarCliente();
@@ -277,39 +290,27 @@ public class AltaFijaMovilRegistroStep {
         getSalesCode();
     }
 
-    public void agregoSVAINTERNET(String svaInternet) {
-        page.altaFijaMovilRegistroPage().agregoSVAINTERNET(svaInternet);
-    }
-
-    public void clicEnAgregarRepetidor() {
-        page.altaFijaMovilRegistroPage().agregarRepetidor();
-    }
-
-    public void clicEnAgregarSVAMT() {
-        page.altaFijaMovilRegistroPage().clicEnAgregarSVAMT();
-    }
-
-    public String getTextoSolicitud(){
-         return page.altaFijaMovilRegistroPage().getTextoSolicitud();
+    public String getTextoSolicitud() {
+        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 
     public void getOrderCode() {
-        List<String> orderCode =  page.altaFijaMovilRegistroPage().getOrderCode();
-        if(orderCode!=null) {
+        List<String> orderCode = page.altaFijaMovilRegistroPage().getOrderCode();
+        if (orderCode != null) {
             this.customer.setOrdersCode(orderCode);
-        }else{
+        } else {
             System.out.println("ERROR - Codigo de Orden - Null");
         }
     }
 
     public String getSalesCode() {
-        String salesCode =  page.altaFijaMovilRegistroPage().getSalesCode();
-        if(salesCode!=null) {
+        String salesCode = page.altaFijaMovilRegistroPage().getSalesCode();
+        if (salesCode != null) {
             customer.setSalesCode(salesCode);
-        }else{
+        } else {
             System.out.println("ERROR - Codigo de Venta - Null");
         }
-        return salesCode==null? " ":salesCode;
+        return salesCode == null ? " " : salesCode;
     }
 
 }

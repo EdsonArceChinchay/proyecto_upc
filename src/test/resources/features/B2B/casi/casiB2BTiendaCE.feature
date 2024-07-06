@@ -36,7 +36,7 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "650024739"
+    Cuando   doy click en el boton Ver detalle del servicio "650024739"
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
     Y        valido que este en el resumen de venta
@@ -55,5 +55,5 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE              | 102040170      | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20521390582 | 2   | CE              | 102040170      | automation@mail.com |

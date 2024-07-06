@@ -285,21 +285,6 @@ public class AltaFijaTiendaPage extends WebBase {
         click(btnSVA);
     }
 
-    public void doyClickEnAgregarBloque(String bloque) {
-        UtilWeb.waitForSeconds(10);
-        WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsClickable(btnbloque, 100);
-        js().scrollElementTop(btnbloque);
-        click(btnbloque);
-    }
-
-    public void doyClickEnGuardarCambios() {
-        WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
-        js().scrollElementTop(btnGuardar);
-        btnGuardar.click();
-
-    }
-
     public void ingresarDatosAgendamientoParaRUC() {
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario

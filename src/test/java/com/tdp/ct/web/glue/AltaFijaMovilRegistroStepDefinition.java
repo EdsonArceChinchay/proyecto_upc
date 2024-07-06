@@ -182,7 +182,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Y("imprimo el texto del contrato solicitado")
-    public void imprimoElTextoDelContratoSolicitado() throws JSONException {
+    public void imprimoElTextoDelContratoSolicitado() {
         this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
         this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
     }
@@ -246,29 +246,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
         this.scenario.log(this.customer.getOrdersCode().toString());
-    }
-
-
-    @Y("doy click en agregar {string}")
-    public void doyClickEnAgregar(String String) {
-        altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
-        altaFijaMovilRegistroStep.clicGuardarCambios();
-    }
-
-
-    @Y("doy click en agregar repetidor")
-    public void doyClickEnAgregarRepetidor() {
-        altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        altaFijaMovilRegistroStep.clicEnAgregarRepetidor();
-        altaFijaMovilRegistroStep.clicGuardarCambios();
-    }
-
-    @Y("doy click en agregar SVA MT {string}")
-    public void doyCLickEnAgregarSVA(String String) {
-        altaFijaMovilRegistroStep.clicEnAgregarSVAMT();
-        altaFijaMovilRegistroStep.agregoSVAINTERNET(String);
-        altaFijaMovilRegistroStep.clicGuardarCambios();
     }
 
     @Y("doy click en el boton confirmar validacion")

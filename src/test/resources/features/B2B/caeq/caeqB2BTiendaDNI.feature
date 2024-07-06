@@ -35,7 +35,7 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "920959541"
+    Cuando   doy click en el boton Ver detalle del servicio "920959541"
     Y        doy click en el boton "Renovar plan / Equipo"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan

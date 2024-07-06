@@ -38,7 +38,10 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     Y        doy click en el boton "Confirmar direccion"
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar "Seguridad Total Residencial"
+    Cuando   doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "Seguridad Total Residencial"
+    Y        doy click en el boton Guardar cambios
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName |
@@ -62,5 +65,5 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
 
     Ejemplos:
-      | tipoUsuario     | userName  | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | userNameST | passST | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464769 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo              |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464769 | automation@mail.com |
