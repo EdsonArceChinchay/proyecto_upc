@@ -61,7 +61,7 @@ public class AltaFijaTiendaStepDefinition {
 
     @Y("presiono el boton Registrar venta")
     public void presiono_el_boton_Registrar_venta() {
-            altaFijaTiendaStep.clickRegistrarVenta();
+        altaFijaTiendaStep.clickRegistrarVenta();
     }
 
     @Y("doy click en añadir SVA")

@@ -21,7 +21,6 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     @Y("selecciono la oferta {string}")
     public void seleccionoLaOferta(String oferta) {
         altaFijaTiendaStep.seleccionarListaOfertas(oferta);
-        //altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 

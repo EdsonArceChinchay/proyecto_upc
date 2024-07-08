@@ -30,7 +30,7 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
 	#Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        selecciono la cartilla del plan activo
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas

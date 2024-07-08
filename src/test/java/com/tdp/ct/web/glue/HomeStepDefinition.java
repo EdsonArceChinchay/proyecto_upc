@@ -3,7 +3,9 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.HomeStep;
+import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.E;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,9 +32,9 @@ public class HomeStepDefinition {
         homeStep.ingresoDocumento(documento);
     }
 
-    @Y("doy click en el boton consultar")
+    @Y("doy click en el boton Consultar")
     public void doyClickEnElBotonConsultar() {
-        homeStep.clickBotonConsultar();
+        homeStep.clickButtonSearch();
     }
 
     @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
@@ -43,11 +45,6 @@ public class HomeStepDefinition {
     @Y("selecciono el ID de Cliente nro {string}")
     public void seleccionoElIDDeClienteNro(String nro) {
         homeStep.seleccionoElIDDeClienteNro(nro);
-    }
-
-    @Y("doy click en el boton Consultar")
-    public void doyClickEnElBotonConsultarRuc() {
-        homeStep.clickBtnConsultar();
     }
 
     @Y("valido que me traiga los servicios contratados por el cliente")
@@ -74,5 +71,46 @@ public class HomeStepDefinition {
     public void cierroPopUpDeCU() {
         homeStep.clickXPopUpCU();
     }
+
+    @Entonces("valido el login exitoso mediante el mensaje {string}")
+    public void validoElLoginExitosoMedianteElMensaje(String msg) {
+        homeStep.validarMsgHome(msg);
+    }
+
+    @Y("valido que se presente la tienda {string}")
+    public void validoQueSePresenteLaTienda(String tienda) {
+        homeStep.validarTiendaAsesor(tienda);
+    }
+
+    @Dado("regreso a la pagina de inicio")
+    public void regresoPaginaInicio() {
+        homeStep.regresarPaginaInicio();
+    }
+
+    @Y("doy click en el icono de Asesor")
+    public void doyClickEnElIconoDeAsesor() {
+        homeStep.doyClickEnElIconoDeAsesor();
+    }
+
+    @Y("doy click en Cerrar Sesion")
+    public void doyClickEnCerrarSesion() {
+        homeStep.doyClickEnCerrarSesion();
+    }
+
+    @Y("doy click en Atras")
+    public void doyClickEnAtras() {
+        homeStep.doyClickEnAtras();
+    }
+
+    @Y("confirmo Cerrar Sesion")
+    public void confirmoCerrarSesion() {
+        homeStep.confirmoCerrarSesion();
+    }
+
+    @Y("me dirijo a la bandeja de Back Office")
+    public void meDirijoALaBandejaDeBackOffice() {
+        homeStep.clickBackOffice();
+    }
+
 
 }

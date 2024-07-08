@@ -29,7 +29,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Cuando   doy click en el boton Ver detalle del servicio "14351218"
     Y        doy click en el boton Agregar SVA
     Y        valido que este en el resumen de venta

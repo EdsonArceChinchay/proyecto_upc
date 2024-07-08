@@ -27,7 +27,7 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "AV, CORONEL JOSE LEAL, 500, LINCE, LIMA , LIMA, PE" actual del servicio

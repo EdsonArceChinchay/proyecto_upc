@@ -30,7 +30,7 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton de la Linea Movil Existente

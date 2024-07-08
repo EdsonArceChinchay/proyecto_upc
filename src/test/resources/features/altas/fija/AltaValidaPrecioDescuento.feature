@@ -31,7 +31,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 	#Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero   |
@@ -114,7 +114,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        valido si el cliente "<nombre>", "<apellido>" con genero "<genero>" ya esta registrado
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas

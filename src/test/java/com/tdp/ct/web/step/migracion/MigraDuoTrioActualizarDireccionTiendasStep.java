@@ -10,11 +10,7 @@ import org.springframework.stereotype.Component;
 public class MigraDuoTrioActualizarDireccionTiendasStep {
     @Autowired
     private StepPages pages;
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void doyClickEnElBoton(String button) {
-        pages.migraDuoTrioActualizarDireccionTiendasPage().doyClickEnElBoton(button);
-    }
+
     @ScreenShotAfter
     public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
         pages.migraDuoTrioActualizarDireccionTiendasPage().validoQueSePresenteElSiguienteMensaje(mensaje);

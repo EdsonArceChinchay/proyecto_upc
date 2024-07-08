@@ -30,7 +30,7 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        cierro el popup de contraseña Única
     #Y        cierro popup de error
     Cuando   doy click en el boton Ver detalle del servicio "9234816429"

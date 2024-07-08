@@ -21,14 +21,6 @@ public class BandejaBackOfficeStepDefinition {
     @Autowired
     private Customer customer;
 
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
-
-    @Y("me dirijo a la bandeja de Back Office")
-    public void meDirijoALaBandejaDeBackOffice() {
-        bandejaBackOfficeStep.clickBackOffice();
-    }
-
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
         bandejaBackOfficeStep.typeDocument(documento);
@@ -36,7 +28,7 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
-        bandejaBackOfficeStep.typeDocument(customer.getNumberDocument());
+        bandejaBackOfficeStep.typeDocument(Customer.getNumberDocument());
     }
 
     //    TODO: Buscar por tipo
@@ -47,7 +39,7 @@ public class BandejaBackOfficeStepDefinition {
         switch (typeDocument) {
             case "documento":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by document number");
-                String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : customer.getNumberDocument();
+                String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : Customer.getNumberDocument();
                 bandejaBackOfficeStep.typeDocument(numberCocument);
                 break;
             case "solicitud":
@@ -75,8 +67,4 @@ public class BandejaBackOfficeStepDefinition {
         bandejaBackOfficeStep.approveRequest();
     }
 
-    @Y("busco por el codigo de expediente")
-    public void buscoPorElCodigoDeExpediente() {
-
-    }
 }

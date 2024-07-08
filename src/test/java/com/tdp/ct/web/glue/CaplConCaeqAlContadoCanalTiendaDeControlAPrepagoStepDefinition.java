@@ -52,15 +52,16 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
 
     @E("ingreso permanencia, tipo de pago y equipo")
     public void ingresoPermanenciaTipoPagoYEquipo(DataTable datos) {
-        String permanencia = UtilWeb.getValueFromDataTable(datos,"permanencia");
-        String tipoPago =UtilWeb.getValueFromDataTable(datos,"tipoPago");
-        String equipoName =UtilWeb.getValueFromDataTable(datos,"equipoName");
+        String permanencia = UtilWeb.getValueFromDataTable(datos, "permanencia");
+        String tipoPago = UtilWeb.getValueFromDataTable(datos, "tipoPago");
+        String equipoName = UtilWeb.getValueFromDataTable(datos, "equipoName");
         caplConCaeqAlContadoCanalTiendaStep.selectTypeOfPayment(tipoPago);
         caplConCaeqAlContadoCanalTiendaStep.writeModeloEquipo(equipoName);
         caplConCaeqAlContadoCanalTiendaStep.selectPermanency(permanencia);
     }
+
     @Y("valido que existan resultados busqueda de equipos")
-    public void validoQueExistanResultadosBusquedaDeEquipos(){
+    public void validoQueExistanResultadosBusquedaDeEquipos() {
         Assert.assertTrue("La cantidad de equipos es menor que 1", caplConCaeqAlContadoCanalTiendaStep.contadorResultadosBusquedaEquipos() >= 1);
 
     }

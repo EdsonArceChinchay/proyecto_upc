@@ -29,7 +29,7 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |

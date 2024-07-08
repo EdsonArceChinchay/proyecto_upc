@@ -18,24 +18,24 @@ public class LoginBerserkerStep {
     private Customer customer;
 
     @ScreenShotBefore
-    public void clickBtnIniciarSesion() {
+    public void clickButtonLogin() {
         customer.setCustomerTest("Test Cliente");
-        page.loginBerserkerPage().clickBtnIniciarSesion();
+        page.loginBerserkerPage().clickButtonLogin();
     }
 
     @ScreenShotAfter
-    public void selectTipoUsuario(String user) {
-        page.loginBerserkerPage().selectTipoUsuario(user);
+    public void selectUserType(String user) {
+        page.loginBerserkerPage().selectUserType(user);
     }
 
     @ScreenShotAfter
-    public void writeUserName(String name) {
-        page.loginBerserkerPage().writeUserName(name);
+    public void typeUserName(String name) {
+        page.loginBerserkerPage().typeUserName(name);
     }
 
     @ScreenShotAfter
-    public void writePassword(String pass) {
-        page.loginBerserkerPage().writePassword(pass);
+    public void typePassword(String pass) {
+        page.loginBerserkerPage().typePassword(pass);
     }
 
     @ScreenShotBefore
@@ -45,8 +45,8 @@ public class LoginBerserkerStep {
     }
 
     @ScreenShotBefore
-    public void clickBtnContinuar() {
-        page.loginBerserkerPage().clickBtnContinuar();
+    public void clickButtonContinue() {
+        page.loginBerserkerPage().clickButtonContinue();
     }
 
     @ScreenShotBefore
@@ -54,15 +54,6 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().clickBtnContinuarToLogin();
     }
 
-    @ScreenShotAfter
-    public void validarMsgHome(String msg) {
-        page.loginBerserkerPage().validarMsgHome(msg);
-    }
-
-    @ScreenShotAfter
-    public void validarTiendaAsesor(String tienda) {
-        page.loginBerserkerPage().validarTiendaAsesor(tienda);
-    }
 
     @ScreenShotAfter
     public void validarMensajeError(String msg) {
@@ -74,59 +65,12 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().validarMsgIncorrectCredential(msg);
     }
 
-    @ScreenShotAfter
-    public void doyClickEnElIconoDeAsesor() {
-        page.loginBerserkerPage().clickIconoAsesor();
-    }
-
-    @ScreenShotAfter
-    public void doyClickEnCerrarSesion() {
-        page.loginBerserkerPage().clickBtnCerrarSesion();
-    }
-
-    @ScreenShotAfter
-    public void doyClickEnAtras() {
-        page.loginBerserkerPage().clickBtnAtras();
-    }
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void confirmoCerrarSesion() {
-        page.loginBerserkerPage().clickBtnCerrarSesion();
-    }
-
-    @ScreenShotAfter
-    @ScreenShotBefore
-    public void writeCaptcha() throws InterruptedException {
+    public void typeCaptcha() throws InterruptedException {
         UtilWeb.waitForSeconds(4);
         page.captchaPage().getCaptcha();
     }
 
-    public void validarNomPlan(String nomPlan) {
-        page.loginBerserkerPage().validarNomPlan(nomPlan);
-    }
-
-    public void scrollDown() {
-        page.altaFijaMovilRegistroPage().scrollDown();
-    }
-
-    public void validarVelocidadInternet(String mbpsBB) {
-        page.loginBerserkerPage().validarVelocidadInternet(mbpsBB);
-    }
-
-    public void validarPrecioDescuento(String precDesc) {
-        page.loginBerserkerPage().validarPrecioDescuento(precDesc);
-    }
-
-    public void validarnombreSVAcontenido(String nomsvaTV) {
-        page.loginBerserkerPage().validarnombreSVAcontenido(nomsvaTV);
-    }
-
-    public void validarPrecioDescuentoTV(String pDescTV) {
-        page.loginBerserkerPage().validarPrecioDescuentoTV(pDescTV);
-    }
-
-    public void regresarPaginaInicio() {
-        page.loginBerserkerPage().regresarPaginaInicio();
-    }
 }

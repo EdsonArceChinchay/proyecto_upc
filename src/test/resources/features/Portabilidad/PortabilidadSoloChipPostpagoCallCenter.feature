@@ -28,7 +28,7 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
    # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas

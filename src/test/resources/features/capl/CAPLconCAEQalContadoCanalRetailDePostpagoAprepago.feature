@@ -28,7 +28,7 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "77654580"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        doy click en el boton Ver detalle del servicio "650023363"
     Y        doy click en el boton "Renovar plan"

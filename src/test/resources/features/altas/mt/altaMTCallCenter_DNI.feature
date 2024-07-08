@@ -29,7 +29,7 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -105,7 +105,7 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
 #    Cuando   selecciono el tipo de documento "<tipoDocumento>"
 #    Y        ingreso el documento "<documento>"
-#    Y        doy click en el boton consultar
+#    Y        doy click en el boton Consultar
 #    Y        ingreso los datos del cliente a registrar
 #      | nombres | apellidos    | genero    |
 #      | Juan    | Lopez Anibal | masculino |

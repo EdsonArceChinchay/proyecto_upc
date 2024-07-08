@@ -28,14 +28,14 @@ Característica: AT-DT079_Migracion Salto 0 por canal Retail
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     #Y        cierro el popup de Detail
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        Seleccinar boton migrar a fibra
+    Y        doy click en el boton Migrar a fibra
     Cuando   doy clic en iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

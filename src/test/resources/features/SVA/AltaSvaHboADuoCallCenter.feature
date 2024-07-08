@@ -29,7 +29,7 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Cuando   doy click en el boton Ver detalle del servicio "9234740961"
     Y        doy click en el boton Agregar SVA

@@ -30,7 +30,7 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
     Cuando   doy click en ver detalle

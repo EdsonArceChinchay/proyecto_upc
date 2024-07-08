@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,25 +15,18 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
 
 public class HomePage extends WebBase {
-    @FindBy(xpath = "//app-root/app-inicio/div/div/div[1]/div[1]/div/img")
-    protected WebElement backOfficeButton;
 
     @FindBy(xpath = "//app-root/app-park/body/div/div[1]/div[3]/div[1]")
     protected WebElement boton01;
 
-    @FindBy(xpath = "//div[1]/form/div/div[3]/button")
-    protected WebElement btnconsultar;
-
-    @FindBy(xpath = "//*[contains(@class,'info-user')]/div")
+    @FindBy(xpath = "//*[contains(@class,'info-user')]/div | //app-client-info")
     protected WebElement txtNombre;
 
-    @FindBy(xpath = "//app-client-info")
-    protected WebElement txtNombreRuc;
-
     @FindBy(xpath = "//div[1]/form/div/div[3]/button")
-    protected WebElement btnConsultar;
+    protected WebElement btnSearch;
 
     @FindBy(xpath = "//*[@class='validation']//tdp-st-input-text")
     protected WebElement txtDocumento;
@@ -46,15 +40,35 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
     protected WebElement botonX;
 
-    public void seleccionoTipoDocumento(String tipoDocumento) {
-        //Addons.reiniciaTimeout(driver());
+    @FindBy(css = ".message-welcome span")
+    protected WebElement msgHome;
+
+    @FindBy(css = ".tienda-row span")
+    protected WebElement tiendaLabel;
+
+    @FindBy(xpath = "//*[contains(text(),'Inicio')]")
+    protected WebElement btnInicio;
+
+    @FindBy(xpath = "//img[@src='assets/images/login-icono.svg']")
+    protected WebElement iconAsesor;
+
+    @FindBy(xpath = "(//*[contains(text(),'Cerrar s')])[1]")
+    protected WebElement btnCerrar;
+
+    @FindBy(xpath = "//*[@class='atras']")
+    protected WebElement btnAtras;
+
+    @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
+    protected WebElement btnBackOffice;
+
+    public void selectDocumentType(String type) {
         UtilWeb.waitForSeconds(2);
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
-        js().scrollElementTop(btnconsultar);
+        js().scrollElementTop(btnSearch);
         click(documentoList);
         String valueTipoDocumento = "";
         SearchContext context = sh().getContext(documentoList);
-        switch (tipoDocumento) {
+        switch (type) {
             case "CE":
             case "C":
                 valueTipoDocumento = "C";
@@ -70,23 +84,20 @@ public class HomePage extends WebBase {
                 valueTipoDocumento = "RUC";
                 break;
             default:
-                throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
+                throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
         context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
-
     }
-
 
     public void ingresoDocumento(String documento) {
         WebElement document = find().getElementByCss("#doc");
         click(document);
         type(document, documento);
-
     }
 
-    public void clickBotonConsultar() {
-        esperaProgresiva(driver(), 3, 5, btnconsultar);
-        btnConsultar.click();
+    public void clickButtonSearch() {
+        esperaProgresiva(driver(), 3, 5, btnSearch);
+        btnSearch.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button search");
         UtilWeb.waitForSeconds(10);
         boolean isB2B =  !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
@@ -103,24 +114,9 @@ public class HomePage extends WebBase {
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
         UtilWeb.waitForSeconds(2);
-        String Nombre = "";
-        String expectedNombre = nombre.trim().toUpperCase();
-        String expectedTipoDocumento = tipoDocumento.trim().toUpperCase();
-        String expectedNroDocumento = nroDocumento.trim().toUpperCase();
-        boolean datosClienteNatural;
-        datosClienteNatural = !driver().findElements(By.xpath("//*[contains(@class,'info-user')]/div")).isEmpty();
-        if (datosClienteNatural) {
-            Nombre = txtNombre.getText().trim().toUpperCase();
-        }
-        boolean datosClienteEmpresa;
-        datosClienteEmpresa = !driver().findElements(By.xpath("//app-client-info")).isEmpty();
-        if (datosClienteEmpresa) {
-            Nombre = txtNombreRuc.getText().trim().toUpperCase();
-        }
-        Assertions.assertTrue(Nombre.contains(expectedNombre), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNombre);
-        Assertions.assertTrue(Nombre.contains(expectedTipoDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedTipoDocumento);
-        Assertions.assertTrue(Nombre.contains(expectedNroDocumento), "El mensaje obtenido: " + Nombre + ", no coincide con lo esperado " + expectedNroDocumento);
-        UtilWeb.waitForSeconds(2);
+        compareWebElementTextAndText(txtNombre,nombre);
+        compareWebElementTextAndText(txtNombre,tipoDocumento);
+        compareWebElementTextAndText(txtNombre,nroDocumento);
     }
 
     public void seleccionoElIDDeClienteNro(String nro) {
@@ -132,11 +128,6 @@ public class HomePage extends WebBase {
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
         btnGuardar.click();
-    }
-
-    public void clickBtnConsultar() {
-        waitUntilElementIsVisible(btnConsultar, 10);
-        click(btnConsultar);
     }
 
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
@@ -154,7 +145,7 @@ public class HomePage extends WebBase {
     }
 
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
-        Boolean existe = false;
+        boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
         String nombretipoDoc = "";
         esperaProgresiva(driver(), 2, 5, listaDocumentos);
@@ -166,7 +157,6 @@ public class HomePage extends WebBase {
         for (int i = 0; i < listaDoc.size(); i++) {
             nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
             if (nombretipoDoc.contains(tipoDocEsperado)) {
-
                 existe = true;
                 listaDoc.get(i).click();
             }
@@ -194,8 +184,43 @@ public class HomePage extends WebBase {
     }
 
     public void clickBackOffice() {
-        click(backOfficeButton);
-        waitUntilElementIsVisible(find().getElementByXPath("//app-root/app-offer-tray/body/div/div[1]/div[2]/form/div[2]/div/div[3]/button"), 5);
+        esperaProgresiva(driver(), 3, 5, btnBackOffice);
+        click(btnBackOffice);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
+        UtilWeb.waitForSeconds(5);
+    }
+
+    public void validarMsgHome(String msg) {
+        UtilWeb.waitForSeconds(1);
+        Addons.revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, msgHome);
+        compareWebElementTextAndText(msgHome,msg);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void validarTiendaAsesor(String tienda) {
+        compareWebElementTextAndText(tiendaLabel,tienda);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void regresarPaginaInicio() {
+        esperaProgresiva(driver(), 3, 5, btnInicio);
+        js().scrollElementTop(btnInicio);
+        btnInicio.click();
+        esperaProgresiva(driver(), 5, 5, msgHome);
+    }
+
+    public void clickIconoAsesor() {
+        waitUntilElementIsClickable(iconAsesor, 10).click();
+    }
+
+    public void clickBtnCerrarSesion() {
+        waitUntilElementIsClickable(btnCerrar, 10).click();
+        UtilWeb.waitForSeconds(2);
+    }
+
+    public void clickBtnAtras() {
+        waitUntilElementIsClickable(btnAtras, 10).click();
     }
 
 }

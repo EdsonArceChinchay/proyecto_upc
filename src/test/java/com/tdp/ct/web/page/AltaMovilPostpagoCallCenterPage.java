@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -20,9 +21,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     protected WebElement BtnOpciones;
     @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
-
-    @FindBy(xpath = "//div[@class='cont-button']")
-    protected WebElement btnBuscar;
 
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement lblLineaNueva;
@@ -48,12 +46,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='option-boxes']//div")
     protected List<WebElement> listPago;
-
-    @FindBy(css = "div.cont-autocomplete")
-    protected WebElement lblItem;
-
-    @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
-    protected WebElement btnConfirmar;
 
     @FindBy(xpath= "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
     protected WebElement btnDetallePedido;
@@ -273,7 +265,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(listNacionalidad);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println(elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()));
+            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()) );
             if(elements.getText().trim().equals(nacionalidad.trim())){
                 js().scrollElementTop(elements);
                 waitUntilElementIsClickable(elements,30).click();
@@ -291,7 +283,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(estadoList);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println(elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()));
+            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()) );
             if(elements.getText().trim().equals(estadoCivil.trim())){
                 click(elements,30);
                 break;

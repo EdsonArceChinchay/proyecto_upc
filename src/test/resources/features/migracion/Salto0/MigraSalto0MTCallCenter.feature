@@ -31,7 +31,7 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan MT
     #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -41,15 +41,14 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        presiono el boton consultar cobertura
     Y        doy clic en el boton "entendido"
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono la opcion Migrar a fibra
+    Y        doy click en el boton Migrar a fibra
     Cuando   doy clic en iniciar registro
-    Y        valido que muestre la pantalla de Agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
-
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

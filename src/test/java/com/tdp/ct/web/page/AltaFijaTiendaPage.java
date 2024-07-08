@@ -3,6 +3,8 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -56,6 +58,21 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//button/span[contains(text(), 'Validar identidad del Rep. Legal')]/..")
     protected WebElement btnValidaLegal;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[1]/app-summary-detail/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span[2]")
+    protected WebElement velocidadBB;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    protected WebElement precDescBB;
+
+    @FindBy(css = "div.tdp-row.textBlue")
+    protected WebElement svaTV;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    protected WebElement precDescTV;
+
+    @FindBy(css = ".title span")
+    protected WebElement nombrePlan;
 
     public String nombresCompletosCliente() {
         esperaProgresiva(driver(), 5, 5, nombresCompletosCliente);
@@ -359,5 +376,47 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("Salió del primer try");
             System.out.println("Salta el registrar");
         }
+    }
+
+
+    public void validarNomPlan(String nomPlan) {
+        Addons.revisarModalError(driver());
+        String expectedNomPlan = nomPlan.trim().toLowerCase();
+        String actualNomPlan = nombrePlan.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualNomPlan.contains(expectedNomPlan), "El plan obtenido: " + actualNomPlan + ", no coincide con lo esperado " + expectedNomPlan);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        Addons.revisarModalError(driver());
+        String expectedVelocInternet = mbpsBB.trim().toLowerCase();
+        String actualVelocInternet = velocidadBB.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualVelocInternet.contains(expectedVelocInternet), "La velocidad de Internet obtenida: " + actualVelocInternet + ", no coincide con lo esperado " + expectedVelocInternet);
+        UtilWeb.waitForSeconds(1);
+
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        Addons.revisarModalError(driver());
+        String expectedPrecioDesc = precDesc.trim().toLowerCase();
+        String actualPrecioDesc = precDescBB.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualPrecioDesc.contains(expectedPrecioDesc), "EL precio de descuento del componente Internet: " + actualPrecioDesc + ", no coincide con lo esperado " + expectedPrecioDesc);
+        UtilWeb.waitForSeconds(1);
+
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        Addons.revisarModalError(driver());
+        String expectedNomSVAtv = nomsvaTV.trim().toLowerCase();
+        String actualNomSVAtv = svaTV.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualNomSVAtv.contains(expectedNomSVAtv), "El SVA del BO obtenida: " + actualNomSVAtv + ", no coincide con lo esperado " + expectedNomSVAtv);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        Addons.revisarModalError(driver());
+        String expectedPrecioDescTV = pDescTV.trim().toLowerCase();
+        String actualPrecioDescTV = precDescTV.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualPrecioDescTV.contains(expectedPrecioDescTV), "El precio de descuento del componente TV: " + actualPrecioDescTV + ", no coincide con lo esperado " + expectedPrecioDescTV);
+        UtilWeb.waitForSeconds(1);
     }
 }

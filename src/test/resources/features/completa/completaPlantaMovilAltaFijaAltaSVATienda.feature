@@ -30,7 +30,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Movil Existente
     Y        selecciono el boton Linea Nueva Hogar

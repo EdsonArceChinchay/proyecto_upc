@@ -28,7 +28,7 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |
       | Miguel  | Mejia     | Masculino |

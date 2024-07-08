@@ -31,7 +31,7 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas

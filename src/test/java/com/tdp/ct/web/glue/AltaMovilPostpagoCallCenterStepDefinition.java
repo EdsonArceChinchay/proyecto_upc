@@ -13,7 +13,6 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaMovilPostpagoCallCenterStepDefinition {
 

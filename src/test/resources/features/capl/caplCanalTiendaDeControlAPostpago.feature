@@ -28,7 +28,7 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "461960081"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton Ver detalle del servicio "650029862"
     Y        doy click en el boton "Renovar plan"

@@ -29,7 +29,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
 	#Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas

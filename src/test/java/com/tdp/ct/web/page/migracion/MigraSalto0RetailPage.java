@@ -9,7 +9,7 @@ import static com.tdp.ct.web.utils.Addons.*;
 
 public class MigraSalto0RetailPage extends WebBase {
 
-    @FindBy(xpath = "(//div/button[@class='btnCard'])[2]")
+    @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
     protected WebElement BtnMigrarFibra;
 
     @FindBy(xpath = "//div/button[@class='btnStart']")

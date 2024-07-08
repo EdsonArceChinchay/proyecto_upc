@@ -121,10 +121,6 @@ public class StepPages {
         return new MigraSalto0RetailPage();
     }
 
-    public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage() {
-        return new MigraSalto0CanalTiendaPage();
-    }
-
     public MigraMTconCambioVelocidaCallCenterPage migraMTconCambioVelocidaCallCenterPage() {
         return new MigraMTconCambioVelocidaCallCenterPage();
     }

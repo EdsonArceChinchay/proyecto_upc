@@ -33,9 +33,9 @@ public class AltaFijaRetailStepDefinition {
 
     @Y("completo los datos solicitados")
     public void completoLosDatosSolicitados(DataTable dataTable) {
-        if(customer.isNewCustomer()) {
+        if (customer.isNewCustomer()) {
             altaFijaRetailStep.ingresarDatosCliente(dataTable);
-        }else{
+        } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
     }

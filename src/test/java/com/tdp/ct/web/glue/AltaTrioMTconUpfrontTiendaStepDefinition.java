@@ -19,7 +19,7 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonLineaNueva();
     }
 
-    @Y("doy click en el boton consultar cobertura")
+    @Y("doy click en el boton Consultar cobertura")
     public void doyClickEnElBotonConsultarCobertura() {
         altaTrioMTconUpfrontTiendaStep.clickBotonConsultarCobertura();
     }
@@ -34,11 +34,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonIniciarRegistro();
     }
 
-    @Y("selecciono la fecha de instalacion")
-    public void seleccionoLaFechaDeInstalacion() {
-        
-    }
-
     @Y("ingreso telefono del contacto {string}")
     public void ingresoTelefonoDelContacto(String numContacto) {
         altaTrioMTconUpfrontTiendaStep.ingresoTelefonoContacto(numContacto);
@@ -51,14 +46,12 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         }else{
             System.out.println("Skip. Cliente Registrado en Dito");
         }
-
     }
 
     @Y("voy hasta el final de la pagina")
     public void voyHastaElFinalDeLaPagina() {
         altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
     }
-
 
     @Y("valido detalles de instalacion")
     public void validoDetallesDeInstalacion() {

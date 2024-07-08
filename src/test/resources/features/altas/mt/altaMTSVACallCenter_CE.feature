@@ -29,7 +29,7 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |
       | Jose    | LLamoca   | masculino |

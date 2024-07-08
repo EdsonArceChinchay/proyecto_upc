@@ -16,8 +16,7 @@ public class AltaMovilComboProactivoStepDefinition {
 
     @Autowired
     private AltaMovilComboProactivoStep altaMovilComboProactivoStep;
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+
     @Autowired
     private Customer customer;
 
@@ -29,7 +28,6 @@ public class AltaMovilComboProactivoStepDefinition {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
     }
-
 
     @Y("doy click en el boton Agregar SVA")
     public void seleccionoElBotonAgregarSva() {

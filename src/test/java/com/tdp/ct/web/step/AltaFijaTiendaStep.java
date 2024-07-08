@@ -100,5 +100,26 @@ public class AltaFijaTiendaStep {
     public void clickBotonRegistrarVenta() {
         page.altaFijaTiendaPage().clickBotonRegistrarVenta();
     }
+
+    public void validarNomPlan(String nomPlan) {
+        page.altaFijaTiendaPage().validarNomPlan(nomPlan);
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        page.altaFijaTiendaPage().validarVelocidadInternet(mbpsBB);
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        page.altaFijaTiendaPage().validarPrecioDescuento(precDesc);
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        page.altaFijaTiendaPage().validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        page.altaFijaTiendaPage().validarPrecioDescuentoTV(pDescTV);
+    }
+
 }
 

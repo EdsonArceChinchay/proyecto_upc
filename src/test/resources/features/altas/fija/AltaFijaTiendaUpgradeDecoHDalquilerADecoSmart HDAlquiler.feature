@@ -28,7 +28,7 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 	#Y        cierro popup de error
     Y        valido que este en el resumen de venta
     Entonces doy click en el boton Agregar SVA

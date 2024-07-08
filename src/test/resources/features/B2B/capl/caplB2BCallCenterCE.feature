@@ -29,7 +29,7 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
     E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
