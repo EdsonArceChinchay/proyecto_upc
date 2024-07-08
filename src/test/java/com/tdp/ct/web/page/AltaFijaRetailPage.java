@@ -80,7 +80,7 @@ public class AltaFijaRetailPage extends WebBase {
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
             click(btnCerrar);

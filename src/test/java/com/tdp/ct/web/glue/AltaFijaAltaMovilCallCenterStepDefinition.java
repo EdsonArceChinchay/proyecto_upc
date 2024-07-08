@@ -19,8 +19,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
     @Autowired
     private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;

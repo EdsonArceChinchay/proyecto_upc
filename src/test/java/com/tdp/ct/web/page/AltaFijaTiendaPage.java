@@ -3,11 +3,8 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.utils.Addons;
-import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +13,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static org.assertj.core.api.BDDAssertions.and;
-
 
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
@@ -52,14 +47,9 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
-
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
-    @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
-    protected WebElement btnReintentarFinal;
 
     @FindBy(xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
@@ -94,15 +84,14 @@ public class AltaFijaTiendaPage extends WebBase {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
             int count = 0;
-            while (isBtnRigth ) {
+            while (isBtnRigth) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight, 5);
                 btnRight.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
-                if (count == countMax)
-                {
+                if (count == countMax) {
                     break;
                 }
             }
@@ -113,7 +102,7 @@ public class AltaFijaTiendaPage extends WebBase {
         try {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
-            while (isBtnLeft ) {
+            while (isBtnLeft) {
                 btnLeft.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left");
                 isBtnLeft = btnLeft.isDisplayed();
