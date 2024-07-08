@@ -95,8 +95,8 @@ public class Helper extends WebBase {
         String currentText = element.getText().trim().toUpperCase();
         LOGGER.log(Level.INFO, "Current text: " + currentText);
         boolean isEquals = currentText.contains(expectedText);
-        LOGGER.log(Level.INFO, "The expected text " + expectedText + "  and the current text " + currentText + " are different: " + isEquals);
-        Assertions.assertTrue(isEquals, "The expected text " + expectedText + "  and the current text " + currentText + " are different: " + isEquals);
+        LOGGER.log(Level.INFO, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
+        Assertions.assertTrue(isEquals, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
     }
 
 }
