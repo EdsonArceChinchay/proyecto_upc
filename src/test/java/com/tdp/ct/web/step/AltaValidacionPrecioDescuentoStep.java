@@ -1,17 +1,13 @@
 package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
-import jdk.jshell.execution.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.xml.crypto.Data;
 
 @Component
 public class AltaValidacionPrecioDescuentoStep {

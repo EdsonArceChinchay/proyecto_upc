@@ -73,10 +73,6 @@ public class StepPages {
         return new MigracionDuoATrioTiendaPage();
     }
 
-    public AltaTrioDuoProactivoPage altaTrioDuoProactivoPage() {
-        return new AltaTrioDuoProactivoPage();
-    }
-
     public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage() {
         return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage();
     }

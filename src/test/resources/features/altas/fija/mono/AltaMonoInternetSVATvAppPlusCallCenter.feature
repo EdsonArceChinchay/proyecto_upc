@@ -76,5 +76,5 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Plus por canal Ca
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan                        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | Internet Movistar RA S23 200 Mbps |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | Internet Movistar RA |
