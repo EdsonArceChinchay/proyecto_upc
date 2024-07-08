@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.scrollFinalPagina;
-
 @Component
 public class OfferSVAStep {
 
