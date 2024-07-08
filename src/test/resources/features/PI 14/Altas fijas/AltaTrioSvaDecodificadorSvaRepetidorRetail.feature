@@ -52,10 +52,9 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Entonces doy click en el boton Agregar SVA
-    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales"
-#    Y        agrego SVA bloque "HBO"
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA decodificador "<decodificador>"
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -80,6 +79,6 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion           | referencia             | tipoPlan | nombrePlan                     | decodificador | svarepetidor          |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | 9.90          | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion           | referencia             | tipoPlan | nombrePlan                     | decodificador          | svaRepetidor          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | PUNTO ADICIONAL HD DVR | REP. SMART WIFI Venta |
 

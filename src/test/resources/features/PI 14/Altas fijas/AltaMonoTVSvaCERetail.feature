@@ -52,6 +52,7 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "<bloque>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
@@ -78,4 +79,4 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan             | bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA | FOX    |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA | HOT    |

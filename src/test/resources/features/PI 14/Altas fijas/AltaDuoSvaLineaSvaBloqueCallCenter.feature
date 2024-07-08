@@ -87,4 +87,4 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1058908648 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | FOX    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1058908648 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |

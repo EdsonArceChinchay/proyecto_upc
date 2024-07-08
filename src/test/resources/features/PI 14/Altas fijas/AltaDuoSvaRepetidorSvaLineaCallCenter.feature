@@ -51,9 +51,10 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y       agrego SVA linea "<svaLinea>"
     Entonces doy click en el boton Agregar SVA
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA repetidor "<svaRepetidor>"
+    Y        agrego SVA linea "<svaLinea>"
     Y        doy click en el boton Guardar cambios
 	  #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
@@ -85,5 +86,5 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svarepetidor              |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1101000012 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

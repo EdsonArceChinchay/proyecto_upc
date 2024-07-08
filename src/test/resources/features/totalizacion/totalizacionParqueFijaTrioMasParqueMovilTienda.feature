@@ -14,7 +14,6 @@
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps @TEST1
-
 Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con documento CE en Tienda
 
   # Se debe de validar que no tenga ordenes en vuelo antes de ejecutar el feature

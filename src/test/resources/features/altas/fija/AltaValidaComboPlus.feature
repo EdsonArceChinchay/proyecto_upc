@@ -61,7 +61,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
   #  Y        agrego SVA Movistar Tv App Max
   #  Y        agrego SVA bloque "<bloque>"
   #  Y        doy click en el boton Guardar cambios
-	#Y        doy click en agregar "<svaInternet>"
+	#Y        agrego SVA internet "<svaInternet>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

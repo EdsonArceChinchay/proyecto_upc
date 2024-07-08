@@ -53,8 +53,8 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA internet "<svainternet>"
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA internet "<svaInternet>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -85,5 +85,5 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svainternet           | svarepetidor              |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |

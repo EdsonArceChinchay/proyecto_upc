@@ -49,7 +49,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -74,5 +74,5 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | decodificador         | svarepetidor          |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | decodificador         | svaRepetidor          |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta | REP. SMART WIFI Venta |

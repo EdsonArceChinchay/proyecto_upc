@@ -54,7 +54,7 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Entonces doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA decodificador "<decodificador>"
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -85,5 +85,5 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador | svarepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | 25.90         | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador      | svaRepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |

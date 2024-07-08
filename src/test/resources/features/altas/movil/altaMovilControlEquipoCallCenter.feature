@@ -36,7 +36,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Postpago
+    Y        selecciono el plan "Postpago" que desea
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"

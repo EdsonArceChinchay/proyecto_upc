@@ -51,8 +51,9 @@ Característica: Alta Trio con sva Decodificador + sva linea Canal Call Center
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y       agrego SVA linea "<svaLinea>"
     Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "<svaLinea>"
     Y        agrego SVA decodificador "<decodificador>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro

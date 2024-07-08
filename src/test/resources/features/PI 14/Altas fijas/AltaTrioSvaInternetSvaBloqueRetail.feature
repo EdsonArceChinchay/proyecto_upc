@@ -6,18 +6,18 @@
 ##ESTADO:
 ##CODIGO:
 ##GDAP: GDAP-1234
-##SPRINT CREADO:
+##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 25/04/2024
+##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
 Característica: Alta Trio con SVA Internet por Canal Retail
 
   @AltaTrioSvaInternetRetail
-  Esquema del escenario: Alta Trio con sva Internet CANAL Retail
+  Esquema del escenario: Alta Trio con SVA Internet "<svaInternet>" por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -51,8 +51,9 @@ Característica: Alta Trio con SVA Internet por Canal Retail
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar "<svaInternet>"
-    Entonces doy click en el boton Agregar SVA
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "<svaInternet>"
     Y        agrego SVA bloque "<bloque>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro

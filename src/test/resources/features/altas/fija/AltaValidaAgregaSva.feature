@@ -58,7 +58,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA Movistar Tv App Max
     Y        doy click en el boton Guardar cambios
-	#Y        doy click en agregar "<svaInternet>"
+	#Y        agrego SVA internet "<svaInternet>"
    # Y        valido el precio de descuento del componente TV "<precDescTV>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento

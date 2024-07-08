@@ -30,9 +30,11 @@ Característica: AT-DT002_Alta Fija migracion deco HD a Smart HD
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
 	#Y        cierro popup de error
-    Y        selecciono agregar sva fija
-    Y        seleccionamos agregar decodificador Smart HD
-    Y        seleccionamos guardar cambios
+    Y        valido que este en el resumen de venta
+    Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA decodificador "PUNTO ADICIONAL HD DVR"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

@@ -40,7 +40,10 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        selecciono boton Cambiar plan
    # Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar repetidor
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA repetidor "Repetidor WIFI PLUS Venta"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -87,7 +90,10 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar repetidor
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA repetidor "Repetidor WIFI PLUS Venta"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

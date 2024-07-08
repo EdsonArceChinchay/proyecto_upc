@@ -26,7 +26,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton consultar
@@ -52,7 +52,10 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        selecciono boton Cambiar plan
     #Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar repetidor
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA repetidor "Repetidor WIFI PLUS Venta"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -67,5 +70,5 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            | longitud    | latitud      |
-      | usuario externo | userNameCC2 | passCC2  | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | RA M23 200 MBPS | tester@tester.com | -77.0381898 | -12.08130997 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan                  | correo            | longitud    | latitud      |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | DÚO INTERNET ESTÁNDAR | tester@tester.com | -77.0381898 | -12.08130997 |

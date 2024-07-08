@@ -1,9 +1,6 @@
 package com.tdp.ct.web.glue.migracion;
 
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
-import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
-import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.MigracionDuoATrioTiendaStep;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +12,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
 
     @Autowired
     private MigracionDuoATrioTiendaStep migracionDuoATrioTiendaStep;
-
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Y("selecciono la cartilla del plan activo")
     public void selecciono_la_cartilla_del_plan_Activo() {
@@ -60,19 +54,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.doyClickEnEnElBoton(button);
     }
 
-    @Y("doy click en el boton Agregar SVA Linea {string}")
-    public void doyClickEnAgregarSVALinea(String SvaLinea) {
-        altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        migracionDuoATrioTiendaStep.agregoSVALinea(SvaLinea);
-        altaFijaMovilRegistroStep.clicGuardarCambios();
-    }
-
-    @Y("doy click en agregar Modem")
-    public void doyClickEnAgregarModem() {
-        altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        migracionDuoATrioTiendaStep.doyClickEnAgregarModem();
-        altaFijaMovilRegistroStep.clicGuardarCambios();
-    }
 
     @Y("cierro el popup de contraseña Única")
     public void cierroElPopupDeContraseñaÚnica() {

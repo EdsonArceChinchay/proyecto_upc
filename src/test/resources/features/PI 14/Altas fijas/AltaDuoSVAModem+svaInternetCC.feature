@@ -53,6 +53,7 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y       agrego SVA internet "<svaInternet>"
     Y        agrego SVA modem "Modem Premium MTA"
     Y        doy click en el boton Guardar cambios
     E        inicio su registro
@@ -83,5 +84,5 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                  | bloque | tipoPlan | svaInternet           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA | HBO    | Duo      | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                  | tipoPlan | svaInternet           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA | Duo      | PACK ANTIVIRUS MCAFEE |

@@ -51,8 +51,9 @@ Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque 
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Entonces doy click en el boton Agregar SVA
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        agrego SVA bloque "<bloque>"
     Y        doy click en el boton Guardar cambios
 	  #Y        valido que este en el resumen de venta
@@ -84,5 +85,5 @@ Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | bloque | svarepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | HBO    | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan            | bloque | svaRepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR | HBO    | Repetidor WIFI PLUS Venta |

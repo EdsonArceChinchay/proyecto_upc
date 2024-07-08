@@ -42,7 +42,7 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "<bloque>"
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -59,5 +59,5 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svarepetidor          |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |

@@ -59,7 +59,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
   #  Y        doy click en añadir SVA
   #  Y        agrego SVA bloque "<bloque>"
   #  Y        doy click en el boton Guardar cambios
-	#Y        doy click en agregar "<svaInternet>"
+	#Y        agrego SVA internet "<svaInternet>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

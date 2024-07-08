@@ -51,10 +51,11 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar Modem
     Entonces doy click en el boton Agregar SVA
-    Y        agrego SVA repetidor "<svarepetidor>"
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        agrego SVA decodificador "<decodificador>"
+    Y        agrego SVA modem "Mejora a Modem Premium MTA"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -85,5 +86,5 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador | svarepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1060122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | 9.90          | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador          | svaRepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1060122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PUNTO ADICIONAL HD DVR | Repetidor WIFI PLUS Venta |

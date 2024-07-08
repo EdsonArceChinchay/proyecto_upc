@@ -11,17 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
-
 Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @migracionTrioAmtSvaCallCenter
   Esquema del escenario: Migracion de Trio a MT con CE  sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
