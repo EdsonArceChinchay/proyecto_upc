@@ -211,9 +211,10 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         return existe;
     }
 
-
     public void selectTypeOfPayment(String payment) {
         boolean tipoPagoEncontrado = false;
+        esperaProgresiva(driver(),5,5,listPago.get(0));
+        js().scrollElementTop(listPago.get(0));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: "+ listPago.size());
         for (WebElement elements : listPago) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: "+ elements.getText());
