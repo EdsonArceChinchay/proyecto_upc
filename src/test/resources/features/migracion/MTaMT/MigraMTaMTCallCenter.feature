@@ -62,10 +62,5 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-<<<<<<< HEAD
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 135 Gb RV | tester@tester.com |
-=======
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan | correo            |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono       | tester@tester.com |
->>>>>>> 486a6e32fd76be0e86b7dd9b7d6adfa86ba962b0
