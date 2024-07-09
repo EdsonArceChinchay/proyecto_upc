@@ -78,7 +78,4 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
-#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000273 | Postpago | Plan Movil Movistar Total ilim |
-#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000808 | Postpago | Plan Movil Movistar Total ilim |
-#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000806 | Postpago | Plan Movil Movistar Total ilim |
-#      | usuario interno | | | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1100000755 | Postpago | Plan Movil Movistar Total ilim |
+

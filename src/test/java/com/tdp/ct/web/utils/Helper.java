@@ -75,9 +75,9 @@ public class Helper extends WebBase {
             element = listElemet.get(i);
             String nameElement = "";
             try {
-                if (element.isEnabled()) {
+                if (element.isEnabled() && element.isSelected()) {
                     nameElement = element.getText().trim();
-                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element " + element + " - " + nameElement + " is enabled");
+                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element " + element + " - " + nameElement + " is enabled and selected");
                 }
             } catch (Exception e) {
                 Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element not found" + element + " - " + e.getMessage());

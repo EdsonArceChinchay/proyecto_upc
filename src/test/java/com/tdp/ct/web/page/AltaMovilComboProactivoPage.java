@@ -125,8 +125,9 @@ public class AltaMovilComboProactivoPage extends WebBase {
 
     public void seleccionoElBotonAgregarSva() {
         revisarModalError(driver());
-        WebElement btnAddSVA = find().getElementByXPath("(//tdp-st-modal/div/form/div/div[2]/tdp-st-button)[1] | //*[@class='buttonG' and contains(text(),'SVA')]");
-        esperaProgresiva(driver(), 3, 5, btnAddSVA);
+        List<WebElement> listbtnAddSVA = find().getElementsByXPath("(//app-modal-detail-landline//div[2]/tdp-st-button)[1] |(//app-modal-detail-mt//div[2]/tdp-st-button)[1] | //*[contains(@class,'buttonG') and contains(text(),'SVA')]");
+        esperaProgresiva(driver(), 3, 5, listbtnAddSVA.get(0));
+        WebElement btnAddSVA = selectEnabledItemFromAListOfItems(listbtnAddSVA);
         js().scrollElementTop(btnAddSVA);
         btnAddSVA.click();
         UtilWeb.waitForSeconds(5);
