@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndTextAndReturnValue;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
@@ -96,20 +97,15 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsClickable(listElementPLan,40).click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
-        //List<WebElement>lista= contexPlan.findElements(  By.cssSelector("div > div > ul > li"));
+        List<WebElement>lista= contexPlan.findElements(  By.cssSelector("div > div > ul > li"));
         UtilWeb.waitForSeconds(2);
-        WebElement elementTimePermanency = contexPlan.findElement(By.xpath("//*[contains(text(),'"+timePermanency.trim()+"')]"));
-        elementTimePermanency.click();
-      /*  UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency "+ lista.size());
-
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency "+ lista.size());
         for(WebElement elements:lista){
-            String newTimePermanency =elements.getText().trim();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Time of permanency "+ newTimePermanency);
-            if(newTimePermanency.equalsIgnoreCase(timePermanency)){
-                UtilWeb.waitForSeconds(2);
+            boolean isEquals =compareWebElementTextAndTextAndReturnValue(elements,timePermanency);
+            if(isEquals){
                 click(elements,3);
             }
-        }*/
+        }
     }
 
     public void BuscarEquipo(String buscarE) {

@@ -96,6 +96,16 @@ public class Helper extends WebBase {
         Assertions.assertTrue(isEquals, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
     }
 
+    public static boolean compareWebElementTextAndTextAndReturnValue(WebElement element, String text) {
+        String expectedText = text.trim().toUpperCase();
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Expected text: " + expectedText);
+        String currentText = element.getText().trim().toUpperCase();
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Current text: " + currentText);
+        boolean isEquals = currentText.contains(expectedText);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
+        return isEquals;
+    }
+
 }
 
 

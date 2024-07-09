@@ -177,6 +177,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void paginaResumen() {
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
