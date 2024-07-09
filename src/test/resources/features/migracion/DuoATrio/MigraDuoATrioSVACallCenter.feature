@@ -46,7 +46,7 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA linea "<svaLinea>"
+    Y        agrego SVA linea "Plan Multidestino 20"
     Y        agrego SVA bloque "HOT"
     Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro

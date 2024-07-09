@@ -53,7 +53,7 @@ public class OfferSVAPage extends WebBase {
     }
 
     public void scrollToTitle(String name) {
-        WebElement titleSection = find().getElementByXPath("//*[contains(@class,'title-section')]/*[contains(text(),'" + name + "')]");
+        WebElement titleSection = find().getElementByXPath("//*[contains(@class,'title-section') or contains(@class,'section-options')]/*[contains(text(),'" + name + "')]");
         esperaProgresiva(driver(), 5, 5, titleSection);
         js().scrollElementTop(titleSection);
     }

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
 import static com.tdp.ct.web.utils.Helper.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
@@ -34,14 +35,6 @@ public class LoginBerserkerPage extends WebBase {
 
     @FindBy(id = "claimVerificationServerError")
     protected WebElement msgErrorCredential;
-
-    public String getMsgError() {
-        return msgError.getText().trim().toLowerCase();
-    }
-
-    public String getMsgErrorCredential() {
-        return msgErrorCredential.getText().trim().toLowerCase();
-    }
 
     public void clickButtonLogin() {
         Addons.reiniciaTimeout(driver());
@@ -83,15 +76,13 @@ public class LoginBerserkerPage extends WebBase {
         waitUntilElementIsVisible(msgErrorCredential, 30);
     }
 
-    public void validarMensajeError(String msgError) {
-        String expectedMsg = msgError.trim().toLowerCase();
-        Assertions.assertTrue(getMsgError().contains(expectedMsg), "El mensaje obtenido: " + getMsgError() + ", no coincide con lo esperado " + expectedMsg);
+    public void validarMensajeError(String msg) {
+        compareWebElementTextAndText(msgError,msg);
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarMsgIncorrectCredential(String msgError) {
-        String expectedMsg = msgError.trim().toLowerCase();
-        Assertions.assertTrue(getMsgErrorCredential().contains(expectedMsg), "El mensaje obtenido: " + getMsgErrorCredential() + ", no coincide con lo esperado " + expectedMsg);
+    public void validarMsgIncorrectCredential(String msg) {
+        compareWebElementTextAndText(msgErrorCredential,msg);
         UtilWeb.waitForSeconds(1);
     }
 

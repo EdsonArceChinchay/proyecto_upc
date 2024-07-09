@@ -16,11 +16,9 @@
  @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
  Característica: migracion duo a trio sva Bloque + sva Linea CANAL CALL CENTER
 
-   Antecedentes:
-     Dado     que abro la pagina de movistar
-
    @migracionDuoTrioSvaBloqueSvaLineaCallCenter
    Esquema del escenario: migracion duo a trio sva Bloque + sva Linea CANAL CALL CENTER
+     Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<tipoUsuario>"
      Y        ingreso el usuario "<userName>"
