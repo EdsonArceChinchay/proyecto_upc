@@ -78,5 +78,5 @@ Característica: CAEQ con documento CE por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 77654581      | 650023365        |
+      | usuario externo | userNameCC | passCC   | CE            | 1042464788      | 920956618        |
 

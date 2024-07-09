@@ -36,19 +36,17 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        Selecciono la cartilla del plan Motvistar Total
     #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "casa"
+    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy clic en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    #Y        luego doy click en la cartilla ir a Movistar Total
-    #Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
-    #Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    #Y        ingreso un correo electronico "<correo>"
-    #Y        ingreso nuevamente el correo electronico "<correo>"
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
@@ -67,7 +65,5 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-     # | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      #| usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102030051 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
       | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 135 Gb RV | tester@tester.com |
