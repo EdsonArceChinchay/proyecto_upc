@@ -14,7 +14,6 @@
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps @TEST1
-
 Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con documento CE en Tienda
 
   # Se debe de validar que no tenga ordenes en vuelo antes de ejecutar el feature
@@ -31,7 +30,7 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton de la Linea Movil Existente
@@ -48,10 +47,10 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

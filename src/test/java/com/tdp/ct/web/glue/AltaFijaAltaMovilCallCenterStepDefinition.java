@@ -7,6 +7,7 @@ import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,8 +20,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
     @Autowired
     private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
@@ -190,5 +189,30 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     public void seleccionoUnPlanMovistarTotal(String nombrePlan) {
         altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
         altaFijaTiendaStep.clickSeleccionarOferta();
+    }
+
+    @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
+    public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
+        altaFijaTiendaStep.validarNomPlan(nomPlan);
+    }
+
+    @Y("valido la velocidad de internet {string}")
+    public void validoLaVelocidadDeInternet(String mbpsBB) {
+        altaFijaTiendaStep.validarVelocidadInternet(mbpsBB);
+    }
+
+    @Y("valido el precio de descuento del componente Internet {string}")
+    public void validoElPrecioDeDescuentoDelComponenteInternet(String precDesc) {
+        altaFijaTiendaStep.validarPrecioDescuento(precDesc);
+    }
+
+    @Y("valido el nombre del SVA de contenido externo {string}")
+    public void validoElNombreDelSVADeContenidoExterno(String nomsvaTV) {
+        altaFijaTiendaStep.validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    @Y("valido el precio de descuento del componente TV {string}")
+    public void validoElPrecioDeDescuentoDelComponenteTV(String pDescTV) {
+        altaFijaTiendaStep.validarPrecioDescuentoTV(pDescTV);
     }
 }

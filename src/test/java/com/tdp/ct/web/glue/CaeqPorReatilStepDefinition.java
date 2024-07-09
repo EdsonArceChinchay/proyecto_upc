@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CaeqPorReatilStepDefinition {
     @Autowired
     private CaeqPorReatilStep caeqPorReatilStep;
+
     @Y("presiona el boton anadir equipo")
     public void presionaElBotonAnadirEquipo() {
         caeqPorReatilStep.btnAnadirEquipo(2);
     }
+
     @Y("presiona el boton anadir equipo del mismo plan")
     public void presionaElBotonAnadirEquipoDelMismoPlan() {
         caeqPorReatilStep.btnAnadirEquipo(1);

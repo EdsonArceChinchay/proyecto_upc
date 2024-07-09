@@ -14,14 +14,11 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT066
-
 Característica: AT-DT066_Migracion de MT a MT en Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @migracionMTaMT_CC_CE
   Esquema del escenario: Migracion de MT a MT  en el canal CALL CENTER
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,7 +29,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
 	#Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -59,11 +56,16 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y         busco por el documento
+    Y        busco por el documento
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
+<<<<<<< HEAD
       | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                      | correo            |
       | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 135 Gb RV | tester@tester.com |
+=======
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono       | tester@tester.com |
+>>>>>>> 486a6e32fd76be0e86b7dd9b7d6adfa86ba962b0

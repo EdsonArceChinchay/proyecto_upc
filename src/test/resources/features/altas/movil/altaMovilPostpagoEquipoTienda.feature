@@ -28,7 +28,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
@@ -39,8 +39,8 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
-    Y        selecciono la opcion "<tipoPlanes>"
+    Y        selecciono el tipo de plan movil "<tipoPlanes>"
+    Y        selecciono la opcion "<planMovil>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"

@@ -9,9 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndTextAndReturnValue;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
@@ -20,9 +22,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     protected WebElement BtnOpciones;
     @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
-
-    @FindBy(xpath = "//div[@class='cont-button']")
-    protected WebElement btnBuscar;
 
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement lblLineaNueva;
@@ -48,12 +47,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='option-boxes']//div")
     protected List<WebElement> listPago;
-
-    @FindBy(css = "div.cont-autocomplete")
-    protected WebElement lblItem;
-
-    @FindBy(xpath= "//*[@id=\"modal3\"]/div[2]/form/div/div[5]/button")
-    protected WebElement btnConfirmar;
 
     @FindBy(xpath= "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
     protected WebElement btnDetallePedido;
@@ -96,7 +89,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void seleccionarTiempo(String tiempoP) {
+    public void selectPermanency(String timePermanency) {
         UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
@@ -104,11 +97,12 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         waitUntilElementIsClickable(listElementPLan,40).click();
         UtilWeb.waitForSeconds(2);
         SearchContext contexPlan=sh().getContext(listElementPLan);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > div > div > ul > li"));
+        List<WebElement>lista= contexPlan.findElements(  By.cssSelector("div > div > ul > li"));
+        UtilWeb.waitForSeconds(2);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency "+ lista.size());
         for(WebElement elements:lista){
-            System.out.println(elements.getText());
-            if(elements.getText().equals(tiempoP)){
-                UtilWeb.waitForSeconds(2);
+            boolean isEquals =compareWebElementTextAndTextAndReturnValue(elements,timePermanency);
+            if(isEquals){
                 click(elements,3);
             }
         }
@@ -143,7 +137,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
 
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             if (elementoExistente) {
                 System.out.println("dio click");
                 click(btnRight);
@@ -167,7 +161,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
             if (i == 2 || i == 5 || i == 8) {
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
@@ -175,7 +169,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
         }
 
-        if(!encontroElemento && listaOfertas.size()>0){
+        if(!encontroElemento && !listaOfertas.isEmpty()){
             System.out.println("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
@@ -206,7 +200,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
                 return;
             } catch (NoSuchElementException e) {
                 System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
-
                 }
             }
         }
@@ -218,21 +211,22 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         return existe;
     }
 
-
-    public void ingresoElTipoDePago(String pago) {
+    public void selectTypeOfPayment(String payment) {
         boolean tipoPagoEncontrado = false;
-        System.out.println("cantidad: " + listPago.size());
+        esperaProgresiva(driver(),5,5,listPago.get(0));
+        js().scrollElementTop(listPago.get(0));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: "+ listPago.size());
         for (WebElement elements : listPago) {
-            System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(pago)) {
-                System.out.println("Se encontro: " + pago);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: "+ elements.getText());
+            if (elements.getText().equalsIgnoreCase(payment)) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Payment type found: "+ payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
                 break;
             }
         }
         if(!tipoPagoEncontrado){
-            System.out.println("NO SE ENCONTRO EL TIPO DE PAGO: " + pago);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No payment type found: "+ payment);
         }
         UtilWeb.waitForSeconds(5);
     }
@@ -268,7 +262,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(listNacionalidad);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println(elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()));
+            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()) );
             if(elements.getText().trim().equals(nacionalidad.trim())){
                 js().scrollElementTop(elements);
                 waitUntilElementIsClickable(elements,30).click();
@@ -286,7 +280,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         SearchContext contexPlan=sh().getContext(estadoList);
         List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
         for(WebElement elements:lista){
-            System.out.println(elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()));
+            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()) );
             if(elements.getText().trim().equals(estadoCivil.trim())){
                 click(elements,30);
                 break;
@@ -304,7 +298,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
     public void clickBtnCerrarModalError( WebElement metodoRepedito){
         //No deberia usarse este metodo. Deberia usarse revisarmodalerror()
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica')]")).isEmpty();
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
             System.out.println("Entro al metodo de Cerrar");

@@ -31,7 +31,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 	#Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero   |
@@ -57,9 +57,9 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        valido la velocidad de internet "<velocidadBB>"
     Y        valido el precio de descuento del componente Internet "<precDescBB>"
   #  Y        doy click en añadir SVA
-  #  Y        doy click en agregar Bloque "<bloque>"
-  #  Y        doy click en Guardar cambios
-	#Y        doy click en agregar "<svaInternet>"
+  #  Y        agrego SVA bloque "<bloque>"
+  #  Y        doy click en el boton Guardar cambios
+	#Y        agrego SVA internet "<svaInternet>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -114,7 +114,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        valido si el cliente "<nombre>", "<apellido>" con genero "<genero>" ya esta registrado
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas

@@ -610,9 +610,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
-    public boolean esNuevoCliente() {
+    public boolean isNewCustomer() {
         return nombreClienteUserData.getText().length() <= 8;
-
     }
 
     //CAMBIOS PARA RETAIL
@@ -882,37 +881,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
-    public void agregoSVAINTERNET(String svaInternet) {
-        WebElement listElementPLan;
-        UtilWeb.waitForSeconds(10);
-        listElementPLan = find().getElementByXPath("//tdp-st-select[@label='Elige SVA'] | //div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
-        esperaProgresiva(driver(), 3, 5, listElementPLan);
-        listElementPLan.click();
-        UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
-        boolean encontrado = false;
-        for (WebElement elements : lista) {
-            System.out.println(elements.getText());
-            if (elements.getText().equals(svaInternet)) {
-                UtilWeb.waitForSeconds(2);
-                click(elements, 3);
-                encontrado = true;
-            }
-        }
-        if (!encontrado) {
-            // Si el elemento específico no se encuentra, seleccionar el último elemento
-            if (!lista.isEmpty()) {
-                WebElement ultimoElemento = lista.get(lista.size() - 1);
-                UtilWeb.waitForSeconds(2);
-                click(ultimoElemento, 3);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el último elemento de la lista.");
-            } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "SVA NO ENCONTRADO y lista vacía.");
-            }
-        }
-    }
-
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         int contador = 0, i = 0;
         int reintentosMax = 3;
@@ -941,20 +909,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         } while (!bOK && contador < reintentosMax);
     }
 
-
-    public void clicEnAgregarSVAMT() {
-        js().scrollElementTop(buttonAgregarSVAMT);
-        waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
-        click(buttonAgregarSVAMT);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void agregarRepetidor() {
-        js().scrollElementTop(buttonRepetidor);
-        waitUntilElementIsVisible(buttonRepetidor, 10);
-        click(buttonRepetidor);
-        UtilWeb.waitForSeconds(5);
-    }
 
     public void scrollDown() {
         UtilWeb.waitForSeconds(4);

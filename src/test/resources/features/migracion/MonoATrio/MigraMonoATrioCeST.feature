@@ -29,7 +29,7 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo

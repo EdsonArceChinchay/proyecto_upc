@@ -30,12 +30,15 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        cierro el popup de contraseña Única
     #Y        cierro popup de error
-    Cuando   doy click en ver detalle
-    Y        doy click en el boton Agregar sva fija
-    Y         seleccionamos agregar Bloque HBO
+    Cuando   doy click en el boton Ver detalle del servicio "9234816429"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "HBO"
+    Y        doy click en el boton Guardar cambios
+    Y        valido que este en el resumen de venta
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

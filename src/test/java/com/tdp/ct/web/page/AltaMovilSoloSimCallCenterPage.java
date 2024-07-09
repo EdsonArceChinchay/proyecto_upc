@@ -177,6 +177,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     }
 
     public void paginaResumen() {
+        revisarModalError(driver());
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -187,7 +188,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 7, completaDatosSolicitados);
+        esperaProgresiva(driver(), 6, 7, completaDatosSolicitados);
+        revisarModalError(driver());
         Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 

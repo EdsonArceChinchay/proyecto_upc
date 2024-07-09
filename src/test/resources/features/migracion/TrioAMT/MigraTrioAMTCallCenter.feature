@@ -31,7 +31,7 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Linea Nueva Movil
     Y       cierro el popup de validación de estado de contraseña única

@@ -28,7 +28,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 	#Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero   |
@@ -53,11 +53,12 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
   #  Y valido la velocidad de internet "<velocidadBB>"
     Y        valido el precio de descuento del componente Internet "<precDescBB>"
-    Y        doy click en añadir SVA
-    Y        doy click en agregar Movistar TV App
-  #  Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
-	#Y        doy click en agregar "<svaInternet>"
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA Movistar Tv App Max
+    Y        doy click en el boton Guardar cambios
+	#Y        agrego SVA internet "<svaInternet>"
    # Y        valido el precio de descuento del componente TV "<precDescTV>"
     E        inicio su registro
     Y        valido que me encuentre en la pantalla agendamiento

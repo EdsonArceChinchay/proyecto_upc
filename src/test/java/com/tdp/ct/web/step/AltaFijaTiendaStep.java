@@ -88,16 +88,6 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnAgregarBloque(String bloque) {
-        page.altaFijaTiendaPage().doyClickEnAgregarBloque(bloque);
-    }
-
-    @ScreenShotAfter
-    public void doyClickEnGuardarCambios() {
-        page.altaFijaTiendaPage().doyClickEnGuardarCambios();
-    }
-
-    @ScreenShotAfter
     public void ingresarDatosAgendamientoParaRUC() {
         page.altaFijaTiendaPage().ingresarDatosAgendamientoParaRUC();
     }
@@ -110,5 +100,26 @@ public class AltaFijaTiendaStep {
     public void clickBotonRegistrarVenta() {
         page.altaFijaTiendaPage().clickBotonRegistrarVenta();
     }
+
+    public void validarNomPlan(String nomPlan) {
+        page.altaFijaTiendaPage().validarNomPlan(nomPlan);
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        page.altaFijaTiendaPage().validarVelocidadInternet(mbpsBB);
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        page.altaFijaTiendaPage().validarPrecioDescuento(precDesc);
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        page.altaFijaTiendaPage().validarnombreSVAcontenido(nomsvaTV);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        page.altaFijaTiendaPage().validarPrecioDescuentoTV(pDescTV);
+    }
+
 }
 

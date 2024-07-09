@@ -1,7 +1,7 @@
 package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.CaptchaBase.Util;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.checkerframework.checker.units.qual.A;
@@ -13,11 +13,6 @@ public class BandejaBackOfficeStep {
 
     @Autowired
     private StepPages page;
-
-    @ScreenShotAfter
-    public void clickBackOffice() {
-        page.bandejaBackOfficePage().clickBackOffice();
-    }
 
     @ScreenShotAfter
     public void typeDocument(String documento) {

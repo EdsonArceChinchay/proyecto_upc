@@ -1,5 +1,4 @@
 #language: es
-
 ##CREADOR: Henry salas
 ##APP: DITO
 ##MODULO:
@@ -15,15 +14,11 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
-
 Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @totalizaciontriomasaltamovil
-
   Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameCC"
@@ -32,7 +27,7 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "109084827"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Linea Nueva Movil

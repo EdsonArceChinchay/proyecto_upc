@@ -29,7 +29,7 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero   |
@@ -51,10 +51,11 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar Modem
-    Entonces doy click en Agregar Sva
-    Y        elegimos sva repetidor "<svarepetidor>"
-    Y        doy click en Guardar cambios
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA modem "Mejora a Modem Premium MTA"
+    Y        agrego SVA repetidor "<svaRepetidor>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -84,5 +85,5 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svarepetidor              |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaRepetidor              |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1067122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Repetidor WIFI PLUS Venta |

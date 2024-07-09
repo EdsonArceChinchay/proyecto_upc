@@ -4,10 +4,9 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import io.cucumber.java.Scenario;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static org.assertj.core.api.BDDAssertions.and;
-
 
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
@@ -52,20 +49,30 @@ public class AltaFijaTiendaPage extends WebBase {
 
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
+
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
-
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
-    @FindBy(xpath = "(//button[contains(text(),'Reintentar')])[1]")
-    protected WebElement btnReintentarFinal;
 
     @FindBy(xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
 
     @FindBy(xpath = "//button/span[contains(text(), 'Validar identidad del Rep. Legal')]/..")
     protected WebElement btnValidaLegal;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[1]/app-summary-detail/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span[2]")
+    protected WebElement velocidadBB;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    protected WebElement precDescBB;
+
+    @FindBy(css = "div.tdp-row.textBlue")
+    protected WebElement svaTV;
+
+    @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
+    protected WebElement precDescTV;
+
+    @FindBy(css = ".title span")
+    protected WebElement nombrePlan;
 
     public String nombresCompletosCliente() {
         esperaProgresiva(driver(), 5, 5, nombresCompletosCliente);
@@ -94,15 +101,14 @@ public class AltaFijaTiendaPage extends WebBase {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
             int count = 0;
-            while (isBtnRigth ) {
+            while (isBtnRigth) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight, 5);
                 btnRight.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
-                if (count == countMax)
-                {
+                if (count == countMax) {
                     break;
                 }
             }
@@ -113,7 +119,7 @@ public class AltaFijaTiendaPage extends WebBase {
         try {
             boolean isBtnLeft;
             isBtnLeft = btnLeft.isDisplayed();
-            while (isBtnLeft ) {
+            while (isBtnLeft) {
                 btnLeft.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left");
                 isBtnLeft = btnLeft.isDisplayed();
@@ -285,21 +291,6 @@ public class AltaFijaTiendaPage extends WebBase {
         click(btnSVA);
     }
 
-    public void doyClickEnAgregarBloque(String bloque) {
-        UtilWeb.waitForSeconds(10);
-        WebElement btnbloque = find().getElementByXPath("//*[@class='text' and contains(text(),'" + bloque + "')]//following::tdp-st-checkbox[1]");
-        waitUntilElementIsClickable(btnbloque, 100);
-        js().scrollElementTop(btnbloque);
-        click(btnbloque);
-    }
-
-    public void doyClickEnGuardarCambios() {
-        WebElement btnGuardar = find().getElementByXPath("//*[@type='button' and contains(text(),'Guardar')]");
-        js().scrollElementTop(btnGuardar);
-        btnGuardar.click();
-
-    }
-
     public void ingresarDatosAgendamientoParaRUC() {
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
 //         Calendario
@@ -385,5 +376,47 @@ public class AltaFijaTiendaPage extends WebBase {
             System.out.println("Salió del primer try");
             System.out.println("Salta el registrar");
         }
+    }
+
+
+    public void validarNomPlan(String nomPlan) {
+        Addons.revisarModalError(driver());
+        String expectedNomPlan = nomPlan.trim().toLowerCase();
+        String actualNomPlan = nombrePlan.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualNomPlan.contains(expectedNomPlan), "El plan obtenido: " + actualNomPlan + ", no coincide con lo esperado " + expectedNomPlan);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void validarVelocidadInternet(String mbpsBB) {
+        Addons.revisarModalError(driver());
+        String expectedVelocInternet = mbpsBB.trim().toLowerCase();
+        String actualVelocInternet = velocidadBB.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualVelocInternet.contains(expectedVelocInternet), "La velocidad de Internet obtenida: " + actualVelocInternet + ", no coincide con lo esperado " + expectedVelocInternet);
+        UtilWeb.waitForSeconds(1);
+
+    }
+
+    public void validarPrecioDescuento(String precDesc) {
+        Addons.revisarModalError(driver());
+        String expectedPrecioDesc = precDesc.trim().toLowerCase();
+        String actualPrecioDesc = precDescBB.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualPrecioDesc.contains(expectedPrecioDesc), "EL precio de descuento del componente Internet: " + actualPrecioDesc + ", no coincide con lo esperado " + expectedPrecioDesc);
+        UtilWeb.waitForSeconds(1);
+
+    }
+
+    public void validarnombreSVAcontenido(String nomsvaTV) {
+        Addons.revisarModalError(driver());
+        String expectedNomSVAtv = nomsvaTV.trim().toLowerCase();
+        String actualNomSVAtv = svaTV.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualNomSVAtv.contains(expectedNomSVAtv), "El SVA del BO obtenida: " + actualNomSVAtv + ", no coincide con lo esperado " + expectedNomSVAtv);
+    }
+
+    public void validarPrecioDescuentoTV(String pDescTV) {
+        Addons.revisarModalError(driver());
+        String expectedPrecioDescTV = pDescTV.trim().toLowerCase();
+        String actualPrecioDescTV = precDescTV.getText().trim().toLowerCase();
+        Assertions.assertTrue(actualPrecioDescTV.contains(expectedPrecioDescTV), "El precio de descuento del componente TV: " + actualPrecioDescTV + ", no coincide con lo esperado " + expectedPrecioDescTV);
+        UtilWeb.waitForSeconds(1);
     }
 }

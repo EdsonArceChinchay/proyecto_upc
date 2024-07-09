@@ -29,12 +29,13 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
-    Cuando   selecciono el boton Ver detalle del servicio "14351218"
-    Y        selecciono el boton agregar sva
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "HBO"
-    Y        doy click en Guardar cambios
+    Y        doy click en el boton Consultar
+    Cuando   doy click en el boton Ver detalle del servicio "14351218"
+    Y        doy click en el boton Agregar SVA
+    Y        valido que este en el resumen de venta
+    Entonces doy click en el boton Agregar SVA
+    Y        agrego SVA bloque "HBO"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

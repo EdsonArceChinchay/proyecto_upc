@@ -28,9 +28,9 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "77654580"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    Y        selecciono el boton Ver detalle del servicio "650023363"
+    Y        doy click en el boton Ver detalle del servicio "650023363"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
@@ -38,7 +38,7 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        selecciono la opcion "Preplan"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
-    #Y        selecciono el boton Ver detalle del servicio "VIVO V21 NEGRO 5G C/PACK"
+    #Y        doy click en el boton Ver detalle del servicio "VIVO V21 NEGRO 5G C/PACK"
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName               |
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |

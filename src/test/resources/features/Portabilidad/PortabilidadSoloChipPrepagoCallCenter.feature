@@ -12,7 +12,6 @@
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
 ##FECMOD: 16/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
 
@@ -29,7 +28,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
   # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas

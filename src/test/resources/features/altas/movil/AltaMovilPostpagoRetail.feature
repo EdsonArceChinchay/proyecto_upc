@@ -28,7 +28,7 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres  | apellidos      | genero   |
@@ -39,7 +39,7 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
-    Y        seleccion oferta Postpago
+    Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono el boton de iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"

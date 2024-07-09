@@ -27,7 +27,7 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464926"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -40,8 +40,8 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     Y        selecciono el plan movil "Postpago"
     Y        selecciono la opcion "Plan Súmate Plus RPM II S/ 97.82"
     Y        doy click en el boton seleccionar oferta
-    Y       selecciono boton Cambiar plan
-    Y         doy click en iniciar registro
+    Y        selecciono boton Cambiar plan
+    Y        doy click en iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -51,4 +51,3 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     #Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido

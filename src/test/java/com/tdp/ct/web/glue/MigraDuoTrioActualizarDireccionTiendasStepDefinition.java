@@ -10,10 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MigraDuoTrioActualizarDireccionTiendasStepDefinition {
     @Autowired
     private MigraDuoTrioActualizarDireccionTiendasStep migraDuoTrioActualizarDireccionTiendasStep;
-    @Y("Doy click en el boton {string}")
-    public void doyClickEnElBoton(String button) {
-        migraDuoTrioActualizarDireccionTiendasStep.doyClickEnElBoton(button);
-    }
+
 
     @Y("valido que se presente el siguiente mensaje {string}")
     public void validoQueSePresenteElSiguienteMensaje(String mensaje) {

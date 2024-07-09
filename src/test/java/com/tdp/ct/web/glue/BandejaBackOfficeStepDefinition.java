@@ -2,7 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
@@ -19,15 +19,7 @@ public class BandejaBackOfficeStepDefinition {
     @Autowired
     private BandejaBackOfficeStep bandejaBackOfficeStep;
     @Autowired
-    private Cliente cliente;
-
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
-
-    @Y("me dirijo a la bandeja de Back Office")
-    public void meDirijoALaBandejaDeBackOffice() {
-        bandejaBackOfficeStep.clickBackOffice();
-    }
+    private Customer customer;
 
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
@@ -36,7 +28,7 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
-        bandejaBackOfficeStep.typeDocument(cliente.getNumeroDocumento());
+        bandejaBackOfficeStep.typeDocument(Customer.getNumberDocument());
     }
 
     //    TODO: Buscar por tipo
@@ -47,12 +39,12 @@ public class BandejaBackOfficeStepDefinition {
         switch (typeDocument) {
             case "documento":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by document number");
-                String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : cliente.getNumeroDocumento();
+                String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : Customer.getNumberDocument();
                 bandejaBackOfficeStep.typeDocument(numberCocument);
                 break;
             case "solicitud":
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by request number");
-                bandejaBackOfficeStep.typeDocument(cliente.getNumeroSolicitud());
+                bandejaBackOfficeStep.typeDocument(customer.getSalesCode());
                 break;
         }
     }
@@ -65,7 +57,7 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("selecciono la solicitud")
     public void selectRequest() {
-        String salesCode = (this.cliente.getNumeroSolicitud() == null) ? "FE-" : this.cliente.getNumeroSolicitud();
+        String salesCode = (this.customer.getSalesCode() == null) ? "FE-" : this.customer.getSalesCode();
         System.out.println("numberRequest: " + salesCode);
         bandejaBackOfficeStep.selectRequest(salesCode);
     }
@@ -75,8 +67,4 @@ public class BandejaBackOfficeStepDefinition {
         bandejaBackOfficeStep.approveRequest();
     }
 
-    @Y("busco por el codigo de expediente")
-    public void buscoPorElCodigoDeExpediente() {
-
-    }
 }

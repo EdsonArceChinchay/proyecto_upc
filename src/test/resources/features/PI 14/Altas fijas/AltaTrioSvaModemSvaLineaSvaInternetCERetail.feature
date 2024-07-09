@@ -29,7 +29,7 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos      | genero    |
@@ -51,11 +51,12 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar Modem
-    Y        doy click en agregar SVA Linea "<svaLinea>"
-    Entonces doy click en Agregar Sva
-    Y        agrego "<svainternet>"
-    Y        doy click en Guardar cambios
+    Cuando   doy click en el boton Agregar SVA
+    Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA modem "Mejora a Modem Premium MTA"
+    Y        agrego SVA linea "<svaLinea>"
+    Y        agrego SVA internet "<svaInternet>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -79,5 +80,5 @@ Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              | svainternet           |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              | svaInternet           |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1059122148 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 | PACK ANTIVIRUS MCAFEE |

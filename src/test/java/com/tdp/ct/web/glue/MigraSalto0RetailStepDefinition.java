@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MigraSalto0RetailStepDefinition {
     @Autowired
     private MigraSalto0RetailStep migraSalto0RetailStep;
-    @Y("Seleccinar boton migrar a fibra")
+    @Y("doy click en el boton Migrar a fibra")
     public void seleccinarBotonMigrarAFibra() {
     migraSalto0RetailStep.SeleccionarBtnMigrarFibra();
     }

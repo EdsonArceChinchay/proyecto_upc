@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ActualizacionDeRuc17CanalTiendaStep {
+
     @Autowired
-    StepPages page;
+    private StepPages page;
+
     @ScreenShotAfter
     public void ingresoRuc17(String ruc) {
         page.actualizacionDeRuc17CanalTiendaPage().ingresoRuc17(ruc);

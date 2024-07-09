@@ -12,11 +12,9 @@ public class MigracionDuoATrioTiendaStep {
     @Autowired
     private StepPages page;
 
-
-        public void selecciono_la_cartilla_del_plan_Activo(){
-            page.migracionDuoATrioTiendaPage().selecciono_la_cartilla_del_plan_Activo();
-        }
-
+    public void selecciono_la_cartilla_del_plan_Activo() {
+        page.migracionDuoATrioTiendaPage().selecciono_la_cartilla_del_plan_Activo();
+    }
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
         page.migracionDuoATrioTiendaPage().seleccionPlanNuevoParaVerLasOfertas();
@@ -38,25 +36,27 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().scrollUp();
     }
 
-
     public void verificoLaDireccionActualDelServicio(String dir) {
         page.migracionDuoATrioTiendaPage().verificoLaDireccionActualDelServicio(dir);
     }
 
-    public void doyClickEnEnElBoton(String btn) {
-        page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(btn);
+    public void doyClickEnEnElBoton(String nameButton) {
+        page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(nameButton);
     }
 
-    public void agregoSVALinea(String svaLinea) {page.migracionDuoATrioTiendaPage().agregoSVALinea(svaLinea);
-
+    public void agregoSVALinea(String svaLinea) {
+        page.migracionDuoATrioTiendaPage().agregoSVALinea(svaLinea);
     }
 
     public void doyClickEnAgregarModem() {
         page.migracionDuoATrioTiendaPage().doyClickEnAgregarModem();
     }
-    public void cerrarPopupCU(){page.migracionDuoATrioTiendaPage().cerrarPopupCU();
+
+    public void cerrarPopupCU() {
+        page.migracionDuoATrioTiendaPage().cerrarPopupCU();
     }
 
-    public void seleccionoCartillaMovistarTotal() {page.migracionDuoATrioTiendaPage().seleccionoCartillaMovistarTotal();
+    public void seleccionoCartillaMovistarTotal() {
+        page.migracionDuoATrioTiendaPage().seleccionoCartillaMovistarTotal();
     }
 }

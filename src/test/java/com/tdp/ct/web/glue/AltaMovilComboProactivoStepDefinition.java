@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaMovilComboProactivoStep;
@@ -16,27 +16,20 @@ public class AltaMovilComboProactivoStepDefinition {
 
     @Autowired
     private AltaMovilComboProactivoStep altaMovilComboProactivoStep;
+
     @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
-    @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     @Y("selecciono completar los datos del cliente")
     public void selecciono_completar_los_datos_del_cliente(DataTable datosCliente) {
-        if (cliente.isClienteNuevo()) {
+        if (customer.isNewCustomer()) {
             altaMovilComboProactivoStep.completoDatosCliente(datosCliente);
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
-
-        // altaMovilComboProactivoStep.clicConfirmarCliente();
-        //  altaFijaMovilRegistroStep.datosClienteValidado();
-        // altaMovilComboProactivoStep.clicConsultar();
-
     }
 
-
-    @Y("selecciono el boton agregar sva")
+    @Y("doy click en el boton Agregar SVA")
     public void seleccionoElBotonAgregarSva() {
         altaMovilComboProactivoStep.seleccionoElBotonAgregarSva();
     }

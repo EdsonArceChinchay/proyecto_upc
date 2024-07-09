@@ -31,9 +31,9 @@ Característica: AT-DT100_Cambio de plan movil con documento CE en Canal Retail
     #Y        valido que se presente la tienda "TALARA"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464930"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del servicio "920955629"
+    Y        doy click en el boton Ver detalle del servicio "920955629"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan

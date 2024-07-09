@@ -15,7 +15,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
-import static com.tdp.ct.web.utils.LocalStorage.*;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class PortabilidadPage extends WebBase {
@@ -37,8 +36,6 @@ public class PortabilidadPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
-
-
 
     public void clickBotonPortabilidad() {
         waitUntilElementIsVisible(btnPortabilidad, 10);
@@ -100,7 +97,6 @@ public class PortabilidadPage extends WebBase {
         js().scrollElementTop(btnPortaMovil);
         btnPortaMovil.click();
         UtilWeb.waitForSeconds(5);
-
     }
 
     public void setValuePortaDirecta() throws JSONException {
@@ -115,7 +111,6 @@ public class PortabilidadPage extends WebBase {
         setValueItemSessionStorage(driver(), primaryKey, secondaryKey, jsonObject);
         jsonStr = getItemSessionStorage(driver(), primaryKey);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "After modified localStorage" + jsonStr);
-
     }
 
     public String getValuePortaDirecta() throws JSONException {
@@ -159,14 +154,11 @@ public class PortabilidadPage extends WebBase {
             String value =String.valueOf(valueToken.charAt(i));
             type(inputToken.get(i), value);
         }
-
-
     }
 
     public void validateMessage(String message) {
         WebElement label = find().getElementByXPath("//*[contains(text(),'"+message.trim()+"')]");
         esperaProgresiva(driver(),3,5,label);
         Assertions.assertTrue(label.isDisplayed(),"No se muestra en mensaje");
-
     }
 }

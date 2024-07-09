@@ -28,7 +28,7 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
     Y        ingreso el ruc "<ruc>" y actualizo
