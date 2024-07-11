@@ -14,14 +14,11 @@
 ##FECMOD: 31/07/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
-
 Característica: AT-DT099_Cambio de plan movil por Canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @CambiodeplanmovilCEcallcenter
   Esquema del escenario: cambio de plan movil en call center sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"

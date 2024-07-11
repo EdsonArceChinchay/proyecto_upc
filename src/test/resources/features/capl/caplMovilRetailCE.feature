@@ -17,11 +17,9 @@
 
 Característica: AT-DT100_Cambio de plan movil con documento CE en Canal Retail
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @CambiodeplanmovilCERetail
   Escenario: cambio de plan movil en Retail sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameDLC"

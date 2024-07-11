@@ -46,6 +46,8 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        doy clic en continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
 #    1598886623  1598886623

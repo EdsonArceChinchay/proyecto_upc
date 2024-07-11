@@ -14,7 +14,6 @@
 ##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
-
 Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call Center
 
   @CompletaPlantaFijaAltaMovil
