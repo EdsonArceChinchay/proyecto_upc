@@ -12,11 +12,11 @@ webdriver:
 ### JIRA - XRAY ###
 ###################
 jxray:
-  integration: off
-  host: https://xray.cloud.xpand-it.com
+  integration: on
+  host: https://us.xray.cloud.getxray.app
   client:
-    id: 26C110920F174F4DB11FA5C7A448090C
-    secret: 749aa5f3935a68d5dc2b6afaf83daee24d049637b46cb391e3167f0a0f5e9dc2
+    id: 10BD5AA52D4B43338201DCB6017DC6F1
+    secret: ac69d9673d66d12a3ae2d65d1135ceea35ce84740d14473a5fcaf256c285d797
 
 ###########################################################################
 ### To use JDBC configuration, comment 'autoconfigure.exclude' property ###

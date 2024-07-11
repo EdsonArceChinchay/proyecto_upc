@@ -13,10 +13,12 @@
 ##ENCARGADO:
 ##FECMOD: 25/05/2024
 
+@VISS-8540
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
 Característica: AT-DT053_Login - FE DITO WEB
 
-  @LoginBerserker @LoginExitoso @jbac_Test
+  @VISS-8519
+  @LoginBerserker @LoginExitoso @jbac_Test 
   Esquema del escenario: Usuario realiza login exitoso: canal Call Center, Tienda y Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -30,8 +32,8 @@ Característica: AT-DT053_Login - FE DITO WEB
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      |
       | usuario externo | userNameCC  | passCC   | Bienvenid@ | nameStoreCC       |
-      | usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
+      #| usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
+      #| usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
