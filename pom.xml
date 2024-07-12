@@ -95,7 +95,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>CucumberRerpot</projectName>
+                            <projectName>Web Ventas Convergente</projectName>
                             <outputDirectory>${project.build.directory}/site</outputDirectory>
                             <cucumberOutput>${project.build.directory}/build/report/cucumber.json</cucumberOutput>
                         </configuration>
