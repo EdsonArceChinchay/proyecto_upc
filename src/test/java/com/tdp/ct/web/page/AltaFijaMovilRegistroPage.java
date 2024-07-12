@@ -38,7 +38,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
-    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    @FindBy(xpath = "//*[contains(text(), 'Estás a un paso de registrar el servicio')]")
     protected WebElement titleRegistrarServicio;
     @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
     protected WebElement titleLugarInstalacionEntrega;

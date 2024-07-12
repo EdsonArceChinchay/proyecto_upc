@@ -192,21 +192,6 @@ public class AltaFijaMovilRegistroStep {
      */
 
     @ScreenShotAfter
-    public void clicEnAgregarSVA() {
-        page.altaFijaMovilRegistroPage().clicEnAgregarSVA();
-    }
-
-    @ScreenShotAfter
-    public void clicSVAHBO() {
-        page.altaFijaMovilRegistroPage().clicSVAHBO();
-    }
-
-    @ScreenShotAfter
-    public void clicGuardarCambios() {
-        page.altaFijaMovilRegistroPage().clicGuardarCambios();
-    }
-
-    @ScreenShotAfter
     public void escogerTurnoAgendamiento() {
         page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
     }

@@ -192,13 +192,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicSiAcepto();
     }
 
-    @Y("agrego el SVA para fija HBO")
-    public void agregoElSVAParaFijaHBO() {
-        altaFijaMovilRegistroStep.clicEnAgregarSVA();
-        altaFijaMovilRegistroStep.clicSVAHBO();
-        altaFijaMovilRegistroStep.clicGuardarCambios();
-    }
-
     //CAMBIOS PARA RETAIL
     @Y("ingreso los datos del cliente a registrar")
     public void completoLosDatosDelClienteARegistrar(DataTable value) throws JSONException {
