@@ -37,8 +37,9 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
-    Y        me muestra la pantalla de ofertas sugeridos
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono boton mantener plan
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios

@@ -38,7 +38,8 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
-    Y        me muestra la pantalla de ofertas sugeridos
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        valido que este en el resumen de venta
     Y        selecciono boton mantener plan
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"

@@ -44,6 +44,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement titleLugarInstalacionEntrega;
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
+    @FindBy(xpath = "//*[contains(text(),'Ofertas sugeridas')]")
+    protected WebElement titleOffer;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
@@ -197,7 +199,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 10, listaOfertasSugeridas.get(0));
+        esperaProgresiva(driver(), 6, 6, listaOfertasSugeridas.get(0));
         boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
