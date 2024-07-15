@@ -60,5 +60,5 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                                |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1854264859 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1854264859 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
