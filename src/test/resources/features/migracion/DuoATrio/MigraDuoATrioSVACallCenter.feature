@@ -31,7 +31,7 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro pop up de CU
-    Y        selecciono la linea con numero "9234803109"
+    Y        selecciono la linea con numero "5010022883"
     Y        selecciono el boton Mostrar ofertas
 #    Y        doy click en el boton "CONFIRMAR DIRECCION"
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
@@ -73,5 +73,5 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1003234850 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1002007051 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
