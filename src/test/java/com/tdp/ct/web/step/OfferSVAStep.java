@@ -53,6 +53,11 @@ public class OfferSVAStep {
                 page.offerSVAPage().addSVAIconButton("Punto Adicional HD DVR");
                 break;
 
+            case "PUNTO ADICIONAL ETHERNET UHD":
+            case "UHD":
+                page.offerSVAPage().addSVAIconButton("Punto Adicional ETHERNET UHD");
+                break;
+
             default:
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Decoder does not exist " + nameSVA);
                 page.offerSVAPage().addSVAIconButton("Punto Adicional");
@@ -107,9 +112,14 @@ public class OfferSVAStep {
                 page.offerSVAPage().addSVACheckBox("Bloque estelar");
                 break;
 
+            case "BLOQUE FULL HD":
+            case "HD":
+                page.offerSVAPage().addSVACheckBox("Bloque Full HD");
+                break;
+
             default:
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Blocks does not exist " + nameSVA);
-                page.offerSVAPage().addSVACheckBox("BLOQUE");
+                page.offerSVAPage().addSVACheckBox("Bloque");
         }
     }
 

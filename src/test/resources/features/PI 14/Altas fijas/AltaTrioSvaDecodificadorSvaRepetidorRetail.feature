@@ -79,6 +79,6 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion           | referencia             | tipoPlan | nombrePlan                     | decodificador          | svaRepetidor          |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | PUNTO ADICIONAL HD DVR | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion           | referencia             | tipoPlan | nombrePlan                     | decodificador   | svaRepetidor          |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1000026488 | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | PUNTO ADICIONAL | REP. SMART WIFI Venta |
 

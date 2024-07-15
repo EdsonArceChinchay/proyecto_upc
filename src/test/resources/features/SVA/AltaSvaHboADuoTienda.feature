@@ -33,7 +33,15 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Y        doy click en el boton Consultar
     #Y        cierro el popup de contraseña Única
     #Y        cierro popup de error
-    Cuando   doy click en el boton Ver detalle del servicio "9234816429"
+    Y        selecciono la linea con numero "9234816429"
+    Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
+    Y        me muestra la pantalla de ofertas sugeridos
+    Y        selecciono boton mantener plan
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"

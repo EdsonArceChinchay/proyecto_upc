@@ -31,7 +31,15 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Cuando   doy click en el boton Ver detalle del servicio "9234740961"
+    Y        selecciono la linea con numero "9234740961"
+    Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
+    Y        me muestra la pantalla de ofertas sugeridos
+    Y        selecciono boton mantener plan
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"

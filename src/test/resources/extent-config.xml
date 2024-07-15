@@ -20,7 +20,9 @@
         </documentTitle>
 
         <reportName>
+            <![CDATA[
             <img src="../../../src/test/resources/logo/favicon.ico"  style="width:12px;height:10px;" />
+]]>
             DITO Report
         </reportName>
         <!-- location of charts in the test view -->
