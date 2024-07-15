@@ -43,15 +43,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement elementoSeleccionar;
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Ir a movistar total')]")
     protected WebElement btnIrAMovistar;
-
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
-    protected WebElement ofertasSugeridas;
-    @FindBy(xpath = "(//div[@class='title'])/span")
-    protected WebElement paginaResumen;
-    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
-    protected WebElement completaDatosSolicitados;
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
     @FindBy(xpath = "//*[@formcontrolname='deliveryType']")
