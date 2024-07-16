@@ -27,15 +27,15 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
 #    Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono la opcion Migrar a fibra
+    Y        doy click en el boton Migrar a fibra
     Cuando   doy clic en iniciar registro
-    Y        valido que muestre la pantalla de Agendamiento
+    Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
     #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

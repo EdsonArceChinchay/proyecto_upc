@@ -197,7 +197,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     public void clickEnBotonSiguiente() {
         esperaProgresiva(driver(),3,5,btnSiguiente);
-        //waitUntilElementIsClickable(btnSiguiente, 20);
         click(btnSiguiente);
     }
 }

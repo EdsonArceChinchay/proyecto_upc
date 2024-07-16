@@ -29,10 +29,10 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   doy click en ver detalle
+    Cuando   doy click en el boton Ver detalle del servicio "650027636"
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
     Cuando   doy clic a iniciar registro
@@ -42,12 +42,14 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    #Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464721 | prueba@prueba.com |

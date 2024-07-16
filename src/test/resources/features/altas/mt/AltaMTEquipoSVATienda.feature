@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 19/01/2024
+##FECMOD: 05/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI17
 Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA con documento CE por Tienda
@@ -29,7 +29,7 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres     | apellidos    | genero   |
@@ -56,7 +56,12 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Y        busco el equipo "SAMSUNG GXY A34 NEGRO A346M 128GB"
     Y        doy click en el boton seleccionar
     Y        doy click en el boton Ir a movistar total
-    Y        doy click en agregar "PACK ANTIVIRUS MCAFEE"
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que este en el resumen de venta
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -77,7 +82,9 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                | correo           |

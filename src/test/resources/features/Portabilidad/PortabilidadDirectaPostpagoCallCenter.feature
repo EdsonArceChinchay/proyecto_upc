@@ -12,7 +12,6 @@
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
 
@@ -30,7 +29,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas

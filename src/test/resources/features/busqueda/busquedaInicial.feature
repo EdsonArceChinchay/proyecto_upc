@@ -29,7 +29,7 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 #   Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        valido que el nombre del cliente sea "<cliente>" y su "<tipoDocumento>" sea "<documento>"
     Y        valido que me traiga los servicios contratados por el cliente
     Y        doy click en el icono de Asesor

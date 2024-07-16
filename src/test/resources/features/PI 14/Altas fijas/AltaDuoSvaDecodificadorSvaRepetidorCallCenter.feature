@@ -29,7 +29,7 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero   |
@@ -51,11 +51,11 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        elegimos sva "<decodificador>"
-    Y        elegimos sva repetidor "<svarepetidor>"
-    Y        doy click en Guardar cambios
-	#Y        valido que este en el resumen de venta
+    Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA decodificador "<decodificador>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -85,5 +85,5 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador | svarepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | 25.90         | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador      | svaRepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |

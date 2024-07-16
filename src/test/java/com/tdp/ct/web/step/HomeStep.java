@@ -14,18 +14,18 @@ public class HomeStep {
     private StepPages page;
 
     @ScreenShotAfter
-    public void seleccionoTipoDocumento(String tipoDocumento) {
-        page.homePage().seleccionoTipoDocumento(tipoDocumento);
+    public void seleccionoTipoDocumento(String type) {
+        page.homePage().selectDocumentType(type);
     }
 
     @ScreenShotAfter
-    public void ingresoDocumento(String documento) {
-        page.homePage().ingresoDocumento(documento);
+    public void ingresoDocumento(String document) {
+        page.homePage().ingresoDocumento(document);
     }
 
     @ScreenShotBefore
-    public void clickBotonConsultar() {
-        page.homePage().clickBotonConsultar();
+    public void clickButtonSearch() {
+        page.homePage().clickButtonSearch();
     }
 
     @ScreenShotAfter
@@ -36,11 +36,6 @@ public class HomeStep {
     @ScreenShotAfter
     public void seleccionoElIDDeClienteNro(String nro) {
         page.homePage().seleccionoElIDDeClienteNro(nro);
-    }
-
-    @ScreenShotAfter
-    public void clickBtnConsultar() {
-        page.homePage().clickBtnConsultar();
     }
 
     @ScreenShotAfter
@@ -67,7 +62,44 @@ public class HomeStep {
         page.homePage().clickXPopUpCU();
     }
 
-    public void clickButtonBackOffice() {
+    @ScreenShotAfter
+    public void clickBackOffice() {
         page.homePage().clickBackOffice();
     }
+
+    @ScreenShotAfter
+    public void validarMsgHome(String msg) {
+        page.homePage().validarMsgHome(msg);
+    }
+
+    @ScreenShotAfter
+    public void validarTiendaAsesor(String tienda) {
+        page.homePage().validarTiendaAsesor(tienda);
+    }
+
+    public void regresarPaginaInicio() {
+        page.homePage().regresarPaginaInicio();
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnElIconoDeAsesor() {
+        page.homePage().clickIconoAsesor();
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnCerrarSesion() {
+        page.homePage().clickBtnCerrarSesion();
+    }
+
+    @ScreenShotAfter
+    public void doyClickEnAtras() {
+        page.homePage().clickBtnAtras();
+    }
+
+    @ScreenShotAfter
+    @ScreenShotBefore
+    public void confirmoCerrarSesion() {
+        page.homePage().clickBtnCerrarSesion();
+    }
+
 }

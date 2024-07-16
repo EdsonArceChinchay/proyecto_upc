@@ -78,16 +78,16 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     @Y("ingreso la informacion del lugar para la instalacion")
     public void ingresoLaInformacionDelLugarParaLaInstalacion(DataTable dirInstalacion) {
         altaMonoHfcTiendaStep.scrollDirecCompleta();
-        String manzana= UtilWeb.getValueFromDataTable(dirInstalacion,"mz");
-        String lote= UtilWeb.getValueFromDataTable(dirInstalacion,"lote");
-        String tipoVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"tipoVivienda");
-        String nombreVivienda= UtilWeb.getValueFromDataTable(dirInstalacion,"nombreVivienda");
-        String bloque= UtilWeb.getValueFromDataTable(dirInstalacion,"bloque");
-        String piso= UtilWeb.getValueFromDataTable(dirInstalacion,"piso");
-        String interior= UtilWeb.getValueFromDataTable(dirInstalacion,"int");
-        String tipoConjH= UtilWeb.getValueFromDataTable(dirInstalacion,"conjunto");
-        String conjH= UtilWeb.getValueFromDataTable(dirInstalacion,"conjHabit");
-        altaMonoHfcTiendaStep.writeDireccionInstalacion(manzana, lote, tipoVivienda, nombreVivienda,bloque, piso, interior, tipoConjH, conjH);
+        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
+        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
+        String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
+        String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
+        String bloque = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
+        String piso = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
+        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String tipoConjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
+        String conjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
+        altaMonoHfcTiendaStep.writeDireccionInstalacion(manzana, lote, tipoVivienda, nombreVivienda, bloque, piso, interior, tipoConjH, conjH);
     }
 
     @Y("presiono el boton Consultar Cobertura")

@@ -30,19 +30,10 @@ public class BandejaBackOfficePage extends WebBase {
     protected WebElement etiquetaCargado;
     @FindBy(id = "fileDropRef")
     protected WebElement fileRuta;
-    @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
-    protected WebElement btnBackOffice;
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
     protected WebElement btnBuscar;
     @FindBy(xpath = "//tdp-st-button[@type='button']")
     protected WebElement btnCargarAudio;
-
-    public void clickBackOffice() {
-        esperaProgresiva(driver(), 3, 5, btnBackOffice);
-        click(btnBackOffice);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
-        UtilWeb.waitForSeconds(5);
-    }
 
     public void typeDocument(String documento) {
         WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");

@@ -43,9 +43,10 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
             altaValidacionPrecioDescuentoStep.validacionBeneficioPlan(beneficioPlan);
         }
     }
+
     @Y("Valido que el descuento aplicado sea {string}")
-    public void valdiacionDescuento(String descuento){
-        if (!Objects.equals(descuento, "")){
+    public void valdiacionDescuento(String descuento) {
+        if (!Objects.equals(descuento, "")) {
             altaValidacionPrecioDescuentoStep.validacionBeneficioPlan(descuento);
         }
     }

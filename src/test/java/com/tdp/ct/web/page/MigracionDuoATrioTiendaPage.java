@@ -3,24 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import io.restassured.internal.common.assertion.Assertion;
 import org.junit.jupiter.api.Assertions;
-import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.Timestamp;
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -56,7 +46,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = " //*[@label='Actualizar dirección' or contains(text(),'Actualizar dirección')]")
     protected WebElement btnActualizarDir;
-    //*[@class='modal_footer']//tdp-st-button[@label='Actualizar dirección']
+
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
     protected WebElement btnBuscar;
 
@@ -67,8 +57,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement btnEntendido;
 
     @FindBy(xpath = "//*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]")
-    //button[@class='btnCard']
-    //*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]
     protected WebElement btnMantenerPlan;
 
     @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
@@ -80,11 +68,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
     @FindBy(xpath = "//*[@type='button' and @class='close']")
     protected WebElement btnClosePopUp;
+
     @FindBy(xpath = "//div[text()='MÓDEM']/parent::div/../descendant-or-self::tdp-st-checkbox[1]")
     protected WebElement agregarModem;
 
@@ -93,7 +79,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3,5,cartillaHogar);
+        esperaProgresiva(driver(), 3, 5, cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(cartillaHogar);
         revisarModalError(driver());
@@ -103,11 +89,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3,5,btnOpcionPlanNuevo);
+        esperaProgresiva(driver(), 3, 5, btnOpcionPlanNuevo);
         btnOpcionPlanNuevo.click();
         UtilWeb.waitForSeconds(1);
     }
-    public void cerrarPopupCU(){
+
+    public void cerrarPopupCU() {
         UtilWeb.waitForSeconds(4);
         try {
             if (cerrarCU.isDisplayed()) {
@@ -156,53 +143,57 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
-    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
-    protected WebElement btnMostrar;
 
-    public void doyClickEnEnElBoton(String btn) {
+    public void doyClickEnEnElBoton(String nameButton) {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
-        String btnEsperado = btn.toUpperCase().trim();
+        String btnEsperado = nameButton.toUpperCase().trim();
         WebElement botonEsperado = null;
         switch (btnEsperado) {
             case "MANTENER PLAN":
                 botonEsperado = btnMantenerPlan;
                 break;
+
             case "ACTUALIZAR":
             case "ACTUALIZAR DIRECCION":
             case "ACTUALIZAR DIRECCIÓN":
-
                 botonEsperado = btnActualizarDir;
                 break;
+
             case "CONFIRMAR":
             case "CONFIRMAR DIRECCION":
             case "CONFIRMAR DIRECCIÓN":
-
                 botonEsperado = btnConfirmarDir;
                 break;
+
             case "BUSCAR":
                 botonEsperado = btnBuscar;
                 break;
+
             case "INGRESAR COORDENADAS":
                 botonEsperado = btnIngCord;
                 break;
+
             case "ENTENDIDO":
                 botonEsperado = btnEntendido;
                 break;
+
             case "CAMBIAR PLAN":
                 botonEsperado = btnCambiarPlan;
                 break;
+
             case "RENOVAR PLAN":
+            case "RENOVAR PLAN / EQUIPO":
                 botonEsperado = btnRenovarPlan;
                 break;
         }
-        if(botonEsperado!=null){
+        if (botonEsperado != null) {
             revisarModalError(driver());
-            esperaProgresiva(driver(), 5, 5,botonEsperado);
+            esperaProgresiva(driver(), 5, 5, botonEsperado);
             js().scrollElementTop(botonEsperado);
             botonEsperado.click();
-        }else{
-           System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
+        } else {
+            System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
         }
         revisarModalError(driver());
     }
@@ -215,7 +206,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         String direccionRecibida = txtDirC.getText().toUpperCase().trim();
         Assertions.assertTrue(direccionRecibida.contains(direccionEsperada), "La direccion recibida: " + direccionRecibida + " es distinta a la esperada: " + direccionEsperada);
     }
-
 
     public void agregoSVALinea(String svaLinea) {
         UtilWeb.waitForSeconds(5);
@@ -241,10 +231,10 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void seleccionoCartillaMovistarTotal() {
         revisarModalError(driver());
-        esperaProgresiva(driver(),4,5,cartillaMovistarTotal);
+        esperaProgresiva(driver(), 4, 5, cartillaMovistarTotal);
         js().scrollElementTop(cartillaMovistarTotal);
         revisarModalError(driver());
-        Addons.esperaCargaMontoDeuda(driver(),120);
+        Addons.esperaCargaMontoDeuda(driver(), 120);
         waitUntilElementIsClickable(cartillaMovistarTotal, 20);
         click(cartillaMovistarTotal);
     }

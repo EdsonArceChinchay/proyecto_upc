@@ -28,7 +28,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1013087120"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |

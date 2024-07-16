@@ -9,7 +9,6 @@ import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPag
 import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc10CanalTiendaPage;
 import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc17CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.*;
-import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,7 +32,6 @@ public class StepPages {
     public AltaFijaMovilRegistroPage altaFijaMovilRegistroPage() {
         return new AltaFijaMovilRegistroPage();
     }
-
 
     public AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage() {
         return new AltaFijaAltaMovilCallCenterPage();
@@ -75,10 +73,6 @@ public class StepPages {
         return new MigracionDuoATrioTiendaPage();
     }
 
-    public AltaTrioDuoProactivoPage altaTrioDuoProactivoPage() {
-        return new AltaTrioDuoProactivoPage();
-    }
-
     public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage() {
         return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage();
     }
@@ -87,20 +81,12 @@ public class StepPages {
         return new AltaMovilPrepagoSoloChipTiendaPage();
     }
 
-    public AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage altaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage() {
-        return new AltaFijaTiendaUpgradeDecoHDalquilerADecoSmartHDAlquilerPage();
-    }
-
     public MigraTrioaMTcanalCallCenterPage migraTrioaMTcanalCallCenterPage() {
         return new MigraTrioaMTcanalCallCenterPage();
     }
 
     public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage() {
         return new AltaMovilControlFinancimientoPage();
-    }
-
-    public AltaMovilSVATiendaPage altaMovilSVATiendaPage() {
-        return new AltaMovilSVATiendaPage();
     }
 
     public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {
@@ -119,8 +105,6 @@ public class StepPages {
         return new ConsultaDireccionPorCoordenasPage();
     }
 
-    ;
-
     public CaeqPorRetailPage caeqPorRetailPage() {
         return new CaeqPorRetailPage();
     }
@@ -137,24 +121,8 @@ public class StepPages {
         return new MigraSalto0RetailPage();
     }
 
-    public MigraSalto0CanalTiendaPage migraSalto0CanalTiendaPage() {
-        return new MigraSalto0CanalTiendaPage();
-    }
-
     public MigraMTconCambioVelocidaCallCenterPage migraMTconCambioVelocidaCallCenterPage() {
         return new MigraMTconCambioVelocidaCallCenterPage();
-    }
-
-    public SvaCallCenterPage svaCallCenterPage() {
-        return new SvaCallCenterPage();
-    }
-
-    public AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage() {
-        return new AltaMonoInternetSvaRepetidorSvaInternetCallCenterPage();
-    }
-
-    public SvaBloqueHboaDuoPorTiendaPage svaBloqueHboaDuoPorTiendaPage() {
-        return new SvaBloqueHboaDuoPorTiendaPage();
     }
 
     public PortabilidadPage portabilidadPage() {
@@ -183,6 +151,10 @@ public class StepPages {
 
     public BandejaBackOfficePage bandejaBackOfficePage() {
         return new BandejaBackOfficePage();
+    }
+
+    public OfferSVAPage offerSVAPage() {
+        return new OfferSVAPage();
     }
 
 }

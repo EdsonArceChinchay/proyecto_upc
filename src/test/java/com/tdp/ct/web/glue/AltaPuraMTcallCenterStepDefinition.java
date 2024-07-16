@@ -1,12 +1,9 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.AltaPuraMTcallCenterStep;
 import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
 
 public class AltaPuraMTcallCenterStepDefinition {
 
@@ -48,7 +45,7 @@ public class AltaPuraMTcallCenterStepDefinition {
         altaPuraMTcallCenterStep.ingresarCorreoVerif(verifCorreo);
     }
 
-//    TODO:
+    //    TODO:
     @Y("doy click en el boton de continuar")
     public void doyClickEnElBotonDeContinuar() {
         altaPuraMTcallCenterStep.clicBotonContinuar();

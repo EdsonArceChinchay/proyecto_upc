@@ -28,7 +28,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
 #    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
 #    Y        selecciona el boton del numero de celular existente "650027636"
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"

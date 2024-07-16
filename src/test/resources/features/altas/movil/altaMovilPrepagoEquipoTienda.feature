@@ -28,7 +28,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
@@ -36,7 +36,8 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Prepago
+    Y        selecciono el plan "Prepago" que desea
+    Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta

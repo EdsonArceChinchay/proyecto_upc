@@ -5,15 +5,15 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
-##GDAP: GDAP-
+##GDAP: GDAP-1377
 ##SPRINT CREADO: PI20_SP1
 ##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
 ##DATA:REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 02/07/2024
+##FECMOD: 03/07/2024
 
-@BERSERKERS @DoneDevOps @PI18_SP4 @RegresionLegacy
+@BERSERKERS @DoneDevOps @PI20_SP1 @RegresionLegacy
 Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Call Center
   Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
 
@@ -29,14 +29,14 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
     E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Cuando   selecciono el boton Ver detalle del servicio "650030665"
+    Cuando   doy click en el boton Ver detalle del servicio "650030665"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes

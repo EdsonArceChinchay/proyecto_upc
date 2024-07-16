@@ -16,15 +16,11 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
     private MigracionMonoADuoSVATiendaStep MigracionMonoADuoSVATiendaStep;
 
     @Autowired
-    private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
-
-    @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
 
     @Y("selecciono la oferta {string}")
     public void seleccionoLaOferta(String oferta) {
         altaFijaTiendaStep.seleccionarListaOfertas(oferta);
-        //altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
@@ -33,17 +29,5 @@ public class MigracionMonoADuoSVATiendaStepDefinition {
         MigracionMonoADuoSVATiendaStep.seleccionarboton();
     }
 
-    @Y("doy clic en agregar sva {string}")
-    public void doyClicEnAgregarSva(String Bloques) {
-        MigracionMonoADuoSVATiendaStep.clicEnAgregarSVA();
-        MigracionMonoADuoSVATiendaStep.agregoSVATV(Bloques);
-        MigracionMonoADuoSVATiendaStep.clicGuardarCambios();
-    }
 
-    @Y("selecciono la opcion a escoger {string}")
-    public void seleccionoLaOpcionAMigrar(String plan) {
-        MigracionMonoADuoSVATiendaStep.seleccionarPlanMigrar(plan);
-        altaFijaTiendaStep.clickSeleccionarOferta();
-
-    }
 }

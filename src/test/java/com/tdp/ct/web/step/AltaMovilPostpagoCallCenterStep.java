@@ -1,5 +1,5 @@
 package com.tdp.ct.web.step;
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
@@ -14,8 +14,6 @@ public class AltaMovilPostpagoCallCenterStep {
 
     @Autowired
     private  StepPages page;
-
-
 
     @ScreenShotBefore
     public void BtonOpciones() {
@@ -33,8 +31,8 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().seleccionarEquipo();
     }
 
-    public  void seleccionarTiempo(String tiempoP) {
-        page.altaMovilPostpagoCallCenterPage().seleccionarTiempo(tiempoP);
+    public  void selectPermanency(String timePermanecy) {
+        page.altaMovilPostpagoCallCenterPage().selectPermanency(timePermanecy);
     }
 
     @ScreenShotAfter
@@ -64,13 +62,14 @@ public class AltaMovilPostpagoCallCenterStep {
     public void doyClickEnIniciarRegistro(){
         page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
+
     @ScreenShotAfter
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
     @ScreenShotBefore
     public void ingresoElTipoDePago(String pago) {
-        page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(pago);
+        page.altaMovilPostpagoCallCenterPage().selectTypeOfPayment(pago);
     }
     @ScreenShotBefore
     @ScreenShotAfter
@@ -87,10 +86,8 @@ public class AltaMovilPostpagoCallCenterStep {
             page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
             page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
             page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
-
-
-
     }
+
     @ScreenShotAfter
     public void ValidoQuePresenteDetallePedido() {
         page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();

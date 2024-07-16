@@ -32,7 +32,7 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        verifico la direccion "LINCE , LIMA , LIMA" actual del servicio
@@ -54,7 +54,9 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464952 | tester@tester.com | Duo           | RA 100 MBPS |

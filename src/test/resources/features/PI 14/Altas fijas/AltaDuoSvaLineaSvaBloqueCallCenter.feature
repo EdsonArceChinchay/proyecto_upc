@@ -29,7 +29,7 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos     | genero    |
@@ -51,11 +51,11 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Y        doy click en agregar SVA Linea "<svaLinea>"
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
-	  #Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "<svaLinea>"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -87,4 +87,4 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque  con docu
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1058908648 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | FOX    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1058908648 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |

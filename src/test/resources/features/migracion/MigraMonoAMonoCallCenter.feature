@@ -31,7 +31,7 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
    # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
@@ -42,8 +42,8 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
 #    Y        doy click en añadir SVA
-#    Y        doy click en agregar Bloque "<bloque>"
-#    Y        doy click en Guardar cambios
+#    Y        agrego SVA bloque "<bloque>"
+#    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

@@ -28,7 +28,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042465034"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
@@ -43,7 +43,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        doy click en el boton "Cambiar Plan"
     #Y        presiono el boton "Cambiar Plan"
     #Y        valido que se presente el detalle de el plan
-    Y         doy click en iniciar registro
+    Y        doy click en iniciar registro
     Y        ingreso email "prueba@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
@@ -51,10 +51,10 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password |
       | usuario externo | userNameST | passST   |

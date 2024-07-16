@@ -13,9 +13,11 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 06/06/2024
 
+@PROCS-11389
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
 
+  @PROCS-11392
   @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
@@ -29,7 +31,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |

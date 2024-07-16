@@ -30,7 +30,7 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono el servicio mono "5010008325" y  el servicio duo "9234656218" a paquetizar
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton continuar

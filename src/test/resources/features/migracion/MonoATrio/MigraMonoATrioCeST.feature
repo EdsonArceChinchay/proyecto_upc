@@ -28,7 +28,7 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
@@ -62,4 +62,4 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                    |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300013 | Trío          | TRIO MOV. VOZ INT. ESTANDAR |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300010 | Trío          | TRIO MOV. VOZ INT. ESTANDAR |

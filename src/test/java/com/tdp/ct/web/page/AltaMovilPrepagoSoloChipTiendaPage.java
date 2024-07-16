@@ -11,6 +11,8 @@ import java.awt.*;
 import java.util.List;
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+
 public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
 
     @FindBy(xpath = "(//div[contains(@class,'pt-4')]/div[@class='tdp-row'])[1]")
@@ -25,6 +27,8 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
     protected WebElement btnConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Continuar')]/..")
     protected WebElement buttonContinuar;
+    @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
+    protected WebElement labelSelectService;
 
     public void seleccionarOferta(String oferta) {
         UtilWeb.waitForSeconds(10);
@@ -188,5 +192,14 @@ public class AltaMovilPrepagoSoloChipTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
         UtilWeb.waitForSeconds(20);
+    }
+
+    public void selectLineWithNumber(String number) {
+        js().scrollElementTop(labelSelectService);
+        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'"+number+"')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
+        esperaProgresiva(driver(),3,5,numberLine);
+        js().scrollElementTop(numberLine);
+        numberLine.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line "+number);
     }
 }

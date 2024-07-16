@@ -1,0 +1,78 @@
+package com.tdp.ct.web.page;
+
+import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
+
+public class OfferSVAPage extends WebBase {
+
+    @FindBy(xpath = " //button[contains(text(),'Guardar cambios') ] | //*[contains(text(),'Guardar cambios')] ")
+    protected WebElement btnSaveChanges;
+
+    @FindBy(xpath = "//*[@class='title']/h1")
+    protected WebElement labelTitle;
+
+    public void validateScreenName(String name) {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Validate screen name: " + name);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 5, labelTitle);
+        js().scrollElementTop(labelTitle);
+        compareWebElementTextAndText(labelTitle, name);
+    }
+
+    public void clickButtonSaveChanges() {
+        js().scrollElementTop(btnSaveChanges);
+        btnSaveChanges.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Save Changes");
+    }
+
+    public void clickBackToSumary() {
+    }
+
+    public void addSVAIconButton(String name) {
+        WebElement nameSVA = find().getElementByXPath("(//*[contains(text(),'" + name + "')]/ancestor::div[contains(@class,'content-section')]//tdp-st-icon-button[contains(@icon,'add')])[1]");
+        nameSVA.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + name);
+    }
+
+    public void addSVACheckBox(String name) {
+        WebElement nameSVA = find().getElementByXPath("(//*[contains(text(),'" + name + "')]/ancestor::div[contains(@class,'content-section')]//tdp-st-checkbox)[1]");
+        nameSVA.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + name);
+    }
+
+    public void scrollToTitle(String name) {
+        WebElement titleSection = find().getElementByXPath("//*[contains(@class,'title-section') or contains(@class,'section-options')]/*[contains(text(),'" + name + "')]");
+        esperaProgresiva(driver(), 5, 5, titleSection);
+        js().scrollElementTop(titleSection);
+    }
+
+    public void addSVASelect(String section, String nameSVA) {
+        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select");
+        listElementPLan.click();
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = sh().getContext(listElementPLan);
+        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement elements : lista) {
+            System.out.println(elements.getText());
+            if (elements.getText().equals(nameSVA)) {
+                UtilWeb.waitForSeconds(2);
+                click(elements, 3);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + nameSVA);
+
+            }
+        }
+    }
+
+}

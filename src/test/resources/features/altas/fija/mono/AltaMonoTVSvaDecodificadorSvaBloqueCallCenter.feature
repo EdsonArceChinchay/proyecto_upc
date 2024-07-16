@@ -29,7 +29,7 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres           | apellidos     | genero   |
@@ -51,11 +51,11 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        elegimos sva "<decodificador>"
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
-	  #Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA decodificador "<decodificador>"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

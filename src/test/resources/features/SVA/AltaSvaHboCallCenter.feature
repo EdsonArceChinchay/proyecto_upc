@@ -30,10 +30,21 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
-    Cuando   doy click en ver detalle
-    Y        doy click en el boton Agregar sva fija
-    Y         seleccionamos agregar Bloque HBO
+    Y        doy click en el boton Consultar
+    Y        selecciono la linea con numero "5010013051"
+    Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        valido que este en el resumen de venta
+    Y        selecciono boton mantener plan
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "HBO"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

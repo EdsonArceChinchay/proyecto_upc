@@ -32,16 +32,6 @@ public class AltaMovilComboProactivoStep {
         page.altaMovilComboProactivoPage().seleccionarDireccion(direccion);
 }
 
-
-    public void clicConsultar() {
-        page.altaMovilComboProactivoPage().clicConsultar();
-
-    }
-
-    public void clicConfirmarCliente() {
-        page.altaMovilComboProactivoPage().clicConfirmarCliente();
-    }
-
     @ScreenShotBefore
     public void seleccionoElBotonAgregarSva() {
         page.altaMovilComboProactivoPage().seleccionoElBotonAgregarSva();

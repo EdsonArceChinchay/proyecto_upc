@@ -25,13 +25,13 @@
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<tipoUsuario>"
      Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
-    E        ingreso el captcha
-    Y        presiono el boton Continuar hacia el home
+     Y        ingreso el password "<password>"
+     E        ingreso el captcha
+     Y        presiono el boton Continuar hacia el home
      Y        valido el login exitoso mediante el mensaje "<msgHome>"
      Cuando   selecciono el tipo de documento "<tipoDocumento>"
      Y        ingreso el documento "<documento>"
-     Y        doy click en el boton consultar
+     Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
      Y        doy click en el boton "Confirmar direccion"
@@ -41,9 +41,10 @@
      Y        doy click en Cambiar plan hogar
      Y        valido que este en el resumen de venta
      Y        doy click en añadir SVA
-     Y        elegimos sva "<decodificador>"
-     Y        doy click en agregar Bloque "<bloque>"
-     Y        doy click en Guardar cambios
+     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+     Y        agrego SVA decodificador "<decodificador>"
+     Y        agrego SVA bloque "<bloque>"
+     Y        doy click en el boton Guardar cambios
      Cuando   doy clic a iniciar registro
      Y        valido que me encuentre en la pantalla agendamiento
      Y        ingreso los datos de agendamiento
@@ -58,5 +59,5 @@
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
      Ejemplos:
-       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador |
-       | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 123456766 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | 9.90          |
+       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
+       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 123456766 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |

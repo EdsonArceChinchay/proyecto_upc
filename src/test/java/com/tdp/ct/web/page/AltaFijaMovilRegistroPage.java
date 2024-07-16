@@ -38,12 +38,14 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement textoContratoCliente;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
     protected WebElement titleLugarInstalacion;
-    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
+    @FindBy(xpath = "//*[contains(text(), 'Estás a un paso de registrar el servicio')]")
     protected WebElement titleRegistrarServicio;
     @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
     protected WebElement titleLugarInstalacionEntrega;
     @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
     protected WebElement titleVerificarLugarInstalacion;
+    @FindBy(xpath = "//*[contains(text(),'Ofertas sugeridas')]")
+    protected WebElement titleOffer;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
     protected List<WebElement> listaOfertasSugeridas;
     @FindBy(xpath = "//button[contains(text(),'Seleccionar Oferta')]")
@@ -179,7 +181,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarPantallaIngresarDireccionEntrega() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 4, 4, titleLugarInstalacionEntrega);
+        esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
+        revisarModalError(driver());
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -196,7 +199,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 10, listaOfertasSugeridas.get(0));
+        esperaProgresiva(driver(), 6, 6, listaOfertasSugeridas.get(0));
         boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
         return existe;
@@ -609,9 +612,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
-    public boolean esNuevoCliente() {
+    public boolean isNewCustomer() {
         return nombreClienteUserData.getText().length() <= 8;
-
     }
 
     //CAMBIOS PARA RETAIL
@@ -881,37 +883,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
 
-    public void agregoSVAINTERNET(String svaInternet) {
-        WebElement listElementPLan;
-        UtilWeb.waitForSeconds(10);
-        listElementPLan = find().getElementByXPath("//tdp-st-select[@label='Elige SVA'] | //div[contains(text(),'SVA INTERNET')]/../descendant-or-self::tdp-st-select");
-        esperaProgresiva(driver(), 3, 5, listElementPLan);
-        listElementPLan.click();
-        UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
-        boolean encontrado = false;
-        for (WebElement elements : lista) {
-            System.out.println(elements.getText());
-            if (elements.getText().equals(svaInternet)) {
-                UtilWeb.waitForSeconds(2);
-                click(elements, 3);
-                encontrado = true;
-            }
-        }
-        if (!encontrado) {
-            // Si el elemento específico no se encuentra, seleccionar el último elemento
-            if (!lista.isEmpty()) {
-                WebElement ultimoElemento = lista.get(lista.size() - 1);
-                UtilWeb.waitForSeconds(2);
-                click(ultimoElemento, 3);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el último elemento de la lista.");
-            } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "SVA NO ENCONTRADO y lista vacía.");
-            }
-        }
-    }
-
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         int contador = 0, i = 0;
         int reintentosMax = 3;
@@ -926,12 +897,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
                 if (elementoExistente) {
                     click(btnCerrar);
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error " + i);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
                     UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error 2");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
                 }
 
             } catch (Exception e) {
@@ -940,20 +911,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         } while (!bOK && contador < reintentosMax);
     }
 
-
-    public void clicEnAgregarSVAMT() {
-        js().scrollElementTop(buttonAgregarSVAMT);
-        waitUntilElementIsVisible(buttonAgregarSVAMT, 10);
-        click(buttonAgregarSVAMT);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void agregarRepetidor() {
-        js().scrollElementTop(buttonRepetidor);
-        waitUntilElementIsVisible(buttonRepetidor, 10);
-        click(buttonRepetidor);
-        UtilWeb.waitForSeconds(5);
-    }
 
     public void scrollDown() {
         UtilWeb.waitForSeconds(4);

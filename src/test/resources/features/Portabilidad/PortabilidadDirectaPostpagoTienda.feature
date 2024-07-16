@@ -12,7 +12,6 @@
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/04/2024
-
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
 
@@ -30,7 +29,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Mostrar ofertas
@@ -85,7 +84,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
       | usuario externo | userNameST | passST   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |

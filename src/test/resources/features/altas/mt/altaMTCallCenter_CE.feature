@@ -30,7 +30,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
@@ -85,7 +85,10 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -96,6 +99,3 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío       |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000495 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS       |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100002129 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MBPS                                      |
-

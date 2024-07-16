@@ -28,7 +28,7 @@ Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos     | genero    |
@@ -49,8 +49,8 @@ Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Y        selecciono en iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
+    Cuando   doy clic a iniciar registro
+    Entonces valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"

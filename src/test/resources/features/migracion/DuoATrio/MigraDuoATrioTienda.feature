@@ -29,7 +29,7 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
 #    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
@@ -57,6 +57,5 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                  |
-      | usuario externo | userNameST | passST  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040388 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR HD |

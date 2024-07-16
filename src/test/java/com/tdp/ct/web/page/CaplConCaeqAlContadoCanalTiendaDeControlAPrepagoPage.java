@@ -21,8 +21,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     protected WebElement btnContinuarCU;
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
-
-
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
     protected WebElement btnRenovarPlan;
 
@@ -41,11 +39,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
     protected WebElement btnConShadowIniciarRegistro;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Entendido')]")
-    protected WebElement btnEntendido;
-
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
 
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
@@ -134,10 +127,7 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
 
     public void clickBtnSelectEquipo() {
         //pendiente revisar
-        //String btnSelect = ".cont-btn tdp-st-button;button";
         String btnSelect = ".cont-btn tdp-st-button";
-
-        //WebElement element = js().getWebElement(btnSelect);
         System.out.println("clickBtnSelectEquipo 0");
         js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
         WebElement element = js().getWebElement(btnSelect);

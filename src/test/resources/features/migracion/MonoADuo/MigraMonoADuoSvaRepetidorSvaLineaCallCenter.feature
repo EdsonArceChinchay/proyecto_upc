@@ -23,14 +23,14 @@
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<tipoUsuario>"
      Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
-    E        ingreso el captcha
-    Y        presiono el boton Continuar hacia el home
+     Y        ingreso el password "<password>"
+     E        ingreso el captcha
+     Y        presiono el boton Continuar hacia el home
      Y         valido el login exitoso mediante el mensaje "<msgHome>"
    # Y        valido que se presente la tienda "<tiendaAsesor>"
      Cuando   selecciono el tipo de documento "<tipoDocumento>"
      Y        ingreso el documento "<documento>"
-     Y        doy click en el boton consultar
+     Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
@@ -40,11 +40,11 @@
      Y        selecciono la oferta "<plan>"
      Y        doy click en Cambiar plan hogar
      Y        valido que este en el resumen de venta
-     Y doy click en agregar repetidor
-     Y doy click en agregar SVA Linea "Plan Multidestino 20"
-#    Y        doy click en añadir SVA
-#    Y        doy click en agregar Bloque "<bloque>"
-#    Y        doy click en Guardar cambios
+     Y        doy click en añadir SVA
+     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+     Y        agrego SVA repetidor "Repetidor WIFI PLUS Venta"
+     Y        agrego SVA linea "Plan Multidestino 20"
+     Y        doy click en el boton Guardar cambios
      Cuando   doy clic a iniciar registro
      Y        valido que me encuentre en la pantalla agendamiento
      Y        ingreso los datos de agendamiento
@@ -61,5 +61,5 @@
 
 
      Ejemplos:
-       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | Sva Linea            |
-       | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA D22 50 MBPS | Plan Multidestino 20 |
+       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                         |
+       | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA |

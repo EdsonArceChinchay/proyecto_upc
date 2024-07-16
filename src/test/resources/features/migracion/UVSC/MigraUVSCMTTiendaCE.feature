@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:
-##GDAP:GDAP-
+##GDAP:GDAP-996
 ##SPRINT CREADO: PI20_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -28,7 +28,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
 	#Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "" actual del servicio
@@ -46,8 +46,6 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
@@ -57,7 +55,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta
-    Y        doy clic para descargar el contrato
+#    Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

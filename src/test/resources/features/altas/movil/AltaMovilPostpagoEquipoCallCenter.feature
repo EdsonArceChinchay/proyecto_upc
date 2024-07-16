@@ -35,7 +35,7 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Entonces ingreso los datos del cliente a registrar
       | nombres | apellidos   | genero   |
@@ -43,9 +43,10 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan_movil Postpago
+    Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
+    Y        selecciono el tipo de plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos

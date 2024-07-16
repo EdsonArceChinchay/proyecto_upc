@@ -14,7 +14,7 @@ public class ConsultaDireccionPorCoordenasStepDefinition {
 
     @Y("ingreso las coordenadas de Longitud X: {string} y Latitud Y:{string}")
     public void ingresoLasCoordenadasDeLogitudyLatitud(String x, String y) {
-        consultaDireccionPorCoordenasStep.ingresoLasCoordenadasDeLogitudyLatitud(x,y);
+        consultaDireccionPorCoordenasStep.ingresoLasCoordenadasDeLogitudyLatitud(x, y);
     }
 
     @Y("valido que la direccion sea {string}")

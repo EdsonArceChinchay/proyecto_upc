@@ -13,9 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 26/04/2024
 
+@PROCS-11389
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal Tienda
 
+  @PROCS-11391
   @AltaMovilcontrolConEquipo
   Esquema del escenario: Realizar una alta movil Control + equipo por canal Tienda
     Dado     que abro la pagina de movistar
@@ -28,7 +30,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos | genero    |

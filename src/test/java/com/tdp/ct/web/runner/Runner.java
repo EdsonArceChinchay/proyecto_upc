@@ -17,8 +17,8 @@ import java.util.logging.Logger;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         tags = "@DoneDevOps"
-
 )
+
 class Runner {
 
     @BeforeClass
@@ -29,6 +29,6 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-        JiraXray.importResults();
+        JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }

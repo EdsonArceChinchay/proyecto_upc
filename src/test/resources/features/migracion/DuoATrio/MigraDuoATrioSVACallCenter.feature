@@ -29,9 +29,9 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
 	#Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        cierro pop up de CU
-    Y        selecciono la cartilla del plan activo
+    Y        selecciono la linea con numero "5010022883"
     Y        selecciono el boton Mostrar ofertas
 #    Y        doy click en el boton "CONFIRMAR DIRECCION"
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
@@ -44,9 +44,11 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en añadir SVA
-    Y        doy click en agregar Bloque "Hot"
-    Y        doy click en Guardar cambios
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA linea "Plan Multidestino 20"
+    Y        agrego SVA bloque "HOT"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -71,5 +73,5 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 102040344 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo           | sva                   | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | plan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1002007051 | correo@gmail.com | PACK ANTIVIRUS MCAFEE | MARIBEL     | JOSE        | SULLANA     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |

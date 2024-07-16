@@ -9,8 +9,6 @@ import org.openqa.selenium.support.FindBy;
 public class MigraDuoTrioActualizarDireccionTiendasPage extends WebBase {
     @FindBy(xpath = "//*[contains(text(),'Se actualizo')]")
     protected WebElement txtMensaje;
-    public void doyClickEnElBoton(String button) {
-    }
 
     public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
         String mensajeEsperado = mensaje.toUpperCase().trim();

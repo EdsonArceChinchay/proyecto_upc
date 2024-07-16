@@ -16,21 +16,19 @@
  @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
  Característica: migracion duo a trio sva Bloque + sva Linea CANAL CALL CENTER
 
-   Antecedentes:
-     Dado     que abro la pagina de movistar
-
    @migracionDuoTrioSvaBloqueSvaLineaCallCenter
    Esquema del escenario: migracion duo a trio sva Bloque + sva Linea CANAL CALL CENTER
+     Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<tipoUsuario>"
      Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
-    E        ingreso el captcha
-    Y        presiono el boton Continuar hacia el home
+     Y        ingreso el password "<password>"
+     E        ingreso el captcha
+     Y        presiono el boton Continuar hacia el home
      Y         valido el login exitoso mediante el mensaje "<msgHome>"
      Cuando   selecciono el tipo de documento "<tipoDocumento>"
      Y        ingreso el documento "<documento>"
-     Y        doy click en el boton consultar
+     Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
      Y        doy click en el boton "Confirmar direccion"
@@ -39,10 +37,11 @@
      Y        selecciono la oferta "<plan>"
      Y        doy click en Cambiar plan hogar
      Y        valido que este en el resumen de venta
-     Y        doy click en agregar SVA Linea "<svaLinea>"
-     Y        doy click en añadir SVA
-     Y        doy click en agregar Bloque "<bloque>"
-     Y        doy click en Guardar cambios
+     Y        doy click en el boton Agregar SVA
+     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+     Y        agrego SVA linea "<svaLinea>"
+     Y        agrego SVA bloque "<bloque>"
+     Y        doy click en el boton Guardar cambios
      Cuando   doy clic a iniciar registro
      Y        valido que me encuentre en la pantalla agendamiento
      Y        ingreso los datos de agendamiento
@@ -53,9 +52,8 @@
      Y        me muestra en pantalla el contrato solicitado
      Cuando   doy clic en si acepto
      Y        doy click en el boton de continuar
-	 #Y         presiono el boton Registrar venta
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
      Ejemplos:
-       | tipoUsuario     | userName | password     | msgHome    | tipoDocumento | documento  | correo                | tipoPlanHogar | plan                                              | bloque         | svaLinea             |
-       | usuario externo | userNameCC | passCC | Bienvenid@ | CE            | 1042465120 | tester_123@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | Bloque estelar | Plan Multidestino 20 |
+       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo                | tipoPlanHogar | plan                            | bloque         | svaLinea             |
+       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042465120 | tester_123@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | Bloque estelar | Plan Multidestino 20 |

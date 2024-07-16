@@ -12,11 +12,12 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
-
+@PROCS-11389
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
 Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Center
   Quiero realizar una alta movil solo sin por call center
 
+  @PROCS-11390
   @AltaMovilCECallCenter
   Esquema del escenario: Alta Movil Control Solo Sim con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
@@ -30,7 +31,7 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        ingreso los datos del cliente a registrar
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |

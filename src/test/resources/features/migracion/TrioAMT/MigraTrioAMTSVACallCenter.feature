@@ -11,17 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
-
 Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
 
   @migracionTrioAmtSvaCallCenter
   Esquema del escenario: Migracion de Trio a MT con CE  sin productos asociados sin biometria
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -32,7 +29,7 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JR JULIO CESAR TELLO 469" actual del servicio
@@ -40,9 +37,10 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
-    Entonces doy click en Agregar Sva
-    Y        doy click en agregar Bloque "<bloque>"
-    Y        doy click en Guardar cambios
+    Entonces doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA bloque "<bloque>"
+    Y        doy click en el boton Guardar cambios
     Cuando   doy clic a iniciar registro
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion

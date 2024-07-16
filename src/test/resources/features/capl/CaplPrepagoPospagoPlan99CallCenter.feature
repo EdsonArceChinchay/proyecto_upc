@@ -27,7 +27,7 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
+    Y        doy click en el boton Consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -50,23 +50,11 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-Y        busco por "<documento>"
+    Y        busco por "<documento>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName    | password | tipoDocumento | documento  | EncontrarCelular |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000314 | 981637356        |
-      | usuario interno | userNameQAN | passQAN  | CE            | 1100000240 | 983610461        |
-
-#      | usuario interno |          |              | CE            | 1100000317 | 981769530        |
-#      | usuario interno |          |              | CE            | 1100000273 | 984093119        |
-#      | usuario interno |          |              | CE            | 1100000273 | 984093119        |
-#      | usuario interno |          |              | CE            | 1100000754 | 985467360        |
-#      | usuario interno |          |              | CE            | 221011144  | 978129232        |
-#  1100000273
-#  1100000808
-#  1100000806
-#  1100000755
+      | tipoUsuario     | userName | password     | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
 

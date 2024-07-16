@@ -50,12 +50,12 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     }
 
     @ScreenShotAfter
-    public void selectPermanencia(String dato) {
-        page.altaMovilPostpagoCallCenterPage().seleccionarTiempo(dato);
+    public void selectPermanency(String timePermanency) {
+        page.altaMovilPostpagoCallCenterPage().selectPermanency(timePermanency);
     }
     @ScreenShotAfter
-    public void selectTipoPago(String tipoPago) {
-        page.altaMovilPostpagoCallCenterPage().ingresoElTipoDePago(tipoPago);
+    public void selectTypeOfPayment(String typePayment) {
+        page.altaMovilPostpagoCallCenterPage().selectTypeOfPayment(typePayment);
     }
 
     @ScreenShotAfter

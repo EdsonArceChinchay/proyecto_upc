@@ -1,6 +1,6 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.model.Cliente;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.Caeq.CaeqMasCaplMasCasiStep;
 import com.tdp.ct.web.step.Portabilidad.ServiceTest;
@@ -18,7 +18,7 @@ public class CaeqMasCaplMasCasiStepDefinition {
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
-    private Cliente cliente;
+    private Customer customer;
 
     private Scenario scenario;
 
@@ -35,7 +35,7 @@ public class CaeqMasCaplMasCasiStepDefinition {
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
         String salesCode = altaFijaMovilRegistroStep.getSalesCode();
-        salesCode = salesCode==null? cliente.getNumeroSolicitud():salesCode;
+        salesCode = salesCode == null ? customer.getSalesCode() : salesCode;
         this.scenario.log("[Código de Venta: " + salesCode + "]");
         caeqMasCaplMasCasiStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqMasCaplMasCasiStep.getSalesLead(salesCode));
         this.scenario.log(caeqMasCaplMasCasiStep.getSalesLead(salesCode).toString());
