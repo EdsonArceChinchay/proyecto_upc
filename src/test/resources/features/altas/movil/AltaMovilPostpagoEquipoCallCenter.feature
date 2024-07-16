@@ -44,6 +44,7 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
+    Y        doy click en el boton Siguiente
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"

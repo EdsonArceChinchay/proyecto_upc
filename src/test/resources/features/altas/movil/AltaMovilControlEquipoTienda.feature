@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 26/04/2024
 
-@BERSERKERS @DoneDevOps @AltaMovilEquipo
+@BERSERKERS @DoneDevOps @AltaMovilEquipo @PROCS-11389
 Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal Tienda
 
-  @AltaMovilcontrolConEquipo
+  @AltaMovilcontrolConEquipo @PROCS-11391
   Esquema del escenario: Realizar una alta movil Control + equipo por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

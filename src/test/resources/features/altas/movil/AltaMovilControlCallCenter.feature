@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 09/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil @PROCS-11389
 Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Center
   Quiero realizar una alta movil solo sin por call center
 
-  @AltaMovilCECallCenter
+  @AltaMovilCECallCenter @PROCS-11390
   Esquema del escenario: Alta Movil Control Solo Sim con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
