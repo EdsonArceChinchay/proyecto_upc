@@ -13,10 +13,12 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 06/06/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil @PROCS-11389
+@PROCS-11389
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
 
-  @Alta_Postpago_sim_CC @MVP13 @Global @PROCS-11392
+  @PROCS-11392
+  @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
