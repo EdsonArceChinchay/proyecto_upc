@@ -9,13 +9,13 @@
 ##SPRINT CREADO: PI20_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE(SIN ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal Call Center
 
-  @PortaDirectaPostCC
+  @PortaDirectaEquipoPostCC
   Esquema del escenario: Portabilidad solo chip postpago + Equipo en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
