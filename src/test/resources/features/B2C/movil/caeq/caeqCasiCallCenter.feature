@@ -11,14 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 24/10/2023
+##FECMOD: 17/07/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI12
-
 Característica: Caeq Mas Casi por call center
 
   @CaeqCasiCallCenter
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: CAEQ y CASI con cliente extranjero por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -37,11 +36,12 @@ Característica: Caeq Mas Casi por call center
     Y        presiona el boton anadir equipo del mismo plan
     Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName |
-      | 12 meses    | Al Contado | SAMSUNG    |
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Mantener Plan"
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -68,7 +68,10 @@ Característica: Caeq Mas Casi por call center
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -78,16 +81,7 @@ Característica: Caeq Mas Casi por call center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento | EncontrarCelular |
-#      | usuario externo | jpachaot | $t3l3f0n1c4$ | Bienvenid@ | CE            | 102030401  |                  |
-#      | usuario interno |          |              | Bienvenid@ | CE            | 1100000273 | 984093119        |
-#      | usuario interno |           | | Bienvenid@ | CE            | 1100000273 | 984093119 |
-#      | usuario interno |           | | Bienvenid@ | CE            | 1100000314 | 984093119        |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | EncontrarCelular |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 723456454 | 650034426        |
 
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000219 | 981805761        |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000811 | 937736455        |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000218 | 968024403        |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000209 | 968640981        |
-#      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 221011133 | 979225159        |
 

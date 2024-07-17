@@ -43,6 +43,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
     Y        doy click en el boton "Mantener Plan"
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
@@ -62,4 +63,3 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
-  #    | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000272 | 968615200        |

@@ -44,6 +44,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
       | 12 meses    | Financiado 12 cuotas | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
@@ -57,6 +58,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |

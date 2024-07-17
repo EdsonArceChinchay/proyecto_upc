@@ -3,28 +3,27 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT049
-##GDAP: GDAP-590
-##SPRINT CREADO:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT048
+##GDAP: GDAP-580
+##SPRINT CREADO: PI_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO:
-##FECMOD: 31/03/2023
+##ENCARGADO: CRISTIAN HUNGARO
+##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
 
-Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
-
-  @CambioEquipoConCambioSIM
+  @CaeqCEPorTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
-    E        ingreso el captcha
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
 #    Y        valido que se presente la tienda "<tiendaAsesor>"
@@ -36,31 +35,30 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
-    E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                               |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
     Y        selecciono tipo de pago Al Contado
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    #Y        selecciono tipo de pago Al Contado
-    #Y        presiono el boton seleccionar
-    Y        cierro el popup de validación de estado de contraseña única
-    Y        selecciono boton mantener plan
-    #Y        Selecciono boton Cambiar Chip
+    Y        cierro pop up de CU
+    Y        doy click en el boton "Mantener Plan"
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
-    #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
+    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy clic en continuar
-    #Y        presiono el boton descargar contrato
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 461960085 |
+

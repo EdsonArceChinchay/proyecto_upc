@@ -5,13 +5,13 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT0
-##GDAP: GDAP-#QAN1
+##GDAP: GDAP-
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 25/12/2023
+##ENCARGADO:
+##FECMOD: 17/07/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
 Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call Center
@@ -26,21 +26,18 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
-      | nombres | apellidos     | genero    |
-      | QAN     | MCCCDIECISEIS | masculino |
-    #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
     Y        selecciono el boton Linea Nueva Movil
-    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Entonces me muestra la pantalla para verificar la direccion
-    Y        presiono el boton Confirmar direccion
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        doy clic en el boton "ENTENDIDO"
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
@@ -56,9 +53,6 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
@@ -98,5 +92,5 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | nombrePlan | numeroExistente |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000232 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío       | 5010197873      |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion          | referencia | nombrePlan | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1593624582 | 13           | 1307      | 130704   | PR 28 DE JULIO 134 | Inkafarma  | Trio       | 9234866740      |
