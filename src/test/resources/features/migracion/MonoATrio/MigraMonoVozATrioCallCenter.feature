@@ -12,12 +12,14 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD:
-@FEMS3-5457
+  ##testejecution
+
 @BERSERKERS @DoneDevOps
 Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar
+ ##Test
 
   @MigraMonoVozATrioCallCenter
   Esquema del escenario: Migracion de Mono voz a Trio por canal Call Center
