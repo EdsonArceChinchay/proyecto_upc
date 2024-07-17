@@ -42,14 +42,14 @@ public class OfferSVAPage extends WebBase {
 
     public void addSVAIconButton(String name) {
         WebElement nameSVA = find().getElementByXPath("(//*[contains(text(),'" + name + "')]/ancestor::div[contains(@class,'content-section')]//tdp-st-icon-button[contains(@icon,'add')])[1]");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + nameSVA.getText());
         nameSVA.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + name);
     }
 
     public void addSVACheckBox(String name) {
-        WebElement nameSVA = find().getElementByXPath("(//*[contains(text(),'" + name + "')]/ancestor::div[contains(@class,'content-section')]//tdp-st-checkbox)[1]");
+        WebElement nameSVA = find().getElementByXPath("(//*[contains(text(),'" + name + "')]/parent::div/following-sibling::div[contains(@class,'container-actions')]//tdp-st-checkbox)[1]");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + nameSVA.getText());
         nameSVA.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + name);
     }
 
     public void scrollToTitle(String name) {

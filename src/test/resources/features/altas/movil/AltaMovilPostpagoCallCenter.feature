@@ -19,7 +19,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
 
   @PROCS-11392
   @Alta_Postpago_sim_CC @MVP13 @Global
-  Esquema del escenario: Alta móvil postpago solo chip con CEX, en canal retail,web front end, flujo no biométrico
+  Esquema del escenario: Alta móvil postpago solo chip con CEX por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
