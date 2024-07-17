@@ -1,49 +1,52 @@
 #language:es
-##CREADOR: CARLOS RUIZ
+##CREADOR: Angel Medina
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: PORTABILIDAD
+##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT
-##GDAP: GDAP-583
-##SPRINT CREADO: PI19_SP2
+##CODIGO: AT-DT106
+##GDAP: GDAP-964
+##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/04/2024
+##DATA: UNICA VEZ
+##ENCARGADO: Angel Medina
+##FECMOD: 16/04/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
+Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
 
-  @PortaDirectaPostCC
-  Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
+  @PortaNormalPreCC
+  Esquema del escenario: Portabilidad solo chip prepago con DNI, en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
-    Y        ingreso el captcha
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#  Y        valido que se presente la tienda "<tiendaAsesor>"
-    Y        valido que este activo el flag de Porta Directa
+  # Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        cierro el popup de contraseña Única
+    Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
-    Y        escojo tipo de linea "<tipoLinea>"
-    Y        escojo tipo de operador "<operador>"
+    Y        escojo tipo de linea "Postpago"
+    Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido que este en la seccion Postpago o Prepago
-    Y        selecciono el plan "Postpago" que desea
+    Y        valido los servicios
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2022-12-24 | 2022-12-31   |
+    Y        doy tiempo extra
+    Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -65,7 +68,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -83,6 +85,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102020  | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 

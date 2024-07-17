@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-890
+##GDAP: GDAP-583
 ##SPRINT CREADO: PI19_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
@@ -13,10 +13,10 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/04/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
+Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
 
-  @PortaDirectaPostST
-  Esquema del escenario: Portabilidad solo chip postpago en canal Tienda
+  @PortaDirectaPostCC
+  Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,8 +30,8 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
+    Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<numero>"
     Y        escojo tipo de linea "<tipoLinea>"
@@ -44,31 +44,25 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono añadir equipos
-    Y        selecciono tipo de pago Al Contado
-    E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName               |
-      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
-    Y        valido que existan resultados busqueda de equipos
-    Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        cierro pop up de CU
+    Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
+    Y        selecciono el departamento donde sera la instalacion "15"
+    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "INKAFARMA"
+    Y        presiono Consultar ubicacion
+    Y        presiono el boton consultar cobertura
+    Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
+    Y        selecciono el horario de entrega "3pm-7pm"
+    Y        ingreso el telefono de contacto "658745259"
+    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
+    Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
-    Y        doy click en el boton Validar Codigo de Portabilidad
-    Y        doy click en "Activa" y doy click en el boton Confirmar
-    Y        obtengo el token
-      | typeDocument    | numberDocument | numberPhone |
-      | <tipoDocumento> | <documento>    | <numero>    |
-    Cuando    ingreso el token y doy click en el boton Confirmar
-    Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
     Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
-#    Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
@@ -77,13 +71,19 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    #Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
+

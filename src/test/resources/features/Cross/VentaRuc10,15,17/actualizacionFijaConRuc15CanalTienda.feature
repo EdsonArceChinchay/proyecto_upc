@@ -5,19 +5,19 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO:
-##GDAP: GDAP-1382
-##SPRINT CREADO: P15-SP3
+##GDAP: GDAP-1381
+##SPRINT CREADO: P15-SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:Eloy Milla
-##FECMOD: 18/05/2023
+##FECMOD: 25/04/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Actualizacion fija con ruc 17 canal Tienda
+Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
 
-  @ActualizacionRuc17Tienda
-  Esquema del escenario: Actualizacion fija todo los planes con ruc 17 canal Tienda
+  @ActualizacionRuc15Tienda
+  Esquema del escenario: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,16 +25,17 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
-    Y        ingreso el ruc "<ruc>", digito verificador "<digito>" y actualizo
+    Y        ingreso el ruc "<ruc>" y actualizo
     Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
 
+
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento | ruc | digito |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | DNI           | 70756041  | 17  | 3      |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | ruc         |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133112 | 15112233442 |

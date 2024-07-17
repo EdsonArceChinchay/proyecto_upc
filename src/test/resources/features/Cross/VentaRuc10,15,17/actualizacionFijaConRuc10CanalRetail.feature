@@ -14,10 +14,10 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: Actualizacion fija con ruc 10 canal Tienda
+Característica: Actualizacion fija con ruc 10 canal Retail
 
   @ActualizacionRuc10Tienda
-  Esquema del escenario: Actualizacion fija con ruc 10 canal Tienda
+  Esquema del escenario: Actualizacion fija con ruc 10 canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
