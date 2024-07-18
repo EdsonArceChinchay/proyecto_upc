@@ -14,13 +14,12 @@
 ##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-
 Característica: AT-DT045_Caeq Mas Capl por call center
   Yo como asesor de call center
-  Quiero hacer un cambio de equipo mas cambio de plan a un usuario con parque movil
+  Quiero hacer un cambio de equipo mas cambio de plan a un cliente extranjero con parque movil
 
   @CaeqCaplCallCenter
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

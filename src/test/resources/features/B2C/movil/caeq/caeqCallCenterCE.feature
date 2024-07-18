@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
-Característica: CAEQ con documento CE por Canal Call Center
+Característica: Cambio de equipo movil a un cliente extranjero(CE) por Canal Call Center
 
   @CaeqCECallcenter
-  Esquema del escenario: CAEQ con documento CE por Canal Call Center
+  Esquema del escenario: Cambio de equipo movil a un cliente extranjero(CE) por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
