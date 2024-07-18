@@ -115,11 +115,13 @@ public class ServiceTest {
         statusBody = statusBody.replace("{fechaSig}", fechaSig);
         statusBody = statusBody.replace("{fechaFinMes}", fechaFinMes);
 
-        System.out.println("Nuevo Body: " + statusBody);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:"+statusBody);
 
         String message = given().headers(headersAksBerserkers())
                 .body(statusBody).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Message: "+message);
+
     }
 
     public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {

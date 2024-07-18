@@ -5,18 +5,18 @@
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-
-##SPRINT CREADO: PI20_SP2
+##GDAP: GDAP-583
+##SPRINT CREADO: PI19_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE(SIN ORDENES EN VUELO)
+##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 17/07/2024
+##FECMOD: 22/04/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal Call Center
+Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
 
-  @PortaDirectaEquipoPostCC
-  Esquema del escenario: Portabilidad solo chip postpago + Equipo en canal Call Center
+  @PortaDirectaPostCC
+  Esquema del escenario: Portabilidad Directa solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -43,21 +43,9 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
-    Y        selecciono la opcion "<nombrePlan>"
-    Y        doy click en el boton seleccionar oferta
-    Y        selecciono añadir equipos
-    E        ingreso permanencia, tipo de pago y equipo
-      | permanencia     | tipoPago   | equipoName               |
-      | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
-    Y        valido que existan resultados busqueda de equipos
-    Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        doy click en el boton Porta Movil
+    Y        selecciono un plan movil "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
-    Y        valido los servicios
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
-    Y        doy tiempo extra
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
@@ -87,7 +75,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -98,5 +85,5 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 73369536  | 920956667 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
 

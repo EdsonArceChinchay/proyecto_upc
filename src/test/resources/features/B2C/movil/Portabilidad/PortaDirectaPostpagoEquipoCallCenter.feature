@@ -1,22 +1,22 @@
 #language:es
-##CREADOR: Edson Arce
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT105
-##GDAP: GDAP-893
-##SPRINT CREADO:
+##CODIGO: AT-DT
+##GDAP: GDAP-
+##SPRINT CREADO: PI20_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 16/04/2024
+##DATA: REUSABLE(SIN ORDENES EN VUELO)
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 17/07/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
+Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal Call Center
 
-  @PortaNormalPostCC @MVP16 @Global
-  Esquema del escenario: Portabilidad solo chip postpago en canal Call Center
+  @PortaDirectaEquipoPostCC
+  Esquema del escenario: Portabilidad solo chip postpago + Equipo en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,7 +25,8 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente la tienda "<tiendaAsesor>"
+#  Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -36,27 +37,33 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido los servicios
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
     Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
-    Y        selecciono un plan movil "<nombrePlan>"
+    Y        selecciono la opcion "<nombrePlan>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia     | tipoPago   | equipoName               |
+      | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+    Y        valido que existan resultados busqueda de equipos
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        doy click en el boton Porta Movil
     Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
+    Y        valido los servicios
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2023-01-24 | 2023-01-31   |
+    Y        doy tiempo extra
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton consultar cobertura
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -71,7 +78,7 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
+    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -80,6 +87,7 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -89,5 +97,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 75102008  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 73369536  | 920956667 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
+

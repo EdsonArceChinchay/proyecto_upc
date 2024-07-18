@@ -354,18 +354,16 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicEnConfirmar() {
-        try {
-            UtilWeb.waitForSeconds(5);
-            WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-            esperaProgresiva(driver(), 5, 5, rootInputCorreo);
-            SearchContext context = sh().getContext(rootInputCorreo);
-            context.findElement(By.cssSelector("button")).click();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
-            UtilWeb.waitForSeconds(2);
-        } catch (NoSuchElementException e) {
-            System.out.println("Ya dió Confirmar");
-        }
+        UtilWeb.waitForSeconds(5);
 
+        WebElement btnConfirm =  find().getElementByXPath("//*[contains(@label,'Confirmar')]"); //find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        esperaProgresiva(driver(), 5, 5, btnConfirm);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Button is displayed" + btnConfirm.isDisplayed());
+        btnConfirm.click();
+        //SearchContext context = sh().getContext(rootInputCorreo);
+       // context.findElement(By.cssSelector("button")).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
+        UtilWeb.waitForSeconds(2);
     }
 
     public void verificarIdentidadValidada() {

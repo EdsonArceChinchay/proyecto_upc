@@ -13,7 +13,8 @@
   "donorActivationDate": "{fechaSig}-05:00",
   "donorEquipmentContractEndDate": "{fechaFinMes}-05:00",
   "programmingDeadline": null,
-  "executionDeadline": null,
+  "executionDeadline": "{fechaSig}-05:00",
+  "scheduleDeadline": "{fechaFinMes}-05:00",
   "portabilityExecutionDate": null,
   "observations": "",
   "rejectCode": "0000",
@@ -24,9 +25,9 @@
   "currency": null,
   "portOutInfo": null,
   "varArgs": null,
-  "_rid": "A-tpALPZiZBIAAAAAAAAAA==",
-  "_self": "dbs/A-tpAA==/colls/A-tpALPZiZA=/docs/A-tpALPZiZBIAAAAAAAAAA==/",
-  "_etag": "\"7101bdf2-0000-0700-0000-601876af0000\"",
+  "_rid": "Z9BJAPK5pAgVAAAAAAAAAA==",
+  "_self": "dbs/Z9BJAA==/colls/Z9BJAPK5pAg=/docs/Z9BJAPK5pAgVAAAAAAAAAA==/",
+  "_etag": "\"00000559-0000-0200-0000-606c87910000\"",
   "_attachments": "attachments/",
   "_ts": 1612215983
 }

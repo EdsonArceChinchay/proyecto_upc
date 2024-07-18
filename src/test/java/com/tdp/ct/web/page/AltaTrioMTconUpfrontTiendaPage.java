@@ -56,9 +56,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//div[3]/app-footer-item/div/div[2]/div[3]/div/button")
     protected WebElement btnMovistarTotal;
 
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
     public void clickBotonLineaNueva() {
         UtilWeb.waitForSeconds(5);
         js().scrollElementTop(btnLineaNueva);
