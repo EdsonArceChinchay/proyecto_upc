@@ -54,6 +54,10 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        doy click en el boton Porta Movil
     Y        valido que este en el resumen de venta
     Y        doy click en iniciar registro
+    Y        valido los servicios
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2023-01-24 | 2023-01-31   |
+    Y        doy tiempo extra
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"

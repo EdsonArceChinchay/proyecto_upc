@@ -232,9 +232,9 @@ public class AltaFijaAltaMovilRetailPage extends WebBase {
     }
 
     public void seleccionarDepa(String tipoDepa) {
-        UtilWeb.waitForSeconds(4);//2
+        UtilWeb.waitForSeconds(20);//2
         WebElement depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
-        esperaProgresiva(driver(), 3, 5, depaList);
+        esperaProgresiva(driver(), 5, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
         System.out.println("Existe Lista de" + depaList.getText() + ": " + existeLista);

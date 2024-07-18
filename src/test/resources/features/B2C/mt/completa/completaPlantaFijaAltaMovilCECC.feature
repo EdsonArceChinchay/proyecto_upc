@@ -45,13 +45,7 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
     Entonces me muestra la pantalla para ingresar la direccion de entrega
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
-    Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        Consulto ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
@@ -63,20 +57,11 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        ingreso el callId "910690021"
-    Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 10/12/1990 | Divorciado  | Alemania     |
-    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Entonces me muestra la pantalla registrar venta
-    Y        doy clic para descargar el contrato
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -92,5 +77,5 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion          | referencia | nombrePlan | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1593624582 | 13           | 1307      | 130704   | PR 28 DE JULIO 134 | Inkafarma  | Trio       | 9234866740      |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion          | referencia | nombrePlan | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300009 | 13           | 1307      | 130704   | PR 28 DE JULIO 134 | Inkafarma  | Trio       | 9234828220      |

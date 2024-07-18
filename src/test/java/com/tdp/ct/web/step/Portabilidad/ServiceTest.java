@@ -83,7 +83,7 @@ public class ServiceTest {
 
     public void preValidate() {
         testPfxKey();
-        String body = readerJson("/features/B2C/Portabilidad/JsonRequest/preValidate.json");
+        String body = readerJson("/Json/PortaNormal/preValidate.json");
         String consultation1 = given().headers(headersAksBerserkers())
                 .body(body).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/prevalidateportin")
                 .then().statusCode(200).extract().path("previousConsultationId");
@@ -107,7 +107,7 @@ public class ServiceTest {
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
 
-        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Portabilidad/JsonRequest/receive.json");
+        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/Json/PortaNormal/receive.json");
         String statusBody = Files.readString(filePath);
 
         statusBody = statusBody.replace("{Code}", consultation);
@@ -165,7 +165,7 @@ public class ServiceTest {
         var numberDocument = UtilWeb.getValueFromDataTable(dataTable, "numberDocument");
         var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
 
-        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Portabilidad/JsonRequest/movistarToken.json");
+        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/features/Json/PortaDirecta/movistarToken.json");
         String statusBody = Files.readString(filePath);
 
         statusBody = statusBody.replace("{typeDocument}", typeDocument);
