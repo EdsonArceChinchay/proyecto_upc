@@ -17,45 +17,39 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
 
     @FindBy(xpath = "(//img[@class='margin-icon add_pointer'])[1]")
     protected WebElement planActual;
-    //@FindBy(xpath = "(//img[@class='margin-icon add_pointer'])[3]")
     @FindBy(xpath = "//div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement planMovil;
-    @FindBy(xpath ="(//div[@class='offert-card-body'])[1]")
+    @FindBy(xpath = "(//div[@class='offert-card-body'])[1]")
     protected WebElement selectCampaniaOferta;
-    @FindBy(xpath ="//tdp-st-button[@label='Seleccionar Oferta']")
+    @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement btnSeleccionarOferta;
-    @FindBy(xpath ="//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
-    @FindBy(xpath ="//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
+    @FindBy(xpath = "//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
     protected WebElement btnAgregarEquipo;
-    @FindBy(xpath ="//div[6]/div[1]/div/div[2]/div[3]/tdp-st-button")
+    @FindBy(xpath = "//div[6]/div[1]/div/div[2]/div[3]/tdp-st-button")
     protected WebElement btnSeleccionarEquipo;
-    @FindBy(xpath ="//*[contains(@label,'Iniciar Registro') or contains(text(),'Iniciar Registro')]")
+    @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or contains(text(),'Iniciar Registro')]")
     protected WebElement btnIniciarRegistro;
     //Validate
-    @FindBy(xpath ="//div[2]/form/div[1]/h1")
+    @FindBy(xpath = "//div[2]/form/div[1]/h1")
     protected WebElement validarTituloCompletarDatos;
 
-    @FindBy(xpath ="//div[1]/div/div[2]/div/h1")
+    @FindBy(xpath = "//div[1]/div/div[2]/div/h1")
     protected WebElement validarSeleccionarEquipo;
 
-    @FindBy(xpath ="//div[2]/div[1]/button[1]")
+    @FindBy(xpath = "//div[2]/div[1]/button[1]")
     protected WebElement btnPostpago;
-    @FindBy(xpath ="//div[2]/div[1]/button[2]")
+    @FindBy(xpath = "//div[2]/div[1]/button[2]")
     protected WebElement btnControl;
 
-    @FindBy(xpath ="//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
+    @FindBy(xpath = "//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
     protected WebElement btnConfirmar;
-
-    @FindBy(xpath ="//*[contains(@label,'Siguiente')]")
-    protected WebElement btnSiguiente;
-
-    @FindBy(xpath = "//div[@class='success-title' and contains(text(), 'Estás a un paso de registrar')]")
-    protected WebElement titleRegistrarServicio;
 
     public void selectPlanActual() {
         click(planActual);
     }
+
     public void selectPlanMovil() {
         UtilWeb.waitForSeconds(8);
         js().scrollElementTop(planMovil);
@@ -74,22 +68,26 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         click(btnSeleccionarOferta);
     }
+
     public void selectBtnLineaNueva() {
-        esperaProgresiva(driver(),3,10,btnLineaNueva);
+        esperaProgresiva(driver(), 3, 10, btnLineaNueva);
         click(btnLineaNueva);
     }
+
     public void selectBtnAgregarEquipo() {
-        esperaProgresiva(driver(),3,5,btnAgregarEquipo);
+        esperaProgresiva(driver(), 3, 5, btnAgregarEquipo);
         click(btnAgregarEquipo);
         UtilWeb.waitForSeconds(5);
     }
+
     public void selectBtnEquipo() {
         js().scrollElementTop(btnSeleccionarEquipo);
         UtilWeb.waitForSeconds(2);
         click(btnSeleccionarEquipo);
     }
+
     public void selectBtnIniciarRegistro() {
-        esperaProgresiva(driver(),5,5,btnIniciarRegistro);
+        esperaProgresiva(driver(), 5, 5, btnIniciarRegistro);
         js().scrollElementTop(btnIniciarRegistro);
         click(btnIniciarRegistro);
         UtilWeb.waitForSeconds(2);
@@ -110,6 +108,7 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         waitUntilElementIsVisible(btnControl, 10);
         click(btnControl);
     }
+
     public void ingresarFechaNac(String fechaNac) {
         WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
         SearchContext context = sh().getContext(rootElement);
@@ -171,12 +170,14 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         System.out.println("seleccionando distrito");
     }
+
     public void ingresarDireccion(String direccion) {
         WebElement direc = find().getElementByXPath("//tdp-st-modal//tdp-st-textarea[@formcontrolname='direccion']");
         click(direc);
         type(direc, direccion);
         UtilWeb.waitForSeconds(2);
     }
+
     public void selectBtnConfirmar() {
         waitUntilElementIsVisible(btnConfirmar, 5);
         click(btnConfirmar);
@@ -188,15 +189,4 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         return getText(validarSeleccionarEquipo);
     }
 
-    public void clickPlanMovil(String planMovil) {
-        WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'"+planMovil+"')]");
-        esperaProgresiva(driver(),5,5,btnplanMovil);
-        waitUntilElementIsClickable(btnplanMovil, 50);
-        click(btnplanMovil);
-    }
-
-    public void clickEnBotonSiguiente() {
-        esperaProgresiva(driver(),3,5,btnSiguiente);
-        click(btnSiguiente);
-    }
 }

@@ -46,7 +46,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | alex mancilla | CASA           | 1    | 1   | URBANIZACION POPULAR | RISSO     |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"

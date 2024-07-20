@@ -39,11 +39,11 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion               | referencia |
       | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
-    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton Consultar ubicacion
       #Y        ingreso la informacion del lugar para la instalacion
        # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
         #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
     Y        selecciono el plan "INTERNET MOVISTAR RA"

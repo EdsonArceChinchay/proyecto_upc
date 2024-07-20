@@ -47,7 +47,7 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"

@@ -83,7 +83,7 @@ Característica:  AT-DT055_Cambio de velocidad dúo canal call center + SVA
     Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
     Y        doy click en el boton "Buscar"
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"

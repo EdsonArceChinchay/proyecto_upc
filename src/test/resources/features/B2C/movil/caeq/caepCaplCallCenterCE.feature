@@ -47,15 +47,15 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 469"
     Y        ingreso la referencia de la direccion "Esquina"
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | EDIFICIO     | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "952696748"
-    Y        ingreso las instrucciones a considerar de la entrega "abc"
+    Y        ingreso telefono de contacto "952696748"
+    Y        ingreso instrucciones de delivery "abc"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "prueba@prueba.com"

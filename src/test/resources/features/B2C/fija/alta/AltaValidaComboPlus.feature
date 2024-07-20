@@ -48,7 +48,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
     Y        ingreso la informacion del lugar para la instalacion
       | mz | lote | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

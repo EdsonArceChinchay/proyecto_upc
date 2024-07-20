@@ -9,20 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.test.context.jdbc.Sql;
 
-
-import javax.swing.*;
 import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Driver;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -138,7 +132,7 @@ public class Addons {
             contador++;
         } while (bCargando && contador < reintentosMax);
 
-        LOGGER.log(Level.INFO, "WebElement: " + elemento.toString());
+        LOGGER.log(Level.INFO, "WebElement: " + elemento);
         contador = 0;
         do {
             LOGGER.log(Level.INFO, "esperaProgresiva - Reintento # " + (contador + 1) + " => espera: " + segundosEspera * contador);
@@ -206,7 +200,7 @@ public class Addons {
                 System.out.println(msg + " - Tiempo de ejecución: " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
             }
         } catch (Exception e) {
-
+            LOGGER.log(Level.WARNING, "ERROR -" + e.getMessage());
         }
     }
 
@@ -218,7 +212,7 @@ public class Addons {
     Se está identificando diferentes modalidades de error.
 */
         boolean bReintentar = true;
-        boolean isModalError= false;
+        boolean isModalError = false;
         int contador = 0;
         int reintentosMax = 5;
         int segundosEspera = 15;
@@ -241,8 +235,8 @@ public class Addons {
                 try {
                     //Busca un boton para Reintentar
                     LOGGER.log(Level.INFO, "Buscando - btn Reintentar");
-                    List<WebElement> btnsReintentar= driver.findElements(By.xpath("//*[contains(text(),'Reintentar')]"));
-                    btnReintentar=btnsReintentar.get(btnsReintentar.size()-1);
+                    List<WebElement> btnsReintentar = driver.findElements(By.xpath("//*[contains(text(),'Reintentar')]"));
+                    btnReintentar = btnsReintentar.get(btnsReintentar.size() - 1);
                     if (btnReintentar.isEnabled()) {
                         btnReintentar.click();
                         System.out.println("################ CLIC en Reintentar");
@@ -259,7 +253,7 @@ public class Addons {
                     //Busca un boton para Entendido
                     LOGGER.log(Level.INFO, "Buscando - btn Entendido");
                     List<WebElement> btnsEntendido = driver.findElements(By.xpath("//*[contains(text(),'Entendido')]"));
-                    btnEntendido=btnsEntendido.get(btnsEntendido.size()-1);
+                    btnEntendido = btnsEntendido.get(btnsEntendido.size() - 1);
                     if (btnEntendido.isEnabled()) {
                         btnEntendido.click();
                         System.out.println("################ CLIC en Entendido");
@@ -389,6 +383,7 @@ public class Addons {
                 botonReintentar.click();
                 System.out.println("CLIC en ENTENDIDO");
             } catch (Exception e) {
+                LOGGER.log(Level.WARNING, "ERROR -" + e.getMessage());
 
             }
 
@@ -444,11 +439,7 @@ public class Addons {
         if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {
                 return false;
-            } else if (env.compareTo("prod") == 0) {
-                return true;
-            } else {
-                return false;
-            }
+            } else return env.compareTo("prod") == 0;
         }
         return false;
     }

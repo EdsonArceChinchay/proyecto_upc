@@ -179,6 +179,7 @@ public class HomePage extends WebBase {
         try {
             botonX.click();
         } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
 
         }
     }

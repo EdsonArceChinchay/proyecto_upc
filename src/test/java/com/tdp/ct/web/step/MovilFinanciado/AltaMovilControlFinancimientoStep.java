@@ -96,12 +96,4 @@ public class AltaMovilControlFinancimientoStep {
         return page.altaMovilControlFinancimientoPage().validateTituloSeleccionarEquipo();
     }
 
-    @ScreenShotAfter
-    public void seleccionoElPlanQueDesea(String planMovil) {
-        page.altaMovilControlFinancimientoPage().clickPlanMovil(planMovil);
-    }
-    @ScreenShotAfter
-    public void doyClickEnBotonSiguiente() {
-        page.altaMovilControlFinancimientoPage().clickEnBotonSiguiente();
-    }
 }

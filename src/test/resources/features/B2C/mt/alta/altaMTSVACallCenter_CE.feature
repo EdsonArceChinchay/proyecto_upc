@@ -44,7 +44,7 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
@@ -57,12 +57,12 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
-    Y        presiono el boton confirmar ubicacion
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "908123789"
-    Y        ingreso las instrucciones a considerar de la entrega "Al frente de la farmacia central"
+    Y        ingreso telefono de contacto "908123789"
+    Y        ingreso instrucciones de delivery "Al frente de la farmacia central"
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"

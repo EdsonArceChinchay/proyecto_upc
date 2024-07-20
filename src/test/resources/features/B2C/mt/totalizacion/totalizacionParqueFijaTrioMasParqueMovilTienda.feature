@@ -41,9 +41,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     #Y        presiono el boton Confirmar direccion
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total

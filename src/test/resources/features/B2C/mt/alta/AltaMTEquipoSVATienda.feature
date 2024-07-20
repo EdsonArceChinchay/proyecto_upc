@@ -46,7 +46,7 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     #Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total

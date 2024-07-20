@@ -47,15 +47,15 @@ Característica: Cambio de equipo movil a un cliente extranjero(CE) por Canal Ca
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
 #      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "956756143"
-    Y        ingreso las instrucciones a considerar de la entrega "abc"
+    Y        ingreso telefono de contacto "956756143"
+    Y        ingreso instrucciones de delivery "abc"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "prueba_qa@gmail.com"

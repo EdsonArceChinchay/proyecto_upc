@@ -48,7 +48,7 @@ Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

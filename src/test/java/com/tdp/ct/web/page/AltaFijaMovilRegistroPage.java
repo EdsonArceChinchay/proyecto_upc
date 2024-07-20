@@ -36,14 +36,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement descargarContrato;
     @FindBy(xpath = "//app-modal-contract//tdp-st-modal//div[@slot='modal_body']//p")
     protected WebElement textoContratoCliente;
-    @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
-    protected WebElement titleLugarInstalacion;
     @FindBy(xpath = "//*[contains(text(), 'Estás a un paso de registrar el servicio')]")
     protected WebElement titleRegistrarServicio;
-    @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
-    protected WebElement titleLugarInstalacionEntrega;
-    @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
-    protected WebElement titleVerificarLugarInstalacion;
     @FindBy(xpath = "//*[contains(text(),'Ofertas sugeridas')]")
     protected WebElement titleOffer;
     @FindBy(xpath = "//div/span[contains(@class,'smallTitle')]/../../following-sibling::*//img")
@@ -54,10 +48,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected List<WebElement> botoneraIrA;
     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
     protected WebElement buttonIniciarRegistro;
-    @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
-    protected WebElement labelAgendamiento;
-    @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
-    protected WebElement buttonConfirmar;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
     @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada') or contains(text(),'Validación no biométrica')])[1]")
@@ -84,16 +74,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonIdentidadValidada;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
-    @FindBy(xpath = "//button[contains(text(),'SVA')]")
-    protected WebElement buttonAgregarSVA;
-    @FindBy(xpath = "//div/button[contains(text(),'Guardar cambios')]")
-    protected WebElement buttonGuardarCambios;
-    @FindBy(css = ".additionals-container .services-section:nth-child(2) .section-content:nth-child(1) tdp-st-icon-button:nth-child(1)")
-    protected WebElement buttonRepetidor;
     @FindBy(xpath = "//body/div[2]/form/div[1]/h1")
     protected WebElement esperarCorreo;
-    @FindBy(xpath = "//div[@class='boxHour active']")
-    protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
     @FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2]")
@@ -104,22 +86,12 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement titleDescargaContrato;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
-    @FindBy(xpath = "//button[@class='buttonG cls-top']")
-    protected WebElement buttonAgregarSVAMT;
     @FindBy(css = ".text-info")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//*[contains(@class,'orden-big')]")
     protected List<WebElement> listCodigoOrden;
 
     public static String SALESCODE;
-
-    public boolean validarPantallaIngresarDireccion() {
-        //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
-        boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
-        UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
-        return existe;
-    }
 
     public boolean validarPantallaRegistrarVenta() {
         boolean verificarUbicacion = true;
@@ -179,24 +151,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
     }
 
-    public boolean validarPantallaIngresarDireccionEntrega() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
-        revisarModalError(driver());
-        boolean existe = waitUntilElementIsVisible(titleLugarInstalacionEntrega, 30).isDisplayed();
-        UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
-        return existe;
-    }
-
-    public boolean validarPantallaVerificarDireccion() {
-        esperaProgresiva(driver(), 6, 4, titleVerificarLugarInstalacion);
-        boolean existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 30).isDisplayed();
-        UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Verificar Lugar de instalacion >>> {0}", existe);
-        return existe;
-    }
-
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 6, 6, listaOfertasSugeridas.get(0));
@@ -252,32 +206,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public boolean validarPantallaAgendamiento() {
-        revisarModalError(driver());
-        clickBtnCerrarModalError(buttonIniciarRegistro);
-        clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(), 2, 5, labelAgendamiento);
-        revisarModalError(driver());
-        boolean existe = labelAgendamiento.isDisplayed();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
-        return existe;
-    }
-
-    public void ingresarContacto(String contacto) {
-        js().scrollElementTop(buttonConfirmar);
-        WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
-        SearchContext context = sh().getContext(rootInput);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(contacto);
-        UtilWeb.waitForSeconds(2);
-    }
-
-    public void clicConfirmarAgendamiento() {
-        //UtilWeb.waitForSeconds(4);
-        esperaProgresiva(driver(), 5, 5, buttonConfirmar);
-        waitUntilElementIsClickable(buttonConfirmar, 10);
-        click(buttonConfirmar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-    }
 
     public boolean validarDetalleInstalacion() {
         UtilWeb.waitForSeconds(1);
@@ -450,8 +378,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
             }
         }
-        //esperaProgresiva(driver(), 5, 6, element);
-        //UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Mostrando contrato en pantalla");
     }
 
@@ -561,11 +487,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js.executeScript("window.scrollTo(0, 0);");
     }
 
-    public void scrollByJavaScriptToFinal() {
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
-        UtilWeb.waitForSeconds(2);
-    }
 
     public boolean esperarLoadingIsNotVisible(String xpath, int segundos) {
         boolean retorno;
@@ -578,36 +499,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             System.out.println("No se espero a que se oculte el elemento");
         }
         return retorno;
-    }
-
-    public void clicEnAgregarSVA() {
-        esperaProgresiva(driver(), 3, 30, buttonAgregarSVA);
-        js().scrollElementTop(buttonAgregarSVA);
-        click(buttonAgregarSVA);
-        UtilWeb.waitForSeconds(10);
-    }
-
-    public void clicSVAHBO() {
-        WebElement rootElement = find().getElementByXPath("//div[contains(text(),'HBO')]/../following-sibling::div//tdp-st-checkbox");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("div > div > input")).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en sva HBO");
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void clicGuardarCambios() {
-        js().scrollElementTop(buttonGuardarCambios);
-        waitUntilElementIsClickable(buttonGuardarCambios, 10);
-        click(buttonGuardarCambios);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void clicEnUnTurnoAgendamiento() {
-        UtilWeb.waitForSeconds(2);
-        waitUntilElementIsClickable(buttonTurnoAgendamientoActivo, 10);
-        click(buttonTurnoAgendamientoActivo);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a en turno agendamiento");
-        UtilWeb.waitForSeconds(4);
     }
 
     public boolean isNewCustomer() {
@@ -748,7 +639,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         return existe;
     }
 
-    public void clicDescargarContrato(ManageScenario scenario) throws InterruptedException {
+    public void clicDescargarContrato(ManageScenario scenario) {
         revisarModalError(driver());
         for (int intento = 1; intento <= 2; intento++) {
             System.out.println("Entra al primer try");
@@ -842,7 +733,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             click(cerrarPopUpContratos);
             System.out.println("cerrarPopUpContratos cierre");
         } catch (Exception e) {
-
+            UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
         }
 
 /*
@@ -904,18 +795,11 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 }
 
             } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
             }
             contador++;
         } while (!bOK && contador < reintentosMax);
     }
-
-
-    public void scrollDown() {
-        UtilWeb.waitForSeconds(4);
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-    }
-
 
     public String getTextoSolicitud() {
         String contract;

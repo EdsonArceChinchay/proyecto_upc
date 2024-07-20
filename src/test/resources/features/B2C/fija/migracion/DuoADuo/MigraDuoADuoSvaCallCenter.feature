@@ -27,8 +27,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -49,7 +48,6 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    #Y        completo id call "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

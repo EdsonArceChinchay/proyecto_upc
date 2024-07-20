@@ -45,7 +45,7 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por ca
     Y        ingreso la informacion del lugar de instalacion
       | mz | bloque | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | D  | 11     | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | RISSO     |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

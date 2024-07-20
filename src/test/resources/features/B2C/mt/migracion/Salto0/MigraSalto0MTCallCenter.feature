@@ -37,9 +37,9 @@ Característica: Migracion salto 0 MT canal Call Center
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "entendido"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
     Cuando   doy clic en iniciar registro

@@ -19,11 +19,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonLineaNueva();
     }
 
-    @Y("doy click en el boton Consultar cobertura")
-    public void doyClickEnElBotonConsultarCobertura() {
-        altaTrioMTconUpfrontTiendaStep.clickBotonConsultarCobertura();
-    }
-
     @Y("doy click en el boton Ir a movistar total")
     public void doyClickEnElBotonIrAMovistarTotal() {
         altaTrioMTconUpfrontTiendaStep.clickBotonIrMovistarTotal();

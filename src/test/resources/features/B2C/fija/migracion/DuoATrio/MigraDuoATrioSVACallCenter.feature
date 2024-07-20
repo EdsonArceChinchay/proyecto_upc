@@ -37,7 +37,7 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"

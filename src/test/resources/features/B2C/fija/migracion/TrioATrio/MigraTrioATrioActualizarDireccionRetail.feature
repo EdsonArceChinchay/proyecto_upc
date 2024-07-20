@@ -35,7 +35,7 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Y        ingreso la direccion donde sera la instalacion "Julio cesar tello 469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        seleccion plan nuevo para ver las ofertas

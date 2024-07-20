@@ -45,7 +45,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"

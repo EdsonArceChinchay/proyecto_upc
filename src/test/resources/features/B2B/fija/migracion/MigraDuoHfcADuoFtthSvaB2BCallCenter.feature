@@ -51,7 +51,7 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic en el boton validar identidad representante legal
+    Y        doy click en el boton validar identidad representante legal
     #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |

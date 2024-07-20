@@ -51,12 +51,12 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
-    Y        presiono Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"

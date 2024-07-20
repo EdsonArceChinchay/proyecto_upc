@@ -40,7 +40,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total

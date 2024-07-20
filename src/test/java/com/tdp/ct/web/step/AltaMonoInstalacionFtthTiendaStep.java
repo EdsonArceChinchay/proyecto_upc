@@ -22,40 +22,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
         page.altaMonoFtthTiendaPage().crearCliente();
     }
 
-    public void writeDireccion(String depa, String prov, String distrito, String direccion, String ref) {
-        page.altaFijaAltaMovilRetailPage().seleccionarDepa(depa);
-        page.altaFijaAltaMovilRetailPage().seleccionarProvincia(prov);
-        page.altaFijaAltaMovilRetailPage().seleccionarDistrito(distrito);
-        page.altaFijaAltaMovilRetailPage().writeDireccion(direccion);
-        page.altaFijaAltaMovilRetailPage().writeReferencia(ref);
-    }
-
-    @ScreenShotBefore
-    public void clickBtnConsultarUbicacion() {
-        page.altaFijaAltaMovilRetailPage().btnConsultar();
-    }
-
-    public void scrollDirecCompleta() {
-        page.altaMonoFtthTiendaPage().scrollDirecCompleta();
-    }
-
-    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda, String bloque, String piso, String interior, String tipoConjH, String conjH) {
-        page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
-        page.altaFijaAltaMovilCallCenterPage().lote(lote);
-        page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
-        page.altaFijaAltaMovilCallCenterPage().nombreVivienda(nomVivienda);
-        page.altaFijaAltaMovilCallCenterPage().bloque(bloque);
-        page.altaFijaAltaMovilCallCenterPage().piso(piso);
-        page.altaFijaAltaMovilCallCenterPage().interior(interior);
-        page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(tipoConjH);
-        page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(conjH);
-    }
-
-    @ScreenShotAfter
-    public void clickBtnConsultarCobertura() {
-        page.altaMonoFtthTiendaPage().clickBtnConsultarCobertura();
-    }
-
     @ScreenShotAfter
     public void validarOfertasSugeridasView(String title) {
         page.altaMonoFtthTiendaPage().validarOfertasSugeridasView(title);
@@ -101,24 +67,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
 
     public void moverToElementIniciarRegistro() {
         page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
-    }
-
-    public void scrollToViewAgendamiento() {
-        page.altaMonoFtthTiendaPage().scrollToViewAgendamiento();
-    }
-
-    @ScreenShotAfter
-    public void validarPantallaAgendamiento() {
-        Assert.assertTrue("No se mostro pantalla de agendamiento", page.altaFijaMovilRegistroPage().validarPantallaAgendamiento());
-    }
-
-    public void ingresarDatosAgendamiento() {
-        page.altaFijaTiendaPage().datosAgendamiento();
-    }
-
-    @ScreenShotBefore
-    public void clickBotonConfirmarAgendamiento() {
-        page.altaFijaTiendaPage().botonConfirmarAgendamiento();
     }
 
 }

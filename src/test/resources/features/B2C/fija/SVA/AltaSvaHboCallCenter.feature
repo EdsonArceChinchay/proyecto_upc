@@ -36,7 +36,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        valido que este en el resumen de venta

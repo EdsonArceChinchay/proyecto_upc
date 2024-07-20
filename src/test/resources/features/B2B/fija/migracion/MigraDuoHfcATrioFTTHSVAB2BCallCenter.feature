@@ -53,7 +53,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic en el boton validar identidad representante legal
+    Y        doy click en el boton validar identidad representante legal
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |

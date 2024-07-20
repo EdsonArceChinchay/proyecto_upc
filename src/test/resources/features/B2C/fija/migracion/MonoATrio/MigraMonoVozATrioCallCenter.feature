@@ -34,9 +34,9 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "entendido"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

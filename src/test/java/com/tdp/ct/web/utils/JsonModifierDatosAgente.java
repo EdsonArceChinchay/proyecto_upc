@@ -51,7 +51,7 @@ public class JsonModifierDatosAgente {
         String email;
     }
 
-    public class LegalId {
+    static class LegalId {
         String country;
         String nationalID;
         String nationalIDType;

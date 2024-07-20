@@ -35,9 +35,9 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "Entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Cuando   doy clic a iniciar registro

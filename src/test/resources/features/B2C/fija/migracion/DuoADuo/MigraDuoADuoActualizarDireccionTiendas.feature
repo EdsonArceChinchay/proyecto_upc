@@ -14,7 +14,6 @@
 ##FECMOD: 01/09/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP3
-
 Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el canal Tienda
 
   @migraDuoDuoActualizarDireccionTiendas
@@ -36,7 +35,7 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Y        ingreso la direccion donde sera la instalacion "JULIO CESAR TELLO,469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta

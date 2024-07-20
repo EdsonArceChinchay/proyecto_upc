@@ -10,16 +10,6 @@ public class AltaPuraMTcallCenterStepDefinition {
     @Autowired
     private AltaPuraMTcallCenterStep altaPuraMTcallCenterStep;
 
-    @Y("Consulto ubicacion")
-    public void consultoUbicacion() {
-        altaPuraMTcallCenterStep.clickConfirmoUbicacion();
-    }
-
-    @Y("selecciono horario {string}")
-    public void seleccionoHorario(String horario) {
-        altaPuraMTcallCenterStep.selectTipoHorario(horario);
-    }
-
     @Y("completo id call {string}")
     public void completoIdCall(String idCall) {
         altaPuraMTcallCenterStep.completarIdCall(idCall);
@@ -30,22 +20,11 @@ public class AltaPuraMTcallCenterStepDefinition {
         altaPuraMTcallCenterStep.selectTipoDePago(tipo);
     }
 
-    @E("ingreso telefono del titular {string}")
-    public void ingresoTelefonoDelTitular(String telefono) {
-        altaPuraMTcallCenterStep.ingresoTelefono(telefono);
-    }
-
-    @E("ingreso instrucciones de delivery {string}")
-    public void ingresoInstruccionesDeDelivery(String referencia) {
-        altaPuraMTcallCenterStep.ingresarReferencia(referencia);
-    }
-
     @E("ingreso correo de verificacion {string}")
     public void ingresoCorreoDeVerificacion(String verifCorreo) {
         altaPuraMTcallCenterStep.ingresarCorreoVerif(verifCorreo);
     }
 
-    //    TODO:
     @Y("doy click en el boton de continuar")
     public void doyClickEnElBotonDeContinuar() {
         altaPuraMTcallCenterStep.clicBotonContinuar();

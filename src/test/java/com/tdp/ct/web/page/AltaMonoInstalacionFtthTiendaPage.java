@@ -31,9 +31,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    protected WebElement btnConsultarCobertura;
-
     @FindBy(xpath = "//*[contains(@class,'detalle')]")
     protected WebElement labelDetail;
 
@@ -44,15 +41,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     public void crearCliente() {
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
-    }
-
-    public void scrollDirecCompleta() {
-        js().scrollElementTop(find().getElementByCss("div.info-user"));
-        UtilWeb.waitForSeconds(3);
-    }
-
-    public void clickBtnConsultarCobertura() {
-        click(btnConsultarCobertura);
     }
 
     public void validarOfertasSugeridasView(String title) {
@@ -106,8 +94,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void scrollToViewAgendamiento() {
-        js().scrollElementTop(find().getElementByCss("div.return"));
-    }
+
     
 }

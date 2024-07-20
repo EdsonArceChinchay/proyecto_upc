@@ -36,43 +36,11 @@ public class AltaFijaMovilRegistroStepDefinition {
         this.scenario = scenario;
     }
 
-    @Entonces("me muestra la pantalla para ingresar la direccion")
-    public void meMuestraLaPantallaParaIngresarLaDireccion() {
-        altaFijaMovilRegistroStep.validarPantallaIngresarDireccion();
-    }
-
     @Entonces("me muestra la pantalla registrar venta")
     public void meMuestraLaPantallaParaRegistrarVenta() {
         altaFijaMovilRegistroStep.validarPantallaRegistrarVenta();
     }
 
-    @Entonces("me muestra la pantalla para ingresar la direccion de entrega")
-    public void meMuestraLaPantallaParaIngresarLaDireccionEntrega() {
-        altaFijaMovilRegistroStep.validarPantallaIngresarDireccionEntrega();
-    }
-
-    @Entonces("me muestra la pantalla para verificar la direccion")
-    public void meMuestraLaPantallaParaVerificarLaDireccion() {
-        altaFijaMovilRegistroStep.validarPantallaVerificarDireccion();
-    }
-
-    @Y("ingreso los datos del lugar de instalacion")
-    public void ingresoLosDatosDelLugarDeInstalacion(DataTable dirInstalacion) {
-
-        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
-        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
-        String piso = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
-        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
-        String habitacion = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
-        String conj = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
-        altaFijaAltaMovilRetailStep.writeMz(manzana);
-        altaFijaAltaMovilRetailStep.writeLte(lote);
-        altaFijaAltaMovilRetailStep.writePiso(piso);
-        altaFijaAltaMovilRetailStep.writeInt(interior);
-        altaFijaAltaMovilRetailStep.seleccionarConjunto(habitacion);
-        altaFijaAltaMovilRetailStep.writeConjHab(conj);
-
-    }
 
     @Entonces("me muestra la pantalla de ofertas sugeridos")
     public void meMuestraLaPantallaDeOfertasSugeridos() {
@@ -95,26 +63,6 @@ public class AltaFijaMovilRegistroStepDefinition {
     public void doyClicAIniciarRegistro() {
         altaFijaMovilRegistroStep.moverToElementIniciarRegistro();
         altaFijaMovilRegistroStep.clicIniciarRegistro();
-    }
-
-    @Y("valido que me encuentre en la pantalla agendamiento")
-    public void validoQueMeEncuentreEnLaPantallaAgendamiento() {
-        altaFijaMovilRegistroStep.validarPantallaAgendamiento();
-    }
-
-    @Y("escojo un turno de agendamiento")
-    public void escojoUnTurnoDeAgendamiento() {
-        altaFijaMovilRegistroStep.escogerTurnoAgendamiento();
-    }
-
-    @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
-    public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contacto) {
-        altaFijaMovilRegistroStep.ingresarContacto(contacto);
-    }
-
-    @Y("doy clic en confirmar agendamiento")
-    public void doyClicEnConfirmarAgendamiento() {
-        altaFijaMovilRegistroStep.clicConfirmarAgendamiento();
     }
 
     @Entonces("me muestra el detalle de la instalacion")
@@ -194,7 +142,7 @@ public class AltaFijaMovilRegistroStepDefinition {
 
     //CAMBIOS PARA RETAIL
     @Y("ingreso los datos del cliente a registrar")
-    public void completoLosDatosDelClienteARegistrar(DataTable value) throws JSONException {
+    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
         altaFijaMovilRegistroStep.verificarClienteNuevo();
         altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(value);
         altaFijaMovilRegistroStep.clicEnCrearCliente();

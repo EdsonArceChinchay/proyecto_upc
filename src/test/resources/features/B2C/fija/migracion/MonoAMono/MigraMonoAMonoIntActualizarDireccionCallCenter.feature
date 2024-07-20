@@ -35,7 +35,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        ingreso la direccion donde sera la instalacion "Jose Leal 500"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta

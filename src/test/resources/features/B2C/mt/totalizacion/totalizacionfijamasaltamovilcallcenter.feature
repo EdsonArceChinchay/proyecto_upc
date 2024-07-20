@@ -48,10 +48,10 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        Consulto ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     Y        ingreso un correo electronico "PRUEBA@GMAIL.COM"

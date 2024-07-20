@@ -46,7 +46,7 @@ Característica: Alta Trio + SVA con documento CE por Canal Retail
     #Y        ingreso la informacion del lugar de instalacion
       #| mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

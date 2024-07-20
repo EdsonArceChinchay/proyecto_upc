@@ -14,51 +14,30 @@ public class AltaPuraMTcallCenterStep {
     @Autowired
     private StepPages page;
 
-    @ScreenShotBefore
-    public void clickConfirmoUbicacion(){
-        UtilWeb.waitForSeconds(3);
-        page.altaPuraMTcallCenterPage().btnConfirmarUbicacion();
-    }
     @ScreenShotAfter
-    public void selectTipoHorario(String horaio){
-        UtilWeb.waitForSeconds(3);
-        page.altaPuraMTcallCenterPage().selectTipoHorario(horaio);
-    }
-
-    @ScreenShotAfter
-    public void completarIdCall(String idCall){
+    public void completarIdCall(String idCall) {
         page.altaPuraMTcallCenterPage().completarIdCall(idCall);
     }
 
     @ScreenShotAfter
-    public void selectTipoDePago(String tipo){
+    public void selectTipoDePago(String tipo) {
         page.altaPuraMTcallCenterPage().selectTipoDePago(tipo);
     }
 
     @ScreenShotAfter
-    public void ingresarReferencia(String  referencia){
-        page.altaPuraMTcallCenterPage().ingresarReferencia(referencia);
-    }
-
-    @ScreenShotAfter
-    public void ingresarCorreoVerif(String verifCorreo){
+    public void ingresarCorreoVerif(String verifCorreo) {
         page.altaPuraMTcallCenterPage().ingresarCorreoVerif(verifCorreo);
     }
 
     @ScreenShotBefore
-    public void clicBotonContinuar(){
+    public void clicBotonContinuar() {
         UtilWeb.waitForSeconds(5);
         page.altaPuraMTcallCenterPage().clicBotonContinuar();
         UtilWeb.waitForSeconds(15);//15
     }
 
     @ScreenShotBefore
-    public void clickCierrePopup(){
+    public void clickCierrePopup() {
         page.altaPuraMTcallCenterPage().clickCierrePopup();
-    }
-
-    @ScreenShotAfter
-    public void ingresoTelefono(String telefono) {
-       page.altaPuraMTcallCenterPage().ingresarTelefono(telefono);
     }
 }

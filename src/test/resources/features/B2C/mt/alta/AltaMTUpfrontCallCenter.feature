@@ -12,7 +12,6 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 29/04/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
 Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Call Center
 
@@ -46,7 +45,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
@@ -54,14 +53,14 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "984592938"
+    E        ingreso telefono de contacto "984592938"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"

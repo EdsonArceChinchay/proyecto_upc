@@ -35,7 +35,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono boton mantener plan

@@ -50,7 +50,7 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Cuando   doy clic a iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic en el boton validar identidad representante legal
+    Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
       | numdoc   | user     | password     |

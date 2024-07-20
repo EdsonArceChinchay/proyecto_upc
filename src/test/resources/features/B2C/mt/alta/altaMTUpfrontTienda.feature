@@ -47,7 +47,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta

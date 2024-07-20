@@ -47,7 +47,7 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
    # Y        ingreso la informacion del lugar de instalacion
    #   | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
    #   | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     #        Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"

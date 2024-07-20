@@ -34,9 +34,9 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "."
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "ENTENDIDO"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
@@ -47,10 +47,10 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        presiono el boton confirmar agendamiento
     Entonces me muestra la pantalla para ingresar la direccion de entrega
     Y        presiono el boton Consultar ubicacion
-    Y        Consulto ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     #Y        valido que este en la seccion completa los datos solicitados

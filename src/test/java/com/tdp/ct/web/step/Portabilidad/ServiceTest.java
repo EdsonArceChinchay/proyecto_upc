@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.KeyStore;
@@ -74,7 +75,7 @@ public class ServiceTest {
             byte[] data = new byte[(int) file.length()];
             fis.read(data);
             fis.close();
-            return new String(data, "UTF-8");
+            return new String(data, StandardCharsets.UTF_8);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

@@ -41,8 +41,8 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                | referencia |
       | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | PARQUE     |
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
     Y        selecciono el plan "TV HOGAR DIGITAL"

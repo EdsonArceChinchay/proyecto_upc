@@ -46,7 +46,7 @@ Característica: AT-DT008_Alta Fija Internet + SVA  con documento CE por canal t
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
 #      | A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

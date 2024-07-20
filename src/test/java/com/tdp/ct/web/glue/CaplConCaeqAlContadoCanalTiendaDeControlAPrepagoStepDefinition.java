@@ -19,19 +19,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
     @Autowired
     private AltaMonoInstalacionFtthTiendaStep altaMonoHfcTiendaStep;
 
-    @Y("selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan")
-    public void seleccionoElBtnVerDetalleDelPlanActualYPresionoElBtnRenovarPlan() {
-        //caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
-        caplConCaeqAlContadoCanalTiendaStep.clickBtnCardPlanActual();
-        caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
-    }
-
-    @Y("presiono el boton Renovar Plan")
-    public void presionoElBtnRenovarPlan() {
-        //caplConCaeqAlContadoCanalTiendaStep.esperarBtnCardPlanActual();
-//        caplConCaeqAlContadoCanalTiendaStep.clickBtnCardPlanActual();
-        caplConCaeqAlContadoCanalTiendaStep.clickBtnRenovarPlan();
-    }
 
     @Y("selecciono el plan {string} y presiono Seleccionar Oferta")
     public void seleccionoElPlanYPresionoSeleccionarOferta(String plan) {

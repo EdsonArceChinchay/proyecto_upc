@@ -49,16 +49,6 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotBefore
-    public void ingresarDatosAgendamiento() {
-            page.altaFijaTiendaPage().datosAgendamiento();
-    }
-
-    @ScreenShotBefore
-    public void clickBotonConfirmarAgendamiento() {
-            page.altaFijaTiendaPage().botonConfirmarAgendamiento();
-    }
-
-    @ScreenShotBefore
     public void clickDescargarContrato() {
         page.altaFijaTiendaPage().descargarContrato();
     }
@@ -85,11 +75,6 @@ public class AltaFijaTiendaStep {
     @ScreenShotAfter
     public void doyClickEnAñadirSVA() {
         page.altaFijaTiendaPage().doyClickEnAñadirSVA();
-    }
-
-    @ScreenShotAfter
-    public void ingresarDatosAgendamientoParaRUC() {
-        page.altaFijaTiendaPage().ingresarDatosAgendamientoParaRUC();
     }
 
     @ScreenShotBefore

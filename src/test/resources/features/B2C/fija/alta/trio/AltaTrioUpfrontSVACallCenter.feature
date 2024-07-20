@@ -46,7 +46,7 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront con documento CE por C
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

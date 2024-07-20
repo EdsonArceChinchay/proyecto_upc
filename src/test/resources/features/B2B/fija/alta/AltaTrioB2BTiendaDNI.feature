@@ -46,7 +46,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     #Y        ingreso la informacion del lugar de instalacion
      # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
      # | A  | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -58,7 +58,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        presiono el boton confirmar agendamiento
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy clic en el boton validar identidad representante legal
+    Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
       | numdoc   | user     | password     |

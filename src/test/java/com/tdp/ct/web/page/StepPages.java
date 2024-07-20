@@ -1,25 +1,13 @@
 package com.tdp.ct.web.page;
 
-import com.tdp.ct.web.page.Caeq.CaeqMasCaplMasCasiPage;
 import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
 import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
-import com.tdp.ct.web.page.Paquetizacion.AltaMovilSoloLineaRetailPage;
-import com.tdp.ct.web.page.Paquetizacion.PaquetizacionDuoMasMonoPorCallCenterPage;
-import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc10CanalTiendaPage;
-import com.tdp.ct.web.page.VentaRuc10.ActualizacionDeRuc17CanalTiendaPage;
 import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
 
 @Component
 public class StepPages {
-    public LoginBerserkerPage loginBerserkerPage() {
-        return new LoginBerserkerPage();
-    }
-
-    public HomePage homePage() {
-        return new HomePage();
-    }
 
     public AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage() {
         return new AltaTrioMTconUpfrontTiendaPage();
@@ -89,32 +77,12 @@ public class StepPages {
         return new AltaMovilControlFinancimientoPage();
     }
 
-    public PaquetizacionDuoMasMonoPorCallCenterPage paquetizacionDuoMasMonoPorCallCenterPage() {
-        return new PaquetizacionDuoMasMonoPorCallCenterPage();
-    }
-
-    public AltaMovilSoloLineaRetailPage altaMovilSoloLineaRetailPage() {
-        return new AltaMovilSoloLineaRetailPage();
-    }
-
-    public MigracionMonoADuoSVATiendaPage MigracionMonoADuoSVATiendaPage() {
-        return new MigracionMonoADuoSVATiendaPage();
-    }
-
-    public ConsultaDireccionPorCoordenasPage consultaDireccionPorCoordenasPage() {
-        return new ConsultaDireccionPorCoordenasPage();
-    }
-
     public CaeqPorRetailPage caeqPorRetailPage() {
         return new CaeqPorRetailPage();
     }
 
     public CambioDeEquipoConCambioDeSimPage cambioDeEquipoConCambioDeSimPage() {
         return new CambioDeEquipoConCambioDeSimPage();
-    }
-
-    public CaeqMasCaplMasCasiPage caeqMasCaplMasCasiPage() {
-        return new CaeqMasCaplMasCasiPage();
     }
 
     public MigraSalto0RetailPage migraSalto0RetailPage() {
@@ -133,28 +101,42 @@ public class StepPages {
         return new MigraDuoTrioActualizarDireccionTiendasPage();
     }
 
-    public ActualizacionDeRuc10CanalTiendaPage actualizacionDeRuc10CanalTiendaPage() {
-        return new ActualizacionDeRuc10CanalTiendaPage();
-    }
-
-    public ActualizacionDeRuc17CanalTiendaPage actualizacionDeRuc17CanalTiendaPage() {
-        return new ActualizacionDeRuc17CanalTiendaPage();
-    }
-
     public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage() {
         return new AltaValidacionPrecioDescuentoPage();
+    }
+
+    public LoginBerserkerPage loginBerserkerPage() {
+        return new LoginBerserkerPage();
     }
 
     public CaptchaPage captchaPage() {
         return new CaptchaPage();
     }
 
-    public BandejaBackOfficePage bandejaBackOfficePage() {
-        return new BandejaBackOfficePage();
+    public HomePage homePage() {
+        return new HomePage();
     }
+
+    public ParkPage parkPage() {
+        return new ParkPage();
+    }
+
+    public AddressPage addressPage() {
+        return new AddressPage();
+    }
+
+    public DeliveryPage deliveryPage(){return new DeliveryPage();}
 
     public OfferSVAPage offerSVAPage() {
         return new OfferSVAPage();
+    }
+
+    public AppointmentPage appointmentPage() {
+        return new AppointmentPage();
+    }
+
+    public BandejaBackOfficePage bandejaBackOfficePage() {
+        return new BandejaBackOfficePage();
     }
 
 }

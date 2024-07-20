@@ -2,7 +2,6 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,75 +16,6 @@ public class AltaFijaAltaMovilCallCenterStep {
 
     @Autowired
     private ManageScenario scenario;
-
-    public void ingresarManzana(String manzana) {
-        page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
-    }
-
-    public void ingresarLote(String lote) {
-        page.altaFijaAltaMovilCallCenterPage().lote(lote);
-    }
-
-    public void seleccionarTipoVivienda(String tipoVivienda) {
-        page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
-    }
-
-    public void ingresarNombreVivienda(String nomVivienda) {
-        page.altaFijaAltaMovilCallCenterPage().nombreVivienda(nomVivienda);
-    }
-
-    public void ingresarPiso(String piso) {
-        page.altaFijaAltaMovilCallCenterPage().piso(piso);
-    }
-
-    public void ingresarInterior(String interior) {
-        page.altaFijaAltaMovilCallCenterPage().interior(interior);
-    }
-
-    public void ingresarBloque(String bloque) {
-        page.altaFijaAltaMovilCallCenterPage().bloque(bloque);
-    }
-
-    public void ingresarManzanaDir(String manzana) {
-        page.altaFijaAltaMovilCallCenterPage().manzanaDir(manzana);
-    }
-
-    public void seleccionarTipoConjuntoHabitacional(String data) {
-        page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(data);
-    }
-
-    public void ingresarConjuntoHabitacional(String data) {
-        page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(data);
-    }
-
-    public void clickBtnConfirmarUbicacion() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmarUbicacion();
-    }
-
-    public void clickConsultarCobertura() {
-        page.altaFijaAltaMovilCallCenterPage().btnConsultarCobertura();
-    }
-
-    public void seleccionarTipoEntrega(String tipEntrega) {
-        page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
-    }
-
-    public void seleccionarBtnHorario(String horario) {
-        page.altaFijaAltaMovilCallCenterPage().btnHorario(horario);
-    }
-
-    public void ingresarTxtTelefono(String telefono) {
-        page.altaFijaAltaMovilCallCenterPage().txtTelefono(telefono);
-    }
-
-    public void ingresarTxtInstrucciones(String instrucciones) {
-        page.altaFijaAltaMovilCallCenterPage().txtInstrucciones(instrucciones);
-    }
-
-    @ScreenShotAfter
-    public void clickBtnConfirmarDelivery() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmarDelivery();
-    }
 
     @ScreenShotBefore
     public void seleccionarTipoPago(String tipoPago) {
@@ -123,7 +53,6 @@ public class AltaFijaAltaMovilCallCenterStep {
     public void seleccionarListaOferta(String listaOferta) {
         page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta, scenario);
     }
-
 
     public void clickIrAMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();

@@ -34,7 +34,7 @@ public class Helper extends WebBase {
 
     public static String obtenerRutaAbsoluta(String sRuta) {
         File archivo = new File(sRuta);
-        return archivo.getAbsolutePath().toString();
+        return archivo.getAbsolutePath();
     }
 
     public static void descargarPDFDesdeURL(String url, String carpetaDescarga) {
@@ -96,7 +96,7 @@ public class Helper extends WebBase {
         Assertions.assertTrue(isEquals, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
     }
 
-    public static boolean compareWebElementTextAndTextAndReturnValue(WebElement element, String text) {
+    public static boolean returnCompareWebElementTextAndText(WebElement element, String text) {
         String expectedText = text.trim().toUpperCase();
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Expected text: " + expectedText);
         String currentText = element.getText().trim().toUpperCase();

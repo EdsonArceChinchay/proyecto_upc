@@ -44,17 +44,6 @@ public class AltaFijaRetailPage extends WebBase {
     }
 
     public void irSeleccionarPlan(String nombrePlan) {
-        /*UtilWeb.waitForSeconds(3);
-        for (WebElement element : listNombPlan){
-            if (element.getText().contains(nombrePlan)){
-                //click(element);
-                System.out.println("El plan es :" + element);
-
-            }
-        }
-        UtilWeb.waitForSeconds(2);
-        clickElementInAList(listNombPlan, nombrePlan);*/
-
         UtilWeb.waitForSeconds(3);
         WebElement nPlan = find().getElementByXPath("//div[contains(text(), '" + nombrePlan + "')]/../..");
         click(nPlan, 2);

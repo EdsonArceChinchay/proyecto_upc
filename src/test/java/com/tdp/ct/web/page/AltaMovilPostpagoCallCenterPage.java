@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndTextAndReturnValue;
+import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
 
 public class AltaMovilPostpagoCallCenterPage extends WebBase {
     @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
@@ -101,7 +101,7 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency "+ lista.size());
         for(WebElement elements:lista){
-            boolean isEquals =compareWebElementTextAndTextAndReturnValue(elements,timePermanency);
+            boolean isEquals =returnCompareWebElementTextAndText(elements,timePermanency);
             if(isEquals){
                 click(elements,3);
             }

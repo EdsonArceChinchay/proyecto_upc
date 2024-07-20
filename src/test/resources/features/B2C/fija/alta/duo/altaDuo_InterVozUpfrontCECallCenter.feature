@@ -46,7 +46,7 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
 #      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"

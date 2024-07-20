@@ -13,7 +13,6 @@ public class AltaTrioMTconUpfrontTiendaStep {
     @Autowired
     private StepPages page;
 
-
     @ScreenShotAfter
     public void clickBotonLineaNueva(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonLineaNueva();

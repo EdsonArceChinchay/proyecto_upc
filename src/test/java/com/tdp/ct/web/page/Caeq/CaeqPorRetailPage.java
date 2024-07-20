@@ -2,8 +2,12 @@ package com.tdp.ct.web.page.Caeq;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.Map;
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -19,8 +23,8 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "//div/button[@class=\"btnCard\"]")
     protected  WebElement botonMantenerPlan;
 
-    @FindBy(xpath = "(//div/button[@class=\"buttonG\"])[3]")
-    protected  WebElement botonConsultaClienteNuevo;
+    @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
+    WebElement BtnCambiarPlan;
 
     public void btnAnadirEquipo(int num) {
         revisarModalError(driver());
@@ -47,9 +51,33 @@ public class CaeqPorRetailPage extends WebBase {
         click(botonMantenerPlan);
     }
 
-    public void btnConsultarClienteNuevo() {
-        UtilWeb.waitForSeconds(2);
-        js().scrollElementTop(botonConsultaClienteNuevo);
-        click(botonConsultaClienteNuevo);
+
+
+    public void clickBotonCambiarPlan() {
+        UtilWeb.waitForSeconds(10);
+        click(BtnCambiarPlan);
     }
+
+
+    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> valuesMovil) {
+        String getValueCAEQ, getValueCAPL, getValueCASI;
+
+        getValueCAEQ = valuesMovil.get("CAEQ").trim().toUpperCase();
+        getValueCAPL = valuesMovil.get("CAPL").trim().toUpperCase();
+        getValueCASI = valuesMovil.get("CASI").trim().toUpperCase();
+
+        valueCAEQ = valueCAEQ.trim().toUpperCase();
+        valueCAPL = valueCAPL.trim().toUpperCase();
+        valueCASI = valueCASI.trim().toUpperCase();
+
+        Assertions.assertEquals(valueCAEQ, getValueCAEQ, "El valor de CAEQ esperado: " + valueCAEQ + " es diferente al obtenido: " + getValueCAEQ);
+        Assertions.assertEquals(valueCAPL, getValueCAPL, "El valor de CAPL esperado: " + valueCAPL + " es diferente al obtenido: " + getValueCAPL);
+        Assertions.assertEquals(valueCASI, getValueCASI, "El valor de CASI esperado: " + valueCASI + " es diferente al obtenido: " + getValueCASI);
+
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CAEQ esperado: " + valueCAEQ + " y el obtenido es:" + getValueCAEQ + ", los valores son iguales "+valueCAEQ.equals(getValueCAEQ));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CAPL esperado: " + valueCAPL + " y el obtenido es:" + getValueCAPL + ", los valores son iguales "+valueCAPL.equals(getValueCAPL));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CASI esperado: " + valueCASI + " y el obtenido es:" + getValueCASI + ", los valores son iguales "+valueCASI.equals(getValueCASI));
+
+    }
+
 }

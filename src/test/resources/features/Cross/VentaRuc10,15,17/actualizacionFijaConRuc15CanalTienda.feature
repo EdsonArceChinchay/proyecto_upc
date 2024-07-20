@@ -34,8 +34,6 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Y        ingreso el ruc "<ruc>" y actualizo
     Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
-
-
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | ruc         |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133112 | 15112233442 |

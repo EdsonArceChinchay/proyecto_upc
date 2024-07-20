@@ -13,7 +13,6 @@ public class MigraTrioaMTcanalCallCenterStep {
     @ScreenShotBefore
     public void seleccionoPlanMovistarTotal() {
         page.migraTrioaMTcanalCallCenterPage().seleccionoPlanMovistarTotal();
-
     }
 
     public void scrollUp() {

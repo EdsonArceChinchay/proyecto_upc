@@ -35,7 +35,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        valido que se muestre la etiqueta "Fibra+Velocidad, COSTO 0"

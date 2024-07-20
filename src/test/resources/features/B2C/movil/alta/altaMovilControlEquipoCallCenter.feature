@@ -57,11 +57,11 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "earce@gmail.com"

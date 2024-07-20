@@ -46,7 +46,7 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

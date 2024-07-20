@@ -46,7 +46,7 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en
     Y        ingreso la informacion del lugar para la instalacion
       | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

@@ -7,7 +7,6 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
-import org.json.JSONException;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,23 +26,8 @@ public class AltaFijaMovilRegistroStep {
     private ManageScenario scenario;
 
     @ScreenShotAfter
-    public void validarPantallaIngresarDireccion() {
-        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaIngresarDireccion());
-    }
-
-    @ScreenShotAfter
     public void validarPantallaRegistrarVenta() {
         Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaRegistrarVenta());
-    }
-
-    @ScreenShotAfter
-    public void validarPantallaIngresarDireccionEntrega() {
-        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaIngresarDireccionEntrega());
-    }
-
-    @ScreenShotAfter
-    public void validarPantallaVerificarDireccion() {
-        Assert.assertTrue(page.altaFijaMovilRegistroPage().validarPantallaVerificarDireccion());
     }
 
     @ScreenShotAfter
@@ -79,22 +63,6 @@ public class AltaFijaMovilRegistroStep {
     @ScreenShotAfter
     public void moverToElementIniciarRegistro() {
         page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
-    }
-
-    @ScreenShotAfter
-    public void validarPantallaAgendamiento() {
-        Assert.assertTrue("No se mostro pantalla de agendamiento",
-                page.altaFijaMovilRegistroPage().validarPantallaAgendamiento());
-    }
-
-    @ScreenShotAfter
-    public void ingresarContacto(String contacto) {
-        page.altaFijaMovilRegistroPage().ingresarContacto(contacto);
-    }
-
-    @ScreenShotAfter
-    public void clicConfirmarAgendamiento() {
-        page.altaFijaMovilRegistroPage().clicConfirmarAgendamiento();
     }
 
     @ScreenShotAfter
@@ -162,10 +130,6 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().clicEnConfirmar();
     }
 
-    @ScreenShotAfter
-    public void moverseFinalDocumento() {
-        page.altaFijaMovilRegistroPage().scrollByJavaScriptToFinal();
-    }
 
     @ScreenShotBefore
     @ScreenShotAfter
@@ -183,24 +147,11 @@ public class AltaFijaMovilRegistroStep {
     public void clicSiAcepto() {
         page.altaFijaMovilRegistroPage().clicSiAcepto();
     }
-    /*
-    @ScreenShotAfter
-    public void validarMensajeExitoso() {
-        Assert.assertTrue("No se pudo validar registro exitoso!!!",
-                page.altaFijaMovilRegistroPage().validarMensajeExitoso());
-    }
-     */
-
-    @ScreenShotAfter
-    public void escogerTurnoAgendamiento() {
-        page.altaFijaMovilRegistroPage().clicEnUnTurnoAgendamiento();
-    }
 
     public void verificarClienteNuevo() {
         customer.setNewCustomer(page.altaFijaMovilRegistroPage().isNewCustomer());
     }
 
-    //CAMBIOS PARA RETAIL
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
         if (customer.isNewCustomer()) {
@@ -263,12 +214,12 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
-    public void clicDescargarContrato() throws InterruptedException {
+    public void clicDescargarContrato() {
         page.altaFijaMovilRegistroPage().clicDescargarContrato(scenario);
     }
 
     @ScreenShotAfter
-    public void validarVentaGenerada() throws JSONException {
+    public void validarVentaGenerada() {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
         getOrderCode();

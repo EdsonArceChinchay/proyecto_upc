@@ -59,11 +59,11 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso un correo electronico "hola@gmail.com"

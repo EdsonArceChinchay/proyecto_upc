@@ -15,20 +15,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     @Autowired
     private StepPages page;
 
-    public void esperarBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnCardPlanActual();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
-    }
-
-    @ScreenShotAfter
-    public void clickBtnRenovarPlan(){
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
-    }
-
     @ScreenShotBefore
     public void clickSelectOferta() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickSelectOferta();

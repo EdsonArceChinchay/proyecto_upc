@@ -45,7 +45,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
 #      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total

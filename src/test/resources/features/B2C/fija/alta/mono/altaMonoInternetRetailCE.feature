@@ -39,11 +39,11 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
-    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | tipoVivienda | nombreVivienda | conjunto             | conjHabit |
       | CASA         | alex mancilla  | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"

@@ -84,14 +84,5 @@ public class AltaMovilControlFinancimientoStepDefinition {
         altaMovilControlFinancimientoStep.completarDatosClienteExtranjeroMovilFinanciado(datosCliente);
     }
 
-    @Y("selecciono el plan {string} que desea")
-    public void seleccionoElPlanQueDesea(String planMovil) {
-        altaMovilControlFinancimientoStep.seleccionoElPlanQueDesea(planMovil);
-    }
 
-
-    @Y("doy click en el boton Siguiente")
-    public void doyClickEnBotonSiguiente() {
-        altaMovilControlFinancimientoStep.doyClickEnBotonSiguiente();
-    }
 }
