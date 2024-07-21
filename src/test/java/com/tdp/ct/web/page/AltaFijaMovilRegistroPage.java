@@ -6,7 +6,6 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
-import org.json.JSONException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -527,7 +526,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void seleccionarGeneroClienteExtranjero(String genero) {
         WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
         click(generoList);
-        String dataValue = "";
+        String dataValue;
         SearchContext context = sh().getContext(generoList);
         if (genero.equalsIgnoreCase("femenino")) {
             dataValue = "F";
@@ -575,7 +574,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public void seleccionarEstadoCivil(String genero) {
         WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
         click(generoList);
-        String dataValue = "";
+        String dataValue;
         SearchContext context = sh().getContext(generoList);
         if (genero.equalsIgnoreCase("femenino")) {
             dataValue = "F";
@@ -826,7 +825,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public List<String> getOrderCode() {
-        List<String> listCodigosDeOrdenes = new ArrayList<String>();
+        List<String> listCodigosDeOrdenes = new ArrayList<>();
         listCodigoOrden.forEach((orden) -> {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Orden: " + orden.getText() + "A");
             listCodigosDeOrdenes.add("Código de Orden: " + orden.getText() + "A");
@@ -837,7 +836,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     public String getSalesCode() {
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
-        String salesCode = null;
+        String salesCode;
         salesCode = getSalesCodeSessionStorage();
 
         if (salesCode == null) {

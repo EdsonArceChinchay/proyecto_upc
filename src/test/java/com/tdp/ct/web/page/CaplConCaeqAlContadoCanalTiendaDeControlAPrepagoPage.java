@@ -15,10 +15,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBase {
-    @FindBy(xpath = "//span[@_ngcontent-ala-c56]")
-    protected WebElement tituloValidando;
-    @FindBy(xpath = "//button[contains(text(),' CONTINUAR')]")
-    protected WebElement btnContinuarCU;
+
     @FindBy(xpath = "(//*[@class=\"detailHogar\"])[1]")
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
@@ -108,16 +105,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         String btnVerOfertas = ".btn-detail tdp-st-button;button";
         WebElement element = js().getWebElement(btnVerOfertas);
         element.click();
-    }
-
-    public void clickBtnVerDetalle(String nroServicio) {
-        UtilWeb.waitForSeconds(5);
-        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
-        esperaProgresiva(driver(), 5, 5, btnVerDetalle);
-        js().scrollElementTop(btnVerDetalle);
-        btnVerDetalle.click();
-        revisarModalError(driver());
-
     }
 
     public void validarFeatures() {

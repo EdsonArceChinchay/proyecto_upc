@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,40 +22,16 @@ public class AddressStep {
         page.addressPage().manzana(manzana);
     }
 
-    public void ingresarLote(String lote) {
-        page.addressPage().lote(lote);
-    }
-
     public void seleccionarTipoVivienda(String tipoVivienda) {
-        page.addressPage().tipoVivienda(tipoVivienda);
+        page.addressPage().selectHouseType(tipoVivienda);
     }
 
     public void ingresarNombreVivienda(String nomVivienda) {
-        page.addressPage().nombreVivienda(nomVivienda);
-    }
-
-    public void ingresarPiso(String piso) {
-        page.addressPage().piso(piso);
-    }
-
-    public void ingresarInterior(String interior) {
-        page.addressPage().interior(interior);
+        page.addressPage().typeHouseName(nomVivienda);
     }
 
     public void ingresarBloque(String bloque) {
         page.addressPage().bloque(bloque);
-    }
-
-    public void ingresarManzanaDir(String manzana) {
-        page.addressPage().manzanaDir(manzana);
-    }
-
-    public void seleccionarTipoConjuntoHabitacional(String data) {
-        page.addressPage().tipoConjuntoHabitacional(data);
-    }
-
-    public void ingresarConjuntoHabitacional(String data) {
-        page.addressPage().conjuntoHabitacional(data);
     }
 
     public void clickButtonConsultCoverage() {
@@ -62,28 +39,28 @@ public class AddressStep {
     }
 
     @ScreenShotAfter
-    public void seleccionarTipoDepa(String tipoDepa) {
-        page.addressPage().seleccionarDepa(tipoDepa);
+    public void selectDepartment(String name) {
+        page.addressPage().selectDepartment(name);
     }
 
     @ScreenShotAfter
-    public void seleccionarTipoProv(String tipoProv) {
-        page.addressPage().seleccionarProvincia(tipoProv);
+    public void selectProvince(String tipoProv) {
+        page.addressPage().selectProvince(tipoProv);
     }
 
     @ScreenShotAfter
-    public void seleccionarTipoDistrito(String tipoDis) {
-        page.addressPage().seleccionarDistrito(tipoDis);
+    public void selectDistrict(String district) {
+        page.addressPage().seleccionarDistrito(district);
     }
 
     @ScreenShotAfter
-    public void writeDirec(String data) {
-        page.addressPage().writeDireccion(data);
+    public void typeAddress(String data) {
+        page.addressPage().typeAddress(data);
     }
 
     @ScreenShotAfter
-    public void writeReferencia(String data1) {
-        page.addressPage().writeReferencia(data1);
+    public void typeReference(String reference) {
+        page.addressPage().typeReference(reference);
     }
 
     @ScreenShotAfter
@@ -92,33 +69,33 @@ public class AddressStep {
     }
 
     @ScreenShotAfter
-    public void writeMz(String data2) {
-        page.addressPage().writeManzana(data2);
+    public void typeApple(String apple) {
+        page.addressPage().typeApple(apple);
     }
 
     @ScreenShotAfter
-    public void writeLte(String data3) {
-        page.addressPage().writeLote(data3);
+    public void typeLot(String lot) {
+        page.addressPage().typeLot(lot);
     }
 
     @ScreenShotAfter
-    public void writePiso(String data4) {
-        page.addressPage().writePiso(data4);
+    public void typeFloor(String floor) {
+        page.addressPage().typeFloor(floor);
     }
 
     @ScreenShotAfter
-    public void writeInt(String data5) {
-        page.addressPage().writeInterior(data5);
+    public void typeInside(String inside) {
+        page.addressPage().typeInside(inside);
     }
 
     @ScreenShotAfter
-    public void seleccionarConjunto(String habitacional) {
-        page.addressPage().seleccionarConjuntoHabitacional(habitacional);
+    public void selectHousingComplexe(String habitacional) {
+        page.addressPage().selectHousingComplexe(habitacional);
     }
 
     @ScreenShotAfter
-    public void writeConjHab(String data6) {
-        page.addressPage().writeConjHab(data6);
+    public void typeHousingComplexName(String housingComplexName) {
+        page.addressPage().typeHousingComplexName(housingComplexName);
     }
 
     @ScreenShotAfter
@@ -136,24 +113,24 @@ public class AddressStep {
         Assert.assertTrue(page.addressPage().validarPantallaVerificarDireccion());
     }
 
-    public void writeDireccion(String depa, String prov, String distrito, String direccion, String ref) {
-        page.addressPage().seleccionarDepa(depa);
-        page.addressPage().seleccionarProvincia(prov);
+    public void typeAddressComplete(String depa, String prov, String distrito, String direccion, String ref) {
+        page.addressPage().selectDepartment(depa);
+        page.addressPage().selectProvince(prov);
         page.addressPage().seleccionarDistrito(distrito);
-        page.addressPage().writeDireccion(direccion);
-        page.addressPage().writeReferencia(ref);
+        page.addressPage().typeAddress(direccion);
+        page.addressPage().typeReference(ref);
     }
 
-    public void writeDireccionInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda, String bloque, String piso, String interior, String tipoConjH, String conjH) {
+    public void typeAddressInstalacion(String manzana, String lote, String tipoVivienda, String nomVivienda, String bloque, String piso, String interior, String tipoConjH, String conjH) {
         page.addressPage().manzana(manzana);
-        page.addressPage().lote(lote);
-        page.addressPage().tipoVivienda(tipoVivienda);
-        page.addressPage().nombreVivienda(nomVivienda);
+        page.addressPage().typeLot(lote);
+        page.addressPage().selectHouseType(tipoVivienda);
+        page.addressPage().typeHouseName(nomVivienda);
         page.addressPage().bloque(bloque);
-        page.addressPage().piso(piso);
-        page.addressPage().interior(interior);
-        page.addressPage().tipoConjuntoHabitacional(tipoConjH);
-        page.addressPage().conjuntoHabitacional(conjH);
+        page.addressPage().typeFloor(piso);
+        page.addressPage().typeInside(interior);
+        page.addressPage().selectHousingComplexe(tipoConjH);
+        page.addressPage().typeHousingComplexName(conjH);
     }
 
     public void scrollDirecCompleta() {
@@ -173,13 +150,28 @@ public class AddressStep {
     @ScreenShotAfter
     public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
         page.addressPage().validoQueQueMeMuestreElMensajdeDeError(msj);
-
     }
 
     @ScreenShotAfter
     public void doyClickAceptarEnElModalDeError() {
         page.addressPage().doyClickAceptarEnElModalDeError();
-
     }
 
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void ingresoDepartamento(String departamento) {
+        page.addressPage().ingresoDepartamento(departamento);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void ingresoProvincia(String provincia) {
+        page.addressPage().ingresoProvincia(provincia);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void ingresoDistrito(String distrito) {
+        page.addressPage().ingresoDistrito(distrito);
+    }
 }

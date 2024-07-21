@@ -29,7 +29,7 @@ public class DeliveryStep {
     }
 
     @ScreenShotAfter
-    public void selectTipoHorario(String horaio){
+    public void selectTipoHorario(String horaio) {
         UtilWeb.waitForSeconds(3);
         page.deliveryPage().selectTipoHorario(horaio);
     }
@@ -40,7 +40,7 @@ public class DeliveryStep {
     }
 
     @ScreenShotAfter
-    public void typeDeliveryInstructions(String  instruction){
+    public void typeDeliveryInstructions(String instruction) {
         page.deliveryPage().typeDeliveryInstructions(instruction);
     }
 }

@@ -40,11 +40,6 @@ public class AltaFijaRetailStep {
     }
 
     @ScreenShotAfter
-    public void irIniciarRegistro(){
-        page.altaFijaRetailPage().irIniciarRegistro();
-    }
-
-    @ScreenShotAfter
     public void ingresarDatosCliente(DataTable dataTable){
         var fechNacimiento = getValueFromDataTable(dataTable, "fechaNac");
         var nacionalidad = getValueFromDataTable(dataTable, "nacionalidad");

@@ -2,7 +2,6 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,6 +11,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
 import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
 import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Helper.*;
 
 public class AddressPage extends WebBase {
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
@@ -46,9 +46,15 @@ public class AddressPage extends WebBase {
     protected WebElement txtMsjError;
     @FindBy(xpath = "//button[contains(text(),'Aceptar')]")
     protected WebElement btnerror;
+    @FindBy(css = "form > div:nth-child(1) > div > tdp-st-select")
+    protected WebElement cbxDepartamento;
+    @FindBy(css = "form > div:nth-child(2) > div > tdp-st-select")
+    protected WebElement cbxProvincia;
+    @FindBy(css = "form > div:nth-child(3) > div > tdp-st-select")
+    protected WebElement cbxDistrito;
     private static final String DEPARTAMENTO = "15";
 
-    public void seleccionarDepa(String tipoDepa) {
+    public void selectDepartment(String department) {
         UtilWeb.waitForSeconds(6);//2
         WebElement depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
@@ -62,21 +68,21 @@ public class AddressPage extends WebBase {
         }
         click(depaList);
         UtilWeb.waitForSeconds(2);
-        By byItem = By.cssSelector("[data-value='" + tipoDepa + "']");
+        By byItem = By.cssSelector("[data-value='" + department + "']");
         SearchContext context = sh().getContext(depaList);
         esperaProgresiva(driver(), 3, 5, depaList, byItem, context);
         context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarProvincia(String tipoProvincia) {
+    public void selectProvince(String tipoProvincia) {
         WebElement provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         esperaProgresiva(driver(), 3, 5, provinciaList);
         boolean existeLista = provinciaList.isEnabled();
         System.out.println("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
-            seleccionarDepa(DEPARTAMENTO);
+            selectDepartment(DEPARTAMENTO);
             provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
         }
         click(provinciaList);
@@ -96,8 +102,8 @@ public class AddressPage extends WebBase {
         System.out.println("Existe Lista de" + distritoList.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
-            seleccionarDepa(DEPARTAMENTO);
-            seleccionarProvincia(PROVINCIA);
+            selectDepartment(DEPARTAMENTO);
+            selectProvince(PROVINCIA);
             distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         }
         click(distritoList);
@@ -109,13 +115,13 @@ public class AddressPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void writeDireccion(String direc) {
+    public void typeAddress(String direc) {
         WebElement inputDireccion = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
         click(inputDireccion);
         type(inputDireccion, direc);
     }
 
-    public void writeReferencia(String referencia) {
+    public void typeReference(String referencia) {
         WebElement Refer = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
         click(Refer);
         type(Refer, referencia);
@@ -125,17 +131,17 @@ public class AddressPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnConsultLocation);
         js().scrollElementTop(btnConsultLocation);
         click(btnConsultLocation);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Consult Location" );
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Consult Location");
         revisarModalError(driver());
         UtilWeb.waitForSeconds(5);
     }
 
-    public void writeManzana(String manzana) {
-        UtilWeb.waitForSeconds(1);
-        WebElement Mz = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(1) > tdp-st-input-text");
-        click(Mz);
-        UtilWeb.waitForSeconds(1);
-        type(Mz, manzana);
+    public void typeApple(String manzana) {
+        boolean existe = validateInputAndLocator(driver(),manzana, inputApple);
+        if (existe) {
+            waitUntilElementIsClickable(inputApple, 15).click();
+            type(inputApple, manzana);
+        }
     }
 
     public void manzana(String manzana) {
@@ -144,28 +150,16 @@ public class AddressPage extends WebBase {
         }
     }
 
-    public void writeLote(String lote) {
-        WebElement Lte = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(4) > div:nth-child(2) > tdp-st-input-text");
-        click(Lte);
-        type(Lte, lote);
-    }
-
-    public void lote(String lote) {
-        boolean existe = validateInputAndLocator(lote, inputLot);
-        if (existe && inputLot.isSelected()) {
+    public void typeLot(String lote) {
+        boolean existe = validateInputAndLocator(driver(),lote, inputLot);
+        if (existe) {
             esperaProgresiva(driver(), 3, 5, inputLot);
             click(inputLot);
             type(inputLot, lote);
         }
     }
 
-    public void writePiso(String piso) {
-        WebElement Npiso = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(1) > tdp-st-input-text");
-        click(Npiso);
-        type(Npiso, piso);
-    }
-
-    public void piso(String piso) {
+    public void typeFloor(String piso) {
         if (piso != null) {
             WebElement Npiso = find().getElementByXPath("//*[@formcontrolname='floor' or @name='floor']");
             esperaProgresiva(driver(), 5, 6, Npiso);
@@ -176,34 +170,38 @@ public class AddressPage extends WebBase {
         }
     }
 
-    public void writeInterior(String inte) {
-        WebElement NInterior = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(5) > div:nth-child(2) > tdp-st-input-text");
-        click(NInterior);
-        type(NInterior, inte);
+    public void typeInside(String inte) {
+        if (inte != null) {
+            WebElement NInterior = find().getElementByXPath("//*[@formcontrolname='inside' or @name='inside']");
+            esperaProgresiva(driver(), 3, 5, NInterior);
+            waitUntilElementIsClickable(NInterior, 15).click();
+            NInterior.sendKeys(Keys.CONTROL + "a");
+            NInterior.sendKeys(Keys.DELETE);
+            type(NInterior, inte);
+        }
     }
 
-    public void tipoConjuntoHabitacional(String tipoConjunto) {
+    public void selectHousingComplexe(String tipoConjunto) {
         if (tipoConjunto != null) {
-            JavascriptExecutor jse = (JavascriptExecutor) driver();
-            UtilWeb.waitForSeconds(1);
-            WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
+            WebElement conjuntoList = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
+            click(conjuntoList);
+            SearchContext context = sh().getContext(conjuntoList);
+            By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
+            esperaProgresiva(driver(), 3, 5, conjuntoList, byItem, context);
+            context.findElement(byItem).click();
+        /*
+        * WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
             esperaProgresiva(driver(), 3, 5, listElementPLan);
             waitUntilElementIsClickable(listElementPLan, 10).click();
 
             String[][] selectOptions = {{"UR", "URBANIZACION RESIDENCIAL"}, {"UP", "URBANIZACION POPULAR"}};
             String sCodigo = buscarValorOpcion(tipoConjunto, selectOptions);
             seleccionarValueComboShadow(driver(), "housingComplexe", sCodigo);
+        * */
         }
     }
-    public void seleccionarConjuntoHabitacional(String tipoConjunto) {
-        WebElement conjuntoList = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
-        click(conjuntoList);
-        SearchContext context = sh().getContext(conjuntoList);
-        By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
-        esperaProgresiva(driver(), 3, 5, conjuntoList, byItem, context);
-        context.findElement(byItem).click();
-    }
-    public void conjuntoHabitacional(String hab) {
+
+    public void typeHousingComplexName(String hab) {
         if (hab != null) {
             WebElement ConjHab = find().getElementByXPath("//*[@formcontrolname='housingComplexName' or @name='housingComplexName']");
             esperaProgresiva(driver(), 3, 5, ConjHab);
@@ -215,38 +213,32 @@ public class AddressPage extends WebBase {
         }
     }
 
-    public void writeConjHab(String hab) {
-        WebElement ConjHab = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(7) > div > tdp-st-input-text");
-        click(ConjHab);
-        type(ConjHab, hab);
-    }
-
     public void seleccionoDireccionSugerida() {
         UtilWeb.waitForSeconds(3);
         click(direccionSugerida);
     }
 
-    public void tipoVivienda(String tipoVivienda) {
-        boolean existe = validateInputAndLocator(tipoVivienda, inputHouseType);
+    public void selectHouseType(String houseType) {
+        boolean existe = validateInputAndLocator(driver(),houseType, inputHouseType);
         if (existe) {
             waitUntilElementIsClickable(inputHouseType, 10).click();
             String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
-            String sCodeTipoVivienda = buscarValorOpcion(tipoVivienda.toUpperCase().trim(), selectOptions);
+            String sCodeTipoVivienda = buscarValorOpcion(houseType.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
         }
     }
 
-    public void nombreVivienda(String nomVivienda) {
-        boolean existe = validateInputAndLocator(nomVivienda, inputHouseName);
+    public void typeHouseName(String houseName) {
+        boolean existe = validateInputAndLocator(driver(),houseName, inputHouseName);
         if (existe) {
             waitUntilElementIsClickable(inputHouseName, 15).click();
-            type(inputHouseName, nomVivienda);
+            type(inputHouseName, houseName);
         }
     }
 
     public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(bloque, inputBlock);
+        boolean existe = validateInputAndLocator(driver(),bloque, inputBlock);
         if (existe) {
             //  js().scrollElementTop(inputBlock);
             System.out.println("Ingreso a bloque si");
@@ -266,46 +258,73 @@ public class AddressPage extends WebBase {
 
     }
 
-    public void manzanaDir(String manzana) {
-        boolean existe = validateInputAndLocator(manzana, inputApple);
-        if (existe && inputApple.isSelected()) {
-            waitUntilElementIsClickable(inputApple, 15).click();
-            type(inputApple, manzana);
-        }
-    }
-
-    public void interior(String inte) {
-        if (inte != null) {
-            WebElement NInterior = find().getElementByXPath("//*[@formcontrolname='inside' or @name='inside']");
-            esperaProgresiva(driver(), 3, 5, NInterior);
-            waitUntilElementIsClickable(NInterior, 15).click();
-            NInterior.sendKeys(Keys.CONTROL + "a");
-            NInterior.sendKeys(Keys.DELETE);
-            type(NInterior, inte);
-        }
-    }
-
     public void clickButtonConsultCoverage() {
         esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         js().scrollElementTop(btnConsultCoverage);
         btnConsultCoverage.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Consultar Cobertura" );
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Consultar Cobertura");
     }
 
-
-
-    public Boolean validateInputAndLocator(String input, WebElement element) {
-        boolean existe = false;
-        if (input != null) {
-            try {
-                existe = element.isDisplayed() && element.isEnabled();
-            } catch (NoSuchElementException e) {
-                e.getMessage();
+    public void ingresoDepartamento(String departamento) {
+        try {
+            if (isVisible(driver(), cbxDepartamento)) {
+                click(cbxDepartamento);
+                SearchContext context = sh().getContext(cbxDepartamento);
+                List<WebElement> lielement = context.findElements(By.cssSelector("div > ul > li"));
+                for (WebElement element : lielement) {
+                    waitUntilElementIsVisible(element, 5);
+                    String elementoLista = element.getText();
+                    if (elementoLista.equalsIgnoreCase(departamento)) {
+                        element.click();
+                        break;
+                    }
+                }
             }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
         }
-        return existe;
+    }
+
+    public void ingresoProvincia(String provincia) {
+        try {
+            if (isVisible(driver(), cbxProvincia)) {
+                click(cbxProvincia);
+                SearchContext context = sh().getContext(cbxProvincia);
+                List<WebElement> lieelement = context.findElements(By.cssSelector("div > ul > li"));
+                for (WebElement element : lieelement) {
+                    waitUntilElementIsVisible(element, 5);
+                    String elementoLista = element.getText();
+                    if (elementoLista.equalsIgnoreCase(provincia)) {
+                        element.click();
+                        break;
+                    }
+                }
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void ingresoDistrito(String distrito) {
+        try {
+            if (isVisible(driver(), cbxDistrito)) {
+                click(cbxDistrito);
+                SearchContext context = sh().getContext(cbxDistrito);
+                List<WebElement> liElement = context.findElements(By.cssSelector("div > ul > li"));
+                for (WebElement element : liElement) {
+                    waitUntilElementIsVisible(element, 3);
+                    String elementoLista = element.getText();
+                    if (elementoLista.equalsIgnoreCase(distrito)) {
+                        element.click();
+                        break;
+                    }
+                }
+            }
+        } catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public boolean validarPantallaIngresarDireccionEntrega() {
@@ -347,19 +366,13 @@ public class AddressPage extends WebBase {
     }
 
     public void validoQueLaDireccionSea(String direccion) {
-        waitUntilElementIsVisible(txtDireccion,50);
-        String direccionObtenida = txtDireccion.getText().trim().toUpperCase();
-        String direccionEsperada = direccion.trim().toUpperCase();
-        Assertions.assertTrue(direccionObtenida.contains(direccionEsperada), "La direccion esperada: " + direccionEsperada + ", es diferente a la obtenida: " + direccionObtenida);
-
+        waitUntilElementIsVisible(txtDireccion, 50);
+        compareWebElementTextAndText(txtDireccion, direccion);
     }
 
     public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
         waitUntilElementIsVisible(txtMsjError, 100);
-        String mensajeObtenido = txtMsjError.getText().trim().toUpperCase();
-        String mensajeEsperado = msj.trim().toUpperCase();
-        Assertions.assertTrue(mensajeObtenido.contains(mensajeEsperado), "El mensaje esperado: " + mensajeEsperado + ", es diferente a la obtenido: " + mensajeObtenido);
-        UtilWeb.waitForSeconds(1);
+        compareWebElementTextAndText(txtMsjError, msj);
     }
 
     public void doyClickAceptarEnElModalDeError() {

@@ -225,7 +225,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
                 }
             }
 
-            if (!encontroElemento && (i == cont || listaOfertas.get(i + 1).getText().trim().equals(""))) {
+            if (!encontroElemento && (i == cont || listaOfertas.get(i + 1).getText().trim().isEmpty())) {
                 System.out.println("No encontro elemento en la lista");
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));

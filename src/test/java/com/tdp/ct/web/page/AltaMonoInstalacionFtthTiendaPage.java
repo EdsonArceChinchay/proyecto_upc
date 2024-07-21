@@ -4,12 +4,10 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -63,10 +61,10 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void clickBtnTipoPlan(String tipoPlan) {
-        for (int i = 0; i < btnPlanList.size(); i++) {
-            String encontrado = btnPlanList.get(i).getText().toLowerCase();
+        for (WebElement element : btnPlanList) {
+            String encontrado = element.getText().toLowerCase();
             if (encontrado.equals(tipoPlan.toLowerCase())) {
-                btnPlanList.get(i).click();
+                element.click();
                 break;
             }
         }

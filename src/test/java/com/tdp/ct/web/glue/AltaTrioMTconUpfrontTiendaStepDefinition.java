@@ -2,7 +2,6 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
-import com.tdp.ct.web.utils.Addons;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -36,9 +35,9 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
 
     @Y("doy click en el boton confirmar")
     public void doyClickEnElBotonConfirmar() {
-        if(customer.isNewCustomer()){
+        if (customer.isNewCustomer()) {
             altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
-        }else{
+        } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
     }

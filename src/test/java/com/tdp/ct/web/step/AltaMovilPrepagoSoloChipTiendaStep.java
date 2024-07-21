@@ -31,10 +31,6 @@ public class AltaMovilPrepagoSoloChipTiendaStep {
         page.altaMovilPrepagoSoloChipTiendaPage().seleccionarOferta();
     }
 
-    @ScreenShotAfter
-    public void clickIniciarRegistro() {
-        page.altaMovilPrepagoSoloChipTiendaPage().entrarIniciarRegistro();
-    }
 
     @ScreenShotAfter
     public void clickIrMovilNuevo() {

@@ -3,7 +3,6 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaFijaRetailStep;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,11 +23,6 @@ public class AltaFijaRetailStepDefinition {
     public void seleccionoElPlanHogar(String nombrePlan) {
         altaFijaRetailStep.irSeleccionarPlan(nombrePlan);
         altaFijaRetailStep.clickIrLineaNueva();
-    }
-
-    @E("inicio su registro")
-    public void inicioSuRegistro() {
-        altaFijaRetailStep.irIniciarRegistro();
     }
 
     @Y("completo los datos solicitados")

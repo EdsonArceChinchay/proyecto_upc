@@ -1,7 +1,6 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
-import com.tdp.ct.web.page.Caeq.CambioDeEquipoConCambioDeSimPage;
 import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
 import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
@@ -27,10 +26,6 @@ public class StepPages {
 
     public AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage() {
         return new AltaMovilPostpagoCallCenterPage();
-    }
-
-    public AltaMovilComboProactivoPage altaMovilComboProactivoPage() {
-        return new AltaMovilComboProactivoPage();
     }
 
     public AltaFijaRetailPage altaFijaRetailPage() {
@@ -81,10 +76,6 @@ public class StepPages {
         return new CaeqPorRetailPage();
     }
 
-    public CambioDeEquipoConCambioDeSimPage cambioDeEquipoConCambioDeSimPage() {
-        return new CambioDeEquipoConCambioDeSimPage();
-    }
-
     public MigraSalto0RetailPage migraSalto0RetailPage() {
         return new MigraSalto0RetailPage();
     }
@@ -125,10 +116,16 @@ public class StepPages {
         return new AddressPage();
     }
 
-    public DeliveryPage deliveryPage(){return new DeliveryPage();}
+    public DeliveryPage deliveryPage() {
+        return new DeliveryPage();
+    }
 
     public OfferSVAPage offerSVAPage() {
         return new OfferSVAPage();
+    }
+
+    public SummaryPage summaryPage() {
+        return new SummaryPage();
     }
 
     public AppointmentPage appointmentPage() {

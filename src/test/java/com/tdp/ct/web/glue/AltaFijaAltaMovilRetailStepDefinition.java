@@ -1,12 +1,8 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.es.Cuando;
-import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -66,7 +66,7 @@ public class HomePage extends WebBase {
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
         click(documentoList);
-        String valueTipoDocumento = "";
+        String valueTipoDocumento;
         SearchContext context = sh().getContext(documentoList);
         switch (type) {
             case "CE":
@@ -138,10 +138,9 @@ public class HomePage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "El cliente SI tiene servicios contratados");
             js().scrollElementTop(find().getElementByXPath("//app-card-line"));
             UtilWeb.waitForSeconds(1);
-        } else {
-            Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
-
         }
+        Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
+
     }
 
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
@@ -154,11 +153,11 @@ public class HomePage extends WebBase {
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
         UtilWeb.waitForSeconds(1);
-        for (int i = 0; i < listaDoc.size(); i++) {
-            nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
+        for (WebElement element : listaDoc) {
+            nombretipoDoc = element.getText().trim().toLowerCase();
             if (nombretipoDoc.contains(tipoDocEsperado)) {
                 existe = true;
-                listaDoc.get(i).click();
+                element.click();
             }
             System.out.println(nombretipoDoc + "nombre documento");
         }

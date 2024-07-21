@@ -14,6 +14,7 @@ public class ParkStep {
     public void selecciono_la_cartilla_del_plan_Activo() {
         page.parkPage().selecciono_la_cartilla_del_plan_Activo();
     }
+
     @ScreenShotAfter
     public void btnHogar() {
         page.parkPage().altaHogar();
@@ -61,6 +62,7 @@ public class ParkStep {
     public void seleccionoCartillaMovistarTotal() {
         page.parkPage().seleccionoCartillaMovistarTotal();
     }
+
     public void esperarBtnCardPlanActual() {
         page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnCardPlanActual();
     }
@@ -71,7 +73,7 @@ public class ParkStep {
     }
 
     @ScreenShotAfter
-    public void clickBtnRenovarPlan(){
+    public void clickBtnRenovarPlan() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
     }
 
@@ -79,22 +81,27 @@ public class ParkStep {
     public void seleccionoBotonVerDetalle() {
         page.parkPage().seleccionoBotonVerDetalle();
     }
+
     @ScreenShotBefore
     public void clickBotonActualizarRuc() {
         page.parkPage().clickBotonActualizarRuc();
     }
+
     @ScreenShotAfter
     public void ingresoRuc(String ruc) {
         page.parkPage().ingresoRuc(ruc);
     }
+
     @ScreenShotBefore
     public void clickBotonActualizar() {
         page.parkPage().clickBotonActualizar();
     }
+
     @ScreenShotAfter
     public void validoMensajeActualizacionCorrecta() {
         page.parkPage().validoMesajeActualizacionCorrecta();
     }
+
     @ScreenShotBefore
     public void clickBotonEntendido() {
         page.parkPage().clickBotonEntendido();
@@ -113,6 +120,7 @@ public class ParkStep {
     public void seleccionoElPlanQueDesea(String planMovil) {
         page.parkPage().clickPlanMovil(planMovil);
     }
+
     @ScreenShotAfter
     public void doyClickEnBotonSiguiente() {
         page.parkPage().clickEnBotonSiguiente();
@@ -127,14 +135,20 @@ public class ParkStep {
     public void btnConfirmarDireccion() {
         page.parkPage().btnConfirmarDireccion();
     }
+
     @ScreenShotAfter
     public void clickMonoYDuo(String mono, String duo) {
-        page.parkPage().clickMonoYDuo(mono,duo);
+        page.parkPage().clickMonoYDuo(mono, duo);
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void botonContinuar() {
         page.parkPage().clickBotonContinuar();
     }
 
+    @ScreenShotBefore
+    public void clickBtnVerDetalle(String nroServicio) {
+        page.parkPage().clickBtnVerDetalle(nroServicio);
+    }
 }

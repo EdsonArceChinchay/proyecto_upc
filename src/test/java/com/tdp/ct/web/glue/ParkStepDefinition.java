@@ -135,4 +135,8 @@ public class ParkStepDefinition {
         parkStep.botonContinuar();
     }
 
+    @Y("doy click en el boton Ver detalle del servicio {string}")
+    public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
+        parkStep.clickBtnVerDetalle(nroServicio);
+    }
 }

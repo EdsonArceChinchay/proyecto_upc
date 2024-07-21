@@ -403,4 +403,15 @@ public class ParkPage extends WebBase {
             }
         } while (status);
     }
+
+
+    public void clickBtnVerDetalle(String nroServicio) {
+        UtilWeb.waitForSeconds(5);
+        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
+        esperaProgresiva(driver(), 5, 5, btnVerDetalle);
+        js().scrollElementTop(btnVerDetalle);
+        btnVerDetalle.click();
+        revisarModalError(driver());
+
+    }
 }

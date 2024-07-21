@@ -4,10 +4,7 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 import java.util.logging.Level;
 

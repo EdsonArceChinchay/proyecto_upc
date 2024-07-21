@@ -159,10 +159,10 @@ public class AltaFijaTiendaPage extends WebBase {
     public void seleccionarOferta() {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Seleccionar Oferta");
         revisarModalError(driver());
-        for (int i = 0; i < listBtnSeleccionarOferta.size(); i++) {
-            if (listBtnSeleccionarOferta.get(i).isEnabled()) {
-                js().scrollElementTop(listBtnSeleccionarOferta.get(i));
-                listBtnSeleccionarOferta.get(i).click();
+        for (WebElement element : listBtnSeleccionarOferta) {
+            if (element.isEnabled()) {
+                js().scrollElementTop(element);
+                element.click();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Click boton Seleccionar Oferta");
             }
         }
@@ -202,7 +202,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void cambiarPestanaPrincipal() {
         revisarModalError(driver());
-        tabs = new ArrayList<String>(driver().getWindowHandles());
+        tabs = new ArrayList<>(driver().getWindowHandles());
         driver().switchTo().window(tabs.get(0));
         UtilWeb.waitForSeconds(1);
     }

@@ -22,21 +22,6 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
         altaValidacionPrecioDescuentoStep.comprueboCliente(nombre, Apellido);
     }
 
-    @Y("selecciono el departamento donde se instalara {string}")
-    public void ingresoDepartamento(String deparmaneto) {
-        altaValidacionPrecioDescuentoStep.ingresoDepartamento(deparmaneto);
-    }
-
-    @Y("selecciono la provincia donde se instalara {string}")
-    public void ingresoProvincia(String provincia) {
-        altaValidacionPrecioDescuentoStep.ingresoProvincia(provincia);
-    }
-
-    @Y("selecciono el distrito donde se instalara {string}")
-    public void ingresoDistrito(String distrito) {
-        altaValidacionPrecioDescuentoStep.ingresoDistrito(distrito);
-    }
-
     @Y("Valido que el beneficio sea {string}")
     public void validacionBeneficioPlan(String beneficioPlan) {
         if (!Objects.equals(beneficioPlan, "null")) {

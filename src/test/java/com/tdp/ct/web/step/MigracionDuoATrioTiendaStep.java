@@ -37,7 +37,7 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().clickButton(nameButton);
     }
 
-    public void seleccionarboton(){
+    public void seleccionarboton() {
         page.migracionDuoATrioTiendaPage().seleccionarboton();
     }
 }

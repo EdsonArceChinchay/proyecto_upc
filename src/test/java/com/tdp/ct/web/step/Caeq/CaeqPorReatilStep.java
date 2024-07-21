@@ -1,6 +1,7 @@
 package com.tdp.ct.web.step.Caeq;
 
 import com.tdp.ct.web.page.StepPages;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import org.json.JSONException;
@@ -45,5 +46,29 @@ public class CaeqPorReatilStep {
 
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> salesLead) {
         page.caeqPorRetailPage().validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, salesLead);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void SeleccionarBotonCambiarChip() {
+        page.caeqPorRetailPage().SeleccionarBotonCambiarChip();
+    }
+
+    @ScreenShotAfter
+    public void seleccionoTipoPagoAlContado() {
+        page.caeqPorRetailPage().seleccionoTipoPagoAlContado();
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void seleccionoelbotonCambiodeChip() {
+        page.caeqPorRetailPage().seleccionoelbotonCambiodeChip();
+
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void cierroPopUpDeClienteExonerado(){
+        page.caeqPorRetailPage().cierroPopUpDeClienteExonerado();
     }
 }

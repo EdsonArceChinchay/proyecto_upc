@@ -62,11 +62,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle();
     }
 
-    @ScreenShotBefore
-    public void clickBtnVerDetalle(String nroServicio) {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle(nroServicio);
-    }
-
     public void validarFeatures() {
         page.caplConCaeqAlContadoCanalTiendaPage().validarFeatures();
     }
@@ -86,6 +81,5 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     public void writeEmail(String email) {
         page.caplConCaeqAlContadoCanalTiendaPage().writeEmail(email);
     }
-
 
 }

@@ -22,25 +22,6 @@ public class AltaValidacionPrecioDescuentoStep {
     @ScreenShotAfter
     public void validacionClienteNuevo(String nombre, String apellidos, String genero) {
         page.altaValidacionPrecioDescuentoPage().validacionClienteNuevo(nombre, apellidos, genero);
-
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void ingresoDepartamento(String departamento) {
-        page.altaValidacionPrecioDescuentoPage().ingresoDepartamento(departamento);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void ingresoProvincia(String provincia) {
-        page.altaValidacionPrecioDescuentoPage().ingresoProvincia(provincia);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void ingresoDistrito(String distrito) {
-        page.altaValidacionPrecioDescuentoPage().ingresoDistrito(distrito);
     }
 
     @ScreenShotAfter

@@ -68,8 +68,7 @@ public class ServiceTest {
     public String readerJson(String path) {
         String jsonFile = System.getProperty("user.dir") + "/src/test/resources" + path;
         File file = new File(jsonFile);
-        String body = "";
-        FileInputStream fis = null;
+        FileInputStream fis;
         try {
             fis = new FileInputStream(file);
             byte[] data = new byte[(int) file.length()];
