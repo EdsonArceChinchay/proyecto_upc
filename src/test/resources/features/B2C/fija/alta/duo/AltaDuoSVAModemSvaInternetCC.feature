@@ -56,7 +56,7 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
     Y       agrego SVA internet "<svaInternet>"
     Y        agrego SVA modem "Modem Premium MTA"
     Y        doy click en el boton Guardar cambios
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

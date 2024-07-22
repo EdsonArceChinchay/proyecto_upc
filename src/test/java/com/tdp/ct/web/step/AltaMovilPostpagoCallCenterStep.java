@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class AltaMovilPostpagoCallCenterStep {
 
     @Autowired
-    private  StepPages page;
+    private StepPages page;
 
     @ScreenShotBefore
     public void BtonOpciones() {
@@ -20,27 +20,18 @@ public class AltaMovilPostpagoCallCenterStep {
     }
 
     @ScreenShotBefore
-    public  void seleccionarPlan(String tipoPlan) {
-        page.altaMovilPostpagoCallCenterPage().seleccionarPlan(tipoPlan);
-
-    }
-
-    @ScreenShotBefore
-    public  void seleccionarEquipo() {
+    public void seleccionarEquipo() {
         page.altaMovilPostpagoCallCenterPage().seleccionarEquipo();
     }
 
-    public  void selectPermanency(String timePermanecy) {
-        page.altaMovilPostpagoCallCenterPage().selectPermanency(timePermanecy);
+    @ScreenShotBefore
+    public void seleccionarPlan(String tipoPlan) {
+        page.altaMovilPostpagoCallCenterPage().seleccionarPlan(tipoPlan);
     }
 
+    @ScreenShotBefore
     @ScreenShotAfter
-    public  void BuscarEquipo(String buscarE) {
-        page.altaMovilPostpagoCallCenterPage().BuscarEquipo(buscarE);
-    }
-
-    @ScreenShotBefore @ScreenShotAfter
-    public  void seleccionoElPlanMovil(String tipoPlan) {
+    public void seleccionoElPlanMovil(String tipoPlan) {
         page.altaMovilPostpagoCallCenterPage().seleccionoElPlanMovil(tipoPlan);
     }
 
@@ -48,28 +39,17 @@ public class AltaMovilPostpagoCallCenterStep {
     public void seleccionoLaCartillaLineaNueva() {
         page.altaMovilPostpagoCallCenterPage().seleccionoLaCartillaLineaNueva();
     }
+
     @ScreenShotBefore
     public void doyClickEnElBotonSeleccionarOferta() {
         page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionarOferta();
-    }
-    @ScreenShotBefore
-    public void doyClickEnElBotonSeleccionar() {
-        page.altaMovilPostpagoCallCenterPage().doyClickEnElBotonSeleccionar();
-    }
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void doyClickEnIniciarRegistro(){
-        page.altaMovilPostpagoCallCenterPage().doyClickEnIniciarRegistro();
     }
 
     @ScreenShotAfter
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
-    @ScreenShotBefore
-    public void ingresoElTipoDePago(String pago) {
-        page.altaMovilPostpagoCallCenterPage().selectTypeOfPayment(pago);
-    }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
@@ -78,28 +58,14 @@ public class AltaMovilPostpagoCallCenterStep {
 
     @ScreenShotAfter
     public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-            String fechaNac= UtilWeb.getValueFromDataTable(datosCliente,"fechaNac");
-            String estadoCivil=UtilWeb.getValueFromDataTable(datosCliente,"estadoCivil");
-            String nacionalidad=UtilWeb.getValueFromDataTable(datosCliente,"nacionalidad");
+        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
+        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
+        String nacionalidad = UtilWeb.getValueFromDataTable(datosCliente, "nacionalidad");
 
-            page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
-            page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
-            page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
+        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
+        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
+        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
     }
 
-    @ScreenShotAfter
-    public void ValidoQuePresenteDetallePedido() {
-        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido();
-    }
-
-    @ScreenShotAfter
-    public void ValidoQuePresenteDetallePedido(String service) {
-        page.altaMovilPostpagoCallCenterPage().ValidoQuePresenteDetallePedido(service);
-    }
-
-    public void doyClickenVerDetalleDelPedido() {
-        page.altaMovilPostpagoCallCenterPage().clickenVerDetalleDelPedido();
-
-    }
 }
 

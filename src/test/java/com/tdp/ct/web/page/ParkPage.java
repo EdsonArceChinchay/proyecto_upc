@@ -75,6 +75,9 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
 
+    @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
+    protected WebElement labelSelectService;
+
 
     public void altaHogar() {
         UtilWeb.waitForSeconds(10);
@@ -413,5 +416,14 @@ public class ParkPage extends WebBase {
         btnVerDetalle.click();
         revisarModalError(driver());
 
+    }
+
+    public void selectLineWithNumber(String number) {
+        js().scrollElementTop(labelSelectService);
+        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'"+number+"')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
+        esperaProgresiva(driver(),3,5,numberLine);
+        js().scrollElementTop(numberLine);
+        numberLine.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line "+number);
     }
 }

@@ -44,7 +44,7 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        cierro pop up de CU
     Y        doy click en el boton "Mantener Plan"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil

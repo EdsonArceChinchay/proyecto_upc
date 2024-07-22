@@ -49,7 +49,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

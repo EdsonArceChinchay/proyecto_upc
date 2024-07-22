@@ -35,7 +35,7 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Cuando   doy click en el boton Ver detalle del servicio "650027636"
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar

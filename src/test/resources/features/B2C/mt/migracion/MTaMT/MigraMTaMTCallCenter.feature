@@ -40,7 +40,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -52,7 +52,12 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office

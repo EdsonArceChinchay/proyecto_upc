@@ -47,7 +47,7 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso email "prueba_qa@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

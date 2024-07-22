@@ -45,7 +45,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto

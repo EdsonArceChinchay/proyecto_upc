@@ -42,7 +42,7 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        valido que los precio de plan hogar y plan mensual sean los mismos
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

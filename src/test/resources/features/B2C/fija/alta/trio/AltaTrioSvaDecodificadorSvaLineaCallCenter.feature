@@ -56,7 +56,7 @@ Característica: Alta Trio con sva Decodificador + sva linea Canal Call Center
     Y        agrego SVA linea "<svaLinea>"
     Y        agrego SVA decodificador "<decodificador>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

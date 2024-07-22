@@ -43,7 +43,7 @@ Característica: Migracion de MT a MT en Tienda
     Y        selecciono el primer tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     #Y        luego doy click en la cartilla ir a Movistar Total
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -59,8 +59,11 @@ Característica: Migracion de MT a MT en Tienda
     Y        doy clic para descargar el contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
-
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | sva MT                | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | nombrePlan                                     |
       | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464680 | PACK ANTIVIRUS MCAFEE | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |

@@ -48,7 +48,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente

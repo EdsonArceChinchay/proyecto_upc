@@ -38,11 +38,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaAltaMovilCallCenterStep.clickIrAMovistarTotal();
     }
 
-    @Y("doy clic nuevamente en confirmar")
-    public void doy_clic_nuevamente_en_confirmar() {
-        altaFijaAltaMovilCallCenterStep.clickBtnConfirmar2();
-    }
-
 
     @Y("selecciono el metodo de pago {string}")
     public void selecciono_el_metodo_de_pago(String metodoPago) {
@@ -57,11 +52,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     @Y("ingreso nuevamente el correo electronico {string}")
     public void ingreso_nuevamente_el_correo_electronico(String correo) {
         altaFijaAltaMovilCallCenterStep.ingresarCorreoNuevamente(correo);
-    }
-
-    @Y("doy clic en finalizar registro")
-    public void doy_clic_en_finalizar_registro() {
-        altaFijaAltaMovilCallCenterStep.clickBtnFinalizarRegistro();
     }
 
     @Y("selecciono el plan {string} Movistar Total")

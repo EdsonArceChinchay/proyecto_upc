@@ -116,6 +116,10 @@ public class StepPages {
         return new AddressPage();
     }
 
+    public DevicesPage devicesPage() {
+        return new DevicesPage();
+    }
+
     public DeliveryPage deliveryPage() {
         return new DeliveryPage();
     }
@@ -130,6 +134,10 @@ public class StepPages {
 
     public AppointmentPage appointmentPage() {
         return new AppointmentPage();
+    }
+
+    public CheckoutPage checkoutPage() {
+        return new CheckoutPage();
     }
 
     public BandejaBackOfficePage bandejaBackOfficePage() {

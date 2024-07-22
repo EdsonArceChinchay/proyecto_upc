@@ -35,7 +35,7 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Pre
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "RV Plan Ilimitado Mi Movistar S/99.9 V"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

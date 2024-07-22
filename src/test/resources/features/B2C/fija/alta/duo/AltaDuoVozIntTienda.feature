@@ -48,7 +48,7 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento

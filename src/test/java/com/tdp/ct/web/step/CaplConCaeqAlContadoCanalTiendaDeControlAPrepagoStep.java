@@ -35,42 +35,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnAddEquipoInCard();
     }
 
-    @ScreenShotAfter
-    public void selectPermanency(String timePermanency) {
-        page.altaMovilPostpagoCallCenterPage().selectPermanency(timePermanency);
-    }
-    @ScreenShotAfter
-    public void selectTypeOfPayment(String typePayment) {
-        page.altaMovilPostpagoCallCenterPage().selectTypeOfPayment(typePayment);
-    }
-
-    @ScreenShotAfter
-    public void writeModeloEquipo(String modelo) {
-        page.altaMovilPostpagoCallCenterPage().BuscarEquipo(modelo);
-    }
-
-    @ScreenShotAfter
-    public int contadorResultadosBusquedaEquipos(){
-        return page.caplConCaeqAlContadoCanalTiendaPage().contadorResultadosBusquedaEquipos();
-    }
-    public void scrollToVerBtnDetalles() {
-        page.caplConCaeqAlContadoCanalTiendaPage().scrollToVerBtnDetalles();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnVerDetalle() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle();
-    }
-
-    public void validarFeatures() {
-        page.caplConCaeqAlContadoCanalTiendaPage().validarFeatures();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnSelectEquipo() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnSelectEquipo();
-    }
-
     @ScreenShotBefore
     public void clickBtnConShadowIniciarRegistro() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnConShadowIniciarRegistro();

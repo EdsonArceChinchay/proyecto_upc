@@ -44,7 +44,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

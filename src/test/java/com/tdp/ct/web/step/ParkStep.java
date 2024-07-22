@@ -151,4 +151,9 @@ public class ParkStep {
     public void clickBtnVerDetalle(String nroServicio) {
         page.parkPage().clickBtnVerDetalle(nroServicio);
     }
+
+    @ScreenShotAfter
+    public void selectLineWithNumber(String number) {
+        page.parkPage().selectLineWithNumber(number);
+    }
 }

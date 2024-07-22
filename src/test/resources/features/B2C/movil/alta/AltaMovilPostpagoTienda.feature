@@ -47,7 +47,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "estelalopez@mail.com"
     Y        ingreso nuevamente el correo electronico "estelalopez@mail.com"

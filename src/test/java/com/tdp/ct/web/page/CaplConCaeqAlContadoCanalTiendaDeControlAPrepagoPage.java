@@ -30,9 +30,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(css = ".tdp-col-md-6:nth-child(1) .add_Product")
     protected WebElement btnAddEquipoInCard;
 
-    @FindBy(css = ".col-2 ._info")
-    protected WebElement caracteristicasContent;
-
     @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
     protected WebElement btnConShadowIniciarRegistro;
 
@@ -80,75 +77,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     public void clickBtnAddEquipoInCard() {
         click(btnAddEquipoInCard);
         UtilWeb.waitForSeconds(5);
-    }
-
-    public int contadorResultadosBusquedaEquipos(){
-        List<WebElement> elementos;
-        int contador = 0;
-        try{
-            UtilWeb.waitForSeconds(5);
-            elementos = driver().findElements(By.className("_item-device"));
-            contador = elementos.size();
-            System.out.println("Cantidad de Equipos: " + contador);
-        }catch(Exception e){
-            System.out.println("NO HAY EQUIPOS EN LA BUSQUEDA");
-        }
-        return contador;
-    }
-
-    public void scrollToVerBtnDetalles() {
-        js().scrollElementTop(find().getElementByCss(".button-offer:nth-child(1)"));
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void clickBtnVerDetalle() {
-        String btnVerOfertas = ".btn-detail tdp-st-button;button";
-        WebElement element = js().getWebElement(btnVerOfertas);
-        element.click();
-    }
-
-    public void validarFeatures() {
-        Assertions.assertFalse(caracteristicasContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void clickBtnSelectEquipo() {
-        //pendiente revisar
-        String btnSelect = ".cont-btn tdp-st-button";
-        System.out.println("clickBtnSelectEquipo 0");
-        js().scrollElementTop(driver().findElement(By.cssSelector(btnSelect)));
-        WebElement element = js().getWebElement(btnSelect);
-        element.click();
-        //revisarModalError(driver());
-        /*if (driver().findElements(By.xpath("//button[contains(text(),' CONTINUAR')]")).size() > 0) {
-            btnContinuarCU.click();
-        }else{
-            System.out.println("No se encontro mensaje de cliente sin CU");
-        }*/
-
-       /*
-        System.out.println("clickBtnSelectEquipo 0.5");
-        System.out.println("data: " + element.getText());
-        System.out.println("clickBtnSelectEquipo 1");
-
-        try {
-            Thread.sleep(50000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        List<WebElement> elements = js().getWebElements(btnSelect);
-        System.out.println("clickBtnSelectEquipo 2");
-        for (WebElement elemento: elements) {
-            try{
-                System.out.println("TagName: " + elemento.getTagName());
-                System.out.println("Text: " + elemento.getText());
-                elemento.click();
-            }catch(Exception e){
-                System.out.println("error: " + e.getStackTrace());
-            }
-        }
-        System.out.println("clickBtnSelectEquipo OK");*/
-        revisarModalError(driver());
     }
 
     public void clickBtnConShadowIniciarRegistro() {

@@ -52,7 +52,7 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Cuando   doy click en el boton Agregar SVA
     Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "Seguridad Total Residencial"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar

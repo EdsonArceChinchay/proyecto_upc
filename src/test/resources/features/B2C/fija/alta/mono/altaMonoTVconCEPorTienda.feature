@@ -47,7 +47,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        selecciono el tipo de plan fija "Mono"
     Y        selecciono el plan "TV HOGAR DIGITAL"
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton confirmar agendamiento

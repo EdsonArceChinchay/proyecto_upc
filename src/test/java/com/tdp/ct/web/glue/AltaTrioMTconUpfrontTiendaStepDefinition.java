@@ -23,10 +23,7 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonIrMovistarTotal();
     }
 
-    @Y("presiono el boton iniciar registro")
-    public void presionoElBotonIniciarRegistro() {
-        altaTrioMTconUpfrontTiendaStep.clickBotonIniciarRegistro();
-    }
+
 
     @Y("ingreso telefono del contacto {string}")
     public void ingresoTelefonoDelContacto(String numContacto) {
@@ -45,16 +42,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     @Y("voy hasta el final de la pagina")
     public void voyHastaElFinalDeLaPagina() {
         altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
-    }
-
-    @Y("valido detalles de instalacion")
-    public void validoDetallesDeInstalacion() {
-        altaTrioMTconUpfrontTiendaStep.validoDetalleDeInstalacion();
-    }
-
-    @Y("confirmo el registro de instalacion")
-    public void confirmoElRegistroDeInstalacion() {
-        altaTrioMTconUpfrontTiendaStep.clickBtnConfirmarElRegistro();
     }
 
     @Y("ingreso el correo electronico {string}")
@@ -85,11 +72,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     @Y("ingreso el numero de documento del supervisor {string}")
     public void ingresoElNumeroDeDocumentoDelSupervisor(String documentoSuperv) {
         altaTrioMTconUpfrontTiendaStep.ingresoNumeroDocumentoSuper(documentoSuperv);
-    }
-
-    @Y("presiono el boton confirmar")
-    public void presionoElBotonConfirmar() {
-        altaTrioMTconUpfrontTiendaStep.presionoBotonConfirmar();
     }
 
     @Y("ingreso usuario citrix de supervisor {string}")

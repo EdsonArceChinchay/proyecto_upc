@@ -57,7 +57,7 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     Y        agrego SVA bloque "<bloque1>"
     Y        agrego SVA bloque "<bloque2>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

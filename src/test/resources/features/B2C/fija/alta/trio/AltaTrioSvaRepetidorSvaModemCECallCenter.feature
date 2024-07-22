@@ -56,7 +56,7 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        agrego SVA modem "Mejora a Modem Premium MTA"
     Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

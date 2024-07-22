@@ -49,7 +49,7 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"

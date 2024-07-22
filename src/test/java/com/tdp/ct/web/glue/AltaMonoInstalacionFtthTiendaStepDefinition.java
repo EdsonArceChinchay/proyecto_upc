@@ -63,11 +63,6 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaMonoHfcTiendaStep.validarDetallePlan();
     }
 
-    @Y("presiono el boton Iniciar Registro")
-    public void presionoElBotonIniciarRegistro() {
-        altaMonoHfcTiendaStep.moverToElementIniciarRegistro();
-        altaTrioMTconUpfrontTiendaStep.clickBotonIniciarRegistro();
-    }
 
     @Y("ingreso email {string} y lo repito")
     public void ingresoEmailYLoRepito(String correo) {

@@ -60,7 +60,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
   #  Y        agrego SVA bloque "<bloque>"
   #  Y        doy click en el boton Guardar cambios
 	#Y        agrego SVA internet "<svaInternet>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -137,7 +137,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
     Y        valido el precio establecido sea "<precio>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

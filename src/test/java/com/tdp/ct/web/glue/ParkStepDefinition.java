@@ -139,4 +139,9 @@ public class ParkStepDefinition {
     public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
         parkStep.clickBtnVerDetalle(nroServicio);
     }
+
+    @Y("selecciono la linea con numero {string}")
+    public void seleccionoLaLineaConNumero(String number) {
+        parkStep.selectLineWithNumber(number);
+    }
 }

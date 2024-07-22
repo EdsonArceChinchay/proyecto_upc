@@ -43,7 +43,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton Agregar SVA
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar

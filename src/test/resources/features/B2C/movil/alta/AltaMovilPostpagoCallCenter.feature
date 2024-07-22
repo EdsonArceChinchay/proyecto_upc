@@ -48,7 +48,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
     #Y        valido que este en el resumen de venta "<nombrePlan>"
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"

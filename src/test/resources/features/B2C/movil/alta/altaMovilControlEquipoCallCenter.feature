@@ -49,7 +49,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"

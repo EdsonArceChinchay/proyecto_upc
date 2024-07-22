@@ -56,7 +56,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

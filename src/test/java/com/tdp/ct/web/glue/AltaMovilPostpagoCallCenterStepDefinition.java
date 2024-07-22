@@ -2,7 +2,6 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.AltaMovilPostpagoCallCenterStep;
 import io.cucumber.datatable.DataTable;
@@ -35,16 +34,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
         altaMovilPostpagoCallCenterStep.seleccionarEquipo();
     }
 
-    @Y("ingreso el tiempo de permanencia{string}")
-    public void ingresoElTiempoDePermanencia(String TiempoP) {
-        altaMovilPostpagoCallCenterStep.selectPermanency(TiempoP);
-    }
-
-    @Y("busco el equipo {string}")
-    public void seleccionoElEquipo(String BuscarE) {
-        altaMovilPostpagoCallCenterStep.BuscarEquipo(BuscarE);
-    }
-
     @Y("selecciono el boton de eleccion de planes")
     public void seleccionoElBotonDeEleccionDePlanes() {
         altaMovilPostpagoCallCenterStep.BtonOpciones();
@@ -65,24 +54,9 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
         altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionarOferta();
     }
 
-    @Y("doy click en el boton seleccionar")
-    public void doyClickEnElBotonSeleccionar() {
-        altaMovilPostpagoCallCenterStep.doyClickEnElBotonSeleccionar();
-    }
-
-    @Y("doy click en iniciar registro")
-    public void doyClickEnIniciarRegistro() {
-        altaMovilPostpagoCallCenterStep.doyClickEnIniciarRegistro();
-    }
-
     @Entonces("me muestra la pantalla de Delivery de linea nueva")
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         altaMovilPostpagoCallCenterStep.meMuestraLaPantallaDeDeliveryDeLineaNueva();
-    }
-
-    @Y("ingreso el tipo de pago {string}")
-    public void ingresoElTipoDePago(String Pago) {
-        altaMovilPostpagoCallCenterStep.ingresoElTipoDePago(Pago);
     }
 
     @Y("selecciono el tipo de entrega de delivery {string}")
@@ -99,18 +73,4 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
         }
     }
 
-    @Y("valido que se muestre el detalle del pedido")
-    public void validoQueSeMuestreElDetalleDelPedido() {
-        altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido();
-    }
-
-    @Y("doy click en ver detalle del pedido")
-    public void doyClickenVerDetalleDelPedido() {
-        altaMovilPostpagoCallCenterStep.doyClickenVerDetalleDelPedido();
-    }
-
-    @Y("valido que se muestre el detalle del pedido de {string}")
-    public void validoQueSeMuestreElDetalleDelPedido(String service) {
-        altaMovilPostpagoCallCenterStep.ValidoQuePresenteDetallePedido(service);
-    }
 }

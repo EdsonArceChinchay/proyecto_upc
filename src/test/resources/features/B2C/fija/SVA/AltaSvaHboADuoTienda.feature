@@ -48,7 +48,7 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar

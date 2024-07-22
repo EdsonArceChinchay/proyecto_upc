@@ -3,7 +3,6 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import io.cucumber.datatable.DataTable;
@@ -12,7 +11,6 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class AltaFijaMovilRegistroStepDefinition {
@@ -57,12 +55,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.seleccionarPlan(plan);
         altaFijaMovilRegistroStep.clicBotonSeleccionarOferta();
         altaFijaMovilRegistroStep.clicIrAMovistarTotal();
-    }
-
-    @Cuando("doy clic a iniciar registro")
-    public void doyClicAIniciarRegistro() {
-        altaFijaMovilRegistroStep.moverToElementIniciarRegistro();
-        altaFijaMovilRegistroStep.clicIniciarRegistro();
     }
 
     @Entonces("me muestra el detalle de la instalacion")
@@ -171,7 +163,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Y("doy clic para descargar el contrato")
-    public void doyClicParaDescargarElContrato() throws InterruptedException {
+    public void doyClicParaDescargarElContrato() {
         if (Parameters.estadoFlujo) {
             altaFijaMovilRegistroStep.clicDescargarContrato();
         }
@@ -183,7 +175,7 @@ public class AltaFijaMovilRegistroStepDefinition {
     }
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
-    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() throws JSONException {
+    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         altaFijaMovilRegistroStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
         this.scenario.log(this.customer.getOrdersCode().toString());

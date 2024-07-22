@@ -45,7 +45,7 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que se presente el detalle de el plan
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso email "tester_qa@gmail.com" y lo confirmo
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

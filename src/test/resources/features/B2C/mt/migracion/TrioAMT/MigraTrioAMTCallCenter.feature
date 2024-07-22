@@ -42,7 +42,7 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
 #    Y        selecciono plan Movistar Total para ver las ofertas
 #    Y        selecciono un plan y doy click en el boton seleccionar oferta
     Y        luego doy click en la cartilla ir a Movistar Total
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento
     #Y        presiono el boton confirmar agendamiento

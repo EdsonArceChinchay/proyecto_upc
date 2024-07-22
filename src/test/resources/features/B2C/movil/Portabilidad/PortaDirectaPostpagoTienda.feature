@@ -53,7 +53,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"

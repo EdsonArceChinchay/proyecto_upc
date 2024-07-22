@@ -62,7 +62,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
   #  Y        agrego SVA bloque "<bloque>"
   #  Y        doy click en el boton Guardar cambios
 	#Y        agrego SVA internet "<svaInternet>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

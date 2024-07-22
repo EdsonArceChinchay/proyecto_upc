@@ -34,8 +34,5 @@ public class AltaFijaRetailStepDefinition {
         }
     }
 
-    @Y("selecciono la linea con numero {string}")
-    public void seleccionoLaLineaConNumero(String number) {
-        altaFijaRetailStep.selectLineWithNumber(number);
-    }
+
 }

@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 import java.util.logging.Level;
 
@@ -14,10 +15,6 @@ import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
-    @FindBy(xpath = "(//button[contains(text(),'Confirmar')])[2]")
-    protected WebElement btnConfirmar2;
-    @FindBy(xpath = "//app-register/body/div[2]/form/div[10]/button")
-    protected WebElement btnFinalizarRegistro;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[2]")
     protected WebElement oferta;
     @FindBy(xpath = "(//img[@src='assets/images/icon_glove.svg'])[1]")
@@ -98,19 +95,19 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-
-    public void btnConfirmar2() {
-        esperaProgresiva(driver(), 3, 5, btnConfirmar2);
-        click(btnConfirmar2, 5);
+    public void tipearCorreo(String correo) {
+        String getCorreo = "div form div:nth-child(4) tdp-st-input-text;input";
         UtilWeb.waitForSeconds(4);
-    }
+        WebElement correoElement = js().getWebElement(getCorreo);
+        click(correoElement);
+        correoElement.sendKeys(correo);
 
-    public void btnFinalizarRegistro() {
-        revisarModalError(driver());
-        waitUntilElementIsVisible(btnFinalizarRegistro, 30);
-        UtilWeb.waitForSeconds(120);
-        click(btnFinalizarRegistro, 10);
-        UtilWeb.waitForSeconds(2);
+        String inputCorreo2 = "div form div:nth-child(5) tdp-st-input-text;input";
+        WebElement correoElement2 = js().getWebElement(inputCorreo2);
+        click(correoElement2);
+        type(correoElement2, correo);
+
+        UtilWeb.waitForSeconds(3);
     }
 
     public void scrollDown() {
@@ -201,17 +198,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
         for (int i = 0; i < listaOfertas.size(); i++) {
 
-            String currentOffer =listaOfertas.get(i).getText().trim().toUpperCase();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
+            String currentOffer = listaOfertas.get(i).getText().trim().toUpperCase();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
             if (!encontroElemento && currentOffer.contains(expectedOffer)) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(1);
                 click(listaOfertas.get(i));
             }
 
             if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer );
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
 
                 scenario.printFullView();
                 js().scrollElementTop(buttonSeleccionarOferta);
@@ -235,13 +232,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
         UtilWeb.waitForSeconds(1);
     }
-    
+
     public void irAMovistarTotal() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
         btnIrAMovistar.click();
         UtilWeb.waitForSeconds(5);
     }
-
 
 }

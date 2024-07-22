@@ -35,7 +35,7 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85.9 VI"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
     Y        voy hasta el final de la pagina
     Y        doy clic para validar contrato Movil

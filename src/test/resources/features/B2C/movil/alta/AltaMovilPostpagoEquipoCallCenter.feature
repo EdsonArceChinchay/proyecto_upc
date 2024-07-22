@@ -55,7 +55,7 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"

@@ -16,18 +16,9 @@ public class AltaTrioMTconUpfrontTiendaStep {
     public void clickBotonLineaNueva(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonLineaNueva();
     }
-
-    @ScreenShotBefore
-    public void clickBotonConsultarCobertura(){
-        page.altaTrioMTconUpfrontTiendaPage().clickBotonConsultarCobertura();
-    }
     @ScreenShotBefore
     public void clickBotonIrMovistarTotal(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonIrMovistarTotal();
-    }
-    @ScreenShotBefore
-    public void clickBotonIniciarRegistro(){
-        page.altaTrioMTconUpfrontTiendaPage().clickBotonIniciarRegistro();
     }
     @ScreenShotAfter
     public void ingresoTelefonoContacto(String numContacto){
@@ -37,14 +28,7 @@ public class AltaTrioMTconUpfrontTiendaStep {
     public void clickBotonConfirmar(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonConfirmar();
     }
-    @ScreenShotAfter
-    public void validoDetalleDeInstalacion(){
-        page.altaTrioMTconUpfrontTiendaPage().validoDetalleDeInstalacion();
-    }
-    @ScreenShotBefore
-    public void clickBtnConfirmarElRegistro(){
-        page.altaTrioMTconUpfrontTiendaPage().clickBtnConfirmarElRegistro();
-    }
+
     @ScreenShotAfter
     public void ingresoCorreoElectronico(String correoElectronico){
         page.altaTrioMTconUpfrontTiendaPage().ingresoCorreoElectronico(correoElectronico);
@@ -69,10 +53,7 @@ public class AltaTrioMTconUpfrontTiendaStep {
     public void ingresoNumeroDocumentoSuper(String documentoSuper){
         page.altaTrioMTconUpfrontTiendaPage().ingresoNumeroDocumentoSuper(documentoSuper);
     }
-    @ScreenShotBefore
-    public void presionoBotonConfirmar(){
-        page.altaTrioMTconUpfrontTiendaPage().presionoBotonConfirmar();
-    }
+
     @ScreenShotAfter
     public void ingresoUsuarioSupervisor(String user){
         page.altaTrioMTconUpfrontTiendaPage().ingresoUsuarioSupervisor(user);

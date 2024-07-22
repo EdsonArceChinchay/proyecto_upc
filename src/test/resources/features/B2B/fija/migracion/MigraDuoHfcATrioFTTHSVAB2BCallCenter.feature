@@ -47,7 +47,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA linea "<sva>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento

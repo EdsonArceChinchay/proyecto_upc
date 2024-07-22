@@ -60,7 +60,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        doy click en el boton Guardar cambios
 	#Y        agrego SVA internet "<svaInternet>"
    # Y        valido el precio de descuento del componente TV "<precDescTV>"
-    E        inicio su registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

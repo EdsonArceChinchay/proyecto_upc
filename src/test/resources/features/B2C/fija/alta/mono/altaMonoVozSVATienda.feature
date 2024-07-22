@@ -51,7 +51,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA linea "Plan Multidestino 25"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento

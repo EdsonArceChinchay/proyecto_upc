@@ -30,14 +30,6 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().confirmarCorreo(correo);
     }
 
-    public void clickBtnConfirmar2() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmar2();
-    }
-
-    public void clickBtnFinalizarRegistro() {
-        page.altaFijaAltaMovilCallCenterPage().btnFinalizarRegistro();
-    }
-
     public void scrollUp() {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
     }

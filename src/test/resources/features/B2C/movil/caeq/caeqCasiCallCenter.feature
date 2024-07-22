@@ -42,7 +42,7 @@ Característica: Caeq Mas Casi por call center
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Mantener Plan"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"

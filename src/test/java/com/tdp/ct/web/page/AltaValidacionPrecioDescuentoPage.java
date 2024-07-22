@@ -15,8 +15,8 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.isVisible;
 
 public class AltaValidacionPrecioDescuentoPage extends WebBase {
-    AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
-    AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
+    final AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
+    final AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
 
     @FindBy(xpath = "//app-searchclient/div[@class='tdp-container clienteExtranjero']")
     protected WebElement regClienteNew;

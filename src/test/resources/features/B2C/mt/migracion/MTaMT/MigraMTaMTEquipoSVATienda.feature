@@ -49,7 +49,7 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        luego doy click en la cartilla ir a Movistar Total
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"

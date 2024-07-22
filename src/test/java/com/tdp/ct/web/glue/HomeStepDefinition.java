@@ -1,6 +1,5 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.HomeStep;
 import io.cucumber.java.es.Dado;
@@ -10,8 +9,6 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class HomeStepDefinition {
-    @Autowired
-    private WebDriverManager manager;
 
     @Autowired
     private HomeStep homeStep;
@@ -111,6 +108,5 @@ public class HomeStepDefinition {
     public void meDirijoALaBandejaDeBackOffice() {
         homeStep.clickBackOffice();
     }
-
 
 }

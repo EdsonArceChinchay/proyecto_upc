@@ -51,7 +51,7 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

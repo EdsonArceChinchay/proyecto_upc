@@ -67,7 +67,6 @@ public class JsonModifierDatosAgente {
                 break;
             }
         }
-        JSONObject jsonObject = new JSONObject(gson.toJson(data));
-        return jsonObject;
+        return new JSONObject(gson.toJson(data));
     }
 }

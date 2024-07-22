@@ -49,7 +49,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento

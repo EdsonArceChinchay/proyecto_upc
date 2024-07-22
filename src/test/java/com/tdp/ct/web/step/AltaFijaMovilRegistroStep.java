@@ -56,16 +56,6 @@ public class AltaFijaMovilRegistroStep {
     }
 
     @ScreenShotAfter
-    public void clicIniciarRegistro() {
-        page.altaFijaMovilRegistroPage().clicIniciarRegistro();
-    }
-
-    @ScreenShotAfter
-    public void moverToElementIniciarRegistro() {
-        page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
-    }
-
-    @ScreenShotAfter
     public void validarDetalleInstalacion() {
         Assert.assertTrue("No se mostro modal de detalle de instalacion",
                 page.altaFijaMovilRegistroPage().validarDetalleInstalacion());

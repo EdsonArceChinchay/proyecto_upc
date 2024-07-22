@@ -53,7 +53,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento

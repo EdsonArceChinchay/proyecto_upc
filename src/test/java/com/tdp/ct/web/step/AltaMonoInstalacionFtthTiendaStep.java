@@ -64,8 +64,4 @@ public class AltaMonoInstalacionFtthTiendaStep {
         page.altaMonoFtthTiendaPage().validarDetallePlan();
     }
 
-    public void moverToElementIniciarRegistro() {
-        page.altaFijaMovilRegistroPage().moverToElementIniciarRegistro();
-    }
-
 }

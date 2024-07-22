@@ -45,8 +45,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
-    protected WebElement buttonIniciarRegistro;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
     protected WebElement buttonValidarIdentidad;
     @FindBy(xpath = "(//button[contains(text(),'Discapacitado o huella desgastada') or contains(text(),'Validación no biométrica')])[1]")
@@ -189,22 +187,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         waitUntilElementIsVisible(botoneraIrA.get(1), 5).click();
         UtilWeb.waitForSeconds(1);
     }
-
-
-    public void moverToElementIniciarRegistro() {
-        esperaProgresiva(driver(), 3, 20, buttonIniciarRegistro);
-        js().scrollElementTop(buttonIniciarRegistro);
-    }
-
-    public void clicIniciarRegistro() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 6, buttonIniciarRegistro);
-        click(buttonIniciarRegistro);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
-        clickBtnCerrarModalError(buttonIniciarRegistro);
-        UtilWeb.waitForSeconds(5);
-    }
-
 
     public boolean validarDetalleInstalacion() {
         UtilWeb.waitForSeconds(1);
