@@ -14,8 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class AltaMovilPostpagoCallCenterStepDefinition {
 
     @Autowired
-    private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
-    @Autowired
     private AltaMovilPostpagoCallCenterStep altaMovilPostpagoCallCenterStep;
 
     @Autowired

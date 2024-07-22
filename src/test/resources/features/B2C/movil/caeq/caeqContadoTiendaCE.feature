@@ -35,7 +35,6 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
-    Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName               |
       | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |

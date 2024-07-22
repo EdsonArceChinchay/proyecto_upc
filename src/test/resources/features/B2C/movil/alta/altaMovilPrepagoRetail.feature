@@ -40,7 +40,7 @@ Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
     Y        doy click en el boton Siguiente
     Y        selecciono la oferta de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en datos del cliente

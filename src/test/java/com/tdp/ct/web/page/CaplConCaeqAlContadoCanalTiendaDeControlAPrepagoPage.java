@@ -30,10 +30,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     @FindBy(css = ".tdp-col-md-6:nth-child(1) .add_Product")
     protected WebElement btnAddEquipoInCard;
 
-    @FindBy(xpath = "//*[@class='btn-start']//tdp-st-button[@label='Iniciar Registro']")
-    protected WebElement btnConShadowIniciarRegistro;
-
-
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
@@ -77,12 +73,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
     public void clickBtnAddEquipoInCard() {
         click(btnAddEquipoInCard);
         UtilWeb.waitForSeconds(5);
-    }
-
-    public void clickBtnConShadowIniciarRegistro() {
-        UtilWeb.waitForSeconds(5);
-        waitUntilElementIsClickable(btnConShadowIniciarRegistro, 20);
-        click(btnConShadowIniciarRegistro);
     }
 
     public void writeEmail(String email) {

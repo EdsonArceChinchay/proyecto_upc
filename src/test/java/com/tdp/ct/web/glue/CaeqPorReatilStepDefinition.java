@@ -64,12 +64,6 @@ public class CaeqPorReatilStepDefinition {
     public void seleccionoBotonCambiarChip() {
         caeqPorReatilStep.SeleccionarBotonCambiarChip();
     }
-
-    @Y("selecciono tipo de pago Al Contado")
-    public void seleccionoTipoDePagoAlContado() {
-        caeqPorReatilStep.seleccionoTipoPagoAlContado();
-    }
-
     @Y("selecciono el boton Cambiar Chip")
     public void seleccionoelbotonCambiodeChip() {
         caeqPorReatilStep.seleccionoelbotonCambiodeChip();

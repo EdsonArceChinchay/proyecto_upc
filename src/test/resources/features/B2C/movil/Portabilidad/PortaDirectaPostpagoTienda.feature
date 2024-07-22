@@ -45,7 +45,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono añadir equipos
-    Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName               |
       | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |

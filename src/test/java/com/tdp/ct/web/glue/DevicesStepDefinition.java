@@ -55,4 +55,5 @@ public class DevicesStepDefinition {
         devicesStep.validateFeatures();
         devicesStep.clickButtonSelect();
     }
+
 }

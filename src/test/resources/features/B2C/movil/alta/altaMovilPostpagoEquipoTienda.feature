@@ -48,7 +48,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente

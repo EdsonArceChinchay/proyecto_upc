@@ -12,8 +12,8 @@ public class SumaryStep {
     private StepPages page;
 
     @ScreenShotBefore
-    public void clickButtonStartRegister(){
-        page.summaryPage().clickButtonStratRegister();
+    public void clickButtonStartRegister() {
+        page.summaryPage().clickButtonStartRegister();
     }
 
     @ScreenShotAfter
@@ -24,12 +24,5 @@ public class SumaryStep {
     public void moverToElementIniciarRegistro() {
         page.summaryPage().moverToElementIniciarRegistro();
     }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void doyClickEnIniciarRegistro(){
-        page.summaryPage().doyClickEnIniciarRegistro();
-    }
-
 
 }

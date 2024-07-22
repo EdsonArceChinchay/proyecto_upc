@@ -16,9 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AltaFijaMovilRegistroStepDefinition {
 
     @Autowired
-    private AltaFijaAltaMovilRetailStep altaFijaAltaMovilRetailStep;
-
-    @Autowired
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
@@ -55,11 +52,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.seleccionarPlan(plan);
         altaFijaMovilRegistroStep.clicBotonSeleccionarOferta();
         altaFijaMovilRegistroStep.clicIrAMovistarTotal();
-    }
-
-    @Entonces("me muestra el detalle de la instalacion")
-    public void meMuestraElDetalleDeLaInstalacion() {
-        altaFijaMovilRegistroStep.validarDetalleInstalacion();
     }
 
     @Y("doy clic en confirmar")
@@ -181,8 +173,4 @@ public class AltaFijaMovilRegistroStepDefinition {
         this.scenario.log(this.customer.getOrdersCode().toString());
     }
 
-    @Y("doy click en el boton confirmar validacion")
-    public void doyClickEnElBotonConfirmarValidacion() {
-        altaFijaMovilRegistroStep.clicConfirmarCliente();
-    }
 }

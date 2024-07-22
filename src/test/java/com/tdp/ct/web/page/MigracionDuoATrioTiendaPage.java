@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -16,12 +15,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
-
-    @FindBy(xpath = "//button[@class='btnSky btnsForms']")
-    protected WebElement lblSeleccionarOferta;
-
-    @FindBy(css = "div.footer_servicio > div > div > div:nth-child(2) > app-footer-item > div > div.tdp-container.background_container > div.tdp-row.buttonW.tdp-mt-1.ng-star-inserted > div > button")
-    protected WebElement lblCartillaCambiar;
 
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
@@ -61,26 +54,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(8);
         clickElementInAList(listaPlanFija, plaHogar);
         UtilWeb.waitForSeconds(1);
-    }
-
-    public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
-        UtilWeb.waitForSeconds(5);
-        String elemento = "//div[contains(text(),'" + planTrio + "')]/../../../div";
-        WebElement elementPlan = find().getElementByXPath(elemento);
-        waitUntilElementIsVisible(elementPlan, 20).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Seleccionando el plan >>> {0}", planTrio);
-        UtilWeb.waitForSeconds(5);
-        js().scrollElementTop(lblSeleccionarOferta);
-        waitUntilElementIsVisible(lblSeleccionarOferta, 10);
-        click(lblSeleccionarOferta, 10);
-
-    }
-
-    public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
-        UtilWeb.waitForSeconds(5);
-        js().scrollElementTop(lblCartillaCambiar);
-        waitUntilElementIsVisible(lblCartillaCambiar, 10);
-        click(lblCartillaCambiar, 18);//12
     }
 
     public void scrollUp() {

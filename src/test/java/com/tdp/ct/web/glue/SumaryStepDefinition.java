@@ -17,11 +17,6 @@ public class SumaryStepDefinition {
 
     @Y("doy click en el boton Iniciar registro")
     public void doyClickEnIniciarRegistro() {
-        sumaryStep.doyClickEnIniciarRegistro();
-    }
-
-    @Cuando("doy click en el boton Iniciar registro")
-    public void doyClicAIniciarRegistro() {
         sumaryStep.moverToElementIniciarRegistro();
         sumaryStep.clickButtonStartRegister();
     }

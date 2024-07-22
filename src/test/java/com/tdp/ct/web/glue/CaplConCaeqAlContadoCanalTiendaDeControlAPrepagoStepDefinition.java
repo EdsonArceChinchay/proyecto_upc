@@ -36,11 +36,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         caplConCaeqAlContadoCanalTiendaStep.clickBtnAddEquipoInCard();
     }
 
-    @Y("presiono el boton con shadow Iniciar Registro")
-    public void presionoElBotonConShadowIniciarRegistro() {
-        caplConCaeqAlContadoCanalTiendaStep.clickBtnConShadowIniciarRegistro();
-    }
-
     @Y("ingreso email {string} y lo confirmo")
     public void ingresoEmailYLoConfirmo(String email) {
         caplConCaeqAlContadoCanalTiendaStep.writeEmail(email);

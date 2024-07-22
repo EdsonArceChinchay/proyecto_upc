@@ -41,7 +41,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        doy click en el boton Siguiente
     Y        selecciono la oferta de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente

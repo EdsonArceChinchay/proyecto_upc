@@ -45,7 +45,7 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        selecciono la opcion "RV Plan Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono en linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente

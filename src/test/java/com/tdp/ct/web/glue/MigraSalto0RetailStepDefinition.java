@@ -32,4 +32,13 @@ public class MigraSalto0RetailStepDefinition {
     public void validoQueLosPrecioDePlanHogarYPlanMensualSeanLosMismos() {
         migraSalto0RetailStep.validateCurrentAndNewPrice();
     }
+    @Y("selecciono la cartilla del plan MT")
+    public void seleccionoLaCartillaDelPlanMT() {
+        migraSalto0RetailStep.seleccionoCartillaPlanMT();
+    }
+
+    @Y("valido que se presente el siguiente mensaje {string}")
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        migraSalto0RetailStep.validoQueSePresenteElSiguienteMensaje(mensaje);
+    }
 }

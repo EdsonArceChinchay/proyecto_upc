@@ -41,7 +41,7 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente

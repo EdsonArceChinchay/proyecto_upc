@@ -32,9 +32,6 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Y        selecciono la cartilla del plan MT
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
-    #Y        cierro el popup de Detail
-    #Y        Selecciono una linea movil y mostrar ofertas
-    #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta

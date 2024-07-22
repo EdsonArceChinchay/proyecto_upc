@@ -46,7 +46,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
       | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en datos del cliente

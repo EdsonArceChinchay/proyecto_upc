@@ -47,7 +47,6 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        selecciono la opcion "RV Plan Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
-    Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName               |
       | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
@@ -55,7 +54,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
     Y        selecciono en linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente

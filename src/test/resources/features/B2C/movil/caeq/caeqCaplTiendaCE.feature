@@ -38,7 +38,6 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/ 79.9 V"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
-    #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago             | equipoName                        |
       | 12 meses    | Financiado 12 cuotas | SAMSUNG GXY A34 NEGRO A346M 128GB |

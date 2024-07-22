@@ -16,40 +16,27 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class SummaryPage extends WebBase {
 
-     @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
+     @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
     protected WebElement btnStartRegister;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
-    protected WebElement btnCerrar;
+    protected WebElement btnClose;
 
     @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
-
-    @FindBy(css = "button.btnStart")
-    protected WebElement btnIniciarRegistro;
 
     public void moverToElementIniciarRegistro() {
         esperaProgresiva(driver(), 3, 5, btnStartRegister);
         js().scrollElementTop(btnStartRegister);
     }
 
-    public void clickButtonStratRegister() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 6, btnStartRegister);
-        click(btnStartRegister);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a iniciar registro");
-        clickBtnCerrarModalError(btnStartRegister);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void doyClickEnIniciarRegistro(){
+    public void clickButtonStartRegister(){
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
-
         int intentos = 4;
         for(int i=0;i<intentos;i++) {
             try {
-                esperaProgresiva(driver(), 5, 8, btnStartRegister);
+                esperaProgresiva(driver(), 6, 6, btnStartRegister);
                 JavascriptExecutor js = (JavascriptExecutor) driver();
                 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
                 btnStartRegister.click();
@@ -62,11 +49,10 @@ public class SummaryPage extends WebBase {
     }
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        boolean elementoExistente;
-        elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
+        boolean elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
         if (elementoExistente) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
-            click(btnCerrar);
+            click(btnClose);
             UtilWeb.waitForSeconds(2);
             click(metodoRepedito);
         }

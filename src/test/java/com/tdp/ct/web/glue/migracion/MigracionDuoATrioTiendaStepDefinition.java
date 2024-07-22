@@ -24,15 +24,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(planHogar);
     }
 
-    @Y("selecciono el tipo de plan trio {string} y presiono Seleccionar oferta")
-    public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
-        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(planTrio);
-    }
-
-    @Y("luego doy click en la cartilla cambiar plan hogar")
-    public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
-        migracionDuoATrioTiendaStep.luegoDoyClickEnLaCartillaCambiarPlanHogar();
-    }
 
     @Y("doy click en el boton {string}")
     public void doyClickEnEnElBoton(String nameButton) {
@@ -43,4 +34,5 @@ public class MigracionDuoATrioTiendaStepDefinition {
     public void doyClickEnCambiarPlanHogar() {
         migracionDuoATrioTiendaStep.seleccionarboton();
     }
+
 }

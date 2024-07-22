@@ -54,10 +54,6 @@ public class CaeqPorReatilStep {
         page.caeqPorRetailPage().SeleccionarBotonCambiarChip();
     }
 
-    @ScreenShotAfter
-    public void seleccionoTipoPagoAlContado() {
-        page.caeqPorRetailPage().seleccionoTipoPagoAlContado();
-    }
 
     @ScreenShotBefore
     @ScreenShotAfter

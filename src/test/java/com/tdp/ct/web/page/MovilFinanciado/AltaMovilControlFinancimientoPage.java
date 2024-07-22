@@ -11,7 +11,6 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class AltaMovilControlFinancimientoPage extends WebBase {
 
-
     @FindBy(xpath = "(//img[@class='margin-icon add_pointer'])[1]")
     protected WebElement planActual;
     @FindBy(xpath = "//div[4]/div[2]/div[2]/app-card-plan/div[1]/div/div[1]/div[3]/img")
@@ -24,17 +23,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement btnLineaNueva;
     @FindBy(xpath = "//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
     protected WebElement btnAgregarEquipo;
-    @FindBy(xpath = "//div[6]/div[1]/div/div[2]/div[3]/tdp-st-button")
-    protected WebElement btnSeleccionarEquipo;
-    @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or contains(text(),'Iniciar Registro')]")
-    protected WebElement btnIniciarRegistro;
-    //Validate
-    @FindBy(xpath = "//div[2]/form/div[1]/h1")
-    protected WebElement validarTituloCompletarDatos;
-
-    @FindBy(xpath = "//div[1]/div/div[2]/div/h1")
-    protected WebElement validarSeleccionarEquipo;
-
     @FindBy(xpath = "//div[2]/div[1]/button[1]")
     protected WebElement btnPostpago;
     @FindBy(xpath = "//div[2]/div[1]/button[2]")
@@ -69,29 +57,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     public void selectBtnLineaNueva() {
         esperaProgresiva(driver(), 3, 10, btnLineaNueva);
         click(btnLineaNueva);
-    }
-
-    public void selectBtnAgregarEquipo() {
-        esperaProgresiva(driver(), 3, 5, btnAgregarEquipo);
-        click(btnAgregarEquipo);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void selectBtnEquipo() {
-        js().scrollElementTop(btnSeleccionarEquipo);
-        UtilWeb.waitForSeconds(2);
-        click(btnSeleccionarEquipo);
-    }
-
-    public void selectBtnIniciarRegistro() {
-        esperaProgresiva(driver(), 5, 5, btnIniciarRegistro);
-        js().scrollElementTop(btnIniciarRegistro);
-        click(btnIniciarRegistro);
-        UtilWeb.waitForSeconds(2);
-    }
-
-    public String validateTituloIniciarRegistro() {
-        return getText(validarTituloCompletarDatos);
     }
 
     public void selectBtnPostpago() {
@@ -179,11 +144,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         waitUntilElementIsVisible(btnConfirmar, 5);
         click(btnConfirmar);
         UtilWeb.waitForSeconds(12);
-    }
-
-    public String validateTituloSeleccionarEquipo() {
-        UtilWeb.waitForSeconds(2);
-        return getText(validarSeleccionarEquipo);
     }
 
 }

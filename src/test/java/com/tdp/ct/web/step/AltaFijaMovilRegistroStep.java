@@ -154,7 +154,6 @@ public class AltaFijaMovilRegistroStep {
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
-
     }
 
     @ScreenShotAfter
@@ -164,7 +163,6 @@ public class AltaFijaMovilRegistroStep {
         } else {
             System.out.println("Skip. Cliente Registrado en Dito");
         }
-
     }
 
     @ScreenShotBefore

@@ -35,7 +35,6 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName                               |
       | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
-    Y        selecciono tipo de pago Al Contado
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"

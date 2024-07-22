@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page.migracion;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -70,5 +71,26 @@ public class MigraSalto0RetailPage extends WebBase {
     public boolean compareTextWebElement(WebElement element1, WebElement element2)
     {
         return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
+    }
+
+    @FindBy(xpath = "//div[@class=\"div-product-name\"]")
+    WebElement scrollCartillaMT;
+
+    public void seleccionoCartillaPlanMT() {
+        js().scrollElementTop(scrollCartillaMT);
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(scrollCartillaMT, 40).click();
+        UtilWeb.waitForSeconds(10);
+    }
+
+    @FindBy(xpath = "//*[contains(text(),'Se actualizo')]")
+    protected WebElement txtMensaje;
+
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        String mensajeEsperado = mensaje.toUpperCase().trim();
+        waitUntilElementIsVisible(txtMensaje, 5);
+        js().scrollElementTop(txtMensaje);
+        String mensajeRecibido = txtMensaje.getText().toUpperCase().trim();
+        Assertions.assertTrue(mensajeRecibido.contains(mensajeEsperado), "el mensaje recibido: " + mensajeRecibido + " es distinta al mensaje esperado: " + mensajeEsperado);
     }
 }

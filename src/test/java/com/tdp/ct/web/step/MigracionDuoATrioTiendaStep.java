@@ -20,18 +20,9 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanHogar(planHogar);
     }
 
-    public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
-        page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(planTrio);
-    }
-
-    public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
-        page.migracionDuoATrioTiendaPage().luegoDoyClickEnLaCartillaCambiarPlanHogar();
-    }
-
     public void scrollUp() {
         page.migracionDuoATrioTiendaPage().scrollUp();
     }
-
 
     public void clickButton(String nameButton) {
         page.migracionDuoATrioTiendaPage().clickButton(nameButton);

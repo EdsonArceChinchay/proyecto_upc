@@ -47,7 +47,7 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
       | 18 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
-    Y        selecciono el boton de iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        ingreso un correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato Movil

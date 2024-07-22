@@ -31,14 +31,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaAltaMovilCallCenterStep.clickPrimeraOferta();
     }
 
-    @Y("selecciono un plan Movistar Total {string}")
-    public void selecciono_un_plan_movistar_total(String nombrePlan) {
-        altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
-        altaFijaTiendaStep.clickSeleccionarOferta();
-        altaFijaAltaMovilCallCenterStep.clickIrAMovistarTotal();
-    }
-
-
     @Y("selecciono el metodo de pago {string}")
     public void selecciono_el_metodo_de_pago(String metodoPago) {
         altaFijaAltaMovilCallCenterStep.seleccionarTipoPago(metodoPago);
@@ -52,6 +44,13 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     @Y("ingreso nuevamente el correo electronico {string}")
     public void ingreso_nuevamente_el_correo_electronico(String correo) {
         altaFijaAltaMovilCallCenterStep.ingresarCorreoNuevamente(correo);
+    }
+
+    @Y("selecciono un plan Movistar Total {string}")
+    public void selecciono_un_plan_movistar_total(String nombrePlan) {
+        altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan);
+        altaFijaTiendaStep.clickSeleccionarOferta();
+        altaFijaAltaMovilCallCenterStep.clickIrAMovistarTotal();
     }
 
     @Y("selecciono el plan {string} Movistar Total")

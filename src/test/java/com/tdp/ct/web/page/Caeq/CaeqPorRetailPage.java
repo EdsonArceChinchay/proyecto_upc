@@ -26,9 +26,6 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
 
-    @FindBy(xpath = "//div/form/div[1]/div[3]/div/div[1]")
-    protected WebElement btnAlContado;
-
     @FindBy (css = "div.actions-button > div:nth-child(2) > tdp-st-button")
     protected WebElement btnCambiarChip;
 
@@ -86,14 +83,6 @@ public class CaeqPorRetailPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CAPL esperado: " + valueCAPL + " y el obtenido es:" + getValueCAPL + ", los valores son iguales "+valueCAPL.equals(getValueCAPL));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CASI esperado: " + valueCASI + " y el obtenido es:" + getValueCASI + ", los valores son iguales "+valueCASI.equals(getValueCASI));
 
-    }
-
-    public void seleccionoTipoPagoAlContado() {
-        Addons.esperaProgresiva(driver(), 3, 5, btnAlContado);
-        Addons.revisarModalError(driver());
-        //waitUntilElementIsVisible(btnAlContado,10);
-        js().scrollElementTop(btnAlContado);
-        click(btnAlContado);
     }
 
     public void SeleccionarBotonCambiarChip() {

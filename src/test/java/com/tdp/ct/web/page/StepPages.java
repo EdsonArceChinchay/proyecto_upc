@@ -12,10 +12,6 @@ public class StepPages {
         return new AltaTrioMTconUpfrontTiendaPage();
     }
 
-    public AltaFijaAltaMovilRetailPage altaFijaAltaMovilRetailPage() {
-        return new AltaFijaAltaMovilRetailPage();
-    }
-
     public AltaFijaMovilRegistroPage altaFijaMovilRegistroPage() {
         return new AltaFijaMovilRegistroPage();
     }
@@ -80,16 +76,8 @@ public class StepPages {
         return new MigraSalto0RetailPage();
     }
 
-    public MigraMTconCambioVelocidaCallCenterPage migraMTconCambioVelocidaCallCenterPage() {
-        return new MigraMTconCambioVelocidaCallCenterPage();
-    }
-
     public PortabilidadPage portabilidadPage() {
         return new PortabilidadPage();
-    }
-
-    public MigraDuoTrioActualizarDireccionTiendasPage migraDuoTrioActualizarDireccionTiendasPage() {
-        return new MigraDuoTrioActualizarDireccionTiendasPage();
     }
 
     public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage() {

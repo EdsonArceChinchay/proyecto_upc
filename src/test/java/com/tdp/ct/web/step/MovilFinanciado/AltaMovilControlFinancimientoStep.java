@@ -34,33 +34,8 @@ public class AltaMovilControlFinancimientoStep {
     }
 
     @ScreenShotBefore
-    public void btnSeleccionarOferta() {
-        page.altaMovilControlFinancimientoPage().selectBtnOferta();
-    }
-
-    @ScreenShotBefore
     public void seleccionarLineaNueva() {
         page.altaMovilControlFinancimientoPage().selectBtnLineaNueva();
-    }
-
-    @ScreenShotAfter
-    public void btnAgregarEquipo() {
-        page.altaMovilControlFinancimientoPage().selectBtnAgregarEquipo();
-    }
-
-    @ScreenShotBefore
-    public void seleccionarEquipo() {
-        page.altaMovilControlFinancimientoPage().selectBtnEquipo();
-    }
-
-    @ScreenShotBefore
-    public void seleccionarBtnIniciarRegistro() {
-        page.altaMovilControlFinancimientoPage().selectBtnIniciarRegistro();
-    }
-
-    @ScreenShotAfter
-    public String validarTituloIniciarRegistro() {
-        return page.altaMovilControlFinancimientoPage().validateTituloIniciarRegistro();
     }
 
     @ScreenShotAfter
@@ -88,11 +63,6 @@ public class AltaMovilControlFinancimientoStep {
         scenario.printFullView();
         page.altaMovilControlFinancimientoPage().selectBtnConfirmar();
 
-    }
-
-    @ScreenShotAfter
-    public String validarSeleccionarEquipo() {
-        return page.altaMovilControlFinancimientoPage().validateTituloSeleccionarEquipo();
     }
 
 }

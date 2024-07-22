@@ -49,4 +49,5 @@ public class DevicesStep {
     public void validateFeatures() {
         page.devicesPage().validateFeatures();
     }
+
 }

@@ -23,8 +23,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonIrMovistarTotal();
     }
 
-
-
     @Y("ingreso telefono del contacto {string}")
     public void ingresoTelefonoDelContacto(String numContacto) {
         altaTrioMTconUpfrontTiendaStep.ingresoTelefonoContacto(numContacto);

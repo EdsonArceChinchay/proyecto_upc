@@ -18,9 +18,6 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
     @Autowired
-    private AltaTrioMTconUpfrontTiendaStep altaTrioMTconUpfrontTiendaStep;
-
-    @Autowired
     private CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep caplConCaeqAlContadoCanalTiendaStep;
 
     @Y("ingreso los datos del cliente extranjero a registrar")
@@ -46,12 +43,6 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
         altaMonoHfcTiendaStep.clickBtnTipoPlan(tipoPlan);
     }
 
-    @Y("selecciono el plan {string} y presiono Seleccionar oferta")
-    public void seleccionoElTipoDePlanMonoYPresionoSeleccionarOferta(String plan) {
-        altaMonoHfcTiendaStep.seleccionarPlan(plan);
-        altaMonoHfcTiendaStep.clickSelectOferta();
-    }
-
     @Y("presiono el boton {string}")
     public void presionoElBotonLineaNueva(String btnName) {
         altaMonoHfcTiendaStep.esperarBtnLineaNueva();
@@ -64,13 +55,15 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     }
 
 
+    @Y("presiono la opcion validar contrato")
+    public void presionoLaOpcionValidarContrato() {
+        altaFijaMovilRegistroStep.clicValidarContrato();
+    }
+
     @Y("ingreso email {string} y lo repito")
     public void ingresoEmailYLoRepito(String correo) {
         caplConCaeqAlContadoCanalTiendaStep.writeEmail(correo);
     }
 
-    @Y("presiono la opcion validar contrato")
-    public void presionoLaOpcionValidarContrato() {
-        altaFijaMovilRegistroStep.clicValidarContrato();
-    }
+
 }

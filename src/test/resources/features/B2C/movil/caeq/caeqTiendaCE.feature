@@ -35,7 +35,6 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
-    Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName                        |
       | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |

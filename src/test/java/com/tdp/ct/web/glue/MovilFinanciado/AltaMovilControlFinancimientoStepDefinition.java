@@ -44,45 +44,11 @@ public class AltaMovilControlFinancimientoStepDefinition {
                 break;
         }
         altaMovilControlFinancimientoStep.seleccionarCampania();
-
-    }
-
-    @Y("selecciono el boton de Seleccionar Oferta")
-    public void selecciono_el_boton_Seleccionar_Oferta() {
-        altaMovilControlFinancimientoStep.btnSeleccionarOferta();
     }
 
     @Y("selecciono en linea Nueva")
     public void selecciono_en_linea_nueva() {
         altaMovilControlFinancimientoStep.seleccionarLineaNueva();
     }
-
-    @Y("selecciono en agregar equipo y valido la pantalla de seleccionar equipo:{string}")
-    public void seleccionoEnAgregarEquipoYValidoLaPantallaDeSeleccionarEquipo(String addEquipo) {
-        altaMovilControlFinancimientoStep.btnAgregarEquipo();
-        Assertions.assertEquals(addEquipo, altaMovilControlFinancimientoStep.validarSeleccionarEquipo());
-    }
-
-    @Y("selecciono un equipo movil")
-    public void selecciono_un_equipo_equipo() {
-        altaMovilControlFinancimientoStep.seleccionarEquipo();
-    }
-
-    @Y("selecciono el boton de iniciar registro")
-    public void selecciono_el_boton_de_iniciar_registro() {
-        altaMovilControlFinancimientoStep.seleccionarBtnIniciarRegistro();
-
-    }
-
-    @Entonces("valido la pantalla despues de iniciar registro :{string}")
-    public void validoLaPantallaDespuesDeIniciarRegistro(String title) {
-        Assertions.assertEquals(title, altaMovilControlFinancimientoStep.validarTituloIniciarRegistro());
-    }
-
-    @Y("completo los datos del cliente en alta movil con financiamiento")
-    public void completoLosDatosDelClienteMovilFinanciamiento(DataTable datosCliente) {
-        altaMovilControlFinancimientoStep.completarDatosClienteExtranjeroMovilFinanciado(datosCliente);
-    }
-
 
 }
