@@ -16,7 +16,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class SummaryPage extends WebBase {
 
-     @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
+    @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
     protected WebElement btnStartRegister;
 
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
