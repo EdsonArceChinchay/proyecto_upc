@@ -13,11 +13,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
     @Autowired
     private MigracionDuoATrioTiendaStep migracionDuoATrioTiendaStep;
 
-    @Y("selecciono la cartilla del plan activo")
-    public void selecciono_la_cartilla_del_plan_Activo() {
-        migracionDuoATrioTiendaStep.selecciono_la_cartilla_del_plan_Activo();
-    }
-
     @Y("seleccion plan nuevo para ver las ofertas")
     public void seleccionPlanNuevoParaVerLasOfertas() {
         migracionDuoATrioTiendaStep.scrollUp();
@@ -29,39 +24,15 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(planHogar);
     }
 
-    @Y("selecciono el tipo de plan trio {string} y presiono Seleccionar oferta")
-    public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
-        migracionDuoATrioTiendaStep.seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(planTrio);
-    }
-
-    @Y("luego doy click en la cartilla cambiar plan hogar")
-    public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
-        migracionDuoATrioTiendaStep.luegoDoyClickEnLaCartillaCambiarPlanHogar();
-    }
-
-    @Y("verifico la direccion {string} actual del servicio")
-    public void verificoLaDireccionActualDelServicio(String dir) {
-        migracionDuoATrioTiendaStep.verificoLaDireccionActualDelServicio(dir);
-    }
 
     @Y("doy click en el boton {string}")
     public void doyClickEnEnElBoton(String nameButton) {
-        migracionDuoATrioTiendaStep.doyClickEnEnElBoton(nameButton);
+        migracionDuoATrioTiendaStep.clickButton(nameButton);
     }
 
-    @Y("doy clic en el boton {string}")
-    public void doyClicEnElBoton(String button) {
-        migracionDuoATrioTiendaStep.doyClickEnEnElBoton(button);
+    @Y("doy click en Cambiar plan hogar")
+    public void doyClickEnCambiarPlanHogar() {
+        migracionDuoATrioTiendaStep.seleccionarboton();
     }
 
-
-    @Y("cierro el popup de contraseña Única")
-    public void cierroElPopupDeContraseñaÚnica() {
-        migracionDuoATrioTiendaStep.cerrarPopupCU();
-    }
-
-    @Y("Selecciono la cartilla del plan Motvistar Total")
-    public void seleccionoLaCartillaDelPlanMotvistarTotal() {
-        migracionDuoATrioTiendaStep.seleccionoCartillaMovistarTotal();
-    }
 }

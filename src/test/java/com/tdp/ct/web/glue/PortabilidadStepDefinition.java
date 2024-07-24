@@ -96,7 +96,7 @@ public class PortabilidadStepDefinition {
     }
 
     @Y("obtengo el token")
-    public void obtengoElToken(DataTable dataTable) throws JSONException, IOException {
+    public void obtengoElToken(DataTable dataTable) throws IOException {
         String codigoDeVenta =altaFijaMovilRegistroStep.getSalesCode();
         token = serviceTest.getCodeToken(dataTable,codigoDeVenta);
         this.scenario.log("Token:" + token);

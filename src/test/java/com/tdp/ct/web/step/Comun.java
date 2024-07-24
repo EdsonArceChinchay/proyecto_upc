@@ -17,9 +17,9 @@ public class Comun {
     }
 
     public static String buscarValorOpcion(String sDescripcionOpcion, String[][] sOpciones) {
-        for (int i = 0; i < sOpciones.length; i++) {
-            if (sOpciones[i][1].equals(sDescripcionOpcion)) {
-                return sOpciones[i][0];
+        for (String[] sOpcione : sOpciones) {
+            if (sOpcione[1].equals(sDescripcionOpcion)) {
+                return sOpcione[0];
             }
         }
         throw new IllegalArgumentException("buscarValorOpcion No válido: " + sDescripcionOpcion);

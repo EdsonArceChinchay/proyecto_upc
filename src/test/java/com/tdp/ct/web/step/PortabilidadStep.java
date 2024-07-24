@@ -8,9 +8,6 @@ import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Level;
-
-
 @Component
 public class PortabilidadStep {
 

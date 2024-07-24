@@ -1,13 +1,20 @@
 package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.net.URL;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -34,7 +41,7 @@ public class Helper extends WebBase {
 
     public static String obtenerRutaAbsoluta(String sRuta) {
         File archivo = new File(sRuta);
-        return archivo.getAbsolutePath().toString();
+        return archivo.getAbsolutePath();
     }
 
     public static void descargarPDFDesdeURL(String url, String carpetaDescarga) {
@@ -73,7 +80,7 @@ public class Helper extends WebBase {
         WebElement element = null;
         for (int i = 0; i < numberElements; i++) {
             element = listElemet.get(i);
-            String nameElement = "";
+            String nameElement;
             try {
                 if (element.isEnabled() && element.isSelected()) {
                     nameElement = element.getText().trim();
@@ -96,7 +103,7 @@ public class Helper extends WebBase {
         Assertions.assertTrue(isEquals, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
     }
 
-    public static boolean compareWebElementTextAndTextAndReturnValue(WebElement element, String text) {
+    public static boolean returnCompareWebElementTextAndText(WebElement element, String text) {
         String expectedText = text.trim().toUpperCase();
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Expected text: " + expectedText);
         String currentText = element.getText().trim().toUpperCase();
@@ -105,6 +112,38 @@ public class Helper extends WebBase {
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "The expected text " + expectedText + "  and the current text " + currentText + " are equals: " + isEquals);
         return isEquals;
     }
+
+    public static boolean isVisible(WebDriver driver, WebElement element) {
+        WebDriverWait waitdefin = new WebDriverWait(driver, Duration.ofSeconds(5));
+        boolean present;
+        UtilWeb.waitForSeconds(1);
+        if (element.isDisplayed() && element.isEnabled() && element.getSize().getWidth() > 0 && element.getSize().getHeight() > 0) {
+            waitdefin.until(ExpectedConditions.visibilityOf(element));
+            waitdefin.until(ExpectedConditions.elementToBeClickable(element));
+            present = true;
+        } else {
+            present = false;
+        }
+        return present;
+    }
+    public static boolean validateInputAndLocator(WebDriver driver,String input, WebElement element) {
+        if (input == null || input.isEmpty()) {
+            return false;
+        }
+        return validateElement(driver, element, 10);
+    }
+
+    public static boolean validateElement(WebDriver driver, WebElement element, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            return element.isDisplayed() && element.isEnabled();
+        } catch (TimeoutException | StaleElementReferenceException e) {
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element validation failed: " + e.getMessage());
+            return false;
+        }
+    }
+
 
 }
 

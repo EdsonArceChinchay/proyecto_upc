@@ -8,19 +8,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 
 public class AltaPuraMTcallCenterPage extends WebBase {
-
-    public Object clicBotonAceptar;
-    @FindBy(xpath = "//button[@class = 'button_step']")
-    protected WebElement btnConfirmaUbicacion;
-    private String tipoPago;
 
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
@@ -28,18 +20,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUoError;
 
-    @FindBy(xpath = "//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
-
-    public void btnConfirmarUbicacion() {
-        click(btnConfirmaUbicacion, 10);
-        UtilWeb.waitForSeconds(5);
-    }
-
-    public void selectTipoHorario(String horario) {
-        WebElement elegirHorario1 = find().getElementByXPath("//span[text()='" + horario + "']/..");
-        click(elegirHorario1);
-    }
 
     public void completarIdCall(String idCall) {
         WebElement rootInputConfirmarCorreo = find().getElementByCss("tdp-st-input-text[formcontrolname=\"callID\"]");
@@ -49,8 +29,6 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     }
 
     public void selectTipoDePago(String tipo) {
-        tipoPago = tipo;
-
         String clickTipo = "div form div:nth-child(7) tdp-st-select;div:nth-child(1)";
         WebElement tipoElement = js().getWebElement(clickTipo);
         click(tipoElement);
@@ -70,13 +48,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
 
     }
 
-    public void ingresarReferencia(String referencia) {
-        String getReferencia = "form div:nth-child(4) div:nth-child(2) tdp-st-input-text;input";
-        UtilWeb.waitForSeconds(3);
-        WebElement referenciaElement = js().getWebElement(getReferencia);
-        click(referenciaElement);
-        type(referenciaElement, referencia);
-    }
+
 
     public void ingresarCorreoVerif(String verifCorreo) {
         String getCorreo = "div form div:nth-child(3) tdp-st-input-text;input";
@@ -118,7 +90,7 @@ public class AltaPuraMTcallCenterPage extends WebBase {
     public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado
         boolean elementoExistente;
-        elementoExistente = driver().findElements(By.xpath("//div[@class='dialog-container']")).size() != 0;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
         if (elementoExistente) {
             Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
             System.out.println("Se cierra Popup de error");
@@ -133,10 +105,5 @@ public class AltaPuraMTcallCenterPage extends WebBase {
         }
     }
 
-    public void ingresarTelefono(String telefono) {
-        WebElement direccionElement = find().getElementByXPath("//*[@formcontrolname='contactNumber']");
-        js().scrollElementTop(direccionElement);
-        click(direccionElement, 5);
-        type(direccionElement, telefono);
-    }
+
 }

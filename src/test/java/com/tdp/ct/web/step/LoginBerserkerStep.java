@@ -65,7 +65,6 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().validarMsgIncorrectCredential(msg);
     }
 
-
     @ScreenShotAfter
     @ScreenShotBefore
     public void typeCaptcha() throws InterruptedException {

@@ -30,4 +30,13 @@ public class MigraSalto0RetailStep {
     public void validateCurrentAndNewPrice() {
         page.migraSalto0RetailPage().validateCurrentAndNewPrice();
     }
+    @ScreenShotBefore
+    public void seleccionoCartillaPlanMT() {
+        page.migraSalto0RetailPage().seleccionoCartillaPlanMT();
+    }
+
+    @ScreenShotAfter
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        page.migraSalto0RetailPage().validoQueSePresenteElSiguienteMensaje(mensaje);
+    }
 }

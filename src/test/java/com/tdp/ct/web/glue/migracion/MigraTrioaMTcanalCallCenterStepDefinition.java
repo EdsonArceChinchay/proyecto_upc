@@ -8,13 +8,6 @@ public class MigraTrioaMTcanalCallCenterStepDefinition {
     @Autowired
     private MigraTrioaMTcanalCallCenterStep migraTrioaMTcanalCallCenterStep;
 
-    @Y("selecciono plan Movistar Total para ver las ofertas")
-    public void seleccionoPlanMovistarTotalParaVerLasOfertas() {
-        migraTrioaMTcanalCallCenterStep.scrollUp();
-        migraTrioaMTcanalCallCenterStep.seleccionoPlanMovistarTotal();
-    }
-
-
     @Y("selecciono un plan y doy click en el boton seleccionar oferta")
     public void seleccionoUnPlanYDoyClickEnElBotonSeleccionarOferta() {
         migraTrioaMTcanalCallCenterStep.seleccionoPlandeOferta();

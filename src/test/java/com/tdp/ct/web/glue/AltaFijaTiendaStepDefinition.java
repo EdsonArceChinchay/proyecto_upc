@@ -1,13 +1,8 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.WebAutomationApplication;
-import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
-import com.tdp.ct.web.step.AltaFijaAltaMovilRetailStep;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,16 +36,6 @@ public class AltaFijaTiendaStepDefinition {
 
     }
 
-    @Y("ingreso los datos de agendamiento")
-    public void ingreso_los_datos_de_agendamiento() {
-        altaFijaTiendaStep.ingresarDatosAgendamiento();
-    }
-
-    @Y("presiono el boton confirmar agendamiento")
-    public void presiono_el_boton_confirmar_agendamiento() {
-        altaFijaTiendaStep.clickBotonConfirmarAgendamiento();
-    }
-
     @Y("presiono el boton descargar contrato")
     public void presiono_el_boton_descargar_contrato() {
         altaFijaTiendaStep.clickDescargarContrato();
@@ -69,12 +54,7 @@ public class AltaFijaTiendaStepDefinition {
         altaFijaTiendaStep.doyClickEnAñadirSVA();
     }
 
-    @Y("ingreso los datos de agendamiento para RUC")
-    public void ingresoLosDatosDeAgendamientoParaRUC() {
-        altaFijaTiendaStep.ingresarDatosAgendamientoParaRUC();
-    }
-
-    @Y("doy clic en el boton validar identidad representante legal")
+    @Y("doy click en el boton validar identidad representante legal")
     public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
         altaFijaTiendaStep.clickBotonValidarRepreLegal();
     }

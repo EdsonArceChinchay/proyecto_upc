@@ -2,7 +2,6 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaTrioMTconUpfrontTiendaStep;
-import com.tdp.ct.web.utils.Addons;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,58 +18,15 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonLineaNueva();
     }
 
-    @Y("doy click en el boton Consultar cobertura")
-    public void doyClickEnElBotonConsultarCobertura() {
-        altaTrioMTconUpfrontTiendaStep.clickBotonConsultarCobertura();
-    }
-
     @Y("doy click en el boton Ir a movistar total")
     public void doyClickEnElBotonIrAMovistarTotal() {
         altaTrioMTconUpfrontTiendaStep.clickBotonIrMovistarTotal();
     }
 
-    @Y("presiono el boton iniciar registro")
-    public void presionoElBotonIniciarRegistro() {
-        altaTrioMTconUpfrontTiendaStep.clickBotonIniciarRegistro();
-    }
-
-    @Y("ingreso telefono del contacto {string}")
-    public void ingresoTelefonoDelContacto(String numContacto) {
-        altaTrioMTconUpfrontTiendaStep.ingresoTelefonoContacto(numContacto);
-    }
-
-    @Y("doy click en el boton confirmar")
-    public void doyClickEnElBotonConfirmar() {
-        if(customer.isNewCustomer()){
-            altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
-        }else{
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
-    }
 
     @Y("voy hasta el final de la pagina")
     public void voyHastaElFinalDeLaPagina() {
         altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
-    }
-
-    @Y("valido detalles de instalacion")
-    public void validoDetallesDeInstalacion() {
-        altaTrioMTconUpfrontTiendaStep.validoDetalleDeInstalacion();
-    }
-
-    @Y("confirmo el registro de instalacion")
-    public void confirmoElRegistroDeInstalacion() {
-        altaTrioMTconUpfrontTiendaStep.clickBtnConfirmarElRegistro();
-    }
-
-    @Y("ingreso el correo electronico {string}")
-    public void ingresoElCorreoElectronico(String correoElectronico) {
-        altaTrioMTconUpfrontTiendaStep.ingresoCorreoElectronico(correoElectronico);
-    }
-
-    @Y("vuelvo ingresar el correo electronico {string}")
-    public void vuelvoIngresarElCorreoElectronico(String vuelveIngresarCorreo) {
-        altaTrioMTconUpfrontTiendaStep.vuelveIngresarCorreoElectronico(vuelveIngresarCorreo);
     }
 
     @Y("doy click en el boton validar identidad del titular")
@@ -91,11 +47,6 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
     @Y("ingreso el numero de documento del supervisor {string}")
     public void ingresoElNumeroDeDocumentoDelSupervisor(String documentoSuperv) {
         altaTrioMTconUpfrontTiendaStep.ingresoNumeroDocumentoSuper(documentoSuperv);
-    }
-
-    @Y("presiono el boton confirmar")
-    public void presionoElBotonConfirmar() {
-        altaTrioMTconUpfrontTiendaStep.presionoBotonConfirmar();
     }
 
     @Y("ingreso usuario citrix de supervisor {string}")

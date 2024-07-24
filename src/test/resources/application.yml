@@ -8,6 +8,7 @@ webdriver:
   headless: on
   headless.dimension: --window-size=1400,600
   pageload: EAGER
+
 ###################
 ### JIRA - XRAY ###
 ###################

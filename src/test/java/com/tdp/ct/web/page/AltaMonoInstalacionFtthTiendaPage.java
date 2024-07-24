@@ -4,12 +4,10 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -28,32 +26,8 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(css = ".detail-content div.features")
     protected WebElement featureContent;
 
-    @FindBy(xpath = "//button[text()='Crear cliente']")
-    protected WebElement buttonCrearCliente;
-
-    @FindBy(xpath = "//button[@type='submit']")
-    protected WebElement btnConsultarCobertura;
-
     @FindBy(xpath = "//*[contains(@class,'detalle')]")
     protected WebElement labelDetail;
-
-    public void scrollToBtnCrearCliente() {
-        js().scrollElementTop(find().getElementByCss("div.consulta"));
-    }
-
-    public void crearCliente() {
-        click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(2);
-    }
-
-    public void scrollDirecCompleta() {
-        js().scrollElementTop(find().getElementByCss("div.info-user"));
-        UtilWeb.waitForSeconds(3);
-    }
-
-    public void clickBtnConsultarCobertura() {
-        click(btnConsultarCobertura);
-    }
 
     public void validarOfertasSugeridasView(String title) {
         revisarModalError(driver());
@@ -75,10 +49,10 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     }
 
     public void clickBtnTipoPlan(String tipoPlan) {
-        for (int i = 0; i < btnPlanList.size(); i++) {
-            String encontrado = btnPlanList.get(i).getText().toLowerCase();
+        for (WebElement element : btnPlanList) {
+            String encontrado = element.getText().toLowerCase();
             if (encontrado.equals(tipoPlan.toLowerCase())) {
-                btnPlanList.get(i).click();
+                element.click();
                 break;
             }
         }
@@ -106,8 +80,4 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void scrollToViewAgendamiento() {
-        js().scrollElementTop(find().getElementByCss("div.return"));
-    }
-    
 }

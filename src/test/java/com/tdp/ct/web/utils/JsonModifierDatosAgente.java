@@ -51,7 +51,7 @@ public class JsonModifierDatosAgente {
         String email;
     }
 
-    public class LegalId {
+    static class LegalId {
         String country;
         String nationalID;
         String nationalIDType;
@@ -67,7 +67,6 @@ public class JsonModifierDatosAgente {
                 break;
             }
         }
-        JSONObject jsonObject = new JSONObject(gson.toJson(data));
-        return jsonObject;
+        return new JSONObject(gson.toJson(data));
     }
 }

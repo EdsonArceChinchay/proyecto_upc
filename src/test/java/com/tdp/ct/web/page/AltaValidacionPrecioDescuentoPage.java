@@ -1,28 +1,22 @@
 package com.tdp.ct.web.page;
 
-import com.beust.ah.A;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.java.lv.Un;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.isVisible;
 
 public class AltaValidacionPrecioDescuentoPage extends WebBase {
-    AltaFijaAltaMovilCallCenterPage altaFijaAltaMovilCallCenterPage = new AltaFijaAltaMovilCallCenterPage();
-    AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
-    AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
-    WebDriverWait waitdefin = new WebDriverWait(driver(), Duration.ofSeconds(5));
+    final AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
+    final AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
 
     @FindBy(xpath = "//app-searchclient/div[@class='tdp-container clienteExtranjero']")
     protected WebElement regClienteNew;
@@ -36,28 +30,8 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     protected WebElement generolist;
     @FindBy(xpath = "//button[contains(text(),'Crear cliente')]")
     protected WebElement btnCrearCliente;
-    @FindBy(css = "form > div:nth-child(1) > div > tdp-st-select")
-    protected WebElement cbxDepartamento;
-    @FindBy(css = "form > div:nth-child(2) > div > tdp-st-select")
-    protected WebElement cbxProvincia;
-    @FindBy(css = "form > div:nth-child(3) > div > tdp-st-select")
-    protected WebElement cbxDistrito;
     @FindBy(xpath = "//div[@class='plan2']")
     protected WebElement lblPrecio;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='mail']")
-    protected WebElement ingresoCorreo;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='confirmEmail']")
-    protected WebElement ingresoConfCorreo;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='callID']")
-    protected WebElement ingresoCall;
-    @FindBy(xpath = "//button/span[contains(text(),'Datos del Cliente')]")
-    protected WebElement btnDatosCliente;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='fechaNacimiento']")
-    protected WebElement ingresoFecha;
-    @FindBy(xpath = "//tdp-st-select[@formcontrolname='nacionalidad']")
-    protected WebElement cbxNacionalidad;
-    @FindBy(xpath = "//tdp-st-select[@formcontrolname='estadoCivil']")
-    protected WebElement cbxEstadoCivil;
     @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
@@ -65,7 +39,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
 
     public void validacionClienteNuevo(String nombre, String apellido, String genero) {
         UtilWeb.waitForSeconds(55);
-        if (isVisible(regClienteNew)) {
+        if (isVisible(driver(),regClienteNew)) {
             click(nombreRegis);
             nombreRegis.sendKeys(nombre);
             click(apellidoRegis);
@@ -73,7 +47,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
 
             click(generolist);
             SearchContext context = sh().getContext(generolist);
-            String dataValue = "";
+            String dataValue;
             if (genero.equalsIgnoreCase("femenino")) {
                 dataValue = "F";
             } else {
@@ -102,75 +76,14 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         Assert.assertEquals(nombreCliente, nombreGet);
     }
 
-    public void ingresoDepartamento(String departamento) {
-        try {
-            altaFijaAltaMovilCallCenterPage.scrollDown();
-            if (isVisible(cbxDepartamento)) {
-                click(cbxDepartamento);
-                SearchContext context = sh().getContext(cbxDepartamento);
-                List<WebElement> lielement = context.findElements(By.cssSelector("div > ul > li"));
-                for (int i = 0; i < lielement.size(); i++) {
-                    waitUntilElementIsVisible(lielement.get(i), 5);
-                    String elementoLista = lielement.get(i).getText();
-                    if (elementoLista.equalsIgnoreCase(departamento)) {
-                        lielement.get(i).click();
-                        break;
-                    }
-                }
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoProvincia(String provincia) {
-        try {
-            if (isVisible(cbxProvincia)) {
-                click(cbxProvincia);
-                SearchContext context = sh().getContext(cbxProvincia);
-                List<WebElement> lieelement = context.findElements(By.cssSelector("div > ul > li"));
-                for (int i = 0; i < lieelement.size(); i++) {
-                    waitUntilElementIsVisible(lieelement.get(i), 5);
-                    String elementoLista = lieelement.get(i).getText();
-                    if (elementoLista.equalsIgnoreCase(provincia)) {
-                        lieelement.get(i).click();
-                        break;
-                    }
-                }
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoDistrito(String distrito) {
-        try {
-            if (isVisible(cbxDistrito)) {
-                click(cbxDistrito);
-                SearchContext context = sh().getContext(cbxDistrito);
-                List<WebElement> liElement = context.findElements(By.cssSelector("div > ul > li"));
-                for (int i = 0; i < liElement.size(); i++) {
-                    waitUntilElementIsVisible(liElement.get(i), 3);
-                    String elementoLista = liElement.get(i).getText();
-                    if (elementoLista.equalsIgnoreCase(distrito)) {
-                        liElement.get(i).click();
-                        break;
-                    }
-                }
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public void validacionBeneficioPlan(String beneficioPlan) {
         List<WebElement> listElement = find().getElementsByXPath("//app-item-card-plan/div/div/div/div");
         WebElement elementoEncontrado = null;
-        for (int i = 0; i < listElement.size(); i++) {
-            String beneficioLista = listElement.get(i).getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
+        for (WebElement element : listElement) {
+            String beneficioLista = element.getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
             System.out.println(beneficioLista);
             if (beneficioLista.equals(beneficioPlan)) {
-                elementoEncontrado = listElement.get(i);
+                elementoEncontrado = element;
                 break;
             }
         }
@@ -179,11 +92,11 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     public void beneficioCompare(String beneficio,String xpathContenedor){
         List<WebElement> listelementos=find().getElementsByXPath("."+xpathContenedor);
         WebElement elementEncontrado=null;
-        for(int i=0;i<listelementos.size();i++){
-            String beneficioLista = listelementos.get(i).getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
+        for (WebElement listelemento : listelementos) {
+            String beneficioLista = listelemento.getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
             System.out.println(beneficioLista);
             if (beneficioLista.equals(beneficio)) {
-                elementEncontrado = listelementos.get(i);
+                elementEncontrado = listelemento;
                 break;
             }
         }
@@ -199,7 +112,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
-            elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+            elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             if (elementoExistente) {
                 System.out.println("dio click");
                 click(btnRight);
@@ -226,14 +139,14 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
             }
             if (i == 2 || i == 5 || i == 8) {
                 boolean elementoExistente;
-                elementoExistente = driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).size() != 0;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
                 if (elementoExistente) {
                     btnRight.click();
                     UtilWeb.waitForSeconds(1);
                 }
             }
         }
-        if (!encontroElemento && listaOfertas.size() > 0) {
+        if (!encontroElemento && !listaOfertas.isEmpty()) {
             System.out.println("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
@@ -244,68 +157,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     public void validacionPrecio(String precioPlan) {
         String precioCompare = lblPrecio.getText();
         Assert.assertEquals(precioPlan, precioCompare);
-    }
-
-    public void ingresoCorreo(String email) {
-        try {
-            if (isVisible(ingresoCorreo)) {
-                click(ingresoCorreo);
-                ingresoCorreo.sendKeys(email);
-            }
-        } catch (NoSuchElementException e) {
-            System.out.print("No se encontro el elemento " + e.getMessage());
-        }
-        try {
-            if (isVisible(ingresoConfCorreo)) {
-                click(ingresoConfCorreo);
-                ingresoConfCorreo.sendKeys(email);
-            }
-        } catch (NoSuchElementException e) {
-            System.out.print("No se encontro el elemento " + e.getMessage());
-        }
-    }
-
-    public void ingresoCallId(String callID) {
-        try {
-            if (isVisible(ingresoCall)) {
-                click(ingresoCall);
-                ingresoCall.sendKeys(callID);
-            } else {
-                System.out.print("No necesita el Call ID");
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoDatosCliente(String fecha) {
-        try {
-            js().scrollElementTop(btnDatosCliente);
-            if (isVisible(btnDatosCliente)) {
-                click(btnDatosCliente);
-                if (isVisible(ingresoFecha)) {
-                    click(ingresoFecha);
-                    ingresoFecha.sendKeys(fecha);
-                }
-            } else {
-                System.out.print("Cliente ya esta registrado");
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoNacionalidad(String nacionalidad) {
-        if (isVisible(cbxNacionalidad)) {
-            altaMovilPostpagoCallCenterPage.seleccionoNacionalidad(nacionalidad);
-        }
-    }
-
-    public void ingresoEstadoCivil(String estadoCivil) {
-        if (isVisible(cbxEstadoCivil)) {
-            altaMovilPostpagoCallCenterPage.seleccionarEstadoCivil(estadoCivil);
-            altaTrioMTconUpfrontTiendaPage.clickBotonConfirmar();
-        }
     }
 
     //Este metodo sirva para buscar elementos dentro de un shadowroot que los elementos sencuentren bajo el formato css "div > ul > li"
@@ -328,17 +179,4 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         }
     }
 
-    public boolean isVisible(WebElement element) {
-        boolean present;
-        UtilWeb.waitForSeconds(1);
-        if (element.isDisplayed() && element.isEnabled() && element.getSize().getWidth() > 0 && element.getSize().getHeight() > 0) {
-            waitdefin.until(ExpectedConditions.visibilityOf(element));
-            waitdefin.until(ExpectedConditions.elementToBeClickable(element));
-            System.out.println("si existe");
-            present = true;
-        } else {
-            present = false;
-        }
-        return present;
-    }
 }

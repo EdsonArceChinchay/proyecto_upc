@@ -1,0 +1,85 @@
+#language:es
+##CREADOR: MOISES LLAMOCA
+##APP: DITO
+##MODULO:
+##FUNCIONALIDAD:
+##ESTADO: ACTIVO
+##CODIGO: AT-DT116
+##GDAP:GDAP-1412
+##SPRINT CREADO: PI16_SP4
+##FRECUENCIA:
+##TAG : BERSERKERS
+##DATA: REUSABLE
+##ENCARGADO:
+##FECMOD: 13/02/2024
+
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
+Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
+
+  @AltaMt_SvaTiendas
+  Esquema del escenario: Alta MT mas SVA en Canal Tiendas
+    Dado     que abro la pagina de movistar
+    Cuando   presiono el boton Iniciar Sesion
+    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<password>"
+    Y        ingreso el captcha
+    Y        presiono el boton Continuar hacia el home
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
+    Cuando   selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
+    Y        doy click en el boton Consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del nuevo cliente
+      | nombres | apellidos | genero    |
+      | Felipe  | Llanos    | Masculino |
+    Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
+    Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro pop up de Cliente Exonerado
+    Y        selecciono el boton Mostrar ofertas
+    Entonces me muestra la pantalla para ingresar la direccion
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    Y        ingreso la referencia de la direccion "<referencia>"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        selecciono tipo de oferta
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Agregar SVA
+    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
+    Y        agrego SVA internet "Seguridad Total Residencial"
+    Y        doy click en el boton Guardar cambios
+    Cuando   doy click en el boton Iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
+    Y        ingreso correo electronico "tester@mail.com"
+    Y        ingreso nuevamente el correo electronico "tester@mail.com"
+    Y        doy click en datos del cliente
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 24/02/1996 | Aruba        | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy clic para validar contrato Movil
+    Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
+    Cuando   doy clic en si acepto
+    Y        doy click en el boton de continuar
+    Y        presiono el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Ejemplos:
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+#  | usuario interno |          |          | Bienvenid@ | CE            | 221011300 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

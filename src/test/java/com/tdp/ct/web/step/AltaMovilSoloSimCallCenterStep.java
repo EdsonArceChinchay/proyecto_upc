@@ -3,8 +3,6 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
-import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -38,10 +36,6 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();
     }
 
-    public void validarPaginaResumen() {
-        page.altaMovilSoloSimCallCenterPage().paginaResumen();
-    }
-
     public void validarCompletaDatosSolicitados() {
         page.altaMovilSoloSimCallCenterPage().completaDatosSolicitados();
     }
@@ -50,8 +44,8 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().validarSeleccionaPostpagoPrepago();
     }
 
-    public void botonentendidoOfertas() {
-        page.altaMovilSoloSimCallCenterPage().botonentendidoOfertas();
+    public void seleccionoElBotonAgregarSva() {
+        page.altaMovilSoloSimCallCenterPage().seleccionoElBotonAgregarSva();
     }
 }
 

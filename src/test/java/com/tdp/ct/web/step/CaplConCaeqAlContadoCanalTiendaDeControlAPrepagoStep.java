@@ -15,20 +15,6 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     @Autowired
     private StepPages page;
 
-    public void esperarBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnCardPlanActual();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
-    }
-
-    @ScreenShotAfter
-    public void clickBtnRenovarPlan(){
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
-    }
-
     @ScreenShotBefore
     public void clickSelectOferta() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickSelectOferta();
@@ -48,58 +34,5 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
     public void clickBtnAddEquipoInCard() {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnAddEquipoInCard();
     }
-
-    @ScreenShotAfter
-    public void selectPermanency(String timePermanency) {
-        page.altaMovilPostpagoCallCenterPage().selectPermanency(timePermanency);
-    }
-    @ScreenShotAfter
-    public void selectTypeOfPayment(String typePayment) {
-        page.altaMovilPostpagoCallCenterPage().selectTypeOfPayment(typePayment);
-    }
-
-    @ScreenShotAfter
-    public void writeModeloEquipo(String modelo) {
-        page.altaMovilPostpagoCallCenterPage().BuscarEquipo(modelo);
-    }
-
-    @ScreenShotAfter
-    public int contadorResultadosBusquedaEquipos(){
-        return page.caplConCaeqAlContadoCanalTiendaPage().contadorResultadosBusquedaEquipos();
-    }
-    public void scrollToVerBtnDetalles() {
-        page.caplConCaeqAlContadoCanalTiendaPage().scrollToVerBtnDetalles();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnVerDetalle() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnVerDetalle(String nroServicio) {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnVerDetalle(nroServicio);
-    }
-
-    public void validarFeatures() {
-        page.caplConCaeqAlContadoCanalTiendaPage().validarFeatures();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnSelectEquipo() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnSelectEquipo();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnConShadowIniciarRegistro() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnConShadowIniciarRegistro();
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void writeEmail(String email) {
-        page.caplConCaeqAlContadoCanalTiendaPage().writeEmail(email);
-    }
-
 
 }

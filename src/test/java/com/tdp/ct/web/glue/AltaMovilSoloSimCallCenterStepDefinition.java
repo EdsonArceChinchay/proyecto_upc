@@ -21,6 +21,11 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     @Autowired
     private Customer customer;
 
+    @Y("doy click en el boton Agregar SVA")
+    public void seleccionoElBotonAgregarSva() {
+        altaMovilSoloSimCallCenterStep.seleccionoElBotonAgregarSva();
+    }
+
     @Y("valido que muestre el nombre completo del cliente {string}")
     public void valido_que_muestre_el_nombre_completo_del_cliente(String data) {
         if (!customer.isNewCustomer()) {
@@ -47,11 +52,6 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaFijaTiendaStep.clickListaBotones();
     }
 
-    @Y("valido que este en el resumen de venta")
-    public void valido_que_este_en_la_pagina_de_registro() {
-        altaMovilSoloSimCallCenterStep.validarPaginaResumen();
-    }
-
     @Y("valido que este en la seccion completa los datos solicitados")
     public void valido_que_este_en_seccion_completa_los_datos_solicitados() {
         altaMovilSoloSimCallCenterStep.validarCompletaDatosSolicitados();
@@ -67,8 +67,4 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
     }
 
-    @Y("doy click en Entendido para visualizar las ofertas")
-    public void doyClickEnEntendidoParaVisualizarLasOfertas() {
-        altaMovilSoloSimCallCenterStep.botonentendidoOfertas();
-    }
 }

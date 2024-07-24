@@ -11,8 +11,5 @@ public class MigraDuoTrioActualizarDireccionTiendasStep {
     @Autowired
     private StepPages pages;
 
-    @ScreenShotAfter
-    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
-        pages.migraDuoTrioActualizarDireccionTiendasPage().validoQueSePresenteElSiguienteMensaje(mensaje);
-    }
+
 }

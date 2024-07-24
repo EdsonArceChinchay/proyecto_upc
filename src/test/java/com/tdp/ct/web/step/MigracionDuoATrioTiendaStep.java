@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +13,6 @@ public class MigracionDuoATrioTiendaStep {
     @Autowired
     private StepPages page;
 
-    public void selecciono_la_cartilla_del_plan_Activo() {
-        page.migracionDuoATrioTiendaPage().selecciono_la_cartilla_del_plan_Activo();
-    }
-
     public void seleccionPlanNuevoParaVerLasOfertas() {
         page.migracionDuoATrioTiendaPage().seleccionPlanNuevoParaVerLasOfertas();
     }
@@ -24,39 +21,15 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanHogar(planHogar);
     }
 
-    public void seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(String planTrio) {
-        page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanTrioYPresionoSeleccionarOferta(planTrio);
-    }
-
-    public void luegoDoyClickEnLaCartillaCambiarPlanHogar() {
-        page.migracionDuoATrioTiendaPage().luegoDoyClickEnLaCartillaCambiarPlanHogar();
-    }
-
     public void scrollUp() {
         page.migracionDuoATrioTiendaPage().scrollUp();
     }
 
-    public void verificoLaDireccionActualDelServicio(String dir) {
-        page.migracionDuoATrioTiendaPage().verificoLaDireccionActualDelServicio(dir);
+    public void clickButton(String nameButton) {
+        page.migracionDuoATrioTiendaPage().clickButton(nameButton);
     }
 
-    public void doyClickEnEnElBoton(String nameButton) {
-        page.migracionDuoATrioTiendaPage().doyClickEnEnElBoton(nameButton);
-    }
-
-    public void agregoSVALinea(String svaLinea) {
-        page.migracionDuoATrioTiendaPage().agregoSVALinea(svaLinea);
-    }
-
-    public void doyClickEnAgregarModem() {
-        page.migracionDuoATrioTiendaPage().doyClickEnAgregarModem();
-    }
-
-    public void cerrarPopupCU() {
-        page.migracionDuoATrioTiendaPage().cerrarPopupCU();
-    }
-
-    public void seleccionoCartillaMovistarTotal() {
-        page.migracionDuoATrioTiendaPage().seleccionoCartillaMovistarTotal();
+    public void seleccionarboton() {
+        page.migracionDuoATrioTiendaPage().seleccionarboton();
     }
 }

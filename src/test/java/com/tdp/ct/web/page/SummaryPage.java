@@ -1,0 +1,96 @@
+package com.tdp.ct.web.page;
+
+import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+
+public class SummaryPage extends WebBase {
+
+    @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
+    protected WebElement btnStartRegister;
+
+    @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
+    protected WebElement btnClose;
+
+    @FindBy(xpath = "(//div[@class='title'])/span")
+    protected WebElement paginaResumen;
+
+    public void moverToElementIniciarRegistro() {
+        UtilWeb.waitForSeconds(5);
+        esperaProgresiva(driver(), 6, 6, btnStartRegister);
+        js().scrollElementTop(btnStartRegister);
+    }
+
+    public void clickButtonStartRegister(){
+        UtilWeb.waitForSeconds(5);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 6, 6, btnStartRegister);
+        btnStartRegister.click();
+        clickBtnCerrarModalError(btnStartRegister);
+        revisarModalError(driver());
+
+      /*  int intentos = 4;
+        for(int i=0;i<intentos;i++) {
+            try {
+                esperaProgresiva(driver(), 6, 6, btnStartRegister);
+                JavascriptExecutor js = (JavascriptExecutor) driver();
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+                btnStartRegister.click();
+                clickBtnCerrarModalError(btnStartRegister);
+                return;
+            } catch (NoSuchElementException e) {
+                System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
+            }
+        }*/
+    }
+
+
+    public void clickBtnCerrarModalError(WebElement metodoRepedito) {
+        int contador = 0, i = 0;
+        int reintentosMax = 3;
+        int segundosEspera = 5;
+        boolean bOK = false;
+
+        UtilWeb.waitForSeconds(1);
+        do {
+            UtilWeb.waitForSeconds(segundosEspera * contador);
+            try {
+                boolean elementoExistente;
+                elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
+                if (elementoExistente) {
+                    click(btnClose);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
+                    UtilWeb.waitForSeconds(5);
+                    click(metodoRepedito);
+                    bOK = true;
+                } else {
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
+                }
+
+            } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
+            }
+            contador++;
+        } while (!bOK && contador < reintentosMax);
+    }
+
+    public void paginaResumen() {
+        revisarModalError(driver());
+        UtilWeb.waitForSeconds(7);
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        esperaProgresiva(driver(),6,6,paginaResumen);
+        Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
+    }
+
+}

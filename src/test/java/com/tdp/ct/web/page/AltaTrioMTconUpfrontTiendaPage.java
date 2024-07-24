@@ -16,33 +16,12 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
-    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
-    protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement btnLineaNueva;
 
-    @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[8]/div/button")
-    protected WebElement btnConsultaCobertura;
-
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-
-    @FindBy(css = "button.btnStart")
-    protected WebElement btnIniciarRegistro;
-
-    @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
-    protected WebElement btnConfirmar;
-
-    @FindBy(xpath = "//app-modal-detalle//div/h1[contains(text(),'Detalles')]")
-    protected WebElement detalleInstalacion;
-
-    public String getDetalleInst() {
-        return getText(detalleInstalacion);
-    }
-
-    @FindBy(xpath = "//app-modal-detalle//div/button")
-    protected WebElement btnConfirmarRegistro;
 
     @FindBy(xpath = "//div[6]/div/div/button/span")
     protected WebElement btnValidarIdentidad;
@@ -50,14 +29,8 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     @FindBy(xpath = "//*[@id=\"modal\"]/div[2]/div/div[2]/div[2]/button")
     protected WebElement btnHuellaDes;
 
-    @FindBy(xpath = "//*[@id=\"modal\"]/div[2]//div[3]/app-modal-discapacitado//form/div/div[3]/button")
-    protected WebElement btnConfirmaSuper;
-
     @FindBy(xpath = "//div[3]/app-footer-item/div/div[2]/div[3]/div/button")
     protected WebElement btnMovistarTotal;
-
-    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Reintentar')]")
-    protected WebElement btnReintentar;
 
     public void clickBotonLineaNueva() {
         UtilWeb.waitForSeconds(5);
@@ -67,23 +40,11 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void clickBotonConsultarCobertura() {
-        waitUntilElementIsVisible(btnConsultaCobertura, 10);
-        click(btnConsultaCobertura);
-        UtilWeb.waitForSeconds(3);
-        System.out.println("click en consulta cobertura");
-    }
-
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(),4,5,botoneraIrA.get(1));
         revisarModalError(driver());
         click(botoneraIrA.get(1));
         UtilWeb.waitForSeconds(1);
-    }
-
-    public void clickBotonIniciarRegistro() {
-        waitUntilElementIsVisible(btnIniciarRegistro, 50);
-        click(btnIniciarRegistro);
     }
 
     public void ingresoTelefonoContacto(String numContacto) {
@@ -92,38 +53,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         click(numeroContac);
         type(numeroContac, numContacto);
 
-    }
-
-    public void clickBotonConfirmar() {
-
-        js().scrollElementTop(btnConfirmar);
-        UtilWeb.waitForSeconds(5);
-        esperaProgresiva(driver(), 3,5,btnConfirmar);
-        waitUntilElementIsClickable(btnConfirmar, 10);
-        click(btnConfirmar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(),3,3,buttonValidarContrato);
-    }
-
-    public void validoDetalleDeInstalacion() {
-        Assert.assertEquals("El resultado obtenido no coincide con lo esperado", "Detalles de instalación", getDetalleInst());
-    }
-
-    public void clickBtnConfirmarElRegistro() {
-        click(btnConfirmarRegistro);
-    }
-
-    public void ingresoCorreoElectronico(String correoElectronico) {
-        WebElement ingresoCorreo = find().getElementByCss("div:nth-child(02) > div > div > div > tdp-st-input-text");
-        click(ingresoCorreo);
-        type(ingresoCorreo, correoElectronico);
-    }
-
-    public void vuelveIngresarCorreoElectronico(String vuelveIngresarCorreo) {
-        WebElement vuelveIngresarC = find().getElementByCss("div:nth-child(3) > div > div > div > tdp-st-input-text");
-        click(vuelveIngresarC);
-        type(vuelveIngresarC, vuelveIngresarCorreo);
     }
 
     public void clickBotonValidarIdentidad() {
@@ -145,10 +74,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         WebElement numeroDocument = find().getElementByCss("#doc");
         click(numeroDocument);
         type(numeroDocument, documentoSuper);
-    }
-
-    public void presionoBotonConfirmar() {
-        click(btnConfirmaSuper);
     }
 
     public void ingresoUsuarioSupervisor(String user) {

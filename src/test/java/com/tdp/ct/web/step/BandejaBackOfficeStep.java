@@ -1,10 +1,7 @@
 package com.tdp.ct.web.step;
 
-import com.tdp.ct.web.CaptchaBase.Util;
-import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
