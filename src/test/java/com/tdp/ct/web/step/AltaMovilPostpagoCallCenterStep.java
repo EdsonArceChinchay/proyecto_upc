@@ -56,16 +56,5 @@ public class AltaMovilPostpagoCallCenterStep {
         page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
 
-    @ScreenShotAfter
-    public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
-        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
-        String nacionalidad = UtilWeb.getValueFromDataTable(datosCliente, "nacionalidad");
-
-        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechaNac);
-        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
-        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
-    }
-
 }
 

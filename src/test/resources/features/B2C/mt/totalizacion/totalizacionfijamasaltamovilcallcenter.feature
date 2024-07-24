@@ -54,7 +54,7 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    Y        ingreso un correo electronico "PRUEBA@GMAIL.COM"
+    Y        ingreso correo electronico "PRUEBA@GMAIL.COM"
     Y        ingreso nuevamente el correo electronico "PRUEBA@GMAIL.COM"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

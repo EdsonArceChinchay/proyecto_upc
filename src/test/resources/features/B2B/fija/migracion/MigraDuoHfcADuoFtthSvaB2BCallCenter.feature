@@ -49,7 +49,7 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton validar identidad representante legal
     #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"

@@ -106,8 +106,8 @@ public class HomePage extends WebBase {
         }
         else{
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2C");
-            Addons.esperaCargaMontoDeuda(driver(), 50);
-            esperaProgresiva(driver(), 3, 20, boton01);
+            //Addons.esperaCargaMontoDeuda(driver(), 50);
+           // esperaProgresiva(driver(), 3, 20, boton01);
         }
         revisarModalError(driver());
     }

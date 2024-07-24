@@ -29,7 +29,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -64,11 +64,11 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1980 | Albania      | Casado       |
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

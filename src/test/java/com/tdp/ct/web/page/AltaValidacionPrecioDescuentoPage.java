@@ -32,20 +32,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     protected WebElement btnCrearCliente;
     @FindBy(xpath = "//div[@class='plan2']")
     protected WebElement lblPrecio;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='mail']")
-    protected WebElement ingresoCorreo;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='confirmEmail']")
-    protected WebElement ingresoConfCorreo;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='callID']")
-    protected WebElement ingresoCall;
-    @FindBy(xpath = "//button/span[contains(text(),'Datos del Cliente')]")
-    protected WebElement btnDatosCliente;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='fechaNacimiento']")
-    protected WebElement ingresoFecha;
-    @FindBy(xpath = "//tdp-st-select[@formcontrolname='nacionalidad']")
-    protected WebElement cbxNacionalidad;
-    @FindBy(xpath = "//tdp-st-select[@formcontrolname='estadoCivil']")
-    protected WebElement cbxEstadoCivil;
     @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
@@ -171,68 +157,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     public void validacionPrecio(String precioPlan) {
         String precioCompare = lblPrecio.getText();
         Assert.assertEquals(precioPlan, precioCompare);
-    }
-
-    public void ingresoCorreo(String email) {
-        try {
-            if (isVisible(driver(),ingresoCorreo)) {
-                click(ingresoCorreo);
-                ingresoCorreo.sendKeys(email);
-            }
-        } catch (NoSuchElementException e) {
-            System.out.print("No se encontro el elemento " + e.getMessage());
-        }
-        try {
-            if (isVisible(driver(),ingresoConfCorreo)) {
-                click(ingresoConfCorreo);
-                ingresoConfCorreo.sendKeys(email);
-            }
-        } catch (NoSuchElementException e) {
-            System.out.print("No se encontro el elemento " + e.getMessage());
-        }
-    }
-
-    public void ingresoCallId(String callID) {
-        try {
-            if (isVisible(driver(),ingresoCall)) {
-                click(ingresoCall);
-                ingresoCall.sendKeys(callID);
-            } else {
-                System.out.print("No necesita el Call ID");
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoDatosCliente(String fecha) {
-        try {
-            js().scrollElementTop(btnDatosCliente);
-            if (isVisible(driver(),btnDatosCliente)) {
-                click(btnDatosCliente);
-                if (isVisible(driver(),ingresoFecha)) {
-                    click(ingresoFecha);
-                    ingresoFecha.sendKeys(fecha);
-                }
-            } else {
-                System.out.print("Cliente ya esta registrado");
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void ingresoNacionalidad(String nacionalidad) {
-        if (isVisible(driver(),cbxNacionalidad)) {
-            altaMovilPostpagoCallCenterPage.seleccionoNacionalidad(nacionalidad);
-        }
-    }
-
-    public void ingresoEstadoCivil(String estadoCivil) {
-        if (isVisible(driver(),cbxEstadoCivil)) {
-            altaMovilPostpagoCallCenterPage.seleccionarEstadoCivil(estadoCivil);
-            altaTrioMTconUpfrontTiendaPage.clickBotonConfirmar();
-        }
     }
 
     //Este metodo sirva para buscar elementos dentro de un shadowroot que los elementos sencuentren bajo el formato css "div > ul > li"

@@ -26,20 +26,8 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
     @FindBy(css = ".detail-content div.features")
     protected WebElement featureContent;
 
-    @FindBy(xpath = "//button[text()='Crear cliente']")
-    protected WebElement buttonCrearCliente;
-
     @FindBy(xpath = "//*[contains(@class,'detalle')]")
     protected WebElement labelDetail;
-
-    public void scrollToBtnCrearCliente() {
-        js().scrollElementTop(find().getElementByCss("div.consulta"));
-    }
-
-    public void crearCliente() {
-        click(buttonCrearCliente);
-        UtilWeb.waitForSeconds(2);
-    }
 
     public void validarOfertasSugeridasView(String title) {
         revisarModalError(driver());
@@ -92,6 +80,4 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-
-    
 }

@@ -48,7 +48,7 @@ Característica: Migracion de MT a MT en Tienda
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        valido que este en la seccion completa los datos solicitados
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

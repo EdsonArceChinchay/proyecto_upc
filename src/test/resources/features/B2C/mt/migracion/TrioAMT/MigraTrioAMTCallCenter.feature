@@ -47,7 +47,7 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente

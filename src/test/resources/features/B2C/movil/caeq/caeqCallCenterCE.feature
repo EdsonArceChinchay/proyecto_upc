@@ -58,7 +58,7 @@ Característica: Cambio de equipo movil a un cliente extranjero(CE) por Canal Ca
     Y        ingreso instrucciones de delivery "abc"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

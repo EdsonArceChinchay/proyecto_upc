@@ -36,7 +36,8 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        selecciono boton Cambiar plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        ingreso email "auto-3241@yopmail.com" y lo confirmo
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -59,5 +60,5 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
 
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042465074 |
-#
+
 

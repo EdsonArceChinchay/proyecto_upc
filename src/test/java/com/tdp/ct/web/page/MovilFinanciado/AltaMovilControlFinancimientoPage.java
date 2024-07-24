@@ -17,8 +17,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement planMovil;
     @FindBy(xpath = "(//div[@class='offert-card-body'])[1]")
     protected WebElement selectCampaniaOferta;
-    @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
-    protected WebElement btnSeleccionarOferta;
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
     @FindBy(xpath = "//div[3]/app-summary-section/div/div/div[1]/div/tdp-st-button")
@@ -27,9 +25,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
     protected WebElement btnPostpago;
     @FindBy(xpath = "//div[2]/div[1]/button[2]")
     protected WebElement btnControl;
-
-    @FindBy(xpath = "//*[@id=\"modal3\"]/div[2]/form/div/div[9]/button")
-    protected WebElement btnConfirmar;
 
     public void selectPlanActual() {
         click(planActual);
@@ -48,12 +43,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         click(selectCampaniaOferta);
     }
 
-    public void selectBtnOferta() {
-        js().scrollElementTop(btnSeleccionarOferta);
-        UtilWeb.waitForSeconds(2);
-        click(btnSeleccionarOferta);
-    }
-
     public void selectBtnLineaNueva() {
         esperaProgresiva(driver(), 3, 10, btnLineaNueva);
         click(btnLineaNueva);
@@ -69,81 +58,6 @@ public class AltaMovilControlFinancimientoPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         waitUntilElementIsVisible(btnControl, 10);
         click(btnControl);
-    }
-
-    public void ingresarFechaNac(String fechaNac) {
-        WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(fechaNac);
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void seleccionoNacionalidad() {
-        WebElement nacList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
-        click(nacList);
-        UtilWeb.waitForSeconds(2);
-        String dataValue = "DEU";
-        SearchContext context = sh().getContext(nacList);
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        System.out.println("seleccionando nacionalidad");
-    }
-
-    public void seleccionarEstadoCivil(String estadoCivil) {
-        WebElement generoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
-        click(generoList);
-        String dataValue;
-        UtilWeb.waitForSeconds(2);
-        SearchContext context = sh().getContext(generoList);
-        if (estadoCivil.equalsIgnoreCase("Soltero")) {
-            dataValue = "single";
-        } else {
-            dataValue = "married";
-        }
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        System.out.println("seleccionando estado civil");
-    }
-
-    public void seleccionoDepartamento() {
-        WebElement depList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='department']");
-        click(depList);
-        UtilWeb.waitForSeconds(2);
-        String dataValue = "15";
-        SearchContext context = sh().getContext(depList);
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        System.out.println("seleccionando departamento");
-    }
-
-    public void seleccionoProvincia() {
-        WebElement proList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='province']");
-        click(proList);
-        UtilWeb.waitForSeconds(2);
-        String dataValue = "1501";
-        SearchContext context = sh().getContext(proList);
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        System.out.println("seleccionando provincia");
-    }
-
-    public void seleccionoDistrito() {
-        WebElement distList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='district']");
-        click(distList);
-        UtilWeb.waitForSeconds(3);
-        String dataValue = "150136";
-        SearchContext context = sh().getContext(distList);
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        System.out.println("seleccionando distrito");
-    }
-
-    public void ingresarDireccion(String direccion) {
-        WebElement direc = find().getElementByXPath("//tdp-st-modal//tdp-st-textarea[@formcontrolname='direccion']");
-        click(direc);
-        type(direc, direccion);
-        UtilWeb.waitForSeconds(2);
-    }
-
-    public void selectBtnConfirmar() {
-        waitUntilElementIsVisible(btnConfirmar, 5);
-        click(btnConfirmar);
-        UtilWeb.waitForSeconds(12);
     }
 
 }

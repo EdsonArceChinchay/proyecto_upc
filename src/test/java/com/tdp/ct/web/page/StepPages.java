@@ -124,6 +124,8 @@ public class StepPages {
         return new AppointmentPage();
     }
 
+    public RegisterPage registerPage(){ return new RegisterPage();}
+
     public CheckoutPage checkoutPage() {
         return new CheckoutPage();
     }

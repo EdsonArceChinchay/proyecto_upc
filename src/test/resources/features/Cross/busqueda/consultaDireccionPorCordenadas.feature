@@ -31,7 +31,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -65,7 +65,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar

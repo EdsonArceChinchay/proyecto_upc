@@ -26,14 +26,20 @@ public class SummaryPage extends WebBase {
     protected WebElement paginaResumen;
 
     public void moverToElementIniciarRegistro() {
-        esperaProgresiva(driver(), 3, 5, btnStartRegister);
+        UtilWeb.waitForSeconds(5);
+        esperaProgresiva(driver(), 6, 6, btnStartRegister);
         js().scrollElementTop(btnStartRegister);
     }
 
     public void clickButtonStartRegister(){
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
-        int intentos = 4;
+        esperaProgresiva(driver(), 6, 6, btnStartRegister);
+        btnStartRegister.click();
+        clickBtnCerrarModalError(btnStartRegister);
+        revisarModalError(driver());
+
+      /*  int intentos = 4;
         for(int i=0;i<intentos;i++) {
             try {
                 esperaProgresiva(driver(), 6, 6, btnStartRegister);
@@ -45,17 +51,37 @@ public class SummaryPage extends WebBase {
             } catch (NoSuchElementException e) {
                 System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
             }
-        }
+        }*/
     }
 
+
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
-        boolean elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
-        if (elementoExistente) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Click al Cerrar");
-            click(btnClose);
-            UtilWeb.waitForSeconds(2);
-            click(metodoRepedito);
-        }
+        int contador = 0, i = 0;
+        int reintentosMax = 3;
+        int segundosEspera = 5;
+        boolean bOK = false;
+
+        UtilWeb.waitForSeconds(1);
+        do {
+            UtilWeb.waitForSeconds(segundosEspera * contador);
+            try {
+                boolean elementoExistente;
+                elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
+                if (elementoExistente) {
+                    click(btnClose);
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
+                    UtilWeb.waitForSeconds(5);
+                    click(metodoRepedito);
+                    bOK = true;
+                } else {
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
+                }
+
+            } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
+            }
+            contador++;
+        } while (!bOK && contador < reintentosMax);
     }
 
     public void paginaResumen() {
@@ -63,7 +89,7 @@ public class SummaryPage extends WebBase {
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        esperaProgresiva(driver(),3,5,paginaResumen);
+        esperaProgresiva(driver(),6,6,paginaResumen);
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 

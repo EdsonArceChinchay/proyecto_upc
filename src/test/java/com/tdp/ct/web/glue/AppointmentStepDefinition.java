@@ -24,11 +24,6 @@ public class AppointmentStepDefinition {
         appointmentStep.ingresarContacto(contacto);
     }
 
-    @Y("doy clic en confirmar agendamiento")
-    public void doyClicEnConfirmarAgendamiento() {
-        appointmentStep.clicConfirmarAgendamiento();
-    }
-
     @Y("valido que se presente la pantalla agendamiento")
     public void validoQueSePresenteLaPantallaAgendamiento() {
         appointmentStep.scrollToViewAgendamiento();

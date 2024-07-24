@@ -30,7 +30,7 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Jose    | LLamoca   | masculino |
     #Y        valido que muestre el nombre completo del cliente "Jose Llamoca"
@@ -66,10 +66,10 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola_mundo@gmail.com"
+    Y        ingreso correo electronico "hola_mundo@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola_mundo@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/09/1988 | Soltero     | Aruba        |
     Y        doy click en el boton confirmar

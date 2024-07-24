@@ -62,7 +62,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        doy clic en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente

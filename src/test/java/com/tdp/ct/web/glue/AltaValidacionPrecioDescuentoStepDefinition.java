@@ -41,21 +41,6 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
         altaValidacionPrecioDescuentoStep.validacionPrecio(precioPlan);
     }
 
-    @Y("ingreso correo electronico {string}")
-    public void ingresoCorreo(String email) {
-        altaValidacionPrecioDescuentoStep.ingresoCorreo(email);
-    }
-
-    @Y("ingreso el callId {string}")
-    public void ingresoCallID(String callId) {
-        altaValidacionPrecioDescuentoStep.ingresoCallId(callId);
-    }
-
-    @Y("valido el ingreso de datos del cliente")
-    public void ingresoDatosCliente(DataTable datosCliente) {
-        altaValidacionPrecioDescuentoStep.ingresoDatosClientes(datosCliente);
-    }
-
     @Y("escojo el plan {string}")
     public void escojoPlan(String plan) {
         altaValidacionPrecioDescuentoStep.escojoPlan(plan);

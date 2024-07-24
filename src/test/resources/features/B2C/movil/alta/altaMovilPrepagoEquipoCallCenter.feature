@@ -31,7 +31,7 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos    | genero   |
       | MARIA MERCEDES | ZAPATA PEREZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Movil
@@ -66,10 +66,10 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar

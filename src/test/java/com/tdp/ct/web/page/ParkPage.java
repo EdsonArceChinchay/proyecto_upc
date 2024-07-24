@@ -89,7 +89,6 @@ public class ParkPage extends WebBase {
             revisarModalError(driver());
             click(btnHogar);
         }
-
     }
 
     public void altaMovil() {

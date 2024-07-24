@@ -20,23 +20,6 @@ public class AltaTrioMTconUpfrontTiendaStep {
     public void clickBotonIrMovistarTotal(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonIrMovistarTotal();
     }
-    @ScreenShotAfter
-    public void ingresoTelefonoContacto(String numContacto){
-        page.altaTrioMTconUpfrontTiendaPage().ingresoTelefonoContacto(numContacto);
-    }
-    @ScreenShotBefore
-    public void clickBotonConfirmar(){
-        page.altaTrioMTconUpfrontTiendaPage().clickBotonConfirmar();
-    }
-
-    @ScreenShotAfter
-    public void ingresoCorreoElectronico(String correoElectronico){
-        page.altaTrioMTconUpfrontTiendaPage().ingresoCorreoElectronico(correoElectronico);
-    }
-    @ScreenShotAfter
-    public void vuelveIngresarCorreoElectronico(String vuelveIngresarCorreo){
-        page.altaTrioMTconUpfrontTiendaPage().vuelveIngresarCorreoElectronico(vuelveIngresarCorreo);
-    }
     @ScreenShotBefore
     public void clickBotonValidarIdentidad(){
         page.altaTrioMTconUpfrontTiendaPage().clickBotonValidarIdentidad();

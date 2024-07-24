@@ -30,7 +30,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
@@ -49,7 +49,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente

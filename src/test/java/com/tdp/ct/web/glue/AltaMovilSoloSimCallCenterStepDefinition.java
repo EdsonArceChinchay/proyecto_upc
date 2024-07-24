@@ -21,15 +21,6 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     @Autowired
     private Customer customer;
 
-    @Y("selecciono completar los datos del cliente")
-    public void selecciono_completar_los_datos_del_cliente(DataTable datosCliente) {
-        if (customer.isNewCustomer()) {
-            altaMovilSoloSimCallCenterStep.completoDatosCliente(datosCliente);
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
-    }
-
     @Y("doy click en el boton Agregar SVA")
     public void seleccionoElBotonAgregarSva() {
         altaMovilSoloSimCallCenterStep.seleccionoElBotonAgregarSva();

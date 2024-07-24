@@ -16,17 +16,12 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
-    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
-    protected WebElement buttonValidarContrato;
 
     @FindBy(xpath = "//button[contains(text(),'Línea nueva') or contains(text(),'Línea Nueva')]")
     protected WebElement btnLineaNueva;
 
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-
-    @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
-    protected WebElement btnConfirmar;
 
     @FindBy(xpath = "//div[6]/div/div/button/span")
     protected WebElement btnValidarIdentidad;
@@ -60,30 +55,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     }
 
-    public void clickBotonConfirmar() {
-
-        js().scrollElementTop(btnConfirmar);
-        UtilWeb.waitForSeconds(5);
-        esperaProgresiva(driver(), 3,5,btnConfirmar);
-        waitUntilElementIsClickable(btnConfirmar, 10);
-        click(btnConfirmar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(),3,3,buttonValidarContrato);
-    }
-
-    public void ingresoCorreoElectronico(String correoElectronico) {
-        WebElement ingresoCorreo = find().getElementByCss("div:nth-child(02) > div > div > div > tdp-st-input-text");
-        click(ingresoCorreo);
-        type(ingresoCorreo, correoElectronico);
-    }
-
-    public void vuelveIngresarCorreoElectronico(String vuelveIngresarCorreo) {
-        WebElement vuelveIngresarC = find().getElementByCss("div:nth-child(3) > div > div > div > tdp-st-input-text");
-        click(vuelveIngresarC);
-        type(vuelveIngresarC, vuelveIngresarCorreo);
-    }
-
     public void clickBotonValidarIdentidad() {
         click(btnValidarIdentidad);
     }
@@ -104,7 +75,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         click(numeroDocument);
         type(numeroDocument, documentoSuper);
     }
-
 
     public void ingresoUsuarioSupervisor(String user) {
         WebElement usuario = find().getElementByCss("#usuarioCitrixSupervisor");

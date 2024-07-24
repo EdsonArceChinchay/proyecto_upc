@@ -62,13 +62,4 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
         altaMovilPostpagoCallCenterStep.seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
 
-    @Y("ingreso los datos del cliente")
-    public void ingresoLosDatosDelCliente(DataTable datosCliente) {
-        if (customer.isNewCustomer()) {
-            altaMovilPostpagoCallCenterStep.ingresoLosDatosDelCliente(datosCliente);
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
-    }
-
 }

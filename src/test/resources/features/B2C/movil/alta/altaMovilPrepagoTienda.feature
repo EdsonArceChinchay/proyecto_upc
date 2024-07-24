@@ -31,7 +31,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
@@ -42,7 +42,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        selecciono la oferta de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente

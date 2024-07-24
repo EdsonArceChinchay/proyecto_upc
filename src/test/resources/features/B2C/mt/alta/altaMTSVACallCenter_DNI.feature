@@ -68,7 +68,7 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente

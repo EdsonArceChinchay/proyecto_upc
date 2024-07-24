@@ -30,7 +30,7 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Luis    | Lozano    | masculino |
     Y        selecciono el boton Linea Nueva Movil
@@ -46,7 +46,7 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        doy click en el boton seleccionar oferta
     Y        selecciono en linea Nueva
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente

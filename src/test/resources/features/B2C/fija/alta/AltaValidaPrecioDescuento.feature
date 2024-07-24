@@ -33,7 +33,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
 	#Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
       | Lana    | Grey Khalifa | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -64,10 +64,10 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "Angel.mf@gmail.com"
+    Y        ingreso correo electronico "Angel.mf@gmail.com"
     Y        ingreso nuevamente el correo electronico "Angel.mf@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 01/09/1990 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
@@ -137,13 +137,13 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
     Y        valido el precio establecido sea "<precio>"
-    Y       doy click en el boton Iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "Angel.mf@gmail.com"
   #  Y        ingreso el callId "<Call ID>"
-    Y        valido el ingreso de datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/05/1990 | Divorciado  | Aruba        |
     Y        doy clic para validar contrato hogar

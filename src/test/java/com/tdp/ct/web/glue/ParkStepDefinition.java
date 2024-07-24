@@ -1,6 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.ParkStep;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -144,4 +145,12 @@ public class ParkStepDefinition {
     public void seleccionoLaLineaConNumero(String number) {
         parkStep.selectLineWithNumber(number);
     }
+
+    @Y("ingreso los datos del nuevo cliente")
+    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
+        parkStep.verificarClienteNuevo();
+        parkStep.ingresarDatosClienteExtranjero(value);
+        parkStep.clicEnCrearCliente();
+    }
+
 }

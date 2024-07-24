@@ -54,7 +54,7 @@ Característica: AT-DT0 _Completa Planta Fija Trio + Alta Movil + Alta equipo mo
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil

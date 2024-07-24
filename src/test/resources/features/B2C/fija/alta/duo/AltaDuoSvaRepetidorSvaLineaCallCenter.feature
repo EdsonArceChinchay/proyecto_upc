@@ -31,7 +31,7 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos     | genero    |
       | Elvis   | Lopez Barrios | masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -61,10 +61,10 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester.123@tester.com"
+    Y        ingreso correo electronico "tester.123@tester.com"
     Y        ingreso nuevamente el correo electronico "tester.123@tester.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar

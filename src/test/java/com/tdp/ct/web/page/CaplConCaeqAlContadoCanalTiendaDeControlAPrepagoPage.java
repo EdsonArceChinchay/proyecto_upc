@@ -75,20 +75,4 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage extends WebBas
         UtilWeb.waitForSeconds(5);
     }
 
-    public void writeEmail(String email) {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(4);
-        WebElement element1 = find().getElementByXPath("//*[@formcontrolname='mail']");
-        WebElement ele1 = sh().getWebElement(element1, "input");
-        clear(ele1);
-        type(ele1, email);
-
-        UtilWeb.waitForSeconds(1);
-        WebElement element2 = find().getElementByXPath("//*[@formcontrolname='confirmEmail']");
-        WebElement ele2 = sh().getWebElement(element2, "input");
-        clear(ele2);
-        type(ele2, email);
-        UtilWeb.waitForSeconds(1);
-    }
-
 }

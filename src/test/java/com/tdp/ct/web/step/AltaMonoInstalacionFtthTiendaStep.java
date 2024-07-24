@@ -12,15 +12,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @Autowired
     private StepPages page;
 
-    public void scrollToBtnCrearCliente() {
-        page.altaMonoFtthTiendaPage().scrollToBtnCrearCliente();
-    }
-
-    @ScreenShotBefore
-    public void crearCliente() {
-        page.altaMonoFtthTiendaPage().crearCliente();
-    }
-
     @ScreenShotAfter
     public void validarOfertasSugeridasView(String title) {
         page.altaMonoFtthTiendaPage().validarOfertasSugeridasView(title);
@@ -43,11 +34,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @ScreenShotBefore
     public void seleccionarPlan(String plan) {
         page.altaFijaMovilRegistroPage().seleccionarPlan(plan);
-    }
-
-    @ScreenShotBefore
-    public void clickSelectOferta() {
-        page.altaFijaMovilRegistroPage().clicSeleccionarOferta();
     }
 
     public void esperarBtnLineaNueva() {

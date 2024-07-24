@@ -26,7 +26,10 @@ public class DevicesPage extends WebBase {
     protected WebElement caracteristicasContent;
 
     @FindBy(xpath = "(//tdp-st-button[@class='tdp-st-button-l hydrated' and @label='Seleccionar'])[1]")
-    protected WebElement btnSeleccionar;
+    protected WebElement btnSelect;
+
+    @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
+    protected WebElement btnSelectDevice;
 
     public void selectTypeOfPayment(String payment) {
         boolean tipoPagoEncontrado = false;
@@ -76,10 +79,17 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSelect() {
-        esperaProgresiva(driver(), 5, 5, btnSeleccionar);
-        js().scrollElementTop(btnSeleccionar);
-        waitUntilElementIsClickable(btnSeleccionar, 10).click();
+        esperaProgresiva(driver(), 5, 5, btnSelect);
+        js().scrollElementTop(btnSelect);
+        waitUntilElementIsClickable(btnSelect, 10).click();
         UtilWeb.waitForSeconds(2);
+        revisarModalError(driver());
+    }
+
+    public void clickButtonSelectDevice() {
+        esperaProgresiva(driver(), 5, 5, btnSelectDevice);
+        js().scrollElementTop(btnSelectDevice);
+        waitUntilElementIsClickable(btnSelectDevice, 10).click();
         revisarModalError(driver());
     }
 

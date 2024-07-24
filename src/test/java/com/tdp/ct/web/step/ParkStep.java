@@ -1,8 +1,11 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.util.UtilWeb;
+import io.cucumber.datatable.DataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +13,9 @@ import org.springframework.stereotype.Component;
 public class ParkStep {
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private Customer customer;
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         page.parkPage().selecciono_la_cartilla_del_plan_Activo();
@@ -155,5 +161,32 @@ public class ParkStep {
     @ScreenShotAfter
     public void selectLineWithNumber(String number) {
         page.parkPage().selectLineWithNumber(number);
+    }
+
+    public void verificarClienteNuevo() {
+        customer.setNewCustomer(page.altaFijaMovilRegistroPage().isNewCustomer());
+    }
+
+    @ScreenShotAfter
+    public void ingresarDatosClienteExtranjero(DataTable datos) {
+        if (customer.isNewCustomer()) {
+            String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
+            String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
+            String genero = UtilWeb.getValueFromDataTable(datos, "genero");
+            page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
+            page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
+            page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
+        } else {
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
+    }
+
+    @ScreenShotAfter
+    public void clicEnCrearCliente() {
+        if (customer.isNewCustomer()) {
+            page.altaFijaMovilRegistroPage().crearCliente();
+        } else {
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
     }
 }

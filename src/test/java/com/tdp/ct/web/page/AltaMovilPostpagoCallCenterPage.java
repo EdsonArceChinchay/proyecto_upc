@@ -131,7 +131,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
         return existe;
     }
 
-
     public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
         WebElement listElementPLan=find().getElementByXPath("(//tdp-st-select)[1]");
         click(listElementPLan);
@@ -146,47 +145,6 @@ public class AltaMovilPostpagoCallCenterPage extends WebBase {
             }
         }
         UtilWeb.waitForSeconds(1);
-    }
-
-    public void ingresarFechaNac(String fechaNac) {
-        WebElement rootElement = find().getElementByXPath("//tdp-st-input-text[@formcontrolname='fechaNacimiento']");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(fechaNac);
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void seleccionoNacionalidad(String nacionalidad) {
-        WebElement listNacionalidad = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']");
-        UtilWeb.waitForSeconds(2);
-        click(listNacionalidad,5);
-        UtilWeb.waitForSeconds(3);//2
-        SearchContext contexPlan=sh().getContext(listNacionalidad);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
-        for(WebElement elements:lista){
-            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+nacionalidad.trim()+" es "+elements.getText().trim().equals(nacionalidad.trim()) );
-            if(elements.getText().trim().equals(nacionalidad.trim())){
-                js().scrollElementTop(elements);
-                waitUntilElementIsClickable(elements,30).click();
-                break;
-            }
-        }
-    }
-
-    public void seleccionarEstadoCivil(String estadoCivil) {
-        WebElement estadoList = find().getElementByXPath("//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']");
-        UtilWeb.waitForSeconds(2);
-        click(estadoList,5);
-        System.out.println("Dio click en lista de estado");
-        UtilWeb.waitForSeconds(3);
-        SearchContext contexPlan=sh().getContext(estadoList);
-        List<WebElement>lista= contexPlan.findElements(By.cssSelector("div > ul > li")); //By.className("mdc-list-item")
-        for(WebElement elements:lista){
-            Logger.getLogger(AltaMovilPostpagoCallCenterPage.class.getName()).log(Level.INFO,elements.getText().trim() +" = "+estadoCivil.trim()+" es "+elements.getText().trim().equals(estadoCivil.trim()) );
-            if(elements.getText().trim().equals(estadoCivil.trim())){
-                click(elements,30);
-                break;
-            }
-        }
     }
 
 }

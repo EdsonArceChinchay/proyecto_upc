@@ -37,7 +37,7 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Y        selecciono el boton Cambiar Chip
     Y        cierro pop up de Cliente Exonerado
     Cuando   doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

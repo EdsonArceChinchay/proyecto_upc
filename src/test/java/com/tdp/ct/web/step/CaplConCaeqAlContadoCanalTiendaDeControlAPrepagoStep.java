@@ -35,10 +35,4 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep {
         page.caplConCaeqAlContadoCanalTiendaPage().clickBtnAddEquipoInCard();
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void writeEmail(String email) {
-        page.caplConCaeqAlContadoCanalTiendaPage().writeEmail(email);
-    }
-
 }

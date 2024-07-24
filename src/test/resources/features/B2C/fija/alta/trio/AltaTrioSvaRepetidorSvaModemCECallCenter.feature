@@ -31,7 +31,7 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero   |
       | Olga    | Rivaguero | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -60,10 +60,10 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester_1_2@tester.com"
+    Y        ingreso correo electronico "tester_1_2@tester.com"
     Y        ingreso nuevamente el correo electronico "tester_1_2@tester.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 11/04/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar

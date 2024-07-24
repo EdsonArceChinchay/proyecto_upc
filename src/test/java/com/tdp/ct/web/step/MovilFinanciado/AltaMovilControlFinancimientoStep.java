@@ -48,21 +48,4 @@ public class AltaMovilControlFinancimientoStep {
         page.altaMovilControlFinancimientoPage().selectBtnControl();
     }
 
-    public void completarDatosClienteExtranjeroMovilFinanciado(DataTable datosCliente) {
-        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
-        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
-        String dir = UtilWeb.getValueFromDataTable(datosCliente, "direccion");
-
-        page.altaMovilControlFinancimientoPage().ingresarFechaNac(fechaNac);
-        page.altaMovilControlFinancimientoPage().seleccionoNacionalidad();
-        page.altaMovilControlFinancimientoPage().seleccionarEstadoCivil(estadoCivil);
-        page.altaMovilControlFinancimientoPage().seleccionoDepartamento();
-        page.altaMovilControlFinancimientoPage().seleccionoProvincia();
-        page.altaMovilControlFinancimientoPage().seleccionoDistrito();
-        page.altaMovilControlFinancimientoPage().ingresarDireccion(dir);
-        scenario.printFullView();
-        page.altaMovilControlFinancimientoPage().selectBtnConfirmar();
-
-    }
-
 }

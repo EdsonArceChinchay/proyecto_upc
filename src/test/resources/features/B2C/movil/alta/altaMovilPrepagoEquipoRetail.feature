@@ -32,7 +32,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos     | genero    |
       | Jorge   | Blanco Llacza | Masculino |
     Y        selecciono el boton Linea Nueva Movil
@@ -47,7 +47,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "prueba@prueba.com"
+    Y        ingreso correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente

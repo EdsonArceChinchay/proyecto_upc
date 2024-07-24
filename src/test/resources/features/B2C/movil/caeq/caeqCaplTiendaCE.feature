@@ -45,7 +45,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

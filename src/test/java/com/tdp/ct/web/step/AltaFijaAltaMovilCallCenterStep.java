@@ -17,19 +17,6 @@ public class AltaFijaAltaMovilCallCenterStep {
     @Autowired
     private ManageScenario scenario;
 
-    @ScreenShotBefore
-    public void seleccionarTipoPago(String tipoPago) {
-        page.altaFijaAltaMovilCallCenterPage().tipoPago(tipoPago);
-    }
-
-    public void ingresarCorreo(String correo) {
-        page.altaFijaAltaMovilCallCenterPage().correo(correo);
-    }
-
-    public void ingresarCorreoNuevamente(String correo) {
-        page.altaFijaAltaMovilCallCenterPage().confirmarCorreo(correo);
-    }
-
     public void scrollUp() {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
     }

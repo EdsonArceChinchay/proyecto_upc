@@ -54,7 +54,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
-    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar

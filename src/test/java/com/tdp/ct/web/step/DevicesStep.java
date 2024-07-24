@@ -50,4 +50,9 @@ public class DevicesStep {
         page.devicesPage().validateFeatures();
     }
 
+    @ScreenShotBefore
+    public void clickButtonSelectDevice() {
+        page.devicesPage().clickButtonSelectDevice();
+    }
+
 }

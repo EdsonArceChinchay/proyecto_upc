@@ -235,7 +235,7 @@ public class Addons {
                 try {
                     //Busca un boton para Reintentar
                     LOGGER.log(Level.INFO, "Buscando - btn Reintentar");
-                    List<WebElement> btnsReintentar = driver.findElements(By.xpath("//*[contains(text(),'Reintentar')]"));
+                    List<WebElement> btnsReintentar = driver.findElements(By.xpath("//*[contains(text(),'Reintentar')] | //app-card-plan-error//*[contains(text(),'Reintentar')] "));
                     btnReintentar = btnsReintentar.get(btnsReintentar.size() - 1);
                     if (btnReintentar.isEnabled()) {
                         btnReintentar.click();

@@ -48,7 +48,7 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

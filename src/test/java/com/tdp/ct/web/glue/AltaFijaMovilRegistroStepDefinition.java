@@ -31,12 +31,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         this.scenario = scenario;
     }
 
-    @Entonces("me muestra la pantalla registrar venta")
-    public void meMuestraLaPantallaParaRegistrarVenta() {
-        altaFijaMovilRegistroStep.validarPantallaRegistrarVenta();
-    }
-
-
     @Entonces("me muestra la pantalla de ofertas sugeridos")
     public void meMuestraLaPantallaDeOfertasSugeridos() {
         altaFijaMovilRegistroStep.mostrarDetalleOfertasSugeridas();
@@ -45,23 +39,6 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("selecciono el tipo de oferta {string}")
     public void seleccionoElTipoDeOferta(String oferta) {
         altaFijaMovilRegistroStep.seleccionarOferta(oferta);
-    }
-
-    @Y("selecciono el tipo de plan {string}")
-    public void seleccionoElTipoDePlan(String plan) {
-        altaFijaMovilRegistroStep.seleccionarPlan(plan);
-        altaFijaMovilRegistroStep.clicBotonSeleccionarOferta();
-        altaFijaMovilRegistroStep.clicIrAMovistarTotal();
-    }
-
-    @Y("doy clic en confirmar")
-    public void doyClicEnConfirmar() {
-        altaFijaMovilRegistroStep.clicConfirmarInstalacion();
-    }
-
-    @Y("completo los datos solicitados {string}")
-    public void completoLosDatosSolicitados(String email) {
-        altaFijaMovilRegistroStep.completarCorreo(email);
     }
 
     @Y("doy click en validar identidad del titular")
@@ -103,11 +80,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicValidarContrato();
     }
 
-    @Y("doy clic en continuar")
-    public void doyClicEnContinuar() {
-        altaFijaMovilRegistroStep.clicBotonContinuar();
-    }
-
     @Y("me muestra en pantalla el contrato solicitado")
     public void meMuestraEnPantallaElContratoSolicitado() {
         altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
@@ -124,29 +96,9 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.clicSiAcepto();
     }
 
-    //CAMBIOS PARA RETAIL
-    @Y("ingreso los datos del cliente a registrar")
-    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
-        altaFijaMovilRegistroStep.verificarClienteNuevo();
-        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(value);
-        altaFijaMovilRegistroStep.clicEnCrearCliente();
-    }
-
-    @Y("completo los datos del cliente")
-    public void completoLosDatosDelCliente(DataTable datosCliente) {
-        altaFijaMovilRegistroStep.completarDatosClienteExtranjero(datosCliente);
-        altaFijaMovilRegistroStep.clicConfirmarCliente();
-        altaFijaMovilRegistroStep.datosClienteValidado();
-    }
-
-    @Y("doy click en datos del cliente")
-    public void doyClickEnDatosDelCliente() {
-        if (customer.isNewCustomer()) {
-            altaFijaMovilRegistroStep.esperarBtnDatosCliente();
-            altaFijaMovilRegistroStep.clicDatosDelCliente();
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
+    @Y("doy clic en continuar")
+    public void doyClicEnContinuar() {
+        altaFijaMovilRegistroStep.clicBotonContinuar();
     }
 
     @Y("me muestra pantalla para Descargar contrato")
@@ -159,6 +111,11 @@ public class AltaFijaMovilRegistroStepDefinition {
         if (Parameters.estadoFlujo) {
             altaFijaMovilRegistroStep.clicDescargarContrato();
         }
+    }
+
+    @Entonces("me muestra la pantalla registrar venta")
+    public void meMuestraLaPantallaParaRegistrarVenta() {
+        altaFijaMovilRegistroStep.validarPantallaRegistrarVenta();
     }
 
     @Y("doy clic en Registrar venta")

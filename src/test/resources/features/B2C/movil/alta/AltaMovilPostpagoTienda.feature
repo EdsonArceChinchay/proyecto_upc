@@ -31,7 +31,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos      | genero   |
       | Estela Rosario | Lopez Manrique | femenino |
 #    Y        cierro popup de aviso
@@ -49,7 +49,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono la cartilla Linea Nueva
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
-    Y        ingreso un correo electronico "estelalopez@mail.com"
+    Y        ingreso correo electronico "estelalopez@mail.com"
     Y        ingreso nuevamente el correo electronico "estelalopez@mail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente

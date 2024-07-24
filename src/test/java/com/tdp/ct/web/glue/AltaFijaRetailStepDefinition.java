@@ -11,9 +11,6 @@ public class AltaFijaRetailStepDefinition {
     @Autowired
     private AltaFijaRetailStep altaFijaRetailStep;
 
-    @Autowired
-    private Customer customer;
-
     @Y("selecciono un plan hogar {string}")
     public void seleccionoUnPlanHogar(String tipoPlan) {
         altaFijaRetailStep.irSeleccionarTipoPlan(tipoPlan);
@@ -24,15 +21,5 @@ public class AltaFijaRetailStepDefinition {
         altaFijaRetailStep.irSeleccionarPlan(nombrePlan);
         altaFijaRetailStep.clickIrLineaNueva();
     }
-
-    @Y("completo los datos solicitados")
-    public void completoLosDatosSolicitados(DataTable dataTable) {
-        if (customer.isNewCustomer()) {
-            altaFijaRetailStep.ingresarDatosCliente(dataTable);
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
-    }
-
 
 }

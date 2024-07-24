@@ -46,7 +46,8 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     E        imprimo el texto del contrato solicitado

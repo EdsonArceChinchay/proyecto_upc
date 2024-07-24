@@ -32,7 +32,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Lucia   | Perez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -70,10 +70,10 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        doy clic en confirmar delivery
     #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/12/1990 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar

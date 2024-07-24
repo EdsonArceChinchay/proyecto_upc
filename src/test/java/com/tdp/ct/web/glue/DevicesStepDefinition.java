@@ -53,7 +53,7 @@ public class DevicesStepDefinition {
         devicesStep.scrollToButtonSeeDetail();
         devicesStep.clickButtonSeeDetail();
         devicesStep.validateFeatures();
-        devicesStep.clickButtonSelect();
+        devicesStep.clickButtonSelectDevice();
     }
 
 }

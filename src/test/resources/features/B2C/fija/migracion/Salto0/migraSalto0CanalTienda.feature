@@ -41,7 +41,7 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

@@ -23,33 +23,10 @@ public class AltaTrioMTconUpfrontTiendaStepDefinition {
         altaTrioMTconUpfrontTiendaStep.clickBotonIrMovistarTotal();
     }
 
-    @Y("ingreso telefono del contacto {string}")
-    public void ingresoTelefonoDelContacto(String numContacto) {
-        altaTrioMTconUpfrontTiendaStep.ingresoTelefonoContacto(numContacto);
-    }
-
-    @Y("doy click en el boton confirmar")
-    public void doyClickEnElBotonConfirmar() {
-        if (customer.isNewCustomer()) {
-            altaTrioMTconUpfrontTiendaStep.clickBotonConfirmar();
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
-    }
 
     @Y("voy hasta el final de la pagina")
     public void voyHastaElFinalDeLaPagina() {
         altaTrioMTconUpfrontTiendaStep.scrollFinalPagina();
-    }
-
-    @Y("ingreso el correo electronico {string}")
-    public void ingresoElCorreoElectronico(String correoElectronico) {
-        altaTrioMTconUpfrontTiendaStep.ingresoCorreoElectronico(correoElectronico);
-    }
-
-    @Y("vuelvo ingresar el correo electronico {string}")
-    public void vuelvoIngresarElCorreoElectronico(String vuelveIngresarCorreo) {
-        altaTrioMTconUpfrontTiendaStep.vuelveIngresarCorreoElectronico(vuelveIngresarCorreo);
     }
 
     @Y("doy click en el boton validar identidad del titular")

@@ -29,11 +29,6 @@ public class AppointmentStep {
         page.appointmentPage().ingresarContacto(contacto);
     }
 
-    @ScreenShotAfter
-    public void clicConfirmarAgendamiento() {
-        page.appointmentPage().clicConfirmarAgendamiento();
-    }
-
     public void scrollToViewAgendamiento() {
         page.appointmentPage().scrollToViewAgendamiento();
     }

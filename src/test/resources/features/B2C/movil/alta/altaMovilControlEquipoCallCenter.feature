@@ -30,7 +30,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Entonces ingreso los datos del cliente a registrar
+    Entonces ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Edson   | Arce      | masculino |
     Y        selecciono el boton Linea Nueva Movil
@@ -64,10 +64,10 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "earce@gmail.com"
+    Y        ingreso correo electronico "earce@gmail.com"
     Y        ingreso nuevamente el correo electronico "earce@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar

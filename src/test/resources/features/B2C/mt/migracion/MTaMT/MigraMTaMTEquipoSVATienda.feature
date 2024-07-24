@@ -51,7 +51,7 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

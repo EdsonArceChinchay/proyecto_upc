@@ -49,7 +49,7 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        doy click en el boton Ir a movistar total
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

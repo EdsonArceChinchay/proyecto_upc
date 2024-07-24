@@ -58,7 +58,7 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        ingreso instrucciones de delivery "abc"
     Y        doy clic en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "prueba@prueba.com"
+    Y        ingreso correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

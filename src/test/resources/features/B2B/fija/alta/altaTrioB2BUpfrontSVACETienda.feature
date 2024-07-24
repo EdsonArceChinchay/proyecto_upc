@@ -57,7 +57,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

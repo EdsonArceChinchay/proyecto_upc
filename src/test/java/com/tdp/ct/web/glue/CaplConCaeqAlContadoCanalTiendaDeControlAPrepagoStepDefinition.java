@@ -36,9 +36,4 @@ public class CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStepDefinition {
         caplConCaeqAlContadoCanalTiendaStep.clickBtnAddEquipoInCard();
     }
 
-    @Y("ingreso email {string} y lo confirmo")
-    public void ingresoEmailYLoConfirmo(String email) {
-        caplConCaeqAlContadoCanalTiendaStep.writeEmail(email);
-    }
-
 }

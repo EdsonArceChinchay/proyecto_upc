@@ -44,7 +44,7 @@ Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
     Y        doy click en el boton "Mantener Plan"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado

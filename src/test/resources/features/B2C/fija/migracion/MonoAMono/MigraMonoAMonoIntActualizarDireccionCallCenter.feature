@@ -46,7 +46,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Cuando   doy click en el boton Iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento
-    Y        ingreso un correo electronico "prueba@gmail.com"
+    Y        ingreso correo electronico "prueba@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba@gmail.com"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

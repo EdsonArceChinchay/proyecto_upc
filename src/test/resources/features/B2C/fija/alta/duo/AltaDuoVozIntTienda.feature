@@ -29,7 +29,7 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -52,9 +52,10 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "prueba@gmail.com" y lo repito
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1992 | Albania      | Casado      |
     Y        doy click en el boton confirmar

@@ -20,13 +20,6 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     @Autowired
     private CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoStep caplConCaeqAlContadoCanalTiendaStep;
 
-    @Y("ingreso los datos del cliente extranjero a registrar")
-    public void ingresoNombreApellidoYGeneroDelClienteExtranjero(DataTable datos) {
-        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
-        altaMonoHfcTiendaStep.scrollToBtnCrearCliente();
-        altaMonoHfcTiendaStep.crearCliente();
-    }
-
     @Entonces("valido que se presente la pantalla con el titulo {string}")
     public void validoSePresentePantallaConTitulo(String title) {
         altaMonoHfcTiendaStep.validarOfertasSugeridasView(title);
@@ -59,11 +52,5 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     public void presionoLaOpcionValidarContrato() {
         altaFijaMovilRegistroStep.clicValidarContrato();
     }
-
-    @Y("ingreso email {string} y lo repito")
-    public void ingresoEmailYLoRepito(String correo) {
-        caplConCaeqAlContadoCanalTiendaStep.writeEmail(correo);
-    }
-
 
 }

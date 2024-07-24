@@ -57,14 +57,6 @@ public class AppointmentPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clicConfirmarAgendamiento() {
-        //UtilWeb.waitForSeconds(4);
-        esperaProgresiva(driver(), 5, 5, buttonConfirmar);
-        waitUntilElementIsClickable(buttonConfirmar, 10);
-        click(buttonConfirmar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Haciendo clic a confirmar agendamiento");
-    }
-
     public void datosAgendamiento() {
         revisarModalError(driver());
 //         Calendario
@@ -168,7 +160,6 @@ public class AppointmentPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-
     public void scrollToViewAgendamiento() {
         js().scrollElementTop(find().getElementByCss("div.return"));
     }
@@ -201,6 +192,5 @@ public class AppointmentPage extends WebBase {
             contador++;
         } while (!bOK && contador < reintentosMax);
     }
-
 
 }

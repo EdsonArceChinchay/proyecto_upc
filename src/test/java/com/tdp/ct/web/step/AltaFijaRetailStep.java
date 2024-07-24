@@ -39,21 +39,5 @@ public class AltaFijaRetailStep {
         page.altaFijaRetailPage().irLineaNueva();
     }
 
-    @ScreenShotAfter
-    public void ingresarDatosCliente(DataTable dataTable){
-        var fechNacimiento = getValueFromDataTable(dataTable, "fechaNac");
-        var nacionalidad = getValueFromDataTable(dataTable, "nacionalidad");
-        var estadoCivil = getValueFromDataTable(dataTable, "estado_civil");
-
-        page.altaMovilPostpagoCallCenterPage().ingresarFechaNac(fechNacimiento);
-        page.altaMovilPostpagoCallCenterPage().seleccionoNacionalidad(nacionalidad);
-        page.altaMovilPostpagoCallCenterPage().seleccionarEstadoCivil(estadoCivil);
-
-        scenario.printFullView();
-        UtilWeb.waitForSeconds(2);
-
-        page.altaMovilPrepagoSoloChipTiendaPage().clickConfirmar();
-        UtilWeb.waitForSeconds(10);
-    }
 
 }

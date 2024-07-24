@@ -27,12 +27,6 @@ public class AltaMovilPrepagoSoloChipTiendaStepDefinition {
         altaMovilPrepagoSoloChipTiendaStep.clickIrMovilNuevo();
     }
 
-    @Y("completo datos del cliente")
-    public void completoDatosDelCliente(DataTable dataTable) {
-        altaMovilPrepagoSoloChipTiendaStep.ingresarDatosCliente(dataTable);
-        altaMovilPrepagoSoloChipTiendaStep.irAConfirmar();
-    }
-
     @Y("presiono continuar")
     public void presionoContinuar() {
         altaMovilPrepagoSoloChipTiendaStep.clicBotonContinuar();

@@ -46,7 +46,7 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        agrego SVA bloque "<bloque>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado

@@ -31,7 +31,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
       | JUANITA | LOPEZ ZAPATA | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
@@ -52,10 +52,10 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Call Center
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@mail.com"
+    Y        ingreso correo electronico "tester@mail.com"
     Y        ingreso nuevamente el correo electronico "tester@mail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 24/01/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar

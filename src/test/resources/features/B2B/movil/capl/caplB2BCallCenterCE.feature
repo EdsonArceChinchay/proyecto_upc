@@ -44,7 +44,7 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        selecciono un plan movil "Plan Elige Todo"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
