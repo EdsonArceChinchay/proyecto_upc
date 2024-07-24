@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 22/02/2024
+##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy @AltaSVA
 Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
@@ -31,8 +31,6 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro el popup de contraseña Única
-    #Y        cierro popup de error
     Y        selecciono la linea con numero "9234816429"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
@@ -62,7 +60,7 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464671 | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464671 | prueba@prueba.com |
 
 

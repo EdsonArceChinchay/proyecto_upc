@@ -58,6 +58,6 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+      | tipoUsuario     | userName   | password | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | userNameCC | passCC   | CE            | 1042464638 |                  |
 

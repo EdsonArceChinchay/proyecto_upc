@@ -3,21 +3,21 @@
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1420
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 17/07/2024
 
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI12
-Característica: Caeq Mas Casi por call center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE) por canal Call Center
 
   @CaeqCasiCallCenter
-  Esquema del escenario: CAEQ y CASI con cliente extranjero por Canal Call Center
+  Esquema del escenario: Cambio de equipo mas cambio de simcard a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,7 +31,6 @@ Característica: Caeq Mas Casi por call center
     Y        doy click en el boton Consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        doy click en el boton "Renovar plan"
-#    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo

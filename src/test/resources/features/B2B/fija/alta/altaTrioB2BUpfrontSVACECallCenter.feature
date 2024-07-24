@@ -1,5 +1,5 @@
 #language:es
-##CREADOR:  CARLOS RUIZ
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD: ALTA
@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 20/06/2024
 
-@BERSERKERS @DoneDevOps @PI18_SP3 @RegresionLegacyUpfront @AltaTrioUpfront
+@BERSERKERS @DoneDevOps @PI19_SPI @RegresionLegacyUpfront @AltaTrioUpfront
 Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal CEX por canal Call Center
 
   @AltaTrioB2BSVACECC

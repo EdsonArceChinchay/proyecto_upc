@@ -1,5 +1,5 @@
 #language:es
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO:
 ##FUNCIONALIDAD:
@@ -9,12 +9,12 @@
 ##SPRINT CREADO: PI20_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
+##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
-Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call Center
+Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero (CE) por canal Call Center
 
   @CompletaPlantaFijaAltaMovil
   Esquema del escenario: Completa Planta Fija Alta Movil con documento CE
@@ -77,5 +77,5 @@ Característica: AT-DT0_Completa Planta Fija Alta Movil con documento CE en Call
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion          | referencia | nombrePlan | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300009 | 13           | 1307      | 130704   | PR 28 DE JULIO 134 | Inkafarma  | Trio       | 9234828220      |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | nombrePlan | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300009 | Trio       | 9234828220      |
