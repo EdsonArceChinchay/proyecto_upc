@@ -64,7 +64,8 @@ Característica: Alta Trio SVA Internet canal Retail
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Alemania     | Casado       |
+      | 12/12/1980 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -78,6 +79,6 @@ Característica: Alta Trio SVA Internet canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet                   |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet           |
       | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | PACK ANTIVIRUS MCAFEE |
 

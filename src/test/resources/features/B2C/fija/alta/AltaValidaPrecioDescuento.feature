@@ -146,6 +146,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/05/1990 | Divorciado  | Aruba        |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato hogar
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

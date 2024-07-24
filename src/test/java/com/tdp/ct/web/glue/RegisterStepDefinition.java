@@ -53,7 +53,6 @@ public class RegisterStepDefinition {
         }
     }
 
-
     @Y("selecciono completar los datos del cliente")
     public void selecciono_completar_los_datos_del_cliente(DataTable datosCliente) {
         if (customer.isNewCustomer()) {

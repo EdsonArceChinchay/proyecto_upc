@@ -60,7 +60,8 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Afganistan   | Casado       |
+      | 12/12/1980 | Afganistan   | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

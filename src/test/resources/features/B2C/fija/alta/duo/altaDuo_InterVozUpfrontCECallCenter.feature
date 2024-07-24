@@ -61,7 +61,8 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 01/12/1990 | Alemania     | Casado       |
+      | 01/12/1990 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

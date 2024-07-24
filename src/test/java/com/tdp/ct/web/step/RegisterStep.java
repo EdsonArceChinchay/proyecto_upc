@@ -51,8 +51,6 @@ public class RegisterStep {
         selectNationality(nacionalidad);
         selectMaritalStatus(estadoCivil);
         UtilWeb.waitForSeconds(2);
-        page.registerPage().clickButtonConfirm();
-        UtilWeb.waitForSeconds(10);
     }
 
     public void esperarBtnDatosCliente() {

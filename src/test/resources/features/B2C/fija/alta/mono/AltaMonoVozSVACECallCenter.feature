@@ -66,7 +66,7 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 02/10/1980 | Casado      | Alemania     |
-    Y       doy click en el boton confirmar
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

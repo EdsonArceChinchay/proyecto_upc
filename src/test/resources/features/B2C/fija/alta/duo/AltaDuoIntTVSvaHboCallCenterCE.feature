@@ -63,7 +63,8 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Alemania     | Casado       |
+      | 12/12/1980 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

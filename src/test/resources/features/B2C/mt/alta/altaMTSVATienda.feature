@@ -65,7 +65,8 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Aruba        | Casado       |
+      | 12/12/1980 | Aruba        | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

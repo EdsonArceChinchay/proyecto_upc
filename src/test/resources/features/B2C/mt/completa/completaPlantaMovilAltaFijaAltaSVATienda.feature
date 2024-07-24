@@ -60,7 +60,6 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija + SVA con documento 
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

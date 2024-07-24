@@ -63,7 +63,8 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
-      | 24/02/1996 | Aruba        | Casado       |
+      | 24/02/1996 | Aruba        | Casado      |
+    Y        doy click en el boton confirmar
     Y        doy clic para validar contrato Movil
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
