@@ -133,5 +133,48 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
         UtilWeb.waitForSeconds(4);
     }
+    @FindBy(xpath = "//div[3]/app-mt-card/div[1]/div/div[1]/div[3]/img")
+    protected WebElement btnselecOferta;
+
+    @FindBy(xpath = "//app-mt-change-plan-card/div/div[2]/div[1]/div[1]")
+    protected WebElement planOferta;
+    @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
+    protected WebElement btnseleccionarOferta;
+
+    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    protected WebElement btnIrMovistarTotal;
+
+    @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
+    protected WebElement btnFinalizarRegistro;
+
+    public void seleccionoPlanMovistarTotal() {
+        UtilWeb.waitForSeconds(3);
+        waitUntilElementIsClickable(btnselecOferta, 50).click();
+        UtilWeb.waitForSeconds(5);
+    }
+
+    public void seleccionoPlandeOferta() {
+        click(planOferta);
+    }
+
+    public void clickBotonSeleccionarOferta() {
+        UtilWeb.waitForSeconds(1);
+        js().scrollElementTop(btnseleccionarOferta);
+        click(btnseleccionarOferta);
+    }
+
+    public void clickBtnIrMovistarTotal() {
+        UtilWeb.waitForSeconds(15);//15
+        revisarModalError(driver());
+        revisarModalError(driver());
+        waitUntilElementIsVisible(btnIrMovistarTotal, 150);
+        click(btnIrMovistarTotal);
+    }
+
+
+    public void clickFinalizarRegistro() {
+        waitUntilElementIsVisible(btnFinalizarRegistro, 10);
+        click(btnFinalizarRegistro);
+    }
 
 }

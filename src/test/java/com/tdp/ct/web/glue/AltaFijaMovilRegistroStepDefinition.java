@@ -41,66 +41,6 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.seleccionarOferta(oferta);
     }
 
-    @Y("doy click en validar identidad del titular")
-    public void doyClickEnValidarIdentidadDelTitular() {
-        altaFijaMovilRegistroStep.clicValidarIdentidadTitular();
-    }
-
-    @Y("elijo el tipo de validacion a realizar {string}")
-    public void elijoElTipoDeValidacionARealizar(String tipoValidacion) {
-        altaFijaMovilRegistroStep.seleccionoTipoValidacion(tipoValidacion);
-    }
-
-    @Y("ingreso los datos del supervisor")
-    public void ingresoLosDatosDelSupervisor(DataTable datos) {
-        altaFijaMovilRegistroStep.ingresarDatosSupervisor(datos);
-        altaFijaMovilRegistroStep.clicConfirmarUsuarioSupervisor();
-    }
-
-    @Y("ingreso los datos solicitados para la validacion del cliente")
-    public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(10);
-        for (int i = 0; i < 3; i++) {
-            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos, i);
-            System.out.println("-- click en siguiente --");
-            altaFijaMovilRegistroStep.clicEnSiguiente();
-        }
-        System.out.println("----- termino preguntas ----------");
-        UtilWeb.waitForSeconds(5);
-        altaFijaMovilRegistroStep.clicEnConfirmar();
-    }
-
-    @Entonces("valido que me muestre el boton con el texto de identidad validada")
-    public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
-        altaFijaMovilRegistroStep.validarIdentidadValidada();
-    }
-
-    @Y("doy clic para validar contrato Movil")
-    public void doyClicParaValidarContratoMovil() {
-        altaFijaMovilRegistroStep.clicValidarContrato();
-    }
-
-    @Y("me muestra en pantalla el contrato solicitado")
-    public void meMuestraEnPantallaElContratoSolicitado() {
-        altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
-    }
-
-    @Y("imprimo el texto del contrato solicitado")
-    public void imprimoElTextoDelContratoSolicitado() {
-        this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
-        this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
-    }
-
-    @Cuando("doy clic en si acepto")
-    public void doyClicEnSiAcepto() {
-        altaFijaMovilRegistroStep.clicSiAcepto();
-    }
-
-    @Y("doy clic en continuar")
-    public void doyClicEnContinuar() {
-        altaFijaMovilRegistroStep.clicBotonContinuar();
-    }
-
     @Y("me muestra pantalla para Descargar contrato")
     public void meMuestraPantallaParaDescargarContrato() {
         altaFijaMovilRegistroStep.mostrarPantallaDescargarContrato();

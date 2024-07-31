@@ -15,9 +15,6 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.isVisible;
 
 public class AltaValidacionPrecioDescuentoPage extends WebBase {
-    final AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage = new AltaMovilPostpagoCallCenterPage();
-    final AltaTrioMTconUpfrontTiendaPage altaTrioMTconUpfrontTiendaPage = new AltaTrioMTconUpfrontTiendaPage();
-
     @FindBy(xpath = "//app-searchclient/div[@class='tdp-container clienteExtranjero']")
     protected WebElement regClienteNew;
     @FindBy(xpath = "//div/div/div[@class='text-info']")
@@ -157,26 +154,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     public void validacionPrecio(String precioPlan) {
         String precioCompare = lblPrecio.getText();
         Assert.assertEquals(precioPlan, precioCompare);
-    }
-
-    //Este metodo sirva para buscar elementos dentro de un shadowroot que los elementos sencuentren bajo el formato css "div > ul > li"
-    public void busquedadShadowUlLi(WebElement element, String comparaText) {
-        try {
-            waitUntilElementIsClickable(element, 5).click();
-            SearchContext context = sh().getContext(element);
-            List<WebElement> list = context.findElements(By.cssSelector("div > ul > li"));
-            for (WebElement webElement : list) {
-                String elementListEsCi = webElement.getText();
-                System.out.println(elementListEsCi);
-                if (comparaText.equalsIgnoreCase(elementListEsCi)) {
-                    js().scrollElementTop(webElement);
-                    waitUntilElementIsClickable(webElement, 5).click();
-                    break;
-                }
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
 }

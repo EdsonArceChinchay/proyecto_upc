@@ -24,7 +24,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.seleccionoElTipoDePlanHogar(planHogar);
     }
 
-
     @Y("doy click en el boton {string}")
     public void doyClickEnEnElBoton(String nameButton) {
         migracionDuoATrioTiendaStep.clickButton(nameButton);
@@ -33,6 +32,22 @@ public class MigracionDuoATrioTiendaStepDefinition {
     @Y("doy click en Cambiar plan hogar")
     public void doyClickEnCambiarPlanHogar() {
         migracionDuoATrioTiendaStep.seleccionarboton();
+    }
+
+    @Y("selecciono un plan y doy click en el boton seleccionar oferta")
+    public void seleccionoUnPlanYDoyClickEnElBotonSeleccionarOferta() {
+        migracionDuoATrioTiendaStep.seleccionoPlandeOferta();
+        migracionDuoATrioTiendaStep.clickBotonSeleccionarOferta();
+    }
+
+    @Y("luego doy click en la cartilla ir a Movistar Total")
+    public void luegoDoyClickEnLaCartillaIrAMovistarTotal() {
+        migracionDuoATrioTiendaStep.clickBtnIrMovistarTotal();
+    }
+
+    @Y("doy click en Finalizar registro")
+    public void doyClickEnFinalizarRegistro() {
+        migracionDuoATrioTiendaStep.clickFinalizarRegistro();
     }
 
 }

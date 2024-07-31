@@ -15,37 +15,9 @@ public class AltaMovilControlFinancimientoStep {
     @Autowired
     private StepPages page;
 
-    @Autowired
-    private ManageScenario scenario;
-
-    @ScreenShotAfter
-    public void ingresarPlanActual() {
-        page.altaMovilControlFinancimientoPage().selectPlanActual();
-    }
-
-    @ScreenShotBefore
-    public void ingresarPlanMovil() {
-        page.altaMovilControlFinancimientoPage().selectPlanMovil();
-    }
-
-    @ScreenShotAfter
-    public void seleccionarCampania() {
-        page.altaMovilControlFinancimientoPage().selectCampania();
-    }
-
     @ScreenShotBefore
     public void seleccionarLineaNueva() {
         page.altaMovilControlFinancimientoPage().selectBtnLineaNueva();
-    }
-
-    @ScreenShotAfter
-    public void ingresarBtnPostpago() {
-        page.altaMovilControlFinancimientoPage().selectBtnPostpago();
-    }
-
-    @ScreenShotAfter
-    public void ingresarBtnControl() {
-        page.altaMovilControlFinancimientoPage().selectBtnControl();
     }
 
 }

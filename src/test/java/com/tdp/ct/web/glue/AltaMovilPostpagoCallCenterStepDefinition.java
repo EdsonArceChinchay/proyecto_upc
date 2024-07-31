@@ -57,9 +57,4 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
         altaMovilPostpagoCallCenterStep.meMuestraLaPantallaDeDeliveryDeLineaNueva();
     }
 
-    @Y("selecciono el tipo de entrega de delivery {string}")
-    public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
-        altaMovilPostpagoCallCenterStep.seleccionoElTipoDeEntregaDeDelivery(tipo);
-    }
-
 }

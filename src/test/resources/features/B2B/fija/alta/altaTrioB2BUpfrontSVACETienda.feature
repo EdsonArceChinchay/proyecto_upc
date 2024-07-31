@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR:  CARLOS RUIZ
 ##APP: DITO
-##MODULO:
+##MODULO: FIJA
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
@@ -59,7 +59,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

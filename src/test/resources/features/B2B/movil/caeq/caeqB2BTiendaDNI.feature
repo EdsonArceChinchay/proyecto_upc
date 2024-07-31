@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO: CAPL
-##FUNCIONALIDAD:
+##MODULO:  MOVIL
+##FUNCIONALIDAD: CAEQ
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
 ##GDAP: GDAP-579
@@ -14,7 +14,7 @@
 ##FECMOD: 04/07/2024
 @BERSERKERS @DoneDevOps @PI20_SP1 @RegresionLegacy
 Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tienda
-  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
+  Quiero realizar un CAEQ a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
 
   @caeqB2BTiendaDNI
   Esquema del escenario: Cambio de equipo a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
@@ -58,12 +58,12 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

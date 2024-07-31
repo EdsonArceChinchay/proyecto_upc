@@ -62,7 +62,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
       | fechaNac   | nacionalidad | estadoCivil |
       | 10/05/1995 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

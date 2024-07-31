@@ -13,11 +13,6 @@ public class MigraSalto0RetailStepDefinition {
     migraSalto0RetailStep.SeleccionarBtnMigrarFibra();
     }
 
-    @Cuando("doy clic en iniciar registro")
-    public void doyClicEnIniciarRegistro() {
-        migraSalto0RetailStep.clicIniciarRegistro();
-    }
-
     @Y("cierro el popup de Detail")
     public void cierroElPopupDeDetail() {
         migraSalto0RetailStep.clickBotonEntendido();

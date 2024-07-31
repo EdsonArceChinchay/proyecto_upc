@@ -36,10 +36,6 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();
     }
 
-    public void validarCompletaDatosSolicitados() {
-        page.altaMovilSoloSimCallCenterPage().completaDatosSolicitados();
-    }
-
     public void validarSeleccionaPostpagoPrepago() {
         page.altaMovilSoloSimCallCenterPage().validarSeleccionaPostpagoPrepago();
     }

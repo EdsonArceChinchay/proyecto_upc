@@ -17,7 +17,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
-public class PortabilidadPage extends WebBase {
+public class PortabilityPage extends WebBase {
 
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'Consultar')]")
     protected WebElement btnConsultar;

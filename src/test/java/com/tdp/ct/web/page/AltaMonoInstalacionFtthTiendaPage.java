@@ -37,41 +37,6 @@ public class AltaMonoInstalacionFtthTiendaPage extends WebBase {
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
 
-    public void scrollToBtnPlanNuevo() {
-        UtilWeb.waitForSeconds(3);
-        js().scrollElementTop(titleOfertas);
-    }
-
-    public void clickBtnPlanNuevo() {
-        esperaProgresiva(driver(), 3, 5, btnPlanNuevo);
-        click(btnPlanNuevo);
-        UtilWeb.waitForSeconds(2);
-    }
-
-    public void clickBtnTipoPlan(String tipoPlan) {
-        for (WebElement element : btnPlanList) {
-            String encontrado = element.getText().toLowerCase();
-            if (encontrado.equals(tipoPlan.toLowerCase())) {
-                element.click();
-                break;
-            }
-        }
-        UtilWeb.waitForSeconds(3);
-    }
-
-    public void esperarBtnLineaNueva() {
-        UtilWeb.waitForSeconds(5);
-        boolean existe = !find().getElementsByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)").isEmpty();
-        if (existe) {
-            js().scrollElementTop(find().getElementByCss(".tdp-col-md-6:nth-child(1) .line:nth-child(2)"));
-        }
-    }
-
-    public void clickBtnLinea(String btnName) {
-        String element = "//button[contains(text(),'" + btnName + "')]";
-        WebElement btn = find().getElementByXPath(element);
-        click(btn);
-    }
 
     public void validarDetallePlan() {
         waitUntilElementIsVisible(featureContent, 20);

@@ -41,13 +41,6 @@ public class MigraSalto0RetailPage extends WebBase {
 
     }
 
-    public void ClicIniciarRegistro() {
-        esperaProgresiva(driver(), 5, 5, BotonIniciarRegistro);
-        js().scrollElementTop(BotonIniciarRegistro);
-        click(BotonIniciarRegistro);
-
-    }
-
     public void clickBotonEntendido() {
         revisarModalError(driver());
     }

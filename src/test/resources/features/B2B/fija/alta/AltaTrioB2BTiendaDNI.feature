@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
+##MODULO: FIJA
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT019
@@ -67,7 +67,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac            |
       | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

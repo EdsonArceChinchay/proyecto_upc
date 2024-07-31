@@ -50,11 +50,5 @@ public class AltaMovilPostpagoCallCenterStep {
         Assert.assertTrue(page.altaMovilPostpagoCallCenterPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
-        page.altaMovilPostpagoCallCenterPage().seleccionoElTipoDeEntregaDeDelivery(tipo);
-    }
-
 }
 

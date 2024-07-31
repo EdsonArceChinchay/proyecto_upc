@@ -34,11 +34,6 @@ public class CaeqPorReatilStepDefinition {
         caeqPorReatilStep.btnAnadirEquipo(1);
     }
 
-    @Y("presiono el boton seleccionar")
-    public void presionoElBotonSeleccionar() {
-        caeqPorReatilStep.btnSeleccionar();
-    }
-
     @Y("selecciono boton mantener plan")
     public void seleccionoBotonMantenerPlan() {
         caeqPorReatilStep.btnMantenerPlan();
@@ -59,11 +54,6 @@ public class CaeqPorReatilStepDefinition {
 
     }
 
-
-    @Y("Selecciono boton Cambiar Chip")
-    public void seleccionoBotonCambiarChip() {
-        caeqPorReatilStep.SeleccionarBotonCambiarChip();
-    }
     @Y("selecciono el boton Cambiar Chip")
     public void seleccionoelbotonCambiodeChip() {
         caeqPorReatilStep.seleccionoelbotonCambiodeChip();

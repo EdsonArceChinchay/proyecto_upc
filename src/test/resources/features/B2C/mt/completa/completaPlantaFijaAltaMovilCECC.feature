@@ -49,15 +49,15 @@ Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

@@ -16,22 +16,62 @@ public class HomeStepDefinition {
     @Autowired
     private Customer customer;
 
+    @Entonces("valido el login exitoso mediante el mensaje {string}")
+    public void validoElLoginExitosoMedianteElMensaje(String msg) {
+        homeStep.validateHomeMessage(msg);
+    }
+
+    @Y("valido que se presente el canal {string}")
+    public void validoQueSePresenteLaTienda(String tienda) {
+        homeStep.validateStoreType(tienda);
+    }
+
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String tipoDocumento) {
         System.out.println("Cliente: " +  customer.getCustomerTest());
         customer.setTypeDocument(tipoDocumento);
-        homeStep.seleccionoTipoDocumento(tipoDocumento);
+        homeStep.selectDocumentType(tipoDocumento);
     }
 
     @Y("ingreso el documento {string}")
     public void ingresoElDocumento(String documento) {
         Customer.setNumberDocument(documento);
-        homeStep.ingresoDocumento(documento);
+        homeStep.typeDocumentNumber(documento);
     }
 
     @Y("doy click en el boton Consultar")
     public void doyClickEnElBotonConsultar() {
-        homeStep.clickButtonSearch();
+        homeStep.clickOnConsultButton();
+    }
+
+    @Y("me dirijo a la bandeja de Back Office")
+    public void meDirijoALaBandejaDeBackOffice() {
+        homeStep.clickOnTheBackOfficeButton();
+    }
+
+    @Dado("regreso a la pagina de inicio")
+    public void regresoPaginaInicio() {
+        homeStep.regresarPaginaInicio();
+    }
+
+    @Y("doy click en el icono de Asesor")
+    public void doyClickEnElIconoDeAsesor() {
+        homeStep.clickOnTheAdvisorIcon();
+    }
+
+    @Y("doy click en Cerrar Sesion")
+    public void doyClickEnCerrarSesion() {
+        homeStep.doyClickEnCerrarSesion();
+    }
+
+    @Y("doy click en Atras")
+    public void doyClickEnAtras() {
+        homeStep.doyClickEnAtras();
+    }
+
+    @Y("confirmo Cerrar Sesion")
+    public void confirmoCerrarSesion() {
+        homeStep.confirmoCerrarSesion();
     }
 
     @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
@@ -67,46 +107,6 @@ public class HomeStepDefinition {
     @Y("cierro pop up de CU")
     public void cierroPopUpDeCU() {
         homeStep.clickXPopUpCU();
-    }
-
-    @Entonces("valido el login exitoso mediante el mensaje {string}")
-    public void validoElLoginExitosoMedianteElMensaje(String msg) {
-        homeStep.validarMsgHome(msg);
-    }
-
-    @Y("valido que se presente la tienda {string}")
-    public void validoQueSePresenteLaTienda(String tienda) {
-        homeStep.validarTiendaAsesor(tienda);
-    }
-
-    @Dado("regreso a la pagina de inicio")
-    public void regresoPaginaInicio() {
-        homeStep.regresarPaginaInicio();
-    }
-
-    @Y("doy click en el icono de Asesor")
-    public void doyClickEnElIconoDeAsesor() {
-        homeStep.doyClickEnElIconoDeAsesor();
-    }
-
-    @Y("doy click en Cerrar Sesion")
-    public void doyClickEnCerrarSesion() {
-        homeStep.doyClickEnCerrarSesion();
-    }
-
-    @Y("doy click en Atras")
-    public void doyClickEnAtras() {
-        homeStep.doyClickEnAtras();
-    }
-
-    @Y("confirmo Cerrar Sesion")
-    public void confirmoCerrarSesion() {
-        homeStep.confirmoCerrarSesion();
-    }
-
-    @Y("me dirijo a la bandeja de Back Office")
-    public void meDirijoALaBandejaDeBackOffice() {
-        homeStep.clickBackOffice();
     }
 
 }

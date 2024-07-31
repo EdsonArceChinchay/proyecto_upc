@@ -26,7 +26,7 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "<tiendaAsesor>"
+    #Y     valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -67,7 +67,7 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1980 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,9 +23,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
-
-    @FindBy(xpath = "//div[6]/div/div/button/span")
-    protected WebElement btnValidarIdentidad;
 
     @FindBy(xpath = "//*[@id=\"modal\"]/div[2]/div/div[2]/div[2]/button")
     protected WebElement btnHuellaDes;
@@ -52,11 +50,6 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         WebElement numeroContac = find().getElementByCss("div:nth-child(1) > div:nth-child(1) > tdp-st-input-text");
         click(numeroContac);
         type(numeroContac, numContacto);
-
-    }
-
-    public void clickBotonValidarIdentidad() {
-        click(btnValidarIdentidad);
     }
 
     public void clickDiscapacitadoHuellaDesgastado() {
@@ -98,5 +91,48 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     public void scrollFinalPagina() {
         Addons.scrollFinalPagina(driver());
         UtilWeb.waitForSeconds(2);
+    }
+
+    @FindBy(xpath = "//*[@class='detalle_sub']")
+    protected WebElement subDetalles;
+
+    @FindBy(xpath = "//*[contains(text(),'aplica UPFRONT')]")
+    protected WebElement lblAplicaUpFront;
+
+    public void subDetalles(){
+        UtilWeb.waitForSeconds(5);
+        JavascriptExecutor js = (JavascriptExecutor)driver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        esperaProgresiva(driver(), 5, 10, subDetalles);
+        click(subDetalles);
+    }
+
+    public void lblAplicaUpFrom(){
+        UtilWeb.waitForSeconds(1);
+        esperaProgresiva(driver(), 4, 10, lblAplicaUpFront);
+        Assert.assertTrue("el elemento no existe",lblAplicaUpFront.isDisplayed());
+        UtilWeb.waitForSeconds(1);
+        click(subDetalles,5);
+    }
+
+    @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
+    protected WebElement cierrePopUoError;
+
+    public void clickCierrePopup() {
+        UtilWeb.waitForSeconds(3);//inhabilitado
+        boolean elementoExistente;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
+        if (elementoExistente) {
+            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
+            System.out.println("Se cierra Popup de error");
+            try {
+                click(cierrePopUoError);
+
+            } catch (Exception e) {
+                System.out.println("error al hacer click");
+            }
+        } else {
+            System.out.println("no se encontró mensaje de error");
+        }
     }
 }

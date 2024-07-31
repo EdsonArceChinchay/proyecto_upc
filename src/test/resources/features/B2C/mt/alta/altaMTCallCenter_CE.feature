@@ -27,7 +27,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -64,10 +64,10 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
       | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     E        ingreso telefono de contacto "984592938"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
@@ -77,7 +77,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/12/1990 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

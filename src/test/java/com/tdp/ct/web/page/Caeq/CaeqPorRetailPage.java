@@ -14,20 +14,12 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class CaeqPorRetailPage extends WebBase {
-    @FindBy(xpath = "(//div[contains(text(),\"Añadir equipo\")])[2]")
-    protected WebElement btnAnadirE;
-
-    @FindBy(css = "tdp-st-button[label=\"Seleccionar\"]")
-    protected  WebElement botonSeleecionar;
 
     @FindBy(xpath = "//div/button[@class=\"btnCard\"]")
     protected  WebElement botonMantenerPlan;
 
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
-
-    @FindBy (css = "div.actions-button > div:nth-child(2) > tdp-st-button")
-    protected WebElement btnCambiarChip;
 
     @FindBy (xpath = "//button[contains(text(),'Cambio de chip')]")
     protected WebElement btnCambiodeChip;
@@ -39,19 +31,10 @@ public class CaeqPorRetailPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
         WebElement btnAñadirEquipo = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])["+num+"]");
-        esperaProgresiva(driver(), 3, 5, btnAñadirEquipo);
+        esperaProgresiva(driver(), 5, 5, btnAñadirEquipo);
         js().scrollElementTop(btnAñadirEquipo);
         click(btnAñadirEquipo);
-        //waitUntilElementIsClickable(btnAnadirE,20).click();
         UtilWeb.waitForSeconds(1);
-    }
-
-    public void btnSeleecionar() {
-        UtilWeb.waitForSeconds(10);
-        js().scrollElementTop(botonSeleecionar);
-        //waitUntilElementIsVisible(botonSeleecionar,10);
-        click(botonSeleecionar);
-        UtilWeb.waitForSeconds(5);
     }
 
     public void btnMantenerPlan() {
@@ -85,16 +68,8 @@ public class CaeqPorRetailPage extends WebBase {
 
     }
 
-    public void SeleccionarBotonCambiarChip() {
-        //waitUntilElementIsVisible(btnCambiarChip,10);
-        Addons.esperaProgresiva(driver(), 3, 5, btnCambiarChip);
-        js().scrollElementTop(btnCambiarChip);
-        click(btnCambiarChip);
-    }
-
     public void seleccionoelbotonCambiodeChip() {
-        //waitUntilElementIsVisible(btnCambiodeChip,20);
-        Addons.esperaProgresiva(driver(), 3, 5, btnCambiodeChip);
+        Addons.esperaProgresiva(driver(), 5, 5, btnCambiodeChip);
         js().scrollElementTop(btnCambiodeChip);
         click(btnCambiodeChip);
     }

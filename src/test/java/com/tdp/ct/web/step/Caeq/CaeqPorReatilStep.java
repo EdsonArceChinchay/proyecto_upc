@@ -24,11 +24,6 @@ public class CaeqPorReatilStep {
     }
 
     @ScreenShotBefore
-    public void btnSeleccionar() {
-        page.caeqPorRetailPage().btnSeleecionar();
-    }
-
-    @ScreenShotBefore
     public void btnMantenerPlan() {
         page.caeqPorRetailPage().btnMantenerPlan();
     }
@@ -50,16 +45,8 @@ public class CaeqPorReatilStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void SeleccionarBotonCambiarChip() {
-        page.caeqPorRetailPage().SeleccionarBotonCambiarChip();
-    }
-
-
-    @ScreenShotBefore
-    @ScreenShotAfter
     public void seleccionoelbotonCambiodeChip() {
         page.caeqPorRetailPage().seleccionoelbotonCambiodeChip();
-
     }
 
     @ScreenShotBefore

@@ -52,11 +52,6 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaFijaTiendaStep.clickListaBotones();
     }
 
-    @Y("valido que este en la seccion completa los datos solicitados")
-    public void valido_que_este_en_seccion_completa_los_datos_solicitados() {
-        altaMovilSoloSimCallCenterStep.validarCompletaDatosSolicitados();
-    }
-
     @Y("valido que este en la seccion Postpago o Prepago")
     public void valido_que_este_en_seccion_Postpago_Prepago() {
         altaMovilSoloSimCallCenterStep.validarSeleccionaPostpagoPrepago();

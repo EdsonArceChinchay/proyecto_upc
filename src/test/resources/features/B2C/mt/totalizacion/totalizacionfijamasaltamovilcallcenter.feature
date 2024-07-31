@@ -50,13 +50,13 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        ingreso correo electronico "PRUEBA@GMAIL.COM"
     Y        ingreso nuevamente el correo electronico "PRUEBA@GMAIL.COM"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

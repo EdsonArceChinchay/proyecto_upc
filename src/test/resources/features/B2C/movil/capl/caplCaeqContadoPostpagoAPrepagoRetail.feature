@@ -38,23 +38,22 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        selecciono la opcion "Preplan"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
-    #Y        doy click en el boton Ver detalle del servicio "VIVO V21 NEGRO 5G C/PACK"
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName               |
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
-    Y        presiono el boton seleccionar
+    Y        doy click en el boton seleccionar
     #Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
-    Y        valido que se presente el detalle de el plan
+    Y        valido que este en el resumen de venta
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -25,7 +25,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-  # Y        valido que se presente la tienda "<tiendaAsesor>"
+  # Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -59,7 +59,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso telefono de contacto "658745259"
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "jlopez@mail.com"
@@ -68,7 +68,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

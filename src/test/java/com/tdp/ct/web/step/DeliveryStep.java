@@ -2,7 +2,6 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,27 +10,24 @@ public class DeliveryStep {
     @Autowired
     private StepPages page;
 
+    @ScreenShotAfter
     public void clickButtonConfirmLocation() {
         page.deliveryPage().clickButtonConfirmLocation();
     }
 
-    public void seleccionarTipoEntrega(String tipEntrega) {
-        page.deliveryPage().tipoEntrega(tipEntrega);
+    @ScreenShotAfter
+    public void selectTypeOfDelivery(String tipEntrega) {
+        page.deliveryPage().selectTypeOfDelivery(tipEntrega);
     }
 
-    public void seleccionarBtnHorario(String horario) {
-        page.deliveryPage().btnHorario(horario);
+    @ScreenShotAfter
+    public void clickOnDeliveryTime(String horario) {
+        page.deliveryPage().clickOnDeliveryTime(horario);
     }
 
     @ScreenShotAfter
     public void clickButtonConfirmDevlivery() {
         page.deliveryPage().clickButtonConfirmDevlivery();
-    }
-
-    @ScreenShotAfter
-    public void selectTipoHorario(String horaio) {
-        UtilWeb.waitForSeconds(3);
-        page.deliveryPage().selectTipoHorario(horaio);
     }
 
     @ScreenShotAfter

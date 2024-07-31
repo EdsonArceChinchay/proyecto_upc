@@ -2,7 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
-import com.tdp.ct.web.step.PortabilidadStep;
+import com.tdp.ct.web.step.PortabilityStep;
 import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import io.cucumber.datatable.DataTable;
 
@@ -16,10 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 
-public class PortabilidadStepDefinition {
+public class PortabilityStepDefinition {
 
     @Autowired
-    PortabilidadStep portabilidadStep;
+    PortabilityStep portabilityStep;
 
     @Autowired
     AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
@@ -38,27 +38,27 @@ public class PortabilidadStepDefinition {
 
     @Y("doy click en el boton portabilidad")
     public void doyClickEnElBotonPortabilidad() {
-        portabilidadStep.clickBotonPortabilidad();
+        portabilityStep.clickBotonPortabilidad();
     }
 
     @Y("ingreso numero de telefono para portar {string}")
     public void ingresoNumeroDeTelefonoParaPortar(String numero) {
-        portabilidadStep.ingresarNumeroPortar(numero);
+        portabilityStep.ingresarNumeroPortar(numero);
     }
 
     @Y("escojo tipo de linea {string}")
     public void escojoTipoDeLinea(String plan) {
-        portabilidadStep.escogerTipoLinea(plan);
+        portabilityStep.escogerTipoLinea(plan);
     }
 
     @Y("escojo tipo de operador {string}")
     public void escojoTipoDeOperador(String operador) {
-        portabilidadStep.escogerTipoOperador(operador);
+        portabilityStep.escogerTipoOperador(operador);
     }
 
     @Y("doy click en el boton Consultar Portabilidad")
     public void doyClickEnElBotonConsultarPortabilidad() {
-        portabilidadStep.clickBotonConsultar();
+        portabilityStep.clickBotonConsultar();
     }
 
     @Y("valido los servicios")
@@ -73,26 +73,25 @@ public class PortabilidadStepDefinition {
 
     @Y("doy click en el boton Porta Movil")
     public void doyClickEnElBotonPortaMovil() {
-        portabilidadStep.clickPortaMovil();
+        portabilityStep.clickPortaMovil();
     }
 
     @Y("valido que este activo el flag de Porta Directa")
     public void validoQueEsteActivoElFlagDePortaDirecta() throws JSONException {
-        portabilidadStep.setValuePortaDirecta();
-        portabilidadStep.getValuePortaDirecta();
-        this.scenario.log(portabilidadStep.getValuePortaDirecta());
+        portabilityStep.setValuePortaDirecta();
+        portabilityStep.getValuePortaDirecta();
+        this.scenario.log(portabilityStep.getValuePortaDirecta());
     }
 
     @Y("doy click en el boton Validar Codigo de Portabilidad")
     public void doyClickEnElBotonValidarCodigoDePortabilidad() {
-        portabilidadStep.clickButtonCodigoDePorta();
+        portabilityStep.clickButtonCodigoDePorta();
     }
 
     @Y("doy click en {string} y doy click en el boton Confirmar")
     public void doyClickEnYDoyClickEnElBotonConfirmar(String nameButton) {
-        portabilidadStep.selectButton(nameButton);
-        portabilidadStep.clickButtonConfirmar();
-
+        portabilityStep.selectButton(nameButton);
+        portabilityStep.clickButtonConfirmar();
     }
 
     @Y("obtengo el token")
@@ -104,14 +103,14 @@ public class PortabilidadStepDefinition {
 
     @Cuando("ingreso el token y doy click en el boton Confirmar")
     public void ingresoElTokenYDoyClickEnElBotonConfirmar() {
-        portabilidadStep.inputToken(token);
-        portabilidadStep.clickButtonConfirmar();
+        portabilityStep.inputToken(token);
+        portabilityStep.clickButtonConfirmar();
     }
 
     @Entonces("valido el mensaje {string} y doy click en el boton Continuar")
     public void validoElMensajeYDoyClickEnElBotonContinuar(String message) {
-        portabilidadStep.validateMessage(message);
-        portabilidadStep.clickButtonContinuar();
+        portabilityStep.validateMessage(message);
+        portabilityStep.clickButtonContinuar();
 
     }
 

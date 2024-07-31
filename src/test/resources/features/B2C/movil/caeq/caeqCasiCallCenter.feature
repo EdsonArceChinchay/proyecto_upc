@@ -55,16 +55,16 @@ Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso telefono de contacto "984093119"
     Y        ingreso instrucciones de delivery "abc"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

@@ -13,10 +13,6 @@ public class MigraSalto0RetailStep {
     public void SeleccionarBtnMigrarFibra() {
         page.migraSalto0RetailPage().SeleccionarBtnMigrarFibra();
     }
-    @ScreenShotBefore
-    public void clicIniciarRegistro() {
-        page.migraSalto0RetailPage().ClicIniciarRegistro();
-    }
 
     public void clickBotonEntendido() {
         page.migraSalto0RetailPage().clickBotonEntendido();

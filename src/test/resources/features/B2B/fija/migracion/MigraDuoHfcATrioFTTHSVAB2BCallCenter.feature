@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT064
 ##GDAP: GDAP-888
@@ -57,7 +57,7 @@ Característica: AT-DT064_Migracion de Duo HFC a Trio HFC + Sva Call Center
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

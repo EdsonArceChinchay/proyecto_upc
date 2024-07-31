@@ -23,11 +23,6 @@ public class AltaFijaTiendaStepDefinition {
         altaFijaTiendaStep.seleccionarListaPLanFija(planFija);
     }
 
-    @Y("doy clic para validar contrato hogar")
-    public void doy_clic_para_validar_contrato_hogar() {
-        altaFijaMovilRegistroStep.clicValidarContrato();
-    }
-
     @Y("selecciono el plan {string}")
     public void selecciono_el_plan(String nombrePlan) {
         altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);

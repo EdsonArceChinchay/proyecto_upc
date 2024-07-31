@@ -57,7 +57,7 @@ Característica: AT-DT013_Alta Mono Linea Voz con documento CE con Canal Tienda
       | fechaNac   | estadoCivil | nacionalidad |
       | 24/04/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

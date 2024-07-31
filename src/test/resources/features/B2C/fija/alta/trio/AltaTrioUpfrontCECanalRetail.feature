@@ -60,7 +60,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
       | fechaNac   | nacionalidad | estadoCivil |
       | 01/12/1990 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

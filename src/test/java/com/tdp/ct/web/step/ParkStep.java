@@ -70,17 +70,17 @@ public class ParkStep {
     }
 
     public void esperarBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnCardPlanActual();
+        page.parkPage().esperarBtnCardPlanActual();
     }
 
     @ScreenShotBefore
     public void clickBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
+        page.parkPage().clickBtnCardPlanActual();
     }
 
     @ScreenShotAfter
     public void clickBtnRenovarPlan() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
+        page.parkPage().clickBtnRenovarPlan();
     }
 
     @ScreenShotBefore

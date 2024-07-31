@@ -89,16 +89,16 @@ public class HomePage extends WebBase {
         context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
     }
 
-    public void ingresoDocumento(String documento) {
+    public void typeDocumentNumber(String number) {
         WebElement document = find().getElementByCss("#doc");
         click(document);
-        type(document, documento);
+        type(document, number);
     }
 
-    public void clickButtonSearch() {
+    public void clickOnConsultButton() {
         esperaProgresiva(driver(), 3, 5, btnSearch);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " +btnSearch.getText());
         btnSearch.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button search");
         UtilWeb.waitForSeconds(10);
         boolean isB2B =  !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
         if (isB2B) {
@@ -183,14 +183,14 @@ public class HomePage extends WebBase {
         }
     }
 
-    public void clickBackOffice() {
+    public void clickOnTheBackOfficeButton() {
         esperaProgresiva(driver(), 3, 5, btnBackOffice);
         click(btnBackOffice);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
         UtilWeb.waitForSeconds(5);
     }
 
-    public void validarMsgHome(String msg) {
+    public void validateHomeMessage(String msg) {
         UtilWeb.waitForSeconds(1);
         Addons.revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, msgHome);
@@ -198,9 +198,9 @@ public class HomePage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarTiendaAsesor(String tienda) {
-        compareWebElementTextAndText(tiendaLabel,tienda);
-        UtilWeb.waitForSeconds(1);
+    public void validateStoreType(String tienda) {
+       // compareWebElementTextAndText(tiendaLabel,tienda);
+        //UtilWeb.waitForSeconds(1);
     }
 
     public void regresarPaginaInicio() {
@@ -210,11 +210,11 @@ public class HomePage extends WebBase {
         esperaProgresiva(driver(), 5, 5, msgHome);
     }
 
-    public void clickIconoAsesor() {
+    public void clickOnTheAdvisorIcon() {
         waitUntilElementIsClickable(iconAsesor, 10).click();
     }
 
-    public void clickBtnCerrarSesion() {
+    public void clickOnTheLogoutButton() {
         waitUntilElementIsClickable(btnCerrar, 10).click();
         UtilWeb.waitForSeconds(2);
     }

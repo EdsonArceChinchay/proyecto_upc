@@ -20,8 +20,7 @@ import static com.tdp.ct.web.utils.Helper.selectEnabledItemFromAListOfItems;
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
-    @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
-    protected WebElement completaDatosSolicitados;
+
     @FindBy(xpath = "(//div[@class='button-filter-section'])/button")
     protected List<WebElement> listaTipoPlanMovil;
     @FindBy(xpath = "(//div[contains(@class,'offert-card-title')])/div[2]")
@@ -167,14 +166,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void botonSeleccionarOfeta() {
         js().scrollElementTop(botonSeleccionarOferta);
         click(botonSeleccionarOferta, 10);
-    }
-
-    public void completaDatosSolicitados() {
-        UtilWeb.waitForSeconds(2);
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 7, completaDatosSolicitados);
-        revisarModalError(driver());
-        Assert.assertTrue("No esta presente el elemento", completaDatosSolicitados.isDisplayed());
     }
 
     public void validarSeleccionaPostpagoPrepago() {
