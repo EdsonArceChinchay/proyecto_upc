@@ -81,5 +81,11 @@ Característica: Cambio de equipo movil a un cliente extranjero(CE) por Canal Ca
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 1042464788      | 920956618        |
+      | usuario externo | userNameCC | passCC   | CE            | 461960084       | 650029858        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
+#      Prueba error
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
 
