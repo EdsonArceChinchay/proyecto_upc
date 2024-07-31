@@ -19,8 +19,7 @@ import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
 import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.isVisible;
-import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.*;
 
 public class RegisterPage extends WebBase {
 
@@ -69,15 +68,15 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeEmail(String email) {
-        typeShadowRootCss(email, inputEmail, "div > div > div > input");
+        typeInputShadowRootCSS(email, inputEmail, "div > div > div > input");
     }
 
     public void typeConfirmEmail(String email) {
-        typeShadowRootCss(email, inputConfirmEmail, "div > div > div > input");
+        typeInputShadowRootCSS(email, inputConfirmEmail, "div > div > div > input");
     }
 
     public void typeIdCall(String idCall) {
-        typeShadowRootCss(idCall, inputCallID, "div > div > div > input");
+        typeInputShadowRootCSS(idCall, inputCallID, "div > div > div > input");
     }
 
     public void waitButtonCustomerData() {
@@ -177,14 +176,6 @@ public class RegisterPage extends WebBase {
         click(buttonContinuar);
         //Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
-    }
-
-    public void typeShadowRootCss(String text, WebElement webElement, String shadowElement){
-        SearchContext context = webElement.getShadowRoot();
-        WebElement inputElement = context.findElement(By.cssSelector(shadowElement));
-        inputElement.sendKeys(Keys.CONTROL + "a");
-        inputElement.sendKeys(Keys.DELETE);
-        type(inputElement, text);
     }
 
     public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement)

@@ -16,7 +16,6 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Retail
 
-
   @AltaMTporRetail
   Esquema del escenario: Alta fija mas alta movil por Retail
     Dado     que abro la pagina de movistar
@@ -65,7 +64,6 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

@@ -1,8 +1,5 @@
 package com.tdp.ct.web.page;
 
-import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
-import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
-import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -40,10 +37,6 @@ public class StepPages {
         return new MigracionDuoATrioTiendaPage();
     }
 
-    public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage() {
-        return new AltaMovilControlFinancimientoPage();
-    }
-
     public CaeqPorRetailPage caeqPorRetailPage() {
         return new CaeqPorRetailPage();
     }
@@ -52,7 +45,7 @@ public class StepPages {
         return new MigraSalto0RetailPage();
     }
 
-    public PortabilityPage portabilidadPage() {
+    public PortabilityPage portabilityPage() {
         return new PortabilityPage();
     }
 

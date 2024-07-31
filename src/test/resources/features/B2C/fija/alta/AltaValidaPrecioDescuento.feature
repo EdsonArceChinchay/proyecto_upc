@@ -76,8 +76,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-#    Y        presiono el boton Registrar venta
-#	Y        valido que se muestre el detalle del pedido
+
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                      | bloque | tipoPlan | svaInternet           | bloque |
@@ -131,7 +130,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        escojo el plan "<nombrePlan>"
+    Y        selecciono el plan "<nombrePlan>"
     Y        Valido que el beneficio sea "<beneficioPlan>"
    # Y        Valido que el descuento aplicado sea "<descuentoPlan>"
     Y        selecciono el boton Linea Nueva

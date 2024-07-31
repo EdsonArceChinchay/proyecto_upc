@@ -18,6 +18,4 @@ public class AltaMonoInstalacionFtthTiendaStepDefinition {
     public void validoSePresentePantallaConTitulo(String title) {
         altaMonoHfcTiendaStep.validarOfertasSugeridasView(title);
     }
-
-
 }

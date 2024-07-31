@@ -213,13 +213,6 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void registrarVenta() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
-        click(btnRegistrarVenta);
-    }
-
     public void doyClickEnAñadirSVA() {
         UtilWeb.waitForSeconds(10);
         waitUntilElementIsClickable(btnSVA, 100);
@@ -235,13 +228,20 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(4);
     }
 
+    public void registrarVenta() {
+        revisarModalError(driver());
+        UtilWeb.waitForSeconds(10);
+        esperaProgresiva(driver(), 7, 8, btnRegistrarVenta);
+        click(btnRegistrarVenta);
+    }
+
     public void clickBotonRegistrarVenta() {
         revisarModalError(driver());
         System.out.println("Entra al primer try");
         try {
             boolean buttonFound = false;
             int contador = 0;
-            int reintentoBucles = 15;
+            int reintentoBucles = 10;
             while (!buttonFound && contador <= reintentoBucles) {
                 System.out.println("Entra al while");
                 System.out.println("Entra al segundo try");

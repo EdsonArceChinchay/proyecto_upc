@@ -2,7 +2,6 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -14,7 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.JsonModifierDatosAgente.modifyJsonValue;
+import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyJsonValue;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class PortabilityPage extends WebBase {
@@ -38,9 +37,8 @@ public class PortabilityPage extends WebBase {
     protected WebElement btnContinuar;
 
     public void clickBotonPortabilidad() {
-        waitUntilElementIsVisible(btnPortabilidad, 10);
+        esperaProgresiva(driver(), 5, 6, btnPortabilidad);
         js().scrollElementTop(btnPortabilidad);
-        esperaProgresiva(driver(), 5, 5, btnPortabilidad);
         click(btnPortabilidad);
         UtilWeb.waitForSeconds(5);
     }
@@ -56,7 +54,7 @@ public class PortabilityPage extends WebBase {
         UtilWeb.waitForSeconds(4);//
         WebElement listElementPLan = find().getElementByCss(".tdp-col-sm-9:nth-child(2) .ng-pristine");
         click(listElementPLan);
-        UtilWeb.waitForSeconds(4);//es 1
+        UtilWeb.waitForSeconds(2);//es 1
         SearchContext contexPlan = sh().getContext(listElementPLan);
         List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
         for (WebElement elements : lista) {
@@ -99,7 +97,7 @@ public class PortabilityPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void setValuePortaDirecta() throws JSONException {
+    public void setValuePortaDirecta() {
         String primaryKey = "datosAgente";
         String secondaryKey = "additionalData";
         String key = "PortaDirecta";
@@ -113,7 +111,7 @@ public class PortabilityPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "After modified localStorage" + jsonStr);
     }
 
-    public String getValuePortaDirecta() throws JSONException {
+    public String getValuePortaDirecta()  {
         String primaryKey = "datosAgente";
         String key = "additionalData";
         String valuePortaDirecta =getValueItemSessionStorage(driver(), primaryKey, key);
@@ -126,7 +124,6 @@ public class PortabilityPage extends WebBase {
          js().scrollElementTop(btnCodePorta);
          click(btnCodePorta,2);
     }
-
 
     public void selectButton(String name) {
         WebElement buttonSelected = find().getElementByXPath("//*[contains(text(),'"+name.trim()+"')]");
@@ -146,7 +143,7 @@ public class PortabilityPage extends WebBase {
 
     public void inputToken(String token) {
        String valueToken = token.trim().toUpperCase();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get token" + valueToken);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get token: " + valueToken);
         List<WebElement> inputToken = find().getElementsByXPath("//input[contains(@class,'entrada')]");
         esperaProgresiva(driver(),3,5,inputToken.get(0));
 

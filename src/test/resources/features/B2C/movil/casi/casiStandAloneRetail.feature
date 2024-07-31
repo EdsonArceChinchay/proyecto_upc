@@ -47,7 +47,6 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
-    Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:

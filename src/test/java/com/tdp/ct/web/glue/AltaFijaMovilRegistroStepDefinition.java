@@ -46,6 +46,14 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.mostrarPantallaDescargarContrato();
     }
 
+    @Y("presiono el boton descargar contrato")
+    public void presiono_el_boton_descargar_contrato() {
+        altaFijaTiendaStep.clickDescargarContrato();
+        altaFijaTiendaStep.clickDescargarPdf();
+        altaFijaTiendaStep.cambiarPestanaPrincipal();
+        altaFijaTiendaStep.clickCerrarPopUp();
+    }
+
     @Y("doy clic para descargar el contrato")
     public void doyClicParaDescargarElContrato() {
         if (Parameters.estadoFlujo) {
@@ -61,6 +69,16 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("doy clic en Registrar venta")
     public void doyClicEnRegistrarVenta() {
         altaFijaTiendaStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono el boton Registrar venta")
+    public void presiono_el_boton_Registrar_venta() {
+        altaFijaTiendaStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono en el boton de Registrar Venta")
+    public void presionoEnElBotonDeRegistrarVenta() {
+        altaFijaTiendaStep.clickBotonRegistrarVenta();
     }
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")

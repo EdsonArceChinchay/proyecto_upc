@@ -3,8 +3,6 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import com.tdp.ct.web.service.util.UtilWeb;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,72 +14,70 @@ public class PortabilityStep {
 
     @ScreenShotBefore
     public void clickBotonPortabilidad() {
-        UtilWeb.waitForSeconds(20);
-        page.portabilidadPage().clickBotonPortabilidad();
-
+        page.portabilityPage().clickBotonPortabilidad();
     }
 
     @ScreenShotBefore
     @ScreenShotAfter
     public void ingresarNumeroPortar(String numero) {
-        page.portabilidadPage().ingresarNumeroPortar(numero);
+        page.portabilityPage().ingresarNumeroPortar(numero);
     }
 
     @ScreenShotAfter
     public void escogerTipoLinea(String plan) {
-        page.portabilidadPage().escogerTipoLinea(plan);
+        page.portabilityPage().escogerTipoLinea(plan);
     }
 
     @ScreenShotAfter
     public void escogerTipoOperador(String operador) {
-        page.portabilidadPage().esogerTipoOperador(operador);
+        page.portabilityPage().esogerTipoOperador(operador);
     }
 
     @ScreenShotBefore
     @ScreenShotAfter
     public void clickBotonConsultar() {
-        page.portabilidadPage().clickBotonConsultar();
+        page.portabilityPage().clickBotonConsultar();
     }
 
     @ScreenShotBefore
     public void clickPortaMovil() {
-        page.portabilidadPage().clickPortaMovil();
+        page.portabilityPage().clickPortaMovil();
     }
 
-    public void setValuePortaDirecta() throws JSONException {
-        page.portabilidadPage().setValuePortaDirecta();
+    public void setValuePortaDirecta() {
+        page.portabilityPage().setValuePortaDirecta();
     }
 
-    public String getValuePortaDirecta() throws JSONException {
-        return page.portabilidadPage().getValuePortaDirecta();
+    public String getValuePortaDirecta() {
+        return page.portabilityPage().getValuePortaDirecta();
     }
 
     @ScreenShotAfter
     public void clickButtonCodigoDePorta() {
-        page.portabilidadPage().clickButtonCodigoDePorta();
+        page.portabilityPage().clickButtonCodigoDePorta();
     }
 
     public void selectButton(String name) {
-        page.portabilidadPage().selectButton(name);
+        page.portabilityPage().selectButton(name);
     }
 
     @ScreenShotBefore
     public void clickButtonConfirmar() {
-        page.portabilidadPage().clickButtonConfirmar();
+        page.portabilityPage().clickButtonConfirmar();
     }
 
     @ScreenShotBefore
     public void clickButtonContinuar() {
-        page.portabilidadPage().clickButtonContinuar();
+        page.portabilityPage().clickButtonContinuar();
     }
 
     @ScreenShotAfter
     public void inputToken(String token) {
-        page.portabilidadPage().inputToken(token);
+        page.portabilityPage().inputToken(token);
     }
 
     @ScreenShotAfter
     public void validateMessage(String message) {
-        page.portabilidadPage().validateMessage(message);
+        page.portabilityPage().validateMessage(message);
     }
 }

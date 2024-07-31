@@ -31,19 +31,6 @@ public class AltaFijaTiendaStepDefinition {
 
     }
 
-    @Y("presiono el boton descargar contrato")
-    public void presiono_el_boton_descargar_contrato() {
-        altaFijaTiendaStep.clickDescargarContrato();
-        altaFijaTiendaStep.clickDescargarPdf();
-        altaFijaTiendaStep.cambiarPestanaPrincipal();
-        altaFijaTiendaStep.clickCerrarPopUp();
-    }
-
-    @Y("presiono el boton Registrar venta")
-    public void presiono_el_boton_Registrar_venta() {
-        altaFijaTiendaStep.clickRegistrarVenta();
-    }
-
     @Y("doy click en añadir SVA")
     public void doyClickEnAñadirSVA() {
         altaFijaTiendaStep.doyClickEnAñadirSVA();
@@ -52,11 +39,6 @@ public class AltaFijaTiendaStepDefinition {
     @Y("doy click en el boton validar identidad representante legal")
     public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
         altaFijaTiendaStep.clickBotonValidarRepreLegal();
-    }
-
-    @Y("presiono en el boton de Registrar Venta")
-    public void presionoEnElBotonDeRegistrarVenta() {
-        altaFijaTiendaStep.clickBotonRegistrarVenta();
     }
 
     @Y("selecciono el boton Linea Nueva")

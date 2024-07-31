@@ -41,7 +41,6 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de Cliente Exonerado
-    #Y        doy click en el boton continuar
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
     Y        valido que este en el resumen de venta

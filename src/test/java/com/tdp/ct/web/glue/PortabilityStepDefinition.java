@@ -3,7 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.PortabilityStep;
-import com.tdp.ct.web.step.Portabilidad.ServiceTest;
+import com.tdp.ct.web.step.ServiceTest;
 import io.cucumber.datatable.DataTable;
 
 import io.cucumber.java.Before;
@@ -77,7 +77,7 @@ public class PortabilityStepDefinition {
     }
 
     @Y("valido que este activo el flag de Porta Directa")
-    public void validoQueEsteActivoElFlagDePortaDirecta() throws JSONException {
+    public void validoQueEsteActivoElFlagDePortaDirecta() {
         portabilityStep.setValuePortaDirecta();
         portabilityStep.getValuePortaDirecta();
         this.scenario.log(portabilityStep.getValuePortaDirecta());

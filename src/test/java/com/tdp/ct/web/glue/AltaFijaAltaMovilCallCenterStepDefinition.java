@@ -74,4 +74,9 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaTiendaStep.seleccionarListaOfertas(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
+
+    @Y("selecciono en linea Nueva")
+    public void selecciono_en_linea_nueva() {
+        altaFijaAltaMovilCallCenterStep.seleccionarLineaNueva();
+    }
 }

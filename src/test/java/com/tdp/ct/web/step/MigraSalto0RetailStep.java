@@ -1,4 +1,4 @@
-package com.tdp.ct.web.step.migracion;
+package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;

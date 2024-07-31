@@ -99,6 +99,11 @@ public class RegisterStepDefinition {
         registerStep.clickButtonContinue();
     }
 
+    @Y("doy click en el boton Continuar")
+    public void doyClicEnContinuar() {
+        registerStep.clicBotonContinuar();
+    }
+
     @Y("doy click en validar identidad del titular")
     public void doyClickEnValidarIdentidadDelTitular() {
         registerStep.clickOnTheValidateHolderIdentityButton();
@@ -134,7 +139,7 @@ public class RegisterStepDefinition {
     }
 
     @Y("doy click en Validar contrato {string}")
-    public void doyClicParaValidarContrato() {
+    public void doyClicParaValidarContrato(String name) {
         registerStep.clicValidarContrato();
     }
 
@@ -154,10 +159,7 @@ public class RegisterStepDefinition {
         registerStep.clicSiAcepto();
     }
 
-    @Y("doy click en el boton Continuar")
-    public void doyClicEnContinuar() {
-        registerStep.clicBotonContinuar();
-    }
+
 
     @Y("doy click en discapacitado o huella desgastado")
     public void doyClickEnDiscapacitadoOHuellaDesgastado() {

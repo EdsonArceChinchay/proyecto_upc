@@ -76,8 +76,6 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-#    Y        presiono el boton Registrar venta
-#	Y        valido que se muestre el detalle del pedido
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | svaTV               | velocidadBB | precDescBB                      | precDescTV                               | bloque | tipoPlan | svaInternet           | bloque |

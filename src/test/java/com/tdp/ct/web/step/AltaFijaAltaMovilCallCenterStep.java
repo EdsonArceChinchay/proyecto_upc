@@ -37,5 +37,10 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();
     }
 
+    @ScreenShotBefore
+    public void seleccionarLineaNueva() {
+        page.altaFijaAltaMovilCallCenterPage().selectBtnLineaNueva();
+    }
+
 }
 

@@ -1,4 +1,4 @@
-package com.tdp.ct.web.glue.migracion;
+package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.MigracionDuoATrioTiendaStep;

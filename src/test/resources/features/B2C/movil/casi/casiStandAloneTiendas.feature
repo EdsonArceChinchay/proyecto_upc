@@ -12,7 +12,6 @@
 ##DATA:Reusable
 ##ENCARGADO:Brandon
 ##FECMOD: 26/02/2024
-
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
 Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
   Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
@@ -44,7 +43,7 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy click en el boton Continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

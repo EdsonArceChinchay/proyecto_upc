@@ -1,7 +1,6 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.step.migracion.MigraSalto0RetailStep;
-import io.cucumber.java.es.Cuando;
+import com.tdp.ct.web.step.MigraSalto0RetailStep;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 

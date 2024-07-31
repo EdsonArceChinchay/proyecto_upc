@@ -213,7 +213,6 @@ public class RegisterStep {
         page.altaFijaMovilRegistroPage().clicBotonContinuar();
     }
 
-
     @ScreenShotBefore
     public void clickDiscapacitadoHuellaDesgastado(){
         page.altaTrioMTconUpfrontTiendaPage().clickDiscapacitadoHuellaDesgastado();

@@ -156,4 +156,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
+    protected WebElement btnLineaNueva;
+
+    public void selectBtnLineaNueva() {
+        esperaProgresiva(driver(), 3, 10, btnLineaNueva);
+        click(btnLineaNueva);
+    }
+
 }
