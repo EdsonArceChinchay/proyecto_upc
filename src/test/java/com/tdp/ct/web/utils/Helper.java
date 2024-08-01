@@ -4,16 +4,14 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.net.URL;
 
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -69,7 +67,7 @@ public class Helper extends WebBase {
             properties.load(new FileInputStream("src/test/resources/config.properties"));
             return properties.getProperty(key);
         } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Error in read values " + e.getMessage());
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error in read values " + e.getMessage());
             return null;
         }
     }
@@ -87,7 +85,7 @@ public class Helper extends WebBase {
                     Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element " + element + " - " + nameElement + " is enabled and selected");
                 }
             } catch (Exception e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element not found" + element + " - " + e.getMessage());
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Web element not found" + element + " - " + e.getMessage());
             }
         }
         return element;
@@ -126,10 +124,13 @@ public class Helper extends WebBase {
         }
         return present;
     }
-    public static boolean validateInputAndLocator(WebDriver driver,String input, WebElement element) {
+
+    public static boolean validateInputAndLocator(WebDriver driver, String input, WebElement element) {
         if (input == null || input.isEmpty()) {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is null" );
             return false;
         }
+        Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is " + input);
         return validateElement(driver, element, 10);
     }
 
@@ -137,13 +138,57 @@ public class Helper extends WebBase {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element is Displayed" + element.isDisplayed() +" - Element is Enabled" +element.isEnabled() );
             return element.isDisplayed() && element.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element validation failed: " + e.getMessage());
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element validation failed: " + e.getMessage());
             return false;
         }
     }
 
+    public static String readerJson(String path) {
+        String jsonFile = System.getProperty("user.dir") + "/src/test/resources" + path;
+        File file = new File(jsonFile);
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            byte[] data = new byte[(int) file.length()];
+            fis.read(data);
+            fis.close();
+            return new String(data, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void typeInputShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+        SearchContext context = webElement.getShadowRoot();
+        WebElement inputElement = context.findElement(By.cssSelector(shadowElement));
+        inputElement.sendKeys(Keys.CONTROL + "a");
+        inputElement.sendKeys(Keys.DELETE);
+        inputElement.sendKeys(text);
+    }
+
+    public static void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+        webElement.click();
+        UtilWeb.waitForSeconds(2);
+        SearchContext contextPlan = webElement.getShadowRoot();
+        List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
+        for (WebElement element : elementsList) {
+            scrollElementTop(element);
+            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            if (isEquals) {
+                scrollElementTop(element);
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Select element: " + element.getText());
+                element.click();
+                break;
+            }
+        }
+    }
+    public static void scrollElementTop(WebElement webElement) {
+      /*  ((JavascriptExecutor) driver()).executeScript("arguments[0].scrollIntoView();", webElement);;
+        System.out.println("Scroll to web element");*/
+    }
 
 }
 

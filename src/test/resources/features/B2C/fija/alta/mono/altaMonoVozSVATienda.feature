@@ -62,7 +62,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
       | fechaNac   | estadoCivil | nacionalidad |
       | 24/04/1990 | Casado      | Aruba      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

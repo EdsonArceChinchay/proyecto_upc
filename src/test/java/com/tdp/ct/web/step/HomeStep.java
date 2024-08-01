@@ -3,7 +3,6 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,18 +13,18 @@ public class HomeStep {
     private StepPages page;
 
     @ScreenShotAfter
-    public void seleccionoTipoDocumento(String type) {
+    public void selectDocumentType(String type) {
         page.homePage().selectDocumentType(type);
     }
 
     @ScreenShotAfter
-    public void ingresoDocumento(String document) {
-        page.homePage().ingresoDocumento(document);
+    public void typeDocumentNumber(String document) {
+        page.homePage().typeDocumentNumber(document);
     }
 
     @ScreenShotBefore
-    public void clickButtonSearch() {
-        page.homePage().clickButtonSearch();
+    public void clickOnConsultButton() {
+        page.homePage().clickOnConsultButton();
     }
 
     @ScreenShotAfter
@@ -63,18 +62,18 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void clickBackOffice() {
-        page.homePage().clickBackOffice();
+    public void clickOnTheBackOfficeButton() {
+        page.homePage().clickOnTheBackOfficeButton();
     }
 
     @ScreenShotAfter
-    public void validarMsgHome(String msg) {
-        page.homePage().validarMsgHome(msg);
+    public void validateHomeMessage(String msg) {
+        page.homePage().validateHomeMessage(msg);
     }
 
     @ScreenShotAfter
-    public void validarTiendaAsesor(String tienda) {
-        page.homePage().validarTiendaAsesor(tienda);
+    public void validateStoreType(String tienda) {
+        page.homePage().validateStoreType(tienda);
     }
 
     public void regresarPaginaInicio() {
@@ -82,13 +81,13 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnElIconoDeAsesor() {
-        page.homePage().clickIconoAsesor();
+    public void clickOnTheAdvisorIcon() {
+        page.homePage().clickOnTheAdvisorIcon();
     }
 
     @ScreenShotAfter
     public void doyClickEnCerrarSesion() {
-        page.homePage().clickBtnCerrarSesion();
+        page.homePage().clickOnTheLogoutButton();
     }
 
     @ScreenShotAfter
@@ -99,7 +98,7 @@ public class HomeStep {
     @ScreenShotAfter
     @ScreenShotBefore
     public void confirmoCerrarSesion() {
-        page.homePage().clickBtnCerrarSesion();
+        page.homePage().clickOnTheLogoutButton();
     }
 
 }

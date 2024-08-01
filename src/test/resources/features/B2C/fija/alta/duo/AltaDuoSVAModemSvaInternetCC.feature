@@ -26,7 +26,7 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -67,7 +67,7 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1980 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -85,5 +85,5 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet con 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                  | tipoPlan | svaInternet           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO INTERNET ESTÁNDAR HD RA | Duo      | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                  | tipoPlan | svaInternet           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1123123148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DÚO INTERNET ESTÁNDAR HD RA | Duo      | PACK ANTIVIRUS MCAFEE |

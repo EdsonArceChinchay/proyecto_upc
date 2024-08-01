@@ -16,20 +16,16 @@ public class DeliveryStepDefinition {
     }
 
     @Y("selecciono un tipo de entrega {string}")
-    public void selecciono_un_tipo_de_entrega(String tipoEntrega) {
-        deliveryStep.seleccionarTipoEntrega(tipoEntrega);
+    public void selecciono_un_tipo_de_entrega(String typeOfDelivery) {
+        deliveryStep.selectTypeOfDelivery(typeOfDelivery);
     }
 
     @Y("selecciono el horario de entrega {string}")
-    public void selecciono_el_horario_de_entrega(String horarioEntrega) {
-        deliveryStep.seleccionarBtnHorario(horarioEntrega);
-    }
-    @Y("selecciono horario {string}")
-    public void seleccionoHorario(String horario) {
-        deliveryStep.selectTipoHorario(horario);
+    public void selecciono_el_horario_de_entrega(String deliveryTime) {
+        deliveryStep.clickOnDeliveryTime(deliveryTime);
     }
 
-    @Y("doy clic en confirmar delivery")
+    @Y("doy click en confirmar delivery")
     public void doy_clic_en_confirmar_delivery() {
         deliveryStep.clickButtonConfirmDevlivery();
     }

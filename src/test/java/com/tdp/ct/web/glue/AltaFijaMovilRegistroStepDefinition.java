@@ -2,13 +2,10 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,69 +38,17 @@ public class AltaFijaMovilRegistroStepDefinition {
         altaFijaMovilRegistroStep.seleccionarOferta(oferta);
     }
 
-    @Y("doy click en validar identidad del titular")
-    public void doyClickEnValidarIdentidadDelTitular() {
-        altaFijaMovilRegistroStep.clicValidarIdentidadTitular();
-    }
-
-    @Y("elijo el tipo de validacion a realizar {string}")
-    public void elijoElTipoDeValidacionARealizar(String tipoValidacion) {
-        altaFijaMovilRegistroStep.seleccionoTipoValidacion(tipoValidacion);
-    }
-
-    @Y("ingreso los datos del supervisor")
-    public void ingresoLosDatosDelSupervisor(DataTable datos) {
-        altaFijaMovilRegistroStep.ingresarDatosSupervisor(datos);
-        altaFijaMovilRegistroStep.clicConfirmarUsuarioSupervisor();
-    }
-
-    @Y("ingreso los datos solicitados para la validacion del cliente")
-    public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(10);
-        for (int i = 0; i < 3; i++) {
-            altaFijaMovilRegistroStep.ingresarDatosValidacionSolicitada(datos, i);
-            System.out.println("-- click en siguiente --");
-            altaFijaMovilRegistroStep.clicEnSiguiente();
-        }
-        System.out.println("----- termino preguntas ----------");
-        UtilWeb.waitForSeconds(5);
-        altaFijaMovilRegistroStep.clicEnConfirmar();
-    }
-
-    @Entonces("valido que me muestre el boton con el texto de identidad validada")
-    public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
-        altaFijaMovilRegistroStep.validarIdentidadValidada();
-    }
-
-    @Y("doy clic para validar contrato Movil")
-    public void doyClicParaValidarContratoMovil() {
-        altaFijaMovilRegistroStep.clicValidarContrato();
-    }
-
-    @Y("me muestra en pantalla el contrato solicitado")
-    public void meMuestraEnPantallaElContratoSolicitado() {
-        altaFijaMovilRegistroStep.visualizarContratoEnPantalla();
-    }
-
-    @Y("imprimo el texto del contrato solicitado")
-    public void imprimoElTextoDelContratoSolicitado() {
-        this.scenario.log(altaFijaMovilRegistroStep.getTextoSolicitud());
-        this.scenario.log("[Código de Venta: " + altaFijaMovilRegistroStep.getSalesCode() + "]");
-    }
-
-    @Cuando("doy clic en si acepto")
-    public void doyClicEnSiAcepto() {
-        altaFijaMovilRegistroStep.clicSiAcepto();
-    }
-
-    @Y("doy clic en continuar")
-    public void doyClicEnContinuar() {
-        altaFijaMovilRegistroStep.clicBotonContinuar();
-    }
-
     @Y("me muestra pantalla para Descargar contrato")
     public void meMuestraPantallaParaDescargarContrato() {
         altaFijaMovilRegistroStep.mostrarPantallaDescargarContrato();
+    }
+
+    @Y("presiono el boton descargar contrato")
+    public void presiono_el_boton_descargar_contrato() {
+        altaFijaTiendaStep.clickDescargarContrato();
+        altaFijaTiendaStep.clickDescargarPdf();
+        altaFijaTiendaStep.cambiarPestanaPrincipal();
+        altaFijaTiendaStep.clickCerrarPopUp();
     }
 
     @Y("doy clic para descargar el contrato")
@@ -121,6 +66,16 @@ public class AltaFijaMovilRegistroStepDefinition {
     @Y("doy clic en Registrar venta")
     public void doyClicEnRegistrarVenta() {
         altaFijaTiendaStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono el boton Registrar venta")
+    public void presiono_el_boton_Registrar_venta() {
+        altaFijaTiendaStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono en el boton de Registrar Venta")
+    public void presionoEnElBotonDeRegistrarVenta() {
+        altaFijaTiendaStep.clickBotonRegistrarVenta();
     }
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")

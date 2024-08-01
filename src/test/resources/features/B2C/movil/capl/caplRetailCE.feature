@@ -25,7 +25,7 @@ Característica: AT-DT100_Cambio de plan movil a cliente extranjero (CE) en Cana
     Y        ingreso el password "passDLC"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
-    #Y        valido que se presente la tienda "TALARA"
+    #Y        valido que se presente el canal "TALARA"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464930"
     Y        doy click en el boton Consultar
@@ -38,13 +38,12 @@ Característica: AT-DT100_Cambio de plan movil a cliente extranjero (CE) en Cana
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

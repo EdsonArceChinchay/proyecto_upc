@@ -1,9 +1,8 @@
-package com.tdp.ct.web.step.Caeq;
+package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import com.tdp.ct.web.step.Portabilidad.ServiceTest;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,11 +23,6 @@ public class CaeqPorReatilStep {
     }
 
     @ScreenShotBefore
-    public void btnSeleccionar() {
-        page.caeqPorRetailPage().btnSeleecionar();
-    }
-
-    @ScreenShotBefore
     public void btnMantenerPlan() {
         page.caeqPorRetailPage().btnMantenerPlan();
     }
@@ -39,9 +33,9 @@ public class CaeqPorReatilStep {
     }
 
     public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {
-        Map<String, String> valuesMovil;
-        valuesMovil = serviceTest.getSalesLead(codigoVenta);
-        return valuesMovil;
+        Map<String, String> movileValues;
+        movileValues = serviceTest.getSalesLead(codigoVenta);
+        return movileValues;
     }
 
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> salesLead) {
@@ -50,16 +44,8 @@ public class CaeqPorReatilStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void SeleccionarBotonCambiarChip() {
-        page.caeqPorRetailPage().SeleccionarBotonCambiarChip();
-    }
-
-
-    @ScreenShotBefore
-    @ScreenShotAfter
     public void seleccionoelbotonCambiodeChip() {
         page.caeqPorRetailPage().seleccionoelbotonCambiodeChip();
-
     }
 
     @ScreenShotBefore

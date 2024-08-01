@@ -2,7 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
-import com.tdp.ct.web.step.Caeq.CaeqPorReatilStep;
+import com.tdp.ct.web.step.CaeqPorReatilStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
@@ -34,11 +34,6 @@ public class CaeqPorReatilStepDefinition {
         caeqPorReatilStep.btnAnadirEquipo(1);
     }
 
-    @Y("presiono el boton seleccionar")
-    public void presionoElBotonSeleccionar() {
-        caeqPorReatilStep.btnSeleccionar();
-    }
-
     @Y("selecciono boton mantener plan")
     public void seleccionoBotonMantenerPlan() {
         caeqPorReatilStep.btnMantenerPlan();
@@ -56,14 +51,8 @@ public class CaeqPorReatilStepDefinition {
         this.scenario.log("[Código de Venta: " + salesCode + "]");
         caeqPorReatilStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqPorReatilStep.getSalesLead(salesCode));
         this.scenario.log(caeqPorReatilStep.getSalesLead(salesCode).toString());
-
     }
 
-
-    @Y("Selecciono boton Cambiar Chip")
-    public void seleccionoBotonCambiarChip() {
-        caeqPorReatilStep.SeleccionarBotonCambiarChip();
-    }
     @Y("selecciono el boton Cambiar Chip")
     public void seleccionoelbotonCambiodeChip() {
         caeqPorReatilStep.seleccionoelbotonCambiodeChip();

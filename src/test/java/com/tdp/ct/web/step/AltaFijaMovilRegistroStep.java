@@ -3,10 +3,7 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
-import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -41,72 +38,6 @@ public class AltaFijaMovilRegistroStep {
         page.altaFijaMovilRegistroPage().seleccionarOferta(oferta);
     }
 
-    @ScreenShotBefore
-    public void clicValidarIdentidadTitular() {
-        page.altaFijaMovilRegistroPage().clicValidarIdentidadTitular();
-    }
-
-    public void seleccionoTipoValidacion(String tipoValidacion) {
-        page.altaFijaMovilRegistroPage().seleccionoTipoValidacion(tipoValidacion);
-    }
-
-    public void ingresarDatosSupervisor(DataTable datos) {
-
-        String numdoc = UtilWeb.getValueFromDataTable(datos, "numdoc");
-        String user = UtilWeb.getValueFromDataTable(datos, "user");
-        String password = UtilWeb.getValueFromDataTable(datos, "password");
-
-        page.altaFijaMovilRegistroPage().ingresarDNISupervisor(numdoc);
-        page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
-        page.altaFijaMovilRegistroPage().IngresarUsuarioSupervisor(user);
-        page.altaFijaMovilRegistroPage().ingresarPasswordSupervisor(password);
-    }
-
-    @ScreenShotBefore
-    public void clicConfirmarUsuarioSupervisor() {
-        page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
-    }
-
-    public void validarIdentidadValidada() {
-        page.altaFijaMovilRegistroPage().verificarIdentidadValidada();
-    }
-
-    @ScreenShotBefore
-    public void clicValidarContrato() {
-        page.altaFijaMovilRegistroPage().clicValidarContrato();
-    }
-
-    public void ingresarDatosValidacionSolicitada(DataTable datos, Integer i) {
-        page.altaFijaMovilRegistroPage().ingresarDatosValidacionReniec(datos, i);
-    }
-
-    @ScreenShotBefore
-    public void clicEnSiguiente() {
-        page.altaFijaMovilRegistroPage().clicSiguiente();
-    }
-
-    @ScreenShotBefore
-    public void clicEnConfirmar() {
-        page.altaFijaMovilRegistroPage().clicEnConfirmar();
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void clicBotonContinuar() {
-        page.altaFijaMovilRegistroPage().clicBotonContinuar();
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void visualizarContratoEnPantalla() {
-        page.altaFijaMovilRegistroPage().visualizarContratoEnPantalla();
-    }
-
-    @ScreenShotBefore
-    public void clicSiAcepto() {
-        page.altaFijaMovilRegistroPage().clicSiAcepto();
-    }
-
     @ScreenShotAfter
     public void mostrarPantallaDescargarContrato() {
         Assert.assertTrue("No mostro pantalla para descargar contrato",
@@ -124,10 +55,6 @@ public class AltaFijaMovilRegistroStep {
                 page.altaFijaMovilRegistroPage().validarVentaGenerada());
         getOrderCode();
         getSalesCode();
-    }
-
-    public String getTextoSolicitud() {
-        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
     }
 
     public void getOrderCode() {

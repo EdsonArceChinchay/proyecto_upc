@@ -7,7 +7,6 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaFijaTiendaStepDefinition {
 
@@ -23,30 +22,12 @@ public class AltaFijaTiendaStepDefinition {
         altaFijaTiendaStep.seleccionarListaPLanFija(planFija);
     }
 
-    @Y("doy clic para validar contrato hogar")
-    public void doy_clic_para_validar_contrato_hogar() {
-        altaFijaMovilRegistroStep.clicValidarContrato();
-    }
-
     @Y("selecciono el plan {string}")
     public void selecciono_el_plan(String nombrePlan) {
         altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
         altaFijaTiendaStep.clickSeleccionarOferta();
         altaFijaTiendaStep.clickListaBotones();
 
-    }
-
-    @Y("presiono el boton descargar contrato")
-    public void presiono_el_boton_descargar_contrato() {
-        altaFijaTiendaStep.clickDescargarContrato();
-        altaFijaTiendaStep.clickDescargarPdf();
-        altaFijaTiendaStep.cambiarPestanaPrincipal();
-        altaFijaTiendaStep.clickCerrarPopUp();
-    }
-
-    @Y("presiono el boton Registrar venta")
-    public void presiono_el_boton_Registrar_venta() {
-        altaFijaTiendaStep.clickRegistrarVenta();
     }
 
     @Y("doy click en añadir SVA")
@@ -57,11 +38,6 @@ public class AltaFijaTiendaStepDefinition {
     @Y("doy click en el boton validar identidad representante legal")
     public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
         altaFijaTiendaStep.clickBotonValidarRepreLegal();
-    }
-
-    @Y("presiono en el boton de Registrar Venta")
-    public void presionoEnElBotonDeRegistrarVenta() {
-        altaFijaTiendaStep.clickBotonRegistrarVenta();
     }
 
     @Y("selecciono el boton Linea Nueva")

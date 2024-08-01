@@ -2,7 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,75 +10,69 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
-import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
-import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
 
 public class DeliveryPage extends WebBase {
-    @FindBy(xpath = "//*[@formcontrolname='deliveryType']")
-    protected WebElement deliveryType;
-    @FindBy(xpath = "//div[@class='contHours']/div/span")
-    protected List<WebElement> btnHorario;
+    @FindBy(xpath = "//tdp-st-select[@formcontrolname='deliveryType'] | //*[@formcontrolname='deliveryType']")
+    protected WebElement selectDeliveryType;
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Confirmar ubicación') or contains(@class,'button') and contains(text(),'Confirmar ubicación')]")
     protected WebElement btnConfirmLocation;
     @FindBy(xpath = "(//button[@class='button_step'])")
     protected WebElement btnConfirmDelivery;
+    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='instruction'] | //*[@formcontrolname='instruction']")
+    protected WebElement inputInstruction;
+    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='contactNumber'] | //*[@formcontrolname='contactNumber']")
+    protected WebElement inputContactNumber;
+
 
     public void clickButtonConfirmLocation() {
-        esperaProgresiva(driver(), 5, 5, btnConfirmLocation);
+        esperaProgresiva(driver(), 6, 5, btnConfirmLocation);
+        js().scrollElementTop(btnConfirmLocation);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnConfirmLocation.getText());
         btnConfirmLocation.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Confirmar Ubicacion");
     }
 
-    public void tipoEntrega(String tipEntrega) {
-        revisarModalError(driver());
-        esperaProgresivaLoading(driver(), 4, 5, "loadingCard");
-        esperaProgresiva(driver(), 4, 6, deliveryType);
-        scrollDown();
-        click(deliveryType);
-        UtilWeb.waitForSeconds(1);
-        SearchContext contexPlan = sh().getContext(deliveryType);
-
-        String[][] deliveryOptions = {{"Express", "Delivery Express"}, {"R24h", "Delivery Regular 24 horas"}, {"R48h", "Delivery Regular 48 horas"}, {"R72h", "Delivery Regular 72 horas"}};
-        String sCodigo = buscarValorOpcion(tipEntrega, deliveryOptions);
-        seleccionarValueComboShadow(driver(), "deliveryType", sCodigo);
-
+    public void selectTypeOfDelivery(String deliveryType) {
+        esperaProgresiva(driver(), 6, 6, selectDeliveryType);
+        js().scrollElementTop(selectDeliveryType);
+        selectDeliveryType.click();
+        UtilWeb.waitForSeconds(2);
+        SearchContext contexPlan = selectDeliveryType.getShadowRoot();
+        List<WebElement> listItems = contexPlan.findElements(By.cssSelector("div > ul > li"));
+        for (WebElement item : listItems) {
+            boolean isEquals = returnCompareWebElementTextAndText(item, deliveryType);
+            if (isEquals) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element " + item.getText());
+                item.click();
+                break;
+            }
+        }
     }
 
-    public void btnHorario(String horario) {
-        clickElementInAList(btnHorario, horario);
-        UtilWeb.waitForSeconds(5);
+    public void clickOnDeliveryTime(String hour) {
+        WebElement btnElement = driver().findElement(By.xpath("//*[@class='boxHour']//*[contains(text(),'" + hour + "')]"));
+        waitUntilElementIsClickable(btnElement, 20);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click hour" + btnElement.getText());
+        btnElement.click();
     }
 
-    public void selectTipoHorario(String horario) {
-        WebElement elegirHorario1 = find().getElementByXPath("//span[text()='" + horario + "']/..");
-        click(elegirHorario1);
-    }
-
-    public void typeTelephone(String number) {
-        WebElement direccionElement = find().getElementByXPath("//*[@formcontrolname='contactNumber']");
-        js().scrollElementTop(direccionElement);
-        click(direccionElement, 5);
-        type(direccionElement, number);
+    public void typeTelephone(String numberPhone) {
+        typeInputShadowRootCSS(numberPhone, inputContactNumber, "div > div > div > input");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type telephone " + numberPhone);
     }
 
     public void typeDeliveryInstructions(String instruction) {
-        WebElement txtInstr = find().getElementByXPath("//*[@formcontrolname='instruction']");
-        esperaProgresiva(driver(), 5, 5, txtInstr);
-        click(txtInstr);
-        type(txtInstr, instruction);
+        typeInputShadowRootCSS(instruction, inputInstruction, "div > div > div > input");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type instruction " + instruction);
     }
 
     public void clickButtonConfirmDevlivery() {
         esperaProgresiva(driver(), 3, 5, btnConfirmDelivery);
-        click(btnConfirmDelivery, 5);
-    }
-
-    public void scrollDown() {
-        UtilWeb.waitForSeconds(4);
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js().scrollElementTop(btnConfirmDelivery);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnConfirmDelivery.getText());
+        click(btnConfirmDelivery);
     }
 
 }

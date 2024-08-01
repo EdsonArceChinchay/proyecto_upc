@@ -25,7 +25,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -38,6 +38,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
@@ -47,7 +48,9 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -55,7 +58,8 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
       | 20/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | JR JULIO CESAR TELLO 469 |
-    Entonces doy clic para validar contrato Movil
+    Y        doy click en el boton confirmar
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -66,5 +70,5 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Financiado 12 cuotas |

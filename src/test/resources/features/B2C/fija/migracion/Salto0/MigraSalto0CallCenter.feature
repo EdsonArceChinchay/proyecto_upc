@@ -41,13 +41,13 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        doy click en el boton "entendido"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
-    Cuando   doy clic en iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar

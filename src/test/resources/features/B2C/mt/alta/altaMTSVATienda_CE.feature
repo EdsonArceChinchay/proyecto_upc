@@ -26,7 +26,7 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
+    #Y     valido que se presente el canal "Tiendas Franquicia Prueba"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -65,7 +65,7 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
       | fechaNac   | nacionalidad | estadoCivil |
       | 24/02/1996 | Aruba        | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

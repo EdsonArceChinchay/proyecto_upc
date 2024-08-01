@@ -25,7 +25,7 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -71,13 +71,11 @@ Característica: Agregar SVA - Planes: Monos, dúos, trios
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/01/1996 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-#    Y        presiono el boton Registrar venta
-#	Y        valido que se muestre el detalle del pedido
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                | svaTV               | velocidadBB | precDescBB                      | precDescTV                               | bloque | tipoPlan | svaInternet           | bloque |

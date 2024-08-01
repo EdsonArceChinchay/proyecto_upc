@@ -26,7 +26,7 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -60,7 +60,7 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso telefono de contacto "658745259"
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
@@ -70,11 +70,11 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
     ##Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

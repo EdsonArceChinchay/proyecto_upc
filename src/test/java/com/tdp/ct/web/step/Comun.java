@@ -2,9 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class Comun {
 

@@ -42,9 +42,8 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "Control"
-    Y        selecciono la opcion "RV Plan Mi Movistar"
-    Y        doy click en el boton seleccionar oferta
-    Y        selecciono en linea Nueva
+    Y        selecciono un plan movil "RV Plan Mi Movistar"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -52,7 +51,8 @@ Característica: AT-DT023_Alta Movil Control con documento CE por canal Tienda
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/08/1994 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
-    Y        doy clic para validar contrato Movil
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

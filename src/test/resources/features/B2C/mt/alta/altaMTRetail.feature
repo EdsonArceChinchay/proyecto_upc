@@ -16,7 +16,6 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Retail
 
-
   @AltaMTporRetail
   Esquema del escenario: Alta fija mas alta movil por Retail
     Dado     que abro la pagina de movistar
@@ -60,12 +59,11 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
       | fechaNac   | estadoCivil | nacionalidad |
       | 11/02/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

@@ -70,17 +70,17 @@ public class ParkStep {
     }
 
     public void esperarBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().esperarBtnCardPlanActual();
+        page.parkPage().esperarBtnCardPlanActual();
     }
 
     @ScreenShotBefore
     public void clickBtnCardPlanActual() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnCardPlanActual();
+        page.parkPage().clickBtnCardPlanActual();
     }
 
     @ScreenShotAfter
     public void clickBtnRenovarPlan() {
-        page.caplConCaeqAlContadoCanalTiendaPage().clickBtnRenovarPlan();
+        page.parkPage().clickBtnRenovarPlan();
     }
 
     @ScreenShotBefore
@@ -169,24 +169,24 @@ public class ParkStep {
 
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        if (customer.isNewCustomer()) {
+        //if (customer.isNewCustomer()) {
             String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
             String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
             String genero = UtilWeb.getValueFromDataTable(datos, "genero");
             page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
             page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
             page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
-        } else {
+       /* } else {
             System.out.println("Skip. Cliente Registrado en Dito");
-        }
+        }*/
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        if (customer.isNewCustomer()) {
+     //   if (customer.isNewCustomer()) {
             page.altaFijaMovilRegistroPage().crearCliente();
-        } else {
+        /*} else {
             System.out.println("Skip. Cliente Registrado en Dito");
-        }
+        }*/
     }
 }

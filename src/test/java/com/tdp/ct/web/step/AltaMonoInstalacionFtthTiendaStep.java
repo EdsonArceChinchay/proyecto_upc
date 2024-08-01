@@ -2,7 +2,6 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,39 +14,6 @@ public class AltaMonoInstalacionFtthTiendaStep {
     @ScreenShotAfter
     public void validarOfertasSugeridasView(String title) {
         page.altaMonoFtthTiendaPage().validarOfertasSugeridasView(title);
-    }
-
-    public void scrollToBtnPlanNuevo() {
-        page.altaMonoFtthTiendaPage().scrollToBtnPlanNuevo();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnPlanNuevo() {
-        page.altaMonoFtthTiendaPage().clickBtnPlanNuevo();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnTipoPlan(String plan) {
-        page.altaMonoFtthTiendaPage().clickBtnTipoPlan(plan);
-    }
-
-    @ScreenShotBefore
-    public void seleccionarPlan(String plan) {
-        page.altaFijaMovilRegistroPage().seleccionarPlan(plan);
-    }
-
-    public void esperarBtnLineaNueva() {
-        page.altaMonoFtthTiendaPage().esperarBtnLineaNueva();
-    }
-
-    @ScreenShotBefore
-    public void clickBtnLineaNueva(String btnName) {
-        page.altaMonoFtthTiendaPage().clickBtnLinea(btnName);
-    }
-
-    @ScreenShotBefore
-    public void validarDetallePlan() {
-        page.altaMonoFtthTiendaPage().validarDetallePlan();
     }
 
 }

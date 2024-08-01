@@ -29,12 +29,22 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }
 
+    @ScreenShotBefore
+    public void BtonOpciones() {
+        page.altaFijaAltaMovilCallCenterPage().BtonOpciones();
+    }
+
     public void seleccionarListaOferta(String listaOferta) {
         page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta, scenario);
     }
 
     public void clickIrAMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();
+    }
+
+    @ScreenShotBefore
+    public void seleccionarLineaNueva() {
+        page.altaFijaAltaMovilCallCenterPage().selectBtnLineaNueva();
     }
 
 }

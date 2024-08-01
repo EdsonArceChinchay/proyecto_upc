@@ -23,9 +23,10 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "passST"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-      #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
+      #Y        valido que se presente el canal "TIENDA SAN MIGUEL"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464814"
     Y        doy click en el boton Consultar
@@ -58,7 +59,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

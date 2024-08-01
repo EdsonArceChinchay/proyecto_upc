@@ -3,11 +3,12 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.junit.jupiter.api.Assertions;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
@@ -36,7 +37,13 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(id = "claimVerificationServerError")
     protected WebElement msgErrorCredential;
 
-    public void clickButtonLogin() {
+    @FindBy(xpath = "//*[contains(@class,'error itemLevel show') or contains(@id,'erro-captcha') or contains(@id,'claimVerificationServerError')]")
+    protected List<WebElement> labelsError;
+
+    @FindBy(xpath = "//*[contains(@id,'erro-captcha')]")
+    protected WebElement labelCaptchaError;
+
+    public void clickOnLoginButton() {
         Addons.reiniciaTimeout(driver());
         Addons.esperaProgresiva(driver(), 3, 5, btnIniciarSesion);
         click(btnIniciarSesion);
@@ -46,44 +53,48 @@ public class LoginBerserkerPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, tipoUsuario);
         Select usuarioSelect = new Select(tipoUsuario);
         usuarioSelect.selectByVisibleText(usuario);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + usuario);
         UtilWeb.waitForSeconds(1);
     }
 
     public void typeUserName(String name) {
         type(inputNameUser, readValues(name));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type user " + readValues(name));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typePassword(String pass) {
         type(inputPassword, readValues(pass));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type password " + readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
 
-    public void clickBtnContinuarHaciaHome() {
-        esperaProgresiva(driver(), 3, 5, btnContinuar);
+    public void clickOnContinueButton() {
         js().scrollElementTop(btnContinuar);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnContinuar.getText());
         click(btnContinuar);
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
-    public void clickButtonContinue() {
-        click(btnContinuar);
-        waitUntilElementIsVisible(msgError, 30);
-    }
-
-    public void clickBtnContinuarToLogin() {
-        click(btnContinuar);
-        waitUntilElementIsVisible(msgErrorCredential, 30);
-    }
-
-    public void validarMensajeError(String msg) {
-        compareWebElementTextAndText(msgError,msg);
+    public void validateErrorMessage(String msg) {
+        waitUntilElementIsVisible(msgError, 10);
+        compareWebElementTextAndText(msgError, msg);
         UtilWeb.waitForSeconds(1);
     }
 
-    public void validarMsgIncorrectCredential(String msg) {
-        compareWebElementTextAndText(msgErrorCredential,msg);
+    public void validateIncorrectCredentialsMessage(String msg) {
+        waitUntilElementIsVisible(msgErrorCredential, 10);
+        compareWebElementTextAndText(msgErrorCredential, msg);
         UtilWeb.waitForSeconds(1);
+    }
+
+    public boolean validateCaptchaErrorMessage() {
+        try {
+            return waitUntilElementIsVisible(labelCaptchaError, 10).isDisplayed();
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
+            return false;
+        }
     }
 
     public String readValues(String key) {

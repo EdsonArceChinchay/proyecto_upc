@@ -1,4 +1,4 @@
-package com.tdp.ct.web.page.migracion;
+package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
@@ -38,13 +38,6 @@ public class MigraSalto0RetailPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, BtnMigrarFibra);
         js().scrollElementTop(BtnMigrarFibra);
         click(BtnMigrarFibra);
-
-    }
-
-    public void ClicIniciarRegistro() {
-        esperaProgresiva(driver(), 5, 5, BotonIniciarRegistro);
-        js().scrollElementTop(BotonIniciarRegistro);
-        click(BotonIniciarRegistro);
 
     }
 

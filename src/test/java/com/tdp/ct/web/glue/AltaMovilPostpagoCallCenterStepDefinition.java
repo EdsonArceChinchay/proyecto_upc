@@ -4,7 +4,6 @@ import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.AltaMovilPostpagoCallCenterStep;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,24 +21,9 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
 
-    @Y("selecciono la opcion {string}")
-    public void seleccionoLaOpcion(String Tipo) {
-        altaMovilPostpagoCallCenterStep.seleccionarPlan(Tipo);
-    }
-
     @Y("selecciono añadir equipos")
     public void seleccionoAñadirEquipos() {
         altaMovilPostpagoCallCenterStep.seleccionarEquipo();
-    }
-
-    @Y("selecciono el boton de eleccion de planes")
-    public void seleccionoElBotonDeEleccionDePlanes() {
-        altaMovilPostpagoCallCenterStep.BtonOpciones();
-    }
-
-    @Y("selecciono el plan movil {string}")
-    public void seleccionoElPlanMovil(String tipoPlan) {
-        altaMovilPostpagoCallCenterStep.seleccionoElPlanMovil(tipoPlan);
     }
 
     @Y("selecciono la cartilla Linea Nueva")
@@ -55,11 +39,6 @@ public class AltaMovilPostpagoCallCenterStepDefinition {
     @Entonces("me muestra la pantalla de Delivery de linea nueva")
     public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
         altaMovilPostpagoCallCenterStep.meMuestraLaPantallaDeDeliveryDeLineaNueva();
-    }
-
-    @Y("selecciono el tipo de entrega de delivery {string}")
-    public void seleccionoElTipoDeEntregaDeDelivery(String tipo) {
-        altaMovilPostpagoCallCenterStep.seleccionoElTipoDeEntregaDeDelivery(tipo);
     }
 
 }

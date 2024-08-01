@@ -58,7 +58,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/11/1994 | Casado      | Alemania     |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

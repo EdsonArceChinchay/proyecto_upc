@@ -12,7 +12,6 @@
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
 ##FECMOD: 09/04/2024
-
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por canal Call Center con delivery regular
 
@@ -26,7 +25,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -40,15 +39,15 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
-    Y        selecciono la opcion "<tipoPlanes>"
-    Y        doy click en el boton seleccionar oferta
+    Y        selecciono el tipo de plan movil "<tipoPlan>"
+    Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -62,7 +61,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso telefono de contacto "658745259"
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "earce@gmail.com"
     Y        ingreso nuevamente el correo electronico "earce@gmail.com"
@@ -71,7 +70,7 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -88,5 +87,5 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes          | planMovil | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

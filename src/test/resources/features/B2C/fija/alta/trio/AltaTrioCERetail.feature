@@ -60,7 +60,7 @@ Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
       | fechaNac   | estadoCivil | nacionalidad |
       | 03/10/1990 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta

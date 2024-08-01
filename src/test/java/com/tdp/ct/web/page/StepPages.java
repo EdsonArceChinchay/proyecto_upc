@@ -1,8 +1,5 @@
 package com.tdp.ct.web.page;
 
-import com.tdp.ct.web.page.Caeq.CaeqPorRetailPage;
-import com.tdp.ct.web.page.MovilFinanciado.AltaMovilControlFinancimientoPage;
-import com.tdp.ct.web.page.migracion.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,24 +21,12 @@ public class StepPages {
         return new AltaMovilPostpagoCallCenterPage();
     }
 
-    public AltaFijaRetailPage altaFijaRetailPage() {
-        return new AltaFijaRetailPage();
-    }
-
     public AltaFijaTiendaPage altaFijaTiendaPage() {
         return new AltaFijaTiendaPage();
     }
 
-    public AltaPuraMTcallCenterPage altaPuraMTcallCenterPage() {
-        return new AltaPuraMTcallCenterPage();
-    }
-
     public AltaMonoInstalacionFtthTiendaPage altaMonoFtthTiendaPage() {
         return new AltaMonoInstalacionFtthTiendaPage();
-    }
-
-    public AltaTrioConBloqueHdUpfrontCallCenterPage altaTrioConBloqueHdUpfrontCallCenterPage() {
-        return new AltaTrioConBloqueHdUpfrontCallCenterPage();
     }
 
     public AltaMovilSoloSimCallCenterPage altaMovilSoloSimCallCenterPage() {
@@ -52,22 +37,6 @@ public class StepPages {
         return new MigracionDuoATrioTiendaPage();
     }
 
-    public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage() {
-        return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage();
-    }
-
-    public AltaMovilPrepagoSoloChipTiendaPage altaMovilPrepagoSoloChipTiendaPage() {
-        return new AltaMovilPrepagoSoloChipTiendaPage();
-    }
-
-    public MigraTrioaMTcanalCallCenterPage migraTrioaMTcanalCallCenterPage() {
-        return new MigraTrioaMTcanalCallCenterPage();
-    }
-
-    public AltaMovilControlFinancimientoPage altaMovilControlFinancimientoPage() {
-        return new AltaMovilControlFinancimientoPage();
-    }
-
     public CaeqPorRetailPage caeqPorRetailPage() {
         return new CaeqPorRetailPage();
     }
@@ -76,8 +45,8 @@ public class StepPages {
         return new MigraSalto0RetailPage();
     }
 
-    public PortabilidadPage portabilidadPage() {
-        return new PortabilidadPage();
+    public PortabilityPage portabilityPage() {
+        return new PortabilityPage();
     }
 
     public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage() {
@@ -124,7 +93,9 @@ public class StepPages {
         return new AppointmentPage();
     }
 
-    public RegisterPage registerPage(){ return new RegisterPage();}
+    public RegisterPage registerPage() {
+        return new RegisterPage();
+    }
 
     public CheckoutPage checkoutPage() {
         return new CheckoutPage();

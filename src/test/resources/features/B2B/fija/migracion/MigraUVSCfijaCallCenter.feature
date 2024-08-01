@@ -48,7 +48,7 @@ Característica: AT-DT064_Migracion UVSC fija en canal Call Center con
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     E        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

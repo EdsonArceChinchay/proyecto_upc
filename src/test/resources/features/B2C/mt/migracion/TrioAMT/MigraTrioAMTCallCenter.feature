@@ -43,10 +43,10 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
+    Y        selecciono el horario de entrega "3pm-7pm"
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en validar identidad del titular
@@ -54,7 +54,7 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

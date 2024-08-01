@@ -26,7 +26,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -39,8 +39,11 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono la oferta de plan movil "<oferta>"
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -48,11 +51,12 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
-    Y        doy clic para validar contrato Movil
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        presiono continuar
+    Y        doy click en el boton Continuar
 #    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -60,5 +64,5 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
+      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento  | oferta       | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@  | CE            | 1942354781 | PLAN PREPAGO | Preplan    |

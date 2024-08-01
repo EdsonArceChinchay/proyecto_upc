@@ -78,6 +78,10 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
     protected WebElement labelSelectService;
 
+    @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
+    protected WebElement btnCardPlanActual;
+    @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
+    protected WebElement btnRenovarPlan;
 
     public void altaHogar() {
         UtilWeb.waitForSeconds(10);
@@ -425,4 +429,28 @@ public class ParkPage extends WebBase {
         numberLine.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line "+number);
     }
+    public void esperarBtnCardPlanActual() {
+        UtilWeb.waitForSeconds(1);
+        js().scrollElementTop(find().getElementByCss("h1.titleForm"));
+
+    }
+
+    public void clickBtnCardPlanActual() {
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
+        js().scrollElementTop(btnCardPlanActual);
+        click(btnCardPlanActual);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void clickBtnRenovarPlan() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        js().scrollElementTop(btnRenovarPlan);
+        click(btnRenovarPlan);
+        System.out.println("click renovar");
+        UtilWeb.waitForSeconds(1);
+}
+
 }

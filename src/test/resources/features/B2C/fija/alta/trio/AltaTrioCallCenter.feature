@@ -27,7 +27,7 @@ Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    #Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -65,7 +65,7 @@ Característica: AT-DT001_Alta Trio con documento CE por Canal Call Center
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

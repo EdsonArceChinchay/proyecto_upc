@@ -9,8 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
-import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
 import static com.tdp.ct.web.utils.Addons.*;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
@@ -50,6 +48,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
         click(oferta);
         UtilWeb.waitForSeconds(2);
+    }
+
+    @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
+    protected WebElement BtnOpciones;
+    public void BtonOpciones() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(),3,5,BtnOpciones);
+        revisarModalError(driver());
+        js().scrollElementTop(BtnOpciones);
+        System.out.println("BtonOpciones clic");
+        BtnOpciones.click();
     }
 
     public void ofertaUno() {
@@ -154,6 +163,14 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
         btnIrAMovistar.click();
         UtilWeb.waitForSeconds(5);
+    }
+
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
+    protected WebElement btnLineaNueva;
+
+    public void selectBtnLineaNueva() {
+        esperaProgresiva(driver(), 3, 10, btnLineaNueva);
+        click(btnLineaNueva);
     }
 
 }

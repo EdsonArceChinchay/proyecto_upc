@@ -1,7 +1,6 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.step.migracion.MigraSalto0RetailStep;
-import io.cucumber.java.es.Cuando;
+import com.tdp.ct.web.step.MigraSalto0RetailStep;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,11 +10,6 @@ public class MigraSalto0RetailStepDefinition {
     @Y("doy click en el boton Migrar a fibra")
     public void seleccinarBotonMigrarAFibra() {
     migraSalto0RetailStep.SeleccionarBtnMigrarFibra();
-    }
-
-    @Cuando("doy clic en iniciar registro")
-    public void doyClicEnIniciarRegistro() {
-        migraSalto0RetailStep.clicIniciarRegistro();
     }
 
     @Y("cierro el popup de Detail")

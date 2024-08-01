@@ -26,7 +26,7 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -67,11 +67,11 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1994 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -80,6 +80,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         | discapacitado  | MARINA      | MARCIAL     | HUARMACA    |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
 

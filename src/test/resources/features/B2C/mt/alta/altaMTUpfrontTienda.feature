@@ -64,7 +64,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

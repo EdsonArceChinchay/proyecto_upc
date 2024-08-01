@@ -178,9 +178,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         element.click();
     }
 
-    public void clicValidarIdentidadTitular() {
+    public void clickOnTheValidateHolderIdentityButton() {
+        esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
         js().scrollElementTop(buttonValidarIdentidad);
-        esperaProgresiva(driver(), 5, 5, buttonValidarIdentidad);
         waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
         UtilWeb.waitForSeconds(1);
     }
@@ -208,7 +208,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSiguiente() {
-
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
         esperaProgresiva(driver(), 3, 3, rootInputCorreo);
         SearchContext context = sh().getContext(rootInputCorreo);
@@ -218,7 +217,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicEnConfirmar() {
         UtilWeb.waitForSeconds(5);
-
         WebElement btnConfirm = find().getElementByXPath("//*[contains(@label,'Confirmar')]"); //find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
         esperaProgresiva(driver(), 5, 5, btnConfirm);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Button is displayed" + btnConfirm.isDisplayed());
@@ -247,32 +245,30 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
-        int reintentoBucles = 4;
+        int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
-            System.out.println("Entra al while");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Start while");
             try {
-                System.out.println("Entra al try");
-                waitUntilElementIsClickable(buttonValidarContrato, 100);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Validar Contrato");
-                buttonFound = true;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Start try");
+               waitUntilElementIsClickable(buttonValidarContrato,60);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed" +buttonValidarContrato.isDisplayed() +"- isEnabled"+  buttonValidarContrato.isEnabled());
+                buttonFound = buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled();
             } catch (Exception e) {
-                System.out.println("Entra al catch");
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
                 UtilWeb.waitForSeconds(6);
-                contador++;
-                System.out.println(contador + " vez");
             }
+            contador++;
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "retry " + (contador + 1));
         }
-        System.out.println("Sale del while");
-        js().scrollElementTop(buttonValidarContrato);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Finish while");
         UtilWeb.waitForSeconds(10);
         Addons.revisarModalError(driver());
         js().scrollElementTop(buttonValidarContrato);
-        click(buttonValidarContrato);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + buttonValidarContrato.getText());
+        buttonValidarContrato.click();
     }
 
     public void clicBotonContinuar() {
-//        TODO: VALIDAR ESTADO DE LA VENTANA
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;

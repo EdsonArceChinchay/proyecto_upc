@@ -59,6 +59,4 @@ public class OfferSVAStepDefinition {
         offerSVAStep.addSVATvApp();
     }
 
-
-
 }

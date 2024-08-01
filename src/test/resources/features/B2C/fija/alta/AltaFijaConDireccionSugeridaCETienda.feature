@@ -57,7 +57,7 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/08/1990 | Albania      | Casado      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

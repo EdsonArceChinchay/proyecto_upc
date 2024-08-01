@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO: CASI
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: CASI
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
 ##GDAP: GDAP-1658
@@ -43,12 +43,12 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT062
 ##GDAP: GDAP-608
@@ -56,7 +56,7 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

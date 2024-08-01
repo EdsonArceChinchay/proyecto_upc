@@ -26,7 +26,7 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -38,8 +38,11 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
-    Y        selecciono la oferta de plan movil "<oferta>"
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
+    Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
@@ -52,7 +55,7 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el horario de entrega "3pm-7pm"
     Y        ingreso telefono de contacto "658745259"
     Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -61,7 +64,7 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -78,6 +81,6 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion           | referencia |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion           | referencia |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
 

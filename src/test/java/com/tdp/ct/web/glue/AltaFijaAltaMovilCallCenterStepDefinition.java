@@ -2,13 +2,11 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
-
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaFijaAltaMovilCallCenterStepDefinition {
@@ -23,6 +21,11 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     public void selecciono_tipo_de_oferta() {
         altaFijaAltaMovilCallCenterStep.scrollUp();
         altaFijaAltaMovilCallCenterStep.clickOferta();
+    }
+
+    @Y("selecciono el boton de eleccion de planes")
+    public void seleccionoElBotonDeEleccionDePlanes() {
+        altaFijaAltaMovilCallCenterStep.BtonOpciones();
     }
 
     @Y("selecciono el primer tipo de oferta")
@@ -73,5 +76,10 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     public void seleccionoLaOferta(String oferta) {
         altaFijaTiendaStep.seleccionarListaOfertas(oferta);
         altaFijaTiendaStep.clickSeleccionarOferta();
+    }
+
+    @Y("selecciono en linea Nueva")
+    public void selecciono_en_linea_nueva() {
+        altaFijaAltaMovilCallCenterStep.seleccionarLineaNueva();
     }
 }

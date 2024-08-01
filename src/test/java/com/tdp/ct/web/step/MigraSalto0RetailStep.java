@@ -1,4 +1,4 @@
-package com.tdp.ct.web.step.migracion;
+package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
@@ -12,10 +12,6 @@ public class MigraSalto0RetailStep {
     @ScreenShotBefore
     public void SeleccionarBtnMigrarFibra() {
         page.migraSalto0RetailPage().SeleccionarBtnMigrarFibra();
-    }
-    @ScreenShotBefore
-    public void clicIniciarRegistro() {
-        page.migraSalto0RetailPage().ClicIniciarRegistro();
     }
 
     public void clickBotonEntendido() {

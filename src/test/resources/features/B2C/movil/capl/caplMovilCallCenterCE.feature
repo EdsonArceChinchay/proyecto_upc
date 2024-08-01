@@ -26,7 +26,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
+    #Y        valido que se presente el canal "PRUEBAS SIST CALLIN VENTA"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -38,7 +38,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto

@@ -25,7 +25,7 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+#    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -58,11 +58,11 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
       | fechaNac   | estadoCivil | nacionalidad |
       | 09/03/1999 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -71,5 +71,5 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA |
+      | tipoUsuario     | userName    | password | tipoDocumento | documento  | tipoPlan | nombrePlan           |
+      | usuario externo | userNameDLC | passDLC  | CE            | 2212464816 | Mono     | INTERNET MOVISTAR RA |

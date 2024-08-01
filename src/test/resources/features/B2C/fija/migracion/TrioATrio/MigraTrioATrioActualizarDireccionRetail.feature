@@ -47,15 +47,14 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
 
     Ejemplos:
-      | tipoUsuario     | userName     | password     | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan                                               |
-      | usuario externo | userNameDLC | passDLC | Bienvenid@ | CE            | 1042464835 | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan                                               |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464835 | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
