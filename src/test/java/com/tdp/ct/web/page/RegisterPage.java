@@ -13,7 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.*;
 
 public class RegisterPage extends WebBase {
@@ -174,53 +173,41 @@ public class RegisterPage extends WebBase {
         Addons.revisarModalError(driver());
     }
 
-
-
     public void validateCompletedSelectForm(String text, WebElement webElement, String shadowElement) {
-        int maxRetires = 3;
+        final int MAX_RETRIES = 3;
         int counter = 0;
         boolean isDisplayed = false;
-        do {
+        while (counter < MAX_RETRIES && !isDisplayed) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
                 isDisplayed = webElement.isDisplayed();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
-
-            }
-            catch (Exception e){
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error..." + e.getMessage());
+            } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
             }
             counter++;
-            if (maxRetires == counter) {
-                break;
-            }
         }
-        while (isDisplayed);
     }
 
     public void validateCompletedInputForm(String text, WebElement webElement, String shadowElement) {
-        int maxRetires = 3;
+        final int MAX_RETRIES = 3;
         int counter = 0;
         boolean isDisplayed = false;
-        do {
+        while (counter < MAX_RETRIES && !isDisplayed) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             try {
                 typeInputShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
                 isDisplayed = webElement.isDisplayed();
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
             }
             counter++;
-            if (maxRetires == counter) {
-                break;
-            }
         }
-        while (isDisplayed);
+
     }
 
     public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
