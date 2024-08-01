@@ -23,6 +23,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "passST"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
       #Y        valido que se presente el canal "TIENDA SAN MIGUEL"
