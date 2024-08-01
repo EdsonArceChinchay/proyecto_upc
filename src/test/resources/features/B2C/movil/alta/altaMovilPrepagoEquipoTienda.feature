@@ -70,5 +70,5 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Financiado 12 cuotas |

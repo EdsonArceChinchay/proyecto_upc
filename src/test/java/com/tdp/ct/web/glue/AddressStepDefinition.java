@@ -7,6 +7,8 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.logging.Level;
+
 public class AddressStepDefinition {
 
     @Autowired
@@ -174,16 +176,31 @@ public class AddressStepDefinition {
     @Y("ingreso la informacion del lugar para la instalacion")
     public void ingresoLaInformacionDelLugarParaLaInstalacion(DataTable dirInstalacion) {
         addressStep.scrollDirecCompleta();
-        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
-        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
-        String bloque = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
-        String piso = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
-        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String apple = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
+        String lot = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
+        String block = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
+        String floor = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
+        String inside = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
         String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
         String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
         String tipoConjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
         String conjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
-        addressStep.typeAddressInstalacion(manzana, lote, tipoVivienda, nombreVivienda, bloque, piso, interior, tipoConjH, conjH);
+        if (!(floor==null) && (inside==null) && (block==null) ) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA" );
+            block = "NA";
+            inside ="NA";
+        }
+
+        else if (!(inside==null) && (block==null)) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Block is null change value: NA" );
+            block = "NA";
+        }
+
+        else if((inside==null) && !(block==null)){
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside is null change value: 1" );
+            inside ="1";
+        }
+        addressStep.typeAddressInstalacion(apple, lot, tipoVivienda, nombreVivienda, block, floor, inside, tipoConjH, conjH);
     }
 
     @Y("presiono el boton Consultar ubicacion")

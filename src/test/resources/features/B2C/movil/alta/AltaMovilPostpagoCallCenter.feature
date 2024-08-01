@@ -68,7 +68,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/02/1996 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

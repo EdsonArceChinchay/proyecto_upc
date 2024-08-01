@@ -181,15 +181,17 @@ public class RegisterPage extends WebBase {
         int counter = 0;
         boolean isDisplayed = false;
         do {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
                 isDisplayed = webElement.isDisplayed();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
+
             }
             catch (Exception e){
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error..." + e.getMessage());
             }
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             counter++;
             if (maxRetires == counter) {
                 break;
@@ -203,18 +205,19 @@ public class RegisterPage extends WebBase {
         int counter = 0;
         boolean isDisplayed = false;
         do {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             try {
                 typeInputShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
-                counter++;
                 isDisplayed = webElement.isDisplayed();
-                if (maxRetires == counter) {
-                    break;
-                }
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
             }
             catch (Exception e){
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
+            }
+            counter++;
+            if (maxRetires == counter) {
+                break;
             }
         }
         while (isDisplayed);

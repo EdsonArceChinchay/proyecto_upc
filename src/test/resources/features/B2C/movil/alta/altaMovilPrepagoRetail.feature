@@ -38,9 +38,11 @@ Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "prueba@prueba.com"
@@ -61,4 +63,4 @@ Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 2042464833 | PLAN PREPAGO | Preplan    |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 2042464832 | PLAN PREPAGO | Preplan    |
