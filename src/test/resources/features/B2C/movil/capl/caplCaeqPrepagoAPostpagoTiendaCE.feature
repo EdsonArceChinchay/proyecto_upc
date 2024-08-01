@@ -37,8 +37,8 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                               |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta

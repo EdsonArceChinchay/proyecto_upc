@@ -68,4 +68,4 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 3010464810 |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 3010464811 |

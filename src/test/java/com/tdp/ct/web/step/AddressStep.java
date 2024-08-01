@@ -132,7 +132,6 @@ public class AddressStep {
         else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Apple and lot is null" );
         }
-
         if (!(floor==null) && (inside==null) && (block==null) ) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA" );
             block = "NA";
