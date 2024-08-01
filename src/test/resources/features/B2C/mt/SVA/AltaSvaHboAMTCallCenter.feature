@@ -9,10 +9,9 @@
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 

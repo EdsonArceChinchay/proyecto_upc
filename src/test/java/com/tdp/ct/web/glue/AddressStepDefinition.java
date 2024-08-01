@@ -120,13 +120,13 @@ public class AddressStepDefinition {
         String conj = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
         String bloqueDir = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
         addressStep.ingresarManzana(manzana);
+        addressStep.typeApple(manzana);
         addressStep.typeLot(lote);
-        addressStep.seleccionarTipoVivienda(tipoVivienda);
-        addressStep.ingresarNombreVivienda(nombreVivienda);
+        addressStep.ingresarBloque(bloqueDir);
         addressStep.typeFloor(floor);
         addressStep.typeInside(interior);
-        addressStep.ingresarBloque(bloqueDir);
-        addressStep.typeApple(manzana);
+        addressStep.seleccionarTipoVivienda(tipoVivienda);
+        addressStep.ingresarNombreVivienda(nombreVivienda);
         addressStep.selectHousingComplexe(habitacion);
         addressStep.typeHousingComplexName(conj);
     }
@@ -176,11 +176,11 @@ public class AddressStepDefinition {
         addressStep.scrollDirecCompleta();
         String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
         String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
-        String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
-        String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
         String bloque = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
         String piso = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
         String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
+        String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
         String tipoConjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
         String conjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
         addressStep.typeAddressInstalacion(manzana, lote, tipoVivienda, nombreVivienda, bloque, piso, interior, tipoConjH, conjH);

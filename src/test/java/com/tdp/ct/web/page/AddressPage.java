@@ -16,7 +16,7 @@ import static com.tdp.ct.web.utils.Helper.*;
 public class AddressPage extends WebBase {
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
     protected WebElement direccionSugerida;
-    @FindBy(xpath = "//*[@formcontrolname='lot' or @name='lot']")
+    @FindBy(xpath = "//*[contains(@class,'ng-valid') and @formcontrolname='lot' or contains(@class,'ng-valid') and @name='lot']")
     protected WebElement inputLot;
     @FindBy(xpath = "//*[@formcontrolname='houseType']")
     protected WebElement inputHouseType;
@@ -24,7 +24,7 @@ public class AddressPage extends WebBase {
     protected WebElement inputHouseName;
     @FindBy(xpath = "//*[@formcontrolname='block' or @name='block']")
     protected WebElement inputBlock;
-    @FindBy(xpath = "//*[@formcontrolname='apple' or @name='apple']")
+    @FindBy(xpath = "//*[ contains(@class,'ng-valid') and @formcontrolname='apple' or  contains(@class,'ng-valid') and @name='apple']")
     protected WebElement inputApple;
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
     protected WebElement btnConsultCoverage;
@@ -141,16 +141,20 @@ public class AddressPage extends WebBase {
         if (existe) {
             waitUntilElementIsClickable(inputApple, 15).click();
             type(inputApple, manzana);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type apple" + manzana);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type apple: " + manzana);
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No apple");
         }
     }
 
-    public void manzana(String manzana) {
-        if (manzana != null) {
-            bloque(manzana);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type block" + manzana);
+    public void typeBlock(String bloque) {
+        boolean existe = validateInputAndLocator(driver(), bloque, inputBlock);
+        if (existe) {
+            waitUntilElementIsClickable(inputBlock, 15).click();
+            inputBlock.sendKeys(Keys.CONTROL + "a");
+            inputBlock.sendKeys(Keys.DELETE);
+            type(inputBlock, bloque);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type block: " + bloque);
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No block");
         }
@@ -160,11 +164,11 @@ public class AddressPage extends WebBase {
         boolean existe = validateInputAndLocator(driver(), lot, inputLot);
         if (existe) {
             esperaProgresiva(driver(), 3, 5, inputLot);
-            click(inputLot);
+            inputLot.click();
             type(inputLot, lot);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type lot" + lot);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type lot: " + lot);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No lot");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No lot ");
         }
     }
 
@@ -172,13 +176,13 @@ public class AddressPage extends WebBase {
         if (piso != null) {
             WebElement Npiso = find().getElementByXPath("//*[@formcontrolname='floor' or @name='floor']");
             esperaProgresiva(driver(), 5, 6, Npiso);
-            waitUntilElementIsClickable(Npiso, 30).click();
+            Npiso.click();
             Npiso.sendKeys(Keys.CONTROL + "a");
             Npiso.sendKeys(Keys.DELETE);
             type(Npiso, piso);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type floor" + piso);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type floor: " + piso);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No floor");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No floor: ");
         }
     }
 
@@ -186,10 +190,11 @@ public class AddressPage extends WebBase {
         if (inte != null) {
             WebElement NInterior = find().getElementByXPath("//*[@formcontrolname='inside' or @name='inside']");
             esperaProgresiva(driver(), 3, 5, NInterior);
+            NInterior.click();
             NInterior.sendKeys(Keys.CONTROL + "a");
             NInterior.sendKeys(Keys.DELETE);
             type(NInterior, inte);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type inside" + inte);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type inside: " + inte);
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No inside");
         }
@@ -199,12 +204,15 @@ public class AddressPage extends WebBase {
         if (tipoConjunto != null) {
             WebElement conjuntoList = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
             js().scrollElementTop(conjuntoList);
-            click(conjuntoList);
+            selectElementShadowRootCSS(tipoConjunto,conjuntoList,"div > ul > li");
+           /* click(conjuntoList);
             UtilWeb.waitForSeconds(2);
             SearchContext context = sh().getContext(conjuntoList);
             By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
             context.findElement(byItem).click();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex" + tipoConjunto);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex: " + tipoConjunto);
+            */
+
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No housing complex");
         }
@@ -218,7 +226,7 @@ public class AddressPage extends WebBase {
             ConjHab.sendKeys(Keys.CONTROL + "a");
             ConjHab.sendKeys(Keys.DELETE);
             type(ConjHab, hab);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex name" + hab);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex name: " + hab);
 
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No housing complex name");
@@ -233,12 +241,12 @@ public class AddressPage extends WebBase {
     public void selectHouseType(String houseType) {
         boolean existe = validateInputAndLocator(driver(), houseType, inputHouseType);
         if (existe) {
-            waitUntilElementIsClickable(inputHouseType, 10).click();
-            String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
+            selectElementShadowRootCSS(houseType,inputHouseType,"div > ul > li");
+           /* String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
             String sCodeTipoVivienda = buscarValorOpcion(houseType.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house " + houseType);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house: " + houseType);*/
 
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No house type");
@@ -250,24 +258,10 @@ public class AddressPage extends WebBase {
         if (existe) {
             waitUntilElementIsClickable(inputHouseName, 15).click();
             type(inputHouseName, houseName);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house name " + houseName);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house name: " + houseName);
 
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No house name");
-        }
-    }
-
-    public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(driver(), bloque, inputBlock);
-        if (existe) {
-            waitUntilElementIsClickable(inputBlock, 15).click();
-            inputBlock.sendKeys(Keys.CONTROL + "a");
-            inputBlock.sendKeys(Keys.DELETE);
-            type(inputBlock, bloque);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type block " + bloque);
-
-        } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No block");
         }
     }
 
@@ -283,17 +277,8 @@ public class AddressPage extends WebBase {
     public void ingresoDepartamento(String departamento) {
         try {
             if (isVisible(driver(), cbxDepartamento)) {
-                click(cbxDepartamento);
-                SearchContext context = sh().getContext(cbxDepartamento);
-                List<WebElement> lielement = context.findElements(By.cssSelector("div > ul > li"));
-                for (WebElement element : lielement) {
-                    waitUntilElementIsVisible(element, 5);
-                    String elementoLista = element.getText();
-                    if (elementoLista.equalsIgnoreCase(departamento)) {
-                        element.click();
-                        break;
-                    }
-                }
+                selectElementShadowRootCSS(departamento,cbxDepartamento,"div > ul > li");
+
             }
         } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
@@ -303,17 +288,7 @@ public class AddressPage extends WebBase {
     public void ingresoProvincia(String provincia) {
         try {
             if (isVisible(driver(), cbxProvincia)) {
-                click(cbxProvincia);
-                SearchContext context = sh().getContext(cbxProvincia);
-                List<WebElement> lieelement = context.findElements(By.cssSelector("div > ul > li"));
-                for (WebElement element : lieelement) {
-                    waitUntilElementIsVisible(element, 5);
-                    String elementoLista = element.getText();
-                    if (elementoLista.equalsIgnoreCase(provincia)) {
-                        element.click();
-                        break;
-                    }
-                }
+                selectElementShadowRootCSS(provincia,cbxProvincia,"div > ul > li");
             }
         } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
@@ -323,17 +298,7 @@ public class AddressPage extends WebBase {
     public void ingresoDistrito(String distrito) {
         try {
             if (isVisible(driver(), cbxDistrito)) {
-                click(cbxDistrito);
-                SearchContext context = sh().getContext(cbxDistrito);
-                List<WebElement> liElement = context.findElements(By.cssSelector("div > ul > li"));
-                for (WebElement element : liElement) {
-                    waitUntilElementIsVisible(element, 3);
-                    String elementoLista = element.getText();
-                    if (elementoLista.equalsIgnoreCase(distrito)) {
-                        element.click();
-                        break;
-                    }
-                }
+                selectElementShadowRootCSS(distrito,cbxDistrito,"div > ul > li");
             }
         } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
@@ -391,6 +356,24 @@ public class AddressPage extends WebBase {
     public void doyClickAceptarEnElModalDeError() {
         waitUntilElementIsClickable(btnerror, 25).click();
     }
+
+    public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+        click(webElement, 10);
+        UtilWeb.waitForSeconds(2);
+        SearchContext contextPlan = sh().getContext(webElement);
+        List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
+        for (WebElement element : elementsList) {
+            js().scrollElementTop(element);
+            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            if (isEquals) {
+                js().scrollElementTop(element);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element: " + element.getText());
+                click(element, 10);
+                break;
+            }
+        }
+    }
+
 
 }
 

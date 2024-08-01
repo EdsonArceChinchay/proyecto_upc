@@ -247,26 +247,25 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         int contador = 0;
         int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
-            System.out.println("Entra al while");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Start while");
             try {
-                System.out.println("Entra al try");
-                waitUntilElementIsClickable(buttonValidarContrato, 100);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el boton Validar Contrato");
-                buttonFound = true;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Start try");
+               waitUntilElementIsClickable(buttonValidarContrato,60);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed" +buttonValidarContrato.isDisplayed() +"- isEnabled"+  buttonValidarContrato.isEnabled());
+                buttonFound = buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled();
             } catch (Exception e) {
-                System.out.println("Entra al catch");
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
                 UtilWeb.waitForSeconds(6);
-                contador++;
-                System.out.println(contador + " vez");
             }
+            contador++;
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "retry " + (contador + 1));
         }
-        System.out.println("Sale del while");
-        js().scrollElementTop(buttonValidarContrato);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Finish while");
         UtilWeb.waitForSeconds(10);
         Addons.revisarModalError(driver());
         js().scrollElementTop(buttonValidarContrato);
-        click(buttonValidarContrato);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "clic boton validar contrato");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + buttonValidarContrato.getText());
+        buttonValidarContrato.click();
     }
 
     public void clicBotonContinuar() {
