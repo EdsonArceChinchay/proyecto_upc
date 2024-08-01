@@ -82,5 +82,5 @@ Característica: AT-DT016_Alta Mono Linea Voz + SVA por Canal Call center
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan              |
-      | usuario externo | userNameCC | passST   | Bienvenid@ | CE            | 1029392827 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | Línea Movistar Voz VoIP |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1029390001 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | Línea Movistar Voz VoIP |
 
