@@ -137,25 +137,34 @@ public class AddressPage extends WebBase {
     }
 
     public void typeApple(String manzana) {
-        boolean existe = validateInputAndLocator(driver(),manzana, inputApple);
+        boolean existe = validateInputAndLocator(driver(), manzana, inputApple);
         if (existe) {
             waitUntilElementIsClickable(inputApple, 15).click();
             type(inputApple, manzana);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type apple" + manzana);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No apple");
         }
     }
 
     public void manzana(String manzana) {
         if (manzana != null) {
             bloque(manzana);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type block" + manzana);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No block");
         }
     }
 
-    public void typeLot(String lote) {
-        boolean existe = validateInputAndLocator(driver(),lote, inputLot);
+    public void typeLot(String lot) {
+        boolean existe = validateInputAndLocator(driver(), lot, inputLot);
         if (existe) {
             esperaProgresiva(driver(), 3, 5, inputLot);
             click(inputLot);
-            type(inputLot, lote);
+            type(inputLot, lot);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type lot" + lot);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No lot");
         }
     }
 
@@ -167,6 +176,9 @@ public class AddressPage extends WebBase {
             Npiso.sendKeys(Keys.CONTROL + "a");
             Npiso.sendKeys(Keys.DELETE);
             type(Npiso, piso);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type floor" + piso);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No floor");
         }
     }
 
@@ -177,6 +189,9 @@ public class AddressPage extends WebBase {
             NInterior.sendKeys(Keys.CONTROL + "a");
             NInterior.sendKeys(Keys.DELETE);
             type(NInterior, inte);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type inside" + inte);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No inside");
         }
     }
 
@@ -189,6 +204,9 @@ public class AddressPage extends WebBase {
             SearchContext context = sh().getContext(conjuntoList);
             By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
             context.findElement(byItem).click();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex" + tipoConjunto);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No housing complex");
         }
     }
 
@@ -200,6 +218,10 @@ public class AddressPage extends WebBase {
             ConjHab.sendKeys(Keys.CONTROL + "a");
             ConjHab.sendKeys(Keys.DELETE);
             type(ConjHab, hab);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type housing complex name" + hab);
+
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No housing complex name");
         }
     }
 
@@ -209,31 +231,43 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHouseType(String houseType) {
-        boolean existe = validateInputAndLocator(driver(),houseType, inputHouseType);
+        boolean existe = validateInputAndLocator(driver(), houseType, inputHouseType);
         if (existe) {
             waitUntilElementIsClickable(inputHouseType, 10).click();
             String[][] selectOptions = {{"BLK", "BLOCK"}, {"CC", "CENTRO COMERCIAL"}, {"CASA", "CASA"}, {"ED", "EDIFICIO"}, {"MCDO", "MERCADO"}};
             String sCodeTipoVivienda = buscarValorOpcion(houseType.toUpperCase().trim(), selectOptions);
             UtilWeb.waitForSeconds(2);
             seleccionarValueComboShadow(driver(), "houseType", sCodeTipoVivienda);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house " + houseType);
+
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No house type");
         }
     }
 
     public void typeHouseName(String houseName) {
-        boolean existe = validateInputAndLocator(driver(),houseName, inputHouseName);
+        boolean existe = validateInputAndLocator(driver(), houseName, inputHouseName);
         if (existe) {
             waitUntilElementIsClickable(inputHouseName, 15).click();
             type(inputHouseName, houseName);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type house name " + houseName);
+
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No house name");
         }
     }
 
     public void bloque(String bloque) {
-        boolean existe = validateInputAndLocator(driver(),bloque, inputBlock);
+        boolean existe = validateInputAndLocator(driver(), bloque, inputBlock);
         if (existe) {
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);
             type(inputBlock, bloque);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type block " + bloque);
+
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No block");
         }
     }
 

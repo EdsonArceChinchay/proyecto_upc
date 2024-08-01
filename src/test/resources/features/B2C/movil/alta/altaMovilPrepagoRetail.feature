@@ -61,4 +61,4 @@ Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464810 | PLAN PREPAGO | Preplan    |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 2042464833 | PLAN PREPAGO | Preplan    |
