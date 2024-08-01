@@ -40,9 +40,9 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento'] | [contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento']")
+    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='fechaNacimiento'] | [@formcontrolname='fechaNacimiento']")
     protected WebElement inputDateOfBirth;
-    @FindBy(xpath = "//tdp-st-textarea[contains(@class,'ng-invalid') and @formcontrolname='direccion'] | //*[contains(@class,'ng-invalid') and @formcontrolname='direccion']")
+    @FindBy(xpath = "//tdp-st-textarea[@formcontrolname='direccion'] | //*[@formcontrolname='direccion']")
     protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
@@ -87,7 +87,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeDateOfBirth(String dateOfBirth) {
-        validateCompletedInputForm(dateOfBirth,inputDateOfBirth,"div > div > div > input");
+        typeInputShadowRootCSS(dateOfBirth,inputDateOfBirth,"div > div > div > input");
     }
 
     public void selectMaritalStatus(String estadoCivil) {
@@ -112,7 +112,7 @@ public class RegisterPage extends WebBase {
 
     public void typeAddress(String address) {
         js().scrollElementTop(inputAddress);
-        validateCompletedInputForm(address,inputAddress,"div > div > div > textarea");
+        typeInputShadowRootCSS(address,inputAddress,"div > div > div > textarea");
     }
 
     public void clickButtonConfirm() {
@@ -197,7 +197,7 @@ public class RegisterPage extends WebBase {
             try {
                 typeInputShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry" + (counter + 1));
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow" + (counter + 1));
                 counter++;
                 isDisplayed = webElement.isDisplayed();
                 if (maxRetires == counter) {
