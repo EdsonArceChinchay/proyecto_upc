@@ -106,7 +106,7 @@ public class AppointmentPage extends WebBase {
             System.out.println("paso aqui 1");
             click(buttonConfirmar);
             UtilWeb.waitForSeconds(1);
-            click(buttonConfirmar2);
+            click(buttonConfirmar);
             System.out.println("paso aqui 2");
         } else {
             click(buttonConfirmar);
