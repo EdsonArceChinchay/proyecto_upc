@@ -14,7 +14,7 @@
 ##FECMOD: 30/07/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion UVSC fija en canal Call Center con
+Característica: AT-DT064_Migracion UVSC fija en canal Call Center
 
   Antecedentes:
     Dado     que abro la pagina de movistar
