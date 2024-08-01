@@ -1,5 +1,4 @@
 #language: es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -13,7 +12,6 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AltaSVA
 Característica: AT-DT109_Flujo de sva en el canal Call Center
 

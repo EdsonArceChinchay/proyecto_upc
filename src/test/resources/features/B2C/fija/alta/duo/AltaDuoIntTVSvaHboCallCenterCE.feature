@@ -65,7 +65,7 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1980 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

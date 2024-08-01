@@ -3,12 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import com.tdp.ct.web.utils.Helper;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -40,9 +42,9 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='fechaNacimiento'] | [@formcontrolname='fechaNacimiento']")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento'] | //*[contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento']")
     protected WebElement inputDateOfBirth;
-    @FindBy(xpath = "//tdp-st-textarea[@formcontrolname='direccion'] | //*[@formcontrolname='direccion']")
+    @FindBy(xpath = "//tdp-st-textarea[contains(@class,'ng-invalid') and @formcontrolname='direccion'] | //*[contains(@class,'ng-invalid') and @formcontrolname='direccion']")
     protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
@@ -65,14 +67,18 @@ public class RegisterPage extends WebBase {
     public void typeEmail(String email) {
         esperaProgresiva(driver(), 6, 6, inputEmail);
         validateCompletedInputForm(email, inputEmail, "div > div > div > input");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type email " + email);
+
     }
 
     public void typeConfirmEmail(String email) {
         validateCompletedInputForm(email, inputConfirmEmail, "div > div > div > input");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type confirm email " + email);
     }
 
     public void typeIdCall(String idCall) {
         validateCompletedInputForm(idCall, inputCallID, "div > div > div > input");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type id call " + idCall);
     }
 
     public void waitButtonCustomerData() {
@@ -87,7 +93,9 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeDateOfBirth(String dateOfBirth) {
-        typeInputShadowRootCSS(dateOfBirth,inputDateOfBirth,"div > div > div > input");
+        validateCompletedInputForm(dateOfBirth,inputDateOfBirth,"div > div > div > input");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type date of birth " + dateOfBirth);
+
     }
 
     public void selectMaritalStatus(String estadoCivil) {
@@ -112,12 +120,13 @@ public class RegisterPage extends WebBase {
 
     public void typeAddress(String address) {
         js().scrollElementTop(inputAddress);
-        typeInputShadowRootCSS(address,inputAddress,"div > div > div > textarea");
+        validateCompletedInputForm(address,inputAddress,"div > div > span > textarea");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type address: " + address);
     }
 
     public void clickButtonConfirm() {
         js().scrollElementTop(btnConfirm);
-        click(btnConfirm);
+        btnConfirm.click();
         esperaProgresiva(driver(), 6, 6, buttonValidarContrato);
     }
 
@@ -175,15 +184,15 @@ public class RegisterPage extends WebBase {
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry" + (counter + 1));
-                counter++;
                 isDisplayed = webElement.isDisplayed();
-                if (maxRetires == counter) {
-                    break;
-                }
             }
             catch (Exception e){
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error" + e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error..." + e.getMessage());
+            }
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
+            counter++;
+            if (maxRetires == counter) {
+                break;
             }
         }
         while (isDisplayed);
@@ -197,7 +206,7 @@ public class RegisterPage extends WebBase {
             try {
                 typeInputShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(2);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow" + (counter + 1));
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
                 counter++;
                 isDisplayed = webElement.isDisplayed();
                 if (maxRetires == counter) {
@@ -205,7 +214,7 @@ public class RegisterPage extends WebBase {
                 }
             }
             catch (Exception e){
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error" + e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
             }
         }
         while (isDisplayed);

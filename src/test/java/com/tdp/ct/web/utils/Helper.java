@@ -127,8 +127,10 @@ public class Helper extends WebBase {
 
     public static boolean validateInputAndLocator(WebDriver driver, String input, WebElement element) {
         if (input == null || input.isEmpty()) {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is null" );
             return false;
         }
+        Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is " + input);
         return validateElement(driver, element, 10);
     }
 
@@ -136,6 +138,7 @@ public class Helper extends WebBase {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element is Displayed" + element.isDisplayed() +" - Element is Enabled" +element.isEnabled() );
             return element.isDisplayed() && element.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
             Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element validation failed: " + e.getMessage());
