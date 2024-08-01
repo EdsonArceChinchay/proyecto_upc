@@ -47,6 +47,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso correo electronico "estelalopez@mail.com"
@@ -55,8 +56,8 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito   | direccion            |
       | 26/07/1995 | soltero     | Alemania     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 |
-	#Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

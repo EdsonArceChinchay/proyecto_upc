@@ -8,8 +8,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
-
 @Component
 public class LoginBerserkerStep {
 

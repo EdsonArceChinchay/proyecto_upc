@@ -38,6 +38,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "<tipoPlanes>"
     Y        selecciono la opcion "<planMovil>"
@@ -47,7 +48,9 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -55,6 +58,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

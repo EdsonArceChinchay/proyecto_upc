@@ -1,7 +1,6 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.AltaValidacionPrecioDescuentoStep;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 

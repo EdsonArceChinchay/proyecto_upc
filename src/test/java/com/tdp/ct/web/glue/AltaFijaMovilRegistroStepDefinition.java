@@ -2,13 +2,10 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;

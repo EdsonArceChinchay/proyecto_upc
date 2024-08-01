@@ -32,7 +32,7 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Postpago"
+    Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono la opcion "Plan Ilimitado Mi Movistar"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo

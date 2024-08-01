@@ -6,17 +6,10 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import static com.tdp.ct.web.step.Comun.buscarValorOpcion;
-import static com.tdp.ct.web.step.Comun.seleccionarValueComboShadow;
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.*;
@@ -25,9 +18,9 @@ public class RegisterPage extends WebBase {
 
     @FindBy(xpath = "//*[@formcontrolname='medioPago']")
     protected WebElement selectMethodPayment;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='mail'] | //*[@formcontrolname='mail']")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@class,'ng-invalid') and @formcontrolname='mail'] | //*[contains(@class,'ng-invalid') and @formcontrolname='mail']")
     protected WebElement inputEmail;
-    @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='confirmEmail'] | //*[@formcontrolname='confirmEmail']")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@class,'ng-invalid') and @formcontrolname='confirmEmail'] | //*[contains(@class,'ng-invalid') and @formcontrolname='confirmEmail']")
     protected WebElement inputConfirmEmail;
     @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='callID']")
     protected WebElement inputCallID;
@@ -35,20 +28,22 @@ public class RegisterPage extends WebBase {
     protected WebElement btnCustomerData;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')] | //button//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
-    @FindBy(xpath = "//*[contains(text(),'Confirmar')]")
-    protected WebElement lblConsultar;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirm;
-    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[@formcontrolname='estadoCivil']")
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='estadoCivil']")
     protected WebElement selectMaritalStatus;
-    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[@formcontrolname='nacionalidad']")
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='nacionalidad']")
     protected WebElement selectNationality;
-    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[@formcontrolname='department']")
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='department']")
     protected WebElement selectDepartment;
-    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[@formcontrolname='province']")
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='province']")
     protected WebElement selectProvince;
-    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[@formcontrolname='district']")
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='district']")
     protected WebElement selectDistrict;
+    @FindBy(xpath = "//tdp-st-input-text[contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento'] | [contains(@class,'ng-invalid') and @formcontrolname='fechaNacimiento']")
+    protected WebElement inputDateOfBirth;
+    @FindBy(xpath = "//tdp-st-textarea[contains(@class,'ng-invalid') and @formcontrolname='direccion'] | //*[contains(@class,'ng-invalid') and @formcontrolname='direccion']")
+    protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
@@ -64,23 +59,24 @@ public class RegisterPage extends WebBase {
 
     public void selectMethodPayment(String methodPayment) {
         esperaProgresiva(driver(), 6, 6, selectMethodPayment);
-        selectElementShadowRootCSS(methodPayment,selectMethodPayment,"div > ul > li");
+        validateCompletedInputForm(methodPayment, selectMethodPayment, "div > ul > li");
     }
 
     public void typeEmail(String email) {
-        typeInputShadowRootCSS(email, inputEmail, "div > div > div > input");
+        esperaProgresiva(driver(), 6, 6, inputEmail);
+        validateCompletedInputForm(email, inputEmail, "div > div > div > input");
     }
 
     public void typeConfirmEmail(String email) {
-        typeInputShadowRootCSS(email, inputConfirmEmail, "div > div > div > input");
+        validateCompletedInputForm(email, inputConfirmEmail, "div > div > div > input");
     }
 
     public void typeIdCall(String idCall) {
-        typeInputShadowRootCSS(idCall, inputCallID, "div > div > div > input");
+        validateCompletedInputForm(idCall, inputCallID, "div > div > div > input");
     }
 
     public void waitButtonCustomerData() {
-        waitUntilElementIsVisible(btnCustomerData, 10);
+        esperaProgresiva(driver(), 6, 6, btnCustomerData);
         js().scrollElementTop(btnCustomerData);
     }
 
@@ -91,47 +87,38 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeDateOfBirth(String dateOfBirth) {
-        String inputDateOfBirth = "tdp-st-input-text;input";
-        WebElement dateOfBirthElement = js().getWebElement(inputDateOfBirth);
-        dateOfBirthElement.sendKeys(dateOfBirth);
-        UtilWeb.waitForSeconds(2);
+        validateCompletedInputForm(dateOfBirth,inputDateOfBirth,"div > div > div > input");
     }
 
     public void selectMaritalStatus(String estadoCivil) {
-        selectElementShadowRootCSS(estadoCivil,selectMaritalStatus,"div > ul > li");
+        validateCompletedSelectForm(estadoCivil, selectMaritalStatus, "div > ul > li");
     }
 
     public void selectNationality(String nationality) {
-        selectElementShadowRootCSS(nationality,selectNationality,"div > ul > li");
+        validateCompletedSelectForm(nationality, selectNationality, "div > ul > li");
     }
 
     public void selectDepartment(String department) {
-        selectElementShadowRootCSS(department,selectDepartment,"div > ul > li");
+        validateCompletedSelectForm(department, selectDepartment, "div > ul > li");
     }
 
     public void selectProvince(String province) {
-        selectElementShadowRootCSS(province,selectProvince,"div > ul > li");
+        validateCompletedSelectForm(province, selectProvince, "div > ul > li");
     }
 
     public void selectDistrict(String district) {
-        selectElementShadowRootCSS(district,selectDistrict,"div > ul > li");
+        validateCompletedSelectForm(district, selectDistrict, "div > ul > li");
     }
 
     public void typeAddress(String address) {
-        UtilWeb.waitForSeconds(2);
-        WebElement direccionElement = js().getWebElement("tdp-st-textarea;textarea");
-        js().scrollElementTop(direccionElement);
-        type(direccionElement, address);
-        js().scrollElementTop(lblConsultar);
-        click(lblConsultar, 10);
+        js().scrollElementTop(inputAddress);
+        validateCompletedInputForm(address,inputAddress,"div > div > div > textarea");
     }
 
     public void clickButtonConfirm() {
-        UtilWeb.waitForSeconds(5);
-        esperaProgresiva(driver(), 3,5,btnConfirm);
         js().scrollElementTop(btnConfirm);
         click(btnConfirm);
-        esperaProgresiva(driver(),6,6,buttonValidarContrato);
+        esperaProgresiva(driver(), 6, 6, buttonValidarContrato);
     }
 
     public void selectTipoDePago(String tipo) {
@@ -178,19 +165,64 @@ public class RegisterPage extends WebBase {
         Addons.revisarModalError(driver());
     }
 
-    public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement)
-    {
-        click(webElement,10);
+
+
+    public void validateCompletedSelectForm(String text, WebElement webElement, String shadowElement) {
+        int maxRetires = 3;
+        int counter = 0;
+        boolean isDisplayed = false;
+        do {
+            try {
+                selectElementShadowRootCSS(text, webElement, shadowElement);
+                UtilWeb.waitForSeconds(2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry" + (counter + 1));
+                counter++;
+                isDisplayed = webElement.isDisplayed();
+                if (maxRetires == counter) {
+                    break;
+                }
+            }
+            catch (Exception e){
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error" + e.getMessage());
+            }
+        }
+        while (isDisplayed);
+    }
+
+    public void validateCompletedInputForm(String text, WebElement webElement, String shadowElement) {
+        int maxRetires = 3;
+        int counter = 0;
+        boolean isDisplayed = false;
+        do {
+            try {
+                typeInputShadowRootCSS(text, webElement, shadowElement);
+                UtilWeb.waitForSeconds(2);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry" + (counter + 1));
+                counter++;
+                isDisplayed = webElement.isDisplayed();
+                if (maxRetires == counter) {
+                    break;
+                }
+            }
+            catch (Exception e){
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error" + e.getMessage());
+            }
+        }
+        while (isDisplayed);
+    }
+
+    public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+        click(webElement, 10);
         UtilWeb.waitForSeconds(2);
-        SearchContext contextPlan=sh().getContext(webElement);
-        List<WebElement>elementsList= contextPlan.findElements(By.cssSelector(shadowElement));
-        for(WebElement element:elementsList){
+        SearchContext contextPlan = sh().getContext(webElement);
+        List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
+        for (WebElement element : elementsList) {
             js().scrollElementTop(element);
-            boolean isEquals =returnCompareWebElementTextAndText(element,text);
-            if(isEquals){
+            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            if (isEquals) {
                 js().scrollElementTop(element);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element: "+ element.getText());
-                click(element,10);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element: " + element.getText());
+                click(element, 10);
                 break;
             }
         }

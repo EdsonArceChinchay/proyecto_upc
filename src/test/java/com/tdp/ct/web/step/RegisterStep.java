@@ -9,8 +9,6 @@ import io.cucumber.datatable.DataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 import static com.tdp.ct.web.service.util.UtilWeb.getValueFromDataTable;
 
 @Component
@@ -70,6 +68,7 @@ public class RegisterStep {
     public void clickBotonConfirmar() {
         page.registerPage().clickButtonConfirm();
     }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void completoDatosCliente(DataTable datosCliente) {
@@ -174,7 +173,6 @@ public class RegisterStep {
     }
 
     public void ingresarDatosSupervisor(DataTable datos) {
-
         String numdoc = UtilWeb.getValueFromDataTable(datos, "numdoc");
         String user = UtilWeb.getValueFromDataTable(datos, "user");
         String password = UtilWeb.getValueFromDataTable(datos, "password");

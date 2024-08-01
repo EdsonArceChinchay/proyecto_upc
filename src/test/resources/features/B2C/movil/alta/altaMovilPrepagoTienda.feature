@@ -39,8 +39,11 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -48,6 +51,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/12/1990 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

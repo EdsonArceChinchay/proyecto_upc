@@ -3,7 +3,6 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaMonoInstalacionFtthTiendaStep;
 import io.cucumber.java.es.Entonces;
-import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class AltaMonoInstalacionFtthTiendaStepDefinition {

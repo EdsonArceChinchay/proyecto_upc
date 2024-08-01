@@ -11,14 +11,14 @@
 ##TAG : BERSERKERS
 ##DATA: NA
 ##ENCARGADO:
-##FECMOD: 25/05/2024
+##FECMOD: 31/07/2024
 
 @VISS-8540
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
 Característica: AT-DT053_Login - FE DITO WEB
 
   @PRR-107
-    @LoginBerserker @LoginExitoso @jbac_Test
+  @LoginBerserker @LoginExitoso @jbac_Test
   Esquema del escenario: Usuario realiza login exitoso: canal Call Center, Tienda y Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

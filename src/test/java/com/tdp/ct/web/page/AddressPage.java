@@ -174,7 +174,6 @@ public class AddressPage extends WebBase {
         if (inte != null) {
             WebElement NInterior = find().getElementByXPath("//*[@formcontrolname='inside' or @name='inside']");
             esperaProgresiva(driver(), 3, 5, NInterior);
-            waitUntilElementIsClickable(NInterior, 15).click();
             NInterior.sendKeys(Keys.CONTROL + "a");
             NInterior.sendKeys(Keys.DELETE);
             type(NInterior, inte);
@@ -183,28 +182,19 @@ public class AddressPage extends WebBase {
 
     public void selectHousingComplexe(String tipoConjunto) {
         if (tipoConjunto != null) {
-            WebElement conjuntoList = find().getElementByCss("tdp-st-card:nth-child(2) > div > div._body > form > div:nth-child(6) > div > tdp-st-select");
+            WebElement conjuntoList = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
+            js().scrollElementTop(conjuntoList);
             click(conjuntoList);
+            UtilWeb.waitForSeconds(2);
             SearchContext context = sh().getContext(conjuntoList);
             By byItem = By.cssSelector("[data-value='" + tipoConjunto + "']");
-            esperaProgresiva(driver(), 3, 5, conjuntoList, byItem, context);
             context.findElement(byItem).click();
-        /*
-        * WebElement listElementPLan = find().getElementByXPath("//*[@formcontrolname='housingComplexe']");
-            esperaProgresiva(driver(), 3, 5, listElementPLan);
-            waitUntilElementIsClickable(listElementPLan, 10).click();
-
-            String[][] selectOptions = {{"UR", "URBANIZACION RESIDENCIAL"}, {"UP", "URBANIZACION POPULAR"}};
-            String sCodigo = buscarValorOpcion(tipoConjunto, selectOptions);
-            seleccionarValueComboShadow(driver(), "housingComplexe", sCodigo);
-        * */
         }
     }
 
     public void typeHousingComplexName(String hab) {
         if (hab != null) {
             WebElement ConjHab = find().getElementByXPath("//*[@formcontrolname='housingComplexName' or @name='housingComplexName']");
-            esperaProgresiva(driver(), 3, 5, ConjHab);
             js().scrollElementTop(ConjHab);
             click(ConjHab);
             ConjHab.sendKeys(Keys.CONTROL + "a");
@@ -240,22 +230,11 @@ public class AddressPage extends WebBase {
     public void bloque(String bloque) {
         boolean existe = validateInputAndLocator(driver(),bloque, inputBlock);
         if (existe) {
-            //  js().scrollElementTop(inputBlock);
-            System.out.println("Ingreso a bloque si");
             waitUntilElementIsClickable(inputBlock, 15).click();
             inputBlock.sendKeys(Keys.CONTROL + "a");
             inputBlock.sendKeys(Keys.DELETE);
             type(inputBlock, bloque);
         }
-       /* (bloque != null) {
-            WebElement NBloque = find().getElementByXPath("//*[@formcontrolname='block' or @name='block']");
-            esperaProgresiva(driver(), 3, 5, NBloque);
-            waitUntilElementIsClickable(NBloque, 15).click();
-            NBloque.sendKeys(Keys.CONTROL + "a");
-            NBloque.sendKeys(Keys.DELETE);
-            type(NBloque, bloque);
-        }*/
-
     }
 
     public void clickButtonConsultCoverage() {

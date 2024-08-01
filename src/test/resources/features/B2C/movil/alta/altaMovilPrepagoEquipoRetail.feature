@@ -40,12 +40,15 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName               |
       | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "prueba@prueba.com"
     Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
@@ -53,6 +56,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -64,4 +68,4 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464887 |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464810 |

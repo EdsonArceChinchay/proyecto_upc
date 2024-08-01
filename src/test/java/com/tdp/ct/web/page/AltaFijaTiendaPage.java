@@ -19,10 +19,8 @@ public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
-
     @FindBy(xpath = "//div[@class='tdp-col-md-2']")
     protected WebElement esperalistaPlanFija;
-
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> listaBotones;
     @FindBy(xpath = "(//button[@class='buttonG'])[1]")

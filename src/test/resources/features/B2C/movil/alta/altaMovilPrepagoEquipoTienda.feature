@@ -38,6 +38,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
@@ -47,7 +48,9 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -55,6 +58,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
       | 20/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | JR JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
