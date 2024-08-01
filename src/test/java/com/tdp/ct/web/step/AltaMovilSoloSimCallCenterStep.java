@@ -32,6 +32,10 @@ public class AltaMovilSoloSimCallCenterStep {
         page.altaMovilSoloSimCallCenterPage().listaPlanMovil(planMovil, scenario);
     }
 
+    public void seleccionarPlan(String tipoPlan) {
+        page.altaMovilSoloSimCallCenterPage().seleccionarPlan(tipoPlan);
+    }
+
     public void clickBotonSeleccionarOferta() {
         page.altaMovilSoloSimCallCenterPage().botonSeleccionarOfeta();
     }

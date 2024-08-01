@@ -34,7 +34,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Postpago"
+    Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/ 79.9 V"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo

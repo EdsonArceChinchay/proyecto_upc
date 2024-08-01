@@ -32,7 +32,7 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Prepago"
+    Y        selecciono el tipo de plan movil "Prepago"
     Y        selecciono la opcion "Prepago con Tarifa Única"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo

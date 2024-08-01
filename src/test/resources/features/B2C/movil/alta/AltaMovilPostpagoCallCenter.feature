@@ -13,11 +13,9 @@
 ##ENCARGADO: Angel Medina
 ##FECMOD: 06/06/2024
 
-@PROCS-11389
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
 
-  @PROCS-11392
   @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta móvil postpago solo chip con CEX por canal Call Center
     Dado     que abro la pagina de movistar
@@ -47,7 +45,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    #Y        valido que este en el resumen de venta "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"

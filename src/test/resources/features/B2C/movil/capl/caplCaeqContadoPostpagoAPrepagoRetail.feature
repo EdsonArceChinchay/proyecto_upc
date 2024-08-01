@@ -34,7 +34,7 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Prepago"
+    Y        selecciono el tipo de plan movil "Prepago"
     Y        selecciono la opcion "Preplan"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos

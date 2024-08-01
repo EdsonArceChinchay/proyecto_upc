@@ -13,11 +13,9 @@
 ##ENCARGADO:
 ##FECMOD: 26/04/2024
 
-@PROCS-11389
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal Tienda
 
-  @PROCS-11391
   @AltaMovilcontrolConEquipo
   Esquema del escenario: Realizar una alta movil Control + equipo por canal Tienda
     Dado     que abro la pagina de movistar
@@ -53,7 +51,9 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono en linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -61,6 +61,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/08/1994 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

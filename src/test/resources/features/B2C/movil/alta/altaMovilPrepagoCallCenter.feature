@@ -38,8 +38,11 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"

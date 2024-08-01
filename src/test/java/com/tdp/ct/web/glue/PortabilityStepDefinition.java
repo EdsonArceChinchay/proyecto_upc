@@ -11,7 +11,6 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;

@@ -1,7 +1,6 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.SumaryStep;
-import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 

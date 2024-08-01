@@ -38,9 +38,11 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "<nombrePlan>"
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
@@ -48,6 +50,7 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
       | 12/12/1980 | Casado      | Albania      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -59,4 +62,4 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 12094544006 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 12094544010 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

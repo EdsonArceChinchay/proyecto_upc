@@ -2,9 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.*;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -50,6 +48,11 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaMovilSoloSimCallCenterStep.seleccionarListaPlanMovil(planMovil);
         altaMovilSoloSimCallCenterStep.clickBotonSeleccionarOferta();
         altaFijaTiendaStep.clickListaBotones();
+    }
+
+    @Y("selecciono la opcion {string}")
+    public void seleccionoLaOpcion(String Tipo) {
+        altaMovilSoloSimCallCenterStep.seleccionarPlan(Tipo);
     }
 
     @Y("valido que este en la seccion Postpago o Prepago")

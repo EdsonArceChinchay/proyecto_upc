@@ -45,6 +45,7 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
@@ -55,6 +56,7 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"

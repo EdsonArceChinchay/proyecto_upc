@@ -11,8 +11,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.selectEnabledItemFromAListOfItems;
@@ -20,7 +20,6 @@ import static com.tdp.ct.web.utils.Helper.selectEnabledItemFromAListOfItems;
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
-
     @FindBy(xpath = "(//div[@class='button-filter-section'])/button")
     protected List<WebElement> listaTipoPlanMovil;
     @FindBy(xpath = "(//div[contains(@class,'offert-card-title')])/div[2]")
@@ -73,8 +72,17 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
         esperaProgresivaLoading(driver(), 3, 5, "loading-offer");
-        UtilWeb.waitForSeconds(2);
         clickElementInAList(listaTipoPlanMovil, planMovil, 10);
+        /*
+        *       UtilWeb.waitForSeconds(3);
+        System.out.println("cantidad: " + listPlan.size());
+        for (WebElement elements : listPlan) {
+            System.out.println("Producto: " + elements.getText());
+            if (elements.getText().equals(tipoPlan)){
+                waitUntilElementIsClickable(elements,10);
+                click(elements, 30);
+            }
+        }*/
     }
 
     public void listaPlanMovil(String planMovil, ManageScenario scenario) {
@@ -160,6 +168,59 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             }
         }
 
+        UtilWeb.waitForSeconds(1);
+    }
+
+    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
+    protected List<WebElement> listaOfertas;
+
+
+    public void seleccionarPlan(String tipoPlan) {
+        UtilWeb.waitForSeconds(4);
+        String ofertaEsperada = tipoPlan.trim().toUpperCase();
+        System.out.println("cantidad de la lista : " + listaOfertas.size());
+        UtilWeb.waitForSeconds(5);
+
+        for (int i = 0; i < 2; i++) {
+            boolean elementoExistente;
+            elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
+            if (elementoExistente) {
+                System.out.println("dio click");
+                click(btnRight);
+                UtilWeb.waitForSeconds(3);
+            }
+        }
+
+        driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+        UtilWeb.waitForSeconds(3);
+        boolean encontroElemento = false;
+
+        for (int i = 0; i < listaOfertas.size(); i++) {
+            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
+            System.out.println("Entro al for de las lista de ofertas");
+            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            if (ofertaObtenida.contains(ofertaEsperada)) {
+                encontroElemento = true;
+                UtilWeb.waitForSeconds(2);
+                click(listaOfertas.get(i));
+                break;
+            }
+            if (i == 2 || i == 5 || i == 8) {
+                boolean elementoExistente;
+                elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
+                if (elementoExistente) {
+                    btnRight.click();
+                    UtilWeb.waitForSeconds(1);
+                }
+            }
+        }
+
+        if (!encontroElemento && !listaOfertas.isEmpty()) {
+            System.out.println("No encontro elemento en la lista");
+            UtilWeb.waitForSeconds(2);
+            int cont = listaOfertas.size() - 1;
+            click(listaOfertas.get(cont));
+        }
         UtilWeb.waitForSeconds(1);
     }
 

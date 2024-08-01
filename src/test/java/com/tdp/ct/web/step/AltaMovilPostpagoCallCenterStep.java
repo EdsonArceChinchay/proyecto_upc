@@ -1,8 +1,6 @@
 package com.tdp.ct.web.step;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.datatable.DataTable;
 import com.tdp.ct.web.page.StepPages;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +13,8 @@ public class AltaMovilPostpagoCallCenterStep {
     private StepPages page;
 
     @ScreenShotBefore
-    public void BtonOpciones() {
-        page.altaMovilPostpagoCallCenterPage().BtonOpciones();
-    }
-
-    @ScreenShotBefore
     public void seleccionarEquipo() {
         page.altaMovilPostpagoCallCenterPage().seleccionarEquipo();
-    }
-
-    @ScreenShotBefore
-    public void seleccionarPlan(String tipoPlan) {
-        page.altaMovilPostpagoCallCenterPage().seleccionarPlan(tipoPlan);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void seleccionoElPlanMovil(String tipoPlan) {
-        page.altaMovilPostpagoCallCenterPage().seleccionoElPlanMovil(tipoPlan);
     }
 
     @ScreenShotBefore
