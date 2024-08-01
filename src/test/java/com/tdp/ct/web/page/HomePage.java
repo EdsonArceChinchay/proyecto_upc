@@ -61,10 +61,11 @@ public class HomePage extends WebBase {
     protected WebElement btnBackOffice;
 
     public void selectDocumentType(String type) {
-        UtilWeb.waitForSeconds(2);
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
+        esperaProgresiva(driver(), 6, 5, documentoList);
         click(documentoList);
+        UtilWeb.waitForSeconds(2);
         String valueTipoDocumento;
         SearchContext context = sh().getContext(documentoList);
         switch (type) {
@@ -86,51 +87,48 @@ public class HomePage extends WebBase {
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
         context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select document type " + valueTipoDocumento);
     }
 
     public void typeDocumentNumber(String number) {
         WebElement document = find().getElementByCss("#doc");
         click(document);
         type(document, number);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number " + number);
     }
 
     public void clickOnConsultButton() {
-        esperaProgresiva(driver(), 3, 5, btnSearch);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " +btnSearch.getText());
+        esperaProgresiva(driver(), 5, 5, btnSearch);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnSearch.getText());
         btnSearch.click();
-        UtilWeb.waitForSeconds(10);
-        boolean isB2B =  !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
+        boolean isB2B = !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
         if (isB2B) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2B");
-        }
-        else{
+        } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2C");
             //Addons.esperaCargaMontoDeuda(driver(), 50);
-           // esperaProgresiva(driver(), 3, 20, boton01);
+            // esperaProgresiva(driver(), 3, 20, boton01);
         }
         revisarModalError(driver());
     }
 
     public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
         UtilWeb.waitForSeconds(2);
-        compareWebElementTextAndText(txtNombre,nombre);
-        compareWebElementTextAndText(txtNombre,tipoDocumento);
-        compareWebElementTextAndText(txtNombre,nroDocumento);
+        compareWebElementTextAndText(txtNombre, nombre);
+        compareWebElementTextAndText(txtNombre, tipoDocumento);
+        compareWebElementTextAndText(txtNombre, nroDocumento);
     }
 
     public void seleccionoElIDDeClienteNro(String nro) {
-        UtilWeb.waitForSeconds(10);
         WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 3, 5, nroItem);
-        waitUntilElementIsClickable(nroItem, 20);
-        nroItem.click();
+        esperaProgresiva(driver(), 5, 5, nroItem);
+        waitUntilElementIsClickable(nroItem, 20).click();
         UtilWeb.waitForSeconds(1);
         WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
         btnGuardar.click();
     }
 
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
-        UtilWeb.waitForSeconds(5);
         boolean serviciosContratados;
         serviciosContratados = !driver().findElements(By.xpath("//app-card-line")).isEmpty();
         if (serviciosContratados) {
@@ -139,24 +137,24 @@ public class HomePage extends WebBase {
             UtilWeb.waitForSeconds(1);
         }
         Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
-
     }
 
     public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
         boolean existe = false;
         String tipoDocEsperado = tipDoc.trim().toLowerCase();
         String nombretipoDoc = "";
-        esperaProgresiva(driver(), 2, 5, listaDocumentos);
+        esperaProgresiva(driver(), 5, 5, listaDocumentos);
         js().scrollElementTop(listaDocumentos);
         click(listaDocumentos);
+        UtilWeb.waitForSeconds(1);
         SearchContext context = sh().getContext(listaDocumentos);
         List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
-        UtilWeb.waitForSeconds(1);
         for (WebElement element : listaDoc) {
             nombretipoDoc = element.getText().trim().toLowerCase();
             if (nombretipoDoc.contains(tipoDocEsperado)) {
-                existe = true;
+                js().scrollElementTop(element);
                 element.click();
+                existe = true;
             }
             System.out.println(nombretipoDoc + "nombre documento");
         }
@@ -177,28 +175,25 @@ public class HomePage extends WebBase {
         try {
             botonX.click();
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
-
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR -" + e.getMessage());
         }
     }
 
     public void clickOnTheBackOfficeButton() {
-        esperaProgresiva(driver(), 3, 5, btnBackOffice);
+        esperaProgresiva(driver(), 5, 5, btnBackOffice);
         click(btnBackOffice);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
         UtilWeb.waitForSeconds(5);
     }
 
     public void validateHomeMessage(String msg) {
-        UtilWeb.waitForSeconds(1);
         Addons.revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, msgHome);
-        compareWebElementTextAndText(msgHome,msg);
-        UtilWeb.waitForSeconds(1);
+        compareWebElementTextAndText(msgHome, msg);
     }
 
     public void validateStoreType(String tienda) {
-       // compareWebElementTextAndText(tiendaLabel,tienda);
+        // compareWebElementTextAndText(tiendaLabel,tienda);
         //UtilWeb.waitForSeconds(1);
     }
 
