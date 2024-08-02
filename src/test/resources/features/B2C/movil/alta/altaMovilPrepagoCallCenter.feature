@@ -82,5 +82,5 @@ Característica: AT-DT097_Alta Movil Prepago con documento CE por canal Call Cen
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan | departamento | provincia | distrito | direccion           | referencia |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042494730 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
 

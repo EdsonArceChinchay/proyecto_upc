@@ -248,23 +248,24 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Start while");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry " + (contador + 1));
             try {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Start try");
-               waitUntilElementIsClickable(buttonValidarContrato,60);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed" +buttonValidarContrato.isDisplayed() +"- isEnabled"+  buttonValidarContrato.isEnabled());
-                buttonFound = buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled();
+                waitUntilElementIsClickable(buttonValidarContrato, 60);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() + " - isEnabled " + buttonValidarContrato.isEnabled() +" - isSelected "+ buttonValidarContrato.isSelected());
+                buttonFound = buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled() ;
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
-                UtilWeb.waitForSeconds(6);
+                UtilWeb.waitForSeconds(10);
             }
             contador++;
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "retry " + (contador + 1));
         }
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Finish while");
         UtilWeb.waitForSeconds(10);
         Addons.revisarModalError(driver());
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + buttonValidarContrato.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() + " - isEnabled " + buttonValidarContrato.isEnabled() +" - isSelected "+ buttonValidarContrato.isSelected());
         buttonValidarContrato.click();
     }
 

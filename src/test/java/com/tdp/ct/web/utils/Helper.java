@@ -127,10 +127,10 @@ public class Helper extends WebBase {
 
     public static boolean validateInputAndLocator(WebDriver driver, String input, WebElement element) {
         if (input == null || input.isEmpty()) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is null" );
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Input is null" );
             return false;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Input is " + input);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Input is " + input);
         return validateElement(driver, element, 10);
     }
 
@@ -138,7 +138,7 @@ public class Helper extends WebBase {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element is Displayed" + element.isDisplayed() +" - Element is Enabled" +element.isEnabled() );
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: " + element.isDisplayed() +" - Element is Enabled: " +element.isEnabled() );
             return element.isDisplayed() && element.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
             Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element validation failed: " + e.getMessage());
@@ -169,26 +169,58 @@ public class Helper extends WebBase {
         inputElement.sendKeys(text);
     }
 
+    public static void validateInput(WebDriver driver, String nameElement, String text, WebElement element) {
+        boolean exist = validateInputAndLocator(driver, text, element);
+        if (exist) {
+            element.click();
+            element.sendKeys(Keys.CONTROL + "a");
+            element.sendKeys(Keys.DELETE);
+            element.sendKeys(text);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type " + nameElement + ": " + text);
+        } else {
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "No " + nameElement);
+        }
+    }
+
+    public static void validateSelectShadow(WebDriver driver,String nameElement, String text, WebElement element, String shadowElement){
+        boolean existe = validateInputAndLocator(driver, text, element);
+        if (existe) {
+            selectElementShadowRootCSS(text, element, shadowElement);
+        } else {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "No " + nameElement);
+        }
+    }
+
     public static void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
         webElement.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contextPlan = webElement.getShadowRoot();
         List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
         for (WebElement element : elementsList) {
-            scrollElementTop(element);
             boolean isEquals = returnCompareWebElementTextAndText(element, text);
             if (isEquals) {
-                scrollElementTop(element);
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Select element: " + element.getText());
+                Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Select element: " + element.getText());
                 element.click();
                 break;
             }
         }
     }
-    public static void scrollElementTop(WebElement webElement) {
-      /*  ((JavascriptExecutor) driver()).executeScript("arguments[0].scrollIntoView();", webElement);;
-        System.out.println("Scroll to web element");*/
-    }
+
+   /* public static void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+        webElement.click();
+        UtilWeb.waitForSeconds(2);
+        SearchContext contextPlan = webElement.getShadowRoot();
+        List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
+        for (WebElement element : elementsList) {
+            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            if (isEquals) {
+                Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Select element: " + element.getText());
+                element.click();
+                break;
+            }
+        }
+    }*/
+
 
 }
 

@@ -39,7 +39,7 @@ Característica: AT-DT113_CASI Stand Alone con documento CE por Canal Retail
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

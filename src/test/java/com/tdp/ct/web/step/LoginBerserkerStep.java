@@ -42,7 +42,7 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickOnContinueButton();
-
+        retryCaptcha();
     }
 
     @ScreenShotBefore
@@ -70,6 +70,7 @@ public class LoginBerserkerStep {
         page.captchaPage().getCaptcha();
     }
 
+    @ScreenShotAfter
     public void retryCaptcha() {
         boolean isTrue = page.loginBerserkerPage().validateCaptchaErrorMessage();
         if (isTrue) {

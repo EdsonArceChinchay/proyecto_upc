@@ -21,22 +21,6 @@ public class AddressStep {
         page.addressPage().seleccionoDireccionSugerida();
     }
 
-    public void ingresarManzana(String manzana) {
-        page.addressPage().typeApple(manzana);
-    }
-
-    public void seleccionarTipoVivienda(String tipoVivienda) {
-        page.addressPage().selectHouseType(tipoVivienda);
-    }
-
-    public void ingresarNombreVivienda(String nomVivienda) {
-        page.addressPage().typeHouseName(nomVivienda);
-    }
-
-    public void ingresarBloque(String bloque) {
-        page.addressPage().typeBlock(bloque);
-    }
-
     public void clickButtonConsultCoverage() {
         page.addressPage().clickButtonConsultCoverage();
     }
@@ -74,6 +58,20 @@ public class AddressStep {
     @ScreenShotAfter
     public void typeApple(String apple) {
         page.addressPage().typeApple(apple);
+    }
+
+    @ScreenShotAfter
+    public void typeBlock(String bloque) {
+        page.addressPage().typeBlock(bloque);
+    }
+
+    @ScreenShotAfter
+    public void selectHouseType(String tipoVivienda) {
+        page.addressPage().selectHouseType(tipoVivienda);
+    }
+    @ScreenShotAfter
+    public void typeHouseName(String nomVivienda) {
+        page.addressPage().typeHouseName(nomVivienda);
     }
 
     @ScreenShotAfter
@@ -122,39 +120,6 @@ public class AddressStep {
         page.addressPage().seleccionarDistrito(distrito);
         page.addressPage().typeAddress(direccion);
         page.addressPage().typeReference(ref);
-    }
-
-    public void typeAddressInstalacion(String apple, String lot, String tipoVivienda, String nomVivienda, String block, String floor, String inside, String tipoConjH, String conjH) {
-        if (!(apple==null) && !(lot==null)) {
-            page.addressPage().typeApple(apple);
-            page.addressPage().typeLot(lot);
-        }
-        else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Apple and lot is null" );
-        }
-        if (!(floor==null) && (inside==null) && (block==null) ) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA" );
-            block = "NA";
-            inside ="NA";
-        }
-
-        else if (!(inside==null) && (block==null)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Block is null change value: NA" );
-            block = "NA";
-        }
-
-        else if((inside==null) && !(block==null)){
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside is null change value: 1" );
-            inside ="1";
-        }
-        page.addressPage().typeBlock(block);
-        page.addressPage().typeFloor(floor);
-        page.addressPage().typeInside(inside);
-
-        page.addressPage().selectHouseType(tipoVivienda);
-        page.addressPage().typeHouseName(nomVivienda);
-        page.addressPage().selectHousingComplexe(tipoConjH);
-        page.addressPage().typeHousingComplexName(conjH);
     }
 
     public void scrollDirecCompleta() {

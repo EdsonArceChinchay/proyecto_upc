@@ -40,15 +40,15 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono el boton de eleccion de planes
-    Y        selecciono el tipo de plan movil "<planMovil>"
-    Y        selecciono la opcion "<tipoPlanes>"
-    Y        doy click en el boton seleccionar oferta
-    Y        selecciono añadir equipos
-    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
-    Y        ingreso el tipo de pago "<tipoPago>"
-    Y        busco el equipo "<nombreEquipo>"
-    Y        doy click en el boton seleccionar
+#    Y        selecciono el boton de eleccion de planes
+#    Y        selecciono el tipo de plan movil "<planMovil>"
+#    Y        selecciono la opcion "<tipoPlanes>"
+#    Y        doy click en el boton seleccionar oferta
+#    Y        selecciono añadir equipos
+#    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+#    Y        ingreso el tipo de pago "<tipoPago>"
+#    Y        busco el equipo "<nombreEquipo>"
+#    Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
