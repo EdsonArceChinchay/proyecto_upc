@@ -12,11 +12,14 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD:
+  ##testejecution
+
 @BERSERKERS @DoneDevOps
 Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
 
   Antecedentes:
     Dado     que abro la pagina de movistar
+ ##Test
 
   @MigraMonoVozATrioCallCenter
   Esquema del escenario: Migracion de Mono voz a Trio por canal Call Center
@@ -37,9 +40,9 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "entendido"
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
+    #Y        selecciono tipo de oferta
+    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
+    #Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
@@ -67,5 +70,6 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300003 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD |
+      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                                           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300004 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD RA A24 100 MBPS |
+
