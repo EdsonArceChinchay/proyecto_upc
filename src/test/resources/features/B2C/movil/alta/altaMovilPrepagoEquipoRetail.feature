@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT021
 ##GDAP: GDAP-715
 ##SPRINT CREADO:
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovilEquipo
 Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal Retail
   Yo como asesor de Retail

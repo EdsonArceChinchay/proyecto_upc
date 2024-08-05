@@ -26,7 +26,7 @@ Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -85,5 +85,5 @@ Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque         |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque estelar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque         |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 10000024488 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque estelar |

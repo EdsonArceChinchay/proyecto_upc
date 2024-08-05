@@ -27,12 +27,13 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
-    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -59,5 +60,5 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20000000003 | 1   | C               | 143625134      | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | RUC           | 20000000003 | 1   | C               | 143625134      | prueba@prueba.com |

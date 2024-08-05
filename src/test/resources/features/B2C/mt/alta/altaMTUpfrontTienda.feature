@@ -26,6 +26,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -52,7 +53,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    #Y         valido que este en el resumen de venta
+    Y         valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -78,5 +79,5 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Dúo        | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |

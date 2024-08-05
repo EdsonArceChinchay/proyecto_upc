@@ -25,7 +25,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#  Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
@@ -84,6 +84,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 42565073  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
 

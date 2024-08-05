@@ -26,7 +26,7 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -76,7 +76,5 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA |
-#      | usuario interno |            |          | Bienvenid@ | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22          |
- #     | usuario interno | userNameQAN | passQAN  | Bienvenid@ | CE            | 1100000786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA D22 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA |

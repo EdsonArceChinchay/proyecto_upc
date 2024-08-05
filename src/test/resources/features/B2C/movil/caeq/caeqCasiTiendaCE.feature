@@ -16,7 +16,7 @@
 Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
 
   @CambioEquipoConCambioSIM
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,6 +25,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -56,5 +57,5 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042465085 |

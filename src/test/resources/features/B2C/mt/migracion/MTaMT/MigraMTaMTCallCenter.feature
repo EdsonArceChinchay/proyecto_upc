@@ -26,7 +26,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-	#Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -67,5 +67,5 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono       | tester@tester.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | nombrePlan | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465107 | Mono       | tester@tester.com |

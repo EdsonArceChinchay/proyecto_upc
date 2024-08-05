@@ -26,14 +26,14 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
-    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
-    #Y        valido que me traiga los servicios contratados por el cliente
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -81,5 +81,5 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | cliente            | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20534983612 | 1   | DNI             | 75448387       | ANALY FLORES LOPEZ | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | RUC           | 20534983612 | 1   | DNI             | 75448387       | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |

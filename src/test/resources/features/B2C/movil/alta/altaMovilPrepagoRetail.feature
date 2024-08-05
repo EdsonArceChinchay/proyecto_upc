@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT096
 ##GDAP: GDAP-588
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 06/06/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @AltaMovil
 Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
 

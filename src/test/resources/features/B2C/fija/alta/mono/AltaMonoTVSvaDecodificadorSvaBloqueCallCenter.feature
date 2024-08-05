@@ -26,7 +26,7 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -85,5 +85,5 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | decodificador |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL | HBO    | 24.90         |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | decodificador |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL | HBO    | 24.90         |

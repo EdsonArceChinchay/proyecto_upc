@@ -26,6 +26,7 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -58,5 +59,5 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanHogar | plan                                |correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@  | CE            | 1101010102 |  Trío         | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan                                | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda     | CE            | 1101010102 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |

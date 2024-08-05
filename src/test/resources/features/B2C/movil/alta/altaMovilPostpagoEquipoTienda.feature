@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1233
@@ -11,9 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 04/04/2024
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
-Característica: Alta Movil postpago con equipo con documento CE por canal Tienda
+Característica: AT-DT022_Alta Movil postpago con equipo con documento CE por canal Tienda
 
   @AltaMovilPostpagoEquipoTienda
   Esquema del escenario: Alta movil Prepago + Equipo por call center
@@ -25,7 +25,7 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -71,5 +71,5 @@ Característica: Alta Movil postpago con equipo con documento CE por canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | planMovil           | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 10424647821 | RV Plan Mi Movistar | Postpago   | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | planMovil           | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 10424647821 | RV Plan Mi Movistar | Postpago   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

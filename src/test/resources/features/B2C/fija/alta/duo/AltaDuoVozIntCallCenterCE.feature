@@ -26,7 +26,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -81,5 +81,5 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1000000245 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

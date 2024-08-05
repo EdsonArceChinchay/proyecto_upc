@@ -27,7 +27,7 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -62,6 +62,6 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                                |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 100777891 | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlan | nombrePlan                                |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 100777891 | Duo      | DÚO MOVISTAR VOZ INTERNET RA D22 100 MBPS |
 

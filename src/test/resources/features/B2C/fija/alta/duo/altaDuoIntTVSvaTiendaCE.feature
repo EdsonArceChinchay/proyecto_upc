@@ -26,6 +26,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -75,5 +76,5 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | svaRepetidor          |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | svaRepetidor          |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta |

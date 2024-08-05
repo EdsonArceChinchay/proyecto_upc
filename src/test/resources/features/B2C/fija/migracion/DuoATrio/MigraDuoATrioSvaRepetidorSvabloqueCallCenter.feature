@@ -28,6 +28,7 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -58,5 +59,5 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |

@@ -26,6 +26,7 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Plus por canal Ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -76,5 +77,5 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Plus por canal Ca
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | Internet Movistar RA |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1548788788 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | casa       | Mono     | Internet Movistar RA |

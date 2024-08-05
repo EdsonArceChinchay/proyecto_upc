@@ -26,7 +26,7 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -86,5 +86,5 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | bloque1         | bloque2        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital | HBO    | Bloque Hot Pack | Bloque estelar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | bloque1         | bloque2        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital | HBO    | Bloque Hot Pack | Bloque estelar |

@@ -25,7 +25,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -58,5 +58,5 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120906347 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 120906347 |

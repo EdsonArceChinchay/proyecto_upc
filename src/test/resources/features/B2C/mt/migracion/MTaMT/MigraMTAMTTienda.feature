@@ -14,7 +14,6 @@
 ##FECMOD: 31/11/2023
 
 @BERSERKERS
-
 Característica: Migracion de MT a MT en Tienda
 
   Antecedentes:
@@ -29,7 +28,7 @@ Característica: Migracion de MT a MT en Tienda
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-	#Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -65,11 +64,5 @@ Característica: Migracion de MT a MT en Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | correo           | nombrePlan                                     |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464680 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000756 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 222103292  | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000217 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
-#      | usuario interno |          |          | Bienvenid@ | CE            | 1100000202 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |            |
-
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo           | nombrePlan                                     |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464680 | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |

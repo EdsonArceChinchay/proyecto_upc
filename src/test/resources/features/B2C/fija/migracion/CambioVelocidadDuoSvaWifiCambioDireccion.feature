@@ -26,7 +26,7 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -70,5 +70,5 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor   | tipoDocumento | documento  | tipoPlanHogar | plan                  | correo            | longitud    | latitud      |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center MT | CE            | 1348959561 | Duo           | DÚO INTERNET ESTÁNDAR | tester@tester.com | -77.0381898 | -12.08130997 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan                  | correo            | longitud    | latitud      |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1348959561 | Duo           | DÚO INTERNET ESTÁNDAR | tester@tester.com | -77.0381898 | -12.08130997 |

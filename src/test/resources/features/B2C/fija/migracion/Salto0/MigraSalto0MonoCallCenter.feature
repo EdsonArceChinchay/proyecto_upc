@@ -24,12 +24,12 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
-#    Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
@@ -56,5 +56,5 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464839 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 |

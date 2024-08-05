@@ -26,6 +26,7 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -71,5 +72,5 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

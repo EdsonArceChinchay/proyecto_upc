@@ -16,7 +16,7 @@
 Característica: CAEQ contado con documento CE por canal Tienda
 
   @CaeqContadoTienda @RegreDito
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,11 +25,10 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-#    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-#    Y        selecciona el boton del numero de celular existente "650027636"
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -59,5 +58,5 @@ Característica: CAEQ contado con documento CE por canal Tienda
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464674 | 984683790        |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464674 | 984683790        |

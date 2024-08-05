@@ -26,7 +26,7 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -75,5 +75,5 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío       |
+      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 1002569949 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío       |

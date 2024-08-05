@@ -24,7 +24,8 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -59,5 +60,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA

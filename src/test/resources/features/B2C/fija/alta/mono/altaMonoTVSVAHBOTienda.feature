@@ -26,7 +26,7 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -80,6 +80,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464815 | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
 

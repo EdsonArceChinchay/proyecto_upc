@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT026
 ##GDAP: GDAP-586
 ##SPRINT CREADO:
@@ -11,28 +11,21 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovilEquipo
 Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Call Center
-  sin cobertura por canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
-     # Realizar una Alta movil Postpago (linea + equipo) con
-     #Delivery en Tambo sin cobertura por canal Call Center
 
   @AltaMovilPostPagoDeliveryCallCenter
   Esquema del escenario: Alta movil Postpago por Call Center con CE sin productos asociados sin biometria
-    Dado     presiono el boton Iniciar Sesion
+    Dado     que abro la pagina de movistar
+    Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -96,5 +89,5 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1022420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1022420045 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |

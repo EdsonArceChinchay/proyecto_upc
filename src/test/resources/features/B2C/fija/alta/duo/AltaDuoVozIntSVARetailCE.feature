@@ -26,6 +26,7 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -79,5 +80,5 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |
+      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |

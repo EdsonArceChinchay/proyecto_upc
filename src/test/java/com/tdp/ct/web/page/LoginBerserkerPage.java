@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.Helper.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
@@ -78,13 +78,13 @@ public class LoginBerserkerPage extends WebBase {
 
     public void validateErrorMessage(String msg) {
         waitUntilElementIsVisible(msgError, 10);
-        compareWebElementTextAndText(msgError, msg);
+        compareWebElementTextAndString(msgError, msg);
         UtilWeb.waitForSeconds(1);
     }
 
     public void validateIncorrectCredentialsMessage(String msg) {
         waitUntilElementIsVisible(msgErrorCredential, 10);
-        compareWebElementTextAndText(msgErrorCredential, msg);
+        compareWebElementTextAndString(msgErrorCredential, msg);
         UtilWeb.waitForSeconds(1);
     }
 

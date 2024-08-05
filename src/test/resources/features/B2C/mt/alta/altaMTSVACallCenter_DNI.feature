@@ -12,7 +12,6 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
 Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
 
@@ -26,7 +25,6 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -41,11 +39,8 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta

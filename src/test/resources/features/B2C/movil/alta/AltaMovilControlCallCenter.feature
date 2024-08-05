@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT029
 ##GDAP: GDAP-961
@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 09/04/2024
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
 Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Center
   Quiero realizar una alta movil solo sin por call center
@@ -26,7 +26,7 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -85,6 +85,6 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219511 | Control       | RV Plan Mi Movistar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 121219511 | Control       | RV Plan Mi Movistar |
 

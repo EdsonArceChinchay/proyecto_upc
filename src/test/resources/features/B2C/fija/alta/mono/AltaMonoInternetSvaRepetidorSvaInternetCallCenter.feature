@@ -26,11 +26,10 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-	  ##Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos      | genero   |
       | Esther Marisol | Lopez Bernardo | femenino |
@@ -85,5 +84,5 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |

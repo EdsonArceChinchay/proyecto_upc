@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT030
 ##GDAP: GDAP-585
@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 09/04/2024
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovilEquipo
 Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
 
@@ -25,7 +25,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -70,5 +70,5 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Financiado 12 cuotas |

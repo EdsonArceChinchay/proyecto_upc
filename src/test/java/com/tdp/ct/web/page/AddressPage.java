@@ -5,7 +5,6 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
@@ -263,12 +262,12 @@ public class AddressPage extends WebBase {
 
     public void validoQueLaDireccionSea(String direccion) {
         waitUntilElementIsVisible(txtDireccion, 50);
-        compareWebElementTextAndText(txtDireccion, direccion);
+        compareWebElementTextAndString(txtDireccion, direccion);
     }
 
     public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
         waitUntilElementIsVisible(txtMsjError, 100);
-        compareWebElementTextAndText(txtMsjError, msj);
+        compareWebElementTextAndString(txtMsjError, msj);
     }
 
     public void doyClickAceptarEnElModalDeError() {

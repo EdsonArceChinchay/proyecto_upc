@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -64,7 +65,6 @@ public class Addons {
         UtilWeb.waitForSeconds(1);
 
         LOGGER.log(Level.INFO, "elementoContenedor: " + elementoContenedor.toString());
-        contador = 0;
         do {
             LOGGER.log(Level.INFO, "esperaProgresiva - Context - Reintento # " + (contador + 1) + " => espera: " + segundosEspera * contador);
             UtilWeb.waitForSeconds(segundosEspera * contador);
@@ -78,7 +78,7 @@ public class Addons {
 
             } catch (Exception e) {
                 LOGGER.log(Level.SEVERE, "error Message: " + e.getMessage());
-                LOGGER.log(Level.SEVERE, "error StackTrace: " + e.getStackTrace());
+                LOGGER.log(Level.SEVERE, "error StackTrace: " + Arrays.toString(e.getStackTrace()));
             }
             contador++;
         } while (!bOK && contador < reintentosMax);
@@ -144,7 +144,7 @@ public class Addons {
                 break;
             } catch (Exception e) {
                 LOGGER.log(Level.SEVERE, "error Message: " + e.getMessage());
-                LOGGER.log(Level.SEVERE, "error StackTrace: " + e.getStackTrace());
+                LOGGER.log(Level.SEVERE, "error StackTrace: " + Arrays.toString(e.getStackTrace()));
             }
             contador++;
         } while (!bOK && contador < reintentosMax);

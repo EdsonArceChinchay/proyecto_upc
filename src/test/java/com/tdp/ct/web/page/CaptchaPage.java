@@ -119,8 +119,8 @@ public class CaptchaPage extends WebBase {
                 for (File file1 : files) {
                     if (!file1.getName().equalsIgnoreCase(".gitkeep")) {
                         file1.delete();
+                        UtilWeb.logger(this.getClass()).log(Level.INFO, "File deleted: " + file1.getName());
                     }
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "File deleted: " + file1.getName());
                 }
             } else {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "The folder is empty");

@@ -25,7 +25,8 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Entonces valido el login exitoso mediante el mensaje "<msjHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -71,5 +72,5 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | tipoDocumento | documento  | tipoPlan | nombrePlan           |
-      | usuario externo | userNameDLC | passDLC  | CE            | 2212464816 | Mono     | INTERNET MOVISTAR RA |
+      | tipoUsuario     | userName    | password | msjHome    | channelType | tipoDocumento | documento  | tipoPlan | nombrePlan           |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 2212464816 | Mono     | INTERNET MOVISTAR RA |

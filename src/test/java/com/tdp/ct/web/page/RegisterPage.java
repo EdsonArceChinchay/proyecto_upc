@@ -174,28 +174,11 @@ public class RegisterPage extends WebBase {
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(3);
+                isDisplayed=webElement.isDisplayed();
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
                 isDisplayed = false;
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
-            }
-            counter++;
-        }
-    }
-
-    public void validateCompletedInputForm(String text, WebElement webElement, String shadowElement) {
-        final int MAX_RETRIES = 5;
-        int counter = 0;
-        boolean isDisplayed = true;
-        while (counter < MAX_RETRIES && isDisplayed) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
-            try {
-                typeInputShadowRootCSS(text, webElement, shadowElement);
-                UtilWeb.waitForSeconds(3);
-            } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
-                isDisplayed = false;
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + false);
             }
             counter++;
         }
@@ -208,7 +191,7 @@ public class RegisterPage extends WebBase {
         List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
         for (WebElement element : elementsList) {
             js().scrollElementTop(element);
-            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
                 js().scrollElementTop(element);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element: " + element.getText());

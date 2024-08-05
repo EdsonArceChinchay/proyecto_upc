@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT098
 ##GDAP: GDAP-1150
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 16/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
 Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por canal Call Center
 
@@ -26,11 +25,10 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos    | genero   |
       | MARIA MERCEDES | ZAPATA PEREZ | FEMENINO |
@@ -40,15 +38,15 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
-#    Y        selecciono el boton de eleccion de planes
-#    Y        selecciono el tipo de plan movil "<planMovil>"
-#    Y        selecciono la opcion "<tipoPlanes>"
-#    Y        doy click en el boton seleccionar oferta
-#    Y        selecciono añadir equipos
-#    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
-#    Y        ingreso el tipo de pago "<tipoPago>"
-#    Y        busco el equipo "<nombreEquipo>"
-#    Y        doy click en el boton seleccionar
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el tipo de plan movil "<planMovil>"
+    Y        selecciono la opcion "<tipoPlanes>"
+    Y        doy click en el boton seleccionar oferta
+    Y        selecciono añadir equipos
+    Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
+    Y        ingreso el tipo de pago "<tipoPago>"
+    Y        busco el equipo "<nombreEquipo>"
+    Y        doy click en el boton seleccionar
     Y        selecciono la cartilla Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
@@ -92,5 +90,5 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464781 | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

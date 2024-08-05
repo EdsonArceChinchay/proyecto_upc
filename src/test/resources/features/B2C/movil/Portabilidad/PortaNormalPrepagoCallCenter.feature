@@ -25,7 +25,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-  # Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -85,6 +85,6 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 75102020  | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 75102020  | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 

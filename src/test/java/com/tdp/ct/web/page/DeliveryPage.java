@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
 import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
 
 public class DeliveryPage extends WebBase {
@@ -25,7 +25,6 @@ public class DeliveryPage extends WebBase {
     protected WebElement inputInstruction;
     @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='contactNumber'] | //*[@formcontrolname='contactNumber']")
     protected WebElement inputContactNumber;
-
 
     public void clickButtonConfirmLocation() {
         esperaProgresiva(driver(), 6, 5, btnConfirmLocation);
@@ -42,7 +41,7 @@ public class DeliveryPage extends WebBase {
         SearchContext contexPlan = selectDeliveryType.getShadowRoot();
         List<WebElement> listItems = contexPlan.findElements(By.cssSelector("div > ul > li"));
         for (WebElement item : listItems) {
-            boolean isEquals = returnCompareWebElementTextAndText(item, deliveryType);
+            boolean isEquals = returnValueCompareWebElementTextAndString(item, deliveryType);
             if (isEquals) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element " + item.getText());
                 item.click();

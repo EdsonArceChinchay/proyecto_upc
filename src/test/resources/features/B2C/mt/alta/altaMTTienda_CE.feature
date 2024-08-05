@@ -26,7 +26,7 @@ Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -77,5 +77,5 @@ Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |

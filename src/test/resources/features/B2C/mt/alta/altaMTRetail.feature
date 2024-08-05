@@ -26,6 +26,7 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -71,5 +72,5 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan | correo           |
-      | usuario externo | userNameDLC| passDLC  | Bienvenid@ | CE            | 156710000 | 15           | 1501     | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | MOVISTAR TOTAL | Trio       | correo@gmail.com |
+      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 156710000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
