@@ -14,7 +14,7 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
+Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tienda
 
   @AltaMt_SvaTiendas
   Esquema del escenario: Alta MT mas SVA en Canal Tiendas

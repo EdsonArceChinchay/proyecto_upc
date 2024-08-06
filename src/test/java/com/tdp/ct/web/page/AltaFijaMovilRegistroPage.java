@@ -97,8 +97,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnConfirm);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Button is displayed" + btnConfirm.isDisplayed());
         btnConfirm.click();
-        //SearchContext context = sh().getContext(rootInputCorreo);
-        // context.findElement(By.cssSelector("button")).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
         UtilWeb.waitForSeconds(2);
     }
@@ -128,8 +126,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry " + (contador + 1));
             try {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Start try");
+                Addons.revisarModalError(driver());
                 waitUntilElementIsClickable(buttonValidarContrato, 60);
-                buttonFound = buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled() ;
+                UtilWeb.waitForSeconds(10);
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
                 UtilWeb.waitForSeconds(10);
@@ -191,8 +190,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        //waitUntilElementIsClickable(element, 30);
-        esperaProgresiva(driver(), 2, 5, element);
+        esperaProgresiva(driver(), 5, 5, element);
         element.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(6);
@@ -233,7 +231,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(2);
     }
 
-    //OTROS metodos
     public void validacionesCliente(String madre, String padre, String lugar, Integer i) {
         revisarModalError(driver());
 
@@ -268,7 +265,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         }
 
         UtilWeb.waitForSeconds(2);
-
     }
 
     public void scrollByJavaScript() {
@@ -290,26 +286,22 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public boolean isNewCustomer() {
+        esperaProgresiva(driver(),5,5,nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
     }
 
-    //CAMBIOS PARA RETAIL
     public void ingresarNombreClienteExtranjero(String nombre) {
         UtilWeb.waitForSeconds(3);
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
         esperaProgresiva(driver(), 5, 5, rootElement);
         revisarModalError(driver());
-        SearchContext context = sh().getContext(rootElement);
-        revisarModalError(driver());
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
+        typeInputShadowRootCSS(nombre,rootElement,"div > div > div > input");
         UtilWeb.waitForSeconds(1);
     }
 
     public void ingresarApellidoClienteExtranjero(String apellidos) {
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
-        SearchContext context = sh().getContext(rootElement);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(apellidos);
-        UtilWeb.waitForSeconds(1);
+        typeInputShadowRootCSS(apellidos,rootElement,"div > div > div > input");
     }
 
     public void seleccionarGeneroClienteExtranjero(String genero) {
@@ -331,6 +323,5 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
     }
-
 
 }

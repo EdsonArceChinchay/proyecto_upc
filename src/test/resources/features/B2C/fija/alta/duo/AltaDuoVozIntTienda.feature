@@ -14,10 +14,10 @@
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
+Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tienda
 
   @AltaDuoBByVozFTTHCanalTiendas
-  Esquema del escenario: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

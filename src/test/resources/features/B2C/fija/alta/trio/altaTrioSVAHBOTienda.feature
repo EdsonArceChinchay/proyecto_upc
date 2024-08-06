@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija @AltaTrio
 Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE por Canal Tienda
 
-  @AltaSVABloqueHBO
+  @AltaTrioSVABloqueHBO
   Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -44,10 +44,10 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO con documento en CE 
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-    #  | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-    #  | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
+      | A  | EDIFICIO | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton Consultar cobertura
-#    Entonces me muestra la pantalla de ofertas sugeridos
+    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta

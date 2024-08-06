@@ -163,7 +163,7 @@ public class AddressPage extends WebBase {
     }
 
     public void typeBlock(String block) {
-        validateInput(driver(), "block", block, inputFloor);
+        validateInput(driver(), "block", block, inputBlock);
     }
 
     public void typeFloor(String floor) {

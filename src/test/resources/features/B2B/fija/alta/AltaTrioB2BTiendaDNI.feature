@@ -13,7 +13,7 @@
 ##ENCARGADO: Edson Arce
 ##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @AltaFija @AltaTrio
+@BERSERKERS @DoneDevOps @AltaFija @AltaTrioUpfront
 Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
 
   @AltaTrioRuCTienda @MVP10 @Global
