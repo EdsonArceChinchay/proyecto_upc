@@ -16,11 +16,6 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
         altaValidacionPrecioDescuentoStep.validacionClienteNuevo(nombre, apellidos, genero);
     }
 
-    @Y("compruebo si el cliente {string}, {string} es el correcto")
-    public void comprueboCLiente(String nombre, String Apellido) {
-        altaValidacionPrecioDescuentoStep.comprueboCliente(nombre, Apellido);
-    }
-
     @Y("Valido que el beneficio sea {string}")
     public void validacionBeneficioPlan(String beneficioPlan) {
         if (!Objects.equals(beneficioPlan, "null")) {
@@ -33,15 +28,5 @@ public class AltaValidacionPrecioDescuentoStepDefinition {
         if (!Objects.equals(descuento, "")) {
             altaValidacionPrecioDescuentoStep.validacionBeneficioPlan(descuento);
         }
-    }
-
-    @Y("valido el precio establecido sea {string}")
-    public void validacionPrecio(String precioPlan) {
-        altaValidacionPrecioDescuentoStep.validacionPrecio(precioPlan);
-    }
-
-    @Y("escojo el plan {string}")
-    public void escojoPlan(String plan) {
-        altaValidacionPrecioDescuentoStep.escojoPlan(plan);
     }
 }

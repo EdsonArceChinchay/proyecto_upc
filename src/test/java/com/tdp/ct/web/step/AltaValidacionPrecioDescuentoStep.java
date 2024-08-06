@@ -27,11 +27,6 @@ public class AltaValidacionPrecioDescuentoStep {
         page.altaValidacionPrecioDescuentoPage().validacionBeneficioPlan(beneficioPlan);
     }
 
-    @ScreenShotAfter
-    public void validacionPrecio(String precioPLan) {
-        page.altaValidacionPrecioDescuentoPage().validacionPrecio(precioPLan);
-    }
-
     @ScreenShotBefore
     @ScreenShotAfter
     public void comprueboCliente(String nombre, String apellido) {

@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class HomeStep {
 
     @Autowired
-    private StepPages page;
+    protected StepPages page;
 
     @ScreenShotAfter
     public void selectDocumentType(String type) {
@@ -75,12 +75,7 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void validateHomeMessage(String msg) {
-        page.homePage().validateHomeMessage(msg);
-    }
-
-    @ScreenShotAfter
-    public void validateStoreType(String type) {
+    public String validateAgentData(String channelType){
         Map<String, String> storeMap = new HashMap<>();
         storeMap.put("CC", "CC");
         storeMap.put("CALL CENTER", "CC");
@@ -88,9 +83,15 @@ public class HomeStep {
         storeMap.put("TIENDA", "ST");
         storeMap.put("DLC", "DLC");
         storeMap.put("RETAIL", "DLC");
-        String store = storeMap.getOrDefault(type.trim().toUpperCase(), null);
-        page.homePage().validateStoreType(store);
+        String store = storeMap.getOrDefault(channelType.trim().toUpperCase(), null);
+       return page.homePage().validateAgentData(store);
     }
+
+    @ScreenShotAfter
+    public void validateHomeMessage(String msg) {
+        page.homePage().validateHomeMessage(msg);
+    }
+
 
     public void backToHomePage() {
         page.homePage().backToHomePage();
@@ -117,7 +118,4 @@ public class HomeStep {
         page.homePage().clickOnTheLogoutButton();
     }
 
-    public String getAgentData(){
-        return page.homePage().getAgentData();
-    }
 }

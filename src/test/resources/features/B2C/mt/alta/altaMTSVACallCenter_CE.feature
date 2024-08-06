@@ -33,7 +33,6 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Jose    | LLamoca   | masculino |
-    #Y        valido que muestre el nombre completo del cliente "Jose Llamoca"
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas

@@ -42,52 +42,9 @@ public class AltaFijaTiendaStep {
         page.altaFijaTiendaPage().seleccionarOferta();
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void clickListaBotones() {
-        page.altaFijaTiendaPage().listaBotones();
-    }
-
-    @ScreenShotBefore
-    public void clickDescargarContrato() {
-        page.altaFijaTiendaPage().descargarContrato();
-    }
-
-    @ScreenShotBefore
-    public void clickDescargarPdf() {
-        page.altaFijaTiendaPage().descargarPdf();
-    }
-
-    public void cambiarPestanaPrincipal() {
-        page.altaFijaTiendaPage().cambiarPestanaPrincipal();
-    }
-
-    public void clickCerrarPopUp() {
-        page.altaFijaTiendaPage().cerrarPopUp();
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void clickRegistrarVenta() {
-        page.altaFijaTiendaPage().registrarVenta();
-    }
-
     @ScreenShotAfter
     public void doyClickEnAñadirSVA() {
         page.altaFijaTiendaPage().doyClickEnAñadirSVA();
-    }
-
-    @ScreenShotBefore
-    public void clickBotonValidarRepreLegal() {
-        page.altaFijaTiendaPage().clickValidarRepreLegal();
-    }
-    @ScreenShotBefore
-    public void clickBotonRegistrarVenta() {
-        page.altaFijaTiendaPage().clickBotonRegistrarVenta();
-    }
-
-    public void validarNomPlan(String nomPlan) {
-        page.altaFijaTiendaPage().validarNomPlan(nomPlan);
     }
 
     public void validarVelocidadInternet(String mbpsBB) {
@@ -105,6 +62,8 @@ public class AltaFijaTiendaStep {
     public void validarPrecioDescuentoTV(String pDescTV) {
         page.altaFijaTiendaPage().validarPrecioDescuentoTV(pDescTV);
     }
-
+    public void seleccionarboton() {
+        page.migracionDuoATrioTiendaPage().seleccionarboton();
+    }
 }
 

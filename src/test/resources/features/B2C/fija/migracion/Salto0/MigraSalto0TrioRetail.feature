@@ -33,7 +33,6 @@ Característica: AT-DT079_Migracion Salto 0 por canal Retail
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
-    #Y        cierro el popup de Detail
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
     Cuando   doy click en el boton Iniciar registro

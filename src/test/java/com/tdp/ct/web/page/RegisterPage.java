@@ -161,7 +161,7 @@ public class RegisterPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-        //Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
+//        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
     }
 

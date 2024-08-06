@@ -2,13 +2,19 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.DeliveryStep;
 import io.cucumber.java.es.E;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class DeliveryStepDefinition {
 
     @Autowired
-    DeliveryStep deliveryStep;
+    private DeliveryStep deliveryStep;
+
+    @Entonces("me muestra la pantalla de Delivery de linea nueva")
+    public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
+        deliveryStep.meMuestraLaPantallaDeDeliveryDeLineaNueva();
+    }
 
     @Y("presiono el boton Confirmar ubicacion")
     public void presiono_el_boton_confirmar_ubicacion() {

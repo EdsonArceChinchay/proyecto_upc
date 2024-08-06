@@ -54,10 +54,6 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
 
-    public static String AGENTNAME = null;
-    public static String CHANNELTYPE = null;
-    public static String CHANNELNAME = null;
-
     public void selectDocumentType(String type) {
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
@@ -169,33 +165,37 @@ public class HomePage extends WebBase {
         Addons.revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, msgHome);
         compareWebElementTextAndString(msgHome, msg);
-        validateAgentData();
     }
 
-    public void validateAgentData() {
+    public String validateAgentData(String storeTypeExpected) {
         String name = getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
         String lastName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname");
-        CHANNELTYPE = getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id");
-        CHANNELNAME = getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name");
+        String channelType = getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id");
+        String channelName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name");
+        String message = null;
         if (name != null && lastName != null) {
-            AGENTNAME = name + " " + lastName;
-            UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Agent's name: %s ", AGENTNAME));
-            validateThatYouAreOnThePage(AGENTNAME);
+            String fullName = name + " " + lastName;
+            message = validateThatYouAreOnThePage("Agent's name: %s. ", fullName);
         }
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Channel name: %s and channel type: %s ", CHANNELNAME, CHANNELTYPE));
-        if (CHANNELNAME != null) {
-            validateThatYouAreOnThePage(CHANNELNAME);
-        }
+        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", channelName);
+        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, channelType);
+        return printAgentData(message);
     }
 
-    public String getAgentData(){
-        return String.format("Agent's name: %s. \nChannel name: %s. \nChannel type: %s. ", AGENTNAME,CHANNELNAME, CHANNELTYPE);
+    public String validateStoreType(String message, String storeTypeExpected, String storeTypeCurrent) {
+        if (storeTypeCurrent != null) {
+            if (storeTypeExpected != null) {
+                compareStringAndString(storeTypeExpected, storeTypeCurrent);
+            }
+            return String.format(message, storeTypeCurrent);
+        }
+        return null;
     }
 
-    public void validateStoreType(String storeType) {
-        if (CHANNELTYPE != null && storeType != null) {
-            returnValueCompareStringAndString(storeType, CHANNELTYPE);
-        }
+    public String printAgentData(String message) {
+        message = message == null ? "" : message;
+        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
+        return message;
     }
 
     public void backToHomePage() {
@@ -221,9 +221,13 @@ public class HomePage extends WebBase {
         waitUntilElementIsClickable(btnAtras, 10);
     }
 
-    public void validateThatYouAreOnThePage(String name) {
-        WebElement element = find().getElementByXPath("//*[contains(text(),'" + name + "')]");
-        Assertions.assertTrue(element.isDisplayed(), String.format("No found element %s", name));
+    public String validateThatYouAreOnThePage(String message, String name) {
+        if (name != null) {
+            WebElement element = find().getElementByXPath("//*[contains(text(),'" + name + "')]");
+            Assertions.assertTrue(element.isDisplayed(), String.format("No found element %s", name));
+            return String.format(message, name);
+        }
+        return null;
     }
 
 }

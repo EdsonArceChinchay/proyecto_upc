@@ -22,18 +22,14 @@ public class ParkPage extends WebBase {
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
-
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaCelularExistente;
-
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .btn-try-again")
     protected WebElement btnRefreshLineaCelularExistente;
-
     @FindBy(css = ".stl_position_movil:nth-child(3) app-card-mt:nth-child(1) .contenedor_park_plan_MT")
     protected WebElement btnPlanMtExistente;
-
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
     @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
@@ -44,40 +40,28 @@ public class ParkPage extends WebBase {
     protected WebElement btnCargango;
     @FindBy(xpath = "//app-card-line[1]")
     protected WebElement cartillaHogar;
-
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
-
     @FindBy(xpath = "//button[@class='update_button']")
     protected WebElement btnActualizar;
-
     @FindBy(xpath = "//div[@class='detailHogar']")
     protected WebElement btnVerDetalle;
-
     @FindBy(xpath = "//div[@class='update_ruc']")
     protected WebElement btnActualizarRuc;
-
     @FindBy(xpath = "//label[contains(text(),' El RUC se ha actualizado de manera correcta. ')]")
     protected WebElement mensaje;
-
     @FindBy(xpath = "(//button[contains(text(),'Entendido')])[2]")
     protected WebElement Entendido;
-
     @FindBy(xpath = "//*[contains(@label,'Siguiente')]")
     protected WebElement btnSiguiente;
-
     @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
     protected WebElement cerrarCU;
-
     @FindBy(xpath = "//*[@label='Confirmar dirección']")
     protected WebElement btnConfirmarDireccion;
-
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
-
     @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
     protected WebElement labelSelectService;
-
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
@@ -280,6 +264,15 @@ public class ParkPage extends WebBase {
         click(cartillaMovistarTotal);
     }
 
+    @FindBy(xpath = "//div[@class=\"div-product-name\"]")
+    WebElement scrollCartillaMT;
+
+    public void seleccionoCartillaPlanMT() {
+        js().scrollElementTop(scrollCartillaMT);
+        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(scrollCartillaMT, 40).click();
+    }
+
     public void verificoLaDireccionActualDelServicio(String dir) {
         revisarModalError(driver());
         String direccionEsperada = dir.toUpperCase().trim();
@@ -423,12 +416,13 @@ public class ParkPage extends WebBase {
 
     public void selectLineWithNumber(String number) {
         js().scrollElementTop(labelSelectService);
-        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'"+number+"')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
-        esperaProgresiva(driver(),3,5,numberLine);
+        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
+        esperaProgresiva(driver(), 3, 5, numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line "+number);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line " + number);
     }
+
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
@@ -448,9 +442,75 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnRenovarPlan.getText());
         click(btnRenovarPlan);
-        System.out.println("click renovar");
         UtilWeb.waitForSeconds(1);
-}
+    }
+
+    @FindBy(xpath = "//button[contains(text(),'Cambio de chip')]")
+    protected WebElement btnCambiodeChip;
+
+    public void seleccionoelbotonCambiodeChip() {
+        Addons.esperaProgresiva(driver(), 5, 5, btnCambiodeChip);
+        js().scrollElementTop(btnCambiodeChip);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnCambiodeChip.getText());
+        click(btnCambiodeChip);
+    }
+
+    @FindBy(xpath = "//*[contains(text(),'CONTINUAR')]")
+    protected WebElement btnClienteExonerado;
+
+    public void cierroPopUpDeClienteExonerado() {
+        Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
+        try {
+            if (btnClienteExonerado.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                click(btnClienteExonerado);
+            } else {
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
+    }
+
+    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
+    protected WebElement cerrarPopUpEstadoCU;
+
+    public void cerrarPopUpEstadoCU() {
+        try {
+            if (cerrarPopUpEstadoCU.isDisplayed()) {
+                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarPopUpEstadoCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                System.out.println("No existe Popup....");
+            }
+        } catch (Exception e) {
+            System.out.println("No hay ningún popup.....");
+        }
+    }
+
+    @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
+    protected WebElement cierrePopUoError;
+
+    public void clickCierrePopup() {
+        UtilWeb.waitForSeconds(3);//inhabilitado
+        boolean elementoExistente;
+        elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
+        if (elementoExistente) {
+            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
+            System.out.println("Se cierra Popup de error");
+            try {
+                click(cierrePopUoError);
+
+            } catch (Exception e) {
+                System.out.println("error al hacer click");
+            }
+        } else {
+            System.out.println("no se encontró mensaje de error");
+        }
+    }
 
 }

@@ -42,10 +42,10 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Y        doy click en el boton "Buscar"
     Y        valido que la direccion sea "<direccion>"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento | longitud     | latitud      | direccion                |
-      | usuario externo | userNameCC  | passCC   | Bienvenid@ | Call Center | C             | 691529632 | -77.03498486 | -12.09465486 | CAMINO REAL 155          |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | C             | 693459354 | -77.03839379 | -12.08616934 | JULIO CESAR TELLO 460    |
-      | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      | C             | 612345675 | -76.91650597 | -12.02665927 | JOSE CARLOS MARIATEGUI 2 |
+      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento | longitud     | latitud       | direccion                |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      | C             | 691529632 | -77.03839379 | -12.08616934  | JULIO CESAR TELLO 460    |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | C             | 693459354 | -77.03498486 | -12.083588836 | JOSE PARDO DE ZELA 175   |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | Call Center | C             | 612345675 | -76.91650597 | -12.02665927  | JOSE CARLOS MARIATEGUI 2 |
 
   @ConsultarDireccionCoordenadas  @CoordenadasIcorrectas
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo que me muestre un mensaje de error cuando ingreso coordenadas incorrectas
@@ -70,7 +70,7 @@ Característica: AT-DT044_Busqueda de direccion por coordenadas DITO WEB
     Entonces me muestra la pantalla para ingresar la direccion
     Y        doy click en el boton "Ingresar coordenadas"
     Y        ingreso las coordenadas de Longitud X: "<longitud>" y Latitud Y:"<latitud>"
-    Y        doy click en el boton "Buscar"
+    Y        doy click en el boton Buscar
     Y        valido que que me muestre el mensajde de error "<mensaje>"
 
     Ejemplos:

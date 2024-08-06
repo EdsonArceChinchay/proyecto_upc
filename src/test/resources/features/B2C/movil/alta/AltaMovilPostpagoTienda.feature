@@ -44,7 +44,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
-    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados

@@ -143,6 +143,11 @@ public class AddressStep {
         page.addressPage().doyClickAceptarEnElModalDeError();
     }
 
+    @ScreenShotAfter
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        page.addressPage().validoQueSePresenteElSiguienteMensaje(mensaje);
+    }
+
     @ScreenShotBefore
     @ScreenShotAfter
     public void ingresoDepartamento(String departamento) {
@@ -159,5 +164,10 @@ public class AddressStep {
     @ScreenShotAfter
     public void ingresoDistrito(String distrito) {
         page.addressPage().ingresoDistrito(distrito);
+    }
+
+    @ScreenShotAfter
+    public void clickOnSearchButton() {
+        page.addressPage().clickOnSearchButton();
     }
 }

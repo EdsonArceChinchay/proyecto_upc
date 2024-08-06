@@ -38,8 +38,6 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        doy click en el boton Migrar a fibra
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso datos de agendamiento "987654321" y doy click en el boton Continuar
-    #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "jlopez@mail.com"

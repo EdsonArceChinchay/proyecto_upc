@@ -209,6 +209,12 @@ public class AddressStepDefinition {
         addressStep.doyClickAceptarEnElModalDeError();
     }
 
+
+    @Y("valido que se presente el siguiente mensaje {string}")
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        addressStep.validoQueSePresenteElSiguienteMensaje(mensaje);
+    }
+
     public void validateInputsAddress(String apple, String lot, String floor, String inside, String block, String houseType, String houseName, String housingComplexe, String housingComplexName) {
         if (!(apple == null) && !(lot == null)) {
             addressStep.typeApple(apple);
@@ -234,4 +240,8 @@ public class AddressStepDefinition {
         addressStep.typeHousingComplexName(housingComplexName);
     }
 
+    @Y("doy click en el boton Buscar")
+    public void doyClickEnElBotonBuscar() {
+        addressStep.clickOnSearchButton();
+    }
 }

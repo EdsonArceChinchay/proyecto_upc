@@ -31,9 +31,8 @@ public class HomeStepDefinition {
     }
 
     @Y("valido que se presente el canal {string}")
-    public void validoQueSePresenteLaTienda(String tienda) {
-        homeStep.validateStoreType(tienda);
-        this.scenario.log(homeStep.getAgentData());
+    public void validoQueSePresenteLaTienda(String channelType) {
+        scenario.log(homeStep.validateAgentData(channelType));
     }
 
     @Y("selecciono el tipo de documento {string}")

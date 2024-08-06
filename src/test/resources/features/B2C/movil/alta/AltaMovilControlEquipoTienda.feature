@@ -52,7 +52,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono en linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"

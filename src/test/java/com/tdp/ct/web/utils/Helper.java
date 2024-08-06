@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -74,7 +75,25 @@ public class Helper extends WebBase {
             return null;
         }
     }
-    
+
+    public static void seleccionarValueComboShadow(WebDriver driver, String sFormControlName, String sCodigoValue){
+        UtilWeb.waitForSeconds(1);
+        System.out.println("seleccionarValueComboShadow(sFormControlName=" + sFormControlName + ", sCodigoValue="+sCodigoValue + ")");
+        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
+        eventFiringWebDriver.executeScript("document.querySelector('[formcontrolname=\""+sFormControlName+"\"]') " +
+                ".shadowRoot.querySelector('li.mdc-list-item[data-value=\""+sCodigoValue+"\"]').click();");
+    }
+
+    public static String buscarValorOpcion(String sDescripcionOpcion, String[][] sOpciones) {
+        for (String[] sOpcione : sOpciones) {
+            if (sOpcione[1].equals(sDescripcionOpcion)) {
+                return sOpcione[0];
+            }
+        }
+        throw new IllegalArgumentException("buscarValorOpcion No válido: " + sDescripcionOpcion);
+    }
+
+
     public static String getValueConfig(String key) {
         Properties properties = new Properties();
         try {
@@ -109,23 +128,35 @@ public class Helper extends WebBase {
         String expectedText = value.trim().toUpperCase();
         String currentText = element.getText().trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals));
-        Assertions.assertTrue(isEquals, String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals));
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
+        Assertions.assertTrue(isEquals,message);
     }
 
     public static boolean returnValueCompareWebElementTextAndString(WebElement element, String value) {
         String expectedText = value.trim().toUpperCase();
         String currentText = element.getText().trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals));
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         return isEquals;
+    }
+
+    public static void compareStringAndString(String expectedValue, String currentValue) {
+        String expectedText = expectedValue.trim().toUpperCase();
+        String currentText = currentValue.trim().toUpperCase();
+        boolean isEquals = currentText.contains(expectedText);
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
+        Assertions.assertTrue(isEquals,message);
     }
 
     public static boolean returnValueCompareStringAndString(String expectedValue, String currentValue) {
         String expectedText = expectedValue.trim().toUpperCase();
         String currentText = currentValue.trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals));
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         return isEquals;
     }
 

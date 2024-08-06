@@ -23,6 +23,16 @@ public class CaeqPorReatilStep {
     }
 
     @ScreenShotBefore
+    public void seleccionarEquipo() {
+        page.caeqPorRetailPage().seleccionarEquipo();
+    }
+
+    @ScreenShotBefore
+    public void doyClickEnElBotonSeleccionarOferta() {
+        page.caeqPorRetailPage().doyClickEnElBotonSeleccionarOferta();
+    }
+
+    @ScreenShotBefore
     public void btnMantenerPlan() {
         page.caeqPorRetailPage().btnMantenerPlan();
     }
@@ -40,17 +50,5 @@ public class CaeqPorReatilStep {
 
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> salesLead) {
         page.caeqPorRetailPage().validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, salesLead);
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void seleccionoelbotonCambiodeChip() {
-        page.caeqPorRetailPage().seleccionoelbotonCambiodeChip();
-    }
-
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void cierroPopUpDeClienteExonerado(){
-        page.caeqPorRetailPage().cierroPopUpDeClienteExonerado();
     }
 }

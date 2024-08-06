@@ -49,7 +49,7 @@ Característica: AT-DT022_Alta Movil postpago con equipo con documento CE por ca
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "hola@gmail.com"

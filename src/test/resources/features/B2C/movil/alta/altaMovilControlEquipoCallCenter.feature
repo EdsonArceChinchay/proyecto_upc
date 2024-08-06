@@ -46,7 +46,7 @@ Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por cana
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva

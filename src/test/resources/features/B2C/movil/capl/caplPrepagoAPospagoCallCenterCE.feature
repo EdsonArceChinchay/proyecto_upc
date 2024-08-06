@@ -38,7 +38,6 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        voy hasta el final de la pagina
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

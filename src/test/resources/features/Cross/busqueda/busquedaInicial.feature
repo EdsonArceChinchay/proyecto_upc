@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @Sanity28 @DROP-G07
 Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 
-  @BusquedaInicial
+  @BusquedaInicial @BusquedaInicialB2C
   Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -41,7 +41,7 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
       | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      | C             | 123456742 | Cuatro De Dos                |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | C             | 123456753 | Cinco De Tres                |
 
-  @BusquedaInicial         @BusquedaInicialRUC
+  @BusquedaInicial         @BusquedaInicialB2B
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -60,10 +60,10 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
     E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
-#    Y        valido que me traiga los servicios contratados por el cliente
-#    Y        doy click en el icono de Asesor
-#    Y        doy click en Cerrar Sesion
-#    Y        confirmo Cerrar Sesion
+    Y        valido que me traiga los servicios contratados por el cliente
+    Y        doy click en el icono de Asesor
+    Y        doy click en Cerrar Sesion
+    Y        confirmo Cerrar Sesion
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | cliente               | nro | tipoDocRepLegal | numDocRepLegal |
       | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | RUC           | 20514559911 | CHIFA HERMANOS S.A.C. | 3   | DNI             | 75447585       |

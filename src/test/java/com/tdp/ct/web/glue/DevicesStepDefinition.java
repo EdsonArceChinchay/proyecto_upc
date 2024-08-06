@@ -24,8 +24,8 @@ public class DevicesStepDefinition {
     }
 
     @Y("ingreso el tipo de pago {string}")
-    public void ingresoElTipoDePago(String Pago) {
-        devicesStep.selectTypeOfPayment(Pago);
+    public void ingresoElTipoDePago(String payment) {
+        devicesStep.selectTypeOfPayment(payment);
     }
 
     @Y("doy click en el boton seleccionar")

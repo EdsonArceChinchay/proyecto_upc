@@ -31,7 +31,6 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
-    #Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"

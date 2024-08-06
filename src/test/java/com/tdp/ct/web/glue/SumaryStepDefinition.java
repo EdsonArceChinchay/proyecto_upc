@@ -1,6 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.SumaryStep;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,8 +17,18 @@ public class SumaryStepDefinition {
 
     @Y("doy click en el boton Iniciar registro")
     public void doyClickEnIniciarRegistro() {
-        sumaryStep.moverToElementIniciarRegistro();
+        sumaryStep.moverToElementStartRegister();
         sumaryStep.clickButtonStartRegister();
+    }
+
+    @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
+    public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
+        sumaryStep.validarNomPlan(nomPlan);
+    }
+
+    @Y("valido el precio establecido sea {string}")
+    public void validacionPrecio(String precioPlan) {
+        sumaryStep.validacionPrecio(precioPlan);
     }
 
 }

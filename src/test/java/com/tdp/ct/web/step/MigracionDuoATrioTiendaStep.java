@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,10 +30,6 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().clickButton(nameButton);
     }
 
-    public void seleccionarboton() {
-        page.migracionDuoATrioTiendaPage().seleccionarboton();
-    }
-
     @ScreenShotBefore
     public void seleccionoPlanMovistarTotal() {
         page.migracionDuoATrioTiendaPage().seleccionoPlanMovistarTotal();
@@ -57,4 +54,20 @@ public class MigracionDuoATrioTiendaStep {
     public void clickFinalizarRegistro() {
         page.migracionDuoATrioTiendaPage().clickFinalizarRegistro();
     }
+
+    @ScreenShotBefore
+    public void SeleccionarBtnMigrarFibra() {
+        page.migracionDuoATrioTiendaPage().SeleccionarBtnMigrarFibra();
+    }
+
+    @ScreenShotAfter
+    public void validateTagUVSC(String value) {
+        page.migracionDuoATrioTiendaPage().validateTagUVSC(value);
+    }
+
+    @ScreenShotAfter
+    public void validateCurrentAndNewPrice() {
+        page.migracionDuoATrioTiendaPage().validateCurrentAndNewPrice();
+    }
+
 }

@@ -32,16 +32,12 @@ Característica: Migracion de MT a MT en Tienda
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-#    Y        selecciono la cartilla del plan activo
     Y        selecciona el boton del numero del plan MT existente "<numeroMt>"
-#    Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
     #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
     Y        doy click en el boton "Confirmar direccion"
-#    Y        selecciono tipo de oferta
     Y        selecciono el primer tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
-    #Y        luego doy click en la cartilla ir a Movistar Total
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento

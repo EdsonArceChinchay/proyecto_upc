@@ -31,7 +31,6 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        valido que muestre el nombre completo del cliente "<nombreCliente>"
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton de la Linea Movil Existente
     Y        cierro el popup de validación de estado de contraseña única

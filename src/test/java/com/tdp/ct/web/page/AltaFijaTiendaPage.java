@@ -64,9 +64,6 @@ public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
 
-    @FindBy(css = ".title span")
-    protected WebElement nombrePlan;
-
     public String nombresCompletosCliente() {
         esperaProgresiva(driver(), 5, 5, nombresCompletosCliente);
         JavascriptExecutor js = (JavascriptExecutor) driver();
@@ -170,7 +167,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void listaBotones() {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Lista de Oferta");
-        waitUntilElementIsClickable(btnLineaNueva, 50);
+        esperaProgresiva(driver(), 5, 5, btnLineaNueva);
         String nameButton = btnLineaNueva.getText();
         click(btnLineaNueva);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + nameButton);
@@ -267,13 +264,6 @@ public class AltaFijaTiendaPage extends WebBase {
         }
     }
 
-    public void validarNomPlan(String nomPlan) {
-        Addons.revisarModalError(driver());
-        String expectedNomPlan = nomPlan.trim().toLowerCase();
-        String actualNomPlan = nombrePlan.getText().trim().toLowerCase();
-        Assertions.assertTrue(actualNomPlan.contains(expectedNomPlan), "El plan obtenido: " + actualNomPlan + ", no coincide con lo esperado " + expectedNomPlan);
-        UtilWeb.waitForSeconds(1);
-    }
 
     public void validarVelocidadInternet(String mbpsBB) {
         Addons.revisarModalError(driver());

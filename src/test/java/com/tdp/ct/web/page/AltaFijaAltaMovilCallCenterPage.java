@@ -160,16 +160,28 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void irAMovistarTotal() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 10, btnIrAMovistar);
+        esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
         btnIrAMovistar.click();
         UtilWeb.waitForSeconds(5);
     }
+
+    @FindBy(xpath = "//button[@class='btnCard']")
+    protected List<WebElement> botoneraIrA;
+
+    public void clickBotonIrMovistarTotal() {
+        esperaProgresiva(driver(),4,5,botoneraIrA.get(1));
+        revisarModalError(driver());
+        click(botoneraIrA.get(1));
+        UtilWeb.waitForSeconds(1);
+    }
+
 
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
 
     public void selectBtnLineaNueva() {
-        esperaProgresiva(driver(), 3, 10, btnLineaNueva);
+        esperaProgresiva(driver(), 5, 5, btnLineaNueva);
+        js().scrollElementTop(btnLineaNueva);
         click(btnLineaNueva);
     }
 

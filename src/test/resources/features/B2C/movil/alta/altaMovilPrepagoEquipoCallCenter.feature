@@ -47,7 +47,7 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"

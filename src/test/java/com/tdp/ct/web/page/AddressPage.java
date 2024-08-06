@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -57,6 +58,10 @@ public class AddressPage extends WebBase {
     protected WebElement cbxProvincia;
     @FindBy(css = "form > div:nth-child(3) > div > tdp-st-select")
     protected WebElement cbxDistrito;
+    @FindBy(xpath = "//*[contains(text(),'Se actualizo')]")
+    protected WebElement txtMensaje;
+    @FindBy(xpath = "(//button[contains(text(),'Buscar')])[1]")
+    protected WebElement btnSearch;
     private static final String DEPARTAMENTO = "15";
 
     public void selectDepartment(String department) {
@@ -217,6 +222,12 @@ public class AddressPage extends WebBase {
         }
     }
 
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        waitUntilElementIsVisible(txtMensaje, 10);
+        js().scrollElementTop(txtMensaje);
+        compareWebElementTextAndString(txtMensaje, mensaje);
+    }
+
     public boolean validarPantallaIngresarDireccionEntrega() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 4, titleLugarInstalacionEntrega);
@@ -228,7 +239,7 @@ public class AddressPage extends WebBase {
     }
 
     public boolean validarPantallaIngresarDireccion() {
-        //esperaProgresiva(driver(),3,20,titleLugarInstalacion);
+        esperaProgresiva(driver(), 5, 5, titleLugarInstalacion);
         boolean existe = waitUntilElementIsVisible(titleLugarInstalacion, 60).isDisplayed();
         UtilWeb.waitForSeconds(1);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
@@ -261,17 +272,24 @@ public class AddressPage extends WebBase {
     }
 
     public void validoQueLaDireccionSea(String direccion) {
-        waitUntilElementIsVisible(txtDireccion, 50);
+        UtilWeb.waitForSeconds(5);
+        esperaProgresiva(driver(), 5, 5, txtDireccion);
         compareWebElementTextAndString(txtDireccion, direccion);
     }
 
     public void validoQueQueMeMuestreElMensajdeDeError(String msj) {
-        waitUntilElementIsVisible(txtMsjError, 100);
+        esperaProgresiva(driver(), 5, 5, txtMsjError);
         compareWebElementTextAndString(txtMsjError, msj);
     }
 
     public void doyClickAceptarEnElModalDeError() {
         waitUntilElementIsClickable(btnerror, 25).click();
+    }
+
+    public void clickOnSearchButton() {
+        esperaProgresiva(driver(), 5, 5, btnSearch);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button "+ btnSearch.getText());
+        btnSearch.click();
     }
 }
 

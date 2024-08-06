@@ -26,8 +26,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
     protected WebElement generolist;
     @FindBy(xpath = "//button[contains(text(),'Crear cliente')]")
     protected WebElement btnCrearCliente;
-    @FindBy(xpath = "//div[@class='plan2']")
-    protected WebElement lblPrecio;
+
     @FindBy(xpath = "//div[@class='stl_negrita g-text--uppercase']")
     protected List<WebElement> listaOfertas;
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
@@ -148,11 +147,6 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
         }
-    }
-
-    public void validacionPrecio(String precioPlan) {
-        String precioCompare = lblPrecio.getText();
-        Assert.assertEquals(precioPlan, precioCompare);
     }
 
 }

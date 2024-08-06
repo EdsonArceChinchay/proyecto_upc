@@ -50,7 +50,6 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#    Y        selecciono el nombre de plan movistar total
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
