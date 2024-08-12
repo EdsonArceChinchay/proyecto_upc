@@ -27,12 +27,12 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -47,22 +47,23 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 01/12/1990 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -76,5 +77,5 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1002464816 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |

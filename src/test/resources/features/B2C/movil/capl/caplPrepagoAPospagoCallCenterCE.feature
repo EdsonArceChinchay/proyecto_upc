@@ -34,15 +34,16 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85.9 VI"
-    Y        doy click en iniciar registro
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        voy hasta el final de la pagina
-    Y        doy clic para validar contrato Movil
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -56,6 +57,6 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName | password     | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | jpachaot | $t3l3f0n1c4$ | CE            | 1042464638 |                  |
+      | tipoUsuario     | userName   | password | tipoDocumento | documento  | EncontrarCelular |
+      | usuario externo | userNameCC | passCC   | CE            | 1042464638 |                  |
 

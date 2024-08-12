@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: Eloy Milla
 ##APP: DITO
-##MODULO: Alta Movil B2B
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
 ##GDAP: GDAP-1662
@@ -27,12 +27,13 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
-    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -46,18 +47,18 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
       | permanencia | tipoPago   | equipoName               |
       | 18 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
-    Y        selecciono el boton de iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Y        doy click en el boton Linea Nueva
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | RUC           | 20000000003 | 1   | C               | 143625134      | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | RUC           | 20000000003 | 1   | C               | 143625134      | prueba@prueba.com |

@@ -26,7 +26,7 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -40,21 +40,21 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        doy click en el boton Ir a movistar total
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -70,5 +70,5 @@ Característica: AT-DT0 _Completa Planta Movil  + Alta Fija con documento CE en 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan | correo         |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1632547925 | Trio       | test@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | nombrePlan | correo         |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1632547925 | Trio       | test@gmail.com |

@@ -30,7 +30,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -45,21 +45,22 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 01/12/1990 | Alemania     | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 01/12/1990 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

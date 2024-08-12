@@ -2,7 +2,6 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 
 public class OfferSVAPage extends WebBase {
 
@@ -28,7 +27,7 @@ public class OfferSVAPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, labelTitle);
         js().scrollElementTop(labelTitle);
-        compareWebElementTextAndText(labelTitle, name);
+        compareWebElementTextAndString(labelTitle, name);
     }
 
     public void clickButtonSaveChanges() {

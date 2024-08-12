@@ -26,7 +26,7 @@
      E        ingreso el captcha
      Y        presiono el boton Continuar hacia el home
      Y         valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente la tienda "<tiendaAsesor>"
+     Y        valido que se presente el canal "<channelType>"
      Cuando   selecciono el tipo de documento "<tipoDocumento>"
      Y        ingreso el documento "<documento>"
      Y        doy click en el boton Consultar
@@ -43,13 +43,13 @@
      Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
      Y        agrego SVA bloque "<bloque>"
      Y        doy click en el boton Guardar cambios
-     Cuando   doy clic a iniciar registro
+     Cuando   doy click en el boton Iniciar registro
      Y        valido que me encuentre en la pantalla agendamiento
      Y        ingreso los datos de agendamiento
      Y        presiono el boton confirmar agendamiento
-#	 Y        ingreso un correo electronico "<correo>"
+#	 Y        ingreso correo electronico "<correo>"
 #	 Y        ingreso nuevamente el correo electronico "<correo>"
-     Y        doy clic para validar contrato hogar
+     Y        doy click en Validar contrato "hogar"
      Y        me muestra en pantalla el contrato solicitado
      Cuando   doy clic en si acepto
      Y        doy click en el boton de continuar
@@ -60,5 +60,5 @@
      Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
      Y        valido que se muestre el detalle del pedido de "Información adicional"
      Ejemplos:
-       | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      | tipoDocumento | documento   | correo            | tipoPlanHogar | plan                                     | bloque |
-       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 10021231242 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+       | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento   | tipoPlanHogar | plan                                     | bloque |
+       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 10021231242 | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |

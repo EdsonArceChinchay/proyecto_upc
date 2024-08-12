@@ -27,6 +27,7 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -36,7 +37,7 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono boton mantener plan
@@ -45,16 +46,16 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Cuando   doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoOferta     | nombrePlan                                        | sva | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 142536409 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | MOVISTAR TOTAL | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 50 MBPS | HBO | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 142536409 | prueba@prueba.com |

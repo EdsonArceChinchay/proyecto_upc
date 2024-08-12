@@ -30,18 +30,19 @@ Característica: AT-DT058_Realizar un CAPL al contado con canal Tienda de un Pre
     Y        doy click en el boton Consultar
     #Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
-    Y        doy click en Entendido para visualizar las ofertas
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "RV Plan Ilimitado Mi Movistar S/99.9 V"
-    Y         doy click en iniciar registro
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

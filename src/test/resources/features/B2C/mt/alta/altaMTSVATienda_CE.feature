@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT116
-##GDAP:GDAP-1412
+##GDAP: GDAP-1412
 ##SPRINT CREADO: PI16_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -14,7 +14,7 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
+Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tienda
 
   @AltaMt_SvaTiendas
   Esquema del escenario: Alta MT mas SVA en Canal Tiendas
@@ -26,12 +26,12 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "Tiendas Franquicia Prueba"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Felipe  | Llanos    | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -46,7 +46,7 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
@@ -54,17 +54,18 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "Seguridad Total Residencial"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@mail.com"
+    Y        ingreso correo electronico "tester@mail.com"
     Y        ingreso nuevamente el correo electronico "tester@mail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 24/02/1996 | Aruba        | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 24/02/1996 | Aruba        | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -77,10 +78,5 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tiendas
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                                |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-
-#  | usuario interno |          |          | Bienvenid@ | CE            | 221011289 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-#  | usuario interno |          |          | Bienvenid@ | CE            | 221011298 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-#  | usuario interno |          |          | Bienvenid@ | CE            | 221011299 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
-#  | usuario interno |          |          | Bienvenid@ | CE            | 221011300 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | nombrePlan                                |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1142464501 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

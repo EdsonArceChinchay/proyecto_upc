@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO: CAPL
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: CAPL
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT
 ##GDAP: GDAP-1377
@@ -27,12 +27,13 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
-    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -43,15 +44,15 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Elige Todo"
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Cuando   doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -65,5 +66,5 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |

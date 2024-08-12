@@ -27,7 +27,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -41,18 +41,18 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,6 +71,6 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName | password     | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlan | nombrePlan                                        | nombrePadre | nombreMadre | distritoNac |
-      | usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | DNI           | 76268961  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
-      #| usuario externo | userNameCC | passCC | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 102040469 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlan | nombrePlan                                        | nombrePadre | nombreMadre | distritoNac |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 76268961  | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      #| usuario externo | userNameCC | passCC | Bienvenid@ | Call Center | CE            | 102040469 | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR RA 1D D22 50 MBPS | FRANCISCO   | CELESTINA   | COMBAPATA   |

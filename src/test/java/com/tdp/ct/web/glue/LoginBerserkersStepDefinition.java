@@ -6,12 +6,14 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.*;
+import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Objects;
 
+@CucumberContextConfiguration
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class LoginBerserkersStepDefinition {
 
@@ -48,7 +50,7 @@ public class LoginBerserkersStepDefinition {
 
     @Cuando("presiono el boton Iniciar Sesion")
     public void presionoElBotonIniciarSesion() {
-        loginBerserkerStep.clickButtonLogin();
+        loginBerserkerStep.clickOnLoginButton();
     }
 
     @Y("selecciono el tipo de usuario {string}")
@@ -73,22 +75,22 @@ public class LoginBerserkersStepDefinition {
 
     @Entonces("valido que se presente el mensaje de error {string}")
     public void validoQueSePresenteElMensajeDeError(String msg) {
-        loginBerserkerStep.validarMensajeError(msg);
+        loginBerserkerStep.validateErrorMessage(msg);
     }
 
     @Y("presiono el boton Continuar")
     public void presionoElBotonContinuar() {
-        loginBerserkerStep.clickButtonContinue();
+        loginBerserkerStep.clickOnContinueButton();
     }
 
     @Entonces("valido que se presente el mensaje de credenciales incorrectas {string}")
     public void validoQueSePresenteElMensajeDeCredencialesIncorrectas(String msg) {
-        loginBerserkerStep.validarMsgIncorrectCredential(msg);
+        loginBerserkerStep.validateIncorrectCredentialsMessage(msg);
     }
 
-    @Y("presiono el boton Continuar para intentar el ingreso")
-    public void presionoElBotonContinuarParaIntentarElIngreso() {
-        loginBerserkerStep.clickBtnContinuarToLogin();
+    @E("ingreso el captcha")
+    public void ingresoElCaptcha() {
+        loginBerserkerStep.getAndTypeCaptcha();
     }
 
     @Y("me logueo con las credenciales en la aplicacion")
@@ -96,15 +98,11 @@ public class LoginBerserkersStepDefinition {
         String tipoUsuario = UtilWeb.getValueFromDataTable(credenciales, "tipoUsuario");
         String userName = UtilWeb.getValueFromDataTable(credenciales, "userName");
         String password = UtilWeb.getValueFromDataTable(credenciales, "password");
-        loginBerserkerStep.clickButtonLogin();
+        loginBerserkerStep.clickOnLoginButton();
         loginBerserkerStep.selectUserType(tipoUsuario);
         loginBerserkerStep.typeUserName(userName);
         loginBerserkerStep.typePassword(password);
-        loginBerserkerStep.clickButtonContinue();
-    }
-
-    @E("ingreso el captcha")
-    public void ingresoElCaptcha() throws InterruptedException {
-        loginBerserkerStep.typeCaptcha();
+        loginBerserkerStep.getAndTypeCaptcha();
+        loginBerserkerStep.clickOnContinueButton();
     }
 }

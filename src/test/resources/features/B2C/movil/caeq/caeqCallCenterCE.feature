@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
-Característica: CAEQ con documento CE por Canal Call Center
+Característica: Cambio de equipo movil a un cliente extranjero(CE) por Canal Call Center
 
   @CaeqCECallcenter
-  Esquema del escenario: CAEQ con documento CE por Canal Call Center
+  Esquema del escenario: Cambio de equipo movil a un cliente extranjero(CE) por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -41,31 +41,31 @@ Característica: CAEQ con documento CE por Canal Call Center
     #Y        doy click en el boton continuar
     Y        doy click en el boton "MANTENER PLAN"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
 #    Y        ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
 #      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "956756143"
-    Y        ingreso las instrucciones a considerar de la entrega "abc"
-    Y        doy clic en confirmar delivery
+    Y        ingreso telefono de contacto "956756143"
+    Y        ingreso instrucciones de delivery "abc"
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -81,5 +81,11 @@ Característica: CAEQ con documento CE por Canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 1042464788      | 920956618        |
+      | usuario externo | userNameCC | passCC   | CE            | 461960084       | 650029858        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
+#      Prueba error
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
+#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
 

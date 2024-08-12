@@ -18,9 +18,9 @@ public class LoginBerserkerStep {
     private Customer customer;
 
     @ScreenShotBefore
-    public void clickButtonLogin() {
+    public void clickOnLoginButton() {
         customer.setCustomerTest("Test Cliente");
-        page.loginBerserkerPage().clickButtonLogin();
+        page.loginBerserkerPage().clickOnLoginButton();
     }
 
     @ScreenShotAfter
@@ -41,36 +41,41 @@ public class LoginBerserkerStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
-        page.loginBerserkerPage().clickBtnContinuarHaciaHome();
+        page.loginBerserkerPage().clickOnContinueButton();
+        retryCaptcha();
     }
 
     @ScreenShotBefore
-    public void clickButtonContinue() {
-        page.loginBerserkerPage().clickButtonContinue();
+    public void clickOnContinueButton() {
+        page.loginBerserkerPage().clickOnContinueButton();
+        retryCaptcha();
     }
-
-    @ScreenShotBefore
-    public void clickBtnContinuarToLogin() {
-        page.loginBerserkerPage().clickBtnContinuarToLogin();
-    }
-
 
     @ScreenShotAfter
-    public void validarMensajeError(String msg) {
-        page.loginBerserkerPage().validarMensajeError(msg);
+    public void validateErrorMessage(String msg) {
+        retryCaptcha();
+        page.loginBerserkerPage().validateErrorMessage(msg);
     }
 
     @ScreenShotBefore
-    public void validarMsgIncorrectCredential(String msg) {
-        page.loginBerserkerPage().validarMsgIncorrectCredential(msg);
+    public void validateIncorrectCredentialsMessage(String msg) {
+        retryCaptcha();
+        page.loginBerserkerPage().validateIncorrectCredentialsMessage(msg);
     }
-
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void typeCaptcha() throws InterruptedException {
+    public void getAndTypeCaptcha() {
         UtilWeb.waitForSeconds(4);
         page.captchaPage().getCaptcha();
     }
 
+    @ScreenShotAfter
+    public void retryCaptcha() {
+        boolean isTrue = page.loginBerserkerPage().validateCaptchaErrorMessage();
+        if (isTrue) {
+            page.captchaPage().updateAndTypeCaptcha();
+            page.loginBerserkerPage().clickOnContinueButton();
+        }
+    }
 }

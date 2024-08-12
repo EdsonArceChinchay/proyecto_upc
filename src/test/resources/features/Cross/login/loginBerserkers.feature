@@ -11,29 +11,29 @@
 ##TAG : BERSERKERS
 ##DATA: NA
 ##ENCARGADO:
-##FECMOD: 25/05/2024
+##FECMOD: 31/07/2024
 
 @VISS-8540
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
 Característica: AT-DT053_Login - FE DITO WEB
 
   @PRR-107
-  @LoginBerserker @LoginExitoso @jbac_Test 
-  Esquema del escenario: Usuario realiza login exitoso: canal Call Center, Tienda y Retail
+    @LoginBerserker @LoginExitoso @jbac_Test
+  Esquema del escenario: Usuario realiza login exitoso en canal <channelType>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor      |
-      | usuario externo | userNameCC  | passCC   | Bienvenid@ | nameStoreCC       |
-      #| usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA SAN MIGUEL |
-      #| usuario externo | userNameDLC | passDLC  | Bienvenid@ | TALARA            |
+      | userType        | userName    | password | msgHome    | channelType |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | Call Center |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
@@ -65,7 +65,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password "passDLC"
     E        ingreso el captcha
-    Y        presiono el boton Continuar para intentar el ingreso
+    Y        presiono el boton Continuar
     Entonces valido que se presente el mensaje de credenciales incorrectas "Usuario y password incorrecto."
 
 

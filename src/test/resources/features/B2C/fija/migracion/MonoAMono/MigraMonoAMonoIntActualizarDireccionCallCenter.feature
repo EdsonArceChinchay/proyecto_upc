@@ -24,7 +24,8 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -35,7 +36,7 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        ingreso la direccion donde sera la instalacion "Jose Leal 500"
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        valido que se presente el siguiente mensaje "Se actualizo la dirección del servicio correctamente"
     Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
@@ -43,12 +44,12 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        selecciono el plan "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     #Y        valido que me encuentre en la pantalla agendamiento
     #Y        ingreso los datos de agendamiento
-    Y        ingreso un correo electronico "prueba@gmail.com"
+    Y        ingreso correo electronico "prueba@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba@gmail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -59,5 +60,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA

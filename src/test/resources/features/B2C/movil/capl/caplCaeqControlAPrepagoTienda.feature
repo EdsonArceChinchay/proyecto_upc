@@ -32,7 +32,7 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Prepago"
+    Y        selecciono el tipo de plan movil "Prepago"
     Y        selecciono la opcion "Prepago con Tarifa Única"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
@@ -41,17 +41,18 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de Cliente Exonerado
-    #Y        doy click en el boton continuar
     Y        doy click en el boton "Cambiar Plan"
-    Y        valido que se presente el detalle de el plan
-    Y        doy click en iniciar registro
-    Y        ingreso email "tester_qa@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

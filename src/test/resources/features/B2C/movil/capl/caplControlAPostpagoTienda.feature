@@ -27,23 +27,25 @@ Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Con
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "461960081"
+    Y        ingreso el documento "1632547927"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-    Y        doy click en el boton Ver detalle del servicio "650029862"
+    Y        doy click en el boton Ver detalle del servicio "650028191"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
-    Y        doy click en iniciar registro
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -31,25 +31,20 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    #Y        selecciono el boton de eleccion de planes Plan Nuevo
-    #Y        selecciono el tipo "Postpago"
-    #Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
-    #Y        selecciono un plan movil "<nombrePlan>"
-    #Y        selecciono el boton de eleccion de planes
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Postpago"
+    Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono la opcion "Plan Súmate Plus RPM II S/ 97.82"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono boton Cambiar plan
-    Y        doy click en iniciar registro
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
-    #Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

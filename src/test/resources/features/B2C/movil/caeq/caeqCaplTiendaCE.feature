@@ -26,7 +26,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -34,31 +34,30 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "Postpago"
+    Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/ 79.9 V"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
-    #Y        selecciono tipo de pago Al Contado
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago             | equipoName                        |
       | 12 meses    | Financiado 12 cuotas | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
-    Y        ingreso un correo electronico "prueba_qa@gmail.com"
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | tipoPlan | nombrePlan                           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 12312312222 | Postpago | Plan Movil Movistar Total ilim 26 GB |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 12312312222 |

@@ -23,14 +23,15 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "passST"
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-      #Y        valido que se presente la tienda "TIENDA SAN MIGUEL"
+      #Y        valido que se presente el canal "TIENDA SAN MIGUEL"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464814"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -39,25 +40,26 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion               | referencia |
       | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
-    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton Consultar ubicacion
       #Y        ingreso la informacion del lugar para la instalacion
        # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
         #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
     Y        selecciono el plan "INTERNET MOVISTAR RA"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "edith@gmail.com" y lo repito
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

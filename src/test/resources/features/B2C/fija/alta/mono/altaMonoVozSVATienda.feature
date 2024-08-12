@@ -30,7 +30,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        ingreso el documento "1023560867"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Carlos  | Suarez    | masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -41,8 +41,8 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
     Y        selecciono el plan "LÍNEA TARIFA PLANA LOCAL VOIP"
@@ -51,17 +51,18 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA linea "Plan Multidestino 25"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "test@mail.com" y lo repito
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 24/04/1990 | Casado      | Aruba      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

@@ -12,7 +12,6 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
 Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
 
@@ -26,7 +25,6 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -41,11 +39,8 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton consultar cobertura
-    #        Entonces me muestra la pantalla de ofertas sugeridos
+    Y        presiono el boton Consultar cobertura
+    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
@@ -53,28 +48,28 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "<sva>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        presiono Consultar ubicacion
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
-    Y        Consulto ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    Y        selecciono el horario de entrega "3pm-7pm"
+    E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -95,5 +90,5 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | tipoOferta     | nombrePlan | correo           | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | PACK ANTIVIRUS MCAFEE | DNI           | 46325790  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | MOVISTAR TOTAL | Trío       | correo@gmail.com | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | tipoUsuario     | userName   | password | msgHome    | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | PACK ANTIVIRUS MCAFEE | DNI           | 46325790  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

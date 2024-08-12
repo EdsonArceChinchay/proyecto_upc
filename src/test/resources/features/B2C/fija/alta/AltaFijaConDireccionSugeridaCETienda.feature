@@ -26,10 +26,11 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -42,21 +43,22 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        selecciono una direccion sugerida
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "prueba@gmail.com" y lo repito
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/08/1990 | Albania      | Casado      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -68,5 +70,5 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1034509118 | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS

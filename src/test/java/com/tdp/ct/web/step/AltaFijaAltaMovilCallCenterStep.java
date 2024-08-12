@@ -18,96 +18,6 @@ public class AltaFijaAltaMovilCallCenterStep {
     @Autowired
     private ManageScenario scenario;
 
-    public void ingresarManzana(String manzana) {
-        page.altaFijaAltaMovilCallCenterPage().manzana(manzana);
-    }
-
-    public void ingresarLote(String lote) {
-        page.altaFijaAltaMovilCallCenterPage().lote(lote);
-    }
-
-    public void seleccionarTipoVivienda(String tipoVivienda) {
-        page.altaFijaAltaMovilCallCenterPage().tipoVivienda(tipoVivienda);
-    }
-
-    public void ingresarNombreVivienda(String nomVivienda) {
-        page.altaFijaAltaMovilCallCenterPage().nombreVivienda(nomVivienda);
-    }
-
-    public void ingresarPiso(String piso) {
-        page.altaFijaAltaMovilCallCenterPage().piso(piso);
-    }
-
-    public void ingresarInterior(String interior) {
-        page.altaFijaAltaMovilCallCenterPage().interior(interior);
-    }
-
-    public void ingresarBloque(String bloque) {
-        page.altaFijaAltaMovilCallCenterPage().bloque(bloque);
-    }
-
-    public void ingresarManzanaDir(String manzana) {
-        page.altaFijaAltaMovilCallCenterPage().manzanaDir(manzana);
-    }
-
-    public void seleccionarTipoConjuntoHabitacional(String data) {
-        page.altaFijaAltaMovilCallCenterPage().tipoConjuntoHabitacional(data);
-    }
-
-    public void ingresarConjuntoHabitacional(String data) {
-        page.altaFijaAltaMovilCallCenterPage().conjuntoHabitacional(data);
-    }
-
-    public void clickBtnConfirmarUbicacion() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmarUbicacion();
-    }
-
-    public void clickConsultarCobertura() {
-        page.altaFijaAltaMovilCallCenterPage().btnConsultarCobertura();
-    }
-
-    public void seleccionarTipoEntrega(String tipEntrega) {
-        page.altaFijaAltaMovilCallCenterPage().tipoEntrega(tipEntrega);
-    }
-
-    public void seleccionarBtnHorario(String horario) {
-        page.altaFijaAltaMovilCallCenterPage().btnHorario(horario);
-    }
-
-    public void ingresarTxtTelefono(String telefono) {
-        page.altaFijaAltaMovilCallCenterPage().txtTelefono(telefono);
-    }
-
-    public void ingresarTxtInstrucciones(String instrucciones) {
-        page.altaFijaAltaMovilCallCenterPage().txtInstrucciones(instrucciones);
-    }
-
-    @ScreenShotAfter
-    public void clickBtnConfirmarDelivery() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmarDelivery();
-    }
-
-    @ScreenShotBefore
-    public void seleccionarTipoPago(String tipoPago) {
-        page.altaFijaAltaMovilCallCenterPage().tipoPago(tipoPago);
-    }
-
-    public void ingresarCorreo(String correo) {
-        page.altaFijaAltaMovilCallCenterPage().correo(correo);
-    }
-
-    public void ingresarCorreoNuevamente(String correo) {
-        page.altaFijaAltaMovilCallCenterPage().confirmarCorreo(correo);
-    }
-
-    public void clickBtnConfirmar2() {
-        page.altaFijaAltaMovilCallCenterPage().btnConfirmar2();
-    }
-
-    public void clickBtnFinalizarRegistro() {
-        page.altaFijaAltaMovilCallCenterPage().btnFinalizarRegistro();
-    }
-
     public void scrollUp() {
         page.altaFijaAltaMovilCallCenterPage().scrollUp();
     }
@@ -120,13 +30,38 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().oferta();
     }
 
+    @ScreenShotBefore
+    public void BtonOpciones() {
+        page.altaFijaAltaMovilCallCenterPage().BtonOpciones();
+    }
+
     public void seleccionarListaOferta(String listaOferta) {
         page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta, scenario);
     }
 
-
     public void clickIrAMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().irAMovistarTotal();
+    }
+
+    @ScreenShotBefore
+    public void clickBotonIrMovistarTotal(){
+        page.altaFijaAltaMovilCallCenterPage().clickBotonIrMovistarTotal();
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void clickListaBotones() {
+        page.altaFijaTiendaPage().listaBotones();
+    }
+
+    @ScreenShotBefore
+    public void seleccionarLineaNueva() {
+        page.altaFijaAltaMovilCallCenterPage().selectBtnLineaNueva();
+    }
+
+
+    public void seleccionoElNombreDePlanMovistarTotal() {
+        page.altaTrioMTconUpfrontTiendaPage().seleccionoElNombreDePlanMovistarTotal();
     }
 
 }

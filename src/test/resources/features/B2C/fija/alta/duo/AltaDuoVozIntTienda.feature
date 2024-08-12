@@ -14,10 +14,10 @@
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
+Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tienda
 
   @AltaDuoBByVozFTTHCanalTiendas
-  Esquema del escenario: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tiendas
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalación FTTH con documento CE por Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -26,10 +26,11 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Miguel  | Mejia     | Masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -44,21 +45,22 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Y        ingreso la informacion del lugar para la instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | A  | EDIFICIO     | Flores         | 1    | 1   | URBANIZACION POPULAR | conjunto A |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
     Y        presiono el boton Confirmar agendamiento
-    Y        ingreso email "prueba@gmail.com" y lo repito
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1992 | Albania      | Casado      |
     Y        doy click en el boton confirmar
-    Y        presiono la opcion validar contrato
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -70,5 +72,5 @@ Característica: Alta Duo (Voz + Internet) con instalación FTTH con documento C
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

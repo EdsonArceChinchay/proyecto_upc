@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class OfferSVAStepDefinition {
 
     @Autowired
-    OfferSVAStep offerSVAStep;
+    private OfferSVAStep offerSVAStep;
 
     @Y("valido que me encuentre en la pantalla {string}")
     public void validoQueMeEncuentreEnLaPantalla(String name) {
@@ -58,7 +58,5 @@ public class OfferSVAStepDefinition {
     public void agregoSVATvApp() {
         offerSVAStep.addSVATvApp();
     }
-
-
 
 }

@@ -12,13 +12,11 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-
 Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
 
   @CambioEquipoConCambioSIM
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -27,7 +25,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -37,32 +35,27 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                               |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB C/CAMP |
-    Y        selecciono tipo de pago Al Contado
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    #Y        selecciono tipo de pago Al Contado
-    #Y        presiono el boton seleccionar
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono boton mantener plan
-    #Y        Selecciono boton Cambiar Chip
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
-    #Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        doy click en el boton Iniciar registro
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     #Y        presiono el boton descargar contrato
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | cliente       |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CAJAMARCA    | CE            | 1042465085 | Jasmin Pinedo |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042465085 |

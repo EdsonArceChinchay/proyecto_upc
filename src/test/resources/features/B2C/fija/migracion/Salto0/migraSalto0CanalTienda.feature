@@ -26,7 +26,8 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -35,15 +36,13 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        doy click en el boton "Confirmar direccion"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
-    Cuando   doy clic en iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
-    #Y        ingreso datos de agendamiento "987654321" y doy clic en continuar
-    #Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -54,5 +53,5 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo           | tipoValidacion | nombreMadre | nombrePadre | distritoNac | tipoPlanHogar | planTrio                                           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 123456778 | correo@gmail.com | discapacitado  | MARIBEL     | JOSE        | SULLANA     | Trío          | Trío Movistar Voz Internet Estandar HD RA 100 Mbps |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 123456778 |

@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT029
 ##GDAP: GDAP-961
@@ -11,13 +11,11 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 09/04/2024
-@PROCS-11389
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
 Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Center
   Quiero realizar una alta movil solo sin por call center
 
-  @PROCS-11390
   @AltaMovilCECallCenter
   Esquema del escenario: Alta Movil Control Solo Sim con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
@@ -28,11 +26,11 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
 #    Y        cierro popup de aviso
@@ -46,29 +44,30 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        doy click en iniciar registro
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
     Y        selecciono el distrito donde sera la instalacion "150116"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
-    Y        presiono Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
+    Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
     Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -86,6 +85,6 @@ Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 121219511 | Control       | RV Plan Mi Movistar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 121219511 | Control       | RV Plan Mi Movistar |
 

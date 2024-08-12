@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT062
 ##GDAP: GDAP-608
@@ -26,16 +26,16 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
-    E        ingreso el numero del documento "<numDocRepLegal>" del Representante Legal
+    E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        doy click en el boton "Confirmar direccion"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -45,18 +45,18 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA linea "<sva>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento para RUC
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic en el boton validar identidad representante legal
+    Y        doy click en el boton validar identidad representante legal
     #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -64,5 +64,5 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |

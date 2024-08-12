@@ -1,5 +1,4 @@
 #language: es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -13,7 +12,6 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AltaSVA
 Característica: AT-DT109_Flujo de sva en el canal Call Center
 
@@ -27,7 +25,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -36,7 +34,7 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        valido que este en el resumen de venta
@@ -45,12 +43,11 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
-    Y        doy clic para validar contrato hogar
+    Cuando   doy click en el boton Iniciar registro
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -61,5 +58,5 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 120906347 | correo@gmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 120906347 |

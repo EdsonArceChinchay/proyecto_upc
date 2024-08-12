@@ -26,31 +26,28 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-#    Y        cierro popup de aviso
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-#    Y        verifico la direccion "" actual del servicio
-#    Y        doy click en el boton "CONFIRMAR DIRECCION"
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<planTrio>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "test.auto@gmail.com"
+    Y        ingreso correo electronico "test.auto@gmail.com"
     Y        ingreso nuevamente el correo electronico "test.auto@gmail.com"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -62,5 +59,5 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | tipoPlanHogar | planTrio                    |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 202300010 | Trío          | TRIO MOV. VOZ INT. ESTANDAR |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanHogar | planTrio                    |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 202300010 | Trío          | TRIO MOV. VOZ INT. ESTANDAR |

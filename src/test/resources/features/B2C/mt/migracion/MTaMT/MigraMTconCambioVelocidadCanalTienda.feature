@@ -26,25 +26,23 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan MT
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
-    #Y        cierro el popup de Detail
-    #Y        Selecciono una linea movil y mostrar ofertas
-    #Y        selecciono el boton Mostrar ofertas
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -54,5 +52,5 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
 
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | nombrePlan                 | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | nombrePlan                 | correo            |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 7241133711 | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |

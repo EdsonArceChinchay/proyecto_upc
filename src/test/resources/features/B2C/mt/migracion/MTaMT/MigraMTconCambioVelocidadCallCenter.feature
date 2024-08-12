@@ -26,7 +26,7 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -34,27 +34,28 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Confirmar direccion"
     Y        cierro popup de error
-    #Y        Selecciono una linea movil y mostrar ofertas
-    #Y        selecciono el boton Mostrar ofertas
-    #Y        selecciono tipo de oferta
-    #Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        selecciono el nombre de plan movistar total
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        valido que se muestre el detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | nombrePlan                 | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042465107 | Mono BA 1 Gb RV + 95 Gb RV | tester@tester.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465107 | tester@tester.com |
 

@@ -26,7 +26,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "PRUEBAS SIST CALLIN VENTA"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -35,9 +35,10 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
     Y        valido que este en el resumen de venta
-    Y        doy click en iniciar registro
-    Y        ingreso email "auto-3241@yopmail.com" y lo confirmo
-    Y        doy clic para validar contrato Movil
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto
@@ -57,7 +58,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042465074 |
-#
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465074 |
+
 

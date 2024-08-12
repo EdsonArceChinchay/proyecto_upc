@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
+##MODULO: MOVIL
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT024
@@ -11,10 +11,9 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
-Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por canal Call Center con delivery regular
+Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por canal Call Center con delivery regular
 
   @AltaControlEquipoCallCenter @MVP06 @Global
   Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
@@ -26,11 +25,11 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Entonces ingreso los datos del cliente a registrar
+    Entonces ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | Edson   | Arce      | masculino |
     Y        selecciono el boton Linea Nueva Movil
@@ -40,16 +39,16 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
-    Y        selecciono la opcion "<tipoPlanes>"
-    Y        doy click en el boton seleccionar oferta
+    Y        selecciono el tipo de plan movil "<tipoPlan>"
+    Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Linea Nueva
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
     Entonces me muestra la pantalla de Delivery de linea nueva
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
@@ -57,21 +56,21 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "earce@gmail.com"
+    Y        ingreso correo electronico "earce@gmail.com"
     Y        ingreso nuevamente el correo electronico "earce@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -88,5 +87,5 @@ Característica: AT-DT024_Alta Movil Control con equipo al contado con CE por ca
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes          | planMovil | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

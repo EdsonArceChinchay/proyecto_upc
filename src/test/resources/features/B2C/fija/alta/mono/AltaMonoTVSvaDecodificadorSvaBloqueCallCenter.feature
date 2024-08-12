@@ -26,12 +26,12 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres           | apellidos     | genero   |
       | Elizabeth Marisol | Lopez Barrios | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -46,7 +46,7 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
@@ -56,22 +56,22 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        agrego SVA decodificador "<decodificador>"
     Y        agrego SVA bloque "<bloque>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester.1.2.3@tester.com"
+    Y        ingreso correo electronico "tester.1.2.3@tester.com"
     Y        ingreso nuevamente el correo electronico "tester.1.2.3@tester.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1994 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -85,5 +85,5 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | decodificador |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL | HBO    | 24.90         |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | decodificador |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL | HBO    | 24.90         |

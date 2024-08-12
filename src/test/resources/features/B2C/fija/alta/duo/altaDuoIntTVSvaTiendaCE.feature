@@ -26,11 +26,12 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
       | FELIPE  | CRUZ ISLA | MASCULINO |
     Y        selecciono el boton Linea Nueva Hogar
@@ -42,7 +43,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
@@ -51,17 +52,18 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
-    E        inicio su registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "test.auto@gmail.com"
+    Y        ingreso correo electronico "test.auto@gmail.com"
     Y        ingreso nuevamente el correo electronico "test.auto@gmail.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 10/05/1995 | Alemania     | Casado       |
-    Y        doy clic para validar contrato hogar
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 10/05/1995 | Alemania     | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -74,5 +76,5 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | decodificador         | svaRepetidor          |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | svaRepetidor          |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta |

@@ -5,22 +5,18 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class HomePage extends WebBase {
-
-    @FindBy(xpath = "//app-root/app-park/body/div/div[1]/div[3]/div[1]")
-    protected WebElement boton01;
 
     @FindBy(xpath = "//*[contains(@class,'info-user')]/div | //app-client-info")
     protected WebElement txtNombre;
@@ -43,9 +39,6 @@ public class HomePage extends WebBase {
     @FindBy(css = ".message-welcome span")
     protected WebElement msgHome;
 
-    @FindBy(css = ".tienda-row span")
-    protected WebElement tiendaLabel;
-
     @FindBy(xpath = "//*[contains(text(),'Inicio')]")
     protected WebElement btnInicio;
 
@@ -62,11 +55,12 @@ public class HomePage extends WebBase {
     protected WebElement btnBackOffice;
 
     public void selectDocumentType(String type) {
-        UtilWeb.waitForSeconds(2);
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
+        esperaProgresiva(driver(), 6, 5, documentoList);
         click(documentoList);
-        String valueTipoDocumento = "";
+        UtilWeb.waitForSeconds(2);
+        String valueTipoDocumento;
         SearchContext context = sh().getContext(documentoList);
         switch (type) {
             case "CE":
@@ -87,90 +81,67 @@ public class HomePage extends WebBase {
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
         context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select document type " + valueTipoDocumento);
     }
 
-    public void ingresoDocumento(String documento) {
+    public void typeDocumentNumber(String number) {
         WebElement document = find().getElementByCss("#doc");
         click(document);
-        type(document, documento);
+        type(document, number);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number " + number);
     }
 
-    public void clickButtonSearch() {
-        esperaProgresiva(driver(), 3, 5, btnSearch);
+    public void clickOnConsultButton() {
+        esperaProgresiva(driver(), 5, 5, btnSearch);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnSearch.getText());
         btnSearch.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button search");
-        UtilWeb.waitForSeconds(10);
-        boolean isB2B =  !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
-        if (isB2B) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2B");
-        }
-        else{
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Customer is B2C");
-            Addons.esperaCargaMontoDeuda(driver(), 50);
-            esperaProgresiva(driver(), 3, 20, boton01);
-        }
+        boolean isB2B = !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
+        String message = isB2B ? "Customer is B2B" : "Customer is B2C";
+        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
         revisarModalError(driver());
     }
 
-    public void validarDatosCliente(String nombre, String tipoDocumento, String nroDocumento) {
+    public void validateCustomerData(String nombre, String tipoDocumento, String nroDocumento) {
         UtilWeb.waitForSeconds(2);
-        compareWebElementTextAndText(txtNombre,nombre);
-        compareWebElementTextAndText(txtNombre,tipoDocumento);
-        compareWebElementTextAndText(txtNombre,nroDocumento);
+        compareWebElementTextAndString(txtNombre, nombre);
+        compareWebElementTextAndString(txtNombre, tipoDocumento);
+        compareWebElementTextAndString(txtNombre, nroDocumento);
     }
 
-    public void seleccionoElIDDeClienteNro(String nro) {
-        UtilWeb.waitForSeconds(10);
+    public void selectCustomerId(String nro) {
         WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 3, 5, nroItem);
-        waitUntilElementIsClickable(nroItem, 20);
-        nroItem.click();
+        esperaProgresiva(driver(), 5, 5, nroItem);
+        waitUntilElementIsClickable(nroItem, 20).click();
         UtilWeb.waitForSeconds(1);
-        WebElement btnGuardar = find().getElementByXPath("//*[contains(text(),'Guardar')]");
-        btnGuardar.click();
+    }
+
+    public void clickOnSaveButton() {
+        WebElement btnSave = find().getElementByXPath("//*[contains(text(),'Guardar')]");
+        btnSave.click();
     }
 
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
-        UtilWeb.waitForSeconds(5);
-        boolean serviciosContratados;
-        serviciosContratados = !driver().findElements(By.xpath("//app-card-line")).isEmpty();
+        boolean serviciosContratados = !driver().findElements(By.xpath("//app-card-line")).isEmpty();
         if (serviciosContratados) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "El cliente SI tiene servicios contratados");
             js().scrollElementTop(find().getElementByXPath("//app-card-line"));
             UtilWeb.waitForSeconds(1);
-        } else {
-            Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
-
         }
+        Assertions.assertTrue(serviciosContratados, "El Cliente NO tiene servicios contratados");
     }
 
-    public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
-        boolean existe = false;
-        String tipoDocEsperado = tipDoc.trim().toLowerCase();
-        String nombretipoDoc = "";
-        esperaProgresiva(driver(), 2, 5, listaDocumentos);
-        js().scrollElementTop(listaDocumentos);
-        click(listaDocumentos);
-        SearchContext context = sh().getContext(listaDocumentos);
-        List<WebElement> listaDoc = context.findElements(By.cssSelector("ul li"));
-        UtilWeb.waitForSeconds(1);
-        for (int i = 0; i < listaDoc.size(); i++) {
-            nombretipoDoc = listaDoc.get(i).getText().trim().toLowerCase();
-            if (nombretipoDoc.contains(tipoDocEsperado)) {
-                existe = true;
-                listaDoc.get(i).click();
-            }
-            System.out.println(nombretipoDoc + "nombre documento");
-        }
-        Assertions.assertTrue(existe, "no se encontro: " + nombretipoDoc);
+    public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
+        esperaProgresiva(driver(), 5, 5, listaDocumentos);
+        selectElementShadowRootCSS(documentType, listaDocumentos, "ul li");
     }
 
-    public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
+    public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
         waitUntilElementIsVisible(txtDocumento, 10).click();
         type(txtDocumento, numDoc);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number of legal representative" + numDoc);
     }
 
-    public void doyClickEnValidarRepresentaLegal() {
+    public void clickOnTheValidateLegalRepresentativeButton() {
         waitUntilElementIsVisible(btnValidar, 10).click();
     }
 
@@ -179,48 +150,84 @@ public class HomePage extends WebBase {
         try {
             botonX.click();
         } catch (Exception e) {
-
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR -" + e.getMessage());
         }
     }
 
-    public void clickBackOffice() {
-        esperaProgresiva(driver(), 3, 5, btnBackOffice);
+    public void clickOnTheBackOfficeButton() {
+        esperaProgresiva(driver(), 5, 5, btnBackOffice);
         click(btnBackOffice);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
         UtilWeb.waitForSeconds(5);
     }
 
-    public void validarMsgHome(String msg) {
-        UtilWeb.waitForSeconds(1);
+    public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, msgHome);
-        compareWebElementTextAndText(msgHome,msg);
-        UtilWeb.waitForSeconds(1);
+        esperaProgresiva(driver(), 5, 5, msgHome);
+        compareWebElementTextAndString(msgHome, msg);
     }
 
-    public void validarTiendaAsesor(String tienda) {
-        compareWebElementTextAndText(tiendaLabel,tienda);
-        UtilWeb.waitForSeconds(1);
+    public String validateAgentData(String storeTypeExpected) {
+        String name = getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
+        String lastName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname");
+        String channelType = getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id");
+        String channelName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name");
+        String message = null;
+        if (name != null && lastName != null) {
+            String fullName = name + " " + lastName;
+            message = validateThatYouAreOnThePage("Agent's name: %s. ", fullName);
+        }
+        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", channelName);
+        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, channelType);
+        return printAgentData(message);
     }
 
-    public void regresarPaginaInicio() {
+    public String validateStoreType(String message, String storeTypeExpected, String storeTypeCurrent) {
+        if (storeTypeCurrent != null) {
+            if (storeTypeExpected != null) {
+                compareStringAndString(storeTypeExpected, storeTypeCurrent);
+            }
+            return String.format(message, storeTypeCurrent);
+        }
+        return null;
+    }
+
+    public String printAgentData(String message) {
+        message = message == null ? "" : message;
+        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
+        return message;
+    }
+
+    public void backToHomePage() {
         esperaProgresiva(driver(), 3, 5, btnInicio);
         js().scrollElementTop(btnInicio);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnInicio.getText());
         btnInicio.click();
         esperaProgresiva(driver(), 5, 5, msgHome);
     }
 
-    public void clickIconoAsesor() {
+    public void clickOnTheAdvisorIcon() {
         waitUntilElementIsClickable(iconAsesor, 10).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button");
     }
 
-    public void clickBtnCerrarSesion() {
+    public void clickOnTheLogoutButton() {
         waitUntilElementIsClickable(btnCerrar, 10).click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Logout");
         UtilWeb.waitForSeconds(2);
     }
 
-    public void clickBtnAtras() {
-        waitUntilElementIsClickable(btnAtras, 10).click();
+    public void ClickOnBackButton() {
+        waitUntilElementIsClickable(btnAtras, 10);
+    }
+
+    public String validateThatYouAreOnThePage(String message, String name) {
+        if (name != null) {
+            WebElement element = find().getElementByXPath("//*[contains(text(),'" + name + "')]");
+            Assertions.assertTrue(element.isDisplayed(), String.format("No found element %s", name));
+            return String.format(message, name);
+        }
+        return null;
     }
 
 }

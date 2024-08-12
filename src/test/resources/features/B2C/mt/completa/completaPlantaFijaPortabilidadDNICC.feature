@@ -27,7 +27,7 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que este activo el flag de Porta Directa
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -45,34 +45,34 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     #Y        presiono el boton Confirmar direccion
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "Entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "Entendido"
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Entonces me muestra la pantalla para ingresar la direccion de entrega
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
-    Y        selecciono horario "3pm-7pm"
-    E        ingreso telefono del titular "998877665"
+    Y        selecciono el horario de entrega "3pm-7pm"
+    E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
-    Y        doy clic en confirmar delivery
+    Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en el boton confirmar
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    Y        doy clic para validar contrato Movil
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -93,7 +93,7 @@ Característica: AT-DT0_Completa Movil ( Planta Fija + Porta Directa Movil) en c
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | numero    | tipoLinea | operador           | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | DNI           | 47618664  | 920956351 | Postpago  | OPERADOR DE PRUEBA | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 47618664  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
 
 

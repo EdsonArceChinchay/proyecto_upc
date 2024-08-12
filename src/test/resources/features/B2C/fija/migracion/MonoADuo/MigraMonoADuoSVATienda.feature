@@ -26,7 +26,8 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -43,13 +44,13 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "<Bloque>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -61,5 +62,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |

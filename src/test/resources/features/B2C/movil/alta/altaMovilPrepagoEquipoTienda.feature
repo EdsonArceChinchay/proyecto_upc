@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT030
 ##GDAP: GDAP-585
@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 09/04/2024
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMovilEquipo
 Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal Tienda
 
@@ -25,12 +25,12 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Movil
@@ -38,24 +38,28 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
-    Y        doy click en el boton linea nueva
+    Y        doy click en el boton Linea Nueva
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        valido que este en la pagina de ofertas sugeridas
+    Y        doy click en el boton Linea Nueva
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
       | 20/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | JR JULIO CESAR TELLO 469 |
-    Entonces doy clic para validar contrato Movil
+    Y        doy click en el boton confirmar
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -66,5 +70,5 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoOferta     | tipoPlanes | timpoPermanencia | nombreEquipo                | tipoPago             |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1012454448 | 15           | 1501      | 150116   | Avenida Julio Cesar Tello 460 | Inkafarma  | MOVISTAR TOTAL | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M | Financiado 12 cuotas |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago             |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1012454448 | Prepago    | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Financiado 12 cuotas |

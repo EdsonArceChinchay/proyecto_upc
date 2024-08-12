@@ -26,12 +26,12 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y     valido que se presente la tienda "<tiendaAsesor>"
+    Y     valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero    |
       | Juan    | Ortiz Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -46,27 +46,27 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     #Y        ingreso la informacion del lugar de instalacion
      # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-#    Y        selecciono el nombre de plan movistar total
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios
-    E        inicio su registro
+    Y       doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "tester@tester.com"
+    Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
     Y        doy click en datos del cliente
-    Y        completo los datos solicitados
-      | fechaNac   | nacionalidad | estado_civil |
-      | 12/12/1980 | Aruba        | Casado       |
-    Y        doy clic para validar contrato Movil
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 12/12/1980 | Aruba        | Casado      |
+    Y        doy click en el boton confirmar
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -82,7 +82,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CAJAMARCA    | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trio       |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trio       |
 
 

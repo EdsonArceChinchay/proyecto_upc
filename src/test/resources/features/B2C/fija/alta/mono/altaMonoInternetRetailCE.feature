@@ -25,12 +25,13 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Entonces valido el login exitoso mediante el mensaje "<msjHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -39,30 +40,30 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
-    Y        presiono el boton Consultar Ubicacion
+    Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | tipoVivienda | nombreVivienda | conjunto             | conjHabit |
       | CASA         | alex mancilla  | URBANIZACION POPULAR | casa      |
-    Y        presiono el boton Consultar Cobertura
+    Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 09/03/1999 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy clic en continuar
+    Y        doy click en el boton Continuar
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -71,5 +72,5 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | MOQUEGUA     | CE            | 2212464816 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | Mono     | INTERNET MOVISTAR RA |
+      | tipoUsuario     | userName    | password | msjHome    | channelType | tipoDocumento | documento  | tipoPlan | nombrePlan           |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 2212464816 | Mono     | INTERNET MOVISTAR RA |

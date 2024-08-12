@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT098
 ##GDAP: GDAP-1150
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 16/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
 Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por canal Call Center
 
@@ -26,12 +25,11 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos    | genero   |
       | MARIA MERCEDES | ZAPATA PEREZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Movil
@@ -39,8 +37,9 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el plan movil "<planMovil>"
+    Y        selecciono el tipo de plan movil "<planMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
     Y        selecciono añadir equipos
@@ -48,8 +47,9 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso el tipo de pago "<tipoPago>"
     Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
-    Y        selecciono la cartilla Linea Nueva
-    Y        doy click en iniciar registro
+    Y        doy click en el boton Linea Nueva
+    Y        valido que este en el resumen de venta
+    Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
@@ -59,21 +59,21 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
       | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso el telefono de contacto "658745259"
-    Y        ingreso las instrucciones a considerar de la entrega "En la cuadra 8 a la derecha"
-    Y        doy clic en confirmar delivery
+    Y        ingreso telefono de contacto "658745259"
+    Y        ingreso instrucciones de delivery "En la cuadra 8 a la derecha"
+    Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso un correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
     Y        doy click en datos del cliente
-    Y        ingreso los datos del cliente
+    Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Entonces doy clic para validar contrato Movil
+    Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -90,5 +90,5 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | planMovil    | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1042464781 | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464781 | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

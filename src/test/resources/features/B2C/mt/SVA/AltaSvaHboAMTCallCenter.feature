@@ -9,10 +9,9 @@
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 30/01/2024
-
+##FECMOD: 17/07/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
 Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
@@ -26,7 +25,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente la tienda "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -35,7 +34,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
-    Y        presiono el boton consultar cobertura
+    Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono boton mantener plan
@@ -43,10 +42,10 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        doy click en el boton Agregar SVA
     Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
-    Y        ingreso un correo electronico "<correo>"
+    Cuando   doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -64,5 +63,5 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464591 | test@hotmail.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464591 | test@hotmail.com |

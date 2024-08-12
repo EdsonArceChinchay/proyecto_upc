@@ -28,6 +28,7 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -44,20 +45,19 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     Y        agrego SVA bloque "<bloque>"
     Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
-    Cuando   doy clic a iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso un correo electronico "<correo>"
+    Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy clic para validar contrato hogar
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 128888888 | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |

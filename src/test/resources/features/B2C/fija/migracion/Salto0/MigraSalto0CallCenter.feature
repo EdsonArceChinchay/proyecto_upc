@@ -25,28 +25,28 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        doy click en el boton "Confirmar direccion"
     Entonces me muestra la pantalla para verificar la direccion
-    #Y        presiono el boton Confirmar direccion
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
-    Y        presiono el boton Consultar Ubicacion
-    Y        presiono el boton consultar cobertura
-    Y        doy clic en el boton "entendido"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "entendido"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
-    Cuando   doy clic en iniciar registro
+    Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso email "qaAutmator@gmail.com" y lo confirmo
-    Y        doy clic para validar contrato hogar
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
@@ -61,5 +61,5 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 1042464830 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464830 |
