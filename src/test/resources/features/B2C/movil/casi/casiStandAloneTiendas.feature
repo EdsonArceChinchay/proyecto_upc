@@ -44,7 +44,7 @@ Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy clic en continuar
-    #Y        presiono el boton Registrar venta
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
