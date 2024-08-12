@@ -66,7 +66,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        doy clic para descargar el contrato
-    Y        doy clic en Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

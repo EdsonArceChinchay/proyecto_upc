@@ -5,16 +5,15 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
 
 public class ParkPage extends WebBase {
 
@@ -54,8 +53,6 @@ public class ParkPage extends WebBase {
     protected WebElement Entendido;
     @FindBy(xpath = "//*[contains(@label,'Siguiente')]")
     protected WebElement btnSiguiente;
-    @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
-    protected WebElement cerrarCU;
     @FindBy(xpath = "//*[@label='Confirmar dirección']")
     protected WebElement btnConfirmarDireccion;
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
@@ -66,6 +63,48 @@ public class ParkPage extends WebBase {
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
     protected WebElement btnRenovarPlan;
+    @FindBy(css = ".text-info")
+    protected WebElement nombreClienteUserData;
+    @FindBy(xpath = "//button[text()='Crear cliente']")
+    protected WebElement buttonCrearCliente;
+    public boolean isNewCustomer() {
+        esperaProgresiva(driver(),5,5,nombreClienteUserData);
+        return nombreClienteUserData.getText().length() <= 8;
+    }
+
+    public void ingresarNombreClienteExtranjero(String nombre) {
+        UtilWeb.waitForSeconds(3);
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
+        esperaProgresiva(driver(), 5, 5, rootElement);
+        revisarModalError(driver());
+        typeInputShadowRootCSS(nombre,rootElement,"div > div > div > input");
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void ingresarApellidoClienteExtranjero(String apellidos) {
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
+        typeInputShadowRootCSS(apellidos,rootElement,"div > div > div > input");
+    }
+
+    public void seleccionarGeneroClienteExtranjero(String genero) {
+        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
+        click(generoList);
+        String dataValue;
+        SearchContext context = sh().getContext(generoList);
+        if (genero.equalsIgnoreCase("femenino")) {
+            dataValue = "F";
+        } else {
+            dataValue = "M";
+        }
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void crearCliente() {
+        js().scrollElementTop(buttonCrearCliente);
+        click(buttonCrearCliente);
+        UtilWeb.waitForSeconds(2);
+    }
 
     public void altaHogar() {
         UtilWeb.waitForSeconds(10);
@@ -92,7 +131,6 @@ public class ParkPage extends WebBase {
         String LineaExistente = btnLineaExistente.getText();
 
         if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
-
             refrescarLineaExistente(".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .btn-try-again");
             click(btnLineaExistente);
 
@@ -116,7 +154,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    System.out.println("No cumplen con la condicion");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
                     break;
                 }
             }
@@ -152,7 +190,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    System.out.println("No cumplen con la condicion");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
                     break;
                 }
             }
@@ -182,7 +220,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    System.out.println("No cumplen con la condicion");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
                     break;
                 }
             }
@@ -219,7 +257,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    System.out.println("No cumplen con la condicion");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
                     break;
                 }
             }
@@ -275,11 +313,9 @@ public class ParkPage extends WebBase {
 
     public void verificoLaDireccionActualDelServicio(String dir) {
         revisarModalError(driver());
-        String direccionEsperada = dir.toUpperCase().trim();
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
-        String direccionRecibida = txtDirC.getText().toUpperCase().trim();
-        Assertions.assertTrue(direccionRecibida.contains(direccionEsperada), "La direccion recibida: " + direccionRecibida + " es distinta a la esperada: " + direccionEsperada);
+        compareWebElementTextAndString(txtDirC,dir);
     }
 
     public void seleccionoBotonVerDetalle() {
@@ -328,7 +364,6 @@ public class ParkPage extends WebBase {
         type(Input, digito);
     }
 
-
     public void clickPlanMovil(String planMovil) {
         WebElement btnplanMovil = find().getElementByXPath("//*[@class='item']/span[contains(text(),'" + planMovil + "')]");
         esperaProgresiva(driver(), 5, 5, btnplanMovil);
@@ -339,22 +374,6 @@ public class ParkPage extends WebBase {
     public void clickEnBotonSiguiente() {
         esperaProgresiva(driver(), 3, 5, btnSiguiente);
         click(btnSiguiente);
-    }
-
-    public void cerrarPopupCU() {
-        UtilWeb.waitForSeconds(4);
-        try {
-            if (cerrarCU.isDisplayed()) {
-                System.out.println("Cierre Nuevo Popup....");
-                UtilWeb.waitForSeconds(4);
-                click(cerrarCU);
-            } else {
-                UtilWeb.waitForSeconds(4);
-                System.out.println("No existe Popup....");
-            }
-        } catch (Exception e) {
-            System.out.println("No hay ningún popup.....");
-        }
     }
 
     public void btnConfirmarDireccion() {
@@ -371,12 +390,12 @@ public class ParkPage extends WebBase {
         waitUntilElementIsVisible(btnDuo, 30);
         js().scrollElementTop(btnDuo);
         click(btnDuo);
-        System.out.println("click duo");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "click duo");
         UtilWeb.waitForSeconds(2);
         WebElement btnMono = find().getElementByXPath("//*[contains(text(),'" + mono.trim() + "')]");
         waitUntilElementIsVisible(btnMono, 30);
         click(btnMono);
-        System.out.println("click mono");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "click mono");
         UtilWeb.waitForSeconds(5);
     }
 
@@ -403,7 +422,6 @@ public class ParkPage extends WebBase {
         } while (status);
     }
 
-
     public void clickBtnVerDetalle(String nroServicio) {
         UtilWeb.waitForSeconds(5);
         WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
@@ -411,7 +429,6 @@ public class ParkPage extends WebBase {
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
         revisarModalError(driver());
-
     }
 
     public void selectLineWithNumber(String number) {
@@ -464,31 +481,51 @@ public class ParkPage extends WebBase {
         Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
         try {
             if (btnClienteExonerado.isDisplayed()) {
-                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
                 click(btnClienteExonerado);
             } else {
-                System.out.println("No existe Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
             }
         } catch (Exception e) {
-            System.out.println("No hay ningún popup.....");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
         }
     }
+
+    @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
+    protected WebElement cerrarCU;
 
     @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
 
+
+    public void cerrarPopupCU() {
+        UtilWeb.waitForSeconds(4);
+        try {
+            if (cerrarCU.isDisplayed()) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
+            }
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
+        }
+    }
+
     public void cerrarPopUpEstadoCU() {
         try {
             if (cerrarPopUpEstadoCU.isDisplayed()) {
-                System.out.println("Cierre Nuevo Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Cierre Nuevo Popup....");
                 UtilWeb.waitForSeconds(4);
                 click(cerrarPopUpEstadoCU);
             } else {
                 UtilWeb.waitForSeconds(4);
-                System.out.println("No existe Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"No existe Popup....");
             }
         } catch (Exception e) {
-            System.out.println("No hay ningún popup.....");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay ningún popup.....");
         }
     }
 
@@ -501,15 +538,15 @@ public class ParkPage extends WebBase {
         elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
         if (elementoExistente) {
             Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
-            System.out.println("Se cierra Popup de error");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"Se cierra Popup de error");
             try {
                 click(cierrePopUoError);
 
             } catch (Exception e) {
-                System.out.println("error al hacer click");
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"error al hacer click");
             }
         } else {
-            System.out.println("no se encontró mensaje de error");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"no se encontró mensaje de error");
         }
     }
 

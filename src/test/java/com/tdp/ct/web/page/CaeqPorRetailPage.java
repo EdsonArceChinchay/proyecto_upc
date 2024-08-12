@@ -23,6 +23,16 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
 
+    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
+    protected WebElement LblEquipos;
+    public void seleccionarEquipo() {
+        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,5,LblEquipos);
+        js().scrollElementTop(LblEquipos);
+        click(LblEquipos, 5);
+        UtilWeb.waitForSeconds(5);
+    }
+
     public void btnAnadirEquipo(int num) {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
@@ -56,16 +66,6 @@ public class CaeqPorRetailPage extends WebBase {
         js().scrollElementTop(lblSeleccionarOferta);
         waitUntilElementIsClickable(lblSeleccionarOferta, 40);//10
         click(lblSeleccionarOferta, 10);
-    }
-
-    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
-    protected WebElement LblEquipos;
-    public void seleccionarEquipo() {
-        UtilWeb.waitForSeconds(3);
-        esperaProgresiva(driver(),3,5,LblEquipos);
-        js().scrollElementTop(LblEquipos);
-        click(LblEquipos, 5);
-        UtilWeb.waitForSeconds(5);
     }
 
 

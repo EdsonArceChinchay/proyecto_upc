@@ -50,7 +50,7 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y         presiono el boton Registrar venta
+    Y         doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:

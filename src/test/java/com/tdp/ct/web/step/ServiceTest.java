@@ -110,7 +110,7 @@ public class ServiceTest {
     public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {
         testPfxKey();
         String FE = codigoVenta.trim();
-        Map<String, String> parametros = new HashMap<>();
+        Map<String, String> parameter = new HashMap<>();
 
         if (!FE.isEmpty()) {
             String response = given().headers(headersAksBerserkers())
@@ -128,7 +128,7 @@ public class ServiceTest {
                     String key = additionalData.getJSONObject(i).getString("key");
                     String value = additionalData.getJSONObject(i).getString("value");
                     if (key.equalsIgnoreCase("CAEQ") || key.equalsIgnoreCase("CAPL") || key.equalsIgnoreCase("CASI")) {
-                        parametros.put(key, value);
+                        parameter.put(key, value);
                     }
                 } catch (JSONException e) {
                     UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR");
@@ -139,7 +139,7 @@ public class ServiceTest {
         } else {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No se envio el codigo de Venta");
         }
-        return parametros;
+        return parameter;
     }
 
     public String getCodeToken(DataTable dataTable, String codigoVenta) {

@@ -49,13 +49,8 @@ public class CheckoutStepDefinition {
         checkoutStep.validarPantallaRegistrarVenta();
     }
 
-    @Y("doy clic en Registrar venta")
+    @Y("doy click en el boton Registrar venta")
     public void doyClicEnRegistrarVenta() {
-        checkoutStep.clickRegistrarVenta();
-    }
-
-    @Y("presiono el boton Registrar venta")
-    public void presiono_el_boton_Registrar_venta() {
         checkoutStep.clickRegistrarVenta();
     }
 

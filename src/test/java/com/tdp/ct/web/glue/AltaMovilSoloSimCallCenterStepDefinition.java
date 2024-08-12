@@ -3,7 +3,10 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.*;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,6 +23,16 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
 
     @Autowired
     private Customer customer;
+
+    @Autowired
+    private CheckoutStep checkoutStep;
+
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
     @Y("doy click en el boton Agregar SVA")
     public void seleccionoElBotonAgregarSva() {
@@ -55,6 +68,45 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     @Y("valido que este en la seccion Postpago o Prepago")
     public void valido_que_este_en_seccion_Postpago_Prepago() {
         altaMovilSoloSimCallCenterStep.validarSeleccionaPostpagoPrepago();
+    }
+
+    @Y("selecciono añadir equipos")
+    public void seleccionoAñadirEquipos() {
+        altaMovilSoloSimCallCenterStep.seleccionarEquipo();
+    }
+
+    @Y("doy click en el boton seleccionar oferta")
+    public void doyClickEnElBotonSeleccionarOferta() {
+        altaMovilSoloSimCallCenterStep.doyClickEnElBotonSeleccionarOferta();
+    }
+
+    @Y("presiona el boton anadir equipo")
+    public void presionaElBotonAnadirEquipo() {
+        altaMovilSoloSimCallCenterStep.btnAnadirEquipo(2);
+    }
+
+    @Y("presiona el boton anadir equipo del mismo plan")
+    public void presionaElBotonAnadirEquipoDelMismoPlan() {
+        altaMovilSoloSimCallCenterStep.btnAnadirEquipo(1);
+    }
+
+    @Y("selecciono boton mantener plan")
+    public void seleccionoBotonMantenerPlan() {
+        altaMovilSoloSimCallCenterStep.btnMantenerPlan();
+    }
+
+    @Y("selecciono boton Cambiar plan")
+    public void seleccionoBotonCambiarPlan() {
+        altaMovilSoloSimCallCenterStep.clickBotonCambiarPlan();
+    }
+
+    @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
+    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
+        String salesCode = checkoutStep.getSalesCode();
+        salesCode = salesCode == null ? customer.getSalesCode() : salesCode;
+        this.scenario.log("[Código de Venta: " + salesCode + "]");
+        altaMovilSoloSimCallCenterStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, altaMovilSoloSimCallCenterStep.getSalesLead(salesCode));
+        this.scenario.log(altaMovilSoloSimCallCenterStep.getSalesLead(salesCode).toString());
     }
 
 }
