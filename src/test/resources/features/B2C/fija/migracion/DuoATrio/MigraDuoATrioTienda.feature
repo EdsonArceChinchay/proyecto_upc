@@ -53,10 +53,11 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento | tipoPlanHogar | plan                                |correo            |
+      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento  | tipoPlanHogar | plan                                |correo            |
       | usuario externo | userNameST | passST   | Bienvenid@  | CE            | 1101010102 |  Trío         | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
