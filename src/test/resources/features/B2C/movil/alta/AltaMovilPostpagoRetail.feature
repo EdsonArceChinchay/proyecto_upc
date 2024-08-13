@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
+##MODULO: MOVIL
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT031
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
 Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
 

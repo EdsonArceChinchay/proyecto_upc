@@ -16,13 +16,6 @@ public class AltaMovilSoloSimCallCenterStep {
     @Autowired
     private ManageScenario scenario;
 
-    public void cerrarPopUpEstadoCU() {
-        page.altaMovilSoloSimCallCenterPage().cerrarPopUpEstadoCU();
-    }
-
-    public void validarOfertasSugeridas() {
-        page.altaMovilSoloSimCallCenterPage().ofertasSugeridas();
-    }
 
     public void seleccionarListaTipoPlanMovil(String planMovil) {
         page.altaMovilSoloSimCallCenterPage().listaTipoPlanMovil(planMovil);

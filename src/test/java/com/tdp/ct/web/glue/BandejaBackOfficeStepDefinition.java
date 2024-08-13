@@ -13,10 +13,13 @@ import java.util.logging.Level;
 
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class BandejaBackOfficeStepDefinition {
+
     @Autowired
     private WebDriverManager manager;
+
     @Autowired
     private BandejaBackOfficeStep bandejaBackOfficeStep;
+
     @Autowired
     private Customer customer;
 

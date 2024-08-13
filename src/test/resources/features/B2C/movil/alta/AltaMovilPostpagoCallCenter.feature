@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
+##MODULO: MOVIL
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT027
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
-##FECMOD: 06/06/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
 
@@ -26,7 +25,7 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -34,7 +33,6 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
-#    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -85,5 +83,5 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento | tipoPlanMovil | nombrePlan                 |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanMovil | nombrePlan                 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar |

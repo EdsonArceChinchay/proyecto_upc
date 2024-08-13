@@ -130,9 +130,9 @@ public class RegisterStep {
 
     @ScreenShotBefore
     public void clickButtonContinue() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         page.registerPage().clickButtonContinue();
-        UtilWeb.waitForSeconds(15);
+        UtilWeb.waitForSeconds(10);
     }
 
     @ScreenShotBefore
@@ -145,11 +145,11 @@ public class RegisterStep {
     }
 
     public String getTextoSolicitud() {
-        return page.altaFijaMovilRegistroPage().getTextoSolicitud();
+        return page.checkoutPage().getTextoSolicitud();
     }
 
     public String getSalesCode() {
-        String salesCode = page.altaFijaMovilRegistroPage().getSalesCode();
+        String salesCode = page.checkoutPage().getSalesCode();
         if (salesCode != null) {
             customer.setSalesCode(salesCode);
         } else {
@@ -231,6 +231,11 @@ public class RegisterStep {
     @ScreenShotAfter
     public void ingresoContraseñaSupervisor(String passw){
         page.altaTrioMTconUpfrontTiendaPage().ingresoContraseñaSupervisor(passw);
+    }
+
+    @ScreenShotBefore
+    public void clickBotonValidarRepreLegal() {
+        page.altaFijaTiendaPage().clickValidarRepreLegal();
     }
 
 }

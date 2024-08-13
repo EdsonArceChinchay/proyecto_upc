@@ -158,8 +158,6 @@ public class RegisterStepDefinition {
         registerStep.clicSiAcepto();
     }
 
-
-
     @Y("doy click en discapacitado o huella desgastado")
     public void doyClickEnDiscapacitadoOHuellaDesgastado() {
         registerStep.clickDiscapacitadoHuellaDesgastado();
@@ -185,4 +183,8 @@ public class RegisterStepDefinition {
         registerStep.ingresoContraseñaSupervisor(passw);
     }
 
+    @Y("doy click en el boton validar identidad representante legal")
+    public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
+        registerStep.clickBotonValidarRepreLegal();
+    }
 }

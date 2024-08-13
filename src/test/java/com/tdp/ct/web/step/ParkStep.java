@@ -69,6 +69,11 @@ public class ParkStep {
         page.parkPage().seleccionoCartillaMovistarTotal();
     }
 
+    @ScreenShotBefore
+    public void seleccionoCartillaPlanMT() {
+        page.parkPage().seleccionoCartillaPlanMT();
+    }
+
     public void esperarBtnCardPlanActual() {
         page.parkPage().esperarBtnCardPlanActual();
     }
@@ -81,6 +86,12 @@ public class ParkStep {
     @ScreenShotAfter
     public void clickBtnRenovarPlan() {
         page.parkPage().clickBtnRenovarPlan();
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void seleccionoelbotonCambiodeChip() {
+        page.parkPage().seleccionoelbotonCambiodeChip();
     }
 
     @ScreenShotBefore
@@ -169,24 +180,31 @@ public class ParkStep {
 
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        //if (customer.isNewCustomer()) {
             String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
             String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
             String genero = UtilWeb.getValueFromDataTable(datos, "genero");
             page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
             page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
             page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
-       /* } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }*/
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-     //   if (customer.isNewCustomer()) {
             page.altaFijaMovilRegistroPage().crearCliente();
-        /*} else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }*/
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void cierroPopUpDeClienteExonerado(){
+        page.parkPage().cierroPopUpDeClienteExonerado();
+    }
+
+    public void cerrarPopUpEstadoCU() {
+        page.parkPage().cerrarPopUpEstadoCU();
+    }
+
+    @ScreenShotBefore
+    public void clickCierrePopup() {
+        page.parkPage().clickCierrePopup();
     }
 }

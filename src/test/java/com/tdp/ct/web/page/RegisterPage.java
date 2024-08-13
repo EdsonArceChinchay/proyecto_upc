@@ -3,14 +3,12 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import com.tdp.ct.web.utils.Helper;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
@@ -49,6 +47,8 @@ public class RegisterPage extends WebBase {
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
+    @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='typePage']")
+    protected WebElement selectPage;
 
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
@@ -66,18 +66,18 @@ public class RegisterPage extends WebBase {
     public void typeEmail(String email) {
         esperaProgresiva(driver(), 6, 6, inputEmail);
         validateCompletedInputForm(email, inputEmail, "div > div > div > input");
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type email " + email);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type email: " + email);
 
     }
 
     public void typeConfirmEmail(String email) {
         validateCompletedInputForm(email, inputConfirmEmail, "div > div > div > input");
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type confirm email " + email);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type confirm email: " + email);
     }
 
     public void typeIdCall(String idCall) {
         validateCompletedInputForm(idCall, inputCallID, "div > div > div > input");
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type id call " + idCall);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type id call: " + idCall);
     }
 
     public void waitButtonCustomerData() {
@@ -92,35 +92,40 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeDateOfBirth(String dateOfBirth) {
-        validateCompletedInputForm(dateOfBirth,inputDateOfBirth,"div > div > div > input");
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type date of birth " + dateOfBirth);
-
+        js().scrollElementTop(inputDateOfBirth);
+        validateCompletedInputForm(dateOfBirth, inputDateOfBirth, "div > div > div > input");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type date of birth: " + dateOfBirth);
     }
 
     public void selectMaritalStatus(String estadoCivil) {
+        js().scrollElementTop(selectMaritalStatus);
         validateCompletedSelectForm(estadoCivil, selectMaritalStatus, "div > ul > li");
     }
 
     public void selectNationality(String nationality) {
+        js().scrollElementTop(selectNationality);
         validateCompletedSelectForm(nationality, selectNationality, "div > ul > li");
     }
 
     public void selectDepartment(String department) {
+        js().scrollElementTop(selectDepartment);
         validateCompletedSelectForm(department, selectDepartment, "div > ul > li");
     }
 
     public void selectProvince(String province) {
+        js().scrollElementTop(selectProvince);
         validateCompletedSelectForm(province, selectProvince, "div > ul > li");
     }
 
     public void selectDistrict(String district) {
+        js().scrollElementTop(selectDistrict);
         validateCompletedSelectForm(district, selectDistrict, "div > ul > li");
     }
 
     public void typeAddress(String address) {
         js().scrollElementTop(inputAddress);
-        validateCompletedInputForm(address,inputAddress,"div > div > span > textarea");
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type address: " + address);
+        validateCompletedInputForm(address, inputAddress, "div > div > span > textarea");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type address: " + address);
     }
 
     public void clickButtonConfirm() {
@@ -130,21 +135,8 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String tipo) {
-        String clickTipo = "div form div:nth-child(7) tdp-st-select;div:nth-child(1)";
-        WebElement tipoElement = js().getWebElement(clickTipo);
-        click(tipoElement);
-        switch (tipo) {
-            case "Boleta":
-                String selectTipo = "div form div:nth-child(7) tdp-st-select;div div:nth-child(2) ul li:nth-child(1)";
-                WebElement selectElement = js().getWebElement(selectTipo);
-                click(selectElement);
-                break;
-            case "Factura":
-                String selectTipo2 = "div form div:nth-child(7) tdp-st-select;div div:nth-child(2) ul li:nth-child(2)";
-                WebElement selectElement2 = js().getWebElement(selectTipo2);
-                click(selectElement2);
-                break;
-        }
+        js().scrollElementTop(selectPage);
+        validateCompletedSelectForm(tipo, selectPage, "div > ul > li");
     }
 
     public void clickButtonContinue() {
@@ -169,45 +161,27 @@ public class RegisterPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-        //Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
+//        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
         Addons.revisarModalError(driver());
     }
 
     public void validateCompletedSelectForm(String text, WebElement webElement, String shadowElement) {
-        final int MAX_RETRIES = 3;
+        final int MAX_RETRIES = 5;
         int counter = 0;
-        boolean isDisplayed = false;
-        while (counter < MAX_RETRIES && !isDisplayed) {
+        boolean isDisplayed = true;
+        while (counter < MAX_RETRIES && isDisplayed) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
-                UtilWeb.waitForSeconds(2);
-                isDisplayed = webElement.isDisplayed();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
+                UtilWeb.waitForSeconds(3);
+                isDisplayed=webElement.isDisplayed();
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
+                isDisplayed = false;
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + false);
             }
             counter++;
         }
-    }
-
-    public void validateCompletedInputForm(String text, WebElement webElement, String shadowElement) {
-        final int MAX_RETRIES = 3;
-        int counter = 0;
-        boolean isDisplayed = false;
-        while (counter < MAX_RETRIES && !isDisplayed) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
-            try {
-                typeInputShadowRootCSS(text, webElement, shadowElement);
-                UtilWeb.waitForSeconds(2);
-                isDisplayed = webElement.isDisplayed();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Element is Displayed" + isDisplayed);
-            } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
-            }
-            counter++;
-        }
-
     }
 
     public void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
@@ -217,7 +191,7 @@ public class RegisterPage extends WebBase {
         List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
         for (WebElement element : elementsList) {
             js().scrollElementTop(element);
-            boolean isEquals = returnCompareWebElementTextAndText(element, text);
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
                 js().scrollElementTop(element);
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element: " + element.getText());

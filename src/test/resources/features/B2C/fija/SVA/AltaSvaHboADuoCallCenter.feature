@@ -27,6 +27,7 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -56,5 +57,5 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 142536409 | prueba@prueba.com |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 142536409 | prueba@prueba.com |

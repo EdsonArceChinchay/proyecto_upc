@@ -28,7 +28,7 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -59,5 +59,5 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | correo            | tipoPlanHogar | plan             | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan             | bloque |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL | HBO    |

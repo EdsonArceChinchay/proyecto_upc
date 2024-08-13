@@ -26,10 +26,10 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero    |
       | QAN     | SESENTAYDOS | masculino |
@@ -85,5 +85,5 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tiendaAsesor              | nombreCliente   | tipoDocumento | documento | departamento | provincia | distrito | direccion                         | referencia | tipoOferta     | nombrePlan                                | correo           | celularExistente |
-      | usuario interno | userNameQAN | passQAN  | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | QAN SESENTAYDOS | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | MOVISTAR TOTAL | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | correo@gmail.com | 995396095        |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
+      | usuario interno | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |

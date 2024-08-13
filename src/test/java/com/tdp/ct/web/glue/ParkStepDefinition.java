@@ -10,14 +10,47 @@ public class ParkStepDefinition {
     @Autowired
     private ParkStep parkStep;
 
-    @Y("selecciono la cartilla del plan activo")
-    public void selecciono_la_cartilla_del_plan_Activo() {
-        parkStep.selecciono_la_cartilla_del_plan_Activo();
+    @Y("ingreso los datos del nuevo cliente")
+    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
+        parkStep.verificarClienteNuevo();
+        parkStep.ingresarDatosClienteExtranjero(value);
+        parkStep.clicEnCrearCliente();
     }
 
     @Y("selecciono el boton Linea Nueva Hogar")
     public void seleccionoElBotonLineaNuevaHogar() {
         parkStep.btnHogar();
+    }
+
+    @Y("selecciono el boton Linea Nueva Movil")
+    public void seleccionoElBotonLineaNuevaMovil() {
+        parkStep.btnMovil();
+    }
+
+    @Y("selecciono el boton Mostrar ofertas")
+    public void seleccionoElBotonMostrarOfertas() {
+        parkStep.btnMostrar();
+    }
+
+    @Y("doy click en el boton Ver detalle del servicio {string}")
+    public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
+        parkStep.clickBtnVerDetalle(nroServicio);
+    }
+
+    @Y("selecciono la linea con numero {string}")
+    public void seleccionoLaLineaConNumero(String number) {
+        parkStep.selectLineWithNumber(number);
+    }
+
+    @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
+    public void selecciono_el_mono_y_duo_a_paquetizar(String mono,String duo){
+        parkStep.clickMonoYDuo(mono,duo);
+    }
+
+
+    @Y("selecciono la cartilla del plan activo")
+    public void selecciono_la_cartilla_del_plan_Activo() {
+        parkStep.selecciono_la_cartilla_del_plan_Activo();
     }
 
     @Y("selecciono el boton de la Linea Hogar Existente {string}")
@@ -45,19 +78,24 @@ public class ParkStepDefinition {
         parkStep.btnLineaMovilExistente();
     }
 
-    @Y("selecciono el boton Linea Nueva Movil")
-    public void seleccionoElBotonLineaNuevaMovil() {
-        parkStep.btnMovil();
-    }
-
-    @Y("selecciono el boton Mostrar ofertas")
-    public void seleccionoElBotonMostrarOfertas() {
-        parkStep.btnMostrar();
-    }
-
     @Y("cierro el popup de contraseña Única")
     public void cierroElPopupDeContraseñaÚnica() {
         parkStep.cerrarPopupCU();
+    }
+
+    @Y("cierro pop up de Cliente Exonerado")
+    public void cierroPopUpDeClienteExonerado() {
+        parkStep.cierroPopUpDeClienteExonerado();
+    }
+
+    @Y("cierro el popup de validación de estado de contraseña única")
+    public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
+        parkStep.cerrarPopUpEstadoCU();
+    }
+
+    @Y("cierro popup de error")
+    public void cierroPopupDeError() {
+        parkStep.clickCierrePopup();
     }
 
     @Y("Selecciono la cartilla del plan Motvistar Total")
@@ -65,6 +103,10 @@ public class ParkStepDefinition {
         parkStep.seleccionoCartillaMovistarTotal();
     }
 
+    @Y("selecciono la cartilla del plan MT")
+    public void seleccionoLaCartillaDelPlanMT() {
+        parkStep.seleccionoCartillaPlanMT();
+    }
 
     @Y("selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan")
     public void seleccionoElBtnVerDetalleDelPlanActualYPresionoElBtnRenovarPlan() {
@@ -75,9 +117,12 @@ public class ParkStepDefinition {
 
     @Y("presiono el boton Renovar Plan")
     public void presionoElBtnRenovarPlan() {
-        //parkStep.esperarBtnCardPlanActual();
-//        parkStep.clickBtnCardPlanActual();
         parkStep.clickBtnRenovarPlan();
+    }
+
+    @Y("selecciono el boton Cambiar Chip")
+    public void seleccionoelbotonCambiodeChip() {
+        parkStep.seleccionoelbotonCambiodeChip();
     }
 
     @Y("selecciono el boton Ver detalle del plan actual y actualizar ruc")
@@ -110,7 +155,6 @@ public class ParkStepDefinition {
         parkStep.seleccionoElPlanQueDesea(planMovil);
     }
 
-
     @Y("doy click en el boton Siguiente")
     public void doyClickEnBotonSiguiente() {
         parkStep.doyClickEnBotonSiguiente();
@@ -126,31 +170,8 @@ public class ParkStepDefinition {
         parkStep.btnConfirmarDireccion();
     }
 
-    @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
-    public void selecciono_el_mono_y_duo_a_paquetizar(String mono,String duo){
-        parkStep.clickMonoYDuo(mono,duo);
-    }
-
     @Y("doy click en el boton continuar")
     public void doyClickEnElBotonContinuar() {
         parkStep.botonContinuar();
     }
-
-    @Y("doy click en el boton Ver detalle del servicio {string}")
-    public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
-        parkStep.clickBtnVerDetalle(nroServicio);
-    }
-
-    @Y("selecciono la linea con numero {string}")
-    public void seleccionoLaLineaConNumero(String number) {
-        parkStep.selectLineWithNumber(number);
-    }
-
-    @Y("ingreso los datos del nuevo cliente")
-    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
-        parkStep.verificarClienteNuevo();
-        parkStep.ingresarDatosClienteExtranjero(value);
-        parkStep.clicEnCrearCliente();
-    }
-
 }

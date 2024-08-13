@@ -12,25 +12,21 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareStringAndString;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 
 public class CaeqPorRetailPage extends WebBase {
 
     @FindBy(xpath = "//div/button[@class=\"btnCard\"]")
-    protected  WebElement botonMantenerPlan;
+    protected WebElement botonMantenerPlan;
 
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
 
-    @FindBy (xpath = "//button[contains(text(),'Cambio de chip')]")
-    protected WebElement btnCambiodeChip;
-
-    @FindBy (xpath = "//*[contains(text(),'CONTINUAR')]")
-    protected WebElement btnClienteExonerado;
-
     public void btnAnadirEquipo(int num) {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
-        WebElement btnAñadirEquipo = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])["+num+"]");
+        WebElement btnAñadirEquipo = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])[" + num + "]");
         esperaProgresiva(driver(), 5, 5, btnAñadirEquipo);
         js().scrollElementTop(btnAñadirEquipo);
         click(btnAñadirEquipo);
@@ -48,44 +44,29 @@ public class CaeqPorRetailPage extends WebBase {
     }
 
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> valuesMovil) {
-        String getValueCAEQ, getValueCAPL, getValueCASI;
-
-        getValueCAEQ = valuesMovil.get("CAEQ").trim().toUpperCase();
-        getValueCAPL = valuesMovil.get("CAPL").trim().toUpperCase();
-        getValueCASI = valuesMovil.get("CASI").trim().toUpperCase();
-
-        valueCAEQ = valueCAEQ.trim().toUpperCase();
-        valueCAPL = valueCAPL.trim().toUpperCase();
-        valueCASI = valueCASI.trim().toUpperCase();
-
-        Assertions.assertEquals(valueCAEQ, getValueCAEQ, "El valor de CAEQ esperado: " + valueCAEQ + " es diferente al obtenido: " + getValueCAEQ);
-        Assertions.assertEquals(valueCAPL, getValueCAPL, "El valor de CAPL esperado: " + valueCAPL + " es diferente al obtenido: " + getValueCAPL);
-        Assertions.assertEquals(valueCASI, getValueCASI, "El valor de CASI esperado: " + valueCASI + " es diferente al obtenido: " + getValueCASI);
-
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CAEQ esperado: " + valueCAEQ + " y el obtenido es:" + getValueCAEQ + ", los valores son iguales "+valueCAEQ.equals(getValueCAEQ));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CAPL esperado: " + valueCAPL + " y el obtenido es:" + getValueCAPL + ", los valores son iguales "+valueCAPL.equals(getValueCAPL));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "El valor de CASI esperado: " + valueCASI + " y el obtenido es:" + getValueCASI + ", los valores son iguales "+valueCASI.equals(getValueCASI));
-
+        compareStringAndString(valueCAEQ, valuesMovil.get("CAEQ"));
+        compareStringAndString(valueCAPL, valuesMovil.get("CAPL"));
+        compareStringAndString(valueCASI, valuesMovil.get("CASI"));
     }
 
-    public void seleccionoelbotonCambiodeChip() {
-        Addons.esperaProgresiva(driver(), 5, 5, btnCambiodeChip);
-        js().scrollElementTop(btnCambiodeChip);
-        click(btnCambiodeChip);
-    }
-    public void cierroPopUpDeClienteExonerado(){
-        Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
-        try {
-            if (btnClienteExonerado.isDisplayed()) {
-                System.out.println("Cierre Nuevo Popup....");
-                click(btnClienteExonerado);
-            } else {
-                System.out.println("No existe Popup....");
-            }
-        } catch (Exception e) {
-            System.out.println("No hay ningún popup.....");
-        }
+    @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
+    protected WebElement lblSeleccionarOferta;
 
+    public void doyClickEnElBotonSeleccionarOferta() {
+        js().scrollElementTop(lblSeleccionarOferta);
+        waitUntilElementIsClickable(lblSeleccionarOferta, 40);//10
+        click(lblSeleccionarOferta, 10);
     }
+
+    @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
+    protected WebElement LblEquipos;
+    public void seleccionarEquipo() {
+        UtilWeb.waitForSeconds(3);
+        esperaProgresiva(driver(),3,5,LblEquipos);
+        js().scrollElementTop(LblEquipos);
+        click(LblEquipos, 5);
+        UtilWeb.waitForSeconds(5);
+    }
+
 
 }

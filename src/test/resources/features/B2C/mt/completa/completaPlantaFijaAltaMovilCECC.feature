@@ -1,19 +1,18 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: COMPLETA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
-##GDAP: GDAP-
+##GDAP: GDAP-716
 ##SPRINT CREADO: PI20_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
-
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
 Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero (CE) por canal Call Center
 
   @CompletaPlantaFijaAltaMovil
@@ -26,6 +25,7 @@ Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -53,7 +53,6 @@ Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero
     E        ingreso telefono de contacto "998877665"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy click en confirmar delivery
-    #Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
@@ -77,5 +76,5 @@ Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | nombrePlan | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300009 | Trio       | 9234828220      |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | nombrePlan | numeroExistente |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 202300009 | Trio       | 9234828220      |

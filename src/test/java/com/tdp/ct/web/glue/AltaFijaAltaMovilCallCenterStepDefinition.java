@@ -3,7 +3,6 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
-import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +20,43 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     public void selecciono_tipo_de_oferta() {
         altaFijaAltaMovilCallCenterStep.scrollUp();
         altaFijaAltaMovilCallCenterStep.clickOferta();
+    }
+
+    @Y("selecciono la oferta {string}")
+    public void seleccionoLaOferta(String oferta) {
+        altaFijaTiendaStep.seleccionarListaOfertas(oferta);
+        altaFijaTiendaStep.clickSeleccionarOferta();
+    }
+
+    @Y("selecciono el boton Linea Nueva")
+    public void seleccionoElBotonLineaNueva() {
+        altaFijaAltaMovilCallCenterStep.clickListaBotones();
+    }
+
+    @Y("doy click en el boton Linea Nueva")
+    public void selecciono_en_linea_nueva() {
+        altaFijaAltaMovilCallCenterStep.seleccionarLineaNueva();
+    }
+    @Y("doy click en Cambiar plan hogar")
+    public void doyClickEnCambiarPlanHogar() {
+        altaFijaTiendaStep.seleccionarboton();
+    }
+
+    @Y("selecciono el tipo de plan fija {string}")
+    public void selecciono_el_tipo_de_plan_fija(String planFija) {
+        altaFijaTiendaStep.seleccionarListaPLanFija(planFija);
+    }
+
+    @Y("selecciono el plan {string}")
+    public void selecciono_el_plan(String nombrePlan) {
+        altaFijaTiendaStep.seleccionarListaOfertas(nombrePlan);
+        altaFijaTiendaStep.clickSeleccionarOferta();
+        altaFijaAltaMovilCallCenterStep.clickListaBotones();
+    }
+
+    @Y("doy click en añadir SVA")
+    public void doyClickEnAñadirSVA() {
+        altaFijaTiendaStep.doyClickEnAñadirSVA();
     }
 
     @Y("selecciono el boton de eleccion de planes")
@@ -47,9 +83,14 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
-    @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
-    public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
-        altaFijaTiendaStep.validarNomPlan(nomPlan);
+    @Y("doy click en el boton Ir a movistar total")
+    public void doyClickEnElBotonIrAMovistarTotal() {
+        altaFijaAltaMovilCallCenterStep.clickBotonIrMovistarTotal();
+    }
+
+    @Y("selecciono el nombre de plan movistar total")
+    public void seleccionoElNombreDePlanMovistarTotal() {
+        altaFijaAltaMovilCallCenterStep.seleccionoElNombreDePlanMovistarTotal();
     }
 
     @Y("valido la velocidad de internet {string}")
@@ -72,14 +113,4 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaTiendaStep.validarPrecioDescuentoTV(pDescTV);
     }
 
-    @Y("selecciono la oferta {string}")
-    public void seleccionoLaOferta(String oferta) {
-        altaFijaTiendaStep.seleccionarListaOfertas(oferta);
-        altaFijaTiendaStep.clickSeleccionarOferta();
-    }
-
-    @Y("selecciono en linea Nueva")
-    public void selecciono_en_linea_nueva() {
-        altaFijaAltaMovilCallCenterStep.seleccionarLineaNueva();
-    }
 }

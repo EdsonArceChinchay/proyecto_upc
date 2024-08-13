@@ -18,8 +18,7 @@ import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.selectEnabledItemFromAListOfItems;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
-    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
-    protected WebElement ofertasSugeridas;
+
     @FindBy(xpath = "(//div[@class='button-filter-section'])/button")
     protected List<WebElement> listaTipoPlanMovil;
     @FindBy(xpath = "(//div[contains(@class,'offert-card-title')])/div[2]")
@@ -32,41 +31,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement btnLeft;
     @FindBy(xpath = "//div[@class='detalle_sub']")
     protected WebElement subDetalles;
-    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
-    protected WebElement cerrarPopUpEstadoCU;
+
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
-
-    public void cerrarPopUpEstadoCU() {
-        try {
-            if (cerrarPopUpEstadoCU.isDisplayed()) {
-                System.out.println("Cierre Nuevo Popup....");
-                UtilWeb.waitForSeconds(4);
-                click(cerrarPopUpEstadoCU);
-            } else {
-                UtilWeb.waitForSeconds(4);
-                System.out.println("No existe Popup....");
-            }
-        } catch (Exception e) {
-            System.out.println("No hay ningún popup.....");
-        }
-    }
-
-    public void ofertasSugeridas() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, ofertasSugeridas);
-        revisarModalError(driver());
-        boolean elementoExistente;
-        elementoExistente = !driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).isEmpty();
-        if (elementoExistente) {
-            js().scrollElementTop(subDetalles);
-            click(subDetalles);
-            System.out.println("si estaba abierto el detalle");
-            UtilWeb.waitForSeconds(1);
-        }
-        revisarModalError(driver());
-        Assert.assertTrue("No esta presente el elemento", ofertasSugeridas.isDisplayed());
-    }
 
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);

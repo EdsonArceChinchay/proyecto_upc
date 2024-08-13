@@ -6,11 +6,14 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+import java.util.HashMap;
+
 @Component
 public class HomeStep {
 
     @Autowired
-    private StepPages page;
+    protected StepPages page;
 
     @ScreenShotAfter
     public void selectDocumentType(String type) {
@@ -28,13 +31,18 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void validacionDeDatos(String nombre, String tipoDocumento, String nroDocumento) {
-        page.homePage().validarDatosCliente(nombre, tipoDocumento, nroDocumento);
+    public void validateCustomerData(String nombre, String tipoDocumento, String nroDocumento) {
+        page.homePage().validateCustomerData(nombre, tipoDocumento, nroDocumento);
     }
 
-    @ScreenShotAfter
-    public void seleccionoElIDDeClienteNro(String nro) {
-        page.homePage().seleccionoElIDDeClienteNro(nro);
+    @ScreenShotBefore
+    public void selectCustomerId(String nro) {
+        page.homePage().selectCustomerId(nro);
+    }
+
+    @ScreenShotBefore
+    public void clickOnSaveButton() {
+        page.homePage().clickOnSaveButton();
     }
 
     @ScreenShotAfter
@@ -43,18 +51,18 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void seleccionoElTipoDeDocumentoDelRepresentanteLegal(String tipDoc) {
-        page.homePage().seleccionoElTipoDeDocumentoDelRepresentanteLegal(tipDoc);
+    public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
+        page.homePage().selectTheTypeOfDocumentOfTheLegalRepresentative(documentType);
     }
 
     @ScreenShotAfter
-    public void ingresoElNumeroDelDocumentoDelRepresentanteLegal(String numDoc) {
-        page.homePage().ingresoElNumeroDelDocumentoDelRepresentanteLegal(numDoc);
+    public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
+        page.homePage().typeTheDocumentNumberOfTheLegalRepresentative(numDoc);
     }
 
     @ScreenShotAfter
-    public void doyClickEnValidarRepresentaLegal() {
-        page.homePage().doyClickEnValidarRepresentaLegal();
+    public void clickOnTheValidateLegalRepresentativeButton() {
+        page.homePage().clickOnTheValidateLegalRepresentativeButton();
     }
 
     public void clickXPopUpCU() {
@@ -67,17 +75,26 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
+    public String validateAgentData(String channelType){
+        Map<String, String> storeMap = new HashMap<>();
+        storeMap.put("CC", "CC");
+        storeMap.put("CALL CENTER", "CC");
+        storeMap.put("ST", "ST");
+        storeMap.put("TIENDA", "ST");
+        storeMap.put("DLC", "DLC");
+        storeMap.put("RETAIL", "DLC");
+        String store = storeMap.getOrDefault(channelType.trim().toUpperCase(), null);
+       return page.homePage().validateAgentData(store);
+    }
+
+    @ScreenShotAfter
     public void validateHomeMessage(String msg) {
         page.homePage().validateHomeMessage(msg);
     }
 
-    @ScreenShotAfter
-    public void validateStoreType(String tienda) {
-        page.homePage().validateStoreType(tienda);
-    }
 
-    public void regresarPaginaInicio() {
-        page.homePage().regresarPaginaInicio();
+    public void backToHomePage() {
+        page.homePage().backToHomePage();
     }
 
     @ScreenShotAfter
@@ -86,13 +103,13 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnCerrarSesion() {
+    public void clickOnTheLogoutButton() {
         page.homePage().clickOnTheLogoutButton();
     }
 
     @ScreenShotAfter
-    public void doyClickEnAtras() {
-        page.homePage().clickBtnAtras();
+    public void ClickOnBackButton() {
+        page.homePage().ClickOnBackButton();
     }
 
     @ScreenShotAfter

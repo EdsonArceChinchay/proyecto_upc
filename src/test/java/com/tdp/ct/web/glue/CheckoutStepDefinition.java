@@ -1,6 +1,11 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.CaptchaBase.Parameters;
+import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.CheckoutStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -8,6 +13,63 @@ public class CheckoutStepDefinition {
 
     @Autowired
     private CheckoutStep checkoutStep;
+
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
+
+    @Autowired
+    private Customer customer;
+
+    @Y("me muestra pantalla para Descargar contrato")
+    public void meMuestraPantallaParaDescargarContrato() {
+        checkoutStep.mostrarPantallaDescargarContrato();
+    }
+
+    @Y("presiono el boton descargar contrato")
+    public void presiono_el_boton_descargar_contrato() {
+        checkoutStep.clickDescargarContrato();
+        checkoutStep.clickDescargarPdf();
+        checkoutStep.cambiarPestanaPrincipal();
+        checkoutStep.clickCerrarPopUp();
+    }
+
+    @Y("doy clic para descargar el contrato")
+    public void doyClicParaDescargarElContrato() {
+        if (Parameters.estadoFlujo) {
+            checkoutStep.clicDescargarContrato();
+        }
+    }
+
+    @Entonces("me muestra la pantalla registrar venta")
+    public void meMuestraLaPantallaParaRegistrarVenta() {
+        checkoutStep.validarPantallaRegistrarVenta();
+    }
+
+    @Y("doy clic en Registrar venta")
+    public void doyClicEnRegistrarVenta() {
+        checkoutStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono el boton Registrar venta")
+    public void presiono_el_boton_Registrar_venta() {
+        checkoutStep.clickRegistrarVenta();
+    }
+
+    @Y("presiono en el boton de Registrar Venta")
+    public void presionoEnElBotonDeRegistrarVenta() {
+        checkoutStep.clickBotonRegistrarVenta();
+    }
+
+    @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
+    public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
+        checkoutStep.validarVentaGenerada();
+        this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
+        this.scenario.log(customer.getOrdersCode().toString());
+    }
 
     @Y("doy click en ver detalle del pedido")
     public void doyClickenVerDetalleDelPedido() {

@@ -17,7 +17,7 @@
 Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call Center
 
   @CaeqCaplCasi
-  Esquema del escenario: Como usuario <userName> de la Tienda <tiendaAsesor> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -26,6 +26,7 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -46,9 +47,6 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
-   #Y        ingreso la informacion del lugar de instalacion
-    #  | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-     # | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -78,6 +76,6 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlan | nombrePlan                     |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PRUEBAS SIST CALLIN VENTA | CE            | 1042464630 | Postpago | Plan Movil Movistar Total ilim |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464630 |
 

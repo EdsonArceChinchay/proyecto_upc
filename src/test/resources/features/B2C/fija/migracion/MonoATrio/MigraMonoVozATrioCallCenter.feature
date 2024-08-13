@@ -5,8 +5,8 @@
 ##FUNCIONALIDAD:Migra
 ##ESTADO:
 ##CODIGO:
-##GDAP:GDAP-1442
-##SPRINT CREADO:PI18 SP4
+##GDAP: GDAP-1442
+##SPRINT CREADO:PI18_SP4
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
@@ -29,7 +29,8 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -40,9 +41,6 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "entendido"
-    #Y        selecciono tipo de oferta
-    #Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    #Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
@@ -70,6 +68,6 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | tipoPlanHogar | plan                                           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 202300004 | TRÍO          | TRIO MOV. VOZ INT. ESTANDAR HD RA A24 100 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 202300004 |
 

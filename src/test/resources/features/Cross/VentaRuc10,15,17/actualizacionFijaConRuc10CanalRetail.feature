@@ -25,7 +25,8 @@ Característica: Actualizacion fija con ruc 10 canal Retail
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -56,5 +57,5 @@ Característica: Actualizacion fija con ruc 10 canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |

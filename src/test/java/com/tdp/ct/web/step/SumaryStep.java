@@ -21,8 +21,17 @@ public class SumaryStep {
         page.summaryPage().paginaResumen();
     }
 
-    public void moverToElementIniciarRegistro() {
-        page.summaryPage().moverToElementIniciarRegistro();
+    public void moverToElementStartRegister() {
+        page.summaryPage().moverToElementStartRegister();
+    }
+
+    public void validarNomPlan(String nomPlan) {
+        page.summaryPage().validarNomPlan(nomPlan);
+    }
+
+    @ScreenShotAfter
+    public void validacionPrecio(String precioPLan) {
+        page.summaryPage().validacionPrecio(precioPLan);
     }
 
 }

@@ -14,6 +14,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
 
 public class AppointmentPage extends WebBase {
 
@@ -42,7 +43,7 @@ public class AppointmentPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(buttonIniciarRegistro);
         clickBtnCerrarModalError(buttonIniciarRegistro);
-        esperaProgresiva(driver(), 2, 5, labelAgendamiento);
+        esperaProgresiva(driver(), 6, 6, labelAgendamiento);
         revisarModalError(driver());
         boolean existe = labelAgendamiento.isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Existe titulo >>> {0}", labelAgendamiento.getText());
@@ -52,8 +53,7 @@ public class AppointmentPage extends WebBase {
     public void ingresarContacto(String contacto) {
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
-        SearchContext context = sh().getContext(rootInput);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(contacto);
+        typeInputShadowRootCSS(contacto,rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -69,7 +69,6 @@ public class AppointmentPage extends WebBase {
             click(listaDias.get(0));
             System.out.println("listaDias: " + listaDias.get(0).getText());
         }
-
         boolean elementoExistente;
         elementoExistente = !driver().findElements(By.xpath("//div[@class='contHours']")).isEmpty();
         if (elementoExistente) {
@@ -78,13 +77,10 @@ public class AppointmentPage extends WebBase {
             click(listaHorario.get(0));
             System.out.println("paso aqui 2 " + listaHorario.get(0).getText());
         }
-
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
-        SearchContext context = sh().getContext(rootInput);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys("956425985");
+        typeInputShadowRootCSS("956425985",rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-
     }
 
     public boolean verficarPantallaAgendamiento() {
@@ -118,7 +114,6 @@ public class AppointmentPage extends WebBase {
 
     public void ingresarDatosAgendamientoParaRUC() {
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-//         Calendario
         boolean elementoExistenteDias;
         elementoExistenteDias = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).isEmpty();
         if (elementoExistenteDias) {
@@ -142,21 +137,13 @@ public class AppointmentPage extends WebBase {
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
         WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
-
-        SearchContext context = sh().getContext(rootInput);
-        context.findElement(By.cssSelector("div > div > div > input")).sendKeys("Edson");
+        typeInputShadowRootCSS("Edson",rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-
-        SearchContext context1 = sh().getContext(rootInput1);
-        context1.findElement(By.cssSelector("div > div > div > input")).sendKeys("Arce");
+        typeInputShadowRootCSS("Arce",rootInput1,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-
-        SearchContext context2 = sh().getContext(rootInput2);
-        context2.findElement(By.cssSelector("div > div > div > input")).sendKeys("976709704");
+        typeInputShadowRootCSS("976709704",rootInput2,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-
-        SearchContext context3 = sh().getContext(rootInput3);
-        context3.findElement(By.cssSelector("div > div > div > input")).sendKeys("906701238");
+        typeInputShadowRootCSS("906701238",rootInput3,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 

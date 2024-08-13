@@ -17,16 +17,8 @@ public class StepPages {
         return new AltaFijaAltaMovilCallCenterPage();
     }
 
-    public AltaMovilPostpagoCallCenterPage altaMovilPostpagoCallCenterPage() {
-        return new AltaMovilPostpagoCallCenterPage();
-    }
-
     public AltaFijaTiendaPage altaFijaTiendaPage() {
         return new AltaFijaTiendaPage();
-    }
-
-    public AltaMonoInstalacionFtthTiendaPage altaMonoFtthTiendaPage() {
-        return new AltaMonoInstalacionFtthTiendaPage();
     }
 
     public AltaMovilSoloSimCallCenterPage altaMovilSoloSimCallCenterPage() {
@@ -39,14 +31,6 @@ public class StepPages {
 
     public CaeqPorRetailPage caeqPorRetailPage() {
         return new CaeqPorRetailPage();
-    }
-
-    public MigraSalto0RetailPage migraSalto0RetailPage() {
-        return new MigraSalto0RetailPage();
-    }
-
-    public PortabilityPage portabilityPage() {
-        return new PortabilityPage();
     }
 
     public AltaValidacionPrecioDescuentoPage altaValidacionPrecioDescuentoPage() {
@@ -81,6 +65,10 @@ public class StepPages {
         return new DeliveryPage();
     }
 
+    public OfferPage offerPage() {
+        return new OfferPage();
+    }
+
     public OfferSVAPage offerSVAPage() {
         return new OfferSVAPage();
     }
@@ -103,6 +91,10 @@ public class StepPages {
 
     public BandejaBackOfficePage bandejaBackOfficePage() {
         return new BandejaBackOfficePage();
+    }
+
+    public PortabilityPage portabilityPage() {
+        return new PortabilityPage();
     }
 
 }

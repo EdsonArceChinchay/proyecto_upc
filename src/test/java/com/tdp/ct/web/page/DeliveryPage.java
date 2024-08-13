@@ -3,16 +3,13 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
-import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
+import static com.tdp.ct.web.utils.Helper.*;
 
 public class DeliveryPage extends WebBase {
     @FindBy(xpath = "//tdp-st-select[@formcontrolname='deliveryType'] | //*[@formcontrolname='deliveryType']")
@@ -25,7 +22,15 @@ public class DeliveryPage extends WebBase {
     protected WebElement inputInstruction;
     @FindBy(xpath = "//tdp-st-input-text[@formcontrolname='contactNumber'] | //*[@formcontrolname='contactNumber']")
     protected WebElement inputContactNumber;
+    @FindBy(css = "body > app-root > app-delivery > div.info-user span")
+    protected WebElement titleDelivery;
 
+    public boolean meMuestraLaPantallaDeDeliveryDeLineaNueva() {
+        boolean existe = waitUntilElementIsVisible(titleDelivery, 60).isDisplayed();
+        UtilWeb.waitForSeconds(1);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de delivery de la linea nueva", existe);
+        return existe;
+    }
 
     public void clickButtonConfirmLocation() {
         esperaProgresiva(driver(), 6, 5, btnConfirmLocation);
@@ -37,18 +42,7 @@ public class DeliveryPage extends WebBase {
     public void selectTypeOfDelivery(String deliveryType) {
         esperaProgresiva(driver(), 6, 6, selectDeliveryType);
         js().scrollElementTop(selectDeliveryType);
-        selectDeliveryType.click();
-        UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan = selectDeliveryType.getShadowRoot();
-        List<WebElement> listItems = contexPlan.findElements(By.cssSelector("div > ul > li"));
-        for (WebElement item : listItems) {
-            boolean isEquals = returnCompareWebElementTextAndText(item, deliveryType);
-            if (isEquals) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Select element " + item.getText());
-                item.click();
-                break;
-            }
-        }
+        selectElementShadowRootCSS(deliveryType, selectDeliveryType, "div > ul > li");
     }
 
     public void clickOnDeliveryTime(String hour) {

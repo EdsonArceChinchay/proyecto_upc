@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,11 @@ import org.springframework.stereotype.Component;
 public class DeliveryStep {
     @Autowired
     private StepPages page;
+
+    @ScreenShotAfter
+    public void meMuestraLaPantallaDeDeliveryDeLineaNueva() {
+        Assert.assertTrue(page.deliveryPage().meMuestraLaPantallaDeDeliveryDeLineaNueva());
+    }
 
     @ScreenShotAfter
     public void clickButtonConfirmLocation() {

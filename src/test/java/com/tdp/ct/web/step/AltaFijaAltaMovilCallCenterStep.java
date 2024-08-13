@@ -2,6 +2,7 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
+import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,24 @@ public class AltaFijaAltaMovilCallCenterStep {
     }
 
     @ScreenShotBefore
+    public void clickBotonIrMovistarTotal(){
+        page.altaFijaAltaMovilCallCenterPage().clickBotonIrMovistarTotal();
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void clickListaBotones() {
+        page.altaFijaTiendaPage().listaBotones();
+    }
+
+    @ScreenShotBefore
     public void seleccionarLineaNueva() {
         page.altaFijaAltaMovilCallCenterPage().selectBtnLineaNueva();
+    }
+
+
+    public void seleccionoElNombreDePlanMovistarTotal() {
+        page.altaTrioMTconUpfrontTiendaPage().seleccionoElNombreDePlanMovistarTotal();
     }
 
 }

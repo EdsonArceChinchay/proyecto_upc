@@ -1,8 +1,8 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.CaeqPorReatilStep;
+import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
@@ -10,8 +10,13 @@ import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CaeqPorReatilStepDefinition {
+
     @Autowired
     private CaeqPorReatilStep caeqPorReatilStep;
+
+    @Autowired
+    private CheckoutStep checkoutStep;
+
     @Autowired
     private Customer customer;
 
@@ -21,8 +26,16 @@ public class CaeqPorReatilStepDefinition {
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
-    @Autowired
-    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+
+    @Y("selecciono añadir equipos")
+    public void seleccionoAñadirEquipos() {
+        caeqPorReatilStep.seleccionarEquipo();
+    }
+
+    @Y("doy click en el boton seleccionar oferta")
+    public void doyClickEnElBotonSeleccionarOferta() {
+        caeqPorReatilStep.doyClickEnElBotonSeleccionarOferta();
+    }
 
     @Y("presiona el boton anadir equipo")
     public void presionaElBotonAnadirEquipo() {
@@ -46,21 +59,11 @@ public class CaeqPorReatilStepDefinition {
 
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
-        String salesCode = altaFijaMovilRegistroStep.getSalesCode();
+        String salesCode = checkoutStep.getSalesCode();
         salesCode = salesCode == null ? customer.getSalesCode() : salesCode;
         this.scenario.log("[Código de Venta: " + salesCode + "]");
         caeqPorReatilStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, caeqPorReatilStep.getSalesLead(salesCode));
         this.scenario.log(caeqPorReatilStep.getSalesLead(salesCode).toString());
-    }
-
-    @Y("selecciono el boton Cambiar Chip")
-    public void seleccionoelbotonCambiodeChip() {
-        caeqPorReatilStep.seleccionoelbotonCambiodeChip();
-    }
-
-    @Y("cierro pop up de Cliente Exonerado")
-    public void cierroPopUpDeClienteExonerado() {
-        caeqPorReatilStep.cierroPopUpDeClienteExonerado();
     }
 
 }

@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DTO32
 ##GDAP: GDAP-575
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 26/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal Tienda
 
@@ -26,6 +25,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -52,7 +52,7 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono en linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "tester@tester.com"
@@ -73,5 +73,5 @@ Característica: AT-DT032_Alta Movil Control + equipo con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1024268237 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1024261234 |

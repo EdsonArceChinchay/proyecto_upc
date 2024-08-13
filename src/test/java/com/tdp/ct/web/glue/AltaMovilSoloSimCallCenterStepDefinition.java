@@ -14,6 +14,8 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     private AltaMovilSoloSimCallCenterStep altaMovilSoloSimCallCenterStep;
 
     @Autowired
+    private AltaFijaAltaMovilCallCenterStep altaFijaAltaMovilCallCenterStep;
+    @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
 
     @Autowired
@@ -33,11 +35,6 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         }
     }
 
-    @Y("valido que este en la pagina de ofertas sugeridas")
-    public void valido_que_este_en_la_pagina_de_ofertas_sugeridas() {
-        altaMovilSoloSimCallCenterStep.validarOfertasSugeridas();
-    }
-
     @Y("selecciono el tipo de plan movil {string}")
     public void selecciono_el_tipo_de_plan_movil(String tipoPlanMovil) {
         altaMovilSoloSimCallCenterStep.seleccionarListaTipoPlanMovil(tipoPlanMovil);
@@ -47,7 +44,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     public void selecciono_un_plan_movil(String planMovil) {
         altaMovilSoloSimCallCenterStep.seleccionarListaPlanMovil(planMovil);
         altaMovilSoloSimCallCenterStep.clickBotonSeleccionarOferta();
-        altaFijaTiendaStep.clickListaBotones();
+        altaFijaAltaMovilCallCenterStep.clickListaBotones();
     }
 
     @Y("selecciono la opcion {string}")
@@ -58,11 +55,6 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     @Y("valido que este en la seccion Postpago o Prepago")
     public void valido_que_este_en_seccion_Postpago_Prepago() {
         altaMovilSoloSimCallCenterStep.validarSeleccionaPostpagoPrepago();
-    }
-
-    @Y("cierro el popup de validación de estado de contraseña única")
-    public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
-        altaMovilSoloSimCallCenterStep.cerrarPopUpEstadoCU();
     }
 
 }

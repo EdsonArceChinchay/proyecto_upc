@@ -14,7 +14,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.returnCompareWebElementTextAndText;
+import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
 
 public class DevicesPage extends WebBase {
 
@@ -62,7 +62,7 @@ public class DevicesPage extends WebBase {
         UtilWeb.waitForSeconds(2);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency " + lista.size());
         for (WebElement elements : lista) {
-            boolean isEquals = returnCompareWebElementTextAndText(elements, timePermanency);
+            boolean isEquals = returnValueCompareWebElementTextAndString(elements, timePermanency);
             if (isEquals) {
                 click(elements, 3);
             }

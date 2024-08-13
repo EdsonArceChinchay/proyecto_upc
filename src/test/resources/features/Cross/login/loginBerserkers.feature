@@ -18,8 +18,8 @@
 Característica: AT-DT053_Login - FE DITO WEB
 
   @PRR-107
-  @LoginBerserker @LoginExitoso @jbac_Test
-  Esquema del escenario: Usuario realiza login exitoso: canal Call Center, Tienda y Retail
+    @LoginBerserker @LoginExitoso @jbac_Test
+  Esquema del escenario: Usuario realiza login exitoso en canal <channelType>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -28,12 +28,12 @@ Característica: AT-DT053_Login - FE DITO WEB
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<storeType>"
+    Y        valido que se presente el canal "<channelType>"
     Ejemplos:
-      | userType        | userName    | password | msgHome    | storeType   |
-      | usuario externo | userNameCC  | passCC   | Bienvenid@ | CALL CENTER |
-      | usuario externo | userNameST  | passST   | Bienvenid@ | TIENDA      |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | RETAIL      |
+      | userType        | userName    | password | msgHome    | channelType |
+      | usuario externo | userNameCC  | passCC   | Bienvenid@ | Call Center |
+      | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco

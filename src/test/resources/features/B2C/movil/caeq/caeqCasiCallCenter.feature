@@ -26,6 +26,7 @@ Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -79,7 +80,7 @@ Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CE            | 723456454 | 650034426        |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | EncontrarCelular |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 723456454 | 650034426        |
 
 

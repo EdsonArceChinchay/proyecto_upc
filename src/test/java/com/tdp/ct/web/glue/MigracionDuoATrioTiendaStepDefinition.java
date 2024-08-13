@@ -28,11 +28,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.clickButton(nameButton);
     }
 
-    @Y("doy click en Cambiar plan hogar")
-    public void doyClickEnCambiarPlanHogar() {
-        migracionDuoATrioTiendaStep.seleccionarboton();
-    }
-
     @Y("selecciono un plan y doy click en el boton seleccionar oferta")
     public void seleccionoUnPlanYDoyClickEnElBotonSeleccionarOferta() {
         migracionDuoATrioTiendaStep.seleccionoPlandeOferta();
@@ -47,6 +42,21 @@ public class MigracionDuoATrioTiendaStepDefinition {
     @Y("doy click en Finalizar registro")
     public void doyClickEnFinalizarRegistro() {
         migracionDuoATrioTiendaStep.clickFinalizarRegistro();
+    }
+
+    @Y("doy click en el boton Migrar a fibra")
+    public void seleccinarBotonMigrarAFibra() {
+        migracionDuoATrioTiendaStep.SeleccionarBtnMigrarFibra();
+    }
+
+    @Y("valido que se muestre la etiqueta {string}")
+    public void validoQueSeMuestreLaEtiqueta(String value) {
+        migracionDuoATrioTiendaStep.validateTagUVSC(value);
+    }
+
+    @Y("valido que los precio de plan hogar y plan mensual sean los mismos")
+    public void validoQueLosPrecioDePlanHogarYPlanMensualSeanLosMismos() {
+        migracionDuoATrioTiendaStep.validateCurrentAndNewPrice();
     }
 
 }

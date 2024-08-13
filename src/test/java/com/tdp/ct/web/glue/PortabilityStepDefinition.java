@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
+import com.tdp.ct.web.step.CheckoutStep;
 import com.tdp.ct.web.step.PortabilityStep;
 import com.tdp.ct.web.step.ServiceTest;
 import io.cucumber.datatable.DataTable;
@@ -18,13 +18,13 @@ import java.io.IOException;
 public class PortabilityStepDefinition {
 
     @Autowired
-    PortabilityStep portabilityStep;
+    private PortabilityStep portabilityStep;
 
     @Autowired
-    AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+    private CheckoutStep checkoutStep;
 
     @Autowired
-    ServiceTest serviceTest;
+    private ServiceTest serviceTest;
 
     private String token;
 
@@ -94,8 +94,8 @@ public class PortabilityStepDefinition {
     }
 
     @Y("obtengo el token")
-    public void obtengoElToken(DataTable dataTable) throws IOException {
-        String codigoDeVenta =altaFijaMovilRegistroStep.getSalesCode();
+    public void obtengoElToken(DataTable dataTable) {
+        String codigoDeVenta =checkoutStep.getSalesCode();
         token = serviceTest.getCodeToken(dataTable,codigoDeVenta);
         this.scenario.log("Token:" + token);
     }

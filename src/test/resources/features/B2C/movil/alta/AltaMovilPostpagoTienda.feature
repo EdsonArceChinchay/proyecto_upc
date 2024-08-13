@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT025
 ##GDAP: GDAP-1007
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaMovil
 Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
 
@@ -26,7 +25,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -34,7 +33,6 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos      | genero   |
       | Estela Rosario | Lopez Manrique | femenino |
-#    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Estela Rosario Lopez Manrique"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -46,7 +44,7 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono la opcion "<tipoPlanes>"
     Y        doy click en el boton seleccionar oferta
-    Y        selecciono la cartilla Linea Nueva
+    Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
@@ -68,5 +66,5 @@ Característica: AT-DT025_Alta Movil Postpago con documento CE por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor              | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                 |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tiendas Franquicia Prueba | CE            | 1100000112 | Postpago      | Plan Ilimitado Mi Movistar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanMovil | tipoPlanes                 |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1100000112 | Postpago      | Plan Ilimitado Mi Movistar |

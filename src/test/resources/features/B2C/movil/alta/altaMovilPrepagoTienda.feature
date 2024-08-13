@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT028
 ##GDAP: GDAP-587
@@ -11,8 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 09/04/2024
-
+##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
 Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
 
@@ -26,7 +25,7 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -57,12 +56,11 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
-#    Y        presiono el boton descargar contrato
     Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome     | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@  | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | oferta       | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1942354781 | PLAN PREPAGO | Preplan    |

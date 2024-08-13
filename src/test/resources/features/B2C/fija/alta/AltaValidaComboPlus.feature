@@ -28,7 +28,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    #Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -80,7 +80,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescuento                     | bloque | tipoPlan | svaInternet           | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1029045634 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO MOVISTAR VOZ ESTÁNDAR HD RA M23            | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV HOGAR DIGITAL RA M23                        | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | CAJAMARCA    | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 150 MBPS | Combo Plus Bonif TV | 150 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescuento                     | bloque | tipoPlan | svaInternet           | bloque |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center  | CE            | 1029045634 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DÚO MOVISTAR VOZ ESTÁNDAR HD RA M23            | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center  | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TV HOGAR DIGITAL RA M23                        | Combo Plus Bonif TV | 200 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Mono     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center  | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRÍO MOV. VOZ INT. ESTANDAR HD RA M23 150 MBPS | Combo Plus Bonif TV | 150 Mbps    | Descuento Prom Internet S/40 x 1m | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |

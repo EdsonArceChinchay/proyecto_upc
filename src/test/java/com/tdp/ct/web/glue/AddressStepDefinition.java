@@ -96,41 +96,27 @@ public class AddressStepDefinition {
 
     @Y("ingreso los datos del lugar de entrega")
     public void ingresoLosDatosDelLugarDeInstalacion(DataTable dirInstalacion) {
-        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
-        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
+        String apple = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
+        String lot = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
         String floor = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
-        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
-        String habitacion = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
-        String conj = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
-        addressStep.typeApple(manzana);
-        addressStep.typeLot(lote);
-        addressStep.typeFloor(floor);
-        addressStep.typeInside(interior);
-        addressStep.selectHousingComplexe(habitacion);
-        addressStep.typeHousingComplexName(conj);
+        String inside = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String housingComplexe = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
+        String housingComplexName = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
+        validateInputsAddress(apple, lot, floor, inside, null, null, null, housingComplexe, housingComplexName);
     }
 
     @Y("ingreso la informacion del lugar de instalacion")
     public void iingreso_la_informacion_del_lugar_de_instalacion(DataTable dirInstalacion) {
-        String manzana = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
-        String lote = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
-        String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
-        String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
+        String apple = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
+        String lot = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
+        String houseType = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
+        String houseName = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
         String floor = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
-        String interior = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
-        String habitacion = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
-        String conj = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
-        String bloqueDir = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
-        addressStep.ingresarManzana(manzana);
-        addressStep.typeApple(manzana);
-        addressStep.typeLot(lote);
-        addressStep.ingresarBloque(bloqueDir);
-        addressStep.typeFloor(floor);
-        addressStep.typeInside(interior);
-        addressStep.seleccionarTipoVivienda(tipoVivienda);
-        addressStep.ingresarNombreVivienda(nombreVivienda);
-        addressStep.selectHousingComplexe(habitacion);
-        addressStep.typeHousingComplexName(conj);
+        String inside = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
+        String housingComplexe = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
+        String housingComplexName = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
+        String block = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
+        validateInputsAddress(apple, lot, floor, inside, block, houseType, houseName, housingComplexe, housingComplexName);
     }
 
     @Y("ingresamos la Manzana o bloque {string}")
@@ -181,26 +167,11 @@ public class AddressStepDefinition {
         String block = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
         String floor = UtilWeb.getValueFromDataTable(dirInstalacion, "piso");
         String inside = UtilWeb.getValueFromDataTable(dirInstalacion, "int");
-        String tipoVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
-        String nombreVivienda = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
-        String tipoConjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
-        String conjH = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
-        if (!(floor==null) && (inside==null) && (block==null) ) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA" );
-            block = "NA";
-            inside ="NA";
-        }
-
-        else if (!(inside==null) && (block==null)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Block is null change value: NA" );
-            block = "NA";
-        }
-
-        else if((inside==null) && !(block==null)){
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside is null change value: 1" );
-            inside ="1";
-        }
-        addressStep.typeAddressInstalacion(apple, lot, tipoVivienda, nombreVivienda, block, floor, inside, tipoConjH, conjH);
+        String houseType = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
+        String houseName = UtilWeb.getValueFromDataTable(dirInstalacion, "nombreVivienda");
+        String housingComplexe = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
+        String housingComplexName = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
+        validateInputsAddress(apple, lot, floor, inside, block, houseType, houseName, housingComplexe, housingComplexName);
     }
 
     @Y("presiono el boton Consultar ubicacion")
@@ -238,4 +209,39 @@ public class AddressStepDefinition {
         addressStep.doyClickAceptarEnElModalDeError();
     }
 
+
+    @Y("valido que se presente el siguiente mensaje {string}")
+    public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
+        addressStep.validoQueSePresenteElSiguienteMensaje(mensaje);
+    }
+
+    public void validateInputsAddress(String apple, String lot, String floor, String inside, String block, String houseType, String houseName, String housingComplexe, String housingComplexName) {
+        if (!(apple == null) && !(lot == null)) {
+            addressStep.typeApple(apple);
+            addressStep.typeLot(lot);
+        }
+        if (!(floor == null) && (inside == null) && (block == null)) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA");
+            block = "NA";
+            inside = "NA";
+        } else if (!(inside == null) && (block == null)) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Block is null change value: NA");
+            block = "NA";
+        } else if ((inside == null) && !(block == null)) {
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside is null change value: 1");
+            inside = "1";
+        }
+        addressStep.selectHouseType(houseType);
+        addressStep.typeHouseName(houseName);
+        addressStep.typeBlock(block);
+        addressStep.typeFloor(floor);
+        addressStep.typeInside(inside);
+        addressStep.selectHousingComplexe(housingComplexe);
+        addressStep.typeHousingComplexName(housingComplexName);
+    }
+
+    @Y("doy click en el boton Buscar")
+    public void doyClickEnElBotonBuscar() {
+        addressStep.clickOnSearchButton();
+    }
 }

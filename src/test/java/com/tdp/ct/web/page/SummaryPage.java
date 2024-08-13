@@ -2,7 +2,9 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 
 public class SummaryPage extends WebBase {
 
@@ -24,7 +27,23 @@ public class SummaryPage extends WebBase {
     @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
 
-    public void moverToElementIniciarRegistro() {
+    @FindBy(css = ".title span")
+    protected WebElement nombrePlan;
+
+    @FindBy(xpath = "//div[@class='plan2']")
+    protected WebElement lblPrecio;
+
+    public void validacionPrecio(String precioPlan) {
+        String precioCompare = lblPrecio.getText();
+        Assert.assertEquals(precioPlan, precioCompare);
+    }
+
+    public void validarNomPlan(String nomPlan) {
+        Addons.revisarModalError(driver());
+        compareWebElementTextAndString(nombrePlan,nomPlan);
+    }
+
+    public void moverToElementStartRegister() {
         UtilWeb.waitForSeconds(5);
         esperaProgresiva(driver(), 6, 6, btnStartRegister);
         js().scrollElementTop(btnStartRegister);
@@ -52,7 +71,6 @@ public class SummaryPage extends WebBase {
             }
         }*/
     }
-
 
     public void clickBtnCerrarModalError(WebElement metodoRepedito) {
         int contador = 0, i = 0;
@@ -87,8 +105,8 @@ public class SummaryPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         esperaProgresiva(driver(),6,6,paginaResumen);
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 

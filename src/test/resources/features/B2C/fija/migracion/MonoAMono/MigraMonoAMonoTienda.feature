@@ -16,8 +16,6 @@
 @BERSERKERS @DoneDevOps @AT-DT103
 Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
 
-  Antecedentes:
-
   @MigracionMonoAMono_CallCenter
   Esquema del escenario: Migracion de Mono a Mono en canal call center
     Dado     que abro la pagina de movistar
@@ -28,7 +26,7 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-   # Y        valido que se presente el canal "<tiendaAsesor>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -41,9 +39,6 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     Y        selecciono la oferta "<plan>"
     Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-#    Y        doy click en añadir SVA
-#    Y        agrego SVA bloque "<bloque>"
-#    Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -57,9 +52,7 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
     Y        doy click en el boton de continuar
     Y         presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    #Y        valido que se muestre el detalle del pedido
-
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tiendaAsesor      | tipoDocumento | documento | correo            | tipoPlanHogar | plan                              | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | TIENDA SAN MIGUEL | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan                              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS |
