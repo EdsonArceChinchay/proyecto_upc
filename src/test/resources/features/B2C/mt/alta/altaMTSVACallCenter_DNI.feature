@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: CARLOS VICENTE
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT037
 ##GDAP: GDAP-1006
@@ -11,12 +11,12 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 13/02/2024
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037
-Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
+##FECMOD: 15/08/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037 @AltaMTSVA
+Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA con documento DNI por canal Call Center
 
   @AltaMTSVACallCenter_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento DNI por canal Call Center
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con documento DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,6 +25,7 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
@@ -90,5 +91,5 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | PACK ANTIVIRUS MCAFEE | DNI           | 46325790  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI           | 46325790  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

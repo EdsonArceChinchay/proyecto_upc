@@ -1,23 +1,22 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT042
 ##GDAP: GDAP-595
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 15/08/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMTSVA
+Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Tienda
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @prueba
-Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Tienda
-
-  @AltatrioMT_SVA
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) con documento CE por canal Tienda
+  @AltaMTSVATienda_CE
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -32,8 +31,8 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos   | genero    |
-      | Juan    | Ortiz Lopez | masculino |
+      | nombres | apellidos       | genero    |
+      | FELIX   | JARAMILLO LOPEZ | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -43,19 +42,18 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono un plan Movistar Total "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios
-    Y       doy click en el boton Iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -72,7 +70,6 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        doy click en el boton Registrar venta
-    #Y        presiono el boton descargar contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -82,7 +79,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | tipoPlan | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | Trio       |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | nombrePlan |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       |
 
 

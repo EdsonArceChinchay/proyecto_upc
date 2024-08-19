@@ -12,12 +12,11 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 31/07/2023
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
+Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente extranjero (CE) por canal Call Center
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
-Característica: AT-DT099_Cambio de plan movil por Canal Call Center
-
-  @CambiodeplanmovilCEcallcenter
-  Esquema del escenario: cambio de plan movil en call center sin biometria
+  @CaplControlAPostCC_CE
+  Esquema del escenario: CAPL de Control a Postpago a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,7 +29,7 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        doy click en el boton Ver detalle del servicio "650026170"
+    Y        doy click en el boton Ver detalle del servicio "920957569"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -59,6 +58,6 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465074 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464736 |
 
 

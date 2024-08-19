@@ -51,7 +51,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonValidarContrato;
 
 
-
     public void clickOnTheValidateHolderIdentityButton() {
         esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
         js().scrollElementTop(buttonValidarIdentidad);
@@ -125,7 +124,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             try {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Start try");
                 Addons.revisarModalError(driver());
-                waitUntilElementIsClickable(buttonValidarContrato, 60);
+                buttonFound = waitUntilElementIsClickable(buttonValidarContrato, 60).isDisplayed();
                 UtilWeb.waitForSeconds(10);
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
@@ -138,7 +137,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         Addons.revisarModalError(driver());
         js().scrollElementTop(buttonValidarContrato);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + buttonValidarContrato.getText());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() + " - isEnabled " + buttonValidarContrato.isEnabled() +" - isSelected "+ buttonValidarContrato.isSelected());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() + " - isEnabled " + buttonValidarContrato.isEnabled() + " - isSelected " + buttonValidarContrato.isSelected());
         buttonValidarContrato.click();
     }
 
@@ -201,7 +200,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
-        typeInputShadowRootCSS(numdoc,rootInput,"div input");
+        typeInputShadowRootCSS(numdoc, rootInput, "div input");
         UtilWeb.waitForSeconds(1);
     }
 
@@ -209,13 +208,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement inputSuperUser = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
-        typeInputShadowRootCSS(user,inputSuperUser,"div input");
+        typeInputShadowRootCSS(user, inputSuperUser, "div input");
     }
 
     public void ingresarPasswordSupervisor(String password) {
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
-        typeInputShadowRootCSS(password,rootInputCorreo,"div input");
+        typeInputShadowRootCSS(password, rootInputCorreo, "div input");
     }
 
     public void clicConfirmarUsuarioSupervisor() {

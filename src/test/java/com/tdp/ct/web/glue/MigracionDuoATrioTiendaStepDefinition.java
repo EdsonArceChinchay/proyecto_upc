@@ -44,8 +44,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.clickFinalizarRegistro();
     }
 
-
-
     @Y("doy click en el boton Migrar a fibra")
     public void seleccinarBotonMigrarAFibra() {
         migracionDuoATrioTiendaStep.SeleccionarBtnMigrarFibra();

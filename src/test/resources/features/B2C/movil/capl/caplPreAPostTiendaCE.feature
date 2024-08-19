@@ -1,41 +1,39 @@
 #language:es
-##CREADOR:
+##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT056
-##GDAP: GDAP-597
+##MODULO: MOVIL
+##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
+##ESTADO: ACTIVO
+##CODIGO: AT-DT058
+##GDAP: GDAP-606
 ##SPRINT CREADO:
-##FRECUENCIA:
+##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
-##ENCARGADO:
-##FECMOD: 30/03/2023
+##DATA: UNICA VEZ
+##ENCARGADO: Edwin De la Cruz
+##FECMOD: 16/08/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5  @CAPL
+Característica: AT-DT058_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Tienda
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @Sanity28 @DROP-G07
-Característica: AT-DT056_Realizar un CAPL al contado con canal Tienda de un Control a Postpago
-
-  @CaplPorTiendaControlAPostpago
-  Escenario: CAPL al contado con canal Tienda de un Control a Postpago exitoso
+  @CaplPreAPostTienda_CE  @RegreDito
+  Escenario: CAPL de prepago a postpago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "passST"
-    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1632547927"
+    Y        ingreso el documento "1632547921"
     Y        doy click en el boton Consultar
-    Y        cierro el popup de contraseña Única
-    Y        doy click en el boton Ver detalle del servicio "650028191"
-    Y        doy click en el boton "Renovar plan"
+    #Y        cierro el popup de contraseña Única
+    Y        doy click en el boton Ver detalle del servicio "650028178"
+    Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/75.9"
+    Y        selecciono un plan movil "RV Plan Ilimitado Mi Movistar S/99.9"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"

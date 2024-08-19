@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT033
 ##GDAP: GDAP-573
 ##SPRINT CREADO:
@@ -11,12 +11,11 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 25/04/2024
-
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
+##FECMOD: 15/08/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMT
 Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por canal Call Center
 
-  @AltaFijaMovilCallCenterDeliveryExpress
+  @AltaMTCallCenter_DNI
   Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery express
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

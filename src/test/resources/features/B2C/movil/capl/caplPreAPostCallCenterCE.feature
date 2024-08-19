@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO: LISTO
+##MODULO: MOVIL
+##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT101
 ##GDAP: GDAP-962
 ##SPRINT CREADO: PI14
@@ -11,11 +11,11 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 02/11/2023
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5
-Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a Postpago
+##FECMOD: 16/08/2024
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
+Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
-  @CaplPrepagoPospago1
+  @CaplPreAPostCC_CE
   Esquema del escenario: CAPL con canal Call Center de un Control CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -25,15 +25,16 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        valido que se presente el canal "Call Center"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
+    Y        doy click en el boton Ver detalle del servicio "<nroMovil>"
     Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85.9 VI"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
@@ -57,6 +58,6 @@ Característica: AT-DT101_Realizar un CAPL con canal Call Center de un Control a
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 1042464638 |                  |
+      | tipoUsuario     | userName   | password | tipoDocumento | documento  | nroMovil  |
+      | usuario externo | userNameCC | passCC   | CE            | 1632547920 | 650028169 |
 

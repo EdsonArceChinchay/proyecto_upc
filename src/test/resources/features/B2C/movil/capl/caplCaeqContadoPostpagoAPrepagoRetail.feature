@@ -25,11 +25,11 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "77654580"
     Y        doy click en el boton Consultar
-    #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        doy click en el boton Ver detalle del servicio "650023363"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -59,5 +59,5 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password |
-      | usuario externo | userNameDLC | passDLC  |
+      | tipoUsuario     | userName    | password | msgHome    | channelType |
+      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      |
