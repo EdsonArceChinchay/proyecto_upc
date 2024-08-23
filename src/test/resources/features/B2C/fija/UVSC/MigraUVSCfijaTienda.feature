@@ -4,23 +4,23 @@
 ##MODULO:
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT064
-##GDAP: GDAP-888
+##CODIGO:
+##GDAP: GDAP-995
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/07/2024
+##FECMOD: 13/08/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion UVSC fija en canal Call Center
+Característica: Migracion UVSC fija en canal Tienda
 
   Antecedentes:
     Dado     que abro la pagina de movistar
 
-  @migraUVSCcallCenter
-  Esquema del escenario: Migracion UVSC fija con documento DNI en canal Call Center
+  @migraUVSCtienda
+  Esquema del escenario: Migracion UVSC fija con documento CE en canal Tienda
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -54,19 +54,14 @@ Característica: AT-DT064_Migracion UVSC fija en canal Call Center
     E        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 75448525  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 3240430200|
