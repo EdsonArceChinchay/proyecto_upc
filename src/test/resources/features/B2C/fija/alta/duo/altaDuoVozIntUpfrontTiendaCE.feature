@@ -69,7 +69,7 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     #Y        presiono el boton descargar contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

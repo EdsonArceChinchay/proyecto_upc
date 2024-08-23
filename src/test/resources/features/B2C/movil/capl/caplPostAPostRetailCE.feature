@@ -1,22 +1,22 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVIL
+##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
 ##ESTADO:
 ##CODIGO: AT-DT057
 ##GDAP: GDAP-601
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 15/08/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Postpago a Postpago
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
+Característica: AT-DT057_Cambio de plan (CAPL) de Postpago a Postpago a cliente extranjero (CE) por canal Retail
 
-  @CaplControlAPostpagoRetail
+  @CaplControlAPostRetail_CE
   Escenario: CAPL Post a Post CEX por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -29,7 +29,8 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     Y        ingreso el documento "1042464926"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        doy click en el boton Ver detalle del servicio "920954511"
+    Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
@@ -44,6 +45,7 @@ Característica: AT-DT057_Realizar un CAPL al contado con canal Retail de un Pos
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

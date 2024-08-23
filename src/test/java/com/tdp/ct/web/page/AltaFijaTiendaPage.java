@@ -14,6 +14,8 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
 
 public class AltaFijaTiendaPage extends WebBase {
     ArrayList<String> tabs;
@@ -81,7 +83,6 @@ public class AltaFijaTiendaPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
-        String ofertaEsperada = planOfertas.trim().toUpperCase();
         revisarModalError(driver());
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
@@ -94,8 +95,8 @@ public class AltaFijaTiendaPage extends WebBase {
             while (isBtnRigth) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight, 5);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button", btnRight.getText());
                 btnRight.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button right");
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
                 if (count == countMax) {
@@ -125,9 +126,8 @@ public class AltaFijaTiendaPage extends WebBase {
         for (int i = 0; i < listaOfertas.size(); i++) {
             js().scrollElementTop(listaOfertas.get(i));
             scenario.printFullView();
-            String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
-            if (ofertaObtenida.contains(ofertaEsperada)) {
+           boolean isEquals = returnValueCompareWebElementTextAndString(listaOfertas.get(i),planOfertas);
+            if (isEquals) {
                 encontroElemento = true;
                 click(listaOfertas.get(i));
                 break;
@@ -147,7 +147,6 @@ public class AltaFijaTiendaPage extends WebBase {
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: " + listaOfertas.get(cont).getText());
-
         }
     }
 
@@ -267,33 +266,22 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void validarVelocidadInternet(String mbpsBB) {
         Addons.revisarModalError(driver());
-        String expectedVelocInternet = mbpsBB.trim().toLowerCase();
-        String actualVelocInternet = velocidadBB.getText().trim().toLowerCase();
-        Assertions.assertTrue(actualVelocInternet.contains(expectedVelocInternet), "La velocidad de Internet obtenida: " + actualVelocInternet + ", no coincide con lo esperado " + expectedVelocInternet);
-        UtilWeb.waitForSeconds(1);
+        compareWebElementTextAndString(velocidadBB,mbpsBB);
     }
 
     public void validarPrecioDescuento(String precDesc) {
         Addons.revisarModalError(driver());
-        String expectedPrecioDesc = precDesc.trim().toLowerCase();
-        String actualPrecioDesc = precDescBB.getText().trim().toLowerCase();
-        Assertions.assertTrue(actualPrecioDesc.contains(expectedPrecioDesc), "EL precio de descuento del componente Internet: " + actualPrecioDesc + ", no coincide con lo esperado " + expectedPrecioDesc);
-        UtilWeb.waitForSeconds(1);
+        compareWebElementTextAndString(precDescBB,precDesc);
     }
 
     public void validarnombreSVAcontenido(String nomsvaTV) {
         Addons.revisarModalError(driver());
-        String expectedNomSVAtv = nomsvaTV.trim().toLowerCase();
-        String actualNomSVAtv = svaTV.getText().trim().toLowerCase();
-        Assertions.assertTrue(actualNomSVAtv.contains(expectedNomSVAtv), "El SVA del BO obtenida: " + actualNomSVAtv + ", no coincide con lo esperado " + expectedNomSVAtv);
+        compareWebElementTextAndString(svaTV,nomsvaTV);
     }
 
     public void validarPrecioDescuentoTV(String pDescTV) {
         Addons.revisarModalError(driver());
-        String expectedPrecioDescTV = pDescTV.trim().toLowerCase();
-        String actualPrecioDescTV = precDescTV.getText().trim().toLowerCase();
-        Assertions.assertTrue(actualPrecioDescTV.contains(expectedPrecioDescTV), "El precio de descuento del componente TV: " + actualPrecioDescTV + ", no coincide con lo esperado " + expectedPrecioDescTV);
-        UtilWeb.waitForSeconds(1);
+        compareWebElementTextAndString(precDescTV,pDescTV);
     }
 
 }

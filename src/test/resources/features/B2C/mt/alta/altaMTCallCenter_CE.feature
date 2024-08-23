@@ -1,23 +1,21 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT038
 ##GDAP: GDAP-589
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 08/02/2024
-#probarenmadrugada
-
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+##FECMOD: 15/08/2024
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01 @AltaMT
 Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Call Center
 
-  @AltaPuraMTcallCenterCE
+  @AltaMTCallCenter_CE
   Esquema del escenario: Alta MT (Alta Fija + Alta Movil) con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -31,10 +29,9 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos   | genero   |
-      | Lucia   | Perez Lopez | femenino |
+      | nombres | apellidos       | genero   |
+      | LUISA   | MELENDEZ ZAPATA | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -46,9 +43,9 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Confirmar ubicacion
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -68,7 +65,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     E        ingreso telefono de contacto "984592938"
     E        ingreso instrucciones de delivery "cerca al parque"
     Y        doy click en confirmar delivery
-    #Y        valido que este en la seccion completa los datos solicitados
+    Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"

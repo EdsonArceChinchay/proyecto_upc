@@ -17,6 +17,25 @@ public class ParkStep {
     @Autowired
     private Customer customer;
 
+    public void verificarClienteNuevo() {
+        customer.setNewCustomer(page.parkPage().isNewCustomer());
+    }
+
+    @ScreenShotAfter
+    public void ingresarDatosClienteExtranjero(DataTable datos) {
+        String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
+        String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
+        String genero = UtilWeb.getValueFromDataTable(datos, "genero");
+        page.parkPage().ingresarNombreClienteExtranjero(nombre);
+        page.parkPage().ingresarApellidoClienteExtranjero(apellidos);
+        page.parkPage().seleccionarGeneroClienteExtranjero(genero);
+    }
+
+    @ScreenShotAfter
+    public void clicEnCrearCliente() {
+        page.parkPage().crearCliente();
+    }
+
     public void selecciono_la_cartilla_del_plan_Activo() {
         page.parkPage().selecciono_la_cartilla_del_plan_Activo();
     }
@@ -172,25 +191,6 @@ public class ParkStep {
     @ScreenShotAfter
     public void selectLineWithNumber(String number) {
         page.parkPage().selectLineWithNumber(number);
-    }
-
-    public void verificarClienteNuevo() {
-        customer.setNewCustomer(page.altaFijaMovilRegistroPage().isNewCustomer());
-    }
-
-    @ScreenShotAfter
-    public void ingresarDatosClienteExtranjero(DataTable datos) {
-            String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
-            String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
-            String genero = UtilWeb.getValueFromDataTable(datos, "genero");
-            page.altaFijaMovilRegistroPage().ingresarNombreClienteExtranjero(nombre);
-            page.altaFijaMovilRegistroPage().ingresarApellidoClienteExtranjero(apellidos);
-            page.altaFijaMovilRegistroPage().seleccionarGeneroClienteExtranjero(genero);
-    }
-
-    @ScreenShotAfter
-    public void clicEnCrearCliente() {
-            page.altaFijaMovilRegistroPage().crearCliente();
     }
 
     @ScreenShotBefore

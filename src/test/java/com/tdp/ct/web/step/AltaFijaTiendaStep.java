@@ -65,5 +65,29 @@ public class AltaFijaTiendaStep {
     public void seleccionarboton() {
         page.migracionDuoATrioTiendaPage().seleccionarboton();
     }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void validacionClienteNuevo(String nombre, String apellidos, String genero) {
+        page.altaValidacionPrecioDescuentoPage().validacionClienteNuevo(nombre, apellidos, genero);
+    }
+
+    @ScreenShotAfter
+    public void validacionBeneficioPlan(String beneficioPlan) {
+        page.altaValidacionPrecioDescuentoPage().validacionBeneficioPlan(beneficioPlan);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void comprueboCliente(String nombre, String apellido) {
+        page.altaValidacionPrecioDescuentoPage().comprueboCliente(nombre, apellido);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void escojoPlan(String plan) {
+        page.altaFijaTiendaPage().listaOfertas(plan, scenario);
+        page.altaFijaTiendaPage().seleccionarOferta();
+    }
 }
 

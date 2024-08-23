@@ -1,23 +1,22 @@
-#language: es
-##CREADOR: HENRY
+#language:es
+##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
-##CODIGO: AT-DT099
-##GDAP: GDAP-1147
+##MODULO: MOVIL
+##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
+##ESTADO: ACTIVO
+##CODIGO: AT-DT101
+##GDAP: GDAP-962
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/07/2023
+##FECMOD: 16/08/2024
+@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
+Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14
-Característica: AT-DT099_Cambio de plan movil por Canal Call Center
-
-  @CambiodeplanmovilCEcallcenter
-  Esquema del escenario: cambio de plan movil en call center sin biometria
+  @CaplPreAPostCC_CE
+  Esquema del escenario: CAPL con canal Call Center de un Control CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,15 +24,17 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<channelType>"
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        valido que se presente el canal "Call Center"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        doy click en el boton Ver detalle del servicio "650026170"
-    Y        doy click en el boton "Renovar plan"
+    Y        doy click en el boton Ver detalle del servicio "<nroMovil>"
+    Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
-    Y        selecciono boton Cambiar plan
+    Y        selecciono el boton de eleccion de planes
+    Y        selecciono el tipo de plan movil "Postpago"
+    Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/ 85"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "automation@gmail.com"
@@ -41,9 +42,9 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Y        doy clic en si acepto
+    Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy click en el boton de continuar
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -57,8 +58,6 @@ Característica: AT-DT099_Cambio de plan movil por Canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465074 |
-
+      | tipoUsuario     | userName   | password | tipoDocumento | documento  | nroMovil  |
+      | usuario externo | userNameCC | passCC   | CE            | 1632547920 | 650028169 |
 

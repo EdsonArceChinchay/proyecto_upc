@@ -1,23 +1,23 @@
 #language:es
-##CREADOR: Edson Arce
+##CREADOR:
 ##APP: DITO
 ##MODULO:
-##FUNCIONALIDAD: CAMBIO
-##ESTADO: ACTIVO
-##CODIGO: AT-DT047
-##GDAP: GDAP-892
-##SPRINT CREADO:  PI_
-##FRECUENCIA: DIARIO
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT050
+##GDAP: GDAP-891
+##SPRINT CREADO:
+##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
-##ENCARGADO: Edson Arce
-##FECMOD: 30/03/2023
+##DATA:
+##ENCARGADO:
+##FECMOD: 20/05/2024
 
-@BERSERKERS @DoneDevOps
-Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
 
-  @CaeqMasCaplTienda @MVP20 @Global
-  Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
+  @CaplconCaeqTienda
+  Esquema del escenario: CAPL con CAEQ por canal Call Center de un Control a Prepago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -25,39 +25,39 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Cuando   selecciono el tipo de documento "CE"
+    Y        ingreso el documento "1042465034"
     Y        doy click en el boton Consultar
-    Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
-    Y        selecciono el tipo de plan movil "Postpago"
-    Y        selecciono la opcion "RV Plan Ilimitado Mi Movistar S/ 79.9 V"
+    Y        selecciono el tipo de plan movil "Prepago"
+    Y        selecciono la opcion "Prepago con Tarifa Única"
     Y        doy click en el boton seleccionar oferta
     Y        presiona el boton anadir equipo
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago             | equipoName                        |
-      | 12 meses    | Financiado 12 cuotas | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | permanencia     | tipoPago   | equipoName               |
+      | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        cierro pop up de Cliente Exonerado
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        ingreso correo electronico "prueba_qa@gmail.com"
-    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    Y        ingreso correo electronico "automation@gmail.com"
+    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 12312312222 |
+      | tipoUsuario     | userName   | password |
+      | usuario externo | userNameST | passST   |

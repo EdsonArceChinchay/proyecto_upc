@@ -50,7 +50,7 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy click en el boton Continuar
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

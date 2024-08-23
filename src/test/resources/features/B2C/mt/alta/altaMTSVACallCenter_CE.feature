@@ -1,23 +1,22 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVISTAR TOTAL
+# #FUNCIONALIDAD: ALTA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT035
 ##GDAP: GDAP-725
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 29/04/2024
-
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035
-Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento CE por canal Call Center
+##FECMOD: 15/08/2024
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035 @AltaMTSVA
+Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Call Center
 
   @AltaMTSVACallCenter_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta SVA con documento CE por canal Call Center
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,8 +30,8 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + Alta SVA con docume
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos | genero    |
-      | Jose    | LLamoca   | masculino |
+      | nombres      | apellidos     | genero    |
+      | JOSE SEGUNDO | LLAMOCA LOPEZ | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas

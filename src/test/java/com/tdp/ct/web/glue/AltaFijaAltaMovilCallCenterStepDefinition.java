@@ -7,6 +7,8 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Objects;
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaFijaAltaMovilCallCenterStepDefinition {
 
@@ -111,6 +113,25 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     @Y("valido el precio de descuento del componente TV {string}")
     public void validoElPrecioDeDescuentoDelComponenteTV(String pDescTV) {
         altaFijaTiendaStep.validarPrecioDescuentoTV(pDescTV);
+    }
+
+    @Y("valido si el cliente {string}, {string} con genero {string} ya esta registrado")
+    public void validoSiElClienteConGeneroYaEstaRegistrado(String nombre, String apellidos, String genero) {
+        altaFijaTiendaStep.validacionClienteNuevo(nombre, apellidos, genero);
+    }
+
+    @Y("Valido que el beneficio sea {string}")
+    public void validacionBeneficioPlan(String beneficioPlan) {
+        if (!Objects.equals(beneficioPlan, "null")) {
+            altaFijaTiendaStep.validacionBeneficioPlan(beneficioPlan);
+        }
+    }
+
+    @Y("Valido que el descuento aplicado sea {string}")
+    public void valdiacionDescuento(String descuento) {
+        if (!Objects.equals(descuento, "")) {
+            altaFijaTiendaStep.validacionBeneficioPlan(descuento);
+        }
     }
 
 }

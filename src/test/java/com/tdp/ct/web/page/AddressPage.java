@@ -188,8 +188,8 @@ public class AddressPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         js().scrollElementTop(btnConsultCoverage);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Click button %s", btnConsultCoverage.getText()));
         btnConsultCoverage.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Consultar Cobertura");
     }
 
     public void ingresoDepartamento(String departamento) {

@@ -52,7 +52,7 @@ Característica: Migracion de MT a MT en Tienda
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

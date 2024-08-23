@@ -49,7 +49,7 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
-    Y        presiono el boton Registrar venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:

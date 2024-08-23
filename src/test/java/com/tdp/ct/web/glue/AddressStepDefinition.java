@@ -209,7 +209,6 @@ public class AddressStepDefinition {
         addressStep.doyClickAceptarEnElModalDeError();
     }
 
-
     @Y("valido que se presente el siguiente mensaje {string}")
     public void validoQueSePresenteElSiguienteMensaje(String mensaje) {
         addressStep.validoQueSePresenteElSiguienteMensaje(mensaje);
