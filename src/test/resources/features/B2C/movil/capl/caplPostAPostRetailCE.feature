@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO: MOVIL
 ##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT057
 ##GDAP: GDAP-601
 ##SPRINT CREADO:
@@ -12,7 +12,6 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT057_Cambio de plan (CAPL) de Postpago a Postpago a cliente extranjero (CE) por canal Retail
 

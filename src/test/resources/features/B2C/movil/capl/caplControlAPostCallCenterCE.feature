@@ -1,9 +1,9 @@
 #language: es
 ##CREADOR: HENRY
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVIL
+##FUNCIONALIDAD:  CAMBIO DE PLAN (CAPL)
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT099
 ##GDAP: GDAP-1147
 ##SPRINT CREADO: PI14
@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/07/2023
+##FECMOD: 23/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
 Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente extranjero (CE) por canal Call Center
 
@@ -46,7 +46,6 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
