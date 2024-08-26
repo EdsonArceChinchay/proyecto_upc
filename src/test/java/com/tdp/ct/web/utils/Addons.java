@@ -224,7 +224,7 @@ public class Addons {
             boolean modal2SinError = false;
             UtilWeb.waitForSeconds(3);
             LOGGER.log(Level.INFO, "revisarModalError #" + (contador + 1) + "/" + reintentosMax);
-            isModalError = !driver.findElements(By.xpath("//app-card-plan-error//*[contains(text(),'Reintentar')] | //mat-dialog-actions | //app-modal-confirmation-financing")).isEmpty();
+            isModalError = !driver.findElements(By.xpath("//app-card-plan-error//*[contains(text(),'Reintentar')] | //mat-dialog-actions | //app-modal-confirmation-financing | //app-modal-confirmation-financing/tdp-st-modal//button")).isEmpty();
             LOGGER.log(Level.INFO, "bExisteModal(Reintentar / Entendido): " + isModalError);
 
             if (isModalError) {
@@ -278,7 +278,7 @@ public class Addons {
 
             //Revisar el tipo de Errores: Uno de los servicios no respondio, porfavor continuar
             //Mostrando un boton: Continuar
-            isModalError = !driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')] | //app-modal-confirmation-financing")).isEmpty();
+            isModalError = !driver.findElements(By.xpath("//mat-dialog-actions//*[contains(text(),'Continuar') or contains(text(),'CONTINUAR')] | //app-modal-confirmation-financing | //app-modal-confirmation-financing/tdp-st-modal//button")).isEmpty();
             LOGGER.log(Level.INFO, "bExisteModal(Continuar): " + isModalError);
             if (isModalError) {
                 WebElement btnContinuar;
