@@ -22,6 +22,7 @@ Característica: AT-DT100_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y        selecciono el tipo de usuario "usuario externo"
     Y        ingreso el usuario "userNameDLC"
     Y        ingreso el password "passDLC"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente el canal "Retail"
