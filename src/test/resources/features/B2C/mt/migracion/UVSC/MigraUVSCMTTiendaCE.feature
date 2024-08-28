@@ -15,7 +15,7 @@
 @BERSERKERS  @DoneDevOps @PI20_SP1 @MigraUVSC
 Característica: Migracion UVSC MT con documento CE canal Tienda
 
-  @MigraUVSCTiendaCE
+  @MigraUVSCMTTiendaCE
   Esquema del escenario: Migracion UVSC MT con documento CE canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
