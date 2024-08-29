@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
+##MODULO: MOVÍL
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:
