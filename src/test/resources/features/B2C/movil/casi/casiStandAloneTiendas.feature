@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR: Moises Llamoca
 ##APP: DITO
-##MODULO: CASI
-##FUNCIONALIDAD:
+##MODULO: MOVÍL
+##FUNCIONALIDAD: CAMBIO DE SIMCARD (CASI)
 ##ESTADO: ACTIVO
 ##CODIGO:AT-DT112
 ##GDAP: GDAP-1418
@@ -13,7 +13,7 @@
 ##ENCARGADO:Brandon
 ##FECMOD: 26/02/2024
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
-Característica: AT-DT112_CASI Stand Alone con documento CE por Canal Tienda
+Característica: AT-DT112_Cambio de Simcard (CASI) a cliente extranjero (CE) por canal Tienda
   Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
   @casiStandAloneTiendas

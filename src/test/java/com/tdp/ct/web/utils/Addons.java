@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class Addons {
     private static final Logger LOGGER = Logger.getLogger(Addons.class.getName());
 
@@ -44,7 +43,7 @@ public class Addons {
 
             } catch (Exception e) {
                 bCargando = false;
-                LOGGER.log(Level.INFO, "loading notFound");
+                LOGGER.log(Level.SEVERE, "loading notFound");
                 UtilWeb.waitForSeconds(segundosEspera);
             }
             contador++;
@@ -52,7 +51,6 @@ public class Addons {
         long fin = System.currentTimeMillis();
         long tiempoEjecucion = fin - inicio;
         formatTiempo(tiempoEjecucion, "esperaProgresivaLoading");
-
     }
 
     public static void esperaProgresiva(WebDriver driver, int reintentosMax, int segundosEspera, WebElement elementoContenedor, By byBuscarEnContenxto, SearchContext context) {
@@ -174,33 +172,37 @@ public class Addons {
                     break;
                 }
             } catch (NoSuchElementException e) {
-                LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento #" + (contador + 1));
+                LOGGER.log(Level.SEVERE, "Elemento no encontrado en el intento #" + (contador + 1));
                 break;
             } catch (ElementClickInterceptedException el) {
-                LOGGER.log(Level.WARNING, "No se puede dar click al elemento en el intento #" + (contador + 1));
+                LOGGER.log(Level.SEVERE, "No se puede dar click al elemento en el intento #" + (contador + 1));
                 break;
             }
-
             contador++;
         } while (contador < reintentosMax);
     }
 
-    private static void formatTiempo(long tiempo, String msg) {
+    public static void formatTiempo(long time, String msg) {
         try {
-            if (tiempo < 60000) { // Menor a 1 minuto
-                System.out.println(msg + " - Tiempo de ejecución: " + tiempo / 1000 + " segundos");
-            } else if (tiempo < 3600000) { // Menor a 1 hora
-                long minutos = tiempo / 60000;
-                long segundos = (tiempo % 60000) / 1000;
-                System.out.println(msg + " - Tiempo de ejecución: " + minutos + " minutos y " + segundos + " segundos");
-            } else { // Mayor o igual a 1 hora
-                long horas = tiempo / 3600000;
-                long minutos = (tiempo % 3600000) / 60000;
-                long segundos = (tiempo % 60000) / 1000;
-                System.out.println(msg + " - Tiempo de ejecución: " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
-            }
+            String message = String.format("%s - Tiempo de ejecución: %s", msg, formatTime(time));
+            LOGGER.log(Level.INFO, message);
         } catch (Exception e) {
-            LOGGER.log(Level.WARNING, "ERROR -" + e.getMessage());
+            LOGGER.log(Level.SEVERE, String.format("ERROR - %s", e.getMessage()));
+        }
+    }
+
+    private static String formatTime(long time) {
+        if (time < 60000) {
+            return time / 1000 + " segundos";
+        } else if (time < 3600000) {
+            long minutos = time / 60000;
+            long segundos = (time % 60000) / 1000;
+            return minutos + " minutos y " + segundos + " segundos";
+        } else {
+            long horas = time / 3600000;
+            long minutos = (time % 3600000) / 60000;
+            long segundos = (time % 60000) / 1000;
+            return horas + " horas, " + minutos + " minutos y " + segundos + " segundos";
         }
     }
 
@@ -239,14 +241,14 @@ public class Addons {
                     btnReintentar = btnsReintentar.get(btnsReintentar.size() - 1);
                     if (btnReintentar.isEnabled()) {
                         btnReintentar.click();
-                        System.out.println("################ CLIC en Reintentar");
+                        LOGGER.log(Level.INFO, "################ CLIC en Reintentar");
                         LOGGER.log(Level.INFO, "CLIC en Reintentar");
                     } else {
                         sinBtnReintentar = true;
                         LOGGER.log(Level.INFO, "btnReintentarEntendido.isEnabled() false");
                     }
                 } catch (Exception e) {
-                    System.out.println("revisarModalError(R): " + e.getMessage());
+                    LOGGER.log(Level.SEVERE, "revisarModalError(R): " + e.getMessage());
                 }
 
                 try {
@@ -256,7 +258,7 @@ public class Addons {
                     btnEntendido = btnsEntendido.get(btnsEntendido.size() - 1);
                     if (btnEntendido.isEnabled()) {
                         btnEntendido.click();
-                        System.out.println("################ CLIC en Entendido");
+                        LOGGER.log(Level.INFO, "################ CLIC en Entendido");
                         LOGGER.log(Level.INFO, "CLIC en Entendido");
                     } else {
                         sinBtnEntendido = true;
@@ -267,11 +269,11 @@ public class Addons {
                     }
 
                 } catch (Exception e) {
-                    System.out.println("revisarModalError(E): " + e.getMessage());
+                    LOGGER.log(Level.SEVERE, "revisarModalError(E): " + e.getMessage());
                 }
             } else {
                 modal1SinError = true;
-                System.out.println("No se encontró el modal error (Reintentar / Entendido)");
+                LOGGER.log(Level.INFO, "No se encontró el modal error (Reintentar / Entendido)");
                 //break;
             }
 
@@ -296,12 +298,11 @@ public class Addons {
                     }
 
                 } catch (Exception e) {
-                    System.out.println("revisarModalError(E): " + e.getMessage());
+                    LOGGER.log(Level.SEVERE, "revisarModalError(E): " + e.getMessage());
                 }
             } else {
                 modal2SinError = true;
-                System.out.println("No se encontró el modal error (Continuar)");
-
+                LOGGER.log(Level.INFO, "No se encontró el modal error (Continuar)");
             }
 
             if (modal1SinError && modal2SinError) {
@@ -338,15 +339,13 @@ public class Addons {
 
             } catch (Exception e) {
                 bCargando = false;
-                LOGGER.log(Level.INFO, "Splash notFound");
+                LOGGER.log(Level.SEVERE, "Splash notFound");
             }
             contador++;
             if (contador >= reintentosMax) {
                 bReintentar = false;
             }
         } while (bReintentar);
-
-
     }
 
     /*
@@ -375,15 +374,15 @@ public class Addons {
         int contador = 0;
         int reintentosMax = 2;
         long inicio = System.currentTimeMillis();
-        System.out.println("revisarModalEntendido");
+        LOGGER.log(Level.INFO, "revisarModalEntendido");
         do {
             try {
                 //Busca un boton para Reintentar
                 WebElement botonReintentar = driver.findElement(By.xpath("//button[text()='Entendido']"));
                 botonReintentar.click();
-                System.out.println("CLIC en ENTENDIDO");
+                LOGGER.log(Level.INFO, "CLIC en ENTENDIDO");
             } catch (Exception e) {
-                LOGGER.log(Level.WARNING, "ERROR -" + e.getMessage());
+                LOGGER.log(Level.SEVERE, "ERROR -" + e.getMessage());
 
             }
 
@@ -403,39 +402,35 @@ public class Addons {
         try {
             rutaBase = System.getProperty("user.dir");
         } catch (Exception e) {
-            System.out.println("Error al obtener la ruta base del proyecto: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, String.format("Error al obtener la ruta base del proyecto: %s", e.getMessage()));
         }
         return rutaBase;
     }
 
     public static void guardarCodigoHTML(WebDriver driver) {
         String fecha = new SimpleDateFormat("yyyy-MM-dd-(HH-mm-ss)").format(new Date());
-        String nombreArchivo = "codigoHTML_" + fecha + ".html";
+        String nombreArchivo = String.format("codigoHTML_%s.html",fecha);
         String rutabase = obtenerRutaBaseProyecto() + "\\target\\html\\";
         File directorio = new File(rutabase);
         if (!directorio.exists()) {
             directorio.mkdirs();
         }
-
         String rutaArchivo = rutabase + nombreArchivo;
-
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         String codigoHTML = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
-        //String codigoHTML = driver.getPageSource();
         try {
             FileWriter fileWriter = new FileWriter(new File(rutaArchivo));
             fileWriter.write(codigoHTML);
             fileWriter.close();
-            System.out.println("El archivo " + nombreArchivo + " se ha guardado correctamente en " + rutaArchivo);
+            LOGGER.log(Level.INFO, String.format("El archivo %s se ha guardado correctamente en %s", nombreArchivo, rutaArchivo));
         } catch (IOException e) {
-            System.out.println("Error al guardar el archivo " + nombreArchivo + " en " + rutaArchivo + ": " + e.getMessage());
+            LOGGER.log(Level.SEVERE, String.format("Error al guardar el archivo %s en %s: %s ", nombreArchivo, rutaArchivo, e.getMessage()));
         }
-
     }
 
     public static boolean esEntornoProductivo() {
         String env = System.getProperty("environment");
-        System.out.println("Enviroment: " + env);
+        LOGGER.log(Level.INFO, "Enviroment: " + env);
         if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {
                 return false;
@@ -459,7 +454,7 @@ public class Addons {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(tiempoEsperaMaximo));
             wait.until(ExpectedConditions.attributeContains(loaderCard, "hidden", "true"));
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, "Error: " + e.getMessage());
         }
     }
 
@@ -468,7 +463,7 @@ public class Addons {
         try {
             resultado = driver.findElement(By.xpath(rutaElemento));
         } catch (NoSuchElementException e) {
-            LOGGER.log(Level.WARNING, "Elemento no encontrado en el intento");
+            LOGGER.log(Level.SEVERE, "Elemento no encontrado en el intento");
         }
         return resultado;
     }

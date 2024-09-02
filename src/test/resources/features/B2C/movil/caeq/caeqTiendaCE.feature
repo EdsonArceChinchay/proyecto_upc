@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVÍL
+##FUNCIONALIDAD:  CAMBIO DE EQUIPO (CAEQ)
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT048
 ##GDAP: GDAP-580
@@ -14,7 +14,7 @@
 ##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT048_Caeq Por Tienda FE DITO WEB
+Característica: AT-DT048_Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por canal Tienda
 
   @CaeqCEPorTienda
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
