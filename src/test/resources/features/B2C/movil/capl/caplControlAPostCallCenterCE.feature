@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 16/08/2024
+##FECMOD: 23/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
 Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente extranjero (CE) por canal Call Center
 
