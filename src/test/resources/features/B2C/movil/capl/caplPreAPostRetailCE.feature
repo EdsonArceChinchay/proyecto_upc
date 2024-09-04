@@ -9,9 +9,9 @@
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 16/08/2024
+##FECMOD: 04/09/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
 Característica: AT-DT100_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Retail
 
