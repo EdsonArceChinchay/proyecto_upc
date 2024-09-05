@@ -54,7 +54,7 @@ Característica: Migracion UVSC fija en canal Tienda
     E        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -64,4 +64,4 @@ Característica: Migracion UVSC fija en canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 3240430200|
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI            | 75448525|

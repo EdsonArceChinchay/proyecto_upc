@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 29/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity
-Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
+Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal Tienda
 
-  @migracionDuoATrioTienda
-  Esquema del escenario: Migracion de Duo a Trio con CE  sin productos asociados sin biometria
+  @migracionDuoBb+VozATrioTienda
+  Esquema del escenario: Migracion de Duo (Internet + Voz) a Trio con documento CE sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -31,7 +31,7 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro pop up de CU
-    Y        selecciono la linea con numero "5010022353"
+    Y        selecciono la linea con numero "14353641"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
@@ -54,12 +54,12 @@ Característica: AT-DT061_Migracion de Duo a Trio por el canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono el boton Registrar venta
+    Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan                                | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1101010102 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464581 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
 
