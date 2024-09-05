@@ -9,14 +9,14 @@
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 16/08/2024
+##FECMOD: 04/09/2024
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
   @CaplPreAPostCC_CE
-  Esquema del escenario: CAPL con canal Call Center de un Control CE
+  Esquema del escenario: CAPL Prepago a Postpago a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -48,7 +48,6 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"

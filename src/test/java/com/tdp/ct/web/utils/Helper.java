@@ -55,7 +55,7 @@ public class Helper extends WebBase {
             document.save(archivoSalida);
             document.close();
 
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "PDF descargado en: " + rutaArchivo);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("PDF descargado en: %s.", rutaArchivo));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,21 +93,20 @@ public class Helper extends WebBase {
         throw new IllegalArgumentException("buscarValorOpcion No válido: " + sDescripcionOpcion);
     }
 
-
     public static String getValueConfig(String key) {
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("src/test/resources/config.properties"));
             return properties.getProperty(key);
         } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error in read values " + e.getMessage());
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Error in read values %s", e.getMessage()));
             return null;
         }
     }
 
     public static WebElement selectEnabledItemFromAListOfItems(List<WebElement> listElemet) {
         int numberElements = listElemet.size();
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Number of web elements: " + numberElements);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Number of web elements: %d." ,numberElements));
         WebElement element = null;
         for (int i = 0; i < numberElements; i++) {
             element = listElemet.get(i);
@@ -115,10 +114,10 @@ public class Helper extends WebBase {
             try {
                 if (element.isEnabled() && element.isSelected()) {
                     nameElement = element.getText().trim();
-                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Web element " + element + " - " + nameElement + " is enabled and selected");
+                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Web element %s - %s is enabled and selected.", element ,nameElement));
                 }
             } catch (Exception e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Web element not found" + element + " - " + e.getMessage());
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Web element not found %s - %s.", element, e.getMessage()));
             }
         }
         return element;
@@ -128,7 +127,7 @@ public class Helper extends WebBase {
         String expectedText = value.trim().toUpperCase();
         String currentText = element.getText().trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         Assertions.assertTrue(isEquals,message);
     }
@@ -137,7 +136,7 @@ public class Helper extends WebBase {
         String expectedText = value.trim().toUpperCase();
         String currentText = element.getText().trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         return isEquals;
     }
@@ -146,7 +145,7 @@ public class Helper extends WebBase {
         String expectedText = expectedValue.trim().toUpperCase();
         String currentText = currentValue.trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         Assertions.assertTrue(isEquals,message);
     }
@@ -155,7 +154,7 @@ public class Helper extends WebBase {
         String expectedText = expectedValue.trim().toUpperCase();
         String currentText = currentValue.trim().toUpperCase();
         boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         return isEquals;
     }
@@ -176,10 +175,10 @@ public class Helper extends WebBase {
 
     public static boolean validateInputAndLocator(WebDriver driver, String nameElement,String input, WebElement element) {
         if (input == null || input.isEmpty()) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Value is null" );
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Value is null." );
             return false;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format(" Element %s - value: %s", nameElement, input) );
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format(" Element %s - value: %s.", nameElement, input) );
         return validateElement(driver, element, 10);
     }
 
@@ -187,10 +186,10 @@ public class Helper extends WebBase {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: " + element.isDisplayed() +" - Element is Enabled: " +element.isEnabled() );
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Element is Displayed: %b - Element is Enabled: %b.", element.isDisplayed(), element.isEnabled()));
             return element.isDisplayed() && element.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element validation failed: " + e.getMessage());
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Element validation failed: %s.", e.getMessage()));
             return false;
         }
     }
@@ -210,9 +209,9 @@ public class Helper extends WebBase {
             element.sendKeys(Keys.CONTROL + "a");
             element.sendKeys(Keys.DELETE);
             element.sendKeys(text);
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type " + nameElement + ": " + text);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type %s: %s.",nameElement, text));
         } else {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "No " + nameElement);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("No %s.", nameElement));
         }
     }
 
@@ -221,7 +220,7 @@ public class Helper extends WebBase {
         if (existe) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "No " + nameElement);
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("No %s.", nameElement));
         }
     }
 
@@ -233,7 +232,7 @@ public class Helper extends WebBase {
         for (WebElement element : elementsList) {
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
-                Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Select element: " + element.getText());
+                Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Select element: %s.", element.getText()));
                 element.click();
                 break;
             }
@@ -244,20 +243,20 @@ public class Helper extends WebBase {
         final int MAX_RETRIES = 5;
         int counter = 0;
         while (counter < MAX_RETRIES) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Retry shadow N° " + (counter + 1));
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Retry shadow N° %d", (counter + 1)));
             try {
                 typeInputShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(3);
                 if (webElement.isDisplayed()) {
-                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: true");
+                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: true.");
                     return;
                 }
             } catch (Exception e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "No found element - " + e.getMessage());
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("No found element - %s.", e.getMessage()));
             }
             counter++;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: false");
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: false.");
     }
 
 }
