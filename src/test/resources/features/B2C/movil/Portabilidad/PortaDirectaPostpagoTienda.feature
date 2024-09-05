@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
+##MODULO: MOVÍL
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
@@ -73,7 +73,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     #Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO: MOVIL
+##MODULO: MOVÍL
 ##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT058
@@ -9,14 +9,14 @@
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO: Edwin De la Cruz
-##FECMOD: 16/08/2024
+##FECMOD: 04/09/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5  @CAPL
 Característica: AT-DT058_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Tienda
 
   @CaplPreAPostTienda_CE  @RegreDito
-  Escenario: CAPL de prepago a postpago
+  Escenario: CAPL de prepago a postpago a cliente extranjero (CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"

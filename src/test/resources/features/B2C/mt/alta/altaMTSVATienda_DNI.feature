@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMTSVA
-Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Tienda
+Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con cliente nacional (DNI) por canal Tienda
 
-  @AltaMTSVATienda_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con documento CE por canal Tienda
+  @AltaMTSVATienda_DNI
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con cliente nacional (DNI) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,10 +30,8 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con documento C
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos       | genero    |
-      | FELIX   | JARAMILLO LOPEZ | masculino |
     Y        selecciono el boton Linea Nueva Hogar
+    Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -59,10 +57,15 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con documento C
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
-    Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Aruba        | Casado      |
+    Y        doy click en validar identidad del titular
+    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
+    Y        ingreso los datos del supervisor
+      | numdoc   | user     | password     |
+      | 73261531 | vsiguass | $t3l3f0n1c4$ |
+#    Y        doy click en el boton continuar
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
@@ -79,7 +82,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con documento C
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |
 
 

@@ -14,13 +14,11 @@
 ##FECMOD: 13/08/2024
 
 @BERSERKERS @DoneDevOps
-Característica: Migracion UVSC fija en canal Tienda
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: Migracion UVSC fija con cliente extranjero (CE) en canal Tienda
 
   @migraUVSCtienda
-  Esquema del escenario: Migracion UVSC fija con documento CE en canal Tienda
+  Esquema del escenario: Migracion UVSC fija con cliente extranjero (CE) en canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -54,7 +52,7 @@ Característica: Migracion UVSC fija en canal Tienda
     E        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    Y        presiono en el boton de Registrar Venta
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

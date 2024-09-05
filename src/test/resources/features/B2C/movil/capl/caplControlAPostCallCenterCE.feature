@@ -1,15 +1,15 @@
 #language: es
 ##CREADOR: HENRY
 ##APP: DITO
-##MODULO: MOVIL
-##FUNCIONALIDAD:  CAMBIO DE PLAN (CAPL)
+##MODULO: MOVÍL
+##FUNCIONALIDAD: CAMBIO DE PLAN (CAPL)
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT099
 ##GDAP: GDAP-1147
 ##SPRINT CREADO: PI14
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 23/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
@@ -29,7 +29,7 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        doy click en el boton Ver detalle del servicio "920957569"
+    Y        doy click en el boton Ver detalle del servicio "920957608"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -57,6 +57,6 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Ejemplos:
 
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464736 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464725 |
 
 

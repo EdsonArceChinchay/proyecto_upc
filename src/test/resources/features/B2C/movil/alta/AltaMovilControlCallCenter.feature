@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
-Característica:  AT-DT029_Alta Movil Control con documento CE por canal Call Center
+Característica:  AT-DT029_Alta Movil Control a cliente extranjero (CE) por canal Call Center
   Quiero realizar una alta movil solo sin por call center
 
   @AltaMovilCECallCenter

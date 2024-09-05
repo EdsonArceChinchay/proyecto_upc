@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVÍL
+##FUNCIONALIDAD: CAMBIO DE EQUIPO (CAEQ)
 ##ESTADO:
 ##CODIGO:
 ##GDAP: GDAP-1423
@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 07/11/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: CAEQ contado con documento CE por canal Tienda
+Característica: Cambio de equipo (CAEQ) movil al contado con cliente extranjero (CE) por canal Tienda
 
   @CaeqContadoTienda @RegreDito
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>

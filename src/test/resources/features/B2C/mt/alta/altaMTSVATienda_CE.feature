@@ -12,12 +12,11 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tienda
+Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA con cliente extranjero (CE) por canal Tienda
 
-  @AltaMt_SvaTiendas
-  Esquema del escenario: Alta MT mas SVA en Canal Tiendas
+  @AltaMTSVATienda_CE
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con cliente extranjero (CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -32,8 +31,8 @@ Característica: AT-DT116_Alta MT MAS SVA con documento CE por canal Tienda
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos | genero    |
-      | Felipe  | Llanos    | Masculino |
+      | nombres | apellidos       | genero    |
+      | FELIX   | JARAMILLO LOPEZ | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única

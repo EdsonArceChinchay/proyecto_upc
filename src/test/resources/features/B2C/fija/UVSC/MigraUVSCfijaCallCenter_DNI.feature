@@ -14,13 +14,11 @@
 ##FECMOD: 30/07/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion UVSC fija en canal Call Center
-
-  Antecedentes:
-    Dado     que abro la pagina de movistar
+Característica: AT-DT064_Migracion UVSC fija con cliente nacional (DNI) en canal Call Center
 
   @migraUVSCcallCenter
-  Esquema del escenario: Migracion UVSC fija con documento DNI en canal Call Center
+  Esquema del escenario: Migracion UVSC fija con cliente nacional (DNI) en canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
