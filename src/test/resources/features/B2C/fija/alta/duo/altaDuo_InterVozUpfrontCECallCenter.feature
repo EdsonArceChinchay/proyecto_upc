@@ -14,10 +14,10 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps  @AltaDuo_InterVozUpfront @AltaDuoUpfront
-Característica: AT-DT095_Alta Duo (Internet y Voz) Upfront con documento CE por canal Call Center
+Característica: AT-DT095_Alta Duo - Internet y Voz - Upfront con documento CE por canal Call Center
 
   @AltaDuo_InterVozUpfront
-  Esquema del escenario: Alta Duo (Internet y Voz) Upfront con documento CE por canal Call Center
+  Esquema del escenario: Alta Duo - Internet y Voz - Upfront con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
