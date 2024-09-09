@@ -62,4 +62,4 @@ Característica: Migracion UVSC fija con cliente extranjero (CE) en canal Tienda
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 3240430200|
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI            | 75448525|
