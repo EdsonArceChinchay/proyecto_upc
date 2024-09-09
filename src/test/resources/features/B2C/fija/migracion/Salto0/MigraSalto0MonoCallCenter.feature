@@ -47,6 +47,7 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
