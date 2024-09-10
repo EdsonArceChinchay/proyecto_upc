@@ -14,7 +14,6 @@
 ##FECMOD: 24/01/2024
 
 @BERSERKERS @DoneDevOps
-
 Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documento CE el canal Tienda
 
   @MigracionMTaMT_Equipo_SVA_Tiendas

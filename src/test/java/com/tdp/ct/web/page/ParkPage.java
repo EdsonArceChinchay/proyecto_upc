@@ -422,17 +422,21 @@ public class ParkPage extends WebBase {
         } while (status);
     }
 
-    public void clickBtnVerDetalle(String nroServicio) {
+    public void scrollToLabelSelectService(){
+        UtilWeb.waitForSeconds(10);
+        js().scrollElementTop(labelSelectService);
         UtilWeb.waitForSeconds(5);
+    }
+
+    public void clickBtnVerDetalle(String nroServicio) {
         WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
-        esperaProgresiva(driver(), 5, 5, btnVerDetalle);
+        esperaProgresiva(driver(), 5, 8, btnVerDetalle);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
         revisarModalError(driver());
     }
 
     public void selectLineWithNumber(String number) {
-        js().scrollElementTop(labelSelectService);
         WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
         esperaProgresiva(driver(), 3, 5, numberLine);
         js().scrollElementTop(numberLine);
@@ -456,6 +460,8 @@ public class ParkPage extends WebBase {
     }
 
     public void clickBtnRenovarPlan() {
+        revisarModalError(driver());
+        UtilWeb.waitForSeconds(10);
         revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);

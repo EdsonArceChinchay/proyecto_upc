@@ -183,6 +183,11 @@ public class ParkStep {
         page.parkPage().clickBotonContinuar();
     }
 
+    public void scrollToLabelSelectService()
+    {
+        page.parkPage().scrollToLabelSelectService();
+    }
+
     @ScreenShotBefore
     public void clickBtnVerDetalle(String nroServicio) {
         page.parkPage().clickBtnVerDetalle(nroServicio);

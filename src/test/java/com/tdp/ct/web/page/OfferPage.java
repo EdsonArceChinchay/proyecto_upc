@@ -62,7 +62,7 @@ public class OfferPage extends WebBase {
     }
 
     public void subDetalles(){
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(20);
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         esperaProgresiva(driver(), 5, 6, subDetalles);

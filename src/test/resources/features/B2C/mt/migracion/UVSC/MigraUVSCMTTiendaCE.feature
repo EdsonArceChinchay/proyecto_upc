@@ -31,7 +31,6 @@ Característica: Migracion UVSC MT con documento CE canal Tienda
     Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "" actual del servicio
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
