@@ -77,4 +77,4 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | svaRepetidor          |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET TV | REP. SMART WIFI Venta |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET | REP. SMART WIFI Venta |

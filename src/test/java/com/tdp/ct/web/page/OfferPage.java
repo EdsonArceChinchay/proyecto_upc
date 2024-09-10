@@ -66,6 +66,7 @@ public class OfferPage extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor)driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         esperaProgresiva(driver(), 5, 6, subDetalles);
+        waitUntilElementIsClickable(subDetalles, 12);
         click(subDetalles);
     }
 
@@ -73,8 +74,9 @@ public class OfferPage extends WebBase {
         UtilWeb.waitForSeconds(1);
         esperaProgresiva(driver(), 4, 10, lblAplicaUpFront);
         Assert.assertTrue("el elemento no existe",lblAplicaUpFront.isDisplayed());
-        UtilWeb.waitForSeconds(1);
         click(subDetalles,5);
+
+
     }
 
 }

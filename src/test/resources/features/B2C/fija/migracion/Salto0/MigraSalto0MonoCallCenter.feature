@@ -29,9 +29,15 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
+    #Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
+    Y        selecciono la linea con numero "5010015393"
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton "Confirmar direccion"
+    #Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "casa"
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "Entendido"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Migrar a fibra
     Cuando   doy click en el boton Iniciar registro
@@ -41,6 +47,7 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "automation@gmail.com"
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+    Y        doy click en Validar contrato "Hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -56,4 +63,4 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464794 |

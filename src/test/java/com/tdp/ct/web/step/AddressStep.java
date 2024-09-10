@@ -13,7 +13,7 @@ public class AddressStep {
     @Autowired
     private StepPages page;
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void seleccionoDireccionSugerida() {
         page.addressPage().seleccionoDireccionSugerida();
     }
@@ -22,27 +22,27 @@ public class AddressStep {
         page.addressPage().clickButtonConsultCoverage();
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void selectDepartment(String name) {
         page.addressPage().selectDepartment(name);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void selectProvince(String tipoProv) {
         page.addressPage().selectProvince(tipoProv);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void selectDistrict(String district) {
         page.addressPage().seleccionarDistrito(district);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeAddress(String data) {
         page.addressPage().typeAddress(data);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeReference(String reference) {
         page.addressPage().typeReference(reference);
     }
@@ -52,12 +52,12 @@ public class AddressStep {
         page.addressPage().clickButtonConsultLocation();
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeApple(String apple) {
         page.addressPage().typeApple(apple);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeBlock(String bloque) {
         page.addressPage().typeBlock(bloque);
     }
@@ -71,32 +71,32 @@ public class AddressStep {
         page.addressPage().typeHouseName(nomVivienda);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeLot(String lot) {
         page.addressPage().typeLot(lot);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeFloor(String floor) {
         page.addressPage().typeFloor(floor);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeInside(String inside) {
         page.addressPage().typeInside(inside);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void selectHousingComplexe(String habitacional) {
         page.addressPage().selectHousingComplexe(habitacional);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void typeHousingComplexName(String housingComplexName) {
         page.addressPage().typeHousingComplexName(housingComplexName);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void validarPantallaIngresarDireccion() {
         Assert.assertTrue(page.addressPage().validarPantallaIngresarDireccion());
     }
@@ -128,7 +128,7 @@ public class AddressStep {
         page.addressPage().ingresoLasCoordenadasDeLogitudyLatitud(x, y);
     }
 
-    @ScreenShotAfter
+    //@ScreenShotAfter
     public void validoQueLaDireccionSea(String direccion) {
         page.addressPage().validoQueLaDireccionSea(direccion);
     }
@@ -148,20 +148,20 @@ public class AddressStep {
         page.addressPage().validoQueSePresenteElSiguienteMensaje(mensaje);
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
+    //@ScreenShotBefore
+    //@ScreenShotAfter
     public void ingresoDepartamento(String departamento) {
         page.addressPage().ingresoDepartamento(departamento);
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
+    //@ScreenShotBefore
+    //@ScreenShotAfter
     public void ingresoProvincia(String provincia) {
         page.addressPage().ingresoProvincia(provincia);
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
+    //@ScreenShotBefore
+    //@ScreenShotAfter
     public void ingresoDistrito(String distrito) {
         page.addressPage().ingresoDistrito(distrito);
     }

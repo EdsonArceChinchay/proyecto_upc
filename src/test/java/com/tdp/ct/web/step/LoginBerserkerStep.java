@@ -33,12 +33,10 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().typeUserName(name);
     }
 
-    @ScreenShotAfter
     public void typePassword(String pass) {
         page.loginBerserkerPage().typePassword(pass);
     }
 
-    @ScreenShotBefore
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickOnContinueButton();
