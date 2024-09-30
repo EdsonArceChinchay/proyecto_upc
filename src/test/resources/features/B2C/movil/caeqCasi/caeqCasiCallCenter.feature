@@ -14,10 +14,10 @@
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE) por canal Call Center
+Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
 
   @CaeqCasiCallCenter
-  Esquema del escenario: Cambio de equipo mas cambio de simcard a cliente extranjero (CE) por canal Call Center
+  Esquema del escenario: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -64,7 +64,7 @@ Característica: Cambio de equipo mas cambio de simcard a cliente extranjero (CE
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"FALSE" en el response del salesLead
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -144,6 +144,7 @@ public class HomePage extends WebBase {
 
     public void clickOnTheValidateLegalRepresentativeButton() {
         waitUntilElementIsVisible(btnValidar, 10).click();
+        UtilWeb.waitForSeconds(20);
     }
 
     public void clickXPopUpCU() {

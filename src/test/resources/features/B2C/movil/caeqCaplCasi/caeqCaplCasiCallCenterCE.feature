@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 24/10/2023
+##FECMOD: 30/09/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call Center
+Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin Cambio de SIM (CASI) a cliente extranjero(CE) por canal Call Center
 
-  @CaeqCaplCasi
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
+  @CaeqCapl
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI  a cliente extranjero(CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -60,7 +60,7 @@ Característica: AT-DT046_CAEQ Mas CAPL Mas CASI con documento CE por canal Call
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

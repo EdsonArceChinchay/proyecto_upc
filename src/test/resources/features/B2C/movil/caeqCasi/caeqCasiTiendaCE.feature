@@ -11,12 +11,12 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 31/03/2023
+##FECMOD: 30/09/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
+Característica: AT-DT049_Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero(CE) por canal Tienda
 
   @CambioEquipoConCambioSIM
-  Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> del canal <channelType> realizo CAEQ sin CASI a cliente extranjero(CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -47,7 +47,7 @@ Característica: AT-DT049_Cambio de equipo con cambio de SIM por Canal Tienda
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
     #Y        presiono el boton descargar contrato
     Y        doy click en el boton Registrar venta
