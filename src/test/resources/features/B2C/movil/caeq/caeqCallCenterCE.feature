@@ -37,8 +37,6 @@ Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Can
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    #Y        cierro pop up de Cliente Exonerado
-    #Y        doy click en el boton continuar
     Y        doy click en el boton "MANTENER PLAN"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
