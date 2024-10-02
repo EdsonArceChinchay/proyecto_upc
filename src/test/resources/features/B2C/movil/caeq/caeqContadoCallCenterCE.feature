@@ -13,9 +13,9 @@
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
-Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Canal Call Center
+Característica: Cambio de equipo (CAEQ) al contado movil a cliente extranjero (CE) por Canal Call Center
 
-  @CaeqCECallcenter
+  @CaeqContadoCallCenter_CE
   Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -80,10 +80,5 @@ Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Can
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
       | usuario externo | userNameCC | passCC   | CE            | 461960084       | 650029858        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
-#      Prueba error
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
+
 

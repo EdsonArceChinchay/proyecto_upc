@@ -258,7 +258,6 @@ public class Helper extends WebBase {
         }
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: false.");
     }
-
 }
 
 
