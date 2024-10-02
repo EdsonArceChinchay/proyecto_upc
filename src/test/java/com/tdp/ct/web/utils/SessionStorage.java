@@ -55,17 +55,18 @@ public class SessionStorage {
             return null;
         }
     }
-
-    public static void setValueItemSessionStorage(WebDriver driver, String primaryKey, String key, JSONArray modifiedJson) {
+    public static void setValueItemSessionStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) {
         try {
             String itemLocalStorage = getItemSessionStorage(driver, primaryKey);
             JSONObject jsonObject = new JSONObject(itemLocalStorage);
-            jsonObject.put(key, modifiedJson);
-            setJsonToSessionStorage(driver, primaryKey, jsonObject.toString());
+            JSONArray parentObject1 = modifiedJson.getJSONArray(key);
+            String jsonObjectModified = jsonObject.put(key, parentObject1).toString();
+            setJsonToSessionStorage(driver, primaryKey, jsonObjectModified);
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error setting value in session storage: " + e.getMessage());
         }
     }
+
 
     private static void setJsonToSessionStorage(WebDriver driver, String key, String modifiedJson) {
         getSessionStorage(driver).setItem(key, modifiedJson);
