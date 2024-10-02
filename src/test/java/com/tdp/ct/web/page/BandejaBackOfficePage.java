@@ -12,6 +12,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.obtenerRutaAbsoluta;
+import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 
 public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
@@ -126,4 +127,10 @@ public class BandejaBackOfficePage extends WebBase {
         return result;
     }
 
+    public boolean isRetention() {
+        String metadata = getValueJsonObjectSessionStorage(driver(),"MSAL_INFO","metadata");
+        boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: "+isRetention));
+        return isRetention;
+    }
 }
