@@ -192,7 +192,7 @@ public class HomePage extends WebBase {
             }
             return String.format(message, storeTypeCurrent);
         }
-        return null;
+        return "";
     }
 
     public String printAgentData(String message) {

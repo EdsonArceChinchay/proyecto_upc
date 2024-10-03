@@ -16,7 +16,7 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@DoneDevOps"
+        tags = "@AltaMovilFinaciamientoTienda_CE"
 )
 
 class Runner {
@@ -29,6 +29,6 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-        JiraXray.importResults("/target/build/report/cucumber.json");
+//        JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }

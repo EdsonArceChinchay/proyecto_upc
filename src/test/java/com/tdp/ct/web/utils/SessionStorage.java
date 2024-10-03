@@ -75,11 +75,12 @@ public class SessionStorage {
     private static String getValueFromJson(JsonObject jsonObject, String key) {
         String[] parts = key.split("\\.");
         JsonElement current = jsonObject;
-        for (String part : parts) {
+        for (int i = 0; i < parts.length; i++)
+        {
             if (current.isJsonObject()) {
-                current = current.getAsJsonObject().get(part);
+                current = current.getAsJsonObject().get(parts[i]);
             } else if (current.isJsonArray()) {
-                return getValueFromArray(parts, current, part);
+                return getValueFromArray(current, parts[i]+1);
             } else {
                 logger.log(Level.SEVERE, "Key not found or incorrect data type");
                 return null;
@@ -88,7 +89,7 @@ public class SessionStorage {
         return current.isJsonNull() ? null : current.getAsString();
     }
 
-    private static String getValueFromArray(String[] parts, JsonElement current, String part) {
+    private static String getValueFromArray(JsonElement current, String part) {
         try {
             int index = Integer.parseInt(part);
             current = current.getAsJsonArray().get(index);
