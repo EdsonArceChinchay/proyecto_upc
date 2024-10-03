@@ -91,7 +91,7 @@ public class LoginBerserkersStepDefinition {
     @E("ingreso el captcha")
     public void ingresoElCaptcha() {
         UtilWeb.waitForSeconds(10);
-      //  loginBerserkerStep.getAndTypeCaptcha();
+        loginBerserkerStep.getAndTypeCaptcha();
     }
 
 }

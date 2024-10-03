@@ -29,6 +29,6 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-//        JiraXray.importResults("/target/build/report/cucumber.json");
+        JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }
