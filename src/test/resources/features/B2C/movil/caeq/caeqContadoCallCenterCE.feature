@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
-Característica: Cambio de equipo (CAEQ) al contado movil a cliente extranjero (CE) por Canal Call Center
+Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por Canal Call Center
 
   @CaeqContadoCallCenter_CE
   Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por Canal Call Center

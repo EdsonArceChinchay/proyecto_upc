@@ -14,7 +14,7 @@
 ##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT048_Cambio de equipo (CAEQ) financiado movil a cliente extranjero (CE) por canal Tienda
+Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente extranjero (CE) por canal Tienda
 
   @CaeqFinanciadoTienda_CE
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>

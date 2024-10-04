@@ -39,8 +39,9 @@ public class DevicesStepDefinition {
         String tipoPago = UtilWeb.getValueFromDataTable(datos, "tipoPago");
         String equipoName = UtilWeb.getValueFromDataTable(datos, "equipoName");
         devicesStep.typeDeviceAndSearch(equipoName);
-        devicesStep.selectTypeOfPayment(tipoPago);
         devicesStep.selectTimeOfPermanency(permanencia);
+        devicesStep.selectTypeOfPayment(tipoPago);
+
     }
 
     @Y("valido que existan resultados busqueda de equipos")
