@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.obtenerRutaAbsoluta;
+import static com.tdp.ct.web.utils.Helper.getAbsolutePath;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 
 public class BandejaBackOfficePage extends WebBase {
@@ -58,7 +58,7 @@ public class BandejaBackOfficePage extends WebBase {
     public void uploadAudio() {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
-            fileRuta.sendKeys(obtenerRutaAbsoluta("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
+            fileRuta.sendKeys(getAbsolutePath("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(10);
             esperaProgresiva(driver(), 5, 7, etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente", "CARGADO", etiquetaCargado.getText());

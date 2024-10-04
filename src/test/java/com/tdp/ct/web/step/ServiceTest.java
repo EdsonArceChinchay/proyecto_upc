@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Helper.getValueConfig;
-import static com.tdp.ct.web.utils.Helper.readerJson;
+import static com.tdp.ct.web.utils.Helper.readJson;
 import static io.restassured.RestAssured.given;
 
 import org.apache.http.conn.ssl.SSLSocketFactory;
@@ -66,7 +66,7 @@ public class ServiceTest {
 
     public void preValidate() {
         testPfxKey();
-        String body = readerJson("/json/PortaNormal/preValidate.json");
+        String body = readJson("/json/PortaNormal/preValidate.json");
         String consultation1 = given().headers(headersAksBerserkers())
                 .body(body).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/prevalidateportin")
                 .then().statusCode(200).extract().path("previousConsultationId");

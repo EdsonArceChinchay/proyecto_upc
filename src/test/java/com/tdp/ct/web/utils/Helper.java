@@ -21,57 +21,35 @@ import java.util.logging.Logger;
 
 public class Helper extends WebBase {
 
-    public static String extraerNumeroSolicitud(String texto) {
-        int longitud = texto.length();
-        //if (longitud >= 30) {
-        //String ultimos30Caracteres = texto.substring(longitud - 30, longitud);
-        int indiceFE = texto.indexOf("FE-");
-        if (indiceFE != -1) {
-            int strpos = texto.substring(indiceFE).indexOf(".");
-            if (strpos > 0) {
-//                return texto.substring(indiceFE).substring(0,strpos-1).replace("-","");
-                return texto.substring(indiceFE).substring(0, strpos).trim();
-            }
-            return texto.substring(indiceFE).replace("-", "");
+    public static String extractRequestNumber(String text) {
+        int indexFE = text.indexOf("FE-");
+        if (indexFE != -1) {
+            String request = text.substring(indexFE).split("\\.")[0].trim();
+            return request.replace("-", "");
         }
-        //}
         return null;
     }
 
-    public static String obtenerRutaAbsoluta(String sRuta) {
-        File archivo = new File(sRuta);
-        return archivo.getAbsolutePath();
+    public static String getAbsolutePath(String relativePath) {
+        return new File(relativePath).getAbsolutePath();
     }
 
-    public static void descargarPDFDesdeURL(String url, String carpetaDescarga) {
-        try {
-            URL pdfURL = new URL(url);
-            PDDocument document = PDDocument.load(pdfURL.openStream());
-
-            String nombreArchivo = url.substring(url.lastIndexOf("/") + 1);
-            String rutaArchivo = carpetaDescarga + "/" + nombreArchivo;
-
-            FileOutputStream archivoSalida = new FileOutputStream(rutaArchivo);
-            document.save(archivoSalida);
-            document.close();
-
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("PDF descargado en: %s.", rutaArchivo));
+    public static void downloadPDF(String url, String downloadDir) {
+        try (PDDocument document = PDDocument.load(new URL(url).openStream());
+             FileOutputStream outputFile = new FileOutputStream(new File(downloadDir, url.substring(url.lastIndexOf("/") + 1)))) {
+            document.save(outputFile);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
         }
     }
 
-    public static String readerJson(String path) {
-        String jsonFile = System.getProperty("user.dir") + "/src/test/resources" + path;
-        File file = new File(jsonFile);
+    public static String readJson(String path) {
+        String jsonFilePath = System.getProperty("user.dir") + "/src/test/resources" + path;
         try {
-            FileInputStream fis = new FileInputStream(file);
-            byte[] data = new byte[(int) file.length()];
-            fis.read(data);
-            fis.close();
-            return new String(data, StandardCharsets.UTF_8);
-        } catch (Exception e) {
-            e.printStackTrace();
+            return new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(jsonFilePath)), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error reading JSON file", e);
             return null;
         }
     }

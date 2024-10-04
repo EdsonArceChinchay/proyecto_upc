@@ -5,11 +5,13 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
+import com.tdp.ct.web.utils.RetentionService;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.PostConstruct;
 import java.util.logging.Level;
 
 @SpringBootTest(classes = WebAutomationApplication.class)
@@ -24,17 +26,22 @@ public class BandejaBackOfficeStepDefinition {
     @Autowired
     private Customer customer;
 
-    private boolean isRetention;
+    @Autowired
+    private RetentionService retentionService;
 
-    @PostConstruct
-    public void init() {
-        this.isRetention = bandejaBackOfficeStep.isRetention();
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
     }
 
     private void executeIfNotRetention(Runnable action) {
-        if (!isRetention) {
-            action.run();
+        if (retentionService.isRetention()) {
+            scenario.log("This step is skipped - Is retention");
+            return;
         }
+        action.run();
     }
 
     @Y("busco por el documento {string}")
@@ -51,7 +58,9 @@ public class BandejaBackOfficeStepDefinition {
     public void buscoPorElTipoDocumento(String tipoDoc) {
         executeIfNotRetention(() -> {
             String typeDocument = (bandejaBackOfficeStep.isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
-            String numberDocument = typeDocument.equals("documento") ? (bandejaBackOfficeStep.isNumber(tipoDoc) ? tipoDoc : Customer.getNumberDocument()) : customer.getSalesCode();
+            String numberDocument = typeDocument.equals("documento")
+                    ? (bandejaBackOfficeStep.isNumber(tipoDoc) ? tipoDoc : Customer.getNumberDocument())
+                    : customer.getSalesCode();
             logSearch(typeDocument);
             bandejaBackOfficeStep.typeDocument(numberDocument);
         });
@@ -74,7 +83,7 @@ public class BandejaBackOfficeStepDefinition {
     public void selectRequest() {
         executeIfNotRetention(() -> {
             String salesCode = (this.customer.getSalesCode() == null) ? "FE-" : this.customer.getSalesCode();
-            System.out.println("numberRequest: " + salesCode);
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "numberRequest: " + salesCode);
             bandejaBackOfficeStep.selectRequest(salesCode);
         });
     }

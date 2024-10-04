@@ -40,7 +40,7 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickOnContinueButton();
-       //retryCaptcha();
+        retryCaptcha();
     }
 
     @ScreenShotBefore
@@ -64,7 +64,7 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     @ScreenShotBefore
     public void getAndTypeCaptcha() {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(5);
         page.captchaPage().getCaptcha();
     }
 

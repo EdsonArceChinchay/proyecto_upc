@@ -40,7 +40,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        selecciono boton mantener plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
-    Y        agrego SVA bloque "HBO"
+    Y        agrego SVA Movistar Tv App Max
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<correo>"

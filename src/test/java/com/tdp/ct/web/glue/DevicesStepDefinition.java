@@ -38,8 +38,8 @@ public class DevicesStepDefinition {
         String permanencia = UtilWeb.getValueFromDataTable(datos, "permanencia");
         String tipoPago = UtilWeb.getValueFromDataTable(datos, "tipoPago");
         String equipoName = UtilWeb.getValueFromDataTable(datos, "equipoName");
-        devicesStep.selectTypeOfPayment(tipoPago);
         devicesStep.typeDeviceAndSearch(equipoName);
+        devicesStep.selectTypeOfPayment(tipoPago);
         devicesStep.selectTimeOfPermanency(permanencia);
     }
 
