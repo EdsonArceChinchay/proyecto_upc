@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 04/10/2024
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI13 @AT-DT104
 Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
 
@@ -29,12 +29,10 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    #Y        selecciono el boton de la Linea Hogar Existente "<numeroExistente>"
-    Y        selecciono la linea con numero "5010015393"
+    Y        selecciono la linea con numero "<numeroServicio>"
     Y        selecciono el boton Mostrar ofertas
-    #Y        doy click en el boton "Confirmar direccion"
     Y        doy click en el boton "Actualizar direccion"
-    Y        ingreso la referencia de la direccion "casa"
+    Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "Entendido"
@@ -53,6 +51,8 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
@@ -62,5 +62,5 @@ Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464794 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | numeroServicio |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464794 | 5010015393     |

@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO:
-##FECMOD: 08/03/2024
+##FECMOD: 04/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
-Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
+Característica: AT-DT077_Migracion salto 0 Trio a cliente extranjero (CE) por canal Call Center
 
   @migraSalto0CallCenter @RegreDito
-  Esquema del escenario: Migracion salto 0 con CE  por canal Call Center
+  Esquema del escenario: Migracion salto 0 Trio a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,7 +30,7 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        selecciono la cartilla del plan activo
+    Y        selecciono la linea con numero "<numeroServicio>"
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para verificar la direccion
     Y        doy click en el boton "Actualizar direccion"
@@ -61,5 +61,5 @@ Característica: AT-DT077_Migracion salto 0 con CE canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464830 |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | numeroServicio |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1002006030 | 13002515       |
