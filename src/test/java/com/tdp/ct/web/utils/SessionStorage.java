@@ -55,6 +55,7 @@ public class SessionStorage {
             return null;
         }
     }
+
     public static void setValueItemSessionStorage(WebDriver driver, String primaryKey, String key, JSONObject modifiedJson) {
         try {
             String itemLocalStorage = getItemSessionStorage(driver, primaryKey);
@@ -67,7 +68,6 @@ public class SessionStorage {
         }
     }
 
-
     private static void setJsonToSessionStorage(WebDriver driver, String key, String modifiedJson) {
         getSessionStorage(driver).setItem(key, modifiedJson);
     }
@@ -75,13 +75,18 @@ public class SessionStorage {
     private static String getValueFromJson(JsonObject jsonObject, String key) {
         String[] parts = key.split("\\.");
         JsonElement current = jsonObject;
-        for (int i = 0; i < parts.length; i++)
-        {
+        for (int i = 0; i < parts.length; i++) {
             if (current.isJsonObject()) {
                 current = current.getAsJsonObject().get(parts[i]);
             } else if (current.isJsonArray()) {
-                return getValueFromArray(current, parts[i]+1);
-            } else {
+                try {
+                    int index = Integer.parseInt(parts[i+1]);
+                    current = current.getAsJsonArray().get(index);
+                    i++;
+                } catch (NumberFormatException | IndexOutOfBoundsException e) {
+                    logger.log(Level.SEVERE, "Invalid or out-of-range index: " + e.getMessage());
+                    return null;
+                }} else {
                 logger.log(Level.SEVERE, "Key not found or incorrect data type");
                 return null;
             }
@@ -89,14 +94,4 @@ public class SessionStorage {
         return current.isJsonNull() ? null : current.getAsString();
     }
 
-    private static String getValueFromArray(JsonElement current, String part) {
-        try {
-            int index = Integer.parseInt(part);
-            current = current.getAsJsonArray().get(index);
-            return current.getAsString();
-        } catch (NumberFormatException | IndexOutOfBoundsException e) {
-            logger.log(Level.SEVERE, "Invalid or out-of-range index: " + e.getMessage());
-            return null;
-        }
-    }
 }
