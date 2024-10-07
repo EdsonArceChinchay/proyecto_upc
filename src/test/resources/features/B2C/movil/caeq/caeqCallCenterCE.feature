@@ -81,7 +81,7 @@ Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Can
 
     Ejemplos:
       | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 461960084       | 650029858        |
+      | usuario externo | userNameCC | passCC   | CE            | 461960085       | 650029859        |
 #      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
 #      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
 #      Prueba error
