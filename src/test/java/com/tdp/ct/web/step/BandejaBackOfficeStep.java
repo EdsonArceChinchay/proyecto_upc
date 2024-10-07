@@ -40,4 +40,8 @@ public class BandejaBackOfficeStep {
     public boolean isNumber(String tipoDoc) {
         return page.bandejaBackOfficePage().isNumber(tipoDoc);
     }
+
+    public boolean isRetention() {
+        return page.bandejaBackOfficePage().isRetention();
+    }
 }

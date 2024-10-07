@@ -14,7 +14,6 @@
 ##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP
-
 Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
 
   @migraSalto0CanalTienda
@@ -51,6 +50,8 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |

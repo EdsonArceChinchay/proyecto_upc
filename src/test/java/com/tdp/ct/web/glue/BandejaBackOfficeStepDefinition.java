@@ -5,6 +5,9 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
+import com.tdp.ct.web.utils.RetentionService;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,50 +26,70 @@ public class BandejaBackOfficeStepDefinition {
     @Autowired
     private Customer customer;
 
+    @Autowired
+    private RetentionService retentionService;
+
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
+
+    private void executeIfNotRetention(Runnable action) {
+        if (retentionService.isRetention()) {
+            scenario.log("This step is skipped - Is retention");
+            return;
+        }
+        action.run();
+    }
+
     @Y("busco por el documento {string}")
     public void buscoPorElDocumento(String documento) {
-        bandejaBackOfficeStep.typeDocument(documento);
+        executeIfNotRetention(() -> bandejaBackOfficeStep.typeDocument(documento));
     }
 
     @Y("busco por el documento")
     public void buscoPorElDocumento() {
-        bandejaBackOfficeStep.typeDocument(Customer.getNumberDocument());
+        executeIfNotRetention(() -> bandejaBackOfficeStep.typeDocument(Customer.getNumberDocument()));
     }
 
-    //    TODO: Buscar por tipo
     @Y("busco por {string}")
     public void buscoPorElTipoDocumento(String tipoDoc) {
-        String typeDocument = (bandejaBackOfficeStep.isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
+        executeIfNotRetention(() -> {
+            String typeDocument = (bandejaBackOfficeStep.isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
+            String numberDocument = typeDocument.equals("documento")
+                    ? (bandejaBackOfficeStep.isNumber(tipoDoc) ? tipoDoc : Customer.getNumberDocument())
+                    : customer.getSalesCode();
+            logSearch(typeDocument);
+            bandejaBackOfficeStep.typeDocument(numberDocument);
+        });
+    }
 
-        switch (typeDocument) {
-            case "documento":
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by document number");
-                String numberCocument = (bandejaBackOfficeStep.isNumber(tipoDoc)) ? tipoDoc : Customer.getNumberDocument();
-                bandejaBackOfficeStep.typeDocument(numberCocument);
-                break;
-            case "solicitud":
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Search by request number");
-                bandejaBackOfficeStep.typeDocument(customer.getSalesCode());
-                break;
-        }
+    private void logSearch(String typeDocument) {
+        String message = typeDocument.equals("documento") ? "Search by document number" : "Search by request number";
+        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
     }
 
     @Y("cargo el audio en la web")
     public void cargoElAudioEnLaWeb() {
-        bandejaBackOfficeStep.openPopUpUploadAudio();
-        bandejaBackOfficeStep.uploadAudio();
+        executeIfNotRetention(() -> {
+            bandejaBackOfficeStep.openPopUpUploadAudio();
+            bandejaBackOfficeStep.uploadAudio();
+        });
     }
 
     @Y("selecciono la solicitud")
     public void selectRequest() {
-        String salesCode = (this.customer.getSalesCode() == null) ? "FE-" : this.customer.getSalesCode();
-        System.out.println("numberRequest: " + salesCode);
-        bandejaBackOfficeStep.selectRequest(salesCode);
+        executeIfNotRetention(() -> {
+            String salesCode = (this.customer.getSalesCode() == null) ? "FE-" : this.customer.getSalesCode();
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "numberRequest: " + salesCode);
+            bandejaBackOfficeStep.selectRequest(salesCode);
+        });
     }
 
     @Y("apruebo la solicitud")
     public void aprueboSolicitud() {
-        bandejaBackOfficeStep.approveRequest();
+        executeIfNotRetention(bandejaBackOfficeStep::approveRequest);
     }
-
 }

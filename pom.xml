@@ -57,6 +57,8 @@
                 <version>2.18</version>
                 <configuration>
                     <skip>true</skip>
+                    <forkCount>0</forkCount>
+                    <argLine>-Xmx1024m</argLine>
                 </configuration>
             </plugin>
             <plugin>

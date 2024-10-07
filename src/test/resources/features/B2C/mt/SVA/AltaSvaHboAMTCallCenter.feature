@@ -29,7 +29,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-    Y        selecciono la linea con numero "14353126"
+    Y        selecciono la linea con numero "14353350"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
@@ -40,7 +40,7 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        selecciono boton mantener plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
-    Y        agrego SVA bloque "HBO"
+    Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<correo>"
@@ -64,4 +64,4 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464591 | test@hotmail.com |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1020030013 | test@hotmail.com |

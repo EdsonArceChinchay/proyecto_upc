@@ -12,15 +12,12 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 31/11/2023
-
 @BERSERKERS
 Característica: Migracion de MT a MT en Tienda
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @MigracionMTaMT
   Esquema del escenario: Migracion de MT a MT  en el canal Tienda
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -34,8 +31,11 @@ Característica: Migracion de MT a MT en Tienda
     Y        doy click en el boton Consultar
     Y        selecciona el boton del numero del plan MT existente "<numeroMt>"
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "JULIO CESAR TELLO,469,LINCE,LIMA" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "Entendido"
     Y        selecciono el primer tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"
     Cuando   doy click en el boton Iniciar registro

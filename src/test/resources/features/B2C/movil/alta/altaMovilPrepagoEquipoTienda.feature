@@ -44,9 +44,9 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo con documento CE por canal
     Y        doy click en el boton seleccionar oferta
     Y        doy click en el boton Linea Nueva
     Y        selecciono añadir equipos
+    Y        busco el equipo "<nombreEquipo>"
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Linea Nueva

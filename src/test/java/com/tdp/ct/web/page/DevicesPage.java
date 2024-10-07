@@ -37,7 +37,8 @@ public class DevicesPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: " + listPago.size());
         for (WebElement elements : listPago) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: " + elements.getText());
-            if (elements.getText().equalsIgnoreCase(payment)) {
+            boolean isEquals = returnValueCompareWebElementTextAndString(elements,payment);
+            if (isEquals) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Payment type found: " + payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;

@@ -42,9 +42,9 @@ Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por cana
     Y        selecciono el tipo de plan movil "<tipoPlan>"
     Y        selecciono un plan movil "<nombrePlan>"
     Y        selecciono añadir equipos
+    Y        busco el equipo "<nombreEquipo>"
     Y        ingreso el tiempo de permanencia"<timpoPermanencia>"
     Y        ingreso el tipo de pago "<tipoPago>"
-    Y        busco el equipo "<nombreEquipo>"
     Y        doy click en el boton seleccionar
     Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta

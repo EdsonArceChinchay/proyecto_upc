@@ -19,62 +19,73 @@ public class ParkStepDefinition {
 
     @Y("selecciono el boton Linea Nueva Hogar")
     public void seleccionoElBotonLineaNuevaHogar() {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnHogar();
     }
 
     @Y("selecciono el boton Linea Nueva Movil")
     public void seleccionoElBotonLineaNuevaMovil() {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnMovil();
     }
 
     @Y("selecciono el boton Mostrar ofertas")
     public void seleccionoElBotonMostrarOfertas() {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnMostrar();
     }
 
     @Y("doy click en el boton Ver detalle del servicio {string}")
     public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
+        parkStep.scrollToLabelSelectService();
         parkStep.clickBtnVerDetalle(nroServicio);
     }
 
     @Y("selecciono la linea con numero {string}")
     public void seleccionoLaLineaConNumero(String number) {
+        parkStep.scrollToLabelSelectService();
         parkStep.selectLineWithNumber(number);
     }
 
     @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
     public void selecciono_el_mono_y_duo_a_paquetizar(String mono,String duo){
+        parkStep.scrollToLabelSelectService();
         parkStep.clickMonoYDuo(mono,duo);
     }
 
-
     @Y("selecciono la cartilla del plan activo")
     public void selecciono_la_cartilla_del_plan_Activo() {
+        parkStep.scrollToLabelSelectService();
         parkStep.selecciono_la_cartilla_del_plan_Activo();
     }
 
     @Y("selecciono el boton de la Linea Hogar Existente {string}")
     public void seleccionoElBotonLineaHogarExistente(String numeroExistente) {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnLineaExistente(numeroExistente);
     }
 
     @Y("selecciona el boton del numero de celular existente {string}")
     public void seleccionaElBotonDelNumeroDeCelularExistente(String numeroExistente) {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnLineaCelularExistente(numeroExistente.trim());
     }
 
     @Y("selecciona el boton del numero del plan MT existente {string}")
     public void seleccionaElBotonDelNumeroDelPlanMtExistente(String numeroExistente) {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnPlanMtExistente(numeroExistente.trim());
     }
 
     @Y("selecciona el boton de detalle del numero de celular existente {string}")
     public void seleccionaElBotonDeDetalleDelNumeroDeCelularExistente(String numeroExistente) {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnDetalleLineaCelularExistente(numeroExistente.trim());
     }
 
     @Y("selecciono el boton de la Linea Movil Existente")
     public void seleccionoElBotonLineaMovilExistente() {
+        parkStep.scrollToLabelSelectService();
         parkStep.btnLineaMovilExistente();
     }
 
@@ -100,16 +111,19 @@ public class ParkStepDefinition {
 
     @Y("Selecciono la cartilla del plan Motvistar Total")
     public void seleccionoLaCartillaDelPlanMotvistarTotal() {
+        parkStep.scrollToLabelSelectService();
         parkStep.seleccionoCartillaMovistarTotal();
     }
 
     @Y("selecciono la cartilla del plan MT")
     public void seleccionoLaCartillaDelPlanMT() {
+        parkStep.scrollToLabelSelectService();
         parkStep.seleccionoCartillaPlanMT();
     }
 
     @Y("selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan")
     public void seleccionoElBtnVerDetalleDelPlanActualYPresionoElBtnRenovarPlan() {
+        parkStep.scrollToLabelSelectService();
         //parkStep.esperarBtnCardPlanActual();
         parkStep.clickBtnCardPlanActual();
         parkStep.clickBtnRenovarPlan();

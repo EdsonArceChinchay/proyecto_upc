@@ -109,8 +109,9 @@ public class HomePage extends WebBase {
     }
 
     public void selectCustomerId(String nro) {
+        UtilWeb.waitForSeconds(30);
         WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 5, 5, nroItem);
+        esperaProgresiva(driver(), 6, 8, nroItem);
         waitUntilElementIsClickable(nroItem, 20).click();
         UtilWeb.waitForSeconds(1);
     }
@@ -143,6 +144,7 @@ public class HomePage extends WebBase {
 
     public void clickOnTheValidateLegalRepresentativeButton() {
         waitUntilElementIsVisible(btnValidar, 10).click();
+        UtilWeb.waitForSeconds(20);
     }
 
     public void clickXPopUpCU() {
@@ -163,7 +165,8 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, msgHome);
+        UtilWeb.waitForSeconds(10);
+        esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
     }
 
@@ -189,7 +192,7 @@ public class HomePage extends WebBase {
             }
             return String.format(message, storeTypeCurrent);
         }
-        return null;
+        return "";
     }
 
     public String printAgentData(String message) {

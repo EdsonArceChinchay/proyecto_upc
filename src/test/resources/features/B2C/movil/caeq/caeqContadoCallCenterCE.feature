@@ -13,9 +13,9 @@
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
 @BERSERKERS @DoneDevOps
-Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Canal Call Center
+Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por Canal Call Center
 
-  @CaeqCECallcenter
+  @CaeqContadoCallCenter_CE
   Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -37,8 +37,6 @@ Característica: Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por Can
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
-    #Y        cierro pop up de Cliente Exonerado
-    #Y        doy click en el boton continuar
     Y        doy click en el boton "MANTENER PLAN"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro

@@ -13,9 +13,9 @@
 ##ENCARGADO:
 ##FECMOD: 07/11/2023
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: Cambio de equipo (CAEQ) movil al contado con cliente extranjero (CE) por canal Tienda
+Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por canal Tienda
 
-  @CaeqContadoTienda @RegreDito
+  @CaeqContadoTienda_CE @RegreDito
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -59,4 +59,4 @@ Característica: Cambio de equipo (CAEQ) movil al contado con cliente extranjero
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464674 | 984683790        |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464674 | 650027989        |

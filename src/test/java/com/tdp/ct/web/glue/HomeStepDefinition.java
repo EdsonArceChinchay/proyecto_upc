@@ -1,7 +1,9 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
+import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import com.tdp.ct.web.step.HomeStep;
+import com.tdp.ct.web.utils.RetentionService;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Dado;
@@ -9,6 +11,8 @@ import io.cucumber.java.es.E;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.PostConstruct;
 
 public class HomeStepDefinition {
 
@@ -18,16 +22,32 @@ public class HomeStepDefinition {
     @Autowired
     private Customer customer;
 
+    @Autowired
+    private BandejaBackOfficeStep bandejaBackOfficeStep;
+
     private Scenario scenario;
+
+    private boolean isRetention;
+
+    @Autowired
+    private RetentionService retentionService;
 
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
 
+    private void executeIfNotRetention(Runnable action) {
+        if (retentionService.isRetention()) {
+            scenario.log("This step is skipped - Is retention");
+            return;
+        }
+        action.run();
+    }
+
     @Entonces("valido el login exitoso mediante el mensaje {string}")
     public void validoElLoginExitosoMedianteElMensaje(String msg) {
-        homeStep.validateHomeMessage(msg);
+            homeStep.validateHomeMessage(msg);
     }
 
     @Y("valido que se presente el canal {string}")
@@ -55,12 +75,15 @@ public class HomeStepDefinition {
 
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {
+        executeIfNotRetention(() -> {
         homeStep.clickOnTheBackOfficeButton();
+        });
     }
 
     @Dado("regreso a la pagina de inicio")
     public void regresoPaginaInicio() {
         homeStep.backToHomePage();
+
     }
 
     @Y("doy click en el icono de Asesor")

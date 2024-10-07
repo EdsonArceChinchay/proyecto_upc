@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.descargarPDFDesdeURL;
+import static com.tdp.ct.web.utils.Helper.downloadPDF;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
@@ -227,7 +227,7 @@ public class CheckoutPage extends WebBase {
                 scenario.printFullView();
                 String pdfUrl = pdfElement.getAttribute("src");
                 System.out.println("Link PDF 1: " + pdfUrl);
-                descargarPDFDesdeURL(pdfUrl, rutabase);
+                downloadPDF(pdfUrl, rutabase);
                 scenario.printFullView();
                 //click en el 2do boton
                 if (contratoDos != null) {
@@ -240,7 +240,7 @@ public class CheckoutPage extends WebBase {
                     scenario.printFullView();
                     String pdfUrl2 = pdfElement2.getAttribute("src");
                     System.out.println("Link PDF 2: " + pdfUrl2);
-                    descargarPDFDesdeURL(pdfUrl2, rutabase);
+                    downloadPDF(pdfUrl2, rutabase);
                     UtilWeb.waitForSeconds(3);
                     click(cerrarPopUpContratos);
                     break;

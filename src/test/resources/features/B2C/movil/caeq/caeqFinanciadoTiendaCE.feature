@@ -14,9 +14,9 @@
 ##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT048_Cambio de equipo (CAEQ) movil a cliente extranjero (CE) por canal Tienda
+Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente extranjero (CE) por canal Tienda
 
-  @CaeqCEPorTienda
+  @CaeqFinanciadoTienda_CE
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -37,7 +37,7 @@ Característica: AT-DT048_Cambio de equipo (CAEQ) movil a cliente extranjero (CE
     Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName                        |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | 12 meses    | Financiado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro pop up de CU

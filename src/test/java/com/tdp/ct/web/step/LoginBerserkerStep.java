@@ -33,12 +33,10 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().typeUserName(name);
     }
 
-    @ScreenShotAfter
     public void typePassword(String pass) {
         page.loginBerserkerPage().typePassword(pass);
     }
 
-    @ScreenShotBefore
     @ScreenShotAfter
     public void clickBtnContinuarHaciaHome() {
         page.loginBerserkerPage().clickOnContinueButton();
@@ -66,7 +64,7 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     @ScreenShotBefore
     public void getAndTypeCaptcha() {
-        UtilWeb.waitForSeconds(4);
+        UtilWeb.waitForSeconds(5);
         page.captchaPage().getCaptcha();
     }
 

@@ -93,16 +93,4 @@ public class LoginBerserkersStepDefinition {
         loginBerserkerStep.getAndTypeCaptcha();
     }
 
-    @Y("me logueo con las credenciales en la aplicacion")
-    public void meLogueoConLasCredencialesEnLaAplicacion(DataTable credenciales) {
-        String tipoUsuario = UtilWeb.getValueFromDataTable(credenciales, "tipoUsuario");
-        String userName = UtilWeb.getValueFromDataTable(credenciales, "userName");
-        String password = UtilWeb.getValueFromDataTable(credenciales, "password");
-        loginBerserkerStep.clickOnLoginButton();
-        loginBerserkerStep.selectUserType(tipoUsuario);
-        loginBerserkerStep.typeUserName(userName);
-        loginBerserkerStep.typePassword(password);
-        loginBerserkerStep.getAndTypeCaptcha();
-        loginBerserkerStep.clickOnContinueButton();
-    }
 }
