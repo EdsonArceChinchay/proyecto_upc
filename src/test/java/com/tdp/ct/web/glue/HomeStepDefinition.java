@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import com.tdp.ct.web.step.HomeStep;
@@ -20,22 +21,25 @@ public class HomeStepDefinition {
     private HomeStep homeStep;
 
     @Autowired
-    private Customer customer;
-
-    @Autowired
     private BandejaBackOfficeStep bandejaBackOfficeStep;
-
-    private Scenario scenario;
-
-    private boolean isRetention;
 
     @Autowired
     private RetentionService retentionService;
+
+    @Autowired
+    private Customer customer;
+
+    private Scenario scenario;
+
+   // public ThreadLocal<Customer> customer = ThreadLocal.withInitial(()-> new Customer("","","",""));
+    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(() -> new Agent("","","","","",""));
+
 
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
+
 
     private void executeIfNotRetention(Runnable action) {
         if (retentionService.isRetention()) {
@@ -48,23 +52,25 @@ public class HomeStepDefinition {
     @Entonces("valido el login exitoso mediante el mensaje {string}")
     public void validoElLoginExitosoMedianteElMensaje(String msg) {
             homeStep.validateHomeMessage(msg);
+            homeStep.initializeAgent(agent.get());
     }
 
     @Y("valido que se presente el canal {string}")
     public void validoQueSePresenteLaTienda(String channelType) {
         scenario.log(homeStep.validateAgentData(channelType));
+        System.out.println(agent.get().print());
     }
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String tipoDocumento) {
         System.out.println("Cliente: " +  customer.getCustomerTest());
-        customer.setTypeDocument(tipoDocumento);
+        customer.setDocumentType(tipoDocumento);
         homeStep.selectDocumentType(tipoDocumento);
     }
 
     @Y("ingreso el documento {string}")
     public void ingresoElDocumento(String documento) {
-        Customer.setNumberDocument(documento);
+        customer.setDocumentNumber(documento);
         homeStep.typeDocumentNumber(documento);
     }
 
@@ -83,7 +89,6 @@ public class HomeStepDefinition {
     @Dado("regreso a la pagina de inicio")
     public void regresoPaginaInicio() {
         homeStep.backToHomePage();
-
     }
 
     @Y("doy click en el icono de Asesor")
@@ -141,4 +146,5 @@ public class HomeStepDefinition {
     public void cierroPopUpDeCU() {
         homeStep.clickXPopUpCU();
     }
+
 }

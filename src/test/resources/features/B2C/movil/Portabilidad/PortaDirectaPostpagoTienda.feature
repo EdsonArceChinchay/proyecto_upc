@@ -11,12 +11,12 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 22/04/2024
+##FECMOD: 07/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
+Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
 
   @PortaDirectaPostST
-  Esquema del escenario: Portabilidad Directa solo chip postpago en canal Tienda
+  Esquema del escenario: Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -44,13 +44,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        selecciono añadir equipos
-    E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName               |
-      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
-    Y        valido que existan resultados busqueda de equipos
-    Y        presiono el boton Ver detalle valido contenido y selecciono
-    Y        cierro pop up de CU
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
@@ -78,6 +71,9 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Tienda
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        valido los servicios
+      | telefono | Fecha_Sig  | Fecha_FinMes |
+      | <numero> | 2023-01-24 | 2023-01-31   |
     #Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

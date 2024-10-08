@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
@@ -75,7 +76,7 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public String validateAgentData(String channelType){
+    public String validateAgentData(String channelType) {
         Map<String, String> storeMap = new HashMap<>();
         storeMap.put("CC", "CC");
         storeMap.put("CALL CENTER", "CC");
@@ -84,14 +85,13 @@ public class HomeStep {
         storeMap.put("DLC", "DLC");
         storeMap.put("RETAIL", "DLC");
         String store = storeMap.getOrDefault(channelType.trim().toUpperCase(), null);
-       return page.homePage().validateAgentData(store);
+        return page.homePage().validateAgentData(store);
     }
 
     @ScreenShotAfter
     public void validateHomeMessage(String msg) {
         page.homePage().validateHomeMessage(msg);
     }
-
 
     public void backToHomePage() {
         page.homePage().backToHomePage();
@@ -116,6 +116,48 @@ public class HomeStep {
     @ScreenShotBefore
     public void confirmoCerrarSesion() {
         page.homePage().clickOnTheLogoutButton();
+    }
+
+    public String getAgentName()
+    {
+        return page.homePage().getAgentName().trim();
+    }
+
+    public String getAgentLastName()
+    {
+        return page.homePage().getAgentLastName();
+    }
+    public String getChannelName()
+    {
+        return page.homePage().getChannelName();
+    }
+    public String getChannelType()
+    {
+        return page.homePage().getChannelType();
+    }
+
+    public String getDocumentNumber()
+    {
+        return page.homePage().getDocumentNumber();
+    }
+
+    public String getDocumentType()
+    {
+        return page.homePage().getDocumentType();
+    }
+
+    public boolean isRetention(){
+       return page.homePage().isRetention();
+    }
+
+    public void initializeAgent(Agent agent) {
+        agent.setFirstName(getAgentName());
+        agent.setLastName(getAgentLastName());
+        agent.setChannelName(getChannelName());
+        agent.setChannelType(getChannelType());
+        agent.setDocumentNumber(getDocumentNumber());
+        agent.setDocumentType(getDocumentType());
+        agent.setRetention(isRetention());
     }
 
 }

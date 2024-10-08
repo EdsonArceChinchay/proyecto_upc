@@ -1,8 +1,6 @@
 package com.tdp.ct.web.page;
 
-import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
@@ -11,20 +9,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.Helper.*;
-import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
-
-
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> botoneraIrA;
     @FindBy(xpath = "//span[contains(text(),'Validar identidad del titular')]/..")
@@ -200,7 +193,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
-        typeInputShadowRootCSS(numdoc, rootInput, "div input");
+        typeInShadowRootCssSelector(numdoc, rootInput, "div input");
         UtilWeb.waitForSeconds(1);
     }
 
@@ -208,13 +201,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement inputSuperUser = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
-        typeInputShadowRootCSS(user, inputSuperUser, "div input");
+        typeInShadowRootCssSelector(user, inputSuperUser, "div input");
     }
 
     public void ingresarPasswordSupervisor(String password) {
         UtilWeb.waitForSeconds(1);
         WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
-        typeInputShadowRootCSS(password, rootInputCorreo, "div input");
+        typeInShadowRootCssSelector(password, rootInputCorreo, "div input");
     }
 
     public void clicConfirmarUsuarioSupervisor() {

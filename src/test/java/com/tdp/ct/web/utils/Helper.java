@@ -101,40 +101,32 @@ public class Helper extends WebBase {
         return element;
     }
 
-    public static void compareWebElementTextAndString(WebElement element, String value) {
-        String expectedText = value.trim().toUpperCase();
-        String currentText = element.getText().trim().toUpperCase();
-        boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
-        Assertions.assertTrue(isEquals,message);
+    public static void compareWebElementTextAndString(WebElement currentElement, String expectedValue) {
+        validateText(currentElement.getText().trim().toUpperCase(), expectedValue.trim().toUpperCase());
+    }
+    public static boolean returnValueCompareWebElementTextAndString(WebElement currentElement, String expectedValue) {
+        return assertText(currentElement.getText().trim().toUpperCase(),expectedValue.trim().toUpperCase());
     }
 
-    public static boolean returnValueCompareWebElementTextAndString(WebElement element, String value) {
-        String expectedText = value.trim().toUpperCase();
-        String currentText = element.getText().trim().toUpperCase();
-        boolean isEquals = currentText.contains(expectedText);
+    public static void compareStringAndString(String currentValue, String expectedValue) {
+        validateText(currentValue.trim().toUpperCase(),expectedValue.trim().toUpperCase());
+    }
+
+    public static boolean returnValueCompareStringAndString(String currentValue, String expectedValue) {
+        return assertText(currentValue.trim().toUpperCase(),expectedValue.trim().toUpperCase());
+    }
+
+    public static boolean assertText(String currentText, String expectedText){
+        boolean isEquals = expectedText.contains(currentText);
         String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         return isEquals;
     }
-
-    public static void compareStringAndString(String expectedValue, String currentValue) {
-        String expectedText = expectedValue.trim().toUpperCase();
-        String currentText = currentValue.trim().toUpperCase();
-        boolean isEquals = currentText.contains(expectedText);
+    public static void validateText(String currentText, String expectedText){
+        boolean isEquals =  expectedText.contains(currentText);
         String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
         Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
         Assertions.assertTrue(isEquals,message);
-    }
-
-    public static boolean returnValueCompareStringAndString(String expectedValue, String currentValue) {
-        String expectedText = expectedValue.trim().toUpperCase();
-        String currentText = currentValue.trim().toUpperCase();
-        boolean isEquals = currentText.contains(expectedText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
-        return isEquals;
     }
 
     public static boolean isVisible(WebDriver driver, WebElement element) {
@@ -171,22 +163,18 @@ public class Helper extends WebBase {
             return false;
         }
     }
-    
-    public static void typeInputShadowRootCSS(String text, WebElement webElement, String shadowElement) {
-        SearchContext context = webElement.getShadowRoot();
-        WebElement inputElement = context.findElement(By.cssSelector(shadowElement));
-        inputElement.sendKeys(Keys.CONTROL + "a");
-        inputElement.sendKeys(Keys.DELETE);
-        inputElement.sendKeys(text);
+
+    public static void typeInShadowRootCssSelector(String text, WebElement webElement, String shadowSelector) {
+        webElement.getShadowRoot()
+                .findElement(By.cssSelector(shadowSelector))
+                .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
     }
 
     public static void validateInput(WebDriver driver, String nameElement, String text, WebElement element) {
         boolean exist = validateInputAndLocator(driver, nameElement,text, element);
         if (exist) {
             element.click();
-            element.sendKeys(Keys.CONTROL + "a");
-            element.sendKeys(Keys.DELETE);
-            element.sendKeys(text);
+            element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
             Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type %s: %s.",nameElement, text));
         } else {
             Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("No %s.", nameElement));
@@ -223,7 +211,7 @@ public class Helper extends WebBase {
         while (counter < MAX_RETRIES) {
             Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Retry shadow N° %d", (counter + 1)));
             try {
-                typeInputShadowRootCSS(text, webElement, shadowElement);
+                typeInShadowRootCssSelector(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(3);
                 if (webElement.isDisplayed()) {
                     Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: true.");
