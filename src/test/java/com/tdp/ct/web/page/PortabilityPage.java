@@ -154,8 +154,9 @@ public class PortabilityPage extends WebBase {
     }
 
     public void validateMessage(String message) {
+        UtilWeb.waitForSeconds(5);
         WebElement label = find().getElementByXPath("//*[contains(text(),'"+message.trim()+"')]");
-        esperaProgresiva(driver(),3,5,label);
+        esperaProgresiva(driver(),5,6,label);
         Assertions.assertTrue(label.isDisplayed(),"No se muestra en mensaje");
     }
 }

@@ -43,7 +43,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
 
-
     public void clickOnTheValidateHolderIdentityButton() {
         esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
         js().scrollElementTop(buttonValidarIdentidad);
@@ -83,10 +82,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicEnConfirmar() {
         UtilWeb.waitForSeconds(5);
-        WebElement btnConfirm = find().getElementByXPath("//*[contains(@label,'Confirmar')]"); //find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(), 5, 5, btnConfirm);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Button is displayed" + btnConfirm.isDisplayed());
-        btnConfirm.click();
+        List<WebElement> btnConfirm = find().getElementsByXPath("//*[contains(@label,'Confirmar')"); //find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
+        esperaProgresiva(driver(), 5, 5, btnConfirm.get(0));
+        getVisibleAndClickableElement(btnConfirm).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
         UtilWeb.waitForSeconds(2);
     }
@@ -140,19 +138,19 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         int contador = 0;
         int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
-            System.out.println("Entra al while");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al while");
             try {
-                System.out.println("Entra al try");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al try");
                 waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
-                System.out.println("Entra al catch");
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"Entra al catch");
                 UtilWeb.waitForSeconds(5);
                 contador++;
-                System.out.println(contador + " vez");
+                UtilWeb.logger(this.getClass()).log(Level.INFO,contador + " vez");
             }
         }
-        System.out.println("Sale del while");
+        UtilWeb.logger(this.getClass()).log(Level.INFO,"Sale del while");
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
@@ -171,7 +169,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
                 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
                 return;
             } catch (NoSuchElementException e) {
-                System.out.println("No se pudo encontrar el elemento" + (i + 1) + " intentos. Error: " + e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.INFO,"No se pudo encontrar el elemento" + (i + 1) + " intentos. Error: " + e.getMessage());
 
             }
         }
@@ -223,35 +221,37 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
         try {
             WebElement elementPadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu padre')]"));
-            esperaProgresiva(driver(), 4, 5, elementPadre);
-            System.out.println("Cual es el nombre de tu padre : " + true);
+            esperaProgresiva(driver(), 5, 6, elementPadre);
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"Cual es el nombre de tu padre : " + true);
             WebElement padreElement = find().getElementByXPath("//span[contains(text(),'" + padre + "')]/..");
             padreElement.click();
+            UtilWeb.waitForSeconds(5);
         } catch (NoSuchElementException e) {
-            System.out.println("No hay padre");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay padre");
         }
 
         try {
             WebElement elementMadre = driver().findElement(By.xpath("//p[contains(text(),'el nombre de tu madre')]"));
-            esperaProgresiva(driver(), 4, 5, elementMadre);
-            System.out.println("Cual es el nombre de tu madre : " + true);
+            esperaProgresiva(driver(), 5, 6, elementMadre);
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"Cual es el nombre de tu madre : " + true);
             WebElement madreElement = find().getElementByXPath("//span[contains(text(),'" + madre + "')]/..");
             madreElement.click();
+            UtilWeb.waitForSeconds(5);
         } catch (NoSuchElementException e) {
-            System.out.println("No hay madre");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay madre");
         }
 
         try {
             WebElement elementNacimiento = driver().findElement(By.xpath("//p[contains(text(),'distrito naciste')]"));
-            esperaProgresiva(driver(), 4, 5, elementNacimiento);
-            System.out.println("En que distrito naciste : " + true);
+            esperaProgresiva(driver(), 5, 6, elementNacimiento);
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"En que distrito naciste : " + true);
             WebElement lugarElement = find().getElementByXPath("//span[contains(text(),'" + lugar + "')]/..");
             lugarElement.click();
+            UtilWeb.waitForSeconds(5);
         } catch (NoSuchElementException e) {
-            System.out.println("No hay nacimiento");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay nacimiento");
         }
-
-        UtilWeb.waitForSeconds(2);
+        UtilWeb.waitForSeconds(5);
     }
 
     public boolean esperarLoadingIsNotVisible(String xpath, int segundos) {
@@ -262,7 +262,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            System.out.println("No se espero a que se oculte el elemento");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"No se espero a que se oculte el elemento");
         }
         return retorno;
     }

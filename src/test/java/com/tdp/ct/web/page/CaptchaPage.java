@@ -75,6 +75,7 @@ public class CaptchaPage extends WebBase {
     }
 
     private ImageToText initializeApi(String path) {
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Initialize Api");
         ImageToText api = new ImageToText();
         api.setClientKey("ebbfcdddae2c552ed5e3ef935aef7c8c");
         api.setFilePath(path);

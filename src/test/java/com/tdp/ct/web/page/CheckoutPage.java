@@ -407,4 +407,8 @@ public class CheckoutPage extends WebBase {
         js().scrollElementTop(btnDetallePedido);
         click(btnDetallePedido);
     }
+
+    public String getProductType() {
+        return getValueItemSessionStorage(driver(), "saleObject", "productType");
+    }
 }

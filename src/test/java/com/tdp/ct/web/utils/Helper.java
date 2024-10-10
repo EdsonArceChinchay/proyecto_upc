@@ -54,12 +54,12 @@ public class Helper extends WebBase {
         }
     }
 
-    public static void seleccionarValueComboShadow(WebDriver driver, String sFormControlName, String sCodigoValue){
+    public static void seleccionarValueComboShadow(WebDriver driver, String sFormControlName, String sCodigoValue) {
         UtilWeb.waitForSeconds(1);
-        System.out.println("seleccionarValueComboShadow(sFormControlName=" + sFormControlName + ", sCodigoValue="+sCodigoValue + ")");
+        System.out.println("seleccionarValueComboShadow(sFormControlName=" + sFormControlName + ", sCodigoValue=" + sCodigoValue + ")");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
-        eventFiringWebDriver.executeScript("document.querySelector('[formcontrolname=\""+sFormControlName+"\"]') " +
-                ".shadowRoot.querySelector('li.mdc-list-item[data-value=\""+sCodigoValue+"\"]').click();");
+        eventFiringWebDriver.executeScript("document.querySelector('[formcontrolname=\"" + sFormControlName + "\"]') " +
+                ".shadowRoot.querySelector('li.mdc-list-item[data-value=\"" + sCodigoValue + "\"]').click();");
     }
 
     public static String buscarValorOpcion(String sDescripcionOpcion, String[][] sOpciones) {
@@ -82,51 +82,53 @@ public class Helper extends WebBase {
         }
     }
 
-    public static WebElement selectEnabledItemFromAListOfItems(List<WebElement> listElemet) {
-        int numberElements = listElemet.size();
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Number of web elements: %d." ,numberElements));
-        WebElement element = null;
-        for (int i = 0; i < numberElements; i++) {
-            element = listElemet.get(i);
-            String nameElement;
+    public static WebElement getVisibleAndClickableElement(List<WebElement> elements) {
+        int numberElements = elements.size();
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Number of web elements: %d.", numberElements));
+        for (WebElement element : elements) {
             try {
-                if (element.isEnabled() && element.isSelected()) {
-                    nameElement = element.getText().trim();
-                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Web element %s - %s is enabled and selected.", element ,nameElement));
+                if (element.isDisplayed() && element.isEnabled()) {
+                    return element;
                 }
-            } catch (Exception e) {
+            } catch (NoSuchElementException e) {
                 Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Web element not found %s - %s.", element, e.getMessage()));
+            } catch (StaleElementReferenceException e) {
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element is no longer attached to the DOM: " + e.getMessage());
+            } catch (Exception e) {
+                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "An error occurred: " + e.getMessage());
             }
         }
-        return element;
+        return null;
     }
 
     public static void compareWebElementTextAndString(WebElement currentElement, String expectedValue) {
         validateText(currentElement.getText().trim().toUpperCase(), expectedValue.trim().toUpperCase());
     }
+
     public static boolean returnValueCompareWebElementTextAndString(WebElement currentElement, String expectedValue) {
-        return assertText(currentElement.getText().trim().toUpperCase(),expectedValue.trim().toUpperCase());
+        return assertText(currentElement.getText().trim().toUpperCase(), expectedValue.trim().toUpperCase());
     }
 
     public static void compareStringAndString(String currentValue, String expectedValue) {
-        validateText(currentValue.trim().toUpperCase(),expectedValue.trim().toUpperCase());
+        validateText(currentValue.trim().toUpperCase(), expectedValue.trim().toUpperCase());
     }
 
     public static boolean returnValueCompareStringAndString(String currentValue, String expectedValue) {
-        return assertText(currentValue.trim().toUpperCase(),expectedValue.trim().toUpperCase());
+        return assertText(currentValue.trim().toUpperCase(), expectedValue.trim().toUpperCase());
     }
 
-    public static boolean assertText(String currentText, String expectedText){
-        boolean isEquals = expectedText.contains(currentText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
+    public static boolean assertText(String currentText, String expectedText) {
+        boolean isEquals = currentText.contains(expectedText);
+        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, message);
         return isEquals;
     }
-    public static void validateText(String currentText, String expectedText){
-        boolean isEquals =  expectedText.contains(currentText);
-        String message =String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO,message);
-        Assertions.assertTrue(isEquals,message);
+
+    public static void validateText(String currentText, String expectedText) {
+        boolean isEquals = currentText.contains(expectedText);
+        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, message);
+        Assertions.assertTrue(isEquals, message);
     }
 
     public static boolean isVisible(WebDriver driver, WebElement element) {
@@ -143,12 +145,12 @@ public class Helper extends WebBase {
         return present;
     }
 
-    public static boolean validateInputAndLocator(WebDriver driver, String nameElement,String input, WebElement element) {
+    public static boolean validateInputAndLocator(WebDriver driver, String nameElement, String input, WebElement element) {
         if (input == null || input.isEmpty()) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Value is null." );
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Value is null.");
             return false;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format(" Element %s - value: %s.", nameElement, input) );
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format(" Element %s - value: %s.", nameElement, input));
         return validateElement(driver, element, 10);
     }
 
@@ -171,18 +173,18 @@ public class Helper extends WebBase {
     }
 
     public static void validateInput(WebDriver driver, String nameElement, String text, WebElement element) {
-        boolean exist = validateInputAndLocator(driver, nameElement,text, element);
+        boolean exist = validateInputAndLocator(driver, nameElement, text, element);
         if (exist) {
             element.click();
             element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type %s: %s.",nameElement, text));
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type %s: %s.", nameElement, text));
         } else {
             Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("No %s.", nameElement));
         }
     }
 
-    public static void validateSelectShadow(WebDriver driver,String nameElement, String text, WebElement element, String shadowElement){
-        boolean existe = validateInputAndLocator(driver,nameElement, text, element);
+    public static void validateSelectShadow(WebDriver driver, String nameElement, String text, WebElement element, String shadowElement) {
+        boolean existe = validateInputAndLocator(driver, nameElement, text, element);
         if (existe) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {

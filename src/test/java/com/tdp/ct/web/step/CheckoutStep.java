@@ -5,11 +5,13 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.logging.Level;
 
 @Component
 public class CheckoutStep {
@@ -47,13 +49,14 @@ public class CheckoutStep {
         getSalesCode();
     }
 
-    public void getOrderCode() {
+    public String getOrderCode() {
         List<String> orderCode = page.checkoutPage().getOrderCode();
         if (orderCode != null) {
             this.customer.setOrdersCode(orderCode);
         } else {
-            System.out.println("ERROR - Codigo de Orden - Null");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Orden - Null");
         }
+        return orderCode == null ? " " : orderCode.toString();
     }
 
     public String getSalesCode() {
@@ -61,7 +64,7 @@ public class CheckoutStep {
         if (salesCode != null) {
             customer.setSalesCode(salesCode);
         } else {
-            System.out.println("ERROR - Codigo de Venta - Null");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Venta - Null");
         }
         return salesCode == null ? " " : salesCode;
     }
@@ -102,5 +105,9 @@ public class CheckoutStep {
 
     public void doyClickenVerDetalleDelPedido() {
         page.checkoutPage().clickenVerDetalleDelPedido();
+    }
+
+    public String getProductType() {
+        return page.checkoutPage().getProductType();
     }
 }
