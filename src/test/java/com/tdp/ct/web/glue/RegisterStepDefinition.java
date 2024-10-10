@@ -126,6 +126,7 @@ public class RegisterStepDefinition {
             registerStep.ingresarDatosValidacionSolicitada(datos, i);
             System.out.println("-- click en siguiente --");
             registerStep.clicEnSiguiente();
+            UtilWeb.waitForSeconds(5);
         }
         System.out.println("----- termino preguntas ----------");
         UtilWeb.waitForSeconds(5);
