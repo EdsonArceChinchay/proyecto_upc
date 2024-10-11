@@ -14,9 +14,9 @@
 ##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
-Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Canal Call Center
+Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Canal Tienda
 
-  @CompletaPlantaMovilAltaFija
+  @CompletaMovilTienda
   Esquema del escenario: Completa Planta Movil Alta Fija con documento CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -67,23 +67,12 @@ Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Cana
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Entonces me muestra la pantalla registrar venta
-    Y        doy clic para descargar el contrato
+    Y        doy click en el boton Continuar
+    Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Delivery"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
-      | usuario interno | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |
+      | usuario interno | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |

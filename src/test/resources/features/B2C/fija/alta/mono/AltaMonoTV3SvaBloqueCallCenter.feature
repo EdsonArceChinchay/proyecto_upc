@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO: ALTA
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA MONO TV
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT014
 ##GDAP: GDAP-1095
@@ -86,5 +86,5 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque con documento CE por Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | bloque1         | bloque2        |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV Hogar Digital | HBO    | Bloque Hot Pack | Bloque estelar |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 100712890 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |

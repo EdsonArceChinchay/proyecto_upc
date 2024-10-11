@@ -43,9 +43,9 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Cal
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-	  # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

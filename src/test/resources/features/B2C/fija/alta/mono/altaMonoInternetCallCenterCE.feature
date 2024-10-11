@@ -14,19 +14,19 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con documento CE por Canal tienda
+Característica: AT-DT011_Alta de Mono Internet con instalación HFC con documento CE por Canal Call Center
 
   @AltaMonoFtthTienda
-  Escenario: Realizar una Alta de Mono con instalación FTTH por Canal tienda
+  Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "usuario externo"
-    Y        ingreso el usuario "userNameST"
-    Y        ingreso el password "passST"
+    Y        ingreso el usuario "userNameCC"
+    Y        ingreso el password "passCC"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-      #Y        valido que se presente el canal "TIENDA SAN MIGUEL"
+    Y        valido que se presente el canal "Call Center"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042464814"
     Y        doy click en el boton Consultar
@@ -39,11 +39,11 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion               | referencia |
-      | 15           | 1501      | 150136   | CONDESA DE CHINCHON 109 | parque     |
+      | 15           | 1501      | 150131   | CONDESA DE CHINCHON 109 | parque     |
     Y        presiono el boton Consultar ubicacion
-      #Y        ingreso la informacion del lugar para la instalacion
-       # | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-        #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
@@ -57,17 +57,22 @@ Característica: AT-DT011_Alta de Mono Internet con instalación FTTH con docume
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/12/1980 | Casado      | Aruba        |
+      | 12/02/1990 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-      #Y        presiono el boton descargar contrato
-    Y        doy click en el boton Registrar venta
+    Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documento>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
