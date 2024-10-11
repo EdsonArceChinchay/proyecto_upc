@@ -71,11 +71,9 @@ public class DevicesPage extends WebBase {
     }
 
     public void typeDeviceAndSearch(String buscarE) {
-        WebElement Input = find().getElementByCss("div.search-input-content > tdp-st-input-text");
-        click(Input);
-        type(Input, buscarE);
-        UtilWeb.waitForSeconds(10);
-        Input.sendKeys(Keys.ENTER);
+        WebElement input = find().getElementByCss("div.search-input-content > tdp-st-input-text");
+        input.click();
+        input.sendKeys(buscarE,Keys.ENTER);
     }
 
     public void clickButtonSelect() {
@@ -107,7 +105,7 @@ public class DevicesPage extends WebBase {
     }
 
     public void scrollToButtonSeeDetail() {
-        js().scrollElementTop(find().getElementByCss(".button-offer:nth-child(1)"));
+        js().scrollElementTop(find().getElementByCss(".cont-devices .tdp-container"));
         UtilWeb.waitForSeconds(5);
     }
 
