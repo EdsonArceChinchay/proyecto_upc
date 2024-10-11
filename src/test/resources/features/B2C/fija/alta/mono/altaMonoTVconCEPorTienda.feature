@@ -27,7 +27,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1013087120"
+    Y        ingreso el documento "101308710"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -45,7 +45,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "Mono"
-    Y        selecciono el plan "TV HOGAR DIGITAL"
+    Y        selecciono el plan "TV"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
