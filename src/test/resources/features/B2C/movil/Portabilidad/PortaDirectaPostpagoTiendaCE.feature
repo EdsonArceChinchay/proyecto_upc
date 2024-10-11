@@ -5,18 +5,18 @@
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-890
-##SPRINT CREADO: PI19_SP2
+##GDAP:
+##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 11/10/2024
+##FECMOD: 10/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
+Característica: AT-DT_Porta Directa solo chip postpago a cliente extranjero (CE) en canal Tienda
 
-  @PortaDirectaPostST
-  Esquema del escenario: Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
+  @PortaDirectaPostST_CE
+  Esquema del escenario: Porta Directa solo chip postpago a cliente extranjero (CE) en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -30,6 +30,10 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del nuevo cliente
+      | nombres | apellidos    | genero    |
+      | JUAN    | PEREZ ZAPATA | masculino |
     Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Mostrar ofertas
@@ -47,8 +51,8 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que este en la seccion completa los datos solicitados
-    Y        ingreso correo electronico "testing@gmail.com"
-    Y        ingreso nuevamente el correo electronico "testing@gmail.com"
+    Y        ingreso correo electronico "jlopez@mail.com"
+    Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
@@ -56,15 +60,11 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
       | <tipoDocumento> | <documento>    | <numero>    |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
-    Y        doy click en validar identidad del titular
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombrePadre   | nombreMadre   | distritoNac   |
-      | <nombrePadre> | <nombreMadre> | <distritoNac> |
-#    Entonces valido que me muestre el boton con el texto de identidad validada
+    Y        doy click en datos del cliente
+    Y        selecciono completar los datos del cliente
+      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
+      | 12/08/1994 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -73,12 +73,12 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        valido el servicio requestportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2024-01-24 | 2024-01-31   |
+    #Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-#      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 47497714  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | MERCEDES    | JUAN        | CAMPOVERDE  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 70501364  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1047497714 | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar |

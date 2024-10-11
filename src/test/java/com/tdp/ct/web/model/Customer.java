@@ -10,8 +10,8 @@ import java.util.List;
 public class Customer {
     @Setter @Getter private String customerTest;
     @Setter @Getter private String nameCustomer;
-    @Setter @Getter private String typeDocument;
-    @Setter @Getter private static String numberDocument;
+    @Setter @Getter private String documentType;
+    @Setter @Getter private String documentNumber;
     @Setter @Getter private String salesCode;
     @Setter @Getter private List <String> ordersCode;
     @Setter @Getter private boolean isNewCustomer;

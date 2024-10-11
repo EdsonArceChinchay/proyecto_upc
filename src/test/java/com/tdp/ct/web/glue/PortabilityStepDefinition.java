@@ -60,9 +60,14 @@ public class PortabilityStepDefinition {
         portabilityStep.clickBotonConsultar();
     }
 
-    @Y("valido los servicios")
-    public void validoLosServicios(DataTable dataTable) throws IOException {
-        serviceTest.receiveMessage(dataTable);
+    @Y("valido el servicio prevalidateportin")
+    public void validoLosServiciosPorta(DataTable dataTable) throws IOException {
+        serviceTest.receiveMessage(dataTable, "prevalidateportin");
+    }
+
+    @Y("valido el servicio requestportin")
+    public void validoLosServiciosPorta2(DataTable dataTable) throws IOException {
+        serviceTest.receiveMessage(dataTable, "requestportin");
     }
 
     @Y("doy tiempo extra")

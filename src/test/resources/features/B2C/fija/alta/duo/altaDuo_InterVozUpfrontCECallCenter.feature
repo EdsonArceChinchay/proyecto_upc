@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
-@BERSERKERS @DoneDevOps  @AltaDuo_InterVozUpfront @AltaDuoUpfront
+@BERSERKERS @DoneDevOps @AltaDuo_InterVozUpfront @AltaDuoUpfront
 Característica: AT-DT095_Alta Duo - Internet y Voz - Upfront con documento CE por canal Call Center
 
   @AltaDuo_InterVozUpfront

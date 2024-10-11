@@ -53,12 +53,12 @@ public class DeliveryPage extends WebBase {
     }
 
     public void typeTelephone(String numberPhone) {
-        typeInputShadowRootCSS(numberPhone, inputContactNumber, "div > div > div > input");
+        typeInShadowRootCssSelector(numberPhone, inputContactNumber, "div > div > div > input");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Type telephone " + numberPhone);
     }
 
     public void typeDeliveryInstructions(String instruction) {
-        typeInputShadowRootCSS(instruction, inputInstruction, "div > div > div > input");
+        typeInShadowRootCssSelector(instruction, inputInstruction, "div > div > div > input");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Type instruction " + instruction);
     }
 

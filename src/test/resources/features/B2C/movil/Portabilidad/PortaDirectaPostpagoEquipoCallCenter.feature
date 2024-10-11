@@ -6,17 +6,17 @@
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
 ##GDAP: GDAP-
-##SPRINT CREADO: PI20_SP2
+##SPRINT CREADO: PI21_SP1
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE(SIN ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 17/07/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal Call Center
+Característica: AT-DT_Porta Directa solo chip postpago + Equipo a cliente Nacional (DNI) en canal Call Center
 
   @PortaDirectaEquipoPostCC
-  Esquema del escenario: Portabilidad solo chip postpago + Equipo en canal Call Center
+  Esquema del escenario: Porta Directa solo chip postpago + Equipo a cliente Nacional (DNI) en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -54,7 +54,7 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        doy click en el boton Porta Movil
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        valido los servicios
+    Y        valido el servicio prevalidateportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2023-01-24 | 2023-01-31   |
     Y        doy tiempo extra
@@ -72,8 +72,8 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso correo electronico "jlopez@mail.com"
-    Y        ingreso nuevamente el correo electronico "jlopez@mail.com"
+    Y        ingreso correo electronico "jufeufecenno-3027@yopmail.com"
+    Y        ingreso nuevamente el correo electronico "jufeufecenno-3027@yopmail.com"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
@@ -98,5 +98,5 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago + Equipo en canal
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 73369536  | 920956667 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 73369536  | 920954567 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
 

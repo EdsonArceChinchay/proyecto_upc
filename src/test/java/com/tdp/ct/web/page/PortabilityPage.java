@@ -111,51 +111,54 @@ public class PortabilityPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "After modified localStorage" + jsonStr);
     }
 
-    public String getValuePortaDirecta()  {
+    public String getValuePortaDirecta() {
         String primaryKey = "datosAgente";
         String key = "additionalData";
-        String valuePortaDirecta =getValueItemSessionStorage(driver(), primaryKey, key);
+        String valuePortaDirecta = getValueItemSessionStorage(driver(), primaryKey, key);
         valuePortaDirecta = (valuePortaDirecta == null) ? " {\"key\": \"PortaDirecta\", \"value\": \"A\"}" : valuePortaDirecta;
         return valuePortaDirecta;
     }
 
     public void clickButtonCodigoDePorta() {
-         esperaProgresiva(driver(),3,5,btnCodePorta);
-         js().scrollElementTop(btnCodePorta);
-         click(btnCodePorta,2);
+        esperaProgresiva(driver(), 3, 5, btnCodePorta);
+        js().scrollElementTop(btnCodePorta);
+        click(btnCodePorta, 2);
     }
 
     public void selectButton(String name) {
-        WebElement buttonSelected = find().getElementByXPath("//*[contains(text(),'"+name.trim()+"')]");
-        esperaProgresiva(driver(),3,5,buttonSelected);
-        click(buttonSelected,2);
+        WebElement buttonSelected = find().getElementByXPath("//*[contains(text(),'" + name.trim() + "')]");
+        esperaProgresiva(driver(), 3, 5, buttonSelected);
+        js().scrollElementTop(buttonSelected);
+        click(buttonSelected, 2);
     }
 
     public void clickButtonConfirmar() {
-        esperaProgresiva(driver(),3,5,btnConfirmar);
-        click(btnConfirmar,2);
+        esperaProgresiva(driver(), 3, 5, btnConfirmar);
+        js().scrollElementTop(btnConfirmar);
+        click(btnConfirmar, 2);
     }
 
     public void clickButtonContinuar() {
-        esperaProgresiva(driver(),3,5,btnContinuar);
-        click(btnContinuar,2);
+        esperaProgresiva(driver(), 3, 5, btnContinuar);
+        click(btnContinuar, 2);
     }
 
     public void inputToken(String token) {
-       String valueToken = token.trim().toUpperCase();
+        String valueToken = token.trim().toUpperCase();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Get token: " + valueToken);
         List<WebElement> inputToken = find().getElementsByXPath("//input[contains(@class,'entrada')]");
-        esperaProgresiva(driver(),3,5,inputToken.get(0));
-
-        for (int i=0;i<inputToken.size();i++){
-            String value =String.valueOf(valueToken.charAt(i));
+        esperaProgresiva(driver(), 3, 5, inputToken.get(0));
+        js().scrollElementTop(inputToken.get(0));
+        for (int i = 0; i < inputToken.size(); i++) {
+            String value = String.valueOf(valueToken.charAt(i));
             type(inputToken.get(i), value);
         }
     }
 
     public void validateMessage(String message) {
-        WebElement label = find().getElementByXPath("//*[contains(text(),'"+message.trim()+"')]");
-        esperaProgresiva(driver(),3,5,label);
-        Assertions.assertTrue(label.isDisplayed(),"No se muestra en mensaje");
+        UtilWeb.waitForSeconds(5);
+        WebElement label = find().getElementByXPath("//*[contains(text(),'" + message.trim() + "')]");
+        esperaProgresiva(driver(), 5, 6, label);
+        Assertions.assertTrue(label.isDisplayed(), "No se muestra en mensaje");
     }
 }

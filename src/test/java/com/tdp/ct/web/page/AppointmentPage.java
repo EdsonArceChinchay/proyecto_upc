@@ -4,7 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,7 +13,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
+import static com.tdp.ct.web.utils.Helper.typeInShadowRootCssSelector;
 
 public class AppointmentPage extends WebBase {
 
@@ -53,7 +52,7 @@ public class AppointmentPage extends WebBase {
     public void ingresarContacto(String contacto) {
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
-        typeInputShadowRootCSS(contacto,rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector(contacto,rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -79,7 +78,7 @@ public class AppointmentPage extends WebBase {
         }
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
-        typeInputShadowRootCSS("956425985",rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector("956425985",rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -137,13 +136,13 @@ public class AppointmentPage extends WebBase {
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
         WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
-        typeInputShadowRootCSS("Edson",rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector("Edson",rootInput,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInputShadowRootCSS("Arce",rootInput1,"div > div > div > input");
+        typeInShadowRootCssSelector("Arce",rootInput1,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInputShadowRootCSS("976709704",rootInput2,"div > div > div > input");
+        typeInShadowRootCssSelector("976709704",rootInput2,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInputShadowRootCSS("906701238",rootInput3,"div > div > div > input");
+        typeInShadowRootCssSelector("906701238",rootInput3,"div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 

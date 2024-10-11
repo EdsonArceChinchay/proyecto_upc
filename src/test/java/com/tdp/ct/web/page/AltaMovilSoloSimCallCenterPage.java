@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.selectEnabledItemFromAListOfItems;
+import static com.tdp.ct.web.utils.Helper.getVisibleAndClickableElement;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
@@ -207,7 +207,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         revisarModalError(driver());
         List<WebElement> listbtnAddSVA = find().getElementsByXPath("(//app-modal-detail-landline//div[2]/tdp-st-button)[1] | (//app-modal-detail-mt//div[2]/tdp-st-button)[1] | //*[contains(@class,'buttonG') and contains(text(),'SVA')]");
         esperaProgresiva(driver(), 3, 5, listbtnAddSVA.get(0));
-        WebElement btnAddSVA = selectEnabledItemFromAListOfItems(listbtnAddSVA);
+        WebElement btnAddSVA = getVisibleAndClickableElement(listbtnAddSVA);
         js().scrollElementTop(btnAddSVA);
         btnAddSVA.click();
         UtilWeb.waitForSeconds(5);

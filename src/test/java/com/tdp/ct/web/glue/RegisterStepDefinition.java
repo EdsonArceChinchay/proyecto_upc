@@ -3,6 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.RegisterStep;
+import com.tdp.ct.web.utils.RetentionService;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -19,11 +20,22 @@ public class RegisterStepDefinition {
     @Autowired
     private Customer customer;
 
+    @Autowired
+    private RetentionService retentionService;
+
     private Scenario scenario;
 
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
+    }
+
+    private void executeIfNotRetention(Runnable action) {
+        if (retentionService.isRetention()) {
+            scenario.log("This step is skipped - Is retention");
+            return;
+        }
+        action.run();
     }
 
     @Y("valido que este en la seccion completa los datos solicitados")
@@ -105,7 +117,9 @@ public class RegisterStepDefinition {
 
     @Y("doy click en validar identidad del titular")
     public void doyClickEnValidarIdentidadDelTitular() {
-        registerStep.clickOnTheValidateHolderIdentityButton();
+        executeIfNotRetention(() -> {
+            registerStep.clickOnTheValidateHolderIdentityButton();
+        });
     }
 
     @Y("elijo el tipo de validacion a realizar {string}")
@@ -121,20 +135,25 @@ public class RegisterStepDefinition {
 
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
-        UtilWeb.waitForSeconds(10);
-        for (int i = 0; i < 3; i++) {
-            registerStep.ingresarDatosValidacionSolicitada(datos, i);
-            System.out.println("-- click en siguiente --");
-            registerStep.clicEnSiguiente();
-        }
-        System.out.println("----- termino preguntas ----------");
-        UtilWeb.waitForSeconds(5);
-        registerStep.clicEnConfirmar();
+        executeIfNotRetention(() -> {
+            UtilWeb.waitForSeconds(10);
+            for (int i = 0; i < 3; i++) {
+                registerStep.ingresarDatosValidacionSolicitada(datos, i);
+                System.out.println("-- click en siguiente --");
+                registerStep.clicEnSiguiente();
+                UtilWeb.waitForSeconds(5);
+            }
+            System.out.println("----- termino preguntas ----------");
+            UtilWeb.waitForSeconds(10);
+            registerStep.clicEnConfirmar();
+        });
     }
 
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
     public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
+        executeIfNotRetention(() -> {
         registerStep.validarIdentidadValidada();
+        });
     }
 
     @Y("doy click en Validar contrato {string}")

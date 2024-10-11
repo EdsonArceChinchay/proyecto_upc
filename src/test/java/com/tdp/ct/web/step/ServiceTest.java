@@ -28,6 +28,8 @@ public class ServiceTest {
 
     private static String consultation = "";
 
+    private static String URL ="https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/";
+
     public void testPfxKey() {
         String password = getValueConfig("credential.certificate.password");
         try {
@@ -63,14 +65,16 @@ public class ServiceTest {
         return headerMap;
     }
 
-
-    public void preValidate() {
+    public void portability(String endpointPath,String jsonPath, String value){
         testPfxKey();
-        String body = readJson("/json/PortaNormal/preValidate.json");
+        String body = readJson(jsonPath);
+        URL = URL+endpointPath;
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " + URL);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Value: " + value);
         String consultation1 = given().headers(headersAksBerserkers())
-                .body(body).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/prevalidateportin")
-                .then().statusCode(200).extract().path("previousConsultationId");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "previousConsultationId: " + consultation1);
+                .body(body).when().post(URL)
+                .then().statusCode(200).extract().path(value);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, value+": " + consultation1);
         // Separa en 2 grupos el código recibido
         String numero1 = consultation1.substring(0, 9);
         String numero2 = consultation1.substring(9, 17);
@@ -80,12 +84,16 @@ public class ServiceTest {
         String numero2Correcto = String.valueOf(restaNumero2);
         // Unimos para obtener el código correcto
         consultation = numero1 + numero2Correcto;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct previousConsultationId: " + consultation);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct "+value+": " + consultation);
     }
 
-    public void receiveMessage(DataTable dataTable) throws IOException {
+    public void receiveMessage(DataTable dataTable,String service) throws IOException {
         testPfxKey();
-        preValidate();
+        if(service.equals("prevalidateportin")){
+            portability("fesimple/api/v1/portability/prevalidateportin","/json/PortaNormal/preValidate.json","previousConsultationId");
+        }else {
+            portability("fesimple/api/v1/portability/requestportin","/json/PortaDirecta/requestPortIn.json","previousConsultationNumber");
+        }
         var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");

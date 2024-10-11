@@ -170,18 +170,42 @@ public class HomePage extends WebBase {
         compareWebElementTextAndString(msgHome, msg);
     }
 
+    public String getAgentName(){
+       return getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
+    }
+    public String getAgentLastName(){
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname").trim();
+    }
+    public String getChannelType(){
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id").trim();
+    }
+
+    public String getChannelName(){
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name").trim();
+    }
+
+    public String getDocumentNumber(){
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalID").trim();
+    }
+    public String getDocumentType(){
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalIDType").trim();
+    }
+
+    public boolean isRetention() {
+        String metadata = getValueJsonObjectSessionStorage(driver(),"MSAL_INFO","metadata");
+        boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: "+isRetention));
+        return isRetention;
+    }
+
     public String validateAgentData(String storeTypeExpected) {
-        String name = getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
-        String lastName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname");
-        String channelType = getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id");
-        String channelName = getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name");
         String message = null;
-        if (name != null && lastName != null) {
-            String fullName = name + " " + lastName;
+        if (getAgentName() != null && getAgentLastName() != null) {
+            String fullName = getAgentName() + " " + getAgentLastName();
             message = validateThatYouAreOnThePage("Agent's name: %s. ", fullName);
         }
-        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", channelName);
-        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, channelType);
+        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", getChannelName());
+        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, getChannelType());
         return printAgentData(message);
     }
 

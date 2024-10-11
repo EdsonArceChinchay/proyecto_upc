@@ -3,6 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.CaptchaBase.Parameters;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.CheckoutStep;
+import com.tdp.ct.web.utils.RetentionService;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Entonces;
@@ -23,6 +24,16 @@ public class CheckoutStepDefinition {
 
     @Autowired
     private Customer customer;
+
+    @Autowired
+    private RetentionService retentionService;
+
+    private void executeIfRetention(Runnable action) {
+        String productType = checkoutStep.getProductType();
+        if (retentionService.isRetention() && productType.equals("MT")) {
+            action.run();
+        }
+    }
 
     @Y("me muestra pantalla para Descargar contrato")
     public void meMuestraPantallaParaDescargarContrato() {
@@ -61,9 +72,12 @@ public class CheckoutStepDefinition {
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
+        executeIfRetention(() -> {
+            checkoutStep.clickBotonRegistrarVenta();
+        });
         checkoutStep.validarVentaGenerada();
         this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
-        this.scenario.log(customer.getOrdersCode().toString());
+        this.scenario.log(checkoutStep.getOrderCode());
     }
 
     @Y("doy click en ver detalle del pedido")

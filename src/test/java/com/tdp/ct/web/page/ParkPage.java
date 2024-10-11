@@ -4,7 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,7 +12,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.typeInputShadowRootCSS;
+import static com.tdp.ct.web.utils.Helper.typeInShadowRootCssSelector;
 
 public class ParkPage extends WebBase {
 
@@ -77,13 +76,13 @@ public class ParkPage extends WebBase {
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
         esperaProgresiva(driver(), 5, 5, rootElement);
         revisarModalError(driver());
-        typeInputShadowRootCSS(nombre,rootElement,"div > div > div > input");
+        typeInShadowRootCssSelector(nombre,rootElement,"div > div > div > input");
         UtilWeb.waitForSeconds(1);
     }
 
     public void ingresarApellidoClienteExtranjero(String apellidos) {
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
-        typeInputShadowRootCSS(apellidos,rootElement,"div > div > div > input");
+        typeInShadowRootCssSelector(apellidos,rootElement,"div > div > div > input");
     }
 
     public void seleccionarGeneroClienteExtranjero(String genero) {
