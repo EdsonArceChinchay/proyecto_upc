@@ -94,8 +94,8 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(3);
         String loadingInserted = "//div[@class='loadingCard ng-star-inserted']";
 
-        if (esperarLoadingIsNotVisible(loadingInserted, 30)) {
-            waitUntilElementIsVisible(buttonIdentidadValidada, 20).isDisplayed();
+        if (esperarLoadingIsNotVisible(loadingInserted, 50)) {
+            waitUntilElementIsVisible(buttonIdentidadValidada, 30).isDisplayed();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Identidad validada");
         }
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);

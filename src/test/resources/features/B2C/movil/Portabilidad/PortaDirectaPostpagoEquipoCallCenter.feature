@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE(SIN ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: /10/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago + Equipo a cliente Nacional (DNI) en canal Call Center
 
@@ -98,5 +98,5 @@ Característica: AT-DT_Porta Directa solo chip postpago + Equipo a cliente Nacio
     Y        apruebo la solicitud
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 73369536  | 920956667 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 73369536  | 920954567 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | DANIELA     | FABIAN      | LIMA        |
 

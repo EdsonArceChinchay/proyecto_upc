@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 07/10/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
 
@@ -61,11 +61,10 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        ingreso los datos del supervisor
       | numdoc   | user     | password     |
       | 73261531 | vsiguass | $t3l3f0n1c4$ |
-#    Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
+#    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -74,7 +73,6 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        valido el servicio requestportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2024-01-24 | 2024-01-31   |
-    #Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -83,4 +81,4 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
 #      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 47497714  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | MERCEDES    | JUAN        | CAMPOVERDE  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 70501364  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO        | ILO  |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 70501364  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
