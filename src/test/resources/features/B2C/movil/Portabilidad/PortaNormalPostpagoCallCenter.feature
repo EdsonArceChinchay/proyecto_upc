@@ -36,7 +36,7 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido los servicios
+    Y        valido el servicio prevalidateportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2023-01-24 | 2023-01-31   |
     Y        valido que este en la seccion Postpago o Prepago

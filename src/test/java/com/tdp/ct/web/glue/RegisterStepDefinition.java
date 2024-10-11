@@ -144,7 +144,7 @@ public class RegisterStepDefinition {
                 UtilWeb.waitForSeconds(5);
             }
             System.out.println("----- termino preguntas ----------");
-            UtilWeb.waitForSeconds(5);
+            UtilWeb.waitForSeconds(10);
             registerStep.clicEnConfirmar();
         });
     }

@@ -81,9 +81,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicEnConfirmar() {
-        UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
         List<WebElement> btnConfirm = find().getElementsByXPath("//*[contains(@label,'Confirmar')]"); //find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
-        esperaProgresiva(driver(), 5, 5, btnConfirm.get(0));
+        esperaProgresiva(driver(), 5, 6, btnConfirm.get(0));
         getVisibleAndClickableElement(btnConfirm).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en confirmar");
         UtilWeb.waitForSeconds(2);

@@ -1,0 +1,22 @@
+{
+  "receipt": "22",
+  "donor": "20",
+  "serviceType": "1",
+  "observations": "",
+  "customerName": "BACILICA REATEGUI BARBARAN",
+  "customerIdentification": {
+    "identificationType": "01",
+    "identificationNumber": "42464650"
+  },
+  "numbersAndPlansList": {
+    "numbersAndPlans": [
+      {
+        "number": "902124429",
+        "planType": "02",
+        "planTypeReceiver": "02"
+      }
+    ]
+  },
+  "salesDepartment": "15",
+  "isUpdateOms": false
+}

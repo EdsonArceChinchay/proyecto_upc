@@ -54,7 +54,7 @@ Característica: AT-DT_Porta Directa solo chip postpago + Equipo a cliente Nacio
     Y        doy click en el boton Porta Movil
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        valido los servicios
+    Y        valido el servicio prevalidateportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2023-01-24 | 2023-01-31   |
     Y        doy tiempo extra

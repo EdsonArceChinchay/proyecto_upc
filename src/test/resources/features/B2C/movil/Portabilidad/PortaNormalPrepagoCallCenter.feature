@@ -36,7 +36,7 @@ Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Cal
     Y        escojo tipo de linea "Postpago"
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido los servicios
+    Y        valido el servicio prevalidateportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2022-12-24 | 2022-12-31   |
     Y        doy tiempo extra
