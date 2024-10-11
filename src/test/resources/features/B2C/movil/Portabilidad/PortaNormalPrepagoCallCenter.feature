@@ -11,12 +11,12 @@
 ##TAG : BERSERKERS
 ##DATA: UNICA VEZ
 ##ENCARGADO: Angel Medina
-##FECMOD: 16/04/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
+Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente Nacional (DNI)en canal Call Center
 
   @PortaNormalPreCC
-  Esquema del escenario: Portabilidad Normal Solo Chip Prepago DNI en canal Call Center
+  Esquema del escenario: Portabilidad Normal Solo Chip Prepago a cliente Nacional (DNI) en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

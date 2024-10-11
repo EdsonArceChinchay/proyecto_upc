@@ -9,14 +9,14 @@
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
+##DATA: REUSABLE
 ##ENCARGADO: VICTOR CARPIO
-##FECMOD: 16/04/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call Center
+Característica: AT-DT105_Portabilidad Normal solo chip postpago a cliente Nacional (DNI) en canal Call Center
 
   @PortaNormalPostCC @MVP16 @Global
-  Esquema del escenario: Portabilidad Normal solo chip postpago en canal Call Center
+  Esquema del escenario: Portabilidad Normal solo chip postpago a cliente Nacional (DNI) en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -54,9 +54,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -71,7 +68,6 @@ Característica: AT-DT105_Portabilidad Normal solo chip postpago en canal Call C
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

@@ -170,31 +170,34 @@ public class HomePage extends WebBase {
         compareWebElementTextAndString(msgHome, msg);
     }
 
-    public String getAgentName(){
-       return getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
+    public String getAgentName() {
+        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
     }
-    public String getAgentLastName(){
+
+    public String getAgentLastName() {
         return getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname").trim();
     }
-    public String getChannelType(){
+
+    public String getChannelType() {
         return getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id").trim();
     }
 
-    public String getChannelName(){
+    public String getChannelName() {
         return getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name").trim();
     }
 
-    public String getDocumentNumber(){
+    public String getDocumentNumber() {
         return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalID").trim();
     }
-    public String getDocumentType(){
+
+    public String getDocumentType() {
         return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalIDType").trim();
     }
 
     public boolean isRetention() {
-        String metadata = getValueJsonObjectSessionStorage(driver(),"MSAL_INFO","metadata");
+        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
         boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: "+isRetention));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: " + isRetention));
         return isRetention;
     }
 
