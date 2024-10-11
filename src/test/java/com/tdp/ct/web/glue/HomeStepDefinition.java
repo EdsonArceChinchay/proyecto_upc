@@ -31,15 +31,13 @@ public class HomeStepDefinition {
 
     private Scenario scenario;
 
-   // public ThreadLocal<Customer> customer = ThreadLocal.withInitial(()-> new Customer("","","",""));
-    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(() -> new Agent("","","","","",""));
-
+    // public ThreadLocal<Customer> customer = ThreadLocal.withInitial(()-> new Customer("","","",""));
+    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(() -> new Agent("", "", "", "", "", ""));
 
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
-
 
     private void executeIfNotRetention(Runnable action) {
         if (retentionService.isRetention()) {
@@ -51,19 +49,19 @@ public class HomeStepDefinition {
 
     @Entonces("valido el login exitoso mediante el mensaje {string}")
     public void validoElLoginExitosoMedianteElMensaje(String msg) {
-            homeStep.validateHomeMessage(msg);
-            homeStep.initializeAgent(agent.get());
+        homeStep.validateHomeMessage(msg);
+        homeStep.initializeAgent(agent.get());
     }
 
     @Y("valido que se presente el canal {string}")
     public void validoQueSePresenteLaTienda(String channelType) {
-        scenario.log(homeStep.validateAgentData(channelType));
-        System.out.println(agent.get().print());
+        homeStep.validateAgentData(channelType);
+        scenario.log(agent.get().print());
     }
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String tipoDocumento) {
-        System.out.println("Cliente: " +  customer.getCustomerTest());
+        System.out.println("Cliente: " + customer.getCustomerTest());
         customer.setDocumentType(tipoDocumento);
         homeStep.selectDocumentType(tipoDocumento);
     }
@@ -82,7 +80,7 @@ public class HomeStepDefinition {
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {
         executeIfNotRetention(() -> {
-        homeStep.clickOnTheBackOfficeButton();
+            homeStep.clickOnTheBackOfficeButton();
         });
     }
 
@@ -113,7 +111,7 @@ public class HomeStepDefinition {
 
     @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
     public void validoQueElNombreDelClienteSeaYSuSea(String nombre, String tipoDocumento, String nroDocumento) {
-        homeStep.validateCustomerData(nombre,tipoDocumento,nroDocumento);
+        homeStep.validateCustomerData(nombre, tipoDocumento, nroDocumento);
     }
 
     @Y("selecciono el ID de Cliente nro {string}")

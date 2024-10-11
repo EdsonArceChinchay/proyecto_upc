@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA MONO TV
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT015
 ##GDAP: GDAP-1093
@@ -85,5 +85,5 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan       | bloque | decodificador |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV HOGAR DIGITAL | HBO    | 24.90         |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | decodificador |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123200000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | 24.90         |

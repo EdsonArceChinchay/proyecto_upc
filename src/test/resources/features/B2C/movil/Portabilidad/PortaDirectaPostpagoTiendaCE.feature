@@ -9,9 +9,9 @@
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 10/10/2024
+##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago a cliente extranjero (CE) en canal Tienda
 

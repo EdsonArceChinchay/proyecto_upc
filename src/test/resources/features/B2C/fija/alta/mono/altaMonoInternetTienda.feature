@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA MONO INTERNET
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT009
 ##GDAP: GDAP-577
@@ -45,7 +45,7 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
-      |    |              |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | A  |              |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -76,5 +76,5 @@ Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR RA |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan        |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1423432127 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR |

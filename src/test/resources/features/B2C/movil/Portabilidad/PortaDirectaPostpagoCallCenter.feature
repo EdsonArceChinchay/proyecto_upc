@@ -9,14 +9,14 @@
 ##SPRINT CREADO: PI19_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 22/04/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Center
+Característica: AT-DT_Porta Directa solo chip postpago en canal Call Center
 
   @PortaDirectaPostCC
-  Esquema del escenario: Portabilidad Directa solo chip postpago en canal Call Center
+  Esquema del escenario: Porta Directa solo chip postpago en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -66,7 +66,6 @@ Característica: AT-DT_Portabilidad Directa solo chip postpago en canal Call Cen
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    #Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

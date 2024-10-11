@@ -1,17 +1,17 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA MONO TV
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT092
 ##GDAP: GDAP-1140
 ##SPRINT CREADO: PI14_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
 Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
@@ -78,5 +78,5 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan             | bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV ESTÁNDAR DIGITAL RA | HOT    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | HOT    |
