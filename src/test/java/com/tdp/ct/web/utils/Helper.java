@@ -226,6 +226,19 @@ public class Helper extends WebBase {
         }
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: false.");
     }
+
+    public static boolean isNumber(String tipoDoc) {
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type document: " + tipoDoc + " is number: ");
+        boolean result;
+        try {
+            Long.parseLong(tipoDoc);
+            result = true;
+        } catch (NumberFormatException excepcion) {
+            result = false;
+        }
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
+        return result;
+    }
 }
 
 

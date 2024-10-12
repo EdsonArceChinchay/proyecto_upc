@@ -14,11 +14,11 @@
 ##FECMOD: 06/05/2024
 
 @BERSERKERS @DoneDevOps @casiStandAloneRetail
-Característica: AT-DT113_Cambio de Simcard (CASI) a cliente extranjero (CE) por canal Retail
+Característica: AT-DT113_Cambio de Simcard (CASI) a cliente con CE por canal Retail
   Quiero realizar un CASI a un cliente con CE y parque movil
 
   @casiStandAloneRetail
-  Esquema del escenario: Cambio de Simcard a un cliente con CE y parque movil
+  Esquema del escenario: Cambio de Simcard (CASI) a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

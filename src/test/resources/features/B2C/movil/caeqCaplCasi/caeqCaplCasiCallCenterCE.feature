@@ -14,10 +14,10 @@
 ##FECMOD: 30/09/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin Cambio de SIM (CASI) a cliente extranjero(CE) por canal Call Center
+Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin Cambio de SIM (CASI) a cliente con CE por canal Call Center
 
   @CaeqCapl
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI  a cliente extranjero(CE) por canal Call Center
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI  a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

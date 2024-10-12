@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT
-##GDAP: GDAP-1389
+##GDAP: GDAP-994
 ##SPRINT CREADO: PI21_SP1
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
@@ -13,10 +13,10 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago + Equipo a cliente Nacional (DNI) en canal Call Center
+Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
 
   @PortaDirectaEquipoPostCC
-  Esquema del escenario: Porta Directa solo chip postpago + Equipo a cliente Nacional (DNI) en canal Call Center
+  Esquema del escenario: Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

@@ -13,11 +13,11 @@
 ##ENCARGADO:Brandon
 ##FECMOD: 26/02/2024
 @BERSERKERS @DoneDevOps @casiStandAloneTiendas
-Característica: AT-DT112_Cambio de Simcard (CASI) a cliente extranjero (CE) por canal Tienda
+Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Tienda
   Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
   @casiStandAloneTiendas
-  Esquema del escenario: Cambio de Simcard a un cliente con parque movil a un usuario con documento CE por Canal Tienda
+  Esquema del escenario: Cambio de Simcard (CASI) a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

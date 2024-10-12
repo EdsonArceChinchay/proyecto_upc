@@ -13,10 +13,10 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 11/10/2024
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
+Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en canal Tienda
 
   @PortaDirectaPostST
-  Esquema del escenario: Porta Directa solo chip postpago a cliente Nacional (DNI) en canal Tienda
+  Esquema del escenario: Porta Directa solo chip postpago a cliente con DNI en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -64,7 +64,6 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-#    Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -80,5 +79,4 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente Nacional (DNI)
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-#      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 47497714  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | MERCEDES    | JUAN        | CAMPOVERDE  |
       | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 70501364  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |

@@ -12,7 +12,6 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.getAbsolutePath;
-import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 
 public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
@@ -70,9 +69,6 @@ public class BandejaBackOfficePage extends WebBase {
     public void selectRequest(String numberRequest) {
         String codigoVenta = numberRequest.trim();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code: " + codigoVenta);
-
-        //      if (codigoVenta.equals("")) {
-        //         System.out.println("no viene numero solicitud");
         esperaProgresiva(driver(), 3, 3, btnDetalle);
         List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
         WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
@@ -80,24 +76,6 @@ public class BandejaBackOfficePage extends WebBase {
         UtilWeb.waitForSeconds(1);
         verDetalleButtons.get(verDetalleButtons.size() - 1).click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click a Ver detalle " + codigoVenta);
-
-//        }
-//    else{
-//        List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
-//        System.out.println("Botones: " + verDetalleButtons.size());
-//        String btnVerDetalle = "//span[contains(text(), '" + codigoVenta + "')]/ancestor::div[contains(@class, 'tdp-row')]//*[text()='Ver detalle']";
-//        System.out.println("ver Detalle: " +  btnVerDetalle);
-//        WebElement solicitudElement = driver().findElement(By.xpath(btnVerDetalle));
-//
-//        if (solicitudElement != null) {
-//            js().scrollElementTop(solicitudElement);
-//            solicitudElement.click();
-//            UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click a Ver detalle del "+ codigoVenta);
-//
-//        }else{
-//            System.out.println("ver Detalle - no encontrado" );
-//        }
-//    }
         esperaProgresiva(driver(), 3, 3, btnCargarAudio);
     }
 
@@ -114,23 +92,4 @@ public class BandejaBackOfficePage extends WebBase {
         }
     }
 
-    public boolean isNumber(String tipoDoc) {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: ");
-        boolean result;
-        try {
-            Long.parseLong(tipoDoc);
-            result = true;
-        } catch (NumberFormatException excepcion) {
-            result = false;
-        }
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
-        return result;
-    }
-
-    public boolean isRetention() {
-        String metadata = getValueJsonObjectSessionStorage(driver(),"MSAL_INFO","metadata");
-        boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: "+isRetention));
-        return isRetention;
-    }
 }

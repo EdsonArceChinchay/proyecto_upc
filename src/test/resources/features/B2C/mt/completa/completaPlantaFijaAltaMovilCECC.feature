@@ -13,7 +13,7 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
-Característica: AT-DT0_Completa planta fija mas alta movil a cliente extranjero (CE) por canal Call Center
+Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente con CE en canal Call Center
 
   @CompletaPlantaFijaAltaMovil
   Esquema del escenario: Completa Planta Fija Alta Movil con documento CE

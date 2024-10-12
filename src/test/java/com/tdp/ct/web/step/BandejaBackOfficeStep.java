@@ -33,15 +33,8 @@ public class BandejaBackOfficeStep {
     }
 
     @ScreenShotAfter
-    public void approveRequest()  {
+    public void approveRequest() {
         page.bandejaBackOfficePage().approveRequest();
     }
 
-    public boolean isNumber(String tipoDoc) {
-        return page.bandejaBackOfficePage().isNumber(tipoDoc);
-    }
-
-    public boolean isRetention() {
-        return page.bandejaBackOfficePage().isRetention();
-    }
 }

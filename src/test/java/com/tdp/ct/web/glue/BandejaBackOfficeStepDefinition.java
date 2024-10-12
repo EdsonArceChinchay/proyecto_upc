@@ -14,6 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.logging.Level;
 
+import static com.tdp.ct.web.utils.Helper.isNumber;
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class BandejaBackOfficeStepDefinition {
 
@@ -57,9 +59,9 @@ public class BandejaBackOfficeStepDefinition {
     @Y("busco por {string}")
     public void buscoPorElTipoDocumento(String tipoDoc) {
         executeIfNotRetention(() -> {
-            String typeDocument = (bandejaBackOfficeStep.isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
+            String typeDocument = (isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
             String numberDocument = typeDocument.equals("documento")
-                    ? (bandejaBackOfficeStep.isNumber(tipoDoc) ? tipoDoc : customer.getDocumentNumber())
+                    ? (isNumber(tipoDoc) ? tipoDoc : customer.getDocumentNumber())
                     : customer.getSalesCode();
             logSearch(typeDocument);
             bandejaBackOfficeStep.typeDocument(numberDocument);
@@ -82,7 +84,7 @@ public class BandejaBackOfficeStepDefinition {
     @Y("selecciono la solicitud")
     public void selectRequest() {
         executeIfNotRetention(() -> {
-            String salesCode = (this.customer.getSalesCode() == null) ? "FE-" : this.customer.getSalesCode();
+            String salesCode = (customer.getSalesCode() == null) ? "FE-" : customer.getSalesCode();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "numberRequest: " + salesCode);
             bandejaBackOfficeStep.selectRequest(salesCode);
         });

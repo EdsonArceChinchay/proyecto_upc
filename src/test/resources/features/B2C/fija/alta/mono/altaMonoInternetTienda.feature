@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @AltaMono @AltaFija
 Característica: AT-DT009_Alta fija mono Internet con documento CE en Canal Tienda
 
-  @AltaFijaTienda
+  @AltaMonoIntTienda
   Esquema del escenario: Alta fija con documento CE en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

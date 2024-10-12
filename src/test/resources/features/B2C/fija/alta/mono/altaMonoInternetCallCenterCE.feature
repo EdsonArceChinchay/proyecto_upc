@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA MONO INTERNET
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT011
 ##GDAP: GDAP-582
@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación HFC con documento CE por Canal Call Center
 
-  @AltaMonoFtthTienda
+  @AltaMonoIntHFC
   Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -39,7 +39,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC con documen
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion               | referencia |
-      | 15           | 1501      | 150131   | CONDESA DE CHINCHON 109 | parque     |
+      | 15           | 1501      | 150131   | AVENIDA CAMINO REAL 155 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
