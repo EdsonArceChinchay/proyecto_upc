@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO: ALTA FIJA
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA DUO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT006
 ##GDAP: GDAP-571
@@ -44,9 +44,9 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | 1    | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -68,7 +68,7 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

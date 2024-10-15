@@ -31,7 +31,6 @@ public class HomeStepDefinition {
 
     private Scenario scenario;
 
-    // public ThreadLocal<Customer> customer = ThreadLocal.withInitial(()-> new Customer("","","",""));
     public ThreadLocal<Agent> agent = ThreadLocal.withInitial(() -> new Agent("", "", "", "", "", ""));
 
     @Before(order = 0)

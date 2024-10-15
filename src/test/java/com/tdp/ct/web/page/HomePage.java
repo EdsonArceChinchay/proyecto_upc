@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -14,6 +15,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
 public class HomePage extends WebBase {
@@ -199,6 +201,11 @@ public class HomePage extends WebBase {
         boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
         UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: " + isRetention));
         return isRetention;
+    }
+
+    public void modifyGroupAgent(String group,String action) {
+        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
+        setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata",modifyGroup(metadata,group,action));
     }
 
     public String validateAgentData(String storeTypeExpected) {

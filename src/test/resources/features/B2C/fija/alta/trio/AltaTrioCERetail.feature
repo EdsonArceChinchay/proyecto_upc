@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:
 ##ENCARGADO: MARIA SANCHEZ
-##FECMOD: 21/09/2023
+##FECMOD: 21/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaTrio
 Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
@@ -61,6 +61,7 @@ Característica: AT-DT003_Alta Trio con documento CE por Canal Retail
     Y        doy click en Validar contrato "hogar"
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -35,7 +35,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
       | nombres | apellidos   | genero    |
       | Pedro   | Lopez Lopez | masculino |
     Y        selecciono el boton Linea Nueva Hogar
-    #Y cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
@@ -44,9 +43,9 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit   |
-      #| A  | 1    | EDIFICIO | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
+      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -71,7 +70,8 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO con documento CE en Can
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

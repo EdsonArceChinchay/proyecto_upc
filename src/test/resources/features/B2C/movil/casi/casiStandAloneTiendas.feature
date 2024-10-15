@@ -43,7 +43,8 @@ Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Ti
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"False", CAPL: "False" y CASI:"True" en el response del salesLead
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:ACTIVO
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA DUO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT095
 ##GDAP: GDAP-990
 ##SPRINT CREADO:
@@ -11,13 +11,13 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO:
-##FECMOD: 30/03/2023
+##FECMOD: 15/10/2024
 
 @BERSERKERS @DoneDevOps @AltaDuo_InterVozUpfront @AltaDuoUpfront
-Característica: AT-DT095_Alta Duo - Internet y Voz - Upfront con documento CE por canal Call Center
+Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
 
   @AltaDuo_InterVozUpfront
-  Esquema del escenario: Alta Duo - Internet y Voz - Upfront con documento CE por canal Call Center
+  Esquema del escenario: Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -43,9 +43,9 @@ Característica: AT-DT095_Alta Duo - Internet y Voz - Upfront con documento CE p
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-#      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
+      | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta

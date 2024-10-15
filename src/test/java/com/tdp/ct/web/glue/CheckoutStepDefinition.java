@@ -23,9 +23,6 @@ public class CheckoutStepDefinition {
     }
 
     @Autowired
-    private Customer customer;
-
-    @Autowired
     private RetentionService retentionService;
 
     private void executeIfRetention(Runnable action) {
@@ -50,9 +47,7 @@ public class CheckoutStepDefinition {
 
     @Y("doy clic para descargar el contrato")
     public void doyClicParaDescargarElContrato() {
-        if (Parameters.estadoFlujo) {
-            checkoutStep.clicDescargarContrato();
-        }
+        checkoutStep.clicDescargarContrato();
     }
 
     @Entonces("me muestra la pantalla registrar venta")

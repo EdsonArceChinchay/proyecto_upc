@@ -12,7 +12,6 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 29/08/2024
-
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity
 Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal Tienda
 
@@ -54,6 +53,7 @@ Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal 
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        presiono en el boton de Registrar Venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

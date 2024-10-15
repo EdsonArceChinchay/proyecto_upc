@@ -1,9 +1,9 @@
 #language:es
 ##CREADOR:Eloy Milla
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO: ATIVO
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA DUO
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1385
 ##SPRINT CREADO: PI15_SP4
@@ -70,7 +70,8 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

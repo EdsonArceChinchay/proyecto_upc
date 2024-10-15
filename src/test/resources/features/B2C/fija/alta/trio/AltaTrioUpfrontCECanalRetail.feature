@@ -42,14 +42,14 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz  | tipoVivienda      | nombreVivienda | piso | int | conjunto             | conjHabit |
-#      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | -parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | alex mancilla | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    Y       doy click en el boton Iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -65,7 +65,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-    #Y        presiono el boton descargar contrato
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

@@ -3,11 +3,16 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import io.restassured.RestAssured;
+import io.restassured.config.HttpClientConfig;
 import io.restassured.config.SSLConfig;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -23,12 +28,14 @@ import static io.restassured.RestAssured.given;
 
 import org.apache.http.conn.ssl.SSLSocketFactory;
 
+import javax.net.ssl.SSLContext;
+
 @Component
 public class ServiceTest {
 
     private static String consultation = "";
-
-    private static String URL ="https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/";
+    private final String URL_AKS = "https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/";
+    private final String URL_AZURE = "https://apimngr-genesis-cert.azure-api.net/";
 
     public void testPfxKey() {
         String password = getValueConfig("credential.certificate.password");
@@ -65,51 +72,49 @@ public class ServiceTest {
         return headerMap;
     }
 
-    public void portability(String endpointPath,String jsonPath, String value){
+    public void portability(String endpointPath, String jsonPath, String value) {
         testPfxKey();
         String body = readJson(jsonPath);
-        URL = URL+endpointPath;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " + URL);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " +( URL_AKS + endpointPath));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Value: " + value);
         String consultation1 = given().headers(headersAksBerserkers())
-                .body(body).when().post(URL)
+                .body(body).when()
+                .post(URL_AKS + endpointPath)
                 .then().statusCode(200).extract().path(value);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, value+": " + consultation1);
-        // Separa en 2 grupos el código recibido
-        String numero1 = consultation1.substring(0, 9);
-        String numero2 = consultation1.substring(9, 17);
-        // La segunda parte del código recibido le resta 1
+        UtilWeb.logger(this.getClass()).log(Level.INFO, value + ": " + consultation1);
+
+        String numero1 = consultation1.substring(0, 9); // Separa en 2 grupos el código recibido
+        String numero2 = consultation1.substring(9, 17); // La segunda parte del código recibido le resta 1
         int restaNumero2 = Integer.parseInt(numero2) - 1;
-        // convierte la segunda parte del código recibido en String
-        String numero2Correcto = String.valueOf(restaNumero2);
-        // Unimos para obtener el código correcto
-        consultation = numero1 + numero2Correcto;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct "+value+": " + consultation);
+        String numero2Correcto = String.valueOf(restaNumero2); // convierte la segunda parte del código recibido en String
+        consultation = numero1 + numero2Correcto;         // Unimos para obtener el código correcto
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct " + value + ": " + consultation);
     }
 
-    public void receiveMessage(DataTable dataTable,String service) throws IOException {
+    public void receiveMessage(DataTable dataTable, String service) throws IOException {
         testPfxKey();
-        if(service.equals("prevalidateportin")){
-            portability("fesimple/api/v1/portability/prevalidateportin","/json/PortaNormal/preValidate.json","previousConsultationId");
-        }else {
-            portability("fesimple/api/v1/portability/requestportin","/json/PortaDirecta/requestPortIn.json","previousConsultationNumber");
+        if (service.equals("prevalidateportin")) {
+            portability("fesimple/api/v1/portability/prevalidateportin", "/json/PortaNormal/preValidate.json", "previousConsultationId");
+        } else {
+            portability("fesimple/api/v1/portability/requestportin", "/json/PortaDirecta/requestPortIn.json", "previousConsultationNumber");
         }
         var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/PortaNormal/receive.json");
-        String statusBody = Files.readString(filePath);
-
-        statusBody = statusBody.replace("{Code}", consultation);
-        statusBody = statusBody.replace("{number}", telefono);
-        statusBody = statusBody.replace("{fechaSig}", fechaSig);
-        statusBody = statusBody.replace("{fechaFinMes}", fechaFinMes);
+        String statusBody = Files.readString(filePath)
+                .replace("{Code}", consultation)
+                .replace("{number}", telefono)
+                .replace("{fechaSig}", fechaSig)
+                .replace("{fechaFinMes}", fechaFinMes);
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:" + statusBody);
 
         String message = given().headers(headersAksBerserkers())
-                .body(statusBody).when().post("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/api/v1/portability/receivemessageportability")
+                .body(statusBody)
+                .when()
+                .post(URL_AKS + "fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Message: " + message);
 
@@ -123,12 +128,11 @@ public class ServiceTest {
         if (!FE.isEmpty()) {
             String response = given().headers(headersAksBerserkers())
                     .when()
-                    .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE)
+                    .get(URL_AKS + "fesimple/v2/saleslead/" + FE)
                     .getBody().asString();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Response FE: " + response);
 
-            JSONObject jsonResponse = new JSONObject(response);
-            JSONArray additionalData = jsonResponse.getJSONArray("commercialOperation")
+            JSONArray additionalData =  new JSONObject(response).getJSONArray("commercialOperation")
                     .getJSONObject(0).getJSONArray("additionalData");
 
             for (int i = 0; i < additionalData.length(); i++) {
@@ -158,26 +162,25 @@ public class ServiceTest {
             var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
 
             Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/PortaDirecta/movistarToken.json");
-            String statusBody = Files.readString(filePath);
-
-            statusBody = statusBody.replace("{typeDocument}", typeDocument);
-            statusBody = statusBody.replace("{numberDocument}", numberDocument);
-            statusBody = statusBody.replace("{idTransaction}", idTransaction);
-            statusBody = statusBody.replace("{numberPhone}", numberPhone);
+            String statusBody = Files.readString(filePath)
+                    .replace("{typeDocument}", typeDocument)
+                    .replace("{numberDocument}", numberDocument)
+                    .replace("{idTransaction}", idTransaction)
+                    .replace("{numberPhone}", numberPhone);
 
             UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body " + statusBody);
 
             String token = given().headers(headersAksBerserkers()).headers(headersApimBerserkers())
-                    .body(statusBody).when().post("https://apimngr-genesis-cert.azure-api.net/api-ne-generartoken-movistartokenapi-op/v1/token")
+                    .body(statusBody)
+                    .when().post(URL_AZURE + "api-ne-generartoken-movistartokenapi-op/v1/token")
                     .then().statusCode(200).extract().path("token");
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Token: " + token);
             return token;
 
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR! Get code token "+ e.getMessage());
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR! Get code token " + e.getMessage());
             return null;
         }
-
     }
 
     private String getIdTransactionOfSaleslead(String codigoVenta) {
@@ -185,7 +188,7 @@ public class ServiceTest {
         String FE = codigoVenta.trim();
         String idTransaction = given().headers(headersAksBerserkers())
                 .when()
-                .get("https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/fesimple/v2/saleslead/" + FE)
+                .get(URL_AKS + "fesimple/v2/saleslead/" + FE)
                 .then().statusCode(200).extract().path("id");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "idTransaction: " + idTransaction);
         return idTransaction;

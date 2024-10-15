@@ -118,36 +118,36 @@ public class HomeStep {
         page.homePage().clickOnTheLogoutButton();
     }
 
-    public String getAgentName()
-    {
+    public String getAgentName() {
         return page.homePage().getAgentName().trim();
     }
 
-    public String getAgentLastName()
-    {
+    public String getAgentLastName() {
         return page.homePage().getAgentLastName();
     }
-    public String getChannelName()
-    {
+
+    public String getChannelName() {
         return page.homePage().getChannelName();
     }
-    public String getChannelType()
-    {
+
+    public String getChannelType() {
         return page.homePage().getChannelType();
     }
 
-    public String getDocumentNumber()
-    {
+    public String getDocumentNumber() {
         return page.homePage().getDocumentNumber();
     }
 
-    public String getDocumentType()
-    {
+    public String getDocumentType() {
         return page.homePage().getDocumentType();
     }
 
-    public boolean isRetention(){
-       return page.homePage().isRetention();
+    public boolean isRetention() {
+        return page.homePage().isRetention();
+    }
+
+    public void modifyGroupAgent(String group, String action){
+        page.homePage().modifyGroupAgent(group,action);
     }
 
     public void initializeAgent(Agent agent) {
@@ -157,6 +157,7 @@ public class HomeStep {
         agent.setChannelType(getChannelType());
         agent.setDocumentNumber(getDocumentNumber());
         agent.setDocumentType(getDocumentType());
+        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES","remove");
         agent.setRetention(isRetention());
     }
 

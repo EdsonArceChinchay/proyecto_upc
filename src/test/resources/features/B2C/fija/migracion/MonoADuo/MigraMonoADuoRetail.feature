@@ -32,7 +32,6 @@
      Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
-#     Y        doy click en el boton "CONFIRMAR DIRECCION"
      Y        doy click en el boton "ACTUALIZAR DIRECCION"
      Y        ingreso la referencia de la direccion "."
      Y        presiono el boton Consultar ubicacion
@@ -54,6 +53,7 @@
      Y        imprimo el texto del contrato solicitado
      Cuando   doy clic en si acepto
      Y        doy click en el boton de continuar
+     Y        doy clic para descargar el contrato
      Y        doy click en el boton Registrar venta
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
      Y        doy click en ver detalle del pedido

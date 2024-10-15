@@ -535,17 +535,17 @@ public class ParkPage extends WebBase {
     }
 
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
-    protected WebElement cierrePopUoError;
+    protected WebElement cierrePopUpError;
 
     public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado
         boolean elementoExistente;
         elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
         if (elementoExistente) {
-            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUoError);
+            Addons.esperaProgresiva(driver(), 3, 5, cierrePopUpError);
             UtilWeb.logger(this.getClass()).log(Level.INFO,"Se cierra Popup de error");
             try {
-                click(cierrePopUoError);
+                click(cierrePopUpError);
 
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO,"error al hacer click");

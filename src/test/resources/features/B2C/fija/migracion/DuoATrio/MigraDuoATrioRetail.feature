@@ -16,11 +16,9 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28
 Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
-
   @migracionDuoATrioRetail
   Esquema del escenario: Migracion de Duo a Trio con CE Retail
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -50,6 +48,7 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
