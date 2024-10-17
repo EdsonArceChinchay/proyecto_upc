@@ -59,6 +59,13 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Cuando   regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        selecciono el tipo de documento "<tipoDocumento>"
+    Y        ingreso el documento "<documento>"
+    Y        doy click en el boton Consultar
+
+
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 12094544011 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

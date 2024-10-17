@@ -14,10 +14,10 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @AT-DT103
-Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
+Característica: AT-DT103_Migracion de Mono a Mono por el canal Tienda
 
   @MigracionMonoAMono_CallCenter
-  Esquema del escenario: Migracion de Mono a Mono en canal call center
+  Esquema del escenario: Migracion de Mono a Mono en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
@@ -55,4 +55,4 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Call Center CE
 
     Ejemplos:
       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan                              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS |
+      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 77654579  | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS |
