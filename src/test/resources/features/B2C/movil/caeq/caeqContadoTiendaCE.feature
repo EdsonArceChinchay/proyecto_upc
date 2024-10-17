@@ -50,7 +50,7 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
-    #Y        doy clic para descargar el contrato
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido

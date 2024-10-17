@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 04/10/2024
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI13 @AT-DT104
-Característica: AT-DT104_Migracion salto 0 HFC FTTH canal Call Center
+Característica: AT-DT104_Migracion salto 0 (Cambio de tecnologia HFC a FTTH) a parque mono a cliente con CE en canal Call Center
 
   @migraSalto0HFC_FTTHCallCenter
-  Esquema del escenario: Migracion salto 0 HFC FTTH con CE  por canal Call Center
+  Esquema del escenario: Migracion salto 0 HFC FTTH con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
