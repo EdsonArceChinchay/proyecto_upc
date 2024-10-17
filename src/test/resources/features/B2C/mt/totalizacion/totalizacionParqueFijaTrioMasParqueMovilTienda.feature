@@ -47,6 +47,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil con docum
     Y        doy click en el boton Ir a movistar total
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en Validar contrato "Móvil"
