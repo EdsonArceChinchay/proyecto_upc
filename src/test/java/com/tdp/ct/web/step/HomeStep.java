@@ -157,7 +157,7 @@ public class HomeStep {
         agent.setChannelType(getChannelType());
         agent.setDocumentNumber(getDocumentNumber());
         agent.setDocumentType(getDocumentType());
-        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES","remove");
+      //  modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES","remove");
         agent.setRetention(isRetention());
     }
 
