@@ -14,10 +14,10 @@
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT0 _Completa movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA con documento CE en tienda
+Característica: AT-DT0 _Completa movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA a cliente con CE en tienda
 
   @CompletaMovilEquipoSVAT
-  Esquema del escenario: Completa Planta Fija Trio + Alta Movil + Alta Equipo Movil+ Alta SVA con documento CE en tienda
+  Esquema del escenario: Completa Planta Fija Trio + Alta Movil + Alta Equipo Movil+ Alta SVA a cliente con CE en tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"

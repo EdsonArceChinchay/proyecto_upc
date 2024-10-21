@@ -14,10 +14,10 @@
 ##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
-Característica: AT-DT0_Completa Planta Movil Alta Fija con documento CE en Canal Tienda
+Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Tienda
 
   @CompletaMovilTienda
-  Esquema del escenario: Completa Planta Movil Alta Fija con documento CE
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
