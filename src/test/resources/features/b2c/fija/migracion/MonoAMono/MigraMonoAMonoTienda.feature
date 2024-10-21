@@ -32,8 +32,12 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Tienda
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"

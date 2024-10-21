@@ -125,16 +125,16 @@ public class AddressPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void typeAddress(String direc) {
-        WebElement inputDireccion = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
-        click(inputDireccion);
-        type(inputDireccion, direc);
+    public void typeAddress(String address) {
+        WebElement inputAdress = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
+        inputAdress.click();
+        inputAdress.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, address);
     }
 
     public void typeReference(String referencia) {
-        WebElement Refer = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
-        click(Refer);
-        type(Refer, referencia);
+        WebElement inputReference = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
+        inputReference.click();
+        inputReference.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, referencia);
     }
 
     public void clickButtonConsultLocation() {
