@@ -65,7 +65,7 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"

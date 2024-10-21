@@ -168,7 +168,7 @@ public class RegisterStepDefinition {
 
     @Y("imprimo el texto del contrato solicitado")
     public void imprimoElTextoDelContratoSolicitado() {
-        this.scenario.log(registerStep.getTextoSolicitud());
+        this.scenario.log(registerStep.getSummary());
         this.scenario.log("[Código de Venta: " + registerStep.getSalesCode() + "]");
     }
 

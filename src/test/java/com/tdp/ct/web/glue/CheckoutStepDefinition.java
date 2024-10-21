@@ -1,7 +1,5 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.CaptchaBase.Parameters;
-import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.step.CheckoutStep;
 import com.tdp.ct.web.utils.RetentionService;
 import io.cucumber.java.Before;
@@ -70,7 +68,8 @@ public class CheckoutStepDefinition {
         executeIfRetention(() -> {
             checkoutStep.clickBotonRegistrarVenta();
         });
-        checkoutStep.validarVentaGenerada();
+        checkoutStep.validateTheBillingCycle();
+        checkoutStep.validateRegistrationHasBeenSuccessful();
         this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
         this.scenario.log(checkoutStep.getOrderCode());
     }
@@ -83,5 +82,13 @@ public class CheckoutStepDefinition {
     @Y("valido que se muestre el detalle del pedido de {string}")
     public void validoQueSeMuestreElDetalleDelPedido(String service) {
         checkoutStep.ValidoQuePresenteDetallePedido(service);
+    }
+
+    @Entonces("visualizo en pantalla el mensaje de exito del ticket generado")
+    public void visualizoEnPantallaElMensajeDeExitoDelTicketGenerado() {
+        checkoutStep.validateTheBillingCycle();
+        checkoutStep.validateRegistrationHasBeenSuccessful();
+        checkoutStep.validateTicket();
+        this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
     }
 }

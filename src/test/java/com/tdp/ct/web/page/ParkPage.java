@@ -66,6 +66,9 @@ public class ParkPage extends WebBase {
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
+    @FindBy(xpath = "//*[contains(@class,'texto-numero') or contains(@class,'seccion-orden')]")
+    protected WebElement btnOrder;
+
     public boolean isNewCustomer() {
         esperaProgresiva(driver(),5,5,nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
@@ -555,4 +558,8 @@ public class ParkPage extends WebBase {
         }
     }
 
+    public void selectOrder() {
+        esperaProgresiva(driver(),5,5,btnOrder);
+        btnOrder.click();
+    }
 }

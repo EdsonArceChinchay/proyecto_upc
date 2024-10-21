@@ -144,8 +144,8 @@ public class RegisterStep {
         page.altaFijaMovilRegistroPage().visualizarContratoEnPantalla();
     }
 
-    public String getTextoSolicitud() {
-        return page.checkoutPage().getTextoSolicitud();
+    public String getSummary() {
+        return page.checkoutPage().getSummary();
     }
 
     public String getSalesCode() {

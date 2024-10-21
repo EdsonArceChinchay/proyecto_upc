@@ -212,4 +212,9 @@ public class ParkStep {
     public void clickCierrePopup() {
         page.parkPage().clickCierrePopup();
     }
+
+    @ScreenShotAfter
+    public void selectOrder() {
+        page.parkPage().selectOrder();
+    }
 }
