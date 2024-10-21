@@ -61,7 +61,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo con documento CE por Canal
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"

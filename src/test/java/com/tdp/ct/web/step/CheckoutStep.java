@@ -41,34 +41,6 @@ public class CheckoutStep {
         page.checkoutPage().clicDescargarContrato(scenario);
     }
 
-    @ScreenShotAfter
-    public void validarVentaGenerada() {
-        Assert.assertTrue("No mostro pantalla de venta exitosa",
-                page.checkoutPage().validarVentaGenerada());
-        getOrderCode();
-        getSalesCode();
-    }
-
-    public String getOrderCode() {
-        List<String> orderCode = page.checkoutPage().getOrderCode();
-        if (orderCode != null) {
-            this.customer.setOrdersCode(orderCode);
-        } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Orden - Null");
-        }
-        return orderCode == null ? " " : orderCode.toString();
-    }
-
-    public String getSalesCode() {
-        String salesCode = page.checkoutPage().getSalesCode();
-        if (salesCode != null) {
-            customer.setSalesCode(salesCode);
-        } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Venta - Null");
-        }
-        return salesCode == null ? " " : salesCode;
-    }
-
     @ScreenShotBefore
     public void clickDescargarContrato() {
         page.altaFijaTiendaPage().descargarContrato();
@@ -98,16 +70,51 @@ public class CheckoutStep {
         page.altaFijaTiendaPage().clickBotonRegistrarVenta();
     }
 
+    public String getProductType() {
+        return page.checkoutPage().getProductType();
+    }
+
+    public void validateTheBillingCycle(){
+        page.checkoutPage().validateTheBillingCycle();
+    }
+
     @ScreenShotAfter
-    public void ValidoQuePresenteDetallePedido(String service) {
-        page.checkoutPage().ValidoQuePresenteDetallePedido(service);
+    public void validateRegistrationHasBeenSuccessful(){
+        Assert.assertTrue("No mostro pantalla de venta exitosa",
+                page.checkoutPage().validateRegistrationHasBeenSuccessful());
+    }
+
+    @ScreenShotAfter
+    public void validateTicket() {
+        page.checkoutPage().validateTicket();
+    }
+
+    public String getOrderCode() {
+        List<String> orderCode = page.checkoutPage().getOrderCode();
+        if (orderCode != null) {
+            customer.setOrdersCode(orderCode);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Orden - Null");
+        }
+        return orderCode == null ? " " : orderCode.toString();
+    }
+
+    public String getSalesCode() {
+        String salesCode = page.checkoutPage().getSalesCode();
+        if (salesCode != null) {
+            customer.setSalesCode(salesCode);
+        } else {
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Venta - Null");
+        }
+        return salesCode == null ? " " : salesCode;
     }
 
     public void doyClickenVerDetalleDelPedido() {
         page.checkoutPage().clickenVerDetalleDelPedido();
     }
 
-    public String getProductType() {
-        return page.checkoutPage().getProductType();
+    @ScreenShotAfter
+    public void ValidoQuePresenteDetallePedido(String service) {
+        page.checkoutPage().ValidoQuePresenteDetallePedido(service);
     }
 }

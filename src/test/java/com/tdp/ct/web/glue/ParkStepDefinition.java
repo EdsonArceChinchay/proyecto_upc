@@ -188,4 +188,9 @@ public class ParkStepDefinition {
     public void doyClickEnElBotonContinuar() {
         parkStep.botonContinuar();
     }
+
+    @Y("selecciono la orden")
+    public void seleccionoLaOrden() {
+        parkStep.selectOrder();
+    }
 }

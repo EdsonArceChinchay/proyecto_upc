@@ -15,7 +15,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
 Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
 
-  @MVP_Alta_movil_SoloSim_CanalRetail @MVP01 @Global
+  @AltaMovilRetail
   Esquema del escenario: Alta Movil Postpago con documento CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -55,7 +55,7 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
@@ -64,7 +64,14 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
-
+    Y        selecciono la orden
+    Y        doy click en el boton continuar
+#    Y        doy clic para descargar el contrato
+#    Y        doy click en el boton Registrar venta
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+#    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
