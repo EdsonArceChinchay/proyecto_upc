@@ -42,7 +42,7 @@ public class AddressStep {
         page.addressPage().typeAddress(data);
     }
 
-    //@ScreenShotAfter
+    @ScreenShotAfter
     public void typeReference(String reference) {
         page.addressPage().typeReference(reference);
     }

@@ -67,7 +67,6 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en el boton confirmar
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |

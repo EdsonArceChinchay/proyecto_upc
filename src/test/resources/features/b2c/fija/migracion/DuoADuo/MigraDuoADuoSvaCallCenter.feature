@@ -1,51 +1,55 @@
 #language:es
-##CREADOR: Edson Arce
+##CREADOR: Angel Medina
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT069
-##GDAP: GDAP-1141
+##CODIGO: AT-DT059
+##GDAP: GDAP-1169
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE
-##ENCARGADO: Maria Sanchez
-##FECMOD: 31/08/2023
+##DATA: REUSABLE(CANCELAR ORDEN EN VUELO)
+##ENCARGADO: Angel Medina
+##FECMOD: 21/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
+Característica: AT-DT059_Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA a cliente con CE por canal Call Center
 
-  Antecedentes:
+  @MigraDuoADuoSVaCallcenter @MVP09 @Global @General
+  Esquema del escenario: Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
-
-  @MigracionMonoAMonoSVACallCenter @MVP19  @Global @General
-  Esquema del escenario: Migracion (mono a mono) + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA PE" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
-    Y        doy click en Cambiar plan hogar
+    Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
-    Entonces doy click en el boton Agregar SVA
+    Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA bloque "<bloque>"
+    Y        agrego SVA repetidor "WIFI"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en Validar contrato "hogar"
@@ -57,7 +61,6 @@ Característica: AT-DT069_Migracion de Mono a Mono por el canal Call Center
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan             | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123456766 | tester@tester.com | Mono          | TV HOGAR DIGITAL | HBO    |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan           |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1854264859 | tester@tester.com | Duo           | Duo Internet Flex HD |

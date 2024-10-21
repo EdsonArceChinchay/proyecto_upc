@@ -1,52 +1,53 @@
 #language:es
-##CREADOR: Angel Medina
+##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD: CAMBIO
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO: ACTIVO
-##CODIGO: AT-DT059
-##GDAP: GDAP-1169
+##CODIGO: AT-DT069
+##GDAP: GDAP-1141
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
-##ENCARGADO: Angel Medina
-##FECMOD: 13/06/2023
+##DATA: REUSABLE
+##ENCARGADO: Maria Sanchez
+##FECMOD: 21/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
+Característica: AT-DT069_Migracion de Mono TV a Mono Internet + SVA a cliente con CE por canal Call Center
 
-  Antecedentes:
+  @MigraMonoAMonoSVACallCenter @MVP19
+  Esquema del escenario: Migracion de Mono TV a Mono Internet + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
-
-  @MigracionDuoADuoSVaCallcenter @MVP09 @Global @General
-  Esquema del escenario: Migracion [duo a duo] + sva en canal CALL CENTER
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "ACTUALIZAR DIRECCION"
+    Y        ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono la oferta "<plan>"
+    Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
-    Y        doy click en el boton Agregar SVA
+    Entonces doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA repetidor "WIFI"
+    Y        agrego SVA Movistar Tv App Max
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento
-    Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en Validar contrato "hogar"
@@ -58,6 +59,7 @@ Característica: AT-DT059_Migracion de Mono a Duo + sva por el canal Call center
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1854264859 | tester@tester.com | Duo           | DÚO MOVISTAR VOZ INTERNET RA M23 600 MBPS |
+      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan              |
+      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123456766 | tester@tester.com | Mono          | Internet Movistar |
