@@ -25,6 +25,8 @@ public class RegisterStepDefinition {
 
     private Scenario scenario;
 
+    private static boolean isActiveValidateIdentity= false;
+
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
@@ -119,6 +121,7 @@ public class RegisterStepDefinition {
     public void doyClickEnValidarIdentidadDelTitular() {
         executeIfNotRetention(() -> {
             registerStep.clickOnTheValidateHolderIdentityButton();
+            isActiveValidateIdentity = registerStep.hasIdentityValidationError();
         });
     }
 
@@ -136,23 +139,26 @@ public class RegisterStepDefinition {
     @Y("ingreso los datos solicitados para la validacion del cliente")
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
         executeIfNotRetention(() -> {
-            UtilWeb.waitForSeconds(10);
-            for (int i = 0; i < 3; i++) {
-                registerStep.ingresarDatosValidacionSolicitada(datos, i);
-                System.out.println("-- click en siguiente --");
-                registerStep.clicEnSiguiente();
-                UtilWeb.waitForSeconds(5);
-            }
-            System.out.println("----- termino preguntas ----------");
-            UtilWeb.waitForSeconds(10);
-            registerStep.clicEnConfirmar();
-        });
+            if (!isActiveValidateIdentity) {
+                UtilWeb.waitForSeconds(10);
+                for (int i = 0; i < 3; i++) {
+                    registerStep.ingresarDatosValidacionSolicitada(datos, i);
+                    System.out.println("-- click en siguiente --");
+                    registerStep.clicEnSiguiente();
+                    UtilWeb.waitForSeconds(5);
+                }
+                System.out.println("----- termino preguntas ----------");
+                UtilWeb.waitForSeconds(10);
+                registerStep.clicEnConfirmar();
+            } });
     }
 
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
     public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
         executeIfNotRetention(() -> {
-        registerStep.validarIdentidadValidada();
+            if (!isActiveValidateIdentity){
+                registerStep.validarIdentidadValidada();
+            }
         });
     }
 

@@ -68,7 +68,7 @@ Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en ca
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Movil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

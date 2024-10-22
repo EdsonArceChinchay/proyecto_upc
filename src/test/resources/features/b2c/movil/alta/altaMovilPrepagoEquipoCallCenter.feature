@@ -57,8 +57,8 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit |
-      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | RISSO     |
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
+      | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"

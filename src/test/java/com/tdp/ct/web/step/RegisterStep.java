@@ -238,4 +238,7 @@ public class RegisterStep {
         page.altaFijaTiendaPage().clickValidarRepreLegal();
     }
 
+    public boolean hasIdentityValidationError() {
+        return page.registerPage().hasIdentityValidationError();
+    }
 }

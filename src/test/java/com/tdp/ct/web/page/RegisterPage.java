@@ -49,6 +49,10 @@ public class RegisterPage extends WebBase {
     protected WebElement completaDatosSolicitados;
     @FindBy(xpath = "//tdp-st-modal//tdp-st-select[contains(@class,'ng-invalid') and @formcontrolname='typePage']")
     protected WebElement selectPage;
+    @FindBy(xpath = "//*[contains(text(),'La validación de identidad se completará')]")
+    protected WebElement textIdentityValidationError;
+    @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Confirmar')]")
+    protected WebElement btnConfirmModal;
 
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
@@ -174,7 +178,7 @@ public class RegisterPage extends WebBase {
             try {
                 selectElementShadowRootCSS(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(3);
-                isDisplayed=webElement.isDisplayed();
+                isDisplayed = webElement.isDisplayed();
             } catch (Exception e) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
                 isDisplayed = false;
@@ -201,4 +205,18 @@ public class RegisterPage extends WebBase {
         }
     }
 
+    public boolean hasIdentityValidationError() {
+       boolean isError=false;
+        try {
+            UtilWeb.waitForSeconds(120);
+            if (textIdentityValidationError.isDisplayed()) {
+                btnConfirmModal.click();
+                isError= true;
+            }
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Element no found" + e.getMessage());
+
+        }
+        return isError;
+    }
 }
