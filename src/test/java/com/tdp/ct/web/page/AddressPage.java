@@ -127,14 +127,12 @@ public class AddressPage extends WebBase {
 
     public void typeAddress(String address) {
         WebElement inputAdress = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
-        inputAdress.click();
-        inputAdress.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, address);
+        typeInShadowRoot(inputAdress,"Address",address);
     }
 
-    public void typeReference(String referencia) {
+    public void typeReference(String reference) {
         WebElement inputReference = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
-        inputReference.click();
-        inputReference.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, referencia);
+        typeInShadowRoot(inputReference,"Reference",reference);
     }
 
     public void clickButtonConsultLocation() {

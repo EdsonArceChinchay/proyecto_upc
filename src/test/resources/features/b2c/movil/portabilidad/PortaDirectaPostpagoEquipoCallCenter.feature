@@ -79,7 +79,7 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Movil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto

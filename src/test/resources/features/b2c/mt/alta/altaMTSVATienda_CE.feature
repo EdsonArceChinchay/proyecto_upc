@@ -51,7 +51,7 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA con cliente ext
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA internet "Seguridad Total Residencial"
+    Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

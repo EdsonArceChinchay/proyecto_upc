@@ -40,8 +40,8 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Huancari | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit  |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -53,8 +53,8 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit  |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso telefono de contacto "658745259"

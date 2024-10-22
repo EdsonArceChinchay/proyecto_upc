@@ -48,6 +48,9 @@ Característica: AT-DT069_Migracion de Mono TV a Mono Internet + SVA a cliente c
     Y        agrego SVA Movistar Tv App Max
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
+    Y        valido que me encuentre en la pantalla agendamiento
+    Y        ingreso los datos de agendamiento
+    Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en Validar contrato "hogar"
