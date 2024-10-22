@@ -166,6 +166,12 @@ public class Helper extends WebBase {
         }
     }
 
+    public static void typeInShadowRoot(WebElement webElement,String nameElement,String text){
+        webElement.click();
+        webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type in element %s = %s.", nameElement,text));
+    }
+
     public static void typeInShadowRootCssSelector(String text, WebElement webElement, String shadowSelector) {
         webElement.getShadowRoot()
                 .findElement(By.cssSelector(shadowSelector))
