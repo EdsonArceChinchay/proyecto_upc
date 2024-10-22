@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.step.ParkStep;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.es.E;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,7 +12,7 @@ public class ParkStepDefinition {
     private ParkStep parkStep;
 
     @Y("ingreso los datos del nuevo cliente")
-    public void completoLosDatosDelClienteARegistrar(DataTable value)  {
+    public void completoLosDatosDelClienteARegistrar(DataTable value) {
         parkStep.verificarClienteNuevo();
         parkStep.ingresarDatosClienteExtranjero(value);
         parkStep.clicEnCrearCliente();
@@ -48,9 +49,9 @@ public class ParkStepDefinition {
     }
 
     @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
-    public void selecciono_el_mono_y_duo_a_paquetizar(String mono,String duo){
+    public void selecciono_el_mono_y_duo_a_paquetizar(String mono, String duo) {
         parkStep.scrollToLabelSelectService();
-        parkStep.clickMonoYDuo(mono,duo);
+        parkStep.clickMonoYDuo(mono, duo);
     }
 
     @Y("selecciono la cartilla del plan activo")
@@ -148,7 +149,7 @@ public class ParkStepDefinition {
     @Y("ingreso el ruc {string} y actualizo")
     public void ingresoElRucYActualizo(String ruc) {
         parkStep.ingresoRuc(ruc);
-        parkStep.clickBotonActualizar();
+        parkStep.clickOnButtonUpdate();
     }
 
     @Y("valido el mensaje de la actualizacion de ruc correcta")
@@ -161,7 +162,7 @@ public class ParkStepDefinition {
     public void ingresoElRucDigitoVerificadorYActualizo(String ruc, String digito) {
         parkStep.ingresoRuc17(ruc);
         parkStep.ingresoDigitoV(digito);
-        parkStep.clickBotonActualizar();
+        parkStep.clickOnButtonUpdate();
     }
 
     @Y("selecciono el plan {string} que desea")
@@ -192,5 +193,30 @@ public class ParkStepDefinition {
     @Y("selecciono la orden")
     public void seleccionoLaOrden() {
         parkStep.selectOrder();
+    }
+
+    @E("ingreso el codigo de SIMCARD")
+    public void ingresoElCodigoDeSIMCARD() {
+        parkStep.typeSimCard();
+    }
+
+    @E("ingreso el codigo de IMEI")
+    public void ingresoElCodigoDeIMEI() {
+        parkStep.typeIMEI();
+    }
+
+    @Y("doy click Validar Stock")
+    public void doyClickValidarStock() {
+        parkStep.clickOnButtonValidateStock();
+    }
+
+    @E("ingreso el numero de caja {string}")
+    public void ingresoElNumeroDeCaja(String number) {
+        parkStep.typeInBoxNumber(number);
+    }
+
+    @E("ingreso el numero de ticket {string}")
+    public void ingresoElNumeroDeTicket(String number) {
+        parkStep.typeInTicketNumber(number);
     }
 }

@@ -11,8 +11,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.typeInShadowRootCssSelector;
+import static com.tdp.ct.web.utils.Helper.*;
 
 public class ParkPage extends WebBase {
 
@@ -68,9 +67,19 @@ public class ParkPage extends WebBase {
     protected WebElement buttonCrearCliente;
     @FindBy(xpath = "//*[contains(@class,'texto-numero') or contains(@class,'seccion-orden')]")
     protected WebElement btnOrder;
+    @FindBy(xpath = "//*[contains(@label,'Validar Stock') or contains(text(),'Validar Stock') or @class='buttonConfirmar']")
+    protected WebElement btnValidateStock;
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'simcard') or contains (@label,'Código de SIMCARD')]")
+    protected WebElement inputSinCard;
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'imei') or contains (@label,'Código de IMEI')]")
+    protected WebElement inputImei;
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroCaja') or contains (@label,'Número de caja')]")
+    protected WebElement inputBoxNumber;
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroTicket') or contains (@label,'Número de ticket')]")
+    protected WebElement inputTicketNumber;
 
     public boolean isNewCustomer() {
-        esperaProgresiva(driver(),5,5,nombreClienteUserData);
+        esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
     }
 
@@ -79,13 +88,13 @@ public class ParkPage extends WebBase {
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
         esperaProgresiva(driver(), 5, 5, rootElement);
         revisarModalError(driver());
-        typeInShadowRootCssSelector(nombre,rootElement,"div > div > div > input");
+        typeInShadowRootCssSelector(nombre, rootElement, "div > div > div > input");
         UtilWeb.waitForSeconds(1);
     }
 
     public void ingresarApellidoClienteExtranjero(String apellidos) {
         WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
-        typeInShadowRootCssSelector(apellidos,rootElement,"div > div > div > input");
+        typeInShadowRootCssSelector(apellidos, rootElement, "div > div > div > input");
     }
 
     public void seleccionarGeneroClienteExtranjero(String genero) {
@@ -317,7 +326,7 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         waitUntilElementIsVisible(txtDirC, 5);
         js().scrollElementTop(txtDirC);
-        compareWebElementTextAndString(txtDirC,dir);
+        compareWebElementTextAndString(txtDirC, dir);
     }
 
     public void seleccionoBotonVerDetalle() {
@@ -335,8 +344,19 @@ public class ParkPage extends WebBase {
     public void ingresoRuc(String ruc) {
         WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        click(Input);
-        type(Input, ruc);
+        typeInShadowRoot(Input, "RUC 17", ruc);
+    }
+
+    public void ingresoRuc17(String ruc) {
+        WebElement Input = find().getElementByXPath("//input[@formcontrolname='twoDigitRuc']");
+        Addons.esperaProgresiva(driver(), 2, 2, Input);
+        typeInShadowRoot(Input, "RUC 17", ruc);
+    }
+
+    public void ingresoDigitoV(String digito) {
+        WebElement Input = find().getElementByXPath("//input[@formcontrolname='endDigitRuc']");
+        Addons.esperaProgresiva(driver(), 2, 2, Input);
+        typeInShadowRoot(Input, "Digit V", digito);
     }
 
     public void clickBotonEntendido() {
@@ -344,26 +364,12 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void clickBotonActualizar() {
+    public void clickOnButtonUpdate() {
         click(btnActualizar);
     }
 
     public void validoMesajeActualizacionCorrecta() {
         Assert.assertTrue("ruc incorrecto intentelo mas tarde", mensaje.isDisplayed());
-    }
-
-    public void ingresoRuc17(String ruc) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='twoDigitRuc']");
-        Addons.esperaProgresiva(driver(), 2, 2, Input);
-        click(Input);
-        type(Input, ruc);
-    }
-
-    public void ingresoDigitoV(String digito) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='endDigitRuc']");
-        Addons.esperaProgresiva(driver(), 2, 2, Input);
-        click(Input);
-        type(Input, digito);
     }
 
     public void clickPlanMovil(String planMovil) {
@@ -386,19 +392,13 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
     }
 
-    public void clickMonoYDuo(String mono, String duo) {
+    public void clickOnPark(String name, String park) {
         UtilWeb.waitForSeconds(2);
-        WebElement btnDuo = find().getElementByXPath("//*[contains(text(),'" + duo.trim() + "')]");
-        waitUntilElementIsVisible(btnDuo, 30);
-        js().scrollElementTop(btnDuo);
-        click(btnDuo);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "click duo");
-        UtilWeb.waitForSeconds(2);
-        WebElement btnMono = find().getElementByXPath("//*[contains(text(),'" + mono.trim() + "')]");
-        waitUntilElementIsVisible(btnMono, 30);
-        click(btnMono);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "click mono");
-        UtilWeb.waitForSeconds(5);
+        WebElement btnPark = find().getElementByXPath("//*[contains(text(),'" + park.trim() + "')]");
+        waitUntilElementIsVisible(btnPark, 30);
+        js().scrollElementTop(btnPark);
+        click(btnPark);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Click on %s park %s", name, park));
     }
 
     public void clickBotonContinuar() {
@@ -424,7 +424,7 @@ public class ParkPage extends WebBase {
         } while (status);
     }
 
-    public void scrollToLabelSelectService(){
+    public void scrollToLabelSelectService() {
         UtilWeb.waitForSeconds(10);
         js().scrollElementTop(labelSelectService);
         UtilWeb.waitForSeconds(5);
@@ -449,7 +449,6 @@ public class ParkPage extends WebBase {
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
-
     }
 
     public void clickBtnCardPlanActual() {
@@ -505,7 +504,6 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
     protected WebElement cerrarPopUpEstadoCU;
 
-
     public void cerrarPopupCU() {
         UtilWeb.waitForSeconds(4);
         try {
@@ -525,15 +523,15 @@ public class ParkPage extends WebBase {
     public void cerrarPopUpEstadoCU() {
         try {
             if (cerrarPopUpEstadoCU.isDisplayed()) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Cierre Nuevo Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
                 UtilWeb.waitForSeconds(4);
                 click(cerrarPopUpEstadoCU);
             } else {
                 UtilWeb.waitForSeconds(4);
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"No existe Popup....");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
             }
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay ningún popup.....");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
         }
     }
 
@@ -546,20 +544,50 @@ public class ParkPage extends WebBase {
         elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
         if (elementoExistente) {
             Addons.esperaProgresiva(driver(), 3, 5, cierrePopUpError);
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"Se cierra Popup de error");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se cierra Popup de error");
             try {
                 click(cierrePopUpError);
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"error al hacer click");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "error al hacer click");
             }
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"no se encontró mensaje de error");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "no se encontró mensaje de error");
         }
     }
 
     public void selectOrder() {
-        esperaProgresiva(driver(),5,5,btnOrder);
+        esperaProgresiva(driver(), 5, 5, btnOrder);
         btnOrder.click();
     }
+
+    public String getSimCard() {
+        return "121212212212121";
+    }
+
+    public String getIMEI() {
+        return "965565632323233";
+    }
+
+    public void typeInput(String input, String text) {
+        switch (input) {
+            case "inputSimCard":
+                typeInShadowRoot(inputSinCard, "SIM CARD", text);
+                break;
+            case "inputImei":
+                typeInShadowRoot(inputImei, "IMEI", text);
+                break;
+            case "inputBoxNumber":
+                typeInShadowRoot(inputBoxNumber, "Box Number", text);
+                break;
+            case "inputTicketNumber":
+                typeInShadowRoot(inputTicketNumber, "Ticket Number", text);
+                break;
+        }
+    }
+
+    public void clickOnButtonValidateStock() {
+        btnValidateStock.click();
+    }
+
 }

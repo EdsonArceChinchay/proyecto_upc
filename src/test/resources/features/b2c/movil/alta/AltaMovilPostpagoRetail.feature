@@ -66,12 +66,17 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        doy click en el boton Consultar
     Y        selecciono la orden
     Y        doy click en el boton continuar
-#    Y        doy clic para descargar el contrato
-#    Y        doy click en el boton Registrar venta
-#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        doy click en ver detalle del pedido
-#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-#    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    E        ingreso el codigo de SIMCARD
+    Y        doy click Validar Stock
+    E        ingreso el numero de caja "123456"
+    E        ingreso el numero de ticket "654321"
+    Y        doy click en el boton confirmar
+    Y        doy clic para descargar el contrato
+    Y        doy click en el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
       | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |

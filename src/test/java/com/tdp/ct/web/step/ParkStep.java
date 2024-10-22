@@ -129,8 +129,8 @@ public class ParkStep {
     }
 
     @ScreenShotBefore
-    public void clickBotonActualizar() {
-        page.parkPage().clickBotonActualizar();
+    public void clickOnButtonUpdate() {
+        page.parkPage().clickOnButtonUpdate();
     }
 
     @ScreenShotAfter
@@ -174,7 +174,8 @@ public class ParkStep {
 
     @ScreenShotAfter
     public void clickMonoYDuo(String mono, String duo) {
-        page.parkPage().clickMonoYDuo(mono, duo);
+        page.parkPage().clickOnPark("Mono", mono);
+        page.parkPage().clickOnPark("Duo", duo);
     }
 
     @ScreenShotBefore
@@ -183,8 +184,7 @@ public class ParkStep {
         page.parkPage().clickBotonContinuar();
     }
 
-    public void scrollToLabelSelectService()
-    {
+    public void scrollToLabelSelectService() {
         page.parkPage().scrollToLabelSelectService();
     }
 
@@ -200,7 +200,7 @@ public class ParkStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void cierroPopUpDeClienteExonerado(){
+    public void cierroPopUpDeClienteExonerado() {
         page.parkPage().cierroPopUpDeClienteExonerado();
     }
 
@@ -216,5 +216,30 @@ public class ParkStep {
     @ScreenShotAfter
     public void selectOrder() {
         page.parkPage().selectOrder();
+    }
+
+    public void typeSimCard() {
+        String simCard = page.parkPage().getSimCard();
+        page.parkPage().typeInput("inputSimCard", simCard);
+    }
+
+    public void typeIMEI() {
+        String imei = page.parkPage().getIMEI();
+        page.parkPage().typeInput("inputImei", imei);
+    }
+
+    @ScreenShotBefore
+    @ScreenShotAfter
+    public void clickOnButtonValidateStock() {
+        page.parkPage().clickOnButtonValidateStock();
+    }
+
+    public void typeInBoxNumber(String number) {
+        page.parkPage().typeInput("inputBoxNumber", number);
+    }
+
+    @ScreenShotAfter
+    public void typeInTicketNumber(String number) {
+        page.parkPage().typeInput("inputTicketNumber", number);
     }
 }
