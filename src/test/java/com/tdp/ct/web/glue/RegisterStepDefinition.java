@@ -122,7 +122,7 @@ public class RegisterStepDefinition {
         executeIfNotRetention(() -> {
             registerStep.clickOnTheValidateHolderIdentityButton();
             isActiveValidateIdentity = registerStep.hasIdentityValidationError();
-            if (!isActiveValidateIdentity){
+            if (isActiveValidateIdentity){
                 registerStep.clickOnButtonConfirm();
             }
         });
