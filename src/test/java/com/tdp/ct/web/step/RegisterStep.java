@@ -163,7 +163,7 @@ public class RegisterStep {
         page.altaFijaMovilRegistroPage().clicSiAcepto();
     }
 
-    @ScreenShotBefore
+    @ScreenShotAfter
     public void clickOnTheValidateHolderIdentityButton() {
         page.altaFijaMovilRegistroPage().clickOnTheValidateHolderIdentityButton();
     }

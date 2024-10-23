@@ -25,7 +25,7 @@ public class RegisterStepDefinition {
 
     private Scenario scenario;
 
-    private static boolean isActiveValidateIdentity= false;
+    private static boolean isActiveValidateIdentity = false;
 
     @Before(order = 0)
     public void before(Scenario scenario) {
@@ -150,14 +150,19 @@ public class RegisterStepDefinition {
                 System.out.println("----- termino preguntas ----------");
                 UtilWeb.waitForSeconds(10);
                 registerStep.clicEnConfirmar();
-            } });
+            } else {
+                scenario.log("This step is skipped");
+            }
+        });
     }
 
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
     public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
         executeIfNotRetention(() -> {
-            if (!isActiveValidateIdentity){
+            if (!isActiveValidateIdentity) {
                 registerStep.validarIdentidadValidada();
+            } else {
+                scenario.log("This step is skipped");
             }
         });
     }

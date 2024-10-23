@@ -374,6 +374,7 @@ public class CheckoutPage extends WebBase {
         esperaProgresiva(driver(),3,5,btnDetallePedido);
         js().scrollElementTop(btnDetallePedido);
         click(btnDetallePedido);
+        UtilWeb.waitForSeconds(10);
     }
 
     public String getProductType() {
