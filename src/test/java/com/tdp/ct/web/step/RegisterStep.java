@@ -241,4 +241,9 @@ public class RegisterStep {
     public boolean hasIdentityValidationError() {
         return page.registerPage().hasIdentityValidationError();
     }
+
+    @ScreenShotBefore
+    public void clickOnButtonConfirm() {
+        page.registerPage().clickOnButtonConfirm();
+    }
 }

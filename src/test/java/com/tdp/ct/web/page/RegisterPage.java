@@ -210,7 +210,6 @@ public class RegisterPage extends WebBase {
         try {
             UtilWeb.waitForSeconds(120);
             if (textIdentityValidationError.isDisplayed()) {
-                btnConfirmModal.click();
                 isError= true;
             }
         } catch (Exception e) {
@@ -218,5 +217,10 @@ public class RegisterPage extends WebBase {
 
         }
         return isError;
+    }
+
+    public void clickOnButtonConfirm() {
+        btnConfirmModal.click();
+        UtilWeb.waitForSeconds(2);
     }
 }
