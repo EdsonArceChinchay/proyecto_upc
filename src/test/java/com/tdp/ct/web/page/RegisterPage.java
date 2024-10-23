@@ -210,6 +210,7 @@ public class RegisterPage extends WebBase {
         try {
             UtilWeb.waitForSeconds(120);
             if (textIdentityValidationError.isDisplayed()) {
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error Validate Identity");
                 isError= true;
             }
         } catch (Exception e) {
@@ -221,6 +222,7 @@ public class RegisterPage extends WebBase {
 
     public void clickOnButtonConfirm() {
         btnConfirmModal.click();
+        UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Click button confirm");
         UtilWeb.waitForSeconds(2);
     }
 }
