@@ -367,16 +367,14 @@ public class CheckoutPage extends WebBase {
     public void ValidoQuePresenteDetallePedido(String service) {
         WebElement serviceText = find().getElementByXPath("//*[contains(text(),'"+service.trim()+"')]");
         js().scrollElementTop(serviceText);
-        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsVisible(serviceText,5);
     }
 
     public void clickenVerDetalleDelPedido() {
         js().scrollElementTop(scrollorden);
         esperaProgresiva(driver(),6,6,btnDetallePedido);
         js().scrollElementTop(btnDetallePedido);
-        UtilWeb.waitForSeconds(5);
-        click(btnDetallePedido);
-        UtilWeb.waitForSeconds(5);
+        waitUntilElementIsClickable(btnDetallePedido,60).click();
     }
 
     public String getProductType() {
