@@ -1,5 +1,6 @@
 package com.tdp.ct.web.page;
 
+import com.google.gson.JsonObject;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
@@ -15,6 +16,8 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
+import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 
 public class SummaryPage extends WebBase {
 
@@ -32,6 +35,8 @@ public class SummaryPage extends WebBase {
 
     @FindBy(xpath = "//div[@class='plan2']")
     protected WebElement lblPrecio;
+
+    private static JsonObject saleObject;
 
     public void validacionPrecio(String precioPlan) {
         String precioCompare = lblPrecio.getText();
@@ -110,4 +115,51 @@ public class SummaryPage extends WebBase {
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 
+    public void additionalData() {
+        int number=0;
+        saleObject = getSessionStorageAsJsonObject(driver(),"saleObject");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getSalesID(): "+ getSalesID());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "productType(): "+ getProductType());
+        number = (getProductType().equals("MT"))? 1:0;
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "needAppointment(): "+ needAppointment(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "isUpfront(): "+ isUpfront(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getReason(): "+ getReason(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getAction(): "+ getAction(number));
+    }
+
+    public String  getSalesID(){
+       return getValueJsonObjectSessionStorage(saleObject,"salesId");
+    }
+
+    public String isUpfront(int number){
+        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.upFront.indicator");
+    }
+
+    public String getProductType()
+    {
+        return  getValueJsonObjectSessionStorage(saleObject,"productType");
+    }
+
+    public String getReason(int number){
+        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".reason");
+    }
+    public String getAction(int number){
+        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".action");
+    }
+
+    public String needAppointment(int number){
+       String productType= getProductType();
+       String needAppointment;
+        switch (productType){
+            case "WIRELINE":
+                needAppointment= getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.additionalData.1.23.value");
+                break;
+            case "MT":
+                needAppointment= getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.additionalData.1.25.value");
+               break;
+            default:
+                needAppointment=null;
+        }
+        return needAppointment;
+    }
 }

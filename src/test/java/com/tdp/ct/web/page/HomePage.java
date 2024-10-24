@@ -1,9 +1,9 @@
 package com.tdp.ct.web.page;
 
+import com.google.gson.JsonObject;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
@@ -55,6 +55,8 @@ public class HomePage extends WebBase {
 
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
+
+    private static JsonObject agentData;
 
     public void selectDocumentType(String type) {
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
@@ -170,30 +172,31 @@ public class HomePage extends WebBase {
         UtilWeb.waitForSeconds(10);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
+        agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
     }
 
     public String getAgentName() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "name");
+        return getValueJsonObjectSessionStorage(agentData, "name");
     }
 
     public String getAgentLastName() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "surname").trim();
+        return getValueJsonObjectSessionStorage(agentData, "surname").trim();
     }
 
     public String getChannelType() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "channels.id").trim();
+        return getValueJsonObjectSessionStorage(agentData, "channels.id").trim();
     }
 
     public String getChannelName() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "sites.1.0.name").trim();
+        return getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim();
     }
 
     public String getDocumentNumber() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalID").trim();
+        return getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim();
     }
 
     public String getDocumentType() {
-        return getValueJsonObjectSessionStorage(driver(), "datosAgente", "legalId.nationalIDType").trim();
+        return getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim();
     }
 
     public boolean isRetention() {

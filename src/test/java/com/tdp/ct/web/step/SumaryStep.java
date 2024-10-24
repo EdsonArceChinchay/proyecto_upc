@@ -11,8 +11,13 @@ public class SumaryStep {
     @Autowired
     private StepPages page;
 
+    public void additionalData(){
+        page.summaryPage().additionalData();
+    }
+
     @ScreenShotBefore
     public void clickButtonStartRegister() {
+        additionalData();
         page.summaryPage().clickButtonStartRegister();
     }
 

@@ -33,7 +33,11 @@ public class SessionStorage {
         return getValueFromJson(getSessionStorageAsJsonObject(driver, primaryKey), key);
     }
 
-    private static JsonObject getSessionStorageAsJsonObject(WebDriver driver, String primaryKey) {
+    public static String getValueJsonObjectSessionStorage(JsonObject primaryKey, String key){
+        return getValueFromJson(primaryKey, key);
+    }
+
+    public static JsonObject getSessionStorageAsJsonObject(WebDriver driver, String primaryKey) {
         return getJsonObject(getItemSessionStorage(driver, primaryKey));
     }
 
