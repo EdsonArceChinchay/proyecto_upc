@@ -20,15 +20,15 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
   Esquema del escenario: Cambio de equipo a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
@@ -73,5 +73,5 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              | tipoValidacion | nombrePadre | nombreMadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | RUC           | 20504127410 | 1   | DNI             | 75447902       | automation@mail.com | discapacitado  | LAZARO      | AURORA      | CALLAO      |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              | tipoValidacion | nombrePadre | nombreMadre | distritoNac |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20504127410    | 1   | DNI             | 75447902       | automation@mail.com | discapacitado  | LAZARO      | AURORA      | CALLAO      |

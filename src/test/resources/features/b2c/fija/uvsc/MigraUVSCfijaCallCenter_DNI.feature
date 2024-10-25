@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR: ELOY MILLA
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: MIGRACION UVSC
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT064
 ##GDAP: GDAP-888
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/07/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion UVSC fija con cliente nacional (DNI) en canal Call Center
+Característica: AT-DT064_Migracion UVSC fija con cliente a DNI en canal Call Center
 
   @migraUVSCcallCenter
-  Esquema del escenario: Migracion UVSC fija con cliente nacional (DNI) en canal Call Center
+  Esquema del escenario: Migracion UVSC fija con cliente a DNI en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -58,13 +58,13 @@ Característica: AT-DT064_Migracion UVSC fija con cliente nacional (DNI) en cana
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 75448525  |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75448525       |

@@ -1,33 +1,34 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT039
 ##GDAP: GDAP-593
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 29/04/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
-Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Call Center
+Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Call Center
 
   @AltaMTUpfronCallCenter
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Call Center
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
@@ -43,8 +44,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -55,8 +56,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -85,8 +86,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464815 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono       |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono       |
 
 
 

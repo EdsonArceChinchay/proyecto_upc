@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMTSVA
-Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con cliente nacional (DNI) por canal Tienda
+Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Tienda
 
   @AltaMTSVATienda_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con cliente nacional (DNI) por canal Tienda
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y     valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Y        valido que se presente el canal "<channelType>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        selecciono el boton Linea Nueva Hogar
@@ -62,12 +63,11 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con cliente nac
     Y        ingreso los datos del supervisor
       | numdoc   | user     | password     |
       | 73261531 | vsiguass | $t3l3f0n1c4$ |
-#    Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -82,7 +82,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA con cliente nac
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 1042464714 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 1042464714     | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |
 
 

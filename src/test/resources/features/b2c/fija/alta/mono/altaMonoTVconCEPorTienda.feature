@@ -20,9 +20,9 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
   Escenario: Alta Mono TV con Documento CE en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameST"
-    Y        ingreso el password "passST"
+    Y        ingreso el password "userPasswordST"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"

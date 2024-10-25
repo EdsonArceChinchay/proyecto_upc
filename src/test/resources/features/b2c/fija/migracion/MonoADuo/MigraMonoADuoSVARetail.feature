@@ -20,15 +20,15 @@
    Esquema del escenario: Migracion de Mono a Duo + SVA en canal Retail
      Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
-     Y        selecciono el tipo de usuario "<tipoUsuario>"
+     Y        selecciono el tipo de usuario "<userType>"
      Y        ingreso el usuario "<userName>"
-     Y        ingreso el password "<password>"
+     Y        ingreso el password "<userPassword>"
      E        ingreso el captcha
      Y        presiono el boton Continuar hacia el home
-     Y         valido el login exitoso mediante el mensaje "<msgHome>"
+     Y        valido el login exitoso mediante el mensaje "<msgHome>"
      Y        valido que se presente el canal "<channelType>"
-     Cuando   selecciono el tipo de documento "<tipoDocumento>"
-     Y        ingreso el documento "<documento>"
+     Cuando   selecciono el tipo de documento "<documentType>"
+     Y        ingreso el documento "<documentNumber>"
      Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
@@ -58,6 +58,7 @@
      Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
      Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
      Y        valido que se muestre el detalle del pedido de "Información adicional"
+
      Ejemplos:
-       | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento   | tipoPlanHogar | plan                                     | bloque |
-       | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 10021231242 | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+       | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                     | bloque |
+       | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 10021231242    | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |

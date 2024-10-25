@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT
 ##GDAP: GDAP-1427
 ##SPRINT CREADO: PI17-SPI
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 05/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI17
-Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA con documento CE por Tienda
+Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA a cliente con CE por canal Tienda
 
   @AltaMTEquipoSVA
-  Esquema del escenario: Alta MT + Alta Equipo Movil + Alta SVA con documento CE por Tienda
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -47,7 +47,7 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
-    #Entonces me muestra la pantalla de ofertas sugeridos
+    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el plan "<nombrePlan>" Movistar Total
     Y        selecciono añadir equipos
@@ -73,7 +73,7 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
       | fechaNac   | estadoCivil | nacionalidad |
       | 11/02/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -88,5 +88,5 @@ Característica: AT-DT0 _ Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil +
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                                | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 991000232 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                                | correo           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |

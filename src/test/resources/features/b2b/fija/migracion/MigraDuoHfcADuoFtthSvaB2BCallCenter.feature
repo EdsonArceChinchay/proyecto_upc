@@ -20,15 +20,15 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
   Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
@@ -52,7 +52,6 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton validar identidad representante legal
-    #Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac          |
       | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
@@ -64,5 +63,5 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | RUC           | 20100323002 | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |

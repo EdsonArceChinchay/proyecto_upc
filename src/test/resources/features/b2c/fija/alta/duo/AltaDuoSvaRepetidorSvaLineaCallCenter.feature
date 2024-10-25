@@ -20,15 +20,15 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
   Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -56,7 +56,7 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        agrego SVA repetidor "<svaRepetidor>"
     Y        agrego SVA linea "<svaLinea>"
     Y        doy click en el boton Guardar cambios
-	  #Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -81,10 +81,11 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1101000012 | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

@@ -1,17 +1,17 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: CROSS
+##FUNCIONALIDAD: LOGIN
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT053
 ##GDAP: GDAP-602
 ##SPRINT CREADO: PI11_SP
-##FRECUENCIA:
+##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
 ##DATA: NA
 ##ENCARGADO:
-##FECMOD: 31/07/2024
+##FECMOD: 25/10/2024
 
 @VISS-8540
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08
@@ -24,22 +24,22 @@ Característica: AT-DT053_Login - FE DITO WEB
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Ejemplos:
-      | userType        | userName    | password | msgHome    | channelType |
-      | usuario externo | userNameCC  | passCC   | Bienvenid@ | Call Center |
-      | usuario externo | userNameST  | passST   | Bienvenid@ | Tienda      |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      |
+      | userType     | userName    | userPassword    | msgHome    | channelType |
+      | internalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
+      | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password ""
     E        ingreso el captcha
@@ -50,9 +50,9 @@ Característica: AT-DT053_Login - FE DITO WEB
   Escenario: Login - Caso negativo - Usuario en blanco
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario ""
-    Y        ingreso el password "passCC"
+    Y        ingreso el password "userPasswordCC"
     E        ingreso el captcha
     Y        presiono el boton Continuar
     Entonces valido que se presente el mensaje de error "This information is required."
@@ -61,9 +61,9 @@ Característica: AT-DT053_Login - FE DITO WEB
   Escenario: Login - Caso negativo - Password incorrecta
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameCC"
-    Y        ingreso el password "passDLC"
+    Y        ingreso el password "userPasswordDLC"
     E        ingreso el captcha
     Y        presiono el boton Continuar
     Entonces valido que se presente el mensaje de credenciales incorrectas "Usuario y password incorrecto."

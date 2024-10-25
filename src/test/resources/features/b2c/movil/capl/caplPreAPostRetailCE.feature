@@ -12,6 +12,7 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 04/09/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
 Característica: AT-DT100_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Retail
 
@@ -19,9 +20,9 @@ Característica: AT-DT100_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
   Escenario: CAPL de Prepago a Postpago a cliente extranjero (CE) por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameDLC"
-    Y        ingreso el password "passDLC"
+    Y        ingreso el password "userPasswordDLC"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"

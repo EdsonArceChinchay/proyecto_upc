@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
-Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Center
+Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Center
 
   @Alta_Postpago_sim_CC @MVP13 @Global
-  Esquema del escenario: Alta móvil postpago solo chip con CEX por canal Call Center
+  Esquema del escenario: Alta movil postpago a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -76,12 +77,12 @@ Característica: AT-DT027_Alta Movil Postpago con documento CE por canal Call Ce
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanMovil | nombrePlan                 |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 10010971  | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10010971       | Postpago      | Plan Ilimitado Mi Movistar |

@@ -14,21 +14,21 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15 @AltaFija @AltaDuo
-Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por canal Retail
+Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA a cliente con CE por canal Retail
 
   @AltaDuoSvaRetail
-  Esquema del escenario: Alta Duo + SVA "<nombreSVA>" con documento CE por canal Retail
+  Esquema del escenario: Alta Duo + SVA "<nombreSVA>" a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -80,5 +80,5 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA con documento CE por ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |
+      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |

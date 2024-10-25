@@ -12,6 +12,7 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO: Edwin De la Cruz
 ##FECMOD: 04/09/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5  @CAPL
 Característica: AT-DT058_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Tienda
 
@@ -19,16 +20,15 @@ Característica: AT-DT058_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
   Escenario: CAPL de prepago a postpago a cliente extranjero (CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameST"
-    Y        ingreso el password "passST"
+    Y        ingreso el password "userPasswordST"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1632547921"
     Y        doy click en el boton Consultar
-    #Y        cierro el popup de contraseña Única
     Y        doy click en el boton Ver detalle del servicio "650028178"
     Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"

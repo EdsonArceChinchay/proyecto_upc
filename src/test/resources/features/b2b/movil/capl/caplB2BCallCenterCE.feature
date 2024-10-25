@@ -21,15 +21,15 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
   Esquema del escenario: Cambio de Plan a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
@@ -58,13 +58,13 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | RUC           | 20510628684 | 1   | CE              | 102040298      | automation@mail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20510628684    | 1   | CE              | 102040298      | automation@mail.com |

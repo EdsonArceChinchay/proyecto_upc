@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: COMPLETA FIJA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-1434
 ##SPRINT CREADO: PI18_SP2
-##FRECUENCIA:
+##FRECUENCIA:SEMANAL
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @RegresionLegacy
-Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Call Center
+Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Call Center
 
-  @CompletaMovilCC
-  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Call Center
+  @CompletaFijaCC
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton de la Linea Movil Existente
     Y        selecciono el boton Linea Nueva Hogar
@@ -50,7 +50,7 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -65,10 +65,10 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | nombrePlan | correo         |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1632547925 | Trio       | test@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo         |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1632547925     | Trio       | test@gmail.com |

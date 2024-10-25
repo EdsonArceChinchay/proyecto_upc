@@ -12,6 +12,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
 Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Center
 
@@ -19,15 +20,15 @@ Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Center
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -58,6 +59,7 @@ Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Center
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | plan                        | Bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | HBO    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                        | Bloque |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | HBO    |

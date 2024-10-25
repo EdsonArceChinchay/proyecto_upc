@@ -1,15 +1,15 @@
 #language: es
 ##CREADOR: Henry salas
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: TOTALIZACION
 ##ESTADO: REFACTORIZADO 24/08/2023 OK
 ##CODIGO: AT-DT110
 ##GDAP: GDAP-1152
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA:  REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
 ##FECMOD: 31/03/2023
 
@@ -20,9 +20,9 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
   Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameCC"
-    Y        ingreso el password "passCC"
+    Y        ingreso el password "userPasswordCC"
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "Bienvenid@"
     Cuando   selecciono el tipo de documento "CE"
@@ -71,7 +71,7 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "109084827"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

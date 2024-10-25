@@ -12,27 +12,23 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD:
-  ##testejecution
 
 @BERSERKERS @DoneDevOps
 Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
 
-  Antecedentes:
-    Dado     que abro la pagina de movistar
- ##Test
-
   @MigraMonoVozATrioCallCenter
   Esquema del escenario: Migracion de Mono voz a Trio por canal Call Center
+    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -62,12 +58,12 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 202300004 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300004      |
 

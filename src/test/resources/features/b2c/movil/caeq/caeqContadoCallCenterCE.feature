@@ -9,9 +9,10 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 26/06/2024
+
 @BERSERKERS @DoneDevOps
 Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por Canal Call Center
 
@@ -19,14 +20,14 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
   Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<numeroDocumento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
@@ -46,9 +47,9 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-#      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -72,18 +73,11 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<numeroDocumento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | tipoDocumento | numeroDocumento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | CE            | 461960085       | 650029859        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000788      | 984594042        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000232      | 963601123        |
-#      Prueba error
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000765      | 985448456        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 1100000529      | 994460680        |
-#      | usuario interno | userNameQAN | passQAN  | CE            | 221011126       | 976579464        |
-
+      | userType     | userName   | userPassword   | documentType | documentNumber | EncontrarCelular |
+      | externalUser | userNameCC | userPasswordCC | CE           | 461960085      | 650029859        |

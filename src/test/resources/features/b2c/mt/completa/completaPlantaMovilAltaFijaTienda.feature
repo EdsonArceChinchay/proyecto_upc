@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: COMPLETA FIJA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT
 ##GDAP: GDAP-
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: VICTOR CARPIO
 ##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
-Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Tienda
+Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Tienda
 
-  @CompletaMovilTienda
-  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en Canal Tienda
+  @CompletaFijaTienda
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero    |
@@ -44,9 +44,9 @@ Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente co
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-   # Y        ingreso la informacion del lugar de instalacion
-   #   | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-   #   | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -63,7 +63,7 @@ Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente co
       | fechaNac   | estadoCivil | nacionalidad |
       | 10/12/1990 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -75,5 +75,5 @@ Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente co
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
-      | usuario interno | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 221011227 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |
+      | userType        | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
+      | usuario interno | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 221011227      | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |

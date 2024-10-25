@@ -22,8 +22,8 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void typeDocumentNumber(String document) {
-        page.homePage().typeDocumentNumber(document);
+    public void typeDocumentNumber(String documentNumber) {
+        page.homePage().typeDocumentNumber(documentNumber);
     }
 
     @ScreenShotBefore
@@ -32,8 +32,8 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public void validateCustomerData(String nombre, String tipoDocumento, String nroDocumento) {
-        page.homePage().validateCustomerData(nombre, tipoDocumento, nroDocumento);
+    public void validateCustomerData(String nombre, String documentType, String nroDocumento) {
+        page.homePage().validateCustomerData(nombre, documentType, nroDocumento);
     }
 
     @ScreenShotBefore

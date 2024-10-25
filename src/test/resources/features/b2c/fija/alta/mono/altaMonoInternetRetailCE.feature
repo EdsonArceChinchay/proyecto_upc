@@ -14,21 +14,21 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Regresion_Carlos @DROP-G01 @AltaFija @AltaMono
-Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Retail
+Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE en Canal Retail
 
   @AltaFijaPorRetail_CE
-  Esquema del escenario: Alta Fija Mono Internet con documento CE en Canal Retail
+  Esquema del escenario: Alta Fija Mono Internet a cliente con CE en Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msjHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -73,5 +73,5 @@ Característica: AT-DT007_Alta Fija Mono Internet con documento CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msjHome    | channelType | tipoDocumento | documento  | tipoPlan | nombrePlan           |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 2212464816 | Mono     | INTERNET MOVISTAR RA |
+      | userType     | userName    | userPassword    | msjHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan           |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2212464816     | Mono     | INTERNET MOVISTAR RA |

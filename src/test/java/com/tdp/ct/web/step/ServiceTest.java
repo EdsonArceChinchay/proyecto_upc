@@ -3,16 +3,11 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import io.restassured.RestAssured;
-import io.restassured.config.HttpClientConfig;
 import io.restassured.config.SSLConfig;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.ssl.SSLContextBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -27,8 +22,6 @@ import static com.tdp.ct.web.utils.Helper.readJson;
 import static io.restassured.RestAssured.given;
 
 import org.apache.http.conn.ssl.SSLSocketFactory;
-
-import javax.net.ssl.SSLContext;
 
 @Component
 public class ServiceTest {
@@ -94,15 +87,15 @@ public class ServiceTest {
     public void receiveMessage(DataTable dataTable, String service) throws IOException {
         testPfxKey();
         if (service.equals("prevalidateportin")) {
-            portability("fesimple/api/v1/portability/prevalidateportin", "/json/PortaNormal/preValidate.json", "previousConsultationId");
+            portability("fesimple/api/v1/portability/prevalidateportin", "/json/portaNormal/preValidate.json", "previousConsultationId");
         } else {
-            portability("fesimple/api/v1/portability/requestportin", "/json/PortaDirecta/requestPortIn.json", "previousConsultationNumber");
+            portability("fesimple/api/v1/portability/requestportin", "/json/portaDirecta/requestPortIn.json", "previousConsultationNumber");
         }
         var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
 
-        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/PortaNormal/receive.json");
+        Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaNormal/receive.json");
         String statusBody = Files.readString(filePath)
                 .replace("{Code}", consultation)
                 .replace("{number}", telefono)
@@ -117,7 +110,6 @@ public class ServiceTest {
                 .post(URL_AKS + "fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Message: " + message);
-
     }
 
     public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {
@@ -154,14 +146,14 @@ public class ServiceTest {
         return parameter;
     }
 
-    public String getCodeToken(DataTable dataTable, String codigoVenta) {
+    public String getCodeToken(DataTable dataTable, String salesCode) {
         try {
-            String idTransaction = getIdTransactionOfSaleslead(codigoVenta);
+            String idTransaction = getIdTransactionOfSaleslead(salesCode);
             var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");
             var numberDocument = UtilWeb.getValueFromDataTable(dataTable, "numberDocument");
             var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
 
-            Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/PortaDirecta/movistarToken.json");
+            Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaDirecta/movistarToken.json");
             String statusBody = Files.readString(filePath)
                     .replace("{typeDocument}", typeDocument)
                     .replace("{numberDocument}", numberDocument)
@@ -183,12 +175,11 @@ public class ServiceTest {
         }
     }
 
-    private String getIdTransactionOfSaleslead(String codigoVenta) {
+    private String getIdTransactionOfSaleslead(String salesCode) {
         testPfxKey();
-        String FE = codigoVenta.trim();
         String idTransaction = given().headers(headersAksBerserkers())
                 .when()
-                .get(URL_AKS + "fesimple/v2/saleslead/" + FE)
+                .get(URL_AKS + "fesimple/v2/saleslead/" + salesCode.trim())
                 .then().statusCode(200).extract().path("id");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "idTransaction: " + idTransaction);
         return idTransaction;

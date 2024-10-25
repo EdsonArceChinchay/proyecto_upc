@@ -20,15 +20,15 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
   Esquema del escenario:Migracion de Duo a Trio + SVA por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro pop up de CU
     Y        selecciono la linea con numero "5010022353"
@@ -68,10 +68,10 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo           | tipoPlanHogar | plan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1101010102 | correo@gmail.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | tipoPlanHogar | plan                                |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101010102     | correo@gmail.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |

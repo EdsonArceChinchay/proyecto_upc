@@ -9,9 +9,10 @@
 ##SPRINT CREADO: PI21_SP1
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE(SIN ORDENES EN VUELO)
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 11/10/2024
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
 
@@ -19,16 +20,16 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
   Esquema del escenario: Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Y        valido que este activo el flag de Porta Directa
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
@@ -79,7 +80,7 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en Validar contrato "Movil"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -90,13 +91,14 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 75102008  | 920956251 | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956251 | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
 

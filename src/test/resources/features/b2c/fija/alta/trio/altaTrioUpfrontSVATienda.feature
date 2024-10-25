@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA TRIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT020
 ##GDAP: GDAP-989
@@ -14,21 +14,21 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @Sanity28 @AltaFija @AltaTrioUpfront
-Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tienda
+Característica: AT-DT020_Alta Trio upfront SVA a cliente con CE por canal Tienda
 
   @AltaTrioUpfrontSVATienda
   Esquema del escenario: Alta Trio upfront SVA canal tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -43,9 +43,9 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-      #| mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      #| A  | EDIFICIO | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque   |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -81,5 +81,5 @@ Característica: AT-DT020_Alta Trio upfront SVA con documento CE por canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | svaInternet           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042411002 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | svaInternet           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE |

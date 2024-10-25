@@ -2,18 +2,11 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.utils.Addons;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.typeInShadowRoot;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
@@ -35,32 +28,26 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
         click(btnHuellaDes);
     }
 
-    public void seleccionoTipoDocumentoSupervisor(String tipoDoc) {
-        WebElement distritoList = find().getElementByXPath(" //*[@id=\"modal\"]/div[2]/div/div[3]/app-modal-discapacitado//div[3]//mat-form-field");
-        click(distritoList);
-        SearchContext context = sh().getContext(distritoList);
-        context.findElement(By.cssSelector("[id='" + tipoDoc + "']")).click();
+    public void selectSupervisorDocumentType(String type) {
+        WebElement documentList = find().getElementByXPath(" //*[@id=\"modal\"]/div[2]/div/div[3]/app-modal-discapacitado//div[3]//mat-form-field");
+        click(documentList);
+        SearchContext context = sh().getContext(documentList);
+        context.findElement(By.cssSelector("[id='" + type + "']")).click();
     }
 
-    public void ingresoNumeroDocumentoSuper(String documentoSuper) {
-        WebElement numeroDocument = find().getElementByCss("#doc");
-        click(numeroDocument);
-        type(numeroDocument, documentoSuper);
+    public void typeSupervisorDocumentNumber(String document) {
+        WebElement inputDocumentNumber = find().getElementByCss("#doc");
+       typeInShadowRoot(inputDocumentNumber,"Number document",document);
     }
 
-    public void ingresoUsuarioSupervisor(String user) {
-        WebElement usuario = find().getElementByCss("#usuarioCitrixSupervisor");
-        click(usuario);
-        type(usuario, user);
+    public void typeSupervisorUser(String user) {
+        WebElement inputUser = find().getElementByCss("#usuarioCitrixSupervisor");
+        typeInShadowRoot(inputUser,"User",user);
     }
 
-    public void ingresoContraseñaSupervisor(String passw) {
-        WebElement contraseña = find().getElementByCss("#passwordCitrixSupervisor");
-        click(contraseña);
-        type(contraseña, passw);
+    public void typeSupervisorPassword(String password) {
+        WebElement inputPassword = find().getElementByCss("#passwordCitrixSupervisor");
+        typeInShadowRoot(inputPassword,"Password",password);
     }
-
-
-
 
 }

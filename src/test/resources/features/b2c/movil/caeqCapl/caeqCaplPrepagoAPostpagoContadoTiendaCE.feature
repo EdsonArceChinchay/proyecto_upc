@@ -2,14 +2,14 @@
 ##CREADOR:
 ##APP: DITO
 ##MODULO: MOVÍL
-##FUNCIONALIDAD:
-##ESTADO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT051
 ##GDAP: GDAP-714
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
@@ -20,12 +20,12 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042465034"
     Y        doy click en el boton Consultar
@@ -58,5 +58,5 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password |
-      | usuario externo | userNameST | passST   |
+      | userType     | userName   | userPassword   | msgHome    |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ |

@@ -14,15 +14,15 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT011_Alta de Mono Internet con instalación HFC con documento CE por Canal Call Center
+Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por Canal Call Center
 
   @AltaMonoIntHFC
   Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameCC"
-    Y        ingreso el password "passCC"
+    Y        ingreso el password "userPasswordCC"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -72,7 +72,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC con documen
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "1042464814"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

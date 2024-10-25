@@ -20,14 +20,14 @@ Característica: AT-DT079_Migracion Salto 0 por canal Retail
   Esquema del escenario: Migracion Salto 0 por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
@@ -51,5 +51,5 @@ Característica: AT-DT079_Migracion Salto 0 por canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 123456778 |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 123456778      |

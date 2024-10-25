@@ -20,15 +20,15 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
   Esquema del escenario: Migracion de Mono a Mono
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -56,5 +56,5 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento    | correo            | tipoPlanHogar | plan                 |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 302010065403 | tester@tester.com | Mono          | INTERNET MOVISTAR RA |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                 |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 302010065403   | tester@tester.com | Mono          | INTERNET MOVISTAR RA |

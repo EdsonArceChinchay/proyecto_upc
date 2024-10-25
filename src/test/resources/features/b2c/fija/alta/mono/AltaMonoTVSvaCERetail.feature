@@ -14,21 +14,21 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
-Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
+Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE en Canal Retail
 
   @AltamonosvaRetail
-  Esquema del escenario: NUEVO - Alta mono + sva  en Canal Retail
+  Esquema del escenario: Alta Mono TV + SVA a cliente con CE en Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -78,6 +78,7 @@ Característica: AT-DT092_Alta Mono TV + SVA con documento CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1000002848 | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | HOT    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1000002848     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | HOT    |

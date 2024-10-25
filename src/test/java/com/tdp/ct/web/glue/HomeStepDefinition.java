@@ -59,16 +59,16 @@ public class HomeStepDefinition {
     }
 
     @Y("selecciono el tipo de documento {string}")
-    public void seleccionoElTipoDeDocumento(String tipoDocumento) {
+    public void seleccionoElTipoDeDocumento(String documentType) {
         System.out.println("Cliente: " + customer.getCustomerTest());
-        customer.setDocumentType(tipoDocumento);
-        homeStep.selectDocumentType(tipoDocumento);
+        customer.setDocumentType(documentType);
+        homeStep.selectDocumentType(documentType);
     }
 
     @Y("ingreso el documento {string}")
-    public void ingresoElDocumento(String documento) {
-        customer.setDocumentNumber(documento);
-        homeStep.typeDocumentNumber(documento);
+    public void ingresoElDocumento(String documentNumber) {
+        customer.setDocumentNumber(documentNumber);
+        homeStep.typeDocumentNumber(documentNumber);
     }
 
     @Y("doy click en el boton Consultar")
@@ -109,8 +109,8 @@ public class HomeStepDefinition {
     }
 
     @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
-    public void validoQueElNombreDelClienteSeaYSuSea(String nombre, String tipoDocumento, String nroDocumento) {
-        homeStep.validateCustomerData(nombre, tipoDocumento, nroDocumento);
+    public void validoQueElNombreDelClienteSeaYSuSea(String nombre, String documentType, String nroDocumento) {
+        homeStep.validateCustomerData(nombre, documentType, nroDocumento);
     }
 
     @Y("selecciono el ID de Cliente nro {string}")

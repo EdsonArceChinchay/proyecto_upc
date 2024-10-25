@@ -9,7 +9,7 @@
 ##SPRINT CREADO: PI_SP
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO: CRISTIAN HUNGARO
 ##FECMOD: 11/04/2024
 
@@ -17,18 +17,18 @@
 Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente extranjero (CE) por canal Tienda
 
   @CaeqFinanciadoTienda_CE
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -59,6 +59,6 @@ Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente ext
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 461960085 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 461960085      |
 

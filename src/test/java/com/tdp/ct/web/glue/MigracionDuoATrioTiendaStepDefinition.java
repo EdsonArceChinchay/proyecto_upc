@@ -39,11 +39,6 @@ public class MigracionDuoATrioTiendaStepDefinition {
         migracionDuoATrioTiendaStep.clickBtnIrMovistarTotal();
     }
 
-    @Y("doy click en Finalizar registro")
-    public void doyClickEnFinalizarRegistro() {
-        migracionDuoATrioTiendaStep.clickFinalizarRegistro();
-    }
-
     @Y("doy click en el boton Migrar a fibra")
     public void seleccinarBotonMigrarAFibra() {
         migracionDuoATrioTiendaStep.SeleccionarBtnMigrarFibra();

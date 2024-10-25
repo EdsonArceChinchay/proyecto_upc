@@ -2,14 +2,14 @@
 ##CREADOR:
 ##APP: DITO
 ##MODULO: MOVÍL
-##FUNCIONALIDAD:
-##ESTADO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT050
 ##GDAP: GDAP-891
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 20/05/2024
 
@@ -20,12 +20,13 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
   Esquema del escenario: CAPL con CAEQ por canal Call Center de un Control a Prepago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "CE"
     Y        ingreso el documento "1042465034"
     Y        doy click en el boton Consultar
@@ -60,5 +61,5 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password |
-      | usuario externo | userNameST | passST   |
+      | userType     | userName   | userPassword   | msgHome    | channelType |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      |

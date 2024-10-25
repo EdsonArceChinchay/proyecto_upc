@@ -9,7 +9,7 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/09/2024
 
@@ -17,18 +17,18 @@
 Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin Cambio de SIM (CASI) a cliente con CE por canal Call Center
 
   @CaeqCapl
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI  a cliente con CE por canal Call Center
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -70,12 +70,12 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464630 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464630     |
 

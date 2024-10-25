@@ -14,21 +14,21 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
-Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en canal Call Center
+Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  en canal Call Center
 
   @AltaDuoCC_SvaHBO
-  Esquema del escenario: Alta Duo SVA HBO con documento CE en canal call center
+  Esquema del escenario: Alta Duo SVA HBO a cliente con CE  en canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
@@ -77,11 +77,11 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO con documento CE en
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan               | bloque | tipoPlan |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1022233148 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET ESTANDAR HD | HBO    | Duo      |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan               | bloque | tipoPlan |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233148     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET ESTANDAR HD | HBO    | Duo      |

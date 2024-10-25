@@ -1,33 +1,33 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA TRIO
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-991
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE @AltaTrioUpfront
-Característica: Alta Trio Upfront con documento CE por canal Retail
+Característica: Alta Trio Upfront a cliente con CE por canal Retail
 
   @AltaTrio_UpfrontCanalRetail
   Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -60,7 +60,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
       | fechaNac   | nacionalidad | estadoCivil |
       | 01/12/1990 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -72,6 +72,7 @@ Característica: Alta Trio Upfront con documento CE por canal Retail
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                  |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1101100011 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                  |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1101100011     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRIO MOV. VOZ INT. ESTANDAR |

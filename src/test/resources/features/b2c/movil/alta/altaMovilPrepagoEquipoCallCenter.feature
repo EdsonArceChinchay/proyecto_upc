@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
-Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por canal Call Center
+Característica: AT-DT098_Alta Movil Prepago con Equipo a cliente con CE por canal Call Center
 
   @AltaMovilPrepagoEquipoCallCenter
-  Esquema del escenario: Alta movil Prepago con Equipo por call center
+  Esquema del escenario: Alta Movil Prepago con Equipo a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos    | genero   |
@@ -83,12 +84,12 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo con documento CE por can
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464781 | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464781     | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

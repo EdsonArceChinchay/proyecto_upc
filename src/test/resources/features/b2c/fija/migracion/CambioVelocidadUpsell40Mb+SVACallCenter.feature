@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
+##MODULO: FIJA
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT055
@@ -20,15 +20,15 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
   Esquema del escenario:  Realizar cambio de velocidad upsell dúo 40mb HFC a la siguiente mayor disponible, añadir SVA [repetidor wifi], CEX, canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -37,7 +37,6 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        selecciono boton Cambiar plan
-   # Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Agregar SVA
     Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -61,23 +60,23 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan            | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 2323232323 | Trio          | RA D22 150 MBPS | tester@tester.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan            | correo            |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Trio          | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva (alta de repetidor wiffi financiado) con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -113,5 +112,5 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 2323232323 | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |

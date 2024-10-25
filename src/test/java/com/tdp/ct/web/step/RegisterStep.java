@@ -216,21 +216,21 @@ public class RegisterStep {
         page.altaTrioMTconUpfrontTiendaPage().clickDiscapacitadoHuellaDesgastado();
     }
     @ScreenShotAfter
-    public void seleccionoTipoDocumentoSupervisor(String tipoDoc){
-        page.altaTrioMTconUpfrontTiendaPage().seleccionoTipoDocumentoSupervisor(tipoDoc);
+    public void selectSupervisorDocumentType(String tipoDoc){
+        page.altaTrioMTconUpfrontTiendaPage().selectSupervisorDocumentType(tipoDoc);
     }
     @ScreenShotAfter
-    public void ingresoNumeroDocumentoSuper(String documentoSuper){
-        page.altaTrioMTconUpfrontTiendaPage().ingresoNumeroDocumentoSuper(documentoSuper);
+    public void typeSupervisorDocumentNumber(String documentoSuper){
+        page.altaTrioMTconUpfrontTiendaPage().typeSupervisorDocumentNumber(documentoSuper);
     }
 
     @ScreenShotAfter
-    public void ingresoUsuarioSupervisor(String user){
-        page.altaTrioMTconUpfrontTiendaPage().ingresoUsuarioSupervisor(user);
+    public void typeSupervisorUser(String user){
+        page.altaTrioMTconUpfrontTiendaPage().typeSupervisorUser(user);
     }
     @ScreenShotAfter
-    public void ingresoContraseñaSupervisor(String passw){
-        page.altaTrioMTconUpfrontTiendaPage().ingresoContraseñaSupervisor(passw);
+    public void typeSupervisorPassword(String passw){
+        page.altaTrioMTconUpfrontTiendaPage().typeSupervisorPassword(passw);
     }
 
     @ScreenShotBefore
@@ -245,5 +245,10 @@ public class RegisterStep {
     @ScreenShotBefore
     public void clickOnButtonConfirm() {
         page.registerPage().clickOnButtonConfirm();
+    }
+
+    @ScreenShotBefore
+    public void clickOnTheFinishRegistrationButton() {
+        page.registerPage().clickOnTheFinishRegistrationButton();
     }
 }

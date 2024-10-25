@@ -1,15 +1,15 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO:
 ##CODIGO: AT-DT066
 ##GDAP: GDAP-581
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
@@ -20,15 +20,15 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
   Esquema del escenario: Migracion de MT a MT  en el canal CALL CENTER
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
@@ -45,7 +45,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -58,13 +58,13 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | nombrePlan | correo            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465107 | Mono       | tester@tester.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo            |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465107     | Mono       | tester@tester.com |

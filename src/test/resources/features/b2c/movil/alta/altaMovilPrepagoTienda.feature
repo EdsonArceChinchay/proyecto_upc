@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
-Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
+Característica: AT-DT028_Alta Movil Prepago a cliente con CE en Canal Tienda
 
   @AltaMovilPrepagoSoloChipTienda_CE
-  Esquema del escenario: Alta Movil Prepago con nuevo cliente con documento CE en Canal Tienda
+  Esquema del escenario: Alta Movil Prepago a cliente con CE en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -63,5 +64,5 @@ Característica: AT-DT028_Alta Movil Prepago documento CE por Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1942354781 | PLAN PREPAGO | Preplan    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | oferta       | nombrePlan |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1942354781     | PLAN PREPAGO | Preplan    |

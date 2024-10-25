@@ -14,21 +14,21 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @RegresionLegacy @AltaDuo
-Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
+Característica: AT-DT_Alta Duo (Internet + TV) + SVA a cliente con CE por canal Tienda
 
   @AltaDuoIntTvSvaCeST
-  Esquema del escenario: Alta Duo (Internet + TV) + SVA con documento CE por canal Tienda
+  Esquema del escenario: Alta Duo (Internet + TV) + SVA a cliente con CE  por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -77,5 +77,5 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA con documento CE por canal
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan      | svaRepetidor          |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1102233456 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET | REP. SMART WIFI Venta |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan   | svaRepetidor          |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1102233456     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO INTERNET | REP. SMART WIFI Venta |

@@ -12,24 +12,24 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaMovilEquipo
-Característica: AT-DT022_Alta Movil postpago con equipo con documento CE por canal Tienda
+Característica: AT-DT022_Alta Movil postpago con equipo a cliente con CE por canal Tienda
 
   @AltaMovilPostpagoEquipoTienda
-  Esquema del escenario: Alta movil Prepago + Equipo por call center
+  Esquema del escenario: Alta Movil postpago con equipo a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    #Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos   | genero   |
       | Ana     | Lopez Lopez | femenino |
@@ -72,5 +72,5 @@ Característica: AT-DT022_Alta Movil postpago con equipo con documento CE por ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | planMovil           | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 10424647821 | RV Plan Mi Movistar | Postpago   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil           | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 10424647821    | RV Plan Mi Movistar | Postpago   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

@@ -1,33 +1,34 @@
 #language: es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA SVA
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT109
 ##GDAP: GDAP-728
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/03/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @AltaSVA
-Característica: AT-DT109_Flujo de sva en el canal Call Center
+Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
 
   @SvaCallCenter
   Esquema del escenario: Sva en el canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la linea con numero "5010013051"
     Y        selecciono el boton Mostrar ofertas
@@ -49,14 +50,18 @@ Característica: AT-DT109_Flujo de sva en el canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 120906347 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 120906347      |

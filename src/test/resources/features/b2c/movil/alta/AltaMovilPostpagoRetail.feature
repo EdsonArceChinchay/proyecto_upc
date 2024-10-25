@@ -12,21 +12,22 @@
 ##DATA: REUSABLE
 ##ENCARGADO: Angel Medina
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
-Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
+Característica: AT-DT031_Alta Movil Postpago a cliente con CE por Canal Retail
 
   @AltaMovilRetail
-  Esquema del escenario: Alta Movil Postpago con documento CE por Canal Retail
+  Esquema del escenario: Alta Movil Postpago a cliente con CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -61,8 +62,8 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Cuando   regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Y        selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la orden
     Y        doy click en el boton continuar
@@ -79,5 +80,5 @@ Característica: AT-DT031_Alta Movil Postpago con documento CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento   | nombrePlan                              |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 12094544011 | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | nombrePlan                              |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 12094544011    | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

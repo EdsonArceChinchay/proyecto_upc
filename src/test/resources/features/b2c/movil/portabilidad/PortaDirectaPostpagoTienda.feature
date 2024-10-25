@@ -9,9 +9,10 @@
 ##SPRINT CREADO: PI19_SP2
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 11/10/2024
+
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en canal Tienda
 
@@ -19,16 +20,16 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
   Esquema del escenario: Porta Directa solo chip postpago a cliente con DNI en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Y        valido que este activo el flag de Porta Directa
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
@@ -52,8 +53,8 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
-      | typeDocument    | numberDocument | numberPhone |
-      | <tipoDocumento> | <documento>    | <numero>    |
+      | typeDocument   | numberDocument | numberPhone |
+      | <documentType> | <documento>    | <numero>    |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
     Y        doy click en validar identidad del titular
@@ -72,11 +73,13 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        valido el servicio requestportin
       | telefono | Fecha_Sig  | Fecha_FinMes |
       | <numero> | 2024-01-24 | 2024-01-31   |
+    Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | DNI           | 70501364  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |

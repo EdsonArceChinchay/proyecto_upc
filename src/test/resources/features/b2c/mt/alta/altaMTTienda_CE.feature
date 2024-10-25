@@ -1,8 +1,8 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT036
 ##GDAP: GDAP-1000
@@ -14,27 +14,26 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
-Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
+Característica: AT-DT036_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Tienda
 
   @AltaMtTienda
-  Esquema del escenario: Alta fija mas alta movil por Tienda con CE sin productos asociados sin biometria
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero   |
       | Luisa   | Cabello   | femenino |
-#    Y        cierro popup de aviso
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -78,5 +77,5 @@ Característica: AT-DT036_ Alta MT (Alta Fija + Alta Movil)  por canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1567400000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1567400000     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |

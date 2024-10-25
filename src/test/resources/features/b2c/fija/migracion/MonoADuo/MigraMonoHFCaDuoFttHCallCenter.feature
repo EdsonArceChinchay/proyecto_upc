@@ -20,15 +20,15 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
   Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, en canal call center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y         valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -56,5 +56,5 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan            |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123456744 | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456744      | tester@tester.com | Duo           | RA D22 200 MBPS |

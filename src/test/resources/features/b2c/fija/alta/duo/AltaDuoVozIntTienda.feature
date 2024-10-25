@@ -14,21 +14,21 @@
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) con instalacion FTTH con documento CE por Canal Tienda
+Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
 
   @AltaDuoBByVozFTTHCanalTiendas
-  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH con documento CE por Canal Tienda
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
@@ -72,6 +72,7 @@ Característica: Alta Duo (Voz + Internet) con instalacion FTTH con documento CE
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1234539198 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

@@ -3,37 +3,37 @@
 ##APP: DITO
 ##MODULO: MOVIL
 ##FUNCIONALIDAD: ALTA
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT029
 ##GDAP: GDAP-961
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
-Característica:  AT-DT029_Alta Movil Control a cliente extranjero (CE) por canal Call Center
+Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Center
   Quiero realizar una alta movil solo sin por call center
 
   @AltaMovilCECallCenter
-  Esquema del escenario: Alta Movil Control Solo Sim con documento CE por canal Call Center
+  Esquema del escenario: Alta movil control a cliente con CE por canal Call Cente
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
-#    Y        cierro popup de aviso
     Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -67,7 +67,7 @@ Característica:  AT-DT029_Alta Movil Control a cliente extranjero (CE) por cana
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -80,11 +80,12 @@ Característica:  AT-DT029_Alta Movil Control a cliente extranjero (CE) por cana
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanMovil | nombrePlan          |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 121219511 | Control       | RV Plan Mi Movistar |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan          |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 121219511      | Control       | RV Plan Mi Movistar |
 

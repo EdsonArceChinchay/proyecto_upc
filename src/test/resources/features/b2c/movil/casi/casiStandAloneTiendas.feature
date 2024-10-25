@@ -9,26 +9,27 @@
 ##SPRINT CREADO: PI15_SP4
 ##FRECUENCIA: DIARIA
 ##TAG : BERSERKERS
-##DATA:Reusable
+##DATA:  REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:Brandon
 ##FECMOD: 26/02/2024
-@BERSERKERS @DoneDevOps @casiStandAloneTiendas
+
+@BERSERKERS @DoneDevOps @casiTienda
 Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Tienda
   Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
 
-  @casiStandAloneTiendas
+  @casiTienda
   Esquema del escenario: Cambio de Simcard (CASI) a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -38,7 +39,7 @@ Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Ti
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -52,5 +53,5 @@ Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Ti
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464721 | prueba@prueba.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464721     | prueba@prueba.com |

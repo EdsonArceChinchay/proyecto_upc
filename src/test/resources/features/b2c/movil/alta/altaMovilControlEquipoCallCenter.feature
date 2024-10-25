@@ -12,6 +12,7 @@
 ##DATA: REUSABLE
 ##ENCARGADO: Edson Arce
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @DoneDevOps @AltaMovilEquipo
 Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por canal Call Center con delivery regular
 
@@ -19,15 +20,15 @@ Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por cana
   Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Dado     presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Entonces ingreso los datos del nuevo cliente
       | nombres | apellidos | genero    |
@@ -80,12 +81,13 @@ Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por cana
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1090454046 | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1090454046     | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

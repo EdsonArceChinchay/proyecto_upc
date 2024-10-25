@@ -20,14 +20,14 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
   Esquema del escenario: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
@@ -35,5 +35,5 @@ Característica: Actualizacion fija todo los planes con ruc 15 canal Tienda
     Y        valido el mensaje de la actualizacion de ruc correcta
     Y        selecciono la cartilla del plan activo
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 7241133112 | 15112233442 |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | ruc         |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 7241133112     | 15112233442 |

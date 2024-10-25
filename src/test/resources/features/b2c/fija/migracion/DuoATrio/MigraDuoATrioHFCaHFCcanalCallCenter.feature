@@ -20,15 +20,15 @@ Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
   Esquema del escenario:Migracion Duo A Trio HFC a HFC
     Cuando   presiono el boton Iniciar Sesion
     Dado     que abro la pagina de movistar
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Y         valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -50,6 +50,7 @@ Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo            | tipoPlanHogar | plan                                |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 128888888 | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                                |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 128888888      | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar |

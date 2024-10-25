@@ -14,24 +14,21 @@
 ##FECMOD: 30/03/2023
 
  @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28
-
  Característica: Migracion mono a duo sva Decodificador + sva Bloque CANAL CALL CENTER
-
-   Antecedentes:
-     Dado     que abro la pagina de movistar
 
    @MigracionMonoDuoSvaDecodificadorSvaBloqueCallCenter
    Esquema del escenario: Migracion mono a duo sva Decodificador + sva Bloque CANAL CALL CENTER
+     Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
-     Y        selecciono el tipo de usuario "<tipoUsuario>"
+     Y        selecciono el tipo de usuario "<userType>"
      Y        ingreso el usuario "<userName>"
-     Y        ingreso el password "<password>"
+     Y        ingreso el password "<userPassword>"
      E        ingreso el captcha
      Y        presiono el boton Continuar hacia el home
      Y        valido el login exitoso mediante el mensaje "<msgHome>"
      Y        valido que se presente el canal "<channelType>"
-     Cuando   selecciono el tipo de documento "<tipoDocumento>"
-     Y        ingreso el documento "<documento>"
+     Cuando   selecciono el tipo de documento "<documentType>"
+     Y        ingreso el documento "<documentNumber>"
      Y        doy click en el boton Consultar
      Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
@@ -59,5 +56,5 @@
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
      Ejemplos:
-       | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
-       | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 123456766 | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |
+       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
+       | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |

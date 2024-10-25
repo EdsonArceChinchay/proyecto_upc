@@ -19,15 +19,15 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
   Esquema del escenario: Migracion de Mono internet a Mono interner con Actualizar Direccion en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -60,5 +60,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042464839 | Mono          | INTERNET MOVISTAR RA
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | Mono          | INTERNET MOVISTAR RA

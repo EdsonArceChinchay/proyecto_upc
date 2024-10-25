@@ -3,32 +3,32 @@
 ##APP: DITO
 ##MODULO: MOVÍL
 ##FUNCIONALIDAD: CAMBIO DE SIMCARD (CASI)
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:AT-DT113
 ##GDAP:GDAP-1386
 ##SPRINT CREADO: PI15_SP5
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:Reusable
+##DATA:  REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:Brandon
 ##FECMOD: 06/05/2024
 
-@BERSERKERS @DoneDevOps @casiStandAloneRetail
+@BERSERKERS @DoneDevOps @casiRetail
 Característica: AT-DT113_Cambio de Simcard (CASI) a cliente con CE por canal Retail
   Quiero realizar un CASI a un cliente con CE y parque movil
 
-  @casiStandAloneRetail
+  @casiRetail
   Esquema del escenario: Cambio de Simcard (CASI) a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -49,5 +49,5 @@ Característica: AT-DT113_Cambio de Simcard (CASI) a cliente con CE por canal Re
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 1042464725 | prueba@prueba.com |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | correo            |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1042464725     | prueba@prueba.com |

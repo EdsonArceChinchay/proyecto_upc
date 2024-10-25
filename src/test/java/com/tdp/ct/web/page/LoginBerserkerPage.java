@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -20,7 +19,7 @@ public class LoginBerserkerPage extends WebBase {
     protected WebElement btnIniciarSesion;
 
     @FindBy(id = "procedencia_usuario")
-    protected WebElement tipoUsuario;
+    protected WebElement userType;
 
     @FindBy(id = "signInName")
     protected WebElement inputNameUser;
@@ -37,9 +36,6 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(id = "claimVerificationServerError")
     protected WebElement msgErrorCredential;
 
-    @FindBy(xpath = "//*[contains(@class,'error itemLevel show') or contains(@id,'erro-captcha') or contains(@id,'claimVerificationServerError')]")
-    protected List<WebElement> labelsError;
-
     @FindBy(xpath = "//*[contains(@id,'erro-captcha')]")
     protected WebElement labelCaptchaError;
 
@@ -49,11 +45,12 @@ public class LoginBerserkerPage extends WebBase {
         click(btnIniciarSesion);
     }
 
-    public void selectUserType(String usuario) {
-        esperaProgresiva(driver(), 3, 5, tipoUsuario);
-        Select usuarioSelect = new Select(tipoUsuario);
-        usuarioSelect.selectByVisibleText(usuario);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + usuario);
+    public void selectUserType(String user) {
+        esperaProgresiva(driver(), 3, 5, userType);
+        Select usuarioSelect = new Select(userType);
+        String userType = (user.equalsIgnoreCase("externalUser")) ? getValueConfig("credential.type.externalUser"):getValueConfig("credential.type.internalUser");
+        usuarioSelect.selectByVisibleText(userType.trim());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + userType);
         UtilWeb.waitForSeconds(1);
     }
 

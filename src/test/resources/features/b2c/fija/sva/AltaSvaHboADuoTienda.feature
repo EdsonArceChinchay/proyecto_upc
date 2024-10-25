@@ -1,36 +1,36 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA SVA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT108
 ##GDAP: GDAP-1105
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy @AltaSVA
-Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
+Característica: AT-DT108_Alta SVA a un DUO de un cliente con CE por Canal Tienda
   Yo como asesor de Tienda
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 
   @svaBloqueHboDuoPorTienda
-  Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo a un usuario con CE y productos asociados sin biometria
+  Esquema del escenario: Alta de un bloque hbo a un cliente con parque duo con CE y productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la linea con numero "9234816429"
     Y        selecciono el boton Mostrar ofertas
@@ -60,9 +60,11 @@ Característica: AT-DT108_Alta SVA a DUO con documento CE por Canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464671 | prueba@prueba.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464671     | prueba@prueba.com |
 
 

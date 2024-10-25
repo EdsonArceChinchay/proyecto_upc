@@ -9,25 +9,26 @@
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/09/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: AT-DT049_Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero(CE) por canal Tienda
 
-  @CambioEquipoConCambioSIM
+  @CaeqSinCasi
   Esquema del escenario: Como usuario <userName> del canal <channelType> realizo CAEQ sin CASI a cliente extranjero(CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        cierro popup de error
@@ -49,7 +50,7 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cli
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
-    #Y        presiono el boton descargar contrato
+    Y        presiono el boton descargar contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -57,5 +58,5 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cli
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042465085 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042465085     |

@@ -56,8 +56,8 @@ public class RegisterStepDefinition {
     }
 
     @Y("ingreso nuevamente el correo electronico {string}")
-    public void ingreso_nuevamente_el_correo_electronico(String correo) {
-        registerStep.typeConfirmEmail(correo);
+    public void ingreso_nuevamente_el_correo_electronico(String email) {
+        registerStep.typeConfirmEmail(email);
     }
 
     @Y("ingreso call id {string}")
@@ -103,8 +103,8 @@ public class RegisterStepDefinition {
     }
 
     @Y("Selecciono tipo de pago {string}")
-    public void seleccionoTipoDePago(String tipo) {
-        registerStep.selectTipoDePago(tipo);
+    public void seleccionoTipoDePago(String type) {
+        registerStep.selectTipoDePago(type);
     }
 
     @Y("doy click en el boton de continuar")
@@ -122,7 +122,7 @@ public class RegisterStepDefinition {
         executeIfNotRetention(() -> {
             registerStep.clickOnTheValidateHolderIdentityButton();
             isActiveValidateIdentity = registerStep.hasIdentityValidationError();
-            if (isActiveValidateIdentity){
+            if (isActiveValidateIdentity) {
                 registerStep.clickOnButtonConfirm();
             }
         });
@@ -134,8 +134,8 @@ public class RegisterStepDefinition {
     }
 
     @Y("ingreso los datos del supervisor")
-    public void ingresoLosDatosDelSupervisor(DataTable datos) {
-        registerStep.ingresarDatosSupervisor(datos);
+    public void ingresoLosDatosDelSupervisor(DataTable dataTable) {
+        registerStep.ingresarDatosSupervisor(dataTable);
         registerStep.clicConfirmarUsuarioSupervisor();
     }
 
@@ -197,27 +197,32 @@ public class RegisterStepDefinition {
     }
 
     @Y("selecciono tipo de documento del supervisor {string}")
-    public void seleccionoTipoDeDocumentoDelSupervisor(String tipoDoc) {
-        registerStep.seleccionoTipoDocumentoSupervisor(tipoDoc);
+    public void seleccionoTipoDeDocumentoDelSupervisor(String type) {
+        registerStep.selectSupervisorDocumentType(type);
     }
 
     @Y("ingreso el numero de documento del supervisor {string}")
-    public void ingresoElNumeroDeDocumentoDelSupervisor(String documentoSuperv) {
-        registerStep.ingresoNumeroDocumentoSuper(documentoSuperv);
+    public void ingresoElNumeroDeDocumentoDelSupervisor(String number) {
+        registerStep.typeSupervisorDocumentNumber(number);
     }
 
     @Y("ingreso usuario citrix de supervisor {string}")
     public void ingresoUsuarioCitrixDeSupervisor(String user) {
-        registerStep.ingresoUsuarioSupervisor(user);
+        registerStep.typeSupervisorUser(user);
     }
 
     @Y("ingreso contraseña de supervisor {string}")
-    public void ingresoContraseñaDeSupervisor(String passw) {
-        registerStep.ingresoContraseñaSupervisor(passw);
+    public void ingresoContraseñaDeSupervisor(String password) {
+        registerStep.typeSupervisorPassword(password);
     }
 
     @Y("doy click en el boton validar identidad representante legal")
     public void doyClicEnElBotonValidarIdentidadRepresentanteLegal() {
         registerStep.clickBotonValidarRepreLegal();
+    }
+
+    @Y("doy click en Finalizar registro")
+    public void doyClickEnFinalizarRegistro() {
+        registerStep.clickOnTheFinishRegistrationButton();
     }
 }

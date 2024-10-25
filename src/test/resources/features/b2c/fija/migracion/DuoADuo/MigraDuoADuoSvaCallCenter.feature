@@ -20,15 +20,15 @@ Característica: AT-DT059_Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA
   Esquema del escenario: Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -61,6 +61,7 @@ Característica: AT-DT059_Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1854264859 | tester@tester.com | Duo           | Duo Internet Flex HD |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan           |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1854264859     | tester@tester.com | Duo           | Duo Internet Flex HD |

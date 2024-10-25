@@ -133,6 +133,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         }
         UtilWeb.waitForSeconds(4);
     }
+
     @FindBy(xpath = "//div[3]/app-mt-card/div[1]/div/div[1]/div[3]/img")
     protected WebElement btnselecOferta;
 
@@ -140,9 +141,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement planOferta;
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
-
-    @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
-    protected WebElement btnFinalizarRegistro;
 
     public void seleccionoPlanMovistarTotal() {
         UtilWeb.waitForSeconds(3);
@@ -168,12 +166,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         revisarModalError(driver());
         waitUntilElementIsVisible(btnIrMovistarTotal, 150);
         click(btnIrMovistarTotal);
-    }
-
-
-    public void clickFinalizarRegistro() {
-        waitUntilElementIsVisible(btnFinalizarRegistro, 10);
-        click(btnFinalizarRegistro);
     }
 
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")

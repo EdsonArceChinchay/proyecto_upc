@@ -12,6 +12,7 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT057_Cambio de plan (CAPL) de Postpago a Postpago a cliente extranjero (CE) por canal Retail
 
@@ -19,9 +20,9 @@ Característica: AT-DT057_Cambio de plan (CAPL) de Postpago a Postpago a cliente
   Escenario: CAPL Post a Post CEX por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "usuario externo"
+    Y        selecciono el tipo de usuario "externalUser"
     Y        ingreso el usuario "userNameDLC"
-    Y        ingreso el password "passDLC"
+    Y        ingreso el password "userPasswordDLC"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"

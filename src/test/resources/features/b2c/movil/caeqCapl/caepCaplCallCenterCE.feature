@@ -2,14 +2,14 @@
 ##CREADOR:
 ##APP: DITO
 ##MODULO: MOVÍL
-##FUNCIONALIDAD:
-##ESTADO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT045
 ##GDAP: GDAP-713
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 30/03/2024
 
@@ -22,15 +22,15 @@ Característica: AT-DT045_Caeq Mas Capl por call center
   Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero en canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
@@ -73,12 +73,12 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1042465134 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465134     |

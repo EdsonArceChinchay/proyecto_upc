@@ -51,11 +51,6 @@ public class MigracionDuoATrioTiendaStep {
     }
 
     @ScreenShotBefore
-    public void clickFinalizarRegistro() {
-        page.migracionDuoATrioTiendaPage().clickFinalizarRegistro();
-    }
-
-    @ScreenShotBefore
     public void SeleccionarBtnMigrarFibra() {
         page.migracionDuoATrioTiendaPage().SeleccionarBtnMigrarFibra();
     }

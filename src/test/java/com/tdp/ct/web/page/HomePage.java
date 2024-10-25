@@ -88,11 +88,9 @@ public class HomePage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Select document type " + valueTipoDocumento);
     }
 
-    public void typeDocumentNumber(String number) {
-        WebElement document = find().getElementByCss("#doc");
-        click(document);
-        type(document, number);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number " + number);
+    public void typeDocumentNumber(String documentNumber) {
+        WebElement inputDocumentNumber = find().getElementByCss("#doc");
+        typeInShadowRoot(inputDocumentNumber,"document number" ,documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -105,10 +103,10 @@ public class HomePage extends WebBase {
         revisarModalError(driver());
     }
 
-    public void validateCustomerData(String nombre, String tipoDocumento, String nroDocumento) {
+    public void validateCustomerData(String nombre, String documentType, String nroDocumento) {
         UtilWeb.waitForSeconds(2);
         compareWebElementTextAndString(txtNombre, nombre);
-        compareWebElementTextAndString(txtNombre, tipoDocumento);
+        compareWebElementTextAndString(txtNombre, documentType);
         compareWebElementTextAndString(txtNombre, nroDocumento);
     }
 

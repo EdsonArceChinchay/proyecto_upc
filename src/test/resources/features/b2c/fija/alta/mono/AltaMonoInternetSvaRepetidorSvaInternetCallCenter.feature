@@ -14,21 +14,21 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @AltaMono
-Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Documento CE Canal Call Center
+Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a cliente con CE Canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter
   Esquema del escenario: Alta Mono Internet Sva Repetidor + Sva Internet
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
       | nombres        | apellidos      | genero   |
@@ -77,12 +77,13 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet con Do
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1123123149 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1123123149     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |

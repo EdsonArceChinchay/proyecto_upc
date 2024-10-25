@@ -21,15 +21,15 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
   Esquema del escenario: Alta movil B2B con permanencia 18 meses + Equipo con Representante Legal Extranjero en Canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el ID de Cliente nro "<nro>"
     Y        selecciono el tipo de documento "<tipoDocRepLegal>" del Representante Legal
@@ -59,7 +59,10 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | RUC           | 20000000003 | 1   | C               | 143625134      | prueba@prueba.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20000000003    | 1   | C               | 143625134      | prueba@prueba.com |

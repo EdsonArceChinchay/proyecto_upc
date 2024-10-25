@@ -1,35 +1,34 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: COMPLETA MOVIL
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-1661
 ##SPRINT CREADO:
-##FRECUENCIA:
+##FRECUENCIA: SEMANAL
 ##TAG : BERSERKERS
-##DATA: REUSABLE
-##ENCARGADO:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##FECMOD: 02/07/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
 Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a cliente con DNI en canal Call Center
 
-  @CompletaPlantaFijaPortabilidadCC
+  @@CompletaPlantaFijaPortabilidadCC
   Esquema del escenario: Completa Planta Fija Porta Directa Movil
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que este activo el flag de Porta Directa
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la linea con numero "<numeroExistente>"
     Y        doy click en el boton portabilidad
@@ -42,7 +41,6 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y        selecciono el plan "<tipoPlan>" que desea
     Y        doy click en el boton Siguiente
     Entonces me muestra la pantalla para verificar la direccion
-    #Y        presiono el boton Confirmar direccion
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "casa"
     Y        presiono el boton Consultar ubicacion
@@ -67,12 +65,11 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "hola@gmail.com"
     Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        ingreso call id "2BE1772E-ADDB-51B6-865A-7E356D944955"
     Y        doy click en validar identidad del titular
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -87,13 +84,13 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
 
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 47618664  | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 47618664       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
 
 

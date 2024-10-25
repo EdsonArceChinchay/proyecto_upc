@@ -20,14 +20,14 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
   Esquema del escenario: Migracion de Duo a duo - Actualizar direccion, con CE  sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -60,5 +60,5 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | tipoDocumento | documento  | tipoPlanHogar | plan               |
-      | usuario externo | userNameST | passST   | Bienvenid@ | CE            | 1042465127 | Duo           | HD RA M23 200 MBPS |
+      | userType     | userName   | userPassword | msgHome    | documentType | documentNumber | tipoPlanHogar | plan               |
+      | externalUser | userNameST |  userPasswordST    | Bienvenid@ | CE            | 1042465127 | Duo           | HD RA M23 200 MBPS |

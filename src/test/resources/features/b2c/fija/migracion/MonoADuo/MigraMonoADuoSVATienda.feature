@@ -14,22 +14,21 @@
 ##FECMOD: 31/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G08
-
 Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
 
   @MigraMonoDuoSVATienda
   Esquema del escenario: Migracion de Mono a Duo con CE + sva
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono la cartilla del plan activo
@@ -63,5 +62,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464839 | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464839     | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |

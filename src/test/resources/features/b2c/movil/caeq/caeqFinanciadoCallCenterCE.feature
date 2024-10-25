@@ -20,15 +20,15 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
   Esquema del escenario: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        doy click en el boton "Renovar plan"
@@ -49,8 +49,8 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -74,13 +74,13 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | EncontrarCelular |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 723456454 | 650034426        |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | EncontrarCelular |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 723456454      | 650034426        |
 
 

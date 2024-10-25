@@ -20,15 +20,15 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
   Esquema del escenario: Migracion de Duo a Trio con CE Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -53,6 +53,6 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | tipoPlanHogar | planTrio                        |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 253462454 | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | planTrio                        |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 253462454      | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR |
 

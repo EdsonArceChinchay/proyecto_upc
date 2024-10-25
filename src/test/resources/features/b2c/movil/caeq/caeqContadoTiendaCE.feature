@@ -3,31 +3,32 @@
 ##APP: DITO
 ##MODULO: MOVÍL
 ##FUNCIONALIDAD: CAMBIO DE EQUIPO (CAEQ)
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO:
 ##GDAP: GDAP-1423
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 07/11/2023
+##FECMOD: 07/11/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por canal Tienda
 
   @CaeqContadoTienda_CE @RegreDito
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <tipoDocumento>: <documento>
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
     Y        presiono el boton Renovar Plan
@@ -58,5 +59,5 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | EncontrarCelular |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464674 | 650027989        |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | EncontrarCelular |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464674     | 650027989        |

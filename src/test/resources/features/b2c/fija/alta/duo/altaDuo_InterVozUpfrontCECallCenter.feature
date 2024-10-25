@@ -14,21 +14,21 @@
 ##FECMOD: 15/10/2024
 
 @BERSERKERS @DoneDevOps @AltaDuo_InterVozUpfront @AltaDuoUpfront
-Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
+Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront a cliente con CE por canal Call Center
 
   @AltaDuo_InterVozUpfront
-  Esquema del escenario: Alta Duo (Internet + Voz) Upfront con documento CE por canal Call Center
+  Esquema del escenario: Alta Duo (Internet + Voz) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -51,7 +51,7 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
-    Y       doy click en el boton Iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
@@ -63,7 +63,7 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
       | fechaNac   | nacionalidad | estadoCivil |
       | 01/12/1990 | Alemania     | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -73,7 +73,8 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront con documento CE por
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1101000112 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000112     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
 

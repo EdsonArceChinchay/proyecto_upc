@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AltaMTUpfront
-Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Tienda
+Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Tienda
 
   @AltaMTUpfrontTienda_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront con documento CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -45,8 +46,8 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | casa         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        valido si el usuario aplica para upfront
@@ -64,7 +65,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Divorciado  | Alemania     |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -79,5 +80,5 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront con documento
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 0674323444 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |

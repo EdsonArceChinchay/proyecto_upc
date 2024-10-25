@@ -20,15 +20,15 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Cal
   Esquema del escenario: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -76,6 +76,14 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Cal
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documentNumber>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1548787786 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |

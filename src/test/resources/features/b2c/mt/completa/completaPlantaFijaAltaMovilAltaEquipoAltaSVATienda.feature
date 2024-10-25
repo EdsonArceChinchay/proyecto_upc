@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR: CARLOS RUIZ
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: COMPLETA MOVIL
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
 ##GDAP: GDAP-1425
 ##SPRINT CREADO: PI18_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT0 _Completa movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA a cliente con CE en tienda
+Característica: AT-DT0 _Completa Movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA a cliente con CE en canal Tienda
 
   @CompletaMovilEquipoSVAT
-  Esquema del escenario: Completa Planta Fija Trio + Alta Movil + Alta Equipo Movil+ Alta SVA a cliente con CE en tienda
+  Esquema del escenario: Completa Planta Fija Trio + Alta Movil + Alta Equipo Movil+ Alta SVA a cliente con CE en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton de la Linea Hogar Existente "14353026"
     Y        selecciono el boton Linea Nueva Movil
@@ -57,7 +57,7 @@ Característica: AT-DT0 _Completa movil MT (Planta Fija Trio + Alta Movil) + Alt
     Y        ingreso correo electronico "<correo>"
     Y        ingreso nuevamente el correo electronico "<correo>"
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,5 +71,5 @@ Característica: AT-DT0 _Completa movil MT (Planta Fija Trio + Alta Movil) + Alt
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | nombrePlan | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 153426984 | Trío       | correo@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 153426984      | Trío       | correo@gmail.com |

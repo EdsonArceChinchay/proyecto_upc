@@ -9,7 +9,7 @@
 ##SPRINT CREADO:  PI_
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: UNICA VEZ
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO: Edson Arce
 ##FECMOD: 30/03/2023
 
@@ -20,15 +20,15 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
@@ -60,5 +60,5 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento   |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 12312312222 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 12312312222    |

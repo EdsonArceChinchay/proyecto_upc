@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037 @AltaMTSVA
-Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA con documento DNI por canal Call Center
+Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Call Center
 
   @AltaMTSVACallCenter_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA con documento DNI por canal Call Center
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
@@ -70,7 +71,7 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA con documento D
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -83,13 +84,13 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA con documento D
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Cuando   busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
-    Y        apruebo la solicitud
+    Entonces apruebo la solicitud
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | sva                   | tipoDocumento | documento | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI           | 46325790  | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | userType     | userName   | userPassword   | msgHome    | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

@@ -19,15 +19,15 @@ Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal 
   Esquema del escenario: Migracion de Duo (Internet + Voz) a Trio con documento CE sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro pop up de CU
     Y        selecciono la linea con numero "14353641"
@@ -60,6 +60,6 @@ Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal 
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan                                | correo           |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1042464581 | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                | correo           |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464581     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
 

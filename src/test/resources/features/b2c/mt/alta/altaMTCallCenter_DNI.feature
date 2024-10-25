@@ -12,22 +12,23 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMT
-Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por canal Call Center
+Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por canal Call Center
 
   @AltaMTCallCenter_DNI
-  Esquema del escenario: Alta fija mas alta movil por Call Center con DNI sin productos asociados y delivery express
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con DNI por canal Call Center y delivery express
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
@@ -69,7 +70,7 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
     ##Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -82,12 +83,12 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) con documento DNI por
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 46325789  | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |

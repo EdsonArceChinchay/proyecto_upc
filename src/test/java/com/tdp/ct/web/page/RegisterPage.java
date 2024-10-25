@@ -53,6 +53,8 @@ public class RegisterPage extends WebBase {
     protected WebElement textIdentityValidationError;
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmModal;
+    @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
+    protected WebElement btnFinalizarRegistro;
 
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
@@ -71,7 +73,6 @@ public class RegisterPage extends WebBase {
         esperaProgresiva(driver(), 6, 6, inputEmail);
         validateCompletedInputForm(email, inputEmail, "div > div > div > input");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Type email: " + email);
-
     }
 
     public void typeConfirmEmail(String email) {
@@ -225,4 +226,10 @@ public class RegisterPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Click button confirm");
         UtilWeb.waitForSeconds(2);
     }
+
+    public void clickOnTheFinishRegistrationButton() {
+        waitUntilElementIsVisible(btnFinalizarRegistro, 10);
+        click(btnFinalizarRegistro);
+    }
+
 }

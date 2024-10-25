@@ -12,21 +12,22 @@
 ##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 01/08/2024
+
 @BERSERKERS @AltaMovil
-Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
+Característica: AT-DT096_Alta Movil Prepago a cliente con CE en Canal Retail
 
   @AltaMovilPrepagoRetail
-  Esquema del escenario: Alta movil prepago combo por retail con nuevo cliente con documento CE
+  Esquema del escenario: Alta Movil Prepago a cliente con CE en Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -55,11 +56,11 @@ Característica: AT-DT096_Alta Movil Prepago con documento CE por canal Retail
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | tipoDocumento | documento  | oferta       | nombrePlan |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | CE            | 2042464832 | PLAN PREPAGO | Preplan    |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | oferta       | nombrePlan |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 2042464832     | PLAN PREPAGO | Preplan    |

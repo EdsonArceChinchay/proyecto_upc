@@ -1,16 +1,15 @@
 #language: es
-
 ##CREADOR: Henry
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
-##ESTADO:
+##MODULO: FIJA
+##FUNCIONALIDAD: ALTA TRIO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT094
 ##GDAP: GDAP-1146
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
 
@@ -21,15 +20,15 @@ Característica: AT-DT094_Alta trio con direccion pangea
   Esquema del escenario: Escenario: Alta trio Por Call Center con direccion pangea
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -44,9 +43,9 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-   # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | lote | tipoVivienda | nombreVivienda    | piso | int | conjunto             | conjHabit  |
-    #  | D  | 11   | EDIFICIO | Familia Barrios   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
+      | D  | 11   | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -62,7 +61,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
       | fechaNac   | estadoCivil | nacionalidad |
       | 02/10/1980 | Divorciado  | Angola       |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -73,12 +72,13 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 166268244 | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 166268244      | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

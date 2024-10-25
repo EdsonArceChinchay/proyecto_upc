@@ -2,14 +2,14 @@
 ##CREADOR:
 ##APP: DITO
 ##MODULO: MOVÍL
-##FUNCIONALIDAD:
-##ESTADO:
+##FUNCIONALIDAD: CAMBIO
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT0114
 ##GDAP: GDAP-1387
 ##SPRINT CREADO: PI16_SP1
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO: PATRICIA CABELLO HUAYTA
 ##FECMOD: 03/07/2023
 
@@ -20,9 +20,9 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
   Esquema del escenario: CAPL con CAEQ por canal Retail de un Postpago a Prepago
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
@@ -42,7 +42,6 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
       | permanencia     | tipoPago   | equipoName               |
       | Sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
     Y        doy click en el boton seleccionar
-    #Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
     Y        valido que este en el resumen de venta
@@ -59,5 +58,5 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | channelType |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      |
+      | userType     | userName    | userPassword    | msgHome    | channelType |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |

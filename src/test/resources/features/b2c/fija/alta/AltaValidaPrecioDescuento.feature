@@ -22,17 +22,16 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
   @AltaTrio_VozTVBB
   Esquema del escenario: Validar precio de descuento BB - Planes: Duos, trios
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-	#Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
       | Lana    | Grey Khalifa | femenino |
@@ -76,12 +75,12 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
-
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                      | bloque | tipoPlan | svaInternet           | bloque |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1022233168 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA S23 600 MBPS       | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1022233169 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                      | bloque | tipoPlan | svaInternet           | bloque |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233168     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET ESTANDAR HD RA S23 600 MBPS       | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233169     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 
 
   @AltaMonoBeneficioDescuento
@@ -98,15 +97,15 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     #El campo ID puede ser llenado en caso de que se encunetre activo se utilizara en caso contrario se saltara el paso.
   Esquema del escenario: Validar planes Beneficios y Descuento Mono Cliente Nuevo/Existente - Documento CE
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
-    #Y        ingreso el captcha
+    Y        ingreso el password "<userPassword>"
+    Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        valido si el cliente "<nombre>", "<apellido>" con genero "<genero>" ya esta registrado
     Y        selecciono el boton Linea Nueva Hogar
@@ -145,7 +144,8 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento | nombre              | apellido           | genero   | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                        | precio   | tipoPlan | beneficioPlan                     | descuentoPlan |
-     # | usuario externo | userNameCC | passCC | Bienvenid@ |Call Center | CE            | 102223310 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 400 MBPS | S/139.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 856575420 | MCONewFirstName1405 | MCONewLastName1405 | Femenino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 200 MBPS | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombre              | apellido           | genero   | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                        | precio   | tipoPlan | beneficioPlan                     | descuentoPlan |
+     # | externalUser | userNameCC | userPasswordCC | Bienvenid@ |Call Center | CE            | 102223310 | Lana                | Grey Khalifa       | Masculino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 400 MBPS | S/139.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 856575420      | MCONewFirstName1405 | MCONewLastName1405 | Femenino | Lima         | Lima      | Lince    | JIRON JULIO CESAR TELLO 469 | Casa       | INTERNET MOVISTAR RA S23 200 MBPS | S/ 99.90 | Mono     | Bono 1000 Mbps/500 Mbps x 6 meses |               |

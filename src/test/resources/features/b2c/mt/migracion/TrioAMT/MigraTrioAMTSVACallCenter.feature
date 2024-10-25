@@ -1,15 +1,15 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: MIGRACION
 ##ESTADO:
 ##CODIGO: AT-DT081
 ##GDAP: GDAP-998
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
 ##FECMOD: 08/07/2024
 
@@ -20,15 +20,15 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
   Esquema del escenario: Migracion de Trio a MT con CE  sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -60,7 +60,7 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Entonces valido que me muestre el boton con el texto de identidad validada
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -71,5 +71,5 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType              | tipoDocumento | documento | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | DNI           | 42465007  | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42465007       | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |

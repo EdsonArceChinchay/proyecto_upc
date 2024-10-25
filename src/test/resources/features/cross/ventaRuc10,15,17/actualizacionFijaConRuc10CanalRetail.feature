@@ -20,15 +20,15 @@ Característica: Actualizacion fija con ruc 10 canal Retail
   Esquema del escenario: Actualizacion fija con ruc 10 canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Ver detalle del plan actual y actualizar ruc
@@ -58,5 +58,5 @@ Característica: Actualizacion fija con ruc 10 canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento  | correo            | tipoPlanHogar | plan        | ruc         |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 7241133113 | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        | ruc         |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 7241133113     | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |

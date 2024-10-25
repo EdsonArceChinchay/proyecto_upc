@@ -1,7 +1,7 @@
 #language:es
 ##CREADOR: Edson Arce
 ##APP: DITO
-##MODULO:
+##MODULO: FIJA
 ##FUNCIONALIDAD: CAMBIO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT054
@@ -20,15 +20,15 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
   Esquema del escenario: Cambio de velocidad up de dúo Internet estándar 50Mb HFC a la siguiente mayor disponible y anadir sva [alta de repetidor wiffi financiado] con CEX, en canal call center, web front end, flujo no biométrico. Cambiar Direccion por coordinadas X,Y
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
@@ -50,7 +50,6 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
     Y        selecciono boton Cambiar plan
-    #Y        doy click en Cambiar plan hogar
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Agregar SVA
     Entonces valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -70,5 +69,5 @@ Característica:  AT-DT054_Cambio de velocidad dúo Cambio Direccion X,Y + SVA
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | tipoPlanHogar | plan                  | correo            | longitud    | latitud      |
-      | usuario externo | userNameCC | passCC   | Bienvenid@ | Call Center | CE            | 1348959561 | Duo           | DÚO INTERNET ESTÁNDAR | tester@tester.com | -77.0381898 | -12.08130997 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                  | correo            | longitud    | latitud      |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1348959561     | Duo           | DÚO INTERNET ESTÁNDAR | tester@tester.com | -77.0381898 | -12.08130997 |

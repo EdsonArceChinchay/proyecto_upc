@@ -12,6 +12,7 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 04/09/2024
+
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
@@ -19,15 +20,15 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
   Esquema del escenario: CAPL Prepago a Postpago a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente el canal "Call Center"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        doy click en el boton Ver detalle del servicio "<nroMovil>"
     Y        presiono el boton Renovar Plan
@@ -52,11 +53,11 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documento>"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | tipoUsuario     | userName   | password | tipoDocumento | documento  | nroMovil  |
-      | usuario externo | userNameCC | passCC   | CE            | 1632547920 | 650028169 |
+      | userType     | userName   | userPassword   | documentType | documentNumber | nroMovil  |
+      | externalUser | userNameCC | userPasswordCC | CE           | 1632547920     | 650028169 |
 

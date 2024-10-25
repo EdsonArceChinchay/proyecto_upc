@@ -20,15 +20,15 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
   Esquema del escenario:  Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -43,9 +43,9 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    #Y        ingreso la informacion del lugar de instalacion
-     # | mz  | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      #| D  | 11   | EDIFICIO | Familia Lopez   | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | Risso     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -78,6 +78,7 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | tipoUsuario     | userName   | password | msgHome    | channelType | tipoDocumento | documento  | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
-      | usuario externo | userNameST | passST   | Bienvenid@ | Tienda      | CE            | 1021303091 | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |

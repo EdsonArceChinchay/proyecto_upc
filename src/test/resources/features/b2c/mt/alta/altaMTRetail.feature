@@ -1,34 +1,34 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO:
-##FUNCIONALIDAD:
+##MODULO: MOVISTAR TOTAL
+##FUNCIONALIDAD: ALTA
 ##ESTADO:
 ##CODIGO: AT-DT034
 ##GDAP: GDAP-574
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA:
+##DATA: REUSABLE
 ##ENCARGADO:
 ##FECMOD: 14/05/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
-Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por canal Retail
+Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
 
   @AltaMTporRetail
-  Esquema del escenario: Alta fija mas alta movil por Retail
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
-    Y        ingreso el password "<password>"
+    Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -60,7 +60,7 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
       | fechaNac   | estadoCivil | nacionalidad |
       | 11/02/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -72,5 +72,5 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) con documento CE por 
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | tipoUsuario     | userName    | password | msgHome    | channelType | tipoDocumento | documento | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | usuario externo | userNameDLC | passDLC  | Bienvenid@ | Retail      | CE            | 156710000 | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
+      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 156710000      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
