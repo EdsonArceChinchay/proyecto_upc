@@ -15,7 +15,7 @@
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
 Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a cliente con DNI en canal Call Center
 
-  @@CompletaPlantaFijaPortabilidadCC
+  @CompletaPlantaFijaPortabilidadCC
   Esquema del escenario: Completa Planta Fija Porta Directa Movil
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
