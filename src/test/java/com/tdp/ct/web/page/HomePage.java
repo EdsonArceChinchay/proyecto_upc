@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.google.gson.JsonObject;
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
@@ -56,8 +57,6 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
 
-    private static JsonObject agentData;
-
     public void selectDocumentType(String type) {
         WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
@@ -90,7 +89,7 @@ public class HomePage extends WebBase {
 
     public void typeDocumentNumber(String documentNumber) {
         WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        typeInShadowRoot(inputDocumentNumber,"document number" ,documentNumber);
+        typeInShadowRoot(inputDocumentNumber, "document number", documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -170,31 +169,26 @@ public class HomePage extends WebBase {
         UtilWeb.waitForSeconds(10);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
-        agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
     }
 
-    public String getAgentName() {
-        return getValueJsonObjectSessionStorage(agentData, "name");
-    }
-
-    public String getAgentLastName() {
-        return getValueJsonObjectSessionStorage(agentData, "surname").trim();
+    public void initializeAgent(Agent agent) {
+        JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
+        agent.setFirstName(getValueJsonObjectSessionStorage(agentData, "name"));
+        agent.setLastName(getValueJsonObjectSessionStorage(agentData, "surname").trim());
+        agent.setChannelType(getValueJsonObjectSessionStorage(agentData, "channels.id").trim());
+        agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
+        agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
+        agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
     }
 
     public String getChannelType() {
+        JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
         return getValueJsonObjectSessionStorage(agentData, "channels.id").trim();
     }
 
-    public String getChannelName() {
-        return getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim();
-    }
-
-    public String getDocumentNumber() {
-        return getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim();
-    }
-
-    public String getDocumentType() {
-        return getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim();
+    public void modifyGroupAgent(String group, String action) {
+        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
+        setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, action));
     }
 
     public boolean isRetention() {
@@ -204,20 +198,14 @@ public class HomePage extends WebBase {
         return isRetention;
     }
 
-    public void modifyGroupAgent(String group,String action) {
-        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-        setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata",modifyGroup(metadata,group,action));
-    }
-
-    public String validateAgentData(String storeTypeExpected) {
+    public void validateAgentData(Agent agent, String storeTypeExpected) {
         String message = null;
-        if (getAgentName() != null && getAgentLastName() != null) {
-            String fullName = getAgentName() + " " + getAgentLastName();
-            message = validateThatYouAreOnThePage("Agent's name: %s. ", fullName);
+        if (agent.getFirstName() != null && agent.getLastName() != null) {
+            message = validateThatYouAreOnThePage("Agent's name: %s. ", agent.getFullName());
         }
-        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", getChannelName());
-        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, getChannelType());
-        return printAgentData(message);
+        message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", agent.getChannelName());
+        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, agent.getChannelType());
+        printAgentData(message);
     }
 
     public String validateStoreType(String message, String storeTypeExpected, String storeTypeCurrent) {

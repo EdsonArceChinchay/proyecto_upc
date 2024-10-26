@@ -31,7 +31,7 @@ Característica: AT-DT053_Login - FE DITO WEB
     Y        valido que se presente el canal "<channelType>"
     Ejemplos:
       | userType     | userName    | userPassword    | msgHome    | channelType |
-      | internalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
+      | externalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
       | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
       | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
 

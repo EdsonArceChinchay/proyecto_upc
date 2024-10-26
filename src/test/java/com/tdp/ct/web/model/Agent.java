@@ -10,6 +10,9 @@ public class Agent extends Person {
     private String channelType;
     private boolean isRetention;
 
+    public Agent() {
+        super();
+    }
 
     public Agent(String firstName, String lastName, String documentNumber, String documentType, String channelName, String channelType) {
         super(firstName, lastName, documentNumber, documentType);

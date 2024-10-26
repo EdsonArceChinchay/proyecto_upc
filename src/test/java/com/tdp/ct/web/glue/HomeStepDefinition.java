@@ -13,8 +13,6 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.PostConstruct;
-
 public class HomeStepDefinition {
 
     @Autowired
@@ -31,7 +29,7 @@ public class HomeStepDefinition {
 
     private Scenario scenario;
 
-    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(() -> new Agent("", "", "", "", "", ""));
+    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
 
     @Before(order = 0)
     public void before(Scenario scenario) {
@@ -54,21 +52,21 @@ public class HomeStepDefinition {
 
     @Y("valido que se presente el canal {string}")
     public void validoQueSePresenteLaTienda(String channelType) {
-        homeStep.validateAgentData(channelType);
+        homeStep.validateAgentData(agent.get(), channelType);
         scenario.log(agent.get().print());
     }
 
     @Y("selecciono el tipo de documento {string}")
-    public void seleccionoElTipoDeDocumento(String documentType) {
+    public void seleccionoElTipoDeDocumento(String customerDocumentType) {
         System.out.println("Cliente: " + customer.getCustomerTest());
-        customer.setDocumentType(documentType);
-        homeStep.selectDocumentType(documentType);
+        customer.setDocumentType(customerDocumentType);
+        homeStep.selectDocumentType(customerDocumentType);
     }
 
     @Y("ingreso el documento {string}")
-    public void ingresoElDocumento(String documentNumber) {
-        customer.setDocumentNumber(documentNumber);
-        homeStep.typeDocumentNumber(documentNumber);
+    public void ingresoElDocumento(String customerDocumentNumber) {
+        customer.setDocumentNumber(customerDocumentNumber);
+        homeStep.typeDocumentNumber(customerDocumentNumber);
     }
 
     @Y("doy click en el boton Consultar")
@@ -105,17 +103,17 @@ public class HomeStepDefinition {
 
     @Y("confirmo Cerrar Sesion")
     public void confirmoCerrarSesion() {
-        homeStep.confirmoCerrarSesion();
+        homeStep.confirmSignOut();
     }
 
     @Y("valido que el nombre del cliente sea {string} y su {string} sea {string}")
-    public void validoQueElNombreDelClienteSeaYSuSea(String nombre, String documentType, String nroDocumento) {
-        homeStep.validateCustomerData(nombre, documentType, nroDocumento);
+    public void validoQueElNombreDelClienteSeaYSuSea(String customerName, String customerDocumentType, String customerDocumentNumber) {
+        homeStep.validateCustomerData(customerName, customerDocumentType, customerDocumentNumber);
     }
 
     @Y("selecciono el ID de Cliente nro {string}")
-    public void seleccionoElIDDeClienteNro(String nro) {
-        homeStep.selectCustomerId(nro);
+    public void seleccionoElIDDeClienteNro(String id) {
+        homeStep.selectCustomerId(id);
         homeStep.clickOnSaveButton();
     }
 

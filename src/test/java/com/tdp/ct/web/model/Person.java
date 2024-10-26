@@ -11,7 +11,8 @@ public abstract class Person {
     private String documentNumber;
     private String documentType;
 
-
+    public Person() {
+    }
 
     public Person(String firstName, String lastName, String documentNumber, String documentType) {
         this.firstName = firstName;
@@ -21,11 +22,11 @@ public abstract class Person {
     }
 
     public String getFullName() {
-        return firstName +" "+ lastName;
+        return firstName + " " + lastName;
     }
 
-    public String print(){
-        return String.format("Full name: %s, %s:%s",getFullName(),documentType,documentNumber);
+    public String print() {
+        return String.format("Full name: %s, %s:%s", getFullName(), documentType, documentNumber);
     }
 
 }

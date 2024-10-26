@@ -76,7 +76,7 @@ public class HomeStep {
     }
 
     @ScreenShotAfter
-    public String validateAgentData(String channelType) {
+    public void validateAgentData(Agent agent, String channelType) {
         Map<String, String> storeMap = new HashMap<>();
         storeMap.put("CC", "CC");
         storeMap.put("CALL CENTER", "CC");
@@ -85,7 +85,7 @@ public class HomeStep {
         storeMap.put("DLC", "DLC");
         storeMap.put("RETAIL", "DLC");
         String store = storeMap.getOrDefault(channelType.trim().toUpperCase(), null);
-        return page.homePage().validateAgentData(store);
+        page.homePage().validateAgentData(agent, store);
     }
 
     @ScreenShotAfter
@@ -114,51 +114,26 @@ public class HomeStep {
 
     @ScreenShotAfter
     @ScreenShotBefore
-    public void confirmoCerrarSesion() {
+    public void confirmSignOut() {
         page.homePage().clickOnTheLogoutButton();
-    }
-
-    public String getAgentName() {
-        return page.homePage().getAgentName().trim();
-    }
-
-    public String getAgentLastName() {
-        return page.homePage().getAgentLastName();
-    }
-
-    public String getChannelName() {
-        return page.homePage().getChannelName();
-    }
-
-    public String getChannelType() {
-        return page.homePage().getChannelType();
-    }
-
-    public String getDocumentNumber() {
-        return page.homePage().getDocumentNumber();
-    }
-
-    public String getDocumentType() {
-        return page.homePage().getDocumentType();
     }
 
     public boolean isRetention() {
         return page.homePage().isRetention();
     }
 
-    public void modifyGroupAgent(String group, String action){
-        page.homePage().modifyGroupAgent(group,action);
+    public void modifyGroupAgent(String group, String action) {
+        page.homePage().modifyGroupAgent(group, action);
     }
 
     public void initializeAgent(Agent agent) {
-        agent.setFirstName(getAgentName());
-        agent.setLastName(getAgentLastName());
-        agent.setChannelName(getChannelName());
-        agent.setChannelType(getChannelType());
-        agent.setDocumentNumber(getDocumentNumber());
-        agent.setDocumentType(getDocumentType());
-        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES","remove");
+        page.homePage().initializeAgent(agent);
+        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", "remove");
         agent.setRetention(isRetention());
+    }
+
+    public String getChannelType() {
+        return page.homePage().getChannelType();
     }
 
 }
