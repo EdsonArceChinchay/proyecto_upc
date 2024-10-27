@@ -41,7 +41,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     public void oferta() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 5, oferta);
+        esperaProgresiva(driver(), 7, 8, oferta);
         revisarModalError(driver());
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
@@ -52,9 +52,10 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
+
     public void BtonOpciones() {
         revisarModalError(driver());
-        esperaProgresiva(driver(),3,5,BtnOpciones);
+        esperaProgresiva(driver(), 3, 5, BtnOpciones);
         revisarModalError(driver());
         js().scrollElementTop(BtnOpciones);
         System.out.println("BtonOpciones clic");
@@ -169,12 +170,11 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> botoneraIrA;
 
     public void clickBotonIrMovistarTotal() {
-        esperaProgresiva(driver(),4,5,botoneraIrA.get(1));
+        esperaProgresiva(driver(), 4, 5, botoneraIrA.get(1));
         revisarModalError(driver());
         click(botoneraIrA.get(1));
         UtilWeb.waitForSeconds(1);
     }
-
 
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;

@@ -62,5 +62,5 @@ Característica: AT-DT068_Migracion de Mono a Duo + sva por el canal Tienda
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan                  | Bloque |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464839     | tester@tester.com | Duo           | DUO INTERNET ESTANDAR HD RA | HBO    |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan              | Bloque |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464839     | tester@tester.com | Duo           | DUO INTERNET FLEX HD RA | HBO    |

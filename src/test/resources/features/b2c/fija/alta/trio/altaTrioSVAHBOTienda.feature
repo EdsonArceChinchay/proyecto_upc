@@ -44,8 +44,8 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit  |
-      | A  | EDIFICIO     | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | tipoVivienda | nombreVivienda   | piso | int | conjunto                 | conjHabit |
+      | A  | EDIFICIO     | Familia Huancari | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta

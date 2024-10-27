@@ -85,4 +85,4 @@ Característica: Alta Trio con SVA Internet + SVA Linea por canal Call Center
     Y        apruebo la solicitud
     Ejemplos:
       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea             | svaInternet           |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1062122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | PACK ANTIVIRUS MCAFEE |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 162122148      | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | PACK ANTIVIRUS MCAFEE |

@@ -45,7 +45,7 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | Risso     |
+      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"

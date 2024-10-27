@@ -83,5 +83,5 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  e
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan               | bloque | tipoPlan |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233148     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET ESTANDAR HD | HBO    | Duo      |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan           | bloque | tipoPlan |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233148     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET FLEX HD | HBO    | Duo      |

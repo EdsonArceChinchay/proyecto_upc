@@ -44,8 +44,8 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
+      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
@@ -85,5 +85,5 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | 15           | 1501      | 150116   | JULIO CESAR TELLO 460 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

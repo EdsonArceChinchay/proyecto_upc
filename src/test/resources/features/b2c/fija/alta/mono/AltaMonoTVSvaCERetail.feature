@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
 Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE en Canal Retail
 
-  @AltamonosvaRetail
+  @AltaMonoTvSvaRetail
   Esquema del escenario: Alta Mono TV + SVA a cliente con CE en Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -81,4 +81,4 @@ Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE en Canal Retail
 
     Ejemplos:
       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1000002848     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | HOT    |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1000002848     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | bloque |

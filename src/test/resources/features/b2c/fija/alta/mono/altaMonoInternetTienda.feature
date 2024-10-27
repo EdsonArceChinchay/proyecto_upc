@@ -44,8 +44,8 @@ Característica: AT-DT009_Alta fija mono Internet a cliente con CE en Canal Tien
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
-      | A  |              |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
+      | mz | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto                 | conjHabit |
+      | A  |              |                | 1      | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
