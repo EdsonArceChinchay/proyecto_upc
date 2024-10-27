@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
-##FECMOD: 04/09/2024
+##FECMOD: 27/10/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
@@ -59,5 +59,5 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y        apruebo la solicitud
     Ejemplos:
       | userType     | userName   | userPassword   | documentType | documentNumber | nroMovil  |
-      | externalUser | userNameCC | userPasswordCC | CE           | 1632547920     | 650028169 |
+      | externalUser | userNameCC | userPasswordCC | CE           | 1632547937     | 650028381 |
 
