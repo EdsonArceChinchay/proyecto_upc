@@ -39,8 +39,7 @@ public class SummaryPage extends WebBase {
     private static JsonObject saleObject;
 
     public void validacionPrecio(String precioPlan) {
-        String precioCompare = lblPrecio.getText();
-        Assert.assertEquals(precioPlan, precioCompare);
+        Assert.assertEquals(precioPlan, lblPrecio.getText());
     }
 
     public void validarNomPlan(String nomPlan) {
@@ -116,15 +115,15 @@ public class SummaryPage extends WebBase {
     }
 
     public void additionalData() {
-        int number=0;
         saleObject = getSessionStorageAsJsonObject(driver(),"saleObject");
         UtilWeb.logger(this.getClass()).log(Level.INFO, "getSalesID(): "+ getSalesID());
         UtilWeb.logger(this.getClass()).log(Level.INFO, "productType(): "+ getProductType());
-        number = (getProductType().equals("MT"))? 1:0;
+        int number = (getProductType().equals("MT"))? 1:0;
         UtilWeb.logger(this.getClass()).log(Level.INFO, "needAppointment(): "+ needAppointment(number));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "isUpfront(): "+ isUpfront(number));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "getReason(): "+ getReason(number));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "getAction(): "+ getAction(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO,"getCOAdditionalData()"+getCOAdditionalData());
     }
 
     public String  getSalesID(){
@@ -145,6 +144,10 @@ public class SummaryPage extends WebBase {
     }
     public String getAction(int number){
         return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".action");
+    }
+
+    public String getCOAdditionalData(){
+        return"";// getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1.0.additionalData");
     }
 
     public String needAppointment(int number){

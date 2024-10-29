@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
+import static com.tdp.ct.web.utils.Helper.typeInShadowRoot;
 
 public class DevicesPage extends WebBase {
 
@@ -37,7 +38,7 @@ public class DevicesPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: " + listPago.size());
         for (WebElement elements : listPago) {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: " + elements.getText());
-            boolean isEquals = returnValueCompareWebElementTextAndString(elements,payment);
+            boolean isEquals = returnValueCompareWebElementTextAndString(elements, payment);
             if (isEquals) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Payment type found: " + payment);
                 waitUntilElementIsClickable(elements, 20).click();
@@ -70,10 +71,9 @@ public class DevicesPage extends WebBase {
         }
     }
 
-    public void typeDeviceAndSearch(String buscarE) {
-        WebElement input = find().getElementByCss("div.search-input-content > tdp-st-input-text");
-        input.click();
-        input.sendKeys(buscarE,Keys.ENTER);
+    public void typeDeviceAndSearch(String device) {
+        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text");
+        typeInShadowRoot(inputDevice, "Device", device);
     }
 
     public void clickButtonSelect() {

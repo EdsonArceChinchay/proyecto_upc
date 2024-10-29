@@ -73,7 +73,9 @@ Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente co
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType        | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
       | usuario interno | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 221011227      | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |

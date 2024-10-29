@@ -178,7 +178,7 @@ public class HomePage extends WebBase {
         agent.setChannelType(getValueJsonObjectSessionStorage(agentData, "channels.id").trim());
         agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
         agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
-        agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
+        agent.setDocumentType(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
     }
 
     public String getChannelType() {

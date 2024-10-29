@@ -6,10 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import static com.tdp.ct.web.utils.Helper.typeInShadowRoot;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
-
 
     @FindBy(xpath = "//*[@id=\"modal\"]/div[2]/div/div[2]/div[2]/button")
     protected WebElement btnHuellaDes;
@@ -37,17 +37,17 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     public void typeSupervisorDocumentNumber(String document) {
         WebElement inputDocumentNumber = find().getElementByCss("#doc");
-       typeInShadowRoot(inputDocumentNumber,"Number document",document);
+        typeInShadowRoot(inputDocumentNumber, "Number document", document);
     }
 
     public void typeSupervisorUser(String user) {
         WebElement inputUser = find().getElementByCss("#usuarioCitrixSupervisor");
-        typeInShadowRoot(inputUser,"User",user);
+        typeInShadowRoot(inputUser, "User", user);
     }
 
     public void typeSupervisorPassword(String password) {
         WebElement inputPassword = find().getElementByCss("#passwordCitrixSupervisor");
-        typeInShadowRoot(inputPassword,"Password",password);
+        typeInShadowRoot(inputPassword, "Password", password);
     }
 
 }

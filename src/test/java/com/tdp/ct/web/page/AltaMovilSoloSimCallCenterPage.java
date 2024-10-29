@@ -5,8 +5,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 
-import org.junit.Assert;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
@@ -29,8 +27,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement btnRight;
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
-    @FindBy(xpath = "//div[@class='detalle_sub']")
-    protected WebElement subDetalles;
 
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
@@ -40,16 +36,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         revisarModalError(driver());
         esperaProgresivaLoading(driver(), 3, 5, "loading-offer");
         clickElementInAList(listaTipoPlanMovil, planMovil, 10);
-        /*
-        *       UtilWeb.waitForSeconds(3);
-        System.out.println("cantidad: " + listPlan.size());
-        for (WebElement elements : listPlan) {
-            System.out.println("Producto: " + elements.getText());
-            if (elements.getText().equals(tipoPlan)){
-                waitUntilElementIsClickable(elements,10);
-                click(elements, 30);
-            }
-        }*/
     }
 
     public void listaPlanMovil(String planMovil, ManageScenario scenario) {

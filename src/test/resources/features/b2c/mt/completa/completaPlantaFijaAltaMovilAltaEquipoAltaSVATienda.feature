@@ -17,7 +17,7 @@
 Característica: AT-DT0 _Completa Movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA a cliente con CE en canal Tienda
 
   @CompletaMovilEquipoSVAT
-  Esquema del escenario: Completa Planta Fija Trio + Alta Movil + Alta Equipo Movil+ Alta SVA a cliente con CE en canal Tienda
+  Esquema del escenario: Completa Movil MT (Planta Fija Trio + Alta Movil) + Alta equipo movil + SVA a cliente con CE en canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

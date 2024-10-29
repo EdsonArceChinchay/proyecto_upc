@@ -13,10 +13,10 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 02/07/2024
 @BERSERKERS  @DoneDevOps @PI20_SP1 @MigraUVSC
-Característica: Migracion UVSC MT con documento CE canal Tienda
+Característica: Migracion UVSC MT a cliente con CE canal Tienda
 
   @MigraUVSCMTTiendaCE
-  Esquema del escenario: Migracion UVSC MT con documento CE canal Tienda
+  Esquema del escenario: Migracion UVSC MT a cliente con CE canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
