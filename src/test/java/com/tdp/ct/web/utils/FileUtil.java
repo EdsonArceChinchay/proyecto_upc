@@ -38,7 +38,7 @@ public class FileUtil {
 
     public static void saveSimCards(String filePath, List<SimCard> simCards) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write("simcard;estado\n");  // Write header
+            writer.write("SIMCARD;ESTADO\n");  // Write header
             for (SimCard simCard : simCards) {
                 writer.write(simCard.getNumber() + ";" + simCard.getStatus() + "\n");
             }
@@ -47,11 +47,11 @@ public class FileUtil {
 
     public static void saveImeis(String filePath, List<Imei> imeis) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write("sapid;name;imei;estado\n");  // Write header
+            writer.write("SAPID;NOMBRE;IMEI;ESTADO\n");  // Write header
             for (Imei imei : imeis) {
                 writer.write(imei.getSapId() + ";" + imei.getName() + ";" + imei.getImei() + ";" + imei.getStatus() + "\n");
             }
         }
     }
 }
-}
+
