@@ -44,7 +44,7 @@ public class SummaryPage extends WebBase {
 
     public void validarNomPlan(String nomPlan) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(nombrePlan,nomPlan);
+        compareWebElementTextAndString(nombrePlan, nomPlan);
     }
 
     public void moverToElementStartRegister() {
@@ -53,7 +53,7 @@ public class SummaryPage extends WebBase {
         js().scrollElementTop(btnStartRegister);
     }
 
-    public void clickButtonStartRegister(){
+    public void clickButtonStartRegister() {
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
         esperaProgresiva(driver(), 6, 6, btnStartRegister);
@@ -99,7 +99,7 @@ public class SummaryPage extends WebBase {
                 }
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" + e.getMessage());
             }
             contador++;
         } while (!bOK && contador < reintentosMax);
@@ -109,59 +109,59 @@ public class SummaryPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(7);
         JavascriptExecutor js = (JavascriptExecutor) driver();
-        esperaProgresiva(driver(),6,6,paginaResumen);
+        esperaProgresiva(driver(), 6, 6, paginaResumen);
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
     }
 
     public void additionalData() {
-        saleObject = getSessionStorageAsJsonObject(driver(),"saleObject");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getSalesID(): "+ getSalesID());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "productType(): "+ getProductType());
-        int number = (getProductType().equals("MT"))? 1:0;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "needAppointment(): "+ needAppointment(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "isUpfront(): "+ isUpfront(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getReason(): "+ getReason(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getAction(): "+ getAction(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO,"getCOAdditionalData()"+getCOAdditionalData());
+        saleObject = getSessionStorageAsJsonObject(driver(), "saleObject");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getSalesID(): " + getSalesID());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "productType(): " + getProductType());
+        int number = (getProductType().equals("MT")) ? 1 : 0;
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "needAppointment(): " + needAppointment(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "isUpfront(): " + isUpfront(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getReason(): " + getReason(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getAction(): " + getAction(number));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "getCOAdditionalData()" + getCOAdditionalData());
     }
 
-    public String  getSalesID(){
-       return getValueJsonObjectSessionStorage(saleObject,"salesId");
+    public String getSalesID() {
+        return getValueJsonObjectSessionStorage(saleObject, "salesId");
     }
 
-    public String isUpfront(int number){
-        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.upFront.indicator");
+    public String isUpfront(int number) {
+        return "";//getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.upFront.indicator");
     }
 
-    public String getProductType()
-    {
-        return  getValueJsonObjectSessionStorage(saleObject,"productType");
+    public String getProductType() {
+        return getValueJsonObjectSessionStorage(saleObject, "productType");
     }
 
-    public String getReason(int number){
-        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".reason");
-    }
-    public String getAction(int number){
-        return  getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".action");
+    public String getReason(int number) {
+        return "";//getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".reason");
     }
 
-    public String getCOAdditionalData(){
+    public String getAction(int number) {
+        return "";//getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".action");
+    }
+
+    public String getCOAdditionalData() {
         return "";// getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1.0.additionalData");
     }
 
-    public String needAppointment(int number){
-       String productType= getProductType();
-       String needAppointment;
-        switch (productType){
+    public String needAppointment(int number) {
+        String productType = getProductType();
+        String needAppointment;
+        switch (productType) {
             case "WIRELINE":
-                needAppointment= getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.additionalData.1.23.value");
+                needAppointment = getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.23.value");
                 break;
             case "MT":
-                needAppointment= getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1."+number+".productOfferings.1.0.additionalData.1.25.value");
-               break;
+                needAppointment = getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.25.value");
+                break;
             default:
-                needAppointment=null;
+                needAppointment = null;
         }
         return needAppointment;
     }

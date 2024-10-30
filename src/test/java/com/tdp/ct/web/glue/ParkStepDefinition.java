@@ -200,9 +200,9 @@ public class ParkStepDefinition {
         parkStep.typeSimCard();
     }
 
-    @E("ingreso el codigo de IMEI")
-    public void ingresoElCodigoDeIMEI() {
-        parkStep.typeIMEI();
+    @E("ingreso el codigo de IMEI de {string}")
+    public void ingresoElCodigoDeIMEI(String device) {
+        parkStep.typeIMEI(device);
     }
 
     @Y("doy click Validar Stock")

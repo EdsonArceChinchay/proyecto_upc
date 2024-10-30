@@ -2,16 +2,23 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.model.Imei;
 import com.tdp.ct.web.model.SimCard;
+import com.tdp.ct.web.service.util.UtilWeb;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 
 public class MaterialsManager {
 
     private List<SimCard> simCards;
     private List<Imei> imeis;
-    private String simCardFilePath;
-    private String imeiFilePath;
+    private String simCardFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/simCard.txt";
+    private String imeiFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/imei.txt";
+
+    public MaterialsManager() throws Exception {
+        this.simCards = FileUtil.readSimCards(simCardFilePath);
+        this.imeis = FileUtil.readImeis(imeiFilePath);
+    }
 
     public MaterialsManager(String simCardFilePath, String imeiFilePath) throws Exception {
         this.simCardFilePath = simCardFilePath;
@@ -23,15 +30,27 @@ public class MaterialsManager {
     public SimCard getAvailableSimCard() {
         for (SimCard simCard : simCards) {
             if ("DISPONIBLE".equals(simCard.getStatus())) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available SimCard: " + simCard.getNumber());
                 return simCard;
             }
         }
         return null;
     }
 
-    public Imei getAvailableImei(String sapid, String name) {
+    public Imei getAvailableImeiBySapId(String sapid) {
         for (Imei imei : imeis) {
-            if ("DISPONIBLE".equals(imei.getStatus()) && imei.getSapId().equals(sapid) && imei.getName().equals(name)) {
+            if ("DISPONIBLE".equals(imei.getStatus()) && imei.getSapId().equals(sapid)) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available IMEI: " + imei.getImei());
+                return imei;
+            }
+        }
+        return null;
+    }
+
+    public Imei getAvailableImeiByName(String name) {
+        for (Imei imei : imeis) {
+            if ("DISPONIBLE".equals(imei.getStatus()) && imei.getName().equals(name)) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available Imei: " + imei.getImei());
                 return imei;
             }
         }
@@ -41,6 +60,7 @@ public class MaterialsManager {
     public void assignSimCard(SimCard simCard) throws IOException {
         if (simCard != null) {
             simCard.setStatus("ASIGNADO");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard: " + simCard.getNumber() + " assigned.");
             FileUtil.saveSimCards(simCardFilePath, simCards);
         }
     }
@@ -48,8 +68,9 @@ public class MaterialsManager {
     public void assignImei(Imei imei) throws IOException {
         if (imei != null) {
             imei.setStatus("ASIGNADO");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "IMEI: " + imei.getImei() + " assigned.");
             FileUtil.saveImeis(imeiFilePath, imeis);
         }
     }
-    }
+}
 

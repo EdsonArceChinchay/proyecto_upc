@@ -43,8 +43,8 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo a cliente con CE por canal
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia     | tipoPago   | equipoName               |
-      | sin permanencia | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+      | permanencia     | tipoPago   | equipoName |
+      | sin permanencia | Al Contado | device     |
     Y        doy click en el boton seleccionar
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Linea Nueva
@@ -66,6 +66,25 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo a cliente con CE por canal
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Cuando   regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
+    Y        doy click en el boton Consultar
+    Y        selecciono la orden
+    Y        doy click en el boton continuar
+    E        ingreso el codigo de SIMCARD
+    E        ingreso el codigo de IMEI de "<device>"
+    Y        doy click Validar Stock
+    E        ingreso el numero de caja "123456"
+    E        ingreso el numero de ticket "654321"
+    Y        doy click en el boton confirmar
+    Y        doy clic para descargar el contrato
+    Y        doy click en el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     |
+      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | device                   |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     | VIVO V21 NEGRO 5G C/PACK |

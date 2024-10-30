@@ -81,10 +81,6 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroTicket') or contains (@label,'Número de ticket')]")
     protected WebElement inputTicketNumber;
 
-    String simCardFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/simCard.txt";
-    String imeiFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/imei.txt";
-
-
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
@@ -118,7 +114,7 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void crearCliente() {
+    public void createCustomer() {
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
@@ -572,34 +568,27 @@ public class ParkPage extends WebBase {
     public String getSimCard() {
         String simcard=null;
         try {
-            MaterialsManager manager = new MaterialsManager(simCardFilePath, imeiFilePath);
-
+            MaterialsManager manager = new MaterialsManager();
             SimCard availableSimCard = manager.getAvailableSimCard();
             if (availableSimCard != null) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available SimCard: " + availableSimCard.getNumber());
                 simcard=availableSimCard.getNumber();
                 manager.assignSimCard(availableSimCard);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard " + availableSimCard.getNumber() + " assigned.");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard"+simcard);
         return simcard;
     }
 
-    public String getIMEI() {
+    public String getIMEI(String device) {
        String imei=null;
         try {
-           MaterialsManager manager = new MaterialsManager(simCardFilePath, imeiFilePath);
-
-            Imei availableImei = manager.getAvailableImei("aa", "vivo");
+           MaterialsManager manager = new MaterialsManager();
+            Imei availableImei = manager.getAvailableImeiByName(device);
             if (availableImei != null) {
                 imei =availableImei.getImei();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available Imei: " + availableImei.getImei());
                 manager.assignImei(availableImei);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Imei " + availableImei.getImei() + " assigned.");
             }
         } catch (Exception e) {
             e.printStackTrace();
