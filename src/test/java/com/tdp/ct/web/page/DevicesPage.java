@@ -77,7 +77,7 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSelect() {
-        esperaProgresiva(driver(), 5, 5, btnSelect);
+        esperaProgresiva(driver(), 6, 8, btnSelect);
         js().scrollElementTop(btnSelect);
         waitUntilElementIsClickable(btnSelect, 10).click();
         UtilWeb.waitForSeconds(2);
