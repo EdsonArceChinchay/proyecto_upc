@@ -566,12 +566,12 @@ public class ParkPage extends WebBase {
     }
 
     public String getSimCard() {
-        String simcard=null;
+        String simcard = null;
         try {
             MaterialsManager manager = new MaterialsManager();
             SimCard availableSimCard = manager.getAvailableSimCard();
             if (availableSimCard != null) {
-                simcard=availableSimCard.getNumber();
+                simcard = availableSimCard.getNumber();
                 manager.assignSimCard(availableSimCard);
             }
 
@@ -582,12 +582,12 @@ public class ParkPage extends WebBase {
     }
 
     public String getIMEI(String device) {
-       String imei=null;
+        String imei = null;
         try {
-           MaterialsManager manager = new MaterialsManager();
+            MaterialsManager manager = new MaterialsManager();
             Imei availableImei = manager.getAvailableImeiByName(device);
             if (availableImei != null) {
-                imei =availableImei.getImei();
+                imei = availableImei.getImei();
                 manager.assignImei(availableImei);
             }
         } catch (Exception e) {
@@ -599,22 +599,22 @@ public class ParkPage extends WebBase {
     public void typeInput(String input, String text) {
         switch (input) {
             case "inputSimCard":
-                esperaProgresiva(driver(),6,8,inputSinCard);
+                esperaProgresiva(driver(), 6, 8, inputSinCard);
                 js().scrollElementTop(inputSinCard);
                 typeInShadowRoot(inputSinCard, "SIM CARD", text);
                 break;
             case "inputImei":
-                esperaProgresiva(driver(),6,8,inputImei);
+                esperaProgresiva(driver(), 6, 8, inputImei);
                 js().scrollElementTop(inputImei);
                 typeInShadowRoot(inputImei, "IMEI", text);
                 break;
             case "inputBoxNumber":
-                esperaProgresiva(driver(),6,8,inputBoxNumber);
+                esperaProgresiva(driver(), 6, 8, inputBoxNumber);
                 js().scrollElementTop(inputBoxNumber);
                 typeInShadowRoot(inputBoxNumber, "Box Number", text);
                 break;
             case "inputTicketNumber":
-                esperaProgresiva(driver(),6,8,inputTicketNumber);
+                esperaProgresiva(driver(), 6, 8, inputTicketNumber);
                 js().scrollElementTop(inputTicketNumber);
                 typeInShadowRoot(inputTicketNumber, "Ticket Number", text);
                 break;
@@ -623,6 +623,19 @@ public class ParkPage extends WebBase {
 
     public void clickOnButtonValidateStock() {
         btnValidateStock.click();
+        boolean isEnabled = true;
+        while (isEnabled) {
+            revisarModalError(driver());
+            try {
+                isEnabled = btnValidateStock.isEnabled();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "isEnabled " + isEnabled);
+                if (isEnabled) btnValidateStock.click();
+
+            } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR " + e.getMessage());
+                isEnabled = false;
+            }
+        }
     }
 
 }

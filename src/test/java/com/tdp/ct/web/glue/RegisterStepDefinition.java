@@ -95,11 +95,7 @@ public class RegisterStepDefinition {
 
     @Y("doy click en el boton confirmar")
     public void doyClickEnElBotonConfirmar() {
-        if (customer.isNewCustomer()) {
-            registerStep.clickBotonConfirmar();
-        } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
-        }
+        registerStep.clickBotonConfirmar();
     }
 
     @Y("Selecciono tipo de pago {string}")

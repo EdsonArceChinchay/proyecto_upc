@@ -218,6 +218,7 @@ public class ParkStep {
         page.parkPage().selectOrder();
     }
 
+    @ScreenShotBefore
     public void typeSimCard() {
         page.parkPage().typeInput("inputSimCard",  page.parkPage().getSimCard());
     }
