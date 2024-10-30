@@ -102,11 +102,11 @@ public class HomePage extends WebBase {
         revisarModalError(driver());
     }
 
-    public void validateCustomerData(String nombre, String documentType, String nroDocumento) {
+    public void validateCustomerData(String customerName, String customerDocumentType, String customerDocumentNumber) {
         UtilWeb.waitForSeconds(2);
-        compareWebElementTextAndString(txtNombre, nombre);
-        compareWebElementTextAndString(txtNombre, documentType);
-        compareWebElementTextAndString(txtNombre, nroDocumento);
+        compareWebElementTextAndString(txtNombre, customerName);
+        compareWebElementTextAndString(txtNombre, customerDocumentType);
+        compareWebElementTextAndString(txtNombre, customerDocumentNumber);
     }
 
     public void selectCustomerId(String nro) {
@@ -179,6 +179,7 @@ public class HomePage extends WebBase {
         agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
         agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
         agent.setDocumentType(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
+        agent.setWarehouse(getValueJsonObjectSessionStorage(agentData, "sites.1.0.id").trim());
     }
 
     public String getChannelType() {
@@ -218,10 +219,9 @@ public class HomePage extends WebBase {
         return "";
     }
 
-    public String printAgentData(String message) {
+    public void printAgentData(String message) {
         message = message == null ? "" : message;
         UtilWeb.logger(this.getClass()).log(Level.INFO, message);
-        return message;
     }
 
     public void backToHomePage() {

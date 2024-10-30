@@ -147,7 +147,7 @@ public class SummaryPage extends WebBase {
     }
 
     public String getCOAdditionalData(){
-        return"";// getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1.0.additionalData");
+        return "";// getValueJsonObjectSessionStorage(saleObject,"commercialOperation.1.0.additionalData");
     }
 
     public String needAppointment(int number){

@@ -81,4 +81,4 @@ Característica: AT-DT031_Alta Movil Postpago a cliente con CE por Canal Retail
 
     Ejemplos:
       | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | nombrePlan                              |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 12094544011    | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1209454400     | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

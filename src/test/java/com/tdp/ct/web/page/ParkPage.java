@@ -1,8 +1,11 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.model.Imei;
+import com.tdp.ct.web.model.SimCard;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import com.tdp.ct.web.utils.MaterialsManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -77,6 +80,10 @@ public class ParkPage extends WebBase {
     protected WebElement inputBoxNumber;
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroTicket') or contains (@label,'Número de ticket')]")
     protected WebElement inputTicketNumber;
+
+    String simCardFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/simCard.txt";
+    String imeiFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/imei.txt";
+
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
@@ -403,6 +410,7 @@ public class ParkPage extends WebBase {
 
     public void clickBotonContinuar() {
         waitUntilElementIsVisible(botonContinuar, 30);
+        js().scrollElementTop(botonContinuar);
         botonContinuar.click();
     }
 
@@ -562,25 +570,63 @@ public class ParkPage extends WebBase {
     }
 
     public String getSimCard() {
-        return "121212212212121";
+        String simcard=null;
+        try {
+            MaterialsManager manager = new MaterialsManager(simCardFilePath, imeiFilePath);
+
+            SimCard availableSimCard = manager.getAvailableSimCard();
+            if (availableSimCard != null) {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available SimCard: " + availableSimCard.getNumber());
+                simcard=availableSimCard.getNumber();
+                manager.assignSimCard(availableSimCard);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard " + availableSimCard.getNumber() + " assigned.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard"+simcard);
+        return simcard;
     }
 
     public String getIMEI() {
-        return "965565632323233";
+       String imei=null;
+        try {
+           MaterialsManager manager = new MaterialsManager(simCardFilePath, imeiFilePath);
+
+            Imei availableImei = manager.getAvailableImei("aa", "vivo");
+            if (availableImei != null) {
+                imei =availableImei.getImei();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available Imei: " + availableImei.getImei());
+                manager.assignImei(availableImei);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Imei " + availableImei.getImei() + " assigned.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return imei;
     }
 
     public void typeInput(String input, String text) {
         switch (input) {
             case "inputSimCard":
+                esperaProgresiva(driver(),6,8,inputSinCard);
+                js().scrollElementTop(inputSinCard);
                 typeInShadowRoot(inputSinCard, "SIM CARD", text);
                 break;
             case "inputImei":
+                esperaProgresiva(driver(),6,8,inputImei);
+                js().scrollElementTop(inputImei);
                 typeInShadowRoot(inputImei, "IMEI", text);
                 break;
             case "inputBoxNumber":
+                esperaProgresiva(driver(),6,8,inputBoxNumber);
+                js().scrollElementTop(inputBoxNumber);
                 typeInShadowRoot(inputBoxNumber, "Box Number", text);
                 break;
             case "inputTicketNumber":
+                esperaProgresiva(driver(),6,8,inputTicketNumber);
+                js().scrollElementTop(inputTicketNumber);
                 typeInShadowRoot(inputTicketNumber, "Ticket Number", text);
                 break;
         }
