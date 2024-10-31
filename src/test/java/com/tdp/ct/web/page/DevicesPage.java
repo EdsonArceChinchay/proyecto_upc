@@ -74,6 +74,7 @@ public class DevicesPage extends WebBase {
     public void typeDeviceAndSearch(String device) {
         WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text");
         typeInShadowRoot(inputDevice, "Device", device);
+        inputDevice.sendKeys(Keys.ENTER);
     }
 
     public void clickButtonSelect() {
