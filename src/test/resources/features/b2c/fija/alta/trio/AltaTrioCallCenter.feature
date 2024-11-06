@@ -50,7 +50,7 @@ Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
     Y        presiono el boton Consultar cobertura
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro

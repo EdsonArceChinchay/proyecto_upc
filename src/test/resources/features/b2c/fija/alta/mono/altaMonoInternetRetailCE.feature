@@ -46,7 +46,7 @@ Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE en Canal Reta
       | CASA         | alex mancilla  | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

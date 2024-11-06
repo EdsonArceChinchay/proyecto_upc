@@ -48,7 +48,7 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront a cliente con CE por C
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA

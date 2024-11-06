@@ -48,7 +48,7 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
       | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA

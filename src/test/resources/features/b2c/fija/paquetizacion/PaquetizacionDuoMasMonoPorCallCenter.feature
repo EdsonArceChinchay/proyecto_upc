@@ -42,7 +42,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

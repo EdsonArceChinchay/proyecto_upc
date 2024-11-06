@@ -48,7 +48,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el tipo de plan "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
