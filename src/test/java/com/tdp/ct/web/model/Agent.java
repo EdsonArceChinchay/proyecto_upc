@@ -8,6 +8,7 @@ import lombok.Setter;
 public class Agent extends Person {
     private String channelName;
     private String channelType;
+    private String warehouse;
     private boolean isRetention;
 
     public Agent() {
@@ -27,6 +28,7 @@ public class Agent extends Person {
                 ", Channel Type: " + channelType +
                 ", Document Number: " + getDocumentNumber() +
                 ", Document Type: " + getDocumentType() +
+                ", Warehouse: " + getWarehouse() +
                 ", Is retention: " + isRetention +
                 "]";
     }

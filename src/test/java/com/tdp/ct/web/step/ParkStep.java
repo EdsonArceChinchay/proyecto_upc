@@ -23,17 +23,17 @@ public class ParkStep {
 
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        String nombre = UtilWeb.getValueFromDataTable(datos, "nombres");
-        String apellidos = UtilWeb.getValueFromDataTable(datos, "apellidos");
-        String genero = UtilWeb.getValueFromDataTable(datos, "genero");
-        page.parkPage().ingresarNombreClienteExtranjero(nombre);
-        page.parkPage().ingresarApellidoClienteExtranjero(apellidos);
-        page.parkPage().seleccionarGeneroClienteExtranjero(genero);
+        String customerName = UtilWeb.getValueFromDataTable(datos, "nombres");
+        String customerLastName = UtilWeb.getValueFromDataTable(datos, "apellidos");
+        String customerGender = UtilWeb.getValueFromDataTable(datos, "genero");
+        page.parkPage().ingresarNombreClienteExtranjero(customerName);
+        page.parkPage().ingresarApellidoClienteExtranjero(customerLastName);
+        page.parkPage().seleccionarGeneroClienteExtranjero(customerGender);
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        page.parkPage().crearCliente();
+        page.parkPage().createCustomer();
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
@@ -163,8 +163,8 @@ public class ParkStep {
     }
 
     @ScreenShotAfter
-    public void verificoLaDireccionActualDelServicio(String dir) {
-        page.parkPage().verificoLaDireccionActualDelServicio(dir);
+    public void verificoLaDireccionActualDelServicio(String address) {
+        page.parkPage().verificoLaDireccionActualDelServicio(address);
     }
 
     @ScreenShotAfter
@@ -189,8 +189,8 @@ public class ParkStep {
     }
 
     @ScreenShotBefore
-    public void clickBtnVerDetalle(String nroServicio) {
-        page.parkPage().clickBtnVerDetalle(nroServicio);
+    public void clickBtnVerDetalle(String numberService) {
+        page.parkPage().clickBtnVerDetalle(numberService);
     }
 
     @ScreenShotAfter
@@ -218,14 +218,13 @@ public class ParkStep {
         page.parkPage().selectOrder();
     }
 
+    @ScreenShotBefore
     public void typeSimCard() {
-        String simCard = page.parkPage().getSimCard();
-        page.parkPage().typeInput("inputSimCard", simCard);
+        page.parkPage().typeInput("inputSimCard",  page.parkPage().getSimCard());
     }
 
-    public void typeIMEI() {
-        String imei = page.parkPage().getIMEI();
-        page.parkPage().typeInput("inputImei", imei);
+    public void typeIMEI(String device) {
+        page.parkPage().typeInput("inputImei", page.parkPage().getIMEI(device));
     }
 
     @ScreenShotBefore

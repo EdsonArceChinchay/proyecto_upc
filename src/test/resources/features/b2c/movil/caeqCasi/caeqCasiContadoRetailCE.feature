@@ -1,25 +1,23 @@
 #language:es
 ##CREADOR:
 ##APP: DITO
-##MODULO: MOVIL
-##FUNCIONALIDAD: ALTA
-##ESTADO: ACTIVO
-##CODIGO: AT-DT021
-##GDAP: GDAP-715
-##SPRINT CREADO: PI13_SP4
+##MODULO: MOVÍL
+##FUNCIONALIDAD:
+##ESTADO:
+##CODIGO: AT-DT049
+##GDAP: GDAP-590
+##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
-##DATA: REUSABLE
+##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:
-##FECMOD: 01/08/2024
+##FECMOD: 30/09/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovilEquipo
-Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por canal Retail
-  Yo como asesor de Retail
-  Quiero hacer un alta combo postpago a un usuario con CE sin parque en movistar
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12
+Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cliente extranjero(CE) por canal Retail
 
-  @altaComboPostpagoRetail
-  Esquema del escenario: Alta movil postpago combo por retail a cliente con CE
+  @CaeqCasi
+  Esquema del escenario: Como usuario <userName> del canal <channelType> realizo CAEQ sin CASI a cliente extranjero(CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -28,41 +26,33 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
+    Y        cierro el popup de contraseña Única
     Y        cierro popup de error
-    Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos     | genero    |
-      | Jorge   | Blanco Llacza | Masculino |
-    Y        selecciono el boton Linea Nueva Movil
-    Y        cierro el popup de validación de estado de contraseña única
-    Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "Postpago" que desea
-    Y        doy click en el boton Siguiente
-    Y        valido que este en la pagina de ofertas sugeridas
-    Y        selecciono añadir equipos
+    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+    Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia     | tipoPago   | equipoName |
-      | sin permanencia | Al Contado | <device>   |
-    Y        doy click en el boton seleccionar
-    Y        valido que este en la pagina de ofertas sugeridas
-    Y        doy click en el boton Linea Nueva
+      | permanencia | tipoPago   | equipoName                        |
+      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
+    Y        valido que existan resultados busqueda de equipos
+    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        cierro el popup de validación de estado de contraseña única
+    Y        selecciono boton mantener plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        ingreso correo electronico "prueba@prueba.com"
-    Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
-    Y        doy click en datos del cliente
-    Y        selecciono completar los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
-    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
     Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito del ticket generado
+    Y        presiono el boton descargar contrato
+    Y        doy click en el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
@@ -85,6 +75,7 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | device                   |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     | VIVO V21 NEGRO 5G C/PACK |
+      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber |
+      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Tienda      | CE           | 1042465085     |

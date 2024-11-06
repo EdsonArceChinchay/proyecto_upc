@@ -44,7 +44,7 @@ Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | EDIFICIO     | Flores         | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<tipoPlan>"

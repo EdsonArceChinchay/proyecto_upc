@@ -74,10 +74,11 @@ public class DevicesPage extends WebBase {
     public void typeDeviceAndSearch(String device) {
         WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text");
         typeInShadowRoot(inputDevice, "Device", device);
+        inputDevice.sendKeys(Keys.ENTER);
     }
 
     public void clickButtonSelect() {
-        esperaProgresiva(driver(), 5, 5, btnSelect);
+        esperaProgresiva(driver(), 6, 8, btnSelect);
         js().scrollElementTop(btnSelect);
         waitUntilElementIsClickable(btnSelect, 10).click();
         UtilWeb.waitForSeconds(2);

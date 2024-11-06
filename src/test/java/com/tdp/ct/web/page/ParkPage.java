@@ -1,8 +1,11 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.model.Imei;
+import com.tdp.ct.web.model.SimCard;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import com.tdp.ct.web.utils.MaterialsManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -111,7 +114,7 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void crearCliente() {
+    public void createCustomer() {
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
@@ -403,6 +406,7 @@ public class ParkPage extends WebBase {
 
     public void clickBotonContinuar() {
         waitUntilElementIsVisible(botonContinuar, 30);
+        js().scrollElementTop(botonContinuar);
         botonContinuar.click();
     }
 
@@ -562,25 +566,56 @@ public class ParkPage extends WebBase {
     }
 
     public String getSimCard() {
-        return "121212212212121";
+        String simcard = null;
+        try {
+            MaterialsManager manager = new MaterialsManager();
+            SimCard availableSimCard = manager.getAvailableSimCard();
+            if (availableSimCard != null) {
+                simcard = availableSimCard.getSimCard();
+                manager.assignSimCard(availableSimCard);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return simcard;
     }
 
-    public String getIMEI() {
-        return "965565632323233";
+    public String getIMEI(String device) {
+        String imei = null;
+        try {
+            MaterialsManager manager = new MaterialsManager();
+            Imei availableImei = manager.getAvailableImeiByName(device);
+            if (availableImei != null) {
+                imei = availableImei.getImei();
+                manager.assignImei(availableImei);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return imei;
     }
 
     public void typeInput(String input, String text) {
         switch (input) {
             case "inputSimCard":
+                esperaProgresiva(driver(), 6, 8, inputSinCard);
+                js().scrollElementTop(inputSinCard);
                 typeInShadowRoot(inputSinCard, "SIM CARD", text);
                 break;
             case "inputImei":
+                esperaProgresiva(driver(), 6, 8, inputImei);
+                js().scrollElementTop(inputImei);
                 typeInShadowRoot(inputImei, "IMEI", text);
                 break;
             case "inputBoxNumber":
+                esperaProgresiva(driver(), 6, 8, inputBoxNumber);
+                js().scrollElementTop(inputBoxNumber);
                 typeInShadowRoot(inputBoxNumber, "Box Number", text);
                 break;
             case "inputTicketNumber":
+                esperaProgresiva(driver(), 6, 8, inputTicketNumber);
+                js().scrollElementTop(inputTicketNumber);
                 typeInShadowRoot(inputTicketNumber, "Ticket Number", text);
                 break;
         }
@@ -588,6 +623,19 @@ public class ParkPage extends WebBase {
 
     public void clickOnButtonValidateStock() {
         btnValidateStock.click();
+        boolean isEnabled = true;
+        while (isEnabled) {
+            revisarModalError(driver());
+            try {
+                isEnabled = btnValidateStock.isEnabled();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "isEnabled " + isEnabled);
+                if (isEnabled) btnValidateStock.click();
+
+            } catch (Exception e) {
+                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR " + e.getMessage());
+                isEnabled = false;
+            }
+        }
     }
 
 }

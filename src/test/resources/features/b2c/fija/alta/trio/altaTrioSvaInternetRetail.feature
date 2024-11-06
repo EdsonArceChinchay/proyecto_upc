@@ -26,7 +26,7 @@ Característica: Alta Trio + SVA a cliente con CE por Canal Retail
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y     valido que se presente el canal "<channelType>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
@@ -44,8 +44,8 @@ Característica: Alta Trio + SVA a cliente con CE por Canal Retail
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<tipoPlan>"

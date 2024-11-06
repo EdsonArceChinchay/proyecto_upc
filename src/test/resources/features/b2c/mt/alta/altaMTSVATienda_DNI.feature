@@ -42,8 +42,8 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
-      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | parque    |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono un plan Movistar Total "<nombrePlan>"

@@ -45,7 +45,7 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
