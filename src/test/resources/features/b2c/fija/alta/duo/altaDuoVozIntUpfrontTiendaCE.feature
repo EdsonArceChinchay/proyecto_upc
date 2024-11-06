@@ -50,7 +50,7 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el tipo de plan "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
     Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

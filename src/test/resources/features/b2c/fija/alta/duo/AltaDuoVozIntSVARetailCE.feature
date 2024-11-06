@@ -48,7 +48,7 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA a cliente con CE por ca
       | D  | 11     | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
