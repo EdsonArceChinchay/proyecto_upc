@@ -43,8 +43,8 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet a cl
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
-      | mz | tipoVivienda  | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | alex mancilla | alex mancilla  | 2    | 3   | URBANIZACION RESIDENCIAL | RISSO     |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan fija "<tipoPlan>"
