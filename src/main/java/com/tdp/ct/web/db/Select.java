@@ -6,85 +6,47 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Component
 public class Select extends JDBCBase {
 
-    private static final String SELECT_QUERY = "SELECT %s FROM %s";
-    private static final String SELECT_WITH_CONDITION_QUERY = "SELECT %s FROM %s %s";
+    private static final String SELECT_FUNCTION_SIM_CARD ="SELECT %s(%d, '%s', '%s', null, 'N', 'S','Lógico')";
+    private static final String SELECT_FUNCTION_IMEI ="SELECT %s(%d, '%s', '%s', '%s', 'S', 'N','Lógico')";
 
     /**
-     * Selecciona y obtiene uno o más registros de una tabla sin una condicion
-     * @param columnsName
-     * @param schemaAndTableName
+     * Selecciona una funcion y obtiene registros de la tabla filtrado por estado, ambiente y almacen
+     * @param function
+     * @param state
+     * @param environment
+     * @param warehouse
      * @return
      */
-    public List<Map<String, Object>> selectDataAsListMaps(String columnsName, String schemaAndTableName) {
-        String query = String.format(SELECT_QUERY, columnsName, schemaAndTableName);
+
+    public List<String> listMaterialSimCardByState(String function, int state, String environment, String warehouse){
+        String query = String.format(SELECT_FUNCTION_SIM_CARD, function, state,environment,warehouse);
         queryLog(query);
-        List<Map<String, Object>> result = jdbcTemplate.queryForList(query);
+        List<String> result =jdbcTemplate.queryForList(query)
+                .stream()
+                .flatMap(map -> map.values().stream())
+                .map(Object::toString)
+                .collect(Collectors.toList());
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Result >>> {0}", result);
         return result;
     }
 
-    /**
-     * Selecciona y obtiene uno o más registros de una tabla basado en un condicion
-     * @param columnsName
-     * @param schemaAndTableName
-     * @param condition
-     * @return
-     */
-    public List<Map<String, Object>> selectDataAsListMaps(String columnsName, String schemaAndTableName, String condition) {
-        String query = String.format(SELECT_WITH_CONDITION_QUERY, columnsName, schemaAndTableName, condition);
+    public List<String>  listMaterialIMEIByState(String function, int state, String environment, String warehouse,String sapId){
+        String query = String.format(SELECT_FUNCTION_IMEI, function, state,environment,warehouse,sapId);
         queryLog(query);
-        List<Map<String, Object>> result = jdbcTemplate.queryForList(query);
+        List<String> result =jdbcTemplate.queryForList(query)
+                .stream()
+                .flatMap(map -> map.values().stream())
+                .map(Object::toString)
+                .collect(Collectors.toList());
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Result >>> {0}", result);
         return result;
     }
 
-    /**
-     * Obtiene un unico registro de una tabla basado en un condicion
-     * @param columnsName
-     * @param schemaAndTableName
-     * @param condition
-     * @return
-     */
-    public Map<String, Object> selectDataAsMap(String columnsName, String schemaAndTableName, String condition) {
-        String query = String.format(SELECT_WITH_CONDITION_QUERY, columnsName, schemaAndTableName, condition);
-        queryLog(query);
-        Map<String, Object> result = jdbcTemplate.queryForMap(query);
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Result >>> {0}", result);
-        return result;
-    }
 
-//    public String selectDataAsString(String schemaTable, String columns, String condition) {
-//        var query = SELECT + columns + FROM + schemaTable + " " + condition;
-//        queryLog(query);
-//        return jdbcTemplate.queryForObject(query, String.class);
-//    }
-//
-//    public Integer selectDataAsInteger(String schemaTable, String columns, String condition) {
-//        var query = SELECT + columns + FROM + schemaTable + " " + condition;
-//        queryLog(query);
-//        return jdbcTemplate.queryForObject(query, Integer.class);
-//    }
-//
-//    public Boolean selectDataAsBoolean(String schemaTable, String columns, String condition) {
-//        var query = SELECT + columns + FROM + schemaTable + " " + condition;
-//        queryLog(query);
-//        return jdbcTemplate.queryForObject(query, Boolean.class);
-//    }
-//
-//    public Double selectDataAsDouble(String schemaTable, String columns, String condition) {
-//        var query = SELECT + columns + FROM + schemaTable + " " + condition;
-//        queryLog(query);
-//        return jdbcTemplate.queryForObject(query, Double.class);
-//    }
-//
-//    public Object selectDataAsObject(String schemaTable, String columns, String condition) {
-//        var query = SELECT + columns + FROM + schemaTable + " " + condition;
-//        queryLog(query);
-//        return jdbcTemplate.queryForObject(query, Object.class);
-//    }
 
 }

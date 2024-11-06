@@ -40,7 +40,7 @@ public class FileUtil {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("SIMCARD;ESTADO\n");  // Write header
             for (SimCard simCard : simCards) {
-                writer.write(simCard.getNumber() + ";" + simCard.getStatus() + "\n");
+                writer.write(simCard.getSimCard() + ";" + simCard.getStatus() + "\n");
             }
         }
     }
@@ -49,7 +49,7 @@ public class FileUtil {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("SAPID;NOMBRE;IMEI;ESTADO\n");  // Write header
             for (Imei imei : imeis) {
-                writer.write(imei.getSapId() + ";" + imei.getName() + ";" + imei.getImei() + ";" + imei.getStatus() + "\n");
+                writer.write(imei.getSapId() + ";" + imei.getNameMaterial() + ";" + imei.getImei() + ";" + imei.getStatus() + "\n");
             }
         }
     }

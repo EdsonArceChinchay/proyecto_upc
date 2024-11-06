@@ -571,7 +571,7 @@ public class ParkPage extends WebBase {
             MaterialsManager manager = new MaterialsManager();
             SimCard availableSimCard = manager.getAvailableSimCard();
             if (availableSimCard != null) {
-                simcard = availableSimCard.getNumber();
+                simcard = availableSimCard.getSimCard();
                 manager.assignSimCard(availableSimCard);
             }
 

@@ -22,13 +22,6 @@ public class Utility extends JDBCBase {
         return jdbcTemplate.queryForObject(query, Integer.class);
     }
 
-//    public boolean createTable(String schema, String table, String newTableProperties) {
-//        var query = "CREATE TABLE " + schema + "." + table + " " + newTableProperties;
-//        queryLog(query);
-//        jdbcTemplate.execute(query);
-//        return isTableExist(null, schema, table, null);
-//    }
-
     /**
      * Valida si una tabla existe
      * @param schemaPattern
@@ -47,15 +40,5 @@ public class Utility extends JDBCBase {
         return existTable;
     }
 
-    /**
-     * Reinicia el id autoincremental
-     * @param schemaAndTableName
-     * @param idToReset
-     */
-    public void resetIdAutoIncrement(String schemaAndTableName, int idToReset) {
-        String query = String.format("ALTER SEQUENCE %s_id_seq RESTART WITH %s", schemaAndTableName, idToReset);
-        queryLog(query);
-        jdbcTemplate.update(query);
-    }
 
 }

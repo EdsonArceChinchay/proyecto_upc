@@ -30,7 +30,7 @@ public class MaterialsManager {
     public SimCard getAvailableSimCard() {
         for (SimCard simCard : simCards) {
             if ("DISPONIBLE".equals(simCard.getStatus())) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available SimCard: " + simCard.getNumber());
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Available SimCard: " + simCard.getSimCard());
                 return simCard;
             }
         }
@@ -49,7 +49,7 @@ public class MaterialsManager {
 
     public Imei getAvailableImeiByName(String name) {
         for (Imei imei : imeis) {
-            if ("DISPONIBLE".equals(imei.getStatus()) && imei.getName().equals(name)) {
+            if ("DISPONIBLE".equals(imei.getStatus()) && imei.getNameMaterial().equals(name)) {
                 UtilWeb.logger(this.getClass()).log(Level.INFO, "Available Imei: " + imei.getImei());
                 return imei;
             }
@@ -60,7 +60,7 @@ public class MaterialsManager {
     public void assignSimCard(SimCard simCard) throws IOException {
         if (simCard != null) {
             simCard.setStatus("ASIGNADO");
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard: " + simCard.getNumber() + " assigned.");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard: " + simCard.getSimCard() + " assigned.");
             FileUtil.saveSimCards(simCardFilePath, simCards);
         }
     }
