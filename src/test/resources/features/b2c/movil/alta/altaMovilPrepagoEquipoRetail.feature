@@ -14,7 +14,7 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovilEquipo
-Característica: AT-DT021_Alta Mobil Prepago + Equipo a cliente con CE por canal Retail
+Característica: AT-DT021_Alta Movil Prepago + Equipo a cliente con CE por canal Retail
   Yo como asesor de Retail
   Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
 
@@ -44,7 +44,7 @@ Característica: AT-DT021_Alta Mobil Prepago + Equipo a cliente con CE por canal
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName |
-      | sin permanencia | Al Contado | device     |
+      | sin permanencia | Al Contado | <device>   |
     Y        doy click en el boton seleccionar
     Y        valido que este en la pagina de ofertas sugeridas
     Y        doy click en el boton Linea Nueva

@@ -41,8 +41,8 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
@@ -54,8 +54,8 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | conjunto b |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Express"
     Y        ingreso telefono de contacto "658745259"
@@ -69,7 +69,6 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre   | nombrePadre   | distritoNac   |
       | <nombreMadre> | <nombrePadre> | <distritoNac> |
-    ##Entonces valido que me muestre el boton con el texto de identidad validada
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado

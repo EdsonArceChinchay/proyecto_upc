@@ -67,6 +67,27 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Cuando   regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
+    Y        doy click en el boton Consultar
+    Y        selecciono la orden
+    Y        doy click en el boton continuar
+    E        ingreso el codigo de SIMCARD
+    Y        doy click Validar Stock
+    E        ingreso el numero de caja "123456"
+    E        ingreso el numero de ticket "654321"
+    Y        doy click en el boton confirmar
+    Y        doy clic para descargar el contrato
+    Y        doy click en el boton Registrar venta
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
