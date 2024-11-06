@@ -44,7 +44,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "Mono"
+    Y        selecciono el tipo de plan "Mono"
     Y        selecciono el plan "LÍNEA TARIFA PLANA LOCAL VOIP"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA

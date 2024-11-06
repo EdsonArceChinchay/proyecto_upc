@@ -44,7 +44,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         altaFijaTiendaStep.seleccionarboton();
     }
 
-    @Y("selecciono el tipo de plan fija {string}")
+    @Y("selecciono el tipo de plan {string}")
     public void selecciono_el_tipo_de_plan_fija(String planFija) {
         altaFijaTiendaStep.seleccionarListaPLanFija(planFija);
     }

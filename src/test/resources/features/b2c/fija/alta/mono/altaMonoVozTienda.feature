@@ -44,7 +44,7 @@ Característica: AT-DT013_Alta Mono Linea Voz con documento CE con Canal Tienda
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "Mono"
+    Y        selecciono el tipo de plan "Mono"
     Y        selecciono el plan "LÍNEA MOVISTAR VOZ VOIP"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

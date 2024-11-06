@@ -45,7 +45,7 @@ Característica: AT-DT _Alta Mono TV a cliente con CE en Canal Call Center
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
