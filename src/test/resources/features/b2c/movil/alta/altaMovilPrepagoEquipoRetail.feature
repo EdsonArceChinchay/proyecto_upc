@@ -14,12 +14,12 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13S4 @AltaMovilEquipo
-Característica: AT-DT021_Alta Movil Prepago + Equipo a cliente con CE por canal Retail
+Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por canal Retail
   Yo como asesor de Retail
-  Quiero hacer un alta combo prepago a un usuario con CE sin parque en movistar
+  Quiero hacer un alta combo postpago a un usuario con CE sin parque en movistar
 
-  @altaComboPrepagoPorRetail
-  Esquema del escenario: Alta movil prepago combo por retail a cliente con CE
+  @altaComboPostpagoRetail
+  Esquema del escenario: Alta movil postpago combo por retail a cliente con CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -38,7 +38,7 @@ Característica: AT-DT021_Alta Movil Prepago + Equipo a cliente con CE por canal
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono el plan "Prepago" que desea
+    Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono añadir equipos
