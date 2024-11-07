@@ -47,10 +47,10 @@ public class OfferPage extends WebBase {
 
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 6, listaOfertasSugeridas.get(0));
-        boolean existe = listaOfertasSugeridas.get(0).isDisplayed();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", existe);
-        return existe;
+        esperaProgresiva(driver(), 8, 8, listaOfertasSugeridas.get(0));
+        boolean exist = waitUntilElementIsVisible(listaOfertasSugeridas.get(0),20).isDisplayed();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", exist);
+        return exist;
     }
 
     public void validarOfertasSugeridasView(String title) {
