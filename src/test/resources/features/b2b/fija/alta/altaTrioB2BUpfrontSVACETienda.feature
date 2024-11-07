@@ -46,7 +46,7 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono la oferta "<nombrePlan>"
     Y        doy click en el boton Linea Nueva
     Y        valido que este en el resumen de venta

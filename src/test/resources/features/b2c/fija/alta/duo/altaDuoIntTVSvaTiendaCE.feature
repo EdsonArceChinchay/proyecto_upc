@@ -45,7 +45,7 @@ Característica: AT-DT_Alta Duo (Internet + TV) + SVA a cliente con CE por canal
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<plan_hogar>"
+    Y        selecciono el tipo de plan "<plan_hogar>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA

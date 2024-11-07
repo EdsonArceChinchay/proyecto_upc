@@ -50,7 +50,7 @@ Característica: Validar Combo Plus Bonif TV - Planes: Monos, Dúos y Trios
       | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido el nombre del SVA de contenido externo "<svaTV>"
     Y        selecciono el boton Linea Nueva

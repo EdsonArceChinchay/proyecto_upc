@@ -44,13 +44,11 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
+    #Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "Mono MT"
+    Y        selecciono un plan Movistar Total "Mono"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -59,7 +57,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"

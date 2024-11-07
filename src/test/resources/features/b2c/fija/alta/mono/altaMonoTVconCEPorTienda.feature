@@ -44,7 +44,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "Mono"
+    Y        selecciono el tipo de plan "Mono"
     Y        selecciono el plan "TV"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
