@@ -45,7 +45,7 @@ Característica: AT-DT003_Alta Trio a cliente con CE por Canal Retail
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Cuando   doy click en el boton Iniciar registro
     Entonces valido que me encuentre en la pantalla agendamiento

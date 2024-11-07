@@ -47,7 +47,7 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a clie
       | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA

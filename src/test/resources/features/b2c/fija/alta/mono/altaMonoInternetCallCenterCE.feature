@@ -46,7 +46,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
       | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "Mono"
+    Y        selecciono el tipo de plan "Mono"
     Y        selecciono el plan "INTERNET MOVISTAR RA"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento

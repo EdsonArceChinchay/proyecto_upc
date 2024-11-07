@@ -49,7 +49,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
       | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     #Y        selecciono el boton Linea Nueva
     Entonces valido en la etapa resumen el nombre del plan escogido "<nombrePlan>"
@@ -122,7 +122,7 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
       | A  | 1    | EDIFICIO     | EDIFICIO       | A      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan fija "<tipoPlan>"
+    Y        selecciono el tipo de plan "<tipoPlan>"
     Y        selecciono el plan "<nombrePlan>"
     Y        Valido que el beneficio sea "<beneficioPlan>"
    # Y        Valido que el descuento aplicado sea "<descuentoPlan>"
