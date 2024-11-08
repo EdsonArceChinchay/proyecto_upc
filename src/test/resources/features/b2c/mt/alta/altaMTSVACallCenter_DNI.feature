@@ -75,7 +75,7 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
+    Y        doy click en Finalizar registro
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
