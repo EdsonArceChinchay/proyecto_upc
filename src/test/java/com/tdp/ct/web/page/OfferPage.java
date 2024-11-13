@@ -48,7 +48,7 @@ public class OfferPage extends WebBase {
     public boolean validarQueExistanOfertasSugeridas() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 8, 9, listaOfertasSugeridas.get(0));
-        boolean exist = waitUntilElementIsVisible(listaOfertasSugeridas.get(0),60).isDisplayed();
+        boolean exist = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", exist);
         return exist;
     }
@@ -61,20 +61,20 @@ public class OfferPage extends WebBase {
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
     }
 
-    public void subDetalles(){
+    public void subDetalles() {
         UtilWeb.waitForSeconds(20);
-        JavascriptExecutor js = (JavascriptExecutor)driver();
+        JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
         esperaProgresiva(driver(), 5, 6, subDetalles);
         waitUntilElementIsClickable(subDetalles, 12);
         click(subDetalles);
     }
 
-    public void lblAplicaUpFrom(){
+    public void lblAplicaUpFrom() {
         UtilWeb.waitForSeconds(1);
         esperaProgresiva(driver(), 4, 10, lblAplicaUpFront);
-        Assert.assertTrue("el elemento no existe",lblAplicaUpFront.isDisplayed());
-        click(subDetalles,5);
+        Assert.assertTrue("el elemento no existe", lblAplicaUpFront.isDisplayed());
+        click(subDetalles, 5);
 
 
     }

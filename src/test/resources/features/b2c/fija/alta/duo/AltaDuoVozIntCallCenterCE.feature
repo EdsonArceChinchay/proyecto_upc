@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
-Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Call Center
+Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE en canal Call Center
 
   @AltaDuoCC @MVP15 @Global
   Esquema del escenario: Alta de dúo internet con CEX, en canal call center, web front end, flujo no biométrico
@@ -81,5 +81,5 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) con documento CE en canal Ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1000000245     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1000000245     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

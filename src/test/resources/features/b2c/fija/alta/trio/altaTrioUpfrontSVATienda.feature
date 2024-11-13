@@ -81,5 +81,5 @@ Característica: AT-DT020_Alta Trio upfront SVA a cliente con CE por canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | svaInternet           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | svaInternet           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE |

@@ -61,5 +61,5 @@ Característica: AT-DT0 _Migracion de Mono a Trio con documento CE en canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | planTrio                    |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 202300010      | Trío          | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | planTrio                    |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 202300010      | Trío          | TRIO MOV. VOZ INT. ESTANDAR |

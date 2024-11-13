@@ -4,8 +4,10 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
@@ -126,7 +128,7 @@ public class AltaFijaTiendaPage extends WebBase {
         for (int i = 0; i < listaOfertas.size(); i++) {
             js().scrollElementTop(listaOfertas.get(i));
             scenario.printFullView();
-           boolean isEquals = returnValueCompareWebElementTextAndString(listaOfertas.get(i),planOfertas);
+            boolean isEquals = returnValueCompareWebElementTextAndString(listaOfertas.get(i), planOfertas);
             if (isEquals) {
                 encontroElemento = true;
                 click(listaOfertas.get(i));
@@ -266,22 +268,22 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void validarVelocidadInternet(String mbpsBB) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(velocidadBB,mbpsBB);
+        compareWebElementTextAndString(velocidadBB, mbpsBB);
     }
 
     public void validarPrecioDescuento(String precDesc) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(precDescBB,precDesc);
+        compareWebElementTextAndString(precDescBB, precDesc);
     }
 
     public void validarnombreSVAcontenido(String nomsvaTV) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(svaTV,nomsvaTV);
+        compareWebElementTextAndString(svaTV, nomsvaTV);
     }
 
     public void validarPrecioDescuentoTV(String pDescTV) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(precDescTV,pDescTV);
+        compareWebElementTextAndString(precDescTV, pDescTV);
     }
 
 }

@@ -64,5 +64,5 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20000000003    | 1   | C               | 143625134      | prueba@prueba.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20000000003    | 1   | C               | 143625134      | prueba@prueba.com |

@@ -87,5 +87,5 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI en c
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |

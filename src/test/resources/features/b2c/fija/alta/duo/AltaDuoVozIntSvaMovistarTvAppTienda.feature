@@ -80,5 +80,5 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |

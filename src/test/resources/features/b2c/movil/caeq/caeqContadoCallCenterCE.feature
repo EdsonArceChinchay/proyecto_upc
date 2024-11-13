@@ -79,5 +79,5 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | documentType | documentNumber | EncontrarCelular |
-      | externalUser | userNameCC | userPasswordCC | CE           | 461960085      | 650029859        |
+      | userType | userName   | userPassword   | documentType | documentNumber | EncontrarCelular |
+      | userType | userNameCC | userPasswordCC | CE           | 461960085      | 650029859        |

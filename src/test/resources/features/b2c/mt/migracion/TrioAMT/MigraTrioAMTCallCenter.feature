@@ -65,5 +65,5 @@ Característica: AT-DT080_Migracion de Trio a MT por Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42464765       | correo@gmail.com | ROSA        | MANUEL      | TRUJILLO    |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42464765       | correo@gmail.com | ROSA        | MANUEL      | TRUJILLO    |

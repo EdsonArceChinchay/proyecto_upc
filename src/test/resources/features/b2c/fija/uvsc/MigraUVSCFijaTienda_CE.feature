@@ -61,5 +61,5 @@ Característica: Migracion UVSC fija a cliente con CE en canal Tienda
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 75448525       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 75448525       |

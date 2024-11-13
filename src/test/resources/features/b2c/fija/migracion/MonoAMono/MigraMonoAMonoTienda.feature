@@ -58,5 +58,5 @@ Característica: AT-DT103_Migracion de Mono a Mono por el canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                              |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 77654579       | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                              |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 77654579       | prueba@prueba.com | Mono          | INTERNET MOVISTAR RA M23 600 MBPS |

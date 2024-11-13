@@ -60,5 +60,5 @@ Característica: Migracion de Mono internet a Mono internet con Actualizar Direc
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | Mono          | INTERNET MOVISTAR RA
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | Mono          | INTERNET MOVISTAR RA

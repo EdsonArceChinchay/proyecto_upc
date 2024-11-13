@@ -37,5 +37,5 @@ Característica: Actualizacion fija todo los planes con ruc 10 canal Tienda
     Y        selecciono la cartilla del plan activo
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | ruc         |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 7241133113     | 10112233440 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | ruc         |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 7241133113     | 10112233440 |

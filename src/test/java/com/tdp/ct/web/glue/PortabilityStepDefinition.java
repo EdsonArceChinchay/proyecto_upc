@@ -5,7 +5,6 @@ import com.tdp.ct.web.step.CheckoutStep;
 import com.tdp.ct.web.step.PortabilityStep;
 import com.tdp.ct.web.step.ServiceTest;
 import io.cucumber.datatable.DataTable;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Cuando;
@@ -100,8 +99,8 @@ public class PortabilityStepDefinition {
 
     @Y("obtengo el token")
     public void obtengoElToken(DataTable dataTable) {
-        String codigoDeVenta =checkoutStep.getSalesCode();
-        token = serviceTest.getCodeToken(dataTable,codigoDeVenta);
+        String codigoDeVenta = checkoutStep.getSalesCode();
+        token = serviceTest.getCodeToken(dataTable, codigoDeVenta);
         this.scenario.log("Token:" + token);
     }
 

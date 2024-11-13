@@ -20,7 +20,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
   Escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "userPasswordST"
     E        ingreso el captcha

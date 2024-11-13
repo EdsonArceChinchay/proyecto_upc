@@ -9,9 +9,11 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
-
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
@@ -166,10 +168,10 @@ public class Helper extends WebBase {
         }
     }
 
-    public static void typeInShadowRoot(WebElement webElement,String nameElement,String text){
+    public static void typeInShadowRoot(WebElement webElement, String nameElement, String text) {
         webElement.click();
         webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type in element %s = %s.", nameElement,text));
+        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type in element %s = %s.", nameElement, text));
     }
 
     public static void typeInShadowRootCssSelector(String text, WebElement webElement, String shadowSelector) {

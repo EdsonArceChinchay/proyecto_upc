@@ -81,5 +81,5 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |

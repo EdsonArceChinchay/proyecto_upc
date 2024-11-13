@@ -84,5 +84,5 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10010971       | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10010971       | Postpago      | Plan Ilimitado Mi Movistar |

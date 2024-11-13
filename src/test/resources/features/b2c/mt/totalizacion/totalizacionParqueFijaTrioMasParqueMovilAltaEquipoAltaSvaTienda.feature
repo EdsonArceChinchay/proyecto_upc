@@ -67,5 +67,5 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1632547903     | Trío       | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1632547903     | Trío       | correo@gmail.com |

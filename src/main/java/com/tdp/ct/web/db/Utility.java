@@ -13,6 +13,7 @@ public class Utility extends JDBCBase {
 
     /**
      * Obtiene la cantidad total de filas regristradas en la tabla
+     *
      * @param schemaTable
      * @return
      */
@@ -24,6 +25,7 @@ public class Utility extends JDBCBase {
 
     /**
      * Valida si una tabla existe
+     *
      * @param schemaPattern
      * @param table
      * @return
@@ -33,7 +35,7 @@ public class Utility extends JDBCBase {
         try (ResultSet tables = Objects.requireNonNull(jdbcTemplate.getDataSource()).getConnection()
                 .getMetaData().getTables(null, schemaPattern, table, null);) {
             existTable = tables.next();
-            Logger.getLogger(Utility.class.getName()).log(Level.INFO,String.format("Table exist %s",existTable));
+            Logger.getLogger(Utility.class.getName()).log(Level.INFO, String.format("Table exist %s", existTable));
         } catch (SQLException e) {
             e.printStackTrace();
         }

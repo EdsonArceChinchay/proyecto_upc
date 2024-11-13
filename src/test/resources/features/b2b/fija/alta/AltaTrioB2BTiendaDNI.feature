@@ -81,5 +81,5 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20534983612    | 1   | DNI             | 75448387       | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20534983612    | 1   | DNI             | 75448387       | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |

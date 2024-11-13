@@ -20,7 +20,7 @@ Característica: AT-DT100_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
   Escenario: CAPL de Prepago a Postpago a cliente extranjero (CE) por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameDLC"
     Y        ingreso el password "userPasswordDLC"
     Y        ingreso el captcha

@@ -73,5 +73,5 @@ Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE en Canal Reta
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msjHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan           |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2212464816     | Mono     | INTERNET MOVISTAR RA |
+      | userType | userName    | userPassword    | msjHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan           |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2212464816     | Mono     | INTERNET MOVISTAR RA |

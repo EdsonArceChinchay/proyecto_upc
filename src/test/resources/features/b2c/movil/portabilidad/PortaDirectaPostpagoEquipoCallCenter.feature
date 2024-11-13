@@ -99,6 +99,6 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956251 | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956251 | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
 

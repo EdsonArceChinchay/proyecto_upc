@@ -63,5 +63,5 @@ Característica: Migracion UVSC MT a cliente con CE canal Tienda
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 9876188171     | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 9876188171     | correo@gmail.com |

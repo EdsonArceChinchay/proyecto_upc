@@ -36,5 +36,5 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
     Y        selecciono la cartilla del plan activo
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | ruc | digito |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | DNI          | 70756041       | 17  | 3      |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | ruc | digito |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | DNI          | 70756041       | 17  | 3      |

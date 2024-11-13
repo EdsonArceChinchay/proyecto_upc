@@ -20,7 +20,7 @@ Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal ca
   Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password "userPasswordCC"
     Y        presiono el boton Continuar hacia el home

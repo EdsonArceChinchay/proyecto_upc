@@ -36,10 +36,10 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | cliente                      |
-      | externalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center | DNI          | 41524632       | LUIGI GUSTAVO REYNOSO DEXTRE |
-      | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      | C            | 123456742      | Cuatro De Dos                |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | C            | 123456753      | Cinco De Tres                |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | cliente                      |
+      | userType | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center | DNI          | 41524632       | LUIGI GUSTAVO REYNOSO DEXTRE |
+      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      | C            | 123456742      | Cuatro De Dos                |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | C            | 123456753      | Cinco De Tres                |
 
   @BusquedaInicial         @BusquedaInicialB2B
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
@@ -65,7 +65,7 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | cliente               | nro | tipoDocRepLegal | numDocRepLegal |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20514559911    | CHIFA HERMANOS S.A.C. | 3   | DNI             | 75447585       |
-#      | externalUser |userNameST |  userPasswordST  | Bienvenid@ | Tienda    | RUC           | 20450685446 | ANDEAN SOUTH EIRL          | 2   | CE              | 6172834231     |
-#     | externalUser |userNameST |  userPasswordST  | Bienvenid@ | Tienda     | RUC           | 20409258566 | INVERSIONES PAPER E.I.R.L. | 1   | DNI             | 75447441       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | cliente               | nro | tipoDocRepLegal | numDocRepLegal |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20514559911    | CHIFA HERMANOS S.A.C. | 3   | DNI             | 75447585       |
+#      | userType |userNameST |  userPasswordST  | Bienvenid@ | Tienda    | RUC           | 20450685446 | ANDEAN SOUTH EIRL          | 2   | CE              | 6172834231     |
+#     | userType |userNameST |  userPasswordST  | Bienvenid@ | Tienda     | RUC           | 20409258566 | INVERSIONES PAPER E.I.R.L. | 1   | DNI             | 75447441       |

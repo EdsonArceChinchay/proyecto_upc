@@ -61,5 +61,5 @@ Característica: AT-DT050_CAPL con CAEQ por canal Tienda de un Control a Prepago
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      |
+      | userType | userName   | userPassword   | msgHome    | channelType |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      |

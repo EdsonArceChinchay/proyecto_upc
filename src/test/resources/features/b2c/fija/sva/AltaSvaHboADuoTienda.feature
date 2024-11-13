@@ -64,7 +64,7 @@ Característica: AT-DT108_Alta SVA a un DUO de un cliente con CE por Canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464671     | prueba@prueba.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464671     | prueba@prueba.com |
 
 

@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaDuo_Upfront_CE @DROP-G01
-Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por canal Tienda
+Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront a cliente con CE por canal Tienda
 
 # Antes de usar se debe le debe de dar score upfront al cliente
   @AltaDuo_Upfront
@@ -77,5 +77,5 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront con documento CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1002464816     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1002464816     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |

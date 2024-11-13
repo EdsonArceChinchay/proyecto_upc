@@ -30,16 +30,16 @@ Característica: AT-DT053_Login - FE DITO WEB
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType |
-      | externalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
-      | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
+      | userType | userName    | userPassword    | msgHome    | channelType |
+      | userType | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
+      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password ""
     E        ingreso el captcha
@@ -50,7 +50,7 @@ Característica: AT-DT053_Login - FE DITO WEB
   Escenario: Login - Caso negativo - Usuario en blanco
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario ""
     Y        ingreso el password "userPasswordCC"
     E        ingreso el captcha
@@ -61,7 +61,7 @@ Característica: AT-DT053_Login - FE DITO WEB
   Escenario: Login - Caso negativo - Password incorrecta
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password "userPasswordDLC"
     E        ingreso el captcha

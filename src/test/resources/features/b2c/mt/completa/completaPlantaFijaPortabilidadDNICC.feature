@@ -90,7 +90,7 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y        apruebo la solicitud
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 47618664       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 47618664       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
 
 

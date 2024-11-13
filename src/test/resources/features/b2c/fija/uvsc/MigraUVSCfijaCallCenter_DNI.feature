@@ -66,5 +66,5 @@ Característica: AT-DT064_Migracion UVSC fija con cliente a DNI en canal Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75448525       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75448525       |

@@ -60,8 +60,8 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan            | correo            |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Trio          | RA D22 150 MBPS | tester@tester.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan            | correo            |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Trio          | RA D22 150 MBPS | tester@tester.com |
 
 
   @CambioVelocidadDuo50Mb+SvaRepetidorCallCenter+CambioDirección
@@ -112,5 +112,5 @@ Característica:  AT-DT055_Cambio de velocidad dúo + SVA por canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan        | correo            | longitud  | latitud   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2323232323     | Duo           | RA 100 MBPS | tester@tester.com | -77.07222 | -12.08367 |

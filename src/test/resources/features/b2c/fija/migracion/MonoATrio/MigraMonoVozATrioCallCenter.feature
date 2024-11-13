@@ -64,6 +64,6 @@ Característica: Migracion Mono Voz a Trio por el canal Call Center con CE
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300004      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300004      |
 

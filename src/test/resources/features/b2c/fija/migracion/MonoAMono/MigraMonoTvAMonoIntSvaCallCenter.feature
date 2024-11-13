@@ -65,5 +65,5 @@ Característica: AT-DT069_Migracion de Mono TV a Mono Internet + SVA a cliente c
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan              |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester@tester.com | Mono          | Internet Movistar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester@tester.com | Mono          | Internet Movistar |

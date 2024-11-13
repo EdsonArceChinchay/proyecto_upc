@@ -21,7 +21,7 @@ Característica: Subir audio en canal Call Center
     Dado     que abro la pagina de movistar
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password "userPasswordCC"
     Y        ingreso el captcha

@@ -60,5 +60,5 @@
      Y        valido que se muestre el detalle del pedido de "Información adicional"
 
      Ejemplos:
-       | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                     | bloque |
-       | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 10021231242    | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |
+       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                     | bloque |
+       | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 10021231242    | Duo           | DÚO INTERNET ESTÁNDAR HD RA D22 150 MBPS | HBO    |

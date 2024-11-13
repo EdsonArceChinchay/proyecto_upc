@@ -20,7 +20,7 @@ Característica: AT-DT056_Cambio de plan (CAPL) de Control a Postpago a cliente 
   Escenario: CAPL al contado con canal Tienda de un Control a Postpago exitoso
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameST"
     Y        ingreso el password "userPasswordST"
     E        ingreso el captcha

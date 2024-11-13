@@ -63,5 +63,5 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |
