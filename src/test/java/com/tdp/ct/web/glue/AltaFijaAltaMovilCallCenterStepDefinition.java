@@ -39,6 +39,7 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     public void selecciono_en_linea_nueva() {
         altaFijaAltaMovilCallCenterStep.seleccionarLineaNueva();
     }
+
     @Y("doy click en Cambiar plan hogar")
     public void doyClickEnCambiarPlanHogar() {
         altaFijaTiendaStep.seleccionarboton();

@@ -34,7 +34,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
 
     public void validacionClienteNuevo(String nombre, String apellido, String genero) {
         UtilWeb.waitForSeconds(55);
-        if (isVisible(driver(),regClienteNew)) {
+        if (isVisible(driver(), regClienteNew)) {
             click(nombreRegis);
             nombreRegis.sendKeys(nombre);
             click(apellidoRegis);
@@ -58,7 +58,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
             if (nombreGet.equalsIgnoreCase("Nombre:")) {
                 throw new RuntimeException("Falla en la carga del cliente o formulario");
             } else {
-                waitUntilElementIsClickable(infCliente,3);
+                waitUntilElementIsClickable(infCliente, 3);
                 String nombreCliente = nombre + " " + apellido;
                 Assert.assertEquals(nombreCliente, nombreGet);
             }
@@ -84,9 +84,10 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         }
         Assert.assertNotNull("No se encontro el elmento " + beneficioPlan, elementoEncontrado);
     }
-    public void beneficioCompare(String beneficio,String xpathContenedor){
-        List<WebElement> listelementos=find().getElementsByXPath("."+xpathContenedor);
-        WebElement elementEncontrado=null;
+
+    public void beneficioCompare(String beneficio, String xpathContenedor) {
+        List<WebElement> listelementos = find().getElementsByXPath("." + xpathContenedor);
+        WebElement elementEncontrado = null;
         for (WebElement listelemento : listelementos) {
             String beneficioLista = listelemento.getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
             System.out.println(beneficioLista);
@@ -98,7 +99,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         Assert.assertNotNull("No se encontro el elmento " + beneficio, elementEncontrado);
     }
 
-    public void validacionBeneficioDescuentoPLan(String planOfertas,String beneficio, String descuento){
+    public void validacionBeneficioDescuentoPLan(String planOfertas, String beneficio, String descuento) {
         revisarModalError(driver());
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
@@ -126,9 +127,9 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
-                if (beneficio!=null){
-                    String beneficioInternet="//span[@class='speedboostLbl']";
-                    beneficioCompare(beneficio,beneficioInternet);
+                if (beneficio != null) {
+                    String beneficioInternet = "//span[@class='speedboostLbl']";
+                    beneficioCompare(beneficio, beneficioInternet);
                 }
                 break;
             }

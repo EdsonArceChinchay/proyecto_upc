@@ -71,5 +71,5 @@ Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42465007       | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42465007       | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |

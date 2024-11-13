@@ -2,13 +2,16 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.*;
 
 public class AddressPage extends WebBase {
@@ -127,12 +130,12 @@ public class AddressPage extends WebBase {
 
     public void typeAddress(String address) {
         WebElement inputAdress = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(4) > div > tdp-st-input-text");
-        typeInShadowRoot(inputAdress,"Address",address);
+        typeInShadowRoot(inputAdress, "Address", address);
     }
 
     public void typeReference(String reference) {
         WebElement inputReference = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(5) > div > tdp-st-input-text");
-        typeInShadowRoot(inputReference,"Reference",reference);
+        typeInShadowRoot(inputReference, "Reference", reference);
     }
 
     public void clickButtonConsultLocation() {
@@ -286,7 +289,7 @@ public class AddressPage extends WebBase {
 
     public void clickOnSearchButton() {
         esperaProgresiva(driver(), 5, 5, btnSearch);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button "+ btnSearch.getText());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnSearch.getText());
         btnSearch.click();
     }
 }

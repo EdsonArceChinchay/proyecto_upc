@@ -59,6 +59,6 @@ Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente ext
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 461960085      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 461960085      |
 

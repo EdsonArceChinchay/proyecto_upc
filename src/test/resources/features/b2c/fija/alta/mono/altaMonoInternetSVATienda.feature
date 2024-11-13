@@ -81,5 +81,5 @@ Característica: AT-DT008_Alta Fija Internet + SVA a cliente con CE por canal ti
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000494     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000494     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE |

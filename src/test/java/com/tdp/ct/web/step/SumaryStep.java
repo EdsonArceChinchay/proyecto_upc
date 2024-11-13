@@ -11,7 +11,7 @@ public class SumaryStep {
     @Autowired
     private StepPages page;
 
-    public void additionalData(){
+    public void additionalData() {
         page.summaryPage().additionalData();
     }
 

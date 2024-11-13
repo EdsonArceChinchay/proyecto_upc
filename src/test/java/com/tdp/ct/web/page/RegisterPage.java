@@ -4,14 +4,18 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
+import static com.tdp.ct.web.utils.Helper.validateCompletedInputForm;
 
 public class RegisterPage extends WebBase {
 
@@ -207,12 +211,12 @@ public class RegisterPage extends WebBase {
     }
 
     public boolean hasIdentityValidationError() {
-       boolean isError=false;
+        boolean isError = false;
         try {
             UtilWeb.waitForSeconds(120);
             if (textIdentityValidationError.isDisplayed()) {
                 UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error Validate Identity");
-                isError= true;
+                isError = true;
             }
         } catch (Exception e) {
             UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Element no found" + e.getMessage());

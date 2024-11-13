@@ -92,5 +92,5 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | sva                   |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1325049087     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | PACK ANTIVIRUS MCAFEE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | sva                   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1325049087     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | PACK ANTIVIRUS MCAFEE |

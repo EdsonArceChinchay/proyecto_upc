@@ -76,5 +76,5 @@ Característica: AT-DT009_Alta fija mono Internet a cliente con CE en Canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan        |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1423432127     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan        |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1423432127     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR |

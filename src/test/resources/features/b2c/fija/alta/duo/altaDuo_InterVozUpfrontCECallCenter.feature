@@ -75,6 +75,6 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront a cliente con CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000112     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000112     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
 

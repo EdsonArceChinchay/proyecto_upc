@@ -75,5 +75,5 @@ Característica: AT-DT032_Alta movil control + equipo a cliente con CE por canal
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1024261234     |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1024261234     |

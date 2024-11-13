@@ -13,6 +13,7 @@ public class JDBCBase {
 
     /**
      * Metodo utilirio que imprime la query formada
+     *
      * @param query
      */
     protected void queryLog(String query) {

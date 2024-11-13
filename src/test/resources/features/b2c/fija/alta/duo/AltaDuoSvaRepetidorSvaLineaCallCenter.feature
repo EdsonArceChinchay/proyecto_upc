@@ -87,5 +87,5 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DÚO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

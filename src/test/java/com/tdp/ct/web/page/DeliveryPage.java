@@ -9,7 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.Helper.selectElementShadowRootCSS;
+import static com.tdp.ct.web.utils.Helper.typeInShadowRootCssSelector;
 
 public class DeliveryPage extends WebBase {
     @FindBy(xpath = "//tdp-st-select[@formcontrolname='deliveryType'] | //*[@formcontrolname='deliveryType']")

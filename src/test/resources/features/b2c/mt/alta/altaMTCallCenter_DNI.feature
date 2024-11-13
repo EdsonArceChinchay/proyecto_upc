@@ -89,5 +89,5 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |

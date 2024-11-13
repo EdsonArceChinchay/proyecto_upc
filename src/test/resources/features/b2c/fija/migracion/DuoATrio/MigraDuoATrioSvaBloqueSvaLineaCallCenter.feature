@@ -56,5 +56,5 @@
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
      Ejemplos:
-       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                            | bloque         | svaLinea             |
-       | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465120     | tester_123@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | Bloque estelar | Plan Multidestino 20 |
+       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                            | bloque         | svaLinea             |
+       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465120     | tester_123@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | Bloque estelar | Plan Multidestino 20 |

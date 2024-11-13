@@ -86,5 +86,5 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | device                   |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     | VIVO V21 NEGRO 5G C/PACK |
+      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | device                   |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     | VIVO V21 NEGRO 5G C/PACK |

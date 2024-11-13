@@ -72,5 +72,5 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) + SVA a cli
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo         |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456368      | Trío       | test@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo         |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456368      | Trío       | test@gmail.com |

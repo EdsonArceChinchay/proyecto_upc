@@ -82,5 +82,5 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en cana
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1047497714     | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1047497714     | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar |

@@ -63,5 +63,5 @@ Característica: AT-DT059_Migracion de Duo (Voz + Tv) a Duo (Internet +Tv) + SVA
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan           |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1854264859     | tester@tester.com | Duo           | Duo Internet Flex HD |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | nombrePlan           |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1854264859     | tester@tester.com | Duo           | Duo Internet Flex HD |

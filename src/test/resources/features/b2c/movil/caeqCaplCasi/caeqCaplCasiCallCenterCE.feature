@@ -76,6 +76,6 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464630     |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464630     |
 

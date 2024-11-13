@@ -1,17 +1,23 @@
 # Propiedades
 
-En este documento se encuentran todas las propiades soportadas por el Framework que permiten la configuración de ejecución de la prueba automatizada.
+En este documento se encuentran todas las propiades soportadas por el Framework que permiten la configuración de
+ejecución de la prueba automatizada.
 
 ### PROPIEDADES COMUNES
 
-**-webdriver.implicitWaitOnSeconds**= Define el tiempo implicito (antes del timeout) de carga y de localización de elementos.
+**-webdriver.implicitWaitOnSeconds**= Define el tiempo implicito (antes del timeout) de carga y de localización de
+elementos.
 
-**-webdriver.cicd**= Activa y desactiva la configuración de la propiedad **'System.setProperty(FIREFOX_PROPERTY, driverPath);'** preparando la ejecución y busqueda directa de los drivers configurados en las variables de entorno del contexto de ejecución.
+**-webdriver.cicd**= Activa y desactiva la configuración de la propiedad **'System.setProperty(FIREFOX_PROPERTY,
+driverPath);'** preparando la ejecución y busqueda directa de los drivers configurados en las variables de entorno del
+contexto de ejecución.
 
-**-webdriver.path**= Ruta de ubicación del driver de ejecución, este driver debe ser compatible con el nombre indicado en la
+**-webdriver.path**= Ruta de ubicación del driver de ejecución, este driver debe ser compatible con el nombre indicado
+en la
 propiedad **_'webdriver.browser'_**
 
 ###### **Inscribir rutas de drivers locales en un mismo bloque**
+
 Si se agregan estas propiedades, la propiedad **-webdriver.path** debe ir vacia o no definida.
 
 ```
@@ -33,7 +39,9 @@ Ejemplo:
 -webdriver.browser=chrome
 ```
 
-**-webdriver.pageload**= Define la estrageia de carga de las páginas durante la ejecución. Valores aceptados: NORMAL, EAGER, NONE
+**-webdriver.pageload**= Define la estrageia de carga de las páginas durante la ejecución. Valores aceptados: NORMAL,
+EAGER, NONE
+
 ```
 * NORMAL: Valor por defecto, Selenium esperara a que toda la pagina haya terminado de cargar.
 * EAGER: Esta propiedad hará que Selenium espere solo a que cargue el HTML Document y obviara los estilos, imagenes y subframes.
@@ -58,7 +66,8 @@ manager.maximize();
 
 **-webdriver.headless**= Valor de tipo boolean (true|false) que, indica si la ejecución será de tipo background.
 
-**-webdriver.headless.dimension**= Argumento solo compatible con los drivers 'firefox|chrome' que, indica la dimensión en la
+**-webdriver.headless.dimension**= Argumento solo compatible con los drivers 'firefox|chrome' que, indica la dimensión
+en la
 que se dimensionará el browser levantado en headLess. Esta propiedad solo se podrá usar si la propiedad '
 web.driver.headless' tiene como valor 'true'
 
@@ -85,7 +94,8 @@ inseguros.
 
 ### PROPIEDADES PARA CHROME BROWSER
 
-**-webdriver.chrome.device**= Ejecuta la instancia de chrome bajo las dimensiones del nombre de un dispositivo mobile soportado por el browser.
+**-webdriver.chrome.device**= Ejecuta la instancia de chrome bajo las dimensiones del nombre de un dispositivo mobile
+soportado por el browser.
 
 ````
 Posibles valores:
@@ -115,7 +125,6 @@ iPad Pro
 Ejemplo:
 -webdriver.chrome.extraArgs= arg1,arg2,arg3,...n
 ````
-
 
 ### EJECUCION REMOTA
 
@@ -170,7 +179,8 @@ public class GoogleStepDefinition {
 
 ### ARCHIVO DE PROPIEDADES
 
-SpringBoot gestiona las propiedades de configuración a través del archivo **_'application.properties'_** o **_'application.yml'_**.
+SpringBoot gestiona las propiedades de configuración a través del archivo **_'application.properties'_** o *
+*_'application.yml'_**.
 
 ## YAML BASICO DE CONFIGURACION INICIAL
 
@@ -197,7 +207,8 @@ webdriver.size= MAXIMIZE
 
 ### **resources/application.yml**
 
-Copiar y pegar la siguiente configuracion en el archivo **application.yml**. Cambiar el valor de la propiedad **path** con la ruta real del driver de ejecución.
+Copiar y pegar la siguiente configuracion en el archivo **application.yml**. Cambiar el valor de la propiedad **path**
+con la ruta real del driver de ejecución.
 
 ```
 webdriver:

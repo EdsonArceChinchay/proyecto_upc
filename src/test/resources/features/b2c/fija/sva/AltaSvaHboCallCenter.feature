@@ -63,5 +63,5 @@ Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 120906347      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 120906347      |

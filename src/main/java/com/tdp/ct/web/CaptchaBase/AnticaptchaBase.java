@@ -11,7 +11,6 @@ import com.tdp.ct.web.Http.HttpRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 import java.util.concurrent.TimeUnit;
 
 public abstract class AnticaptchaBase {
@@ -24,9 +23,9 @@ public abstract class AnticaptchaBase {
     private String clientKey;
 
     /**
-     *  Specify softId to earn 10% commission with your app.
-     *  Get your softId here:
-     *  <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
+     * Specify softId to earn 10% commission with your app.
+     * Get your softId here:
+     * <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
      */
     private Integer softId;
 
@@ -264,9 +263,9 @@ public abstract class AnticaptchaBase {
     }
 
     /**
-     *  Specify softId to earn 10% commission with your app.
-     *  Get your softId here:
-     *  <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
+     * Specify softId to earn 10% commission with your app.
+     * Get your softId here:
+     * <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
      */
     public void setSoftId(Integer softId_) {
         softId = softId_;

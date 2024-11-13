@@ -74,5 +74,5 @@ Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

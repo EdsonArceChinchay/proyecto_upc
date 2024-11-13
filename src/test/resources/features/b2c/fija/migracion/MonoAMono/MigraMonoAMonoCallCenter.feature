@@ -56,5 +56,5 @@ Característica: AT-DT073_Migracion de Mono a Mono por el canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                 |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 302010065403   | tester@tester.com | Mono          | INTERNET MOVISTAR RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 302010065403   | tester@tester.com | Mono          | INTERNET MOVISTAR RA |

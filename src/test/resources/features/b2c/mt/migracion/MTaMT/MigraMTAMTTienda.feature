@@ -60,5 +60,5 @@ Característica: Migracion de MT a MT en Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombrePlan                                     |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464680     | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombrePlan                                     |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464680     | correo@gmail.com | Dúo BA TV HD 200 Mbps RV + Ilimitado 135 Gb RV |

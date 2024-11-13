@@ -16,6 +16,7 @@ public class CSVReader {
     /**
      * Obtener los datos del archivo CSV en formato de DataTable.
      * Para posteriormente insertar la tabla en al seccion de Ejemplos de un Escenario tipo Scenario Outline o Escenario del Esquema
+     *
      * @param csvDataFile Nombre del archivo .csv
      * @return Los datos obtenidos (cabeceras, valores por filas) del archivo CSV en formato DataTable String
      */
@@ -35,7 +36,7 @@ public class CSVReader {
 
     /**
      * Obtiene el nombre del archivo de datos .csv escrito en el formato requerido para su lectura.
-     *
+     * <p>
      * Example
      * | file@nombre_del_archivo.csv |
      *
@@ -52,6 +53,7 @@ public class CSVReader {
 
     /**
      * Configura las cabeceras del DataTable a partir de la primera fila en el archivo de datos .csv
+     *
      * @param csvBr Lectura buffer del archivo de datos .csv
      * @return Las cabeceras en formato buffer obtenido a partir de la primera fila en el archivo de datos .csv
      */
@@ -71,6 +73,7 @@ public class CSVReader {
 
     /**
      * Configura el cuerpo del DataTable a partir de las filas de valores despues de la numero (1) separada para las cabeceras.
+     *
      * @param csvBr Lectura buffer del archivo de datos .csv
      * @return El cuerpo del DataTable a partir de las filas de valores despues de la numero (1) separada para las cabeceras.
      */

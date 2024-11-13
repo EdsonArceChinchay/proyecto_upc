@@ -58,5 +58,5 @@ Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tie
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20521390582    | 2   | CE              | 102040170      | automation@mail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20521390582    | 2   | CE              | 102040170      | automation@mail.com |

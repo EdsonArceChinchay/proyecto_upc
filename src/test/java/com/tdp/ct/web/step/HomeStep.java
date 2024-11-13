@@ -7,8 +7,8 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class HomeStep {

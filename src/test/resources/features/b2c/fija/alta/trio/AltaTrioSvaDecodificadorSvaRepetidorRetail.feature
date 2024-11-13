@@ -81,6 +81,6 @@ Característica: Alta Trio con SVA Decodificador + SVA Repetidor a cliente con C
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                     | decodificador   | svaRepetidor          |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1000026488     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | .          | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | PUNTO ADICIONAL | REP. SMART WIFI Venta |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                     | decodificador   | svaRepetidor          |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1000026488     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | .          | Trio     | TRIO MOV. VOZ INT. ESTANDAR HD | PUNTO ADICIONAL | REP. SMART WIFI Venta |
 

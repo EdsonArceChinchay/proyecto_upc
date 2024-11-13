@@ -58,6 +58,6 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | documentType | documentNumber | nroMovil  |
-      | externalUser | userNameCC | userPasswordCC | CE           | 1632547937     | 650028381 |
+      | userType | userName   | userPassword   | documentType | documentNumber | nroMovil  |
+      | userType | userNameCC | userPasswordCC | CE           | 1632547937     | 650028381 |
 

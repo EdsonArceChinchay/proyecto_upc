@@ -60,5 +60,5 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 12312312222    |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 12312312222    |

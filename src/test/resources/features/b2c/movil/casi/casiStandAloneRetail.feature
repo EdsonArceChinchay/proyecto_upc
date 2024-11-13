@@ -49,5 +49,5 @@ Característica: AT-DT113_Cambio de Simcard (CASI) a cliente con CE por canal Re
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | correo            |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1042464725     | prueba@prueba.com |
+      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | correo            |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1042464725     | prueba@prueba.com |

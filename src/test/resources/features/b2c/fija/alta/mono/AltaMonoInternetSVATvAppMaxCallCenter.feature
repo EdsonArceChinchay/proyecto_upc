@@ -85,5 +85,5 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Cal
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |

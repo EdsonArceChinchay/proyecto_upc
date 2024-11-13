@@ -30,10 +30,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        doy click en Atras
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType |
-      | externalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
-      | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
+      | userType | userName    | userPassword    | msgHome    | channelType |
+      | userType | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
+      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
 
   @CerrarSesionBerserker  @CierroSesion
   Esquema del escenario: Como usuario <userName> del canal <channelType> deseo cerrar sesion
@@ -50,10 +50,10 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType |
-      | externalUser | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
-      | externalUser | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
+      | userType | userName    | userPassword    | msgHome    | channelType |
+      | userType | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
+      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
 
 
   @CerrarSesionBerserker  @CierroSesionDespuesConsultar
@@ -75,6 +75,6 @@ Característica: AT-DT052_Cerrar Sesion - FE DITO WEB
     Y        doy click en Cerrar Sesion
     Y        confirmo Cerrar Sesion
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 41524632  |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456735 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 41524632       |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456735      |

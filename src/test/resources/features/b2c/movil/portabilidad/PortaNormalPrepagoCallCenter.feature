@@ -87,6 +87,6 @@ Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102020       | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102020       | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 
