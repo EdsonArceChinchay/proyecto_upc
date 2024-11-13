@@ -51,5 +51,5 @@ Característica: AT-DT079_Migracion Salto 0 por canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 123456778      |
+      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 123456778      |

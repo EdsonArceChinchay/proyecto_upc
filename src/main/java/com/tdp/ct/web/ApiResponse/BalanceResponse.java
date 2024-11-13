@@ -20,9 +20,7 @@ public class BalanceResponse {
                 errorCode = JsonHelper.extractStr(json, "errorCode");
                 errorDescription = JsonHelper.extractStr(json, "errorDescription");
             }
-        }
-        else
-        {
+        } else {
             DebugHelper.out("Unknown error", DebugHelper.Type.ERROR);
         }
     }

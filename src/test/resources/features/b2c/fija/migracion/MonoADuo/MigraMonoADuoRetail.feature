@@ -62,5 +62,5 @@
      Y        valido que se muestre el detalle del pedido de "Información adicional"
 
      Ejemplos:
-       | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                         |
-       | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 202300015      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA |
+       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                         |
+       | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 202300015      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA |

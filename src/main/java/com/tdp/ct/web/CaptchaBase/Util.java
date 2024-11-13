@@ -1,18 +1,12 @@
 package com.tdp.ct.web.CaptchaBase;
 
-import com.tdp.ct.web.service.util.UtilWeb;
-import io.cucumber.java.Scenario;
 import org.apache.commons.lang3.StringUtils;
-import org.openqa.selenium.WebDriver;
-
-
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class Util {
 
@@ -51,7 +45,7 @@ public class Util {
 
     }
 
-//    public static void screenshot(WebDriver webDriver) {
+    //    public static void screenshot(WebDriver webDriver) {
 //        UtilWeb.takeScreenShotWeb((Scenario) UtilWeb.getVariableOnSession(Constants.SCENARIO), webDriver);
 //    }
 //    /**
@@ -65,8 +59,8 @@ public class Util {
         }
     }
 
-    public static String descifrarBase64(String texto)
-    {    Base64.Decoder decoder = Base64.getDecoder();
+    public static String descifrarBase64(String texto) {
+        Base64.Decoder decoder = Base64.getDecoder();
         byte[] decodedByteArray = decoder.decode(texto);
         return new String(decodedByteArray);
     }

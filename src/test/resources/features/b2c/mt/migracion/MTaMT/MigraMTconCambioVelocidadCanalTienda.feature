@@ -56,5 +56,5 @@ Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan                 | correo            |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 7241133711     | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan                 | correo            |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 7241133711     | Trío HD 1 Gb RV + 95 Gb RV | tester@tester.com |

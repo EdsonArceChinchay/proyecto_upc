@@ -63,5 +63,5 @@ Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | emailUser        |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1020030013     | test@hotmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | emailUser        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1020030013     | test@hotmail.com |

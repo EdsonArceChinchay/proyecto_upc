@@ -73,5 +73,5 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              | tipoValidacion | nombrePadre | nombreMadre | distritoNac |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20504127410    | 1   | DNI             | 75447902       | automation@mail.com | discapacitado  | LAZARO      | AURORA      | CALLAO      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              | tipoValidacion | nombrePadre | nombreMadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20504127410    | 1   | DNI             | 75447902       | automation@mail.com | discapacitado  | LAZARO      | AURORA      | CALLAO      |

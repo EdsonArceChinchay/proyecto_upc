@@ -57,5 +57,5 @@ Característica: AT-DT111_Migracion de Trio a Trio - Actualizar Dirección, por 
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | documentType | documentNumber | tipoPlanHogar | plan                                               |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1042464835     | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |
+      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | tipoPlanHogar | plan                                               |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1042464835     | Trio          | TRÍO MOV. VOZ INTERNET ESTANDAR HD RA D22 100 MBPS |

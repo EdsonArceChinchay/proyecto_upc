@@ -2,7 +2,8 @@
 
 ### **Framework de automatización: Continuous Testing**
 
-Esta es una librería de automatización de pruebas End to End creado para crear scripts simples y complejos abstrayendo la complejidad de la herramienta de automatización, en este caso soportado por Selenium 4.
+Esta es una librería de automatización de pruebas End to End creado para crear scripts simples y complejos abstrayendo
+la complejidad de la herramienta de automatización, en este caso soportado por Selenium 4.
 
 * Integración entre SpringBoot + Selenium + Cucumber
 * Librería de automatización: **Selenium 4**
@@ -20,11 +21,13 @@ public class StepDefinition {}
 
 ### ARCHIVO DE PROPIEDADES
 
-SpringBoot gestiona las propiedades de configuración a través del archivo **_'application.properties'_** o **_'application.yml'_**.
+SpringBoot gestiona las propiedades de configuración a través del archivo **_'application.properties'_** o *
+*_'application.yml'_**.
 
 ## Perfiles y Ambientes
 
-Podemos crear perfiles (ambientes) de ejecución agregando un sufijo al nombre del archivo de propiedades principal y posteriormente
+Podemos crear perfiles (ambientes) de ejecución agregando un sufijo al nombre del archivo de propiedades principal y
+posteriormente
 cambiar el ambiente a través de comandos con el nombre del sufijo creado.
 
 ```
@@ -43,18 +46,21 @@ Comando:
 * Por ejemplo: se puede utilizar una URL para el ambiente de Desarrollo y otra para el ambiente QA
 
 **application.yml** [default]
+
 ```
 url:
   site: http://default-environmet/uri
 ```
 
 **application-dev.yml**
+
 ```
 url:
   site: http://desarrollo-environmet/uri
 ```
 
 **application-qa.yml**
+
 ```
 url:
   site: http://calidad-environmet/uri
@@ -79,7 +85,8 @@ public void initMethod(){
 
 ### Ejecución LOCAL
 
-Para crear una nueva instancia del Driver de tipo WebDriver de un Browser especifico, se debe llamar al siguiente metodo:
+Para crear una nueva instancia del Driver de tipo WebDriver de un Browser especifico, se debe llamar al siguiente
+metodo:
 
 ```
 public class StepDefinition {
@@ -92,6 +99,7 @@ public void initMethod(){
   manager.navigateTo(urlGoogle); -> navega hacia la url indicada.
 }
 ```
+
 * Y agregar las propiedades en 'application.properties'
 
 ```
@@ -99,9 +107,11 @@ application.properties
 - webdriver.path=drivers/mac/chromedriver
 - webdriver.browser=chrome
 ```
+
 ### Ejecución REMOTA
 
-Para crear una nueva instancia del Driver de tipo RemoteWebDriver de un Browser especifico, se debe llamar al siguiente metodo:
+Para crear una nueva instancia del Driver de tipo RemoteWebDriver de un Browser especifico, se debe llamar al siguiente
+metodo:
 
 ```
 public class StepDefinition {
@@ -125,7 +135,8 @@ application.properties
 
 ### Ejecución en Paralelo
 
-Para poder ejecutar test en paralelo, es necesario tomar en cuenta que Cucumber ya se encarga de repartir las ejecuciones en
+Para poder ejecutar test en paralelo, es necesario tomar en cuenta que Cucumber ya se encarga de repartir las
+ejecuciones en
 hilos independientes siempre y cuando los test se encuentren en distintos features.
 
 ```
@@ -284,14 +295,16 @@ public class GoogleResultsPage extends WebBase {
 
 Existen 3 maneras de llegar a estos metodos.
 
-- **_default_** = Extendiendo de la clase **'WebBase'** tenemos acceso a los metodos de tipo 'wrapper' que envuelven un comando propio de Selenium.
+- **_default_** = Extendiendo de la clase **'WebBase'** tenemos acceso a los metodos de tipo 'wrapper' que envuelven un
+  comando propio de Selenium.
 - **_find()_** = Accede a metodos que permiten localizar elementos sin llamar al metodo **'findElement()'**.
 - **_js()_** = Accede a los metodos que ejecutan comandos de js a través de la clase **'JavascriptExecutor'**.
 
 ## Configuración de las Opciones de Cucumber
 
 * **@CucumberOptions()** = Soportará las opciones de cucumber
-* **plugin = {"json:target/build/cucumber.json"}** = Json que guardar la trazabilidad de ejecución de Cucumber, Posteriormente se usara para la integración con Jira.
+* **plugin = {"json:target/build/cucumber.json"}** = Json que guardar la trazabilidad de ejecución de Cucumber,
+  Posteriormente se usara para la integración con Jira.
 * **stepNotifications = true** = Muestra el paso a paso de la ejecución (Opcion cosmetica).
 * **publish = true** = Publica un reporte 'público' en el servidor de Cucumber (Este reporte no requiere autorización).
 * **features = {"src/test/resources/features"}** = Indica donde están alojados los features.
@@ -311,7 +324,8 @@ public class Runner {}
 
 ## Generación de reporte HTML Cucumber
 
-Para generar un reporte HTML local de los resultados con cucumber, es necesario agregar el siguiente plugin en la sección </build> del archivo pom.xml
+Para generar un reporte HTML local de los resultados con cucumber, es necesario agregar el siguiente plugin en la
+sección </build> del archivo pom.xml
 
 ```
 <plugin>
@@ -337,10 +351,13 @@ Para generar un reporte HTML local de los resultados con cucumber, es necesario 
 
 Donde, las configuraciones:
 
-* **outputDirectory=** Indica el directorio en donde se generará el reporte HTML de cucumber. En el ejemplo, la ruta especfica el directorio **_Target_** y la carpeta **_/site_**
-* **cucumberOutput=** Indica la ruta del archivo output generado posterior a la ejecución. La ruta de este archivo debe coincidir con el especificado en las **_opciones de cucumber_** en la clase Runner.
+* **outputDirectory=** Indica el directorio en donde se generará el reporte HTML de cucumber. En el ejemplo, la ruta
+  especfica el directorio **_Target_** y la carpeta **_/site_**
+* **cucumberOutput=** Indica la ruta del archivo output generado posterior a la ejecución. La ruta de este archivo debe
+  coincidir con el especificado en las **_opciones de cucumber_** en la clase Runner.
 
-Por último, realizar la ejecución de un goal  por comandos. Se recomienda utilizar el goal clean para limpiar ejecuciones anteriores.
+Por último, realizar la ejecución de un goal por comandos. Se recomienda utilizar el goal clean para limpiar ejecuciones
+anteriores.
 
 ```
 $ mvn clean verify
@@ -393,7 +410,9 @@ El FrameWork genera también otro tipo de reportería soportado por la librería
 
 Para poder acceder a esta otra alternativa, completar los siguientes pasos.
 
-1. En las opciones de cucumber, en la opción **'plugin'**, agregar el adaptador de la libreria extent _**"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"**_
+1. En las opciones de cucumber, en la opción **'plugin'**, agregar el adaptador de la libreria extent
+   _**"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"**_
+
 ```
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty", "json:target/build/cucumber.json",
@@ -408,7 +427,8 @@ Para poder acceder a esta otra alternativa, completar los siguientes pasos.
 )
 ```
 
-2. Crear el archivo de propiedades _**"extent.properties"**_ en el directorio de recursos: _**src/test/resources**_ y copiar el siguiente contenido:
+2. Crear el archivo de propiedades _**"extent.properties"**_ en el directorio de recursos: _**src/test/resources**_ y
+   copiar el siguiente contenido:
 
 * Modificar los datos entre "< >"
 
@@ -428,7 +448,8 @@ systeminfo.build=<VERSION_BUILD>
 systeminfo.AppName=<NOMBRE_DEL_APP>
 ```
 
-3. Crear el archivo xml _**"extent-config.xml"**_ en el directorio de recursos: _**src/test/resources**_ y copiar el siguiente contenido:
+3. Crear el archivo xml _**"extent-config.xml"**_ en el directorio de recursos: _**src/test/resources**_ y copiar el
+   siguiente contenido:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -477,7 +498,8 @@ $(document).ready(function() {
 </extentreports>
 ```
 
-4. Ejecutar la prueba desde la clase Runner o por comandos. Al finalizar se creara una carpeta en el root del proyecto con los reportes en formato PDF y HTML.
+4. Ejecutar la prueba desde la clase Runner o por comandos. Al finalizar se creara una carpeta en el root del proyecto
+   con los reportes en formato PDF y HTML.
 
 ##Recomendaciones
 

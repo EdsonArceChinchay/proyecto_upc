@@ -60,6 +60,6 @@ Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal 
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464581     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                                | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464581     | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | correo@gmail.com |
 

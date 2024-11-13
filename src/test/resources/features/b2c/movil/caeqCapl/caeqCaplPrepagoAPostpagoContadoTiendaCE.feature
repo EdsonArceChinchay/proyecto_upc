@@ -58,5 +58,5 @@ Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal T
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ |
+      | userType | userName   | userPassword   | msgHome    |
+      | userType | userNameST | userPasswordST | Bienvenid@ |

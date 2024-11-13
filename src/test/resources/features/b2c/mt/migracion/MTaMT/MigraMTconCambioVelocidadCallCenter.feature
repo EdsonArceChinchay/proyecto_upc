@@ -59,6 +59,6 @@ Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465107     | tester@tester.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465107     | tester@tester.com |
 

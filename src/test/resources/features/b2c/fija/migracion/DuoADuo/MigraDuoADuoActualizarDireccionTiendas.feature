@@ -60,5 +60,5 @@ Característica: AT-DT072_Migracion de Duo a Duo - Actualizar Dirección, por el
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
 
     Ejemplos:
-      | userType     | userName   | userPassword | msgHome    | documentType | documentNumber | tipoPlanHogar | plan               |
-      | externalUser | userNameST |  userPasswordST    | Bienvenid@ | CE            | 1042465127 | Duo           | HD RA M23 200 MBPS |
+      | userType | userName   | userPassword   | msgHome    | documentType | documentNumber | tipoPlanHogar | plan               |
+      | userType | userNameST | userPasswordST | Bienvenid@ | CE           | 1042465127     | Duo           | HD RA M23 200 MBPS |

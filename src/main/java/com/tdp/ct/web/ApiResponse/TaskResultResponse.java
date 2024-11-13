@@ -2,8 +2,6 @@ package com.tdp.ct.web.ApiResponse;
 
 import com.tdp.ct.web.Helper.DebugHelper;
 import com.tdp.ct.web.Helper.JsonHelper;
-
-
 import org.json.JSONObject;
 
 import java.time.ZoneId;
@@ -52,25 +50,25 @@ public class TaskResultResponse {
                     solution.challenge = JsonHelper.extractStr(json, "solution", "challenge", true);
                     solution.seccode = JsonHelper.extractStr(json, "solution", "seccode", true);
                     solution.validate = JsonHelper.extractStr(json, "solution", "validate", true);
-                    solution.cookies = JsonHelper.extractJSONObject(json,"solution",  "cookies");
+                    solution.cookies = JsonHelper.extractJSONObject(json, "solution", "cookies");
                     solution.localStorage = JsonHelper.extractJSONObject(json, "solution", "localStorage");
-                    solution.fingerprint = JsonHelper.extractJSONObject(json,"solution",  "fingerprint");
-                    solution.domain = JsonHelper.extractStr(json,"solution",  "domain", true);
-                    solution.captcha_id = JsonHelper.extractStr(json,"solution",  "captcha_id", true);
-                    solution.lot_number = JsonHelper.extractStr(json,"solution",  "lot_number", true);
-                    solution.pass_token = JsonHelper.extractStr(json,"solution",  "pass_token", true);
-                    solution.gen_time = JsonHelper.extractInt(json,"solution",  "gen_time", true);
-                    solution.captcha_output = JsonHelper.extractStr(json,"solution",  "captcha_output", true);
+                    solution.fingerprint = JsonHelper.extractJSONObject(json, "solution", "fingerprint");
+                    solution.domain = JsonHelper.extractStr(json, "solution", "domain", true);
+                    solution.captcha_id = JsonHelper.extractStr(json, "solution", "captcha_id", true);
+                    solution.lot_number = JsonHelper.extractStr(json, "solution", "lot_number", true);
+                    solution.pass_token = JsonHelper.extractStr(json, "solution", "pass_token", true);
+                    solution.gen_time = JsonHelper.extractInt(json, "solution", "gen_time", true);
+                    solution.captcha_output = JsonHelper.extractStr(json, "solution", "captcha_output", true);
 
 
                     if (solution.gRecaptchaResponse == null &&
-                        solution.text == null &&
-                        solution.token == null &&
-                        solution.challenge == null &&
-                        solution.seccode == null &&
-                        solution.validate == null &&
-                        solution.cookies == null &&
-                        solution.captcha_output == null) {
+                            solution.text == null &&
+                            solution.token == null &&
+                            solution.challenge == null &&
+                            solution.seccode == null &&
+                            solution.validate == null &&
+                            solution.cookies == null &&
+                            solution.captcha_output == null) {
                         DebugHelper.out("2 Got no 'solution' field from API", DebugHelper.Type.ERROR);
                         DebugHelper.out(json.toString(), DebugHelper.Type.ERROR);
 

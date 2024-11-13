@@ -88,5 +88,5 @@ Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + 
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                                | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                                | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |

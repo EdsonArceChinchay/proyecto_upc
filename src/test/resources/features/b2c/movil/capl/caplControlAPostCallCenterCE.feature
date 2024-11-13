@@ -57,7 +57,7 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Y        apruebo la solicitud
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464725     |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464725     |
 
 

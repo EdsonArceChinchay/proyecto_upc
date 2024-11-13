@@ -68,5 +68,5 @@ Característica: AT-DT107_Sva bloque HBO a duo por Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 142536409      | prueba@prueba.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 142536409      | prueba@prueba.com |

@@ -62,5 +62,5 @@ Característica: AT-DT077_Migracion salto 0 Trio a cliente con CE por canal Call
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numeroServicio |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1002006030     | 13002515       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numeroServicio |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1002006030     | 13002515       |

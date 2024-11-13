@@ -58,5 +58,5 @@ Característica: AT-DT0114_CAPL con CAEQ por canal Retail de un Postpago a Prepa
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
+      | userType | userName    | userPassword    | msgHome    | channelType |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |

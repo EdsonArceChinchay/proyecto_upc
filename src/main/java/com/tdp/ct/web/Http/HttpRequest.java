@@ -16,8 +16,7 @@ public class HttpRequest {
     private boolean validateTLSCertificates = false;
     private Map<String, String> proxy = null; //new HashMap<String, String>() {{put("host", "192.168.0.168"); put("port", "8888");}};
     private Map<String, String> cookies = new HashMap<>();
-    private Map<String, String> headers = new HashMap<String, String>()
-    {{
+    private Map<String, String> headers = new HashMap<String, String>() {{
         put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
         put("Accept-Encoding", "gzip, deflate, sdch");
         put("Accept-Language", "ru-RU,en;q=0.8,ru;q=0.6");

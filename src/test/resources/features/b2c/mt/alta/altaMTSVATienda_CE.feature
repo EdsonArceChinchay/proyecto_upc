@@ -79,5 +79,5 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | nombrePlan                                |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | nombrePlan                                |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |

@@ -56,5 +56,5 @@
      Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
      Ejemplos:
-       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
-       | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |
+       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
+       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |

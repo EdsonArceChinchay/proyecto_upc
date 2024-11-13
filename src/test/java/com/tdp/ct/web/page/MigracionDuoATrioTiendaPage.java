@@ -122,13 +122,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnCard']")
     protected List<WebElement> listaBotones;
 
-    public void seleccionarboton(){
+    public void seleccionarboton() {
         System.out.println(1);
         UtilWeb.waitForSeconds(4);
         System.out.println(1);
-        for(WebElement element:listaBotones){
-            if (element.getText().contains("Cambiar plan hogar")){
-                click(element,40);
+        for (WebElement element : listaBotones) {
+            if (element.getText().contains("Cambiar plan hogar")) {
+                click(element, 40);
             }
         }
         UtilWeb.waitForSeconds(4);
@@ -160,6 +160,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
     protected WebElement btnIrMovistarTotal;
+
     public void clickBtnIrMovistarTotal() {
         UtilWeb.waitForSeconds(15);//15
         revisarModalError(driver());
@@ -213,14 +214,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void validateCurrentAndNewPrice() {
         js().scrollElementTop(separator);
-        boolean hasSameHomePlanPrice = compareTextWebElement(currentHomePlanPrice,newHomePlanPrice);
-        Assertions.assertTrue(hasSameHomePlanPrice,"Not the same home plan price");
-        boolean hasSameMonthlyPlanPrice =compareTextWebElement(currentMonthlyPlanPrice,newMonthlyPlanPrice);
-        Assertions.assertTrue(hasSameMonthlyPlanPrice,"Not the same monthly plan price");
+        boolean hasSameHomePlanPrice = compareTextWebElement(currentHomePlanPrice, newHomePlanPrice);
+        Assertions.assertTrue(hasSameHomePlanPrice, "Not the same home plan price");
+        boolean hasSameMonthlyPlanPrice = compareTextWebElement(currentMonthlyPlanPrice, newMonthlyPlanPrice);
+        Assertions.assertTrue(hasSameMonthlyPlanPrice, "Not the same monthly plan price");
     }
 
-    public boolean compareTextWebElement(WebElement element1, WebElement element2)
-    {
+    public boolean compareTextWebElement(WebElement element1, WebElement element2) {
         return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
     }
 
