@@ -147,6 +147,7 @@ public class ServiceTest {
     }
 
     public String getCodeToken(DataTable dataTable, String salesCode) {
+       UtilWeb.waitForSeconds(5);
         try {
             String idTransaction = getIdTransactionOfSaleslead(salesCode);
             var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");
