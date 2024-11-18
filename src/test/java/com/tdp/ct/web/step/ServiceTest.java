@@ -78,8 +78,7 @@ public class ServiceTest {
 
         String numero1 = consultation1.substring(0, 9); // Separa en 2 grupos el código recibido
         String numero2 = consultation1.substring(9, 17); // La segunda parte del código recibido le resta 1
-        int restaNumero2 = Integer.parseInt(numero2) - 1;
-        String numero2Correcto = String.valueOf(restaNumero2); // convierte la segunda parte del código recibido en String
+        String numero2Correcto = String.valueOf(Integer.parseInt(numero2) - 1); // convierte la segunda parte del código recibido en String
         consultation = numero1 + numero2Correcto;         // Unimos para obtener el código correcto
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct " + value + ": " + consultation);
     }
@@ -147,18 +146,19 @@ public class ServiceTest {
     }
 
     public String getCodeToken(DataTable dataTable, String salesCode) {
+       UtilWeb.waitForSeconds(5);
         try {
             String idTransaction = getIdTransactionOfSaleslead(salesCode);
-            var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");
-            var numberDocument = UtilWeb.getValueFromDataTable(dataTable, "numberDocument");
-            var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
+            var documentType = UtilWeb.getValueFromDataTable(dataTable, "documentType");
+            var documentNumber = UtilWeb.getValueFromDataTable(dataTable, "documentNumber");
+            var phoneNumber = UtilWeb.getValueFromDataTable(dataTable, "phoneNumber");
 
             Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaDirecta/movistarToken.json");
             String statusBody = Files.readString(filePath)
-                    .replace("{typeDocument}", typeDocument)
-                    .replace("{numberDocument}", numberDocument)
+                    .replace("{documentType}", documentType)
+                    .replace("{documentNumber}", documentNumber)
                     .replace("{idTransaction}", idTransaction)
-                    .replace("{numberPhone}", numberPhone);
+                    .replace("{phoneNumber}", phoneNumber);
 
             UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body " + statusBody);
 

@@ -14,7 +14,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -49,7 +48,7 @@ public class Helper extends WebBase {
     public static String readJson(String path) {
         String jsonFilePath = System.getProperty("user.dir") + "/src/test/resources" + path;
         try {
-            return new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(jsonFilePath)), StandardCharsets.UTF_8);
+            return java.nio.file.Files.readString(java.nio.file.Paths.get(jsonFilePath));
         } catch (IOException e) {
             Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error reading JSON file", e);
             return null;

@@ -16,13 +16,17 @@ import java.util.logging.Level;
 
 public class CaptchaPage extends WebBase {
 
+    private static final String PATH = System.getProperty("user.dir") + File.separator + "captcha";
+    private static final int MAX_RETRIES = 5;
     @FindBy(xpath = "//div[@class='contentFake50Percent']/input[@class='textInput']")
     protected WebElement inputCaptcha;
     @FindBy(xpath = "//a[contains(@onclick,'generate')]")
     protected WebElement btnUpdateCaptcha;
 
-    private static final String PATH = System.getProperty("user.dir") + File.separator + "captcha";
-    private static final int MAX_RETRIES = 5;
+    public static String createIDCaptcha() {
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
+    }
 
     public void updateAndTypeCaptcha() {
         UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Type incorrect captcha...");
@@ -105,11 +109,6 @@ public class CaptchaPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Update captcha...");
         btnUpdateCaptcha.click();
         UtilWeb.waitForSeconds(5);
-    }
-
-    public static String createIDCaptcha() {
-        UUID uuid = UUID.randomUUID();
-        return uuid.toString();
     }
 
     public void cleanFile(String path) {

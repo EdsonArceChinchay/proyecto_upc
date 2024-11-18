@@ -62,7 +62,7 @@ public class PortabilityStep {
     }
 
     @ScreenShotBefore
-    public void clickButtonConfirmar() {
+    public void clickButtonConfirm() {
         page.portabilityPage().clickButtonConfirmar();
     }
 

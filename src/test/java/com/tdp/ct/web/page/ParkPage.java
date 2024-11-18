@@ -80,6 +80,18 @@ public class ParkPage extends WebBase {
     protected WebElement inputBoxNumber;
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroTicket') or contains (@label,'Número de ticket')]")
     protected WebElement inputTicketNumber;
+    @FindBy(xpath = "//button[contains(text(),'Cambio de chip')]")
+    protected WebElement btnCambiodeChip;
+    @FindBy(xpath = "//*[contains(text(),'CONTINUAR')]")
+    protected WebElement btnClienteExonerado;
+    @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
+    protected WebElement cerrarCU;
+    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
+    protected WebElement cerrarPopUpEstadoCU;
+    @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
+    protected WebElement cierrePopUpError;
+    @FindBy(xpath = "//div[@class=\"div-product-name\"]")
+    WebElement scrollCartillaMT;
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
@@ -316,9 +328,6 @@ public class ParkPage extends WebBase {
         click(cartillaMovistarTotal);
     }
 
-    @FindBy(xpath = "//div[@class=\"div-product-name\"]")
-    WebElement scrollCartillaMT;
-
     public void seleccionoCartillaPlanMT() {
         js().scrollElementTop(scrollCartillaMT);
         UtilWeb.waitForSeconds(5);
@@ -475,18 +484,12 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    @FindBy(xpath = "//button[contains(text(),'Cambio de chip')]")
-    protected WebElement btnCambiodeChip;
-
     public void seleccionoelbotonCambiodeChip() {
         Addons.esperaProgresiva(driver(), 5, 5, btnCambiodeChip);
         js().scrollElementTop(btnCambiodeChip);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnCambiodeChip.getText());
         click(btnCambiodeChip);
     }
-
-    @FindBy(xpath = "//*[contains(text(),'CONTINUAR')]")
-    protected WebElement btnClienteExonerado;
 
     public void cierroPopUpDeClienteExonerado() {
         Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
@@ -501,12 +504,6 @@ public class ParkPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
         }
     }
-
-    @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
-    protected WebElement cerrarCU;
-
-    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
-    protected WebElement cerrarPopUpEstadoCU;
 
     public void cerrarPopupCU() {
         UtilWeb.waitForSeconds(4);
@@ -538,9 +535,6 @@ public class ParkPage extends WebBase {
             UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
         }
     }
-
-    @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
-    protected WebElement cierrePopUpError;
 
     public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado

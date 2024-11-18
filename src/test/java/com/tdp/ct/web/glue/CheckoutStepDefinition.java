@@ -14,14 +14,13 @@ public class CheckoutStepDefinition {
     private CheckoutStep checkoutStep;
 
     private Scenario scenario;
+    @Autowired
+    private RetentionService retentionService;
 
     @Before(order = 0)
     public void before(Scenario scenario) {
         this.scenario = scenario;
     }
-
-    @Autowired
-    private RetentionService retentionService;
 
     private void executeIfRetention(Runnable action) {
         String productType = checkoutStep.getProductType();
