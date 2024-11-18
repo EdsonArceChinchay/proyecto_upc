@@ -23,6 +23,8 @@ import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
 
+    private static String SALES_CODE;
+    private static String CONTRACT;
     @FindBy(xpath = "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
     protected WebElement btnDetallePedido;
     @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
@@ -57,11 +59,8 @@ public class CheckoutPage extends WebBase {
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
-
     @FindBy(xpath = "//*[contains(@class,'sectionToPrint') or contains(@class,'ticket-equipment')]")
     protected WebElement tittleTicket;
-    private static String SALES_CODE;
-    private static String CONTRACT;
 
     public boolean validarPantallaRegistrarVenta() {
         boolean verificarUbicacion = true;

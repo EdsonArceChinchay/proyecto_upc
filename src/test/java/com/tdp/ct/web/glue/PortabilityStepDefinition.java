@@ -94,27 +94,26 @@ public class PortabilityStepDefinition {
     @Y("doy click en {string} y doy click en el boton Confirmar")
     public void doyClickEnYDoyClickEnElBotonConfirmar(String nameButton) {
         portabilityStep.selectButton(nameButton);
-        portabilityStep.clickButtonConfirmar();
+        portabilityStep.clickButtonConfirm();
     }
 
     @Y("obtengo el token")
-    public void obtengoElToken(DataTable dataTable) {
-        String codigoDeVenta = checkoutStep.getSalesCode();
-        token = serviceTest.getCodeToken(dataTable, codigoDeVenta);
+    public void getToken(DataTable dataTable) {
+        String salesCode = checkoutStep.getSalesCode();
+        token = serviceTest.getCodeToken(dataTable, salesCode);
         this.scenario.log("Token:" + token);
     }
 
     @Cuando("ingreso el token y doy click en el boton Confirmar")
     public void ingresoElTokenYDoyClickEnElBotonConfirmar() {
         portabilityStep.inputToken(token);
-        portabilityStep.clickButtonConfirmar();
+        portabilityStep.clickButtonConfirm();
     }
 
     @Entonces("valido el mensaje {string} y doy click en el boton Continuar")
     public void validoElMensajeYDoyClickEnElBotonContinuar(String message) {
         portabilityStep.validateMessage(message);
         portabilityStep.clickButtonContinuar();
-
     }
 
 }

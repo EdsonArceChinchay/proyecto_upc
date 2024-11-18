@@ -15,21 +15,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class HomeStepDefinition {
 
+    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
     @Autowired
     private HomeStep homeStep;
-
     @Autowired
     private BandejaBackOfficeStep bandejaBackOfficeStep;
-
     @Autowired
     private RetentionService retentionService;
-
     @Autowired
     private Customer customer;
-
     private Scenario scenario;
-
-    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
 
     @Before(order = 0)
     public void before(Scenario scenario) {

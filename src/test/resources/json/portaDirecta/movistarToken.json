@@ -30,11 +30,11 @@
     "campos": [
       {
         "llave": "tipoDoc",
-        "valor": "{typeDocument}"
+        "valor": "{documentType}"
       },
       {
         "llave": "numeroDoc",
-        "valor": "{numberDocument}"
+        "valor": "{documentNumber}"
       },
       {
         "llave": "idTransaction",
@@ -42,7 +42,7 @@
       },
       {
         "llave": "telefono",
-        "valor": "{numberPhone}"
+        "valor": "{phoneNumber}"
       }
     ]
   }
