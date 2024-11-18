@@ -57,5 +57,5 @@ Característica: Migracion Duo A Trio Sva Repetidor + Sva Bloque canal Call Cent
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 128888888      | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                            | bloque | svaRepetidor          |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 128888888      | tester@tester.com | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR | HBO    | REP. SMART WIFI Venta |

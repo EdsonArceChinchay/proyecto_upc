@@ -80,7 +80,7 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | EncontrarCelular |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 723456454      | 650034426        |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | EncontrarCelular |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 723456454      | 650034426        |
 
 

@@ -53,6 +53,6 @@ Característica: AT-DT102_Migracion de Duo a Trio por el canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | planTrio                        |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 253462454      | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | planTrio                        |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 253462454      | Trío          | TRÍO MOV. VOZ INTERNET ESTANDAR |
 

@@ -63,5 +63,5 @@ Característica: AT-DT071_Migracion de Duo a Trio + sva por el canal Tienda (HFC
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464993     | tester@tester.com | Trio          | TRÍO |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464993     | tester@tester.com | Trio          | TRÍO |

@@ -74,5 +74,5 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                      | nombrePadre | nombreMadre | distritoNac |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 76268961       | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR | FRANCISCO   | CELESTINA   | COMBAPATA   |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                      | nombrePadre | nombreMadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 76268961       | Trío     | TRÍO MOV. VOZ INTERNET ESTANDAR | FRANCISCO   | CELESTINA   | COMBAPATA   |

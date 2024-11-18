@@ -16,8 +16,7 @@ public class HttpRequest {
     private boolean validateTLSCertificates = false;
     private Map<String, String> proxy = null; //new HashMap<String, String>() {{put("host", "192.168.0.168"); put("port", "8888");}};
     private Map<String, String> cookies = new HashMap<>();
-    private Map<String, String> headers = new HashMap<String, String>()
-    {{
+    private Map<String, String> headers = new HashMap<String, String>() {{
         put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
         put("Accept-Encoding", "gzip, deflate, sdch");
         put("Accept-Language", "ru-RU,en;q=0.8,ru;q=0.6");
@@ -43,6 +42,10 @@ public class HttpRequest {
         return validateTLSCertificates;
     }
 
+    public void setValidateTLSCertificates(boolean validateTLSCertificates) {
+        this.validateTLSCertificates = validateTLSCertificates;
+    }
+
     public String getUrl() {
         return url;
     }
@@ -51,12 +54,20 @@ public class HttpRequest {
         return postRaw;
     }
 
+    public void setRawPost(String post) {
+        this.postRaw = post;
+    }
+
     public Map<String, String> getProxy() {
         return proxy;
     }
 
     public Integer getTimeout() {
         return timeout;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
     }
 
     public String getReferer() {
@@ -68,12 +79,20 @@ public class HttpRequest {
         return null;
     }
 
+    public void setReferer(String referer) {
+        headers.put("Referer", referer);
+    }
+
     public Map<String, String> getHeaders() {
         return headers;
     }
 
     public Map<String, String> getCookies() {
         return cookies;
+    }
+
+    public void setCookies(Map<String, String> cookies) {
+        this.cookies = cookies;
     }
 
     public Set<Integer> getAcceptedHttpCodes() {
@@ -92,8 +111,16 @@ public class HttpRequest {
         return followRedirects;
     }
 
+    public void setFollowRedirects(boolean followRedirects) {
+        this.followRedirects = followRedirects;
+    }
+
     public Integer getMaxBodySize() {
         return maxBodySize;
+    }
+
+    public void setMaxBodySize(Integer maxBodySize) {
+        this.maxBodySize = maxBodySize;
     }
 
     public String getUrlWithoutChangingParts(String url) throws Exception {
@@ -137,10 +164,6 @@ public class HttpRequest {
         }
     }
 
-    public void setRawPost(String post) {
-        this.postRaw = post;
-    }
-
     public void addToPost(String key, String value) throws UnsupportedEncodingException {
         if (postRaw == null) {
             postRaw = "";
@@ -152,34 +175,10 @@ public class HttpRequest {
         addHeader("Content-Type", "application/x-www-form-urlencoded");
     }
 
-    public void setTimeout(Integer timeout) {
-        this.timeout = timeout;
-    }
-
-    public void setMaxBodySize(Integer maxBodySize) {
-        this.maxBodySize = maxBodySize;
-    }
-
-    public void setReferer(String referer) {
-        headers.put("Referer", referer);
-    }
-
-    public void setFollowRedirects(boolean followRedirects) {
-        this.followRedirects = followRedirects;
-    }
-
-    public void setValidateTLSCertificates(boolean validateTLSCertificates) {
-        this.validateTLSCertificates = validateTLSCertificates;
-    }
-
     public void setProxy(String proxyHost, Integer proxyPort) {
         this.proxy = new HashMap<>();
         this.proxy.put("host", proxyHost);
         this.proxy.put("port", String.valueOf(proxyPort));
-    }
-
-    public void setCookies(Map<String, String> cookies) {
-        this.cookies = cookies;
     }
 
     public void addCookie(String key, String value) {

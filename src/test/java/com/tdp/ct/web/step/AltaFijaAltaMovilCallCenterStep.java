@@ -44,7 +44,7 @@ public class AltaFijaAltaMovilCallCenterStep {
     }
 
     @ScreenShotBefore
-    public void clickBotonIrMovistarTotal(){
+    public void clickBotonIrMovistarTotal() {
         page.altaFijaAltaMovilCallCenterPage().clickBotonIrMovistarTotal();
     }
 

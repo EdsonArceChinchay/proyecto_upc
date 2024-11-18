@@ -71,5 +71,5 @@ Característica: AT-DT0 _Completa Movil MT (Planta Fija Trio + Alta Movil) + Alt
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 153426984      | Trío       | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 153426984      | Trío       | correo@gmail.com |

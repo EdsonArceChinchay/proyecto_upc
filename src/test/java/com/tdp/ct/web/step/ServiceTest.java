@@ -4,12 +4,14 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import io.cucumber.datatable.DataTable;
 import io.restassured.RestAssured;
 import io.restassured.config.SSLConfig;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.KeyStore;
@@ -20,8 +22,6 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Helper.getValueConfig;
 import static com.tdp.ct.web.utils.Helper.readJson;
 import static io.restassured.RestAssured.given;
-
-import org.apache.http.conn.ssl.SSLSocketFactory;
 
 @Component
 public class ServiceTest {
@@ -68,7 +68,7 @@ public class ServiceTest {
     public void portability(String endpointPath, String jsonPath, String value) {
         testPfxKey();
         String body = readJson(jsonPath);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " +( URL_AKS + endpointPath));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " + (URL_AKS + endpointPath));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Value: " + value);
         String consultation1 = given().headers(headersAksBerserkers())
                 .body(body).when()
@@ -78,8 +78,7 @@ public class ServiceTest {
 
         String numero1 = consultation1.substring(0, 9); // Separa en 2 grupos el código recibido
         String numero2 = consultation1.substring(9, 17); // La segunda parte del código recibido le resta 1
-        int restaNumero2 = Integer.parseInt(numero2) - 1;
-        String numero2Correcto = String.valueOf(restaNumero2); // convierte la segunda parte del código recibido en String
+        String numero2Correcto = String.valueOf(Integer.parseInt(numero2) - 1); // convierte la segunda parte del código recibido en String
         consultation = numero1 + numero2Correcto;         // Unimos para obtener el código correcto
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct " + value + ": " + consultation);
     }
@@ -124,7 +123,7 @@ public class ServiceTest {
                     .getBody().asString();
             UtilWeb.logger(this.getClass()).log(Level.INFO, "Response FE: " + response);
 
-            JSONArray additionalData =  new JSONObject(response).getJSONArray("commercialOperation")
+            JSONArray additionalData = new JSONObject(response).getJSONArray("commercialOperation")
                     .getJSONObject(0).getJSONArray("additionalData");
 
             for (int i = 0; i < additionalData.length(); i++) {
@@ -150,16 +149,16 @@ public class ServiceTest {
        UtilWeb.waitForSeconds(5);
         try {
             String idTransaction = getIdTransactionOfSaleslead(salesCode);
-            var typeDocument = UtilWeb.getValueFromDataTable(dataTable, "typeDocument");
-            var numberDocument = UtilWeb.getValueFromDataTable(dataTable, "numberDocument");
-            var numberPhone = UtilWeb.getValueFromDataTable(dataTable, "numberPhone");
+            var documentType = UtilWeb.getValueFromDataTable(dataTable, "documentType");
+            var documentNumber = UtilWeb.getValueFromDataTable(dataTable, "documentNumber");
+            var phoneNumber = UtilWeb.getValueFromDataTable(dataTable, "phoneNumber");
 
             Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaDirecta/movistarToken.json");
             String statusBody = Files.readString(filePath)
-                    .replace("{typeDocument}", typeDocument)
-                    .replace("{numberDocument}", numberDocument)
+                    .replace("{documentType}", documentType)
+                    .replace("{documentNumber}", documentNumber)
                     .replace("{idTransaction}", idTransaction)
-                    .replace("{numberPhone}", numberPhone);
+                    .replace("{phoneNumber}", phoneNumber);
 
             UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body " + statusBody);
 

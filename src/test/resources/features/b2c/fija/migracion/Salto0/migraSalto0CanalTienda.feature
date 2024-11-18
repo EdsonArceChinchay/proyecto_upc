@@ -54,5 +54,5 @@ Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456778      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 123456778      |

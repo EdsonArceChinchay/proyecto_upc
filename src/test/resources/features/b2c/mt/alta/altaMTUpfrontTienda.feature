@@ -80,5 +80,5 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |

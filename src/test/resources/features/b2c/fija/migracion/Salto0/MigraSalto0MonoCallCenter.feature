@@ -61,5 +61,5 @@ Característica: AT-DT104_Migracion salto 0 (Cambio de tecnologia HFC a FTTH) a 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numeroServicio |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464794     | 5010015393     |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numeroServicio |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464794     | 5010015393     |

@@ -80,6 +80,6 @@ Característica: AT-DT097_Alta Movil Prepago a cliente con CE por canal Call Cen
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | oferta       | nombrePlan | departamento | provincia | distrito | direccion           | referencia |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042494730     | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | oferta       | nombrePlan | departamento | provincia | distrito | direccion           | referencia |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042494730     | PLAN PREPAGO | Preplan    | 15           | 1501      | 150116   | IGNACIO MERINO 1990 | INKAFARMA  |
 

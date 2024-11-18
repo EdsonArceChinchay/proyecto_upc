@@ -56,5 +56,5 @@ Característica: AT-DT082_Migracion de Trio a trio  por el canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                                |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464612     | tester@tester.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                                |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464612     | tester@tester.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |

@@ -43,6 +43,32 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
     protected WebElement btnRenovarPlan;
+    @FindBy(xpath = "//button[@class='btnCard']")
+    protected List<WebElement> listaBotones;
+    @FindBy(xpath = "//div[3]/app-mt-card/div[1]/div/div[1]/div[3]/img")
+    protected WebElement btnselecOferta;
+    @FindBy(xpath = "//app-mt-change-plan-card/div/div[2]/div[1]/div[1]")
+    protected WebElement planOferta;
+    @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
+    protected WebElement btnseleccionarOferta;
+    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    protected WebElement btnIrMovistarTotal;
+    @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
+    protected WebElement BtnMigrarFibra;
+    @FindBy(xpath = "//div/button[@class='btnStart']")
+    protected WebElement BotonIniciarRegistro;
+    @FindBy(css = "h1.title")
+    protected WebElement titleOffer;
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[1]")
+    protected WebElement currentHomePlanPrice;
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[2]")
+    protected WebElement currentMonthlyPlanPrice;
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[3]")
+    protected WebElement newHomePlanPrice;
+    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[4]")
+    protected WebElement newMonthlyPlanPrice;
+    @FindBy(xpath = "(//*[contains(@class,'border_upgrade')]//*[contains(@class,'separator')])[1]")
+    protected WebElement separator;
 
     public void seleccionPlanNuevoParaVerLasOfertas() {
         revisarModalError(driver());
@@ -119,28 +145,17 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         revisarModalError(driver());
     }
 
-    @FindBy(xpath = "//button[@class='btnCard']")
-    protected List<WebElement> listaBotones;
-
-    public void seleccionarboton(){
+    public void seleccionarboton() {
         System.out.println(1);
         UtilWeb.waitForSeconds(4);
         System.out.println(1);
-        for(WebElement element:listaBotones){
-            if (element.getText().contains("Cambiar plan hogar")){
-                click(element,40);
+        for (WebElement element : listaBotones) {
+            if (element.getText().contains("Cambiar plan hogar")) {
+                click(element, 40);
             }
         }
         UtilWeb.waitForSeconds(4);
     }
-
-    @FindBy(xpath = "//div[3]/app-mt-card/div[1]/div/div[1]/div[3]/img")
-    protected WebElement btnselecOferta;
-
-    @FindBy(xpath = "//app-mt-change-plan-card/div/div[2]/div[1]/div[1]")
-    protected WebElement planOferta;
-    @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
-    protected WebElement btnseleccionarOferta;
 
     public void seleccionoPlanMovistarTotal() {
         UtilWeb.waitForSeconds(3);
@@ -158,8 +173,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         click(btnseleccionarOferta);
     }
 
-    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
-    protected WebElement btnIrMovistarTotal;
     public void clickBtnIrMovistarTotal() {
         UtilWeb.waitForSeconds(15);//15
         revisarModalError(driver());
@@ -167,30 +180,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         waitUntilElementIsVisible(btnIrMovistarTotal, 150);
         click(btnIrMovistarTotal);
     }
-
-    @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
-    protected WebElement BtnMigrarFibra;
-
-    @FindBy(xpath = "//div/button[@class='btnStart']")
-    protected WebElement BotonIniciarRegistro;
-
-    @FindBy(css = "h1.title")
-    protected WebElement titleOffer;
-
-    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[1]")
-    protected WebElement currentHomePlanPrice;
-
-    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[2]")
-    protected WebElement currentMonthlyPlanPrice;
-
-    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[3]")
-    protected WebElement newHomePlanPrice;
-
-    @FindBy(xpath = "(//*[contains(@class,'price-upgrade')])[4]")
-    protected WebElement newMonthlyPlanPrice;
-
-    @FindBy(xpath = "(//*[contains(@class,'border_upgrade')]//*[contains(@class,'separator')])[1]")
-    protected WebElement separator;
 
     public void SeleccionarBtnMigrarFibra() {
         esperaProgresiva(driver(), 3, 5, BtnMigrarFibra);
@@ -213,14 +202,13 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     public void validateCurrentAndNewPrice() {
         js().scrollElementTop(separator);
-        boolean hasSameHomePlanPrice = compareTextWebElement(currentHomePlanPrice,newHomePlanPrice);
-        Assertions.assertTrue(hasSameHomePlanPrice,"Not the same home plan price");
-        boolean hasSameMonthlyPlanPrice =compareTextWebElement(currentMonthlyPlanPrice,newMonthlyPlanPrice);
-        Assertions.assertTrue(hasSameMonthlyPlanPrice,"Not the same monthly plan price");
+        boolean hasSameHomePlanPrice = compareTextWebElement(currentHomePlanPrice, newHomePlanPrice);
+        Assertions.assertTrue(hasSameHomePlanPrice, "Not the same home plan price");
+        boolean hasSameMonthlyPlanPrice = compareTextWebElement(currentMonthlyPlanPrice, newMonthlyPlanPrice);
+        Assertions.assertTrue(hasSameMonthlyPlanPrice, "Not the same monthly plan price");
     }
 
-    public boolean compareTextWebElement(WebElement element1, WebElement element2)
-    {
+    public boolean compareTextWebElement(WebElement element1, WebElement element2) {
         return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
     }
 

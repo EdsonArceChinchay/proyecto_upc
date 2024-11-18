@@ -14,18 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class RegisterStepDefinition {
 
+    private static boolean isActiveValidateIdentity = false;
     @Autowired
     private RegisterStep registerStep;
-
     @Autowired
     private Customer customer;
-
     @Autowired
     private RetentionService retentionService;
-
     private Scenario scenario;
-
-    private static boolean isActiveValidateIdentity = false;
 
     @Before(order = 0)
     public void before(Scenario scenario) {

@@ -58,5 +58,5 @@ Característica: Actualizacion fija con ruc 10 canal Retail
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        | ruc         |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 7241133113     | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        | ruc         |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 7241133113     | tester@tester.com | Duo           | RA 100 MBPS | 10112233440 |

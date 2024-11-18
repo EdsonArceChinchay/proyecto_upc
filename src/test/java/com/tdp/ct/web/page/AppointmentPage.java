@@ -52,7 +52,7 @@ public class AppointmentPage extends WebBase {
     public void ingresarContacto(String contacto) {
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByXPath("(//div[@class='tdp-row']//tdp-st-input-text)[1]");
-        typeInShadowRootCssSelector(contacto,rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector(contacto, rootInput, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -78,7 +78,7 @@ public class AppointmentPage extends WebBase {
         }
         js().scrollElementTop(buttonConfirmar);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
-        typeInShadowRootCssSelector("956425985",rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector("956425985", rootInput, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -136,13 +136,13 @@ public class AppointmentPage extends WebBase {
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
         WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
-        typeInShadowRootCssSelector("Edson",rootInput,"div > div > div > input");
+        typeInShadowRootCssSelector("Edson", rootInput, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInShadowRootCssSelector("Arce",rootInput1,"div > div > div > input");
+        typeInShadowRootCssSelector("Arce", rootInput1, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInShadowRootCssSelector("976709704",rootInput2,"div > div > div > input");
+        typeInShadowRootCssSelector("976709704", rootInput2, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
-        typeInShadowRootCssSelector("906701238",rootInput3,"div > div > div > input");
+        typeInShadowRootCssSelector("906701238", rootInput3, "div > div > div > input");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -173,7 +173,7 @@ public class AppointmentPage extends WebBase {
                 }
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" +e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" + e.getMessage());
             }
             contador++;
         } while (!bOK && contador < reintentosMax);

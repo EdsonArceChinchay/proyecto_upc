@@ -33,7 +33,7 @@ public class SessionStorage {
         return getValueFromJson(getSessionStorageAsJsonObject(driver, primaryKey), key);
     }
 
-    public static String getValueJsonObjectSessionStorage(JsonObject primaryKey, String key){
+    public static String getValueJsonObjectSessionStorage(JsonObject primaryKey, String key) {
         return getValueFromJson(primaryKey, key);
     }
 
@@ -95,13 +95,14 @@ public class SessionStorage {
                 current = current.getAsJsonObject().get(parts[i]);
             } else if (current.isJsonArray()) {
                 try {
-                    int index = Integer.parseInt(parts[i+1]);
+                    int index = Integer.parseInt(parts[i + 1]);
                     current = current.getAsJsonArray().get(index);
                     i++;
                 } catch (NumberFormatException | IndexOutOfBoundsException e) {
                     logger.log(Level.SEVERE, "Invalid or out-of-range index: " + e.getMessage());
                     return null;
-                }} else {
+                }
+            } else {
                 logger.log(Level.SEVERE, "Key not found or incorrect data type");
                 return null;
             }

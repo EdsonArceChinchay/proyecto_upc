@@ -87,5 +87,5 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100712890      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100712890      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |

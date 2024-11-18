@@ -36,6 +36,7 @@ public class FeatureCSV {
     /**
      * Obtiene todos los archivos de tipo Feature *.feature en el directorio
      * --> resources/features/...
+     *
      * @return Lista de nombre de archivos ubicados en el directorio --> resources/features/...
      */
     private static List<String> getListFilesForFolder() {
@@ -56,7 +57,7 @@ public class FeatureCSV {
 
     private static List<String> getFilterFeatureFiles(List<String> allFiles) {
         List<String> featureFileFiltered = new LinkedList<>();
-        for(String files : allFiles){
+        for (String files : allFiles) {
             String featureFilePath = FEATURE_PATH + files;
             String featureLine;
             //find a file with csv format
@@ -65,7 +66,7 @@ public class FeatureCSV {
                 while ((featureLine = brFinal.readLine()) != null)
                     if (featureLine.contains(EXPECTED_ANNOTATION_REGEX_CSV))
                         featureFileFiltered.add(files);
-            }catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -137,6 +138,7 @@ public class FeatureCSV {
      * Obtiene y guarda en sesion los siguientes datos del archivo feature antes de reemplazarlo:
      * Ruta origen del archivo feature
      * Contenido origen del archivo feature
+     *
      * @param featureFilePath Nombre del archivo feature a evaluar para reemplazar su contenido
      */
     private static void setSourceFeatureContent(String featureFilePath) {
@@ -173,7 +175,7 @@ public class FeatureCSV {
             }
         }
         Logger.getLogger(CSVReader.class.getName())
-                .log(Level.INFO, "Features that was reset >>> \n\n \"{0}\"\n",features);
+                .log(Level.INFO, "Features that was reset >>> \n\n \"{0}\"\n", features);
     }
 
 }

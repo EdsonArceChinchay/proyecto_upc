@@ -5,7 +5,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -21,22 +20,17 @@ import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStora
 
 public class SummaryPage extends WebBase {
 
+    private static JsonObject saleObject;
     @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
     protected WebElement btnStartRegister;
-
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-
     @FindBy(xpath = "(//div[@class='title'])/span")
     protected WebElement paginaResumen;
-
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
-
     @FindBy(xpath = "//div[@class='plan2']")
     protected WebElement lblPrecio;
-
-    private static JsonObject saleObject;
 
     public void validacionPrecio(String precioPlan) {
         Assert.assertEquals(precioPlan, lblPrecio.getText());

@@ -7,18 +7,11 @@ public class DebugHelper {
     private static final String ANSI_GREEN = "\u001B[32m";
     private static final String ANSI_YELLOW = "\u001B[33m";
     private static final String ANSI_RESET = "\u001B[0m";
+    private static Boolean verboseMode = false;
 
     public static void setVerboseMode(Boolean verboseMode) {
         DebugHelper.verboseMode = verboseMode;
     }
-
-    public enum Type {
-        ERROR,
-        INFO,
-        SUCCESS
-    }
-
-    private static Boolean verboseMode = false;
 
     public static void jsonFieldParseError(String field, JSONObject submitResult) {
         String error = field + " could not be parsed. Raw response: " + JsonHelper.asString(submitResult);
@@ -39,5 +32,11 @@ public class DebugHelper {
         }
 
         System.out.print(ANSI_RESET);
+    }
+
+    public enum Type {
+        ERROR,
+        INFO,
+        SUCCESS
     }
 }

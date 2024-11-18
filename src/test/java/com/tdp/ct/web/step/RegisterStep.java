@@ -139,6 +139,7 @@ public class RegisterStep {
     public void clicValidarContrato() {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
+
     @ScreenShotAfter
     public void visualizarContratoEnPantalla() {
         page.altaFijaMovilRegistroPage().visualizarContratoEnPantalla();
@@ -212,24 +213,27 @@ public class RegisterStep {
     }
 
     @ScreenShotBefore
-    public void clickDiscapacitadoHuellaDesgastado(){
+    public void clickDiscapacitadoHuellaDesgastado() {
         page.altaTrioMTconUpfrontTiendaPage().clickDiscapacitadoHuellaDesgastado();
     }
+
     @ScreenShotAfter
-    public void selectSupervisorDocumentType(String tipoDoc){
+    public void selectSupervisorDocumentType(String tipoDoc) {
         page.altaTrioMTconUpfrontTiendaPage().selectSupervisorDocumentType(tipoDoc);
     }
+
     @ScreenShotAfter
-    public void typeSupervisorDocumentNumber(String documentoSuper){
+    public void typeSupervisorDocumentNumber(String documentoSuper) {
         page.altaTrioMTconUpfrontTiendaPage().typeSupervisorDocumentNumber(documentoSuper);
     }
 
     @ScreenShotAfter
-    public void typeSupervisorUser(String user){
+    public void typeSupervisorUser(String user) {
         page.altaTrioMTconUpfrontTiendaPage().typeSupervisorUser(user);
     }
+
     @ScreenShotAfter
-    public void typeSupervisorPassword(String passw){
+    public void typeSupervisorPassword(String passw) {
         page.altaTrioMTconUpfrontTiendaPage().typeSupervisorPassword(passw);
     }
 

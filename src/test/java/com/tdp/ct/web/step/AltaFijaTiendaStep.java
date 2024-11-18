@@ -62,6 +62,7 @@ public class AltaFijaTiendaStep {
     public void validarPrecioDescuentoTV(String pDescTV) {
         page.altaFijaTiendaPage().validarPrecioDescuentoTV(pDescTV);
     }
+
     public void seleccionarboton() {
         page.migracionDuoATrioTiendaPage().seleccionarboton();
     }

@@ -34,7 +34,7 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<phoneNumber>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
@@ -56,8 +56,8 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido el servicio prevalidateportin
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
+      | telefono      | Fecha_Sig  | Fecha_FinMes |
+      | <phoneNumber> | 2023-01-24 | 2023-01-31   |
     Y        doy tiempo extra
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"
@@ -99,6 +99,6 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956251 | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956251   | Postpago  | ENTEL    | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
 

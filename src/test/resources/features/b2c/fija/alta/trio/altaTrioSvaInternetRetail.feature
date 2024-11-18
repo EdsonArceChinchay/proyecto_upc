@@ -80,5 +80,5 @@ Característica: Alta Trio + SVA a cliente con CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet                 |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | Seguridad Total Residencial |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet                 |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | Seguridad Total Residencial |

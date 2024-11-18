@@ -83,5 +83,5 @@ Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                  |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100014564      | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100014564      | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

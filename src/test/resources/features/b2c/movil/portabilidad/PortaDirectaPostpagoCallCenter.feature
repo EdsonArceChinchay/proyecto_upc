@@ -34,7 +34,7 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<phoneNumber>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
@@ -85,6 +85,6 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42565073       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42565073       | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
 

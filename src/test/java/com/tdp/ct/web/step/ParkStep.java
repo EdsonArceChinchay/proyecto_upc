@@ -220,7 +220,7 @@ public class ParkStep {
 
     @ScreenShotBefore
     public void typeSimCard() {
-        page.parkPage().typeInput("inputSimCard",  page.parkPage().getSimCard());
+        page.parkPage().typeInput("inputSimCard", page.parkPage().getSimCard());
     }
 
     public void typeIMEI(String device) {

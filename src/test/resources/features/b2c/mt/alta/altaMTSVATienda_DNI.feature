@@ -82,7 +82,7 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
 
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 1042464714     | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | ERMINIA     | APOLONIO    | LURIN       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
 
 

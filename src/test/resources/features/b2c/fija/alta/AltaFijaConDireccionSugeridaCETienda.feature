@@ -72,5 +72,5 @@ Característica: Alta Duo con direccion sugerida con documento CE por Canal Tien
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan                               |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1034509118     | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                    | referencia | tipoPlan | nombrePlan                               |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1034509118     | 15           | 1501      | 150116   | Av. Ignacio Merino 1999-1901 | Casa       | Duo      | DÚO INTERNET ESTÁNDAR HD RA M23 200 MBPS |

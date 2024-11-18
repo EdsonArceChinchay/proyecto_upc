@@ -30,12 +30,12 @@ public class OfferStep {
     }
 
     @ScreenShotBefore
-    public void clickSubDetalles(){
+    public void clickSubDetalles() {
         page.offerPage().subDetalles();
     }
 
     @ScreenShotBefore
-    public void validarlblAplicaUpFrom(){
+    public void validarlblAplicaUpFrom() {
         page.offerPage().lblAplicaUpFrom();
     }
 }

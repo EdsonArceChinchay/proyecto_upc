@@ -66,5 +66,5 @@ Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Cal
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20510628684    | 1   | CE              | 102040298      | automation@mail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20510628684    | 1   | CE              | 102040298      | automation@mail.com |

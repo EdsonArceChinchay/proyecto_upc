@@ -53,5 +53,5 @@ Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Ti
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464721     | prueba@prueba.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464721     | prueba@prueba.com |

@@ -57,5 +57,5 @@ Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464952     | tester@tester.com | Duo           | RA 100 MBPS |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464952     | tester@tester.com | Duo           | RA 100 MBPS |

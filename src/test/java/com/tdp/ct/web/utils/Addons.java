@@ -2,22 +2,17 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.*;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.time.Duration;
-import java.util.Arrays;
-import java.util.List;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -31,7 +26,7 @@ public class Addons {
         LOGGER.log(Level.INFO, "esperaProgresivaLoading(reintentosMax: " + reintentosMax + ", segundosEspera: " + segundosEspera + ", sLoading: " + sLoadingXPath + ")");
         long inicio = System.currentTimeMillis();
         int contador = 0;
-        boolean bCargando = false;
+        boolean bCargando;
         do {
             try {
                 LOGGER.log(Level.INFO, "Buscando Loading ...");
@@ -214,7 +209,7 @@ public class Addons {
     Se está identificando diferentes modalidades de error.
 */
         boolean bReintentar = true;
-        boolean isModalError = false;
+        boolean isModalError;
         int contador = 0;
         int reintentosMax = 5;
         int segundosEspera = 15;
@@ -338,7 +333,6 @@ public class Addons {
                 // }
 
             } catch (Exception e) {
-                bCargando = false;
                 LOGGER.log(Level.SEVERE, "Splash notFound");
             }
             contador++;
@@ -409,7 +403,7 @@ public class Addons {
 
     public static void guardarCodigoHTML(WebDriver driver) {
         String fecha = new SimpleDateFormat("yyyy-MM-dd-(HH-mm-ss)").format(new Date());
-        String nombreArchivo = String.format("codigoHTML_%s.html",fecha);
+        String nombreArchivo = String.format("codigoHTML_%s.html", fecha);
         String rutabase = obtenerRutaBaseProyecto() + "\\target\\html\\";
         File directorio = new File(rutabase);
         if (!directorio.exists()) {

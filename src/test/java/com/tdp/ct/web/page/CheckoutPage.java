@@ -23,7 +23,9 @@ import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
 
-    @FindBy(xpath= "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
+    private static String SALES_CODE;
+    private static String CONTRACT;
+    @FindBy(xpath = "//*[contains(text(),'Ver detalle del pedido') or contains(@class,'detalle_sub')]")
     protected WebElement btnDetallePedido;
     @FindBy(xpath = "//app-root/app-success/div[2]/div[3]")
     protected WebElement scrollorden;
@@ -57,11 +59,8 @@ public class CheckoutPage extends WebBase {
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
     protected WebElement rootModalButtonSiAcepto;
-
     @FindBy(xpath = "//*[contains(@class,'sectionToPrint') or contains(@class,'ticket-equipment')]")
     protected WebElement tittleTicket;
-    private static String SALES_CODE;
-    private static String CONTRACT;
 
     public boolean validarPantallaRegistrarVenta() {
         boolean verificarUbicacion = true;
@@ -115,7 +114,7 @@ public class CheckoutPage extends WebBase {
                 return false;
 
             } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
                 return false;
             }
         }
@@ -129,22 +128,23 @@ public class CheckoutPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
         UtilWeb.waitForSeconds(6);
     }
+
     public void clicBotonContinuar() {
         Addons.revisarModalError(driver());
         boolean buttonFound = false;
         int contador = 0;
         int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"Entra al while");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al while");
             try {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Entra al try");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al try");
                 waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Entra al catch");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al catch");
                 UtilWeb.waitForSeconds(5);
                 contador++;
-                UtilWeb.logger(this.getClass()).log(Level.INFO,contador + " vez");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, contador + " vez");
             }
         }
         System.out.println("Sale del while");
@@ -195,7 +195,7 @@ public class CheckoutPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"No se espero a que se oculte el elemento");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se espero a que se oculte el elemento");
         }
         return retorno;
     }
@@ -203,7 +203,7 @@ public class CheckoutPage extends WebBase {
     public void clicDescargarContrato(ManageScenario scenario) {
         revisarModalError(driver());
         for (int intento = 1; intento <= 2; intento++) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"Entra al primer try");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al primer try");
             try {
                 esperaProgresiva(driver(), 6, 5, descargarContrato);
                 click(descargarContrato);
@@ -215,22 +215,22 @@ public class CheckoutPage extends WebBase {
                     String nombreDelBoton = contratoUno.getText();
                     UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el Boton contratoUno: " + nombreDelBoton);
                 } catch (Exception e) {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO,"El elemento contrato Uno ya no fue encontrado: ");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento contrato Uno ya no fue encontrado: ");
                 }
 
                 String rutabase = obtenerRutaBaseProyecto() + "\\target\\contrato-pdf\\";
                 File directorio = new File(rutabase);
                 if (!directorio.exists()) {
                     directorio.mkdirs();
-                    UtilWeb.logger(this.getClass()).log(Level.INFO,"Directorio Creado: ");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Directorio Creado: ");
                 }
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"RUTA BASE: " + rutabase);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "RUTA BASE: " + rutabase);
                 WebElement pdfElement = driver().findElement(By.tagName("iframe"));
 
                 esperaProgresiva(driver(), 3, 3, pdfElement);
                 scenario.printFullView();
                 String pdfUrl = pdfElement.getAttribute("src");
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Link PDF 1: " + pdfUrl);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Link PDF 1: " + pdfUrl);
                 downloadPDF(pdfUrl, rutabase);
                 scenario.printFullView();
                 //click en el 2do boton
@@ -249,19 +249,19 @@ public class CheckoutPage extends WebBase {
                     click(cerrarPopUpContratos);
                     break;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO,"No hay un segundo contrato.");
+                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay un segundo contrato.");
                 }
                 scenario.printFullView();
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Error: " + e.getMessage());
-                UtilWeb.logger(this.getClass()).log(Level.INFO,"Sale del primer try");
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Error: " + e.getMessage());
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Sale del primer try");
             }
 
         }
 
         try {
             click(cerrarPopUpContratos);
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"cerrarPopUpContratos cierre");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "cerrarPopUpContratos cierre");
         } catch (Exception e) {
             UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" + e.getMessage());
         }
@@ -365,16 +365,16 @@ public class CheckoutPage extends WebBase {
     }
 
     public void ValidoQuePresenteDetallePedido(String service) {
-        WebElement serviceText = find().getElementByXPath("//*[contains(text(),'"+service.trim()+"')]");
+        WebElement serviceText = find().getElementByXPath("//*[contains(text(),'" + service.trim() + "')]");
         js().scrollElementTop(serviceText);
-        waitUntilElementIsVisible(serviceText,5);
+        waitUntilElementIsVisible(serviceText, 5);
     }
 
     public void clickenVerDetalleDelPedido() {
         js().scrollElementTop(scrollorden);
-        esperaProgresiva(driver(),6,6,btnDetallePedido);
+        esperaProgresiva(driver(), 6, 6, btnDetallePedido);
         js().scrollElementTop(btnDetallePedido);
-        waitUntilElementIsClickable(btnDetallePedido,60).click();
+        waitUntilElementIsClickable(btnDetallePedido, 60).click();
     }
 
     public String getProductType() {
@@ -403,6 +403,6 @@ public class CheckoutPage extends WebBase {
     }
 
     public void validateTicket() {
-       js().scrollElementTop(tittleTicket);
+        js().scrollElementTop(tittleTicket);
     }
 }

@@ -20,7 +20,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
   Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "externalUser"
+    Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
     Y        ingreso el password "userPasswordCC"
     E        ingreso el captcha

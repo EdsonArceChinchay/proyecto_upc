@@ -3,13 +3,16 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
@@ -29,6 +32,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement btnRight;
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
+    @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
+    protected WebElement BtnOpciones;
+    @FindBy(xpath = "//button[@class='btnCard']")
+    protected List<WebElement> botoneraIrA;
+    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
+    protected WebElement btnLineaNueva;
 
     public void scrollUp() {
         revisarModalError(driver());
@@ -49,9 +58,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(oferta);
         UtilWeb.waitForSeconds(2);
     }
-
-    @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
-    protected WebElement BtnOpciones;
 
     public void BtonOpciones() {
         revisarModalError(driver());
@@ -166,18 +172,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    @FindBy(xpath = "//button[@class='btnCard']")
-    protected List<WebElement> botoneraIrA;
-
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(), 4, 5, botoneraIrA.get(1));
         revisarModalError(driver());
         click(botoneraIrA.get(1));
         UtilWeb.waitForSeconds(1);
     }
-
-    @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
-    protected WebElement btnLineaNueva;
 
     public void selectBtnLineaNueva() {
         esperaProgresiva(driver(), 5, 5, btnLineaNueva);

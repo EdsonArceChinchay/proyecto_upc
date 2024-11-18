@@ -73,5 +73,5 @@ Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con docu
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | tipoPlanHogar | plan                                |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101010102     | correo@gmail.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | tipoPlanHogar | plan                                |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101010102     | correo@gmail.com | Trío          | TRÍO MOVISTAR VOZ INTERNET ESTANDAR |

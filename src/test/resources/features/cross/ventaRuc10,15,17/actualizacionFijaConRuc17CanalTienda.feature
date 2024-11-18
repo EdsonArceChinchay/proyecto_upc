@@ -26,6 +26,7 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Y        valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
@@ -36,5 +37,5 @@ Característica: Actualizacion fija con ruc 17 canal Tienda
     Y        selecciono la cartilla del plan activo
 
     Ejemplos:
-      | userType     | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | ruc | digito |
-      | externalUser | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | DNI          | 70756041       | 17  | 3      |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | ruc | digito |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | DNI          | 70756041       | 17  | 3      |

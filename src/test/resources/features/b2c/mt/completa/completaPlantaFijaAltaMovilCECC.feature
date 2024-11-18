@@ -77,5 +77,5 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |

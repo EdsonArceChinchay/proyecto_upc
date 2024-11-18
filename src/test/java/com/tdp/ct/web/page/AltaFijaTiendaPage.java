@@ -4,8 +4,10 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
@@ -18,7 +20,6 @@ import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
 
 public class AltaFijaTiendaPage extends WebBase {
-    ArrayList<String> tabs;
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
     @FindBy(xpath = "//div[@class='tdp-col-md-2']")
@@ -35,36 +36,27 @@ public class AltaFijaTiendaPage extends WebBase {
     protected List<WebElement> listBtnSeleccionarOferta;
     @FindBy(xpath = "//div[contains(text(),'Nombre:')]")
     protected WebElement nombresCompletosCliente;
-
     @FindBy(xpath = "(//button[contains(text(),'Línea nueva móvil') or @class='btnCard' and contains(text(),'Línea nueva') or @class='btnCard' and contains(text(),'Portabilidad móvil') or contains(text(),'Portabilidad móvil')  or @class='btnCard' and contains(text(),'Línea Nueva')  or @class='btnCard' and contains(text(),'Cambiar plan hogar')  or @class='btnCard' and contains(text(),'Cambiar Plan')])[1]")
     protected WebElement btnLineaNueva;
-
     @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'SVA')]")
     protected WebElement btnSVA;
-
     @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
     protected WebElement btnRight;
-
     @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
     protected WebElement btnLeft;
-
     @FindBy(xpath = "(//div[@class='tdp-col-sm-4 tdp-offset-4'])[2]/tdp-st-button")
     protected WebElement btnRegistrarVenta;
-
     @FindBy(xpath = "//button/span[contains(text(), 'Validar identidad del Rep. Legal')]/..")
     protected WebElement btnValidaLegal;
-
     @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[4]/div/div[1]/app-summary-detail/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div[1]/span[2]")
     protected WebElement velocidadBB;
-
     @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescBB;
-
     @FindBy(css = "div.tdp-row.textBlue")
     protected WebElement svaTV;
-
     @FindBy(xpath = "//app-root/app-alta-fija-page/app-resumen-page/div/div[5]/div[1]/div/div[1]/div[3]")
     protected WebElement precDescTV;
+    ArrayList<String> tabs;
 
     public String nombresCompletosCliente() {
         esperaProgresiva(driver(), 5, 5, nombresCompletosCliente);
@@ -126,7 +118,7 @@ public class AltaFijaTiendaPage extends WebBase {
         for (int i = 0; i < listaOfertas.size(); i++) {
             js().scrollElementTop(listaOfertas.get(i));
             scenario.printFullView();
-           boolean isEquals = returnValueCompareWebElementTextAndString(listaOfertas.get(i),planOfertas);
+            boolean isEquals = returnValueCompareWebElementTextAndString(listaOfertas.get(i), planOfertas);
             if (isEquals) {
                 encontroElemento = true;
                 click(listaOfertas.get(i));
@@ -266,22 +258,22 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void validarVelocidadInternet(String mbpsBB) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(velocidadBB,mbpsBB);
+        compareWebElementTextAndString(velocidadBB, mbpsBB);
     }
 
     public void validarPrecioDescuento(String precDesc) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(precDescBB,precDesc);
+        compareWebElementTextAndString(precDescBB, precDesc);
     }
 
     public void validarnombreSVAcontenido(String nomsvaTV) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(svaTV,nomsvaTV);
+        compareWebElementTextAndString(svaTV, nomsvaTV);
     }
 
     public void validarPrecioDescuentoTV(String pDescTV) {
         Addons.revisarModalError(driver());
-        compareWebElementTextAndString(precDescTV,pDescTV);
+        compareWebElementTextAndString(precDescTV, pDescTV);
     }
 
 }

@@ -69,5 +69,5 @@ Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documen
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo              |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464769     | automation@mail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo              |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464769     | automation@mail.com |

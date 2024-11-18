@@ -74,12 +74,12 @@ public class CheckoutStep {
         return page.checkoutPage().getProductType();
     }
 
-    public void validateTheBillingCycle(){
+    public void validateTheBillingCycle() {
         page.checkoutPage().validateTheBillingCycle();
     }
 
     @ScreenShotAfter
-    public void validateRegistrationHasBeenSuccessful(){
+    public void validateRegistrationHasBeenSuccessful() {
         Assert.assertTrue("No mostro pantalla de venta exitosa",
                 page.checkoutPage().validateRegistrationHasBeenSuccessful());
     }
@@ -94,7 +94,7 @@ public class CheckoutStep {
         if (orderCode != null) {
             customer.setOrdersCode(orderCode);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Orden - Null");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "ERROR - Codigo de Orden - Null");
         }
         return orderCode == null ? " " : orderCode.toString();
     }
@@ -104,7 +104,7 @@ public class CheckoutStep {
         if (salesCode != null) {
             customer.setSalesCode(salesCode);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"ERROR - Codigo de Venta - Null");
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "ERROR - Codigo de Venta - Null");
         }
         return salesCode == null ? " " : salesCode;
     }

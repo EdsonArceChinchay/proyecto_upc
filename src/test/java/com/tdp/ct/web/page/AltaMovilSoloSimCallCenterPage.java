@@ -1,11 +1,10 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
-
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
-
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -30,6 +29,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
+    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
+    protected List<WebElement> listaOfertas;
 
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);
@@ -123,10 +124,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
         UtilWeb.waitForSeconds(1);
     }
-
-    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
-    protected List<WebElement> listaOfertas;
-
 
     public void seleccionarPlan(String tipoPlan) {
         UtilWeb.waitForSeconds(4);

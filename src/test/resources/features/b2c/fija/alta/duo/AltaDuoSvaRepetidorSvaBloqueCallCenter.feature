@@ -86,5 +86,5 @@ Característica: AT-DT090_Alta Duo (Internet + TV) + Sva Repetidor + Sva Bloque 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan            | bloque | svaRepetidor              |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR | HBO    | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan            | bloque | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR | HBO    | Repetidor WIFI PLUS Venta |

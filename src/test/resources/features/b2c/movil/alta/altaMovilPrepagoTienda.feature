@@ -64,5 +64,5 @@ Característica: AT-DT028_Alta Movil Prepago a cliente con CE en Canal Tienda
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | oferta       | nombrePlan |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1942354781     | PLAN PREPAGO | Preplan    |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | oferta       | nombrePlan |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1942354781     | PLAN PREPAGO | Preplan    |

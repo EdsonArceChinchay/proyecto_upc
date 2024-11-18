@@ -58,5 +58,5 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cli
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042465085     |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042465085     |

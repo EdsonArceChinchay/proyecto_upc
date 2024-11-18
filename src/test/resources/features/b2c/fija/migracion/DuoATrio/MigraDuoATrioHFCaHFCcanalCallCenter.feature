@@ -52,5 +52,5 @@ Característica: AT-DT060_Migracion Duo A Trio HFC a HFC canal Call Center
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                                |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 128888888      | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                                |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 128888888      | tester@tester.com | Trío          | Trío Movistar Voz Internet Estandar |

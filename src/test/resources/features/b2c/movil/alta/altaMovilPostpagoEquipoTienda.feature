@@ -72,5 +72,5 @@ Característica: AT-DT022_Alta Movil postpago con equipo a cliente con CE por ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil           | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 10424647821    | RV Plan Mi Movistar | Postpago   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil           | tipoPlanes | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 10424647821    | RV Plan Mi Movistar | Postpago   | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
