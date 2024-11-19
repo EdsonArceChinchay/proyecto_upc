@@ -15,8 +15,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -246,6 +250,28 @@ public class Helper extends WebBase {
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
         return result;
     }
+
+    public static String generate18DigitString() {
+        String datePart = getCurrentDateFormatted("yyyyMMdd");
+        String randomPart = generateRandomDigits(10);
+        return datePart + randomPart;
+    }
+
+    public static String getCurrentDateFormatted(String format) {
+        ZonedDateTime currentDate = ZonedDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        return currentDate.format(formatter);
+    }
+
+    public static String generateRandomDigits(int length) {
+        Random random = new Random();
+        StringBuilder randomDigits = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            randomDigits.append(random.nextInt(10)); // Generates a random digit (0-9)
+        }
+        return randomDigits.toString();
+    }
+
 }
 
 
