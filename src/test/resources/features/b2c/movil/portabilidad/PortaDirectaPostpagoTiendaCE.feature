@@ -70,10 +70,10 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en cana
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        valido el servicio requestportin
+    Y        valido el servicio de status de portabilidad
       | telefono      | Fecha_Sig  | Fecha_FinMes |
       | <phoneNumber> | 2024-01-24 | 2024-01-31   |
+    Y        doy click en el boton de continuar
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -83,4 +83,4 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en cana
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1047497714     | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | C            | 1047497714     | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar |

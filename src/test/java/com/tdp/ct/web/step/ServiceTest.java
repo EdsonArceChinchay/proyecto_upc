@@ -11,7 +11,6 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.KeyStore;
@@ -19,8 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Helper.getValueConfig;
-import static com.tdp.ct.web.utils.Helper.readJson;
+import static com.tdp.ct.web.utils.Helper.*;
 import static io.restassured.RestAssured.given;
 
 @Component
@@ -28,7 +26,6 @@ public class ServiceTest {
 
     private static String consultation = "";
     private final String URL_AKS = "https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/";
-    private final String URL_AZURE = "https://apimngr-genesis-cert.azure-api.net/";
 
     public void testPfxKey() {
         String password = getValueConfig("credential.certificate.password");
@@ -83,26 +80,53 @@ public class ServiceTest {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct " + value + ": " + consultation);
     }
 
-    public void receiveMessage(DataTable dataTable, String service) throws IOException {
-        testPfxKey();
-        if (service.equals("prevalidateportin")) {
-            portability("fesimple/api/v1/portability/prevalidateportin", "/json/portaNormal/preValidate.json", "previousConsultationId");
-        } else {
-            portability("fesimple/api/v1/portability/requestportin", "/json/portaDirecta/requestPortIn.json", "previousConsultationNumber");
+    public void serviceManager(String service) {
+        switch (service) {
+            case "prevalidateportin":
+                portability("fesimple/api/v1/portability/prevalidateportin", "/json/portaNormal/preValidate.json", "previousConsultationId");
+                break;
+            case "requestportin":
+                portability("fesimple/api/v1/portability/prevalidateportin", "/json/portaNormal/preValidate.json", "previousConsultationId");
+                break;
+            default:
+                consultation = generate18DigitString();
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct: " + consultation);
+
         }
+    }
+
+    public String modifyJson(DataTable dataTable) {
         var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
         var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
         var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
+        var baseDate = getCurrentDateFormatted("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaNormal/receive.json");
-        String statusBody = Files.readString(filePath)
-                .replace("{Code}", consultation)
-                .replace("{number}", telefono)
-                .replace("{fechaSig}", fechaSig)
-                .replace("{fechaFinMes}", fechaFinMes);
+
+        String statusBody = "";
+
+        try {
+            Files.readString(filePath)
+                    .replace("{Code}", consultation)
+                    .replace("{number}", telefono)
+                    .replace("{fechaSig}", fechaSig)
+                    .replace("{fechaFinMes}", fechaFinMes)
+                    .replace("{baseDate}", baseDate);
+        } catch (Exception e) {
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
+
+        }
 
         UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:" + statusBody);
 
+        return statusBody;
+
+    }
+
+    public void receiveMessage(DataTable dataTable) {
+        testPfxKey();
+
+        String statusBody = modifyJson(dataTable);
         String message = given().headers(headersAksBerserkers())
                 .body(statusBody)
                 .when()
@@ -146,7 +170,9 @@ public class ServiceTest {
     }
 
     public String getCodeToken(DataTable dataTable, String salesCode) {
-       UtilWeb.waitForSeconds(5);
+        UtilWeb.waitForSeconds(10);
+        String URL_AZURE = "https://apimngr-genesis-cert.azure-api.net/";
+
         try {
             String idTransaction = getIdTransactionOfSaleslead(salesCode);
             var documentType = UtilWeb.getValueFromDataTable(dataTable, "documentType");
