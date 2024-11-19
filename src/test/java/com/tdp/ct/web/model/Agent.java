@@ -24,10 +24,22 @@ public class Agent extends Person {
 
     public String print() {
         return "Agent [Full Name: " + getFullName() +
+                " - " + getDocumentType() +
+                ": " + getDocumentNumber() +
+                ",\nChannel Name: " + channelName +
+                " - Channel Type: " + channelType +
+                " - Warehouse: " + getWarehouse() +
+                ",\n Is retention: " + isRetention +
+                "]";
+    }
+
+    @Override
+    public String toString() {
+        return "Agent [Full Name: " + getFullName() +
                 ", Channel Name: " + channelName +
                 ", Channel Type: " + channelType +
-                ", Document Number: " + getDocumentNumber() +
                 ", Document Type: " + getDocumentType() +
+                ", Document Number: " + getDocumentNumber() +
                 ", Warehouse: " + getWarehouse() +
                 ", Is retention: " + isRetention +
                 "]";
