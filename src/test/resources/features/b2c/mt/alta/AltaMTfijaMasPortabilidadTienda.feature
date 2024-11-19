@@ -38,7 +38,7 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal ti
     Y        doy click en el boton portabilidad
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<numberPhone>"
     Y        escojo tipo de linea "Postpago"
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
@@ -65,11 +65,10 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal ti
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
-      | typeDocument   | numberDocument | numberPhone |
-      | <documentType> | <documentNumber>    | <numero>    |
+      | typeDocument   | numberDocument   | numberPhone   |
+      | <documentType> | <documentNumber> | <numberPhone> |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
-
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -81,8 +80,8 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal ti
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        valido el servicio requestportin
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2024-01-24 | 2024-01-31   |
+      | telefono      | Fecha_Sig  | Fecha_FinMes |
+      | <numberPhone> | 2024-01-24 | 2024-01-31   |
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -93,5 +92,5 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal ti
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | documentType | documentNumber | correo           | nombrePlan | numero  |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | TRIO       |920956351|
+      | userType     | userName   | userPassword   | msgHome    | documentType | documentNumber | correo           | nombrePlan | numberPhone |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | TRIO       | 920956351   |

@@ -122,13 +122,13 @@ public class HomeStep {
         return page.homePage().isRetention();
     }
 
-    public void modifyGroupAgent(String group, String action) {
-        page.homePage().modifyGroupAgent(group, action);
+    public void modifyGroupAgent(String group, Agent agent) {
+        page.homePage().modifyGroupAgent(group,agent);
     }
 
     public void initializeAgent(Agent agent) {
         page.homePage().initializeAgent(agent);
-        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", "remove");
+        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
         agent.setRetention(isRetention());
     }
 

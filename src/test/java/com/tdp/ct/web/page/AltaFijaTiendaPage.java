@@ -199,7 +199,7 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void doyClickEnAñadirSVA() {
+    public void onAddSvaClick() {
         UtilWeb.waitForSeconds(10);
         waitUntilElementIsClickable(btnSVA, 100);
         js().scrollElementTop(btnSVA);
