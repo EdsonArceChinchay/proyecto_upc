@@ -12,8 +12,6 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.IOException;
-
 public class PortabilityStepDefinition {
 
     @Autowired
@@ -60,13 +58,15 @@ public class PortabilityStepDefinition {
     }
 
     @Y("valido el servicio prevalidateportin")
-    public void validoLosServiciosPorta(DataTable dataTable) throws IOException {
-        serviceTest.receiveMessage(dataTable, "prevalidateportin");
+    public void validoLosServiciosPorta(DataTable dataTable) {
+        serviceTest.serviceManager("prevalidateportin");
+        serviceTest.receiveMessage(dataTable);
     }
 
     @Y("valido el servicio requestportin")
-    public void validoLosServiciosPorta2(DataTable dataTable) throws IOException {
-        serviceTest.receiveMessage(dataTable, "requestportin");
+    public void validoLosServiciosPorta2(DataTable dataTable) {
+        serviceTest.serviceManager("requestportin");
+        serviceTest.receiveMessage(dataTable);
     }
 
     @Y("doy tiempo extra")
@@ -82,7 +82,6 @@ public class PortabilityStepDefinition {
     @Y("valido que este activo el flag de Porta Directa")
     public void validoQueEsteActivoElFlagDePortaDirecta() {
         portabilityStep.setValuePortaDirecta();
-        portabilityStep.getValuePortaDirecta();
         this.scenario.log(portabilityStep.getValuePortaDirecta());
     }
 
@@ -115,4 +114,9 @@ public class PortabilityStepDefinition {
         portabilityStep.clickButtonContinuar();
     }
 
+    @Y("valido el servicio de status de portabilidad")
+    public void validoElServicioDeStatusDePortabilidad(DataTable dataTable) {
+        serviceTest.serviceManager("");
+        serviceTest.receiveMessage(dataTable);
+    }
 }

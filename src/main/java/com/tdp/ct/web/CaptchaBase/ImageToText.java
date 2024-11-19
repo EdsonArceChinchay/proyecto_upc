@@ -1,6 +1,5 @@
 package com.tdp.ct.web.CaptchaBase;
 
-
 import com.tdp.ct.web.ApiResponse.TaskResultResponse;
 import com.tdp.ct.web.Helper.DebugHelper;
 import com.tdp.ct.web.Helper.StringHelper;
@@ -17,6 +16,36 @@ public class ImageToText extends AnticaptchaBase implements IAnticaptchaTaskProt
     private Integer minLength;
     private Integer maxLength;
     private String bodyBase64;
+
+    public void setPhrase(Boolean phrase) {
+        this.phrase = phrase;
+    }
+
+    public void setCase_(Boolean case_) {
+        this.case_ = case_;
+    }
+
+    public void setNumeric(NumericOption numeric) {
+        this.numeric = numeric;
+    }
+
+    public void setMath(Integer math) {
+        this.math = math;
+    }
+
+    public void setMinLength(Integer minLength) {
+        this.minLength = minLength;
+    }
+
+    public void setMaxLength(Integer maxLength) {
+        this.maxLength = maxLength;
+    }
+
+    public enum NumericOption {
+        NO_REQUIREMENTS,
+        NUMBERS_ONLY,
+        ANY_LETTERS_EXCEPT_NUMBERS
+    }
 
     public void setFilePath(String filePath) {
         File f = new File(filePath);
@@ -39,48 +68,24 @@ public class ImageToText extends AnticaptchaBase implements IAnticaptchaTaskProt
         return phrase;
     }
 
-    public void setPhrase(Boolean phrase) {
-        this.phrase = phrase;
-    }
-
     public Boolean getCase_() {
         return case_;
-    }
-
-    public void setCase_(Boolean case_) {
-        this.case_ = case_;
     }
 
     public NumericOption getNumeric() {
         return numeric;
     }
 
-    public void setNumeric(NumericOption numeric) {
-        this.numeric = numeric;
-    }
-
     public Integer getMath() {
         return math;
-    }
-
-    public void setMath(Integer math) {
-        this.math = math;
     }
 
     public Integer getMinLength() {
         return minLength;
     }
 
-    public void setMinLength(Integer minLength) {
-        this.minLength = minLength;
-    }
-
     public Integer getMaxLength() {
         return maxLength;
-    }
-
-    public void setMaxLength(Integer maxLength) {
-        this.maxLength = maxLength;
     }
 
     @Override
@@ -117,11 +122,5 @@ public class ImageToText extends AnticaptchaBase implements IAnticaptchaTaskProt
 
     public void setBodyBase64(String bodyBase64) {
         this.bodyBase64 = bodyBase64;
-    }
-
-    public enum NumericOption {
-        NO_REQUIREMENTS,
-        NUMBERS_ONLY,
-        ANY_LETTERS_EXCEPT_NUMBERS
     }
 }
