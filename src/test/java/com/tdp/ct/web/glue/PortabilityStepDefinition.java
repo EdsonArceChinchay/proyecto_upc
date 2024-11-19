@@ -99,8 +99,7 @@ public class PortabilityStepDefinition {
 
     @Y("obtengo el token")
     public void getToken(DataTable dataTable) {
-        String salesCode = checkoutStep.getSalesCode();
-        token = serviceTest.getCodeToken(dataTable, salesCode);
+        token = serviceTest.getCodeToken(dataTable, checkoutStep.getSalesCode());
         this.scenario.log("Token:" + token);
     }
 
