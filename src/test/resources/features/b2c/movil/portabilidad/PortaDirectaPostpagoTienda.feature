@@ -53,8 +53,8 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
-      | typeDocument   | numberDocument | numberPhone |
-      | <documentType> | <documento>    | <numero>    |
+      | documentType   | documentNumber   | phoneNumber   |
+      | <documentType> | <documentNumber> | <phoneNumber> |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
     Y        doy click en validar identidad del titular
@@ -71,8 +71,8 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        valido el servicio requestportin
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2024-01-24 | 2024-01-31   |
+      | telefono      | Fecha_Sig  | Fecha_FinMes |
+      | <phoneNumber> | 2024-01-24 | 2024-01-31   |
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
@@ -81,5 +81,5 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |

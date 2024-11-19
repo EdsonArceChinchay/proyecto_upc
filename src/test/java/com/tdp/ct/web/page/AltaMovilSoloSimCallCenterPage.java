@@ -29,6 +29,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
+    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
+    protected List<WebElement> listaOfertas;
 
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);
@@ -122,10 +124,6 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
         UtilWeb.waitForSeconds(1);
     }
-
-    @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
-    protected List<WebElement> listaOfertas;
-
 
     public void seleccionarPlan(String tipoPlan) {
         UtilWeb.waitForSeconds(4);

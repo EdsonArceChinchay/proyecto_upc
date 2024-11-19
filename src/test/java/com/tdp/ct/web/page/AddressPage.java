@@ -15,6 +15,7 @@ import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Helper.*;
 
 public class AddressPage extends WebBase {
+    private static final String DEPARTAMENTO = "15";
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
     protected WebElement direccionSugerida;
     @FindBy(xpath = "//*[contains(@class,'ng-valid') and @formcontrolname='lot' or contains(@class,'ng-valid') and @name='lot']")
@@ -65,7 +66,6 @@ public class AddressPage extends WebBase {
     protected WebElement txtMensaje;
     @FindBy(xpath = "(//button[contains(text(),'Buscar')])[1]")
     protected WebElement btnSearch;
-    private static final String DEPARTAMENTO = "15";
 
     public void selectDepartment(String department) {
         UtilWeb.waitForSeconds(6);//2

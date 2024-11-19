@@ -8,10 +8,10 @@ import java.nio.file.Paths;
 public class StringHelper {
     public static String toCamelCase(String s) {
         String[] parts = s.split("_");
-        String camelCaseString = "";
+        StringBuilder camelCaseString = new StringBuilder();
 
         for (String part : parts) {
-            camelCaseString += part.substring(0, 1).toUpperCase() + part.substring(1).toLowerCase();
+            camelCaseString.append(part.substring(0, 1).toUpperCase()).append(part.substring(1).toLowerCase());
         }
 
         return camelCaseString.substring(0, 1).toLowerCase() + camelCaseString.substring(1);

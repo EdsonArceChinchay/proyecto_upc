@@ -15,12 +15,12 @@ public class CaeqPorRetailPage extends WebBase {
 
     @FindBy(xpath = "//div/button[@class=\"btnCard\"]")
     protected WebElement botonMantenerPlan;
-
-    @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
-    WebElement BtnCambiarPlan;
-
     @FindBy(xpath = "(//*[contains(@class,'add_Product') or contains(text(),'Añadir equipo') or  contains(text(),'Agregar Equipo')])[1]")
     protected WebElement LblEquipos;
+    @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
+    protected WebElement lblSeleccionarOferta;
+    @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
+    WebElement BtnCambiarPlan;
 
     public void seleccionarEquipo() {
         UtilWeb.waitForSeconds(3);
@@ -55,9 +55,6 @@ public class CaeqPorRetailPage extends WebBase {
         compareStringAndString(valueCAPL, valuesMovil.get("CAPL"));
         compareStringAndString(valueCASI, valuesMovil.get("CASI"));
     }
-
-    @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
-    protected WebElement lblSeleccionarOferta;
 
     public void doyClickEnElBotonSeleccionarOferta() {
         js().scrollElementTop(lblSeleccionarOferta);

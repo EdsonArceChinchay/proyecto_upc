@@ -136,6 +136,7 @@ public class PortabilityPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, btnConfirmar);
         js().scrollElementTop(btnConfirmar);
         click(btnConfirmar, 2);
+        UtilWeb.waitForSeconds(20);
     }
 
     public void clickButtonContinuar() {

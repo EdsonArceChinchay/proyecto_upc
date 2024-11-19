@@ -58,8 +58,8 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     }
 
     @Y("doy click en añadir SVA")
-    public void doyClickEnAñadirSVA() {
-        altaFijaTiendaStep.doyClickEnAñadirSVA();
+    public void onAddSvaClick() {
+        altaFijaTiendaStep.onAddSvaClick();
     }
 
     @Y("selecciono el boton de eleccion de planes")
@@ -117,8 +117,8 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     }
 
     @Y("valido si el cliente {string}, {string} con genero {string} ya esta registrado")
-    public void validoSiElClienteConGeneroYaEstaRegistrado(String nombre, String apellidos, String genero) {
-        altaFijaTiendaStep.validacionClienteNuevo(nombre, apellidos, genero);
+    public void validoSiElClienteConGeneroYaEstaRegistrado(String customerName, String customerLastName, String customerGenre) {
+        altaFijaTiendaStep.validacionClienteNuevo(customerName, customerLastName, customerGenre);
     }
 
     @Y("Valido que el beneficio sea {string}")
@@ -129,9 +129,9 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     }
 
     @Y("Valido que el descuento aplicado sea {string}")
-    public void valdiacionDescuento(String descuento) {
-        if (!Objects.equals(descuento, "")) {
-            altaFijaTiendaStep.validacionBeneficioPlan(descuento);
+    public void valdiacionDescuento(String discount) {
+        if (!Objects.equals(discount, "")) {
+            altaFijaTiendaStep.validacionBeneficioPlan(discount);
         }
     }
 

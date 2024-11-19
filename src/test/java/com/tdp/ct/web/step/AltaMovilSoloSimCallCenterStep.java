@@ -19,7 +19,8 @@ public class AltaMovilSoloSimCallCenterStep {
 
     @Autowired
     private ManageScenario scenario;
-
+    @Autowired
+    private ServiceTest serviceTest;
 
     public void seleccionarListaTipoPlanMovil(String planMovil) {
         page.altaMovilSoloSimCallCenterPage().listaTipoPlanMovil(planMovil);
@@ -44,9 +45,6 @@ public class AltaMovilSoloSimCallCenterStep {
     public void seleccionoElBotonAgregarSva() {
         page.altaMovilSoloSimCallCenterPage().seleccionoElBotonAgregarSva();
     }
-
-    @Autowired
-    private ServiceTest serviceTest;
 
     @ScreenShotBefore
     public void btnAnadirEquipo(int num) {

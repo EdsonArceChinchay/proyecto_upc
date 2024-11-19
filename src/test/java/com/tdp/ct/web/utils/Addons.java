@@ -26,7 +26,7 @@ public class Addons {
         LOGGER.log(Level.INFO, "esperaProgresivaLoading(reintentosMax: " + reintentosMax + ", segundosEspera: " + segundosEspera + ", sLoading: " + sLoadingXPath + ")");
         long inicio = System.currentTimeMillis();
         int contador = 0;
-        boolean bCargando = false;
+        boolean bCargando;
         do {
             try {
                 LOGGER.log(Level.INFO, "Buscando Loading ...");
@@ -209,7 +209,7 @@ public class Addons {
     Se está identificando diferentes modalidades de error.
 */
         boolean bReintentar = true;
-        boolean isModalError = false;
+        boolean isModalError;
         int contador = 0;
         int reintentosMax = 5;
         int segundosEspera = 15;
@@ -333,7 +333,6 @@ public class Addons {
                 // }
 
             } catch (Exception e) {
-                bCargando = false;
                 LOGGER.log(Level.SEVERE, "Splash notFound");
             }
             contador++;
