@@ -11,6 +11,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Objects;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -179,7 +180,7 @@ public class HomePage extends WebBase {
         agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
         agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
         agent.setDocumentType(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
-        agent.setWarehouse(getValueJsonObjectSessionStorage(agentData, "sites.1.0.id").trim());
+        agent.setWarehouse(getValueJsonObjectSessionStorage(agentData, "sites.1.1.id").trim());
     }
 
     public String getChannelType() {
@@ -187,9 +188,20 @@ public class HomePage extends WebBase {
         return getValueJsonObjectSessionStorage(agentData, "channels.id").trim();
     }
 
-    public void modifyGroupAgent(String group, String action) {
-        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-        setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, action));
+    public void modifyGroupAgent(String group, Agent agent) {
+        if ((Objects.requireNonNull(getValueConfig("environment.agent.addRetentionRole.channels"))).contains(agent.getChannelType())) {
+            String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
+            setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
+        }
+
+    }
+
+    public String shouldAddRetentionRole() {
+        if (Objects.requireNonNull(getValueConfig("environment.agent.addRetentionRole")).equalsIgnoreCase("true")) {
+            return "add";
+        } else {
+            return "remove";
+        }
     }
 
     public boolean isRetention() {

@@ -43,8 +43,8 @@ public class AltaFijaTiendaStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnAñadirSVA() {
-        page.altaFijaTiendaPage().doyClickEnAñadirSVA();
+    public void onAddSvaClick() {
+        page.altaFijaTiendaPage().onAddSvaClick();
     }
 
     public void validarVelocidadInternet(String mbpsBB) {

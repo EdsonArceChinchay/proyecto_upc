@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Objects;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -48,7 +49,7 @@ public class LoginBerserkerPage extends WebBase {
     public void selectUserType(String user) {
         esperaProgresiva(driver(), 3, 5, userType);
         Select usuarioSelect = new Select(userType);
-        String userType = getValueConfig("credential.user.userType").trim();
+        String userType = Objects.requireNonNull(getValueConfig("credential.user.userType")).trim();
         usuarioSelect.selectByVisibleText(userType);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + userType);
         UtilWeb.waitForSeconds(1);
