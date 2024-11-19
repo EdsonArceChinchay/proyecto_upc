@@ -93,5 +93,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | nombrePlan |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono       |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  |
+
+
