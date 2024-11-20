@@ -44,8 +44,8 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit     |
+      |    |              |                |      |     | URBANIZACION RESIDENCIAL | SAN MIGUELITO |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<tipoPlan>"
@@ -86,5 +86,5 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador      | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia             | tipoPlan | nombrePlan                  | decodificador      | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | AL FRENTE DE LA BOTICA | Duo      | DÚO INTERNET ESTÁNDAR HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |
