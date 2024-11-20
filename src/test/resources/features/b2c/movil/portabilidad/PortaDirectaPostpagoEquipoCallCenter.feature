@@ -56,8 +56,8 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido el servicio prevalidateportin
-      | telefono      | Fecha_Sig  | Fecha_FinMes |
-      | <phoneNumber> | 2023-01-24 | 2023-01-31   |
+      | phoneNumber   |
+      | <phoneNumber> |
     Y        doy tiempo extra
     Y        selecciono el departamento donde sera la instalacion "15"
     Y        selecciono la provincia donde sera la instalacion "1501"

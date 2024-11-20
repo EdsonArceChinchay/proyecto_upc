@@ -9,9 +9,9 @@
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
-##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
+##DATA: REUSABLE
 ##ENCARGADO: CARLOS RUIZ
-##FECMOD: 11/10/2024
+##FECMOD: 20/11/2024
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en canal Tienda
@@ -70,10 +70,10 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en cana
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido el servicio de status de portabilidad
-      | telefono      | Fecha_Sig  | Fecha_FinMes |
-      | <phoneNumber> | 2024-01-24 | 2024-01-31   |
     Y        doy click en el boton de continuar
+    Y        valido el servicio de status de portabilidad
+      | phoneNumber   |
+      | <phoneNumber> |
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.downloadPDF;
+import static com.tdp.ct.web.utils.FileUtils.downloadPDF;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
