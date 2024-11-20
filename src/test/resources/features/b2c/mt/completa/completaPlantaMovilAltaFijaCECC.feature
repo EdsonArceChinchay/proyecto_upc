@@ -69,5 +69,5 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo         |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1632547925     | Trio       | test@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1632547925     | Trio       | t@t.com |

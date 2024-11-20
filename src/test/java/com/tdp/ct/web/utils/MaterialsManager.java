@@ -16,15 +16,15 @@ public class MaterialsManager {
     private String imeiFilePath = System.getProperty("user.dir") + "/src/test/resources/materials/imei.txt";
 
     public MaterialsManager() throws Exception {
-        this.simCards = FileUtil.readSimCards(simCardFilePath);
-        this.imeis = FileUtil.readImeis(imeiFilePath);
+        this.simCards = FileUtils.readSimCards(simCardFilePath);
+        this.imeis = FileUtils.readImeis(imeiFilePath);
     }
 
     public MaterialsManager(String simCardFilePath, String imeiFilePath) throws Exception {
         this.simCardFilePath = simCardFilePath;
         this.imeiFilePath = imeiFilePath;
-        this.simCards = FileUtil.readSimCards(simCardFilePath);
-        this.imeis = FileUtil.readImeis(imeiFilePath);
+        this.simCards = FileUtils.readSimCards(simCardFilePath);
+        this.imeis = FileUtils.readImeis(imeiFilePath);
     }
 
     public SimCard getAvailableSimCard() {
@@ -61,7 +61,7 @@ public class MaterialsManager {
         if (simCard != null) {
             simCard.setStatus("ASIGNADO");
             UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard: " + simCard.getSimCard() + " assigned.");
-            FileUtil.saveSimCards(simCardFilePath, simCards);
+            FileUtils.saveSimCards(simCardFilePath, simCards);
         }
     }
 
@@ -69,7 +69,7 @@ public class MaterialsManager {
         if (imei != null) {
             imei.setStatus("ASIGNADO");
             UtilWeb.logger(this.getClass()).log(Level.INFO, "IMEI: " + imei.getImei() + " assigned.");
-            FileUtil.saveImeis(imeiFilePath, imeis);
+            FileUtils.saveImeis(imeiFilePath, imeis);
         }
     }
 }

@@ -71,8 +71,8 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        valido el servicio requestportin
-      | telefono      | Fecha_Sig  | Fecha_FinMes |
-      | <phoneNumber> | 2024-01-24 | 2024-01-31   |
+      | phoneNumber   |
+      | <phoneNumber> |
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

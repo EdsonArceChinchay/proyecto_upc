@@ -5,6 +5,8 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import io.cucumber.java.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.utils.Addons.saveHTMLCode;
+
 public class Hooks {
 
     @Autowired
@@ -41,7 +43,7 @@ public class Hooks {
 
     @After(order = 1)
     public void tearDown() {
-        //guardarCodigoHTML(manager.getDriver());
+//        saveHTMLCode(manager.getDriver());
         scenario.shotWhenFail();
     }
 

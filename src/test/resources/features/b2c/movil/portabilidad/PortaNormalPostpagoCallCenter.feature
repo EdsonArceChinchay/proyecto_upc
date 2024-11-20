@@ -33,13 +33,13 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI en c
     Y        cierro el popup de contraseña Única
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<phoneNumber>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
     Y        valido el servicio prevalidateportin
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2023-01-24 | 2023-01-31   |
+      | phoneNumber   |
+      | <phoneNumber> |
     Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -87,5 +87,5 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI en c
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |

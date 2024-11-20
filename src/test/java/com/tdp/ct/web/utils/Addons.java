@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathS;
+
 public class Addons {
     private static final Logger LOGGER = Logger.getLogger(Addons.class.getName());
 
@@ -391,20 +393,10 @@ public class Addons {
         formatTiempo(tiempoEjecucion, "revisarModalEntendido");
     }
 
-    public static String obtenerRutaBaseProyecto() {
-        String rutaBase = "";
-        try {
-            rutaBase = System.getProperty("user.dir");
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, String.format("Error al obtener la ruta base del proyecto: %s", e.getMessage()));
-        }
-        return rutaBase;
-    }
-
-    public static void guardarCodigoHTML(WebDriver driver) {
+    public static void saveHTMLCode(WebDriver driver) {
         String fecha = new SimpleDateFormat("yyyy-MM-dd-(HH-mm-ss)").format(new Date());
         String nombreArchivo = String.format("codigoHTML_%s.html", fecha);
-        String rutabase = obtenerRutaBaseProyecto() + "\\target\\html\\";
+        String rutabase = getAbsolutePathS("/target/html");
         File directorio = new File(rutabase);
         if (!directorio.exists()) {
             directorio.mkdirs();

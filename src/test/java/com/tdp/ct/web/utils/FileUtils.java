@@ -2,16 +2,19 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.model.Imei;
 import com.tdp.ct.web.model.SimCard;
+import org.apache.pdfbox.pdmodel.PDDocument;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class FileUtil {
+public class FileUtils {
     public static List<SimCard> readSimCards(String filePath) throws Exception {
         List<SimCard> simCards = new ArrayList<>();
         List<String> lines = Files.readAllLines(Paths.get(filePath));
@@ -51,6 +54,24 @@ public class FileUtil {
             for (Imei imei : imeis) {
                 writer.write(imei.getSapId() + ";" + imei.getNameMaterial() + ";" + imei.getImei() + ";" + imei.getStatus() + "\n");
             }
+        }
+    }
+
+    public static String getAbsolutePathS(String relativePath) {
+        return new File(relativePath).getAbsolutePath();
+    }
+
+    public static Path getAbsolutePath(String relativePath) {
+        return Path.of(System.getProperty("user.dir") + relativePath);
+    }
+
+    public static void downloadPDF(String url, String downloadDir) {
+        try (PDDocument document = PDDocument.load(new URL(url).openStream());
+             FileOutputStream outputFile = new FileOutputStream(new File(downloadDir, url.substring(url.lastIndexOf("/") + 1)))) {
+            document.save(outputFile);
+            Logger.getLogger(Helper.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
+        } catch (IOException e) {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
         }
     }
 }

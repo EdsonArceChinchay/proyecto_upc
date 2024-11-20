@@ -35,20 +35,6 @@ public class Helper extends WebBase {
         return null;
     }
 
-    public static String getAbsolutePath(String relativePath) {
-        return new File(relativePath).getAbsolutePath();
-    }
-
-    public static void downloadPDF(String url, String downloadDir) {
-        try (PDDocument document = PDDocument.load(new URL(url).openStream());
-             FileOutputStream outputFile = new FileOutputStream(new File(downloadDir, url.substring(url.lastIndexOf("/") + 1)))) {
-            document.save(outputFile);
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
-        } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
-        }
-    }
-
     public static String readJson(String path) {
         String jsonFilePath = System.getProperty("user.dir") + "/src/test/resources" + path;
         try {
@@ -249,27 +235,6 @@ public class Helper extends WebBase {
         }
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
         return result;
-    }
-
-    public static String generate18DigitString() {
-        String datePart = getCurrentDateFormatted("yyyyMMdd");
-        String randomPart = generateRandomDigits(10);
-        return datePart + randomPart;
-    }
-
-    public static String getCurrentDateFormatted(String format) {
-        ZonedDateTime currentDate = ZonedDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-        return currentDate.format(formatter);
-    }
-
-    public static String generateRandomDigits(int length) {
-        Random random = new Random();
-        StringBuilder randomDigits = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            randomDigits.append(random.nextInt(10)); // Generates a random digit (0-9)
-        }
-        return randomDigits.toString();
     }
 
 }
