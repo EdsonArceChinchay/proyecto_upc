@@ -33,13 +33,13 @@ Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en ca
     Y        cierro pop up de CU
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<phoneNumber>"
     Y        escojo tipo de linea "Postpago"
     Y        escojo tipo de operador "OPERADOR DE PRUEBA"
     Y        doy click en el boton Consultar Portabilidad
     Y        valido el servicio prevalidateportin
-      | telefono | Fecha_Sig  | Fecha_FinMes |
-      | <numero> | 2022-12-24 | 2022-12-31   |
+      | phoneNumber   |
+      | <phoneNumber> |
     Y        doy tiempo extra
     Y        selecciono el plan "Prepago" que desea
     Y        doy click en el boton Siguiente
@@ -87,6 +87,6 @@ Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numero    | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102020       | 920956351 | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoPlanMovil | nombrePlan | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102020       | 920956351   | Prepago       | Prepago    | ANGELICA    | SERAPIO     | SANTIAGO    |
 

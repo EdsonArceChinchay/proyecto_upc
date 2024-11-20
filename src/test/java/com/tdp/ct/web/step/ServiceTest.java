@@ -18,7 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.DateUtils.*;
+import static com.tdp.ct.web.utils.Helper.getValueConfig;
+import static com.tdp.ct.web.utils.Helper.readJson;
 import static io.restassured.RestAssured.given;
 
 @Component
@@ -96,10 +98,10 @@ public class ServiceTest {
     }
 
     public String modifyJson(DataTable dataTable) {
-        var telefono = UtilWeb.getValueFromDataTable(dataTable, "telefono");
-        var fechaSig = UtilWeb.getValueFromDataTable(dataTable, "Fecha_Sig");
-        var fechaFinMes = UtilWeb.getValueFromDataTable(dataTable, "Fecha_FinMes");
-        var baseDate = getCurrentDateFormatted("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        var phoneNumber = UtilWeb.getValueFromDataTable(dataTable, "telefono");
+        var nextDay = getNextDayFormatted("yyyy-MM-dd");
+        var endOfMonthNextDay = getEndOfMonthNextDayFormatted("yyyy-MM-dd");
+        var baseDate = getFormattedCurrentDate("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
         Path filePath = Path.of(System.getProperty("user.dir") + "/src/test/resources/json/portaNormal/receive.json");
 
@@ -108,9 +110,9 @@ public class ServiceTest {
         try {
             statusBody = Files.readString(filePath)
                     .replace("{Code}", consultation)
-                    .replace("{number}", telefono)
-                    .replace("{fechaSig}", fechaSig)
-                    .replace("{fechaFinMes}", fechaFinMes)
+                    .replace("{number}", phoneNumber)
+                    .replace("{fechaSig}", nextDay)
+                    .replace("{fechaFinMes}", endOfMonthNextDay)
                     .replace("{baseDate}", baseDate);
         } catch (Exception e) {
             UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
