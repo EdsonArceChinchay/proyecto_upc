@@ -106,7 +106,7 @@ public class ServiceTest {
         String statusBody = "";
 
         try {
-            Files.readString(filePath)
+            statusBody = Files.readString(filePath)
                     .replace("{Code}", consultation)
                     .replace("{number}", telefono)
                     .replace("{fechaSig}", fechaSig)
@@ -114,10 +114,9 @@ public class ServiceTest {
                     .replace("{baseDate}", baseDate);
         } catch (Exception e) {
             UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
-
         }
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:" + statusBody);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:\n" + statusBody);
 
         return statusBody;
 
@@ -126,9 +125,8 @@ public class ServiceTest {
     public void receiveMessage(DataTable dataTable) {
         testPfxKey();
 
-        String statusBody = modifyJson(dataTable);
         String message = given().headers(headersAksBerserkers())
-                .body(statusBody)
+                .body(modifyJson(dataTable))
                 .when()
                 .post(URL_AKS + "fesimple/api/v1/portability/receivemessageportability")
                 .then().statusCode(201).extract().path("message");
