@@ -58,7 +58,7 @@ public class BandejaBackOfficePage extends WebBase {
     public void uploadAudio() {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
-            fileRuta.sendKeys(getAbsolutePathS("src//test//resources//mp3//FE-audio-ejemplo.mp3"));
+            fileRuta.sendKeys(getAbsolutePathS("/src/test/resources/mp3/FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(10);
             esperaProgresiva(driver(), 5, 7, etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente", "CARGADO", etiquetaCargado.getText());

@@ -58,11 +58,11 @@ public class FileUtils {
     }
 
     public static String getAbsolutePathS(String relativePath) {
-        return new File(relativePath).getAbsolutePath();
+        return System.getProperty("user.dir") + relativePath;
     }
 
     public static Path getAbsolutePath(String relativePath) {
-        return Path.of(System.getProperty("user.dir") + relativePath);
+        return Path.of(getAbsolutePathS(relativePath));
     }
 
     public static void downloadPDF(String url, String downloadDir) {
