@@ -57,4 +57,4 @@
 
      Ejemplos:
        | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo                | tipoPlanHogar | plan                                    | bloque         | decodificador   |
-       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester_123@tester.com | Duo           | DÚO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |
+       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456766      | tester_123@tester.com | Duo           | DUO INTERNET ESTÁNDAR RA 1D D22 50 MBPS | Bloque estelar | Punto Adicional |

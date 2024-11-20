@@ -62,4 +62,4 @@ Característica: AT-DT067_Migracion de Mono a Duo + sva por el canal Center
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                        | Bloque |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | tester@tester.com | Duo           | DÚO INTERNET ESTÁNDAR HD RA | HBO    |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464839     | tester@tester.com | Duo           | DUO INTERNET ESTÁNDAR HD RA | HBO    |

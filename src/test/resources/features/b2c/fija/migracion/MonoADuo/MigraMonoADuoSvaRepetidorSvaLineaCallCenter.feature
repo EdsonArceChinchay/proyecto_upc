@@ -59,4 +59,4 @@
 
      Ejemplos:
        | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanHogar | plan                         |
-       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10021231242    | Duo           | DÚO MOVISTAR VOZ INTERNET RA |
+       | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10021231242    | Duo           | DUO MOVISTAR VOZ INTERNET RA |

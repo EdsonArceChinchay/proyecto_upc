@@ -61,7 +61,7 @@ public class FileUtils {
         return new File(relativePath).getAbsolutePath();
     }
 
-    public static Path getAbsolutePath(String relativePath){
+    public static Path getAbsolutePath(String relativePath) {
         return Path.of(System.getProperty("user.dir") + relativePath);
     }
 
