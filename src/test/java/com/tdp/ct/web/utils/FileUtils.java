@@ -7,6 +7,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +57,12 @@ public class FileUtils {
         }
     }
 
-    public static String getAbsolutePath(String relativePath) {
-        return new File(relativePath).getAbsolutePath();
+    public static String getAbsolutePathS(String relativePath) {
+        return System.getProperty("user.dir") + relativePath;
+    }
+
+    public static Path getAbsolutePath(String relativePath) {
+        return Path.of(getAbsolutePathS(relativePath));
     }
 
     public static void downloadPDF(String url, String downloadDir) {

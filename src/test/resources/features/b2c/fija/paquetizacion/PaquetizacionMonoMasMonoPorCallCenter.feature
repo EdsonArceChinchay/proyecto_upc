@@ -69,5 +69,5 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100777891      | Duo      | DÚO MOVISTAR VOZ INTERNET |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100777891      | Duo      | DUO MOVISTAR VOZ INTERNET |
 

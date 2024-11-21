@@ -19,6 +19,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.FileUtils.downloadPDF;
+import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathS;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
@@ -218,7 +219,7 @@ public class CheckoutPage extends WebBase {
                     UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento contrato Uno ya no fue encontrado: ");
                 }
 
-                String rutabase = obtenerRutaBaseProyecto() + "\\target\\contrato-pdf\\";
+                String rutabase = getAbsolutePathS( "/target/contrato-pdf");
                 File directorio = new File(rutabase);
                 if (!directorio.exists()) {
                     directorio.mkdirs();
