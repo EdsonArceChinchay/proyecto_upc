@@ -12,11 +12,12 @@
 ##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 17/07/2024
+
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaSVA @RegresionLegacy
-Característica: AT-DT _ Alta SVA a un MT con documento CE en canal Call Center
+Característica: AT-DT _ Alta SVA a un MT a cliente con CE por canal Call Center
 
   @SvaMTCE_CC
-  Esquema del escenario: Alta SVA a un MT con documento CE en canal Call Center
+  Esquema del escenario: Alta SVA a un MT a cliente CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

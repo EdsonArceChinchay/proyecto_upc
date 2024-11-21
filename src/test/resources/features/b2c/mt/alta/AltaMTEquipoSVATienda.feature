@@ -14,10 +14,10 @@
 ##FECMOD: 05/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI17
-Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA a cliente con CE por canal Tienda
+Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Equipo Movil + SVA a cliente con CE por canal Tienda
 
   @AltaMTEquipoSVA
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Alta Equipo Movil + Alta SVA a cliente con CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + Equipo Movil + SVA a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

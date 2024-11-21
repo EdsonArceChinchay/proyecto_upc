@@ -14,10 +14,10 @@
 ##FECMOD: 14/11/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal tienda
+Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en canal tienda
 
   @AltaMTfijaMasPorta
-  Esquema del escenario: Alta MT (alta fija + portabilidad) con CE en canal tienda
+  Esquema del escenario: Alta MT (alta fija + portabilidad) a cliente CE en canal tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -65,8 +65,8 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) con CE  en canal ti
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
-      | typeDocument   | numberDocument   | numberPhone   |
-      | <documentType> | <documentNumber> | <numberPhone> |
+      | typeDocument   | numberDocument   | phoneNumber   |
+      | <documentType> | <documentNumber> | <phoneNumber> |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
     Y        doy click en datos del cliente

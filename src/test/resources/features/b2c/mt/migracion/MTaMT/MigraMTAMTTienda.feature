@@ -12,7 +12,8 @@
 ##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
 ##FECMOD: 31/11/2023
-@BERSERKERS
+
+@BERSERKERS @DoneDevOps
 Característica: Migracion de MT a MT en Tienda
 
   @MigracionMTaMT

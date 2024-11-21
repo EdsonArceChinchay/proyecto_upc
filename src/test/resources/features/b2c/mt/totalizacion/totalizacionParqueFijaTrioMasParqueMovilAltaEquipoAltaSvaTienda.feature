@@ -14,11 +14,10 @@
 ##FECMOD: 19/01/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Equipo Movil + Alta SVA con documento CE en Tienda
+Característica: AT-DT0 _ Totalizacion MT (parque fijo + parque movil) + SVA a cliente con CE por canal Tienda
 
-  # Se debe de validar que no tenga ordenes en vuelo antes de ejecutar el feature
   @TotalMovilEquipoSVAT
-  Esquema del escenario: Totalizacion Parque Fija Trio + Parque Movil + Alta Equipo Movil + Alta SVA con documento CE en Tienda
+  Esquema del escenario: Totalizacion MT (parque fijo + parque movil) + SVA a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -65,7 +64,9 @@ Característica: AT-DT0 _ Totalizacion Parque Fija Trio + Parque Movil + Alta Eq
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo           |
       | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1632547903     | Trío       | correo@gmail.com |
