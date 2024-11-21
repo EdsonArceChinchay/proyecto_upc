@@ -12,11 +12,12 @@
 ##DATA: REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
 ##FECMOD: 19/01/2024
+
 @BERSERKERS @DoneDevOps
-Característica: Migracion salto 0 MT canal Call Center
+Característica: Migracion salto 0 MT (Cambio de tecnologia HFC a FTTH) a cliente con CE por canal Call Center
 
   @migraSalto0MTCallCenter @RegreDito
-  Esquema del escenario: Migracion salto 0 MT con CE  por canal Call Center
+  Esquema del escenario: Migracion salto 0 MT a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

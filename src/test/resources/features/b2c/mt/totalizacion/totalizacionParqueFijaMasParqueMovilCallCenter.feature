@@ -3,7 +3,7 @@
 ##APP: DITO
 ##MODULO: MOVISTAR TOTAL
 ##FUNCIONALIDAD: TOTALIZACION
-##ESTADO: REFACTORIZADO 24/08/2023 OK
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT110
 ##GDAP: GDAP-1152
 ##SPRINT CREADO:
@@ -14,10 +14,10 @@
 ##FECMOD: 20/11/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
-Característica: AT-DT110_totalizacion servicio fijo mas alta movil por canal call center
+Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal call center
 
   @TotalizacionMTTrioMovilCC
-  Escenario: totalizazion del servicio fijo mas una alta movil por call center sin biometria
+  Escenario: Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal call center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"

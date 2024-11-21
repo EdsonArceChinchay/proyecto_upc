@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
-Característica: AT-DT079_Migracion Salto 0 por canal Retail
+Característica: AT-DT079_Migracion salto 0 fija (Cambio de tecnologia HFC a FTTH) a cliente con CE por canal Retail
 
   @migracionsalto0porretail
   Esquema del escenario: Migracion Salto 0 por canal Retail
