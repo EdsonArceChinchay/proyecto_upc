@@ -3,7 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.RegisterStep;
-import com.tdp.ct.web.utils.RetentionService;
+import com.tdp.ct.web.services.RetentionService;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

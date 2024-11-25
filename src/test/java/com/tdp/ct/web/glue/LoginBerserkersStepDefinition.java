@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.java.es.*;
 import io.cucumber.spring.CucumberContextConfiguration;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Objects;
+import java.util.logging.Level;
 
 @CucumberContextConfiguration
 @SpringBootTest(classes = WebAutomationApplication.class)
@@ -33,7 +35,7 @@ public class LoginBerserkersStepDefinition {
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
-        System.out.println("Enviroment: " + env);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Environment: %s - SO: %s", env, System.getProperty("os.name")));
         String urlMovistar = urlqaMovistar;
         if (Objects.nonNull(env)) {
             if (env.compareTo("dev") == 0) {

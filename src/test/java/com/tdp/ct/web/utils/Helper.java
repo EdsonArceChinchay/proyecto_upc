@@ -2,25 +2,17 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Properties;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,16 +25,6 @@ public class Helper extends WebBase {
             return request.replace("-", "");
         }
         return null;
-    }
-
-    public static String readJson(String path) {
-        String jsonFilePath = System.getProperty("user.dir") + "/src/test/resources" + path;
-        try {
-            return java.nio.file.Files.readString(java.nio.file.Paths.get(jsonFilePath));
-        } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error reading JSON file", e);
-            return null;
-        }
     }
 
     public static void seleccionarValueComboShadow(WebDriver driver, String sFormControlName, String sCodigoValue) {

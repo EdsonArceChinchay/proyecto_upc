@@ -4,7 +4,6 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -71,7 +70,7 @@ public class AltaMovilSoloSimCallCenterStep {
         page.caeqPorRetailPage().clickBotonCambiarPlan();
     }
 
-    public Map<String, String> getSalesLead(String codigoVenta) throws JSONException {
+    public Map<String, String> getSalesLead(String codigoVenta) {
         Map<String, String> movileValues;
         movileValues = serviceTest.getSalesLead(codigoVenta);
         return movileValues;

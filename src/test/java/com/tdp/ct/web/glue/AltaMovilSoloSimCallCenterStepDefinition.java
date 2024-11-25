@@ -9,7 +9,6 @@ import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -104,7 +103,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     }
 
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
-    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) throws JSONException {
+    public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) {
         String salesCode = checkoutStep.getSalesCode();
         salesCode = salesCode == null ? customer.getSalesCode() : salesCode;
         this.scenario.log("[Código de Venta: " + salesCode + "]");

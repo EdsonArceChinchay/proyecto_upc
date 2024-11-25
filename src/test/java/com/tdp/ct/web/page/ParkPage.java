@@ -53,9 +53,9 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "(//button[contains(text(),'Entendido')])[2]")
     protected WebElement Entendido;
     @FindBy(xpath = "//*[contains(@label,'Siguiente')]")
-    protected WebElement btnSiguiente;
+    protected WebElement btnNext;
     @FindBy(xpath = "//*[@label='Confirmar dirección']")
-    protected WebElement btnConfirmarDireccion;
+    protected WebElement btnConfirmAddress;
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
     @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
@@ -72,9 +72,9 @@ public class ParkPage extends WebBase {
     protected WebElement btnOrder;
     @FindBy(xpath = "//*[contains(@label,'Validar Stock') or contains(text(),'Validar Stock') or @class='buttonConfirmar']")
     protected WebElement btnValidateStock;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'simcard') or contains (@label,'Código de SIMCARD')]")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'simcard') or contains (@label,'SIMCARD') or contains(@placeholder,'SIMCARD')]")
     protected WebElement inputSinCard;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'imei') or contains (@label,'Código de IMEI')]")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'equipo') or contains(@label,'IMEI') or contains(@placeholder,'IMEI')])")
     protected WebElement inputImei;
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroCaja') or contains (@label,'Número de caja')]")
     protected WebElement inputBoxNumber;
@@ -391,15 +391,15 @@ public class ParkPage extends WebBase {
         click(btnplanMovil);
     }
 
-    public void clickEnBotonSiguiente() {
-        esperaProgresiva(driver(), 3, 5, btnSiguiente);
-        click(btnSiguiente);
+    public void clickOnButtonNext() {
+        esperaProgresiva(driver(), 3, 5, btnNext);
+        click(btnNext);
     }
 
-    public void btnConfirmarDireccion() {
-        esperaProgresiva(driver(), 5, 5, btnConfirmarDireccion);
-        js().scrollElementTop(btnConfirmarDireccion);
-        click(btnConfirmarDireccion);
+    public void btnConfirmAddress() {
+        esperaProgresiva(driver(), 5, 5, btnConfirmAddress);
+        js().scrollElementTop(btnConfirmAddress);
+        click(btnConfirmAddress);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Confirmar Direccion");
         revisarModalError(driver());
     }
@@ -413,7 +413,7 @@ public class ParkPage extends WebBase {
         UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Click on %s park %s", name, park));
     }
 
-    public void clickBotonContinuar() {
+    public void clickOnButtonContinue() {
         waitUntilElementIsVisible(botonContinuar, 30);
         js().scrollElementTop(botonContinuar);
         botonContinuar.click();

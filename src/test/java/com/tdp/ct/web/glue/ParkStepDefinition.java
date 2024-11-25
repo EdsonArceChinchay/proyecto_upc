@@ -171,8 +171,8 @@ public class ParkStepDefinition {
     }
 
     @Y("doy click en el boton Siguiente")
-    public void doyClickEnBotonSiguiente() {
-        parkStep.doyClickEnBotonSiguiente();
+    public void clickOnButtonNext() {
+        parkStep.clickOnButtonNext();
     }
 
     @Y("verifico la direccion {string} actual del servicio")
@@ -182,12 +182,12 @@ public class ParkStepDefinition {
 
     @Y("presiono el boton Confirmar direccion")
     public void presionoElBotonConfirmarDireccion() {
-        parkStep.btnConfirmarDireccion();
+        parkStep.clickOnButtonConfirmAddress();
     }
 
     @Y("doy click en el boton continuar")
-    public void doyClickEnElBotonContinuar() {
-        parkStep.botonContinuar();
+    public void clickOnButtonContinue() {
+        parkStep.clickOnButtonContinue();
     }
 
     @Y("selecciono la orden")

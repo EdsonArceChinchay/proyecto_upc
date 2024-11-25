@@ -5,7 +5,7 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import io.cucumber.java.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static com.tdp.ct.web.utils.Addons.saveHTMLCode;
+import static com.tdp.ct.web.utils.FileUtils.*;
 
 public class Hooks {
 

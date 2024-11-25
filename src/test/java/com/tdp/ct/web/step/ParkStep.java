@@ -158,8 +158,8 @@ public class ParkStep {
     }
 
     @ScreenShotAfter
-    public void doyClickEnBotonSiguiente() {
-        page.parkPage().clickEnBotonSiguiente();
+    public void clickOnButtonNext() {
+        page.parkPage().clickOnButtonNext();
     }
 
     @ScreenShotAfter
@@ -168,8 +168,8 @@ public class ParkStep {
     }
 
     @ScreenShotAfter
-    public void btnConfirmarDireccion() {
-        page.parkPage().btnConfirmarDireccion();
+    public void clickOnButtonConfirmAddress() {
+        page.parkPage().btnConfirmAddress();
     }
 
     @ScreenShotAfter
@@ -180,8 +180,8 @@ public class ParkStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void botonContinuar() {
-        page.parkPage().clickBotonContinuar();
+    public void clickOnButtonContinue() {
+        page.parkPage().clickOnButtonContinue();
     }
 
     public void scrollToLabelSelectService() {
