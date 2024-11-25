@@ -3,6 +3,8 @@ package com.tdp.ct.web.utils;
 import com.tdp.ct.web.model.Imei;
 import com.tdp.ct.web.model.SimCard;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 import java.io.*;
 import java.net.URL;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static com.tdp.ct.web.utils.DateUtils.getFormattedCurrentDate;
 
 public class FileUtils {
     public static List<SimCard> readSimCards(String filePath) throws Exception {
@@ -65,13 +69,42 @@ public class FileUtils {
         return Path.of(getAbsolutePathS(relativePath));
     }
 
+    public static String readJson(String relativePath) {
+        try {
+            return java.nio.file.Files.readString(java.nio.file.Paths.get(getAbsolutePathS(relativePath)));
+        } catch (IOException e) {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error reading JSON file", e.getMessage());
+            return null;
+        }
+    }
+
     public static void downloadPDF(String url, String downloadDir) {
         try (PDDocument document = PDDocument.load(new URL(url).openStream());
              FileOutputStream outputFile = new FileOutputStream(new File(downloadDir, url.substring(url.lastIndexOf("/") + 1)))) {
             document.save(outputFile);
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
         } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
+        }
+    }
+
+    public static void saveHTMLCode(WebDriver driver) {
+        String nombreArchivo = String.format("codigoHTML_%s.html", getFormattedCurrentDate("yyyy-MM-dd-(HH-mm-ss)"));
+        String rutabase = getAbsolutePathS("/target/html");
+        File directorio = new File(rutabase);
+        if (!directorio.exists()) {
+            directorio.mkdirs();
+        }
+        String rutaArchivo = rutabase + nombreArchivo;
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        String codigoHTML = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
+        try {
+            FileWriter fileWriter = new FileWriter(new File(rutaArchivo));
+            fileWriter.write(codigoHTML);
+            fileWriter.close();
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("El archivo %s se ha guardado correctamente en %s", nombreArchivo, rutaArchivo)));
+        } catch (IOException e) {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("Error al guardar el archivo %s en %s: %s ", nombreArchivo, rutaArchivo, e.getMessage())));
         }
     }
 }
