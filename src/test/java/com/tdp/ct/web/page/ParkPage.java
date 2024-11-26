@@ -74,7 +74,7 @@ public class ParkPage extends WebBase {
     protected WebElement btnValidateStock;
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'simcard') or contains (@label,'SIMCARD') or contains(@placeholder,'SIMCARD')]")
     protected WebElement inputSinCard;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'equipo') or contains(@label,'IMEI') or contains(@placeholder,'IMEI')])")
+    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'equipo') or contains(@label,'IMEI') or contains(@placeholder,'IMEI')]")
     protected WebElement inputImei;
     @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroCaja') or contains (@label,'Número de caja')]")
     protected WebElement inputBoxNumber;
