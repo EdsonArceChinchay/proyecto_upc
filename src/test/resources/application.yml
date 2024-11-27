@@ -19,16 +19,6 @@ jxray:
     id: 10BD5AA52D4B43338201DCB6017DC6F1
     secret: ac69d9673d66d12a3ae2d65d1135ceea35ce84740d14473a5fcaf256c285d797
 
-###########################################################################
-### To use JDBC configuration, comment 'autoconfigure.exclude' property ###
-###########################################################################
-spring:
-  dataSource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://pg-genesis-data-cert.postgres.database.azure.com:5432/testdatamgmt
-    username: dbtesting
-    password: 5xM#vo66
-
 ###################
 ### URL - SITES ###
 ###################

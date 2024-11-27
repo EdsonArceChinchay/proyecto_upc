@@ -14,7 +14,7 @@
 ##FECMOD: 04/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP-G06
-Característica: AT-DT077_Migracion salto 0 Trio a cliente con CE por canal Call Center
+Característica: AT-DT077_Migracion salto 0 Trio (Cambio de tecnologia HFC a FTTH) a cliente con CE por canal Call Center
 
   @migraSalto0CallCenter @RegreDito
   Esquema del escenario: Migracion salto 0 Trio a cliente extranjero CE por canal Call Center

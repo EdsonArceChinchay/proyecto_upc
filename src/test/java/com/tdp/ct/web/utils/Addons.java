@@ -5,20 +5,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathS;
+import static com.tdp.ct.web.utils.DateUtils.formatTime;
 
 public class Addons {
     private static final Logger LOGGER = Logger.getLogger(Addons.class.getName());
@@ -47,7 +42,7 @@ public class Addons {
         } while (bCargando && contador < reintentosMax);
         long fin = System.currentTimeMillis();
         long tiempoEjecucion = fin - inicio;
-        formatTiempo(tiempoEjecucion, "esperaProgresivaLoading");
+        formatTime(tiempoEjecucion, "esperaProgresivaLoading");
     }
 
     public static void esperaProgresiva(WebDriver driver, int reintentosMax, int segundosEspera, WebElement elementoContenedor, By byBuscarEnContenxto, SearchContext context) {
@@ -79,7 +74,7 @@ public class Addons {
         } while (!bOK && contador < reintentosMax);
         long fin = System.currentTimeMillis();
         long tiempoEjecucion = fin - inicio;
-        formatTiempo(tiempoEjecucion, "esperaProgresiva *");
+        formatTime(tiempoEjecucion, "esperaProgresiva *");
     }
 
     public static void esperaProgresiva(WebDriver driver, int reintentosMax, int segundosEspera, WebElement elemento) {
@@ -145,7 +140,7 @@ public class Addons {
         } while (!bOK && contador < reintentosMax);
         long fin = System.currentTimeMillis();
         long tiempoEjecucion = fin - inicio;
-        formatTiempo(tiempoEjecucion, "esperaProgresiva");
+        formatTime(tiempoEjecucion, "esperaProgresiva");
     }
 
     public static void esperaProgresivaReintentos(WebDriver driver, int reintentosMax, int segundosEspera, WebElement elemento) {
@@ -177,30 +172,6 @@ public class Addons {
             }
             contador++;
         } while (contador < reintentosMax);
-    }
-
-    public static void formatTiempo(long time, String msg) {
-        try {
-            String message = String.format("%s - Tiempo de ejecución: %s", msg, formatTime(time));
-            LOGGER.log(Level.INFO, message);
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, String.format("ERROR - %s", e.getMessage()));
-        }
-    }
-
-    private static String formatTime(long time) {
-        if (time < 60000) {
-            return time / 1000 + " segundos";
-        } else if (time < 3600000) {
-            long minutos = time / 60000;
-            long segundos = (time % 60000) / 1000;
-            return minutos + " minutos y " + segundos + " segundos";
-        } else {
-            long horas = time / 3600000;
-            long minutos = (time % 3600000) / 60000;
-            long segundos = (time % 60000) / 1000;
-            return horas + " horas, " + minutos + " minutos y " + segundos + " segundos";
-        }
     }
 
     public static void revisarModalError(WebDriver driver) {
@@ -390,28 +361,7 @@ public class Addons {
 
         long fin = System.currentTimeMillis();
         long tiempoEjecucion = fin - inicio;
-        formatTiempo(tiempoEjecucion, "revisarModalEntendido");
-    }
-
-    public static void saveHTMLCode(WebDriver driver) {
-        String fecha = new SimpleDateFormat("yyyy-MM-dd-(HH-mm-ss)").format(new Date());
-        String nombreArchivo = String.format("codigoHTML_%s.html", fecha);
-        String rutabase = getAbsolutePathS("/target/html");
-        File directorio = new File(rutabase);
-        if (!directorio.exists()) {
-            directorio.mkdirs();
-        }
-        String rutaArchivo = rutabase + nombreArchivo;
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        String codigoHTML = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
-        try {
-            FileWriter fileWriter = new FileWriter(new File(rutaArchivo));
-            fileWriter.write(codigoHTML);
-            fileWriter.close();
-            LOGGER.log(Level.INFO, String.format("El archivo %s se ha guardado correctamente en %s", nombreArchivo, rutaArchivo));
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, String.format("Error al guardar el archivo %s en %s: %s ", nombreArchivo, rutaArchivo, e.getMessage()));
-        }
+        formatTime(tiempoEjecucion, "revisarModalEntendido");
     }
 
     public static boolean esEntornoProductivo() {

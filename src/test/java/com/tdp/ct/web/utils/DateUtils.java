@@ -4,6 +4,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DateUtils {
 
@@ -27,9 +29,7 @@ public class DateUtils {
     }
 
     public static String generate18DigitString() {
-        String datePart = getFormattedCurrentDate("yyyyMMdd");
-        String randomPart = generateRandomDigits(10);
-        return datePart + randomPart;
+        return getFormattedCurrentDate("yyyyMMdd") + generateRandomDigits(10);
     }
 
     private static String formatDate(ZonedDateTime dateTime, String format) {
@@ -44,5 +44,29 @@ public class DateUtils {
             randomDigits.append(random.nextInt(10)); // Generates a random digit (0-9)
         }
         return randomDigits.toString();
+    }
+
+    public static void formatTime(long time, String msg) {
+        try {
+            String message = String.format("%s - Time of execution: %s", msg, formatTime(time));
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (message));
+        } catch (Exception e) {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("ERROR %s",e.getMessage())));
+        }
+    }
+
+    private static String formatTime(long time) {
+        if (time < 60000) {
+            return time / 1000 + " seconds";
+        } else if (time < 3600000) {
+            long minutes = time / 60000;
+            long seconds = (time % 60000) / 1000;
+            return minutes + " minutes y " + seconds + " seconds";
+        } else {
+            long hours = time / 3600000;
+            long minutes = (time % 3600000) / 60000;
+            long seconds = (time % 60000) / 1000;
+            return hours + " hours, " + minutes + " minutes y " + seconds + " seconds";
+        }
     }
 }

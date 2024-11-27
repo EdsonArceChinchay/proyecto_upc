@@ -5,7 +5,7 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
-import com.tdp.ct.web.utils.RetentionService;
+import com.tdp.ct.web.services.RetentionService;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;

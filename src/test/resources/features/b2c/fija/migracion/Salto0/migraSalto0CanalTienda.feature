@@ -14,7 +14,7 @@
 ##FECMOD: 10/01/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13 @DROP
-Característica: AT-DT078_Migracion salto 0 con documento CE por canal Tienda
+Característica: AT-DT078_Migracion salto 0 fija (Cambio de tecnologia HFC a FTTH) a cliente con CE por canal Tienda
 
   @migraSalto0CanalTienda
   Esquema del escenario: Migracion salto 0 con documento CE por canal Tienda

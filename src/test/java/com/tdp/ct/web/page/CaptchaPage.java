@@ -29,7 +29,7 @@ public class CaptchaPage extends WebBase {
     }
 
     public void updateAndTypeCaptcha() {
-        UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Type incorrect captcha...");
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type incorrect captcha...");
         updateCaptcha();
         getCaptcha();
     }
