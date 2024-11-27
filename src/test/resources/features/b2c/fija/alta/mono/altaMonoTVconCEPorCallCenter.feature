@@ -69,13 +69,13 @@ Característica: AT-DT _Alta Mono TV a cliente con CE en Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-#    Dado     regreso a la pagina de inicio
-#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        me dirijo a la bandeja de Back Office
-#    Y        busco por "<documentNumber>"
-#    Y        selecciono la solicitud
-#    Y        cargo el audio en la web
-#    Y        apruebo la solicitud
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documentNumber>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
 
