@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -37,7 +38,7 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(id = "claimVerificationServerError")
     protected WebElement msgErrorCredential;
 
-    @FindBy(xpath = "//*[contains(@id,'erro-captcha')]")
+    @FindBy(css = "div[id*='erro-captcha']")
     protected WebElement labelCaptchaError;
 
     public void clickOnLoginButton() {

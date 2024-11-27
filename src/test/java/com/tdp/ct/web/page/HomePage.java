@@ -25,7 +25,7 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@class,'info-user')]/div | //app-client-info")
     protected WebElement txtNombre;
 
-    @FindBy(xpath = "//div[1]/form/div/div[3]/button")
+    @FindBy(css = "[class*='buttonConsultar']")
     protected WebElement btnSearch;
 
     @FindBy(xpath = "//*[@class='validation']//tdp-st-input-text")

@@ -18,7 +18,7 @@ import static com.tdp.ct.web.utils.Helper.*;
 
 public class ParkPage extends WebBase {
 
-    @FindBy(xpath = "//div[@class=\"contenedor_park add_pointer\"]")
+    @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected WebElement btnHogar;
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
@@ -32,8 +32,8 @@ public class ParkPage extends WebBase {
     protected WebElement btnPlanMtExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
-    @FindBy(xpath = "(//*[contains(text(),'Mostrar Ofertas') or contains(text(),'Mostrar ofertas')])[1]")
-    protected WebElement btnMostrar;
+    @FindBy(css = "div[class='show-offerts']")
+    protected WebElement btnShowOffers;
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
@@ -302,9 +302,9 @@ public class ParkPage extends WebBase {
 
     public void mostrarOfertas() {
         Addons.esperaCargaMontoDeuda(driver(), 20);
-        esperaProgresiva(driver(), 5, 6, btnMostrar);
+        esperaProgresiva(driver(), 5, 6, btnShowOffers);
         revisarModalError(driver());
-        click(btnMostrar);
+        click(btnShowOffers);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
     }
 
