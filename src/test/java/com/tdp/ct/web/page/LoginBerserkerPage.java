@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -12,7 +13,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.getValueConfig;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -37,7 +38,7 @@ public class LoginBerserkerPage extends WebBase {
     @FindBy(id = "claimVerificationServerError")
     protected WebElement msgErrorCredential;
 
-    @FindBy(xpath = "//*[contains(@id,'erro-captcha')]")
+    @FindBy(css = "div[id*='erro-captcha']")
     protected WebElement labelCaptchaError;
 
     public void clickOnLoginButton() {
@@ -49,7 +50,7 @@ public class LoginBerserkerPage extends WebBase {
     public void selectUserType(String user) {
         esperaProgresiva(driver(), 3, 5, userType);
         Select usuarioSelect = new Select(userType);
-        String userType = Objects.requireNonNull(getValueConfig("credential.user.userType")).trim();
+        String userType = Objects.requireNonNull(getValueConfig("config","credential.user.userType")).trim();
         usuarioSelect.selectByVisibleText(userType);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + userType);
         UtilWeb.waitForSeconds(1);
@@ -96,7 +97,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String key) {
-        return getValueConfig("credential.user." + key) == null ? "" : getValueConfig("credential.user." + key);
+        return getValueConfig("config","credential.user." + key) == null ? "" : getValueConfig("config","credential.user." + key);
     }
 
 }

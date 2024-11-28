@@ -1,4 +1,4 @@
-package com.tdp.ct.web.services;
+package com.tdp.ct.web.service;
 
 import com.tdp.ct.web.step.HomeStep;
 import org.springframework.beans.factory.annotation.Autowired;

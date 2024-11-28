@@ -14,8 +14,8 @@ import org.openqa.selenium.support.FindBy;
 import java.util.Objects;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.Helper.*;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.SessionStorage.*;
@@ -25,7 +25,7 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@class,'info-user')]/div | //app-client-info")
     protected WebElement txtNombre;
 
-    @FindBy(xpath = "//div[1]/form/div/div[3]/button")
+    @FindBy(css = "[class*='buttonConsultar']")
     protected WebElement btnSearch;
 
     @FindBy(xpath = "//*[@class='validation']//tdp-st-input-text")
@@ -189,7 +189,7 @@ public class HomePage extends WebBase {
     }
 
     public void modifyGroupAgent(String group, Agent agent) {
-        if ((Objects.requireNonNull(getValueConfig("environment.agent.addRetentionRole.channels"))).contains(agent.getChannelType())) {
+        if ((Objects.requireNonNull(getValueConfig("config","environment.agent.addRetentionRole.channels"))).contains(agent.getChannelType())) {
             String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
             setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
         }
@@ -197,7 +197,7 @@ public class HomePage extends WebBase {
     }
 
     public String shouldAddRetentionRole() {
-        if (Objects.requireNonNull(getValueConfig("environment.agent.addRetentionRole")).equalsIgnoreCase("true")) {
+        if (Objects.requireNonNull(getValueConfig("config","environment.agent.addRetentionRole")).equalsIgnoreCase("true")) {
             return "add";
         } else {
             return "remove";
