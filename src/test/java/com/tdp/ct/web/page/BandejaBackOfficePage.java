@@ -12,7 +12,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getAbsolutePath;
-import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathS;
+import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
 
 public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
@@ -58,12 +58,13 @@ public class BandejaBackOfficePage extends WebBase {
     public void uploadAudio() {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
-            fileRuta.sendKeys(getAbsolutePathS("/src/test/resources/mp3/FE-audio-ejemplo.mp3"));
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"Upload Audio");
+            fileRuta.sendKeys(getAbsolutePathString("src/test/resources/mp3/FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(10);
             esperaProgresiva(driver(), 5, 7, etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente", "CARGADO", etiquetaCargado.getText());
         } else {
-            System.out.println("Adjunto ya subido anteriormente");
+            UtilWeb.logger(this.getClass()).log(Level.INFO,"Adjunto ya subido anteriormente");
         }
     }
 

@@ -13,7 +13,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.getValueConfig;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -50,7 +50,7 @@ public class LoginBerserkerPage extends WebBase {
     public void selectUserType(String user) {
         esperaProgresiva(driver(), 3, 5, userType);
         Select usuarioSelect = new Select(userType);
-        String userType = Objects.requireNonNull(getValueConfig("credential.user.userType")).trim();
+        String userType = Objects.requireNonNull(getValueConfig("config","credential.user.userType")).trim();
         usuarioSelect.selectByVisibleText(userType);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + userType);
         UtilWeb.waitForSeconds(1);
@@ -97,7 +97,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String key) {
-        return getValueConfig("credential.user." + key) == null ? "" : getValueConfig("credential.user." + key);
+        return getValueConfig("config","credential.user." + key) == null ? "" : getValueConfig("config","credential.user." + key);
     }
 
 }

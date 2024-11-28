@@ -1,4 +1,4 @@
-package com.tdp.ct.web.services;
+package com.tdp.ct.web.service;
 
 import org.springframework.stereotype.Component;
 

@@ -5,6 +5,7 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
+import com.tdp.ct.web.service.MaterialService;
 import io.cucumber.datatable.DataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,15 @@ public class ParkStep {
 
     @Autowired
     private Customer customer;
+
+    private final MaterialService materialService;
+    private static String simCard = null;
+    private static String imei= null;
+
+    @Autowired
+    public ParkStep(MaterialService materialService) {
+        this.materialService = materialService;
+    }
 
     public void verificarClienteNuevo() {
         customer.setNewCustomer(page.parkPage().isNewCustomer());
@@ -220,11 +230,13 @@ public class ParkStep {
 
     @ScreenShotBefore
     public void typeSimCard() {
-        page.parkPage().typeInput("inputSimCard", page.parkPage().getSimCard());
+        simCard = materialService.getSimCard("5P36", "UAT4");
+        page.parkPage().typeInput("inputSimCard", simCard );
     }
 
     public void typeIMEI(String device) {
-        page.parkPage().typeInput("inputImei", page.parkPage().getIMEI(device));
+        imei = materialService.getIMEIByName(device,"5P36", "UAT4");
+        page.parkPage().typeInput("inputImei", imei);
     }
 
     @ScreenShotBefore
@@ -234,6 +246,10 @@ public class ParkStep {
     }
 
     public void typeInBoxNumber(String number) {
+        if(!(simCard ==null))
+        {materialService.assignSimCard(simCard);}
+        if(!(imei ==null))
+        {materialService.assignIMEI(imei);}
         page.parkPage().typeInput("inputBoxNumber", number);
     }
 
