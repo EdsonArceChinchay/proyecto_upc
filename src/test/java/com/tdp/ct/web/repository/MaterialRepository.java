@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Repository
 public class MaterialRepository {
@@ -20,6 +22,7 @@ public class MaterialRepository {
         String sql = "SELECT idmaterial AS idMaterial, nombrematerial AS nameMaterial, numeroserie AS serialNumber, estado AS status, almacen AS warehouse, ambiente AS environment, sap_id AS sapID " +
                 "FROM public.material " +
                 "WHERE estado=1 AND almacen=? AND ambiente=? AND simcard='S' LIMIT 10";
+        Logger.getLogger(MaterialRepository.class.getName()).log(Level.INFO, "Query >>> {0}", sql);
         return jdbcTemplate.query(sql, new Object[]{warehouse, environment}, new MaterialRowMapper());
     }
 
@@ -27,11 +30,13 @@ public class MaterialRepository {
         String sql = "SELECT idmaterial AS idMaterial, nombrematerial AS nameMaterial, numeroserie AS serialNumber, estado AS status, almacen AS warehouse, ambiente AS environment, sap_id AS sapID " +
                 "FROM public.material " +
                 "WHERE nombrematerial LIKE ? AND sap_id LIKE ? AND estado=1 AND almacen=? AND ambiente=? AND imei='S' LIMIT 10";
+        Logger.getLogger(MaterialRepository.class.getName()).log(Level.INFO, "Query >>> {0}", sql);
         return jdbcTemplate.query(sql, new Object[]{"%" + name + "%", "%" + sapId + "%", warehouse, environment}, new MaterialRowMapper());
     }
 
     public void assignMaterial(String serialNumber) {
         String sql = "UPDATE public.material SET grupo='MESAS', estado=1, proyecto='DITO', tester='AutomationTester', fechaasignacion=now() WHERE numeroserie=?";
+        Logger.getLogger(MaterialRepository.class.getName()).log(Level.INFO, "Query >>> {0}", sql);
         jdbcTemplate.update(sql, serialNumber);
     }
 

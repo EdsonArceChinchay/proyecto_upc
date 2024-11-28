@@ -26,6 +26,7 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en ca
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "Tienda"
     Y        valido que este activo el flag de Porta Directa
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"

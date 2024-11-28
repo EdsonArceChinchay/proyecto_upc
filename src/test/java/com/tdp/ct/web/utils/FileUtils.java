@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,19 +62,31 @@ public class FileUtils {
         }
     }
 
+    public static String getValueConfig(String properties, String key) {
+        String path = ((properties.equalsIgnoreCase("config")) ? "src/test/resources/config.properties" : "src/test/resources/application.properties");
+        Properties properties1 = new Properties();
+        try {
+            properties1.load(new FileInputStream(path));
+            return properties1.getProperty(key);
+        } catch (IOException e) {
+            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Error in read values %s", e.getMessage()));
+            return null;
+        }
+    }
+
     public static String getAbsolutePathString(String relativePath) {
-        String absolutePath = getAbsolutePath(relativePath).toString();
-        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Absolute path: "+absolutePath);
-        return absolutePath;
+        return getAbsolutePath(relativePath).toString();
     }
 
     public static Path getAbsolutePath(String relativePath) {
-        return  Paths.get(relativePath).toAbsolutePath();
+        Path  absolutePath = Paths.get(relativePath).toAbsolutePath();
+        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Absolute path: %s", absolutePath.toString()));
+        return  absolutePath;
     }
 
     public static String readJson(String relativePath) {
         try {
-            return java.nio.file.Files.readString(java.nio.file.Paths.get(getAbsolutePathString(relativePath)));
+            return java.nio.file.Files.readString(getAbsolutePath(relativePath));
         } catch (IOException e) {
             Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error reading JSON file", e.getMessage());
             return null;

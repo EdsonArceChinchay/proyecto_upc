@@ -10,14 +10,13 @@ import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Helper.getValueConfig;
-
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 @Component
 public class SSLConfigurator {
 
     public void configureSSL() {
-        String password = getValueConfig("credential.certificate.password");
+        String password = getValueConfig("config","credential.certificate.password");
         try {
             KeyStore keyStore = KeyStore.getInstance("PKCS12");
             keyStore.load(new FileInputStream("src/test/resources/certificado/apim-client-certificate.pfx"), password.toCharArray());

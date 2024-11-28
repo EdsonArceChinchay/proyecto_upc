@@ -8,11 +8,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,17 +39,6 @@ public class Helper extends WebBase {
             }
         }
         throw new IllegalArgumentException("buscarValorOpcion No válido: " + sDescripcionOpcion);
-    }
-
-    public static String getValueConfig(String key) {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream("src/test/resources/config.properties"));
-            return properties.getProperty(key);
-        } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Error in read values %s", e.getMessage()));
-            return null;
-        }
     }
 
     public static WebElement getVisibleAndClickableElement(List<WebElement> elements) {

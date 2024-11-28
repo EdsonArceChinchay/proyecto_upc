@@ -9,28 +9,30 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
+
 @Configuration
 public class DatabaseConfig {
 
-        @Bean
-        public DataSource dataSource() {
-            DataSource dataSource =DataSourceBuilder.create()
-                    .url("jdbc:postgresql://pg-genesis-data-cert.postgres.database.azure.com:5432/testdatamgmt")
-                    .username("dbtesting")
-                    .password("5xM#vo66")
-                    .driverClassName("org.postgresql.Driver")
-                    .build();
-            try (Connection connection = dataSource.getConnection()) {
-                if (connection != null) {
-                    System.out.println("Conexión a la base de datos exitosa!");
-                } else {
-                    System.out.println("Fallo en la conexión a la base de datos.");
-                }
-            } catch (SQLException e) {
-                System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+    @Bean
+    public DataSource dataSource() {
+        DataSource dataSource = DataSourceBuilder.create()
+                .url(getValueConfig("application", "spring.datasource.url"))
+                .username(getValueConfig("application", "spring.datasource.username"))
+                .password(getValueConfig("application", "spring.datasource.password"))
+                .driverClassName(getValueConfig("application", "spring.datasource.driver-class-name"))
+                .build();
+        try (Connection connection = dataSource.getConnection()) {
+            if (connection != null) {
+                System.out.println("Conexión a la base de datos exitosa!");
+            } else {
+                System.out.println("Fallo en la conexión a la base de datos.");
             }
-            return dataSource;
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
+        return dataSource;
+    }
 
     @PostConstruct
     public void checkProperties() {
