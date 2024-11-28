@@ -6,11 +6,11 @@ import io.restassured.config.SSLConfig;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.springframework.stereotype.Component;
 
-import static com.tdp.ct.web.utils.Helper.getValueConfig;
-
 import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.Helper.getValueConfig;
 
 
 @Component

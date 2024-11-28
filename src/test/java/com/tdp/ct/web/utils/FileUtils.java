@@ -61,17 +61,19 @@ public class FileUtils {
         }
     }
 
-    public static String getAbsolutePathS(String relativePath) {
-        return System.getProperty("user.dir") + relativePath;
+    public static String getAbsolutePathString(String relativePath) {
+        String absolutePath = getAbsolutePath(relativePath).toString();
+        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Absolute path: "+absolutePath);
+        return absolutePath;
     }
 
     public static Path getAbsolutePath(String relativePath) {
-        return Path.of(getAbsolutePathS(relativePath));
+        return  Paths.get(relativePath).toAbsolutePath();
     }
 
     public static String readJson(String relativePath) {
         try {
-            return java.nio.file.Files.readString(java.nio.file.Paths.get(getAbsolutePathS(relativePath)));
+            return java.nio.file.Files.readString(java.nio.file.Paths.get(getAbsolutePathString(relativePath)));
         } catch (IOException e) {
             Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error reading JSON file", e.getMessage());
             return null;
@@ -90,7 +92,7 @@ public class FileUtils {
 
     public static void saveHTMLCode(WebDriver driver) {
         String nombreArchivo = String.format("codigoHTML_%s.html", getFormattedCurrentDate("yyyy-MM-dd-(HH-mm-ss)"));
-        String rutabase = getAbsolutePathS("/target/html");
+        String rutabase = getAbsolutePathString("target/html");
         File directorio = new File(rutabase);
         if (!directorio.exists()) {
             directorio.mkdirs();

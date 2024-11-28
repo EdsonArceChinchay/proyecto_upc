@@ -2,8 +2,8 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.config.SSLConfigurator;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.services.ApiClient;
-import com.tdp.ct.web.services.HeaderService;
+import com.tdp.ct.web.service.ApiClient;
+import com.tdp.ct.web.service.HeaderService;
 import io.cucumber.datatable.DataTable;
 import org.json.JSONArray;
 import org.json.JSONException;

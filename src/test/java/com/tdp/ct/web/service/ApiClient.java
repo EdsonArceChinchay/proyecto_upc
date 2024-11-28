@@ -1,4 +1,4 @@
-package com.tdp.ct.web.services;
+package com.tdp.ct.web.service;
 
 import com.tdp.ct.web.utils.FileUtils;
 import io.restassured.RestAssured;
