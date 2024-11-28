@@ -66,7 +66,7 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en ca
     Y        doy click en el boton Validar Codigo de Portabilidad
     Y        doy click en "Activa" y doy click en el boton Confirmar
     Y        obtengo el token
-      | typeDocument   | numberDocument   | phoneNumber   |
+      | documentType   | documentNumber   | phoneNumber   |
       | <documentType> | <documentNumber> | <phoneNumber> |
     Cuando    ingreso el token y doy click en el boton Confirmar
     Entonces  valido el mensaje "Código valido" y doy click en el boton Continuar
