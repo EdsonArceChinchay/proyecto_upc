@@ -28,6 +28,7 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "Retail"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
@@ -55,7 +56,7 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                   |
-      | 12/12/2000 | soltero     | Alemania     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
+      | 12/12/2000 | soltero     | Angola       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 |
     Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
@@ -86,5 +87,5 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | device                   |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 3010464811     | VIVO V21 NEGRO 5G C/PACK |
+      | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | device                         |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1010464811     | HONOR X8A VERDE CRT-LX3 C/PACK |

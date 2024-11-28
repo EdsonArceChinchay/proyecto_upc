@@ -24,7 +24,7 @@ public class JsonUtils {
             return null;
         } catch (Exception e) {
             Logger.getLogger(JsonUtils.class.getName()).log(Level.SEVERE,"An error occurred: " + e.getMessage());
-            return null;
+            return "";
         }
     }
 

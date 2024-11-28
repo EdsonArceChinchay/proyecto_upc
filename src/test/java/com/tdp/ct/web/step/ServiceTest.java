@@ -1,9 +1,9 @@
 package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.config.SSLConfigurator;
+import com.tdp.ct.web.service.ApiClient;
+import com.tdp.ct.web.service.HeaderService;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.services.ApiClient;
-import com.tdp.ct.web.services.HeaderService;
 import io.cucumber.datatable.DataTable;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,15 +11,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.DateUtils.*;
-import static com.tdp.ct.web.utils.FileUtils.getAbsolutePath;
-import static com.tdp.ct.web.utils.FileUtils.readJson;
+import static com.tdp.ct.web.utils.FileUtils.*;
 import static com.tdp.ct.web.utils.JsonUtils.extractValue;
 
 @Component
@@ -42,7 +39,6 @@ public class ServiceTest {
         String body = readJson(jsonPath);
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " + (URL_AKS + endpointPath));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Value: " + value);
-
         String consultationResult = extractValue(apiClient.post(URL_AKS + endpointPath, body, headerService.getAksBerserkersHeaders()), value);
         updateConsultation(value, consultationResult);
     }
@@ -58,11 +54,11 @@ public class ServiceTest {
         switch (service) {
             case "prevalidateportin":
                 portability("fesimple/api/v1/portability/requestportin",
-                        "/src/test/resources/json/portaNormal/preValidate.json", "previousConsultationId");
+                        "src/test/resources/json/portaNormal/preValidate.json", "previousConsultationId");
                 break;
             case "requestportin":
                 portability("fesimple/api/v1/portability/requestportin",
-                        "/src/test/resources/json/portaDirecta/requestPortIn.json", "previousConsultationNumber");
+                        "src/test/resources/json/portaDirecta/requestPortIn.json", "previousConsultationNumber");
                 break;
             default:
                 consultation = generate18DigitString();
@@ -76,11 +72,10 @@ public class ServiceTest {
         String endOfMonthNextDay = getEndOfMonthNextDayFormatted("yyyy-MM-dd");
         String baseDate = getFormattedCurrentDate("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
-        Path filePath = getAbsolutePath("/src/test/resources/json/portaNormal/receive.json");
         String statusBody = "";
 
         try {
-            statusBody = Files.readString(filePath)
+            statusBody = readJson("src/test/resources/json/portaNormal/receive.json")
                     .replace("{code}", consultation)
                     .replace("{phoneNumber}", phoneNumber)
                     .replace("{nextDay}", nextDay)
@@ -159,8 +154,7 @@ public class ServiceTest {
             String documentNumber = UtilWeb.getValueFromDataTable(dataTable, "documentNumber");
             String phoneNumber = UtilWeb.getValueFromDataTable(dataTable, "phoneNumber");
 
-            Path filePath = getAbsolutePath("/src/test/resources/json/portaDirecta/movistarToken.json");
-            newBody = Files.readString(filePath)
+            newBody = readJson("src/test/resources/json/portaDirecta/movistarToken.json")
                     .replace("{documentType}", documentType)
                     .replace("{documentNumber}", documentNumber)
                     .replace("{idTransaction}", idTransaction)

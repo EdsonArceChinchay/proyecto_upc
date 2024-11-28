@@ -19,7 +19,6 @@ Característica: Subir audio en canal Call Center
   @AdjuntarAudioBackOffice
   Escenario: Subir un audio despues de generar orden en canal Call Center
     Dado     que abro la pagina de movistar
-    Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
     Y        ingreso el usuario "userNameCC"
