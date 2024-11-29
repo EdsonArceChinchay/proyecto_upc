@@ -1,7 +1,6 @@
 package com.tdp.ct.web.utils;
 
-import com.tdp.ct.web.model.Imei;
-import com.tdp.ct.web.model.SimCard;
+import com.tdp.ct.web.model.Material;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -20,44 +19,44 @@ import java.util.logging.Logger;
 import static com.tdp.ct.web.utils.DateUtils.getFormattedCurrentDate;
 
 public class FileUtils {
-    public static List<SimCard> readSimCards(String filePath) throws Exception {
-        List<SimCard> simCards = new ArrayList<>();
+    public static List<Material> readSimCards(String filePath) throws Exception {
+        List<Material> simCards = new ArrayList<>();
         List<String> lines = Files.readAllLines(Paths.get(filePath));
 
         for (String line : lines.subList(1, lines.size())) {
             String[] parts = line.split(";");
-            simCards.add(new SimCard(parts[0], parts[1]));
+            simCards.add(new Material(parts[0], parts[1]));
         }
 
         return simCards;
     }
 
-    public static List<Imei> readImeis(String filePath) throws Exception {
-        List<Imei> imeis = new ArrayList<>();
+    public static List<Material> readImeis(String filePath) throws Exception {
+        List<Material> imeis = new ArrayList<>();
         List<String> lines = Files.readAllLines(Paths.get(filePath));
 
         for (String line : lines.subList(1, lines.size())) {
             String[] parts = line.split(";");
-            imeis.add(new Imei(parts[0], parts[1], parts[2], parts[3]));
+            imeis.add(new Material(parts[0], parts[1], parts[2], parts[3]));
         }
 
         return imeis;
     }
 
-    public static void saveSimCards(String filePath, List<SimCard> simCards) throws IOException {
+    public static void saveSimCards(String filePath, List<Material> simCards) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("SIMCARD;ESTADO\n");  // Write header
-            for (SimCard simCard : simCards) {
-                writer.write(simCard.getSimCard() + ";" + simCard.getStatus() + "\n");
+            for (Material simCard : simCards) {
+                writer.write(simCard.getSerialNumber() + ";" + simCard.getStatus() + "\n");
             }
         }
     }
 
-    public static void saveImeis(String filePath, List<Imei> imeis) throws IOException {
+    public static void saveImeis(String filePath, List<Material> imeis) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("SAPID;NOMBRE;IMEI;ESTADO\n");  // Write header
-            for (Imei imei : imeis) {
-                writer.write(imei.getSapId() + ";" + imei.getNameMaterial() + ";" + imei.getImei() + ";" + imei.getStatus() + "\n");
+            for (Material imei : imeis) {
+                writer.write(imei.getSapId() + ";" + imei.getNameMaterial() + ";" + imei.getSerialNumber() + ";" + imei.getStatus() + "\n");
             }
         }
     }
