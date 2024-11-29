@@ -9,7 +9,7 @@ public class Material {
     private int idMaterial;
     private String nameMaterial;
     private String serialNumber;
-    private int status;
+    private String status;
     private String warehouse;
     private String environment;
     private String sapId;
@@ -17,14 +17,14 @@ public class Material {
     public Material() {
     }
 
-    public Material(String sapId, String nameMaterial, String imei, int status) {
+    public Material(String sapId, String nameMaterial, String imei, String status) {
         this.sapId = sapId;
         this.nameMaterial = nameMaterial;
         this.serialNumber = imei;
         this.status = status;
     }
 
-    public Material(String simCard, int status) {
+    public Material(String simCard, String status) {
         this.nameMaterial = simCard;
         this.status = status;
     }
