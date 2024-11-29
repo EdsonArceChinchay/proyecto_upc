@@ -16,14 +16,14 @@ public class MaterialsManager {
 
     public MaterialsManager() throws Exception {
         this.simCards = FileUtils.readSimCards(simCardFilePath);
-        this.imeis = FileUtils.readImeis(imeiFilePath);
+        this.imeis = FileUtils.readIMEIs(imeiFilePath);
     }
 
     public MaterialsManager(String simCardFilePath, String imeiFilePath) throws Exception {
         this.simCardFilePath = simCardFilePath;
         this.imeiFilePath = imeiFilePath;
         this.simCards = FileUtils.readSimCards(simCardFilePath);
-        this.imeis = FileUtils.readImeis(imeiFilePath);
+        this.imeis = FileUtils.readIMEIs(imeiFilePath);
     }
 
     public Material getAvailableSimCard() {
@@ -68,7 +68,7 @@ public class MaterialsManager {
         if (imei != null) {
             imei.setStatus("ASIGNADO");
             UtilWeb.logger(this.getClass()).log(Level.INFO, "IMEI: " + imei.getSerialNumber() + " assigned.");
-            FileUtils.saveImeis(imeiFilePath, imeis);
+            FileUtils.saveIMEIs(imeiFilePath, imeis);
         }
     }
 }

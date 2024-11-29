@@ -38,7 +38,7 @@ public class LoginBerserkerStep {
     }
 
     @ScreenShotAfter
-    public void clickBtnContinuarHaciaHome() {
+    public void clickBtnContinueToHome() {
         page.loginBerserkerPage().clickOnContinueButton();
         retryCaptcha();
     }

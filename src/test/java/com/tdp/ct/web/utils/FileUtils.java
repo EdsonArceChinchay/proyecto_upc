@@ -31,7 +31,7 @@ public class FileUtils {
         return simCards;
     }
 
-    public static List<Material> readImeis(String filePath) throws Exception {
+    public static List<Material> readIMEIs(String filePath) throws Exception {
         List<Material> imeis = new ArrayList<>();
         List<String> lines = Files.readAllLines(Paths.get(filePath));
 
@@ -52,7 +52,7 @@ public class FileUtils {
         }
     }
 
-    public static void saveImeis(String filePath, List<Material> imeis) throws IOException {
+    public static void saveIMEIs(String filePath, List<Material> imeis) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write("SAPID;NOMBRE;IMEI;ESTADO\n");  // Write header
             for (Material imei : imeis) {
@@ -78,16 +78,49 @@ public class FileUtils {
     }
 
     public static Path getAbsolutePath(String relativePath) {
-        Path  absolutePath = Paths.get(relativePath).toAbsolutePath();
-        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Absolute path: %s", absolutePath.toString()));
-        return  absolutePath;
+        Path absolutePath = Paths.get(relativePath).toAbsolutePath();
+        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Absolute path: %s", absolutePath));
+        return absolutePath;
+    }
+
+    public static void createDirectory(String path) {
+        Path absolutePath = getAbsolutePath(path);
+        if (!Files.exists(absolutePath)) {
+            try {
+                Files.createDirectories(absolutePath);
+                Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("Directory created in: %s", path));
+            } catch (IOException e) {
+                Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("ERROR! - %s", e.getMessage()));
+            }
+        } else {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The directory already exists.");
+        }
+    }
+
+    public static void cleanFile(String path) {
+        File file = new File(path);
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            if (files != null) {
+                for (File file1 : files) {
+                    if (!file1.getName().equalsIgnoreCase(".gitkeep")) {
+                        file1.delete();
+                        Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("File deleted: %s", file1.getName()));
+                    }
+                }
+            } else {
+                Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The folder is empty");
+            }
+        } else {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The specified path is not a valid folder.");
+        }
     }
 
     public static String readJson(String relativePath) {
         try {
             return java.nio.file.Files.readString(getAbsolutePath(relativePath));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error reading JSON file", e.getMessage());
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error reading JSON file - %s", e.getMessage()));
             return null;
         }
     }
@@ -98,27 +131,24 @@ public class FileUtils {
             document.save(outputFile);
             Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, "Error downloading PDF", e);
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error downloading PDF - %s", e.getMessage()));
         }
     }
 
     public static void saveHTMLCode(WebDriver driver) {
-        String nombreArchivo = String.format("codigoHTML_%s.html", getFormattedCurrentDate("yyyy-MM-dd-(HH-mm-ss)"));
-        String rutabase = getAbsolutePathString("target/html");
-        File directorio = new File(rutabase);
-        if (!directorio.exists()) {
-            directorio.mkdirs();
-        }
-        String rutaArchivo = rutabase + nombreArchivo;
+        String naneFile = String.format("codigoHTML_%s.html", getFormattedCurrentDate("yyyy-MM-dd-(HH-mm-ss)"));
+        String path = getAbsolutePathString("target/html");
+        createDirectory(naneFile);
+        String pathFile = path + naneFile;
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        String codigoHTML = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
+        String htmlCode = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
         try {
-            FileWriter fileWriter = new FileWriter(new File(rutaArchivo));
-            fileWriter.write(codigoHTML);
+            FileWriter fileWriter = new FileWriter(pathFile);
+            fileWriter.write(htmlCode);
             fileWriter.close();
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("El archivo %s se ha guardado correctamente en %s", nombreArchivo, rutaArchivo)));
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("El archivo %s se ha guardado correctamente en %s", naneFile, pathFile)));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("Error al guardar el archivo %s en %s: %s ", nombreArchivo, rutaArchivo, e.getMessage())));
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("Error al guardar el archivo %s en %s: %s ", naneFile, pathFile, e.getMessage())));
         }
     }
 }

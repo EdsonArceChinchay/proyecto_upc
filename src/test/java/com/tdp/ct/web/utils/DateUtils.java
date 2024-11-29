@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 
 public class DateUtils {
 
-    public static ZonedDateTime getCurrentDate(){
-        return  ZonedDateTime.now();
+    public static ZonedDateTime getCurrentDate() {
+        return ZonedDateTime.now();
     }
 
     public static String getFormattedCurrentDate(String format) {
@@ -41,7 +41,7 @@ public class DateUtils {
         Random random = new Random();
         StringBuilder randomDigits = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            randomDigits.append(random.nextInt(10)); // Generates a random digit (0-9)
+            randomDigits.append(random.nextInt(10));
         }
         return randomDigits.toString();
     }
@@ -49,24 +49,24 @@ public class DateUtils {
     public static void formatTime(long time, String msg) {
         try {
             String message = String.format("%s - Time of execution: %s", msg, formatTime(time));
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (message));
+            Logger.getLogger(DateUtils.class.getName()).log(Level.INFO, (message));
         } catch (Exception e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("ERROR %s",e.getMessage())));
+            Logger.getLogger(DateUtils.class.getName()).log(Level.SEVERE, (String.format("ERROR %s", e.getMessage())));
         }
     }
 
     private static String formatTime(long time) {
         if (time < 60000) {
-            return time / 1000 + " seconds";
+            return String.format("%d seconds", time / 1000);
         } else if (time < 3600000) {
             long minutes = time / 60000;
             long seconds = (time % 60000) / 1000;
-            return minutes + " minutes y " + seconds + " seconds";
+            return String.format("%d minutes and %d seconds", minutes, seconds);
         } else {
             long hours = time / 3600000;
             long minutes = (time % 3600000) / 60000;
             long seconds = (time % 60000) / 1000;
-            return hours + " hours, " + minutes + " minutes y " + seconds + " seconds";
+            return String.format("%d hours, %d minutes and %d seconds", hours, minutes, seconds);
         }
     }
 }

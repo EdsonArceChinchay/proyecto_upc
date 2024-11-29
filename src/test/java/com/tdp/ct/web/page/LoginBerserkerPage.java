@@ -17,8 +17,8 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 public class LoginBerserkerPage extends WebBase {
 
-    @FindBy(xpath = "//button[text()='Iniciar sesion']")
-    protected WebElement btnIniciarSesion;
+    @FindBy(css = "button[type='button']")
+    protected WebElement btnLogIn;
 
     @FindBy(id = "procedencia_usuario")
     protected WebElement userType;
@@ -30,7 +30,7 @@ public class LoginBerserkerPage extends WebBase {
     protected WebElement inputPassword;
 
     @FindBy(name = "btnpruebavalidate")
-    protected WebElement btnContinuar;
+    protected WebElement btnContinue;
 
     @FindBy(css = ".error.itemLevel.show")
     protected WebElement msgError;
@@ -43,8 +43,8 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickOnLoginButton() {
         Addons.reiniciaTimeout(driver());
-        Addons.esperaProgresiva(driver(), 3, 5, btnIniciarSesion);
-        click(btnIniciarSesion);
+        Addons.esperaProgresiva(driver(), 3, 5, btnLogIn);
+        click(btnLogIn);
     }
 
     public void selectUserType(String user) {
@@ -69,9 +69,9 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void clickOnContinueButton() {
-        js().scrollElementTop(btnContinuar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnContinuar.getText());
-        click(btnContinuar);
+        js().scrollElementTop(btnContinue);
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnContinue.getText());
+        click(btnContinue);
         UtilWeb.waitForSeconds(5);
     }
 
