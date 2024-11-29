@@ -1,9 +1,12 @@
 package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.model.Material;
+import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.io.*;
 import java.net.URL;
@@ -151,5 +154,18 @@ public class FileUtils {
             Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("Error al guardar el archivo %s en %s: %s ", naneFile, pathFile, e.getMessage())));
         }
     }
+
+    public static boolean saveScreenshot(WebElement webElement, String path) {
+        try {
+            File image = webElement.getScreenshotAs(OutputType.FILE);
+            org.apache.commons.io.FileUtils.copyFile(image, new File(path));
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("Screenshot saved in: %s.", path));
+            return true;
+        } catch (Exception e) {
+            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error saving screenshot: %s.", e.getMessage()));
+            return false;
+        }
+    }
+
 }
 

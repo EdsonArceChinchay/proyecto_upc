@@ -64,7 +64,6 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     @ScreenShotBefore
     public void getAndTypeCaptcha() {
-        UtilWeb.waitForSeconds(5);
         page.captchaPage().getCaptcha();
     }
 

@@ -91,7 +91,7 @@ public class LoginBerserkerPage extends WebBase {
         try {
             return waitUntilElementIsVisible(labelCaptchaError, 10).isDisplayed();
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error " + e.getMessage());
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR! - " + e.getMessage());
             return false;
         }
     }
