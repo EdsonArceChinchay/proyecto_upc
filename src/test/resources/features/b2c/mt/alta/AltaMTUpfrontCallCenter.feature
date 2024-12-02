@@ -49,7 +49,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -72,7 +73,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
       | fechaNac   | nacionalidad | estadoCivil |
       | 12/12/1980 | Albania      | Casado      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "hogar"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -86,8 +87,8 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono       |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
 
 
 

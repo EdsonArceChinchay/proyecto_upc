@@ -1,7 +1,6 @@
 package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.model.Material;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -16,10 +15,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.DateUtils.getFormattedCurrentDate;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class FileUtils {
     public static List<Material> readSimCards(String filePath) throws Exception {
@@ -69,11 +68,10 @@ public class FileUtils {
         Properties properties1 = new Properties();
         try {
             properties1.load(new FileInputStream(path));
-            return properties1.getProperty(key);
         } catch (IOException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Error in read values %s", e.getMessage()));
-            return null;
+            logSevere(String.format("Error in read values %s", e.getMessage()));
         }
+        return properties1.getProperty(key);
     }
 
     public static String getAbsolutePathString(String relativePath) {
@@ -82,7 +80,7 @@ public class FileUtils {
 
     public static Path getAbsolutePath(String relativePath) {
         Path absolutePath = Paths.get(relativePath).toAbsolutePath();
-        Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Absolute path: %s", absolutePath));
+        logSevere(String.format("Absolute path: %s", absolutePath));
         return absolutePath;
     }
 
@@ -91,12 +89,12 @@ public class FileUtils {
         if (!Files.exists(absolutePath)) {
             try {
                 Files.createDirectories(absolutePath);
-                Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("Directory created in: %s", path));
+                logInfo(String.format("Directory created in: %s", path));
             } catch (IOException e) {
-                Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("ERROR! - %s", e.getMessage()));
+                logSevere(String.format("ERROR! - %s", e.getMessage()));
             }
         } else {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The directory already exists.");
+            logInfo("The directory already exists");
         }
     }
 
@@ -108,14 +106,14 @@ public class FileUtils {
                 for (File file1 : files) {
                     if (!file1.getName().equalsIgnoreCase(".gitkeep")) {
                         file1.delete();
-                        Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("File deleted: %s", file1.getName()));
+                        logInfo(String.format("File deleted: %s", file1.getName()));
                     }
                 }
             } else {
-                Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The folder is empty");
+                logInfo("The folder is empty");
             }
         } else {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, "The specified path is not a valid folder.");
+            logInfo("The specified path is not a valid folder");
         }
     }
 
@@ -123,7 +121,7 @@ public class FileUtils {
         try {
             return java.nio.file.Files.readString(getAbsolutePath(relativePath));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error reading JSON file - %s", e.getMessage()));
+            logSevere(String.format("Error reading JSON file - %s", e.getMessage()));
             return null;
         }
     }
@@ -132,9 +130,9 @@ public class FileUtils {
         try (PDDocument document = PDDocument.load(new URL(url).openStream());
              FileOutputStream outputFile = new FileOutputStream(new File(downloadDir, url.substring(url.lastIndexOf("/") + 1)))) {
             document.save(outputFile);
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("PDF downloaded to: %s.", downloadDir)));
+            logInfo((String.format("PDF downloaded to: %s", downloadDir)));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error downloading PDF - %s", e.getMessage()));
+            logSevere(String.format("Error downloading PDF - %s", e.getMessage()));
         }
     }
 
@@ -149,9 +147,9 @@ public class FileUtils {
             FileWriter fileWriter = new FileWriter(pathFile);
             fileWriter.write(htmlCode);
             fileWriter.close();
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, (String.format("El archivo %s se ha guardado correctamente en %s", naneFile, pathFile)));
+            logInfo(String.format("The %s file has been successfully saved in %s", naneFile, pathFile));
         } catch (IOException e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, (String.format("Error al guardar el archivo %s en %s: %s ", naneFile, pathFile, e.getMessage())));
+            logSevere(String.format("Error saving file %s in %s - %s", naneFile, pathFile, e.getMessage()));
         }
     }
 
@@ -159,10 +157,10 @@ public class FileUtils {
         try {
             File image = webElement.getScreenshotAs(OutputType.FILE);
             org.apache.commons.io.FileUtils.copyFile(image, new File(path));
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, String.format("Screenshot saved in: %s.", path));
+            logInfo(String.format("Screenshot saved in: %s", path));
             return true;
         } catch (Exception e) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.SEVERE, String.format("Error saving screenshot: %s.", e.getMessage()));
+            logSevere(String.format("Error saving screenshot: %s", e.getMessage()));
             return false;
         }
     }

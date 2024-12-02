@@ -167,7 +167,6 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
     }
@@ -189,7 +188,7 @@ public class HomePage extends WebBase {
     }
 
     public void modifyGroupAgent(String group, Agent agent) {
-        if ((Objects.requireNonNull(getValueConfig("config","environment.agent.addRetentionRole.channels"))).contains(agent.getChannelType())) {
+        if ((Objects.requireNonNull(getValueConfig("config","environment.agent.add-retention-role.channels"))).contains(agent.getChannelType())) {
             String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
             setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
         }
@@ -197,7 +196,7 @@ public class HomePage extends WebBase {
     }
 
     public String shouldAddRetentionRole() {
-        if (Objects.requireNonNull(getValueConfig("config","environment.agent.addRetentionRole")).equalsIgnoreCase("true")) {
+        if (Objects.requireNonNull(getValueConfig("config","environment.agent.add-retention-role")).equalsIgnoreCase("true")) {
             return "add";
         } else {
             return "remove";

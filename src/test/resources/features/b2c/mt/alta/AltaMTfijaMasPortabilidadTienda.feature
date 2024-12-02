@@ -55,7 +55,8 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en ca
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -93,5 +94,5 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | documentType | documentNumber | correo           | nombrePlan | phoneNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | TRIO       | 920956351   |
+      | userType     | userName   | userPassword   | msgHome    | documentType | documentNumber | correo           | planType | planName | phoneNumber |
+      | externalUser | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | Trío MT  | TRIO     | 920956351   |

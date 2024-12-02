@@ -4,8 +4,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import static com.tdp.ct.web.utils.LogUtils.*;
 
 public class DateUtils {
 
@@ -49,9 +49,9 @@ public class DateUtils {
     public static void formatTime(long time, String msg) {
         try {
             String message = String.format("%s - Time of execution: %s", msg, formatTime(time));
-            Logger.getLogger(DateUtils.class.getName()).log(Level.INFO, (message));
+            logInfo(message);
         } catch (Exception e) {
-            Logger.getLogger(DateUtils.class.getName()).log(Level.SEVERE, (String.format("ERROR %s", e.getMessage())));
+            logSevere(String.format("ERROR %s", e.getMessage()));
         }
     }
 
