@@ -48,7 +48,8 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -79,5 +80,5 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | nombrePlan                                |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío HD 600 Mbps RA + Ilimitado 135 Gb RA |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio     |

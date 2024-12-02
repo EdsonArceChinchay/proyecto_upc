@@ -9,16 +9,16 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.File;
 import java.util.UUID;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.FileUtils.*;
 import static com.tdp.ct.web.utils.Helper.isNumber;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class CaptchaPage extends WebBase {
 
-    private static final String PATH = System.getProperty("user.dir") + File.separator + "captcha";
-    private static final int MAX_RETRIES = 5;
-    private static final int MAX_ATTEMPTS = 5;
+    private static final String PATH = getAbsolutePathString("/captcha");
+    private static final int MAX_RETRIES = Integer.parseInt(getValueConfig("config", "environment.captcha.max-retries"));
+    private static final int MAX_ATTEMPTS = Integer.parseInt(getValueConfig("config", "environment.captcha.max-attempts"));
     private static final int EXPECTED_CAPTCHA_LENGTH = 4;
 
     private static int count = 0;
@@ -36,22 +36,24 @@ public class CaptchaPage extends WebBase {
     }
 
     public void updateAndTypeCaptcha() {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type incorrect captcha...");
+        logInfo("Type incorrect captcha...");
         updateAndFetchNewCaptcha();
     }
 
     public void getCaptcha() {
         if (count >= MAX_ATTEMPTS) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Maximum captcha attempts reached.");
-            throw new MaxCaptchaAttemptsException("Maximum captcha attempts reached.");
+            String msg = String.format("Maximum %s captcha attempts reached", MAX_ATTEMPTS);
+            logInfo(msg);
+            throw new MaxCaptchaAttemptsException(msg);
         }
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get captcha...");
+        logInfo("Get captcha...");
+        logInfo("Captcha attempts...", ++count);
         UtilWeb.waitForSeconds(5);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("captchaElement displayed... %s", captcha.isDisplayed()));
+        logInfo("captchaElement displayed...", captcha.isDisplayed());
         int retries = 0;
         while (!captcha.isDisplayed() && retries < MAX_RETRIES) {
             updateCaptcha();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("captchaElement displayed... %s - retries: %s.", captcha.isDisplayed(), (retries + 1)));
+            logInfo(String.format("captchaElement displayed... %s - retries: %s.", captcha.isDisplayed(), (retries + 1)));
             retries++;
         }
         String path = PATH + File.separator + createIDCaptcha() + ".png";
@@ -59,13 +61,11 @@ public class CaptchaPage extends WebBase {
         if (isSave) {
             String getCaptcha = decodeCaptcha(path);
             validateCaptcha(getCaptcha);
-            count++;
         }
     }
 
-
     public String decodeCaptcha(String path) {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Decoding captcha...");
+        logInfo("Decoding captcha...");
         try {
             DebugHelper.setVerboseMode(true);
             ImageToText api = initializeApi(path);
@@ -85,7 +85,7 @@ public class CaptchaPage extends WebBase {
     }
 
     private ImageToText initializeApi(String path) {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Initialize Api");
+        logInfo("Initialize Api");
         ImageToText api = new ImageToText();
         api.setClientKey(getValueConfig("config", "credential.api.secret"));
         api.setFilePath(path);
@@ -100,14 +100,14 @@ public class CaptchaPage extends WebBase {
     }
 
     public void typeCaptcha(String sCaptcha) {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type captcha...");
+        logInfo("Type captcha...");
         clear(inputCaptcha);
         type(inputCaptcha, sCaptcha);
         cleanFile(PATH);
     }
 
     public void updateCaptcha() {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Update captcha...");
+        logInfo("Update captcha...");
         btnUpdateCaptcha.click();
         UtilWeb.waitForSeconds(5);
     }
@@ -122,16 +122,19 @@ public class CaptchaPage extends WebBase {
 
     private boolean isInvalidCaptcha(String captcha) {
         if (captcha == null) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, ("Captcha is null."));
+            logInfo("Captcha is null");
             return true;
-        } else if (captcha.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, ("Captcha is empty."));
+        }
+        if (captcha.isEmpty()) {
+            logInfo("Captcha is empty.");
             return true;
-        } else if (!isNumber(captcha)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, ("Captcha contains letters."));
+        }
+        if (!isNumber(captcha)) {
+            logInfo("Captcha contains letters.");
             return true;
-        } else if (captcha.trim().length() != EXPECTED_CAPTCHA_LENGTH) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, ("Captcha has a different length of 4."));
+        }
+        if (captcha.trim().length() != EXPECTED_CAPTCHA_LENGTH) {
+            logInfo(String.format("Captcha has a different length (expected: %d, found: %s).", EXPECTED_CAPTCHA_LENGTH, captcha.trim().length()));
             return true;
         }
         return false;

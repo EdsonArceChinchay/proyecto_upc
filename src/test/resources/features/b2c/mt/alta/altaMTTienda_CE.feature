@@ -45,13 +45,10 @@ Característica: AT-DT036_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-   # Y        ingreso la informacion del lugar de instalacion
-    #  | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-    #  |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "Mono MT"
-    Y        selecciono un plan Movistar Total "Mono"
+    Y        selecciono el tipo de plan "<planType> "
+    Y        selecciono un plan Movistar Total "<planName>"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -63,7 +60,7 @@ Característica: AT-DT036_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
       | fechaNac   | estadoCivil | nacionalidad |
       | 11/02/1990 | Casado      | Albania      |
     Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
+    Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
@@ -77,5 +74,5 @@ Característica: AT-DT036_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1567400000     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1567400000     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono     | correo@gmail.com |

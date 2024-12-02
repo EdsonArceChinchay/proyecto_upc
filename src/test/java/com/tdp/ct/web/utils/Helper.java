@@ -10,8 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class Helper extends WebBase {
 
@@ -43,18 +44,18 @@ public class Helper extends WebBase {
 
     public static WebElement getVisibleAndClickableElement(List<WebElement> elements) {
         int numberElements = elements.size();
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Number of web elements: %d.", numberElements));
+        logInfo(String.format("Number of web elements: %d", numberElements));
         for (WebElement element : elements) {
             try {
                 if (element.isDisplayed() && element.isEnabled()) {
                     return element;
                 }
             } catch (NoSuchElementException e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Web element not found %s - %s.", element, e.getMessage()));
+                logSevere(String.format("Web element not found %s - %s", element, e.getMessage()));
             } catch (StaleElementReferenceException e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "Element is no longer attached to the DOM: " + e.getMessage());
+                logSevere(String.format("Element is no longer attached to the DOM: %s", e.getMessage()));
             } catch (Exception e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, "An error occurred: " + e.getMessage());
+                logSevere(String.format("An error occurred: %s", e.getMessage()));
             }
         }
         return null;
@@ -78,15 +79,15 @@ public class Helper extends WebBase {
 
     public static boolean assertText(String currentText, String expectedText) {
         boolean isEquals = currentText.contains(expectedText);
-        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, message);
+        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        logInfo(message);
         return isEquals;
     }
 
     public static void validateText(String currentText, String expectedText) {
         boolean isEquals = currentText.contains(expectedText);
-        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b.", expectedText, currentText, isEquals);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, message);
+        String message = String.format("Expected text: %s, Current text: %s, Are equals: %b", expectedText, currentText, isEquals);
+        logInfo(message);
         Assertions.assertTrue(isEquals, message);
     }
 
@@ -106,10 +107,10 @@ public class Helper extends WebBase {
 
     public static boolean validateInputAndLocator(WebDriver driver, String nameElement, String input, WebElement element) {
         if (input == null || input.isEmpty()) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Value is null.");
+            logInfo("Value is null");
             return false;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format(" Element %s - value: %s.", nameElement, input));
+        logInfo(String.format(" Element %s - value: %s", nameElement, input));
         return validateElement(driver, element, 10);
     }
 
@@ -117,10 +118,10 @@ public class Helper extends WebBase {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Element is Displayed: %b - Element is Enabled: %b.", element.isDisplayed(), element.isEnabled()));
+            logInfo(String.format("Element is Displayed: %b - Element is Enabled: %b", element.isDisplayed(), element.isEnabled()));
             return element.isDisplayed() && element.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("Element validation failed: %s.", e.getMessage()));
+            logSevere(String.format("Element validation failed: %s", e.getMessage()));
             return false;
         }
     }
@@ -128,7 +129,7 @@ public class Helper extends WebBase {
     public static void typeInShadowRoot(WebElement webElement, String nameElement, String text) {
         webElement.click();
         webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type in element %s = %s.", nameElement, text));
+        logInfo(String.format("Type in element %s = %s", nameElement, text));
     }
 
     public static void typeInShadowRootCssSelector(String text, WebElement webElement, String shadowSelector) {
@@ -142,9 +143,9 @@ public class Helper extends WebBase {
         if (exist) {
             element.click();
             element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Type %s: %s.", nameElement, text));
+            logInfo(String.format("Type %s: %s", nameElement, text));
         } else {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("No %s.", nameElement));
+            logInfo(String.format("No %s", nameElement));
         }
     }
 
@@ -153,7 +154,7 @@ public class Helper extends WebBase {
         if (existe) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {
-            Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("No %s.", nameElement));
+            logInfo(String.format("No %s", nameElement));
         }
     }
 
@@ -165,7 +166,7 @@ public class Helper extends WebBase {
         for (WebElement element : elementsList) {
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
-                Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Select element: %s.", element.getText()));
+                logInfo(String.format("Select element: %s", element.getText()));
                 element.click();
                 break;
             }
@@ -176,20 +177,20 @@ public class Helper extends WebBase {
         final int MAX_RETRIES = 5;
         int counter = 0;
         while (counter < MAX_RETRIES) {
-            Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("Retry shadow N° %d", (counter + 1)));
+            logInfo(String.format("Retry shadow N° %d", (counter + 1)));
             try {
                 typeInShadowRootCssSelector(text, webElement, shadowElement);
                 UtilWeb.waitForSeconds(3);
                 if (webElement.isDisplayed()) {
-                    Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: true.");
+                    logInfo("Element is Displayed: true");
                     return;
                 }
             } catch (Exception e) {
-                Logger.getLogger(Helper.class.getName()).log(Level.SEVERE, String.format("No found element - %s.", e.getMessage()));
+                logSevere(String.format("No found element - %s", e.getMessage()));
             }
             counter++;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Element is Displayed: false.");
+        logInfo("Element is Displayed: false");
     }
 
     public static boolean isNumber(String str) {
@@ -200,7 +201,7 @@ public class Helper extends WebBase {
         } catch (NumberFormatException e) {
             result = false;
         }
-        Logger.getLogger(Helper.class.getName()).log(Level.INFO, String.format("%s is number: %b",str,result));
+        logInfo(String.format("%s is number: %b", str, result));
         return result;
     }
 

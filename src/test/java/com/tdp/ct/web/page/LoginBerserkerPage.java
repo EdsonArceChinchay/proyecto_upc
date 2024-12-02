@@ -3,17 +3,14 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.Objects;
-import java.util.logging.Level;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
+import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -50,29 +47,28 @@ public class LoginBerserkerPage extends WebBase {
     public void selectUserType(String user) {
         esperaProgresiva(driver(), 3, 5, userType);
         Select usuarioSelect = new Select(userType);
-        String userType = Objects.requireNonNull(getValueConfig("config","credential.user.userType")).trim();
+        String userType = getValueConfig("config", "credential.user.userType").trim();
         usuarioSelect.selectByVisibleText(userType);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select " + userType);
+        logInfo(String.format("Select %s", userType));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typeUserName(String name) {
         type(inputNameUser, readValues(name));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type user " + readValues(name));
+        logInfo(String.format("Type user %s", readValues(name)));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typePassword(String pass) {
         type(inputPassword, readValues(pass));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type password " + readValues(pass));
+        logInfo(String.format("Type password %s", readValues(pass)));
         UtilWeb.waitForSeconds(1);
     }
 
     public void clickOnContinueButton() {
         js().scrollElementTop(btnContinue);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnContinue.getText());
+        logInfo("Click button",btnContinue.getText());
         click(btnContinue);
-        UtilWeb.waitForSeconds(5);
     }
 
     public void validateErrorMessage(String msg) {
@@ -91,13 +87,13 @@ public class LoginBerserkerPage extends WebBase {
         try {
             return waitUntilElementIsVisible(labelCaptchaError, 10).isDisplayed();
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR! - " + e.getMessage());
+            logInfo("No captcha error");
             return false;
         }
     }
 
     public String readValues(String key) {
-        return getValueConfig("config","credential.user." + key) == null ? "" : getValueConfig("config","credential.user." + key);
+        return getValueConfig("config", "credential.user." + key) == null ? "" : getValueConfig("config", "credential.user." + key);
     }
 
 }
