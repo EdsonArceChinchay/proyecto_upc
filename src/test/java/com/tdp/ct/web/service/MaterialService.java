@@ -21,7 +21,7 @@ public class MaterialService {
     public String getSimCard(String warehouse, String environment) {
         List<Material> simCards = materialRepository.getSimCards(warehouse, environment);
         if (!simCards.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "SimCard: " + simCards.get(0).getSerialNumber() );
+            UtilWeb.logger(this.getClass()).log(Level.INFO, "SIM CARD: " + simCards.get(0).getSerialNumber() );
             return simCards.get(0).getSerialNumber();
         }
         return null;

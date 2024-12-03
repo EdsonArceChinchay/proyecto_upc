@@ -46,7 +46,8 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -89,5 +90,5 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | MARIA       | JAIME       | PUEBLO LIBRE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Mono MT  | Mono BA  | MARIA       | JAIME       | PUEBLO LIBRE |

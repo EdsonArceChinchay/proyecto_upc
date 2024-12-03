@@ -1,8 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.model.Imei;
-import com.tdp.ct.web.model.SimCard;
+import com.tdp.ct.web.model.Material;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import com.tdp.ct.web.utils.MaterialsManager;
@@ -563,9 +562,9 @@ public class ParkPage extends WebBase {
         String simcard = null;
         try {
             MaterialsManager manager = new MaterialsManager();
-            SimCard availableSimCard = manager.getAvailableSimCard();
+            Material availableSimCard = manager.getAvailableSimCard();
             if (availableSimCard != null) {
-                simcard = availableSimCard.getSimCard();
+                simcard = availableSimCard.getSerialNumber();
                 manager.assignSimCard(availableSimCard);
             }
 
@@ -579,9 +578,9 @@ public class ParkPage extends WebBase {
         String imei = null;
         try {
             MaterialsManager manager = new MaterialsManager();
-            Imei availableImei = manager.getAvailableImeiByName(device);
+            Material availableImei = manager.getAvailableImeiByName(device);
             if (availableImei != null) {
-                imei = availableImei.getImei();
+                imei = availableImei.getSerialNumber();
                 manager.assignImei(availableImei);
             }
         } catch (Exception e) {

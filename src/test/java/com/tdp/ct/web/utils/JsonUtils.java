@@ -6,6 +6,9 @@ import org.json.JSONObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
+
 public class JsonUtils {
 
     /**
@@ -20,10 +23,10 @@ public class JsonUtils {
             JSONObject jsonObject = new JSONObject(jsonString);
             return jsonObject.optString(key, null);
         } catch (JSONException e) {
-            Logger.getLogger(JsonUtils.class.getName()).log(Level.SEVERE,"Error parsing JSON: " + e.getMessage());
+            logSevere("Error parsing JSON", e.getMessage());
             return null;
         } catch (Exception e) {
-            Logger.getLogger(JsonUtils.class.getName()).log(Level.SEVERE,"An error occurred: " + e.getMessage());
+            logSevere("An error occurred", e.getMessage());
             return "";
         }
     }

@@ -48,7 +48,8 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
@@ -93,5 +94,5 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 156710000      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | correo@gmail.com |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 156710000      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | correo@gmail.com |

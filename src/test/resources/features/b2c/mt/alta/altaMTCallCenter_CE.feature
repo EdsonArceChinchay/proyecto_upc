@@ -47,8 +47,8 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        presiono el boton Consultar cobertura
     #Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "Mono MT"
-    Y        selecciono un plan Movistar Total "nombrePlan"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -93,7 +93,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  |
+      | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
+      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
 
 

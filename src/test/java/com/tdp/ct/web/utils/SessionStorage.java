@@ -9,8 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.remote.Augmenter;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class SessionStorage {
 
@@ -45,7 +46,7 @@ public class SessionStorage {
         try {
             return gson.fromJson(jsonString, JsonObject.class);
         } catch (Exception e) {
-            logger.log(Level.INFO, "Error converting to JsonObject: " + e.getMessage());
+            logSevere("Error converting to JsonObject", e.getMessage());
             return null;
         }
     }
@@ -55,7 +56,7 @@ public class SessionStorage {
             JSONObject jsonObject = new JSONObject(jsonString);
             return jsonObject.optString(key, null);
         } catch (Exception e) {
-            logger.log(Level.INFO, "Error getting value from JSON: " + e.getMessage());
+            logSevere("Error getting value from JSON" + e.getMessage());
             return null;
         }
     }
@@ -68,7 +69,7 @@ public class SessionStorage {
             String jsonObjectModified = jsonObject.put(key, parentObject1).toString();
             setJsonToSessionStorage(driver, primaryKey, jsonObjectModified);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error setting value in session storage: " + e.getMessage());
+            logSevere("Error setting value in session storage", e.getMessage());
         }
     }
 
@@ -79,7 +80,7 @@ public class SessionStorage {
             String jsonObjectModified = jsonObject.put(key, modifiedString).toString();
             setJsonToSessionStorage(driver, primaryKey, jsonObjectModified);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error setting value in session storage: " + e.getMessage());
+            logSevere("Error setting value in session storage", e.getMessage());
         }
     }
 
@@ -99,11 +100,11 @@ public class SessionStorage {
                     current = current.getAsJsonArray().get(index);
                     i++;
                 } catch (NumberFormatException | IndexOutOfBoundsException e) {
-                    logger.log(Level.SEVERE, "Invalid or out-of-range index: " + e.getMessage());
+                    logSevere("Invalid or out-of-range index", e.getMessage());
                     return null;
                 }
             } else {
-                logger.log(Level.SEVERE, "Key not found or incorrect data type");
+                logSevere("Key not found or incorrect data type");
                 return null;
             }
         }
