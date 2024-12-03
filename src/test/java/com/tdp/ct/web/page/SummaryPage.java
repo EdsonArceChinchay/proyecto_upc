@@ -14,8 +14,9 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.explicitWaitXpath;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 

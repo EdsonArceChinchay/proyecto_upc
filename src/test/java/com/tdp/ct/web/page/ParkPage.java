@@ -13,7 +13,8 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.WebUtils.*;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class ParkPage extends WebBase {
 
@@ -91,37 +92,37 @@ public class ParkPage extends WebBase {
     protected WebElement cierrePopUpError;
     @FindBy(xpath = "//div[@class=\"div-product-name\"]")
     WebElement scrollCartillaMT;
-
+    @FindBy(css = "input[placeholder='Nombres']")
+    WebElement inputName;
+    @FindBy(css = "input[placeholder='Apellidos']")
+    WebElement inputLastName;
+    @FindBy(css = "tdp-st-select[formcontrolname='genero']")
+    WebElement selectGender;
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
     }
 
-    public void ingresarNombreClienteExtranjero(String nombre) {
+    public void ingresarNombreClienteExtranjero(String name) {
         UtilWeb.waitForSeconds(3);
-        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
-        esperaProgresiva(driver(), 5, 5, rootElement);
-        revisarModalError(driver());
-        typeInShadowRootCssSelector(nombre, rootElement, "div > div > div > input");
-        UtilWeb.waitForSeconds(1);
+        type(inputName,name);
+        logInfo("Type last name",name);
     }
 
-    public void ingresarApellidoClienteExtranjero(String apellidos) {
-        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
-        typeInShadowRootCssSelector(apellidos, rootElement, "div > div > div > input");
+    public void ingresarApellidoClienteExtranjero(String lastName) {
+        type(inputLastName,lastName);
+        logInfo("Type last name",lastName);
     }
 
-    public void seleccionarGeneroClienteExtranjero(String genero) {
-        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
-        click(generoList);
+    public void seleccionarGeneroClienteExtranjero(String gender) {
+        selectGender.click();
         String dataValue;
-        SearchContext context = sh().getContext(generoList);
-        if (genero.equalsIgnoreCase("femenino")) {
+        if (gender.equalsIgnoreCase("femenino")) {
             dataValue = "F";
         } else {
             dataValue = "M";
         }
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        driver().findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -179,7 +180,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
+                    logInfo("No cumplen con la condicion");
                     break;
                 }
             }

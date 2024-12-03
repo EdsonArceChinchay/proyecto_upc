@@ -14,7 +14,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class RegisterPage extends WebBase {
 

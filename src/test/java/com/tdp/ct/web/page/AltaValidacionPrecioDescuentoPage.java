@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.isVisible;
+import static com.tdp.ct.web.utils.WebUtils.isVisible;
 
 public class AltaValidacionPrecioDescuentoPage extends WebBase {
     @FindBy(xpath = "//app-searchclient/div[@class='tdp-container clienteExtranjero']")

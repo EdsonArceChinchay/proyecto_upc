@@ -7,8 +7,11 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+<<<<<<< HEAD
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
+=======
+>>>>>>> 32300ad6ac73648e8634ebbb2140c300c9fe2f84
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,12 +19,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Objects;
-import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.WebUtils.*;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 
 
@@ -63,11 +68,18 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
 
+<<<<<<< HEAD
 
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
 
     @FindBy(css = "tdp-st-input-text[formcontrolname='numDoc']")
+=======
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
+    protected WebElement selectDocumentType;
+
+    @FindBy(css = "input[id='doc']")
+>>>>>>> 32300ad6ac73648e8634ebbb2140c300c9fe2f84
     protected WebElement inputDocumentNumber;
 
     public void selectDocumentType(String type) {
@@ -100,19 +112,17 @@ public class HomePage extends WebBase {
     }
 
     public void typeDocumentNumber(String documentNumber) {
-        //WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        //typeInShadowRoot(inputDocumentNumber, "document number", documentNumber);
-        WebElement element = js().getWebElement("input[id=\"doc\"]");
-        element.sendKeys(documentNumber);
+        type(inputDocumentNumber, documentNumber);
+        logInfo("Type document number", documentNumber);
     }
 
     public void clickOnConsultButton() {
         esperaProgresiva(driver(), 5, 5, btnSearch);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnSearch.getText());
+        logInfo("Click button", btnSearch.getText());
         btnSearch.click();
         boolean isB2B = !driver().findElements(By.xpath("//*[contains(text(),'RUC')]")).isEmpty();
         String message = isB2B ? "Customer is B2B" : "Customer is B2C";
-        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
+        logInfo(message);
         revisarModalError(driver());
     }
 
@@ -137,7 +147,7 @@ public class HomePage extends WebBase {
     public void validoQueMeTraigaLosServiciosContratadosPorElCliente() {
         boolean serviciosContratados = !driver().findElements(By.xpath("//app-card-line")).isEmpty();
         if (serviciosContratados) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "El cliente SI tiene servicios contratados");
+            logInfo("El cliente SI tiene servicios contratados");
             js().scrollElementTop(find().getElementByXPath("//app-card-line"));
             UtilWeb.waitForSeconds(1);
         }
@@ -152,7 +162,7 @@ public class HomePage extends WebBase {
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
         waitUntilElementIsVisible(txtDocumento, 10).click();
         type(txtDocumento, numDoc);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number of legal representative" + numDoc);
+        logInfo("Type document number of legal representative", numDoc);
     }
 
     public void clickOnTheValidateLegalRepresentativeButton() {
@@ -165,14 +175,14 @@ public class HomePage extends WebBase {
         try {
             botonX.click();
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR -" + e.getMessage());
+            logSevere("ERROR" + e.getMessage());
         }
     }
 
     public void clickOnTheBackOfficeButton() {
         esperaProgresiva(driver(), 5, 5, btnBackOffice);
         click(btnBackOffice);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Back Office ");
+        logInfo("Click button Back Office");
         UtilWeb.waitForSeconds(5);
     }
 
@@ -201,7 +211,7 @@ public class HomePage extends WebBase {
     }
 
     public void modifyGroupAgent(String group, Agent agent) {
-        if ((Objects.requireNonNull(getValueConfig("config","environment.agent.add-retention-role.channels"))).contains(agent.getChannelType())) {
+        if ((Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role.channels"))).contains(agent.getChannelType())) {
             String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
             setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
         }
@@ -209,7 +219,7 @@ public class HomePage extends WebBase {
     }
 
     public String shouldAddRetentionRole() {
-        if (Objects.requireNonNull(getValueConfig("config","environment.agent.add-retention-role")).equalsIgnoreCase("true")) {
+        if (Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role")).equalsIgnoreCase("true")) {
             return "add";
         } else {
             return "remove";
@@ -219,7 +229,7 @@ public class HomePage extends WebBase {
     public boolean isRetention() {
         String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
         boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Is retention: " + isRetention));
+        logInfo(String.format("Is retention: " + isRetention));
         return isRetention;
     }
 
@@ -245,25 +255,25 @@ public class HomePage extends WebBase {
 
     public void printAgentData(String message) {
         message = message == null ? "" : message;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
+        logInfo(message);
     }
 
     public void backToHomePage() {
         esperaProgresiva(driver(), 3, 5, btnInicio);
         js().scrollElementTop(btnInicio);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnInicio.getText());
+        logInfo("Click button " + btnInicio.getText());
         btnInicio.click();
         esperaProgresiva(driver(), 5, 5, msgHome);
     }
 
     public void clickOnTheAdvisorIcon() {
         waitUntilElementIsClickable(iconAsesor, 10).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button");
+        logInfo("Click button");
     }
 
     public void clickOnTheLogoutButton() {
         waitUntilElementIsClickable(btnCerrar, 10).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Logout");
+        logInfo("Click button Logout");
         UtilWeb.waitForSeconds(2);
     }
 

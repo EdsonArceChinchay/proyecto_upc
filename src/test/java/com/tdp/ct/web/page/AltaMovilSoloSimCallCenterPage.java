@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.Helper.getVisibleAndClickableElement;
+import static com.tdp.ct.web.utils.WebUtils.getVisibleAndClickableElement;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
