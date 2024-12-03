@@ -204,6 +204,25 @@ public class Helper extends WebBase {
         Logger.getLogger(Helper.class.getName()).log(Level.INFO, "Type document: " + tipoDoc + " is number: " + result);
         return result;
     }
+    public static WebElement explicitWaitName(WebDriver driver, int wait, String elements){
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.name(elements)));
+    }
+    public static WebElement explicitWaitId(WebDriver driver, int wait, String elements){
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.id(elements)));
+    }
+    public static WebElement explicitWaitXpath(WebDriver driver, int wait, String elements){
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elements)));
+    }
+    public static WebElement explicitWaitCss(WebDriver driver, int wait, String elements){
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elements)));
+    }
+    public static WebElement waitUntilPresenceOfElementLocated(WebDriver driver, int timeOutOnSeconds, By webElement){
+        return (WebElement)(new WebDriverWait(driver, Duration.ofSeconds((long)timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+    }
 
 }
 

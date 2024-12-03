@@ -8,9 +8,13 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Objects;
 import java.util.logging.Level;
 
@@ -19,6 +23,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.Helper.*;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.SessionStorage.*;
+
 
 public class HomePage extends WebBase {
 
@@ -58,14 +63,19 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
 
+
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
+    protected WebElement selectDocumentType;
+
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numDoc']")
+    protected WebElement inputDocumentNumber;
+
     public void selectDocumentType(String type) {
-        WebElement documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
         js().scrollElementTop(btnSearch);
-        esperaProgresiva(driver(), 6, 5, documentoList);
-        click(documentoList);
+        esperaProgresiva(driver(), 6, 5, selectDocumentType);
+        click(selectDocumentType);
         UtilWeb.waitForSeconds(2);
         String valueTipoDocumento;
-        SearchContext context = sh().getContext(documentoList);
         switch (type) {
             case "CE":
             case "C":
@@ -84,13 +94,16 @@ public class HomePage extends WebBase {
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Select document type " + valueTipoDocumento);
+        WebElement value = driver().findElement(By.cssSelector("ul > li[data-value='" + valueTipoDocumento + "']"));
+        waitUntilElementIsClickable(value, 60).click();
+       // logInfo("Select document type", valueTipoDocumento);
     }
 
     public void typeDocumentNumber(String documentNumber) {
-        WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        typeInShadowRoot(inputDocumentNumber, "document number", documentNumber);
+        //WebElement inputDocumentNumber = find().getElementByCss("#doc");
+        //typeInShadowRoot(inputDocumentNumber, "document number", documentNumber);
+        WebElement element = js().getWebElement("input[id=\"doc\"]");
+        element.sendKeys(documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -111,10 +124,8 @@ public class HomePage extends WebBase {
     }
 
     public void selectCustomerId(String nro) {
-        UtilWeb.waitForSeconds(30);
-        WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 6, 8, nroItem);
-        waitUntilElementIsClickable(nroItem, 20).click();
+        WebElement nroItem = explicitWaitXpath(driver(),60, "(//tdp-st-radio)[" + nro.trim() + "]");
+        nroItem.click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -167,9 +178,11 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(), 5, 8, msgHome);
-        compareWebElementTextAndString(msgHome, msg);
+        WebElement mensaje = explicitWaitCss(driver(),60, ".message-welcome span");
+
+        //UtilWeb.waitForSeconds(10);
+        //esperaProgresiva(driver(), 5, 8, msgHome);
+        compareWebElementTextAndString(mensaje, msg);
     }
 
     public void initializeAgent(Agent agent) {
