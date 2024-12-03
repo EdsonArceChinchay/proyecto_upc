@@ -13,7 +13,7 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.typeInShadowRootCssSelector;
+import static com.tdp.ct.web.utils.WebUtils.typeInShadowRootCssSelector;
 
 public class AppointmentPage extends WebBase {
 

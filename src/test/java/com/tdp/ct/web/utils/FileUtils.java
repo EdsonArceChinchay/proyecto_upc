@@ -140,7 +140,7 @@ public class FileUtils {
         String naneFile = String.format("codigoHTML_%s.html", getFormattedCurrentDate("yyyy-MM-dd-(HH-mm-ss)"));
         String path = getAbsolutePathString("target/html");
         createDirectory(naneFile);
-        String pathFile = path + naneFile;
+        String pathFile = path + File.separator + naneFile;
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         String htmlCode = (String) jsExecutor.executeScript("return document.documentElement.outerHTML;");
         try {

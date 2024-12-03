@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class LoginBerserkerPage extends WebBase {

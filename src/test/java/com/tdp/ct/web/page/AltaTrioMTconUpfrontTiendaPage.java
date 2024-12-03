@@ -7,7 +7,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tdp.ct.web.utils.Helper.typeInShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.typeInShadowRoot;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
