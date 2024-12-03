@@ -14,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Helper.isNumber;
+import static com.tdp.ct.web.utils.WebUtils.isNumber;
 
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class BandejaBackOfficeStepDefinition {

@@ -11,12 +11,12 @@ import java.io.File;
 import java.util.UUID;
 
 import static com.tdp.ct.web.utils.FileUtils.*;
-import static com.tdp.ct.web.utils.Helper.isNumber;
+import static com.tdp.ct.web.utils.WebUtils.isNumber;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class CaptchaPage extends WebBase {
 
-    private static final String PATH = getAbsolutePathString("/captcha");
+    private static final String PATH = getAbsolutePathString("captcha");
     private static final int MAX_RETRIES = Integer.parseInt(getValueConfig("config", "environment.captcha.max-retries"));
     private static final int MAX_ATTEMPTS = Integer.parseInt(getValueConfig("config", "environment.captcha.max-attempts"));
     private static final int EXPECTED_CAPTCHA_LENGTH = 4;

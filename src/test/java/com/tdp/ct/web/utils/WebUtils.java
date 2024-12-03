@@ -11,10 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
-public class Helper extends WebBase {
+public class WebUtils extends WebBase {
 
     public static String extractRequestNumber(String text) {
         int indexFE = text.indexOf("FE-");
@@ -27,7 +28,7 @@ public class Helper extends WebBase {
 
     public static void seleccionarValueComboShadow(WebDriver driver, String sFormControlName, String sCodigoValue) {
         UtilWeb.waitForSeconds(1);
-        System.out.println("seleccionarValueComboShadow(sFormControlName=" + sFormControlName + ", sCodigoValue=" + sCodigoValue + ")");
+        logInfo("seleccionarValueComboShadow(sFormControlName=" + sFormControlName + ", sCodigoValue=" + sCodigoValue + ")");
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
         eventFiringWebDriver.executeScript("document.querySelector('[formcontrolname=\"" + sFormControlName + "\"]') " +
                 ".shadowRoot.querySelector('li.mdc-list-item[data-value=\"" + sCodigoValue + "\"]').click();");
@@ -105,18 +106,24 @@ public class Helper extends WebBase {
         return present;
     }
 
-    public static boolean validateInputAndLocator(WebDriver driver, String nameElement, String input, WebElement element) {
-        if (input == null || input.isEmpty()) {
+    public static void validateAndType(String nameElement, WebElement webElement, String value) {
+        if (validateInputAndLocator(nameElement, webElement, value)) {
+            webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+        }
+    }
+
+    public static boolean validateInputAndLocator(String nameElement, WebElement element, String value) {
+        if (value == null || value.isEmpty()) {
             logInfo("Value is null");
             return false;
         }
-        logInfo(String.format(" Element %s - value: %s", nameElement, input));
-        return validateElement(driver, element, 10);
+        logInfo(String.format("Element %s - value: %s", nameElement, value));
+        return validateElement(element, 10);
     }
 
-    public static boolean validateElement(WebDriver driver, WebElement element, int timeoutInSeconds) {
+    public static boolean validateElement(WebElement element, int timeoutInSeconds) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(element));
             logInfo(String.format("Element is Displayed: %b - Element is Enabled: %b", element.isDisplayed(), element.isEnabled()));
             return element.isDisplayed() && element.isEnabled();
@@ -138,19 +145,19 @@ public class Helper extends WebBase {
                 .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
     }
 
-    public static void validateInput(WebDriver driver, String nameElement, String text, WebElement element) {
-        boolean exist = validateInputAndLocator(driver, nameElement, text, element);
+    public static void validateInput(String nameElement, WebElement element, String value) {
+        boolean exist = validateInputAndLocator(nameElement, element, value);
         if (exist) {
             element.click();
-            element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-            logInfo(String.format("Type %s: %s", nameElement, text));
+            element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+            logInfo(String.format("Type %s: %s", nameElement, value));
         } else {
             logInfo(String.format("No %s", nameElement));
         }
     }
 
-    public static void validateSelectShadow(WebDriver driver, String nameElement, String text, WebElement element, String shadowElement) {
-        boolean existe = validateInputAndLocator(driver, nameElement, text, element);
+    public static void validateSelectShadow(String nameElement, String text, WebElement element, String shadowElement) {
+        boolean existe = validateInputAndLocator(nameElement,element, text);
         if (existe) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {
@@ -203,6 +210,20 @@ public class Helper extends WebBase {
         }
         logInfo(String.format("%s is number: %b", str, result));
         return result;
+    }
+
+    public static void selectElementCSS(String text, WebElement webElement, String webElementList) {
+        webElement.click();
+        UtilWeb.waitForSeconds(2);
+        List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
+        for (WebElement element : elementsList) {
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
+            if (isEquals) {
+                logInfo(String.format("Select element: %s", element.getText()));
+                element.click();
+                break;
+            }
+        }
     }
 
 }
