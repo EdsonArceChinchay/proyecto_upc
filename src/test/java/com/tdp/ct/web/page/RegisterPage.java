@@ -17,7 +17,7 @@ public class RegisterPage extends WebBase {
     protected WebElement selectMethodPayment;
     @FindBy(css = "tdp-st-input-text[formcontrolname='mail'] input")
     protected WebElement inputEmail;
-    @FindBy(xpath = "tdp-st-input-text[@formcontrolname='confirmEmail']")
+    @FindBy(xpath = "tdp-st-input-text[formcontrolname='confirmEmail']")
     protected WebElement inputConfirmEmail;
     @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
     protected WebElement inputCallID;
