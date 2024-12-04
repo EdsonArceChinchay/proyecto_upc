@@ -9,14 +9,16 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.WebUtils.*;
 import static com.tdp.ct.web.utils.LogUtils.*;
 
 public class ParkPage extends WebBase {
 
-    @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
-    protected WebElement btnHogar;
+   // @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
+    protected String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
@@ -29,14 +31,13 @@ public class ParkPage extends WebBase {
     protected WebElement btnPlanMtExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
-    @FindBy(css = "div[class='show-offerts']")
-    protected WebElement btnShowOffers;
+    //@FindBy(css = "div[class='show-offerts']")
+    protected String btnShowOffers = "div[class='show-offerts']";
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
     protected WebElement btnCargango;
-    @FindBy(xpath = "//app-card-line[1]")
-    protected WebElement cartillaHogar;
+    protected String cartillaHogar = "//app-card-line[1]";
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
     @FindBy(xpath = "//button[@class='update_button']")
@@ -55,8 +56,8 @@ public class ParkPage extends WebBase {
     protected WebElement btnConfirmAddress;
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
-    @FindBy(xpath = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]")
-    protected WebElement labelSelectService;
+
+    protected String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
@@ -130,14 +131,14 @@ public class ParkPage extends WebBase {
     }
 
     public void altaHogar() {
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(), 6, 5, btnHogar);
-        js().scrollElementTop(btnHogar);
-        if (btnHogar.isDisplayed()) {
-            click(btnHogar);
+
+        WebElement BotonAltaHogar = explicitWaitCss(driver(),10,btnHogar);
+        js().scrollElementTop(BotonAltaHogar);
+        if (BotonAltaHogar.isDisplayed()) {
+            click(BotonAltaHogar);
         } else {
             revisarModalError(driver());
-            click(btnHogar);
+            click(BotonAltaHogar);
         }
     }
 
@@ -298,20 +299,21 @@ public class ParkPage extends WebBase {
     }
 
     public void mostrarOfertas() {
-        Addons.esperaCargaMontoDeuda(driver(), 20);
-        esperaProgresiva(driver(), 5, 6, btnShowOffers);
+       // Addons.esperaCargaMontoDeuda(driver(), 20);
+        WebElement showOffer = explicitWaitCss(driver(), 10, btnShowOffers);
         revisarModalError(driver());
-        click(btnShowOffers);
+        showOffer.click();
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
+        click(showOffer);
         logInfo("Dio click al boton Mostrar Ofertas");
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, cartillaHogar);
+        WebElement selectCartilla = explicitWaitXpath(driver(),20,cartillaHogar);
         revisarModalError(driver());
-        js().scrollElementTop(cartillaHogar);
-        revisarModalError(driver());
-        cartillaHogar.click();
+        js().scrollElementTop(selectCartilla);
+        selectCartilla.click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -436,9 +438,10 @@ public class ParkPage extends WebBase {
     }
 
     public void scrollToLabelSelectService() {
-        UtilWeb.waitForSeconds(10);
-        js().scrollElementTop(labelSelectService);
-        UtilWeb.waitForSeconds(5);
+        WebElement scroll = explicitWaitXpath(driver(), 10,
+                labelSelectService);
+        js().scrollElementTop(scroll);
+        //UtilWeb.waitForSeconds(5);
     }
 
     public void clickBtnVerDetalle(String nroServicio) {

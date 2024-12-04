@@ -6,7 +6,10 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import java.util.List;
+import java.util.logging.Level;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.LogUtils.*;
 import static com.tdp.ct.web.utils.WebUtils.*;
@@ -21,8 +24,9 @@ public class RegisterPage extends WebBase {
     protected WebElement inputConfirmEmail;
     @FindBy(css = "tdp-st-input-text[formcontrolname='callID'] input")
     protected WebElement inputCallID;
-    @FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
-    protected WebElement btnCustomerData;
+    //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
+    protected String btnCustomerData =
+            "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')] | //button//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")
@@ -81,13 +85,15 @@ public class RegisterPage extends WebBase {
     }
 
     public void waitButtonCustomerData() {
-        esperaProgresiva(driver(), 6, 6, btnCustomerData);
-        js().scrollElementTop(btnCustomerData);
+        //esperaProgresiva(driver(), 6, 6, btnCustomerData);
+        WebElement scrollBtnCustomerData = explicitWaitXpath(driver(),5,btnCustomerData);
+        js().scrollElementTop(scrollBtnCustomerData);
     }
 
     public void clickButtonCustomerData() {
-        UtilWeb.waitForSeconds(2);
-        click(btnCustomerData);
+        //UtilWeb.waitForSeconds(2);
+        WebElement ButtonCustomerData = explicitWaitXpath(driver(),5, btnCustomerData);
+        ButtonCustomerData.click();
         UtilWeb.waitForSeconds(5);
     }
 
