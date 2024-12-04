@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.WebUtils.explicitWaitCss;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
@@ -51,8 +52,9 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement planOferta;
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
-    @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
-    protected WebElement btnIrMovistarTotal;
+   // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    protected String btnIrMovistarTotal =
+            "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
     protected WebElement BtnMigrarFibra;
     @FindBy(xpath = "//div/button[@class='btnStart']")
@@ -154,7 +156,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 click(element, 40);
             }
         }
-        UtilWeb.waitForSeconds(4);
+       // UtilWeb.waitForSeconds(4);
     }
 
     public void seleccionoPlanMovistarTotal() {
@@ -174,11 +176,12 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     }
 
     public void clickBtnIrMovistarTotal() {
-        UtilWeb.waitForSeconds(15);//15
+        //UtilWeb.waitForSeconds(15);//15
         revisarModalError(driver());
         revisarModalError(driver());
-        waitUntilElementIsVisible(btnIrMovistarTotal, 150);
-        click(btnIrMovistarTotal);
+        WebElement botonIrMovistalTotal = explicitWaitCss(driver(), 15, btnIrMovistarTotal);
+       // waitUntilElementIsVisible(btnIrMovistarTotal, 150);
+        botonIrMovistalTotal.click();
     }
 
     public void SeleccionarBtnMigrarFibra() {

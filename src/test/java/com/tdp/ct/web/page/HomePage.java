@@ -7,9 +7,14 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Objects;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -20,6 +25,7 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 import static com.tdp.ct.web.utils.WebUtils.*;
+
 
 public class HomePage extends WebBase {
 
@@ -61,7 +67,6 @@ public class HomePage extends WebBase {
 
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
-
     @FindBy(css = "input[id='doc']")
     protected WebElement inputDocumentNumber;
 
@@ -116,10 +121,8 @@ public class HomePage extends WebBase {
     }
 
     public void selectCustomerId(String nro) {
-        UtilWeb.waitForSeconds(30);
-        WebElement nroItem = find().getElementByXPath("(//tdp-st-radio)[" + nro.trim() + "]");
-        esperaProgresiva(driver(), 6, 8, nroItem);
-        waitUntilElementIsClickable(nroItem, 20).click();
+        WebElement nroItem = explicitWaitXpath(driver(),60, "(//tdp-st-radio)[" + nro.trim() + "]");
+        nroItem.click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -171,6 +174,8 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
+        WebElement mensaje = explicitWaitCss(driver(),60, ".message-welcome span");
+        compareWebElementTextAndString(mensaje, msg);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
     }

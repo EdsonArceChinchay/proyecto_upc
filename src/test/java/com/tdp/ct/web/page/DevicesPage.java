@@ -4,6 +4,7 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,7 +25,7 @@ public class DevicesPage extends WebBase {
     @FindBy(css = ".col-2 ._info")
     protected WebElement caracteristicasContent;
 
-    @FindBy(xpath = "(//tdp-st-button[@class='tdp-st-button-l hydrated' and @label='Seleccionar'])[1]")
+    @FindBy(css = "tdp-st-button[label='Seleccionar'] button")
     protected WebElement btnSelect;
 
     @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
@@ -62,6 +63,7 @@ public class DevicesPage extends WebBase {
     public void typeDeviceAndSearch(String device) {
         WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text input");
         validateAndType("device", inputDevice, device);
+        inputDevice.sendKeys(Keys.ENTER);
     }
 
     public void clickButtonSelect() {
@@ -98,7 +100,7 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSeeDetail() {
-        String btnVerOfertas = ".btn-detail tdp-st-button;button";
+        String btnVerOfertas = ".btn-detail tdp-st-button button";
         WebElement element = js().getWebElement(btnVerOfertas);
         element.click();
     }
