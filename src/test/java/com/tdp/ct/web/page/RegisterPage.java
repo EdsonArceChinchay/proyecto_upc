@@ -22,7 +22,7 @@ public class RegisterPage extends WebBase {
     protected WebElement inputEmail;
     @FindBy(css = "tdp-st-input-text[formcontrolname='confirmEmail'] input")
     protected WebElement inputConfirmEmail;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='callID'] input")
     protected WebElement inputCallID;
     //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
     protected String btnCustomerData =
@@ -41,15 +41,15 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] textarea")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
     protected WebElement inputDateOfBirth;
-    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion'] input")
+    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion'] textarea")
     protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
-    @FindBy(xpath = "tdp-st-select[formcontrolname='typePage']")
+    @FindBy(css = "tdp-st-select[formcontrolname='typePage']")
     protected WebElement selectPage;
     @FindBy(xpath = "//*[contains(text(),'La validación de identidad se completará')]")
     protected WebElement textIdentityValidationError;
