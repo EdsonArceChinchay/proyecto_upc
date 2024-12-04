@@ -16,8 +16,8 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.Helper.returnValueCompareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.returnValueCompareWebElementTextAndString;
 
 public class AltaFijaTiendaPage extends WebBase {
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")

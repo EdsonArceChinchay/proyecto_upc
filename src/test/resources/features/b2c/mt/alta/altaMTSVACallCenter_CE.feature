@@ -46,7 +46,8 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -92,5 +93,5 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | sva                   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1325049087     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Dúo        | PACK ANTIVIRUS MCAFEE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva                   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1325049087     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo BA   | PACK ANTIVIRUS MCAFEE |

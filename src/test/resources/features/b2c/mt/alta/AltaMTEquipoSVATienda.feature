@@ -49,7 +49,8 @@ Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Equipo Movil + SVA a
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono el plan "<nombrePlan>" Movistar Total
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        selecciono añadir equipos
     Y        ingreso el tiempo de permanencia"Permanencia de 12 meses"
     Y        ingreso el tipo de pago "Al Contado"
@@ -88,5 +89,5 @@ Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Equipo Movil + SVA a
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                                | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | TRÍO HD 400 MBPS RA + ILIMITADO 135 GB RA | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio HD  | correo@gmail.com |

@@ -44,7 +44,8 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        presiono el boton Consultar cobertura
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -92,5 +93,5 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Entonces apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | nombrePlan | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío       | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | userType | userName   | userPassword   | msgHome    | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío MT  | Trio     | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

@@ -231,12 +231,12 @@ public class ParkStep {
     @ScreenShotBefore
     public void typeSimCard() {
         simCard = materialService.getSimCard("5P36", "UAT4");
-        page.parkPage().typeInput("inputSimCard", simCard );
+        page.parkPage().typeInput("inputSimCard", simCard==null?page.parkPage().getSimCard():simCard);
     }
 
     public void typeIMEI(String device) {
         imei = materialService.getIMEIByName(device,"5P36", "UAT4");
-        page.parkPage().typeInput("inputImei", imei);
+        page.parkPage().typeInput("inputImei", imei==null?page.parkPage().getIMEI(device):imei);
     }
 
     @ScreenShotBefore

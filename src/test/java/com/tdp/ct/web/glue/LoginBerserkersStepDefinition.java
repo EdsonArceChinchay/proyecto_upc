@@ -70,7 +70,7 @@ public class LoginBerserkersStepDefinition {
 
     @Y("presiono el boton Continuar hacia el home")
     public void presionoElBotonContinuarHaciaElHome() {
-        loginBerserkerStep.clickBtnContinuarHaciaHome();
+        loginBerserkerStep.clickBtnContinueToHome();
     }
 
     @Entonces("valido que se presente el mensaje de error {string}")

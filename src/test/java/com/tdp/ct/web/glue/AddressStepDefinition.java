@@ -7,7 +7,7 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.logging.Level;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class AddressStepDefinition {
 
@@ -220,14 +220,14 @@ public class AddressStepDefinition {
             addressStep.typeLot(lot);
         }
         if (!(floor == null) && (inside == null) && (block == null)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside and block is null change value: NA");
+            logInfo("Inside and block is null change value: NA");
             block = "NA";
             inside = "NA";
         } else if (!(inside == null) && (block == null)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Block is null change value: NA");
+            logInfo("Block is null change value: NA");
             block = "NA";
         } else if ((inside == null) && !(block == null)) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Inside is null change value: 1");
+            logInfo("Inside is null change value: 1");
             inside = "1";
         }
         addressStep.selectHouseType(houseType);

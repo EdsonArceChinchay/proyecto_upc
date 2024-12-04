@@ -46,7 +46,8 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
@@ -80,9 +81,9 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Ejemplos:
 
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | nombrePlan | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+    Ejemplos:
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | planType | planName | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
 
 

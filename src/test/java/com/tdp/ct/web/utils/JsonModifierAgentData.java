@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class JsonModifierAgentData {
 
@@ -25,7 +25,7 @@ public class JsonModifierAgentData {
             }
             return new JSONObject(gson.toJson(data));
         } catch (Exception e) {
-            Logger.getLogger(JsonModifierAgentData.class.getName()).log(Level.INFO, "Error modify json values " + e.getMessage());
+            logSevere("Error modify json values", e.getMessage());
             return null;
         }
     }

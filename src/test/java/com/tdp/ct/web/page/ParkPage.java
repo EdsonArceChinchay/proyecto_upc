@@ -1,8 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
-import com.tdp.ct.web.model.Imei;
-import com.tdp.ct.web.model.SimCard;
+import com.tdp.ct.web.model.Material;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import com.tdp.ct.web.utils.MaterialsManager;
@@ -10,11 +9,9 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
-
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.*;
+import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.WebUtils.*;
+import static com.tdp.ct.web.utils.LogUtils.*;
 
 public class ParkPage extends WebBase {
 
@@ -72,13 +69,13 @@ public class ParkPage extends WebBase {
     protected WebElement btnOrder;
     @FindBy(xpath = "//*[contains(@label,'Validar Stock') or contains(text(),'Validar Stock') or @class='buttonConfirmar']")
     protected WebElement btnValidateStock;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'simcard') or contains (@label,'SIMCARD') or contains(@placeholder,'SIMCARD')]")
+    @FindBy(css = "tdp-st-input-text[formcontrolname,'simcard'] input")
     protected WebElement inputSinCard;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'equipo') or contains(@label,'IMEI') or contains(@placeholder,'IMEI')]")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='equipo')] input")
     protected WebElement inputImei;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroCaja') or contains (@label,'Número de caja')]")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroCaja'] input")
     protected WebElement inputBoxNumber;
-    @FindBy(xpath = "//tdp-st-input-text[contains(@formcontrolname,'numeroTicket') or contains (@label,'Número de ticket')]")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroTicket'] input")
     protected WebElement inputTicketNumber;
     @FindBy(xpath = "//button[contains(text(),'Cambio de chip')]")
     protected WebElement btnCambiodeChip;
@@ -92,37 +89,37 @@ public class ParkPage extends WebBase {
     protected WebElement cierrePopUpError;
     @FindBy(xpath = "//div[@class=\"div-product-name\"]")
     WebElement scrollCartillaMT;
-
+    @FindBy(css = "input[placeholder='Nombres']")
+    WebElement inputName;
+    @FindBy(css = "input[placeholder='Apellidos']")
+    WebElement inputLastName;
+    @FindBy(css = "tdp-st-select[formcontrolname='genero']")
+    WebElement selectGender;
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
     }
 
-    public void ingresarNombreClienteExtranjero(String nombre) {
+    public void ingresarNombreClienteExtranjero(String name) {
         UtilWeb.waitForSeconds(3);
-        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
-        esperaProgresiva(driver(), 5, 5, rootElement);
-        revisarModalError(driver());
-        typeInShadowRootCssSelector(nombre, rootElement, "div > div > div > input");
-        UtilWeb.waitForSeconds(1);
+        type(inputName,name);
+        logInfo("Type last name",name);
     }
 
-    public void ingresarApellidoClienteExtranjero(String apellidos) {
-        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
-        typeInShadowRootCssSelector(apellidos, rootElement, "div > div > div > input");
+    public void ingresarApellidoClienteExtranjero(String lastName) {
+        type(inputLastName,lastName);
+        logInfo("Type last name",lastName);
     }
 
-    public void seleccionarGeneroClienteExtranjero(String genero) {
-        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
-        click(generoList);
+    public void seleccionarGeneroClienteExtranjero(String gender) {
+        selectGender.click();
         String dataValue;
-        SearchContext context = sh().getContext(generoList);
-        if (genero.equalsIgnoreCase("femenino")) {
+        if (gender.equalsIgnoreCase("femenino")) {
             dataValue = "F";
         } else {
             dataValue = "M";
         }
-        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        driver().findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -180,7 +177,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
+                    logInfo("No cumplen con la condicion");
                     break;
                 }
             }
@@ -216,7 +213,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
+                    logInfo("No cumplen con la condicion");
                     break;
                 }
             }
@@ -246,7 +243,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
+                    logInfo( "No cumplen con la condicion");
                     break;
                 }
             }
@@ -283,7 +280,7 @@ public class ParkPage extends WebBase {
                         i++;
                     }
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No cumplen con la condicion");
+                    logInfo( "No cumplen con la condicion");
                     break;
                 }
             }
@@ -305,7 +302,7 @@ public class ParkPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, btnShowOffers);
         revisarModalError(driver());
         click(btnShowOffers);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
+        logInfo("Dio click al boton Mostrar Ofertas");
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
@@ -356,19 +353,20 @@ public class ParkPage extends WebBase {
     public void ingresoRuc(String ruc) {
         WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        typeInShadowRoot(Input, "RUC 17", ruc);
+        validateAndType("RUC",Input,ruc);
+
     }
 
     public void ingresoRuc17(String ruc) {
         WebElement Input = find().getElementByXPath("//input[@formcontrolname='twoDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        typeInShadowRoot(Input, "RUC 17", ruc);
+        validateAndType("RUC 17",Input,ruc);
     }
 
-    public void ingresoDigitoV(String digito) {
+    public void ingresoDigitoV(String digit) {
         WebElement Input = find().getElementByXPath("//input[@formcontrolname='endDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        typeInShadowRoot(Input, "Digit V", digito);
+        validateAndType("Digit V",Input,digit);
     }
 
     public void clickBotonEntendido() {
@@ -400,7 +398,7 @@ public class ParkPage extends WebBase {
         esperaProgresiva(driver(), 5, 5, btnConfirmAddress);
         js().scrollElementTop(btnConfirmAddress);
         click(btnConfirmAddress);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton: Confirmar Direccion");
+        logInfo("Dio click al boton: Confirmar Direccion");
         revisarModalError(driver());
     }
 
@@ -410,7 +408,7 @@ public class ParkPage extends WebBase {
         waitUntilElementIsVisible(btnPark, 30);
         js().scrollElementTop(btnPark);
         click(btnPark);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, String.format("Click on %s park %s", name, park));
+       logInfo(String.format("Click on %s park %s", name, park));
     }
 
     public void clickOnButtonContinue() {
@@ -456,7 +454,7 @@ public class ParkPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click in line " + number);
+        logInfo( "Click in line", number);
     }
 
     public void esperarBtnCardPlanActual() {
@@ -479,7 +477,7 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnRenovarPlan.getText());
+        logInfo( "Click button " + btnRenovarPlan.getText());
         click(btnRenovarPlan);
         UtilWeb.waitForSeconds(1);
     }
@@ -487,7 +485,7 @@ public class ParkPage extends WebBase {
     public void seleccionoelbotonCambiodeChip() {
         Addons.esperaProgresiva(driver(), 5, 5, btnCambiodeChip);
         js().scrollElementTop(btnCambiodeChip);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button " + btnCambiodeChip.getText());
+        logInfo("Click button",btnCambiodeChip.getText());
         click(btnCambiodeChip);
     }
 
@@ -495,13 +493,13 @@ public class ParkPage extends WebBase {
         Addons.esperaProgresiva(driver(), 3, 5, btnClienteExonerado);
         try {
             if (btnClienteExonerado.isDisplayed()) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
+                logInfo("Cierre Nuevo Popup....");
                 click(btnClienteExonerado);
             } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
+                logInfo( "No existe Popup....");
             }
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
+            logSevere("No hay ningún popup.....");
         }
     }
 
@@ -509,30 +507,30 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(4);
         try {
             if (cerrarCU.isDisplayed()) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
+                logInfo( "Cierre Nuevo Popup....");
                 UtilWeb.waitForSeconds(4);
                 click(cerrarCU);
             } else {
                 UtilWeb.waitForSeconds(4);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
+                logInfo( "No existe Popup....");
             }
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
+            logSevere( "No hay ningún popup.....");
         }
     }
 
     public void cerrarPopUpEstadoCU() {
         try {
             if (cerrarPopUpEstadoCU.isDisplayed()) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Cierre Nuevo Popup....");
+                logInfo( "Cierre Nuevo Popup....");
                 UtilWeb.waitForSeconds(4);
                 click(cerrarPopUpEstadoCU);
             } else {
                 UtilWeb.waitForSeconds(4);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "No existe Popup....");
+                logInfo("No existe Popup....");
             }
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay ningún popup.....");
+            logSevere( "No hay ningún popup.....");
         }
     }
 
@@ -542,15 +540,15 @@ public class ParkPage extends WebBase {
         elementoExistente = !driver().findElements(By.xpath("//div[@class='dialog-container']")).isEmpty();
         if (elementoExistente) {
             Addons.esperaProgresiva(driver(), 3, 5, cierrePopUpError);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se cierra Popup de error");
+            logInfo( "Se cierra Popup de error");
             try {
                 click(cierrePopUpError);
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "error al hacer click");
+                logSevere("error al hacer click");
             }
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "no se encontró mensaje de error");
+            logInfo( "no se encontró mensaje de error");
         }
     }
 
@@ -563,9 +561,9 @@ public class ParkPage extends WebBase {
         String simcard = null;
         try {
             MaterialsManager manager = new MaterialsManager();
-            SimCard availableSimCard = manager.getAvailableSimCard();
+            Material availableSimCard = manager.getAvailableSimCard();
             if (availableSimCard != null) {
-                simcard = availableSimCard.getSimCard();
+                simcard = availableSimCard.getSerialNumber();
                 manager.assignSimCard(availableSimCard);
             }
 
@@ -579,9 +577,9 @@ public class ParkPage extends WebBase {
         String imei = null;
         try {
             MaterialsManager manager = new MaterialsManager();
-            Imei availableImei = manager.getAvailableImeiByName(device);
+            Material availableImei = manager.getAvailableImeiByName(device);
             if (availableImei != null) {
-                imei = availableImei.getImei();
+                imei = availableImei.getSerialNumber();
                 manager.assignImei(availableImei);
             }
         } catch (Exception e) {
@@ -590,27 +588,27 @@ public class ParkPage extends WebBase {
         return imei;
     }
 
-    public void typeInput(String input, String text) {
+    public void typeInput(String input, String value) {
         switch (input) {
             case "inputSimCard":
                 esperaProgresiva(driver(), 6, 8, inputSinCard);
                 js().scrollElementTop(inputSinCard);
-                typeInShadowRoot(inputSinCard, "SIM CARD", text);
+                validateAndType("SIM CARD",inputSinCard,  value);
                 break;
             case "inputImei":
                 esperaProgresiva(driver(), 6, 8, inputImei);
                 js().scrollElementTop(inputImei);
-                typeInShadowRoot(inputImei, "IMEI", text);
+                validateAndType("IMEI",inputImei,  value);
                 break;
             case "inputBoxNumber":
                 esperaProgresiva(driver(), 6, 8, inputBoxNumber);
                 js().scrollElementTop(inputBoxNumber);
-                typeInShadowRoot(inputBoxNumber, "Box Number", text);
+                validateAndType("Box Number",inputBoxNumber,value);
                 break;
             case "inputTicketNumber":
                 esperaProgresiva(driver(), 6, 8, inputTicketNumber);
                 js().scrollElementTop(inputTicketNumber);
-                typeInShadowRoot(inputTicketNumber, "Ticket Number", text);
+                validateAndType("Ticket Number",inputTicketNumber,  value);
                 break;
         }
     }
@@ -622,11 +620,11 @@ public class ParkPage extends WebBase {
             revisarModalError(driver());
             try {
                 isEnabled = btnValidateStock.isEnabled();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "isEnabled " + isEnabled);
+                logInfo( "isEnabled " + isEnabled);
                 if (isEnabled) btnValidateStock.click();
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR " + e.getMessage());
+                logSevere(  "ERROR", e.getMessage());
                 isEnabled = false;
             }
         }

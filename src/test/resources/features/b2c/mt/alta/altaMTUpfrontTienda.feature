@@ -52,7 +52,8 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Entonces me muestra la pantalla de ofertas sugeridos
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
-    Y        selecciono un plan Movistar Total "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -80,5 +81,5 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Dúo        | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName  | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Duo MT   | Duo BA TV | correo@gmail.com |
