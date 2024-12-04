@@ -89,8 +89,7 @@ public class HomePage extends WebBase {
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        WebElement value = driver().findElement(By.cssSelector("ul > li[data-value='" + valueTipoDocumento + "']"));
-        waitUntilElementIsClickable(value, 60).click();
+        driver().findElement(By.cssSelector("tdp-st-select[formcontrolname='tipoDoc'] li[data-value='" + valueTipoDocumento + "']")).click();
         logInfo("Select document type", valueTipoDocumento);
     }
 
