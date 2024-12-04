@@ -17,7 +17,7 @@ public class RegisterPage extends WebBase {
     protected WebElement selectMethodPayment;
     @FindBy(css = "tdp-st-input-text[formcontrolname='mail'] input")
     protected WebElement inputEmail;
-    @FindBy(xpath = "tdp-st-input-text[formcontrolname='confirmEmail']")
+    @FindBy(xpath = "tdp-st-input-text[formcontrolname='confirmEmail'] input")
     protected WebElement inputConfirmEmail;
     @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
     protected WebElement inputCallID;
@@ -37,7 +37,7 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] textarea")
     protected WebElement inputDateOfBirth;
     @FindBy(css = "tdp-st-textarea[formcontrolname='direccion'] input")
     protected WebElement inputAddress;
