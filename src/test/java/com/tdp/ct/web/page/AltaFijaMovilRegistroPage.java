@@ -4,7 +4,10 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -163,7 +166,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void visualizarContratoEnPantalla() {
         UtilWeb.waitForSeconds(2);
-        esperaProgresiva(driver(),6,7,btnYes);
+        esperaProgresiva(driver(), 6, 7, btnYes);
     }
 
     public void clicSiAcepto() {

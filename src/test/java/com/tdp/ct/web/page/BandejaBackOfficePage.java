@@ -8,11 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.FileUtils.getAbsolutePath;
 import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
@@ -36,61 +36,60 @@ public class BandejaBackOfficePage extends WebBase {
     @FindBy(css = "tdp-st-button[type='button']")
     protected WebElement btnCargarAudio;
 
-    public void typeDocument(String documento) {
-        WebElement document = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
-        waitUntilElementIsClickable(document, 20).click();
-        type(document, documento);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Type document number: " + documento);
+    public void typeDocument(String document) {
+        WebElement inputDocument = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
+        waitUntilElementIsClickable(inputDocument, 20).click();
+        validateAndType("document number",inputDocument,document);
     }
 
     public void clickButtonSearch() {
         btnBuscar.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Search");
+        logInfo("Click button Search");
         esperaProgresiva(driver(), 5, 5, btnCargarAudio);
     }
 
     public void openPopUpUploadAudio() {
         esperaProgresiva(driver(), 5, 5, btnCargarAudio);
         btnCargarAudio.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Upload Audio");
+        logInfo("Click button Upload Audio");
     }
 
     public void uploadAudio() {
         esperaProgresiva(driver(), 5, 6, etiquetaCargando);
         if (etiquetaCargando.getText().equals("PENDIENTE AUDIO")) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"Upload Audio");
+            logInfo("Upload Audio");
             fileRuta.sendKeys(getAbsolutePathString("src/test/resources/mp3/FE-audio-ejemplo.mp3"));
             UtilWeb.waitForSeconds(10);
             esperaProgresiva(driver(), 5, 7, etiquetaCargado);
             Assert.assertEquals("No se Cargo correctamente", "CARGADO", etiquetaCargado.getText());
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO,"Adjunto ya subido anteriormente");
+            logInfo("Adjunto ya subido anteriormente");
         }
     }
 
     public void selectRequest(String numberRequest) {
         String codigoVenta = numberRequest.trim();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code: " + codigoVenta);
+        logInfo("Sales code: " + codigoVenta);
         esperaProgresiva(driver(), 3, 3, btnDetalle);
         List<WebElement> verDetalleButtons = driver().findElements(By.xpath("//button[text()='Ver detalle']"));
         WebElement verDetalleButton = verDetalleButtons.get(verDetalleButtons.size() - 1);
         js().scrollElementTop(verDetalleButton);
         UtilWeb.waitForSeconds(1);
         verDetalleButtons.get(verDetalleButtons.size() - 1).click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click a Ver detalle " + codigoVenta);
+        logInfo("Dio click a Ver detalle " + codigoVenta);
         esperaProgresiva(driver(), 3, 3, btnCargarAudio);
     }
 
     public void approveRequest() {
         UtilWeb.waitForSeconds(10);
         btnAprobar.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button Approve");
+        logInfo("Click button Approve");
         esperaProgresiva(driver(), 5, 5, btnBandejaPrincipal);
         UtilWeb.waitForSeconds(5);
         if (etiquetaAprobado.getText().equals("APROBADO")) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "El registro móvil fue exitoso con código de orden: " + codigoOrden);
+            logInfo("El registro móvil fue exitoso con código de orden: " + codigoOrden);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Hubo en error al enviar orden");
+            logInfo("Hubo en error al enviar orden");
         }
     }
 

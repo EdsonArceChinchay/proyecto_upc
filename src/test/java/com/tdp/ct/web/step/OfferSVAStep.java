@@ -3,11 +3,10 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Level;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @Component
 public class OfferSVAStep {
@@ -58,7 +57,7 @@ public class OfferSVAStep {
                 break;
 
             default:
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Decoder does not exist " + nameSVA);
+                logInfo("Decoder does not exist " + nameSVA);
                 page.offerSVAPage().addSVAIconButton("Punto Adicional");
 
         }
@@ -83,7 +82,7 @@ public class OfferSVAStep {
                 break;
 
             default:
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Repeater does not exist " + nameSVA);
+                logInfo("Repeater does not exist " + nameSVA);
                 page.offerSVAPage().addSVAIconButton("WIFI");
         }
 
@@ -117,7 +116,7 @@ public class OfferSVAStep {
                 break;
 
             default:
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Blocks does not exist " + nameSVA);
+                logInfo("Blocks does not exist " + nameSVA);
                 page.offerSVAPage().addSVACheckBox("Bloque");
         }
     }
@@ -145,6 +144,5 @@ public class OfferSVAStep {
     public void addSVATvApp() {
         page.offerSVAPage().scrollToTitle("MOVISTAR TV APP");
         page.offerSVAPage().addSVACheckBox("Movistar Tv App Max");
-
     }
 }

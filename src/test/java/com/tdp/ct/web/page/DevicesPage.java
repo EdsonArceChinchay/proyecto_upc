@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -37,26 +36,26 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(listPago.get(0));
         logInfo("Count type of payment", listPago.size());
         for (WebElement elements : listPago) {
-            logInfo( "Type of payment", elements.getText());
+            logInfo("Type of payment", elements.getText());
             boolean isEquals = returnValueCompareWebElementTextAndString(elements, payment);
             if (isEquals) {
-                logInfo( "Payment type found: " + payment);
+                logInfo("Payment type found: " + payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
                 break;
             }
         }
         if (!tipoPagoEncontrado) {
-            logInfo("No payment type found",payment);
+            logInfo("No payment type found", payment);
         }
         UtilWeb.waitForSeconds(5);
     }
 
     public void selectTimeOfPermanency(String timePermanency) {
-        UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
+        esperaProgresiva(driver(), 6, 8, listElementPLan);
         selectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
     }
 

@@ -9,10 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
@@ -96,9 +96,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             }
             try {
                 waitUntilElementIsVisible(btnRight, 5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnRight");
+                logInfo("Se muestra el btnRight");
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento btnRight ya no fue encontrado: ");
+                logInfo("El elemento btnRight ya no fue encontrado: ");
             }
             elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             contador++;
@@ -116,7 +116,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             }
             try {
                 waitUntilElementIsVisible(btnLeft, 5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnLeft");
+                logInfo("Se muestra el btnLeft");
             } catch (Exception e) {
                 System.out.println("El elemento btnLeft ya no fue encontrado: ");
             }
@@ -131,16 +131,16 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         for (int i = 0; i < listaOfertas.size(); i++) {
 
             String currentOffer = listaOfertas.get(i).getText().trim().toUpperCase();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
+            logInfo("Offer: " + i + " " + currentOffer);
             if (!encontroElemento && currentOffer.contains(expectedOffer)) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
+                logInfo("Offer: " + i + " " + currentOffer);
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(1);
                 click(listaOfertas.get(i));
             }
 
             if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Offer: " + i + " " + currentOffer);
+                logInfo("Offer: " + i + " " + currentOffer);
 
                 scenario.printFullView();
                 js().scrollElementTop(buttonSeleccionarOferta);

@@ -7,7 +7,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
+import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.*;
@@ -68,7 +69,7 @@ public class AddressPage extends WebBase {
 
     public void selectDepartment(String department) {
         //UtilWeb.waitForSeconds(6);//2
-        WebElement depaList = explicitWaitCss(driver(),6,"tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        WebElement depaList = explicitWaitCss(driver(), 6, "tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
@@ -183,7 +184,7 @@ public class AddressPage extends WebBase {
         //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         revisarModalError(driver());
         //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
-        WebElement ButtonConsultCoverage = explicitWaitXpath(driver(),10,btnConsultCoverage);
+        WebElement ButtonConsultCoverage = explicitWaitXpath(driver(), 10, btnConsultCoverage);
         js().scrollElementTop(ButtonConsultCoverage);
         logInfo(String.format("Click button %s", ButtonConsultCoverage.getText()));
         ButtonConsultCoverage.click();
@@ -192,30 +193,30 @@ public class AddressPage extends WebBase {
     public void ingresoDepartamento(String department) {
         try {
             if (isVisible(driver(), cbxDepartamento)) {
-                selectElementCSS(department,cbxDepartamento,"form > div:nth-child(1) > div > tdp-st-select li");
+                selectElementCSS(department, cbxDepartamento, "form > div:nth-child(1) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-            logSevere(  "No found element",e.getMessage());
+            logSevere("No found element", e.getMessage());
         }
     }
 
     public void ingresoProvincia(String province) {
         try {
             if (isVisible(driver(), cbxProvincia)) {
-                selectElementCSS(province,cbxProvincia,"form > div:nth-child(2) > div > tdp-st-select li");
+                selectElementCSS(province, cbxProvincia, "form > div:nth-child(2) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-           logSevere( "No found element", e.getMessage());
+            logSevere("No found element", e.getMessage());
         }
     }
 
     public void ingresoDistrito(String district) {
         try {
             if (isVisible(driver(), cbxDistrito)) {
-                selectElementCSS(district,cbxDistrito,"form > div:nth-child(3) > div > tdp-st-select li");
+                selectElementCSS(district, cbxDistrito, "form > div:nth-child(3) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-            logSevere(  "No found element - " + e.getMessage());
+            logSevere("No found element - " + e.getMessage());
         }
     }
 

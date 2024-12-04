@@ -52,7 +52,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement planOferta;
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
-   // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
     protected String btnIrMovistarTotal =
             "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
@@ -156,7 +156,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
                 click(element, 40);
             }
         }
-       // UtilWeb.waitForSeconds(4);
+        // UtilWeb.waitForSeconds(4);
     }
 
     public void seleccionoPlanMovistarTotal() {
@@ -180,7 +180,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         revisarModalError(driver());
         revisarModalError(driver());
         WebElement botonIrMovistalTotal = explicitWaitCss(driver(), 15, btnIrMovistarTotal);
-       // waitUntilElementIsVisible(btnIrMovistarTotal, 150);
+        // waitUntilElementIsVisible(btnIrMovistarTotal, 150);
         botonIrMovistalTotal.click();
     }
 

@@ -36,7 +36,6 @@ public class MaterialRepository {
         }
     }
 
-
     public List<Material> getSimCards(String warehouse, String environment) {
         String sql = "SELECT idmaterial AS idMaterial, nombrematerial AS nameMaterial, numeroserie AS serialNumber, estado AS status, almacen AS warehouse, ambiente AS environment, sap_id AS sapID " +
                 "FROM public.material " +
@@ -54,7 +53,7 @@ public class MaterialRepository {
     }
 
     public void assignMaterial(String serialNumber) {
-        String sql = "UPDATE public.material SET grupo='MESAS', estado=1, proyecto='DITO', tester='AutomationTester', fechaasignacion=now() WHERE numeroserie=?";
+        String sql = "UPDATE public.material SET grupo='MESAS', estado=2, proyecto='DITO', tester='AutomationTester', fechaasignacion=now() WHERE numeroserie=?";
         logInfo("Query >>> {0}", sql);
         getJdbcTemplate().update(sql, serialNumber);
     }

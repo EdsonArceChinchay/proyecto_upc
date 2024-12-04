@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.isVisible;
 
 public class AltaValidacionPrecioDescuentoPage extends WebBase {
@@ -76,7 +77,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         WebElement elementoEncontrado = null;
         for (WebElement element : listElement) {
             String beneficioLista = element.getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
-            System.out.println(beneficioLista);
+            logInfo(beneficioLista);
             if (beneficioLista.equals(beneficioPlan)) {
                 elementoEncontrado = element;
                 break;
@@ -90,7 +91,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         WebElement elementEncontrado = null;
         for (WebElement listelemento : listelementos) {
             String beneficioLista = listelemento.getText().replace("+", "").replace("\n", "").replace("(", "").replace(")", "");
-            System.out.println(beneficioLista);
+            logInfo(beneficioLista);
             if (beneficioLista.equals(beneficio)) {
                 elementEncontrado = listelemento;
                 break;
@@ -103,14 +104,14 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         revisarModalError(driver());
 
         String ofertaEsperada = planOfertas.trim().toUpperCase();
-        System.out.println("Ofertas : " + listaOfertas.size());
+        logInfo("Ofertas : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
         //driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             if (elementoExistente) {
-                System.out.println("dio click");
+                logInfo("dio click");
                 click(btnRight);
                 UtilWeb.waitForSeconds(3);
             }
@@ -121,8 +122,8 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
         //-------------------------------------------------------//
         for (int i = 0; i < listaOfertas.size(); i++) {
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            logInfo("Entro al for de las lista de ofertas");
+            logInfo("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
@@ -143,7 +144,7 @@ public class AltaValidacionPrecioDescuentoPage extends WebBase {
             }
         }
         if (!encontroElemento && !listaOfertas.isEmpty()) {
-            System.out.println("No encontro elemento en la lista");
+            logInfo("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
