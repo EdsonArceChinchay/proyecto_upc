@@ -67,8 +67,8 @@ public class AddressPage extends WebBase {
     protected WebElement btnSearch;
 
     public void selectDepartment(String department) {
-        UtilWeb.waitForSeconds(6);//2
-        WebElement depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        //UtilWeb.waitForSeconds(6);//2
+        WebElement depaList = explicitWaitCss(driver(),6,"tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
@@ -140,7 +140,6 @@ public class AddressPage extends WebBase {
         click(btnConsultLocation);
         logInfo("Click button Consult Location");
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(5);
     }
 
     public void typeApple(String apple) {

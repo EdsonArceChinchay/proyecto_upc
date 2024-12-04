@@ -17,8 +17,8 @@ import static com.tdp.ct.web.utils.LogUtils.*;
 
 public class ParkPage extends WebBase {
 
-    @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
-    protected WebElement btnHogar;
+   // @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
+    protected String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
@@ -37,7 +37,6 @@ public class ParkPage extends WebBase {
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
     protected WebElement btnCargango;
-    //@FindBy(xpath = "//app-card-line[1]")
     protected String cartillaHogar = "//app-card-line[1]";
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
@@ -132,14 +131,14 @@ public class ParkPage extends WebBase {
     }
 
     public void altaHogar() {
-        UtilWeb.waitForSeconds(10);
-        esperaProgresiva(driver(), 6, 5, btnHogar);
-        js().scrollElementTop(btnHogar);
-        if (btnHogar.isDisplayed()) {
-            click(btnHogar);
+
+        WebElement BotonAltaHogar = explicitWaitCss(driver(),10,btnHogar);
+        js().scrollElementTop(BotonAltaHogar);
+        if (BotonAltaHogar.isDisplayed()) {
+            click(BotonAltaHogar);
         } else {
             revisarModalError(driver());
-            click(btnHogar);
+            click(BotonAltaHogar);
         }
     }
 
@@ -300,7 +299,7 @@ public class ParkPage extends WebBase {
     }
 
     public void mostrarOfertas() {
-        Addons.esperaCargaMontoDeuda(driver(), 20);
+       // Addons.esperaCargaMontoDeuda(driver(), 20);
         WebElement showOffer = explicitWaitCss(driver(), 10, btnShowOffers);
         revisarModalError(driver());
         showOffer.click();
