@@ -13,11 +13,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.DateUtils.*;
-import static com.tdp.ct.web.utils.FileUtils.*;
+import static com.tdp.ct.web.utils.FileUtils.readJson;
 import static com.tdp.ct.web.utils.JsonUtils.extractValue;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 @Component
 public class ServiceTest {
@@ -37,8 +38,8 @@ public class ServiceTest {
 
     public void portability(String endpointPath, String jsonPath, String value) {
         String body = readJson(jsonPath);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Endpoint: " + (URL_AKS + endpointPath));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Value: " + value);
+        logInfo("Endpoint: " + (URL_AKS + endpointPath));
+        logInfo("Value: " + value);
         String consultationResult = extractValue(apiClient.post(URL_AKS + endpointPath, body, headerService.getAksBerserkersHeaders()), value);
         updateConsultation(value, consultationResult);
     }
@@ -47,7 +48,7 @@ public class ServiceTest {
         String parteOne = consultationResult.substring(0, 9);
         String parteTwoCorrected = String.valueOf(Integer.parseInt(consultationResult.substring(9, 17)) - 1);
         consultation = parteOne + parteTwoCorrected;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct " + value + ": " + consultation);
+        logInfo("Correct " + value + ": " + consultation);
     }
 
     public void serviceManager(String service) {
@@ -62,7 +63,7 @@ public class ServiceTest {
                 break;
             default:
                 consultation = generate18DigitString();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Correct: " + consultation);
+                logInfo("Correct: " + consultation);
         }
     }
 
@@ -82,17 +83,17 @@ public class ServiceTest {
                     .replace("{endOfMonthNextDay}", endOfMonthNextDay)
                     .replace("{baseDate}", baseDate);
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR - " + e.getMessage());
+            logSevere("ERROR", e.getMessage());
         }
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body:\n" + statusBody);
+        logInfo("New Body:\n" + statusBody);
         return statusBody;
     }
 
     public void receiveMessage(DataTable dataTable) {
         String message = extractValue(apiClient.post(URL_AKS + "fesimple/api/v1/portability/receivemessageportability",
                 modifyJson(dataTable), headerService.getAksBerserkersHeaders()), "message");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Message: " + message);
+        logInfo("Message: " + message);
     }
 
     public Map<String, String> getSalesLead(String salesCode) {
@@ -101,7 +102,7 @@ public class ServiceTest {
 
         if (!FE.isEmpty()) {
             String response = apiClient.get(URL_AKS + "fesimple/v2/saleslead/" + FE, headerService.getAksBerserkersHeaders());
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Response FE: " + response);
+            logInfo("Response FE: " + response);
             JSONArray additionalData = null;
             try {
                 additionalData = new JSONObject(response)
@@ -109,7 +110,7 @@ public class ServiceTest {
                         .getJSONObject(0)
                         .getJSONArray("additionalData");
             } catch (JSONException e) {
-                UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR get additional data" + e.getMessage());
+                logSevere("ERROR get additional data" + e.getMessage());
             }
 
             for (int i = 0; i < additionalData.length(); i++) {
@@ -120,11 +121,11 @@ public class ServiceTest {
                         parameter.put(key, value);
                     }
                 } catch (JSONException e) {
-                    UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR parsing additional data" + e.getMessage());
+                    logSevere("ERROR parsing additional data", e.getMessage());
                 }
             }
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se envió el código de Venta");
+            logInfo("No se envió el código de Venta");
         }
         return parameter;
     }
@@ -134,7 +135,7 @@ public class ServiceTest {
 
         String token = extractValue(apiClient.post(URL_AZURE + "api-ne-generartoken-movistartokenapi-op/v1/token",
                 modifyBody(dataTable, salesCode), headerService.getApimBerserkersHeaders()), "token");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Token: " + token);
+        logInfo("Token: " + token);
 
         return token;
     }
@@ -142,7 +143,7 @@ public class ServiceTest {
     private String getIdTransactionOfSalesLead(String salesCode) {
         String idTransaction = extractValue(apiClient.get(URL_AKS + "fesimple/v2/saleslead/" + salesCode.trim(),
                 headerService.getAksBerserkersHeaders()), "id");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "idTransaction: " + idTransaction);
+        logInfo("idTransaction: " + idTransaction);
         return idTransaction;
     }
 
@@ -160,9 +161,9 @@ public class ServiceTest {
                     .replace("{idTransaction}", idTransaction)
                     .replace("{phoneNumber}", phoneNumber);
 
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "New Body: " + newBody);
+            logInfo("New Body: " + newBody);
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "ERROR! " + e.getMessage());
+            logSevere("ERROR!", e.getMessage());
             return null;
         }
         return newBody;

@@ -9,9 +9,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.getVisibleAndClickableElement;
 
 public class AltaMovilSoloSimCallCenterPage extends WebBase {
@@ -54,15 +55,15 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 3, 3, btnRight);
                 btnRight.click();
-                System.out.println("dio click right while");
+                logInfo("dio click right while");
             } else {
-                System.out.println("El elemento btnRight no existe o es nulo.");
+                logInfo("El elemento btnRight no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnRight, 5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnRight");
+                logInfo("Se muestra el btnRight");
             } catch (Exception e) {
-                System.out.println("El elemento btnRight ya no fue encontrado: ");
+                logSevere("El elemento btnRight ya no fue encontrado", e.getMessage());
             }
             elementoExistenteRight = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             contador++;
@@ -73,27 +74,26 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         while (elementoExistenteleft && contador < contadorMax) {
             if (btnLeft != null) {
                 waitUntilElementIsClickable(btnLeft, 8).click();
-
-                System.out.println("dio click left while");
+                logInfo("dio click left while");
             } else {
-                System.out.println("El elemento btnleft no existe o es nulo.");
+                logInfo("El elemento btnleft no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnLeft, 5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el btnLeft");
+                logInfo("Se muestra el btnLeft");
             } catch (Exception e) {
-                System.out.println("El elemento btnLeft ya no fue encontrado: ");
+                logSevere("El elemento btnLeft ya no fue encontrado", e.getMessage());
             }
             elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
             contador++;
         }
 
-        System.out.println("Ofertas : " + listaPlanMovil.size());
+        logInfo("Ofertas : " + listaPlanMovil.size());
         int cont = listaPlanMovil.size() - 1;
         boolean encontroElemento = false;
         for (int i = 0; i < listaPlanMovil.size(); i++) {
 
-            System.out.println("Oferta: " + i + " " + listaPlanMovil.get(i).getText());
+            logInfo("Oferta: " + i + " " + listaPlanMovil.get(i).getText());
             if (!encontroElemento && listaPlanMovil.get(i).getText().trim().toUpperCase().contains(planMovil.trim().toUpperCase())) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
@@ -115,7 +115,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
             }
 
             if (!encontroElemento && (i == cont || listaPlanMovil.get(i + 1).getText().trim().isEmpty())) {
-                System.out.println("No encontro elemento en la lista");
+                logInfo("No encontro elemento en la lista");
                 UtilWeb.waitForSeconds(2);
                 click(listaPlanMovil.get(i));
                 break;
@@ -128,14 +128,14 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     public void seleccionarPlan(String tipoPlan) {
         UtilWeb.waitForSeconds(4);
         String ofertaEsperada = tipoPlan.trim().toUpperCase();
-        System.out.println("cantidad de la lista : " + listaOfertas.size());
+        logInfo("cantidad de la lista : " + listaOfertas.size());
         UtilWeb.waitForSeconds(5);
 
         for (int i = 0; i < 2; i++) {
             boolean elementoExistente;
             elementoExistente = !driver().findElements(By.xpath("//img[@src='assets/images/right-arrow.png']")).isEmpty();
             if (elementoExistente) {
-                System.out.println("dio click");
+                logInfo("dio click");
                 click(btnRight);
                 UtilWeb.waitForSeconds(3);
             }
@@ -147,8 +147,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
         for (int i = 0; i < listaOfertas.size(); i++) {
             String ofertaObtenida = listaOfertas.get(i).getText().trim().toUpperCase();
-            System.out.println("Entro al for de las lista de ofertas");
-            System.out.println("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
+            logInfo("Entro al for de las lista de ofertas");
+            logInfo("Oferta " + i + 1 + ": " + ofertaObtenida + ", es igual al Plan a elegir: " + ofertaObtenida.contains(ofertaEsperada));
             if (ofertaObtenida.contains(ofertaEsperada)) {
                 encontroElemento = true;
                 UtilWeb.waitForSeconds(2);
@@ -166,7 +166,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         }
 
         if (!encontroElemento && !listaOfertas.isEmpty()) {
-            System.out.println("No encontro elemento en la lista");
+            logInfo("No encontro elemento en la lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
@@ -183,7 +183,7 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 3, 3, preguntaTipoPlan);
         boolean existe = waitUntilElementIsVisible(preguntaTipoPlan, 90).isDisplayed();
         UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina preguntaTipoPlan >>> {0}", existe);
+        logInfo("Estas en la pagina preguntaTipoPlan >>> {0}", existe);
     }
 
     public void seleccionoElBotonAgregarSva() {

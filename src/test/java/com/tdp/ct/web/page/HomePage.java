@@ -7,14 +7,9 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.Objects;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -94,7 +89,7 @@ public class HomePage extends WebBase {
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        driver().findElement(By.cssSelector("tdp-st-select[formcontrolname='tipoDoc'] li[data-value='" + valueTipoDocumento + "']")).click();
+        js().getWebElement("tdp-st-select[formcontrolname=\"tipoDoc\"] li[data-value=\"" + valueTipoDocumento + "\"]").click();
         logInfo("Select document type", valueTipoDocumento);
     }
 
@@ -121,7 +116,7 @@ public class HomePage extends WebBase {
     }
 
     public void selectCustomerId(String nro) {
-        WebElement nroItem = explicitWaitXpath(driver(),60, "(//tdp-st-radio)[" + nro.trim() + "]");
+        WebElement nroItem = explicitWaitXpath(driver(), 60, "(//tdp-st-radio)[" + nro.trim() + "]");
         nroItem.click();
         UtilWeb.waitForSeconds(1);
     }
@@ -174,7 +169,7 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        WebElement mensaje = explicitWaitCss(driver(),60, ".message-welcome span");
+        WebElement mensaje = explicitWaitCss(driver(), 60, ".message-welcome span");
         compareWebElementTextAndString(mensaje, msg);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);

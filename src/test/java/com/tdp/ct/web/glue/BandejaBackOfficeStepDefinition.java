@@ -3,17 +3,15 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Customer;
-import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import com.tdp.ct.web.service.RetentionService;
+import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.logging.Level;
-
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.isNumber;
 
 @SpringBootTest(classes = WebAutomationApplication.class)
@@ -70,7 +68,7 @@ public class BandejaBackOfficeStepDefinition {
 
     private void logSearch(String typeDocument) {
         String message = typeDocument.equals("documento") ? "Search by document number" : "Search by request number";
-        UtilWeb.logger(this.getClass()).log(Level.INFO, message);
+        logInfo(message);
     }
 
     @Y("cargo el audio en la web")
@@ -85,7 +83,7 @@ public class BandejaBackOfficeStepDefinition {
     public void selectRequest() {
         executeIfNotRetention(() -> {
             String salesCode = (customer.getSalesCode() == null) ? "FE-" : customer.getSalesCode();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "numberRequest: " + salesCode);
+            logInfo("numberRequest: " + salesCode);
             bandejaBackOfficeStep.selectRequest(salesCode);
         });
     }

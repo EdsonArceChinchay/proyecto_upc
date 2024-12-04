@@ -6,19 +6,17 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
-import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
 
 public class SummaryPage extends WebBase {
 
@@ -27,8 +25,8 @@ public class SummaryPage extends WebBase {
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-   // @FindBy(xpath = "(//div[@class='title'])/span")
-    protected String paginaResumen= "(//div[@class='title'])/span";
+    // @FindBy(xpath = "(//div[@class='title'])/span")
+    protected String paginaResumen = "(//div[@class='title'])/span";
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
     @FindBy(xpath = "//div[@class='plan2']")
@@ -86,16 +84,16 @@ public class SummaryPage extends WebBase {
                 elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
                 if (elementoExistente) {
                     click(btnClose);
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en cerrar - modal error Timeslot " + i);
+                    logInfo("Dio click en cerrar - modal error Timeslot " + i);
                     UtilWeb.waitForSeconds(5);
                     click(metodoRepedito);
                     bOK = true;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro el modal error Timeslot");
+                    logInfo("No se encontro el modal error Timeslot");
                 }
 
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" + e.getMessage());
+               logSevere("ERROR", e.getMessage());
             }
             contador++;
         } while (!bOK && contador < reintentosMax);
@@ -104,23 +102,23 @@ public class SummaryPage extends WebBase {
     public void paginaResumen() {
         revisarModalError(driver());
         //UtilWeb.waitForSeconds(7);
-        WebElement sumaryPage = explicitWaitXpath(driver(),10,paginaResumen);
+        WebElement sumaryPage = explicitWaitXpath(driver(), 10, paginaResumen);
         //JavascriptExecutor js = (JavascriptExecutor) driver();
-        esperaProgresiva(driver(), 6, 6, sumaryPage );
+        esperaProgresiva(driver(), 6, 6, sumaryPage);
         js().scrollElementTop(sumaryPage);
         Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
     }
 
     public void additionalData() {
         saleObject = getSessionStorageAsJsonObject(driver(), "saleObject");
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getSalesID(): " + getSalesID());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "productType(): " + getProductType());
+        logInfo("getSalesID(): " + getSalesID());
+        logInfo("productType(): " + getProductType());
         int number = (getProductType().equals("MT")) ? 1 : 0;
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "needAppointment(): " + needAppointment(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "isUpfront(): " + isUpfront(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getReason(): " + getReason(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getAction(): " + getAction(number));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "getCOAdditionalData()" + getCOAdditionalData());
+        logInfo("needAppointment(): " + needAppointment(number));
+        logInfo("isUpfront(): " + isUpfront(number));
+        logInfo("getReason(): " + getReason(number));
+        logInfo("getAction(): " + getAction(number));
+        logInfo("getCOAdditionalData()" + getCOAdditionalData());
     }
 
     public String getSalesID() {
