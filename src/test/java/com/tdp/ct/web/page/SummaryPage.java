@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 
@@ -25,8 +27,8 @@ public class SummaryPage extends WebBase {
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-    @FindBy(xpath = "(//div[@class='title'])/span")
-    protected WebElement paginaResumen;
+   // @FindBy(xpath = "(//div[@class='title'])/span")
+    protected String paginaResumen= "(//div[@class='title'])/span";
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
     @FindBy(xpath = "//div[@class='plan2']")
@@ -101,11 +103,12 @@ public class SummaryPage extends WebBase {
 
     public void paginaResumen() {
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(7);
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        esperaProgresiva(driver(), 6, 6, paginaResumen);
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        Assert.assertTrue("El elemento no existe", paginaResumen.isDisplayed());
+        //UtilWeb.waitForSeconds(7);
+        WebElement sumaryPage = explicitWaitXpath(driver(),10,paginaResumen);
+        //JavascriptExecutor js = (JavascriptExecutor) driver();
+        esperaProgresiva(driver(), 6, 6, sumaryPage );
+        js().scrollElementTop(sumaryPage);
+        Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
     }
 
     public void additionalData() {

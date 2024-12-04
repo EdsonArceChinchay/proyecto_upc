@@ -27,7 +27,7 @@ Característica: Subir audio en canal Call Center
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por el documento "****"
+    Y        busco por el documento "121219511"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

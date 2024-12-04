@@ -33,7 +33,7 @@ public class BandejaBackOfficePage extends WebBase {
     protected WebElement fileRuta;
     @FindBy(xpath = "//*[contains(@type,'submit') or contains(text(),'Buscar')]")
     protected WebElement btnBuscar;
-    @FindBy(xpath = "//tdp-st-button[@type='button']")
+    @FindBy(css = "tdp-st-button[type='button']")
     protected WebElement btnCargarAudio;
 
     public void typeDocument(String documento) {
