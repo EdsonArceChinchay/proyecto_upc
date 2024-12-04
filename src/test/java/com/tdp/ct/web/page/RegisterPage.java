@@ -45,7 +45,7 @@ public class RegisterPage extends WebBase {
     protected WebElement buttonContinuar;
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
-    @FindBy(xpath = "tdp-st-select[formcontrolname='typePage']")
+    @FindBy(css = "tdp-st-select[formcontrolname='typePage']")
     protected WebElement selectPage;
     @FindBy(xpath = "//*[contains(text(),'La validación de identidad se completará')]")
     protected WebElement textIdentityValidationError;
