@@ -69,7 +69,7 @@ public class ParkPage extends WebBase {
     protected WebElement btnOrder;
     @FindBy(xpath = "//*[contains(@label,'Validar Stock') or contains(text(),'Validar Stock') or @class='buttonConfirmar']")
     protected WebElement btnValidateStock;
-    @FindBy(css = "tdp-st-input-text[formcontrolname,'simcard'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='simcard'] input")
     protected WebElement inputSinCard;
     @FindBy(css = "tdp-st-input-text[formcontrolname='equipo')] input")
     protected WebElement inputImei;
