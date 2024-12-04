@@ -2,17 +2,15 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class OfferSVAPage extends WebBase {
 
@@ -59,19 +57,7 @@ public class OfferSVAPage extends WebBase {
 
     public void addSVASelect(String section, String nameSVA) {
         WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select");
-        listElementPLan.click();
-        UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > ul > li"));
-        for (WebElement elements : lista) {
-            System.out.println(elements.getText());
-            if (elements.getText().equals(nameSVA)) {
-                UtilWeb.waitForSeconds(2);
-                click(elements, 3);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Add SVA " + nameSVA);
-
-            }
-        }
+        selectElementXpath(nameSVA,listElementPLan,"//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select//li");
     }
 
 }

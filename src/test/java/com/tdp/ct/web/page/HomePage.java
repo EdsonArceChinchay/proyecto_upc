@@ -35,7 +35,7 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[@class='validation']//app-simple-button")
     protected WebElement btnValidar;
 
-    @FindBy(xpath = "//*[@class='validation']//tdp-st-select")
+    @FindBy(css = "[class='validation'] tdp-st-select")
     protected WebElement listaDocumentos;
 
     @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
@@ -141,7 +141,7 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        selectElementShadowRootCSS(documentType, listaDocumentos, "ul li");
+        selectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
