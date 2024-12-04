@@ -17,7 +17,7 @@
 Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
 
   @BusquedaInicial @BusquedaInicialB2C
-  Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <documentType>: <documento>
+  Esquema del escenario: Como usuario <userName> del canal <channelType> deseo consultar el cliente con <documentType>: <documentNumber>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -42,7 +42,7 @@ Característica: AT-DT043_Busqueda Inicial CE, DNI y RUC DITO WEB
       | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | C            | 123456753      | Cinco De Tres                |
 
   @BusquedaInicial         @BusquedaInicialB2B
-  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
+  Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documentNumber>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

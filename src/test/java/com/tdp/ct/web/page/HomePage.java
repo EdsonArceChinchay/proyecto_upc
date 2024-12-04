@@ -20,11 +20,11 @@ import java.util.Objects;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.WebUtils.*;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.*;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 
 public class HomePage extends WebBase {
@@ -35,13 +35,13 @@ public class HomePage extends WebBase {
     @FindBy(css = "[class*='buttonConsultar']")
     protected WebElement btnSearch;
 
-    @FindBy(xpath = "//*[@class='validation']//tdp-st-input-text")
+    @FindBy(css = "[class='validation'] tdp-st-input-text input")
     protected WebElement txtDocumento;
 
     @FindBy(xpath = "//*[@class='validation']//app-simple-button")
     protected WebElement btnValidar;
 
-    @FindBy(xpath = "//*[@class='validation']//tdp-st-select")
+    @FindBy(css = "[class='validation'] tdp-st-select")
     protected WebElement listaDocumentos;
 
     @FindBy(xpath = "//img[@class='close'] | //button[contains(text(),' CONTINUAR')]")
@@ -144,13 +144,12 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        selectElementShadowRootCSS(documentType, listaDocumentos, "ul li");
+        selectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
         waitUntilElementIsVisible(txtDocumento, 10).click();
-        type(txtDocumento, numDoc);
-        logInfo("Type document number of legal representative", numDoc);
+        validateAndType("document number of legal representative", txtDocumento, numDoc);
     }
 
     public void clickOnTheValidateLegalRepresentativeButton() {
@@ -163,7 +162,7 @@ public class HomePage extends WebBase {
         try {
             botonX.click();
         } catch (Exception e) {
-            logSevere("ERROR" + e.getMessage());
+            logSevere("ERROR", e.getMessage());
         }
     }
 
@@ -203,7 +202,6 @@ public class HomePage extends WebBase {
             String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
             setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
         }
-
     }
 
     public String shouldAddRetentionRole() {

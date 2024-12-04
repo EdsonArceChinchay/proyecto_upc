@@ -15,11 +15,10 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.FileUtils.downloadPDF;
-import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
+import static com.tdp.ct.web.utils.FileUtils.*;
+import static com.tdp.ct.web.utils.LogUtils.*;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {
@@ -58,8 +57,8 @@ public class CheckoutPage extends WebBase {
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
     protected WebElement buttonContinuar;
-    @FindBy(xpath = "//tdp-st-button[@label='Sí, acepta']")
-    protected WebElement rootModalButtonSiAcepto;
+    @FindBy(css = "app-modal-contract tdp-st-button button")
+    protected WebElement btnYes;
     @FindBy(xpath = "//*[contains(@class,'sectionToPrint') or contains(@class,'ticket-equipment')]")
     protected WebElement tittleTicket;
 
@@ -72,10 +71,10 @@ public class CheckoutPage extends WebBase {
             try {
                 msjExitoso.isDisplayed();
                 Parameters.estadoFlujo = false;
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Ventana de venta exitosa visible");
+                logInfo("Ventana de venta exitosa visible");
                 return true;
             } catch (NoSuchElementException nsee) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de venta exitosa");
+                logSevere("No se encontro la ventana de venta exitosa");
 //                verificarUbicacion = true;
             }
             try {
@@ -83,7 +82,7 @@ public class CheckoutPage extends WebBase {
                 verificarUbicacion = false;
                 Parameters.estadoFlujo = true;
             } catch (NoSuchElementException nsee) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro la ventana de registrar venta");
+                logSevere("No se encontro la ventana de registrar venta");
 //                verificarUbicacion = true;
             }
             contadorEstado++;
@@ -93,7 +92,7 @@ public class CheckoutPage extends WebBase {
             esperaProgresiva(driver(), 3, 4, titleRegistrarServicio);
             boolean existe = waitUntilElementIsVisible(titleRegistrarServicio, 70).isDisplayed();
             UtilWeb.waitForSeconds(1);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de Lugar de instalacion >>> {0}", existe);
+            logInfo("Estas en la pagina de Lugar de instalacion >>> {0}", existe);
             return existe;
 
         } catch (TimeoutException ex) {
@@ -115,18 +114,16 @@ public class CheckoutPage extends WebBase {
                 return false;
 
             } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
+                logInfo("El mensaje 'Tu registro hogar ha sido cancelado' no está presente en la pantalla.");
                 return false;
             }
         }
     }
 
     public void clicSiAcepto() {
-        WebElement element = sh().getWebElement(rootModalButtonSiAcepto, "button");
-        //waitUntilElementIsClickable(element, 30);
-        esperaProgresiva(driver(), 2, 5, element);
-        element.click();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dando click en si acepto");
+        esperaProgresiva(driver(), 2, 5, btnYes);
+        btnYes.click();
+        logInfo("Dando click en si acepto");
         UtilWeb.waitForSeconds(6);
     }
 
@@ -136,23 +133,23 @@ public class CheckoutPage extends WebBase {
         int contador = 0;
         int reintentoBucles = 5;
         while (!buttonFound && contador <= reintentoBucles) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al while");
+            logInfo("Entra al while");
             try {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al try");
+                logInfo("Entra al try");
                 waitUntilElementIsClickable(buttonContinuar, 10);
                 buttonFound = true;
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al catch");
+                logInfo("Entra al catch");
                 UtilWeb.waitForSeconds(5);
                 contador++;
-                UtilWeb.logger(this.getClass()).log(Level.INFO, contador + " vez");
+                logInfo(contador + " vez");
             }
         }
-        System.out.println("Sale del while");
+        logInfo("Sale del while");
         esperaProgresiva(driver(), 5, 5, buttonContinuar);
         js().scrollElementTop(buttonContinuar);
         click(buttonContinuar);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Click en continuar");
+        logInfo("Click en continuar");
         UtilWeb.waitForSeconds(5);
     }
 
@@ -174,10 +171,10 @@ public class CheckoutPage extends WebBase {
                 UtilWeb.waitForSeconds(1);
 
             } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
+                logInfo("La pantalla se quedo con el mensaje de cargando... luego de 60 segundos");
             }
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
+            logInfo("Ocurrio un error, el loading no desaparecio despues de " + segundos + "  segundos");
         }
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         return existe;
@@ -196,7 +193,7 @@ public class CheckoutPage extends WebBase {
             retorno = true;
         } catch (Exception e) {
             retorno = false;
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se espero a que se oculte el elemento");
+            logSevere("No se espero a que se oculte el elemento");
         }
         return retorno;
     }
@@ -204,7 +201,7 @@ public class CheckoutPage extends WebBase {
     public void clicDescargarContrato(ManageScenario scenario) {
         revisarModalError(driver());
         for (int intento = 1; intento <= 2; intento++) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Entra al primer try");
+            logInfo("Entra al primer try");
             try {
                 esperaProgresiva(driver(), 6, 5, descargarContrato);
                 click(descargarContrato);
@@ -214,57 +211,57 @@ public class CheckoutPage extends WebBase {
                     waitUntilElementIsVisible(contratoUno, 40);
                     UtilWeb.waitForSeconds(3);
                     String nombreDelBoton = contratoUno.getText();
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el Boton contratoUno: " + nombreDelBoton);
+                    logInfo("Se muestra el Boton contratoUno: " + nombreDelBoton);
                 } catch (Exception e) {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "El elemento contrato Uno ya no fue encontrado: ");
+                    logSevere("El elemento contrato Uno ya no fue encontrado: ");
                 }
 
-                String rutabase = getAbsolutePathString( "target/contrato-pdf");
+                String rutabase = getAbsolutePathString("target/contrato-pdf");
                 File directorio = new File(rutabase);
                 if (!directorio.exists()) {
                     directorio.mkdirs();
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Directorio Creado: ");
+                    logInfo("Directorio Creado: ");
                 }
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "RUTA BASE: " + rutabase);
+                logInfo("RUTA BASE: " + rutabase);
                 WebElement pdfElement = driver().findElement(By.tagName("iframe"));
 
                 esperaProgresiva(driver(), 3, 3, pdfElement);
                 scenario.printFullView();
                 String pdfUrl = pdfElement.getAttribute("src");
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Link PDF 1: " + pdfUrl);
+                logInfo("Link PDF 1: " + pdfUrl);
                 downloadPDF(pdfUrl, rutabase);
                 scenario.printFullView();
                 //click en el 2do boton
                 if (contratoDos != null) {
                     String nombreDelBoton2 = contratoDos.getText();
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "Se muestra el Boton contratoDos: " + nombreDelBoton2);
+                    logInfo("Se muestra el Boton contratoDos: " + nombreDelBoton2);
                     click(contratoDos);
                     UtilWeb.waitForSeconds(3);
                     WebElement pdfElement2 = driver().findElement(By.tagName("iframe"));
                     esperaProgresiva(driver(), 3, 3, pdfElement2);
                     scenario.printFullView();
                     String pdfUrl2 = pdfElement2.getAttribute("src");
-                    System.out.println("Link PDF 2: " + pdfUrl2);
+                    logInfo("Link PDF 2: " + pdfUrl2);
                     downloadPDF(pdfUrl2, rutabase);
                     UtilWeb.waitForSeconds(3);
                     click(cerrarPopUpContratos);
                     break;
                 } else {
-                    UtilWeb.logger(this.getClass()).log(Level.INFO, "No hay un segundo contrato.");
+                    logInfo("No hay un segundo contrato.");
                 }
                 scenario.printFullView();
             } catch (Exception e) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Error: " + e.getMessage());
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Sale del primer try");
+                logSevere("Error", e.getMessage());
+                logSevere("Sale del primer try");
             }
 
         }
 
         try {
             click(cerrarPopUpContratos);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "cerrarPopUpContratos cierre");
+            logInfo("cerrarPopUpContratos cierre");
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.WARNING, "ERROR -" + e.getMessage());
+            logSevere("ERROR", e.getMessage());
         }
     }
 
@@ -275,16 +272,16 @@ public class CheckoutPage extends WebBase {
             CONTRACT = textoContratoCliente.getText().trim();
 
             if (!CONTRACT.isEmpty()) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Texto del contrato del cliente: " + CONTRACT);
+                logInfo("Texto del contrato del cliente: " + CONTRACT);
                 break;
             } else {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Texto del contrato del cliente está vacío. Reintentando...");
+                logInfo("Texto del contrato del cliente está vacío. Reintentando...");
             }
             contadorReintentos++;
         } while (contadorReintentos < 4);
 
         if (contadorReintentos == 4) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se alcanzó el número máximo de reintentos. No se pudo obtener un texto no vacío.");
+            logInfo("Se alcanzó el número máximo de reintentos. No se pudo obtener un texto no vacío.");
         }
 
         return CONTRACT;
@@ -293,7 +290,7 @@ public class CheckoutPage extends WebBase {
     public List<String> getOrderCode() {
         List<String> listCodigosDeOrdenes = new ArrayList<>();
         listCodigoOrden.forEach((orden) -> {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Código de Orden: " + orden.getText() + "A");
+            logInfo("Código de Orden: " + orden.getText() + "A");
             listCodigosDeOrdenes.add("Código de Orden: " + orden.getText() + "A");
         });
         return listCodigosDeOrdenes;
@@ -301,7 +298,7 @@ public class CheckoutPage extends WebBase {
 
     public String getSalesCode() {
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Method getSalesCode()");
+        logInfo("Method getSalesCode()");
         String salesCode;
         salesCode = getSalesCodeSessionStorage();
 
@@ -315,7 +312,7 @@ public class CheckoutPage extends WebBase {
 
         salesCode = (salesCode == null) ? null : salesCode.trim();
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales Code: " + salesCode);
+        logInfo("Sales Code", salesCode);
 
         return salesCode;
 
@@ -326,10 +323,10 @@ public class CheckoutPage extends WebBase {
 
         try {
             salesCode = getValueItemSessionStorage(driver(), "saleObject", "salesId");
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of session storage: " + salesCode);
+            logInfo("Sales code of session storage", salesCode);
 
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Error - Get sales code of session storage " + e.getMessage());
+            logSevere("Error - Get sales code of session storage", e.getMessage());
 
         }
 
@@ -338,11 +335,11 @@ public class CheckoutPage extends WebBase {
 
     public String getSalesCodeContract(String contract) {
         try {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Get sales code of contract: " + contract);
+            logInfo("Get sales code of contract", contract);
             SALES_CODE = "FE-" + ((contract.split("FE-")[1]).split("\\.")[0]);
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Sales code of text contract: " + SALES_CODE);
+            logInfo("Sales code of text contract ", SALES_CODE);
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Get sales code of contract " + e.getMessage());
+            logSevere("Error - Get sales code of contract ", e.getMessage());
         }
         return SALES_CODE;
     }
@@ -350,17 +347,17 @@ public class CheckoutPage extends WebBase {
     public String getSalesCodeFinalSales() {
         String salesCode = null;
         try {
-            WebElement txtCodigoVenta = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
-            boolean elementoExistente = txtCodigoVenta.isDisplayed();
-            if (elementoExistente) {
-                salesCode = txtCodigoVenta.getText().trim();
+            WebElement txtSalesCode = driver().findElement(By.xpath("//*[contains(@id,'salesID') or contains(text(),'FE-')]"));
+            boolean isExist = txtSalesCode.isDisplayed();
+            if (isExist) {
+                salesCode = txtSalesCode.getText().trim();
                 if (salesCode.length() > 13) {
                     salesCode = salesCode.split(": ")[1];
                 }
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Get sales code of final sales: " + salesCode);
+                logInfo("Get sales code of final sales", salesCode);
             }
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Error - Get sales code of final sales" + e.getMessage());
+            logSevere("Error - Get sales code of final sales", e.getMessage());
         }
         return salesCode;
     }
@@ -398,7 +395,7 @@ public class CheckoutPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, msjExitoso);
         existe = waitUntilElementIsVisible(msjExitoso, 180).isDisplayed();
         UtilWeb.waitForSeconds(1);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Mensaje exitoso >>> {0}", msjExitoso.getText());
+        logInfo("Mensaje exitoso >>> {0}", msjExitoso.getText());
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         return existe;
     }

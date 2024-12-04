@@ -57,8 +57,8 @@ public class AddressStep {
     }
 
     //@ScreenShotAfter
-    public void typeBlock(String bloque) {
-        page.addressPage().typeBlock(bloque);
+    public void typeBlock(String block) {
+        page.addressPage().typeBlock(block);
     }
 
     @ScreenShotAfter

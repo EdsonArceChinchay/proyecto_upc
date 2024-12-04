@@ -3,11 +3,10 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tdp.ct.web.utils.WebUtils.typeInShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
@@ -31,23 +30,22 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
     public void selectSupervisorDocumentType(String type) {
         WebElement documentList = find().getElementByXPath(" //*[@id=\"modal\"]/div[2]/div/div[3]/app-modal-discapacitado//div[3]//mat-form-field");
         click(documentList);
-        SearchContext context = sh().getContext(documentList);
-        context.findElement(By.cssSelector("[id='" + type + "']")).click();
+        driver().findElement(By.cssSelector("[id='" + type + "']")).click();
     }
 
     public void typeSupervisorDocumentNumber(String document) {
         WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        typeInShadowRoot(inputDocumentNumber, "Number document", document);
+        validateAndType("document number",inputDocumentNumber,document);
     }
 
     public void typeSupervisorUser(String user) {
         WebElement inputUser = find().getElementByCss("#usuarioCitrixSupervisor");
-        typeInShadowRoot(inputUser, "User", user);
+        validateAndType("user",inputUser,user);
     }
 
     public void typeSupervisorPassword(String password) {
         WebElement inputPassword = find().getElementByCss("#passwordCitrixSupervisor");
-        typeInShadowRoot(inputPassword, "Password", password);
+        validateAndType("password",inputPassword,password);
     }
 
 }

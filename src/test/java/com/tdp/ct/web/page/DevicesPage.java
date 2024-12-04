@@ -4,8 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -14,8 +12,9 @@ import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.WebUtils.returnValueCompareWebElementTextAndString;
-import static com.tdp.ct.web.utils.WebUtils.typeInShadowRoot;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class DevicesPage extends WebBase {
 
@@ -35,19 +34,19 @@ public class DevicesPage extends WebBase {
         boolean tipoPagoEncontrado = false;
         esperaProgresiva(driver(), 5, 5, listPago.get(0));
         js().scrollElementTop(listPago.get(0));
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count type of payment: " + listPago.size());
+        logInfo("Count type of payment", listPago.size());
         for (WebElement elements : listPago) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Type of payment: " + elements.getText());
+            logInfo( "Type of payment", elements.getText());
             boolean isEquals = returnValueCompareWebElementTextAndString(elements, payment);
             if (isEquals) {
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Payment type found: " + payment);
+                logInfo( "Payment type found: " + payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
                 break;
             }
         }
         if (!tipoPagoEncontrado) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No payment type found: " + payment);
+            logInfo("No payment type found",payment);
         }
         UtilWeb.waitForSeconds(5);
     }
@@ -57,24 +56,12 @@ public class DevicesPage extends WebBase {
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
-        waitUntilElementIsClickable(listElementPLan, 40).click();
-        UtilWeb.waitForSeconds(2);
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.cssSelector("div > div > ul > li"));
-        UtilWeb.waitForSeconds(2);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Count of Time of permanency " + lista.size());
-        for (WebElement elements : lista) {
-            boolean isEquals = returnValueCompareWebElementTextAndString(elements, timePermanency);
-            if (isEquals) {
-                click(elements, 3);
-            }
-        }
+        selectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
     }
 
     public void typeDeviceAndSearch(String device) {
-        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text");
-        typeInShadowRoot(inputDevice, "Device", device);
-        inputDevice.sendKeys(Keys.ENTER);
+        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text input");
+        validateAndType("device", inputDevice, device);
     }
 
     public void clickButtonSelect() {
@@ -97,10 +84,10 @@ public class DevicesPage extends WebBase {
             UtilWeb.waitForSeconds(5);
             List<WebElement> elementos = driver().findElements(By.className("_item-device"));
             int counter = elementos.size();
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Quantity of devices " + counter);
+            logInfo("Quantity of devices", counter);
             return counter;
         } catch (Exception e) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No devices" + e.getMessage());
+            logSevere("No devices", e.getMessage());
             return 0;
         }
     }

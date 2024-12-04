@@ -7,12 +7,10 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
-
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.WebUtils.*;
+import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class AddressPage extends WebBase {
     private static final String DEPARTAMENTO = "15";
@@ -22,11 +20,11 @@ public class AddressPage extends WebBase {
     protected WebElement inputLot;
     @FindBy(css = "[formcontrolname='houseType'] input")
     protected WebElement selectHouseType;
-    @FindBy(css = "[@formcontrolname='houseName'] input")
+    @FindBy(css = "[formcontrolname='houseName'] input")
     protected WebElement inputHouseName;
-    @FindBy(css = "[@formcontrolname='block'] input")
+    @FindBy(css = "[formcontrolname='block'] input")
     protected WebElement inputBlock;
-    @FindBy(css = "[@formcontrolname='floor'] input")
+    @FindBy(css = "[formcontrolname='floor'] input")
     protected WebElement inputFloor;
     @FindBy(css = "[formcontrolname='apple'] input")
     protected WebElement inputApple;
@@ -36,8 +34,9 @@ public class AddressPage extends WebBase {
     protected WebElement selectHousingComplexe;
     @FindBy(css = "[formcontrolname='housingComplexName'] input")
     protected WebElement inputHousingComplexName;
-    @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
-    protected WebElement btnConsultCoverage;
+    //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
+    protected String btnConsultCoverage =
+            "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]";
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar ubicación') or contains(@class,'button') and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsultLocation;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
@@ -103,7 +102,7 @@ public class AddressPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarDistrito(String tipoDistrito) {
+    public void seleccionarDistrito(String district) {
         String PROVINCIA = "1501";
         WebElement distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
         esperaProgresiva(driver(), 3, 5, distritoList);
@@ -117,7 +116,7 @@ public class AddressPage extends WebBase {
         }
         click(distritoList);
         UtilWeb.waitForSeconds(2);
-        WebElement byItem = find().getElementBy(By.cssSelector("[data-value='" + tipoDistrito + "']"));
+        WebElement byItem = find().getElementBy(By.cssSelector("[data-value='" + district + "']"));
         byItem.click();
         UtilWeb.waitForSeconds(1);
     }
@@ -126,13 +125,13 @@ public class AddressPage extends WebBase {
         WebElement inputAddress = find().getElementByCss("tdp-st-input-text[formcontrolname='direction'] input");
         type(inputAddress, address);
         logInfo("Type address", address);
+        validateAndType("address", inputAddress, address);
+
     }
 
     public void typeReference(String reference) {
         WebElement inputReference = find().getElementByCss("tdp-st-input-text[formcontrolname='reference'] input");
-        type(inputReference, reference);
-        logInfo("Type reference", reference);
-
+        validateAndType("reference", inputReference, reference);
     }
 
     public void clickButtonConsultLocation() {
@@ -182,41 +181,42 @@ public class AddressPage extends WebBase {
     }
 
     public void clickButtonConsultCoverage() {
-        esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
+        //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
-        js().scrollElementTop(btnConsultCoverage);
-        logInfo(String.format("Click button %s", btnConsultCoverage.getText()));
-        btnConsultCoverage.click();
+        //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
+        WebElement ButtonConsultCoverage = explicitWaitXpath(driver(),10,btnConsultCoverage);
+        js().scrollElementTop(ButtonConsultCoverage);
+        logInfo(String.format("Click button %s", ButtonConsultCoverage.getText()));
+        ButtonConsultCoverage.click();
     }
 
-    public void ingresoDepartamento(String departamento) {
+    public void ingresoDepartamento(String department) {
         try {
             if (isVisible(driver(), cbxDepartamento)) {
-                selectElementShadowRootCSS(departamento, cbxDepartamento, "div > ul > li");
+                selectElementCSS(department,cbxDepartamento,"form > div:nth-child(1) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
+            logSevere(  "No found element",e.getMessage());
         }
     }
 
-    public void ingresoProvincia(String provincia) {
+    public void ingresoProvincia(String province) {
         try {
             if (isVisible(driver(), cbxProvincia)) {
-                selectElementShadowRootCSS(provincia, cbxProvincia, "div > ul > li");
+                selectElementCSS(province,cbxProvincia,"form > div:nth-child(2) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
+           logSevere( "No found element", e.getMessage());
         }
     }
 
-    public void ingresoDistrito(String distrito) {
+    public void ingresoDistrito(String district) {
         try {
             if (isVisible(driver(), cbxDistrito)) {
-                selectElementShadowRootCSS(distrito, cbxDistrito, "div > ul > li");
+                selectElementCSS(district,cbxDistrito,"form > div:nth-child(3) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
-            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "No found element - " + e.getMessage());
+            logSevere(  "No found element - " + e.getMessage());
         }
     }
 

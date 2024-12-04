@@ -12,8 +12,7 @@ import java.time.Duration;
 import java.util.List;
 
 import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
-import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.LogUtils.logSevere;
+import static com.tdp.ct.web.utils.LogUtils.*;
 
 public class WebUtils extends WebBase {
 
@@ -109,24 +108,25 @@ public class WebUtils extends WebBase {
     public static void validateAndType(String nameElement, WebElement webElement, String value) {
         if (validateInputAndLocator(nameElement, webElement, value)) {
             webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+            logInfo(String.format("Type %s: %s", nameElement, value));
         }
     }
 
-    public static boolean validateInputAndLocator(String nameElement, WebElement element, String value) {
+    public static boolean validateInputAndLocator(String nameElement, WebElement webElement, String value) {
         if (value == null || value.isEmpty()) {
             logInfo("Value is null");
             return false;
         }
         logInfo(String.format("Element %s - value: %s", nameElement, value));
-        return validateElement(element, 10);
+        return validateElement(webElement,nameElement, 10);
     }
 
-    public static boolean validateElement(WebElement element, int timeoutInSeconds) {
+    public static boolean validateElement(WebElement webElement,String nameElement,int timeoutInSeconds) {
         try {
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
-            wait.until(ExpectedConditions.visibilityOf(element));
-            logInfo(String.format("Element is Displayed: %b - Element is Enabled: %b", element.isDisplayed(), element.isEnabled()));
-            return element.isDisplayed() && element.isEnabled();
+            wait.until(ExpectedConditions.visibilityOf(webElement));
+            logInfo(String.format("Element %s is Displayed: %b - Element is Enabled: %b",nameElement ,webElement.isDisplayed(), webElement.isEnabled()));
+            return webElement.isDisplayed() && webElement.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
             logSevere(String.format("Element validation failed: %s", e.getMessage()));
             return false;
@@ -235,7 +235,9 @@ public class WebUtils extends WebBase {
         webElement.click();
         UtilWeb.waitForSeconds(2);
         List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
+        logInfo("List size",elementsList.size());
         for (WebElement element : elementsList) {
+            scrollTo(element);
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
                 logInfo(String.format("Select element: %s", element.getText()));
@@ -244,6 +246,28 @@ public class WebUtils extends WebBase {
             }
         }
     }
+    public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
+        webElement.click();
+        UtilWeb.waitForSeconds(2);
+        List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
+        logInfo("List size",elementsList.size());
+        for (WebElement element : elementsList) {
+            scrollTo(element);
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
+            if (isEquals) {
+                logInfo(String.format("Select element: %s", element.getText()));
+                element.click();
+                break;
+            }
+        }
+    }
+
+    public static void scrollTo(WebElement webElement){
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+    }
+
+
 
 }
 
