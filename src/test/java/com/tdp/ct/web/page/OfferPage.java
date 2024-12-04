@@ -9,10 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class OfferPage extends WebBase {
 
@@ -31,14 +31,14 @@ public class OfferPage extends WebBase {
 
     public void ofertasSugeridas() {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, ofertasSugeridas);
+        esperaProgresiva(driver(), 5, 5, ofertasSugeridas);
         revisarModalError(driver());
         boolean elementoExistente;
         elementoExistente = !driver().findElements(By.xpath("//p[contains(text(),'RESTRICCIONES')]")).isEmpty();
         if (elementoExistente) {
             js().scrollElementTop(subDetalles);
             click(subDetalles);
-            System.out.println("si estaba abierto el detalle");
+            logInfo("si estaba abierto el detalle");
             UtilWeb.waitForSeconds(1);
         }
         revisarModalError(driver());
@@ -49,13 +49,13 @@ public class OfferPage extends WebBase {
         revisarModalError(driver());
         esperaProgresiva(driver(), 8, 9, listaOfertasSugeridas.get(0));
         boolean exist = waitUntilElementIsVisible(listaOfertasSugeridas.get(0), 60).isDisplayed();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Estas en la pagina de ofertas >>> {0}", exist);
+        logInfo("Estas en la pagina de ofertas >>> {0}", exist);
         return exist;
     }
 
     public void validarOfertasSugeridasView(String title) {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, titleOfertas);
+        esperaProgresiva(driver(), 6, 7, titleOfertas);
         js().scrollElementTop(labelDetail);
         String actualTitle = titleOfertas.getText().toLowerCase();
         Assert.assertEquals("El titulo obtenido: " + actualTitle + ", no coincide con lo esperado", title.toLowerCase(), actualTitle);
@@ -75,8 +75,6 @@ public class OfferPage extends WebBase {
         esperaProgresiva(driver(), 4, 10, lblAplicaUpFront);
         Assert.assertTrue("el elemento no existe", lblAplicaUpFront.isDisplayed());
         click(subDetalles, 5);
-
-
     }
 
 }

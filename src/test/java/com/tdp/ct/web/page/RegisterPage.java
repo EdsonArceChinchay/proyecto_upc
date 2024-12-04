@@ -6,12 +6,11 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import java.util.List;
-import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.LogUtils.*;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class RegisterPage extends WebBase {
@@ -85,14 +84,12 @@ public class RegisterPage extends WebBase {
     }
 
     public void waitButtonCustomerData() {
-        //esperaProgresiva(driver(), 6, 6, btnCustomerData);
-        WebElement scrollBtnCustomerData = explicitWaitXpath(driver(),5,btnCustomerData);
+        WebElement scrollBtnCustomerData = explicitWaitXpath(driver(), 5, btnCustomerData);
         js().scrollElementTop(scrollBtnCustomerData);
     }
 
     public void clickButtonCustomerData() {
-        //UtilWeb.waitForSeconds(2);
-        WebElement ButtonCustomerData = explicitWaitXpath(driver(),5, btnCustomerData);
+        WebElement ButtonCustomerData = explicitWaitXpath(driver(), 5, btnCustomerData);
         ButtonCustomerData.click();
         UtilWeb.waitForSeconds(5);
     }
@@ -103,7 +100,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSS(maritalStatus, selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] li");
+        selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "tdp-st-select[formcontrolname='estadoCivil'] li");
     }
 
     public void selectNationality(String nationality) {
@@ -116,7 +113,6 @@ public class RegisterPage extends WebBase {
 
     public void selectProvince(String province) {
         selectElementCSS(province, selectProvince, "tdp-st-select[formcontrolname='province'] li");
-
     }
 
     public void selectDistrict(String district) {
@@ -169,7 +165,7 @@ public class RegisterPage extends WebBase {
         try {
             UtilWeb.waitForSeconds(120);
             if (textIdentityValidationError.isDisplayed()) {
-                logInfo( "Error Validate Identity");
+                logInfo("Error Validate Identity");
                 isError = true;
             }
         } catch (Exception e) {
@@ -181,7 +177,7 @@ public class RegisterPage extends WebBase {
 
     public void clickOnButtonConfirm() {
         btnConfirmModal.click();
-        logInfo( "Click button confirm");
+        logInfo("Click button confirm");
         UtilWeb.waitForSeconds(2);
     }
 

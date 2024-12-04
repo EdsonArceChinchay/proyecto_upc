@@ -2,12 +2,12 @@ package com.tdp.ct.web.service;
 
 import com.tdp.ct.web.model.Material;
 import com.tdp.ct.web.repository.MaterialRepository;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @Service
 public class MaterialService {
@@ -21,7 +21,7 @@ public class MaterialService {
     public String getSimCard(String warehouse, String environment) {
         List<Material> simCards = materialRepository.getSimCards(warehouse, environment);
         if (!simCards.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "SIM CARD: " + simCards.get(0).getSerialNumber() );
+            logInfo("SIM CARD: " + simCards.get(0).getSerialNumber());
             return simCards.get(0).getSerialNumber();
         }
         return null;
@@ -30,7 +30,7 @@ public class MaterialService {
     public String getIMEIByName(String name, String warehouse, String environment) {
         List<Material> imeis = materialRepository.getIMEIs(warehouse, environment, name, "");
         if (!imeis.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "IMEI: " + imeis.get(0).getSerialNumber() );
+            logInfo("IMEI: " + imeis.get(0).getSerialNumber());
             return imeis.get(0).getSerialNumber();
         }
         return null;
@@ -39,7 +39,7 @@ public class MaterialService {
     public String getIMEIBySapId(String sapId, String warehouse, String environment) {
         List<Material> imeis = materialRepository.getIMEIs(warehouse, environment, "", sapId);
         if (!imeis.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "IMEI: " + imeis.get(0).getSerialNumber() );
+            logInfo("IMEI: " + imeis.get(0).getSerialNumber());
             return imeis.get(0).getSerialNumber();
         }
         return null;

@@ -74,7 +74,7 @@ public class ParkPage extends WebBase {
     protected WebElement btnValidateStock;
     @FindBy(css = "tdp-st-input-text[formcontrolname='simcard'] input")
     protected WebElement inputSinCard;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='equipo')] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='equipo'] input")
     protected WebElement inputImei;
     @FindBy(css = "tdp-st-input-text[formcontrolname='numeroCaja'] input")
     protected WebElement inputBoxNumber;
@@ -302,7 +302,7 @@ public class ParkPage extends WebBase {
     }
 
     public void mostrarOfertas() {
-        // Addons.esperaCargaMontoDeuda(driver(), 20);
+        revisarModalError(driver());
         WebElement showOffer = explicitWaitCss(driver(), 100, btnShowOffers);
         revisarModalError(driver());
         showOffer.click();
@@ -624,7 +624,7 @@ public class ParkPage extends WebBase {
             revisarModalError(driver());
             try {
                 isEnabled = btnValidateStock.isEnabled();
-                logInfo("isEnabled",isEnabled);
+                logInfo("isEnabled", isEnabled);
                 if (isEnabled) btnValidateStock.click();
 
             } catch (Exception e) {

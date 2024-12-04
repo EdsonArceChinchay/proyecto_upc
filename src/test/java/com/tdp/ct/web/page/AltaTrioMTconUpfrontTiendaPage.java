@@ -35,17 +35,17 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     public void typeSupervisorDocumentNumber(String document) {
         WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        validateAndType("document number",inputDocumentNumber,document);
+        validateAndType("document number", inputDocumentNumber, document);
     }
 
     public void typeSupervisorUser(String user) {
         WebElement inputUser = find().getElementByCss("#usuarioCitrixSupervisor");
-        validateAndType("user",inputUser,user);
+        validateAndType("user", inputUser, user);
     }
 
     public void typeSupervisorPassword(String password) {
         WebElement inputPassword = find().getElementByCss("#passwordCitrixSupervisor");
-        validateAndType("password",inputPassword,password);
+        validateAndType("password", inputPassword, password);
     }
 
 }
