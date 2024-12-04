@@ -44,8 +44,8 @@ Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Repr
     Y        doy click en el boton Siguiente
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                        |
-      | 18 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | permanencia | tipoPago   | equipoName                     |
+      | 18 meses    | Al Contado | HONOR X8A VERDE CRT-LX3 C/PACK |
     Y        doy click en el boton seleccionar
     Y        doy click en el boton Linea Nueva
     Y        doy click en el boton Iniciar registro
