@@ -11,7 +11,7 @@ import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.Helper.explicitWaitCss;
+import static com.tdp.ct.web.utils.WebUtils.explicitWaitCss;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 

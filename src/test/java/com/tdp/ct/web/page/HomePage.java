@@ -7,11 +7,8 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-<<<<<<< HEAD
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
-=======
->>>>>>> 32300ad6ac73648e8634ebbb2140c300c9fe2f84
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,18 +65,9 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
     protected WebElement btnBackOffice;
 
-<<<<<<< HEAD
-
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
-
-    @FindBy(css = "tdp-st-input-text[formcontrolname='numDoc']")
-=======
-    @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
-    protected WebElement selectDocumentType;
-
     @FindBy(css = "input[id='doc']")
->>>>>>> 32300ad6ac73648e8634ebbb2140c300c9fe2f84
     protected WebElement inputDocumentNumber;
 
     public void selectDocumentType(String type) {
