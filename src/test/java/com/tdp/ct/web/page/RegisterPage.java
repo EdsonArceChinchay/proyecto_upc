@@ -31,15 +31,15 @@ public class RegisterPage extends WebBase {
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirm;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='estadoCivil']")
+    @FindBy(css = "tdp-st-select[formcontrolname='estadoCivil']")
     protected WebElement selectMaritalStatus;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='nacionalidad']")
+    @FindBy(css = "tdp-st-select[formcontrolname='nacionalidad']")
     protected WebElement selectNationality;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='department']")
+    @FindBy(css = "tdp-st-select[formcontrolname='department']")
     protected WebElement selectDepartment;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='province']")
+    @FindBy(css = "tdp-st-select[formcontrolname='province']")
     protected WebElement selectProvince;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='district']")
+    @FindBy(css = "tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
     @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
     protected WebElement inputDateOfBirth;
@@ -103,29 +103,24 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        js().scrollElementTop(selectMaritalStatus);
-        selectElementCSS(maritalStatus, selectMaritalStatus, "tdp-st-modal tdp-st-select[formcontrolname='estadoCivil'] li");
+        selectElementCSS(maritalStatus, selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] li");
     }
 
     public void selectNationality(String nationality) {
-        js().scrollElementTop(selectNationality);
-        selectElementCSS(nationality, selectNationality, "tdp-st-modal tdp-st-select[formcontrolname='nacionalidad'] li");
+        selectElementCSS(nationality, selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li");
     }
 
     public void selectDepartment(String department) {
-        js().scrollElementTop(selectDepartment);
-        selectElementCSS(department, selectDepartment, "tdp-st-modal tdp-st-select[formcontrolname='department'] li");
+        selectElementCSS(department, selectDepartment, "tdp-st-select[formcontrolname='department'] li");
     }
 
     public void selectProvince(String province) {
-        js().scrollElementTop(selectProvince);
-        selectElementCSS(province, selectProvince, "tdp-st-modal tdp-st-select[formcontrolname='province'] li");
+        selectElementCSS(province, selectProvince, "tdp-st-select[formcontrolname='province'] li");
 
     }
 
     public void selectDistrict(String district) {
-        js().scrollElementTop(selectDistrict);
-        selectElementCSS(district, selectDistrict, "tdp-st-modal tdp-st-select[formcontrolname='district'] li");
+        selectElementCSS(district, selectDistrict, "tdp-st-select[formcontrolname='district'] li");
     }
 
     public void typeAddress(String address) {
@@ -140,7 +135,6 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        js().scrollElementTop(selectPage);
         selectElementCSS(type, selectPage, "tdp-st-select[formcontrolname='typePage'] li");
     }
 
