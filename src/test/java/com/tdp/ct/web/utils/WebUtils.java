@@ -12,7 +12,8 @@ import java.time.Duration;
 import java.util.List;
 
 import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
-import static com.tdp.ct.web.utils.LogUtils.*;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class WebUtils extends WebBase {
 
@@ -118,14 +119,14 @@ public class WebUtils extends WebBase {
             return false;
         }
         logInfo(String.format("Element %s - value: %s", nameElement, value));
-        return validateElement(webElement,nameElement, 10);
+        return validateElement(webElement, nameElement, 10);
     }
 
-    public static boolean validateElement(WebElement webElement,String nameElement,int timeoutInSeconds) {
+    public static boolean validateElement(WebElement webElement, String nameElement, int timeoutInSeconds) {
         try {
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.visibilityOf(webElement));
-            logInfo(String.format("Element %s is Displayed: %b - Element is Enabled: %b",nameElement ,webElement.isDisplayed(), webElement.isEnabled()));
+            logInfo(String.format("Element %s is Displayed: %b - Element is Enabled: %b", nameElement, webElement.isDisplayed(), webElement.isEnabled()));
             return webElement.isDisplayed() && webElement.isEnabled();
         } catch (TimeoutException | StaleElementReferenceException e) {
             logSevere(String.format("Element validation failed: %s", e.getMessage()));
@@ -157,7 +158,7 @@ public class WebUtils extends WebBase {
     }
 
     public static void validateSelectShadow(String nameElement, String text, WebElement element, String shadowElement) {
-        boolean existe = validateInputAndLocator(nameElement,element, text);
+        boolean existe = validateInputAndLocator(nameElement, element, text);
         if (existe) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {
@@ -213,10 +214,11 @@ public class WebUtils extends WebBase {
     }
 
     public static void selectElementCSS(String text, WebElement webElement, String webElementList) {
+        scrollTo(webElement);
         webElement.click();
         UtilWeb.waitForSeconds(2);
         List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
-        logInfo("List size",elementsList.size());
+        logInfo("List size", elementsList.size());
         for (WebElement element : elementsList) {
             scrollTo(element);
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
@@ -227,11 +229,12 @@ public class WebUtils extends WebBase {
             }
         }
     }
+
     public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
         webElement.click();
         UtilWeb.waitForSeconds(2);
         List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
-        logInfo("List size",elementsList.size());
+        logInfo("List size", elementsList.size());
         for (WebElement element : elementsList) {
             scrollTo(element);
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
@@ -243,11 +246,11 @@ public class WebUtils extends WebBase {
         }
     }
 
-    public static void scrollTo(WebElement webElement){
+    public static void scrollTo(WebElement webElement) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+        logInfo("Scroll to", webElement.toString());
     }
-
 
 
 }

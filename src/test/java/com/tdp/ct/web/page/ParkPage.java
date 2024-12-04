@@ -351,7 +351,7 @@ public class ParkPage extends WebBase {
     }
 
     public void ingresoRuc(String ruc) {
-        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text");
+        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text input");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
         validateAndType("RUC",Input,ruc);
 

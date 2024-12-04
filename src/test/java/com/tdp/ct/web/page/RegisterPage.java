@@ -97,29 +97,24 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        js().scrollElementTop(selectMaritalStatus);
-        selectElementCSS(maritalStatus, selectMaritalStatus, "tdp-st-modal tdp-st-select[formcontrolname='estadoCivil'] li");
+        selectElementCSS(maritalStatus, selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] li");
     }
 
     public void selectNationality(String nationality) {
-        js().scrollElementTop(selectNationality);
-        selectElementCSS(nationality, selectNationality, "tdp-st-modal tdp-st-select[formcontrolname='nacionalidad'] li");
+        selectElementCSS(nationality, selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li");
     }
 
     public void selectDepartment(String department) {
-        js().scrollElementTop(selectDepartment);
-        selectElementCSS(department, selectDepartment, "tdp-st-modal tdp-st-select[formcontrolname='department'] li");
+        selectElementCSS(department, selectDepartment, "tdp-st-select[formcontrolname='department'] li");
     }
 
     public void selectProvince(String province) {
-        js().scrollElementTop(selectProvince);
-        selectElementCSS(province, selectProvince, "tdp-st-modal tdp-st-select[formcontrolname='province'] li");
+        selectElementCSS(province, selectProvince, "tdp-st-select[formcontrolname='province'] li");
 
     }
 
     public void selectDistrict(String district) {
-        js().scrollElementTop(selectDistrict);
-        selectElementCSS(district, selectDistrict, "tdp-st-modal tdp-st-select[formcontrolname='district'] li");
+        selectElementCSS(district, selectDistrict, "tdp-st-select[formcontrolname='district'] li");
     }
 
     public void typeAddress(String address) {
@@ -134,7 +129,6 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        js().scrollElementTop(selectPage);
         selectElementCSS(type, selectPage, "tdp-st-select[formcontrolname='typePage'] li");
     }
 
