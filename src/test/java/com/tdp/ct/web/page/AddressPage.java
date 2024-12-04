@@ -34,8 +34,9 @@ public class AddressPage extends WebBase {
     protected WebElement selectHousingComplexe;
     @FindBy(css = "[formcontrolname='housingComplexName'] input")
     protected WebElement inputHousingComplexName;
-    @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
-    protected WebElement btnConsultCoverage;
+    //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
+    protected String btnConsultCoverage =
+            "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]";
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar ubicación') or contains(@class,'button') and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsultLocation;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
@@ -66,8 +67,8 @@ public class AddressPage extends WebBase {
     protected WebElement btnSearch;
 
     public void selectDepartment(String department) {
-        UtilWeb.waitForSeconds(6);//2
-        WebElement depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        //UtilWeb.waitForSeconds(6);//2
+        WebElement depaList = explicitWaitCss(driver(),6,"tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
@@ -139,7 +140,6 @@ public class AddressPage extends WebBase {
         click(btnConsultLocation);
         logInfo("Click button Consult Location");
         revisarModalError(driver());
-        UtilWeb.waitForSeconds(5);
     }
 
     public void typeApple(String apple) {
@@ -180,12 +180,13 @@ public class AddressPage extends WebBase {
     }
 
     public void clickButtonConsultCoverage() {
-        esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
+        //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
-        js().scrollElementTop(btnConsultCoverage);
-        logInfo(String.format("Click button %s", btnConsultCoverage.getText()));
-        btnConsultCoverage.click();
+        //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
+        WebElement ButtonConsultCoverage = explicitWaitXpath(driver(),10,btnConsultCoverage);
+        js().scrollElementTop(ButtonConsultCoverage);
+        logInfo(String.format("Click button %s", ButtonConsultCoverage.getText()));
+        ButtonConsultCoverage.click();
     }
 
     public void ingresoDepartamento(String department) {
