@@ -27,15 +27,15 @@ public class RegisterPage extends WebBase {
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirm;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='estadoCivil']")
+    @FindBy(css = "tdp-st-select[formcontrolname='estadoCivil']")
     protected WebElement selectMaritalStatus;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='nacionalidad']")
+    @FindBy(css = "tdp-st-select[formcontrolname='nacionalidad']")
     protected WebElement selectNationality;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='department']")
+    @FindBy(css = "tdp-st-select[formcontrolname='department']")
     protected WebElement selectDepartment;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='province']")
+    @FindBy(css = "tdp-st-select[formcontrolname='province']")
     protected WebElement selectProvince;
-    @FindBy(css = "tdp-st-modal tdp-st-select[formcontrolname='district']")
+    @FindBy(css = "tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
     @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
     protected WebElement inputDateOfBirth;
