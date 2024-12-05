@@ -138,7 +138,7 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        selectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
+        clickAndSelectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {

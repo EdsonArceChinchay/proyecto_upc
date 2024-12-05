@@ -39,7 +39,7 @@ public class LoginBerserkerPage extends WebBase {
     protected WebElement labelCaptchaError;
 
     public void clickOnLoginButton() {
-        Addons.reiniciaTimeout(driver());
+        Addons.resetTimeOut(driver());
         Addons.esperaProgresiva(driver(), 3, 5, btnLogIn);
         click(btnLogIn);
     }

@@ -212,41 +212,37 @@ public class WebUtils extends WebBase {
         logInfo(String.format("%s is number: %b", str, result));
         return result;
     }
-    public static WebElement explicitWaitName(WebDriver driver, int wait, String elements){
+
+    public static WebElement explicitWaitName(WebDriver driver, int wait, String elements) {
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.name(elements)));
-    }
-    public static WebElement explicitWaitId(WebDriver driver, int wait, String elements){
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.id(elements)));
-    }
-    public static WebElement explicitWaitXpath(WebDriver driver, int wait, String elements){
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elements)));
-    }
-    public static WebElement explicitWaitCss(WebDriver driver, int wait, String elements){
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return  wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elements)));
-    }
-    public static WebElement waitUntilPresenceOfElementLocated(WebDriver driver, int timeOutOnSeconds, By webElement){
-        return (WebElement)(new WebDriverWait(driver, Duration.ofSeconds((long)timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.name(elements)));
     }
 
-    public static void selectElementCSS(String text, WebElement webElement, String webElementList) {
+    public static WebElement explicitWaitId(WebDriver driver, int wait, String elements) {
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.id(elements)));
+    }
+
+    public static WebElement explicitWaitXpath(WebDriver driver, int wait, String elements) {
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elements)));
+    }
+
+    public static WebElement explicitWaitCss(WebDriver driver, int wait, String elements) {
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
+        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elements)));
+    }
+
+    public static WebElement waitUntilPresenceOfElementLocated(WebDriver driver, int timeOutOnSeconds, By webElement) {
+        return (WebElement) (new WebDriverWait(driver, Duration.ofSeconds((long) timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+    }
+
+    public static void clickAndSelectElementCSS(String text, WebElement webElement, String webElementList) {
         scrollTo(webElement);
         webElement.click();
+        logInfo("Click element", webElement.toString());
         UtilWeb.waitForSeconds(2);
-        List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
-        logInfo("List size", elementsList.size());
-        for (WebElement element : elementsList) {
-            scrollTo(element);
-            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
-            if (isEquals) {
-                logInfo(String.format("Select element: %s", element.getText()));
-                element.click();
-                break;
-            }
-        }
+        selectElementCSS(text, webElementList);
     }
 
     public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
@@ -269,6 +265,20 @@ public class WebUtils extends WebBase {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
         logInfo("Scroll to", webElement.toString());
+    }
+
+    public static void selectElementCSS(String text, String webElementList) {
+        List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
+        logInfo("List size", elementsList.size());
+        for (WebElement element : elementsList) {
+            scrollTo(element);
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
+            if (isEquals) {
+                logInfo(String.format("Select element: %s", element.getText()));
+                element.click();
+                break;
+            }
+        }
     }
 
 

@@ -68,7 +68,6 @@ public class AddressPage extends WebBase {
     protected WebElement btnSearch;
 
     public void selectDepartment(String department) {
-        //UtilWeb.waitForSeconds(6);//2
         WebElement depaList = explicitWaitCss(driver(), 6, "tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
 
@@ -172,7 +171,7 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHousingComplexe(String housingComplexe) {
-        selectElementCSS(housingComplexe, selectHousingComplexe, "[formcontrolname='housingComplexe'] ul li");
+        clickAndSelectElementCSS(housingComplexe, selectHousingComplexe, "[formcontrolname='housingComplexe'] ul li");
     }
 
     public void typeHousingComplexName(String hab) {
@@ -193,7 +192,7 @@ public class AddressPage extends WebBase {
     public void ingresoDepartamento(String department) {
         try {
             if (isVisible(driver(), cbxDepartamento)) {
-                selectElementCSS(department, cbxDepartamento, "form > div:nth-child(1) > div > tdp-st-select li");
+                clickAndSelectElementCSS(department, cbxDepartamento, "form > div:nth-child(1) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -203,7 +202,7 @@ public class AddressPage extends WebBase {
     public void ingresoProvincia(String province) {
         try {
             if (isVisible(driver(), cbxProvincia)) {
-                selectElementCSS(province, cbxProvincia, "form > div:nth-child(2) > div > tdp-st-select li");
+                clickAndSelectElementCSS(province, cbxProvincia, "form > div:nth-child(2) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -213,7 +212,7 @@ public class AddressPage extends WebBase {
     public void ingresoDistrito(String district) {
         try {
             if (isVisible(driver(), cbxDistrito)) {
-                selectElementCSS(district, cbxDistrito, "form > div:nth-child(3) > div > tdp-st-select li");
+                clickAndSelectElementCSS(district, cbxDistrito, "form > div:nth-child(3) > div > tdp-st-select li");
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element - " + e.getMessage());

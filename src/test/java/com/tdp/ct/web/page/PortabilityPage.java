@@ -4,8 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,7 +13,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyJsonValue;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.SessionStorage.*;
-import static com.tdp.ct.web.utils.WebUtils.selectElementCSS;
+import static com.tdp.ct.web.utils.WebUtils.clickAndSelectElementCSS;
 import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class PortabilityPage extends WebBase {
@@ -41,11 +39,11 @@ public class PortabilityPage extends WebBase {
     @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono'] input")
     protected WebElement inputPhoneNumber;
 
-    @FindBy(css ="tdp-st-select[formcontrolname='tipoLinea']")
-    protected  WebElement selectLineType;
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoLinea']")
+    protected WebElement selectLineType;
 
-    @FindBy(css ="tdp-st-select[formcontrolname='tipoOperador']")
-    protected  WebElement selectOperatorType;
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoOperador']")
+    protected WebElement selectOperatorType;
 
     public void clickBotonPortabilidad() {
         esperaProgresiva(driver(), 5, 6, btnPortabilidad);
@@ -56,18 +54,17 @@ public class PortabilityPage extends WebBase {
 
     public void ingresarNumeroPortar(String phoneNumber) {
         UtilWeb.waitForSeconds(5);
-        validateAndType("mobile number",inputPhoneNumber,phoneNumber);
+        validateAndType("mobile number", inputPhoneNumber, phoneNumber);
     }
 
     public void escogerTipoLinea(String plan) {
         UtilWeb.waitForSeconds(4);
-        selectElementCSS(plan,selectLineType,"tdp-st-select[formcontrolname='tipoLinea'] li");
+        clickAndSelectElementCSS(plan, selectLineType, "tdp-st-select[formcontrolname='tipoLinea'] li");
     }
 
     public void esogerTipoOperador(String operator) {
         UtilWeb.waitForSeconds(4);
-        selectElementCSS(operator,selectOperatorType,"tdp-st-select[formcontrolname='tipoOperador'] li");
-
+        clickAndSelectElementCSS(operator, selectOperatorType, "tdp-st-select[formcontrolname='tipoOperador'] li");
     }
 
     public void clickBotonConsultar() {
@@ -91,11 +88,11 @@ public class PortabilityPage extends WebBase {
         String newValue = "A";
 
         String jsonStr = getItemSessionStorage(driver(), primaryKey);
-        logInfo( "Before modified localStorage" + jsonStr);
+        logInfo("Before modified localStorage" + jsonStr);
         JSONObject jsonObject = modifyJsonValue(jsonStr, key, newValue);
         setValueItemSessionStorage(driver(), primaryKey, secondaryKey, jsonObject);
         jsonStr = getItemSessionStorage(driver(), primaryKey);
-        logInfo( "After modified localStorage" + jsonStr);
+        logInfo("After modified localStorage" + jsonStr);
     }
 
     public String getValuePortaDirecta() {
@@ -133,7 +130,7 @@ public class PortabilityPage extends WebBase {
 
     public void inputToken(String token) {
         String valueToken = token.trim().toUpperCase();
-        logInfo( "Get token: " + valueToken);
+        logInfo("Get token: " + valueToken);
         List<WebElement> inputToken = find().getElementsByXPath("//input[contains(@class,'entrada')]");
         esperaProgresiva(driver(), 3, 5, inputToken.get(0));
         js().scrollElementTop(inputToken.get(0));

@@ -56,7 +56,7 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
         esperaProgresiva(driver(), 6, 8, listElementPLan);
-        selectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
+        clickAndSelectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
     }
 
     public void typeDeviceAndSearch(String device) {

@@ -30,7 +30,7 @@ Característica: AT-DT _ Alta SVA a un MT a cliente con CE por canal Call Center
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        selecciono la linea con numero "14353350"
+    Y        selecciono la linea con numero "9234912744"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
@@ -65,4 +65,4 @@ Característica: AT-DT _ Alta SVA a un MT a cliente con CE por canal Call Center
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | emailUser        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1020030013     | test@hotmail.com |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 2777000004     | test@hotmail.com |

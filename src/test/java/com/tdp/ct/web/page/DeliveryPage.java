@@ -8,8 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.WebUtils.selectElementCSS;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class DeliveryPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='deliveryType']")
@@ -42,7 +41,7 @@ public class DeliveryPage extends WebBase {
     public void selectTypeOfDelivery(String deliveryType) {
         esperaProgresiva(driver(), 6, 6, selectDeliveryType);
         js().scrollElementTop(selectDeliveryType);
-        selectElementCSS(deliveryType, selectDeliveryType, "tdp-st-select[formcontrolname='deliveryType'] li");
+        clickAndSelectElementCSS(deliveryType, selectDeliveryType, "tdp-st-select[formcontrolname='deliveryType'] li");
     }
 
     public void clickOnDeliveryTime(String hour) {
