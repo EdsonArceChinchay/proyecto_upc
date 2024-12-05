@@ -10,11 +10,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyJsonValue;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.SessionStorage.*;
+import static com.tdp.ct.web.utils.WebUtils.selectElementCSS;
+import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class PortabilityPage extends WebBase {
 
@@ -36,6 +38,15 @@ public class PortabilityPage extends WebBase {
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
 
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono'] input")
+    protected WebElement inputPhoneNumber;
+
+    @FindBy(css ="tdp-st-select[formcontrolname='tipoLinea']")
+    protected  WebElement selectLineType;
+
+    @FindBy(css ="tdp-st-select[formcontrolname='tipoOperador']")
+    protected  WebElement selectOperatorType;
+
     public void clickBotonPortabilidad() {
         esperaProgresiva(driver(), 5, 6, btnPortabilidad);
         js().scrollElementTop(btnPortabilidad);
@@ -43,44 +54,20 @@ public class PortabilityPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void ingresarNumeroPortar(String numero) {
+    public void ingresarNumeroPortar(String phoneNumber) {
         UtilWeb.waitForSeconds(5);
-        WebElement document = find().getElementByCss(".tdp-col-sm-9:nth-child(1) .ng-pristine");
-        click(document);
-        type(document, numero);
+        validateAndType("mobile number",inputPhoneNumber,phoneNumber);
     }
 
     public void escogerTipoLinea(String plan) {
-        UtilWeb.waitForSeconds(4);//
-        WebElement listElementPLan = find().getElementByCss(".tdp-col-sm-9:nth-child(2) .ng-pristine");
-        click(listElementPLan);
-        UtilWeb.waitForSeconds(2);//es 1
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
-        for (WebElement elements : lista) {
-            System.out.println(elements.getText());
-            if (elements.getText().equals(plan)) {
-                UtilWeb.waitForSeconds(1);
-                click(elements, 30);
-            }
-        }
+        UtilWeb.waitForSeconds(4);
+        selectElementCSS(plan,selectLineType,"tdp-st-select[formcontrolname='tipoLinea'] li");
     }
 
-    public void esogerTipoOperador(String operador) {
-        UtilWeb.waitForSeconds(4);//
-        WebElement listElementPLan = find().getElementByCss(".tdp-col-sm-9:nth-child(5) .ng-pristine");
-        js().scrollElementTop(listElementPLan);
-        click(listElementPLan);
-        UtilWeb.waitForSeconds(4);//es 1
-        SearchContext contexPlan = sh().getContext(listElementPLan);
-        List<WebElement> lista = contexPlan.findElements(By.className("mdc-list-item"));
-        for (WebElement elements : lista) {
-            System.out.println(elements.getText());
-            if (elements.getText().equals(operador)) {
-                UtilWeb.waitForSeconds(1);
-                click(elements, 30);
-            }
-        }
+    public void esogerTipoOperador(String operator) {
+        UtilWeb.waitForSeconds(4);
+        selectElementCSS(operator,selectOperatorType,"tdp-st-select[formcontrolname='tipoOperador'] li");
+
     }
 
     public void clickBotonConsultar() {
@@ -104,11 +91,11 @@ public class PortabilityPage extends WebBase {
         String newValue = "A";
 
         String jsonStr = getItemSessionStorage(driver(), primaryKey);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Before modified localStorage" + jsonStr);
+        logInfo( "Before modified localStorage" + jsonStr);
         JSONObject jsonObject = modifyJsonValue(jsonStr, key, newValue);
         setValueItemSessionStorage(driver(), primaryKey, secondaryKey, jsonObject);
         jsonStr = getItemSessionStorage(driver(), primaryKey);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "After modified localStorage" + jsonStr);
+        logInfo( "After modified localStorage" + jsonStr);
     }
 
     public String getValuePortaDirecta() {
@@ -146,7 +133,7 @@ public class PortabilityPage extends WebBase {
 
     public void inputToken(String token) {
         String valueToken = token.trim().toUpperCase();
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Get token: " + valueToken);
+        logInfo( "Get token: " + valueToken);
         List<WebElement> inputToken = find().getElementsByXPath("//input[contains(@class,'entrada')]");
         esperaProgresiva(driver(), 3, 5, inputToken.get(0));
         js().scrollElementTop(inputToken.get(0));

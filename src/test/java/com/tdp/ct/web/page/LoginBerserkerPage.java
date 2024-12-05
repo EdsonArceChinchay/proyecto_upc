@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -67,7 +67,7 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickOnContinueButton() {
         js().scrollElementTop(btnContinue);
-        logInfo("Click button",btnContinue.getText());
+        logInfo("Click button", btnContinue.getText());
         click(btnContinue);
     }
 

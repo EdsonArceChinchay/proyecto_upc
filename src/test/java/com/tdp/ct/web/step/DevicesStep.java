@@ -23,8 +23,8 @@ public class DevicesStep {
     }
 
     @ScreenShotAfter
-    public void typeDeviceAndSearch(String buscarE) {
-        page.devicesPage().typeDeviceAndSearch(buscarE);
+    public void typeDeviceAndSearch(String device) {
+        page.devicesPage().typeDeviceAndSearch(device);
     }
 
     @ScreenShotBefore

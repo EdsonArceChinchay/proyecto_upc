@@ -5,13 +5,13 @@ import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
-import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.logging.Level;
+
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @Component
 public class CheckoutStep {
@@ -94,7 +94,7 @@ public class CheckoutStep {
         if (orderCode != null) {
             customer.setOrdersCode(orderCode);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "ERROR - Codigo de Orden - Null");
+            logInfo("ERROR - Codigo de Orden - Null");
         }
         return orderCode == null ? " " : orderCode.toString();
     }
@@ -104,7 +104,7 @@ public class CheckoutStep {
         if (salesCode != null) {
             customer.setSalesCode(salesCode);
         } else {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "ERROR - Codigo de Venta - Null");
+            logInfo("ERROR - Codigo de Venta - Null");
         }
         return salesCode == null ? " " : salesCode;
     }

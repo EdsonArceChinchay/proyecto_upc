@@ -4,11 +4,11 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -24,7 +24,7 @@ public class DevicesPage extends WebBase {
     @FindBy(css = ".col-2 ._info")
     protected WebElement caracteristicasContent;
 
-    @FindBy(xpath = "(//tdp-st-button[@class='tdp-st-button-l hydrated' and @label='Seleccionar'])[1]")
+    @FindBy(css = "tdp-st-button[label='Seleccionar'] button")
     protected WebElement btnSelect;
 
     @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
@@ -36,32 +36,33 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(listPago.get(0));
         logInfo("Count type of payment", listPago.size());
         for (WebElement elements : listPago) {
-            logInfo( "Type of payment", elements.getText());
+            logInfo("Type of payment", elements.getText());
             boolean isEquals = returnValueCompareWebElementTextAndString(elements, payment);
             if (isEquals) {
-                logInfo( "Payment type found: " + payment);
+                logInfo("Payment type found: " + payment);
                 waitUntilElementIsClickable(elements, 20).click();
                 tipoPagoEncontrado = true;
                 break;
             }
         }
         if (!tipoPagoEncontrado) {
-            logInfo("No payment type found",payment);
+            logInfo("No payment type found", payment);
         }
         UtilWeb.waitForSeconds(5);
     }
 
     public void selectTimeOfPermanency(String timePermanency) {
-        UtilWeb.waitForSeconds(3);
         revisarModalError(driver());
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
+        esperaProgresiva(driver(), 6, 8, listElementPLan);
         selectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
     }
 
     public void typeDeviceAndSearch(String device) {
         WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text input");
         validateAndType("device", inputDevice, device);
+        inputDevice.sendKeys(Keys.ENTER);
     }
 
     public void clickButtonSelect() {
@@ -98,7 +99,7 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSeeDetail() {
-        String btnVerOfertas = ".btn-detail tdp-st-button;button";
+        String btnVerOfertas = ".btn-detail tdp-st-button button";
         WebElement element = js().getWebElement(btnVerOfertas);
         element.click();
     }

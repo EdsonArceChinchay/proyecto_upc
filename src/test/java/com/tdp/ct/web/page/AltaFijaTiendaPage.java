@@ -12,10 +12,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
 import static com.tdp.ct.web.utils.WebUtils.returnValueCompareWebElementTextAndString;
 
@@ -87,7 +87,7 @@ public class AltaFijaTiendaPage extends WebBase {
             while (isBtnRigth) {
                 esperaProgresiva(driver(), 4, 5, btnRight);
                 waitUntilElementIsClickable(btnRight, 5);
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button", btnRight.getText());
+                logInfo("Click button", btnRight.getText());
                 btnRight.click();
                 isBtnRigth = btnRight.isDisplayed();
                 count++;
@@ -104,14 +104,14 @@ public class AltaFijaTiendaPage extends WebBase {
             isBtnLeft = btnLeft.isDisplayed();
             while (isBtnLeft) {
                 btnLeft.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click button left");
+                logInfo("Click button left");
                 isBtnLeft = btnLeft.isDisplayed();
             }
         } catch (NoSuchElementException e) {
             e.getMessage();
         }
 
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Cantidad de Ofertas : " + listaOfertas.size());
+        logInfo("Cantidad de Ofertas : " + listaOfertas.size());
 
         boolean encontroElemento = false;
         //-------------------------------------------------------//
@@ -134,22 +134,22 @@ public class AltaFijaTiendaPage extends WebBase {
             }
         }
         if (!encontroElemento && !listaOfertas.isEmpty()) {
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "No se encontro oferta en la Lista");
+            logInfo("No se encontro oferta en la Lista");
             UtilWeb.waitForSeconds(2);
             int cont = listaOfertas.size() - 1;
             click(listaOfertas.get(cont));
-            UtilWeb.logger(this.getClass()).log(Level.INFO, "Se selecciono oferta: " + listaOfertas.get(cont).getText());
+            logInfo("Se selecciono oferta: " + listaOfertas.get(cont).getText());
         }
     }
 
     public void seleccionarOferta() {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Seleccionar Oferta");
+        logInfo("Metodo Seleccionar Oferta");
         revisarModalError(driver());
         for (WebElement element : listBtnSeleccionarOferta) {
             if (element.isEnabled()) {
                 js().scrollElementTop(element);
                 element.click();
-                UtilWeb.logger(this.getClass()).log(Level.INFO, "Click boton Seleccionar Oferta");
+                logInfo("Click boton Seleccionar Oferta");
             }
         }
         UtilWeb.waitForSeconds(3);
@@ -157,11 +157,11 @@ public class AltaFijaTiendaPage extends WebBase {
 
 
     public void listaBotones() {
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Metodo Lista de Oferta");
+        logInfo("Metodo Lista de Oferta");
         esperaProgresiva(driver(), 5, 5, btnLineaNueva);
         String nameButton = btnLineaNueva.getText();
         click(btnLineaNueva);
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click en el boton: " + nameButton);
+        logInfo("Dio click en el boton: " + nameButton);
     }
 
     public void descargarContrato() {
@@ -229,32 +229,31 @@ public class AltaFijaTiendaPage extends WebBase {
             int contador = 0;
             int reintentoBucles = 10;
             while (!buttonFound && contador <= reintentoBucles) {
-                System.out.println("Entra al while");
-                System.out.println("Entra al segundo try");
+                logInfo("Entra al while");
+                logInfo("Entra al segundo try");
                 try {
                     JavascriptExecutor jse = (JavascriptExecutor) driver();
                     jse.executeScript("window.scrollBy(0,250)");
                     UtilWeb.waitForSeconds(1);
                     waitUntilElementIsVisible(btnRegistrarVenta, 2);
                     buttonFound = true;
-                    System.out.println("Sale del segundo try");
+                    logInfo("Sale del segundo try");
                 } catch (Exception e) {
-                    System.out.println("Espera 20 seg");
+                    logInfo("Espera 20 seg");
                     UtilWeb.waitForSeconds(20);
                     revisarModalError(driver());
                     contador++;
-                    System.out.println(contador + " vez");
+                    logInfo(contador + " vez");
                 }
             }
-            System.out.println("Sale del while");
+            logInfo("Sale del while");
             click(btnRegistrarVenta);
-            System.out.println("Hace click en el boton Registrar Venta");
+            logInfo("Hace click en el boton Registrar Venta");
         } catch (Exception e) {
-            System.out.println("Salió del primer try");
-            System.out.println("Salta el registrar");
+            logInfo("Salió del primer try");
+            logInfo("Salta el registrar");
         }
     }
-
 
     public void validarVelocidadInternet(String mbpsBB) {
         Addons.revisarModalError(driver());

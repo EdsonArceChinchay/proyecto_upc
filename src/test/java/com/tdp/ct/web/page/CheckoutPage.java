@@ -17,8 +17,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.tdp.ct.web.utils.Addons.*;
-import static com.tdp.ct.web.utils.FileUtils.*;
-import static com.tdp.ct.web.utils.LogUtils.*;
+import static com.tdp.ct.web.utils.FileUtils.downloadPDF;
+import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.getValueItemSessionStorage;
 
 public class CheckoutPage extends WebBase {

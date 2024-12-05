@@ -88,4 +88,4 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | device                         |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1110464811     | HONOR X8A VERDE CRT-LX3 C/PACK |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 2210464811     | HONOR X8A VERDE CRT-LX3 C/PACK |
