@@ -100,7 +100,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] > div"), "tdp-st-select[formcontrolname='estadoCivil'] li");
+        selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] > div > div"), "tdp-st-select[formcontrolname='estadoCivil'] li");
     }
 
     public void selectNationality(String nationality) {

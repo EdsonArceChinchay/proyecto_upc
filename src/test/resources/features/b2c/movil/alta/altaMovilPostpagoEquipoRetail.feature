@@ -18,7 +18,7 @@ Característica: AT-DT021_Alta movil postpago + equipo a cliente con CE por cana
   Yo como asesor de Retail
   Quiero hacer un alta combo postpago a un usuario con CE sin parque en movistar
 
-  @altaComboPostpagoRetail
+  @altaPostpagoEquipoRetail
   Esquema del escenario: Alta movil postpago combo por retail a cliente con CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
