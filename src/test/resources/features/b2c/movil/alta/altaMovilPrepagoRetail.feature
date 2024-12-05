@@ -1,5 +1,5 @@
 #language:es
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO: MOVIL
 ##FUNCIONALIDAD: ALTA
@@ -10,8 +10,8 @@
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 01/08/2024
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 05/12/2024
 
 @BERSERKERS @AltaMovil
 Característica: AT-DT096_Alta Movil Prepago a cliente con CE en Canal Retail
@@ -42,7 +42,6 @@ Característica: AT-DT096_Alta Movil Prepago a cliente con CE en Canal Retail
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<oferta>"
     Y        selecciono un plan movil "<nombrePlan>"
-    Y        valido que este en el resumen de venta
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "prueba@prueba.com"
@@ -81,4 +80,4 @@ Característica: AT-DT096_Alta Movil Prepago a cliente con CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | oferta       | nombrePlan |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 2042464832     | PLAN PREPAGO | Preplan    |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 242464832      | PLAN PREPAGO | Preplan    |

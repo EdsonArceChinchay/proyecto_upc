@@ -1,22 +1,22 @@
 #language:es
-##CREADOR:
+##CREADOR: CARLOS RUIZ
 ##APP: DITO
 ##MODULO: MOVISTAR TOTAL
 ##FUNCIONALIDAD: ALTA
-##ESTADO:
+##ESTADO: ACTIVO
 ##CODIGO: AT-DT034
 ##GDAP: GDAP-574
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 14/05/2024
+##ENCARGADO: CARLOS RUIZ
+##FECMOD: 05/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
 Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
 
-  @AltaMTporRetail
+  @AltaMTRetail
   Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -46,7 +46,6 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
@@ -67,7 +66,6 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Cuando   doy clic en si acepto
     Y        doy click en el boton Continuar
     Entonces visualizo en pantalla el mensaje de exito del ticket generado
-    Y        doy click en ver detalle del pedido
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
@@ -95,4 +93,4 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 156710000      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | correo@gmail.com |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2167100001     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | correo@gmail.com |

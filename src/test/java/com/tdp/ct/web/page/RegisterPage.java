@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,7 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
+@Slf4j
 public class RegisterPage extends WebBase {
 
     @FindBy(css = "[formcontrolname='medioPago']")
@@ -100,7 +102,24 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] > div > div"), "tdp-st-select[formcontrolname='estadoCivil'] li");
+        boolean isExsited;
+        try {
+            logInfo("Search by without shadowRoot");
+            selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] div[tabindex=\"0\"]"), "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+            isExsited = false;
+
+        } catch (Exception e) {
+            logSevere("ERROR", e.getMessage());
+            isExsited = true;
+        }
+        if (isExsited){
+            try {
+                logInfo("Search by shadowRoot");
+                validateSelectShadow("marital status", maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "div > ul > li");
+            } catch (Exception e) {
+                logSevere("ERROR", e.getMessage());
+            }
+        }
     }
 
     public void selectNationality(String nationality) {
