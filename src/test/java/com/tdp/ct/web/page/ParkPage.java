@@ -300,9 +300,8 @@ public class ParkPage extends WebBase {
 
     public void mostrarOfertas() {
        // Addons.esperaCargaMontoDeuda(driver(), 20);
-        WebElement showOffer = explicitWaitCss(driver(), 10, btnShowOffers);
+        WebElement showOffer = explicitWaitCss(driver(), 20, btnShowOffers);
         revisarModalError(driver());
-        showOffer.click();
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
         click(showOffer);
         logInfo("Dio click al boton Mostrar Ofertas");
@@ -310,7 +309,7 @@ public class ParkPage extends WebBase {
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        WebElement selectCartilla = explicitWaitXpath(driver(),20,cartillaHogar);
+        WebElement selectCartilla = explicitWaitXpath(driver(),25,cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(selectCartilla);
         selectCartilla.click();
