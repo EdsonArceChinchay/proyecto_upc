@@ -12,6 +12,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
@@ -303,15 +305,20 @@ public class ParkPage extends WebBase {
 
     public void mostrarOfertas() {
         revisarModalError(driver());
+        WebElement showOffer = explicitWaitCss(driver(), 60, btnShowOffers);
+        revisarModalError(driver());
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
+        click(showOffer);
+        /*revisarModalError(driver());
         WebElement showOffer = explicitWaitCss(driver(), 100, btnShowOffers);
         revisarModalError(driver());
-        showOffer.click();
+        showOffer.click();*/
         logInfo("Dio click al boton Mostrar Ofertas");
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        WebElement selectCartilla = explicitWaitXpath(driver(), 20, cartillaHogar);
+        WebElement selectCartilla = explicitWaitXpath(driver(),25,cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(selectCartilla);
         selectCartilla.click();
