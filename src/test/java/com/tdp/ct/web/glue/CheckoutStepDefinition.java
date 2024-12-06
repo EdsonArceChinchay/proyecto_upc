@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.step.CheckoutStep;
 import com.tdp.ct.web.service.RetentionService;
+import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Entonces;

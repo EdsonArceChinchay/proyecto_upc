@@ -93,7 +93,7 @@ public class SummaryPage extends WebBase {
                 }
 
             } catch (Exception e) {
-               logSevere("ERROR", e.getMessage());
+                logSevere("ERROR", e.getMessage());
             }
             contador++;
         } while (!bOK && contador < reintentosMax);

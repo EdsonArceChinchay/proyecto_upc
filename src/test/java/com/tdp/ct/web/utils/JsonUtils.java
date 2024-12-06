@@ -3,10 +3,6 @@ package com.tdp.ct.web.utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class JsonUtils {

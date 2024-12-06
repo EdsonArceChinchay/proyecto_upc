@@ -305,20 +305,16 @@ public class ParkPage extends WebBase {
 
     public void mostrarOfertas() {
         revisarModalError(driver());
-        WebElement showOffer = explicitWaitCss(driver(), 60, btnShowOffers);
+        WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
         revisarModalError(driver());
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
         click(showOffer);
-        /*revisarModalError(driver());
-        WebElement showOffer = explicitWaitCss(driver(), 100, btnShowOffers);
-        revisarModalError(driver());
-        showOffer.click();*/
         logInfo("Dio click al boton Mostrar Ofertas");
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        WebElement selectCartilla = explicitWaitXpath(driver(),25,cartillaHogar);
+        WebElement selectCartilla = explicitWaitXpath(driver(), 25, cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(selectCartilla);
         selectCartilla.click();
@@ -446,10 +442,8 @@ public class ParkPage extends WebBase {
     }
 
     public void scrollToLabelSelectService() {
-        WebElement scroll = explicitWaitXpath(driver(), 10,
-                labelSelectService);
+        WebElement scroll = explicitWaitXpath(driver(), 30, labelSelectService);
         js().scrollElementTop(scroll);
-        //UtilWeb.waitForSeconds(5);
     }
 
     public void clickBtnVerDetalle(String nroServicio) {

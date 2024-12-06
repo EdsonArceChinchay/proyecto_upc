@@ -11,7 +11,6 @@ import com.tdp.ct.web.Http.HttpRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 import java.util.concurrent.TimeUnit;
 
 public abstract class AnticaptchaBase {

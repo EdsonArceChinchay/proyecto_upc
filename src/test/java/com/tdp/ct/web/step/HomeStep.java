@@ -123,7 +123,7 @@ public class HomeStep {
     }
 
     public void modifyGroupAgent(String group, Agent agent) {
-        page.homePage().modifyGroupAgent(group,agent);
+        page.homePage().modifyGroupAgent(group, agent);
     }
 
     public void initializeAgent(Agent agent) {

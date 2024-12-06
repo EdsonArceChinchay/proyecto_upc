@@ -169,8 +169,8 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        WebElement mensaje = explicitWaitCss(driver(), 60, ".message-welcome span");
-        compareWebElementTextAndString(mensaje, msg);
+        WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
+        compareWebElementTextAndString(message, msg);
         esperaProgresiva(driver(), 5, 8, msgHome);
         compareWebElementTextAndString(msgHome, msg);
     }

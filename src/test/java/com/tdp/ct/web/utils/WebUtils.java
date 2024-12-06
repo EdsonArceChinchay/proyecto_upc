@@ -234,7 +234,7 @@ public class WebUtils extends WebBase {
     }
 
     public static WebElement waitUntilPresenceOfElementLocated(WebDriver driver, int timeOutOnSeconds, By webElement) {
-        return (WebElement) (new WebDriverWait(driver, Duration.ofSeconds((long) timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+        return (new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
     }
 
     public static void clickAndSelectElementCSS(String text, WebElement webElement, String webElementList) {

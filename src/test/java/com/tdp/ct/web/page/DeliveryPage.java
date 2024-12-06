@@ -8,7 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.WebUtils.*;
+import static com.tdp.ct.web.utils.WebUtils.clickAndSelectElementCSS;
+import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class DeliveryPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='deliveryType']")

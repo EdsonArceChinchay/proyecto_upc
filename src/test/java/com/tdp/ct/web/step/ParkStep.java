@@ -2,25 +2,23 @@ package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
+import com.tdp.ct.web.service.MaterialService;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.util.UtilWeb;
-import com.tdp.ct.web.service.MaterialService;
 import io.cucumber.datatable.DataTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ParkStep {
+    private static String simCard = null;
+    private static String imei = null;
+    private final MaterialService materialService;
     @Autowired
     private StepPages page;
-
     @Autowired
     private Customer customer;
-
-    private final MaterialService materialService;
-    private static String simCard = null;
-    private static String imei= null;
 
     @Autowired
     public ParkStep(MaterialService materialService) {
@@ -231,12 +229,12 @@ public class ParkStep {
     @ScreenShotBefore
     public void typeSimCard() {
         simCard = materialService.getSimCard("5P36", "UAT4");
-        page.parkPage().typeInput("inputSimCard", simCard==null?page.parkPage().getSimCard():simCard);
+        page.parkPage().typeInput("inputSimCard", simCard == null ? page.parkPage().getSimCard() : simCard);
     }
 
     public void typeIMEI(String device) {
-        imei = materialService.getIMEIByName(device,"5P36", "UAT4");
-        page.parkPage().typeInput("inputImei", imei==null?page.parkPage().getIMEI(device):imei);
+        imei = materialService.getIMEIByName(device, "5P36", "UAT4");
+        page.parkPage().typeInput("inputImei", imei == null ? page.parkPage().getIMEI(device) : imei);
     }
 
     @ScreenShotBefore
@@ -246,10 +244,12 @@ public class ParkStep {
     }
 
     public void typeInBoxNumber(String number) {
-        if(!(simCard ==null))
-        {materialService.assignSimCard(simCard);}
-        if(!(imei ==null))
-        {materialService.assignIMEI(imei);}
+        if (!(simCard == null)) {
+            materialService.assignSimCard(simCard);
+        }
+        if (!(imei == null)) {
+            materialService.assignIMEI(imei);
+        }
         page.parkPage().typeInput("inputBoxNumber", number);
     }
 

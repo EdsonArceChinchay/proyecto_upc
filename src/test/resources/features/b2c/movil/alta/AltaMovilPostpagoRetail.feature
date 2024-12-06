@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
 Característica: AT-DT031_Alta Movil Postpago a cliente con CE por Canal Retail
 
-  @AltaMovilRetail
+  @AltaMovilPostpagoRetail
   Esquema del escenario: Alta Movil Postpago a cliente con CE por Canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

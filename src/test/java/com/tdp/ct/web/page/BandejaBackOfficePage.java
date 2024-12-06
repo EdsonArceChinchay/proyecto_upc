@@ -39,7 +39,7 @@ public class BandejaBackOfficePage extends WebBase {
     public void typeDocument(String document) {
         WebElement inputDocument = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
         waitUntilElementIsClickable(inputDocument, 20).click();
-        validateAndType("document number",inputDocument,document);
+        validateAndType("document number", inputDocument, document);
     }
 
     public void clickButtonSearch() {
