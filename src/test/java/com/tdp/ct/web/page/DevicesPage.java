@@ -24,7 +24,7 @@ public class DevicesPage extends WebBase {
     @FindBy(css = ".col-2 ._info")
     protected WebElement caracteristicasContent;
 
-    @FindBy(css = "tdp-st-button[label='Seleccionar'] button")
+    @FindBy(css = "tdp-st-button[label='Seleccionar']")
     protected WebElement btnSelect;
 
     @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
@@ -56,12 +56,12 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
         esperaProgresiva(driver(), 6, 8, listElementPLan);
-        clickAndSelectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
+        selectElementCSSWithAndWithoutShadowRoot("time permanency", listElementPLan, ".comboPermanecia tdp-st-select li", timePermanency);
     }
 
     public void typeDeviceAndSearch(String device) {
-        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text input");
-        validateAndType("device", inputDevice, device);
+        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text");
+        validateAndTypeWithAndWithoutShadowRoot("device", inputDevice, device);
         inputDevice.sendKeys(Keys.ENTER);
     }
 

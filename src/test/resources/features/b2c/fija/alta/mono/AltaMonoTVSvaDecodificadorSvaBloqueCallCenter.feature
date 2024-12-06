@@ -87,4 +87,4 @@ Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con docume
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | decodificador |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123200000      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | 24.90         |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123200000      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | 24.90         |

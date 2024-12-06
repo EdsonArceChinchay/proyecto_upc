@@ -86,5 +86,5 @@ Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador          | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1060122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PUNTO ADICIONAL HD DVR | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador          | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1060122148     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PUNTO ADICIONAL HD DVR | Repetidor WIFI PLUS Venta |

@@ -13,8 +13,8 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyJsonValue;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.SessionStorage.*;
-import static com.tdp.ct.web.utils.WebUtils.clickAndSelectElementCSS;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.selectElementCSSWithAndWithoutShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 
 public class PortabilityPage extends WebBase {
 
@@ -36,7 +36,7 @@ public class PortabilityPage extends WebBase {
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
     protected WebElement btnContinuar;
 
-    @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono']")
     protected WebElement inputPhoneNumber;
 
     @FindBy(css = "tdp-st-select[formcontrolname='tipoLinea']")
@@ -54,17 +54,17 @@ public class PortabilityPage extends WebBase {
 
     public void ingresarNumeroPortar(String phoneNumber) {
         UtilWeb.waitForSeconds(5);
-        validateAndType("mobile number", inputPhoneNumber, phoneNumber);
+        validateAndTypeWithAndWithoutShadowRoot("mobile number", inputPhoneNumber, phoneNumber);
     }
 
     public void escogerTipoLinea(String plan) {
         UtilWeb.waitForSeconds(4);
-        clickAndSelectElementCSS(plan, selectLineType, "tdp-st-select[formcontrolname='tipoLinea'] li");
+        selectElementCSSWithAndWithoutShadowRoot("line type", selectLineType, "tdp-st-select[formcontrolname='tipoLinea'] li", plan);
     }
 
     public void esogerTipoOperador(String operator) {
         UtilWeb.waitForSeconds(4);
-        clickAndSelectElementCSS(operator, selectOperatorType, "tdp-st-select[formcontrolname='tipoOperador'] li");
+        selectElementCSSWithAndWithoutShadowRoot("operator", selectOperatorType, "tdp-st-select[formcontrolname='tipoOperador'] li", operator);
     }
 
     public void clickBotonConsultar() {

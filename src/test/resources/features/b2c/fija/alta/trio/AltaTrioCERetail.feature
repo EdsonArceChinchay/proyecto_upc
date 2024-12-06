@@ -70,5 +70,5 @@ Característica: AT-DT003_Alta Trio a cliente con CE por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042464816     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042464816     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
 

@@ -86,4 +86,4 @@ Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet a cl
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan           | tipoPlan | svaInternet           |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1123123148     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET FLEX HD | Duo      | PACK ANTIVIRUS MCAFEE |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1123123148     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET FLEX HD | Duo      | PACK ANTIVIRUS MCAFEE |

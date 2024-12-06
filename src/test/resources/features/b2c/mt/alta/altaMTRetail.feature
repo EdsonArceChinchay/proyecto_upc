@@ -93,4 +93,4 @@ Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2167100001     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | correo@gmail.com |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2167100001     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | correo@gmail.com |

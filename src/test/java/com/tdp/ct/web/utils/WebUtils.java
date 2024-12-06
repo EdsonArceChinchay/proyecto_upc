@@ -2,6 +2,7 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -10,11 +11,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
+@Slf4j
 public class WebUtils extends WebBase {
 
     public static String extractRequestNumber(String text) {
@@ -119,7 +123,7 @@ public class WebUtils extends WebBase {
             return false;
         }
         logInfo(String.format("Element %s - value: %s", nameElement, value));
-        return validateElement(webElement, nameElement, 10);
+        return validateElement(webElement, nameElement, 60);
     }
 
     public static boolean validateElement(WebElement webElement, String nameElement, int timeoutInSeconds) {
@@ -134,16 +138,11 @@ public class WebUtils extends WebBase {
         }
     }
 
-    public static void typeInShadowRoot(WebElement webElement, String nameElement, String text) {
-        webElement.click();
-        webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
-        logInfo(String.format("Type in element %s = %s", nameElement, text));
-    }
-
-    public static void typeInShadowRootCssSelector(String text, WebElement webElement, String shadowSelector) {
+    public static void typeInShadowRootCssSelector(String nameElement, WebElement webElement, String value) {
         webElement.getShadowRoot()
-                .findElement(By.cssSelector(shadowSelector))
-                .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, text);
+                .findElement(By.cssSelector("input"))
+                .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+        logInfo(String.format("Type in element %s = %s", nameElement, value));
     }
 
     public static void validateInput(String nameElement, WebElement element, String value) {
@@ -158,8 +157,8 @@ public class WebUtils extends WebBase {
     }
 
     public static void validateSelectShadow(String nameElement, String text, WebElement element, String shadowElement) {
-        boolean existe = validateInputAndLocator(nameElement, element, text);
-        if (existe) {
+        boolean exist = validateInputAndLocator(nameElement, element, text);
+        if (exist) {
             selectElementShadowRootCSS(text, element, shadowElement);
         } else {
             logInfo(String.format("No %s", nameElement));
@@ -172,6 +171,7 @@ public class WebUtils extends WebBase {
         SearchContext contextPlan = webElement.getShadowRoot();
         List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
         for (WebElement element : elementsList) {
+            scrollTo(element);
             boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
             if (isEquals) {
                 logInfo(String.format("Select element: %s", element.getText()));
@@ -237,12 +237,12 @@ public class WebUtils extends WebBase {
         return (new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
     }
 
-    public static void clickAndSelectElementCSS(String text, WebElement webElement, String webElementList) {
+    public static void clickAndSelectElementCSS(String nameElement, WebElement webElement, String webElementList, String value) {
         scrollTo(webElement);
         webElement.click();
-        logInfo("Click element", webElement.toString());
+        logInfo("Click element", nameElement);
         UtilWeb.waitForSeconds(2);
-        selectElementCSS(text, webElementList);
+        selectElementCSS(value, webElementList);
     }
 
     public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
@@ -281,6 +281,84 @@ public class WebUtils extends WebBase {
         }
     }
 
+    public static void clickInShadowRootCssSelector(String nameElement, WebElement webElement) {
+        boolean isExist = validateElement(webElement, nameElement, 10);
+        if (isExist) {
+            webElement.click();
+            logInfo("Click on", nameElement);
+        }
+    }
+
+    public static void validateAndClick(String nameElement, WebElement webElement) {
+        boolean isExist = validateElement(webElement, nameElement, 10);
+        if (isExist) {
+            webElement.click();
+            logInfo("Click on", nameElement);
+        }
+    }
+
+    public static boolean hasShadowRoot(WebElement element) {
+        try {
+            element.getShadowRoot();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static void selectElementCSSWithAndWithoutShadowRoot(String nameElement, WebElement webElement, String webElementList, String value) {
+        if (hasShadowRoot(webElement)) {
+            logInfo("Search by with shadowRoot");
+            validateSelectShadow(nameElement, value, webElement, "ul li");
+        } else {
+            logInfo("Search by without shadowRoot");
+            clickAndSelectElementCSS(nameElement, webElement, webElementList, value);
+        }
+    }
+
+    public static void validateAndTypeWithAndWithoutShadowRoot(String nameElement, WebElement webElement, String value) {
+        if (hasShadowRoot(webElement)) {
+            logInfo("Search by with shadowRoot");
+            typeInShadowRootCssSelector(nameElement, webElement, value);
+        } else {
+            logInfo("Search by without shadowRoot");
+            validateAndType(nameElement, getNewLocator(webElement), value);
+        }
+    }
+
+    public static void validateAndClickWithAndWithoutShadowRoot(String nameElement, WebElement webElement) {
+        if (hasShadowRoot(webElement)) {
+            logInfo("Search by with shadowRoot");
+            clickInShadowRootCssSelector(nameElement, webElement);
+        } else {
+            logInfo("Search by without shadowRoot");
+            validateAndClick(nameElement, getNewLocator(webElement));
+        }
+    }
+
+    public static WebElement getNewLocator(WebElement webElement) {
+        String element = extractLocator(webElement.toString().trim());
+        if (element.contains("input")) {
+            element = element + " input";
+        } else if (element.contains("textarea")) {
+            element = element + " textarea";
+        } else {
+            element = element + " button";
+        }
+        logInfo("New locator", element);
+        return getDriver().findElement(By.cssSelector(element));
+    }
+
+    public static String extractLocator(String webElement) {
+        String regex = "(?:\\w+ selector:\\s*)([^\\]]+])";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(webElement);
+        if (matcher.find()) {
+            return matcher.group(1).trim();
+        } else {
+            throw new IllegalArgumentException("No valid css selector found in the input string.");
+        }
+    }
 
 }
 

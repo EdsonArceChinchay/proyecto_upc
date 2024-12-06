@@ -20,8 +20,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.WebUtils.getVisibleAndClickableElement;
-import static com.tdp.ct.web.utils.WebUtils.typeInShadowRootCssSelector;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnCard']")
@@ -42,7 +41,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
     protected WebElement buttonContinuar;
-    @FindBy(css = "app-modal-contract tdp-st-button button")
+    @FindBy(css = "tdp-st-button[label=\"Sí, acepta\"]")
     protected WebElement btnYes;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
@@ -171,19 +170,18 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         esperaProgresiva(driver(), 7, 7, btnYes);
-        btnYes.click();
-        logInfo("Dando click en si acepto");
+        validateAndClickWithAndWithoutShadowRoot("Yes, accept", btnYes);
         UtilWeb.waitForSeconds(6);
     }
 
-    public void ingresarDNISupervisor(String numdoc) {
+    public void ingresarDNISupervisor(String documentNumber) {
         revisarModalError(driver());
         esperaProgresiva(driver(), 5, 5, selectTipoDoc);
         waitUntilElementIsClickable(selectTipoDoc, 30).click();
         clickElementInAList(listDocumentos, "DNI");
         UtilWeb.waitForSeconds(1);
         WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
-        typeInShadowRootCssSelector(numdoc, rootInput, "div input");
+        validateAndTypeWithAndWithoutShadowRoot("document number", rootInput, documentNumber);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -191,13 +189,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
         WebElement inputSuperUser = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
-        typeInShadowRootCssSelector(user, inputSuperUser, "div input");
+        validateAndTypeWithAndWithoutShadowRoot("user supervisor", inputSuperUser, user);
     }
 
     public void ingresarPasswordSupervisor(String password) {
         UtilWeb.waitForSeconds(1);
-        WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
-        typeInShadowRootCssSelector(password, rootInputCorreo, "div input");
+        WebElement inputPassword = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
+        validateAndTypeWithAndWithoutShadowRoot("password supervisor", inputPassword, password);
     }
 
     public void clicConfirmarUsuarioSupervisor() {

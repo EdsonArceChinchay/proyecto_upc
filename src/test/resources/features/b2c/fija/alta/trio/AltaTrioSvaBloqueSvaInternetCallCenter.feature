@@ -86,5 +86,5 @@ Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10000024488    | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10000024488    | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |

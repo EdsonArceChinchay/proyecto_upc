@@ -82,4 +82,4 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName  | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Duo MT   | Duo BA TV | correo@gmail.com |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Duo MT   | Duo BA TV | correo@gmail.com |

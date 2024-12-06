@@ -59,9 +59,9 @@ Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente
       | phoneNumber   |
       | <phoneNumber> |
     Y        doy tiempo extra
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion

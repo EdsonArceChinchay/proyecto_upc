@@ -86,5 +86,5 @@ Característica: Alta Trio con sva Repetidor + sva Modem Canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1067122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1067122148     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Repetidor WIFI PLUS Venta |

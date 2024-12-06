@@ -91,4 +91,4 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Mono MT  | Mono BA  | MARIA       | JAIME       | PUEBLO LIBRE |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 46325789       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Mono MT  | Mono BA  | MARIA       | JAIME       | PUEBLO LIBRE |

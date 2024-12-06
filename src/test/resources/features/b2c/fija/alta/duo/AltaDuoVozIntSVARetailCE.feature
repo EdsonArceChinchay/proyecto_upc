@@ -81,4 +81,4 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA a cliente con CE por ca
 
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                | nombreSVA             |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1021303091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET | PACK ANTIVIRUS MCAFEE |

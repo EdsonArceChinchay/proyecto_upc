@@ -82,6 +82,6 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                  | bloque | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1022102007     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | PISO 1     | TRIO MOV. VOZ INT. ESTANDAR | HBO    | correo@gmail.com |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1022102007     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | PISO 1     | TRIO MOV. VOZ INT. ESTANDAR | HBO    | correo@gmail.com |
 
 

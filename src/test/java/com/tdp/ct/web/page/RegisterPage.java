@@ -19,11 +19,11 @@ public class RegisterPage extends WebBase {
 
     @FindBy(css = "[formcontrolname='medioPago']")
     protected WebElement selectMethodPayment;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='mail'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='mail']")
     protected WebElement inputEmail;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='confirmEmail'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='confirmEmail']")
     protected WebElement inputConfirmEmail;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='callID'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
     protected WebElement inputCallID;
     //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
     protected String btnCustomerData =
@@ -42,9 +42,9 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(css = "tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento']")
     protected WebElement inputDateOfBirth;
-    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion'] textarea")
+    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion']")
     protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
@@ -69,20 +69,20 @@ public class RegisterPage extends WebBase {
 
     public void selectMethodPayment(String methodPayment) {
         esperaProgresiva(driver(), 6, 6, selectMethodPayment);
-        clickAndSelectElementCSS(methodPayment, selectMethodPayment, "[formcontrolname='medioPago'] li");
+        selectElementCSSWithAndWithoutShadowRoot("method payment", selectMethodPayment, "[formcontrolname='medioPago'] li", methodPayment);
     }
 
     public void typeEmail(String email) {
         esperaProgresiva(driver(), 6, 6, inputEmail);
-        validateAndType("email", inputEmail, email);
+        validateAndTypeWithAndWithoutShadowRoot("email", inputEmail, email);
     }
 
     public void typeConfirmEmail(String email) {
-        validateAndType("confirm email", inputConfirmEmail, email);
+        validateAndTypeWithAndWithoutShadowRoot("confirm email", inputConfirmEmail, email);
     }
 
     public void typeIdCall(String idCall) {
-        validateAndType("id call", inputCallID, idCall);
+        validateAndTypeWithAndWithoutShadowRoot("id call", inputCallID, idCall);
     }
 
     public void waitButtonCustomerData() {
@@ -98,57 +98,32 @@ public class RegisterPage extends WebBase {
 
     public void typeDateOfBirth(String dateOfBirth) {
         js().scrollElementTop(inputDateOfBirth);
-        validateAndType("date of birth", inputDateOfBirth, dateOfBirth);
+        validateAndTypeWithAndWithoutShadowRoot("date of birth", inputDateOfBirth, dateOfBirth);
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        boolean isExsited;
-        try {
-            logInfo("Search by without shadowRoot");
-            clickAndSelectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-            isExsited = false;
-        } catch (Exception e) {
-            logSevere("ERROR", e.getMessage());
-            isExsited = true;
-            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
-                logInfo("1 catch");
-                selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-                isExsited = false;
-            }
-        }
-        if (isExsited) {
-            try {
-                logInfo("Search by shadowRoot");
-                validateSelectShadow("marital status", maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "div > ul > li");
-            } catch (Exception e) {
-                logSevere("ERROR", e.getMessage());
-                if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
-                    logInfo("2 catch");
-                    selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-                }
-            }
-        }
+        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
     }
 
     public void selectNationality(String nationality) {
-        clickAndSelectElementCSS(nationality, selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li");
+        selectElementCSSWithAndWithoutShadowRoot("nationality", selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li", nationality);
     }
 
     public void selectDepartment(String department) {
-        clickAndSelectElementCSS(department, selectDepartment, "tdp-st-select[formcontrolname='department'] li");
+        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, "tdp-st-select[formcontrolname='department'] li", department);
     }
 
     public void selectProvince(String province) {
-        clickAndSelectElementCSS(province, selectProvince, "tdp-st-select[formcontrolname='province'] li");
+        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, "tdp-st-select[formcontrolname='province'] li", province);
     }
 
     public void selectDistrict(String district) {
-        clickAndSelectElementCSS(district, selectDistrict, "tdp-st-select[formcontrolname='district'] li");
+        selectElementCSSWithAndWithoutShadowRoot("district", selectDistrict, "tdp-st-select[formcontrolname='district'] li", district);
     }
 
     public void typeAddress(String address) {
-        js().scrollElementTop(inputAddress);
-        validateAndType("address", inputAddress, address);
+        js().scrollElementTop(inputAddress); //*textarea
+        validateAndTypeWithAndWithoutShadowRoot("address", inputAddress, address);
     }
 
     public void clickButtonConfirm() {
@@ -158,7 +133,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        clickAndSelectElementCSS(type, selectPage, "tdp-st-select[formcontrolname='typePage'] li");
+        selectElementCSSWithAndWithoutShadowRoot("", selectPage, "tdp-st-select[formcontrolname='typePage'] li", type);
     }
 
     public void clickButtonContinue() {

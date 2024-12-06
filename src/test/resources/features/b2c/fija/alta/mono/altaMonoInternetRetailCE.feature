@@ -39,7 +39,7 @@ Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE en Canal Reta
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
-      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
+      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar para la instalacion
       | tipoVivienda | nombreVivienda | conjunto                 | conjHabit |

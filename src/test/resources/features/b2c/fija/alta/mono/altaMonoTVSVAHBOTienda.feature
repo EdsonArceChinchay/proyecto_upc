@@ -80,6 +80,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE en Can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlan | nombrePlan |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
 

@@ -80,5 +80,5 @@ Característica: Alta Trio SVA Internet canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | PACK ANTIVIRUS MCAFEE |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042411002     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | PACK ANTIVIRUS MCAFEE |
 

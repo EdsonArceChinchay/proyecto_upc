@@ -38,8 +38,8 @@ Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
     Y        selecciono el distrito donde sera la instalacion "150136"
     Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
     Y        ingreso la referencia de la direccion "casa naranja"

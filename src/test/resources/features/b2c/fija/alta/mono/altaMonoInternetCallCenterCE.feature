@@ -38,8 +38,8 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
-      | departamento | provincia | distrito | direccion               | referencia |
-      | 15           | 1501      | 150131   | AVENIDA CAMINO REAL 155 | parque     |
+      | departamento | provincia | distrito   | direccion               | referencia |
+      | LIMA         | LIMA      | SAN ISIDRO | AVENIDA CAMINO REAL 155 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |

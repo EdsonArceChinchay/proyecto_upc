@@ -40,7 +40,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                | referencia |
-      | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | PARQUE     |
+      | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | PARQUE     |
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta

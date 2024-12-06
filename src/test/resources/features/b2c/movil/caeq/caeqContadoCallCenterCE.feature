@@ -41,9 +41,9 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        doy click en el boton "MANTENER PLAN"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion

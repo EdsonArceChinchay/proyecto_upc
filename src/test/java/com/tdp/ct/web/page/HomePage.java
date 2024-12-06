@@ -29,7 +29,7 @@ public class HomePage extends WebBase {
     @FindBy(css = "[class*='buttonConsultar']")
     protected WebElement btnSearch;
 
-    @FindBy(css = "[class='validation'] tdp-st-input-text input")
+    @FindBy(css = "[class='validation'] tdp-st-input-text")
     protected WebElement txtDocumento;
 
     @FindBy(xpath = "//*[@class='validation']//app-simple-button")
@@ -62,7 +62,7 @@ public class HomePage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
 
-    @FindBy(css = "tdp-st-input-text[id=\"doc\"] input[id=\"doc\"]")
+    @FindBy(css = "tdp-st-input-text[id=\"doc\"]")
     protected WebElement inputDocumentNumber;
 
     public void selectDocumentType(String type) {
@@ -70,7 +70,7 @@ public class HomePage extends WebBase {
         switch (type) {
             case "CE":
             case "C":
-                valueDocumentType = "C";
+                valueDocumentType = "CE";
                 break;
             case "DNI":
                 valueDocumentType = "DNI";
@@ -86,13 +86,12 @@ public class HomePage extends WebBase {
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
         esperaProgresiva(driver(), 6, 5, selectDocumentType);
-        clickAndSelectElementCSS(valueDocumentType, selectDocumentType, "tdp-st-select[formcontrolname=\"tipoDoc\"] li");
-        //selectElementShadowRootCSS(valueDocumentType, selectDocumentType, "ul li");
+        selectElementCSSWithAndWithoutShadowRoot("document type", selectDocumentType, "tdp-st-select[formcontrolname='tipoDoc'] li", valueDocumentType);
         UtilWeb.waitForSeconds(2);
     }
 
     public void typeDocumentNumber(String documentNumber) {
-        validateAndType("document number", inputDocumentNumber, documentNumber);
+        validateAndTypeWithAndWithoutShadowRoot("document number", inputDocumentNumber, documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -135,12 +134,12 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        clickAndSelectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
+        selectElementCSSWithAndWithoutShadowRoot("document type of the legal representative", listaDocumentos, "[class='validation'] tdp-st-select li", documentType);
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
         waitUntilElementIsVisible(txtDocumento, 10).click();
-        validateAndType("document number of legal representative", txtDocumento, numDoc);
+        validateAndTypeWithAndWithoutShadowRoot("document number of legal representative", txtDocumento, numDoc);
     }
 
     public void clickOnTheValidateLegalRepresentativeButton() {

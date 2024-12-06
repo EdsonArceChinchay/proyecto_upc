@@ -40,7 +40,7 @@ Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tie
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                   | referencia |
-      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | parque     |
+      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta

@@ -58,7 +58,7 @@ Característica: AT-DT030_Alta Movil Prepago + Equipo a cliente con CE por canal
     Y        doy click en datos del cliente
     Y        selecciono completar los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad | departamento | provincia | distrito | direccion                |
-      | 20/08/1996 | soltero     | Albania      | APURIMAC     | ABANCAY   | CIRCA    | JR JULIO CESAR TELLO 469 |
+      | 20/08/1996 | soltero     | Albania      | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 |
     Y        doy click en el boton confirmar
     Entonces doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado

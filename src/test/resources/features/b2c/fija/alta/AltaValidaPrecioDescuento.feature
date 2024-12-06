@@ -79,8 +79,8 @@ Característica: Validar precio de descuento BB - Planes: Duos, trios.
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                                     | svaTV               | velocidadBB | precDescBB                      | bloque | tipoPlan | svaInternet           | bloque |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233168     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET FLEX HD RA S23 600 MBPS           | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233169     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233168     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO INTERNET FLEX HD RA S23 600 MBPS           | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Duo      | PACK ANTIVIRUS MCAFEE | HBO    |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022233169     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | TRIO MOV. VOZ INT. ESTANDAR HD RA S23 600 MBPS | Combo Plus Bonif TV | 300 Mbps    | Descto Plan Internet 50% x 2 ms | HBO    | Trio     | PACK ANTIVIRUS MCAFEE | HBO    |
 
 
   @AltaMonoBeneficioDescuento

@@ -75,4 +75,4 @@ Característica: AT-DT0_ Alta Trio B2B Upfront con SVA con representante legal C
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20000000006    | 1   | CE              | 200000002      | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20000000006    | 1   | CE              | 200000002      | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

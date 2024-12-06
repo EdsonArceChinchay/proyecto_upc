@@ -86,4 +86,4 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

@@ -81,5 +81,5 @@ Característica: Alta Trio con sva Modem + sva Linea Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1065122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1065122148     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 |

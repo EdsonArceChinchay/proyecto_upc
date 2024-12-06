@@ -12,7 +12,7 @@ import java.util.List;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.validateInput;
 
 public class BandejaBackOfficePage extends WebBase {
     @FindBy(xpath = "//app-root/app-success-simple/div[2]/button")
@@ -37,9 +37,9 @@ public class BandejaBackOfficePage extends WebBase {
     protected WebElement btnCargarAudio;
 
     public void typeDocument(String document) {
-        WebElement inputDocument = find().getElementByXPath("//*[@name='filterPost' or @formcontrolname='filterPost'or contains(@placeholder,'Buscar DNI o código FE')]");
+        WebElement inputDocument = find().getElementByCss("[formcontrolname='filterPost']");
         waitUntilElementIsClickable(inputDocument, 20).click();
-        validateAndType("document number", inputDocument, document);
+        validateInput("document number", inputDocument, document);
     }
 
     public void clickButtonSearch() {

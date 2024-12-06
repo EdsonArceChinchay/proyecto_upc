@@ -75,4 +75,4 @@ Característica: Alta Trio Upfront a cliente con CE por canal Retail
 
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                  |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1101100011     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1101100011     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trio       | TRIO MOV. VOZ INT. ESTANDAR |

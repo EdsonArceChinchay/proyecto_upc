@@ -89,5 +89,5 @@ Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por cana
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1090454046     | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | nombrePlan          | tipoPlan | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1090454046     | LIMA         | LIMA      | SAN MIGUEL | Calle Condesa de Chinchon 107 | Casa       | RV Plan Mi Movistar | Control  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

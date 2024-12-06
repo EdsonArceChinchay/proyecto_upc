@@ -90,5 +90,5 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022420045     | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022420045     | LIMA         | LIMA      | SAN MIGUEL | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |

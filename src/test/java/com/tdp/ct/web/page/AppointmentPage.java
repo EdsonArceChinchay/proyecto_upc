@@ -14,7 +14,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 
 public class AppointmentPage extends WebBase {
 
@@ -52,8 +52,8 @@ public class AppointmentPage extends WebBase {
 
     public void ingresarContacto(String contact) {
         js().scrollElementTop(buttonConfirmar);
-        WebElement rootInput = find().getElementByXPath("tdp-st-input-text[formcontrolname='contactNumber1'] input");
-        validateAndType("contact", rootInput, contact);
+        WebElement rootInput = find().getElementByXPath("tdp-st-input-text[formcontrolname='contactNumber1']");
+        validateAndTypeWithAndWithoutShadowRoot("contact", rootInput, contact);
         UtilWeb.waitForSeconds(2);
     }
 
@@ -78,8 +78,8 @@ public class AppointmentPage extends WebBase {
             logInfo("paso aqui 2 " + listaHorario.get(0).getText());
         }
         js().scrollElementTop(buttonConfirmar);
-        WebElement contactNumber1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text input");
-        validateAndType("contact", contactNumber1, "956425985");
+        WebElement contactNumber1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
+        validateAndTypeWithAndWithoutShadowRoot("contact", contactNumber1, "956425985");
         UtilWeb.waitForSeconds(2);
     }
 
@@ -133,14 +133,14 @@ public class AppointmentPage extends WebBase {
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
         js().scrollElementTop(buttonConfirmar);
-        WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text input");
-        WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text input");
-        WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text input");
-        WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text input");
-        validateAndType("contact name", rootInput, "Edson");
-        validateAndType("contact lastName", rootInput1, "Arce");
-        validateAndType("contact number 1", rootInput2, "976709704");
-        validateAndType("contact number 2", rootInput3, "906701238");
+        WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
+        WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
+        WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
+        WebElement rootInput3 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(5) > tdp-st-input-text");
+        validateAndTypeWithAndWithoutShadowRoot("contact name", rootInput, "Edson");
+        validateAndTypeWithAndWithoutShadowRoot("contact lastName", rootInput1, "Arce");
+        validateAndTypeWithAndWithoutShadowRoot("contact number 1", rootInput2, "976709704");
+        validateAndTypeWithAndWithoutShadowRoot("contact number 2", rootInput3, "906701238");
     }
 
     public void scrollToViewAgendamiento() {
