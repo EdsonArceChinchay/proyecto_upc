@@ -69,28 +69,31 @@ public class HomePage extends WebBase {
         js().scrollElementTop(btnSearch);
         esperaProgresiva(driver(), 6, 5, selectDocumentType);
         click(selectDocumentType);
+        logInfo("Click en selectDocumentType");
+
         UtilWeb.waitForSeconds(2);
-        String valueTipoDocumento;
+        String valueDocumentType;
         switch (type) {
             case "CE":
             case "C":
-                valueTipoDocumento = "C";
+                valueDocumentType = "C";
                 break;
             case "DNI":
-                valueTipoDocumento = "DNI";
+                valueDocumentType = "DNI";
                 break;
             case "Pasaporte":
             case "P":
-                valueTipoDocumento = "P";
+                valueDocumentType = "P";
                 break;
             case "RUC":
-                valueTipoDocumento = "RUC";
+                valueDocumentType = "RUC";
                 break;
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        js().getWebElement("tdp-st-select[formcontrolname=\"tipoDoc\"] li[data-value=\"" + valueTipoDocumento + "\"]").click();
-        logInfo("Select document type", valueTipoDocumento);
+        WebElement item = js().getWebElement("li[data-value=\"" + valueDocumentType + "\"]");
+        waitUntilElementIsClickable(item, 30).click();
+        logInfo("Select document type", valueDocumentType);
     }
 
     public void typeDocumentNumber(String documentNumber) {
