@@ -21,7 +21,6 @@ import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.*;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
-
 public class HomePage extends WebBase {
 
     @FindBy(xpath = "//*[contains(@class,'info-user')]/div | //app-client-info")
@@ -62,16 +61,11 @@ public class HomePage extends WebBase {
 
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
-    @FindBy(css = "input[id='doc']")
+
+    @FindBy(css = "tdp-st-input-text[id=\"doc\"] input[id=\"doc\"]")
     protected WebElement inputDocumentNumber;
 
     public void selectDocumentType(String type) {
-        js().scrollElementTop(btnSearch);
-        esperaProgresiva(driver(), 6, 5, selectDocumentType);
-        click(selectDocumentType);
-        logInfo("Click en selectDocumentType");
-
-        UtilWeb.waitForSeconds(2);
         String valueDocumentType;
         switch (type) {
             case "CE":
@@ -91,14 +85,14 @@ public class HomePage extends WebBase {
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        WebElement item = js().getWebElement("li[data-value=\"" + valueDocumentType + "\"]");
-        waitUntilElementIsClickable(item, 30).click();
-        logInfo("Select document type", valueDocumentType);
+        esperaProgresiva(driver(), 6, 5, selectDocumentType);
+        clickAndSelectElementCSS(valueDocumentType, selectDocumentType, "tdp-st-select[formcontrolname=\"tipoDoc\"] li");
+        //selectElementShadowRootCSS(valueDocumentType, selectDocumentType, "ul li");
+        UtilWeb.waitForSeconds(2);
     }
 
     public void typeDocumentNumber(String documentNumber) {
-        type(inputDocumentNumber, documentNumber);
-        logInfo("Type document number", documentNumber);
+        validateAndType("document number", inputDocumentNumber, documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -174,7 +168,7 @@ public class HomePage extends WebBase {
         Addons.revisarModalError(driver());
         WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
         compareWebElementTextAndString(message, msg);
-        esperaProgresiva(driver(), 5, 8, msgHome);
+        esperaProgresiva(driver(), 6, 7, msgHome);
         compareWebElementTextAndString(msgHome, msg);
     }
 

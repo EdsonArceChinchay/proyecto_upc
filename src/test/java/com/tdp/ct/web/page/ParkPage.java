@@ -446,8 +446,8 @@ public class ParkPage extends WebBase {
         js().scrollElementTop(scroll);
     }
 
-    public void clickBtnVerDetalle(String nroServicio) {
-        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
+    public void clickBtnVerDetalle(String nroService) {
+        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroService + "')]//following::div[contains(text(),' Ver detalle ')][1]");
         esperaProgresiva(driver(), 5, 8, btnVerDetalle);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
@@ -455,8 +455,9 @@ public class ParkPage extends WebBase {
     }
 
     public void selectLineWithNumber(String number) {
+        Addons.esperaCargaMontoDeuda(driver(), 30);
         WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
-        esperaProgresiva(driver(), 3, 5, numberLine);
+        esperaProgresiva(driver(), 6, 8, numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
         logInfo("Click in line", number);
@@ -480,7 +481,7 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(10);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        esperaProgresiva(driver(), 5, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);
         logInfo("Click button", btnRenovarPlan.getText());
         click(btnRenovarPlan);
