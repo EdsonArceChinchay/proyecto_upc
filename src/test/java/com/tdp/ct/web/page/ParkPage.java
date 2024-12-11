@@ -108,7 +108,7 @@ public class ParkPage extends WebBase {
 
     public void ingresarNombreClienteExtranjero(String name) {
         UtilWeb.waitForSeconds(3);
-        validateAndTypeWithAndWithoutShadowRoot("last name", inputName, name);
+        validateAndTypeWithAndWithoutShadowRoot("first name", inputName, name);
     }
 
     public void ingresarApellidoClienteExtranjero(String lastName) {

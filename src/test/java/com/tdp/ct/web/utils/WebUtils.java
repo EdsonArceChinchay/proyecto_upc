@@ -11,12 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static com.tdp.ct.web.lib.WebDriverManager.getDriver;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
+import static com.tdp.ct.web.utils.StringExtractor.extractSelector;
 
 @Slf4j
 public class WebUtils extends WebBase {
@@ -132,17 +131,19 @@ public class WebUtils extends WebBase {
             wait.until(ExpectedConditions.visibilityOf(webElement));
             logInfo(String.format("Element %s is Displayed: %b - Element is Enabled: %b", nameElement, webElement.isDisplayed(), webElement.isEnabled()));
             return webElement.isDisplayed() && webElement.isEnabled();
-        } catch (TimeoutException | StaleElementReferenceException e) {
+        } catch (TimeoutException | StaleElementReferenceException | NullPointerException e) {
             logSevere(String.format("Element validation failed: %s", e.getMessage()));
             return false;
         }
     }
 
     public static void typeInShadowRootCssSelector(String nameElement, WebElement webElement, String value) {
-        webElement.getShadowRoot()
-                .findElement(By.cssSelector("input"))
-                .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
-        logInfo(String.format("Type in element %s = %s", nameElement, value));
+        if (validateInputAndLocator(nameElement, webElement, value)) {
+            webElement.getShadowRoot()
+                    .findElement(By.cssSelector("input"))
+                    .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+            logInfo(String.format("Type in element %s = %s", nameElement, value));
+        }
     }
 
     public static void validateInput(String nameElement, WebElement element, String value) {
@@ -238,11 +239,14 @@ public class WebUtils extends WebBase {
     }
 
     public static void clickAndSelectElementCSS(String nameElement, WebElement webElement, String webElementList, String value) {
-        scrollTo(webElement);
-        webElement.click();
-        logInfo("Click element", nameElement);
-        UtilWeb.waitForSeconds(2);
-        selectElementCSS(value, webElementList);
+        if (validateElement(webElement, nameElement, 1)) {
+            scrollTo(webElement);
+            webElement.click();
+            logInfo("Click element", nameElement);
+            UtilWeb.waitForSeconds(1);
+            selectElementCSS(value, webElementList);
+        }
+
     }
 
     public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
@@ -337,27 +341,29 @@ public class WebUtils extends WebBase {
     }
 
     public static WebElement getNewLocator(WebElement webElement) {
-        String element = extractLocator(webElement.toString().trim());
+        String element = webElement.toString().trim();
+        logInfo("Web element to be modified", element);
+        try {
+            return getDriver().findElement(By.cssSelector(addElement(element)));
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static String addElement(String webElement) {
+        String element = extractSelector(webElement).trim();
+        logInfo("Web element extracted", element);
         if (element.contains("input")) {
             element = element + " input";
         } else if (element.contains("textarea")) {
             element = element + " textarea";
+        } else if (element.contains("select")) {
+            element = element + " ul li";
         } else {
             element = element + " button";
         }
-        logInfo("New locator", element);
-        return getDriver().findElement(By.cssSelector(element));
-    }
-
-    public static String extractLocator(String webElement) {
-        String regex = "(?:\\w+ selector:\\s*)([^\\]]+])";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(webElement);
-        if (matcher.find()) {
-            return matcher.group(1).trim();
-        } else {
-            throw new IllegalArgumentException("No valid css selector found in the input string.");
-        }
+        logInfo(String.format("Element before: %s and after: %s", webElement, element));
+        return element;
     }
 
 }

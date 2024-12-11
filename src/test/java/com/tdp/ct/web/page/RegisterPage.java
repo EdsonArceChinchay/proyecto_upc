@@ -102,7 +102,25 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
+        boolean isExsited;
+        try {
+            logInfo("Search by without shadowRoot");
+            js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] div[tabindex=\"0\"]").click();
+            selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+            isExsited = false;
+        } catch (Exception e) {
+            logSevere("ERROR", e.getMessage());
+            isExsited = true;
+        }
+        if (isExsited) {
+            try {
+                logInfo("Search by shadowRoot");
+                validateSelectShadow("marital status", maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "div > ul > li");
+            } catch (Exception e) {
+                logSevere("ERROR", e.getMessage());
+            }
+        }
+
     }
 
     public void selectNationality(String nationality) {

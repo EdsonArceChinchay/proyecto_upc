@@ -16,23 +16,23 @@ public class AddressPage extends WebBase {
     private static final String DEPARTAMENTO = "LIMA";
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
     protected WebElement direccionSugerida;
-    @FindBy(css = "[formcontrolname='lot'] ")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='lot']")
     protected WebElement inputLot;
-    @FindBy(css = "[formcontrolname='houseType']")
+    @FindBy(css = "tdp-st-select[formcontrolname='houseType']")
     protected WebElement selectHouseType;
-    @FindBy(css = "[formcontrolname='houseName']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='houseName']")
     protected WebElement inputHouseName;
-    @FindBy(css = "[formcontrolname='block']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='block']")
     protected WebElement inputBlock;
-    @FindBy(css = "[formcontrolname='floor']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='floor']")
     protected WebElement inputFloor;
-    @FindBy(css = "[formcontrolname='apple']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='apple']")
     protected WebElement inputApple;
-    @FindBy(css = "[formcontrolname='inside']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='inside']")
     protected WebElement inputInside;
-    @FindBy(css = "[formcontrolname='housingComplexe']")
+    @FindBy(css = "tdp-st-select[formcontrolname='housingComplexe']")
     protected WebElement selectHousingComplexe;
-    @FindBy(css = "[formcontrolname='housingComplexName']")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='housingComplexName']")
     protected WebElement inputHousingComplexName;
     //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
     protected String btnConsultCoverage =
@@ -138,7 +138,7 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHouseType(String houseType) {
-        validateAndTypeWithAndWithoutShadowRoot("houseType", selectHouseType, houseType);
+        selectElementCSSWithAndWithoutShadowRoot("houseType", selectHouseType, "tdp-st-select[formcontrolname='houseType'] ul li", houseType);
     }
 
     public void typeHouseName(String houseName) {
@@ -158,7 +158,7 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHousingComplexe(String housingComplexe) {
-        selectElementCSSWithAndWithoutShadowRoot("housing complexe", selectHousingComplexe, "[formcontrolname='housingComplexe'] ul li", housingComplexe);
+        selectElementCSSWithAndWithoutShadowRoot("housing complexe", selectHousingComplexe, "tdp-st-select[formcontrolname='housingComplexe'] ul li", housingComplexe);
     }
 
     public void typeHousingComplexName(String hab) {

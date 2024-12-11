@@ -3,7 +3,6 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,18 +17,18 @@ import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowR
 
 public class AppointmentPage extends WebBase {
 
-    @FindBy(xpath = "//*[@label='Iniciar Registro' or  @type='button' and @class='btnStart']")
-    protected WebElement buttonIniciarRegistro;
+    @FindBy(css = "button[class=\"btnStart\"]")
+    protected WebElement btnStart;
     @FindBy(xpath = "//span[contains(text(),'Agendamiento')]")
     protected WebElement labelAppointment;
-    @FindBy(xpath = "//button[contains(text(),'Confirmar')]")
-    protected WebElement buttonConfirmar;
-    @FindBy(xpath = "//div[@class='boxHour active']")
+    @FindBy(css = "button[type=\"submit\"]")
+    protected WebElement btnConfirm;
+    @FindBy(css = "div[class='boxHour active']")
     protected WebElement buttonTurnoAgendamientoActivo;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnCerrar;
-    @FindBy(xpath = "(//button[contains(text(),'Confirmar')])[2]")
-    protected WebElement buttonConfirmar2;
+    @FindBy(css = "button[class=\"buttonG\"]")
+    protected WebElement btnConfirm2;
 
     public void clicEnUnTurnoAgendamiento() {
         UtilWeb.waitForSeconds(2);
@@ -41,8 +40,8 @@ public class AppointmentPage extends WebBase {
 
     public boolean validarPantallaAgendamiento() {
         revisarModalError(driver());
-        clickBtnCerrarModalError(buttonIniciarRegistro);
-        clickBtnCerrarModalError(buttonIniciarRegistro);
+        clickBtnCerrarModalError(btnStart);
+        clickBtnCerrarModalError(btnStart);
         esperaProgresiva(driver(), 6, 8, labelAppointment);
         revisarModalError(driver());
         boolean existe = labelAppointment.isDisplayed();
@@ -51,7 +50,7 @@ public class AppointmentPage extends WebBase {
     }
 
     public void ingresarContacto(String contact) {
-        js().scrollElementTop(buttonConfirmar);
+        js().scrollElementTop(btnConfirm);
         WebElement rootInput = find().getElementByXPath("tdp-st-input-text[formcontrolname='contactNumber1']");
         validateAndTypeWithAndWithoutShadowRoot("contact", rootInput, contact);
         UtilWeb.waitForSeconds(2);
@@ -61,7 +60,7 @@ public class AppointmentPage extends WebBase {
         revisarModalError(driver());
 //         Calendario
         boolean elementoExistenteDias;
-        esperaProgresiva(driver(), 3, 5, buttonConfirmar);
+        esperaProgresiva(driver(), 3, 5, btnConfirm);
         elementoExistenteDias = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-today')]//following::div[@class='mat-calendar-body-cell-content']")).isEmpty();
         if (elementoExistenteDias) {
             logInfo("elementoExistenteDias: true");
@@ -77,21 +76,10 @@ public class AppointmentPage extends WebBase {
             click(listaHorario.get(0));
             logInfo("paso aqui 2 " + listaHorario.get(0).getText());
         }
-        js().scrollElementTop(buttonConfirmar);
+        js().scrollElementTop(btnConfirm);
         WebElement contactNumber1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         validateAndTypeWithAndWithoutShadowRoot("contact", contactNumber1, "956425985");
         UtilWeb.waitForSeconds(2);
-    }
-
-    public boolean verficarPantallaAgendamiento() {
-        revisarModalError(driver());
-        boolean existe = false;
-        try {
-            existe = find().getElementByXPath("//span[contains(text(),'Agendamiento')]").isDisplayed();
-        } catch (NoSuchElementException e) {
-            logSevere("Comprobando elemento");
-        }
-        return existe;
     }
 
     public void botonConfirmarAgendamiento() {
@@ -100,12 +88,12 @@ public class AppointmentPage extends WebBase {
         elementoExistente = !driver().findElements(By.xpath("//div[@class='contHours']")).isEmpty();
         if (elementoExistente) {
             logInfo("paso aqui 1");
-            click(buttonConfirmar);
+            click(btnConfirm);
             UtilWeb.waitForSeconds(1);
-            click(buttonConfirmar2);
+            click(btnConfirm2);
             logInfo("paso aqui 2");
         } else {
-            click(buttonConfirmar);
+            click(btnConfirm);
             logInfo("paso aqui 3");
         }
         UtilWeb.waitForSeconds(5);
@@ -132,7 +120,7 @@ public class AppointmentPage extends WebBase {
             logInfo("paso aqui 2 " + listaHorario.get(0).getText());
         }
         driver().manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-        js().scrollElementTop(buttonConfirmar);
+        js().scrollElementTop(btnConfirm);
         WebElement rootInput = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(1) > tdp-st-input-text");
         WebElement rootInput1 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(2) > tdp-st-input-text");
         WebElement rootInput2 = find().getElementByCss("div.tdp-row.tdp-mb-3 > div:nth-child(3) > tdp-st-input-text");
