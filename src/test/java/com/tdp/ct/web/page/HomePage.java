@@ -86,6 +86,7 @@ public class HomePage extends WebBase {
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
         esperaProgresiva(driver(), 6, 5, selectDocumentType);
+        js().scrollElementTop(selectDocumentType);
         selectElementCSSWithAndWithoutShadowRoot("document type", selectDocumentType, "tdp-st-select[formcontrolname='tipoDoc'] li", valueDocumentType);
         UtilWeb.waitForSeconds(2);
     }

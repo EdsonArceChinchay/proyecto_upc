@@ -111,6 +111,11 @@ public class RegisterPage extends WebBase {
         } catch (Exception e) {
             logSevere("ERROR", e.getMessage());
             isExsited = true;
+            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
+                logInfo("1 catch");
+                selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+                isExsited = false;
+            }
         }
         if (isExsited) {
             try {
@@ -118,6 +123,10 @@ public class RegisterPage extends WebBase {
                 validateSelectShadow("marital status", maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "div > ul > li");
             } catch (Exception e) {
                 logSevere("ERROR", e.getMessage());
+                if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
+                    logInfo("2 catch");
+                    selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+                }
             }
         }
 
