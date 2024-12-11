@@ -139,9 +139,8 @@ public class WebUtils extends WebBase {
 
     public static void typeInShadowRootCssSelector(String nameElement, WebElement webElement, String value) {
         if (validateInputAndLocator(nameElement, webElement, value)) {
-            String tag = webElement.getText().contains("input") ? "input" : "textarea";
             webElement.getShadowRoot()
-                    .findElement(By.cssSelector(tag))
+                    .findElement(By.cssSelector(getTag(webElement)))
                     .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
             logInfo(String.format("Type in element %s = %s", nameElement, value));
         }
@@ -365,6 +364,12 @@ public class WebUtils extends WebBase {
         }
         logInfo(String.format("Element before: %s and after: %s", webElement, element));
         return element;
+    }
+
+    public static String getTag(WebElement webElement){
+        String tag = webElement.toString().contains("input") ? "input" : "textarea";
+        logInfo("New tag",tag);
+        return  tag;
     }
 
 }
