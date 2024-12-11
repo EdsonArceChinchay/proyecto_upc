@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import static com.tdp.ct.web.service.util.UtilWeb.getValueFromDataTable;
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @Component
 public class RegisterStep {
@@ -46,13 +47,12 @@ public class RegisterStep {
 
     @ScreenShotAfter
     public void ingresarDatosCliente(DataTable dataTable) {
-        var fechNacimiento = getValueFromDataTable(dataTable, "fechaNac");
-        var nacionalidad = getValueFromDataTable(dataTable, "nacionalidad");
-        var estadoCivil = getValueFromDataTable(dataTable, "estadoCivil");
-        typeDateOfBirth(fechNacimiento);
-        selectNationality(nacionalidad);
-        selectMaritalStatus(estadoCivil);
-        UtilWeb.waitForSeconds(2);
+        var dateOfBirth = getValueFromDataTable(dataTable, "fechaNac");
+        var nationality = getValueFromDataTable(dataTable, "nacionalidad");
+        var maritalStatus = getValueFromDataTable(dataTable, "estadoCivil");
+        typeDateOfBirth(dateOfBirth);
+        selectNationality(nationality);
+        selectMaritalStatus(maritalStatus);
     }
 
     public void waitButtonCustomerData() {
@@ -72,20 +72,20 @@ public class RegisterStep {
     @ScreenShotBefore
     @ScreenShotAfter
     public void completoDatosCliente(DataTable datosCliente) {
-        String fechaNac = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
-        String nacionalidad = UtilWeb.getValueFromDataTable(datosCliente, "nacionalidad");
-        String estadoCivil = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
-        String departamento = UtilWeb.getValueFromDataTable(datosCliente, "departamento");
-        String provincia = UtilWeb.getValueFromDataTable(datosCliente, "provincia");
-        String distrito = UtilWeb.getValueFromDataTable(datosCliente, "distrito");
-        String direccion = UtilWeb.getValueFromDataTable(datosCliente, "direccion");
-        typeDateOfBirth(fechaNac);
-        selectNationality(nacionalidad);
-        selectMaritalStatus(estadoCivil);
-        selectDepartment(departamento);
-        selectProvince(provincia);
-        selectDistrict(distrito);
-        typeAddress(direccion);
+        String dateOfBirth = UtilWeb.getValueFromDataTable(datosCliente, "fechaNac");
+        String nationality = UtilWeb.getValueFromDataTable(datosCliente, "nacionalidad");
+        String maritalStatus = UtilWeb.getValueFromDataTable(datosCliente, "estadoCivil");
+        String department = UtilWeb.getValueFromDataTable(datosCliente, "departamento");
+        String province = UtilWeb.getValueFromDataTable(datosCliente, "provincia");
+        String district = UtilWeb.getValueFromDataTable(datosCliente, "distrito");
+        String address = UtilWeb.getValueFromDataTable(datosCliente, "direccion");
+        typeDateOfBirth(dateOfBirth);
+        selectNationality(nationality);
+        selectMaritalStatus(maritalStatus);
+        selectDepartment(department);
+        selectProvince(province);
+        selectDistrict(district);
+        typeAddress(address);
     }
 
     @ScreenShotAfter
@@ -155,7 +155,7 @@ public class RegisterStep {
         if (salesCode != null) {
             customer.setSalesCode(salesCode);
         } else {
-            System.out.println("ERROR - Codigo de Venta - Null");
+            logInfo("ERROR - Codigo de Venta - Null");
         }
         return salesCode == null ? " " : salesCode;
     }

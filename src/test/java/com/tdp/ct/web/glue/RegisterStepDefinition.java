@@ -12,6 +12,8 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+
 public class RegisterStepDefinition {
 
     private static boolean isActiveValidateIdentity = false;
@@ -67,7 +69,7 @@ public class RegisterStepDefinition {
             registerStep.waitButtonCustomerData();
             registerStep.clickButtonCustomerData();
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -76,7 +78,7 @@ public class RegisterStepDefinition {
         if (customer.isNewCustomer()) {
             registerStep.ingresarDatosCliente(dataTable);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -85,7 +87,7 @@ public class RegisterStepDefinition {
         if (customer.isNewCustomer()) {
             registerStep.completoDatosCliente(datosCliente);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 

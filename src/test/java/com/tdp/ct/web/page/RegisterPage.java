@@ -112,19 +112,19 @@ public class RegisterPage extends WebBase {
         }
     }
 
-    public void validateMaterialStatus(String maritalStatus){
+    public void validateMaterialStatus(String maritalStatus) {
         try {
             if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"].ng-invalid").isDisplayed()) {
                 selectMaritalStatus(maritalStatus);
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logSevere("ERROR", e.getMessage());
         }
     }
 
     public void selectNationality(String nationality) {
         selectElementCSSWithAndWithoutShadowRoot("nationality", selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li", nationality);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void selectDepartment(String department) {
@@ -140,7 +140,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeAddress(String address) {
-        js().scrollElementTop(inputAddress); //*textarea
+        js().scrollElementTop(inputAddress);
         validateAndTypeWithAndWithoutShadowRoot("address", inputAddress, address);
     }
 
@@ -190,7 +190,6 @@ public class RegisterPage extends WebBase {
             }
         } catch (Exception e) {
             logSevere("Element no found" + e.getMessage());
-
         }
         return isError;
     }
@@ -205,5 +204,4 @@ public class RegisterPage extends WebBase {
         waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
     }
-
 }
