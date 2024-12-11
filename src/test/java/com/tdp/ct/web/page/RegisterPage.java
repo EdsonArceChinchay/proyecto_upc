@@ -17,7 +17,7 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 @Slf4j
 public class RegisterPage extends WebBase {
 
-    @FindBy(css = "[formcontrolname='medioPago']")
+    @FindBy(css = "tdp-st-select[formcontrolname='medioPago']")
     protected WebElement selectMethodPayment;
     @FindBy(css = "tdp-st-input-text[formcontrolname='mail']")
     protected WebElement inputEmail;
@@ -102,34 +102,25 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        boolean isExsited;
+        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
         try {
-            logInfo("Search by without shadowRoot");
-            js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] div[tabindex=\"0\"]").click();
-            selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-            isExsited = false;
+            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
+                selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+            }
         } catch (Exception e) {
             logSevere("ERROR", e.getMessage());
-            isExsited = true;
-            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
-                logInfo("1 catch");
-                selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-                isExsited = false;
-            }
         }
-        if (isExsited) {
-            try {
-                logInfo("Search by shadowRoot");
-                validateSelectShadow("marital status", maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "div > ul > li");
-            } catch (Exception e) {
-                logSevere("ERROR", e.getMessage());
-                if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
-                    logInfo("2 catch");
-                    selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
-                }
-            }
-        }
+    }
 
+    public void validateMaterialStatus(String maritalStatus){
+        try {
+            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"].ng-invalid").isDisplayed()) {
+                selectMaritalStatus(maritalStatus);
+            }
+        }
+        catch (Exception e) {
+            logSevere("ERROR", e.getMessage());
+        }
     }
 
     public void selectNationality(String nationality) {
@@ -160,7 +151,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        selectElementCSSWithAndWithoutShadowRoot("", selectPage, "tdp-st-select[formcontrolname='typePage'] li", type);
+        selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, "tdp-st-select[formcontrolname='typePage'] li", type);
     }
 
     public void clickButtonContinue() {

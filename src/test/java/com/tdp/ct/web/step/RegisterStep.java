@@ -96,6 +96,7 @@ public class RegisterStep {
     @ScreenShotAfter
     public void selectMaritalStatus(String maritalStatus) {
         page.registerPage().selectMaritalStatus(maritalStatus);
+        page.registerPage().validateMaterialStatus(maritalStatus);
     }
 
     @ScreenShotAfter
