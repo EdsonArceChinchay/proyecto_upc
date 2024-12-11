@@ -139,8 +139,9 @@ public class WebUtils extends WebBase {
 
     public static void typeInShadowRootCssSelector(String nameElement, WebElement webElement, String value) {
         if (validateInputAndLocator(nameElement, webElement, value)) {
+            String tag = webElement.getText().contains("input") ? "input" : "textarea";
             webElement.getShadowRoot()
-                    .findElement(By.cssSelector("input"))
+                    .findElement(By.cssSelector(tag))
                     .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
             logInfo(String.format("Type in element %s = %s", nameElement, value));
         }

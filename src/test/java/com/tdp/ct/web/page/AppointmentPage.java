@@ -42,7 +42,7 @@ public class AppointmentPage extends WebBase {
         revisarModalError(driver());
         clickBtnCerrarModalError(btnStart);
         clickBtnCerrarModalError(btnStart);
-        esperaProgresiva(driver(), 6, 8, labelAppointment);
+        esperaProgresiva(driver(), 7, 8, labelAppointment);
         revisarModalError(driver());
         boolean existe = labelAppointment.isDisplayed();
         logInfo("Existe titulo >>> {0}", labelAppointment.getText());
