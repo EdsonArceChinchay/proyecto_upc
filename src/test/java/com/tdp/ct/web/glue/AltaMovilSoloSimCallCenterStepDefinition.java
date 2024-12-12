@@ -12,6 +12,8 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaMovilSoloSimCallCenterStepDefinition {
 
@@ -46,7 +48,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         if (!customer.isNewCustomer()) {
             altaFijaTiendaStep.validarNombresCompletosCliente(data);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 

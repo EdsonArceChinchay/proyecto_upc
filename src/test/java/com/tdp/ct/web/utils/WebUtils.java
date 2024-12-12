@@ -366,10 +366,10 @@ public class WebUtils extends WebBase {
         return element;
     }
 
-    public static String getTag(WebElement webElement){
+    public static String getTag(WebElement webElement) {
         String tag = webElement.toString().contains("input") ? "input" : "textarea";
-        logInfo("New tag",tag);
-        return  tag;
+        logInfo("New tag", tag);
+        return tag;
     }
 
 }

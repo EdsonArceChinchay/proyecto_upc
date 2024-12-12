@@ -21,11 +21,10 @@ import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
 public class SummaryPage extends WebBase {
 
     private static JsonObject saleObject;
-    @FindBy(xpath = "//*[contains(@label,'Iniciar Registro') or  @type='button' and @class='btnStart']")
+    @FindBy(css = "button[class=\"btnStart\"]")
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-    // @FindBy(xpath = "(//div[@class='title'])/span")
     protected String paginaResumen = "(//div[@class='title'])/span";
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
@@ -54,23 +53,9 @@ public class SummaryPage extends WebBase {
         btnStartRegister.click();
         clickBtnCerrarModalError(btnStartRegister);
         revisarModalError(driver());
-
-      /*  int intentos = 4;
-        for(int i=0;i<intentos;i++) {
-            try {
-                esperaProgresiva(driver(), 6, 6, btnStartRegister);
-                JavascriptExecutor js = (JavascriptExecutor) driver();
-                js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-                btnStartRegister.click();
-                clickBtnCerrarModalError(btnStartRegister);
-                return;
-            } catch (NoSuchElementException e) {
-                System.out.println("No se pudo cargar la página después de " + (i + 1) + " intentos. Error: " + e.getMessage());
-            }
-        }*/
     }
 
-    public void clickBtnCerrarModalError(WebElement metodoRepedito) {
+    public void clickBtnCerrarModalError(WebElement repeatedMethod) {
         int contador = 0, i = 0;
         int reintentosMax = 3;
         int segundosEspera = 5;
@@ -86,7 +71,7 @@ public class SummaryPage extends WebBase {
                     click(btnClose);
                     logInfo("Dio click en cerrar - modal error Timeslot " + i);
                     UtilWeb.waitForSeconds(5);
-                    click(metodoRepedito);
+                    click(repeatedMethod);
                     bOK = true;
                 } else {
                     logInfo("No se encontro el modal error Timeslot");
@@ -101,9 +86,7 @@ public class SummaryPage extends WebBase {
 
     public void paginaResumen() {
         revisarModalError(driver());
-        //UtilWeb.waitForSeconds(7);
         WebElement sumaryPage = explicitWaitXpath(driver(), 10, paginaResumen);
-        //JavascriptExecutor js = (JavascriptExecutor) driver();
         esperaProgresiva(driver(), 6, 6, sumaryPage);
         js().scrollElementTop(sumaryPage);
         Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
@@ -147,17 +130,13 @@ public class SummaryPage extends WebBase {
 
     public String needAppointment(int number) {
         String productType = getProductType();
-        String needAppointment;
         switch (productType) {
             case "WIRELINE":
-                needAppointment = getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.23.value");
-                break;
+                return getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.23.value");
             case "MT":
-                needAppointment = getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.25.value");
-                break;
+                return getValueJsonObjectSessionStorage(saleObject, "commercialOperation.1." + number + ".productOfferings.1.0.additionalData.1.25.value");
             default:
-                needAppointment = null;
+                return null;
         }
-        return needAppointment;
     }
 }

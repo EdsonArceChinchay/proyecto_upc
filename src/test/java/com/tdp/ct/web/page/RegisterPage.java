@@ -73,7 +73,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void typeEmail(String email) {
-        esperaProgresiva(driver(), 6, 6, inputEmail);
+        esperaProgresiva(driver(), 6, 7, inputEmail);
         validateAndTypeWithAndWithoutShadowRoot("email", inputEmail, email);
     }
 
