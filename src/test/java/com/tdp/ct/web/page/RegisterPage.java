@@ -69,7 +69,7 @@ public class RegisterPage extends WebBase {
 
     public void selectMethodPayment(String methodPayment) {
         esperaProgresiva(driver(), 6, 6, selectMethodPayment);
-        selectElementCSSWithAndWithoutShadowRoot("method payment", selectMethodPayment, "[formcontrolname='medioPago'] li", methodPayment);
+        selectElementCSSWithAndWithoutShadowRoot("method payment", selectMethodPayment, methodPayment);
     }
 
     public void typeEmail(String email) {
@@ -102,7 +102,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
+        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, maritalStatus);
         try {
             if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
                 selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
@@ -123,20 +123,20 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectNationality(String nationality) {
-        selectElementCSSWithAndWithoutShadowRoot("nationality", selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li", nationality);
+        selectElementCSSWithAndWithoutShadowRoot("nationality", selectNationality, nationality);
         UtilWeb.waitForSeconds(2);
     }
 
     public void selectDepartment(String department) {
-        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, "tdp-st-select[formcontrolname='department'] li", department);
+        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
     }
 
     public void selectProvince(String province) {
-        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, "tdp-st-select[formcontrolname='province'] li", province);
+        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
     }
 
     public void selectDistrict(String district) {
-        selectElementCSSWithAndWithoutShadowRoot("district", selectDistrict, "tdp-st-select[formcontrolname='district'] li", district);
+        selectElementCSSWithAndWithoutShadowRoot("district", selectDistrict, district);
     }
 
     public void typeAddress(String address) {
@@ -151,7 +151,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, "tdp-st-select[formcontrolname='typePage'] li", type);
+        selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, type);
     }
 
     public void clickButtonContinue() {

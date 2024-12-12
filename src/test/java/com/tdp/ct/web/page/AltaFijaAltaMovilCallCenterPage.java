@@ -64,7 +64,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, BtnOpciones);
         revisarModalError(driver());
         js().scrollElementTop(BtnOpciones);
-        System.out.println("BtonOpciones clic");
+        logInfo("BtonOpciones clic");
         BtnOpciones.click();
     }
 
@@ -90,9 +90,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 4, 3, btnRight);
                 btnRight.click();
-                System.out.println("dio click right while");
+                logInfo("dio click right while");
             } else {
-                System.out.println("El elemento btnRight no existe o es nulo.");
+                logInfo("El elemento btnRight no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnRight, 5);
@@ -109,22 +109,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         while (elementoExistenteleft && contador < contadorMax) {
             if (btnLeft != null) {
                 waitUntilElementIsClickable(btnLeft, 8).click();
-
-                System.out.println("dio click left while");
+                logInfo("dio click left while");
             } else {
-                System.out.println("El elemento btnleft no existe o es nulo.");
+                logInfo("El elemento btnleft no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnLeft, 5);
                 logInfo("Se muestra el btnLeft");
             } catch (Exception e) {
-                System.out.println("El elemento btnLeft ya no fue encontrado: ");
+                logInfo("El elemento btnLeft ya no fue encontrado: ");
             }
             elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
             contador++;
         }
 
-        System.out.println("Ofertas : " + listaOfertas.size());
+        logInfo("Ofertas : " + listaOfertas.size());
         int cont = listaOfertas.size() - 1;
         boolean encontroElemento = false;
 
@@ -155,7 +154,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             }
 
             if (!encontroElemento && (i == cont || listaOfertas.get(i + 1).getText().trim().isEmpty())) {
-                System.out.println("No encontro elemento en la lista");
+                logInfo("No encontro elemento en la lista");
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;

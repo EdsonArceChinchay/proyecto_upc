@@ -67,37 +67,37 @@ public class AddressPage extends WebBase {
     protected WebElement btnSearch;
 
     public void selectDepartment(String department) {
-        WebElement depaList = explicitWaitCss(driver(), 6, "tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+        WebElement depaList = explicitWaitCss(driver(), 6, "form > div:nth-child(1) > div > tdp-st-select");
         esperaProgresiva(driver(), 5, 5, depaList);
 
         boolean existeLista = depaList.isEnabled();
         logInfo("Existe Lista de" + depaList.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
-            depaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(1) > div > tdp-st-select");
+            depaList = find().getElementByCss("form > div:nth-child(1) > div > tdp-st-select");
             UtilWeb.waitForSeconds(4);
         }
-        selectElementCSSWithAndWithoutShadowRoot("department", depaList, "form > div:nth-child(1) > div > tdp-st-select li", department);
+        selectElementCSSWithAndWithoutShadowRoot("department", depaList, department);
         UtilWeb.waitForSeconds(1);
     }
 
     public void selectProvince(String province) {
-        WebElement provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+        WebElement provinciaList = find().getElementByCss("form > div:nth-child(2) > div > tdp-st-select");
         esperaProgresiva(driver(), 3, 5, provinciaList);
         boolean existeLista = provinciaList.isEnabled();
         logInfo("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
             selectDepartment(DEPARTAMENTO);
-            provinciaList = find().getElementByCss("tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(2) > div > tdp-st-select");
+            provinciaList = find().getElementByCss("form > div:nth-child(2) > div > tdp-st-select");
         }
-        selectElementCSSWithAndWithoutShadowRoot("province", provinciaList, "form > div:nth-child(2) > div > tdp-st-select li", province);
+        selectElementCSSWithAndWithoutShadowRoot("province", provinciaList, province);
         UtilWeb.waitForSeconds(1);
     }
 
     public void seleccionarDistrito(String district) {
         String PROVINCIA = "LIMA";
-        WebElement distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+        WebElement distritoList = find().getElementByCss("form > div:nth-child(3) > div > tdp-st-select");
         esperaProgresiva(driver(), 3, 5, distritoList);
         boolean existeLista = distritoList.isEnabled();
         logInfo("Existe Lista de" + distritoList.getText() + ": " + existeLista);
@@ -105,9 +105,9 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             selectDepartment(DEPARTAMENTO);
             selectProvince(PROVINCIA);
-            distritoList = find().getElementByCss(" tdp-st-card:nth-child(1) > div > div._body > form > div:nth-child(3) > div > tdp-st-select");
+            distritoList = find().getElementByCss("form > div:nth-child(3) > div > tdp-st-select");
         }
-        selectElementCSSWithAndWithoutShadowRoot("district", distritoList, "form > div:nth-child(3) > div > tdp-st-select li", district);
+        selectElementCSSWithAndWithoutShadowRoot("district", distritoList, district);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -138,7 +138,7 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHouseType(String houseType) {
-        selectElementCSSWithAndWithoutShadowRoot("houseType", selectHouseType, "tdp-st-select[formcontrolname='houseType'] ul li", houseType);
+        selectElementCSSWithAndWithoutShadowRoot("houseType", selectHouseType, houseType);
     }
 
     public void typeHouseName(String houseName) {
@@ -158,7 +158,7 @@ public class AddressPage extends WebBase {
     }
 
     public void selectHousingComplexe(String housingComplexe) {
-        selectElementCSSWithAndWithoutShadowRoot("housing complexe", selectHousingComplexe, "tdp-st-select[formcontrolname='housingComplexe'] ul li", housingComplexe);
+        selectElementCSSWithAndWithoutShadowRoot("housing complexe", selectHousingComplexe, housingComplexe);
     }
 
     public void typeHousingComplexName(String hab) {
@@ -178,7 +178,7 @@ public class AddressPage extends WebBase {
     public void ingresoDepartamento(String department) {
         try {
             if (isVisible(driver(), cbxDepartamento)) {
-                selectElementCSSWithAndWithoutShadowRoot("department", cbxDepartamento, "form > div:nth-child(1) > div > tdp-st-select li", department);
+                selectElementCSSWithAndWithoutShadowRoot("department", cbxDepartamento, department);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -188,7 +188,7 @@ public class AddressPage extends WebBase {
     public void ingresoProvincia(String province) {
         try {
             if (isVisible(driver(), cbxProvincia)) {
-                selectElementCSSWithAndWithoutShadowRoot("province", cbxProvincia, "form > div:nth-child(2) > div > tdp-st-select li", province);
+                selectElementCSSWithAndWithoutShadowRoot("province", cbxProvincia, province);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -198,7 +198,7 @@ public class AddressPage extends WebBase {
     public void ingresoDistrito(String district) {
         try {
             if (isVisible(driver(), cbxDistrito)) {
-                selectElementCSSWithAndWithoutShadowRoot("district", cbxDistrito, "form > div:nth-child(3) > div > tdp-st-select li", district);
+                selectElementCSSWithAndWithoutShadowRoot("district", cbxDistrito, district);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element - " + e.getMessage());

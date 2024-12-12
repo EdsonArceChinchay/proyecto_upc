@@ -32,6 +32,9 @@ public class DevicesPage extends WebBase {
     @FindBy(css = "tdp-st-input-text[formcontrolname=\"name\"]")
     protected WebElement inputDevice;
 
+    @FindBy(css = ".btn-detail tdp-st-button")
+    protected WebElement btnSeeDetail;
+
     public void selectTypeOfPayment(String payment) {
         esperaProgresiva(driver(), 5, 5, listTypeOfPayment.get(0));
         js().scrollElementTop(listTypeOfPayment.get(0));
@@ -44,7 +47,7 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
         esperaProgresiva(driver(), 6, 8, listElementPLan);
-        selectElementCSSWithAndWithoutShadowRoot("time permanency", listElementPLan, ".comboPermanecia tdp-st-select li", timePermanency);
+        selectElementCSSWithAndWithoutShadowRoot("time permanency", listElementPLan, timePermanency);
     }
 
     public void typeDeviceAndSearch(String device) {
@@ -86,14 +89,12 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSeeDetail() {
-        String btnVerOfertas = ".btn-detail tdp-st-button button";
-        WebElement element = js().getWebElement(btnVerOfertas);
-        element.click();
+        validateAndClickWithAndWithoutShadowRoot("see detail", btnSeeDetail);
     }
 
     public void validateFeatures() {
+        UtilWeb.waitForSeconds(2);
         Assertions.assertFalse(featureContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
-        UtilWeb.waitForSeconds(1);
     }
 
 }

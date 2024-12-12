@@ -59,12 +59,12 @@ public class PortabilityPage extends WebBase {
 
     public void escogerTipoLinea(String plan) {
         UtilWeb.waitForSeconds(4);
-        selectElementCSSWithAndWithoutShadowRoot("line type", selectLineType, "tdp-st-select[formcontrolname='tipoLinea'] li", plan);
+        selectElementCSSWithAndWithoutShadowRoot("line type", selectLineType, plan);
     }
 
     public void esogerTipoOperador(String operator) {
         UtilWeb.waitForSeconds(4);
-        selectElementCSSWithAndWithoutShadowRoot("operator", selectOperatorType, "tdp-st-select[formcontrolname='tipoOperador'] li", operator);
+        selectElementCSSWithAndWithoutShadowRoot("operator", selectOperatorType, operator);
     }
 
     public void clickBotonConsultar() {

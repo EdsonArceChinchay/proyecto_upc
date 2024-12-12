@@ -42,7 +42,7 @@ public class DeliveryPage extends WebBase {
     public void selectTypeOfDelivery(String deliveryType) {
         esperaProgresiva(driver(), 6, 6, selectDeliveryType);
         js().scrollElementTop(selectDeliveryType);
-        selectElementCSSWithAndWithoutShadowRoot("delivery type", selectDeliveryType, "tdp-st-select[formcontrolname='deliveryType'] li", deliveryType);
+        selectElementCSSWithAndWithoutShadowRoot("delivery type", selectDeliveryType, deliveryType);
     }
 
     public void clickOnDeliveryTime(String hour) {

@@ -140,11 +140,11 @@ public class RegisterStepDefinition {
                 UtilWeb.waitForSeconds(10);
                 for (int i = 0; i < 3; i++) {
                     registerStep.ingresarDatosValidacionSolicitada(datos, i);
-                    System.out.println("-- click en siguiente --");
+                    logInfo("-- click en siguiente --");
                     registerStep.clicEnSiguiente();
                     UtilWeb.waitForSeconds(5);
                 }
-                System.out.println("----- termino preguntas ----------");
+                logInfo("----- termino preguntas ----------");
                 UtilWeb.waitForSeconds(10);
                 registerStep.clicEnConfirmar();
             } else {

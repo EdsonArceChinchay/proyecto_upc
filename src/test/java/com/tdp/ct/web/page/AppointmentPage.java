@@ -18,7 +18,7 @@ public class AppointmentPage extends WebBase {
 
     @FindBy(css = "button[class=\"btnStart\"]")
     protected WebElement btnStart;
-    @FindBy(css = "app-agenda-page .info-user")
+    @FindBy(css = "app-agenda-page .info-user, app-agenda-mt .info-user")
     protected WebElement labelAppointment;
     @FindBy(css = "button[type=\"submit\"]")
     protected WebElement btnConfirm;

@@ -53,7 +53,7 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Cerrar s')])[1]")
     protected WebElement btnCerrar;
 
-    @FindBy(xpath = "//*[@class='atras']")
+    @FindBy(css = "[@class='atras']")
     protected WebElement btnAtras;
 
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
@@ -87,7 +87,7 @@ public class HomePage extends WebBase {
         }
         esperaProgresiva(driver(), 6, 5, selectDocumentType);
         js().scrollElementTop(selectDocumentType);
-        selectElementCSSWithAndWithoutShadowRoot("document type", selectDocumentType, "tdp-st-select[formcontrolname='tipoDoc'] li", valueDocumentType);
+        selectElementCSSWithAndWithoutShadowRoot("document type", selectDocumentType, valueDocumentType);
         UtilWeb.waitForSeconds(2);
     }
 
@@ -135,7 +135,7 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        selectElementCSSWithAndWithoutShadowRoot("document type of the legal representative", listaDocumentos, "[class='validation'] tdp-st-select li", documentType);
+        selectElementCSSWithAndWithoutShadowRoot("document type of the legal representative", listaDocumentos, documentType);
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {

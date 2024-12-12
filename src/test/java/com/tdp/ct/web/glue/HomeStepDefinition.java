@@ -13,6 +13,8 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+
 public class HomeStepDefinition {
 
     public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
@@ -53,7 +55,7 @@ public class HomeStepDefinition {
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String customerDocumentType) {
-        System.out.println("Cliente: " + customer.getCustomerTest());
+        logInfo("Cliente: " + customer.getCustomerTest());
         customer.setDocumentType(customerDocumentType);
         homeStep.selectDocumentType(customerDocumentType);
     }

@@ -229,7 +229,7 @@ public class WebUtils extends WebBase {
         return (new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
     }
 
-    public static void clickAndSelectElementCSS(String nameElement, WebElement webElement, String webElementList, String value) {
+    public static void clickAndSelectElementCSS(String nameElement, WebElement webElement, String value) {
         if (validateElement(webElement, nameElement, 1)) {
             scrollTo(webElement);
             webElement.click();
@@ -237,7 +237,6 @@ public class WebUtils extends WebBase {
             UtilWeb.waitForSeconds(1);
             selectElementCSS(value, addElement(webElement.toString()));
         }
-
     }
 
     public static void selectElement(List<WebElement> webElementList, String value) {
@@ -259,7 +258,6 @@ public class WebUtils extends WebBase {
         List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
         selectElement(elementsList, value);
     }
-
 
     public static void scrollTo(WebElement webElement) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -312,13 +310,13 @@ public class WebUtils extends WebBase {
         }
     }
 
-    public static void selectElementCSSWithAndWithoutShadowRoot(String nameElement, WebElement webElement, String webElementList, String value) {
+    public static void selectElementCSSWithAndWithoutShadowRoot(String nameElement, WebElement webElement, String value) {
         if (hasShadowRoot(webElement)) {
             logInfo("Search by with shadowRoot");
             validateSelectShadow(nameElement, value, webElement, "ul li");
         } else {
             logInfo("Search by without shadowRoot");
-            clickAndSelectElementCSS(nameElement, webElement, webElementList, value);
+            clickAndSelectElementCSS(nameElement, webElement, value);
         }
     }
 

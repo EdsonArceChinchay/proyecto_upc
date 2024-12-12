@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.explicitWaitCss;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
@@ -142,21 +143,18 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             js().scrollElementTop(botonEsperado);
             botonEsperado.click();
         } else {
-            System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
+            logSevere("ERROR - NO HAY BOTON CONFIGURADO");
         }
         revisarModalError(driver());
     }
 
     public void seleccionarboton() {
-        System.out.println(1);
         UtilWeb.waitForSeconds(4);
-        System.out.println(1);
         for (WebElement element : listaBotones) {
             if (element.getText().contains("Cambiar plan hogar")) {
                 click(element, 40);
             }
         }
-        // UtilWeb.waitForSeconds(4);
     }
 
     public void seleccionoPlanMovistarTotal() {
@@ -191,10 +189,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
 
     }
 
-    public void clickBotonEntendido() {
-        revisarModalError(driver());
-    }
-
     public void validateTagUVSC(String value) {
         js().scrollElementTop(titleOffer);
         revisarModalError(driver());
@@ -214,6 +208,5 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public boolean compareTextWebElement(WebElement element1, WebElement element2) {
         return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
     }
-
 
 }

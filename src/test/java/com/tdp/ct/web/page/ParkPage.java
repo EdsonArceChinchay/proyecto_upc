@@ -122,7 +122,7 @@ public class ParkPage extends WebBase {
         } else {
             dataValue = "M";
         }
-        selectElementCSSWithAndWithoutShadowRoot("gender", selectGender, "tdp-st-select[formcontrolname='genero'] li", dataValue);
+        selectElementCSSWithAndWithoutShadowRoot("gender", selectGender, dataValue);
     }
 
     public void createCustomer() {
