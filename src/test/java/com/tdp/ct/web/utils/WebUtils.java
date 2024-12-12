@@ -2,7 +2,6 @@ package com.tdp.ct.web.utils;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -17,7 +16,6 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.StringExtractor.extractSelector;
 
-@Slf4j
 public class WebUtils extends WebBase {
 
     public static String extractRequestNumber(String text) {
@@ -109,10 +107,14 @@ public class WebUtils extends WebBase {
         return present;
     }
 
+    public static void type(String nameElement, WebElement webElement, String value) {
+        webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
+        logInfo(String.format("Type in %s: %s", nameElement, value));
+    }
+
     public static void validateAndType(String nameElement, WebElement webElement, String value) {
         if (validateInputAndLocator(nameElement, webElement, value)) {
-            webElement.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
-            logInfo(String.format("Type %s: %s", nameElement, value));
+            type(nameElement, webElement, value);
         }
     }
 
@@ -139,19 +141,16 @@ public class WebUtils extends WebBase {
 
     public static void typeInShadowRootCssSelector(String nameElement, WebElement webElement, String value) {
         if (validateInputAndLocator(nameElement, webElement, value)) {
-            webElement.getShadowRoot()
-                    .findElement(By.cssSelector(getTag(webElement)))
-                    .sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
-            logInfo(String.format("Type in element %s = %s", nameElement, value));
+            type(nameElement, webElement.getShadowRoot()
+                    .findElement(By.cssSelector(getTag(webElement))), value);
         }
     }
 
-    public static void validateInput(String nameElement, WebElement element, String value) {
-        boolean exist = validateInputAndLocator(nameElement, element, value);
+    public static void validateInput(String nameElement, WebElement webElement, String value) {
+        boolean exist = validateInputAndLocator(nameElement, webElement, value);
         if (exist) {
-            element.click();
-            element.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE, value);
-            logInfo(String.format("Type %s: %s", nameElement, value));
+            webElement.click();
+            type(nameElement, webElement, value);
         } else {
             logInfo(String.format("No %s", nameElement));
         }
@@ -166,20 +165,12 @@ public class WebUtils extends WebBase {
         }
     }
 
-    public static void selectElementShadowRootCSS(String text, WebElement webElement, String shadowElement) {
+    public static void selectElementShadowRootCSS(String value, WebElement webElement, String shadowElement) {
         webElement.click();
         UtilWeb.waitForSeconds(2);
         SearchContext contextPlan = webElement.getShadowRoot();
         List<WebElement> elementsList = contextPlan.findElements(By.cssSelector(shadowElement));
-        for (WebElement element : elementsList) {
-            scrollTo(element);
-            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
-            if (isEquals) {
-                logInfo(String.format("Select element: %s", element.getText()));
-                element.click();
-                break;
-            }
-        }
+        selectElement(elementsList, value);
     }
 
     public static void validateCompletedInputForm(String text, WebElement webElement, String shadowElement) {
@@ -244,19 +235,16 @@ public class WebUtils extends WebBase {
             webElement.click();
             logInfo("Click element", nameElement);
             UtilWeb.waitForSeconds(1);
-            selectElementCSS(value, webElementList);
+            selectElementCSS(value, addElement(webElement.toString()));
         }
 
     }
 
-    public static void selectElementXpath(String text, WebElement webElement, String webElementList) {
-        webElement.click();
-        UtilWeb.waitForSeconds(2);
-        List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
-        logInfo("List size", elementsList.size());
-        for (WebElement element : elementsList) {
+    public static void selectElement(List<WebElement> webElementList, String value) {
+        logInfo("List size", webElementList.size());
+        for (WebElement element : webElementList) {
             scrollTo(element);
-            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
+            boolean isEquals = returnValueCompareWebElementTextAndString(element, value);
             if (isEquals) {
                 logInfo(String.format("Select element: %s", element.getText()));
                 element.click();
@@ -264,6 +252,14 @@ public class WebUtils extends WebBase {
             }
         }
     }
+
+    public static void selectElementXpath(String value, WebElement webElement, String webElementList) {
+        webElement.click();
+        UtilWeb.waitForSeconds(2);
+        List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
+        selectElement(elementsList, value);
+    }
+
 
     public static void scrollTo(WebElement webElement) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -271,18 +267,9 @@ public class WebUtils extends WebBase {
         logInfo("Scroll to", webElement.toString());
     }
 
-    public static void selectElementCSS(String text, String webElementList) {
+    public static void selectElementCSS(String value, String webElementList) {
         List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
-        logInfo("List size", elementsList.size());
-        for (WebElement element : elementsList) {
-            scrollTo(element);
-            boolean isEquals = returnValueCompareWebElementTextAndString(element, text);
-            if (isEquals) {
-                logInfo(String.format("Select element: %s", element.getText()));
-                element.click();
-                break;
-            }
-        }
+        selectElement(elementsList, value);
     }
 
     public static void clickInShadowRootCssSelector(String nameElement, WebElement webElement) {
@@ -301,12 +288,27 @@ public class WebUtils extends WebBase {
         }
     }
 
+    public static void enterInput(String nameElement, WebElement webElement) {
+        validateAndClick(nameElement, webElement);
+        webElement.sendKeys(Keys.ENTER);
+    }
+
     public static boolean hasShadowRoot(WebElement element) {
         try {
             element.getShadowRoot();
             return true;
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    public static void enterWithAndWithoutShadowRoot(String nameElement, WebElement webElement) {
+        if (hasShadowRoot(webElement)) {
+            logInfo("Search by with shadowRoot");
+            enterInput(nameElement, webElement);
+        } else {
+            logInfo("Search by without shadowRoot");
+            enterInput(nameElement, getNewLocator(webElement));
         }
     }
 
@@ -371,7 +373,6 @@ public class WebUtils extends WebBase {
         logInfo("New tag", tag);
         return tag;
     }
-
 }
 
 

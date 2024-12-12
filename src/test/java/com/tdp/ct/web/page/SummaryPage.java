@@ -21,7 +21,7 @@ import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
 public class SummaryPage extends WebBase {
 
     private static JsonObject saleObject;
-    @FindBy(css = "button[class=\"btnStart\"]")
+    @FindBy(css = "button[class=\"btnStart\"],tdp-st-button[label=\"Iniciar Registro\"]")
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
