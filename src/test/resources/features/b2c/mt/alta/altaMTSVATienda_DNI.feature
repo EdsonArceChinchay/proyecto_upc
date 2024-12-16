@@ -62,8 +62,6 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |

@@ -54,6 +54,8 @@ public class RegisterPage extends WebBase {
     protected WebElement selectPage;
     @FindBy(xpath = "//*[contains(text(),'La validación de identidad se completará')]")
     protected WebElement textIdentityValidationError;
+    @FindBy(css = "tdp-st-modal .body_bio .font_title_validation")
+    protected WebElement titleValidation;
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmModal;
     @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
@@ -105,7 +107,7 @@ public class RegisterPage extends WebBase {
         selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, maritalStatus);
         try {
             if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
-                selectElementCSS(maritalStatus, "tdp-st-select[formcontrolname='estadoCivil'] ul > li");
+                selectElementCSS("tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
             }
         } catch (Exception e) {
             logSevere("ERROR", e.getMessage());
@@ -182,14 +184,19 @@ public class RegisterPage extends WebBase {
 
     public boolean hasIdentityValidationError() {
         boolean isError = false;
-        try {
-            UtilWeb.waitForSeconds(120);
-            if (textIdentityValidationError.isDisplayed()) {
-                logInfo("Error Validate Identity");
-                isError = true;
+        UtilWeb.waitForSeconds(10);
+        if (!validateIsDisplayed(titleValidation)) {
+            try {
+                UtilWeb.waitForSeconds(30);
+                if (textIdentityValidationError.isDisplayed()) {
+                    logInfo("Error Validate Identity");
+                    isError = true;
+                }
+            } catch (Exception e) {
+                logSevere("Title error no found" + e.getMessage());
             }
-        } catch (Exception e) {
-            logSevere("Element no found" + e.getMessage());
+        } else {
+            logSevere("Title error no found");
         }
         return isError;
     }

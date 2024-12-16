@@ -33,5 +33,4 @@ public class LogUtils {
         Logger.getLogger(LogUtils.class.getName()).log(Level.SEVERE, String.format("%s: %s.", str, value));
     }
 
-
 }

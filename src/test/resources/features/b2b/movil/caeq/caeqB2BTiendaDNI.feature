@@ -54,8 +54,6 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |

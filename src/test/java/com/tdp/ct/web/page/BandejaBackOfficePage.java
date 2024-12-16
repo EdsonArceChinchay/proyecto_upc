@@ -45,7 +45,7 @@ public class BandejaBackOfficePage extends WebBase {
     public void clickButtonSearch() {
         btnBuscar.click();
         logInfo("Click button Search");
-        esperaProgresiva(driver(), 5, 5, btnCargarAudio);
+        esperaProgresiva(driver(), 3, 5, btnCargarAudio);
     }
 
     public void openPopUpUploadAudio() {

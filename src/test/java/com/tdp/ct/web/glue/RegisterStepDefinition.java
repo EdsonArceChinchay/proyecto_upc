@@ -128,8 +128,8 @@ public class RegisterStepDefinition {
     }
 
     @Y("ingreso los datos del supervisor")
-    public void ingresoLosDatosDelSupervisor(DataTable dataTable) {
-        registerStep.ingresarDatosSupervisor(dataTable);
+    public void ingresoLosDatosDelSupervisor() {
+        registerStep.ingresarDatosSupervisor();
         registerStep.clicConfirmarUsuarioSupervisor();
     }
 

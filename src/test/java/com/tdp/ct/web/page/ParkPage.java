@@ -12,8 +12,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
@@ -47,9 +45,9 @@ public class ParkPage extends WebBase {
     protected WebElement txtDirC;
     @FindBy(xpath = "//button[@class='update_button']")
     protected WebElement btnActualizar;
-    @FindBy(xpath = "//div[@class='detailHogar']")
+    @FindBy(css = "div[class='detailHogar']")
     protected WebElement btnVerDetalle;
-    @FindBy(xpath = "//div[@class='update_ruc']")
+    @FindBy(css = "div[class='update_ruc']")
     protected WebElement btnActualizarRuc;
     @FindBy(xpath = "//label[contains(text(),' El RUC se ha actualizado de manera correcta. ')]")
     protected WebElement mensaje;
@@ -150,7 +148,7 @@ public class ParkPage extends WebBase {
     }
 
     public void lineaExistente(String numeroExistente) {
-        esperaProgresiva(driver(), 3, 5, btnLineaExistente);
+        esperaProgresiva(driver(), 5, 5, btnLineaExistente);
         js().scrollElementTop(btnLineaExistente);
         String LineaExistente = btnLineaExistente.getText();
 
@@ -302,7 +300,6 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
         revisarModalError(driver());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
         click(showOffer);
         logInfo("Dio click al boton Mostrar Ofertas");
     }
@@ -352,20 +349,20 @@ public class ParkPage extends WebBase {
     }
 
     public void ingresoRuc(String ruc) {
-        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text input");
+        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
         validateAndTypeWithAndWithoutShadowRoot("RUC", Input, ruc);
 
     }
 
     public void ingresoRuc17(String ruc) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='twoDigitRuc']");
+        WebElement Input = find().getElementByCss("tdp-st-input-text[@formcontrolname='twoDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
         validateAndTypeWithAndWithoutShadowRoot("RUC 17", Input, ruc);
     }
 
     public void ingresoDigitoV(String digit) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='endDigitRuc']");
+        WebElement Input = find().getElementByCss("tdp-st-input-text[@formcontrolname='endDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
         validateAndTypeWithAndWithoutShadowRoot("Digit V", Input, digit);
     }

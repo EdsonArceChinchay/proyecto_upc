@@ -33,7 +33,7 @@ public class AddressStep {
 
     //@ScreenShotAfter
     public void selectDistrict(String district) {
-        page.addressPage().seleccionarDistrito(district);
+        page.addressPage().selectDistrict(district);
     }
 
     //@ScreenShotAfter
@@ -114,7 +114,7 @@ public class AddressStep {
     public void typeAddressComplete(String depa, String prov, String distrito, String direccion, String ref) {
         page.addressPage().selectDepartment(depa);
         page.addressPage().selectProvince(prov);
-        page.addressPage().seleccionarDistrito(distrito);
+        page.addressPage().selectDistrict(distrito);
         page.addressPage().typeAddress(direccion);
         page.addressPage().typeReference(ref);
     }

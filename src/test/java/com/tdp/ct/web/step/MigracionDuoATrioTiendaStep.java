@@ -23,7 +23,7 @@ public class MigracionDuoATrioTiendaStep {
     }
 
     public void scrollUp() {
-        page.migracionDuoATrioTiendaPage().scrollUp();
+        scrollUp();
     }
 
     public void clickButton(String nameButton) {

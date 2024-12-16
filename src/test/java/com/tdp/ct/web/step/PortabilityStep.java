@@ -19,18 +19,18 @@ public class PortabilityStep {
 
     @ScreenShotBefore
     @ScreenShotAfter
-    public void ingresarNumeroPortar(String numero) {
-        page.portabilityPage().ingresarNumeroPortar(numero);
+    public void typePhoneNumber(String phoneNumber) {
+        page.portabilityPage().typePhoneNumber(phoneNumber);
     }
 
     @ScreenShotAfter
-    public void escogerTipoLinea(String plan) {
-        page.portabilityPage().escogerTipoLinea(plan);
+    public void selectLineType(String plan) {
+        page.portabilityPage().selectLineType(plan);
     }
 
     @ScreenShotAfter
-    public void escogerTipoOperador(String operador) {
-        page.portabilityPage().esogerTipoOperador(operador);
+    public void selectOperatorType(String operator) {
+        page.portabilityPage().selectOperatorType(operator);
     }
 
     @ScreenShotBefore

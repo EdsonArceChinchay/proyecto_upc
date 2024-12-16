@@ -38,18 +38,18 @@ public class PortabilityStepDefinition {
     }
 
     @Y("ingreso numero de telefono para portar {string}")
-    public void ingresoNumeroDeTelefonoParaPortar(String numero) {
-        portabilityStep.ingresarNumeroPortar(numero);
+    public void ingresoNumeroDeTelefonoParaPortar(String phoneNumber) {
+        portabilityStep.typePhoneNumber(phoneNumber);
     }
 
     @Y("escojo tipo de linea {string}")
     public void escojoTipoDeLinea(String plan) {
-        portabilityStep.escogerTipoLinea(plan);
+        portabilityStep.selectLineType(plan);
     }
 
     @Y("escojo tipo de operador {string}")
     public void escojoTipoDeOperador(String operador) {
-        portabilityStep.escogerTipoOperador(operador);
+        portabilityStep.selectOperatorType(operador);
     }
 
     @Y("doy click en el boton Consultar Portabilidad")

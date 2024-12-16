@@ -56,11 +56,11 @@ public class AddressPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Aceptar')]")
     protected WebElement btnerror;
     @FindBy(css = "form > div:nth-child(1) > div > tdp-st-select")
-    protected WebElement cbxDepartamento;
+    protected WebElement selectDepartment;
     @FindBy(css = "form > div:nth-child(2) > div > tdp-st-select")
-    protected WebElement cbxProvincia;
+    protected WebElement selectProvince;
     @FindBy(css = "form > div:nth-child(3) > div > tdp-st-select")
-    protected WebElement cbxDistrito;
+    protected WebElement selectDistrict;
     @FindBy(xpath = "//*[contains(text(),'Se actualizo')]")
     protected WebElement txtMensaje;
     @FindBy(xpath = "(//button[contains(text(),'Buscar')])[1]")
@@ -74,28 +74,25 @@ public class AddressPage extends WebBase {
         logInfo("Existe Lista de" + depaList.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
-            depaList = find().getElementByCss("form > div:nth-child(1) > div > tdp-st-select");
             UtilWeb.waitForSeconds(4);
         }
-        selectElementCSSWithAndWithoutShadowRoot("department", depaList, department);
+        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
         UtilWeb.waitForSeconds(1);
     }
 
     public void selectProvince(String province) {
-        WebElement provinciaList = find().getElementByCss("form > div:nth-child(2) > div > tdp-st-select");
-        esperaProgresiva(driver(), 3, 5, provinciaList);
-        boolean existeLista = provinciaList.isEnabled();
-        logInfo("Existe Lista de" + provinciaList.getText() + ": " + existeLista);
+        esperaProgresiva(driver(), 3, 5, selectProvince);
+        boolean existeLista = selectProvince.isEnabled();
+        logInfo("Existe Lista de" + selectProvince.getText() + ": " + existeLista);
         if (!existeLista) {
             driver().navigate().refresh();
             selectDepartment(DEPARTAMENTO);
-            provinciaList = find().getElementByCss("form > div:nth-child(2) > div > tdp-st-select");
         }
-        selectElementCSSWithAndWithoutShadowRoot("province", provinciaList, province);
+        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
         UtilWeb.waitForSeconds(1);
     }
 
-    public void seleccionarDistrito(String district) {
+    public void selectDistrict(String district) {
         String PROVINCIA = "LIMA";
         WebElement distritoList = find().getElementByCss("form > div:nth-child(3) > div > tdp-st-select");
         esperaProgresiva(driver(), 3, 5, distritoList);
@@ -168,7 +165,6 @@ public class AddressPage extends WebBase {
 
     public void clickButtonConsultCoverage() {
         revisarModalError(driver());
-        //esperaProgresiva(driver(), 5, 5, btnConsultCoverage);
         WebElement ButtonConsultCoverage = explicitWaitXpath(driver(), 20, btnConsultCoverage);
         js().scrollElementTop(ButtonConsultCoverage);
         logInfo(String.format("Click button %s", ButtonConsultCoverage.getText()));
@@ -177,8 +173,8 @@ public class AddressPage extends WebBase {
 
     public void ingresoDepartamento(String department) {
         try {
-            if (isVisible(driver(), cbxDepartamento)) {
-                selectElementCSSWithAndWithoutShadowRoot("department", cbxDepartamento, department);
+            if (isVisible(driver(), selectDepartment)) {
+                selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -187,8 +183,8 @@ public class AddressPage extends WebBase {
 
     public void ingresoProvincia(String province) {
         try {
-            if (isVisible(driver(), cbxProvincia)) {
-                selectElementCSSWithAndWithoutShadowRoot("province", cbxProvincia, province);
+            if (isVisible(driver(), selectProvince)) {
+                selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element", e.getMessage());
@@ -197,8 +193,8 @@ public class AddressPage extends WebBase {
 
     public void ingresoDistrito(String district) {
         try {
-            if (isVisible(driver(), cbxDistrito)) {
-                selectElementCSSWithAndWithoutShadowRoot("district", cbxDistrito, district);
+            if (isVisible(driver(), selectDistrict)) {
+                selectElementCSSWithAndWithoutShadowRoot("district", selectDistrict, district);
             }
         } catch (NoSuchElementException e) {
             logSevere("No found element - " + e.getMessage());

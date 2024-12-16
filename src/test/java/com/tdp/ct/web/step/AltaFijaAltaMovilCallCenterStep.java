@@ -19,7 +19,7 @@ public class AltaFijaAltaMovilCallCenterStep {
     private ManageScenario scenario;
 
     public void scrollUp() {
-        page.altaFijaAltaMovilCallCenterPage().scrollUp();
+        page.altaFijaAltaMovilCallCenterPage().scrollUP();
     }
 
     public void clickPrimeraOferta() {

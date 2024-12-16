@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import static com.tdp.ct.web.service.util.UtilWeb.getValueFromDataTable;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @Component
@@ -174,15 +175,16 @@ public class RegisterStep {
         page.altaFijaMovilRegistroPage().seleccionoTipoValidacion(tipoValidacion);
     }
 
-    public void ingresarDatosSupervisor(DataTable datos) {
-        String numdoc = UtilWeb.getValueFromDataTable(datos, "numdoc");
-        String user = UtilWeb.getValueFromDataTable(datos, "user");
-        String password = UtilWeb.getValueFromDataTable(datos, "password");
-
-        page.altaFijaMovilRegistroPage().ingresarDNISupervisor(numdoc);
+    public void ingresarDatosSupervisor() {
+        String documentTypeSupervisor = getValueConfig("config", "credential.user.documentTypeSupervisor");
+        String documentNumberSupervisor = getValueConfig("config", "credential.user.documentNumberSupervisor");
+        String userNameSupervisor = getValueConfig("config", "credential.user.userNameSupervisor");
+        String passwordNameSupervisor = getValueConfig("config", "credential.user.passwordNameSupervisor");
+        page.altaFijaMovilRegistroPage().selectDocumentTypeSupervisor(documentTypeSupervisor);
+        page.altaFijaMovilRegistroPage().typeDocumentNumberSupervisor(documentNumberSupervisor);
         page.altaFijaMovilRegistroPage().clicConfirmarUsuarioSupervisor();
-        page.altaFijaMovilRegistroPage().IngresarUsuarioSupervisor(user);
-        page.altaFijaMovilRegistroPage().ingresarPasswordSupervisor(password);
+        page.altaFijaMovilRegistroPage().typeUserNameSupervisor(userNameSupervisor);
+        page.altaFijaMovilRegistroPage().typePasswordNameSupervisor(passwordNameSupervisor);
     }
 
     @ScreenShotBefore

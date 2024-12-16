@@ -15,8 +15,7 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
-import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
-import static com.tdp.ct.web.utils.WebUtils.explicitWaitXpath;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class SummaryPage extends WebBase {
 
@@ -29,10 +28,12 @@ public class SummaryPage extends WebBase {
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
     @FindBy(xpath = "//div[@class='plan2']")
-    protected WebElement lblPrecio;
+    protected WebElement lblPrice;
+    @FindBy(css = "app-agenda-page .info-user, app-agenda-mt .info-user")
+    protected WebElement labelAppointment;
 
     public void validacionPrecio(String precioPlan) {
-        Assert.assertEquals(precioPlan, lblPrecio.getText());
+        Assert.assertEquals(precioPlan, lblPrice.getText());
     }
 
     public void validarNomPlan(String nomPlan) {
@@ -79,6 +80,10 @@ public class SummaryPage extends WebBase {
 
             } catch (Exception e) {
                 logSevere("ERROR", e.getMessage());
+            }
+            if (validateIsDisplayed(labelAppointment)) {
+                logInfo("You are on appointment");
+                break;
             }
             contador++;
         } while (!bOK && contador < reintentosMax);

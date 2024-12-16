@@ -29,7 +29,6 @@ public class FileUtils {
             String[] parts = line.split(";");
             simCards.add(new Material(parts[0], parts[1]));
         }
-
         return simCards;
     }
 

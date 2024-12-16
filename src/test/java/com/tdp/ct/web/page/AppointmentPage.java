@@ -11,8 +11,8 @@ import java.util.List;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.validateIsDisplayed;
 
 public class AppointmentPage extends WebBase {
 
@@ -147,12 +147,4 @@ public class AppointmentPage extends WebBase {
         }
     }
 
-    public boolean validateIsDisplayed(WebElement webElement) {
-        try {
-            return webElement.isDisplayed();
-        } catch (Exception e) {
-            logSevere("ERROR", e.getMessage());
-            return false;
-        }
-    }
 }

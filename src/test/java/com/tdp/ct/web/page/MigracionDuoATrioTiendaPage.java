@@ -3,7 +3,6 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -86,13 +85,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void scrollUp() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(5);
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
-    }
 
     public void clickButton(String nameButton) {
         UtilWeb.waitForSeconds(2);
@@ -186,7 +178,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, BtnMigrarFibra);
         js().scrollElementTop(BtnMigrarFibra);
         click(BtnMigrarFibra);
-
     }
 
     public void validateTagUVSC(String value) {

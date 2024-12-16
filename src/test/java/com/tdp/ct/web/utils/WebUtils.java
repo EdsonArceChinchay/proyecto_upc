@@ -205,28 +205,36 @@ public class WebUtils extends WebBase {
         return result;
     }
 
-    public static WebElement explicitWaitName(WebDriver driver, int wait, String elements) {
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.name(elements)));
+    public static WebElement explicitWaitName(WebDriver driver, int timeOutOnSeconds, String elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.name(elements)));
     }
 
-    public static WebElement explicitWaitId(WebDriver driver, int wait, String elements) {
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.id(elements)));
+    public static WebElement explicitWaitId(WebDriver driver, int timeOutOnSeconds, String elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.id(elements)));
     }
 
-    public static WebElement explicitWaitXpath(WebDriver driver, int wait, String elements) {
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elements)));
+    public static WebElement explicitWaitXpath(WebDriver driver, int timeOutOnSeconds, String elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elements)));
     }
 
-    public static WebElement explicitWaitCss(WebDriver driver, int wait, String elements) {
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(wait));
-        return wait1.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elements)));
+    public static WebElement explicitWaitCss(WebDriver driver, int timeOutOnSeconds, String elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(elements)));
     }
 
-    public static WebElement waitUntilPresenceOfElementLocated(WebDriver driver, int timeOutOnSeconds, By webElement) {
-        return (new WebDriverWait(driver, Duration.ofSeconds(timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+    public static WebElement waitUntilPresenceOfElementLocated(int timeOutOnSeconds, By webElement) {
+        return (new WebDriverWait(getDriver(), Duration.ofSeconds(timeOutOnSeconds))).until(ExpectedConditions.presenceOfElementLocated(webElement));
+    }
+
+    public static boolean validateIsDisplayed(WebElement webElement) {
+        try {
+            return webElement.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static void clickAndSelectElementCSS(String nameElement, WebElement webElement, String value) {
@@ -235,7 +243,7 @@ public class WebUtils extends WebBase {
             webElement.click();
             logInfo("Click element", nameElement);
             UtilWeb.waitForSeconds(1);
-            selectElementCSS(value, addElement(webElement.toString()));
+            selectElementCSS(addElement(webElement.toString()), value);
         }
     }
 
@@ -265,7 +273,13 @@ public class WebUtils extends WebBase {
         logInfo("Scroll to", webElement.toString());
     }
 
-    public static void selectElementCSS(String value, String webElementList) {
+    public static void scrollUp() {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
+    }
+
+    public static void selectElementCSS(String webElementList, String value) {
         List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
         selectElement(elementsList, value);
     }

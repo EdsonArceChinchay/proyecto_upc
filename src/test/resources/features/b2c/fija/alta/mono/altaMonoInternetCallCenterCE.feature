@@ -32,8 +32,8 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres   | apellidos    | genero   |
+      | ANA MARIA | ZAPATA LOPEZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion

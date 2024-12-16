@@ -61,8 +61,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac            |

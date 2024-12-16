@@ -18,7 +18,7 @@ import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowR
 
 public class PortabilityPage extends WebBase {
 
-    @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'Consultar')]")
+    @FindBy(css = "[type=\"submit\"].button-g, [type=\"submit\"].buttonG")
     protected WebElement btnConsultar;
 
     @FindBy(xpath = "//div[contains(text(),'Portabilidad')]")
@@ -31,10 +31,10 @@ public class PortabilityPage extends WebBase {
     protected WebElement btnCodePorta;
 
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Confirmar')]")
-    protected WebElement btnConfirmar;
+    protected WebElement btnConfirm;
 
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
-    protected WebElement btnContinuar;
+    protected WebElement btnContinue;
 
     @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono']")
     protected WebElement inputPhoneNumber;
@@ -49,21 +49,19 @@ public class PortabilityPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, btnPortabilidad);
         js().scrollElementTop(btnPortabilidad);
         click(btnPortabilidad);
-        UtilWeb.waitForSeconds(5);
     }
 
-    public void ingresarNumeroPortar(String phoneNumber) {
-        UtilWeb.waitForSeconds(5);
+    public void typePhoneNumber(String phoneNumber) {
+        waitUntilElementIsClickable(inputPhoneNumber, 10);
         validateAndTypeWithAndWithoutShadowRoot("mobile number", inputPhoneNumber, phoneNumber);
     }
 
-    public void escogerTipoLinea(String plan) {
-        UtilWeb.waitForSeconds(4);
+    public void selectLineType(String plan) {
         selectElementCSSWithAndWithoutShadowRoot("line type", selectLineType, plan);
     }
 
-    public void esogerTipoOperador(String operator) {
-        UtilWeb.waitForSeconds(4);
+    public void selectOperatorType(String operator) {
+        UtilWeb.waitForSeconds(2);
         selectElementCSSWithAndWithoutShadowRoot("operator", selectOperatorType, operator);
     }
 
@@ -117,15 +115,15 @@ public class PortabilityPage extends WebBase {
     }
 
     public void clickButtonConfirmar() {
-        esperaProgresiva(driver(), 3, 5, btnConfirmar);
-        js().scrollElementTop(btnConfirmar);
-        click(btnConfirmar, 2);
+        esperaProgresiva(driver(), 3, 5, btnConfirm);
+        js().scrollElementTop(btnConfirm);
+        click(btnConfirm, 2);
         UtilWeb.waitForSeconds(20);
     }
 
     public void clickButtonContinuar() {
-        esperaProgresiva(driver(), 3, 5, btnContinuar);
-        click(btnContinuar, 2);
+        esperaProgresiva(driver(), 3, 5, btnContinue);
+        click(btnContinue, 2);
     }
 
     public void inputToken(String token) {

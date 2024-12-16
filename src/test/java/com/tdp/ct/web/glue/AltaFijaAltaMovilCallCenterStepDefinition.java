@@ -25,8 +25,8 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     }
 
     @Y("selecciono la oferta {string}")
-    public void seleccionoLaOferta(String oferta) {
-        altaFijaTiendaStep.seleccionarListaOfertas(oferta);
+    public void seleccionoLaOferta(String offer) {
+        altaFijaTiendaStep.seleccionarListaOfertas(offer);
         altaFijaTiendaStep.clickSeleccionarOferta();
     }
 
