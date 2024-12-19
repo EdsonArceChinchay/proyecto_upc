@@ -14,7 +14,7 @@ public class MigracionDuoATrioTiendaStepDefinition {
 
     @Y("seleccion plan nuevo para ver las ofertas")
     public void seleccionPlanNuevoParaVerLasOfertas() {
-        migracionDuoATrioTiendaStep.scrollUp();
+        migracionDuoATrioTiendaStep.scrollUP();
         migracionDuoATrioTiendaStep.seleccionPlanNuevoParaVerLasOfertas();
     }
 

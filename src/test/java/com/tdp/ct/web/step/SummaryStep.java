@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SumaryStep {
+public class SummaryStep {
     @Autowired
     private StepPages page;
 

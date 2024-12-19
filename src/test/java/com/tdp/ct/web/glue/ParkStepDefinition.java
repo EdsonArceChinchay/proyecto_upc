@@ -91,7 +91,7 @@ public class ParkStepDefinition {
     }
 
     @Y("cierro el popup de contraseña Única")
-    public void cierroElPopupDeContraseñaÚnica() {
+    public void closeModalUniquePassword() {
         parkStep.cerrarPopupCU();
     }
 
@@ -101,7 +101,7 @@ public class ParkStepDefinition {
     }
 
     @Y("cierro el popup de validación de estado de contraseña única")
-    public void cierroElPopupDeValidaciónDeEstadoDeContraseñaÚnica() {
+    public void closeModalUniquePassword2() {
         parkStep.cerrarPopUpEstadoCU();
     }
 

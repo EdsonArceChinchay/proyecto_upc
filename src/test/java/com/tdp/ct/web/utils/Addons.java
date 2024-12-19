@@ -314,27 +314,6 @@ public class Addons {
         } while (bReintentar);
     }
 
-    /*
-            private static void modalError(WebDriver driver, int timeOnSeconds, String message) {
-                    boolean bReintentar;
-                    boolean bEntendido;
-                    logInfo("modalError");
-                    WebElement btnReintentar = driver.findElement(By.xpath("//mat-dialog-actions//*[contains(text(),'Reintentar')]"));
-                    bReintentar = driver.findElements((By) btnReintentar).size() != 0;
-                    esperaProgresiva(driver,8, 1, btnReintentar);
-                    if (bReintentar) {
-                            btnReintentar.click();
-                            if (message.isEmpty()) message = "Click al boton Reintentar";
-                            logInfo(message);
-                    }
-                    WebElement btnEntendido = (WebElement) By.xpath("//mat-dialog-actions//*[contains(text(),'Entendido')]");
-                    bEntendido = driver.findElements((By)btnEntendido).size() !=0;
-                    if (bEntendido){
-                        logInfo("Click al boton Entendido");
-                        btnEntendido.click();
-                    }
-            }
-    */
     public static void revisarModalEntendido(WebDriver driver) {
         boolean bReintentar = true;
         int contador = 0;
@@ -378,11 +357,6 @@ public class Addons {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     }
 
-    public static void scrollFinalPagina(WebDriver driver) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-    }
-
     public static void esperaCargaMontoDeuda(WebDriver driver, int tiempoEsperaMaximo) {
         try {
             By loaderCard = By.cssSelector("app-deuda img.stl_loader");
@@ -393,13 +367,4 @@ public class Addons {
         }
     }
 
-    public static WebElement validarElementoPresente(WebDriver driver, String rutaElemento) {
-        WebElement resultado = null;
-        try {
-            resultado = driver.findElement(By.xpath(rutaElemento));
-        } catch (NoSuchElementException e) {
-            logSevere("Elemento no encontrado en el intento");
-        }
-        return resultado;
-    }
 }

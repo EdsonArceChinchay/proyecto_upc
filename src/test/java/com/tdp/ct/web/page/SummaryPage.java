@@ -24,7 +24,7 @@ public class SummaryPage extends WebBase {
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-    protected String paginaResumen = "(//div[@class='title'])/span";
+    protected final String paginaResumen = "(//div[@class='title'])/span";
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
     @FindBy(xpath = "//div[@class='plan2']")

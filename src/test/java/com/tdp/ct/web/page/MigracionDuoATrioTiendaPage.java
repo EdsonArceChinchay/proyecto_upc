@@ -53,7 +53,7 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
     // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
-    protected String btnIrMovistarTotal =
+    protected final String btnIrMovistarTotal =
             "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
     protected WebElement BtnMigrarFibra;

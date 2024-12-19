@@ -279,6 +279,11 @@ public class WebUtils extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
+    public static void scrollDown(){
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
     public static void selectElementCSS(String webElementList, String value) {
         List<WebElement> elementsList = getDriver().findElements(By.cssSelector(webElementList));
         selectElement(elementsList, value);

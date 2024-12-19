@@ -191,22 +191,22 @@ public class RegisterStepDefinition {
     }
 
     @Y("selecciono tipo de documento del supervisor {string}")
-    public void seleccionoTipoDeDocumentoDelSupervisor(String type) {
+    public void selectSupervisorDocumentType(String type) {
         registerStep.selectSupervisorDocumentType(type);
     }
 
     @Y("ingreso el numero de documento del supervisor {string}")
-    public void ingresoElNumeroDeDocumentoDelSupervisor(String number) {
+    public void typeSupervisorDocumentNumber(String number) {
         registerStep.typeSupervisorDocumentNumber(number);
     }
 
     @Y("ingreso usuario citrix de supervisor {string}")
-    public void ingresoUsuarioCitrixDeSupervisor(String user) {
+    public void typeSupervisorUser(String user) {
         registerStep.typeSupervisorUser(user);
     }
 
     @Y("ingreso contraseña de supervisor {string}")
-    public void ingresoContraseñaDeSupervisor(String password) {
+    public void typeSupervisorPassword(String password) {
         registerStep.typeSupervisorPassword(password);
     }
 
@@ -216,7 +216,7 @@ public class RegisterStepDefinition {
     }
 
     @Y("doy click en Finalizar registro")
-    public void doyClickEnFinalizarRegistro() {
+    public void clickOnTheFinishRegistrationButton() {
         registerStep.clickOnTheFinishRegistrationButton();
     }
 }

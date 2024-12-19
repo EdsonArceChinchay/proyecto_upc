@@ -64,9 +64,7 @@ public class CheckoutStepDefinition {
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
-        executeIfRetention(() -> {
-            checkoutStep.clickBotonRegistrarVenta();
-        });
+        executeIfRetention(() -> checkoutStep.clickBotonRegistrarVenta());
         checkoutStep.validateTheBillingCycle();
         checkoutStep.validateRegistrationHasBeenSuccessful();
         this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");

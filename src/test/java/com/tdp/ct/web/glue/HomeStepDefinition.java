@@ -17,7 +17,7 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class HomeStepDefinition {
 
-    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
+    public final ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
     @Autowired
     private HomeStep homeStep;
     @Autowired
@@ -73,9 +73,7 @@ public class HomeStepDefinition {
 
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {
-        executeIfNotRetention(() -> {
-            homeStep.clickOnTheBackOfficeButton();
-        });
+        executeIfNotRetention(() -> homeStep.clickOnTheBackOfficeButton());
     }
 
     @Dado("regreso a la pagina de inicio")

@@ -35,7 +35,7 @@ public class AddressPage extends WebBase {
     @FindBy(css = "tdp-st-input-text[formcontrolname='housingComplexName']")
     protected WebElement inputHousingComplexName;
     //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
-    protected String btnConsultCoverage =
+    protected final String btnConsultCoverage =
             "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]";
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar ubicación') or contains(@class,'button') and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsultLocation;

@@ -22,7 +22,7 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
 
-    public void seleccionarEquipo() {
+    public void clickOnAddDevice() {
         UtilWeb.waitForSeconds(3);
         esperaProgresiva(driver(), 3, 5, LblEquipos);
         js().scrollElementTop(LblEquipos);
@@ -30,13 +30,13 @@ public class CaeqPorRetailPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
-    public void btnAnadirEquipo(int num) {
+    public void clickOnAddDevice(int num) {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(2);
-        WebElement btnAñadirEquipo = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])[" + num + "]");
-        esperaProgresiva(driver(), 5, 5, btnAñadirEquipo);
-        js().scrollElementTop(btnAñadirEquipo);
-        click(btnAñadirEquipo);
+        WebElement btnAddDevice = find().getElementByXPath("(//div[contains(text(),'Añadir equipo')])[" + num + "]");
+        esperaProgresiva(driver(), 5, 5, btnAddDevice);
+        js().scrollElementTop(btnAddDevice);
+        click(btnAddDevice);
         UtilWeb.waitForSeconds(1);
     }
 
