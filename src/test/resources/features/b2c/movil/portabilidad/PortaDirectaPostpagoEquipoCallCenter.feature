@@ -14,10 +14,10 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
+Característica: AT-DT_Porta Directa solo chip postpago + equipo movil a cliente con DNI por canal Call Center
 
   @PortaDirectaEquipoPostCC
-  Esquema del escenario: Porta Directa solo chip postpago + equipo movil a cliente con DNI en canal Call Center
+  Esquema del escenario: Porta Directa solo chip postpago + equipo movil a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -14,11 +14,11 @@
 ##FECMOD: 03/07/2024
 
 @BERSERKERS @DoneDevOps @PI20_SP1 @RegresionLegacy
-Característica: AT-DT _CAPL B2B con Representante Legal Extranjero en Canal Call Center
-  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
+Característica: AT-DT _CAPL B2B con Representante Legal Extranjero por canal Call Center
+  Quiero realizar un CAPL a un cliente B2B con parque movil con Representante Legal Extranjero por canal Call Center
 
   @caplB2BCallCenterCE
-  Esquema del escenario: Cambio de Plan a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Call Center
+  Esquema del escenario: Cambio de Plan a un cliente B2B con parque movil con Representante Legal Extranjero por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

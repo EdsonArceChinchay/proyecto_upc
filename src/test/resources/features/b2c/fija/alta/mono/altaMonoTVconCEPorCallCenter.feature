@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija @AltaMono
-Característica: AT-DT _Alta Mono TV a cliente con CE en Canal Call Center
+Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
 
   @AltaMonoTVCC
-  Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE en Canal Call Center
+  Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

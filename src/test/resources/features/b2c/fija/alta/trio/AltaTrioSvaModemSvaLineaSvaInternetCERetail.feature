@@ -14,10 +14,10 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
+Característica: AT-DT0_Alta Trio con sva Modem + sva Linea + sva Internet por canal Retail
 
   @AltaTrioSvaModemSvaLineaSvaInternetRetail
-  Esquema del escenario: Alta Trio con sva Modem + sva Linea + sva Internet Canal Retail
+  Esquema del escenario: Alta Trio con sva Modem + sva Linea + sva Internet por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

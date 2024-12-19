@@ -14,10 +14,10 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMovil
-Característica: AT-DT028_Alta Movil Prepago a cliente con CE en Canal Tienda
+Característica: AT-DT028_Alta Movil Prepago a cliente con CE por canal Tienda
 
   @AltaMovilPrepagoSoloChipTienda_CE
-  Esquema del escenario: Alta Movil Prepago a cliente con CE en Canal Tienda
+  Esquema del escenario: Alta Movil Prepago a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

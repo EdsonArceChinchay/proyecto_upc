@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
-Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  en canal Call Center
+Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  por canal Call Center
 
   @AltaDuoCC_SvaHBO
-  Esquema del escenario: Alta Duo SVA HBO a cliente con CE  en canal call center
+  Esquema del escenario: Alta Duo SVA HBO a cliente con CE  por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

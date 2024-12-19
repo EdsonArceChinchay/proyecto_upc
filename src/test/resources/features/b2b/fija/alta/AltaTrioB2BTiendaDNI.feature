@@ -14,10 +14,10 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaFija @AltaTrioUpfront
-Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc por canal Tienda, financiado 100 % con flujo biométrico
 
   @AltaTrioRuCTienda @MVP10 @Global
-  Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+  Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc por canal Tienda, financiado 100 % con flujo biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

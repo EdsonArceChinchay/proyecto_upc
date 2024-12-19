@@ -14,11 +14,11 @@
 ##FECMOD: 11/04/2024
 
 @BERSERKERS @DoneDevOps @PI18_SP4 @RegresionLegacy
-Característica: AT-DT _CASI B2B con Representante Legal Extranjero en Canal Tienda
-  Quiero realizar un CASI a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
+Característica: AT-DT _CASI B2B con Representante Legal Extranjero por canal Tienda
+  Quiero realizar un CASI a un cliente B2B con parque movil con Representante Legal Extranjero por canal Tienda
 
   @casiB2B_CETienda
-  Esquema del escenario: Cambio de Simcard a un cliente B2B con parque movil con Representante Legal Extranjero en Canal Tienda
+  Esquema del escenario: Cambio de Simcard a un cliente B2B con parque movil con Representante Legal Extranjero por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

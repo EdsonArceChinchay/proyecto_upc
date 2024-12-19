@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18SP1 @RegresionDitoC @AltaFija @AltaMono
-Característica: AT-DT0_Alta Mono Linea Voz + SVA con documento CE con Canal Tienda
+Característica: AT-DT0_Alta Mono Linea Voz + SVA a cliente con CE por canal Tienda
 
   @AltaMonoVozSVATienda
   Escenario: Yo como asesor de Tiendas realizare un alta Mono Linea Voz a un cliente nuevo con CE

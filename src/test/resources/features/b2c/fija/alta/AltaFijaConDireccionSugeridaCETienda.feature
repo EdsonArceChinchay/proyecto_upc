@@ -14,7 +14,7 @@
 ##FECMOD: 04/12/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16
-Característica: Alta Duo con direccion sugerida con documento CE por Canal Tiendas
+Característica: AT-DT0_Alta Duo con direccion sugerida a cliente con CE por canal Tiendas
 
   @AltaDuoDireccionSugeridaTienda
   Esquema del escenario: Alta Duo con direccion sugerida

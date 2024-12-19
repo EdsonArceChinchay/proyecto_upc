@@ -17,7 +17,7 @@
 Característica: AT-DT020_Alta Trio upfront SVA a cliente con CE por canal Tienda
 
   @AltaTrioUpfrontSVATienda
-  Esquema del escenario: Alta Trio upfront SVA canal tienda
+  Esquema del escenario: Alta Trio upfront SVA canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

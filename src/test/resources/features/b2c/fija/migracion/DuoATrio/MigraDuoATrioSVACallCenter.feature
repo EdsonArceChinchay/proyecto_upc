@@ -14,7 +14,7 @@
 ##FECMOD: 06/05/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @RegresionPangea @Sanity28 @DROP-G05 @RegresionLegacy
-Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA con documento CE por canal Call Center
+Característica: AT-DT065_Migracion de Duo (TV + Internet) a Trio + SVA a cliente con CE por canal Call Center
 
   @MigracionduoTrioSVACC
   Esquema del escenario:Migracion de Duo a Trio + SVA por canal Call Center

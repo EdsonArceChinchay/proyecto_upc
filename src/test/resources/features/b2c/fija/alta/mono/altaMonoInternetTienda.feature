@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity @Sanity28 @SanityF @DROP-G08 @AltaMono @AltaFija
-Característica: AT-DT009_Alta fija mono Internet a cliente con CE en Canal Tienda
+Característica: AT-DT009_Alta fija mono Internet a cliente con CE por canal Tienda
 
   @AltaMonoIntTienda
-  Esquema del escenario: Alta fija con documento CE en Canal Tienda
+  Esquema del escenario: Alta fija a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

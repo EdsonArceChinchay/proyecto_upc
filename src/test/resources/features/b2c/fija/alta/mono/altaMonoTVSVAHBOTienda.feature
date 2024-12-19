@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE en Canal Tienda
+Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE por canal Tienda
 
   @AltaFijaTiendaHBO
-  Esquema del escenario: Alta fija mas SVA HBO a cliente con CE en Canal Tienda
+  Esquema del escenario: Alta fija mas SVA HBO a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

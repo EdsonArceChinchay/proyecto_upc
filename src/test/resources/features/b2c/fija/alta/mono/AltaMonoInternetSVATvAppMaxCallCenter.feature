@@ -14,7 +14,7 @@
 ##FECMOD: 10/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16 @AltaMono
-Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
+Característica: AT-DT0_Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
 
   @AltaFijaMonoSVATvAppMaxCallCenter
   Esquema del escenario: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center

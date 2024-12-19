@@ -17,7 +17,7 @@
 Característica: AT-DT024_Alta Movil Control + Equipo al contado con CE por canal Call Center con delivery regular
 
   @AltaControlEquipoCallCenter @MVP06 @Global
-  Esquema del escenario: Alta control con equipo al contado con CEX, en canal call center con delivery regular, web front end, flujo no biométrico
+  Esquema del escenario: Alta control con equipo al contado con CEX, por canal Call Center con delivery regular, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Dado     presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
 Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Center
-  Quiero realizar una alta movil solo sin por call center
+  Quiero realizar una alta movil solo sin por canal Call Center
 
   @AltaMovilCECallCenter
   Esquema del escenario: Alta movil control a cliente con CE por canal Call Cente

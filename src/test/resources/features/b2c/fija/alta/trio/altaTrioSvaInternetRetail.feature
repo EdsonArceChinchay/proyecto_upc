@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @Sanity28
-Característica: Alta Trio + SVA a cliente con CE por Canal Retail
+Característica: AT-DT0_Alta Trio + SVA a cliente con CE por canal Retail
 
   @AltaTrioSVARetail
   Esquema del escenario: Alta Trio SVA canal Retail

@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @casiTienda
 Característica: AT-DT112_Cambio de Simcard (CASI) a cliente con CE por canal Tienda
-  Quiero realizar un CASI a un cliente con parque movil a un usuario con documento CE
+  Quiero realizar un CASI a un cliente con parque movil a un usuario a cliente con CE
 
   @casiTienda
   Esquema del escenario: Cambio de Simcard (CASI) a cliente con CE por canal Tienda

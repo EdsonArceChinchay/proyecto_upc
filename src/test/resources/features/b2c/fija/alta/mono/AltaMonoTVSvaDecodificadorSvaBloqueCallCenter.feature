@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
-Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque con documento CE por Call Center
+Característica: AT-DT015_Alta Mono TV Sva Decodificador + Sva Bloque a cliente con CE por canal Call Center
 
   @AltaMonoTVSvaDecodificadorSvaBloqueCallCenter
   Esquema del escenario: Alta Mono TV Sva Decodificador + Sva Bloque

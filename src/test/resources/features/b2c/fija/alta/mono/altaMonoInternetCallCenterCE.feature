@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por Canal Call Center
+Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por canal Call Center
 
   @AltaMonoIntHFC
-  Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
+  Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"

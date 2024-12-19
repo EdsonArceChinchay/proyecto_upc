@@ -16,7 +16,7 @@
  @BERSERKERS @DoneDevOps
  Característica: Migracion de Mono a DUO por el canal Call Retail CE
 
-   Esquema del escenario: Migracion de Mono a Duo en canal Retail
+   Esquema del escenario: Migracion de Mono a Duo por canal Retail
      Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<userType>"

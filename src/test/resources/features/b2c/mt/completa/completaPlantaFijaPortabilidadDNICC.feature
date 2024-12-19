@@ -13,7 +13,7 @@
 ##FECMOD: 02/07/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
-Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a cliente con DNI en canal Call Center
+Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a cliente con DNI por canal Call Center
 
   @CompletaPlantaFijaPortabilidadCC
   Esquema del escenario: Completa Planta Fija Porta Directa Movil

@@ -14,10 +14,10 @@
 ##FECMOD: 20/11/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE en canal Tienda
+Característica: AT-DT_Porta Directa solo chip postpago a cliente con CE por canal Tienda
 
   @PortaDirectaPostST_CE
-  Esquema del escenario: Porta Directa solo chip postpago a cliente con CE en canal Tienda
+  Esquema del escenario: Porta Directa solo chip postpago a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

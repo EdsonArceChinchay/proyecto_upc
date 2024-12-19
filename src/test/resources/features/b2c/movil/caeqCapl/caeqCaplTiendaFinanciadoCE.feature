@@ -14,10 +14,10 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX Canal Tienda
+Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX canal Tienda
 
   @CaeqMasCaplTienda @MVP20 @Global
-  Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , en canal tienda,web front end, flujo no biométrico
+  Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , por canal Tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

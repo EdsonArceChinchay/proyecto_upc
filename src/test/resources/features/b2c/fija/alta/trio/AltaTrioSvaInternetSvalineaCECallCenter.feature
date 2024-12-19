@@ -14,7 +14,7 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con SVA Internet + SVA Linea por canal Call Center
+Característica: AT-DT0_Alta Trio con SVA Internet + SVA Linea por canal Call Center
 
   @AltaTrioSvaInternetSvalineaCallCenter
   Esquema del escenario: Alta Trio con sva Internet + sva linea CANAL CALL CENTER

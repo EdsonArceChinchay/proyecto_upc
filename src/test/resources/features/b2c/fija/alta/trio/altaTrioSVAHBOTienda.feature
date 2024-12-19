@@ -14,7 +14,7 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaSVABloqueHBO @Sanity28 @DROP @AltaFija @AltaTrio
-Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por Canal Tienda
+Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por canal Tienda
 
   @AltaTrioSVABloqueHBO
   Esquema del escenario: Alta Tienda Fija Trio con SVA Bloque HBO sin productos asociados sin biometria

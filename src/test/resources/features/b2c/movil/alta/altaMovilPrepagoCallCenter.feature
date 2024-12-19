@@ -17,7 +17,7 @@
 Característica: AT-DT097_Alta Movil Prepago a cliente con CE por canal Call Center
 
   @AltaMovilPrepagoCallCenter
-  Esquema del escenario: Alta movil Prepago por call center
+  Esquema del escenario: Alta movil Prepago por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

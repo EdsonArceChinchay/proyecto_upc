@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
-Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet a cliente con CE por Canal Call Center
+Característica: AT-DT089_Alta Duo (Internet + TV) sva Modem + SVA Internet a cliente con CE por canal Call Center
 
   @AltaDuo_Sva_Modem_Sva_Internet
   Esquema del escenario: Alta Duo SVA HBO CALL CENTER

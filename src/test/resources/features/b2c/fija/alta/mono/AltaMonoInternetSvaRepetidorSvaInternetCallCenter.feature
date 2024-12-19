@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @AltaMono
-Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a cliente con CE Canal Call Center
+Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a cliente con CE canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter
   Esquema del escenario: Alta Mono Internet Sva Repetidor + Sva Internet

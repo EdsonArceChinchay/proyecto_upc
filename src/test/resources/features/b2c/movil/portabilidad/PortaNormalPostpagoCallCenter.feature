@@ -14,10 +14,10 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI en canal Call Center
+Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por canal Call Center
 
   @PortaNormalPostCC @MVP16 @Global
-  Esquema del escenario: Porta Normal solo chip postpago a cliente con DNI en canal Call Center
+  Esquema del escenario: Porta Normal solo chip postpago a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

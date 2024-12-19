@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
-Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por Call Center
+Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por canal Call Center
 
   @AltaMonoTV3SvaBloqueCallCenter
   Esquema del escenario: Alta Mono TV 3 Sva Bloque

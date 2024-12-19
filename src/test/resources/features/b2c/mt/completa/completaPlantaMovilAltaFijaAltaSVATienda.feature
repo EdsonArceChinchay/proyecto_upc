@@ -14,10 +14,10 @@
 ##FECMOD: 08/02/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) + SVA a cliente con CE en canal Tienda
+Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) + SVA a cliente con CE por canal Tienda
 
   @CompletaFijaSVAT @TEST1
-  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) + SVA a cliente con CE en canal Tienda
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) + SVA a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

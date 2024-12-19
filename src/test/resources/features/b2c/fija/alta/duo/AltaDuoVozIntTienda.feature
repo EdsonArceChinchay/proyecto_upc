@@ -14,10 +14,10 @@
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
+Característica: AT-DT00_Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por canal Tienda
 
   @AltaDuoBByVozFTTHCanalTiendas
-  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

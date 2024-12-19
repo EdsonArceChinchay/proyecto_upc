@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC @AltaFija @AltaMono
-Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
+Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Tienda
 
   @AltaMonoTVTienda
-  Escenario: Alta Mono TV con Documento CE en Canal Tienda
+  Escenario: Alta Mono TV a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"

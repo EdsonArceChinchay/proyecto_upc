@@ -14,12 +14,12 @@
 ##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT045_Caeq Mas Capl por call center
-  Yo como asesor de call center
+Característica: AT-DT045_Caeq Mas Capl por canal Call Center
+  Yo como asesor de Call Center
   Quiero hacer un cambio de equipo mas cambio de plan a un cliente extranjero con parque movil
 
   @CaeqCaplCallCenter
-  Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero en canal Call Center
+  Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

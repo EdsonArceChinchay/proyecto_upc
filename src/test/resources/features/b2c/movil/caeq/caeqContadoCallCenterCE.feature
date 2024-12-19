@@ -14,10 +14,10 @@
 ##FECMOD: 26/06/2024
 
 @BERSERKERS @DoneDevOps
-Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por Canal Call Center
+Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por canal Call Center
 
   @CaeqContadoCallCenter_CE
-  Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por Canal Call Center
+  Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

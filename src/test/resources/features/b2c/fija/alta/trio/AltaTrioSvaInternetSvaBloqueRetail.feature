@@ -14,10 +14,10 @@
 ##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con SVA Internet por Canal Retail
+Característica: AT-DT0_Alta Trio con SVA Internet por canal Retail
 
   @AltaTrioSvaInternetRetail
-  Esquema del escenario: Alta Trio con SVA Internet "<svaInternet>" por Canal Retail
+  Esquema del escenario: Alta Trio con SVA Internet "<svaInternet>" por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

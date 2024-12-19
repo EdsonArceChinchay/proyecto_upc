@@ -14,11 +14,11 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Representante Legal Extranjero en Canal Tienda
-  Quiero realizar un alta movil + equipo a un cliente B2B con Representante Legal Extranjero en Canal Tienda
+Característica: AT-DT Alta Movil B2B con permanencia 18 meses + equipo con Representante Legal Extranjero por canal Tienda
+  Quiero realizar un alta movil + equipo a un cliente B2B con Representante Legal Extranjero por canal Tienda
 
   @altaMovilB2BCETienda
-  Esquema del escenario: Alta movil B2B con permanencia 18 meses + Equipo con Representante Legal Extranjero en Canal Tienda
+  Esquema del escenario: Alta movil B2B con permanencia 18 meses + Equipo con Representante Legal Extranjero por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

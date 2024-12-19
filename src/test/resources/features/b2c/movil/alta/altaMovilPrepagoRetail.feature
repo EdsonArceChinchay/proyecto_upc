@@ -14,10 +14,10 @@
 ##FECMOD: 05/12/2024
 
 @BERSERKERS @AltaMovil
-Característica: AT-DT096_Alta Movil Prepago a cliente con CE en Canal Retail
+Característica: AT-DT096_Alta Movil Prepago a cliente con CE por canal Retail
 
   @AltaMovilPrepagoRetail
-  Esquema del escenario: Alta Movil Prepago a cliente con CE en Canal Retail
+  Esquema del escenario: Alta Movil Prepago a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -14,7 +14,7 @@
 ##FECMOD: 31/11/2023
 
 @BERSERKERS @DoneDevOps
-Característica: Migracion de MT a MT en Tienda
+Característica: Migracion de MT a MT por canal Tienda
 
   @MigracionMTaMT
   Esquema del escenario: Migracion de MT a MT  en el canal Tienda

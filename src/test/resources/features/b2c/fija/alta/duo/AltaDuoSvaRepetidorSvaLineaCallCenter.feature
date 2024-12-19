@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
-Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea Call Center
+Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea por canal Call Center
 
   @AltaDuoSvaRepetidorSvaLineaCallCenter
   Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center

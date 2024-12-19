@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps  @AltaTrio_Upfront_CE @AltaTrioUpfront
-Característica: Alta Trio Upfront a cliente con CE por canal Retail
+Característica: AT-DT0_Alta Trio Upfront a cliente con CE por canal Retail
 
   @AltaTrio_UpfrontCanalRetail
   Esquema del escenario: Alta Trio Upfront con Nuevo Cliente Extranjero

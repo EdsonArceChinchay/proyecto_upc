@@ -14,10 +14,10 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaMovil
-Característica: AT-DT025_Alta Movil Postpago a cliente con CE por Canal Tienda
+Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
 
   @AltaMovilPostpagoCanalTienda
-  Esquema del escenario: Alta Movil Postpago a cliente con CE por Canal Tienda
+  Esquema del escenario: Alta Movil Postpago a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

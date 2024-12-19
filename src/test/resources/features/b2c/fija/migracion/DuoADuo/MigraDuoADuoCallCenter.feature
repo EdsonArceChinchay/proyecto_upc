@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
-Característica: AT-DT063_Migracion Duo a Duo en canal CALL CENTER
+Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
 
 
   @MigracionDuoDuocanalCallCenter

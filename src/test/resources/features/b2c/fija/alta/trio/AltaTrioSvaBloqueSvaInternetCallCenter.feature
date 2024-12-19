@@ -14,7 +14,7 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
+Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER
 
   @AltaTrioSvaBloqueSvaInternetCallCenter
   Esquema del escenario: Alta Trio con sva Bloque + sva Internet CANAL CALL CENTER

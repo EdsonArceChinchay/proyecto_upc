@@ -14,10 +14,10 @@
 ##FECMOD: 21/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaTrio
-Característica: AT-DT003_Alta Trio a cliente con CE por Canal Retail
+Característica: AT-DT003_Alta Trio a cliente con CE por canal Retail
 
   @AltaTrioRetail
-  Esquema del escenario: Alta Trio a cliente con CE por Canal Retail
+  Esquema del escenario: Alta Trio a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

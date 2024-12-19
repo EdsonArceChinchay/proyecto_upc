@@ -33,7 +33,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
-      | KARINA  | PEREZ ZAPATA | femenino |
+      | KARINA  | PEREZ ZAPATA | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única

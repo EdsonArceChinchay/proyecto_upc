@@ -14,10 +14,10 @@
 ##FECMOD: 13/08/2024
 
 @BERSERKERS @DoneDevOps
-Característica: Migracion UVSC fija a cliente con CE en canal Tienda
+Característica: Migracion UVSC fija a cliente con CE por canal Tienda
 
   @migraUVSCtienda
-  Esquema del escenario: Migracion UVSC fija a cliente con CE en canal Tienda
+  Esquema del escenario: Migracion UVSC fija a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -14,11 +14,11 @@
 ##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01 @AltaTrio
-Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
-  Quiero realizar una alta fija por call center
+Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
+  Quiero realizar una alta fija por canal Call Center
 
   @AltaTrioPorCallCenter
-  Esquema del escenario: Alta Trio a cliente con CE por Canal Call Center
+  Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -17,7 +17,7 @@
 Característica: AT-DT078_Migracion salto 0 fija (Cambio de tecnologia HFC a FTTH) a cliente con CE por canal Tienda
 
   @migraSalto0CanalTienda
-  Esquema del escenario: Migracion salto 0 con documento CE por canal Tienda
+  Esquema del escenario: Migracion salto 0 a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

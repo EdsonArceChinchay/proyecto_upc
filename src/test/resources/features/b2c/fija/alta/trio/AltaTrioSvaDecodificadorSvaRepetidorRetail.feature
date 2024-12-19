@@ -14,10 +14,10 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @RegresionLegacy @AltaTrio
-Característica: Alta Trio con SVA Decodificador + SVA Repetidor a cliente con CE por Canal Retail
+Característica: AT-DT0_Alta Trio con SVA Decodificador + SVA Repetidor a cliente con CE por canal Retail
 
   @AltaTrioSvaDecodificadorSvaRepetidorRetail
-  Esquema del escenario: Alta Trio con SVA Decodificador + SVA Repetidor a cliente con CE por Canal Retail
+  Esquema del escenario: Alta Trio con SVA Decodificador + SVA Repetidor a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

@@ -14,10 +14,10 @@
 ##FECMOD: 24/01/2024
 
 @BERSERKERS @DoneDevOps
-Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documento CE el canal Tienda
+Característica: Migracion de MT a MT + Alta Equipo Movil + Alta SVA a cliente con CE el canal Tienda
 
   @MigracionMTaMT_Equipo_SVA_Tiendas
-  Esquema del escenario: Migracion de MT a MT + Alta Equipo Movil + Alta SVA con documento CE el canal Tienda
+  Esquema del escenario: Migracion de MT a MT + Alta Equipo Movil + Alta SVA a cliente con CE el canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

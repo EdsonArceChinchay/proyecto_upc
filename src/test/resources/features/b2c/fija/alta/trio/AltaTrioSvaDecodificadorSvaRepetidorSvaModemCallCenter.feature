@@ -14,10 +14,10 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
+Característica: AT-DT0_Alta Trio con sva Decodificador + sva Repetidor + sva Modem por canal Call Center
 
   @AltaTrioSvaDecodificadorSvaRepetidorSvaModemCallCenter
-  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor + sva Modem Canal Call Center
+  Esquema del escenario: Alta Trio con sva Decodificador + sva Repetidor + sva Modem por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

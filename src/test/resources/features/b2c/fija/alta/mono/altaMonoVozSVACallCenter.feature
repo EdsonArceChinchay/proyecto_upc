@@ -14,10 +14,10 @@
 ##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP2 @AltaFija @AltaMono
-Característica: AT-DT016_Alta Mono Linea Voz + SVA por Canal Call center
+Característica: AT-DT016_Alta Mono Linea Voz + SVA por canal Call center
 
   @AltaMonoVozSVACC
-  Esquema del escenario: Alta Mono Voz con plan <nombrePlan> mas SVA con Documento CE por Canal Call Center
+  Esquema del escenario: Alta Mono Voz con plan <nombrePlan> mas SVA con Documento CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

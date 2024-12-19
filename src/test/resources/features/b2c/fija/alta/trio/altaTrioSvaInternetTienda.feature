@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @Sanity28
-Característica: Alta Trio SVA Internet canal Retail
+Característica: AT-DT0_Alta Trio SVA Internet por canal Retail
 
   @AltaTrioSVARetailCE
   Esquema del escenario: Alta Trio SVA canal Retail
