@@ -96,7 +96,7 @@ public class Addons {
                 if (splashText.length() > 3 && splashElement.isDisplayed()) {
                     bCargando = true;
                 }else{
-                    logInfo("Contunue ... ");
+                    logInfo("Continue ... ");
                     break;
                 }
                 if (bCargando) {
