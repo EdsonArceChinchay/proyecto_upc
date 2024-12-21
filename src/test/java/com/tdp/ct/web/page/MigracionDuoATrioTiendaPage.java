@@ -15,33 +15,27 @@ import static com.tdp.ct.web.utils.WebUtils.explicitWaitCss;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
+    // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    protected final String btnIrMovistarTotal =
+            "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
-
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
-
     @FindBy(xpath = "//*[@label='Confirmar dirección' or contains(text(),'Confirmar dirección')]")
     protected WebElement btnConfirmarDir;
-
     @FindBy(xpath = " //*[@label='Actualizar dirección' or contains(text(),'Actualizar dirección')]")
     protected WebElement btnActualizarDir;
-
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
     protected WebElement btnBuscar;
-
     @FindBy(xpath = "(//*[contains(text(),'Ingresar coordenadas')])[1]")
     protected WebElement btnIngCord;
-
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
-
     @FindBy(xpath = "//*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]")
     protected WebElement btnMantenerPlan;
-
     @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
-
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
     protected WebElement btnRenovarPlan;
     @FindBy(xpath = "//button[@class='btnCard']")
@@ -52,9 +46,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement planOferta;
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
-    // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
-    protected final String btnIrMovistarTotal =
-            "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
     protected WebElement BtnMigrarFibra;
     @FindBy(xpath = "//div/button[@class='btnStart']")

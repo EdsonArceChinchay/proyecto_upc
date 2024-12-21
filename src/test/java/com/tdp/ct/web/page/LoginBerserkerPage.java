@@ -92,7 +92,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String key) {
-        return getValueConfig("config", "credential.user." + key) == null ? "" : getValueConfig("config", "credential.user." + key);
+        return getValueConfig("config", "credential.user." + key);
     }
 
 }

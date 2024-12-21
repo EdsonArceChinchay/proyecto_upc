@@ -279,7 +279,7 @@ public class WebUtils extends WebBase {
         js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
     }
 
-    public static void scrollDown(){
+    public static void scrollDown() {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }

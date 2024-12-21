@@ -95,7 +95,7 @@ public class Addons {
                 String splashText = splashElement.getText();
                 if (splashText.length() > 3 && splashElement.isDisplayed()) {
                     bCargando = true;
-                }else{
+                } else {
                     logInfo("Continue ... ");
                     break;
                 }
