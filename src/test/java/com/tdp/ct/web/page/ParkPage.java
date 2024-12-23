@@ -101,6 +101,7 @@ public class ParkPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
     WebElement selectGender;
 
+
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         return nombreClienteUserData.getText().length() <= 8;
@@ -304,6 +305,7 @@ public class ParkPage extends WebBase {
     }
 
     public void mostrarOfertas() {
+        //Addons.esperaCargaMontoDeuda(driver(),30);
         revisarModalError(driver());
         WebElement showOffer = explicitWaitCss(driver(), 60, btnShowOffers);
         revisarModalError(driver());
