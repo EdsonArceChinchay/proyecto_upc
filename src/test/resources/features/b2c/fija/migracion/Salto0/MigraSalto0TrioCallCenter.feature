@@ -48,6 +48,7 @@ Característica: AT-DT077_Migracion salto 0 Trio (Cambio de tecnologia HFC a FTT
     Y        ingreso nuevamente el correo electronico "automation@gmail.com"
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada

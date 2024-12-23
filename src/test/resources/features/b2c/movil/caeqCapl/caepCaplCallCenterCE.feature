@@ -14,12 +14,12 @@
 ##FECMOD: 30/03/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT045_Caeq Mas Capl por call center
-  Yo como asesor de call center
+Característica: AT-DT045_Caeq Mas Capl por canal Call Center
+  Yo como asesor de Call Center
   Quiero hacer un cambio de equipo mas cambio de plan a un cliente extranjero con parque movil
 
   @CaeqCaplCallCenter
-  Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero en canal Call Center
+  Esquema del escenario: Cambio de equipo mas cambio de plan a cliente extranjero por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -43,9 +43,9 @@ Característica: AT-DT045_Caeq Mas Capl por call center
     Y        doy click en el boton "Cambiar Plan"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 469"
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono el boton Consultar ubicacion

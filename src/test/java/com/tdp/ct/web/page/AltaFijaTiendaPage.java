@@ -223,7 +223,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void clickBotonRegistrarVenta() {
         revisarModalError(driver());
-        System.out.println("Entra al primer try");
+        logInfo("Entra al primer try");
         try {
             boolean buttonFound = false;
             int contador = 0;

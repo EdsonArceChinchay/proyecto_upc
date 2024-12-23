@@ -10,17 +10,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Objects;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.SessionStorage.*;
+import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
+import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 import static com.tdp.ct.web.utils.WebUtils.*;
-
 
 public class HomePage extends WebBase {
 
@@ -30,7 +26,7 @@ public class HomePage extends WebBase {
     @FindBy(css = "[class*='buttonConsultar']")
     protected WebElement btnSearch;
 
-    @FindBy(css = "[class='validation'] tdp-st-input-text input")
+    @FindBy(css = "[class='validation'] tdp-st-input-text")
     protected WebElement txtDocumento;
 
     @FindBy(xpath = "//*[@class='validation']//app-simple-button")
@@ -54,7 +50,7 @@ public class HomePage extends WebBase {
     @FindBy(xpath = "(//*[contains(text(),'Cerrar s')])[1]")
     protected WebElement btnCerrar;
 
-    @FindBy(xpath = "//*[@class='atras']")
+    @FindBy(css = "[@class='atras']")
     protected WebElement btnAtras;
 
     @FindBy(xpath = "//*[contains(@alt,'icon_bandeja') or contains(@src,'icon_bandeja.svg')]")
@@ -62,40 +58,38 @@ public class HomePage extends WebBase {
 
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
-    @FindBy(css = "input[id='doc']")
+
+    @FindBy(css = "tdp-st-input-text[id=\"doc\"]")
     protected WebElement inputDocumentNumber;
 
     public void selectDocumentType(String type) {
-        js().scrollElementTop(btnSearch);
-        esperaProgresiva(driver(), 6, 5, selectDocumentType);
-        click(selectDocumentType);
-        UtilWeb.waitForSeconds(2);
-        String valueTipoDocumento;
+        String valueDocumentType;
         switch (type) {
             case "CE":
             case "C":
-                valueTipoDocumento = "C";
+                valueDocumentType = "CE";
                 break;
             case "DNI":
-                valueTipoDocumento = "DNI";
+                valueDocumentType = "DNI";
                 break;
             case "Pasaporte":
             case "P":
-                valueTipoDocumento = "P";
+                valueDocumentType = "P";
                 break;
             case "RUC":
-                valueTipoDocumento = "RUC";
+                valueDocumentType = "RUC";
                 break;
             default:
                 throw new IllegalArgumentException("Tipo de documento no existe " + type);
         }
-        js().getWebElement("tdp-st-select[formcontrolname=\"tipoDoc\"] li[data-value=\"" + valueTipoDocumento + "\"]").click();
-        logInfo("Select document type", valueTipoDocumento);
+        esperaProgresiva(driver(), 6, 5, selectDocumentType);
+        js().scrollElementTop(selectDocumentType);
+        selectElementCSSWithAndWithoutShadowRoot("document type", selectDocumentType, valueDocumentType);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void typeDocumentNumber(String documentNumber) {
-        type(inputDocumentNumber, documentNumber);
-        logInfo("Type document number", documentNumber);
+        validateAndTypeWithAndWithoutShadowRoot("document number", inputDocumentNumber, documentNumber);
     }
 
     public void clickOnConsultButton() {
@@ -138,12 +132,12 @@ public class HomePage extends WebBase {
 
     public void selectTheTypeOfDocumentOfTheLegalRepresentative(String documentType) {
         esperaProgresiva(driver(), 5, 5, listaDocumentos);
-        selectElementCSS(documentType, listaDocumentos, "[class='validation'] tdp-st-select li");
+        selectElementCSSWithAndWithoutShadowRoot("document type of the legal representative", listaDocumentos, documentType);
     }
 
     public void typeTheDocumentNumberOfTheLegalRepresentative(String numDoc) {
         waitUntilElementIsVisible(txtDocumento, 10).click();
-        validateAndType("document number of legal representative", txtDocumento, numDoc);
+        validateAndTypeWithAndWithoutShadowRoot("document number of legal representative", txtDocumento, numDoc);
     }
 
     public void clickOnTheValidateLegalRepresentativeButton() {
@@ -169,48 +163,15 @@ public class HomePage extends WebBase {
 
     public void validateHomeMessage(String msg) {
         Addons.revisarModalError(driver());
-        WebElement mensaje = explicitWaitCss(driver(), 60, ".message-welcome span");
-        compareWebElementTextAndString(mensaje, msg);
-        esperaProgresiva(driver(), 5, 8, msgHome);
+        WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
+        compareWebElementTextAndString(message, msg);
+        esperaProgresiva(driver(), 6, 7, msgHome);
         compareWebElementTextAndString(msgHome, msg);
-    }
-
-    public void initializeAgent(Agent agent) {
-        JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
-        agent.setFirstName(getValueJsonObjectSessionStorage(agentData, "name"));
-        agent.setLastName(getValueJsonObjectSessionStorage(agentData, "surname").trim());
-        agent.setChannelType(getValueJsonObjectSessionStorage(agentData, "channels.id").trim());
-        agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
-        agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
-        agent.setDocumentType(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
-        agent.setWarehouse(getValueJsonObjectSessionStorage(agentData, "sites.1.1.id").trim());
     }
 
     public String getChannelType() {
         JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
         return getValueJsonObjectSessionStorage(agentData, "channels.id").trim();
-    }
-
-    public void modifyGroupAgent(String group, Agent agent) {
-        if ((Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role.channels"))).contains(agent.getChannelType())) {
-            String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-            setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
-        }
-    }
-
-    public String shouldAddRetentionRole() {
-        if (Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role")).equalsIgnoreCase("true")) {
-            return "add";
-        } else {
-            return "remove";
-        }
-    }
-
-    public boolean isRetention() {
-        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-        boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
-        logInfo(String.format("Is retention: " + isRetention));
-        return isRetention;
     }
 
     public void validateAgentData(Agent agent, String storeTypeExpected) {
@@ -219,7 +180,7 @@ public class HomePage extends WebBase {
             message = validateThatYouAreOnThePage("Agent's name: %s. ", agent.getFullName());
         }
         message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", agent.getChannelName());
-        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, agent.getChannelType());
+        message = message + validateStoreType("\nChannel type: %s", storeTypeExpected, agent.getChannelType());
         printAgentData(message);
     }
 

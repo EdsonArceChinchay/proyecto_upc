@@ -3,7 +3,6 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,37 +10,32 @@ import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.explicitWaitCss;
 
 public class MigracionDuoATrioTiendaPage extends WebBase {
 
+    // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
+    protected final String btnIrMovistarTotal =
+            "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(css = "div:nth-child(2) > app-card-plan > div.card.ng-star-inserted > div > div.tdp-row.tdp-mt-3.tdp-mb-3 > div.tdp-col-2.mt-10.ng-star-inserted > img")
     protected WebElement btnOpcionPlanNuevo;
-
     @FindBy(xpath = "(//div[@class='tdp-col-md-2'])")
     protected List<WebElement> listaPlanFija;
-
     @FindBy(xpath = "//*[@label='Confirmar dirección' or contains(text(),'Confirmar dirección')]")
     protected WebElement btnConfirmarDir;
-
     @FindBy(xpath = " //*[@label='Actualizar dirección' or contains(text(),'Actualizar dirección')]")
     protected WebElement btnActualizarDir;
-
     @FindBy(xpath = "(//*[@type='submit' and contains(text(),'Buscar')])[1]")
     protected WebElement btnBuscar;
-
     @FindBy(xpath = "(//*[contains(text(),'Ingresar coordenadas')])[1]")
     protected WebElement btnIngCord;
-
     @FindBy(xpath = "(//*[contains(text(),'Entendido')])[1]")
     protected WebElement btnEntendido;
-
     @FindBy(xpath = "//*[contains(text(),'Mantener Plan') or @class='btnCard' and contains(text(),'Mantener Plan')]")
     protected WebElement btnMantenerPlan;
-
     @FindBy(xpath = "//*[contains(text(),'Cambiar Plan') or @class='btnCard' and contains(text(),'CAMBIAR PLAN')]")
     protected WebElement btnCambiarPlan;
-
     @FindBy(xpath = "//*[contains(text(),'Renovar plan') or contains(@class,'btn-renovate-plan') and contains(text(),'Renovar plan')]")
     protected WebElement btnRenovarPlan;
     @FindBy(xpath = "//button[@class='btnCard']")
@@ -52,9 +46,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     protected WebElement planOferta;
     @FindBy(xpath = "//button[@class=\"btnSky btnsForms\"]")
     protected WebElement btnseleccionarOferta;
-    // @FindBy(xpath = "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]")
-    protected String btnIrMovistarTotal =
-            "//*[@class='btnCard' and contains(text(),'Ir a movistar total') or @class='btnCard' and contains(text(),'Ir a movistar')]";
     @FindBy(xpath = "(//div/button[@class='btnCard'])[2] | //button[@class='btnCard' and contains(text(),'Migrar a Fibra')]")
     protected WebElement BtnMigrarFibra;
     @FindBy(xpath = "//div/button[@class='btnStart']")
@@ -85,13 +76,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void scrollUp() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(5);
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
-    }
 
     public void clickButton(String nameButton) {
         UtilWeb.waitForSeconds(2);
@@ -142,21 +126,18 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
             js().scrollElementTop(botonEsperado);
             botonEsperado.click();
         } else {
-            System.out.println("ERROR - NO HAY BOTON CONFIGURADO");
+            logSevere("ERROR - NO HAY BOTON CONFIGURADO");
         }
         revisarModalError(driver());
     }
 
     public void seleccionarboton() {
-        System.out.println(1);
         UtilWeb.waitForSeconds(4);
-        System.out.println(1);
         for (WebElement element : listaBotones) {
             if (element.getText().contains("Cambiar plan hogar")) {
                 click(element, 40);
             }
         }
-        // UtilWeb.waitForSeconds(4);
     }
 
     public void seleccionoPlanMovistarTotal() {
@@ -188,11 +169,6 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, BtnMigrarFibra);
         js().scrollElementTop(BtnMigrarFibra);
         click(BtnMigrarFibra);
-
-    }
-
-    public void clickBotonEntendido() {
-        revisarModalError(driver());
     }
 
     public void validateTagUVSC(String value) {
@@ -214,6 +190,5 @@ public class MigracionDuoATrioTiendaPage extends WebBase {
     public boolean compareTextWebElement(WebElement element1, WebElement element2) {
         return element1.getText().trim().equalsIgnoreCase(element2.getText().trim());
     }
-
 
 }

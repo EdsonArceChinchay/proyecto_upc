@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:  REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:Brandon
-##FECMOD: 06/05/2024
+##FECMOD: 05/12/2024
 
 @BERSERKERS @DoneDevOps @casiRetail
 Característica: AT-DT113_Cambio de Simcard (CASI) a cliente con CE por canal Retail

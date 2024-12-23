@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.WebUtils.selectElementCSS;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.selectElementCSSWithAndWithoutShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 
 public class DeliveryPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='deliveryType']")
@@ -18,9 +18,9 @@ public class DeliveryPage extends WebBase {
     protected WebElement btnConfirmLocation;
     @FindBy(xpath = "(//button[@class='button_step'])")
     protected WebElement btnConfirmDelivery;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='instruction'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='instruction']")
     protected WebElement inputInstruction;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='contactNumber'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='contactNumber']")
     protected WebElement inputContactNumber;
     @FindBy(css = "body > app-root > app-delivery > div.info-user span")
     protected WebElement titleDelivery;
@@ -42,7 +42,7 @@ public class DeliveryPage extends WebBase {
     public void selectTypeOfDelivery(String deliveryType) {
         esperaProgresiva(driver(), 6, 6, selectDeliveryType);
         js().scrollElementTop(selectDeliveryType);
-        selectElementCSS(deliveryType, selectDeliveryType, "tdp-st-select[formcontrolname='deliveryType'] li");
+        selectElementCSSWithAndWithoutShadowRoot("delivery type", selectDeliveryType, deliveryType);
     }
 
     public void clickOnDeliveryTime(String hour) {
@@ -53,11 +53,11 @@ public class DeliveryPage extends WebBase {
     }
 
     public void typeTelephone(String numberPhone) {
-        validateAndType("telephone", inputContactNumber, numberPhone);
+        validateAndTypeWithAndWithoutShadowRoot("telephone", inputContactNumber, numberPhone);
     }
 
     public void typeDeliveryInstructions(String instruction) {
-        validateAndType("instruction", inputInstruction, instruction);
+        validateAndTypeWithAndWithoutShadowRoot("instruction", inputInstruction, instruction);
     }
 
     public void clickButtonConfirmDevlivery() {

@@ -14,10 +14,10 @@
 ##FECMOD: 20/11/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
-Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal call center
+Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal Call Center
 
   @TotalizacionMTTrioMovilCC
-  Escenario: Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal call center
+  Escenario: Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"

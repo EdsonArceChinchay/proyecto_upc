@@ -21,7 +21,7 @@ public class OfferSVAPage extends WebBase {
     public void validateScreenName(String name) {
         logInfo("Validate screen name", name);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, labelTitle);
+        esperaProgresiva(driver(), 5, 7, labelTitle);
         js().scrollElementTop(labelTitle);
         compareWebElementTextAndString(labelTitle, name);
     }

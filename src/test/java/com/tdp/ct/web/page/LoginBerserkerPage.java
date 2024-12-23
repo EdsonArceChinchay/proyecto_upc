@@ -11,6 +11,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.compareWebElementTextAndString;
+import static com.tdp.ct.web.utils.WebUtils.validateAndType;
 
 public class LoginBerserkerPage extends WebBase {
 
@@ -39,7 +40,7 @@ public class LoginBerserkerPage extends WebBase {
     protected WebElement labelCaptchaError;
 
     public void clickOnLoginButton() {
-        Addons.reiniciaTimeout(driver());
+        Addons.resetTimeOut(driver());
         Addons.esperaProgresiva(driver(), 3, 5, btnLogIn);
         click(btnLogIn);
     }
@@ -54,14 +55,12 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void typeUserName(String name) {
-        type(inputNameUser, readValues(name));
-        logInfo(String.format("Type user %s", readValues(name)));
+        validateAndType("user name", inputNameUser, readValues(name));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typePassword(String pass) {
-        type(inputPassword, readValues(pass));
-        logInfo(String.format("Type password %s", readValues(pass)));
+        validateAndType("password", inputPassword, readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
 
@@ -93,7 +92,7 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public String readValues(String key) {
-        return getValueConfig("config", "credential.user." + key) == null ? "" : getValueConfig("config", "credential.user." + key);
+        return getValueConfig("config", "credential.user." + key);
     }
 
 }

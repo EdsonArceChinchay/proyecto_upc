@@ -14,10 +14,10 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35_Upfront @Sanity28 @DROP-G04 @AltaFija @AltaTrioUpfront
-Característica: AT-DT018_Alta Trio con bloque HD Upfront a cliente con CE por Canal Call Center
+Característica: AT-DT018_Alta Trio con bloque HD Upfront a cliente con CE por canal Call Center
 
   @AltaTrioConBloqueHdUpfrontCallCenter
-  Esquema del escenario: Alta Trio con bloque HD Upfront por Call Center con CE sin productos asociados sin biometria
+  Esquema del escenario: Alta Trio con bloque HD Upfront por canal Call Center con CE sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -79,6 +79,6 @@ Característica: AT-DT018_Alta Trio con bloque HD Upfront a cliente con CE por C
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10003901234    | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10003901234    | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
 
 

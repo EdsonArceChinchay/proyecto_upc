@@ -25,8 +25,8 @@ public class AppointmentStep {
     }
 
     @ScreenShotAfter
-    public void ingresarContacto(String contacto) {
-        page.appointmentPage().ingresarContacto(contacto);
+    public void typeContactNumber(String contact) {
+        page.appointmentPage().typeContactNumber(contact);
     }
 
     public void scrollToViewAgendamiento() {
@@ -36,11 +36,6 @@ public class AppointmentStep {
     @ScreenShotBefore
     public void clickBotonConfirmarAgendamiento() {
         page.appointmentPage().botonConfirmarAgendamiento();
-    }
-
-    @ScreenShotBefore
-    public void ingresarDatosAgendamiento() {
-        page.appointmentPage().datosAgendamiento();
     }
 
     @ScreenShotAfter

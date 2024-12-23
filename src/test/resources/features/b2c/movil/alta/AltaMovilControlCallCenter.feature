@@ -15,7 +15,7 @@
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11  @Sanity @Sanity28 @SanityN @SanityF @DROP-G04 @AltaMovil
 Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Center
-  Quiero realizar una alta movil solo sin por call center
+  Quiero realizar una alta movil solo sin por canal Call Center
 
   @AltaMovilCECallCenter
   Esquema del escenario: Alta movil control a cliente con CE por canal Call Cente
@@ -46,9 +46,9 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
     Y        selecciono un plan movil "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion

@@ -16,7 +16,7 @@
 Característica: Migracion de Mono internet a Mono internet con Actualizar Direccion por el canal Call Center
 
   @MigracionMonoInternetAMonoInternetActualizarDireccion_CallCenter
-  Esquema del escenario: Migracion de Mono internet a Mono interner con Actualizar Direccion en canal Call Center
+  Esquema del escenario: Migracion de Mono internet a Mono interner con Actualizar Direccion por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

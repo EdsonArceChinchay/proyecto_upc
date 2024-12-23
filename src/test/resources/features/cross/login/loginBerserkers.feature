@@ -19,7 +19,7 @@ Característica: AT-DT053_Login - FE DITO WEB
 
   @PRR-107
     @LoginBerserker @LoginExitoso @jbac_Test
-  Esquema del escenario: Usuario realiza login exitoso en canal <channelType>
+  Esquema del escenario: Usuario realiza login exitoso por canal <channelType>
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

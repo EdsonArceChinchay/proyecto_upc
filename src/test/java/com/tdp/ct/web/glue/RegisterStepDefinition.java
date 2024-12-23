@@ -1,9 +1,9 @@
 package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Customer;
+import com.tdp.ct.web.service.RetentionService;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.RegisterStep;
-import com.tdp.ct.web.service.RetentionService;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -11,6 +11,8 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class RegisterStepDefinition {
 
@@ -67,7 +69,7 @@ public class RegisterStepDefinition {
             registerStep.waitButtonCustomerData();
             registerStep.clickButtonCustomerData();
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -76,7 +78,7 @@ public class RegisterStepDefinition {
         if (customer.isNewCustomer()) {
             registerStep.ingresarDatosCliente(dataTable);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -85,7 +87,7 @@ public class RegisterStepDefinition {
         if (customer.isNewCustomer()) {
             registerStep.completoDatosCliente(datosCliente);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -126,8 +128,8 @@ public class RegisterStepDefinition {
     }
 
     @Y("ingreso los datos del supervisor")
-    public void ingresoLosDatosDelSupervisor(DataTable dataTable) {
-        registerStep.ingresarDatosSupervisor(dataTable);
+    public void ingresoLosDatosDelSupervisor() {
+        registerStep.ingresarDatosSupervisor();
         registerStep.clicConfirmarUsuarioSupervisor();
     }
 
@@ -138,11 +140,11 @@ public class RegisterStepDefinition {
                 UtilWeb.waitForSeconds(10);
                 for (int i = 0; i < 3; i++) {
                     registerStep.ingresarDatosValidacionSolicitada(datos, i);
-                    System.out.println("-- click en siguiente --");
+                    logInfo("-- click en siguiente --");
                     registerStep.clicEnSiguiente();
                     UtilWeb.waitForSeconds(5);
                 }
-                System.out.println("----- termino preguntas ----------");
+                logInfo("----- termino preguntas ----------");
                 UtilWeb.waitForSeconds(10);
                 registerStep.clicEnConfirmar();
             } else {
@@ -189,22 +191,22 @@ public class RegisterStepDefinition {
     }
 
     @Y("selecciono tipo de documento del supervisor {string}")
-    public void seleccionoTipoDeDocumentoDelSupervisor(String type) {
+    public void selectSupervisorDocumentType(String type) {
         registerStep.selectSupervisorDocumentType(type);
     }
 
     @Y("ingreso el numero de documento del supervisor {string}")
-    public void ingresoElNumeroDeDocumentoDelSupervisor(String number) {
+    public void typeSupervisorDocumentNumber(String number) {
         registerStep.typeSupervisorDocumentNumber(number);
     }
 
     @Y("ingreso usuario citrix de supervisor {string}")
-    public void ingresoUsuarioCitrixDeSupervisor(String user) {
+    public void typeSupervisorUser(String user) {
         registerStep.typeSupervisorUser(user);
     }
 
     @Y("ingreso contraseña de supervisor {string}")
-    public void ingresoContraseñaDeSupervisor(String password) {
+    public void typeSupervisorPassword(String password) {
         registerStep.typeSupervisorPassword(password);
     }
 
@@ -214,7 +216,7 @@ public class RegisterStepDefinition {
     }
 
     @Y("doy click en Finalizar registro")
-    public void doyClickEnFinalizarRegistro() {
+    public void clickOnTheFinishRegistrationButton() {
         registerStep.clickOnTheFinishRegistrationButton();
     }
 }

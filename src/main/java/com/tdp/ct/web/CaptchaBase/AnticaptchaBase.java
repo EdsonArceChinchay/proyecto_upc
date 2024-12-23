@@ -11,30 +11,23 @@ import com.tdp.ct.web.Http.HttpRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 import java.util.concurrent.TimeUnit;
 
 public abstract class AnticaptchaBase {
 
-    protected TaskResultResponse taskInfo;
     private final String host = "api.anti-captcha.com";
     private final SchemeType scheme = SchemeType.HTTPS;
+    protected TaskResultResponse taskInfo;
     private String errorMessage;
     private Integer taskId;
     private String clientKey;
 
     /**
-     *  Specify softId to earn 10% commission with your app.
-     *  Get your softId here:
-     *  <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
+     * Specify softId to earn 10% commission with your app.
+     * Get your softId here:
+     * <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
      */
     private Integer softId;
-
-    public enum ProxyTypeOption {
-        HTTP,
-        SOCKS4,
-        SOCKS5
-    }
 
     private JSONObject jsonPostRequest(ApiMethod methodName, JSONObject jsonPostData) {
 
@@ -264,9 +257,9 @@ public abstract class AnticaptchaBase {
     }
 
     /**
-     *  Specify softId to earn 10% commission with your app.
-     *  Get your softId here:
-     *  <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
+     * Specify softId to earn 10% commission with your app.
+     * Get your softId here:
+     * <a href="https://anti-captcha.com/clients/tools/devcenter">https://anti-captcha.com/clients/tools/devcenter</a>
      */
     public void setSoftId(Integer softId_) {
         softId = softId_;
@@ -275,6 +268,12 @@ public abstract class AnticaptchaBase {
     @SuppressWarnings("WeakerAccess")
     public String getErrorMessage() {
         return errorMessage == null ? "no error message" : errorMessage;
+    }
+
+    public enum ProxyTypeOption {
+        HTTP,
+        SOCKS4,
+        SOCKS5
     }
 
     private enum SchemeType {

@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo Canal Tiendas
+Característica: AT-DT051_Realizar CAPL de prepago a postpago con equipo canal Tiendas
 
   @CaplMasCaeqPrepagoApostpago
   Esquema del escenario: CAPL de prepago a postpago por canal TIENDA

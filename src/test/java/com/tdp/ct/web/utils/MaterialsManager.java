@@ -10,10 +10,10 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class MaterialsManager {
 
-    private List<Material> simCards;
-    private List<Material> imeis;
-    private String simCardFilePath = getAbsolutePathString( "src/test/resources/materials/simCard.txt");
-    private String imeiFilePath = getAbsolutePathString( "src/test/resources/materials/imei.txt");
+    private final List<Material> simCards;
+    private final List<Material> imeis;
+    private String simCardFilePath = getAbsolutePathString("src/test/resources/materials/simCard.txt");
+    private String imeiFilePath = getAbsolutePathString("src/test/resources/materials/imei.txt");
 
     public MaterialsManager() throws Exception {
         this.simCards = FileUtils.readSimCards(simCardFilePath);
@@ -40,7 +40,7 @@ public class MaterialsManager {
     public Material getAvailableImeiBySapId(String sapid) {
         for (Material imei : imeis) {
             if ("DISPONIBLE".equals(imei.getStatus()) && imei.getSapId().equals(sapid)) {
-                logInfo( "Available IMEI", imei.getSerialNumber());
+                logInfo("Available IMEI", imei.getSerialNumber());
                 return imei;
             }
         }
@@ -50,7 +50,7 @@ public class MaterialsManager {
     public Material getAvailableImeiByName(String name) {
         for (Material imei : imeis) {
             if ("DISPONIBLE".equals(imei.getStatus()) && imei.getNameMaterial().equals(name)) {
-                logInfo( "Available IMEI", imei.getSerialNumber());
+                logInfo("Available IMEI", imei.getSerialNumber());
                 return imei;
             }
         }
@@ -60,7 +60,7 @@ public class MaterialsManager {
     public void assignSimCard(Material simCard) throws IOException {
         if (simCard != null) {
             simCard.setStatus("ASIGNADO");
-            logInfo(String.format("SIM CARD: %s assigned.",simCard.getSerialNumber()));
+            logInfo(String.format("SIM CARD: %s assigned.", simCard.getSerialNumber()));
             FileUtils.saveSimCards(simCardFilePath, simCards);
         }
     }

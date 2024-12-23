@@ -14,10 +14,10 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Decodificador + sva linea Canal Call Center
+Característica: AT-DT0_Alta Trio con SVA Decodificador + sva linea canal Call Center
 
   @AltaTrioSvaDecodificadorSvaLineaCallCenter
-  Esquema del escenario: Alta Trio con sva Decodificador + sva linea Canal Call Center
+  Esquema del escenario: Alta Trio con SVA Decodificador + sva linea canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -85,5 +85,5 @@ Característica: Alta Trio con sva Decodificador + sva linea Canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador | svaLinea              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1066122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | 9.90          | Plan Multidestino  20 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | decodificador | svaLinea              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1066122148     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | 9.90          | Plan Multidestino  20 |

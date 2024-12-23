@@ -14,10 +14,10 @@
 ##FECMOD: 05/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija  @AltaMono
-Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Center
+Característica: AT-DT093_Alta Mono voz + SVA a cliente con CE por canal Call Center
 
   @AltamonovozsvaLineaCallCenter
-  Esquema del escenario: Alta Mono voz + SVA con documento CE en Canal Call Center
+  Esquema del escenario: Alta Mono voz + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -86,4 +86,4 @@ Característica: AT-DT093_Alta Mono voz + SVA con documento CE en Canal Call Cen
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

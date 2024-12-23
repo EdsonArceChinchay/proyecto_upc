@@ -14,10 +14,10 @@
 ##FECMOD: 13/02/2024
 
 @BERSERKERS @DoneDevOps @AltaFija @AltaTrioUpfront
-Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc por canal Tienda, financiado 100 % con flujo biométrico
 
   @AltaTrioRuCTienda @MVP10 @Global
-  Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc en tienda, financiado 100 % con flujo biométrico
+  Esquema del escenario: Alta Trío familiar 100 Mbps tecnología FTTH + SVA con ruc por canal Tienda, financiado 100 % con flujo biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -61,8 +61,6 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        doy click en el boton continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac            |
@@ -82,4 +80,4 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20534983612    | 1   | DNI             | 75448387       | 15           | 1501      | 150116   | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20534983612    | 1   | DNI             | 75448387       | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |

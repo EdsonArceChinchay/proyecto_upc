@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC @AltaFija @AltaMono
-Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
+Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Tienda
 
   @AltaMonoTVTienda
-  Escenario: Alta Mono TV con Documento CE en Canal Tienda
+  Escenario: Alta Mono TV a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
@@ -40,7 +40,7 @@ Característica: AT-DT _Alta Mono TV con Documento CE en Canal Tienda
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
       | departamento | provincia | distrito | direccion                | referencia |
-      | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | PARQUE     |
+      | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | PARQUE     |
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta

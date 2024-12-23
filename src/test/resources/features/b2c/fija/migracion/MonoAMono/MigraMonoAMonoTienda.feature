@@ -17,7 +17,7 @@
 Característica: AT-DT103_Migracion de Mono a Mono por el canal Tienda
 
   @MigracionMonoAMono_CallCenter
-  Esquema del escenario: Migracion de Mono a Mono en canal Tienda
+  Esquema del escenario: Migracion de Mono a Mono por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

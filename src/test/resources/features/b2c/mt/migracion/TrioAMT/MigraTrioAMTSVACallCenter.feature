@@ -14,7 +14,7 @@
 ##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11
-Característica: AT-DT081_Migracion de Trio a MT por Canal Call Center
+Característica: AT-DT081_Migracion de Trio a MT por canal Call Center
 
   @migracionTrioAmtSvaCallCenter
   Esquema del escenario: Migracion de Trio a MT con CE  sin productos asociados sin biometria

@@ -20,8 +20,7 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.WebUtils.getVisibleAndClickableElement;
-import static com.tdp.ct.web.utils.WebUtils.typeInShadowRootCssSelector;
+import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class AltaFijaMovilRegistroPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnCard']")
@@ -34,15 +33,13 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonValBiometrica;
     @FindBy(xpath = "(//button[contains(text(),'Validación biométrica')])[3]")
     protected WebElement buttonValBiometrica3;
-    @FindBy(xpath = "//*[contains(text(),'Tipo de Documento')]/../../../../..")
-    protected WebElement selectTipoDoc;
-    @FindBy(xpath = "//mat-option/span")
-    protected List<WebElement> listDocumentos;
+    @FindBy(css = "mat-select[formcontrolname=\"tipoDoc\"]")
+    protected WebElement selectDocumentType;
     @FindBy(xpath = "//h4[contains(text(),'Validar identidad del titular')]")
     protected WebElement lblPreguntas;
     @FindBy(xpath = "//*[contains(text(),' Continuar ')]/parent::button")
     protected WebElement buttonContinuar;
-    @FindBy(css = "app-modal-contract tdp-st-button button")
+    @FindBy(css = "tdp-st-button[label=\"Sí, acepta\"]")
     protected WebElement btnYes;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
@@ -171,39 +168,40 @@ public class AltaFijaMovilRegistroPage extends WebBase {
 
     public void clicSiAcepto() {
         esperaProgresiva(driver(), 7, 7, btnYes);
-        btnYes.click();
-        logInfo("Dando click en si acepto");
+        validateAndClickWithAndWithoutShadowRoot("Yes, accept", btnYes);
         UtilWeb.waitForSeconds(6);
     }
 
-    public void ingresarDNISupervisor(String numdoc) {
+    public void selectDocumentTypeSupervisor(String documentTypeSupervisor) {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, selectTipoDoc);
-        waitUntilElementIsClickable(selectTipoDoc, 30).click();
-        clickElementInAList(listDocumentos, "DNI");
+        esperaProgresiva(driver(), 5, 5, selectDocumentType);
+        selectDocumentType.click();
         UtilWeb.waitForSeconds(1);
-        WebElement rootInput = find().getElementByXPath("//app-modal-discapacitado//form//div/div/tdp-st-input-text");
-        typeInShadowRootCssSelector(numdoc, rootInput, "div input");
+        selectElementCSS("mat-option", documentTypeSupervisor);
+    }
+
+    public void typeDocumentNumberSupervisor(String documentNumberSupervisor) {
+        WebElement inputDocumentNumber = find().getElementByCss("tdp-st-input-text[formcontrolname='numDoc']");
+        validateAndTypeWithAndWithoutShadowRoot("document number", inputDocumentNumber, documentNumberSupervisor);
         UtilWeb.waitForSeconds(1);
     }
 
-    public void IngresarUsuarioSupervisor(String user) {
+    public void typeUserNameSupervisor(String user) {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(1);
-        WebElement inputSuperUser = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[1]");
-        typeInShadowRootCssSelector(user, inputSuperUser, "div input");
+        WebElement inputSuperUser = find().getElementByCss("tdp-st-input-text[formcontrolname=\"usuarioCitrixSupervisor\"], tdp-st-input-text[id=\"usuarioCitrixSupervisor\"]");
+        validateAndTypeWithAndWithoutShadowRoot("user supervisor", inputSuperUser, user);
     }
 
-    public void ingresarPasswordSupervisor(String password) {
+    public void typePasswordNameSupervisor(String password) {
         UtilWeb.waitForSeconds(1);
-        WebElement rootInputCorreo = find().getElementByXPath("(//app-modal-discapacitado//form//div/div/tdp-st-input-text)[2]");
-        typeInShadowRootCssSelector(password, rootInputCorreo, "div input");
+        WebElement inputPassword = find().getElementByCss("tdp-st-input-text[formcontrolname=\"passwordCitrixSupervisor\"],tdp-st-input-text[id=\"passwordCitrixSupervisor\"]");
+        validateAndTypeWithAndWithoutShadowRoot("password supervisor", inputPassword, password);
     }
 
     public void clicConfirmarUsuarioSupervisor() {
-        WebElement btnConfirmar = find().getElementByXPath("//button[@label='Confirmar']");
+        WebElement btnConfirmar = find().getElementByCss("app-modal-discapacitado [label=\"Confirmar\"].buttonConsultar,  app-modal-discapacitado  button[type=\"submit\"]");
         js().scrollElementTop(btnConfirmar);
-        UtilWeb.waitForSeconds(1);
         click(btnConfirmar);
         UtilWeb.waitForSeconds(2);
     }

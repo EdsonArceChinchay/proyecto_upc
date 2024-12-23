@@ -12,6 +12,8 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+
 @SpringBootTest(classes = WebAutomationApplication.class)
 public class AltaMovilSoloSimCallCenterStepDefinition {
 
@@ -46,7 +48,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         if (!customer.isNewCustomer()) {
             altaFijaTiendaStep.validarNombresCompletosCliente(data);
         } else {
-            System.out.println("Skip. Cliente Registrado en Dito");
+            logInfo("Skip. Cliente Registrado en Dito");
         }
     }
 
@@ -73,8 +75,8 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     }
 
     @Y("selecciono añadir equipos")
-    public void seleccionoAñadirEquipos() {
-        altaMovilSoloSimCallCenterStep.seleccionarEquipo();
+    public void clickOnAddDevice() {
+        altaMovilSoloSimCallCenterStep.clickOnAddDevice();
     }
 
     @Y("doy click en el boton seleccionar oferta")
@@ -84,12 +86,12 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
 
     @Y("presiona el boton anadir equipo")
     public void presionaElBotonAnadirEquipo() {
-        altaMovilSoloSimCallCenterStep.btnAnadirEquipo(2);
+        altaMovilSoloSimCallCenterStep.clickOnAddDevice(2);
     }
 
     @Y("presiona el boton anadir equipo del mismo plan")
     public void presionaElBotonAnadirEquipoDelMismoPlan() {
-        altaMovilSoloSimCallCenterStep.btnAnadirEquipo(1);
+        altaMovilSoloSimCallCenterStep.clickOnAddDevice(1);
     }
 
     @Y("selecciono boton mantener plan")

@@ -14,10 +14,10 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Modem + sva Linea Canal Retail
+Característica: AT-DT0_Alta Trio con sva Modem + sva Linea por canal Retail
 
   @AltaTrioSvaModemSvaLineaRetail
-  Esquema del escenario: Alta Trio con sva Modem + sva Linea Canal Retail
+  Esquema del escenario: Alta Trio con sva Modem + sva Linea por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -81,5 +81,5 @@ Característica: Alta Trio con sva Modem + sva Linea Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1065122148     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea              |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1065122148     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino  20 |

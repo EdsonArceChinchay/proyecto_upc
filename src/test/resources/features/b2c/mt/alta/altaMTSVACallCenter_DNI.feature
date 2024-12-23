@@ -94,4 +94,4 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío MT  | Trio     | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío MT  | Trio     | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

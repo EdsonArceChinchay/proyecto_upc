@@ -14,7 +14,7 @@
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DROP-G06 @RegresionLegacy @AltaSVA
-Característica: AT-DT108_Alta SVA a un DUO de un cliente con CE por Canal Tienda
+Característica: AT-DT108_Alta SVA a un DUO de un cliente con CE por canal Tienda
   Yo como asesor de Tienda
   Quiero agregar un bloque hbo a un cliente con parque duo a un usuario con CE
 

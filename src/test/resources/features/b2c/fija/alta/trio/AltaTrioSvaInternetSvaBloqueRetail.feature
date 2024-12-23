@@ -14,10 +14,10 @@
 ##FECMOD: 08/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con SVA Internet por Canal Retail
+Característica: AT-DT0_Alta Trio con SVA Internet por canal Retail
 
   @AltaTrioSvaInternetRetail
-  Esquema del escenario: Alta Trio con SVA Internet "<svaInternet>" por Canal Retail
+  Esquema del escenario: Alta Trio con SVA Internet "<svaInternet>" por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -81,5 +81,5 @@ Característica: Alta Trio con SVA Internet por Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 10000024488    | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 10000024488    | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |

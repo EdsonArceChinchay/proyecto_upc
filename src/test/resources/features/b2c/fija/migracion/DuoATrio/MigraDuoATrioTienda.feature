@@ -16,7 +16,7 @@
 Característica: AT-DT061_Migracion de Duo (Internet + Voz) a Trio por el canal Tienda
 
   @migracionDuoBb+VozATrioTienda
-  Esquema del escenario: Migracion de Duo (Internet + Voz) a Trio con documento CE sin biometria
+  Esquema del escenario: Migracion de Duo (Internet + Voz) a Trio a cliente con CE sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

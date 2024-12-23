@@ -18,7 +18,7 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront a cliente con CE por
 
 # Antes de usar se debe le debe de dar score upfront al cliente
   @AltaDuo_Upfront
-  Esquema del escenario: Alta Duo por tienda con Nuevo Cliente Extranjero
+  Esquema del escenario: Alta Duo por canal Tienda con Nuevo Cliente Extranjero
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -78,4 +78,4 @@ Característica: AT-DT006_Alta Duo (Voz + Internet) Upfront a cliente con CE por
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1002464816     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1002464816     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET |

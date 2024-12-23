@@ -14,10 +14,10 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP-G03 @AltaMovilEquipo
-Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Call Center
+Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por canal Call Center
 
   @AltaMovilPostPagoDeliveryCallCenter
-  Esquema del escenario: Alta movil Postpago por Call Center con CE sin productos asociados sin biometria
+  Esquema del escenario: Alta movil Postpago por canal Call Center con CE sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -90,5 +90,5 @@ Característica: AT-DT026_Alta movil Postpago + Equipo con Delivery por Canal Ca
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022420045     | 15           | 1501      | 150136   | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlanes                    | planMovil | timpoPermanencia | nombreEquipo             | tipoPago   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1022420045     | LIMA         | LIMA      | SAN MIGUEL | Calle Condesa de Chinchon 107 | Casa       | RV Plan Ilimitado Mi Movistar | Postpago  | Sin permanencia  | VIVO V21 NEGRO 5G C/PACK | Al Contado |

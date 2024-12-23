@@ -46,13 +46,13 @@ public class AltaMovilSoloSimCallCenterStep {
     }
 
     @ScreenShotBefore
-    public void btnAnadirEquipo(int num) {
-        page.caeqPorRetailPage().btnAnadirEquipo(num);
+    public void clickOnAddDevice(int num) {
+        page.caeqPorRetailPage().clickOnAddDevice(num);
     }
 
     @ScreenShotBefore
-    public void seleccionarEquipo() {
-        page.caeqPorRetailPage().seleccionarEquipo();
+    public void clickOnAddDevice() {
+        page.caeqPorRetailPage().clickOnAddDevice();
     }
 
     @ScreenShotBefore

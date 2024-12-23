@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @AltaFija @AltaTrio
-Característica: Alta Trio con sva Internet por canal Retail
+Característica: AT-DT0_Alta Trio con sva Internet por canal Retail
 
   @AltaTrioSvaInternetRetail_Carlos
   Esquema del escenario: Alta Trio con sva Internet CANAL Retail
@@ -81,5 +81,5 @@ Característica: Alta Trio con sva Internet por canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1000024488     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaInternet           | bloque |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1000024488     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | PACK ANTIVIRUS MCAFEE | Bloque |

@@ -4,7 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,36 +17,28 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class DevicesPage extends WebBase {
 
-    @FindBy(xpath = "//div[@class='option-boxes']//div")
-    protected List<WebElement> listPago;
+    @FindBy(css = "[class='option-boxes'] div")
+    protected List<WebElement> listTypeOfPayment;
 
     @FindBy(css = ".col-2 ._info")
-    protected WebElement caracteristicasContent;
+    protected WebElement featureContent;
 
-    @FindBy(css = "tdp-st-button[label='Seleccionar'] button")
+    @FindBy(css = "tdp-st-button[label='Seleccionar']")
     protected WebElement btnSelect;
 
     @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
     protected WebElement btnSelectDevice;
 
+    @FindBy(css = "tdp-st-input-text[formcontrolname=\"name\"]")
+    protected WebElement inputDevice;
+
+    @FindBy(css = ".btn-detail tdp-st-button")
+    protected WebElement btnSeeDetail;
+
     public void selectTypeOfPayment(String payment) {
-        boolean tipoPagoEncontrado = false;
-        esperaProgresiva(driver(), 5, 5, listPago.get(0));
-        js().scrollElementTop(listPago.get(0));
-        logInfo("Count type of payment", listPago.size());
-        for (WebElement elements : listPago) {
-            logInfo("Type of payment", elements.getText());
-            boolean isEquals = returnValueCompareWebElementTextAndString(elements, payment);
-            if (isEquals) {
-                logInfo("Payment type found: " + payment);
-                waitUntilElementIsClickable(elements, 20).click();
-                tipoPagoEncontrado = true;
-                break;
-            }
-        }
-        if (!tipoPagoEncontrado) {
-            logInfo("No payment type found", payment);
-        }
+        esperaProgresiva(driver(), 5, 5, listTypeOfPayment.get(0));
+        js().scrollElementTop(listTypeOfPayment.get(0));
+        selectElement(listTypeOfPayment, payment);
         UtilWeb.waitForSeconds(5);
     }
 
@@ -56,13 +47,12 @@ public class DevicesPage extends WebBase {
         js().scrollElementTop(find().getElementByCss("a.back-ofer"));
         WebElement listElementPLan = find().getElementByCss(".comboPermanecia tdp-st-select");
         esperaProgresiva(driver(), 6, 8, listElementPLan);
-        selectElementCSS(timePermanency, listElementPLan, ".comboPermanecia tdp-st-select li");
+        selectElementCSSWithAndWithoutShadowRoot("time permanency", listElementPLan, timePermanency);
     }
 
     public void typeDeviceAndSearch(String device) {
-        WebElement inputDevice = find().getElementByCss("div.search-input-content > tdp-st-input-text input");
-        validateAndType("device", inputDevice, device);
-        inputDevice.sendKeys(Keys.ENTER);
+        validateAndTypeWithAndWithoutShadowRoot("search by device", inputDevice, device);
+        enterWithAndWithoutShadowRoot("search by device", inputDevice);
     }
 
     public void clickButtonSelect() {
@@ -99,14 +89,12 @@ public class DevicesPage extends WebBase {
     }
 
     public void clickButtonSeeDetail() {
-        String btnVerOfertas = ".btn-detail tdp-st-button button";
-        WebElement element = js().getWebElement(btnVerOfertas);
-        element.click();
+        validateAndClickWithAndWithoutShadowRoot("see detail", btnSeeDetail);
     }
 
     public void validateFeatures() {
-        Assertions.assertFalse(caracteristicasContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
-        UtilWeb.waitForSeconds(1);
+        UtilWeb.waitForSeconds(2);
+        Assertions.assertFalse(featureContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
     }
 
 }

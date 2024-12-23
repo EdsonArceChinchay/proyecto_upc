@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
-Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea Call Center
+Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea por canal Call Center
 
   @AltaDuoSvaRepetidorSvaLineaCallCenter
   Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center
@@ -88,4 +88,4 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea C
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

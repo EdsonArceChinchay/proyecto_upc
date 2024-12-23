@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
-Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE en canal Call Center
+Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal Call Center
 
   @AltaDuoCC @MVP15 @Global
-  Esquema del escenario: Alta de dúo internet con CEX, en canal call center, web front end, flujo no biométrico
+  Esquema del escenario: Alta de dúo internet con CEX, por canal Call Center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -82,4 +82,4 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE en canal Ca
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1000000245     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1000000245     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

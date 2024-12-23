@@ -20,8 +20,8 @@ public class AppointmentStepDefinition {
     }
 
     @Y("ingreso datos del contacto en la pantalla agendamiento {string}")
-    public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contacto) {
-        appointmentStep.ingresarContacto(contacto);
+    public void ingresoDatosDelContactoEnLaPantallaAgendamiento(String contact) {
+        appointmentStep.typeContactNumber(contact);
     }
 
     @Y("valido que se presente la pantalla agendamiento")
@@ -32,7 +32,7 @@ public class AppointmentStepDefinition {
 
     @Y("ingreso telefono de contacto")
     public void ingresoTelefonoDeContacto() {
-        appointmentStep.ingresarDatosAgendamiento();
+        appointmentStep.typeContactNumber(null);
     }
 
     @Y("presiono el boton Confirmar agendamiento")
@@ -42,7 +42,7 @@ public class AppointmentStepDefinition {
 
     @Y("ingreso los datos de agendamiento")
     public void ingreso_los_datos_de_agendamiento() {
-        appointmentStep.ingresarDatosAgendamiento();
+        appointmentStep.typeContactNumber(null);
     }
 
     @Y("presiono el boton confirmar agendamiento")

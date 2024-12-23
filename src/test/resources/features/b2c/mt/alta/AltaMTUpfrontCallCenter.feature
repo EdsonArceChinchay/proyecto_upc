@@ -88,7 +88,7 @@ Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
 
 
 

@@ -14,10 +14,10 @@
 ##FECMOD: 25/12/2023
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G01
-Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Tienda
+Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Tienda
 
   @CompletaFijaTienda
-  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE en canal Tienda
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -78,4 +78,4 @@ Característica: AT-DT0_Completa Fija MT (Planta Movil + Alta Fija) a cliente co
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType        | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | nombrePlan                                | celularExistente |
-      | usuario interno | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 221011227      | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |
+      | usuario interno | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 221011227      | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío HD 100 Mbps RA + Ilimitado 135 Gb RA | 995396095        |

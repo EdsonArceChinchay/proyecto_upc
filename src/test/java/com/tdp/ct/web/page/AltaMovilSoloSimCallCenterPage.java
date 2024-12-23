@@ -23,11 +23,10 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected List<WebElement> listaPlanMovil;
     @FindBy(xpath = "//tdp-st-button[@label='Seleccionar Oferta']")
     protected WebElement botonSeleccionarOferta;
-    @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
+    @FindBy(css = "img[alt='right-arrow']")
     protected WebElement btnRight;
-    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
+    @FindBy(css = "img[alt='left-arrow']")
     protected WebElement btnLeft;
-
     @FindBy(xpath = "//h4[contains(text(), 'Desea un plan Prepago o Postpago')]")
     protected WebElement preguntaTipoPlan;
     @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")

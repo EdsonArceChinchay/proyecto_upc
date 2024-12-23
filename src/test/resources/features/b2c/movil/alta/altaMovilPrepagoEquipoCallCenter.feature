@@ -92,4 +92,4 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo a cliente con CE por can
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464781     | PREPAGO   | Preplan    | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464781     | PREPAGO   | Preplan    | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

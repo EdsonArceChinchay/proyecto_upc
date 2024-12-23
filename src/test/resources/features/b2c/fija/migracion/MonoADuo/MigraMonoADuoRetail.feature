@@ -14,10 +14,10 @@
 ##FECMOD: 06/05/2024
 
  @BERSERKERS @DoneDevOps  @RegresionLegacy
- Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) con documento CE por el Canal Retail
+ Característica: Migracion de MONO (INTERNET) a DUO (INTERNET + VOZ) a cliente con CE por el canal Retail
 
    @MigracionMonoADuoRetail
-   Esquema del escenario: Migracion de Mono Internet a DUO con documento CE por el Canal Retail
+   Esquema del escenario: Migracion de Mono Internet a DUO a cliente con CE por el canal Retail
      Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<userType>"

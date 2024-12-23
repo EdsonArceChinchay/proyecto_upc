@@ -33,7 +33,7 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero   |
-      | KARINA  | PEREZ ZAPATA | femenino |
+      | KARINA  | PEREZ ZAPATA | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -82,4 +82,4 @@ Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName  | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Duo MT   | Duo BA TV | correo@gmail.com |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 0674323444     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Duo MT   | Duo BA TV | correo@gmail.com |

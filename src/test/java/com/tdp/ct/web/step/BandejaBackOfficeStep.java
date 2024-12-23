@@ -12,8 +12,8 @@ public class BandejaBackOfficeStep {
     private StepPages page;
 
     @ScreenShotAfter
-    public void typeDocument(String documento) {
-        page.bandejaBackOfficePage().typeDocument(documento);
+    public void typeDocument(String document) {
+        page.bandejaBackOfficePage().typeDocument(document);
         page.bandejaBackOfficePage().clickButtonSearch();
     }
 

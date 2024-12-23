@@ -14,10 +14,10 @@
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28  @DROP-G01
-Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente con CE en canal Call Center
+Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente con CE por canal Call Center
 
   @CompletaMovilCC
-  Esquema del escenario: Completa Planta Fija Alta Movil con documento CE
+  Esquema del escenario: Completa Planta Fija Alta Movil a cliente con CE
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

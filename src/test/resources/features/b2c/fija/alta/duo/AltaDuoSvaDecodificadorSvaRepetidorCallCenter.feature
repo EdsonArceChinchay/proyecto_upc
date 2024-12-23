@@ -86,5 +86,5 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia             | tipoPlan | nombrePlan              | decodificador      | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET FLEX HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia             | tipoPlan | nombrePlan              | decodificador      | svaRepetidor              |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET FLEX HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |

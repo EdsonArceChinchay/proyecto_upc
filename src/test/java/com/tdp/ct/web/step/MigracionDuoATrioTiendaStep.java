@@ -7,6 +7,8 @@ import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import static com.tdp.ct.web.utils.WebUtils.scrollUp;
+
 @ScreenShot
 @Component
 public class MigracionDuoATrioTiendaStep {
@@ -22,8 +24,8 @@ public class MigracionDuoATrioTiendaStep {
         page.migracionDuoATrioTiendaPage().seleccionoElTipoDePlanHogar(planHogar);
     }
 
-    public void scrollUp() {
-        page.migracionDuoATrioTiendaPage().scrollUp();
+    public void scrollUP() {
+        scrollUp();
     }
 
     public void clickButton(String nameButton) {

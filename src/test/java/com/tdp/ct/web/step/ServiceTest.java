@@ -24,10 +24,9 @@ import static com.tdp.ct.web.utils.LogUtils.logSevere;
 public class ServiceTest {
 
     private static final String URL_AKS = "https://aks-berserkers-ingress-cert.eastus2.cloudapp.azure.com/";
-
+    private static String consultation = "";
     private final ApiClient apiClient;
     private final HeaderService headerService;
-    private static String consultation = "";
 
     @Autowired
     public ServiceTest(ApiClient apiClient, SSLConfigurator sslConfigurator, HeaderService headerService) {

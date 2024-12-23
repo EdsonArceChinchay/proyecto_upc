@@ -81,4 +81,4 @@ Característica: AT-DT094_Alta trio con direccion pangea
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 166268244      | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 166268244      | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

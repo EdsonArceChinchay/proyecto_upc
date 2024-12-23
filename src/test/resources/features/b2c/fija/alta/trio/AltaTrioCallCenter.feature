@@ -14,11 +14,11 @@
 ##FECMOD: 09/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G01 @AltaTrio
-Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
-  Quiero realizar una alta fija por call center
+Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
+  Quiero realizar una alta fija por canal Call Center
 
   @AltaTrioPorCallCenter
-  Esquema del escenario: Alta Trio a cliente con CE por Canal Call Center
+  Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -38,8 +38,8 @@ Característica: AT-DT001_Alta Trio a cliente con CE por Canal Call Center
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
     Y        selecciono el distrito donde sera la instalacion "150136"
     Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
     Y        ingreso la referencia de la direccion "casa naranja"

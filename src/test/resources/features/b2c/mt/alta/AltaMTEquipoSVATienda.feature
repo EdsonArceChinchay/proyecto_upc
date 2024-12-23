@@ -90,4 +90,4 @@ Característica: AT-DT0 _Alta MT (Alta Fija + Alta Movil) + Equipo Movil + SVA a
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio HD  | correo@gmail.com |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 991000232      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio HD  | correo@gmail.com |

@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.builder.AgentBuilder;
 import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
@@ -15,6 +16,9 @@ public class HomeStep {
 
     @Autowired
     protected StepPages page;
+
+    @Autowired
+    protected AgentBuilder agentBuilder;
 
     @ScreenShotAfter
     public void selectDocumentType(String type) {
@@ -119,17 +123,13 @@ public class HomeStep {
     }
 
     public boolean isRetention() {
-        return page.homePage().isRetention();
-    }
-
-    public void modifyGroupAgent(String group, Agent agent) {
-        page.homePage().modifyGroupAgent(group,agent);
+        return AgentBuilder.isRetention();
     }
 
     public void initializeAgent(Agent agent) {
-        page.homePage().initializeAgent(agent);
-        modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
-        agent.setRetention(isRetention());
+        AgentBuilder.initializeAgent(agent);
+        agentBuilder.modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
+        agent.setRetention(AgentBuilder.isRetention());
     }
 
     public String getChannelType() {

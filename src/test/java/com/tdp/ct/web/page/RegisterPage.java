@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,19 +14,20 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
+@Slf4j
 public class RegisterPage extends WebBase {
 
-    @FindBy(css = "[formcontrolname='medioPago']")
-    protected WebElement selectMethodPayment;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='mail'] input")
-    protected WebElement inputEmail;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='confirmEmail'] input")
-    protected WebElement inputConfirmEmail;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='callID'] input")
-    protected WebElement inputCallID;
     //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
-    protected String btnCustomerData =
+    protected final String btnCustomerData =
             "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
+    @FindBy(css = "tdp-st-select[formcontrolname='medioPago']")
+    protected WebElement selectMethodPayment;
+    @FindBy(css = "tdp-st-input-text[formcontrolname='mail']")
+    protected WebElement inputEmail;
+    @FindBy(css = "tdp-st-input-text[formcontrolname='confirmEmail']")
+    protected WebElement inputConfirmEmail;
+    @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
+    protected WebElement inputCallID;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')] | //button//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")
@@ -40,9 +42,9 @@ public class RegisterPage extends WebBase {
     protected WebElement selectProvince;
     @FindBy(css = "tdp-st-select[formcontrolname='district']")
     protected WebElement selectDistrict;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='fechaNacimiento']")
     protected WebElement inputDateOfBirth;
-    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion'] textarea")
+    @FindBy(css = "tdp-st-textarea[formcontrolname='direccion']")
     protected WebElement inputAddress;
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
@@ -52,6 +54,8 @@ public class RegisterPage extends WebBase {
     protected WebElement selectPage;
     @FindBy(xpath = "//*[contains(text(),'La validación de identidad se completará')]")
     protected WebElement textIdentityValidationError;
+    @FindBy(css = "tdp-st-modal .body_bio .font_title_validation")
+    protected WebElement titleValidation;
     @FindBy(xpath = "//mat-dialog-actions//*[contains(text(),'Confirmar')]")
     protected WebElement btnConfirmModal;
     @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
@@ -67,20 +71,20 @@ public class RegisterPage extends WebBase {
 
     public void selectMethodPayment(String methodPayment) {
         esperaProgresiva(driver(), 6, 6, selectMethodPayment);
-        selectElementCSS(methodPayment, selectMethodPayment, "[formcontrolname='medioPago'] li");
+        selectElementCSSWithAndWithoutShadowRoot("method payment", selectMethodPayment, methodPayment);
     }
 
     public void typeEmail(String email) {
-        esperaProgresiva(driver(), 6, 6, inputEmail);
-        validateAndType("email", inputEmail, email);
+        esperaProgresiva(driver(), 6, 7, inputEmail);
+        validateAndTypeWithAndWithoutShadowRoot("email", inputEmail, email);
     }
 
     public void typeConfirmEmail(String email) {
-        validateAndType("confirm email", inputConfirmEmail, email);
+        validateAndTypeWithAndWithoutShadowRoot("confirm email", inputConfirmEmail, email);
     }
 
     public void typeIdCall(String idCall) {
-        validateAndType("id call", inputCallID, idCall);
+        validateAndTypeWithAndWithoutShadowRoot("id call", inputCallID, idCall);
     }
 
     public void waitButtonCustomerData() {
@@ -96,32 +100,50 @@ public class RegisterPage extends WebBase {
 
     public void typeDateOfBirth(String dateOfBirth) {
         js().scrollElementTop(inputDateOfBirth);
-        validateAndType("date of birth", inputDateOfBirth, dateOfBirth);
+        validateAndTypeWithAndWithoutShadowRoot("date of birth", inputDateOfBirth, dateOfBirth);
     }
 
     public void selectMaritalStatus(String maritalStatus) {
-        selectElementCSS(maritalStatus, js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"]"), "tdp-st-select[formcontrolname='estadoCivil'] li");
+        selectElementCSSWithAndWithoutShadowRoot("marital status", selectMaritalStatus, maritalStatus);
+        try {
+            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"] ul > li").isDisplayed()) {
+                selectElementCSS("tdp-st-select[formcontrolname='estadoCivil'] ul > li", maritalStatus);
+            }
+        } catch (Exception e) {
+            logSevere("ERROR", e.getMessage());
+        }
+    }
+
+    public void validateMaterialStatus(String maritalStatus) {
+        try {
+            if (js().getWebElement("tdp-st-select[formcontrolname=\"estadoCivil\"].ng-invalid").isDisplayed()) {
+                selectMaritalStatus(maritalStatus);
+            }
+        } catch (Exception e) {
+            logSevere("ERROR", e.getMessage());
+        }
     }
 
     public void selectNationality(String nationality) {
-        selectElementCSS(nationality, selectNationality, "tdp-st-select[formcontrolname='nacionalidad'] li");
+        selectElementCSSWithAndWithoutShadowRoot("nationality", selectNationality, nationality);
+        UtilWeb.waitForSeconds(2);
     }
 
     public void selectDepartment(String department) {
-        selectElementCSS(department, selectDepartment, "tdp-st-select[formcontrolname='department'] li");
+        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
     }
 
     public void selectProvince(String province) {
-        selectElementCSS(province, selectProvince, "tdp-st-select[formcontrolname='province'] li");
+        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
     }
 
     public void selectDistrict(String district) {
-        selectElementCSS(district, selectDistrict, "tdp-st-select[formcontrolname='district'] li");
+        selectElementCSSWithAndWithoutShadowRoot("district", selectDistrict, district);
     }
 
     public void typeAddress(String address) {
         js().scrollElementTop(inputAddress);
-        validateAndType("address", inputAddress, address);
+        validateAndTypeWithAndWithoutShadowRoot("address", inputAddress, address);
     }
 
     public void clickButtonConfirm() {
@@ -131,7 +153,7 @@ public class RegisterPage extends WebBase {
     }
 
     public void selectTipoDePago(String type) {
-        selectElementCSS(type, selectPage, "tdp-st-select[formcontrolname='typePage'] li");
+        selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, type);
     }
 
     public void clickButtonContinue() {
@@ -162,15 +184,19 @@ public class RegisterPage extends WebBase {
 
     public boolean hasIdentityValidationError() {
         boolean isError = false;
-        try {
-            UtilWeb.waitForSeconds(120);
-            if (textIdentityValidationError.isDisplayed()) {
-                logInfo("Error Validate Identity");
-                isError = true;
+        UtilWeb.waitForSeconds(10);
+        if (!validateIsDisplayed(titleValidation)) {
+            try {
+                UtilWeb.waitForSeconds(30);
+                if (textIdentityValidationError.isDisplayed()) {
+                    logInfo("Error Validate Identity");
+                    isError = true;
+                }
+            } catch (Exception e) {
+                logSevere("Title error no found" + e.getMessage());
             }
-        } catch (Exception e) {
-            logSevere("Element no found" + e.getMessage());
-
+        } else {
+            logSevere("Title error no found");
         }
         return isError;
     }
@@ -185,5 +211,4 @@ public class RegisterPage extends WebBase {
         waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
     }
-
 }

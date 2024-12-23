@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija @AltaMono
-Característica: AT-DT _Alta Mono TV a cliente con CE en Canal Call Center
+Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
 
   @AltaMonoTVCC
-  Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE en Canal Call Center
+  Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -69,16 +69,16 @@ Característica: AT-DT _Alta Mono TV a cliente con CE en Canal Call Center
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
-#    Dado     regreso a la pagina de inicio
-#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        me dirijo a la bandeja de Back Office
-#    Y        busco por "<documentNumber>"
-#    Y        selecciono la solicitud
-#    Y        cargo el audio en la web
-#    Y        apruebo la solicitud
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "<documentNumber>"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
 
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1001028016     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1001028016     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
 

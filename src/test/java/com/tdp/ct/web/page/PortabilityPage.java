@@ -4,8 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,12 +13,12 @@ import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyJsonValue;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.SessionStorage.*;
-import static com.tdp.ct.web.utils.WebUtils.selectElementCSS;
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.selectElementCSSWithAndWithoutShadowRoot;
+import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 
 public class PortabilityPage extends WebBase {
 
-    @FindBy(xpath = "//*[@class='buttonG' and contains(text(),'Consultar')]")
+    @FindBy(css = "[type=\"submit\"].button-g, [type=\"submit\"].buttonG")
     protected WebElement btnConsultar;
 
     @FindBy(xpath = "//div[contains(text(),'Portabilidad')]")
@@ -33,41 +31,38 @@ public class PortabilityPage extends WebBase {
     protected WebElement btnCodePorta;
 
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Confirmar')]")
-    protected WebElement btnConfirmar;
+    protected WebElement btnConfirm;
 
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
-    protected WebElement btnContinuar;
+    protected WebElement btnContinue;
 
-    @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono']")
     protected WebElement inputPhoneNumber;
 
-    @FindBy(css ="tdp-st-select[formcontrolname='tipoLinea']")
-    protected  WebElement selectLineType;
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoLinea']")
+    protected WebElement selectLineType;
 
-    @FindBy(css ="tdp-st-select[formcontrolname='tipoOperador']")
-    protected  WebElement selectOperatorType;
+    @FindBy(css = "tdp-st-select[formcontrolname='tipoOperador']")
+    protected WebElement selectOperatorType;
 
     public void clickBotonPortabilidad() {
         esperaProgresiva(driver(), 5, 6, btnPortabilidad);
         js().scrollElementTop(btnPortabilidad);
         click(btnPortabilidad);
-        UtilWeb.waitForSeconds(5);
     }
 
-    public void ingresarNumeroPortar(String phoneNumber) {
-        UtilWeb.waitForSeconds(5);
-        validateAndType("mobile number",inputPhoneNumber,phoneNumber);
+    public void typePhoneNumber(String phoneNumber) {
+        waitUntilElementIsClickable(inputPhoneNumber, 10);
+        validateAndTypeWithAndWithoutShadowRoot("mobile number", inputPhoneNumber, phoneNumber);
     }
 
-    public void escogerTipoLinea(String plan) {
-        UtilWeb.waitForSeconds(4);
-        selectElementCSS(plan,selectLineType,"tdp-st-select[formcontrolname='tipoLinea'] li");
+    public void selectLineType(String plan) {
+        selectElementCSSWithAndWithoutShadowRoot("line type", selectLineType, plan);
     }
 
-    public void esogerTipoOperador(String operator) {
-        UtilWeb.waitForSeconds(4);
-        selectElementCSS(operator,selectOperatorType,"tdp-st-select[formcontrolname='tipoOperador'] li");
-
+    public void selectOperatorType(String operator) {
+        UtilWeb.waitForSeconds(2);
+        selectElementCSSWithAndWithoutShadowRoot("operator", selectOperatorType, operator);
     }
 
     public void clickBotonConsultar() {
@@ -91,11 +86,11 @@ public class PortabilityPage extends WebBase {
         String newValue = "A";
 
         String jsonStr = getItemSessionStorage(driver(), primaryKey);
-        logInfo( "Before modified localStorage" + jsonStr);
+        logInfo("Before modified localStorage" + jsonStr);
         JSONObject jsonObject = modifyJsonValue(jsonStr, key, newValue);
         setValueItemSessionStorage(driver(), primaryKey, secondaryKey, jsonObject);
         jsonStr = getItemSessionStorage(driver(), primaryKey);
-        logInfo( "After modified localStorage" + jsonStr);
+        logInfo("After modified localStorage" + jsonStr);
     }
 
     public String getValuePortaDirecta() {
@@ -120,20 +115,20 @@ public class PortabilityPage extends WebBase {
     }
 
     public void clickButtonConfirmar() {
-        esperaProgresiva(driver(), 3, 5, btnConfirmar);
-        js().scrollElementTop(btnConfirmar);
-        click(btnConfirmar, 2);
+        esperaProgresiva(driver(), 3, 5, btnConfirm);
+        js().scrollElementTop(btnConfirm);
+        click(btnConfirm, 2);
         UtilWeb.waitForSeconds(20);
     }
 
     public void clickButtonContinuar() {
-        esperaProgresiva(driver(), 3, 5, btnContinuar);
-        click(btnContinuar, 2);
+        esperaProgresiva(driver(), 3, 5, btnContinue);
+        click(btnContinue, 2);
     }
 
     public void inputToken(String token) {
         String valueToken = token.trim().toUpperCase();
-        logInfo( "Get token: " + valueToken);
+        logInfo("Get token: " + valueToken);
         List<WebElement> inputToken = find().getElementsByXPath("//input[contains(@class,'entrada')]");
         esperaProgresiva(driver(), 3, 5, inputToken.get(0));
         js().scrollElementTop(inputToken.get(0));

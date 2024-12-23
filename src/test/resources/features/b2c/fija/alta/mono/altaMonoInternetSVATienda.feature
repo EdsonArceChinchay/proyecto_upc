@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G05 @AltaFija @AltaMono
-Característica: AT-DT008_Alta Fija Internet + SVA a cliente con CE por canal tienda
+Característica: AT-DT008_Alta Fija Internet + SVA a cliente con CE por canal Tienda
 
   @AltaFijaTiendaSVA
-  Esquema del escenario: Alta fija por tienda con CE sin productos asociados sin biometria
+  Esquema del escenario: Alta fija por canal Tienda con CE sin productos asociados sin biometria
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -82,4 +82,4 @@ Característica: AT-DT008_Alta Fija Internet + SVA a cliente con CE por canal ti
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000494     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000494     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE |

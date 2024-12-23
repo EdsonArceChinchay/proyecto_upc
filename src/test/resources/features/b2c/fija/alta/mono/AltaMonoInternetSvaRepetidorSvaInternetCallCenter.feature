@@ -14,7 +14,7 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @DROP @AltaFija @AltaMono
-Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a cliente con CE Canal Call Center
+Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a cliente con CE canal Call Center
 
   @AltaMonoInternetSvaRepetidorSvaInternetCallCenter
   Esquema del escenario: Alta Mono Internet Sva Repetidor + Sva Internet
@@ -86,4 +86,4 @@ Característica: AT-DT012_Alta Mono Internet Sva Repetidor + Sva Internet a clie
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan           | svaInternet           | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1123123149     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1123123149     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | INTERNET MOVISTAR RA | PACK ANTIVIRUS MCAFEE | Repetidor WIFI PLUS Venta |

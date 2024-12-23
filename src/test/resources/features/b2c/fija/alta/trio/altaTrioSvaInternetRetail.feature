@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps @Sanity28
-Característica: Alta Trio + SVA a cliente con CE por Canal Retail
+Característica: AT-DT0_Alta Trio + SVA a cliente con CE por canal Retail
 
   @AltaTrioSVARetail
   Esquema del escenario: Alta Trio SVA canal Retail
@@ -81,4 +81,4 @@ Característica: Alta Trio + SVA a cliente con CE por Canal Retail
 
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                          | svaInternet                 |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042411002     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | Seguridad Total Residencial |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042411002     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Trío     | TRÍO MOVISTAR VOZ INTERNET ESTANDAR | Seguridad Total Residencial |

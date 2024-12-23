@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tdp.ct.web.utils.WebUtils.validateAndType;
+import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 
 public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
@@ -35,17 +35,17 @@ public class AltaTrioMTconUpfrontTiendaPage extends WebBase {
 
     public void typeSupervisorDocumentNumber(String document) {
         WebElement inputDocumentNumber = find().getElementByCss("#doc");
-        validateAndType("document number", inputDocumentNumber, document);
+        validateAndTypeWithAndWithoutShadowRoot("document number", inputDocumentNumber, document);
     }
 
     public void typeSupervisorUser(String user) {
         WebElement inputUser = find().getElementByCss("#usuarioCitrixSupervisor");
-        validateAndType("user", inputUser, user);
+        validateAndTypeWithAndWithoutShadowRoot("user", inputUser, user);
     }
 
     public void typeSupervisorPassword(String password) {
         WebElement inputPassword = find().getElementByCss("#passwordCitrixSupervisor");
-        validateAndType("password", inputPassword, password);
+        validateAndTypeWithAndWithoutShadowRoot("password", inputPassword, password);
     }
 
 }

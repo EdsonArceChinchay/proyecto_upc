@@ -14,7 +14,7 @@
 ##FECMOD: 25/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaTrio
-Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
+Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
 
   @AltaTrioSvaBloqueSvaInternetSvaLineaCallCenter
   Esquema del escenario: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
@@ -87,5 +87,5 @@ Característica: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea             | bloque         | svaInternet           |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10000486488    | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea             | bloque         | svaInternet           |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10000486488    | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |

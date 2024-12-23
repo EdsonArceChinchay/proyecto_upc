@@ -14,10 +14,10 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en canal Call Center
+Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI por canal Call Center
 
   @PortaNormalPreCC
-  Esquema del escenario: Portabilidad Normal Solo Chip Prepago a cliente con DNI en canal Call Center
+  Esquema del escenario: Portabilidad Normal Solo Chip Prepago a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -49,9 +49,9 @@ Característica: AT-DT106_Porta Normal Solo Chip Prepago a cliente con DNI en ca
     Y        selecciono un plan movil "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "INKAFARMA"
     Y        presiono el boton Consultar ubicacion

@@ -14,10 +14,10 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaMono
-Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE en Canal Retail
+Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE por canal Retail
 
   @AltaMonoTvSvaRetail
-  Esquema del escenario: Alta Mono TV + SVA a cliente con CE en Canal Retail
+  Esquema del escenario: Alta Mono TV + SVA a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -80,5 +80,5 @@ Característica: AT-DT092_Alta Mono TV + SVA a cliente con CE en Canal Retail
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1000002848     | 15           | 1501      | 150136   | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | bloque |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan | bloque |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1000002848     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Mono     | TV         | bloque |

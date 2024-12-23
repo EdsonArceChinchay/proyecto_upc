@@ -14,7 +14,7 @@ public class MaterialRowMapper implements RowMapper<Material> {
         material.setIdMaterial(rs.getInt("idMaterial"));
         material.setNameMaterial(rs.getString("nameMaterial"));
         material.setSerialNumber(rs.getString("serialNumber"));
-        material.setStatus(rs.getString("status").equals("1")? "DISPONIBLE" : "ASIGNADO" );
+        material.setStatus(rs.getString("status").equals("1") ? "DISPONIBLE" : "ASIGNADO");
         material.setWarehouse(rs.getString("warehouse"));
         material.setEnvironment(rs.getString("environment"));
         material.setSapId(rs.getString("sapID"));

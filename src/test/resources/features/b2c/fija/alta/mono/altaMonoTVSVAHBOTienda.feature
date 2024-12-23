@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROPG3 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE en Canal Tienda
+Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE por canal Tienda
 
   @AltaFijaTiendaHBO
-  Esquema del escenario: Alta fija mas SVA HBO a cliente con CE en Canal Tienda
+  Esquema del escenario: Alta fija mas SVA HBO a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -80,6 +80,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE en Can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                     | referencia | tipoPlan | nombrePlan |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464815     | 15           | 1501      | 150136   | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlan | nombrePlan |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
 

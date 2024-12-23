@@ -96,4 +96,4 @@ Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con
 
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1002569949     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | CASA       | Trío MT  | Trio HD  |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1002569949     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | CASA       | Trío MT  | Trio HD  |

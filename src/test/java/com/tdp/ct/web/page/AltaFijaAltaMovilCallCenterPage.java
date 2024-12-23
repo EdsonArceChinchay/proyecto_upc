@@ -4,7 +4,6 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,6 +12,7 @@ import java.util.List;
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
+import static com.tdp.ct.web.utils.WebUtils.scrollUp;
 
 public class AltaFijaAltaMovilCallCenterPage extends WebBase {
 
@@ -28,9 +28,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected WebElement elementoSeleccionar;
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Ir a movistar total')]")
     protected WebElement btnIrAMovistar;
-    @FindBy(xpath = "//img[@src='assets/images/right-arrow.png']")
+    @FindBy(css = "img[alt='right-arrow']")
     protected WebElement btnRight;
-    @FindBy(xpath = "//img[@src='assets/images/left-arrow.png']")
+    @FindBy(css = "img[alt='left-arrow']")
     protected WebElement btnLeft;
     @FindBy(xpath = "//app-card-plan/div[1]/div/div[1]/div[3]/img")
     protected WebElement BtnOpciones;
@@ -39,22 +39,17 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
 
-    public void scrollUp() {
+    public void scrollUP() {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(10);//10
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
-        revisarModalError(driver());
+        scrollUp();
     }
 
     public void oferta() {
         revisarModalError(driver());
         esperaProgresiva(driver(), 7, 8, oferta);
         revisarModalError(driver());
-        JavascriptExecutor js = (JavascriptExecutor) driver();
-        js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
-        js.executeScript("window.scrollTo(document.body.scrollHeight,150)");
+        scrollUp();
         click(oferta);
         UtilWeb.waitForSeconds(2);
     }
@@ -64,7 +59,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, BtnOpciones);
         revisarModalError(driver());
         js().scrollElementTop(BtnOpciones);
-        System.out.println("BtonOpciones clic");
+        logInfo("BtonOpciones clic");
         BtnOpciones.click();
     }
 
@@ -90,9 +85,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             if (btnRight != null) {
                 esperaProgresiva(driver(), 4, 3, btnRight);
                 btnRight.click();
-                System.out.println("dio click right while");
+                logInfo("dio click right while");
             } else {
-                System.out.println("El elemento btnRight no existe o es nulo.");
+                logInfo("El elemento btnRight no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnRight, 5);
@@ -109,22 +104,21 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         while (elementoExistenteleft && contador < contadorMax) {
             if (btnLeft != null) {
                 waitUntilElementIsClickable(btnLeft, 8).click();
-
-                System.out.println("dio click left while");
+                logInfo("dio click left while");
             } else {
-                System.out.println("El elemento btnleft no existe o es nulo.");
+                logInfo("El elemento btnleft no existe o es nulo.");
             }
             try {
                 waitUntilElementIsVisible(btnLeft, 5);
                 logInfo("Se muestra el btnLeft");
             } catch (Exception e) {
-                System.out.println("El elemento btnLeft ya no fue encontrado: ");
+                logInfo("El elemento btnLeft ya no fue encontrado: ");
             }
             elementoExistenteleft = !driver().findElements(By.xpath("//img[@src='assets/images/left-arrow.png']")).isEmpty();
             contador++;
         }
 
-        System.out.println("Ofertas : " + listaOfertas.size());
+        logInfo("Ofertas : " + listaOfertas.size());
         int cont = listaOfertas.size() - 1;
         boolean encontroElemento = false;
 
@@ -155,7 +149,7 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
             }
 
             if (!encontroElemento && (i == cont || listaOfertas.get(i + 1).getText().trim().isEmpty())) {
-                System.out.println("No encontro elemento en la lista");
+                logInfo("No encontro elemento en la lista");
                 UtilWeb.waitForSeconds(2);
                 click(listaOfertas.get(i));
                 break;

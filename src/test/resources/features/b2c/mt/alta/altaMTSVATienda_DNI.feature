@@ -62,8 +62,6 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |
@@ -84,6 +82,6 @@ Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | planType | planName | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | 15           | 1501      | 150116   | JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
 
 

@@ -12,8 +12,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
@@ -23,7 +21,11 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 public class ParkPage extends WebBase {
 
     // @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
-    protected String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
+    protected final String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
+    //@FindBy(css = "div[class='show-offerts']")
+    protected final String btnShowOffers = "div[class='show-offerts']";
+    protected final String cartillaHogar = "//app-card-line[1]";
+    protected final String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
@@ -36,20 +38,17 @@ public class ParkPage extends WebBase {
     protected WebElement btnPlanMtExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
-    //@FindBy(css = "div[class='show-offerts']")
-    protected String btnShowOffers = "div[class='show-offerts']";
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
     protected WebElement btnCargango;
-    protected String cartillaHogar = "//app-card-line[1]";
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
     @FindBy(xpath = "//button[@class='update_button']")
     protected WebElement btnActualizar;
-    @FindBy(xpath = "//div[@class='detailHogar']")
+    @FindBy(css = "div[class='detailHogar']")
     protected WebElement btnVerDetalle;
-    @FindBy(xpath = "//div[@class='update_ruc']")
+    @FindBy(css = "div[class='update_ruc']")
     protected WebElement btnActualizarRuc;
     @FindBy(xpath = "//label[contains(text(),' El RUC se ha actualizado de manera correcta. ')]")
     protected WebElement mensaje;
@@ -61,7 +60,6 @@ public class ParkPage extends WebBase {
     protected WebElement btnConfirmAddress;
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
-    protected String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
@@ -74,13 +72,13 @@ public class ParkPage extends WebBase {
     protected WebElement btnOrder;
     @FindBy(xpath = "//*[contains(@label,'Validar Stock') or contains(text(),'Validar Stock') or @class='buttonConfirmar']")
     protected WebElement btnValidateStock;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='simcard'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='simcard']")
     protected WebElement inputSinCard;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='equipo'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='equipo']")
     protected WebElement inputImei;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroCaja'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroCaja']")
     protected WebElement inputBoxNumber;
-    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroTicket'] input")
+    @FindBy(css = "tdp-st-input-text[formcontrolname='numeroTicket'] ")
     protected WebElement inputTicketNumber;
     @FindBy(xpath = "//button[contains(text(),'Cambio de chip')]")
     protected WebElement btnCambiodeChip;
@@ -94,9 +92,9 @@ public class ParkPage extends WebBase {
     protected WebElement cierrePopUpError;
     @FindBy(xpath = "//div[@class=\"div-product-name\"]")
     WebElement scrollCartillaMT;
-    @FindBy(css = "input[placeholder='Nombres']")
+    @FindBy(css = "tdp-st-input-text[placeholder='Nombres']")
     WebElement inputName;
-    @FindBy(css = "input[placeholder='Apellidos']")
+    @FindBy(css = "tdp-st-input-text[placeholder='Apellidos']")
     WebElement inputLastName;
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
     WebElement selectGender;
@@ -109,25 +107,21 @@ public class ParkPage extends WebBase {
 
     public void ingresarNombreClienteExtranjero(String name) {
         UtilWeb.waitForSeconds(3);
-        type(inputName, name);
-        logInfo("Type last name", name);
+        validateAndTypeWithAndWithoutShadowRoot("first name", inputName, name);
     }
 
     public void ingresarApellidoClienteExtranjero(String lastName) {
-        type(inputLastName, lastName);
-        logInfo("Type last name", lastName);
+        validateAndTypeWithAndWithoutShadowRoot("last name", inputLastName, lastName);
     }
 
     public void seleccionarGeneroClienteExtranjero(String gender) {
-        selectGender.click();
         String dataValue;
         if (gender.equalsIgnoreCase("femenino")) {
             dataValue = "F";
         } else {
             dataValue = "M";
         }
-        driver().findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
-        UtilWeb.waitForSeconds(1);
+        selectElementCSSWithAndWithoutShadowRoot("gender", selectGender, dataValue);
     }
 
     public void createCustomer() {
@@ -137,7 +131,6 @@ public class ParkPage extends WebBase {
     }
 
     public void altaHogar() {
-
         WebElement BotonAltaHogar = explicitWaitCss(driver(), 10, btnHogar);
         js().scrollElementTop(BotonAltaHogar);
         if (BotonAltaHogar.isDisplayed()) {
@@ -156,7 +149,7 @@ public class ParkPage extends WebBase {
     }
 
     public void lineaExistente(String numeroExistente) {
-        esperaProgresiva(driver(), 3, 5, btnLineaExistente);
+        esperaProgresiva(driver(), 5, 5, btnLineaExistente);
         js().scrollElementTop(btnLineaExistente);
         String LineaExistente = btnLineaExistente.getText();
 
@@ -307,20 +300,15 @@ public class ParkPage extends WebBase {
     public void mostrarOfertas() {
         //Addons.esperaCargaMontoDeuda(driver(),30);
         revisarModalError(driver());
-        WebElement showOffer = explicitWaitCss(driver(), 60, btnShowOffers);
+        WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
         revisarModalError(driver());
-        UtilWeb.logger(this.getClass()).log(Level.INFO, "Dio click al boton Mostrar Ofertas");
         click(showOffer);
-        /*revisarModalError(driver());
-        WebElement showOffer = explicitWaitCss(driver(), 100, btnShowOffers);
-        revisarModalError(driver());
-        showOffer.click();*/
         logInfo("Dio click al boton Mostrar Ofertas");
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
-        WebElement selectCartilla = explicitWaitXpath(driver(),25,cartillaHogar);
+        WebElement selectCartilla = explicitWaitXpath(driver(), 25, cartillaHogar);
         revisarModalError(driver());
         js().scrollElementTop(selectCartilla);
         selectCartilla.click();
@@ -363,22 +351,22 @@ public class ParkPage extends WebBase {
     }
 
     public void ingresoRuc(String ruc) {
-        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text input");
+        WebElement Input = find().getElementByCss("app-update-ruc > form > div > tdp-st-input-text");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        validateAndType("RUC", Input, ruc);
+        validateAndTypeWithAndWithoutShadowRoot("RUC", Input, ruc);
 
     }
 
     public void ingresoRuc17(String ruc) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='twoDigitRuc']");
+        WebElement Input = find().getElementByCss("tdp-st-input-text[@formcontrolname='twoDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        validateAndType("RUC 17", Input, ruc);
+        validateAndTypeWithAndWithoutShadowRoot("RUC 17", Input, ruc);
     }
 
     public void ingresoDigitoV(String digit) {
-        WebElement Input = find().getElementByXPath("//input[@formcontrolname='endDigitRuc']");
+        WebElement Input = find().getElementByCss("tdp-st-input-text[@formcontrolname='endDigitRuc']");
         Addons.esperaProgresiva(driver(), 2, 2, Input);
-        validateAndType("Digit V", Input, digit);
+        validateAndTypeWithAndWithoutShadowRoot("Digit V", Input, digit);
     }
 
     public void clickBotonEntendido() {
@@ -448,14 +436,12 @@ public class ParkPage extends WebBase {
     }
 
     public void scrollToLabelSelectService() {
-        WebElement scroll = explicitWaitXpath(driver(), 10,
-                labelSelectService);
+        WebElement scroll = explicitWaitXpath(driver(), 30, labelSelectService);
         js().scrollElementTop(scroll);
-        //UtilWeb.waitForSeconds(5);
     }
 
-    public void clickBtnVerDetalle(String nroServicio) {
-        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroServicio + "')]//following::div[contains(text(),' Ver detalle ')][1]");
+    public void clickBtnVerDetalle(String nroService) {
+        WebElement btnVerDetalle = find().getElementByXPath("//*[contains(text(),'" + nroService + "')]//following::div[contains(text(),' Ver detalle ')][1]");
         esperaProgresiva(driver(), 5, 8, btnVerDetalle);
         js().scrollElementTop(btnVerDetalle);
         btnVerDetalle.click();
@@ -463,8 +449,9 @@ public class ParkPage extends WebBase {
     }
 
     public void selectLineWithNumber(String number) {
+        Addons.esperaCargaMontoDeuda(driver(), 30);
         WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
-        esperaProgresiva(driver(), 3, 5, numberLine);
+        esperaProgresiva(driver(), 6, 8, numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
         logInfo("Click in line", number);
@@ -488,7 +475,7 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(10);
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, btnRenovarPlan);
+        esperaProgresiva(driver(), 5, 5, btnRenovarPlan);
         js().scrollElementTop(btnRenovarPlan);
         logInfo("Click button", btnRenovarPlan.getText());
         click(btnRenovarPlan);
@@ -606,22 +593,22 @@ public class ParkPage extends WebBase {
             case "inputSimCard":
                 esperaProgresiva(driver(), 6, 8, inputSinCard);
                 js().scrollElementTop(inputSinCard);
-                validateAndType("SIM CARD", inputSinCard, value);
+                validateAndTypeWithAndWithoutShadowRoot("SIM CARD", inputSinCard, value);
                 break;
             case "inputImei":
                 esperaProgresiva(driver(), 6, 8, inputImei);
                 js().scrollElementTop(inputImei);
-                validateAndType("IMEI", inputImei, value);
+                validateAndTypeWithAndWithoutShadowRoot("IMEI", inputImei, value);
                 break;
             case "inputBoxNumber":
                 esperaProgresiva(driver(), 6, 8, inputBoxNumber);
                 js().scrollElementTop(inputBoxNumber);
-                validateAndType("Box Number", inputBoxNumber, value);
+                validateAndTypeWithAndWithoutShadowRoot("Box Number", inputBoxNumber, value);
                 break;
             case "inputTicketNumber":
                 esperaProgresiva(driver(), 6, 8, inputTicketNumber);
                 js().scrollElementTop(inputTicketNumber);
-                validateAndType("Ticket Number", inputTicketNumber, value);
+                validateAndTypeWithAndWithoutShadowRoot("Ticket Number", inputTicketNumber, value);
                 break;
         }
     }

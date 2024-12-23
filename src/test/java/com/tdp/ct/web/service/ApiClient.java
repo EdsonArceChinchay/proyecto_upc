@@ -56,7 +56,7 @@ public class ApiClient {
      */
     private void validateResponse(Response response) {
         if (response.getStatusCode() < 200 || response.getStatusCode() >= 300) {
-            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO,response.asPrettyString());
+            Logger.getLogger(FileUtils.class.getName()).log(Level.INFO, response.asPrettyString());
             throw new RuntimeException("Failed: HTTP error code : " + response.getStatusCode());
         }
     }

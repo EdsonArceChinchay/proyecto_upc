@@ -14,7 +14,7 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT076_Migra MT con cambio de velocidad en canal Tienda
+Característica: AT-DT076_Migra MT con cambio de velocidad por canal Tienda
 
   @MigraMTcambioVelocidadTienda
   Esquema del escenario:  Realizar migra MT cambio de velocidad  canal Tienda

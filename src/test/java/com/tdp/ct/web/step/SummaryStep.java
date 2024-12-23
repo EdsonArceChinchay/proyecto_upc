@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SumaryStep {
+public class SummaryStep {
     @Autowired
     private StepPages page;
 
@@ -22,8 +22,8 @@ public class SumaryStep {
     }
 
     @ScreenShotAfter
-    public void validarPaginaResumen() {
-        page.summaryPage().paginaResumen();
+    public void validateSummaryPage() {
+        page.summaryPage().validateSummaryPage();
     }
 
     public void moverToElementStartRegister() {

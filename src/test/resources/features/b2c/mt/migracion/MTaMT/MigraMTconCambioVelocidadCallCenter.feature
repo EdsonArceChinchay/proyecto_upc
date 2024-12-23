@@ -14,10 +14,10 @@
 ##FECMOD: 30/03/2023
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT075_Migra MT con cambio de velocidad en canal call center
+Característica: AT-DT075_Migra MT con cambio de velocidad por canal Call Center
 
   @MigraMTcambioVelocidad
-  Esquema del escenario:  Realizar migra MT cambio de velocidad  canal call center
+  Esquema del escenario:  Realizar migra MT cambio de velocidad  canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

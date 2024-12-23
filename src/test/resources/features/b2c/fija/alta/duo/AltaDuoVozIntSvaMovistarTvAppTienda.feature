@@ -14,10 +14,10 @@
 ##FECMOD: 14/02/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
+Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA Movistar TV App por canal Tienda
 
   @AltaDuoSvaMovistarTvApp
-  Esquema del escenario:  Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
+  Esquema del escenario:  Alta Duo (Voz + Internet) + SVA Movistar TV App por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -81,4 +81,4 @@ Característica: Alta Duo (Voz + Internet) + SVA Movistar TV App en canal tienda
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |

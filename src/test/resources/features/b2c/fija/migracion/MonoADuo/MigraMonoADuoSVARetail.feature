@@ -17,7 +17,7 @@
  Característica: Migracion de Mono a DUO +SVA por el canal  Retail CE
 
    @MigracionMonoADuo_SVA_RETAIL
-   Esquema del escenario: Migracion de Mono a Duo + SVA en canal Retail
+   Esquema del escenario: Migracion de Mono a Duo + SVA por canal Retail
      Dado     que abro la pagina de movistar
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<userType>"

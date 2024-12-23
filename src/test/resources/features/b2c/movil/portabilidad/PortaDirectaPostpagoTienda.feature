@@ -14,10 +14,10 @@
 ##FECMOD: 11/10/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en canal Tienda
+Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI por canal Tienda
 
   @PortaDirectaPostST
-  Esquema del escenario: Porta Directa solo chip postpago a cliente con DNI en canal Tienda
+  Esquema del escenario: Porta Directa solo chip postpago a cliente con DNI por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -34,7 +34,7 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        doy click en el boton portabilidad
     Y        cierro el popup de contraseña Única
     Y        selecciono el boton Mostrar ofertas
-    Y        ingreso numero de telefono para portar "<numero>"
+    Y        ingreso numero de telefono para portar "<phoneNumber>"
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
@@ -60,8 +60,6 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI en can
     Y        doy click en validar identidad del titular
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |

@@ -29,7 +29,6 @@ public class FileUtils {
             String[] parts = line.split(";");
             simCards.add(new Material(parts[0], parts[1]));
         }
-
         return simCards;
     }
 
@@ -70,7 +69,9 @@ public class FileUtils {
             properties1.load(new FileInputStream(path));
         } catch (IOException e) {
             logSevere(String.format("Error in read values %s", e.getMessage()));
+            throw new RuntimeException(String.format("Error in read values %s", key));
         }
+        logInfo(String.format("Key: %s - value: %s", key, properties1.getProperty(key)));
         return properties1.getProperty(key);
     }
 

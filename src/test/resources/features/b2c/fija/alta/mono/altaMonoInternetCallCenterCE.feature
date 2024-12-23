@@ -14,10 +14,10 @@
 ##FECMOD: 08/04/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
-Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por Canal Call Center
+Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por canal Call Center
 
   @AltaMonoIntHFC
-  Escenario: Realizar una Alta de Mono con instalación HFC por Canal Call Center
+  Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
@@ -32,14 +32,14 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres   | apellidos    | genero   |
+      | ANA MARIA | ZAPATA LOPEZ | FEMENINO |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        completo los datos para consultar la cobertura
-      | departamento | provincia | distrito | direccion               | referencia |
-      | 15           | 1501      | 150131   | AVENIDA CAMINO REAL 155 | parque     |
+      | departamento | provincia | distrito   | direccion               | referencia |
+      | LIMA         | LIMA      | SAN ISIDRO | AVENIDA CAMINO REAL 155 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |

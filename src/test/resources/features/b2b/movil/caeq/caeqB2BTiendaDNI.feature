@@ -13,11 +13,11 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 04/07/2024
 @BERSERKERS @DoneDevOps @PI20_SP1 @RegresionLegacy
-Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tienda
-  Quiero realizar un CAEQ a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
+Característica: AT-DT _CAEQ B2B con Representante Legal Nacional por canal Tienda
+  Quiero realizar un CAEQ a un cliente B2B con parque movil con Representante Legal Nacional por canal Tienda
 
   @caeqB2BTiendaDNI
-  Esquema del escenario: Cambio de equipo a un cliente B2B con parque movil con Representante Legal Nacional en Canal Tienda
+  Esquema del escenario: Cambio de equipo a un cliente B2B con parque movil con Representante Legal Nacional por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -54,8 +54,6 @@ Característica: AT-DT _CAEQ B2B con Representante Legal Nacional en Canal Tiend
     Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-      | numdoc   | user     | password     |
-      | 73261531 | vsiguass | $t3l3f0n1c4$ |
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombrePadre   | nombreMadre   | distritoNac   |
       | <nombrePadre> | <nombreMadre> | <distritoNac> |

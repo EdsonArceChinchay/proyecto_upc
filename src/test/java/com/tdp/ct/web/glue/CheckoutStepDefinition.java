@@ -1,7 +1,7 @@
 package com.tdp.ct.web.glue;
 
-import com.tdp.ct.web.step.CheckoutStep;
 import com.tdp.ct.web.service.RetentionService;
+import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Entonces;
@@ -64,9 +64,7 @@ public class CheckoutStepDefinition {
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
-        executeIfRetention(() -> {
-            checkoutStep.clickBotonRegistrarVenta();
-        });
+        executeIfRetention(() -> checkoutStep.clickBotonRegistrarVenta());
         checkoutStep.validateTheBillingCycle();
         checkoutStep.validateRegistrationHasBeenSuccessful();
         this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");

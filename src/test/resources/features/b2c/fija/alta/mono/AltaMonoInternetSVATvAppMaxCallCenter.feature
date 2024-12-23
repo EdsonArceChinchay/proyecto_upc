@@ -14,7 +14,7 @@
 ##FECMOD: 10/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI16 @AltaMono
-Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
+Característica: AT-DT0_Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
 
   @AltaFijaMonoSVATvAppMaxCallCenter
   Esquema del escenario: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Call Center
@@ -86,4 +86,4 @@ Característica: Alta Fija Mono Internet + SVA Movistar Tv App Max por canal Cal
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |

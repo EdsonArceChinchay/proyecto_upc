@@ -14,10 +14,10 @@
 ##FECMOD: 14/11/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en canal tienda
+Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE por canal Tienda
 
   @AltaMTfijaMasPorta
-  Esquema del escenario: Alta MT (alta fija + portabilidad) a cliente CE en canal tienda
+  Esquema del escenario: Alta MT (alta fija + portabilidad) a cliente CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -47,9 +47,9 @@ Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE  en ca
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "15"
-    Y        selecciono la provincia donde sera la instalacion "1501"
-    Y        selecciono el distrito donde sera la instalacion "150116"
+    Y        selecciono el departamento donde sera la instalacion "LIMA"
+    Y        selecciono la provincia donde sera la instalacion "LIMA"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
     Y        ingreso la direccion donde sera la instalacion "Julio Cesar Tello 469"
     Y        ingreso la referencia de la direccion "Casa"
     Y        presiono el boton Consultar ubicacion

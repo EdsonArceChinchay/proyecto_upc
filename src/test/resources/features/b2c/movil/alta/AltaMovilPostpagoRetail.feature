@@ -14,10 +14,10 @@
 ##FECMOD: 01/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G05 @AltaMovil
-Característica: AT-DT031_Alta Movil Postpago a cliente con CE por Canal Retail
+Característica: AT-DT031_Alta Movil Postpago a cliente con CE por canal Retail
 
-  @AltaMovilRetail
-  Esquema del escenario: Alta Movil Postpago a cliente con CE por Canal Retail
+  @AltaMovilPostpagoRetail
+  Esquema del escenario: Alta Movil Postpago a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -81,4 +81,4 @@ Característica: AT-DT031_Alta Movil Postpago a cliente con CE por Canal Retail
 
     Ejemplos:
       | userType | userName    | userPassword    | msgHome    | documentType | documentNumber | nombrePlan                              |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1209454400     | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | CE           | 1209454401     | RV Plan Ilimitado Mi Movistar S/ 74.9 V |

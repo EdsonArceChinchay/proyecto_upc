@@ -14,10 +14,10 @@
 ##FECMOD: 30/05/2023
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI15
-Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
+Característica: AT-DT00_Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por canal Tienda
 
   @AltaDuoBByVozFTTHCanalTiendas
-  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por Canal Tienda
+  Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -75,4 +75,4 @@ Característica: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | 15           | 1501      | 150116   | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

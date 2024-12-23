@@ -13,8 +13,8 @@ public class DevicesStep {
     private StepPages page;
 
     @ScreenShotAfter
-    public void selectTimeOfPermanency(String timePermanecy) {
-        page.devicesPage().selectTimeOfPermanency(timePermanecy);
+    public void selectTimeOfPermanency(String timePermanency) {
+        page.devicesPage().selectTimeOfPermanency(timePermanency);
     }
 
     @ScreenShotAfter

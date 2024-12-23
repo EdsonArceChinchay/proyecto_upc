@@ -2,9 +2,9 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.model.Customer;
+import com.tdp.ct.web.service.RetentionService;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
 import com.tdp.ct.web.step.HomeStep;
-import com.tdp.ct.web.service.RetentionService;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Dado;
@@ -13,9 +13,11 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.utils.LogUtils.logInfo;
+
 public class HomeStepDefinition {
 
-    public ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
+    public final ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
     @Autowired
     private HomeStep homeStep;
     @Autowired
@@ -53,7 +55,7 @@ public class HomeStepDefinition {
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String customerDocumentType) {
-        System.out.println("Cliente: " + customer.getCustomerTest());
+        logInfo("Cliente: " + customer.getCustomerTest());
         customer.setDocumentType(customerDocumentType);
         homeStep.selectDocumentType(customerDocumentType);
     }
@@ -71,9 +73,7 @@ public class HomeStepDefinition {
 
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {
-        executeIfNotRetention(() -> {
-            homeStep.clickOnTheBackOfficeButton();
-        });
+        executeIfNotRetention(() -> homeStep.clickOnTheBackOfficeButton());
     }
 
     @Dado("regreso a la pagina de inicio")

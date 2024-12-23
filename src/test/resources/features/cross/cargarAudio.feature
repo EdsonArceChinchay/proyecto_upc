@@ -14,10 +14,10 @@
 ##FECMOD: 11/06/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP5
-Característica: Subir audio en canal Call Center
+Característica: Subir audio por canal Call Center
 
   @AdjuntarAudioBackOffice
-  Escenario: Subir un audio despues de generar orden en canal Call Center
+  Escenario: Subir un audio despues de generar orden por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"

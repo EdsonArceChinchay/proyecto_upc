@@ -81,4 +81,4 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | 15           | 1501      | 150116   | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio     |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio     |
