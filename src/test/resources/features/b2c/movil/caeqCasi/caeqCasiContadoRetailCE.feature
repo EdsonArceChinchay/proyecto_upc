@@ -48,7 +48,7 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cli
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"False" en el response del salesLead
+    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy click en el boton Continuar
     Y        presiono el boton descargar contrato
     Y        doy click en el boton Registrar venta
