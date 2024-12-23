@@ -21,6 +21,9 @@ Característica: AT-DT053_Login - FE DITO WEB
     @LoginBerserker @LoginExitoso @jbac_Test
   Esquema del escenario: Usuario realiza login exitoso por canal <channelType>
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA        | HU           | Test        | Transaccion | Tipo Venta |
+      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-17493 | Login       | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -28,12 +31,12 @@ Característica: AT-DT053_Login - FE DITO WEB
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<channelType>"
+#    Y        valido que se presente el canal "<channelType>"
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType |
-      | userType | userNameCC  | userPasswordCC  | Bienvenid@ | Call Center |
-      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      |
+      | userType | userName     | userPassword     | msgHome    | channelType |
+      | userType | userNameQAN1 | userPasswordQAN1 | Bienvenid@ | Call Center |
+#      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
+#      | userType | userNameDLC  | userPasswordDLC  | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco

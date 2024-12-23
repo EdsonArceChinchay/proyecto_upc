@@ -7,6 +7,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -265,6 +266,11 @@ public class HomePage extends WebBase {
             return String.format(message, name);
         }
         return null;
+    }
+    public void Zoom(int zoomLevel){
+        String zoomScript = "document.body.style.zoom='" + zoomLevel + "%'";
+        ((JavascriptExecutor) driver()).executeScript(zoomScript);
+        logInfo("Zoom ajustado al " + zoomLevel + "%.");
     }
 
 }

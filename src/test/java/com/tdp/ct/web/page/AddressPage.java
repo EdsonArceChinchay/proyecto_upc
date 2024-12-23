@@ -76,6 +76,7 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             UtilWeb.waitForSeconds(4);
         }
+        js().scrollElementTop(selectDepartment);
         selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
         UtilWeb.waitForSeconds(1);
     }

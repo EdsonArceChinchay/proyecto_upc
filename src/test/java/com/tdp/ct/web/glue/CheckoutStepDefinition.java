@@ -1,5 +1,6 @@
 package com.tdp.ct.web.glue;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.RetentionService;
 import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
@@ -8,11 +9,15 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
+
 public class CheckoutStepDefinition {
 
     @Autowired
     private CheckoutStep checkoutStep;
 
+    @Autowired
+    private Cliente cliente;
     private Scenario scenario;
     @Autowired
     private RetentionService retentionService;
@@ -69,6 +74,14 @@ public class CheckoutStepDefinition {
         checkoutStep.validateRegistrationHasBeenSuccessful();
         this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
         this.scenario.log(checkoutStep.getOrderCode());
+
+        System.out.println("Orden Generada: " + checkoutStep.getOrderCode());
+        System.out.println("Plan Seleccionado: " + cliente.getPlanSeleccionado());
+        System.out.println("Num Documento: " + getScenarioContext().get("nroDocumento"));
+        this.scenario.log("Num Documento: " +getScenarioContext().get("nroDocumento"));
+        this.scenario.log("Orden Generada: " + checkoutStep.getOrderCode());
+        this.scenario.log("Plan Seleccionado: " + cliente.getPlanSeleccionado());
+        getScenarioContext().put("orden", checkoutStep.getOrderCode());
     }
 
     @Y("doy click en ver detalle del pedido")

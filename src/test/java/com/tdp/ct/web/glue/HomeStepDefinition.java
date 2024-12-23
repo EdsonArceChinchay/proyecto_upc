@@ -43,6 +43,7 @@ public class HomeStepDefinition {
 
     @Entonces("valido el login exitoso mediante el mensaje {string}")
     public void validoElLoginExitosoMedianteElMensaje(String msg) {
+
         homeStep.validateHomeMessage(msg);
         homeStep.initializeAgent(agent.get());
     }

@@ -90,6 +90,7 @@ public class HomeStep {
 
     @ScreenShotAfter
     public void validateHomeMessage(String msg) {
+        page.homePage().Zoom(65);
         page.homePage().validateHomeMessage(msg);
     }
 

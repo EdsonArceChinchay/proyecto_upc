@@ -4,8 +4,8 @@
 #
 webdriver:
   browser: chrome #chrome, safari, firefox, edge
-  path: drivers/chrome/chromedriver
-  headless: on
+  path: drivers/chrome/chromedriver.exe
+  headless: off
   headless.dimension: --window-size=1400,600
   pageload: EAGER
 
@@ -13,7 +13,7 @@ webdriver:
 ### JIRA - XRAY ###
 ###################
 jxray:
-  integration: on
+  integration: off
   host: https://us.xray.cloud.getxray.app
   client:
     id: 10BD5AA52D4B43338201DCB6017DC6F1

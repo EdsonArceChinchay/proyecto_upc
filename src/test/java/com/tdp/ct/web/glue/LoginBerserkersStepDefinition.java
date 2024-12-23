@@ -2,7 +2,9 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.*;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Objects;
+import java.util.logging.Level;
 
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @CucumberContextConfiguration
@@ -91,6 +95,30 @@ public class LoginBerserkersStepDefinition {
     @E("ingreso el captcha")
     public void ingresoElCaptcha() {
         loginBerserkerStep.getAndTypeCaptcha();
+    }
+
+    @Y("ingreso los datos para la bitacora")
+    public void ingresoLosDatosParaLaBitacora(DataTable dataTable) {
+        //Reiniciar datos
+        getScenarioContext().put("usuarioVendedor", "NA");
+        getScenarioContext().put("nroLinea", "NA");
+        getScenarioContext().put("simcard", "NA");
+        getScenarioContext().put("tipoDocumento", "NA");
+        getScenarioContext().put("nroDocumento", "NA");
+        getScenarioContext().put("orden", "NA");
+        getScenarioContext().put("numeroSolicitud", "NA");
+
+        // Obtener datos del dataTable
+        getScenarioContext().put("analistaQa", UtilWeb.getValueFromDataTable(dataTable, "Analista QA"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Analista QA: " + getScenarioContext().get("analistaQa"));
+        getScenarioContext().put("hu", UtilWeb.getValueFromDataTable(dataTable, "HU"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "HU:" + getScenarioContext().get("hu"));
+        getScenarioContext().put("test", UtilWeb.getValueFromDataTable(dataTable, "Test"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Test:" + getScenarioContext().get("test"));
+        getScenarioContext().put("transaccion", UtilWeb.getValueFromDataTable(dataTable, "Transaccion"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Transaccion:" + getScenarioContext().get("transaccion"));
+        getScenarioContext().put("tipoVenta", UtilWeb.getValueFromDataTable(dataTable, "Tipo Venta"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Tipo Venta:" + getScenarioContext().get("tipoVenta"));
     }
 
 }

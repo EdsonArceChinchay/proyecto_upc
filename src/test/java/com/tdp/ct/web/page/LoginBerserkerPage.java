@@ -3,9 +3,12 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.logging.Level;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
@@ -94,5 +97,6 @@ public class LoginBerserkerPage extends WebBase {
     public String readValues(String key) {
         return getValueConfig("config", "credential.user." + key) == null ? "" : getValueConfig("config", "credential.user." + key);
     }
+
 
 }
