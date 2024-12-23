@@ -36,23 +36,23 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cli
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                        |
-      | 12 meses    | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | permanencia | tipoPago   | equipoName |
+      | 12 meses    | Al Contado | <device>   |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono boton mantener plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
+    Y        ingreso correo electronico "prueba@prueba.com"
+    Y        ingreso nuevamente el correo electronico "prueba@prueba.com"
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
     Y        doy click en el boton Continuar
-    Y        presiono el boton descargar contrato
-    Y        doy click en el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
@@ -77,5 +77,5 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cli
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042465085     |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | device                            |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042465085     | SAMSUNG GXY A34 NEGRO A346M 128GB |
