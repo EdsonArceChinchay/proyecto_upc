@@ -59,7 +59,6 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil + SVA a
     Y        doy click en el boton Ir a movistar total
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
-    Y        valido que este en el resumen de venta
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
     Y        doy click en el boton Guardar cambios

@@ -70,7 +70,7 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
-      | 12/09/1988 | Soltero     | Aruba        |
+      | 12/09/1988 | Divorciado  | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
