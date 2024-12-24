@@ -14,10 +14,10 @@
 ##FECMOD: 15/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035 @AltaMTSVA
-Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con CE por canal Call Center
+Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
 
   @AltaMTSVACallCenter_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con CE por canal Call Center
+  Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -44,7 +44,6 @@ Característica: AT-DT035_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"

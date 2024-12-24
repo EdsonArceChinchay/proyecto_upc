@@ -14,10 +14,10 @@
 ##FECMOD: 15/08/2024
 
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01 @AltaMT
-Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Call Center
+Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
 
   @AltaMTCallCenter_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Call Center
+  Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -45,7 +45,6 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
-    #Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
@@ -57,7 +56,7 @@ Característica: AT-DT038_Alta MT (Alta Fija + Alta Movil) a cliente con CE por 
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+      | A  | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"

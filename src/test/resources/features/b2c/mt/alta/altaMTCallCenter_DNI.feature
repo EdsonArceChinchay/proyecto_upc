@@ -14,10 +14,10 @@
 ##FECMOD: 15/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMT
-Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por canal Call Center
+Característica: AT-DT033_Alta MT (Alta fija + alta movil) a cliente con DNI por canal Call Center
 
   @AltaMTCallCenter_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con DNI por canal Call Center y delivery express
+  Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con DNI por canal Call Center y delivery express
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -44,7 +44,6 @@ Característica: AT-DT033_Alta MT (Alta Fija + Alta Movil) a cliente con DNI por
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"

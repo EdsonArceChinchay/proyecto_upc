@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 25/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08
-Característica: AT-DT036_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G08 @AltaMT
+Característica: AT-DT036_Alta MT (Alta fija + alta movil) a cliente con CE por canal Tienda
 
   @AltaMtTienda
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
