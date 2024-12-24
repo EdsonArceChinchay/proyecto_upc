@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cliente extranjero(CE) por canal Retail
 
-  @CaeqCasi
+  @CaeqCasiRetail
   Esquema del escenario: Como usuario <userName> del canal <channelType> realizo CAEQ sin CASI a cliente extranjero(CE) por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
