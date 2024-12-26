@@ -18,8 +18,11 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
   Quiero realizar una alta movil solo sin por canal Call Center
 
   @AltaMovilCECallCenter
-  Esquema del escenario: Alta movil control a cliente con CE por canal Call Cente
+  Esquema del escenario: Alta movil control a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA        | HU           | Test        | Transaccion | Tipo Venta |
+      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-20528 | ALTA MOVIL  | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -86,6 +89,6 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan          |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 121219511      | Control       | RV Plan Mi Movistar |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan          |
+      | userType | userNameLOR | userPasswordLOR | Bienvenid@ | Call Center | CE           | 121219511      | Control       | RV Plan Mi Movistar |
 

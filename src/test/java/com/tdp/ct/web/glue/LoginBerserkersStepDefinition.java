@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.logging.Level;
 
 import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 @CucumberContextConfiguration
@@ -64,6 +65,8 @@ public class LoginBerserkersStepDefinition {
 
     @Y("ingreso el usuario {string}")
     public void ingresoElUsuario(String name) {
+        String userVendedor = getValueConfig("config", "credential.user." + name).trim();
+        getScenarioContext().put("usuarioVendedor", userVendedor);
         loginBerserkerStep.typeUserName(name);
     }
 

@@ -13,6 +13,7 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class HomeStepDefinition {
@@ -57,12 +58,14 @@ public class HomeStepDefinition {
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String customerDocumentType) {
         logInfo("Cliente: " + customer.getCustomerTest());
+        getScenarioContext().put("tipoDocumento", customerDocumentType);
         customer.setDocumentType(customerDocumentType);
         homeStep.selectDocumentType(customerDocumentType);
     }
 
     @Y("ingreso el documento {string}")
     public void ingresoElDocumento(String customerDocumentNumber) {
+        getScenarioContext().put("nroDocumento", customerDocumentNumber);
         customer.setDocumentNumber(customerDocumentNumber);
         homeStep.typeDocumentNumber(customerDocumentNumber);
     }
