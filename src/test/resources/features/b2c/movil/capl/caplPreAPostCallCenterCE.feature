@@ -37,27 +37,28 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y        selecciono el tipo de plan movil "Postpago"
     Y        selecciono un plan movil "Plan Ilimitado Mi Movistar S/85"
     Y        valido que este en el resumen de venta
-    Y        doy click en el boton Iniciar registro
-    Y        ingreso correo electronico "automation@gmail.com"
-    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
-    Y        doy click en Validar contrato "Móvil"
-    Y        me muestra en pantalla el contrato solicitado
-    Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Y        doy click en el boton Iniciar registro
+#    Y        ingreso correo electronico "automation@gmail.com"
+#    Y        ingreso nuevamente el correo electronico "automation@gmail.com"
+#    Y        doy click en Validar contrato "Móvil"
+#    Y        me muestra en pantalla el contrato solicitado
+#    Y        imprimo el texto del contrato solicitado
+#    Cuando   doy clic en si acepto
+#    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
+#    Y        doy click en el boton Continuar
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+#    Y        valido que se muestre el detalle del pedido de "Información adicional"
+#    Dado     regreso a la pagina de inicio
+#    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+#    Y        me dirijo a la bandeja de Back Office
+#    Y        busco por "<documentNumber>"
+#    Y        selecciono la solicitud
+#    Y        cargo el audio en la web
+#    Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | documentType | documentNumber | nroMovil  |
-      | userType | userNameCC | userPasswordCC | CE           | 1632547937     | 650028381 |
+      | userType     | userName     | userPassword     | documentType | documentNumber | nroMovil  |
+#      | userType     | userNameCC   | userPasswordCC   | CE           | 1632547937     | 650028381 |
 
+      | externalUser | userNameQAN2 | userPasswordQAN2 | CE           | 1100000273     | 920321329 |

@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +22,8 @@ public class CaeqPorRetailPage extends WebBase {
     protected WebElement lblSeleccionarOferta;
     @FindBy(xpath = "(//button[@class=\"btnCard\"])[2]")
     WebElement BtnCambiarPlan;
+    @FindBy(xpath = "//div[@class='stl_plan_actual' and contains(text(),'PLAN ACTUAL')]")
+    protected WebElement lblCurrentPlan;
 
     public void clickOnAddDevice() {
         UtilWeb.waitForSeconds(3);
@@ -63,4 +66,9 @@ public class CaeqPorRetailPage extends WebBase {
     }
 
 
+    public void seeTheChosenOffer( ManageScenario scenario) {
+        esperaProgresiva(driver(), 5, 5, lblCurrentPlan);
+        js().scrollElementTop(lblCurrentPlan);
+        scenario.printFullView();
+    }
 }

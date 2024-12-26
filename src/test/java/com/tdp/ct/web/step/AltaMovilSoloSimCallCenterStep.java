@@ -79,5 +79,9 @@ public class AltaMovilSoloSimCallCenterStep {
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI, Map<String, String> salesLead) {
         page.caeqPorRetailPage().validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, salesLead);
     }
+
+    public void seeTheChosenOffer() {
+        page.caeqPorRetailPage().seeTheChosenOffer(scenario);
+    }
 }
 

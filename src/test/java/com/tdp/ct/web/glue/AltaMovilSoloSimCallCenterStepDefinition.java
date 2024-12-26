@@ -61,6 +61,7 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     public void selecciono_un_plan_movil(String planMovil) {
         altaMovilSoloSimCallCenterStep.seleccionarListaPlanMovil(planMovil);
         altaMovilSoloSimCallCenterStep.clickBotonSeleccionarOferta();
+        altaMovilSoloSimCallCenterStep.seeTheChosenOffer();
         altaFijaAltaMovilCallCenterStep.clickListaBotones();
     }
 
@@ -112,5 +113,4 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         altaMovilSoloSimCallCenterStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, altaMovilSoloSimCallCenterStep.getSalesLead(salesCode));
         this.scenario.log(altaMovilSoloSimCallCenterStep.getSalesLead(salesCode).toString());
     }
-
 }
