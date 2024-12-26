@@ -51,7 +51,7 @@ public class LoginBerserkerPage extends WebBase {
     public void selectUserType(String user) {
         esperaProgresiva(driver(), 3, 5, userType);
         Select usuarioSelect = new Select(userType);
-        String userType = getValueConfig("config", "credential.user.userType").trim();
+        String userType = getValueConfig("config", "credential.user." + user).trim();
         usuarioSelect.selectByVisibleText(userType);
         logInfo(String.format("Select %s", userType));
         UtilWeb.waitForSeconds(1);

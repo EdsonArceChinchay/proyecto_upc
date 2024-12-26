@@ -57,4 +57,16 @@ public class DevicesStepDefinition {
         devicesStep.clickButtonSelectDevice();
     }
 
+    @Y("visualizo la seleccion en la pantalla de ofertas")
+    public void visualizoLaSeleccionEnLaPantallaDeOfertas() {
+        devicesStep.scrollToOfertDetails();
+    }
+
+    @Y("presiono el boton Ver detalle valido contenido y selecciono el equipo elegido {string}")
+    public void presionoBotonVerDetalleValidoContenidoYSeleccionoElEquipoElegido(String device) {
+        devicesStep.scrollToDeviceList();
+        devicesStep.clickBtnSeeDeviceDetails(device);
+        devicesStep.validateFeatures();
+        devicesStep.clickButtonSelectDevice();
+    }
 }

@@ -3,6 +3,7 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,9 @@ public class DevicesStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    private ManageScenario scenario;
 
     @ScreenShotAfter
     public void selectTimeOfPermanency(String timePermanency) {
@@ -55,4 +59,16 @@ public class DevicesStep {
         page.devicesPage().clickButtonSelectDevice();
     }
 
+    public void scrollToOfertDetails() {
+        page.devicesPage().scrollToOfertDetails(scenario);
+    }
+
+    public void scrollToDeviceList() {
+        page.devicesPage().scrollToDeviceList();
+    }
+
+    @ScreenShotBefore
+    public void clickBtnSeeDeviceDetails(String equipo) {
+        page.devicesPage().clickBtnSeeDeviceDetails(equipo);
+    }
 }

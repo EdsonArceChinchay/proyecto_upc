@@ -1,9 +1,12 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -35,12 +38,49 @@ public class DevicesPage extends WebBase {
     @FindBy(css = ".btn-detail tdp-st-button")
     protected WebElement btnSeeDetail;
 
+//    public void selectTypeOfPayment(String payment) {
+//        esperaProgresiva(driver(), 5, 5, listTypeOfPayment.get(0));
+//        js().scrollElementTop(listTypeOfPayment.get(0));
+//        selectElement(listTypeOfPayment, payment);
+//        UtilWeb.waitForSeconds(5);
+//    }
+
     public void selectTypeOfPayment(String payment) {
-        esperaProgresiva(driver(), 5, 5, listTypeOfPayment.get(0));
-        js().scrollElementTop(listTypeOfPayment.get(0));
-        selectElement(listTypeOfPayment, payment);
+        boolean typePaymentMethod = false;
+        System.out.println("cantidad: " + listTypeOfPayment.size());
+        for (WebElement elements : listTypeOfPayment) {
+            System.out.println("Producto: " + elements.getText());
+            if (elements.getText().contains(payment)) {
+                System.out.println("Se encontro: " + payment);
+                waitUntilElementIsClickable(elements, 20).click();
+                UtilWeb.waitForSeconds(1);
+                typePaymentMethod = driver().findElement(By.xpath("//div[@class='_item mb-10 active']")).getText().contains(payment);
+
+                break;
+            }
+        }
+        Assert.assertTrue("No se pudo dar click en el tipo de pago requerido",
+                typePaymentMethod);
         UtilWeb.waitForSeconds(5);
     }
+
+//    public void selectTypeOfPayment(String pago) {
+//        boolean tipoPagoEncontrado = false;
+//        System.out.println("cantidad: " + listTypeOfPayment.size());
+//        for (WebElement elements : listTypeOfPayment) {
+//            System.out.println("Producto: " + elements.getText());
+//            if (elements.getText().equals(pago)) {
+//                System.out.println("Se encontro: " + pago);
+//                waitUntilElementIsClickable(elements, 20).click();
+//                UtilWeb.waitForSeconds(1);
+//                tipoPagoEncontrado = driver().findElement(By.xpath("//div[@class='_item mb-10 active']")).getText().contains(pago);
+//                break;
+//            }
+//        }
+//        Assert.assertTrue("No se pudo dar click en el tipo de pago requerido",
+//                tipoPagoEncontrado);
+//        UtilWeb.waitForSeconds(5);
+//    }
 
     public void selectTimeOfPermanency(String timePermanency) {
         revisarModalError(driver());
@@ -97,4 +137,37 @@ public class DevicesPage extends WebBase {
         Assertions.assertFalse(featureContent.getText().isEmpty(), "Error, no se encuentran las caracteristicas del equipo");
     }
 
+    @FindBy(xpath = "//div[@class='stl_plan_actual' and contains(text(),'PLAN ACTUAL')]")
+    protected WebElement lblCurrentPlan;
+
+    @FindBy(xpath = "//span[@class='itemPriceEquip' and contains(text(),' Precio')]")
+    protected WebElement lblDevicePaymentDetail;
+
+    public void scrollToOfertDetails(ManageScenario scenario) {
+        esperaProgresiva(driver(), 5, 5, lblCurrentPlan);
+        js().scrollElementTop(lblCurrentPlan);
+        scenario.printFullView();
+        js().scrollElementTop(lblDevicePaymentDetail);
+        scenario.printFullView();
+    }
+
+    public void scrollToDeviceList() {
+        js().scrollElementTop(find().getElementByXPath("(//div[@class='_item-device']/h3)[1]"));
+        UtilWeb.waitForSeconds(5);
+    }
+
+    @FindBy(xpath = "(//div[@class='_item-device']/h3)")
+    protected List<WebElement> deviceList;
+
+    public void clickBtnSeeDeviceDetails(String equipo) {
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        for (WebElement element : deviceList) {
+            if (element.getText().equals(equipo)) {
+                js.executeScript("return document.querySelectorAll(\"body > app-root > app-devices > " +
+                        "div.cont-devices > div > div:nth-child(1) > div > div.btn-detail > tdp-st-button\")[" +
+                        deviceList.indexOf(element) + "].shadowRoot.querySelector(\"button > div\").click()");
+                break;
+            }
+        }
+    }
 }

@@ -74,7 +74,7 @@ public class Hooks {
         );
 
         // Cierro el driver de manera segura
-        if (manager.isDriverOn()) manager.quitDriver();
+//        if (manager.isDriverOn()) manager.quitDriver();
     }
 
     public static ScenarioContext getScenarioContext() {
