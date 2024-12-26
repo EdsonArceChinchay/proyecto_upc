@@ -46,25 +46,25 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        doy click en el boton Iniciar registro
     Y        selecciono el departamento donde sera la instalacion "LIMA"
     Y        selecciono la provincia donde sera la instalacion "LIMA"
-#    Y        selecciono el distrito donde sera la instalacion "LINCE"
-#    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
-#    Y        ingreso la referencia de la direccion "conjunto b"
-#    Y        presiono el boton Consultar ubicacion
-#    Y        ingreso la informacion del lugar de instalacion
-#      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-#      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
-#    Y        presiono el boton Confirmar ubicacion
-#    Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
-#    Y        selecciono el horario de entrega "3pm-7pm"
-#    Y        ingreso telefono de contacto "984093119"
-#    Y        ingreso instrucciones de delivery "abc"
-#    Y        doy click en confirmar delivery
-#    Y        selecciono el metodo de pago "Contra entrega"
-#    Y        ingreso correo electronico "prueba_qa@gmail.com"
-#    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-#    Y        doy click en Validar contrato "Móvil"
-#    Y        me muestra en pantalla el contrato solicitado
-#    Y        imprimo el texto del contrato solicitado
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "conjunto b"
+    Y        presiono el boton Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+    Y        presiono el boton Confirmar ubicacion
+    Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
+    Y        selecciono el horario de entrega "3pm-7pm"
+    Y        ingreso telefono de contacto "984093119"
+    Y        ingreso instrucciones de delivery "abc"
+    Y        doy click en confirmar delivery
+    Y        selecciono el metodo de pago "Contra entrega"
+    Y        ingreso correo electronico "prueba_qa@gmail.com"
+    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    Y        doy click en Validar contrato "Móvil"
+    Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
 #    Cuando   doy clic en si acepto
 #    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"FALSE" en el response del salesLead
 #    Y        doy click en el boton Continuar
