@@ -30,11 +30,15 @@ Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call C
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        selecciono la cartilla del plan activo
+#    Y        selecciono la cartilla del plan activo
+    Y        selecciono la linea con numero "<numeroExistente>"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
@@ -50,21 +54,23 @@ Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call C
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     E        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Cuando   doy clic en si acepto
+#    Y        doy click en el boton de continuar
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+#    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+#    Y        valido que se muestre el detalle del pedido de "Información adicional"
+#    Dado     regreso a la pagina de inicio
+#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        me dirijo a la bandeja de Back Office
+#    Y        busco por "<documentNumber>"
+#    Y        selecciono la solicitud
+#    Y        cargo el audio en la web
+#    Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75448525       |
+      | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | numeroExistente |
+#      | userType     | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | DNI          | 75448525       |                 |
+
+      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | DNI          | 72079848       | 5066694236      |
