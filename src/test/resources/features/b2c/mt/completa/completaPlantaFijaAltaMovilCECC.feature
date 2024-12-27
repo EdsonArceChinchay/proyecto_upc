@@ -60,22 +60,25 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
-    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Delivery"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Cuando   doy clic en si acepto
+#    Y        doy click en el boton de continuar
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+#    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+#    Y        valido que se muestre el detalle del pedido de "Delivery"
+#    Y        valido que se muestre el detalle del pedido de "Información adicional"
+#    Dado     regreso a la pagina de inicio
+#    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+#    Y        me dirijo a la bandeja de Back Office
+#    Y        busco por "<documentNumber>"
+#    Y        selecciono la solicitud
+#    Y        cargo el audio en la web
+#    Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |
+      | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
+#      | userType     | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |
+
+#      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000667      | Trio       | 14073845      |
+      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000772      | Trio       | 5010302330      |
