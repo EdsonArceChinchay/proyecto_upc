@@ -19,6 +19,9 @@ Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
   @AltaMonoTVCC
   Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA        | HU           | Test        | Transaccion    | Tipo Venta |
+      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-20528 | ALTA MONO TVCC | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -79,6 +82,6 @@ Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
 
     Ejemplos:
 
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1001028016     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
+      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
+      | userType | userNameLOR | userPasswordLOR | Bienvenid@ | Call Center | CE           | 1001028016     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
 

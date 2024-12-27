@@ -126,14 +126,22 @@ public class AppointmentPage extends WebBase {
         } while (!bOK && contador < retryMax);
     }
 
+    @FindBy(xpath = "//*[@class='fontSize16 colorDefault' and contains(text(),'Fecha')]")
+    protected WebElement instalationDate;
+
     public void validateCalendarAndSelectedDay() {
         boolean hasListDays;
         hasListDays = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-selected')]//following::button[@class='mat-calendar-body-cell']")).isEmpty();
         if (hasListDays) {
             logInfo("Yes, it has a calendar");
             List<WebElement> listDays = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-selected')]//following::button[@class='mat-calendar-body-cell']"));
-            click(listDays.get(0));
-            logInfo("Select first day " + listDays.get(0).getText());
+            for (WebElement list : listDays) {
+                if (!instalationDate.getText().contains(" de ")) {
+                    click(list);
+                    logInfo("Select first day " + list.getText());
+                    break;
+                }
+            }
         }
     }
 
