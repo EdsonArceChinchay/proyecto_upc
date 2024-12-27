@@ -36,6 +36,9 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion
+    Y        ingreso la informacion del lugar de instalacion
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
@@ -80,5 +83,5 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
       | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
 #      | userType     | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |
 
-#      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000667      | Trio       | 14073845      |
-      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000772      | Trio       | 5010302330      |
+      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000667      | Trio       | 14073845      |
+#      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000772      | Trio       | 5010302330      |

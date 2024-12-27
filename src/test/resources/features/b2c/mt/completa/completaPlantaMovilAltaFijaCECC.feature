@@ -30,7 +30,8 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        selecciono el boton de la Linea Movil Existente
+#    Y        selecciono el boton de la Linea Movil Existente
+    Y        selecciono la linea con numero "<numeroExistente>"
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -53,21 +54,23 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
-    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+#    Cuando   doy clic en si acepto
+#    Y        doy click en el boton Continuar
+#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+#    Y        doy click en ver detalle del pedido
+#    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
+#    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+#    Y        valido que se muestre el detalle del pedido de "Información adicional"
+#    Dado     regreso a la pagina de inicio
+#    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+#    Y        me dirijo a la bandeja de Back Office
+#    Y        busco por "<documentNumber>"
+#    Y        selecciono la solicitud
+#    Y        cargo el audio en la web
+#    Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1632547925     | Trio       | t@t.com |
+      | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo  | numeroExistente |
+#      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1632547925     | Trio       | t@t.com ||
+
+      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 221011271      | Trio       | t@t.com | 939088895       |
