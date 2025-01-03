@@ -36,6 +36,7 @@ public class Hooks {
 
     @Before(order = 0)
     public void setUp() {
+
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         manager.setUpDriver();
     }
@@ -57,6 +58,7 @@ public class Hooks {
     }
     @After(order = 0)
     public void afterScenario() {
+        httpSender.disableSSLValidation();
         // Captura el error de Selenium si existe
         String seleniumError = (String) getScenarioContext().getOrDefault("seleniumError", ""); // Obtiene el error de Selenium
 
@@ -66,7 +68,7 @@ public class Hooks {
         // Llama la petición post usando SendPost
         httpSender.sendRunStatus(
                 (String) getScenarioContext().get("transaccion"),
-                " -- ",
+                (String) getScenarioContext().get("tags"),
                 String.valueOf(scenario.getScenario().getStatus()),
                 (String) getScenarioContext().get("test"),
                 (String) getScenarioContext().get("hu"),

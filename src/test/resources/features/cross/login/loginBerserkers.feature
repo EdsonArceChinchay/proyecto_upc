@@ -22,8 +22,8 @@ Característica: AT-DT053_Login - FE DITO WEB
   Esquema del escenario: Usuario realiza login exitoso por canal <channelType>
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-17493 | Login       | Contado    |
+      | Analista QA        | HU           | Test        | Transaccion | Tipo Venta | Tags          |
+      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-17493 | Login       | Contado    | @LoginExitoso |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"

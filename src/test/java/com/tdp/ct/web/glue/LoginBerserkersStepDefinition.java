@@ -110,6 +110,7 @@ public class LoginBerserkersStepDefinition {
         getScenarioContext().put("nroDocumento", "NA");
         getScenarioContext().put("orden", "NA");
         getScenarioContext().put("numeroSolicitud", "NA");
+        getScenarioContext().put("tags", "NA");
 
         // Obtener datos del dataTable
         getScenarioContext().put("analistaQa", UtilWeb.getValueFromDataTable(dataTable, "Analista QA"));
@@ -118,6 +119,8 @@ public class LoginBerserkersStepDefinition {
         UtilWeb.logger(this.getClass()).log(Level.INFO, "HU:" + getScenarioContext().get("hu"));
         getScenarioContext().put("test", UtilWeb.getValueFromDataTable(dataTable, "Test"));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Test:" + getScenarioContext().get("test"));
+        getScenarioContext().put("tags", UtilWeb.getValueFromDataTable(dataTable, "Tags"));
+        UtilWeb.logger(this.getClass()).log(Level.INFO, "Tags:" + getScenarioContext().get("tags"));
         getScenarioContext().put("transaccion", UtilWeb.getValueFromDataTable(dataTable, "Transaccion"));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Transaccion:" + getScenarioContext().get("transaccion"));
         getScenarioContext().put("tipoVenta", UtilWeb.getValueFromDataTable(dataTable, "Tipo Venta"));

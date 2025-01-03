@@ -86,7 +86,9 @@ public class HttpSender {
         LOGGER.log(Level.INFO, "enviarNotificacion : " + enviarNotificacion);
         if (!enviarNotificacion) return;
         LOGGER.log(Level.INFO, "sendRunStatus");
-
+        if (tags == null || tags.isEmpty()) {
+            tags = " -- ";
+        }
         JSONObject jsonBody = new JSONObject();
         try {
             jsonBody.put("app", "DITO");
@@ -96,7 +98,7 @@ public class HttpSender {
             jsonBody.put("key_test", keyTest);
             jsonBody.put("key_hu", keyHu);
             jsonBody.put("error_details", seleniumError); // Agrega el error de Selenium al JSON
-            jsonBody.put("env", "Prod"); // Tipo de ejecucion Test | Prod
+            jsonBody.put("env", "Test"); // Tipo de ejecucion Test | Prod
         } catch (JSONException e) {
             throw new RuntimeException("Error inesperado en sendRunStatus: " + e.getMessage());
         }
