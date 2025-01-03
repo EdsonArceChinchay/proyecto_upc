@@ -62,7 +62,7 @@ public class BitacoraService {
                 getScenarioContext().get("hu") + "/" + getScenarioContext().get("test"),
                 (String) getScenarioContext().get("nroDocumento"), (String) getScenarioContext().get("tipoDocumento"),
                 segment, (String) getScenarioContext().get("transaccion"), (String) getScenarioContext().get("tipoVenta"),
-                aplication, "N/A", (String) getScenarioContext().get("usuarioVendedor"),
+                aplication, (String) getScenarioContext().get("idCliente"), (String) getScenarioContext().get("usuarioVendedor"),
                 orden.trim(), (String) getScenarioContext().get("numeroSolicitud"),
                 (String) getScenarioContext().get("codigoAutogestion"), (String) getScenarioContext().get("codigoReclamo"),
                 (String) getScenarioContext().get("simcard"), (String) getScenarioContext().get("imei"),

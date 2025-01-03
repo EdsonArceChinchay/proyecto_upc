@@ -11,6 +11,7 @@ import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.isNumber;
 
@@ -84,6 +85,7 @@ public class BandejaBackOfficeStepDefinition {
         executeIfNotRetention(() -> {
             String salesCode = (customer.getSalesCode() == null) ? "FE-" : customer.getSalesCode();
             logInfo("numberRequest: " + salesCode);
+            getScenarioContext().put("numeroSolicitud", salesCode);
             bandejaBackOfficeStep.selectRequest(salesCode);
         });
     }

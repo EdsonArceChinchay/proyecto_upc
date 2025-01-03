@@ -20,8 +20,8 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
   Esquema del escenario: Alta de dúo internet con CEX, por canal Call Center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion   | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
+      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -72,7 +72,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        doy click en el boton de continuar
     Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
-    Y        presiono el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -87,5 +87,5 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameLOR | userPasswordLOR | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

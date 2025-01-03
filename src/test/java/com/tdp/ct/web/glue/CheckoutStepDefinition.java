@@ -81,7 +81,11 @@ public class CheckoutStepDefinition {
         this.scenario.log("Num Documento: " +getScenarioContext().get("nroDocumento"));
         this.scenario.log("Orden Generada: " + checkoutStep.getOrderCode());
         this.scenario.log("Plan Seleccionado: " + cliente.getPlanSeleccionado());
-        getScenarioContext().put("orden", checkoutStep.getOrderCode());
+
+        String fullText = checkoutStep.getOrderCode();
+        String[] splitText = fullText.split(": ");
+        String orderCode = splitText[1];
+        getScenarioContext().put("orden", orderCode);
     }
 
     @Y("doy click en ver detalle del pedido")
