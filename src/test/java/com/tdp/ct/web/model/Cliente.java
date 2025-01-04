@@ -24,6 +24,7 @@ public class Cliente {
     @Setter @Getter String tipoVenta;
     @Setter @Getter String horarioVenta;
     @Setter @Getter String nombreCliente;
+    @Setter @Getter String idCliente;
     @Setter @Getter String numeroTelefono;
     @Setter @Getter String password;
     @Setter @Getter String tipoUsuarioVendedor;

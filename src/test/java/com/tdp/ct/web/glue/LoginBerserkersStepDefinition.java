@@ -104,6 +104,7 @@ public class LoginBerserkersStepDefinition {
     public void ingresoLosDatosParaLaBitacora(DataTable dataTable) {
         //Reiniciar datos
         getScenarioContext().put("usuarioVendedor", "NA");
+        getScenarioContext().put("idCliente", "NA");
         getScenarioContext().put("nroLinea", "NA");
         getScenarioContext().put("simcard", "NA");
         getScenarioContext().put("tipoDocumento", "NA");
