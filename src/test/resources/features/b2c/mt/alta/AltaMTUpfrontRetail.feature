@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 29/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROPG7
-Característica: AT-DT040_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Retail
+@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @DROPG7 @AltaMT_Upfront
+Característica: AT-DT040_Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Retail
 
   @AltaMTUpfrontRetail
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Retail
+  Esquema del escenario: Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

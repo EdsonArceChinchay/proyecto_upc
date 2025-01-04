@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC
-Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC @AltaMTSVA
+Característica: AT-DT116_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Tienda
 
   @AltaMTSVATienda_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -81,4 +81,4 @@ Característica: AT-DT116_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con C
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1142464501     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio     |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 2142464501     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Trío MT  | Trio     |

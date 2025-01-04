@@ -90,29 +90,19 @@ public class Addons {
             try {
                 logInfo("Buscando Splash ...");
                 By by;
-                //by = By.cssSelector(".splash");
-                //by = By.xpath("//div[@class='splash']");
-                //by = By.xpath("//tdp-loader[contains(@class, 'splash')]");
-                //by = By.tagName("tdp-loader");
-                //by = By.xpath("//tdp-loader/div[@class='splash']/div[@class='splash-title']");
-                //by = By.xpath("//div[@class='splash-title']");
-
                 by = By.cssSelector("tdp-loader");
-                //List<WebElement> elements = driver.findElements(by);
-                //if (!elements.isEmpty()){
-                //LOGGER.log(Level.INFO, "SEARCH:");
                 WebElement splashElement = driver.findElement(by);
                 String splashText = splashElement.getText();
-                if (splashText.length() > 3) {
+                if (splashText.length() > 3 && splashElement.isDisplayed()) {
                     bCargando = true;
+                } else {
+                    logInfo("Continue ... ");
+                    break;
                 }
                 if (bCargando) {
                     logInfo("Splash detectado: " + splashText + " #" + (contador + 1));
                     UtilWeb.waitForSeconds(segundosEspera * contador);
                 }
-                // }else{
-                //         LOGGER.log(Level.INFO, "NO hay Splash");
-                // }
 
             } catch (Exception e) {
                 bCargando = false;

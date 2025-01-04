@@ -13,11 +13,11 @@
 ##ENCARGADO: CARLOS RUIZ
 ##FECMOD: 05/10/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3
-Característica: AT-DT034_Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROPG3 @AltaMT
+Característica: AT-DT034_Alta MT (Alta fija + alta movil) a cliente con CE por canal Retail
 
   @AltaMTRetail
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) a cliente con CE por canal Retail
+  Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

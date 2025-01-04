@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 14/11/2024
 
-@BERSERKERS @DoneDevOps
-Característica: AT-DT080_Alta MT (alta fija + portabilidad) a cliente CE por canal Tienda
+@BERSERKERS @DoneDevOps @AltaMT
+Característica: AT-DT080_Alta MT (Alta fija + portabilidad) a cliente CE por canal Tienda
 
   @AltaMTfijaMasPorta
-  Esquema del escenario: Alta MT (alta fija + portabilidad) a cliente CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta fija + portabilidad) a cliente CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

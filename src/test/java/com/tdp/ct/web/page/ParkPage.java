@@ -22,6 +22,10 @@ public class ParkPage extends WebBase {
 
     // @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected final String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
+    //@FindBy(css = "div[class='show-offerts']")
+    protected final String btnShowOffers = "div[class='show-offerts']";
+    protected final String cartillaHogar = "//app-card-line[1]";
+    protected final String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
@@ -34,13 +38,10 @@ public class ParkPage extends WebBase {
     protected WebElement btnPlanMtExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
-    //@FindBy(css = "div[class='show-offerts']")
-    protected final String btnShowOffers = "div[class='show-offerts']";
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
     @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
     protected WebElement btnCargango;
-    protected final String cartillaHogar = "//app-card-line[1]";
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
     @FindBy(xpath = "//button[@class='update_button']")
@@ -59,7 +60,6 @@ public class ParkPage extends WebBase {
     protected WebElement btnConfirmAddress;
     @FindBy(xpath = "//button[contains(text(),'Continuar')]")
     protected WebElement botonContinuar;
-    protected final String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
     @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
@@ -98,6 +98,7 @@ public class ParkPage extends WebBase {
     WebElement inputLastName;
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
     WebElement selectGender;
+
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
@@ -297,6 +298,7 @@ public class ParkPage extends WebBase {
     }
 
     public void mostrarOfertas() {
+        //Addons.esperaCargaMontoDeuda(driver(),30);
         revisarModalError(driver());
         WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
         revisarModalError(driver());

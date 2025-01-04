@@ -34,9 +34,9 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-#    Y        ingreso los datos del nuevo cliente
-#      | nombres | apellidos    | genero   |
-#      | Lana | Grey Khalifa | femenino |
+    Y        ingreso los datos del nuevo cliente
+      | nombres | apellidos | genero   |
+      | Pruebas | Qan       | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -61,10 +61,10 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        ingreso correo electronico "pruebas@gmail.com"
     Y        ingreso nuevamente el correo electronico "pruebas@gmail.com"
     Y        doy click en datos del cliente
-#    Y        completo los datos del cliente
-#      | fechaNac   | nacionalidad | estadoCivil |
-#      | 12/12/1980 | Alemania | Casado |
-#    Y        doy click en el boton confirmar
+    Y        completo los datos del cliente
+      | fechaNac   | nacionalidad | estadoCivil |
+      | 12/12/1980 | Alemania | Casado |
+    Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "hogar"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -88,4 +88,4 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002365     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

@@ -14,10 +14,10 @@
 ##FECMOD: 15/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AT-DT037 @AltaMTSVA
-Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Call Center
+Característica: AT-DT037_Alta MT (Alta fija + alta movil) + SVA a cliente con DNI por canal Call Center
 
   @AltaMTSVACallCenter_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Call Center
+  Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -42,7 +42,6 @@ Característica: AT-DT037_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con D
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
-    Entonces me muestra la pantalla de ofertas sugeridos
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"

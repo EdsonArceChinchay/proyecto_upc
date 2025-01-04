@@ -29,7 +29,7 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-        new HttpSender().sendDetailsRun("TIQLT-JR1220");
+//        new HttpSender().sendDetailsRun("TIQLT-JR1220");
         JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }

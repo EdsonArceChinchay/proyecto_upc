@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 29/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02
-Característica: AT-DT039_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Call Center
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaMT_Upfront
+Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Call Center
 
   @AltaMTUpfronCallCenter
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Call Center
+  Esquema del escenario: Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

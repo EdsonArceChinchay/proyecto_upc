@@ -12,7 +12,7 @@ public class SummaryStepDefinition {
 
     @Y("valido que este en el resumen de venta")
     public void valido_que_este_en_la_pagina_de_registro() {
-        summaryStep.validarPaginaResumen();
+        summaryStep.validateSummaryPage();
     }
 
     @Y("doy click en el boton Iniciar registro")

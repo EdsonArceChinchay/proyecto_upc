@@ -22,8 +22,8 @@ public class SummaryStep {
     }
 
     @ScreenShotAfter
-    public void validarPaginaResumen() {
-        page.summaryPage().paginaResumen();
+    public void validateSummaryPage() {
+        page.summaryPage().validateSummaryPage();
     }
 
     public void moverToElementStartRegister() {

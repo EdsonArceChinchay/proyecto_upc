@@ -20,11 +20,11 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 public class SummaryPage extends WebBase {
 
     private static JsonObject saleObject;
+    protected final String summaryPage = "(//div[@class='title'])/span";
     @FindBy(css = "button[class=\"btnStart\"],tdp-st-button[label=\"Iniciar Registro\"]")
     protected WebElement btnStartRegister;
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
-    protected final String paginaResumen = "(//div[@class='title'])/span";
     @FindBy(css = ".title span")
     protected WebElement nombrePlan;
     @FindBy(xpath = "//div[@class='plan2']")
@@ -89,9 +89,9 @@ public class SummaryPage extends WebBase {
         } while (!bOK && contador < reintentosMax);
     }
 
-    public void paginaResumen() {
+    public void validateSummaryPage() {
         revisarModalError(driver());
-        WebElement sumaryPage = explicitWaitXpath(driver(), 10, paginaResumen);
+        WebElement sumaryPage = explicitWaitXpath(driver(), 10, summaryPage);
         esperaProgresiva(driver(), 6, 6, sumaryPage);
         js().scrollElementTop(sumaryPage);
         Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());

@@ -11,15 +11,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.Objects;
-
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
-import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
-import static com.tdp.ct.web.utils.JsonModifierAgentData.modifyGroup;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.SessionStorage.*;
+import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
+import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class HomePage extends WebBase {
@@ -173,42 +170,9 @@ public class HomePage extends WebBase {
         compareWebElementTextAndString(msgHome, msg);
     }
 
-    public void initializeAgent(Agent agent) {
-        JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
-        agent.setFirstName(getValueJsonObjectSessionStorage(agentData, "name"));
-        agent.setLastName(getValueJsonObjectSessionStorage(agentData, "surname").trim());
-        agent.setChannelType(getValueJsonObjectSessionStorage(agentData, "channels.id").trim());
-        agent.setChannelName(getValueJsonObjectSessionStorage(agentData, "sites.1.0.name").trim());
-        agent.setDocumentNumber(getValueJsonObjectSessionStorage(agentData, "legalId.nationalID").trim());
-        agent.setDocumentType(getValueJsonObjectSessionStorage(agentData, "legalId.nationalIDType").trim());
-        agent.setWarehouse(getValueJsonObjectSessionStorage(agentData, "sites.1.1.id").trim());
-    }
-
     public String getChannelType() {
         JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");
         return getValueJsonObjectSessionStorage(agentData, "channels.id").trim();
-    }
-
-    public void modifyGroupAgent(String group, Agent agent) {
-        if ((Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role.channels"))).contains(agent.getChannelType())) {
-            String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-            setValueItemSessionStorage(driver(), "MSAL_INFO", "metadata", modifyGroup(metadata, group, shouldAddRetentionRole()));
-        }
-    }
-
-    public String shouldAddRetentionRole() {
-        if (Objects.requireNonNull(getValueConfig("config", "environment.agent.add-retention-role")).equalsIgnoreCase("true")) {
-            return "add";
-        } else {
-            return "remove";
-        }
-    }
-
-    public boolean isRetention() {
-        String metadata = getValueJsonObjectSessionStorage(driver(), "MSAL_INFO", "metadata");
-        boolean isRetention = metadata.contains("B2C_FRONTEND_WEB_RETENCIONES");
-        logInfo(String.format("Is retention: " + isRetention));
-        return isRetention;
     }
 
     public void validateAgentData(Agent agent, String storeTypeExpected) {
@@ -217,7 +181,7 @@ public class HomePage extends WebBase {
             message = validateThatYouAreOnThePage("Agent's name: %s. ", agent.getFullName());
         }
         message = message + validateThatYouAreOnThePage("\nChannel name: %s. ", agent.getChannelName());
-        message = message + validateStoreType("\nChannel type: %s. ", storeTypeExpected, agent.getChannelType());
+        message = message + validateStoreType("\nChannel type: %s", storeTypeExpected, agent.getChannelType());
         printAgentData(message);
     }
 

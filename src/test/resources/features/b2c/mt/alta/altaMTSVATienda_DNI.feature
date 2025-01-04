@@ -14,10 +14,10 @@
 ##FECMOD: 15/08/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @AltaMTSVA
-Característica: AT-DT042_Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Tienda
+Característica: AT-DT042_Alta MT (Alta fija + alta movil) + SVA a cliente con DNI por canal Tienda
 
   @AltaMTSVATienda_DNI
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) + SVA a cliente con DNI por canal Tienda
+  Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con DNI por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

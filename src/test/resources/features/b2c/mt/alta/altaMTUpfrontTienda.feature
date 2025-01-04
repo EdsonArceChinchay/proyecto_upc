@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 15/08/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AltaMTUpfront
-Característica: AT-DT041_Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Tienda
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AltaMT_Upfront
+Característica: AT-DT041_Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Tienda
 
   @AltaMTUpfrontTienda_CE
-  Esquema del escenario: Alta MT (Alta Fija + Alta Movil) Upfront a cliente con CE por canal Tienda
+  Esquema del escenario: Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

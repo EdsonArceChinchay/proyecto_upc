@@ -17,6 +17,9 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 @Slf4j
 public class RegisterPage extends WebBase {
 
+    //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
+    protected final String btnCustomerData =
+            "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
     @FindBy(css = "tdp-st-select[formcontrolname='medioPago']")
     protected WebElement selectMethodPayment;
     @FindBy(css = "tdp-st-input-text[formcontrolname='mail']")
@@ -25,9 +28,6 @@ public class RegisterPage extends WebBase {
     protected WebElement inputConfirmEmail;
     @FindBy(css = "tdp-st-input-text[formcontrolname='callID']")
     protected WebElement inputCallID;
-    //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
-    protected final String btnCustomerData =
-            "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')] | //button//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
     @FindBy(xpath = "//*[contains(text(),'Confirmar') and @type='submit'] | //button[contains(text(),'Confirmar')]")

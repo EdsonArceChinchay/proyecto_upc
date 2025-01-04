@@ -41,7 +41,7 @@ Característica: AT-DT _ Alta SVA a un MT a cliente con CE por canal Call Center
     Y        selecciono boton mantener plan
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
-    Y        agrego SVA internet "PACK ANTIVIRUS MCAFEE"
+    Y        agrego SVA bloque "HBO"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso correo electronico "<emailUser>"

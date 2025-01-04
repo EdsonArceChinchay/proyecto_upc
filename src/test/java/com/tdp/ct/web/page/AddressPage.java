@@ -14,6 +14,9 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class AddressPage extends WebBase {
     private static final String DEPARTAMENTO = "LIMA";
+    //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
+    protected final String btnConsultCoverage =
+            "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]";
     @FindBy(xpath = "//tdp-st-card[2]/div/div[2]/form/div[3]/div/div/div[3]")
     protected WebElement direccionSugerida;
     @FindBy(css = "tdp-st-input-text[formcontrolname='lot']")
@@ -34,9 +37,6 @@ public class AddressPage extends WebBase {
     protected WebElement selectHousingComplexe;
     @FindBy(css = "tdp-st-input-text[formcontrolname='housingComplexName']")
     protected WebElement inputHousingComplexName;
-    //@FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]")
-    protected final String btnConsultCoverage =
-            "//*[@type='submit' and contains(text(),'Consultar cobertura') or contains(@class,'button')  and contains(text(),'Consultar cobertura') ]";
     @FindBy(xpath = "//*[@type='submit' and contains(text(),'Consultar ubicación') or contains(@class,'button') and contains(text(),'Consultar ubicación')]")
     protected WebElement btnConsultLocation;
     @FindBy(xpath = "//span[contains(text(),'Lugar de')]")
