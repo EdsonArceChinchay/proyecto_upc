@@ -45,6 +45,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement buttonIdentidadValidada;
     @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
     protected WebElement buttonValidarContrato;
+    @FindBy(css = ".text-info")
+    protected WebElement nombreClienteUserData;
+    @FindBy(xpath = "//button[text()='Crear cliente']")
+    protected WebElement buttonCrearCliente;
 
     public void clickOnTheValidateHolderIdentityButton() {
         esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
@@ -255,5 +259,51 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             logSevere("No se espero a que se oculte el elemento");
         }
         return retorno;
+    }
+
+    public boolean esNuevoCliente() {
+        if (nombreClienteUserData.getText().length() > 8) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void ingresarNombreClienteExtranjero(String nombre) {
+        UtilWeb.waitForSeconds(3);
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='nomCli']");
+        esperaProgresiva(driver(), 5, 5, rootElement);
+        revisarModalError(driver());
+        SearchContext context = sh().getContext(rootElement);
+        revisarModalError(driver());
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(nombre);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void ingresarApellidoClienteExtranjero(String apellidos) {
+        WebElement rootElement = find().getElementByXPath("//div/tdp-st-input-text[@formcontrolname='apeCli']");
+        SearchContext context = sh().getContext(rootElement);
+        context.findElement(By.cssSelector("div > div > div > input")).sendKeys(apellidos);
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void seleccionarGeneroClienteExtranjero(String genero) {
+        WebElement generoList = find().getElementByXPath("//div/tdp-st-select[@formcontrolname='genero']");
+        click(generoList);
+        String dataValue = "";
+        SearchContext context = sh().getContext(generoList);
+        if (genero.equalsIgnoreCase("femenino")) {
+            dataValue = "F";
+        } else {
+            dataValue = "M";
+        }
+        context.findElement(By.cssSelector("[data-value='" + dataValue + "']")).click();
+        UtilWeb.waitForSeconds(1);
+    }
+
+    public void crearCliente() {
+        js().scrollElementTop(buttonCrearCliente);
+        click(buttonCrearCliente);
+        UtilWeb.waitForSeconds(2);
     }
 }

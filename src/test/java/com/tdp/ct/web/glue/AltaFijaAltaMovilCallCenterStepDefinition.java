@@ -2,7 +2,11 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
+import com.tdp.ct.web.step.AltaFijaMovilRegistroStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +21,16 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
 
     @Autowired
     private AltaFijaTiendaStep altaFijaTiendaStep;
+
+    @Autowired
+    private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
+
+    private Scenario scenario;
+
+    @Before(order = 0)
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
     @Y("selecciono tipo de oferta")
     public void selecciono_tipo_de_oferta() {
@@ -135,4 +149,26 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
         }
     }
 
+    @Y("ingreso los datos del cliente a registrar")
+    public void completoLosDatosDelClienteARegistrar(DataTable datos) {
+        altaFijaMovilRegistroStep.verificarClienteNuevo();
+        altaFijaMovilRegistroStep.ingresarDatosClienteExtranjero(datos);
+        altaFijaMovilRegistroStep.clicEnCrearCliente();
+    }
+
+    @Y("presiono el boton consultar cobertura")
+    public void presiono_el_boton_Consultar_covertura() {
+        altaFijaAltaMovilCallCenterStep.clickConsultarCobertura();
+    }
+
+    @Y("selecciono un plan {string} de Movistar Total")
+    public void seleccionoUnPlanDeMovistarTotal(String nombrePlan) {
+        //this.scenario.log(altaFijaAltaMovilCallCenterStep.seleccionarListaOferta(nombrePlan));
+        altaFijaAltaMovilCallCenterStep.clickSeleccionarOferta();
+    }
+
+    @Y("selecciono ir a Movistar Total")
+    public void seleccionoIrAMovistarTotal() {
+        altaFijaAltaMovilCallCenterStep.clickIrAMovistarTotal();
+    }
 }
