@@ -10,12 +10,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static com.tdp.ct.web.utils.DateUtils.formatTime;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class Addons {
+    private static final Logger LOGGER = Logger.getLogger(Addons.class.getName());
 
     public static void esperaProgresivaLoading(WebDriver driver, int reintentosMax, int segundosEspera, String sLoadingXPath) {
         //USAR SOLO EN ALGUNOS CASOS, CUANDO TIENE UN LOADING DIFERENTE
@@ -357,4 +360,32 @@ public class Addons {
         }
     }
 
+    public static void esperaSimple(WebDriver driver, int maxAttempts, WebElement elemento, boolean action) {
+        boolean isActionSuccessful = false;
+        int attempt = 0;
+        LOGGER.log(Level.INFO, "Inicio de esperaSimple: "+ elemento);
+        while (attempt < maxAttempts && !isActionSuccessful) {
+            try {
+                if (elemento != null && elemento.isDisplayed()) { // Verificar existencia y visibilidad del elemento
+                    if (action) {
+                        elemento.click();
+                        LOGGER.log(Level.INFO, "Click al elemento: "+ elemento);
+                    }
+                    isActionSuccessful = true; // Si el clic es exitoso, se sale del bucle.
+                } else {
+                    throw new NoSuchElementException("El elemento no está disponible o no es visible en la página.");
+                }
+            } catch (NoSuchElementException | ElementNotInteractableException e) {
+                attempt++;
+                LOGGER.log(Level.INFO, "Reintentando... Intento " + attempt + " ERROR: " + e.getMessage());
+                UtilWeb.waitForSeconds(2); // Espera de 2 segundos antes del siguiente intento
+            }
+        }
+
+        if (!isActionSuccessful) {
+            throw new RuntimeException("No se pudo realizar la acción sobre el elemento " + elemento + " después de " + maxAttempts + " intentos.");
+        }else{
+            LOGGER.log(Level.INFO, "Elemento encontrado en el intento " + attempt );
+        }
+    }
 }

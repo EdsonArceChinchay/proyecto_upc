@@ -33,7 +33,7 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     #Y        valido que se presente la tienda "<tiendaAsesor>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton Consultar
+    Y        doy click en el boton consultar
     #Y        cierro popup de error
     Y        ingreso los datos del cliente a registrar
       | nombres      | apellidos          | genero   |

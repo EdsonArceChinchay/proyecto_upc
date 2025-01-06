@@ -70,11 +70,6 @@ public class HomeStepDefinition {
         homeStep.typeDocumentNumber(customerDocumentNumber);
     }
 
-    @Y("doy click en el boton Consultar")
-    public void doyClickEnElBotonConsultar() {
-        homeStep.clickOnConsultButton();
-    }
-
     @Y("me dirijo a la bandeja de Back Office")
     public void meDirijoALaBandejaDeBackOffice() {
         executeIfNotRetention(() -> homeStep.clickOnTheBackOfficeButton());
@@ -139,6 +134,12 @@ public class HomeStepDefinition {
     @Y("cierro pop up de CU")
     public void cierroPopUpDeCU() {
         homeStep.clickXPopUpCU();
+    }
+
+    @Y("doy click en el boton consultar")
+    public void doyClickEnElBotonConsultar() {
+        homeStep.clickBotonConsultar();
+
     }
 
 }
