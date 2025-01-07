@@ -64,5 +64,12 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaTrioMTconUpfrontTiendaPage().seleccionoElNombreDePlanMovistarTotal();
     }
 
+    public void clickConsultarCobertura() {
+        page.altaFijaAltaMovilCallCenterPage().btnConsultarCobertura();
+    }
+
+    public void clickSeleccionarOferta() {
+        page.altaFijaAltaMovilCallCenterPage().seleccionarOferta();
+    }
 }
 

@@ -11,8 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
-import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
@@ -62,6 +61,12 @@ public class HomePage extends WebBase {
 
     @FindBy(css = "tdp-st-input-text[id=\"doc\"]")
     protected WebElement inputDocumentNumber;
+
+    @FindBy(xpath = "//div[1]/form/div/div[3]/button")
+    protected WebElement btnconsultar;
+
+    @FindBy(xpath = "/html/body/app-root/app-park/body/div/div[1]/div[3]/div[1]")
+    protected WebElement boton01;
 
     public void selectDocumentType(String type) {
         String valueDocumentType;
@@ -235,6 +240,16 @@ public class HomePage extends WebBase {
         String zoomScript = "document.body.style.zoom='" + zoomLevel + "%'";
         ((JavascriptExecutor) driver()).executeScript(zoomScript);
         logInfo("Zoom ajustado al " + zoomLevel + "%.");
+    }
+
+    public void clickBotonConsultar() {
+        //esperaProgresiva(driver(), 3, 5, btnconsultar);
+        esperaSimple(driver(),30,btnconsultar,true);
+//        btnConsultar.click();
+//        Addons.esperaCargaMontoDeuda(driver(), 50);
+//        esperaProgresiva(driver(), 5, 10, boton01);
+        esperaSimple(driver(),30,boton01, false);
+        revisarModalError(driver());
     }
 
 }

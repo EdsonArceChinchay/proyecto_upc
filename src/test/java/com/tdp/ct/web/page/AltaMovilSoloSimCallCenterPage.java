@@ -31,6 +31,8 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     protected WebElement preguntaTipoPlan;
     @FindBy(xpath = "//div[contains(@class, 'card-option-ofert-content')]")
     protected List<WebElement> listaOfertas;
+    @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
+    protected WebElement ofertasSugeridas;
 
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);
@@ -195,4 +197,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
+    public void imprimoLaOfertaSeleccionada(ManageScenario scenario) {
+        waitUntilElementIsVisible(ofertasSugeridas, 20);
+        js().scrollElementTop(ofertasSugeridas);
+        scenario.printFullView();
+    }
 }

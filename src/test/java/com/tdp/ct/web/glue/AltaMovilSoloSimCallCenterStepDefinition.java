@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.model.Customer;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.step.AltaFijaAltaMovilCallCenterStep;
 import com.tdp.ct.web.step.AltaFijaTiendaStep;
 import com.tdp.ct.web.step.AltaMovilSoloSimCallCenterStep;
@@ -32,6 +33,9 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     private CheckoutStep checkoutStep;
 
     private Scenario scenario;
+
+    @Autowired
+    private ManageScenario scenario2;
 
     @Before(order = 0)
     public void before(Scenario scenario) {
@@ -112,5 +116,12 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
         this.scenario.log("[Código de Venta: " + salesCode + "]");
         altaMovilSoloSimCallCenterStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, altaMovilSoloSimCallCenterStep.getSalesLead(salesCode));
         this.scenario.log(altaMovilSoloSimCallCenterStep.getSalesLead(salesCode).toString());
+    }
+
+    @Y("selecciono un plan {string} movil")
+    public void seleccionoUnPlanMovil(String planMovil) {
+        altaMovilSoloSimCallCenterStep.seleccionarListaPlanMovil(planMovil);
+        altaMovilSoloSimCallCenterStep.clickBotonSeleccionarOferta();
+        altaMovilSoloSimCallCenterStep.imprimoLaOfertaSeleccionada(scenario2);
     }
 }

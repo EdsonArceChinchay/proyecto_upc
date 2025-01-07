@@ -97,6 +97,10 @@ public class StepPages {
         return new PortabilityPage();
     }
 
+    public CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage caplConCaeqAlContadoCanalTiendaPage() {
+        return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage();
+    }
+
 }
 
 

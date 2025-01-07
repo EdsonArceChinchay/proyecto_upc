@@ -137,4 +137,8 @@ public class HomeStep {
         return page.homePage().getChannelType();
     }
 
+    @ScreenShotBefore
+    public void clickBotonConsultar() {
+        page.homePage().clickBotonConsultar();
+    }
 }

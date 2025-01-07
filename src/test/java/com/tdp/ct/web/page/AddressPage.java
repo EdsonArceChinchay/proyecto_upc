@@ -2,7 +2,9 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -76,8 +78,13 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             UtilWeb.waitForSeconds(4);
         }
-        js().scrollElementTop(selectDepartment);
-        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
+        click(depaList);
+        UtilWeb.waitForSeconds(2);
+        By byItem = By.cssSelector("[data-value='" + department + "']");
+        SearchContext context = sh().getContext(depaList);
+        esperaProgresiva(driver(), 3, 5, depaList, byItem, context);
+        js().scrollElementTop(context.findElement(byItem));
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -89,7 +96,13 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             selectDepartment(DEPARTAMENTO);
         }
-        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
+        click(selectProvince);
+        UtilWeb.waitForSeconds(10);
+        SearchContext context = sh().getContext(selectProvince);
+        By byItem = By.cssSelector("[data-value='" + province + "']");
+        esperaProgresiva(driver(), 3, 5, selectProvince, byItem, context);
+        js().scrollElementTop(context.findElement(byItem));
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 
@@ -105,7 +118,13 @@ public class AddressPage extends WebBase {
             selectProvince(PROVINCIA);
             distritoList = find().getElementByCss("form > div:nth-child(3) > div > tdp-st-select");
         }
-        selectElementCSSWithAndWithoutShadowRoot("district", distritoList, district);
+        click(distritoList);
+        UtilWeb.waitForSeconds(2);
+        SearchContext context = sh().getContext(distritoList);
+        By byItem = By.cssSelector("[data-value='" + district + "']");
+        esperaProgresiva(driver(), 4, 5, distritoList, byItem, context);
+        js().scrollElementTop(context.findElement(byItem));
+        context.findElement(byItem).click();
         UtilWeb.waitForSeconds(1);
     }
 

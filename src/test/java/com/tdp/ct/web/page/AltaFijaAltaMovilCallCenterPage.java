@@ -6,6 +6,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.List;
 
@@ -38,6 +39,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     protected List<WebElement> botoneraIrA;
     @FindBy(xpath = "//button[@class='btnCard' and contains(text(),'Línea nueva') or contains(text(),'Línea Nueva') or contains(text(),'Línea nueva') ]")
     protected WebElement btnLineaNueva;
+    @FindBy(xpath = "//button[@type='submit']")
+    protected WebElement btnConsultarCobertura;
 
     public void scrollUP() {
         revisarModalError(driver());
@@ -159,13 +162,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void irAMovistarTotal() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
-        btnIrAMovistar.click();
-        UtilWeb.waitForSeconds(5);
-    }
-
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(), 4, 5, botoneraIrA.get(1));
         revisarModalError(driver());
@@ -179,4 +175,27 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(btnLineaNueva);
     }
 
+    public void btnConsultarCobertura() {
+        esperaProgresiva(driver(), 5, 3, btnConsultarCobertura);
+        js().scrollElementTop(btnConsultarCobertura);
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 5, btnConsultarCobertura);
+        btnConsultarCobertura.click();
+    }
+
+    public void seleccionarOferta() {
+        revisarModalError(driver());
+
+        EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver());
+        eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" + ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
+        UtilWeb.waitForSeconds(3);
+        buttonSeleccionarOferta.click();
+    }
+
+    public void irAMovistarTotal() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
+        btnIrAMovistar.click();
+        UtilWeb.waitForSeconds(5);
+    }
 }

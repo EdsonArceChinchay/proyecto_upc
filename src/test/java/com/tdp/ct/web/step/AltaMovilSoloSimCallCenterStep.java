@@ -83,5 +83,9 @@ public class AltaMovilSoloSimCallCenterStep {
     public void seeTheChosenOffer() {
         page.caeqPorRetailPage().seeTheChosenOffer(scenario);
     }
+
+    public void imprimoLaOfertaSeleccionada(ManageScenario scenario) {
+        page.altaMovilSoloSimCallCenterPage().imprimoLaOfertaSeleccionada(scenario);
+    }
 }
 
