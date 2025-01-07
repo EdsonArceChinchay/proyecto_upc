@@ -13,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 06/01/2025
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
+@validar-fija
 Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
 
-  @sanity_programado @validar-fija
+  @robotQAN
   Esquema del escenario: Visualizacion de Ofertas Fija - CE por Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora

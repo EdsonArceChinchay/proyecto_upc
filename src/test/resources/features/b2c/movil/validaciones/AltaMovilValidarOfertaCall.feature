@@ -1,5 +1,4 @@
 #language:es
-
 ##CREADOR:
 ##APP: DITO
 ##MODULO:
@@ -14,10 +13,10 @@
 ##ENCARGADO:
 ##FECMOD: 06/01/2025
 
-@BERSERKERS @QAN
+@validar-movil
 Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
 
-  @sanity_programado @validar-movil
+  @robotQAN
   Esquema del escenario: Alta movil Postpago solo chip
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora

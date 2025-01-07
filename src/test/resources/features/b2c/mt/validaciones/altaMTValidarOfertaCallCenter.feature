@@ -13,11 +13,11 @@
 ##ENCARGADO:
 ##FECMOD: 06/01/2025
 
-@BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01
+@validar-mt
 
 Característica: Visualizacion de Ofertas MT - CE por Call Center
 
-  @sanity_programado @validar-mt
+  @robotQAN
   Esquema del escenario: Alta MT por call center con nuevo cliente con documento CE
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
