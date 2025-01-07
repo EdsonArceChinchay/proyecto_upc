@@ -21,8 +21,8 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
   Esquema del escenario: Alta movil Postpago solo chip
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion                    | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-23032 | TIQLT-20770 | Visualizacion de Ofertas Movil | CONTADO    |
+      | Analista QA   | HU          | Test        | Transaccion                    | Tipo Venta |
+      | Lucero Obispo | TIQLT-23032 | TIQLT-20770 | Visualizacion de Ofertas Movil | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -53,7 +53,7 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
     Y        visualizo los detalles del plan seleccionado
 
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      | usuario externo | userNameQAN8 | passQAN8 | Bienvenid@ | CE            | 1100000765 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
+      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100000765 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN4 | passQAN4 | Bienvenid@ | CE            | 1100002324 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 
