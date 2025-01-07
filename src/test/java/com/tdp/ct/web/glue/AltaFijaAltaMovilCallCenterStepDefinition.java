@@ -25,13 +25,6 @@ public class AltaFijaAltaMovilCallCenterStepDefinition {
     @Autowired
     private AltaFijaMovilRegistroStep altaFijaMovilRegistroStep;
 
-    private Scenario scenario;
-
-    @Before(order = 0)
-    public void before(Scenario scenario) {
-        this.scenario = scenario;
-    }
-
     @Y("selecciono tipo de oferta")
     public void selecciono_tipo_de_oferta() {
         altaFijaAltaMovilCallCenterStep.scrollUp();

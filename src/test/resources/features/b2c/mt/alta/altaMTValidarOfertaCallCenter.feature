@@ -21,8 +21,8 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
   Esquema del escenario: Alta MT por call center con nuevo cliente con documento CE
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
-      | Analista QA        | HU          | Test        | Transaccion                 | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-23032 | TIQLT-20771 | Visualizacion de Ofertas MT | CONTADO    |
+      | Analista QA   | HU          | Test        | Transaccion                 | Tipo Venta |
+      | Lucero Obispo | TIQLT-23032 | TIQLT-20771 | Visualizacion de Ofertas MT | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -61,6 +61,6 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        selecciono ir a Movistar Total
 
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion       | referencia | nombrePlan |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion       | referencia | nombrePlan |
 #      | usuario interno | userNameQAN7 | passQAN7 | Bienvenid@ | CE            | 1100000605 | 15           | 1501      | 150113   | CALLE EULER 118O        | Inkafarma  | MBPS       |
-      | usuario externo | userNameQAN8 | passQAN8 | Bienvenid@ | CE            | 1100002107 | 15           | 1501      | 150113   | CALLE EULER 116 | Inkafarma  | MBPS       |
+      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | 15           | 1501      | 150113   | CALLE EULER 116 | Inkafarma  | MBPS       |

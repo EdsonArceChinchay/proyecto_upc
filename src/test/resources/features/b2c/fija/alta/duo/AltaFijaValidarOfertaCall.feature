@@ -16,12 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
 Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
 
-  @sanity_programado
+  @sanity_programado @validar-fija
   Esquema del escenario: Visualizacion de Ofertas Fija - CE por Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion                   | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-23032 | TIQLT-20769 | Visualizacion de Ofertas Fija | CONTADO    |
+      | Analista QA   | HU          | Test        | Transaccion                   | Tipo Venta |
+      | Lucero Obispo | TIQLT-23032 | TIQLT-20769 | Visualizacion de Ofertas Fija | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<tipoUsuario>"
     Y        ingreso el usuario "<userName>"
@@ -48,7 +48,7 @@ Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto             | conjHabit |
-      |    |              |                | 1      |      1| 1   | URBANIZACION POPULAR | casa      |
+      |    |              |                | 1      | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<tipoPlan>"
@@ -56,8 +56,8 @@ Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
 
 
     Ejemplos:
-      | tipoUsuario     | userName     | password | msgHome    | tipoDocumento | documento  | nombres      | apellidos            | departamento | provincia | distrito | direccion                                                                 | referencia             | tipoPlan | nombrePlan |
-      | usuario externo | userNameQAN8 | passQAN8 | Bienvenid@ | CE            | 1100002107 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
+      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | nombres      | apellidos            | departamento | provincia | distrito | direccion                                                                 | referencia             | tipoPlan | nombrePlan |
+      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
     #  | usuario interno | userNameQAN6 | passQAN6 | Bienvenid@ | CE            | 221011311 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
     #      | usuario interno | userNameCC | passCC   | Bienvenid@ | CE            | 1100000312 | QATIPROD QAN | Prueba QAN TRECIENTOS DOCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET |
     #  | usuario interno | userNameCC | passCC   | Bienvenid@ | CE            | 1100000522 | QATIPROD QAN | Prueba QAN D VEINTIDOS   | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 2 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET |
