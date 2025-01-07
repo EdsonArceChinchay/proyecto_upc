@@ -132,6 +132,7 @@ public class ParkPage extends WebBase {
 
     public void altaHogar() {
         WebElement BotonAltaHogar = explicitWaitCss(driver(), 10, btnHogar);
+        esperaProgresiva(driver(),5,2,BotonAltaHogar);
         js().scrollElementTop(BotonAltaHogar);
         if (BotonAltaHogar.isDisplayed()) {
             click(BotonAltaHogar);
