@@ -162,13 +162,6 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void irAMovistarTotal() {
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
-        btnIrAMovistar.click();
-        UtilWeb.waitForSeconds(5);
-    }
-
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(), 4, 5, botoneraIrA.get(1));
         revisarModalError(driver());
@@ -197,5 +190,12 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         eventFiringWebDriver.executeScript("document.querySelector('body > app-root > app-offer-mt > app-mt-change-plan-modal > tdp-st-modal')" + ".shadowRoot.querySelector('div > div.mdc-dialog__container > div.mdc-dialog__surface > div.mdc-dialog__content').scrollTop=500");
         UtilWeb.waitForSeconds(3);
         buttonSeleccionarOferta.click();
+    }
+
+    public void irAMovistarTotal() {
+        revisarModalError(driver());
+        esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
+        btnIrAMovistar.click();
+        UtilWeb.waitForSeconds(5);
     }
 }

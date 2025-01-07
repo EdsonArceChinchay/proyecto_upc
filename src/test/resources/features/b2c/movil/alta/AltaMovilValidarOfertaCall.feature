@@ -6,7 +6,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT096
-##GDAP: GDAP-NNN
+##GDAP: GDAP-1764
 ##SPRINT CREADO: PI21
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -17,7 +17,7 @@
 @BERSERKERS @QAN
 Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
 
-  @sanity_programado
+  @sanity_programado @validar-movil
   Esquema del escenario: Alta movil Postpago solo chip
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
