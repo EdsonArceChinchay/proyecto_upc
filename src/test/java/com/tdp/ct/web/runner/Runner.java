@@ -17,7 +17,7 @@ import java.util.logging.Logger;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@LoginExitoso"
+        tags = "@validar-mt"
 )
 class Runner {
 
@@ -29,7 +29,7 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-        new HttpSender().sendDetailsRun("TIQLT-JR1220");
+//        new HttpSender().sendDetailsRun("TIQLT-JR1220");
         JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }
