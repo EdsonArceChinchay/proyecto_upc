@@ -24,7 +24,7 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
       | Analista QA   | HU          | Test        | Transaccion                 | Tipo Venta |
       | Lucero Obispo | TIQLT-23032 | TIQLT-20771 | Visualizacion de Ofertas MT | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
@@ -61,6 +61,6 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        selecciono ir a Movistar Total
 
     Ejemplos:
-      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion       | referencia | nombrePlan |
+      | userType | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion       | referencia | nombrePlan |
 #      | usuario interno | userNameQAN7 | passQAN7 | Bienvenid@ | CE            | 1100000605 | 15           | 1501      | 150113   | CALLE EULER 118O        | Inkafarma  | MBPS       |
-      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | 15           | 1501      | 150113   | CALLE EULER 116 | Inkafarma  | MBPS       |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | 15           | 1501      | 150113   | CALLE EULER 116 | Inkafarma  | MBPS       |

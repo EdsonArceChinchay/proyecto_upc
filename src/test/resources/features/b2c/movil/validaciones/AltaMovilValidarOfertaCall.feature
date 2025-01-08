@@ -23,7 +23,7 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
       | Analista QA   | HU          | Test        | Transaccion                    | Tipo Venta |
       | Lucero Obispo | TIQLT-23032 | TIQLT-20770 | Visualizacion de Ofertas Movil | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
@@ -52,7 +52,7 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
     Y        visualizo los detalles del plan seleccionado
 
     Ejemplos:
-      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100000765 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | userType | userName     | password         | msgHome    | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100000765 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN4 | passQAN4 | Bienvenid@ | CE            | 1100002324 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 

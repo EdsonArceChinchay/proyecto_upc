@@ -23,7 +23,7 @@ Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
       | Analista QA   | HU          | Test        | Transaccion                   | Tipo Venta |
       | Lucero Obispo | TIQLT-23032 | TIQLT-20769 | Visualizacion de Ofertas Fija | CONTADO    |
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "<tipoUsuario>"
+    Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<password>"
     Y        ingreso el captcha
@@ -56,8 +56,8 @@ Característica:Visualizacion de Ofertas Fija - CE en canal Call Center
 
 
     Ejemplos:
-      | tipoUsuario     | userName     | password         | msgHome    | tipoDocumento | documento  | nombres      | apellidos            | departamento | provincia | distrito | direccion                                                                 | referencia             | tipoPlan | nombrePlan |
-      | usuario externo | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
+      | userType | userName     | password         | msgHome    | tipoDocumento | documento  | nombres      | apellidos            | departamento | provincia | distrito | direccion                                                                 | referencia             | tipoPlan | nombrePlan |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
     #  | usuario interno | userNameQAN6 | passQAN6 | Bienvenid@ | CE            | 221011311 | QATIPROD QAN | QAN TRESCIENTOS ONCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO TV     |
     #      | usuario interno | userNameCC | passCC   | Bienvenid@ | CE            | 1100000312 | QATIPROD QAN | Prueba QAN TRECIENTOS DOCE | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 1 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET |
     #  | usuario interno | userNameCC | passCC   | Bienvenid@ | CE            | 1100000522 | QATIPROD QAN | Prueba QAN D VEINTIDOS   | 15           | 1501      | 150104   | AVENIDA ALMIRANTE MIGUEL GRAU 93 Bloque 1 Piso 2 interior 1 Urb Sauzalito | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET |
