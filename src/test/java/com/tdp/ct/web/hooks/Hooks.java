@@ -5,7 +5,9 @@ import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.utils.BitacoraService;
 import com.tdp.ct.web.utils.HttpSender;
+import com.tdp.ct.web.utils.WebDriverErrorDecorator;
 import io.cucumber.java.*;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Hooks {
@@ -37,8 +39,15 @@ public class Hooks {
     @Before(order = 0)
     public void setUp() {
 
+        httpSender.disableSSLValidation();
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         manager.setUpDriver();
+
+        // Crea una instancia del WebDriver decorado con el soporte para errores y capturas
+        WebDriver decoratedDriver = WebDriverErrorDecorator.create(manager.getDriver());
+
+        // Actualiza el driver en manager con el decorado
+        manager.setDriver(decoratedDriver);
     }
 
     @Before(order = 1)
