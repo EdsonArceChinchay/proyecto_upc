@@ -34,7 +34,7 @@ public class HttpSender {
         this.BASE_URL = "https://syn-mon.jeffersonriobueno.com/";
 //        this.SENDER_NUMBER = env.get("SENDER_NUMBER");
 //        this.SENDER_NUMBER = new String[]{"51923094244@c.us","51942964007@c.us","120363231256426271@g.us"};
-        this.SENDER_NUMBER = new String[]{"51923094244@c.us"};
+        this.SENDER_NUMBER = new String[]{"51907117575@c.us"};
         // 51969944146@c.us DANTE
         // 51920004138@c.us CARMEN
         // 51923094244@c.us JEFF
