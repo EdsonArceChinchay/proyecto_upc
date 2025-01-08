@@ -69,7 +69,7 @@ public class Hooks {
     public void afterScenario() {
         httpSender.disableSSLValidation();
         // Captura el error de Selenium si existe
-        String seleniumError = (String) getScenarioContext().getOrDefault("seleniumError", ""); // Obtiene el error de Selenium
+        String seleniumError =  WebDriverErrorDecorator.getLastSeleniumError();// Obtiene el error de Selenium
 
         // Genera la bitácora utilizando el servicio BitacoraService
         bitacoraService.generarBitacora();
