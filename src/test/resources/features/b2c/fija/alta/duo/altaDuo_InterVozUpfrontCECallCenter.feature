@@ -16,9 +16,12 @@
 @BERSERKERS @DoneDevOps @AltaDuo_InterVozUpfront @AltaDuoUpfront
 Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront a cliente con CE por canal Call Center
 
-  @AltaDuo_InterVozUpfront
+  @AltaDuo_InterVozUpfront @test-fija
   Esquema del escenario: Alta Duo (Internet + Voz) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test       | Transaccion                            | Tipo Venta | Tags       |
+      | Lucero Obispo | TIQLT-JR0109 | TIQLT-0001 | ALTA FIJA DUO (Internet + Voz) Upfront | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -45,7 +48,7 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront a cliente con CE por
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
+      |    |              |                | 2    | 9   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
@@ -75,6 +78,6 @@ Característica: AT-DT095_Alta Duo (Internet + Voz) Upfront a cliente con CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000112     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | plan_hogar | nombrePlan                   |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | INKAFARMA  | Duo        | DUO MOVISTAR VOZ INTERNET RA |
 

@@ -16,9 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
 Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente con CE por canal Call Center
 
-  @AltaDuoSvaLineaSvaBloqueCallCenter
+  @AltaDuoSvaLineaSvaBloqueCallCenter @test-fija
   Esquema del escenario: Alta Duo Sva Linea + Sva bloque Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU        | Test       | Transaccion                                   | Tipo Venta | Tags                                |
+      | Lucero Obispo | TIQLT-JR0109 | TIQLT-0004 | ALTA FIJA (Voz + TV) + Sva Linea + Sva bloque | Contado    | @AltaDuoSvaLineaSvaBloqueCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -87,5 +90,5 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1058908648     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |
