@@ -19,16 +19,19 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
   @AltaMonoIntHFC
   Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
-    Y        ingreso el usuario "userNameCC"
-    Y        ingreso el password "userPasswordCC"
+    Y        ingreso el usuario "userNameQAN5"
+    Y        ingreso el password "userPasswordQAN5"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        valido que se presente el canal "Call Center"
     Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1042464814"
+    Y        ingreso el documento "1100002107"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -42,8 +45,8 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
       | LIMA         | LIMA      | SAN ISIDRO | AVENIDA CAMINO REAL 155 | parque     |
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
-      | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
+      |    |              |                | 1    | 3   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "Mono"
@@ -72,7 +75,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "1042464814"
+    Y        busco por "1100002107"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

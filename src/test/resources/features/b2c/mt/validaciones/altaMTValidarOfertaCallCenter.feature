@@ -18,7 +18,7 @@
 Característica: Visualizacion de Ofertas MT - CE por Call Center
 
   @robotQAN
-  Esquema del escenario: Alta MT por call center con nuevo cliente con documento CE
+  Esquema del escenario: Visualizacion de Ofertas MT - CE por Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion                 | Tipo Venta |
@@ -31,11 +31,11 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     #Y        valido que se presente la tienda "<tiendaAsesor>"
-    Cuando   selecciono el tipo de documento "<tipoDocumento>"
-    Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
-    #Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
+    Y        doy click en el boton Consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del nuevo cliente
       | nombres      | apellidos          | genero   |
       | QATIPROD QAN | DCC SETENTAICUATRO | femenino |
     Y        selecciono el boton Linea Nueva Hogar
@@ -61,6 +61,5 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        selecciono ir a Movistar Total
 
     Ejemplos:
-      | userType | userName     | password         | msgHome    | tipoDocumento | documento  | departamento | provincia | distrito | direccion       | referencia | nombrePlan |
-#      | usuario interno | userNameQAN7 | passQAN7 | Bienvenid@ | CE            | 1100000605 | 15           | 1501      | 150113   | CALLE EULER 118O        | Inkafarma  | MBPS       |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002107 | 15           | 1501      | 150113   | CALLE EULER 116 | Inkafarma  | MBPS       |
+      | userType | userName     | password         | msgHome    | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE           | 1100000761     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MBPS       |

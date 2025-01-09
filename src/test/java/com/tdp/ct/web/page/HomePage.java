@@ -242,14 +242,5 @@ public class HomePage extends WebBase {
         logInfo("Zoom ajustado al " + zoomLevel + "%.");
     }
 
-    public void clickBotonConsultar() {
-        //esperaProgresiva(driver(), 3, 5, btnconsultar);
-        esperaSimple(driver(),30,btnconsultar,true);
-//        btnConsultar.click();
-//        Addons.esperaCargaMontoDeuda(driver(), 50);
-//        esperaProgresiva(driver(), 5, 10, boton01);
-        esperaSimple(driver(),30,boton01, false);
-        revisarModalError(driver());
-    }
 
 }

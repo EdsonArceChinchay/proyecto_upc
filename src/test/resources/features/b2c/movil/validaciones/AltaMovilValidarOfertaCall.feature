@@ -17,7 +17,7 @@
 Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
 
   @robotQAN
-  Esquema del escenario: Alta movil Postpago solo chip
+  Esquema del escenario: Visualizacion de Ofertas Movil - CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion                    | Tipo Venta |
@@ -31,9 +31,9 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Cuando   selecciono el tipo de documento "<tipoDocumento>"
     Y        ingreso el documento "<documento>"
-    Y        doy click en el boton consultar
-#    Y        cierro popup de error
-    Y        ingreso los datos del cliente a registrar
+    Y        doy click en el boton Consultar
+    Y        cierro popup de error
+    Y        ingreso los datos del nuevo cliente
       | nombres      | apellidos    | genero    |
       | QATIPROD QAN | veinticuatro | masculino |
 #    Y        guardo el nombre del cliente
@@ -53,6 +53,6 @@ Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
 
     Ejemplos:
       | userType | userName     | password         | msgHome    | tipoDocumento | documento  | tipoPlanMovil | nombrePlan                              |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100000765 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE            | 1100002104 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 #      | usuario interno | userNameQAN4 | passQAN4 | Bienvenid@ | CE            | 1100002324 | Postpago      | RV Plan Ilimitado Mi Movistar S/ 74.9 V |
 
