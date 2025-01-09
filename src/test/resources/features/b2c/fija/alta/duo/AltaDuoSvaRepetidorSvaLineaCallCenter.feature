@@ -16,9 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
 Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea por canal Call Center
 
-  @AltaDuoSvaRepetidorSvaLineaCallCenter
+  @AltaDuoSvaRepetidorSvaLineaCallCenter @test-fija
   Esquema del escenario: Alta Duo Sva Repetidor + Sva Línea Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test       | Transaccion                                          | Tipo Venta | Tags                                   |
+      | Lucero Obispo | TIQLT-JR0109 | TIQLT-0006 | ALTA FIJA (Voz + Internet) Sva Repetidor + Sva Línea | Contado    | @AltaDuoSvaRepetidorSvaLineaCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -88,4 +91,4 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea p
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000012     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |

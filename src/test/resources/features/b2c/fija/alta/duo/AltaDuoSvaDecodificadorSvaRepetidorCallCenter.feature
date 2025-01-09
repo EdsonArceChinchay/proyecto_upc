@@ -16,9 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @Sanity28 @AltaFija @AltaDuo
 Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA Repetidor a cliente con CE por canal Call Center
 
-  @AltaDuosvaDecodificadorsvaRepetidorCallCenter
+  @AltaDuosvaDecodificadorsvaRepetidorCallCenter @test-fija
   Esquema del escenario: Alta Duo con sva Decodificador + sva Repetidor CALL CENTER
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test       | Transaccion                                                    | Tipo Venta | Tags                                           |
+      | Lucero Obispo | TIQLT-JR0109 | TIQLT-0003 | ALTA FIJA (Internet + TV) con SVA Decodificador + SVA Repetido | Contado    | @AltaDuosvaDecodificadorsvaRepetidorCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -86,5 +89,5 @@ Característica: AT-DT087_Alta Duo (Internet + TV) con SVA Decodificador + SVA R
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia             | tipoPlan | nombrePlan              | decodificador      | svaRepetidor              |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET FLEX HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia             | tipoPlan | nombrePlan              | decodificador      | svaRepetidor              |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | AL FRENTE DE LA BOTICA | Duo      | DUO INTERNET FLEX HD RA | PUNTO ADICIONAL HD | Repetidor WIFI PLUS Venta |
