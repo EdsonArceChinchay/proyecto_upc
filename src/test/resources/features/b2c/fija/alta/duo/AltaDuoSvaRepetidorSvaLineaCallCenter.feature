@@ -91,4 +91,4 @@ Característica: AT-DT091_Alta Duo (Voz + Internet) Sva Repetidor + Sva Línea p
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia             | tipoPlan | nombrePlan                   | svaLinea             | svaRepetidor              |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | Repetidor WIFI PLUS Venta |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ INTERNET RA | Plan Multidestino 25 | SMART WIFI |

@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
 Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  por canal Call Center
 
-  @AltaDuoCC_SvaHBO @test-fija
+  @AltaDuoCC_SvaHBO
   Esquema del escenario: Alta Duo SVA HBO a cliente con CE  por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
