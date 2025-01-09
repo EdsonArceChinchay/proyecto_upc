@@ -31,17 +31,25 @@ public class ParkStep {
 
     @ScreenShotAfter
     public void ingresarDatosClienteExtranjero(DataTable datos) {
-        String customerName = UtilWeb.getValueFromDataTable(datos, "nombres");
-        String customerLastName = UtilWeb.getValueFromDataTable(datos, "apellidos");
-        String customerGender = UtilWeb.getValueFromDataTable(datos, "genero");
-        page.parkPage().ingresarNombreClienteExtranjero(customerName);
-        page.parkPage().ingresarApellidoClienteExtranjero(customerLastName);
-        page.parkPage().seleccionarGeneroClienteExtranjero(customerGender);
+        if (customer.isNewCustomer()) {
+            String customerName = UtilWeb.getValueFromDataTable(datos, "nombres");
+            String customerLastName = UtilWeb.getValueFromDataTable(datos, "apellidos");
+            String customerGender = UtilWeb.getValueFromDataTable(datos, "genero");
+            page.parkPage().ingresarNombreClienteExtranjero(customerName);
+            page.parkPage().ingresarApellidoClienteExtranjero(customerLastName);
+            page.parkPage().seleccionarGeneroClienteExtranjero(customerGender);
+        } else {
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
     }
 
     @ScreenShotAfter
     public void clicEnCrearCliente() {
-        page.parkPage().createCustomer();
+        if (customer.isNewCustomer()) {
+            page.parkPage().createCustomer();
+        } else {
+            System.out.println("Skip. Cliente Registrado en Dito");
+        }
     }
 
     public void selecciono_la_cartilla_del_plan_Activo() {

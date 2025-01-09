@@ -83,5 +83,5 @@ Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
     Ejemplos:
 
       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan |
-      | userType | userNameLOR | userPasswordLOR | Bienvenid@ | Call Center | CE           | 1001028016     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         |
 

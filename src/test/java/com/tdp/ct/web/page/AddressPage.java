@@ -78,13 +78,8 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             UtilWeb.waitForSeconds(4);
         }
-        click(depaList);
-        UtilWeb.waitForSeconds(2);
-        By byItem = By.cssSelector("[data-value='" + department + "']");
-        SearchContext context = sh().getContext(depaList);
-        esperaProgresiva(driver(), 3, 5, depaList, byItem, context);
-        js().scrollElementTop(context.findElement(byItem));
-        context.findElement(byItem).click();
+        js().scrollElementTop(selectDepartment);
+        selectElementCSSWithAndWithoutShadowRoot("department", selectDepartment, department);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -96,13 +91,7 @@ public class AddressPage extends WebBase {
             driver().navigate().refresh();
             selectDepartment(DEPARTAMENTO);
         }
-        click(selectProvince);
-        UtilWeb.waitForSeconds(10);
-        SearchContext context = sh().getContext(selectProvince);
-        By byItem = By.cssSelector("[data-value='" + province + "']");
-        esperaProgresiva(driver(), 3, 5, selectProvince, byItem, context);
-        js().scrollElementTop(context.findElement(byItem));
-        context.findElement(byItem).click();
+        selectElementCSSWithAndWithoutShadowRoot("province", selectProvince, province);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -118,13 +107,7 @@ public class AddressPage extends WebBase {
             selectProvince(PROVINCIA);
             distritoList = find().getElementByCss("form > div:nth-child(3) > div > tdp-st-select");
         }
-        click(distritoList);
-        UtilWeb.waitForSeconds(2);
-        SearchContext context = sh().getContext(distritoList);
-        By byItem = By.cssSelector("[data-value='" + district + "']");
-        esperaProgresiva(driver(), 4, 5, distritoList, byItem, context);
-        js().scrollElementTop(context.findElement(byItem));
-        context.findElement(byItem).click();
+        selectElementCSSWithAndWithoutShadowRoot("district", distritoList, district);
         UtilWeb.waitForSeconds(1);
     }
 

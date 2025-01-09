@@ -136,9 +136,9 @@ public class HomeStepDefinition {
         homeStep.clickXPopUpCU();
     }
 
-    @Y("doy click en el boton consultar")
+    @Y("doy click en el boton Consultar")
     public void doyClickEnElBotonConsultar() {
-        homeStep.clickBotonConsultar();
+        homeStep.clickOnConsultButton();
 
     }
 

@@ -20,6 +20,9 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
   @AltaTrioPorCallCenter
   Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -32,21 +35,20 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos    | genero    |
-      | ELOY    | OLIVERA CANO | MASCULINO |
-    Y        valido que muestre el nombre completo del cliente "ELOY OLIVERA CANO"
+      | nombres | apellidos | genero   |
+      | Pruebas | Qan       | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
     Y        selecciono el departamento donde sera la instalacion "LIMA"
     Y        selecciono la provincia donde sera la instalacion "LIMA"
-    Y        selecciono el distrito donde sera la instalacion "150136"
-    Y        ingreso la direccion donde sera la instalacion "Calle Condesa de Chinchon 107"
+    Y        selecciono el distrito donde sera la instalacion "LINCE"
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 450"
     Y        ingreso la referencia de la direccion "casa naranja"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION POPULAR | conjunto b |
+      | A  | EDIFICIO     | Familia Barreto | 1    | 10  | URBANIZACION POPULAR | conjunto b |
     Y        presiono el boton Consultar cobertura
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
@@ -83,5 +85,5 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100014564      | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                  |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
