@@ -16,7 +16,7 @@
 @validar-fija
 Característica: Visualizacion de Ofertas Fija - CE en canal Call Center
 
-  @robotQAN
+  @robotQAN @QAN
   Esquema del escenario: Visualizacion de Ofertas Fija - CE en canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

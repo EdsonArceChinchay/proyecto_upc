@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
 Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal Call Center
 
-  @AltaDuoCC @MVP15 @Global @robotQAN
+  @AltaDuoCC @MVP15 @Global @robotQAN @QAN
   Esquema del escenario: Alta de dúo internet con CEX, por canal Call Center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

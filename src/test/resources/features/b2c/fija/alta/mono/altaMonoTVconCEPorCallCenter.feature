@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI18 @AltaFija @AltaMono
 Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Call Center
 
-  @AltaMonoTVCC
+  @AltaMonoTVCC @QAN
   Esquema del escenario: Alta Mono TV con plan <nombrePlan> a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps
 Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call Center
 
-  @migraUVSCcallCenter
+  @migraUVSCcallCenter @QAN
   Esquema del escenario: Migracion UVSC fija con cliente a DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

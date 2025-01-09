@@ -17,7 +17,7 @@
 
 Característica: Visualizacion de Ofertas MT - CE por Call Center
 
-  @robotQAN
+  @robotQAN @QAN
   Esquema del escenario: Visualizacion de Ofertas MT - CE por Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora

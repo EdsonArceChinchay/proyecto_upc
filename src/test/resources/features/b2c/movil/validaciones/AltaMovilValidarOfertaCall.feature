@@ -16,7 +16,7 @@
 @validar-movil
 Característica:  Visualizacion de Ofertas Movil - CE por canal Call Center
 
-  @robotQAN
+  @robotQAN @QAN
   Esquema del escenario: Visualizacion de Ofertas Movil - CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora

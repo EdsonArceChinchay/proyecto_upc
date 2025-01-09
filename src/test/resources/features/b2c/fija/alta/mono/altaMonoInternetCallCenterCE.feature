@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por canal Call Center
 
-  @AltaMonoIntHFC
+  @AltaMonoIntHFC @QAN
   Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

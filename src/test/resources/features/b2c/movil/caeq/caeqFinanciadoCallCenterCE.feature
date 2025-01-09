@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
 
-  @CaeqFinanciadoCallCenter_CE
+  @CaeqFinanciadoCallCenter_CE @QAN
   Esquema del escenario: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

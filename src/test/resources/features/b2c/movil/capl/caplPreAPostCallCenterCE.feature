@@ -16,7 +16,7 @@
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
-  @CaplPreAPostCC_CE
+  @CaplPreAPostCC_CE @QAN
   Esquema del escenario: CAPL Prepago a Postpago a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

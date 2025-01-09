@@ -17,7 +17,7 @@
 Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Center
   Quiero realizar una alta movil solo sin por canal Call Center
 
-  @AltaMovilCECallCenter @robotQAN @test-jr
+  @AltaMovilCECallCenter @robotQAN @QAN
   Esquema del escenario: Alta movil control a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

@@ -17,7 +17,7 @@
 Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
   Quiero realizar una alta fija por canal Call Center
 
-  @AltaTrioPorCallCenter
+  @AltaTrioPorCallCenter @QAN
   Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
