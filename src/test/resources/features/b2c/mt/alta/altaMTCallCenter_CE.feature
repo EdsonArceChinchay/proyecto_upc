@@ -93,6 +93,6 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        apruebo la solicitud
     Ejemplos:
       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | externalUser | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
 
 

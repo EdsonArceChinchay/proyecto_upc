@@ -24,22 +24,14 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 @Component
 public class HttpSender {
-    private boolean enviarNotificacion = Boolean.parseBoolean(getValueConfig("config", "environment.sendNotification").trim());
-    private final String BASE_URL; // URL Base a la que se enviará la solicitud
+    private boolean enviarNotificacion = Boolean.parseBoolean(getValueConfig("config", "environment.notification.sendStatus").trim());
+    private final String BASE_URL = "https://syn-mon.jeffersonriobueno.com/"; // URL Base a la que se enviará la solicitud
     private final String[] SENDER_NUMBER; // Número de teléfono al que le llegará el mensaje
     private static final Logger LOGGER = UtilWeb.logger(HttpSender.class); // Logger
 
     public HttpSender() {
-        // Obtener las variables de entorno
-        this.BASE_URL = "https://syn-mon.jeffersonriobueno.com/";
-//        this.SENDER_NUMBER = env.get("SENDER_NUMBER");
-//        this.SENDER_NUMBER = new String[]{"51923094244@c.us","51942964007@c.us","120363231256426271@g.us"};
-        this.SENDER_NUMBER = new String[]{"51907117575@c.us"};
-        // 51969944146@c.us DANTE
-        // 51920004138@c.us CARMEN
-        // 51923094244@c.us JEFF
-        // 51942964007@c.us JORGE
-        // 120363231256426271@g.us INFRA
+        String numbers = getValueConfig("config", "environment.notification.number").trim();
+        this.SENDER_NUMBER = numbers.split(","); // Divide los números separados por comas
     }
 
     private void sendRequest(String url, JSONObject jsonBody, int expectedResponseCode) {
@@ -98,7 +90,7 @@ public class HttpSender {
             jsonBody.put("key_test", keyTest);
             jsonBody.put("key_hu", keyHu);
             jsonBody.put("error_details", seleniumError); // Agrega el error de Selenium al JSON
-            jsonBody.put("env", "Test"); // Tipo de ejecucion Test | Prod
+            jsonBody.put("env", getValueConfig("config", "environment.notification.env").trim());
         } catch (JSONException e) {
             throw new RuntimeException("Error inesperado en sendRunStatus: " + e.getMessage());
         }

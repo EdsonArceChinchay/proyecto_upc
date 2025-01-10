@@ -11,13 +11,15 @@ import org.junit.runner.RunWith;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
+
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"json:target/build/report/cucumber.json",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@test-jr"
+        tags = "@LoginExitoso"
 )
 class Runner {
 
@@ -29,7 +31,10 @@ class Runner {
     @AfterClass
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
-//        new HttpSender().sendDetailsRun("TIQLT-JR1220");
+        boolean Flag = Boolean.parseBoolean(getValueConfig("config", "environment.notification.sendReporte").trim());
+        if (Flag){
+            new HttpSender().sendDetailsRun(getValueConfig("config", "environment.notification.huKey").trim());
+        }
         JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }

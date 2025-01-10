@@ -95,4 +95,4 @@ Característica: AT-DT080_Alta MT (Alta fija + portabilidad) a cliente CE por ca
 
     Ejemplos:
       | userType     | userName   | userPassword   | msgHome    | documentType | documentNumber | correo           | planType | planName | phoneNumber |
-      | externalUser | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | Trío MT  | TRIO     | 920956351   |
+      | userType | userNameST | userPasswordST | Bienvenid@ | C            | 424647650      | correo@gmail.com | Trío MT  | TRIO     | 920956351   |

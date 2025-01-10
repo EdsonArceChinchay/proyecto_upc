@@ -73,4 +73,4 @@ Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call C
       | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | numeroExistente |
 #      | userType     | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | DNI          | 75448525       |                 |
 
-      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | DNI          | 72079848       | 5066694236      |
+      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | DNI          | 72079848       | 5066694236      |

@@ -83,5 +83,5 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
       | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente |
 #      | userType     | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 202300009      | Trio       | 9234828220      |
 
-      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000667      | Trio       | 14073845      |
-#      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000772      | Trio       | 5010302330      |
+      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000667      | Trio       | 14073845      |
+#      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000772      | Trio       | 5010302330      |
