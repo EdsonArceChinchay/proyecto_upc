@@ -85,5 +85,5 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
       | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
 #      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |
 
-#      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000760     | 920371847        | SAMSUNG GXY A34 NEGRO A346M 128GB |
-      | externalUser | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000765     | 951011708        | OPPO RENO 10 AZUL 256GB 5G |
+#      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000760     | 920371847        | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000765     | 951011708        | OPPO RENO 10 AZUL 256GB 5G |

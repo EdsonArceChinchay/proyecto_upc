@@ -83,4 +83,4 @@ Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente
       | userType     | userName     | userPassword     | documentType | documentNumber | fijoExistente | correo               | celularExistente |
 #      | userType     | userNameCC   | userPasswordCC   | CE           | 1632547925     |               | t@t.com              |                  |
 
-      | externalUser | userNameQAN2 | userPasswordQAN2 | CE           | 1100000908     | 5010301053    | pruebasqan@gmail.com | 975420359        |
+      | userType | userNameQAN2 | userPasswordQAN2 | CE           | 1100000908     | 5010301053    | pruebasqan@gmail.com | 975420359        |

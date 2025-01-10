@@ -61,4 +61,4 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
       | userType     | userName     | userPassword     | documentType | documentNumber | nroMovil  |
 #      | userType     | userNameCC   | userPasswordCC   | CE           | 1632547937     | 650028381 |
 
-      | externalUser | userNameQAN2 | userPasswordQAN2 | CE           | 1100000273     | 920321329 |
+      | userType | userNameQAN2 | userPasswordQAN2 | CE           | 1100000273     | 920321329 |
