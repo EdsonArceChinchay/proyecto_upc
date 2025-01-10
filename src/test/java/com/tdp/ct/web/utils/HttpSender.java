@@ -25,7 +25,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 @Component
 public class HttpSender {
     private boolean enviarNotificacion = Boolean.parseBoolean(getValueConfig("config", "environment.notification.sendStatus").trim());
-    private final String BASE_URL = "https://syn-mon.jeffersonriobueno.com/";; // URL Base a la que se enviará la solicitud
+    private final String BASE_URL = "https://syn-mon.jeffersonriobueno.com/"; // URL Base a la que se enviará la solicitud
     private final String[] SENDER_NUMBER; // Número de teléfono al que le llegará el mensaje
     private static final Logger LOGGER = UtilWeb.logger(HttpSender.class); // Logger
 
