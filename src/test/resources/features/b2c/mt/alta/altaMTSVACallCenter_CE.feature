@@ -16,12 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035 @AltaMTSVA
 Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
 
-  @AltaMTSVACallCenter_CE @robotQAN @QAN
+  @AltaMTSVACallCenter_CE @robotQAN @QAN @test-altas
   Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA        | HU           | Test        | Transaccion | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-JR1220 | TIQLT-20528 | Alta MT + SVA    | Contado    |
+      | Jefferson Riobueno | TIQLT-JR0111 | TIQLT-20528 | Alta MT + SVA    | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -96,4 +96,4 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva                   |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100000760     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo BA   | PACK ANTIVIRUS MCAFEE |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo BA   | PACK ANTIVIRUS MCAFEE |

@@ -16,9 +16,12 @@
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11 @Sanity28 @AT-DT038 @DROP-G01 @AltaMT
 Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
 
-  @AltaMTCallCenter_CE
+  @AltaMTCallCenter_CE @test-altas
   Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA        | HU           | Test        | Transaccion                | Tipo Venta | Tags       |
+      | Jefferson Riobueno | TIQLT-JR0111 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -93,6 +96,6 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        apruebo la solicitud
     Ejemplos:
       | userType     | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100000786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
 
 

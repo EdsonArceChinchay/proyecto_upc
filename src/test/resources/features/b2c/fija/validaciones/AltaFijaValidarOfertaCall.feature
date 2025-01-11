@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD: ALTA DUO
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT005
-##GDAP: GDAP-572
+##GDAP: GDAP-1763
 ##SPRINT CREADO: PI12
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
@@ -20,8 +20,8 @@ Característica: Visualizacion de Ofertas Fija - CE en canal Call Center
   Esquema del escenario: Visualizacion de Ofertas Fija - CE en canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
+      | Analista QA   | HU           | Test        | Transaccion                   | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20769 | Visualizacion de Ofertas Fija | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
