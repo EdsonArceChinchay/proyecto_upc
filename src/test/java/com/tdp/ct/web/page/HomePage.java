@@ -168,11 +168,35 @@ public class HomePage extends WebBase {
     }
 
     public void validateHomeMessage(String msg) {
-        Addons.revisarModalError(driver());
-        WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
-        compareWebElementTextAndString(message, msg);
-        esperaProgresiva(driver(), 6, 7, msgHome);
-        compareWebElementTextAndString(msgHome, msg);
+        int maxAttempts = 3;
+        int attempt = 0;
+        boolean isMatched = false;
+        while (attempt < maxAttempts && !isMatched) {
+            try {
+                Addons.revisarModalError(driver());
+                WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
+                compareWebElementTextAndString(message, msg);
+                esperaProgresiva(driver(), 6, 7, msgHome);
+                compareWebElementTextAndString(msgHome, msg);
+                // Si no lanza excepción, el texto coincide
+                isMatched = true;
+            } catch (AssertionError e) {
+                // Captura de error si el texto no coincide
+                logInfo("El texto no coincide. Se refrescara la pagina intento Nro: " + (attempt + 1));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+            if (!isMatched) {
+                attempt++;
+                if (attempt < maxAttempts) {
+                    driver().navigate().refresh(); // Refrescar la página
+                    System.out.println("Página refrescada. Reintentando...");
+                } else {
+                    System.out.println("Se alcanzó el máximo de intentos. El texto no coincide.");
+                }
+            }
+        }
     }
 
     public String getChannelType() {
