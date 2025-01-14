@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 
 public class CambioContraseniaPage extends WebBase {
     @FindBy(xpath = "//button[contains(text(),'Cambio de contraseña')]")
@@ -38,27 +39,19 @@ public class CambioContraseniaPage extends WebBase {
     protected WebElement botonEntendido;
 
     public void ingresarContraseniaActual(String clave) {
-        byte[] decodedBytes = Base64.getDecoder().decode(readValues(clave));
-        String decodedValue = new String(decodedBytes);
-        type(inputContraseniaActual, decodedValue);
-        UtilWeb.waitForSeconds(1);
-//        type(inputContraseniaActual, clave, 10);
+        String claveText = getValueConfig("config", "credential.user." + clave).trim();
+        UtilWeb.waitForSeconds(5);
+        type(inputContraseniaActual, claveText);
     }
 
     public void ingresarNuevaContrasenia(String clave) {
-        byte[] decodedBytes = Base64.getDecoder().decode(readValues(clave));
-        String decodedValue = new String(decodedBytes);
-        type(inputContraseniaNueva, decodedValue);
+        type(inputContraseniaNueva, clave);
         UtilWeb.waitForSeconds(1);
-//        type(inputContraseniaNueva, clave, 10);
     }
 
     public void confirmarNuevaCotrasenia(String clave) {
-        byte[] decodedBytes = Base64.getDecoder().decode(readValues(clave));
-        String decodedValue = new String(decodedBytes);
-        type(inputConfirmarContraseniaNueva, decodedValue);
+        type(inputConfirmarContraseniaNueva, clave);
         UtilWeb.waitForSeconds(1);
-//        type(inputConfirmarContraseniaNueva, clave, 10);
     }
 
     public void visualizarExitoEnCambioDeContrasenia() {

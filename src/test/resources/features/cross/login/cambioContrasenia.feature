@@ -40,4 +40,4 @@ Característica: Cambio de contraseña
     Y        presiono el boton entendido
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | userNewPassword |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | passAUX         |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Ntt#98QaT!!jk   |
