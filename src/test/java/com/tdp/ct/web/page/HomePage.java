@@ -8,6 +8,7 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -168,36 +169,50 @@ public class HomePage extends WebBase {
     }
 
     public void validateHomeMessage(String msg) {
-        int maxAttempts = 3;
+        int maxAttempts = 3; // Número máximo de intentos
         int attempt = 0;
         boolean isMatched = false;
+
         while (attempt < maxAttempts && !isMatched) {
             try {
+                // Verificar si existe un modal de error y cerrarlo
                 Addons.revisarModalError(driver());
-                WebElement message = explicitWaitCss(driver(), 120, ".message-welcome span");
+
+                // Intentar encontrar el mensaje de bienvenida
+                WebElement message = explicitWaitCss(driver(), 30, ".message-welcome span");
                 compareWebElementTextAndString(message, msg);
-                esperaProgresiva(driver(), 6, 7, msgHome);
+
+                // Verificar mensaje adicional, si aplica
+                esperaProgresiva(driver(), 5, 5, msgHome);
                 compareWebElementTextAndString(msgHome, msg);
+
                 // Si no lanza excepción, el texto coincide
                 isMatched = true;
             } catch (AssertionError e) {
-                // Captura de error si el texto no coincide
-                logInfo("El texto no coincide. Se refrescara la pagina intento Nro: " + (attempt + 1));
+                // El texto no coincide
+                logInfo("El texto no coincide. Se refrescará la página, intento Nro: " + (attempt + 1));
+            } catch (TimeoutException e) {
+                // El elemento no fue encontrado dentro del tiempo de espera
+                logInfo("No se encontró el elemento esperado. Se refrescará la página, intento Nro: " + (attempt + 1));
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                // Otros errores inesperados
+                throw new RuntimeException("Error inesperado durante la validación de la página de bienvenida: ", e);
             }
 
             if (!isMatched) {
                 attempt++;
                 if (attempt < maxAttempts) {
-                    driver().navigate().refresh(); // Refrescar la página
-                    System.out.println("Página refrescada. Reintentando...");
+                    // Refrescar la página y reintentar
+                    driver().navigate().refresh();
+                    logInfo("Página refrescada. Reintentando...");
                 } else {
-                    System.out.println("Se alcanzó el máximo de intentos. El texto no coincide.");
+                    // Agotar intentos
+                    throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");
                 }
             }
         }
     }
+
 
     public String getChannelType() {
         JsonObject agentData = getSessionStorageAsJsonObject(driver(), "datosAgente");

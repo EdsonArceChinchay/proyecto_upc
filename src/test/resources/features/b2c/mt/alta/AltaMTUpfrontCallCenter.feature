@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP-G02 @AltaMT_Upfront
 Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Call Center
 
-  @AltaMTUpfronCallCenter @test-altas
+  @AltaMTUpfronCallCenter
   Esquema del escenario: Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

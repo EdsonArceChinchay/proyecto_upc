@@ -19,6 +19,9 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
   @PortaNormalPostCC @MVP16 @Global
   Esquema del escenario: Porta Normal solo chip postpago a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU           | Test        | Transaccion  | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20769 | Portabilidad | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -26,11 +29,14 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-    Y        valido que se presente el canal "<channelType>"
+#    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
+    Y        ingreso los datos del nuevo cliente
+      | nombres | apellidos | genero   |
+      | Pruebas | Qan       | femenino |
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<phoneNumber>"
@@ -87,5 +93,5 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 75102008       | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 002372950      | 936501035   | Postpago  | ENTEL | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |

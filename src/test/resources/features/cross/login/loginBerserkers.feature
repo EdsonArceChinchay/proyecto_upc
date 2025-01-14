@@ -34,9 +34,9 @@ Característica: AT-DT053_Login - FE DITO WEB
 #    Y        valido que se presente el canal "<channelType>"
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType |
-      | userType | userNameQAN1 | userPasswordQAN1 | Bienvenid@ | Call Center |
-#      | userType | userNameST  | userPasswordST  | Bienvenid@ | Tienda      |
-#      | userType | userNameDLC  | userPasswordDLC  | Bienvenid@ | Retail      |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Tienda      |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Retail      |
 
   @LoginBerserker @LoginCasoNegativo
   Escenario: Login - Caso negativo - Contraseña en blanco

@@ -17,12 +17,12 @@
 Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
   Quiero realizar una alta fija por canal Call Center
 
-  @AltaTrioPorCallCenter @QAN
+  @AltaTrioPorCallCenter @QAN @test-altas
   Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA Trio | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"

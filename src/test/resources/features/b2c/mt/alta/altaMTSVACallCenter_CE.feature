@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035 @AltaMTSVA
 Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
 
-  @AltaMTSVACallCenter_CE @robotQAN @QAN @test-altas
+  @AltaMTSVACallCenter_CE @robotQAN @QAN
   Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora

@@ -36,43 +36,68 @@ public class HttpSender {
 
     private void sendRequest(String url, JSONObject jsonBody, int expectedResponseCode) {
         HttpURLConnection connection = null;
-        try {
-            LOGGER.log(Level.INFO, "Configurando conexión para URL: {0}", url);
-            URL urlObj = new URL(url);
-            connection = (HttpURLConnection) urlObj.openConnection();
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setDoOutput(true);
-            LOGGER.log(Level.INFO, "Conexión configurada, enviando datos...");
+        int maxRetries = 3; // Número máximo de reintentos
+        int retryDelay = 2000; // Tiempo de espera entre reintentos (en milisegundos)
+        int attempt = 0;
 
-            String jsonInputString = jsonBody.toString();
-            LOGGER.log(Level.INFO, "Cuerpo del mensaje: {0}", jsonInputString);
+        while (attempt < maxRetries) {
+            try {
+                LOGGER.log(Level.INFO, "Intento {0} de {1}: Configurando conexión para URL: {2}",
+                        new Object[]{attempt + 1, maxRetries, url});
+                URL urlObj = new URL(url);
+                connection = (HttpURLConnection) urlObj.openConnection();
+                connection.setConnectTimeout(15000); // Tiempo límite para conectarse (15 segundos)
+                connection.setReadTimeout(15000);    // Tiempo límite para leer la respuesta (15 segundos)
+                connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-Type", "application/json; utf-8");
+                connection.setDoOutput(true);
 
-            try (OutputStream os = connection.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes("utf-8");
-                os.write(input, 0, input.length);
-                LOGGER.log(Level.INFO, "Datos enviados");
+                LOGGER.log(Level.INFO, "Conexión configurada, enviando datos...");
+
+                String jsonInputString = jsonBody.toString();
+                LOGGER.log(Level.INFO, "Cuerpo del mensaje: {0}", jsonInputString);
+
+                try (OutputStream os = connection.getOutputStream()) {
+                    byte[] input = jsonInputString.getBytes("utf-8");
+                    os.write(input, 0, input.length);
+                    LOGGER.log(Level.INFO, "Datos enviados");
+                }
+
+                int responseCode = connection.getResponseCode();
+                LOGGER.log(Level.INFO, "Código de respuesta recibido: {0}", responseCode);
+
+                if (responseCode / 100 == 2) { // Verifica si el código está en la familia 20x
+                    LOGGER.log(Level.INFO, "Solicitud enviada exitosamente en el intento {0}.", attempt + 1);
+                    break; // Salimos del bucle de reintento si la solicitud fue exitosa
+                } else {
+                    LOGGER.log(Level.WARNING, "Error en la solicitud. Código de respuesta: {0}. Reintentando...", responseCode);
+                }
+            } catch (Exception e) {
+                LOGGER.log(Level.SEVERE, "Error en el envío de la solicitud en el intento {0}: {1}",
+                        new Object[]{attempt + 1, e.getMessage()});
+                e.printStackTrace();
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                    LOGGER.log(Level.INFO, "Conexión cerrada.");
+                }
             }
 
-            int responseCode = connection.getResponseCode();
-            LOGGER.log(Level.INFO, "Código de respuesta recibido: {0}", responseCode);
-
-            if (responseCode == expectedResponseCode) {
-                LOGGER.log(Level.INFO, "Solicitud enviada exitosamente.");
+            attempt++; // Incrementamos el contador de intentos
+            if (attempt < maxRetries) {
+                try {
+                    Thread.sleep(retryDelay); // Esperamos antes de reintentar
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    LOGGER.log(Level.SEVERE, "Hilo interrumpido durante el tiempo de espera entre reintentos.");
+                    break;
+                }
             } else {
-                LOGGER.log(Level.WARNING, "Error en la solicitud. Código de respuesta: {0}", responseCode);
-            }
-
-        } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, "Error en el envío de la solicitud: {0}", e.getMessage());
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                connection.disconnect();
-                LOGGER.log(Level.INFO, "Conexión cerrada.");
+                LOGGER.log(Level.SEVERE, "Máximo número de reintentos alcanzado. Fallo en la solicitud.");
             }
         }
     }
+
 
     public void sendRunStatus(String transaction, String tags, String status, String keyTest, String keyHu, String seleniumError) {
         LOGGER.log(Level.INFO, "enviarNotificacion : " + enviarNotificacion);
