@@ -15,6 +15,7 @@ public class Parameters {
     public static String MovimientosHistoricosExportarStatus = "Conforme";
 
     public static boolean estadoFlujo = true;
+    public static boolean cambioDirecciones = true;
 }
 
 

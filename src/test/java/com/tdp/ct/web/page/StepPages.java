@@ -101,6 +101,9 @@ public class StepPages {
         return new CaplConCaeqAlContadoCanalTiendaDeControlAPrepagoPage();
     }
 
+    public CambioContraseniaPage cambioContraseniaPage() {
+        return new CambioContraseniaPage();
+    }
 }
 
 
