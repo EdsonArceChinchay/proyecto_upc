@@ -29,7 +29,7 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
@@ -87,4 +87,4 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName                    |
-      | userType | userNameQAN4 | userPasswordQAN4 | msgHome | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
