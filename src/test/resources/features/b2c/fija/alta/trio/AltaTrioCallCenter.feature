@@ -38,13 +38,14 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
       | nombres | apellidos | genero   |
       | Pruebas | Qan       | femenino |
     Y        selecciono el boton Linea Nueva Hogar
+    Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "LIMA"
-    Y        selecciono la provincia donde sera la instalacion "LIMA"
-    Y        selecciono el distrito donde sera la instalacion "LINCE"
-    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 450"
-    Y        ingreso la referencia de la direccion "casa naranja"
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto             | conjHabit  |
@@ -52,8 +53,8 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        presiono el boton Consultar cobertura
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "<tipoPlan>"
-    Y        selecciono el plan "<nombrePlan>"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono el plan "<planName>"
     Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -85,5 +86,5 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan                  |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName     | userPassword     | msgHome | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName                    |
+      | userType | userNameQAN4 | userPasswordQAN4 | msgHome | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
