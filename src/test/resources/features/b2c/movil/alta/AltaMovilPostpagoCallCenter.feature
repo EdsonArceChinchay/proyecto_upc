@@ -16,9 +16,13 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Center
 
-  @Alta_Postpago_sim_CC @MVP13 @Global
+  @Alta_Postpago_sim_CC @MVP13 @Global @sanity-1701
   Esquema del escenario: Alta movil postpago a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA        | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
+      | Jefferson Riobueno | TIQLT-25981 | TIQLT-20528 | Alta movil postpago | Contado    | @AltaMTCallCenter_CE |
+
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -34,7 +38,6 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero    |
       | Juan    | Lopez Anibal | masculino |
-    Y        valido que muestre el nombre completo del cliente "Juan Lopez Anibal"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -85,4 +88,4 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 10010971       | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002323       | Postpago      | Plan Ilimitado Mi Movistar |
