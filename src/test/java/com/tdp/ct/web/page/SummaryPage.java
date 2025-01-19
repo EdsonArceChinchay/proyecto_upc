@@ -91,8 +91,8 @@ public class SummaryPage extends WebBase {
 
     public void validateSummaryPage() {
         revisarModalError(driver());
-        WebElement sumaryPage = explicitWaitXpath(driver(), 10, summaryPage);
-        esperaProgresiva(driver(), 6, 6, sumaryPage);
+        WebElement sumaryPage = explicitWaitXpath(driver(), 20, summaryPage);
+        esperaProgresiva(driver(), 10, 10, sumaryPage);
         js().scrollElementTop(sumaryPage);
         Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
     }

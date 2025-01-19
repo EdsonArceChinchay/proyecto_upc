@@ -20,8 +20,8 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
   Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
-      | Jefferson Riobueno | TIQLT-25981 | TIQLT-20528 | Alta MT (Alta fija + alta movil) | Contado    | @AltaMTCallCenter_CE |
+      | Analista QA | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
+      | XXXXXX      | TIQLT-26007 | TIQLT-20528 | Alta MT (Alta fija + alta movil) | Contado    | @AltaMTCallCenter_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -58,8 +58,8 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | TORRE        | ALEX MANCILLA  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit | lote |
+      | A  | TORRE        | ALEX MANCILLA  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     | 2    |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 48 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -96,6 +96,6 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002310     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002111     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
 
 

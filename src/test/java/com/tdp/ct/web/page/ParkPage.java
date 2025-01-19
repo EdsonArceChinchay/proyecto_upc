@@ -144,9 +144,14 @@ public class ParkPage extends WebBase {
 
     public void altaMovil() {
         UtilWeb.waitForSeconds(2);
+        esperaProgresiva(driver(),8,2,btnMovil);
         js().scrollElementTop(btnMovil);
-        esperaProgresiva(driver(), 5, 5, btnMovil);
-        click(btnMovil);
+        if (btnMovil.isDisplayed()) {
+            click(btnMovil);
+        } else {
+            revisarModalError(driver());
+            click(btnMovil);
+        }
     }
 
     public void lineaExistente(String numeroExistente) {
