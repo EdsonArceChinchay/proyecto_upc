@@ -126,7 +126,6 @@ public class AppointmentPage extends WebBase {
         } while (!bOK && contador < retryMax);
     }
 
-//    @FindBy(xpath = "//*[@class='fontSize16 colorDefault' and contains(text(),'Fecha')]")
     @FindBy(xpath = "//*[contains(text(), 'Fecha')]")
 
     protected WebElement instalationDate;
