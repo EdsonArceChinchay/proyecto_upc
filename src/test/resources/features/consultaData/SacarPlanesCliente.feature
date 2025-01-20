@@ -53,5 +53,5 @@ Característica: Cliente quiere saber que planes tiene
     Entonces valido el login exitoso mediante el mensaje "<TITLE_HOME>"
     Y visualizo los planes de "<TIPO_DOCs>" y "<NUM_DOCs>"
     Ejemplos:
-      | TIPO_USUARIO    | USER         | PASSWORD | TITLE_HOME | TIPO_DOCs  | NUM_DOCs                           |
-      | usuario interno | userNameQAN3 | passQAN3 | Bienvenid@ | CE, CE, CE | 1100000248, 1100002366, 1100000942 |
+      | TIPO_USUARIO | USER         | PASSWORD         | TITLE_HOME | TIPO_DOCs  | NUM_DOCs                           |
+      | userType     | userNameQAN1 | userPasswordQAN1 | Bienvenid@ | CE, CE, CE | 1100000248, 1100002366, 1100000942 |
