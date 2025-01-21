@@ -51,7 +51,7 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cli
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "False" y CASI:"True" en el response del salesLead
-    Y        doy click en el boton Continuar
+     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -62,7 +62,7 @@ Característica: AT-DT049_Cambio de Equipo (CAEQ) con Cambio de SIM (CASI) a cli
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la orden
-    Y        doy click en el boton continuar
+     Y        doy click en el boton de continuar
     E        ingreso el codigo de SIMCARD
     E        ingreso el codigo de IMEI de "<device>"
     Y        doy click Validar Stock

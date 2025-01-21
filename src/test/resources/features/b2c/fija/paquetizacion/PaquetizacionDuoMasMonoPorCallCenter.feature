@@ -34,7 +34,7 @@ Característica:AT-DT085_Paquetizacion Duo mas Mono Call Center
     Y        cierro el popup de contraseña Única
     Y        selecciono el servicio mono "5010007041" y  el servicio duo "14339051" a paquetizar
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton continuar
+    Y        doy click en el boton de continuar
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion

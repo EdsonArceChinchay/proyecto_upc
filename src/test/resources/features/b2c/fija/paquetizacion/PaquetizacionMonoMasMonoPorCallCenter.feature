@@ -33,7 +33,7 @@ Característica: AT-DT086_Paquetizacion Mono mas Mono Call Center
     Y        doy click en el boton Consultar
     Y        selecciono el servicio mono "5010008325" y  el servicio duo "9234656218" a paquetizar
     Y        selecciono el boton Mostrar ofertas
-    Y        doy click en el boton continuar
+    Y        doy click en el boton de continuar
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
     Y        presiono el boton Consultar ubicacion

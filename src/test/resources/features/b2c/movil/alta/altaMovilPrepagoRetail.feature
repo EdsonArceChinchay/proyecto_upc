@@ -66,7 +66,7 @@ Característica: AT-DT096_Alta Movil Prepago a cliente con CE por canal Retail
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la orden
-    Y        doy click en el boton continuar
+    Y        doy click en el boton de continuar
     E        ingreso el codigo de SIMCARD
     Y        doy click Validar Stock
     E        ingreso el numero de caja "123456"

@@ -16,12 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AT-DT005 @AltaFija @AltaDuo
 Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal Call Center
 
-  @AltaDuoCC @MVP15 @Global @robotQAN @QAN
+  @AltaDuoCC @MVP15 @Global @robotQAN @QAN @sanity-1701
   Esquema del escenario: Alta de dúo internet con CEX, por canal Call Center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion                | Tipo Venta | Tags       |
-      | Jefferson Riobueno | TIQLT-JR0111 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
+      | Analista QA | HU           | Test        | Transaccion                | Tipo Venta | Tags       |
+      | XXXXX           | TIQLT-26007 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -88,4 +88,4 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

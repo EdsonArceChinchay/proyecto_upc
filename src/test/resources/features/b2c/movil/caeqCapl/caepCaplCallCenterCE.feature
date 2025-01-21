@@ -66,7 +66,7 @@ Característica: AT-DT045_Caeq Mas Capl por canal Call Center
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
-    Y        doy click en el boton Continuar
+     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"

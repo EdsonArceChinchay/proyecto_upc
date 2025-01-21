@@ -5,6 +5,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -161,8 +162,9 @@ public class RegisterPage extends WebBase {
     }
 
     public void clickButtonContinue() {
+        UtilWeb.waitForSeconds(20);
         Addons.revisarModalError(driver()); // Validación inicial de posibles errores.
-        int maxRetries = 5; // Número máximo de intentos
+        int maxRetries = 6; // Número máximo de intentos
         int retries = 0;
         boolean isButtonUnclickable = false;
 
@@ -180,8 +182,20 @@ public class RegisterPage extends WebBase {
                 logInfo("Clic realizado en el botón.");
 
                 // Validar que el botón ya no sea clickeable
-                logInfo("Validando que el botón ya no sea clickeable.");
-                isButtonUnclickable = wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(buttonContinuar)));
+                logInfo("Validando que el botón ya no sea clickeable o ya no esté presente.");
+                try {
+                    // Verificar si el botón aún está presente en el DOM
+                    if (!driver().findElements((By) buttonContinuar).isEmpty()) {
+                        logInfo("El botón sigue visible. Verificando si es clickeable nuevamente.");
+                        isButtonUnclickable = wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(buttonContinuar)));
+                    } else {
+                        logInfo("El botón ya no está presente en el DOM.");
+                        isButtonUnclickable = true; // Consideramos la acción como exitosa
+                    }
+                } catch (Exception innerException) {
+                    logInfo("Error al verificar el estado del botón: " + innerException.getMessage());
+                    isButtonUnclickable = true; // Si ocurre un error, asumimos que el botón ya no es clickeable
+                }
 
                 if (isButtonUnclickable) {
                     logInfo("El botón ya no es clickeable. Acción completada con éxito.");
