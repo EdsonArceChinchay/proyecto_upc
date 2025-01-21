@@ -2,9 +2,12 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.model.Customer;
+import com.tdp.ct.web.page.CheckoutPage;
 import com.tdp.ct.web.service.RetentionService;
 import com.tdp.ct.web.step.BandejaBackOfficeStep;
+import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.es.Y;
@@ -28,9 +31,16 @@ public class BandejaBackOfficeStepDefinition {
     private Customer customer;
 
     @Autowired
+    private Cliente cliente;
+
+   @Autowired
+    private CheckoutStep checkoutStep;
+
+    @Autowired
     private RetentionService retentionService;
 
     private Scenario scenario;
+
 
     @Before(order = 0)
     public void before(Scenario scenario) {
@@ -65,13 +75,16 @@ public class BandejaBackOfficeStepDefinition {
             logSearch(typeDocument);
             bandejaBackOfficeStep.typeDocument(numberDocument);
         });*/
-
-        switch (tipoDoc){
+        String salesCode = checkoutStep.getSalesCode();
+        String nroDoc = (String) getScenarioContext().get("nroDocumento");
+        switch (tipoDoc.toLowerCase()){
             case "documento":
-                bandejaBackOfficeStep.typeDocument((String) getScenarioContext().get("nroDocumento"));
+                bandejaBackOfficeStep.typeDocument(nroDoc);
+                logInfo("Se esta buscando por el numero de documento "+nroDoc);
                 break;
-            case "solicitud":
-               // bandejaBackOfficeStep.typeDocument(cliente.getNumeroSolicitud());
+            case "codigo de venta":
+                bandejaBackOfficeStep.typeDocument(salesCode);
+                logInfo("Se esta buscando por le codigo de venta "+salesCode);
                 break;
         }
 
