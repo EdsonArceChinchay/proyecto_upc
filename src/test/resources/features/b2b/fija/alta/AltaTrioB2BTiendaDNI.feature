@@ -61,7 +61,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        doy click en el boton validar identidad representante legal
     Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
     Y        ingreso los datos del supervisor
-    Y        doy click en el boton continuar
+    Y        doy click en el boton de continuar
     Y        ingreso los datos solicitados para la validacion del cliente
       | nombreMadre | nombrePadre | distritoNac            |
       | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |

@@ -171,7 +171,7 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     }
 
     public void clicSiAcepto() {
-        esperaProgresiva(driver(), 7, 7, btnYes);
+        esperaProgresiva(driver(), 10, 7, btnYes);
         validateAndClickWithAndWithoutShadowRoot("Yes, accept", btnYes);
         UtilWeb.waitForSeconds(6);
     }

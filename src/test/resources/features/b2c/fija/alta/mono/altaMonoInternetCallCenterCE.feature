@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por canal Call Center
 
-  @AltaMonoIntHFC @QAN
+  @AltaMonoIntHFC @QAN @test-altas
   Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -24,8 +24,8 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
       | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
-    Y        ingreso el usuario "userNameQAN5"
-    Y        ingreso el password "userPasswordQAN5"
+    Y        ingreso el usuario "userNameQAN7"
+    Y        ingreso el password "userPasswordQAN7"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
@@ -66,7 +66,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"

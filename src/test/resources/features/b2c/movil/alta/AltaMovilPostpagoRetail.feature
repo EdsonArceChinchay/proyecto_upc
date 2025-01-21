@@ -55,7 +55,7 @@ Característica: AT-DT031_Alta Movil Postpago a cliente con CE por canal Retail
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton Continuar
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito del ticket generado
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -66,7 +66,7 @@ Característica: AT-DT031_Alta Movil Postpago a cliente con CE por canal Retail
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la orden
-    Y        doy click en el boton continuar
+    Y        doy click en el boton de continuar
     E        ingreso el codigo de SIMCARD
     Y        doy click Validar Stock
     E        ingreso el numero de caja "123456"
