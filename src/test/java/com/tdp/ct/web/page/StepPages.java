@@ -104,6 +104,10 @@ public class StepPages {
     public CambioContraseniaPage cambioContraseniaPage() {
         return new CambioContraseniaPage();
     }
+
+    public DataClientePage temporalPage() {
+        return new DataClientePage();
+    }
 }
 
 
