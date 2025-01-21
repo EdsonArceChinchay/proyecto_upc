@@ -67,7 +67,7 @@ public class AltaFijaTiendaPage extends WebBase {
 
     public void listaPlanFija(String planFija) {
         revisarModalError(driver());
-        esperaProgresiva(driver(), 3, 5, esperalistaPlanFija);
+        esperaProgresiva(driver(), 6, 5, esperalistaPlanFija);
         UtilWeb.waitForSeconds(5);
         clickElementInAList(listaPlanFija, planFija);
         UtilWeb.waitForSeconds(5);
