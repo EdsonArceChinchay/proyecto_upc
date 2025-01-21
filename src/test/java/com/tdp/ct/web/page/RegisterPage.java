@@ -160,32 +160,6 @@ public class RegisterPage extends WebBase {
         selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, type);
     }
 
-    public void clickButtonContinue2() {
-        Addons.revisarModalError(driver());
-        boolean buttonFound = false;
-        int contador = 0;
-        int reintentoBucles = 5;
-        while (!buttonFound && contador <= reintentoBucles) {
-            logInfo("Entra al while");
-            try {
-                logInfo("Entra al try");
-                waitUntilElementIsClickable(buttonContinuar, 30);
-                buttonFound = true;
-            } catch (Exception e) {
-                logInfo("Entra al catch");
-                UtilWeb.waitForSeconds(5);
-                contador++;
-                logInfo(contador + " vez");
-            }
-        }
-        logInfo("Sale del While");
-        esperaProgresiva(driver(), 5, 5, buttonContinuar);
-        js().scrollElementTop(buttonContinuar);
-        click(buttonContinuar);
-//        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
-        Addons.revisarModalError(driver());
-    }
-
     public void clickButtonContinue() {
         Addons.revisarModalError(driver()); // Validación inicial de posibles errores.
         int maxRetries = 5; // Número máximo de intentos
