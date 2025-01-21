@@ -7,6 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -157,29 +161,47 @@ public class RegisterPage extends WebBase {
     }
 
     public void clickButtonContinue() {
-        Addons.revisarModalError(driver());
-        boolean buttonFound = false;
-        int contador = 0;
-        int reintentoBucles = 5;
-        while (!buttonFound && contador <= reintentoBucles) {
-            logInfo("Entra al while");
+        Addons.revisarModalError(driver()); // Validación inicial de posibles errores.
+        int maxRetries = 5; // Número máximo de intentos
+        int retries = 0;
+        boolean isButtonUnclickable = false;
+
+        while (!isButtonUnclickable && retries < maxRetries) {
             try {
-                logInfo("Entra al try");
-                waitUntilElementIsClickable(buttonContinuar, 30);
-                buttonFound = true;
+                // Esperar a que el botón sea visible y clickeable
+                logInfo("Esperando que el botón sea visible y clickeable.");
+                WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(30));
+                wait.until(ExpectedConditions.elementToBeClickable(buttonContinuar));
+                logInfo("El botón es clickeable.");
+
+                // Realizar clic en el botón
+                logInfo("Intentando hacer clic en el botón.");
+                buttonContinuar.click();
+                logInfo("Clic realizado en el botón.");
+
+                // Validar que el botón ya no sea clickeable
+                logInfo("Validando que el botón ya no sea clickeable.");
+                isButtonUnclickable = wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(buttonContinuar)));
+
+                if (isButtonUnclickable) {
+                    logInfo("El botón ya no es clickeable. Acción completada con éxito.");
+                } else {
+                    logInfo("El botón sigue siendo clickeable. Reintentando...");
+                    retries++;
+                    UtilWeb.waitForSeconds(5); // Esperar antes de reintentar
+                }
             } catch (Exception e) {
-                logInfo("Entra al catch");
-                UtilWeb.waitForSeconds(5);
-                contador++;
-                logInfo(contador + " vez");
+                logInfo("Error al hacer clic en el botón: " + e.getMessage());
+                retries++;
+                UtilWeb.waitForSeconds(5); // Esperar antes de reintentar
             }
         }
-        logInfo("Sale del While");
-        esperaProgresiva(driver(), 5, 5, buttonContinuar);
-        js().scrollElementTop(buttonContinuar);
-        click(buttonContinuar);
-//        Addons.esperaProgresivaReintentos(driver(), 5, 5, buttonContinuar);
-        Addons.revisarModalError(driver());
+
+        if (!isButtonUnclickable) {
+            throw new RuntimeException("No se pudo hacer clic en el botón de forma exitosa después de " + maxRetries + " intentos.");
+        }
+
+        Addons.revisarModalError(driver()); // Validación final de errores.
     }
 
     public boolean hasIdentityValidationError() {

@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD:
 ##ESTADO:
 ##CODIGO: AT-DT052
-##GDAP:
+##GDAP: GDAP-1768
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG: BERSERKERS
@@ -17,7 +17,7 @@
 
 Característica: Cambio de contraseña
 
-  @robotQAN @QAN
+  @QAN
   Esquema del escenario: Usuario realiza un cambio de su contraseña
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
@@ -40,4 +40,5 @@ Característica: Cambio de contraseña
     Y        presiono el boton entendido
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | userNewPassword |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Ntt#98QaT!!jk   |
+      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | tele#EP8fS00    |
+

@@ -19,6 +19,9 @@ Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE por canal Ret
   @AltaFijaPorRetail_CE
   Esquema del escenario: Alta Fija Mono Internet a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA | HU          | Test        | Transaccion               | Tipo Venta | Tags                  |
+      | XXXXX       | TIQLT-26007 | TIQLT-20528 | Alta Fija Mono Internet - Retail| Contado    | @AltaFijaPorRetail_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -73,5 +76,5 @@ Característica: AT-DT007_Alta Fija Mono Internet a cliente con CE por canal Ret
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msjHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan           |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 2212464816     | Mono     | INTERNET MOVISTAR RA |
+      | userType | userName     | userPassword    | msjHome    | channelType | documentType | documentNumber | tipoPlan | nombrePlan           |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Retail      | CE           | 1100002107     | Mono     | INTERNET MOVISTAR RA |
