@@ -57,14 +57,25 @@ public class BandejaBackOfficeStepDefinition {
 
     @Y("busco por {string}")
     public void buscoPorElTipoDocumento(String tipoDoc) {
-        executeIfNotRetention(() -> {
+       /* executeIfNotRetention(() -> {
             String typeDocument = (isNumber(tipoDoc) || tipoDoc.contains("documento")) ? "documento" : "solicitud";
             String numberDocument = typeDocument.equals("documento")
                     ? (isNumber(tipoDoc) ? tipoDoc : customer.getDocumentNumber())
                     : customer.getSalesCode();
             logSearch(typeDocument);
             bandejaBackOfficeStep.typeDocument(numberDocument);
-        });
+        });*/
+
+        switch (tipoDoc){
+            case "documento":
+                bandejaBackOfficeStep.typeDocument((String) getScenarioContext().get("nroDocumento"));
+                break;
+            case "solicitud":
+               // bandejaBackOfficeStep.typeDocument(cliente.getNumeroSolicitud());
+                break;
+        }
+
+
     }
 
     private void logSearch(String typeDocument) {

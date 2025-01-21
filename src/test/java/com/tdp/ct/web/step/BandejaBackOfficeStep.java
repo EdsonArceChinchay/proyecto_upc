@@ -1,5 +1,6 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ public class BandejaBackOfficeStep {
 
     @Autowired
     private StepPages page;
+    @Autowired
+    private Cliente cliente;
 
     @ScreenShotAfter
     public void typeDocument(String document) {
