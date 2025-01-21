@@ -105,8 +105,8 @@ public class StepPages {
         return new CambioContraseniaPage();
     }
 
-    public TemporalPage temporalPage() {
-        return new TemporalPage();
+    public DataClientePage temporalPage() {
+        return new DataClientePage();
     }
 }
 

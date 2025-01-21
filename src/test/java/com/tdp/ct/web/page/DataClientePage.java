@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import static com.tdp.ct.web.utils.Utils.cargarMsgLog;
 import static com.tdp.ct.web.utils.Utils.getToday;
 
-public class TemporalPage extends WebBase {
+public class DataClientePage extends WebBase {
 
     String TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_CLIENTE, TIPO_PLAN_DEL_CLIENTE, NUM_LINEA, NOMBRE_PLAN, TIPO_PLAN, ESTADO_PLAN, DEUDA, CANTIDAD_DEUDA, PLAN_IPTV, ORDEN_EN_VUELO, CICLO_FACTURACION, ANTIGUEDAD_DATA;
     String ERROR_ZONA_PANGEA = "";
