@@ -132,7 +132,6 @@ public class RegisterStep {
 
     @ScreenShotBefore
     public void clickButtonContinue() {
-        UtilWeb.waitForSeconds(10);
         page.registerPage().clickButtonContinue();
         UtilWeb.waitForSeconds(10);
     }

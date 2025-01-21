@@ -19,6 +19,9 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) con instalacion FTTH a client
   @AltaDuoBByVozFTTHCanalTiendas
   Esquema del escenario: Alta Duo (Voz + Internet) con instalacion FTTH a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA | HU          | Test        | Transaccion                         | Tipo Venta | Tags                           |
+      | XXXXX       | TIQLT-26007 | TIQLT-20528 | ALTA FIJA (Voz + Internet) - Tienda | Contado    | @AltaDuoBByVozFTTHCanalTiendas |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -74,5 +77,5 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) con instalacion FTTH a client
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1234539198     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                   |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Tienda      | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo      | DUO MOVISTAR VOZ INTERNET RA |

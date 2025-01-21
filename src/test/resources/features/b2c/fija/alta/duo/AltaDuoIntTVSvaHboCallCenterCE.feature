@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12 @AltaFija @AltaDuo
 Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  por canal Call Center
 
-  @AltaDuoCC_SvaHBO
+  @AltaDuoCC_SvaHBO @test-altas
   Esquema del escenario: Alta Duo SVA HBO a cliente con CE  por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -84,4 +84,4 @@ Característica: AT-DT004_Alta Duo (Internet + TV) + SVA HBO a cliente con CE  p
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan           | bloque | tipoPlan |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET FLEX HD | HBO    | Duo      |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | DUO INTERNET FLEX HD | HBO    | Duo      |

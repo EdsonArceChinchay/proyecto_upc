@@ -16,12 +16,12 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Center
 
-  @Alta_Postpago_sim_CC @MVP13 @Global @sanity-1701
+  @Alta_Postpago_sim_CC @MVP13 @Global
   Esquema del escenario: Alta movil postpago a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
-      | Jefferson Riobueno | TIQLT-25981 | TIQLT-20528 | Alta movil postpago | Contado    | @AltaMTCallCenter_CE |
+      | Analista QA           | HU          | Test        | Transaccion         | Tipo Venta | Tags                 |
+      | XXXXXXXXXXXXXXXXXXXXX | TIQLT-26007 | TIQLT-20528 | Alta movil postpago | Contado    | @AltaMTCallCenter_CE |
 
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"

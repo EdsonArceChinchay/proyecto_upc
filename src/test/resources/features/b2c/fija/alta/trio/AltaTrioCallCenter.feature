@@ -86,5 +86,5 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName                    |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName                    |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
