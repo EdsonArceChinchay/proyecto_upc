@@ -593,7 +593,7 @@ public class DataClientePage extends WebBase {
             String text = "SIN REGISTRO";
             nombreClientes.add(text);
             tipoPlanCliente.add(text);
-            numeroDelPlan.add(text);
+            numeroDelPlan.add("NA");
             nombreDelPlan.add(text);
             tipoPlanContratado.add(text);
             componentesPlanContratado.add(text);
@@ -745,7 +745,7 @@ public class DataClientePage extends WebBase {
                 String text = "SIN REGISTRO";
                 nombreClientes.add(text);
                 tipoPlanCliente.add(text);
-                numeroDelPlan.add(text);
+                numeroDelPlan.add("NA");
                 nombreDelPlan.add(text);
                 tipoPlanContratado.add(text);
                 componentesPlanContratado.add(text);
@@ -2841,7 +2841,7 @@ public class DataClientePage extends WebBase {
                 row.createCell(8).setCellValue((String) getScenarioContext().get("tipoVenta"));
                 row.createCell(9).setCellValue("DITO");
                 row.createCell(10).setCellValue((String) getScenarioContext().get("idCliente"));
-                row.createCell(11).setCellValue(clienteData.getNroDocumento());
+                row.createCell(11).setCellValue((String) getScenarioContext().get("usuarioVendedor"));
                 row.createCell(12).setCellValue((String) getScenarioContext().get("orden"));
                 row.createCell(13).setCellValue((String) getScenarioContext().get("numeroSolicitud"));
                 row.createCell(14).setCellValue((String) getScenarioContext().get("codigoAutogestion"));
