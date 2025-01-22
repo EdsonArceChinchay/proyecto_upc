@@ -46,8 +46,8 @@ Característica: Cliente quiere saber que planes tiene
   Esquema del escenario: Planes del Cliente
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA              | HU          | Test       | Transaccion   | Tipo Venta |
-      | Jesus Abel Tornero Rojas | TIQLT-JTXXXX | TIQLT-XXXX | Consulta Data | NA         |
+      | Analista QA              | HU          | Test        | Transaccion   | Tipo Venta |
+      | Jesus Abel Tornero Rojas | TIQLT-XXXXX | TIQLT-XXXXX | CONSULTA DATA | NA         |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -58,4 +58,4 @@ Característica: Cliente quiere saber que planes tiene
     Y visualizo los planes de "<TIPO_DOCs>" y "<NUM_DOCs>"
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | TIPO_DOCs | NUM_DOCs |
-      | userType | userNameQAN1 | userPasswordQAN1 | Bienvenid@ | CE        |          |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | CE        |          |
