@@ -111,6 +111,10 @@ public class LoginBerserkersStepDefinition {
         getScenarioContext().put("nroDocumento", "NA");
         getScenarioContext().put("orden", "NA");
         getScenarioContext().put("numeroSolicitud", "NA");
+        getScenarioContext().put("codigoAutogestion", "NA");
+        getScenarioContext().put("codigoReclamo", "NA");
+        getScenarioContext().put("imei", "NA");
+        getScenarioContext().put("estadoOrden", "NA");
         getScenarioContext().put("tags", "NA");
 
         // Obtener datos del dataTable

@@ -25,8 +25,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 
-import static com.tdp.ct.web.utils.Utils.cargarMsgLog;
-import static com.tdp.ct.web.utils.Utils.getToday;
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
+import static com.tdp.ct.web.utils.Utils.*;
+import static com.tdp.ct.web.utils.Utils.getHostname;
 
 public class DataClientePage extends WebBase {
 
@@ -79,11 +80,11 @@ public class DataClientePage extends WebBase {
     private WebElement insertarReferencia;
     @FindBy(xpath = "//*[@class = 'flex_100 hydrated ng-dirty ng-touched ng-valid' and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-valid') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-touched') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'hydrated') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-dirty') and @formcontrolname = 'reference' and string-length(@value) > 0]")
     private WebElement verSiTieneReferencia;
-    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar ubicación')] | //*[@class = 'button_step' and contains(text(), 'Consultar ubicacion')]")
+    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar ubicación')] | //*[@class = 'button_step' and contains(text(), 'Consultar ubicacion')] | //*[contains(@class, 'utton') and contains(text(), 'Consultar ubicaci')] | //*[contains(@class, 'utton') and contains(text(), 'Consultar Ubicaci')]")
     private WebElement btnConsultarUbicacion;
     @FindBy(xpath = "//*[contains(@class, 'text-adress') and contains(text(), 'Dirección')]")
     private WebElement titleDireccionInsertada;
-    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar cobertura')] | //*[@class = 'button_step' and contains(text(), 'cobertura')]")
+    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar cobertura')] | //*[@class = 'button_step' and contains(text(), 'cobertura')] | //*[contains(@class, 'utton') and contains(text(), 'obertura')]")
     private WebElement btnConsultarCobertura;
     @FindBy(xpath = "//*[contains(@class, 'title') and contains(text(), 'Ofertas sugeridas')]")
     private WebElement titleOfertasSugeridas;
@@ -219,12 +220,16 @@ public class DataClientePage extends WebBase {
     private WebElement btnReintentar;
 
     // ENTENDIDO
-    @FindBy(xpath = "//*[contains(@class, 'button') and contains(text(), 'Entendido')]")
+    @FindBy(xpath = "//*[contains(@class, 'utton') and contains(text(), 'Entendido')]")
     private WebElement btnEntendido;
 
     private final String folderPath = "CapturaData";
     private final String excelName = "capturaData" + getToday().replace("/", "");
     private final String sheetName = "Datos Clientes";
+
+    private final String folderPathBitacora = "Bitacoras";
+    private final String excelNameBitacora = "bitacora" + getToday().replace("/", "") + "_Masiva";
+    private final String sheetNameBitacora = "Datos Bitacora";
 
     Utils utils = new Utils();
     Actions action = new Actions(driver());
@@ -588,7 +593,7 @@ public class DataClientePage extends WebBase {
             String text = "SIN REGISTRO";
             nombreClientes.add(text);
             tipoPlanCliente.add(text);
-            numeroDelPlan.add(text);
+            numeroDelPlan.add("NA");
             nombreDelPlan.add(text);
             tipoPlanContratado.add(text);
             componentesPlanContratado.add(text);
@@ -688,6 +693,7 @@ public class DataClientePage extends WebBase {
         }
 
         generarExcel(folderPath, excelName, sheetName);
+        generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
         imprimirReporte();
     }
 
@@ -739,7 +745,7 @@ public class DataClientePage extends WebBase {
                 String text = "SIN REGISTRO";
                 nombreClientes.add(text);
                 tipoPlanCliente.add(text);
-                numeroDelPlan.add(text);
+                numeroDelPlan.add("NA");
                 nombreDelPlan.add(text);
                 tipoPlanContratado.add(text);
                 componentesPlanContratado.add(text);
@@ -838,6 +844,7 @@ public class DataClientePage extends WebBase {
                 clienteDataList.clear();
                 clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_CLIENTE, tipoPlanArray[i], numeroLineaArray[i], nombrePlanArray[i], tipoPlanContratadoArray[i], componentesPlanContratadoArray[i], estadoPlanArray[i], deudaPlanArray[i], cantidadDeudaDelPlanArray[i], iptvArray[i], ordenVueloArray[i], tecnologiaPlanArray[i], velocidadPlanArray[i], cuentaConSVAPlanArray[i], direccionMigrarFTTHArray[i], etiquetaFibraArray[i], cicloFacturacionArray[i], tiempoCreacionLineaArray[i], direccionClienteArray[i], estadoDireccionArray[i], tecnologiaAMigrarArray[i], etiquetaSaltoCeroArray[i]));
                 generarExcel(folderPath, excelName, sheetName);
+                generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
             }
             tipoPlanCliente.clear();
             numeroDelPlan.clear();
@@ -2198,7 +2205,9 @@ public class DataClientePage extends WebBase {
             click(insertarReferencia,5);
             insertarReferencia.sendKeys(Keys.CONTROL + "a");
             insertarReferencia.sendKeys(Keys.DELETE);
+            cargarMsgLog(Level.INFO, "INGRESO REFERENCIA");
             type(insertarReferencia, ".",5);
+            cargarMsgLog(Level.INFO, "SE INGRESO REFERENCIA");
         }
     }
 
@@ -2291,7 +2300,9 @@ public class DataClientePage extends WebBase {
                 click(element,5);
                 element.sendKeys(Keys.CONTROL + "a");
                 element.sendKeys(Keys.DELETE);
+                System.out.println("INGRESO A INSERTAR TEXTO OBLIGATORIO");
                 type(element, texto,5);
+                System.out.println("INSERTO TEXTO OBLIGATORIO");
             }
         } catch (Exception e) {
             System.out.println("NO SE DETECTO INSERSION DE TEXTO OBLIGATORIO");
@@ -2485,7 +2496,9 @@ public class DataClientePage extends WebBase {
             if (masDeUnaDireccion.equals("SI")) {
                 insertarTipoVivienda();
             }
+            cargarMsgLog(Level.INFO, "Ingreso a dar click consultar cobertura");
             click(btnConsultarCobertura,5);
+            cargarMsgLog(Level.INFO, "Dio click consultar cobertura");
             clickBtnReintentar();
             errorInconsistenciaDireccion();
             try {
@@ -2493,6 +2506,7 @@ public class DataClientePage extends WebBase {
                 if (btnConsultarCobertura.isDisplayed()) {
                     cargarMsgLog(Level.INFO, "Ingreso a dar click consultar cobertura - contingencia");
                     click(btnConsultarCobertura,5);
+                    cargarMsgLog(Level.INFO, "Dio click consultar cobertura - contingencia");
                 }
             } catch (Exception e1) {
                 cargarMsgLog(Level.INFO, "Si se dio click a consultar cobertura");
@@ -2747,6 +2761,103 @@ public class DataClientePage extends WebBase {
                 row.createCell(21).setCellValue(clienteData.getEstadoDireccion());
                 row.createCell(22).setCellValue(clienteData.getTecnologiaAMigrar());
                 row.createCell(23).setCellValue(clienteData.getSaltoCero());
+            }
+
+            // Crear directorio si no existe
+            Path paths = Paths.get(folderPath).toAbsolutePath();
+            if (!Files.exists(paths)) {
+                Files.createDirectories(paths);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Directorio creado en: {0} " + paths.toString());
+            } else {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "El directorio ya existe en: {0} " + paths.toString());
+            }
+
+            // Escribir el archivo Excel
+            try (FileOutputStream fileOut = new FileOutputStream(path)) {
+                workbook.write(fileOut);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Archivo Excel creado o actualizado en: {0} " + folderPath + "/" + fileName);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error al crear o escribir el archivo Excel: " + path);
+        } finally {
+            try {
+                if (workbook != null) {
+                    workbook.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void generarExcelBitacora(String folderPath, String fileName, String sheetName) {
+        String path = Paths.get(folderPath, fileName).toString() + ".xlsx";
+        Workbook workbook = null;
+        Sheet sheet = null;
+
+        try {
+            // Verificar si el archivo existe
+            File file = new File(path);
+            if (file.exists()) {
+                // Abrir el archivo existente
+                try (FileInputStream fileIn = new FileInputStream(path)) {
+                    workbook = new XSSFWorkbook(fileIn);
+                    sheet = workbook.getSheet(sheetName);
+                    if (sheet == null) {
+                        sheet = workbook.createSheet(sheetName); // Si la hoja no existe, se crea una nueva
+                    }
+                }
+            } else {
+                // Si el archivo no existe, crear un nuevo workbook
+                workbook = new XSSFWorkbook();
+                sheet = workbook.createSheet(sheetName);
+            }
+
+            // Obtener el índice de la última fila y agregar nuevas filas después de la última fila existente
+            int rowIndex = sheet.getPhysicalNumberOfRows();
+
+            // Si el archivo es nuevo, agregar encabezados
+            if (rowIndex == 0) {
+                String[] headers = {
+                        "FECHA / CREACIÓN ALTA", "TIPO DE VENTANA" ,"CREADO POR", "TIQLT / CP", "NumDoc", "TIPO DE DOC", "Segmento",
+                        "TipoTransaccion", "TipoVenta", "Aplicaciones", "ID DE CLIENTE", "Usuario", "ORDEN",
+                        "CÓDIGO DE VENTA / FE - (App/Web Fron end)", "CÓDIGO DE AUTOGESTIÓN - (App/Web Mi movistar)",
+                        "CÓDIGO DE RECLAMO", "SIMCARD", "IMEI", "NRO DE LINEA", "ESTADO DE LA ORDEN FINAL", "INVENTARIO PC"
+                };
+
+                // Crear encabezados
+                Row headerRow = sheet.createRow(rowIndex++);
+                for (int i = 0; i < headers.length; i++) {
+                    headerRow.createCell(i).setCellValue(headers[i]);
+                }
+            }
+
+            // Agregar los datos a las filas
+            for (ClienteData clienteData : clienteDataList) {
+                Row row = sheet.createRow(rowIndex++);
+                row.createCell(0).setCellValue(getToday());
+                row.createCell(1).setCellValue(calcularTipoVentana());
+                row.createCell(2).setCellValue((String) getScenarioContext().get("analistaQa"));
+                row.createCell(3).setCellValue(getScenarioContext().get("hu") + "/" + getScenarioContext().get("test"));
+                row.createCell(4).setCellValue(clienteData.getNroDocumento());
+                row.createCell(5).setCellValue(clienteData.getTipoDocumento());
+                row.createCell(6).setCellValue("B2C");
+                row.createCell(7).setCellValue((String) getScenarioContext().get("transaccion"));
+                row.createCell(8).setCellValue((String) getScenarioContext().get("tipoVenta"));
+                row.createCell(9).setCellValue("DITO");
+                row.createCell(10).setCellValue((String) getScenarioContext().get("idCliente"));
+                row.createCell(11).setCellValue((String) getScenarioContext().get("usuarioVendedor"));
+                row.createCell(12).setCellValue((String) getScenarioContext().get("orden"));
+                row.createCell(13).setCellValue((String) getScenarioContext().get("numeroSolicitud"));
+                row.createCell(14).setCellValue((String) getScenarioContext().get("codigoAutogestion"));
+                row.createCell(15).setCellValue((String) getScenarioContext().get("codigoReclamo"));
+                row.createCell(16).setCellValue((String) getScenarioContext().get("simcard"));
+                row.createCell(17).setCellValue((String) getScenarioContext().get("imei"));
+                row.createCell(18).setCellValue(clienteData.getNumeroDeLinea());
+                row.createCell(19).setCellValue((String) getScenarioContext().get("estadoOrden"));
+                row.createCell(20).setCellValue(getHostname());
             }
 
             // Crear directorio si no existe

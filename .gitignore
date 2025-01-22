@@ -15,6 +15,7 @@ captcha/**
 node_modules/
 dist/
 Bitacoras/
+CapturaData/
 
 # Compiled Java class files
 *.class
@@ -48,6 +49,7 @@ Thumbs.db
 *.app
 *.exe
 *.war
+*.env
 
 # Large media files
 *.mp4
