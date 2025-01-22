@@ -702,6 +702,7 @@ public class DataClientePage extends WebBase {
         String[] tiposNumDocumCliente = numeroDocumentoCliente.split(",\\s");
         //int numElementos = Math.min(tiposDocumentos.length, tiposNumDocumCliente.length);
         int numElementos = tiposNumDocumCliente.length;
+        int contarErrorDoc = 0;
         for (int j = 0; j < numElementos; j++) {
             if (j % 25 == 0 && j > 1) {
                 cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 50");
@@ -813,7 +814,12 @@ public class DataClientePage extends WebBase {
             verlistas(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
             verlistas(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
             NOMBRE_CLIENTE = nombreClientesArray[j];
-            for (int i = 0; i < tipoPlanArray.length; i++) {
+            System.out.println("LONGITUD FOR: " + cicloFacturacionArray.length);
+            if (cicloFacturacionArray.length == 0) {
+                contarErrorDoc++;
+                System.out.println("DOCUMENTOS ERROR: " + contarErrorDoc);
+            }
+            for (int i = 0; i < cicloFacturacionArray.length; i++) {
                 System.out.println(TIPO_DOCUMENTO + ", " + NUMERO_DOCUMENTO + ", " + NOMBRE_CLIENTE + ", " + tipoPlanArray[i] + ", " + numeroLineaArray[i] + ", " + nombrePlanArray[i] + ", " + tipoPlanContratadoArray[i] + ", " + componentesPlanContratadoArray[i] + ", " + estadoPlanArray[i] + ", " + deudaPlanArray[i] + ", " + cantidadDeudaDelPlanArray[i] + ", " + iptvArray[i] + ", " + ordenVueloArray[i] + ", " + tecnologiaPlanArray[i] + ", " + velocidadPlanArray[i] + ", " + cuentaConSVAPlanArray[i] + ", " + direccionMigrarFTTHArray[i] + ", " + etiquetaFibraArray[i] + ", " + cicloFacturacionArray[i] + ", " + tiempoCreacionLineaArray[i] + ", " + direccionClienteArray[i] + ", " + estadoDireccionArray[i] + ", " + tecnologiaAMigrarArray[i] + ", " + etiquetaSaltoCeroArray[i]);
                 tipoDocuemtoList.add(TIPO_DOCUMENTO);
                 numeroDocumentoList.add(NUMERO_DOCUMENTO);
