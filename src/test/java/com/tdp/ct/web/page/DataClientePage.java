@@ -80,11 +80,11 @@ public class DataClientePage extends WebBase {
     private WebElement insertarReferencia;
     @FindBy(xpath = "//*[@class = 'flex_100 hydrated ng-dirty ng-touched ng-valid' and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-valid') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-touched') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'hydrated') and @formcontrolname = 'reference' and string-length(@value) > 0] | //*[contains(@class, 'ng-dirty') and @formcontrolname = 'reference' and string-length(@value) > 0]")
     private WebElement verSiTieneReferencia;
-    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar ubicación')] | //*[@class = 'button_step' and contains(text(), 'Consultar ubicacion')]")
+    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar ubicación')] | //*[@class = 'button_step' and contains(text(), 'Consultar ubicacion')] | //*[contains(@class, 'utton') and contains(text(), 'Consultar ubicaci')] | //*[contains(@class, 'utton') and contains(text(), 'Consultar Ubicaci')]")
     private WebElement btnConsultarUbicacion;
     @FindBy(xpath = "//*[contains(@class, 'text-adress') and contains(text(), 'Dirección')]")
     private WebElement titleDireccionInsertada;
-    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar cobertura')] | //*[@class = 'button_step' and contains(text(), 'cobertura')]")
+    @FindBy(xpath = "//*[@class = 'button_step' and contains(text(), 'Consultar cobertura')] | //*[@class = 'button_step' and contains(text(), 'cobertura')] | //*[contains(@class, 'utton') and contains(text(), 'obertura')]")
     private WebElement btnConsultarCobertura;
     @FindBy(xpath = "//*[contains(@class, 'title') and contains(text(), 'Ofertas sugeridas')]")
     private WebElement titleOfertasSugeridas;
@@ -220,7 +220,7 @@ public class DataClientePage extends WebBase {
     private WebElement btnReintentar;
 
     // ENTENDIDO
-    @FindBy(xpath = "//*[contains(@class, 'button') and contains(text(), 'Entendido')]")
+    @FindBy(xpath = "//*[contains(@class, 'utton') and contains(text(), 'Entendido')]")
     private WebElement btnEntendido;
 
     private final String folderPath = "CapturaData";
@@ -2205,7 +2205,9 @@ public class DataClientePage extends WebBase {
             click(insertarReferencia,5);
             insertarReferencia.sendKeys(Keys.CONTROL + "a");
             insertarReferencia.sendKeys(Keys.DELETE);
+            cargarMsgLog(Level.INFO, "INGRESO REFERENCIA");
             type(insertarReferencia, ".",5);
+            cargarMsgLog(Level.INFO, "SE INGRESO REFERENCIA");
         }
     }
 
@@ -2298,7 +2300,9 @@ public class DataClientePage extends WebBase {
                 click(element,5);
                 element.sendKeys(Keys.CONTROL + "a");
                 element.sendKeys(Keys.DELETE);
+                System.out.println("INGRESO A INSERTAR TEXTO OBLIGATORIO");
                 type(element, texto,5);
+                System.out.println("INSERTO TEXTO OBLIGATORIO");
             }
         } catch (Exception e) {
             System.out.println("NO SE DETECTO INSERSION DE TEXTO OBLIGATORIO");
@@ -2492,7 +2496,9 @@ public class DataClientePage extends WebBase {
             if (masDeUnaDireccion.equals("SI")) {
                 insertarTipoVivienda();
             }
+            cargarMsgLog(Level.INFO, "Ingreso a dar click consultar cobertura");
             click(btnConsultarCobertura,5);
+            cargarMsgLog(Level.INFO, "Dio click consultar cobertura");
             clickBtnReintentar();
             errorInconsistenciaDireccion();
             try {
@@ -2500,6 +2506,7 @@ public class DataClientePage extends WebBase {
                 if (btnConsultarCobertura.isDisplayed()) {
                     cargarMsgLog(Level.INFO, "Ingreso a dar click consultar cobertura - contingencia");
                     click(btnConsultarCobertura,5);
+                    cargarMsgLog(Level.INFO, "Dio click consultar cobertura - contingencia");
                 }
             } catch (Exception e1) {
                 cargarMsgLog(Level.INFO, "Si se dio click a consultar cobertura");
