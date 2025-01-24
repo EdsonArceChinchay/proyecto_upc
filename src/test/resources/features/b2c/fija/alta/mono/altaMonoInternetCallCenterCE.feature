@@ -16,22 +16,22 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11SP4 @Sanity28 @DROP-G04 @LocalDrop @AltaFija @AltaMono
 Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente con CE por canal Call Center
 
-  @AltaMonoIntHFC @QAN @test-altas
-  Escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
+  @AltaMonoIntHFC @QAN @test-fija
+  Esquema del escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA DUO | Contado    |
+      | Analista QA   | HU           | Test        | Transaccion             | Tipo Venta |
+      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA MONO INTERNET | Contado    |
     Cuando   presiono el boton Iniciar Sesion
-    Y        selecciono el tipo de usuario "userType"
-    Y        ingreso el usuario "userNameQAN7"
-    Y        ingreso el password "userPasswordQAN7"
+    Y        selecciono el tipo de usuario "<userType>"
+    Y        ingreso el usuario "<userName>"
+    Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        valido que se presente el canal "Call Center"
-    Cuando   selecciono el tipo de documento "CE"
-    Y        ingreso el documento "1100002107"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+#    Y        valido que se presente el canal "Call Center"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
@@ -40,17 +40,19 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y        completo los datos para consultar la cobertura
-      | departamento | provincia | distrito   | direccion               | referencia |
-      | LIMA         | LIMA      | SAN ISIDRO | AVENIDA CAMINO REAL 155 | parque     |
+    Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    Y        selecciono la provincia donde sera la instalacion "<provincia>"
+    Y        selecciono el distrito donde sera la instalacion "<distrito>"
+    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+    Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                | 1    | 3   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "Mono"
-    Y        selecciono el plan "INTERNET MOVISTAR RA"
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono el plan "<planName>"
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso telefono de contacto
@@ -75,7 +77,10 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "1100002107"
+    Y        busco por "<documentNumber>"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+    Ejemplos:
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100000439     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono   | INTERNET MOVISTAR RA   |
