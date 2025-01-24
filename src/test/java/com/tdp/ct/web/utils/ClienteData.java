@@ -31,6 +31,17 @@ public class ClienteData {
     private String tecnologiaAMigrar;
     private String saltoCero;
 
+    public ClienteData(String tipoDocumento, String nroDocumento) {
+        this.tipoDocumento = tipoDocumento;
+        this.nroDocumento = nroDocumento;
+    }
+
+    public ClienteData(String tipoDocumento, String nroDocumento, String numeroDeLinea) {
+        this.tipoDocumento = tipoDocumento;
+        this.nroDocumento = nroDocumento;
+        this.numeroDeLinea = numeroDeLinea;
+    }
+
     public ClienteData(String tipoDocumento, String nroDocumento, String nombreCliente, String tipoPlanDelCliente, String numeroDeLinea, String nombrePlan, String tipoPlan, String componentesPlan, String estadoDePlan, String estadoDeuda, String cantidadDeDeuda, String planIPTV, String ordenEnVuelo, String tecnologiaDelPlan, String velocidadRedPlan, String sva, String direccionAFibra, String verSiTieneEtiquetaFibra, String cicloDeFacturacion, String antiguedad, String direccion, String estadoDireccion, String tecnologiaAMigrar, String saltoCero) {
         this.tipoDocumento = tipoDocumento;
         this.nroDocumento = nroDocumento;

@@ -227,6 +227,8 @@ public class DataClientePage extends WebBase {
     private final String excelName = "capturaData" + getToday().replace("/", "");
     private final String sheetName = "Datos Clientes";
 
+    private final String sheetNameError = "Datos Clientes Error";
+
     private final String folderPathBitacora = "Bitacoras";
     private final String excelNameBitacora = "bitacora" + getToday().replace("/", "") + "_Masiva";
     private final String sheetNameBitacora = "Datos Bitacora";
@@ -285,6 +287,9 @@ public class DataClientePage extends WebBase {
 
     private List<ClienteData> clienteDataList = new ArrayList<>();
 
+    List<Integer> totalElementosPorArray = new ArrayList<>();
+    List<String> resultadoList = new ArrayList<>();
+
     public void clickBtnContinuar() {
         cargarMsgLog(Level.INFO,"Ingreso a dar click al boton Continuar");
         click(btnContinuarProd,5);
@@ -300,9 +305,11 @@ public class DataClientePage extends WebBase {
         try {
             cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento");
             documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
+            cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS");
             js().scrollElementTop(scroll);
             UtilWeb.waitForSeconds(1);
             click(documentoList,5);
+            cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS");
             String valueTipoDocumento = "";
             SearchContext context = sh().getContext(documentoList);
             switch (tipoDocumento) {
@@ -323,14 +330,17 @@ public class DataClientePage extends WebBase {
                 default:
                     throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
             }
+            cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO");
             context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
             cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
         } catch (Exception e) {
             cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento - Contingencia");
             documentoList = find().getElementByXPath("//*[@class='ng-untouched ng-pristine flex_100 hydrated ng-valid'] | //*[contains(@class, 'ng-valid') and @formcontrolname='tipoDoc'] | (//*[contains(@class, 'ng-pristine') and @formcontrolname='tipoDoc'])[1]");
+            cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS - CONTINGENCIA");
             js().scrollElementTop(scroll);
             UtilWeb.waitForSeconds(1);
             click(documentoList,5);
+            cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS - CONTINGENCIA");
             String valueTipoDocumento = "";
             SearchContext context = sh().getContext(documentoList);
             switch (tipoDocumento) {
@@ -351,6 +361,7 @@ public class DataClientePage extends WebBase {
                 default:
                     throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
             }
+            cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO - CONTINGENCIA");
             context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
             cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
         }
@@ -814,43 +825,96 @@ public class DataClientePage extends WebBase {
             verlistas(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
             verlistas(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
             NOMBRE_CLIENTE = nombreClientesArray[j];
-            System.out.println("LONGITUD FOR: " + cicloFacturacionArray.length);
-            if (cicloFacturacionArray.length == 0) {
+            System.out.println("LONGITUD FOR: " + numeroLineaArray.length);
+
+            addElementosArray(numeroDelPlan, numeroLineaArray, "NUMERO DEL PLAN");
+            addElementosArray(nombreDelPlan, nombrePlanArray, "NOMBRE DEL PLAN");
+            addElementosArray(tipoPlanContratado, tipoPlanContratadoArray, "TIPO PLAN CONTRATADO");
+            addElementosArray(componentesPlanContratado, componentesPlanContratadoArray, "COMPONENTES PLAN CONTRATADO");
+            addElementosArray(estadoDelPlan, estadoPlanArray, "ESTADO DEL PLAN");
+            addElementosArray(deudaDelPlan, deudaPlanArray, "SI TIENE DEUDA EL PLAN");
+            addElementosArray(cantidadDeudaDelPlan, cantidadDeudaDelPlanArray, "LA CANTIDAD QUE TIENE DE DEUDA");
+            addElementosArray(iptvPlan, iptvArray, "SI EL PLAN TIENE IPTV");
+            addElementosArray(ordenVueloPlan, ordenVueloArray, "SI EL PLAN TIENE ORDEN EN VUELO");
+            addElementosArray(tecnologiaPlan, tecnologiaPlanArray, "VER TIPO TECNOLOGIA DE RED");
+            addElementosArray(velocidadPlan, velocidadPlanArray, "VER VELOCIDAD DE RED");
+            addElementosArray(cuentaConSVAPlan, cuentaConSVAPlanArray, "VER SI CUENTA CON SVA");
+            addElementosArray(direccionMigrarFTTH, direccionMigrarFTTHArray, "VER SI PUEDE MIGRAR A FIBRA");
+            addElementosArray(etiquetaFibra, etiquetaFibraArray, "VER SI TIENE ETIQUETA FIBRA");
+            addElementosArray(cicloFacturacion, cicloFacturacionArray, "VER CICLOS DE FACTURACION");
+            addElementosArray(tiempoCreacionLinea, tiempoCreacionLineaArray, "VER ANTIGUEDAD DE LINEA");
+            addElementosArray(direccionCliente, direccionClienteArray, "VER DIRECCION DEL CLIENTE");
+            addElementosArray(estadoDireccion, estadoDireccionArray, "VER ESTADO DIRECCION");
+            addElementosArray(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
+            addElementosArray(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
+
+            Integer[] totalElementosPorArrayAll = totalElementosPorArray.toArray(new Integer[0]);
+
+            verlistasInt(totalElementosPorArray, totalElementosPorArrayAll, "CANTIDAD DE ELEMENTOS POR ARRAY");
+
+            String resultado;
+            for (int i = 0; i < totalElementosPorArrayAll.length; i++) {
+                if (Objects.equals(totalElementosPorArrayAll[0], totalElementosPorArrayAll[i])) {
+                    System.out.println("ELEMENTO " + i + " ES IGUAL AL ELEMENTO SIGUIENTE");
+                    resultado = "OK";
+                    resultadoList.add(resultado);
+                } else {
+                    System.out.println("ELEMENTO " + i + " NO ES IGUAL AL ELEMENTO SIGUIENTE");
+                }
+            }
+
+            String[] resultadoListArray = resultadoList.toArray(new String[0]);
+            verlistas(resultadoList, resultadoListArray, "VER RESULTADOS");
+
+            System.out.println("CANTIDAD EN LISTA DE RESULTADOS: " + resultadoListArray.length);
+            System.out.println("CANTIDAD EN LISTA DE ELEMENTOS POR ARRAY: " + totalElementosPorArrayAll.length);
+
+            if (resultadoListArray.length == totalElementosPorArrayAll.length) {
+                for (int i = 0; i < numeroLineaArray.length; i++) {
+                    System.out.println(TIPO_DOCUMENTO + ", " + NUMERO_DOCUMENTO + ", " + NOMBRE_CLIENTE + ", " + tipoPlanArray[i] + ", " + numeroLineaArray[i] + ", " + nombrePlanArray[i] + ", " + tipoPlanContratadoArray[i] + ", " + componentesPlanContratadoArray[i] + ", " + estadoPlanArray[i] + ", " + deudaPlanArray[i] + ", " + cantidadDeudaDelPlanArray[i] + ", " + iptvArray[i] + ", " + ordenVueloArray[i] + ", " + tecnologiaPlanArray[i] + ", " + velocidadPlanArray[i] + ", " + cuentaConSVAPlanArray[i] + ", " + direccionMigrarFTTHArray[i] + ", " + etiquetaFibraArray[i] + ", " + cicloFacturacionArray[i] + ", " + tiempoCreacionLineaArray[i] + ", " + direccionClienteArray[i] + ", " + estadoDireccionArray[i] + ", " + tecnologiaAMigrarArray[i] + ", " + etiquetaSaltoCeroArray[i]);
+                    tipoDocuemtoList.add(TIPO_DOCUMENTO);
+                    numeroDocumentoList.add(NUMERO_DOCUMENTO);
+                    nombreClienteList.add(NOMBRE_CLIENTE);
+                    tipoPlanClienteList.add(tipoPlanArray[i]);
+                    numeroLineaList.add(numeroLineaArray[i]);
+                    nombrePlanList.add(nombrePlanArray[i]);
+                    tipoPlanContratadoList.add(tipoPlanContratadoArray[i]);
+                    componentesPlanContratadoList.add(componentesPlanContratadoArray[i]);
+                    estadoPlanList.add(estadoPlanArray[i]);
+                    deudaClienteList.add(deudaPlanArray[i]);
+                    cantidadDeudaList.add(cantidadDeudaDelPlanArray[i]);
+                    planIPTVList.add(iptvArray[i]);
+                    ordenEnVueloList.add(ordenVueloArray[i]);
+                    tecnologiaPlanList.add(tecnologiaPlanArray[i]);
+                    velocidadPlanList.add(velocidadPlanArray[i]);
+                    cuentaConSVAPlanList.add(cuentaConSVAPlanArray[i]);
+                    direccionMigrarFTTHList.add(direccionMigrarFTTHArray[i]);
+                    etiquetaFibraList.add(etiquetaFibraArray[i]);
+                    cicloFacturacionList.add(cicloFacturacionArray[i]);
+                    tiempoCreacionLineaList.add(tiempoCreacionLineaArray[i]);
+                    direccionClienteList.add(direccionClienteArray[i]);
+                    estadoDireccionList.add(estadoDireccionArray[i]);
+                    tecnologiaAMigrarList.add(tecnologiaAMigrarArray[i]);
+                    etiquetaSaltoCeroList.add(etiquetaSaltoCeroArray[i]);
+
+                    // INSERTAR DATOS
+                    clienteDataList.clear();
+                    clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_CLIENTE, tipoPlanArray[i], numeroLineaArray[i], nombrePlanArray[i], tipoPlanContratadoArray[i], componentesPlanContratadoArray[i], estadoPlanArray[i], deudaPlanArray[i], cantidadDeudaDelPlanArray[i], iptvArray[i], ordenVueloArray[i], tecnologiaPlanArray[i], velocidadPlanArray[i], cuentaConSVAPlanArray[i], direccionMigrarFTTHArray[i], etiquetaFibraArray[i], cicloFacturacionArray[i], tiempoCreacionLineaArray[i], direccionClienteArray[i], estadoDireccionArray[i], tecnologiaAMigrarArray[i], etiquetaSaltoCeroArray[i]));
+                    generarExcel(folderPath, excelName, sheetName);
+                    generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
+                }
+            } else {
                 contarErrorDoc++;
                 System.out.println("DOCUMENTOS ERROR: " + contarErrorDoc);
-            }
-            for (int i = 0; i < cicloFacturacionArray.length; i++) {
-                System.out.println(TIPO_DOCUMENTO + ", " + NUMERO_DOCUMENTO + ", " + NOMBRE_CLIENTE + ", " + tipoPlanArray[i] + ", " + numeroLineaArray[i] + ", " + nombrePlanArray[i] + ", " + tipoPlanContratadoArray[i] + ", " + componentesPlanContratadoArray[i] + ", " + estadoPlanArray[i] + ", " + deudaPlanArray[i] + ", " + cantidadDeudaDelPlanArray[i] + ", " + iptvArray[i] + ", " + ordenVueloArray[i] + ", " + tecnologiaPlanArray[i] + ", " + velocidadPlanArray[i] + ", " + cuentaConSVAPlanArray[i] + ", " + direccionMigrarFTTHArray[i] + ", " + etiquetaFibraArray[i] + ", " + cicloFacturacionArray[i] + ", " + tiempoCreacionLineaArray[i] + ", " + direccionClienteArray[i] + ", " + estadoDireccionArray[i] + ", " + tecnologiaAMigrarArray[i] + ", " + etiquetaSaltoCeroArray[i]);
-                tipoDocuemtoList.add(TIPO_DOCUMENTO);
-                numeroDocumentoList.add(NUMERO_DOCUMENTO);
-                nombreClienteList.add(NOMBRE_CLIENTE);
-                tipoPlanClienteList.add(tipoPlanArray[i]);
-                numeroLineaList.add(numeroLineaArray[i]);
-                nombrePlanList.add(nombrePlanArray[i]);
-                tipoPlanContratadoList.add(tipoPlanContratadoArray[i]);
-                componentesPlanContratadoList.add(componentesPlanContratadoArray[i]);
-                estadoPlanList.add(estadoPlanArray[i]);
-                deudaClienteList.add(deudaPlanArray[i]);
-                cantidadDeudaList.add(cantidadDeudaDelPlanArray[i]);
-                planIPTVList.add(iptvArray[i]);
-                ordenEnVueloList.add(ordenVueloArray[i]);
-                tecnologiaPlanList.add(tecnologiaPlanArray[i]);
-                velocidadPlanList.add(velocidadPlanArray[i]);
-                cuentaConSVAPlanList.add(cuentaConSVAPlanArray[i]);
-                direccionMigrarFTTHList.add(direccionMigrarFTTHArray[i]);
-                etiquetaFibraList.add(etiquetaFibraArray[i]);
-                cicloFacturacionList.add(cicloFacturacionArray[i]);
-                tiempoCreacionLineaList.add(tiempoCreacionLineaArray[i]);
-                direccionClienteList.add(direccionClienteArray[i]);
-                estadoDireccionList.add(estadoDireccionArray[i]);
-                tecnologiaAMigrarList.add(tecnologiaAMigrarArray[i]);
-                etiquetaSaltoCeroList.add(etiquetaSaltoCeroArray[i]);
-
-                // INSERTAR DATOS
                 clienteDataList.clear();
-                clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_CLIENTE, tipoPlanArray[i], numeroLineaArray[i], nombrePlanArray[i], tipoPlanContratadoArray[i], componentesPlanContratadoArray[i], estadoPlanArray[i], deudaPlanArray[i], cantidadDeudaDelPlanArray[i], iptvArray[i], ordenVueloArray[i], tecnologiaPlanArray[i], velocidadPlanArray[i], cuentaConSVAPlanArray[i], direccionMigrarFTTHArray[i], etiquetaFibraArray[i], cicloFacturacionArray[i], tiempoCreacionLineaArray[i], direccionClienteArray[i], estadoDireccionArray[i], tecnologiaAMigrarArray[i], etiquetaSaltoCeroArray[i]));
-                generarExcel(folderPath, excelName, sheetName);
-                generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
+                clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO));
+                generarExcelError(folderPath, excelName, sheetNameError);
+                for (int i = 0; i < numeroLineaArray.length; i++) {
+                    // INSERTAR DATOS
+                    clienteDataList.clear();
+                    clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, numeroLineaArray[i]));
+                    generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
+                }
             }
             tipoPlanCliente.clear();
             numeroDelPlan.clear();
@@ -873,6 +937,9 @@ public class DataClientePage extends WebBase {
             estadoDireccion.clear();
             tecnologiaAMigrar.clear();
             etiquetaSaltoCero.clear();
+
+            totalElementosPorArray.clear();
+            resultadoList.clear();
         }
 
         imprimirReporte();
@@ -2694,6 +2761,19 @@ public class DataClientePage extends WebBase {
     }
 
     /**
+     * CAPURA DE ELEMENTOS POR ARRAY
+     * */
+
+    public void addElementosArray(List<String> list, String[] array, String nameLista) {
+        System.out.println("*********************************");
+        System.out.println("Lista del - " + nameLista);
+        System.out.println("Contenido Lista: " + list);
+        System.out.println("Cantidad de elementos en el array: " + array.length);
+        totalElementosPorArray.add(array.length);
+        System.out.println("*********************************");
+    }
+
+    /**
      * FUNCION - CREAR EXCEL
      * */
 
@@ -2798,6 +2878,81 @@ public class DataClientePage extends WebBase {
         }
     }
 
+    public void generarExcelError(String folderPath, String fileName, String sheetName) {
+        String path = Paths.get(folderPath, fileName).toString() + ".xlsx";
+        Workbook workbook = null;
+        Sheet sheet = null;
+
+        try {
+            // Verificar si el archivo existe
+            File file = new File(path);
+            if (file.exists()) {
+                // Abrir el archivo existente
+                try (FileInputStream fileIn = new FileInputStream(path)) {
+                    workbook = new XSSFWorkbook(fileIn);
+                    sheet = workbook.getSheet(sheetName);
+                    if (sheet == null) {
+                        sheet = workbook.createSheet(sheetName); // Si la hoja no existe, se crea una nueva
+                    }
+                }
+            } else {
+                // Si el archivo no existe, crear un nuevo workbook
+                workbook = new XSSFWorkbook();
+                sheet = workbook.createSheet(sheetName);
+            }
+
+            // Obtener el índice de la última fila y agregar nuevas filas después de la última fila existente
+            int rowIndex = sheet.getPhysicalNumberOfRows();
+
+            // Si el archivo es nuevo, agregar encabezados
+            if (rowIndex == 0) {
+                String[] headers = {
+                        "Tipo Documento", "Número Documento"
+                };
+
+                // Crear encabezados
+                Row headerRow = sheet.createRow(rowIndex++);
+                for (int i = 0; i < headers.length; i++) {
+                    headerRow.createCell(i).setCellValue(headers[i]);
+                }
+            }
+
+            // Agregar los datos a las filas
+            for (ClienteData clienteData : clienteDataList) {
+                Row row = sheet.createRow(rowIndex++);
+                row.createCell(0).setCellValue(clienteData.getTipoDocumento());
+                row.createCell(1).setCellValue(clienteData.getNroDocumento());
+            }
+
+            // Crear directorio si no existe
+            Path paths = Paths.get(folderPath).toAbsolutePath();
+            if (!Files.exists(paths)) {
+                Files.createDirectories(paths);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Directorio creado en: {0} " + paths.toString());
+            } else {
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "El directorio ya existe en: {0} " + paths.toString());
+            }
+
+            // Escribir el archivo Excel
+            try (FileOutputStream fileOut = new FileOutputStream(path)) {
+                workbook.write(fileOut);
+                UtilWeb.logger(this.getClass()).log(Level.INFO, "Archivo Excel creado o actualizado en: {0} " + folderPath + "/" + fileName);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            UtilWeb.logger(this.getClass()).log(Level.SEVERE, "Error al crear o escribir el archivo Excel: " + path);
+        } finally {
+            try {
+                if (workbook != null) {
+                    workbook.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void generarExcelBitacora(String folderPath, String fileName, String sheetName) {
         String path = Paths.get(folderPath, fileName).toString() + ".xlsx";
         Workbook workbook = null;
@@ -2852,7 +3007,7 @@ public class DataClientePage extends WebBase {
                 row.createCell(6).setCellValue("B2C");
                 row.createCell(7).setCellValue((String) getScenarioContext().get("transaccion"));
                 row.createCell(8).setCellValue((String) getScenarioContext().get("tipoVenta"));
-                row.createCell(9).setCellValue("DITO");
+                row.createCell(9).setCellValue("Web FrontEnd");
                 row.createCell(10).setCellValue((String) getScenarioContext().get("idCliente"));
                 row.createCell(11).setCellValue((String) getScenarioContext().get("usuarioVendedor"));
                 row.createCell(12).setCellValue((String) getScenarioContext().get("orden"));
