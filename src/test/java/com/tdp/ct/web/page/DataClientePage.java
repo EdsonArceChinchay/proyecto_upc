@@ -223,6 +223,14 @@ public class DataClientePage extends WebBase {
     @FindBy(xpath = "//*[contains(@class, 'utton') and contains(text(), 'Entendido')]")
     private WebElement btnEntendido;
 
+    // BOTON ELIMINAR NUMERO SELECCIONADO
+    @FindBy(xpath = "//*[contains(@src, 'service') and contains(@alt, 'delete')]")
+    private WebElement btnEliminarSeleccion;
+
+    //BOTON INICIO
+    @FindBy(xpath = "//*[contains(normalize-space(text()), 'Inicio')]")
+    private WebElement btnInicio;
+
     private final String folderPath = "CapturaData";
     private final String excelName = "capturaData" + getToday().replace("/", "");
     private final String sheetName = "Datos Clientes";
@@ -302,68 +310,90 @@ public class DataClientePage extends WebBase {
         cargarMsgLog(Level.INFO,"Ingreso a seleccionar el tipo de documento a buscar");
         UtilWeb.waitForSeconds(2);
         WebElement documentoList;
-        try {
-            cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento");
-            documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
-            cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS");
-            js().scrollElementTop(scroll);
-            UtilWeb.waitForSeconds(1);
-            click(documentoList,5);
-            cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS");
-            String valueTipoDocumento = "";
-            SearchContext context = sh().getContext(documentoList);
-            switch (tipoDocumento) {
-                case "CE":
-                case "C":
-                    valueTipoDocumento = "C";
-                    break;
-                case "DNI":
-                    valueTipoDocumento = "DNI";
-                    break;
-                case "Pasaporte":
-                case "P":
-                    valueTipoDocumento = "P";
-                    break;
-                case "RUC":
-                    valueTipoDocumento = "RUC";
-                    break;
-                default:
-                    throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
+        int cont = 0;
+        boolean paso = false;
+        while (cont < 3 && !paso) {
+            try {
+                try {
+                    cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento");
+                    documentoList = find().getElementByCss("div.searchClient div:nth-child(1) > tdp-st-select");
+                    cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS");
+                    js().scrollElementTop(scroll);
+                    cargarMsgLog(Level.INFO, "PASO A REALIZAR SCROLL EN TIPO DOCUMENTO");
+                    UtilWeb.waitForSeconds(1);
+                    click(documentoList,5);
+                    cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS");
+                    String valueTipoDocumento = "";
+                    SearchContext context = sh().getContext(documentoList);
+                    switch (tipoDocumento) {
+                        case "CE":
+                        case "C":
+                            valueTipoDocumento = "C";
+                            break;
+                        case "DNI":
+                            valueTipoDocumento = "DNI";
+                            break;
+                        case "Pasaporte":
+                        case "P":
+                            valueTipoDocumento = "P";
+                            break;
+                        case "RUC":
+                            valueTipoDocumento = "RUC";
+                            break;
+                        default:
+                            throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
+                    }
+                    cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO");
+                    context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
+                    cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
+                    paso = true;
+                } catch (Exception e) {
+                    cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento - Contingencia");
+                    documentoList = find().getElementByXPath("//*[@class='ng-untouched ng-pristine flex_100 hydrated ng-valid'] | //*[contains(@class, 'ng-valid') and @formcontrolname='tipoDoc'] | (//*[contains(@class, 'ng-pristine') and @formcontrolname='tipoDoc'])[1]");
+                    cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS - CONTINGENCIA");
+                    js().scrollElementTop(scroll);
+                    cargarMsgLog(Level.INFO, "PASO A REALIZAR SCROLL EN TIPO DOCUMENTO - CONTINGENCIA");
+                    UtilWeb.waitForSeconds(1);
+                    click(documentoList,5);
+                    cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS - CONTINGENCIA");
+                    String valueTipoDocumento = "";
+                    SearchContext context = sh().getContext(documentoList);
+                    switch (tipoDocumento) {
+                        case "CE":
+                        case "C":
+                            valueTipoDocumento = "C";
+                            break;
+                        case "DNI":
+                            valueTipoDocumento = "DNI";
+                            break;
+                        case "Pasaporte":
+                        case "P":
+                            valueTipoDocumento = "P";
+                            break;
+                        case "RUC":
+                            valueTipoDocumento = "RUC";
+                            break;
+                        default:
+                            throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
+                    }
+                    cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO - CONTINGENCIA");
+                    context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
+                    cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
+                    paso = true;
+                }
+            } catch (Exception er) {
+                cont++;
+                cargarMsgLog(Level.INFO, "NO CARGO SELECCIONAR TIPO DOCUMENTO - REINTENTO - N°" + cont);
+                if (cont < 3) {
+                    click(btnInicio,15);
+                    UtilWeb.waitForSeconds(5);
+                    clickBtnReintentar();
+                    UtilWeb.waitForSeconds(2);
+                    Zoom(65);
+                } else {
+                    driver().quit();
+                }
             }
-            cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO");
-            context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
-            cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
-        } catch (Exception e) {
-            cargarMsgLog(Level.INFO,"Ingreso a seleccionar Tipo Documento - Contingencia");
-            documentoList = find().getElementByXPath("//*[@class='ng-untouched ng-pristine flex_100 hydrated ng-valid'] | //*[contains(@class, 'ng-valid') and @formcontrolname='tipoDoc'] | (//*[contains(@class, 'ng-pristine') and @formcontrolname='tipoDoc'])[1]");
-            cargarMsgLog(Level.INFO, "INGRESO A VISUALIZAR LISTA DOCUMENTOS - CONTINGENCIA");
-            js().scrollElementTop(scroll);
-            UtilWeb.waitForSeconds(1);
-            click(documentoList,5);
-            cargarMsgLog(Level.INFO, "CLICK LISTA DE DOCUMENTOS - CONTINGENCIA");
-            String valueTipoDocumento = "";
-            SearchContext context = sh().getContext(documentoList);
-            switch (tipoDocumento) {
-                case "CE":
-                case "C":
-                    valueTipoDocumento = "C";
-                    break;
-                case "DNI":
-                    valueTipoDocumento = "DNI";
-                    break;
-                case "Pasaporte":
-                case "P":
-                    valueTipoDocumento = "P";
-                    break;
-                case "RUC":
-                    valueTipoDocumento = "RUC";
-                    break;
-                default:
-                    throw new IllegalArgumentException("Tipo de documento no existe " + tipoDocumento);
-            }
-            cargarMsgLog(Level.INFO, "CLICK DOCUMENTO SELECCIONADO - CONTINGENCIA");
-            context.findElement(By.cssSelector("[data-value='" + valueTipoDocumento + "']")).click();
-            cargarMsgLog(Level.INFO,"Selecciono el tipo de documento: " + valueTipoDocumento);
         }
     }
 
@@ -412,7 +442,10 @@ public class DataClientePage extends WebBase {
                 cargarMsgLog(Level.INFO,"Se sigue visualizo la barra cargando");
                 UtilWeb.waitForSeconds(2);
                 driver().navigate().refresh();
+                UtilWeb.waitForSeconds(4);
+                action.sendKeys(Keys.ESCAPE).build().perform();
                 barraCargando();
+                cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 1");
                 Zoom(65);
             }
         } catch (Exception e) {
@@ -714,12 +747,18 @@ public class DataClientePage extends WebBase {
         //int numElementos = Math.min(tiposDocumentos.length, tiposNumDocumCliente.length);
         int numElementos = tiposNumDocumCliente.length;
         int contarErrorDoc = 0;
+        int recorrido = 0;
         for (int j = 0; j < numElementos; j++) {
-            if (j % 25 == 0 && j > 1) {
-                cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 50");
-                driver().navigate().refresh();
-                barraCargando();
-                UtilWeb.waitForSeconds(1);
+            recorrido++;
+            System.out.println("**********************************");
+            System.out.println("SE INICIA RECORRIDO N°" + recorrido);
+            System.out.println("**********************************");
+            if (recorrido % 25 == 0 && recorrido > 1) {
+                cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 25");
+                click(btnInicio,15);
+                UtilWeb.waitForSeconds(5);
+                clickBtnReintentar();
+                UtilWeb.waitForSeconds(2);
                 Zoom(65);
             }
             //TIPO_DOCUMENTO = tiposDocumentos[j];
@@ -915,6 +954,14 @@ public class DataClientePage extends WebBase {
                     clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, numeroLineaArray[i]));
                     generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
                 }
+                System.out.println("SE REGRESA AL INICIO");
+                action.sendKeys(Keys.ESCAPE).build().perform();
+                UtilWeb.waitForSeconds(2);
+                click(btnInicio,15);
+                UtilWeb.waitForSeconds(5);
+                clickBtnReintentar();
+                UtilWeb.waitForSeconds(2);
+                Zoom(65);
             }
             tipoPlanCliente.clear();
             numeroDelPlan.clear();
@@ -2044,6 +2091,7 @@ public class DataClientePage extends WebBase {
                                         driver().navigate().refresh();
                                         UtilWeb.waitForSeconds(4);
                                         action.sendKeys(Keys.ESCAPE).build().perform();
+                                        cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 2");
                                         Zoom(65);
                                         click(numeroPlan,5);
                                         clickBtnReintentar();
@@ -2150,6 +2198,7 @@ public class DataClientePage extends WebBase {
                                             driver().navigate().refresh();
                                             UtilWeb.waitForSeconds(4);
                                             action.sendKeys(Keys.ESCAPE).build().perform();
+                                            cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 3");
                                             Zoom(65);
                                             click(numeroPlanMT,5);
                                             clickBtnReintentar();
@@ -2721,20 +2770,49 @@ public class DataClientePage extends WebBase {
                     click(btnMostrarOfertas,10);
                     clickBtnReintentar();
                     existe = true;
-                    try {
-                        waitUntilElementIsClickable(titlesDeInsertarDireccion,10);
-                        if (btnMostrarOfertas.isDisplayed()) {
-                            cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas - Contingencia");
-                            click(btnMostrarOfertas,10);
-                            clickBtnReintentar();
+                    boolean exist = false;
+                    int contador = 0;
+                    while (contador < 2 && !exist) {
+                        contador++;
+                        try {
+                            cargarMsgLog(Level.INFO,"INGRESO A VISUALIZAR CONTENIDO INSERTAR DIRECCION - N°" + contador);
+                            waitUntilElementIsClickable(titlesDeInsertarDireccion,10);
+                            if (titlesDeInsertarDireccion.isDisplayed()) {
+                                cargarMsgLog(Level.INFO,"Ya no se visualiza Boton Mostrar Ofertas");
+                                exist = true;
+                            }
+                        } catch (Exception er) {
+                            if (btnMostrarOfertas.isDisplayed()) {
+                                if (contador < 2) {
+                                    cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas - Contingencia - N°" + contador);
+                                    click(btnMostrarOfertas,10);
+                                    cargarMsgLog(Level.INFO,"Dio click - Boton Mostrar Ofertas - Contingencia - N°" + contador);
+                                    clickBtnReintentar();
+                                } else {
+                                    cargarMsgLog(Level.INFO, "INGRESO A ELIMINAR ELEMENTO SELECCIONADO");
+                                    eliminarNumeroSeleccionado();
+                                }
+                            }
                         }
-                    } catch (Exception er) {
-                        cargarMsgLog(Level.INFO,"Ya no se visualiza Boton Mostrar Ofertas");
                     }
                 }
             } catch (Exception e) {
                 cont ++;
+                cargarMsgLog(Level.INFO,"NO SE VISUALIZA EL BOTON MOSTRAR OFERTA - N°" + cont);
             }
+        }
+    }
+
+    /**
+     * FUNCION - ELIMINAR NUMERO SELECCIONADO
+     * */
+
+    public void eliminarNumeroSeleccionado() {
+        cargarMsgLog(Level.INFO, "Ingreso a visualizar si aun se muestra el plan seleccionado");
+        if (btnMostrarOfertas.isDisplayed()) {
+            cargarMsgLog(Level.INFO, "Se visualizo que aun existe el numero seleccionado");
+            click(btnEliminarSeleccion,10);
+            cargarMsgLog(Level.INFO, "Se elimino el numero aun seleccionado");
         }
     }
 
