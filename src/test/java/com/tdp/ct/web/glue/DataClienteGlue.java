@@ -54,4 +54,9 @@ public class DataClienteGlue {
     public void visualizoMasPlanesCliente(String docs, String numers) {
         dataClienteStep.visualizoMasPlanesCliente(docs, numers);
     }
+
+    @Y("visualizo los planes leyendo la WhiteList")
+    public void visualizoMasPlanesClienteWhiteList() {
+        dataClienteStep.visualizoMasPlanesClienteWhiteList();
+    }
 }

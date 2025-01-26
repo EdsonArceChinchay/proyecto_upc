@@ -4,6 +4,7 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.ClienteData;
 import com.tdp.ct.web.utils.Utils;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -241,6 +243,11 @@ public class DataClientePage extends WebBase {
     private final String excelNameBitacora = "bitacora" + getToday().replace("/", "") + "_Masiva";
     private final String sheetNameBitacora = "Datos Bitacora";
 
+    private static final String folderPathWhiteList = "Clientes";
+    private static final String excelNameWhiteList = "WhiteList";
+
+    static String pathWhiteList = Paths.get(folderPathWhiteList, excelNameWhiteList).toString() + ".xlsx";
+
     Utils utils = new Utils();
     Actions action = new Actions(driver());
 
@@ -440,7 +447,6 @@ public class DataClientePage extends WebBase {
         try {
             if (titleCargando.isDisplayed()) {
                 cargarMsgLog(Level.INFO,"Se sigue visualizo la barra cargando");
-                UtilWeb.waitForSeconds(2);
                 driver().navigate().refresh();
                 UtilWeb.waitForSeconds(4);
                 action.sendKeys(Keys.ESCAPE).build().perform();
@@ -753,10 +759,14 @@ public class DataClientePage extends WebBase {
             System.out.println("**********************************");
             System.out.println("SE INICIA RECORRIDO N°" + recorrido);
             System.out.println("**********************************");
+            if (recorrido % 5 == 0 && recorrido > 1) {
+                cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 0");
+                Zoom(65);
+            }
             if (recorrido % 25 == 0 && recorrido > 1) {
                 cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 25");
                 click(btnInicio,15);
-                UtilWeb.waitForSeconds(5);
+                UtilWeb.waitForSeconds(4);
                 clickBtnReintentar();
                 UtilWeb.waitForSeconds(2);
                 Zoom(65);
@@ -989,6 +999,317 @@ public class DataClientePage extends WebBase {
             resultadoList.clear();
         }
 
+        imprimirReporte();
+    }
+
+    public void visualizoMasPlanesClienteWhiteList() {
+        int cantidad;
+
+        DecimalFormat decimalFormat = new DecimalFormat("#");
+
+        try {
+            // Lee el archivo Excel
+            FileInputStream fileInputStream = new FileInputStream(pathWhiteList);
+            Workbook workbook = new XSSFWorkbook(fileInputStream);
+            Sheet sheet = workbook.getSheetAt(0); // Lee la primera hoja
+            cantidad = sheet.getLastRowNum();
+            System.out.println("CANTIDAD FILAS: " + cantidad);
+
+            fileInputStream.close();
+
+            int contarErrorDoc = 0;
+
+            for (int j = 1; j <= cantidad; j++) {
+
+                Row row = sheet.getRow(j);
+                String estado = "";
+
+                if (row != null) {
+                    // Leer Columnas - Tipo Documento | Numero Documento
+                    Cell tipoDocumentoCell = row.getCell(0);
+                    Cell numeroDocumentoCell = row.getCell(1);
+                    Cell estadoCell = row.getCell(2);
+
+                    if (estadoCell == null) {
+                        // Insertar Texto
+                        String tipoDocumento = tipoDocumentoCell.getStringCellValue();
+                        String numeroDocumento = String.valueOf(decimalFormat.format(numeroDocumentoCell.getNumericCellValue()));
+
+                        System.out.println("******************************************");
+                        System.out.println("TIPO DOCUMENTO: " + tipoDocumento);
+                        System.out.println("NUMERO DOCUMENTO: " + numeroDocumento);
+                        System.out.println("ESTADO PROCESO: " + estado);
+                        System.out.println("Recorrido N°" + j + " de " + cantidad);
+                        System.out.println("******************************************");
+
+                        if (j % 5 == 0 && j > 1) {
+                            cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 0");
+                            Zoom(65);
+                        }
+                        if (j % 25 == 0 && j > 1) {
+                            cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 25");
+                            click(btnInicio,15);
+                            UtilWeb.waitForSeconds(4);
+                            clickBtnReintentar();
+                            UtilWeb.waitForSeconds(2);
+                            Zoom(65);
+                        }
+                        //TIPO_DOCUMENTO = tiposDocumentos[j];
+                        TIPO_DOCUMENTO = tipoDocumento;
+                        System.out.println("Doc Consultado: " + TIPO_DOCUMENTO);
+                        NUMERO_DOCUMENTO = numeroDocumento;
+                        System.out.println("Num Doc Consultado: " + NUMERO_DOCUMENTO);
+                        seleccionoTipoDocumento(tipoDocumento);
+                        ingresoNumDocumento(numeroDocumento);
+                        clickBotonConsultar();
+                        visualizarBtnCargarMas();
+                        int elementos = contarElementosExistentes();
+                        try {
+                            if (nombreCliente.isDisplayed()) {
+                                NOMBRE_CLIENTE = nombreCliente.getText().substring(8);
+                                cargarMsgLog(Level.INFO, "Nombre Cliente: " + NOMBRE_CLIENTE);
+                                nombreClientes.add(NOMBRE_CLIENTE);
+                                almacenarElementosExistentes();
+                                sacarNumeroPlan();
+                                sacarNombrePlanCliente();
+                                tipoPlan();
+                                estadoPlan();
+                                verSiTieneDeuda();
+                                cantidadDeuda();
+                                tipoPlanDelCliente(elementos);
+                                verSiEsPlanIPTV();
+                                verSiTieneOrdenEnVuelo();
+                                verSiMigraAFibra();
+                                clickParaSeleccionarPlanActivo();
+                                estado = "EXITOSO";
+                            }
+                        } catch (Exception e) {
+                            cargarMsgLog(Level.INFO, "El cliente es nuevo");
+                            String text = "SIN REGISTRO";
+                            nombreClientes.add(text);
+                            tipoPlanCliente.add(text);
+                            numeroDelPlan.add("NA");
+                            nombreDelPlan.add(text);
+                            tipoPlanContratado.add(text);
+                            componentesPlanContratado.add(text);
+                            estadoDelPlan.add(text);
+                            deudaDelPlan.add(text);
+                            cantidadDeudaDelPlan.add(text);
+                            iptvPlan.add(text);
+                            ordenVueloPlan.add(text);
+                            tecnologiaPlan.add(text);
+                            velocidadPlan.add(text);
+                            cuentaConSVAPlan.add(text);
+                            direccionMigrarFTTH.add(text);
+                            etiquetaFibra.add(text);
+                            cicloFacturacion.add(text);
+                            tiempoCreacionLinea.add(text);
+                            direccionCliente.add(text);
+                            estadoDireccion.add(text);
+                            tecnologiaAMigrar.add(text);
+                            etiquetaSaltoCero.add(text);
+                            estado = "EXITOSO";
+                        }
+
+                        System.out.println("############################################");
+                        System.out.println("INGRESO A INSERTAR VALOR A LA COLUMNA ESTADO");
+                        // ESCRIBE EN LA COLUMNA C
+                        estadoCell = row.createCell(2);
+
+                        if (estado.equals("EXITOSO")) {
+                            System.out.println("ESTADO PROCESO ES EXITOSO");
+                            estadoCell.setCellValue("EXITOSO");
+                        } else {
+                            System.out.println("ESTADO PROCESO ES FALLIDO");
+                            estadoCell.setCellValue("FALLIDO");
+                        }
+                        System.out.println("############################################");
+
+                        Integer[] totalElementosPlanClienteArray = totalElementosPlanCliente.toArray(new Integer[0]);
+                        String[] tipoPlanArray = tipoPlanCliente.toArray(new String[0]);
+                        String[] numeroLineaArray = numeroDelPlan.toArray(new String[0]);
+                        String[] nombrePlanArray = nombreDelPlan.toArray(new String[0]);
+                        String[] tipoPlanContratadoArray = tipoPlanContratado.toArray(new String[0]);
+                        String[] componentesPlanContratadoArray = componentesPlanContratado.toArray(new String[0]);
+                        String[] estadoPlanArray = estadoDelPlan.toArray(new String[0]);
+                        String[] deudaPlanArray = deudaDelPlan.toArray(new String[0]);
+                        String[] cantidadDeudaDelPlanArray = cantidadDeudaDelPlan.toArray(new String[0]);
+                        String[] iptvArray = iptvPlan.toArray(new String[0]);
+                        String[] ordenVueloArray = ordenVueloPlan.toArray(new String[0]);
+                        String[] nombreClientesArray = nombreClientes.toArray(new String[0]);
+                        String[] tecnologiaPlanArray = tecnologiaPlan.toArray(new String[0]);
+                        String[] velocidadPlanArray = velocidadPlan.toArray(new String[0]);
+                        String[] cuentaConSVAPlanArray = cuentaConSVAPlan.toArray(new String[0]);
+                        String[] direccionMigrarFTTHArray = direccionMigrarFTTH.toArray(new String[0]);
+                        String[] etiquetaFibraArray = etiquetaFibra.toArray(new String[0]);
+                        String[] cicloFacturacionArray = cicloFacturacion.toArray(new String[0]);
+                        String[] tiempoCreacionLineaArray = tiempoCreacionLinea.toArray(new String[0]);
+                        String[] direccionClienteArray = direccionCliente.toArray(new String[0]);
+                        String[] estadoDireccionArray = estadoDireccion.toArray(new String[0]);
+                        String[] tecnologiaAMigrarArray = tecnologiaAMigrar.toArray(new String[0]);
+                        String[] etiquetaSaltoCeroArray = etiquetaSaltoCero.toArray(new String[0]);
+                        verlistas(tipoPlanCliente, tipoPlanArray, "TIPO PLAN");
+                        verlistas(numeroDelPlan, numeroLineaArray, "NUMERO DEL PLAN");
+                        verlistas(nombreDelPlan, nombrePlanArray, "NOMBRE DEL PLAN");
+                        verlistas(tipoPlanContratado, tipoPlanContratadoArray, "TIPO PLAN CONTRATADO");
+                        verlistas(componentesPlanContratado, componentesPlanContratadoArray, "COMPONENTES PLAN CONTRATADO");
+                        verlistas(estadoDelPlan, estadoPlanArray, "ESTADO DEL PLAN");
+                        verlistas(deudaDelPlan, deudaPlanArray, "SI TIENE DEUDA EL PLAN");
+                        verlistas(cantidadDeudaDelPlan, cantidadDeudaDelPlanArray, "LA CANTIDAD QUE TIENE DE DEUDA");
+                        verlistas(iptvPlan, iptvArray, "SI EL PLAN TIENE IPTV");
+                        verlistas(ordenVueloPlan, ordenVueloArray, "SI EL PLAN TIENE ORDEN EN VUELO");
+                        verlistasInt(totalElementosPlanCliente, totalElementosPlanClienteArray, "TOTAL ELEMENTOS PLAN CLIENTE");
+                        verlistas(tecnologiaPlan, tecnologiaPlanArray, "VER TIPO TECNOLOGIA DE RED");
+                        verlistas(velocidadPlan, velocidadPlanArray, "VER VELOCIDAD DE RED");
+                        verlistas(cuentaConSVAPlan, cuentaConSVAPlanArray, "VER SI CUENTA CON SVA");
+                        verlistas(direccionMigrarFTTH, direccionMigrarFTTHArray, "VER SI PUEDE MIGRAR A FIBRA");
+                        verlistas(nombreClientes, nombreClientesArray, "VER NOMBRE CLIENTE");
+                        verlistas(etiquetaFibra, etiquetaFibraArray, "VER SI TIENE ETIQUETA FIBRA");
+                        verlistas(cicloFacturacion, cicloFacturacionArray, "VER CICLOS DE FACTURACION");
+                        verlistas(tiempoCreacionLinea, tiempoCreacionLineaArray, "VER ANTIGUEDAD DE LINEA");
+                        verlistas(direccionCliente, direccionClienteArray, "VER DIRECCION DEL CLIENTE");
+                        verlistas(estadoDireccion, estadoDireccionArray, "VER ESTADO DIRECCION");
+                        verlistas(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
+                        verlistas(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
+                        NOMBRE_CLIENTE = nombreClientesArray[j];
+                        System.out.println("LONGITUD FOR: " + numeroLineaArray.length);
+
+                        addElementosArray(numeroDelPlan, numeroLineaArray, "NUMERO DEL PLAN");
+                        addElementosArray(nombreDelPlan, nombrePlanArray, "NOMBRE DEL PLAN");
+                        addElementosArray(tipoPlanContratado, tipoPlanContratadoArray, "TIPO PLAN CONTRATADO");
+                        addElementosArray(componentesPlanContratado, componentesPlanContratadoArray, "COMPONENTES PLAN CONTRATADO");
+                        addElementosArray(estadoDelPlan, estadoPlanArray, "ESTADO DEL PLAN");
+                        addElementosArray(deudaDelPlan, deudaPlanArray, "SI TIENE DEUDA EL PLAN");
+                        addElementosArray(cantidadDeudaDelPlan, cantidadDeudaDelPlanArray, "LA CANTIDAD QUE TIENE DE DEUDA");
+                        addElementosArray(iptvPlan, iptvArray, "SI EL PLAN TIENE IPTV");
+                        addElementosArray(ordenVueloPlan, ordenVueloArray, "SI EL PLAN TIENE ORDEN EN VUELO");
+                        addElementosArray(tecnologiaPlan, tecnologiaPlanArray, "VER TIPO TECNOLOGIA DE RED");
+                        addElementosArray(velocidadPlan, velocidadPlanArray, "VER VELOCIDAD DE RED");
+                        addElementosArray(cuentaConSVAPlan, cuentaConSVAPlanArray, "VER SI CUENTA CON SVA");
+                        addElementosArray(direccionMigrarFTTH, direccionMigrarFTTHArray, "VER SI PUEDE MIGRAR A FIBRA");
+                        addElementosArray(etiquetaFibra, etiquetaFibraArray, "VER SI TIENE ETIQUETA FIBRA");
+                        addElementosArray(cicloFacturacion, cicloFacturacionArray, "VER CICLOS DE FACTURACION");
+                        addElementosArray(tiempoCreacionLinea, tiempoCreacionLineaArray, "VER ANTIGUEDAD DE LINEA");
+                        addElementosArray(direccionCliente, direccionClienteArray, "VER DIRECCION DEL CLIENTE");
+                        addElementosArray(estadoDireccion, estadoDireccionArray, "VER ESTADO DIRECCION");
+                        addElementosArray(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
+                        addElementosArray(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
+
+                        Integer[] totalElementosPorArrayAll = totalElementosPorArray.toArray(new Integer[0]);
+
+                        verlistasInt(totalElementosPorArray, totalElementosPorArrayAll, "CANTIDAD DE ELEMENTOS POR ARRAY");
+
+                        String resultado;
+                        for (int i = 0; i < totalElementosPorArrayAll.length; i++) {
+                            if (Objects.equals(totalElementosPorArrayAll[0], totalElementosPorArrayAll[i])) {
+                                System.out.println("ELEMENTO " + i + " ES IGUAL AL ELEMENTO SIGUIENTE");
+                                resultado = "OK";
+                                resultadoList.add(resultado);
+                            } else {
+                                System.out.println("ELEMENTO " + i + " NO ES IGUAL AL ELEMENTO SIGUIENTE");
+                            }
+                        }
+
+                        String[] resultadoListArray = resultadoList.toArray(new String[0]);
+                        verlistas(resultadoList, resultadoListArray, "VER RESULTADOS");
+
+                        System.out.println("CANTIDAD EN LISTA DE RESULTADOS: " + resultadoListArray.length);
+                        System.out.println("CANTIDAD EN LISTA DE ELEMENTOS POR ARRAY: " + totalElementosPorArrayAll.length);
+
+                        if (resultadoListArray.length == totalElementosPorArrayAll.length) {
+                            for (int i = 0; i < numeroLineaArray.length; i++) {
+                                System.out.println(TIPO_DOCUMENTO + ", " + NUMERO_DOCUMENTO + ", " + NOMBRE_CLIENTE + ", " + tipoPlanArray[i] + ", " + numeroLineaArray[i] + ", " + nombrePlanArray[i] + ", " + tipoPlanContratadoArray[i] + ", " + componentesPlanContratadoArray[i] + ", " + estadoPlanArray[i] + ", " + deudaPlanArray[i] + ", " + cantidadDeudaDelPlanArray[i] + ", " + iptvArray[i] + ", " + ordenVueloArray[i] + ", " + tecnologiaPlanArray[i] + ", " + velocidadPlanArray[i] + ", " + cuentaConSVAPlanArray[i] + ", " + direccionMigrarFTTHArray[i] + ", " + etiquetaFibraArray[i] + ", " + cicloFacturacionArray[i] + ", " + tiempoCreacionLineaArray[i] + ", " + direccionClienteArray[i] + ", " + estadoDireccionArray[i] + ", " + tecnologiaAMigrarArray[i] + ", " + etiquetaSaltoCeroArray[i]);
+                                tipoDocuemtoList.add(TIPO_DOCUMENTO);
+                                numeroDocumentoList.add(NUMERO_DOCUMENTO);
+                                nombreClienteList.add(NOMBRE_CLIENTE);
+                                tipoPlanClienteList.add(tipoPlanArray[i]);
+                                numeroLineaList.add(numeroLineaArray[i]);
+                                nombrePlanList.add(nombrePlanArray[i]);
+                                tipoPlanContratadoList.add(tipoPlanContratadoArray[i]);
+                                componentesPlanContratadoList.add(componentesPlanContratadoArray[i]);
+                                estadoPlanList.add(estadoPlanArray[i]);
+                                deudaClienteList.add(deudaPlanArray[i]);
+                                cantidadDeudaList.add(cantidadDeudaDelPlanArray[i]);
+                                planIPTVList.add(iptvArray[i]);
+                                ordenEnVueloList.add(ordenVueloArray[i]);
+                                tecnologiaPlanList.add(tecnologiaPlanArray[i]);
+                                velocidadPlanList.add(velocidadPlanArray[i]);
+                                cuentaConSVAPlanList.add(cuentaConSVAPlanArray[i]);
+                                direccionMigrarFTTHList.add(direccionMigrarFTTHArray[i]);
+                                etiquetaFibraList.add(etiquetaFibraArray[i]);
+                                cicloFacturacionList.add(cicloFacturacionArray[i]);
+                                tiempoCreacionLineaList.add(tiempoCreacionLineaArray[i]);
+                                direccionClienteList.add(direccionClienteArray[i]);
+                                estadoDireccionList.add(estadoDireccionArray[i]);
+                                tecnologiaAMigrarList.add(tecnologiaAMigrarArray[i]);
+                                etiquetaSaltoCeroList.add(etiquetaSaltoCeroArray[i]);
+
+                                // INSERTAR DATOS
+                                clienteDataList.clear();
+                                clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, NOMBRE_CLIENTE, tipoPlanArray[i], numeroLineaArray[i], nombrePlanArray[i], tipoPlanContratadoArray[i], componentesPlanContratadoArray[i], estadoPlanArray[i], deudaPlanArray[i], cantidadDeudaDelPlanArray[i], iptvArray[i], ordenVueloArray[i], tecnologiaPlanArray[i], velocidadPlanArray[i], cuentaConSVAPlanArray[i], direccionMigrarFTTHArray[i], etiquetaFibraArray[i], cicloFacturacionArray[i], tiempoCreacionLineaArray[i], direccionClienteArray[i], estadoDireccionArray[i], tecnologiaAMigrarArray[i], etiquetaSaltoCeroArray[i]));
+                                generarExcel(folderPath, excelName, sheetName);
+                                generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
+                            }
+                        } else {
+                            contarErrorDoc++;
+                            System.out.println("DOCUMENTOS ERROR: " + contarErrorDoc);
+                            clienteDataList.clear();
+                            clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO));
+                            generarExcelError(folderPath, excelName, sheetNameError);
+                            for (int i = 0; i < numeroLineaArray.length; i++) {
+                                // INSERTAR DATOS
+                                clienteDataList.clear();
+                                clienteDataList.add(new ClienteData(TIPO_DOCUMENTO, NUMERO_DOCUMENTO, numeroLineaArray[i]));
+                                generarExcelBitacora(folderPathBitacora, excelNameBitacora, sheetNameBitacora);
+                            }
+                            System.out.println("SE REGRESA AL INICIO");
+                            action.sendKeys(Keys.ESCAPE).build().perform();
+                            UtilWeb.waitForSeconds(2);
+                            click(btnInicio,15);
+                            UtilWeb.waitForSeconds(5);
+                            clickBtnReintentar();
+                            UtilWeb.waitForSeconds(2);
+                            Zoom(65);
+                        }
+                        tipoPlanCliente.clear();
+                        numeroDelPlan.clear();
+                        nombreDelPlan.clear();
+                        tipoPlanContratado.clear();
+                        componentesPlanContratado.clear();
+                        estadoDelPlan.clear();
+                        deudaDelPlan.clear();
+                        cantidadDeudaDelPlan.clear();
+                        iptvPlan.clear();
+                        ordenVueloPlan.clear();
+                        tecnologiaPlan.clear();
+                        velocidadPlan.clear();
+                        cuentaConSVAPlan.clear();
+                        direccionMigrarFTTH.clear();
+                        etiquetaFibra.clear();
+                        cicloFacturacion.clear();
+                        tiempoCreacionLinea.clear();
+                        direccionCliente.clear();
+                        estadoDireccion.clear();
+                        tecnologiaAMigrar.clear();
+                        etiquetaSaltoCero.clear();
+
+                        totalElementosPorArray.clear();
+                        resultadoList.clear();
+
+                        // Escribir los cambios al archivo
+                        try (FileOutputStream outFile = new FileOutputStream(pathWhiteList)){
+                            workbook.write(outFile);
+                            System.out.println("Se han guardado los cambios en el archivo Excel.");
+                        }
+                    }
+                }
+            }
+
+            workbook.close(); // Cerrar el Workbook
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         imprimirReporte();
     }
 
@@ -2082,10 +2403,13 @@ public class DataClientePage extends WebBase {
                         if (!NumeroPlan.substring(0, 1).equals("9")) {
                             System.out.println("Ingreso a dar click al numero: " + NumeroPlan);
                             deslizar(i);
+                            String cargoDireccionHogar = "";
+                            System.out.println("CARGO DIRECION HOGAR: " + cargoDireccionHogar);
                             try {
                                 click(numeroPlan,5);
                                 clickBtnReintentar();
-                                btnMostratOferta();
+                                cargoDireccionHogar = btnMostrarOfertaReturn();
+                                System.out.println("ESTADO CARGO DIRECCION HOGAR: " + cargoDireccionHogar);
                                 try {
                                     if (titleCargando.isDisplayed()) {
                                         driver().navigate().refresh();
@@ -2095,10 +2419,11 @@ public class DataClientePage extends WebBase {
                                         Zoom(65);
                                         click(numeroPlan,5);
                                         clickBtnReintentar();
-                                        btnMostratOferta();
+                                        cargoDireccionHogar = btnMostrarOfertaReturn();
+                                        System.out.println("ESTADO CARGO DIRECCION HOGAR - CARGANDO: " + cargoDireccionHogar);
                                     }
                                 } catch (Exception e) {
-                                    cargarMsgLog(Level.INFO, "No se visualiza la barra de carga");
+                                    cargarMsgLog(Level.INFO, "No se visualiza la barra de carga - Infinito");
                                 }
                                 try {
                                     if (btnReintentar.isDisplayed()) {
@@ -2119,15 +2444,7 @@ public class DataClientePage extends WebBase {
                                     clickBtnRegresar();
                                 }
                             } catch (Exception e) {
-                                String texto = "NO CARGO CAMBIAR DIRECCION";
-                                tecnologiaPlan.add(texto);
-                                velocidadPlan.add(texto);
-                                cuentaConSVAPlan.add(texto);
-                                direccionMigrarFTTH.add(texto);
-                                direccionCliente.add(texto);
-                                estadoDireccion.add(texto);
-                                tecnologiaAMigrar.add(texto);
-                                etiquetaSaltoCero.add(texto);
+                                cargarMsgLog(Level.INFO, "No se visualiza la barra de carga - Hogar - Infinito");
                             }
                         } else {
                             cargarMsgLog(Level.INFO,"Numero Movil");
@@ -2189,10 +2506,13 @@ public class DataClientePage extends WebBase {
                             if (!NumeroPlan.substring(0, 1).equals("9")) {
                                 System.out.println("Ingreso a dar click al numero: " + NumeroPlan);
                                 deslizar(i);
+                                String cargoDireccionMT = "";
+                                System.out.println("CARGO DIRECION HOGAR: " + cargoDireccionMT);
                                 try {
                                     click(numeroPlanMT,5);
                                     clickBtnReintentar();
-                                    btnMostratOferta();
+                                    cargoDireccionMT = btnMostrarOfertaReturn();
+                                    System.out.println("ESTADO CARGO DIRECCION MT: " + cargoDireccionMT);
                                     try {
                                         if (titleCargando.isDisplayed()) {
                                             driver().navigate().refresh();
@@ -2202,7 +2522,8 @@ public class DataClientePage extends WebBase {
                                             Zoom(65);
                                             click(numeroPlanMT,5);
                                             clickBtnReintentar();
-                                            btnMostratOferta();
+                                            cargoDireccionMT = btnMostrarOfertaReturn();
+                                            System.out.println("ESTADO CARGO DIRECCION MT - CARGANDO: " + cargoDireccionMT);
                                         }
                                     } catch (Exception e) {
                                         cargarMsgLog(Level.INFO, "No se visualiza la barra de carga");
@@ -2226,15 +2547,7 @@ public class DataClientePage extends WebBase {
                                         clickBtnRegresar();
                                     }
                                 } catch (Exception e) {
-                                    String texto = "NO CARGO CAMBIAR DIRECCION";
-                                    tecnologiaPlan.add(texto);
-                                    velocidadPlan.add(texto);
-                                    cuentaConSVAPlan.add(texto);
-                                    direccionMigrarFTTH.add(texto);
-                                    direccionCliente.add(texto);
-                                    estadoDireccion.add(texto);
-                                    tecnologiaAMigrar.add(texto);
-                                    etiquetaSaltoCero.add(texto);
+                                    cargarMsgLog(Level.INFO, "No se visualiza la barra de carga - MT - Infinito");
                                 }
                             } else {
                                 cargarMsgLog(Level.INFO,"Numero Movil");
@@ -2756,9 +3069,9 @@ public class DataClientePage extends WebBase {
 
     /**
      * FUNCION BOTON MOSTRAR OFERTAS
-     * */
+     */
 
-    public void btnMostratOferta() {
+    public void btnMostrarOferta() {
         cargarMsgLog(Level.INFO,"Ingreso a Validar Existencia Boton Mostrar Ofertas");
         boolean existe = false;
         int cont = 0;
@@ -2791,6 +3104,15 @@ public class DataClientePage extends WebBase {
                                 } else {
                                     cargarMsgLog(Level.INFO, "INGRESO A ELIMINAR ELEMENTO SELECCIONADO");
                                     eliminarNumeroSeleccionado();
+                                    String texto = "NO CARGO CAMBIAR DIRECCION";
+                                    tecnologiaPlan.add(texto);
+                                    velocidadPlan.add(texto);
+                                    cuentaConSVAPlan.add(texto);
+                                    direccionMigrarFTTH.add(texto);
+                                    direccionCliente.add(texto);
+                                    estadoDireccion.add(texto);
+                                    tecnologiaAMigrar.add(texto);
+                                    etiquetaSaltoCero.add(texto);
                                 }
                             }
                         }
@@ -2801,6 +3123,66 @@ public class DataClientePage extends WebBase {
                 cargarMsgLog(Level.INFO,"NO SE VISUALIZA EL BOTON MOSTRAR OFERTA - N°" + cont);
             }
         }
+    }
+
+    public String btnMostrarOfertaReturn() {
+        cargarMsgLog(Level.INFO,"Ingreso a Validar Existencia Boton Mostrar Ofertas");
+        String direccionActual = null;
+        boolean existe = false;
+        int cont = 0;
+        while (!existe && cont < 30) {
+            try {
+                UtilWeb.waitForSeconds(2);
+                if (btnMostrarOfertas.isDisplayed()) {
+                    cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas");
+                    click(btnMostrarOfertas,10);
+                    clickBtnReintentar();
+                    existe = true;
+                    boolean exist = false;
+                    int contador = 0;
+                    while (contador < 2 && !exist) {
+                        contador++;
+                        try {
+                            cargarMsgLog(Level.INFO,"INGRESO A VISUALIZAR CONTENIDO INSERTAR DIRECCION - N°" + contador);
+                            waitUntilElementIsClickable(titlesDeInsertarDireccion,10);
+                            if (titlesDeInsertarDireccion.isDisplayed()) {
+                                cargarMsgLog(Level.INFO,"Ya no se visualiza Boton Mostrar Ofertas");
+                                direccionActual = "OK";
+                                exist = true;
+                                return direccionActual;
+                            }
+                        } catch (Exception er) {
+                            if (btnMostrarOfertas.isDisplayed()) {
+                                if (contador < 2) {
+                                    cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas - Contingencia - N°" + contador);
+                                    click(btnMostrarOfertas,10);
+                                    cargarMsgLog(Level.INFO,"Dio click - Boton Mostrar Ofertas - Contingencia - N°" + contador);
+                                    clickBtnReintentar();
+                                } else {
+                                    cargarMsgLog(Level.INFO, "INGRESO A ELIMINAR ELEMENTO SELECCIONADO");
+                                    direccionActual = "FALLO";
+                                    eliminarNumeroSeleccionado();
+                                    String texto = "NO CARGO CAMBIAR DIRECCION";
+                                    tecnologiaPlan.add(texto);
+                                    velocidadPlan.add(texto);
+                                    cuentaConSVAPlan.add(texto);
+                                    direccionMigrarFTTH.add(texto);
+                                    direccionCliente.add(texto);
+                                    estadoDireccion.add(texto);
+                                    tecnologiaAMigrar.add(texto);
+                                    etiquetaSaltoCero.add(texto);
+                                    return direccionActual;
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                cont ++;
+                cargarMsgLog(Level.INFO,"NO SE VISUALIZA EL BOTON MOSTRAR OFERTA - N°" + cont);
+            }
+        }
+        return direccionActual;
     }
 
     /**
