@@ -37,4 +37,8 @@ public class DataClienteStep {
     public void visualizoMasPlanesCliente(String docs, String numers) {
         page.temporalPage().visualizoMasPlanesCliente(docs, numers);
     }
+
+    public void visualizoMasPlanesClienteWhiteList() {
+        page.temporalPage().visualizoMasPlanesClienteWhiteList();
+    }
 }
