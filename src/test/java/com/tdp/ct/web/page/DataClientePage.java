@@ -804,6 +804,7 @@ public class DataClientePage extends WebBase {
             } catch (Exception e) {
                 cargarMsgLog(Level.INFO, "El cliente es nuevo");
                 String text = "SIN REGISTRO";
+                almacenarElementosExistentes();
                 nombreClientes.add(text);
                 tipoPlanCliente.add(text);
                 numeroDelPlan.add("NA");
@@ -1086,6 +1087,7 @@ public class DataClientePage extends WebBase {
                         } catch (Exception e) {
                             cargarMsgLog(Level.INFO, "El cliente es nuevo");
                             String text = "SIN REGISTRO";
+                            almacenarElementosExistentes();
                             nombreClientes.add(text);
                             tipoPlanCliente.add(text);
                             numeroDelPlan.add("NA");
@@ -1171,7 +1173,8 @@ public class DataClientePage extends WebBase {
                         verlistas(estadoDireccion, estadoDireccionArray, "VER ESTADO DIRECCION");
                         verlistas(tecnologiaAMigrar, tecnologiaAMigrarArray, "VER TECNOLOGIA A MIGRAR");
                         verlistas(etiquetaSaltoCero, etiquetaSaltoCeroArray, "VER SI TIENE SALTO 0");
-                        NOMBRE_CLIENTE = nombreClientesArray[j];
+                        int cantidadAlmancenadaNombre = nombreClientesArray.length - 1;
+                        NOMBRE_CLIENTE = nombreClientesArray[cantidadAlmancenadaNombre];
                         System.out.println("LONGITUD FOR: " + numeroLineaArray.length);
 
                         addElementosArray(numeroDelPlan, numeroLineaArray, "NUMERO DEL PLAN");
