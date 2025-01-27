@@ -1019,6 +1019,7 @@ public class DataClientePage extends WebBase {
             fileInputStream.close();
 
             int contarErrorDoc = 0;
+            int contador = 0;
 
             for (int j = 1; j <= cantidad; j++) {
 
@@ -1026,6 +1027,7 @@ public class DataClientePage extends WebBase {
                 String estado = "";
 
                 if (row != null) {
+                    contador++;
                     // Leer Columnas - Tipo Documento | Numero Documento
                     Cell tipoDocumentoCell = row.getCell(0);
                     Cell numeroDocumentoCell = row.getCell(1);
@@ -1043,11 +1045,11 @@ public class DataClientePage extends WebBase {
                         System.out.println("Recorrido N°" + j + " de " + cantidad);
                         System.out.println("******************************************");
 
-                        if (j % 5 == 0 && j > 1) {
+                        if (contador % 5 == 0 && contador > 1) {
                             cargarMsgLog(Level.INFO,"SE APLICA ZOOM - 0");
                             Zoom(65);
                         }
-                        if (j % 25 == 0 && j > 1) {
+                        if (contador % 25 == 0 && contador > 1) {
                             cargarMsgLog(Level.INFO,"SE CUMPLIO REQUISITO % 25");
                             click(btnInicio,15);
                             UtilWeb.waitForSeconds(4);
@@ -2443,8 +2445,11 @@ public class DataClientePage extends WebBase {
                                         etiquetaSaltoCero.add(texto);
                                     }
                                 } catch (Exception e) {
-                                    verSiModificaDireccion(NumeroPlan);
-                                    clickBtnRegresar();
+                                    System.out.println("ESTADO CARGO DIRECCION HOGAR - VALIDACION: " + cargoDireccionHogar);
+                                    if (Objects.equals(cargoDireccionHogar, "OK")) {
+                                        verSiModificaDireccion(NumeroPlan);
+                                        clickBtnRegresar();
+                                    }
                                 }
                             } catch (Exception e) {
                                 cargarMsgLog(Level.INFO, "No se visualiza la barra de carga - Hogar - Infinito");
