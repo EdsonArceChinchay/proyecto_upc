@@ -392,10 +392,18 @@ public class DataClientePage extends WebBase {
                 cont++;
                 cargarMsgLog(Level.INFO, "NO CARGO SELECCIONAR TIPO DOCUMENTO - REINTENTO - N°" + cont);
                 if (cont < 3) {
+                    System.out.println("SE PROCEDE A REGRESAR AL INICIO");
+                    action.sendKeys(Keys.ESCAPE).build().perform();
+                    driver().navigate().refresh();
+                    System.out.println("SE PROCEDE A REFRESCAR LA PAGINA");
+                    barraCargando();
+                    System.out.println("SE PASO LA VALIDACION DE BARRA CARGANDO N°1");
+                    action.sendKeys(Keys.ESCAPE).build().perform();
+                    barraCargando();
+                    System.out.println("SE PASO LA VALIDACION DE BARRA CARGANDO N°2");
                     click(btnInicio,15);
-                    UtilWeb.waitForSeconds(5);
                     clickBtnReintentar();
-                    UtilWeb.waitForSeconds(2);
+                    UtilWeb.waitForSeconds(1);
                     Zoom(65);
                 } else {
                     driver().quit();
@@ -1020,6 +1028,7 @@ public class DataClientePage extends WebBase {
 
             int contarErrorDoc = 0;
             int contador = 0;
+            int paso = 0;
 
             for (int j = 1; j <= cantidad; j++) {
 
@@ -1034,6 +1043,8 @@ public class DataClientePage extends WebBase {
                     Cell estadoCell = row.getCell(2);
 
                     if (estadoCell == null) {
+                        paso++;
+
                         // Insertar Texto
                         String tipoDocumento = tipoDocumentoCell.getStringCellValue();
                         String numeroDocumento = String.valueOf(decimalFormat.format(numeroDocumentoCell.getNumericCellValue()));
@@ -1042,7 +1053,8 @@ public class DataClientePage extends WebBase {
                         System.out.println("TIPO DOCUMENTO: " + tipoDocumento);
                         System.out.println("NUMERO DOCUMENTO: " + numeroDocumento);
                         System.out.println("ESTADO PROCESO: " + estado);
-                        System.out.println("Recorrido N°" + j + " de " + cantidad);
+                        System.out.println("RECORRIDO N°" + j + " de " + cantidad);
+                        System.out.println("INICIO - N°" + paso);
                         System.out.println("******************************************");
 
                         if (contador % 5 == 0 && contador > 1) {
@@ -1114,20 +1126,6 @@ public class DataClientePage extends WebBase {
                             etiquetaSaltoCero.add(text);
                             estado = "EXITOSO";
                         }
-
-                        System.out.println("############################################");
-                        System.out.println("INGRESO A INSERTAR VALOR A LA COLUMNA ESTADO");
-                        // ESCRIBE EN LA COLUMNA C
-                        estadoCell = row.createCell(2);
-
-                        if (estado.equals("EXITOSO")) {
-                            System.out.println("ESTADO PROCESO ES EXITOSO");
-                            estadoCell.setCellValue("EXITOSO");
-                        } else {
-                            System.out.println("ESTADO PROCESO ES FALLIDO");
-                            estadoCell.setCellValue("FALLIDO");
-                        }
-                        System.out.println("############################################");
 
                         Integer[] totalElementosPlanClienteArray = totalElementosPlanCliente.toArray(new Integer[0]);
                         String[] tipoPlanArray = tipoPlanCliente.toArray(new String[0]);
@@ -1269,12 +1267,18 @@ public class DataClientePage extends WebBase {
                             }
                             System.out.println("SE REGRESA AL INICIO");
                             action.sendKeys(Keys.ESCAPE).build().perform();
-                            UtilWeb.waitForSeconds(2);
+                            driver().navigate().refresh();
+                            System.out.println("REFRESCO LA PAGINA");
+                            barraCargando();
+                            System.out.println("PASO LA VALIDACION DE BARRA CARGANDO N°1");
+                            action.sendKeys(Keys.ESCAPE).build().perform();
+                            barraCargando();
+                            System.out.println("PASO LA VALIDACION DE BARRA CARGANDO N°2");
                             click(btnInicio,15);
-                            UtilWeb.waitForSeconds(5);
                             clickBtnReintentar();
-                            UtilWeb.waitForSeconds(2);
+                            UtilWeb.waitForSeconds(1);
                             Zoom(65);
+                            estado = "ERROR";
                         }
                         tipoPlanCliente.clear();
                         numeroDelPlan.clear();
@@ -1300,6 +1304,20 @@ public class DataClientePage extends WebBase {
 
                         totalElementosPorArray.clear();
                         resultadoList.clear();
+
+                        System.out.println("############################################");
+                        System.out.println("INGRESO A INSERTAR VALOR A LA COLUMNA ESTADO");
+                        // ESCRIBE EN LA COLUMNA C
+                        estadoCell = row.createCell(2);
+
+                        if (estado.equals("EXITOSO")) {
+                            System.out.println("ESTADO PROCESO ES EXITOSO");
+                            estadoCell.setCellValue("EXITOSO");
+                        } else {
+                            System.out.println("ESTADO PROCESO ES FALLIDO");
+                            estadoCell.setCellValue("FALLIDO");
+                        }
+                        System.out.println("############################################");
 
                         // Escribir los cambios al archivo
                         try (FileOutputStream outFile = new FileOutputStream(pathWhiteList)){
@@ -3079,64 +3097,11 @@ public class DataClientePage extends WebBase {
      * FUNCION BOTON MOSTRAR OFERTAS
      */
 
-    public void btnMostrarOferta() {
-        cargarMsgLog(Level.INFO,"Ingreso a Validar Existencia Boton Mostrar Ofertas");
-        boolean existe = false;
-        int cont = 0;
-        while (!existe && cont < 30) {
-            try {
-                UtilWeb.waitForSeconds(2);
-                if (btnMostrarOfertas.isDisplayed()) {
-                    cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas");
-                    click(btnMostrarOfertas,10);
-                    clickBtnReintentar();
-                    existe = true;
-                    boolean exist = false;
-                    int contador = 0;
-                    while (contador < 2 && !exist) {
-                        contador++;
-                        try {
-                            cargarMsgLog(Level.INFO,"INGRESO A VISUALIZAR CONTENIDO INSERTAR DIRECCION - N°" + contador);
-                            waitUntilElementIsClickable(titlesDeInsertarDireccion,10);
-                            if (titlesDeInsertarDireccion.isDisplayed()) {
-                                cargarMsgLog(Level.INFO,"Ya no se visualiza Boton Mostrar Ofertas");
-                                exist = true;
-                            }
-                        } catch (Exception er) {
-                            if (btnMostrarOfertas.isDisplayed()) {
-                                if (contador < 2) {
-                                    cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas - Contingencia - N°" + contador);
-                                    click(btnMostrarOfertas,10);
-                                    cargarMsgLog(Level.INFO,"Dio click - Boton Mostrar Ofertas - Contingencia - N°" + contador);
-                                    clickBtnReintentar();
-                                } else {
-                                    cargarMsgLog(Level.INFO, "INGRESO A ELIMINAR ELEMENTO SELECCIONADO");
-                                    eliminarNumeroSeleccionado();
-                                    String texto = "NO CARGO CAMBIAR DIRECCION";
-                                    tecnologiaPlan.add(texto);
-                                    velocidadPlan.add(texto);
-                                    cuentaConSVAPlan.add(texto);
-                                    direccionMigrarFTTH.add(texto);
-                                    direccionCliente.add(texto);
-                                    estadoDireccion.add(texto);
-                                    tecnologiaAMigrar.add(texto);
-                                    etiquetaSaltoCero.add(texto);
-                                }
-                            }
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                cont ++;
-                cargarMsgLog(Level.INFO,"NO SE VISUALIZA EL BOTON MOSTRAR OFERTA - N°" + cont);
-            }
-        }
-    }
-
     public String btnMostrarOfertaReturn() {
         cargarMsgLog(Level.INFO,"Ingreso a Validar Existencia Boton Mostrar Ofertas");
         String direccionActual = null;
         boolean existe = false;
+        boolean presente = false;
         int cont = 0;
         while (!existe && cont < 30) {
             try {
@@ -3146,29 +3111,34 @@ public class DataClientePage extends WebBase {
                     click(btnMostrarOfertas,10);
                     clickBtnReintentar();
                     existe = true;
-                    boolean exist = false;
                     int contador = 0;
-                    while (contador < 2 && !exist) {
+                    while (contador < 2 && !presente) {
                         contador++;
+                        System.out.println("#########################");
+                        System.out.println("CONTADO VALE: " + contador);
+                        System.out.println("#########################");
                         try {
                             cargarMsgLog(Level.INFO,"INGRESO A VISUALIZAR CONTENIDO INSERTAR DIRECCION - N°" + contador);
                             waitUntilElementIsClickable(titlesDeInsertarDireccion,10);
                             if (titlesDeInsertarDireccion.isDisplayed()) {
                                 cargarMsgLog(Level.INFO,"Ya no se visualiza Boton Mostrar Ofertas");
                                 direccionActual = "OK";
-                                exist = true;
+                                presente = true;
                                 return direccionActual;
                             }
                         } catch (Exception er) {
                             if (btnMostrarOfertas.isDisplayed()) {
                                 if (contador < 2) {
+                                    System.out.println("SE SIGUE VISUALIZANDO EL BOTON MOSTAR OFERTAS - REINTENTO - N°" + contador);
                                     cargarMsgLog(Level.INFO,"Se encontro Boton Mostrar Ofertas - Contingencia - N°" + contador);
                                     click(btnMostrarOfertas,10);
                                     cargarMsgLog(Level.INFO,"Dio click - Boton Mostrar Ofertas - Contingencia - N°" + contador);
                                     clickBtnReintentar();
                                 } else {
+                                    System.out.println("SE SIGUE VISUALIZANDO EL BOTON MOSTAR OFERTAS");
                                     cargarMsgLog(Level.INFO, "INGRESO A ELIMINAR ELEMENTO SELECCIONADO");
                                     direccionActual = "FALLO";
+                                    System.out.println("SE ELIMINA OPCION SELECCIONANA");
                                     eliminarNumeroSeleccionado();
                                     String texto = "NO CARGO CAMBIAR DIRECCION";
                                     tecnologiaPlan.add(texto);
