@@ -53,15 +53,13 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
     Y        selecciono añadir equipos
-    Y        busco el equipo "SAMSUNG GXY A34 NEGRO A346M 128GB"
-    Y        ingreso el tiempo de permanencia"Permanencia de 12 meses"
-    #Y        ingreso el tipo de pago "Financiado 12 cuotas"
-    Y        ingreso el tipo de pago "Al Contado"
+    E        ingreso permanencia, tipo de pago y equipo
+      | permanencia     | tipoPago   | equipoName                        |
+      | sin permanencia | Al Contado | SAMSUNG GXY A34 NEGRO A346M 128GB |
     Y        doy click en el boton seleccionar
     Y        doy click en el boton Ir a movistar total
-
     Y        valido que este en el resumen de venta
-    Cuando   doy click en el boton Iniciar registro
+    Y        doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
