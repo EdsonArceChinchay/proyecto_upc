@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static com.tdp.ct.web.hooks.Hooks.getScenarioContext;
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.FileUtils.downloadPDF;
 import static com.tdp.ct.web.utils.FileUtils.getAbsolutePathString;
@@ -368,6 +369,17 @@ public class CheckoutPage extends WebBase {
         WebElement serviceText = find().getElementByXPath("//*[contains(text(),'" + service.trim() + "')]");
         js().scrollElementTop(serviceText);
         waitUntilElementIsVisible(serviceText, 5);
+
+        if ("Servicio Hogar".equals(service.trim())) {
+            try {
+                WebElement nroLineaElement = find().getElementByXPath("/html/body/app-root/app-success/app-order-detail-fe/div[2]/div/div[1]/div/div/div/app-order-detail/div/div/div[2]/div/div[1]/div[1]/span[2]");
+                String nroLinea = nroLineaElement.getText();
+                getScenarioContext().put("nroLinea", nroLinea);
+            } catch (NoSuchElementException e) {
+                logInfo("Elemento no encontrado");
+            }
+        }
+
     }
 
     public void clickenVerDetalleDelPedido() {
