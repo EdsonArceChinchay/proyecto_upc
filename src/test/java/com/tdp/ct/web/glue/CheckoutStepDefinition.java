@@ -85,9 +85,7 @@ public class CheckoutStepDefinition {
         this.scenario.log("Orden Generada: " + checkoutStep.getOrderCode());
         this.scenario.log("Plan Seleccionado: " + cliente.getPlanSeleccionado());
 
-        String fullText = checkoutStep.getOrderCode();
-        String[] splitText = fullText.split(": ");
-        String orderCode = splitText[1];
+        String orderCode = checkoutStep.getOrderCode();
         getScenarioContext().put("orden", orderCode);
     }
 
