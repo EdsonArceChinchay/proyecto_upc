@@ -10,6 +10,7 @@ import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
+import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowRoot;
 import static com.tdp.ct.web.utils.WebUtils.validateIsDisplayed;
@@ -131,18 +132,20 @@ public class AppointmentPage extends WebBase {
     protected WebElement instalationDate;
 
     public void validateCalendarAndSelectedDay() {
+        String valueDay = getValueConfig("config", "credential.system.daySchedule");
+        int day = Integer.parseInt(valueDay);
+        logInfo("Day option: " + day);
+
         boolean hasListDays;
         hasListDays = !driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-selected')]//following::button[@class='mat-calendar-body-cell']")).isEmpty();
+
         if (hasListDays) {
             logInfo("Yes, it has a calendar");
             List<WebElement> listDays = driver().findElements(By.xpath("//*[contains(@class,'mat-calendar-body-selected')]//following::button[@class='mat-calendar-body-cell']"));
-            for (WebElement list : listDays) {
-                if (!instalationDate.getText().contains(" de ")) {
-                    click(list);
-                    logInfo("Select first day " + list.getText());
-                    break;
-                }
-            }
+
+            int index = day-1;
+            listDays.get(index).click();
+            logInfo("Select day " + listDays.get(index).getText() + " (Option " + day + ")");
         }
     }
 
