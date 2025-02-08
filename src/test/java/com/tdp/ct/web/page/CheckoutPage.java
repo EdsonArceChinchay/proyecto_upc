@@ -294,7 +294,7 @@ public class CheckoutPage extends WebBase {
         List<String> listCodigosDeOrdenes = new ArrayList<>();
         listCodigoOrden.forEach((orden) -> {
             logInfo("Código de Orden: " + orden.getText() + "A");
-            listCodigosDeOrdenes.add("Código de Orden: " + orden.getText() + "A");
+            listCodigosDeOrdenes.add(orden.getText() + "A");
         });
         return listCodigosDeOrdenes;
     }
