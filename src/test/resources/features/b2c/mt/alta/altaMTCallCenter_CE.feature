@@ -90,7 +90,7 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
+    Y        busco por "codigo de venta"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

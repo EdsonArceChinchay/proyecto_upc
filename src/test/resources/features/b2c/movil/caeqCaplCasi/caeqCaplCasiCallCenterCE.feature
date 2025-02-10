@@ -70,7 +70,7 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "<documentNumber>"
+    Y        busco por "codigo de venta"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud

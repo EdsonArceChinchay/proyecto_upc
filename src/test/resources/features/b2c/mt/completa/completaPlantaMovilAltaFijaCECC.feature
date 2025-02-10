@@ -65,7 +65,7 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
 #    Dado     regreso a la pagina de inicio
 #    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        me dirijo a la bandeja de Back Office
-#    Y        busco por "<documentNumber>"
+#    Y        busco por "codigo de venta"
 #    Y        selecciono la solicitud
 #    Y        cargo el audio en la web
 #    Y        apruebo la solicitud
