@@ -76,7 +76,7 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
 #    Dado     regreso a la pagina de inicio
 #    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
 #    Y        me dirijo a la bandeja de Back Office
-#    Y        busco por "<documentNumber>"
+#    Y        busco por "codigo de venta"
 #    Y        selecciono la solicitud
 #    Y        cargo el audio en la web
 #    Y        apruebo la solicitud
