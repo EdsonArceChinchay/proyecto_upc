@@ -20,8 +20,8 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
   Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
-      | XXXXXX      | TIQLT-26007 | TIQLT-20528 | Alta MT (Alta fija + alta movil) | Contado    | @AltaMTCallCenter_CE |
+      | Analista QA   | HU          | Test        | Transaccion                      | Tipo Venta | Tags                 |
+      | Jorge Cancino | TIQLT-27971 | TIQLT-20528 | Alta MT (Alta fija + alta movil) | Contado    | @AltaMTCallCenter_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -34,8 +34,8 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos       | genero   |
-      | LUISA   | MELENDEZ ZAPATA | femenino |
+      | nombres | apellidos | genero   |
+      | Pruebas | QAN       | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
@@ -96,6 +96,6 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002111     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002329     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
 
 
