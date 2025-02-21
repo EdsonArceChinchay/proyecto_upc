@@ -20,8 +20,8 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
   Esquema del escenario: Alta movil postpago a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA           | HU          | Test        | Transaccion         | Tipo Venta | Tags                 |
-      | XXXXXXXXXXXXXXXXXXXXX | TIQLT-26007 | TIQLT-20528 | Alta movil postpago | Contado    | @AltaMTCallCenter_CE |
+      | Analista QA   | HU          | Test        | Transaccion         | Tipo Venta | Tags                 |
+      | Jorge Cancino | TIQLT-27971 | TIQLT-20528 | Alta movil postpago | Contado    | @AltaMTCallCenter_CE |
 
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
@@ -37,7 +37,7 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
       | nombres | apellidos    | genero    |
-      | Juan    | Lopez Anibal | masculino |
+      | Pruebas | QANDOCIENTOS | masculino |
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -87,5 +87,5 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002323       | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                 |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002323     | Postpago      | Plan Ilimitado Mi Movistar |
