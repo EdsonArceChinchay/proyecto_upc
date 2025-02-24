@@ -517,7 +517,9 @@ public class DataClientePage extends WebBase {
                 cont1++;
             }
             try {
-                UtilWeb.waitForSeconds(2);
+                if (cont > 0) {
+                    UtilWeb.waitForSeconds(2);
+                }
                 if (btnCargarMas.isDisplayed()) {
                     clickBtnCargarMas();
                     visualizaContenidoHome();
