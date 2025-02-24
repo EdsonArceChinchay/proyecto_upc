@@ -12,10 +12,13 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.logging.Level;
+
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
+import static com.tdp.ct.web.utils.Utils.cargarMsgLog;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class ParkPage extends WebBase {
@@ -99,6 +102,7 @@ public class ParkPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
     WebElement selectGender;
 
+    StepPages view = new StepPages();
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
@@ -455,9 +459,8 @@ public class ParkPage extends WebBase {
     }
 
     public void selectLineWithNumber(String number) {
-        Addons.esperaCargaMontoDeuda(driver(), 30);
+        seleccionarPlanCargarDeuda(number);
         WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
-        esperaProgresiva(driver(), 6, 8, numberLine);
         js().scrollElementTop(numberLine);
         numberLine.click();
         logInfo("Click in line", number);
@@ -636,4 +639,72 @@ public class ParkPage extends WebBase {
         }
     }
 
+    /**
+     * FUNCION - SELECCIONAR PLAN PARA CARGAR DEUDA
+     * */
+
+    public void seleccionarPlanCargarDeuda(String numeroPlan) {
+        view.temporalPage().barraCargando();
+        visualizarLinea(numeroPlan);
+        int cont = 0;
+        boolean existe = false;
+        while (cont < 3 && !existe) {
+            cont++;
+            try {
+                cargarMsgLog(Level.INFO, "Ingreso a validar que se halla cargado el contenido de Deuda del plan");
+                if (cont > 1) {
+                    cargaDeDeuda(numeroPlan);
+                }
+                WebElement planCargoDeuda = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/following-sibling::*[contains(@class, 'footer')]/*/*[contains(@class, 'euda')]");
+                if (planCargoDeuda.isDisplayed()) {
+                    cargarMsgLog(Level.INFO, "Se visualizo la Deuda del plan");
+                    existe = true;
+                }
+            } catch (Exception e) {
+                cargarMsgLog(Level.INFO, "Ingreso a seleccionar Numero: " + numeroPlan);
+                WebElement numeroPlanCliente = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
+                click(numeroPlanCliente,5);
+                cargarMsgLog(Level.INFO, "Dio click al Numero: " + numeroPlan + " - Intendo N°" + cont);
+            }
+        }
+    }
+
+    /**
+     * FUNCION - CARGA DE DEUDA
+     * */
+
+    public void cargaDeDeuda(String numeroPlan) {
+        cargarMsgLog(Level.INFO, "Ingreso a visualizar la barra cargando de deuda");
+        int cont = 0;
+        boolean existe = false;
+        while (cont < 300 && !existe){
+            cont++;
+            try {
+                WebElement barraCargando = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/following-sibling::*[contains(@class, 'footer')]/*/*[contains(@class, 'loader')]");
+                if (barraCargando.isDisplayed()) {
+                    cargarMsgLog(Level.INFO, "SE VISUALIZA BARRA CARGANDO DEUDA ... N°" + cont);
+                }
+            } catch (Exception e) {
+                cargarMsgLog(Level.INFO, "NO SE VISUALIZA LA BARRA CARGANDO DEUDA");
+                existe = true;
+            }
+        }
+    }
+
+    /**
+     * FUNCION - VISUALIZAR LINEA A REALIZAR CAMBIO DE PLAN
+     * */
+
+    public void visualizarLinea(String numeroPlan) {
+        try {
+            cargarMsgLog(Level.INFO, "Ingreso a visualizar si existe Linea");
+            WebElement linea = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
+            if (linea.isDisplayed()) {
+                cargarMsgLog(Level.INFO, "Linea - " + numeroPlan + " - existe");
+            }
+        } catch (Exception e) {
+            cargarMsgLog(Level.INFO, "Ingreso a dar click a VER MAS");
+            view.temporalPage().visualizarBtnCargarMas();
+        }
+    }
 }
