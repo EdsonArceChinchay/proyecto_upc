@@ -105,11 +105,6 @@ public class RegisterStepDefinition {
         registerStep.selectTipoDePago(type);
     }
 
-    @Y("doy click en el boton de continuar")
-    public void doyClickEnElBotonDeContinuar() {
-        registerStep.clickButtonContinue();
-    }
-
     @Y("doy click en el boton Continuar")
     public void doyClicEnContinuar() {
         registerStep.clicBotonContinuar();
@@ -222,5 +217,14 @@ public class RegisterStepDefinition {
     @Y("doy click en Finalizar registro")
     public void clickOnTheFinishRegistrationButton() {
         registerStep.clickOnTheFinishRegistrationButton();
+    }
+
+    /**
+     * FUNCION CLICK BOTON CONTINUAR
+     * */
+
+    @Y("doy click en el boton de continuar")
+    public void doyClickEnElBotonDeContinuar() {
+        registerStep.clickButtonContinue();
     }
 }

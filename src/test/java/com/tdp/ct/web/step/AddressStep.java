@@ -17,40 +17,6 @@ public class AddressStep {
         page.addressPage().seleccionoDireccionSugerida();
     }
 
-    public void clickButtonConsultCoverage() {
-        page.addressPage().clickButtonConsultCoverage();
-    }
-
-    //@ScreenShotAfter
-    public void selectDepartment(String name) {
-        page.addressPage().selectDepartment(name);
-    }
-
-    //@ScreenShotAfter
-    public void selectProvince(String tipoProv) {
-        page.addressPage().selectProvince(tipoProv);
-    }
-
-    //@ScreenShotAfter
-    public void selectDistrict(String district) {
-        page.addressPage().selectDistrict(district);
-    }
-
-    //@ScreenShotAfter
-    public void typeAddress(String data) {
-        page.addressPage().typeAddress(data);
-    }
-
-    @ScreenShotAfter
-    public void typeReference(String reference) {
-        page.addressPage().typeReference(reference);
-    }
-
-    @ScreenShotAfter
-    public void clickButtonConsultLocation() {
-        page.addressPage().clickButtonConsultLocation();
-    }
-
     //@ScreenShotAfter
     public void typeApple(String apple) {
         page.addressPage().typeApple(apple);
@@ -96,11 +62,6 @@ public class AddressStep {
         page.addressPage().typeHousingComplexName(housingComplexName);
     }
 
-    //@ScreenShotAfter
-    public void validarPantallaIngresarDireccion() {
-        Assert.assertTrue(page.addressPage().validarPantallaIngresarDireccion());
-    }
-
     @ScreenShotAfter
     public void validarPantallaIngresarDireccionEntrega() {
         Assert.assertTrue(page.addressPage().validarPantallaIngresarDireccionEntrega());
@@ -113,8 +74,8 @@ public class AddressStep {
 
     public void typeAddressComplete(String depa, String prov, String distrito, String direccion, String ref) {
         page.addressPage().selectDepartment(depa);
-        page.addressPage().selectProvince(prov);
-        page.addressPage().selectDistrict(distrito);
+        page.addressPage().selectProvince(depa, prov);
+        page.addressPage().selectDistrict(depa, prov, distrito);
         page.addressPage().typeAddress(direccion);
         page.addressPage().typeReference(ref);
     }
@@ -169,5 +130,69 @@ public class AddressStep {
     @ScreenShotAfter
     public void clickOnSearchButton() {
         page.addressPage().clickOnSearchButton();
+    }
+
+    /**
+     * FUNCION - PANTALLA INSERTAR DIRECCION
+     * */
+
+    public void validarPantallaIngresarDireccion() {
+        Assert.assertTrue(page.addressPage().validarPantallaIngresarDireccion());
+    }
+
+    /**
+     * FUNCION - SELECCIONAR DEPARTAMENTO
+     * */
+
+    public void selectDepartment(String name) {
+        page.addressPage().selectDepartment(name);
+    }
+
+    /**
+     * FUNCION - SELECCIONAR PROVINCIA
+     * */
+
+    public void selectProvince(String departamentoDireccion, String tipoProv) {
+        page.addressPage().selectProvince(departamentoDireccion, tipoProv);
+    }
+
+    /**
+     * FUNCION - SELECCIONAR DISTRITO
+     * */
+
+    public void selectDistrict(String departamentoDireccion, String provinciaDireccion ,String district) {
+        page.addressPage().selectDistrict(departamentoDireccion, provinciaDireccion, district);
+    }
+
+    /**
+     * FUNCION - INSERTAR DIRECCION
+     * */
+
+    public void typeAddress(String address) {
+        page.addressPage().typeAddress(address);
+    }
+
+    /**
+     * FUNCION - INSERTAR REFERENCIA
+     * */
+
+    public void typeReference(String reference) {
+        page.addressPage().typeReference(reference);
+    }
+
+    /**
+     * FUNCION - CLICK BOTON CONSULTAR UBICACION
+     * */
+
+    public void clickButtonConsultLocation() {
+        page.addressPage().clickButtonConsultLocation();
+    }
+
+    /**
+     * FUNCION - CLICK BOTON CONSULTAR COBERTURA
+     * */
+
+    public void clickButtonConsultCoverage() {
+        page.addressPage().clickButtonConsultCoverage();
     }
 }

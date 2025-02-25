@@ -11,23 +11,9 @@ public class SummaryStep {
     @Autowired
     private StepPages page;
 
-    public void additionalData() {
-        page.summaryPage().additionalData();
-    }
-
-    @ScreenShotBefore
-    public void clickButtonStartRegister() {
-        additionalData();
-        page.summaryPage().clickButtonStartRegister();
-    }
-
     @ScreenShotAfter
     public void validateSummaryPage() {
         page.summaryPage().validateSummaryPage();
-    }
-
-    public void moverToElementStartRegister() {
-        page.summaryPage().moverToElementStartRegister();
     }
 
     public void validarNomPlan(String nomPlan) {
@@ -39,4 +25,20 @@ public class SummaryStep {
         page.summaryPage().validacionPrecio(precioPLan);
     }
 
+    /**
+     * FUNCION - MOVER A BOTON INICIAR REGISTR0
+     * */
+
+    public void moverToElementStartRegister() {
+        page.summaryPage().moverToElementStartRegister();
+    }
+
+    public void additionalData() {
+        page.summaryPage().additionalData();
+    }
+
+    public void clickButtonStartRegister() {
+        additionalData();
+        page.summaryPage().clickButtonStartRegister();
+    }
 }

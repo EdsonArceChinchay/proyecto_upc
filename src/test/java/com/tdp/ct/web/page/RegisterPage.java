@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +23,8 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 @Slf4j
 public class RegisterPage extends WebBase {
 
-    //@FindBy(xpath = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]")
-    protected final String btnCustomerData =
-            "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
+    protected final String btnCustomerData = "(//span[contains(text(),'Datos del Cliente')]/..)[2] | //button//*[contains(text(),' Datos del Cliente ')]";
+
     @FindBy(css = "tdp-st-select[formcontrolname='medioPago']")
     protected WebElement selectMethodPayment;
     @FindBy(css = "tdp-st-input-text[formcontrolname='mail']")
@@ -51,8 +51,6 @@ public class RegisterPage extends WebBase {
     protected WebElement inputDateOfBirth;
     @FindBy(css = "tdp-st-textarea[formcontrolname='direccion']")
     protected WebElement inputAddress;
-    @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
-    protected WebElement buttonContinuar;
     @FindBy(xpath = "//h1[contains(text(),'datos solicitados')]")
     protected WebElement completaDatosSolicitados;
     @FindBy(css = "tdp-st-select[formcontrolname='typePage']")
@@ -65,6 +63,13 @@ public class RegisterPage extends WebBase {
     protected WebElement btnConfirmModal;
     @FindBy(xpath = "//*[contains(text(),'Finalizar registro') or @type='submit' and contains(text(),'Finalizar registro')]")
     protected WebElement btnFinalizarRegistro;
+
+    // BOTON CONTINUAR
+    @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
+    protected WebElement buttonContinuar;
+
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public void completaDatosSolicitados() {
         UtilWeb.waitForSeconds(2);
@@ -161,63 +166,6 @@ public class RegisterPage extends WebBase {
         selectElementCSSWithAndWithoutShadowRoot("type of payment", selectPage, type);
     }
 
-    public void clickButtonContinue() {
-        UtilWeb.waitForSeconds(20);
-        Addons.revisarModalError(driver()); // Validación inicial de posibles errores.
-        int maxRetries = 6; // Número máximo de intentos
-        int retries = 0;
-        boolean isButtonUnclickable = false;
-
-        while (!isButtonUnclickable && retries < maxRetries) {
-            try {
-                // Esperar a que el botón sea visible y clickeable
-                logInfo("Esperando que el botón sea visible y clickeable.");
-                WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(30));
-                wait.until(ExpectedConditions.elementToBeClickable(buttonContinuar));
-                logInfo("El botón es clickeable.");
-
-                // Realizar clic en el botón
-                logInfo("Intentando hacer clic en el botón.");
-                buttonContinuar.click();
-                logInfo("Clic realizado en el botón.");
-
-                // Validar que el botón ya no sea clickeable
-                logInfo("Validando que el botón ya no sea clickeable o ya no esté presente.");
-                try {
-                    // Verificar si el botón aún está presente en el DOM
-                    if (!driver().findElements((By) buttonContinuar).isEmpty()) {
-                        logInfo("El botón sigue visible. Verificando si es clickeable nuevamente.");
-                        isButtonUnclickable = wait.until(ExpectedConditions.not(ExpectedConditions.elementToBeClickable(buttonContinuar)));
-                    } else {
-                        logInfo("El botón ya no está presente en el DOM.");
-                        isButtonUnclickable = true; // Consideramos la acción como exitosa
-                    }
-                } catch (Exception innerException) {
-                    logInfo("Error al verificar el estado del botón: " + innerException.getMessage());
-                    isButtonUnclickable = true; // Si ocurre un error, asumimos que el botón ya no es clickeable
-                }
-
-                if (isButtonUnclickable) {
-                    logInfo("El botón ya no es clickeable. Acción completada con éxito.");
-                } else {
-                    logInfo("El botón sigue siendo clickeable. Reintentando...");
-                    retries++;
-                    UtilWeb.waitForSeconds(5); // Esperar antes de reintentar
-                }
-            } catch (Exception e) {
-                logInfo("Error al hacer clic en el botón: " + e.getMessage());
-                retries++;
-                UtilWeb.waitForSeconds(5); // Esperar antes de reintentar
-            }
-        }
-
-        if (!isButtonUnclickable) {
-            throw new RuntimeException("No se pudo hacer clic en el botón de forma exitosa después de " + maxRetries + " intentos.");
-        }
-
-        Addons.revisarModalError(driver()); // Validación final de errores.
-    }
-
     public boolean hasIdentityValidationError() {
         boolean isError = false;
         UtilWeb.waitForSeconds(10);
@@ -246,5 +194,49 @@ public class RegisterPage extends WebBase {
     public void clickOnTheFinishRegistrationButton() {
         waitUntilElementIsVisible(btnFinalizarRegistro, 10);
         click(btnFinalizarRegistro);
+    }
+
+    /**
+     * FUNCION CLICK BOTON CONTINUAR
+     * */
+
+    public void clickButtonContinue() {
+        int cont = 0;
+        boolean existeElement = false;
+        int contadorBoton = 0;
+        boolean existeBoton = false;
+        while (cont < 3 && !existeElement) {
+            cont++;
+            try {
+                logInfo("Ingreso a visualizar el BOTON CONTINUAR");
+                waitUntilElementIsVisible(buttonContinuar,5);
+                while (contadorBoton < 3 && !existeBoton) {
+                    contadorBoton++;
+                    try {
+                        if (buttonContinuar.isDisplayed()) {
+                            logInfo("Se visualizo el BOTON CONTINUAR - RECORRIDO N°" + contadorBoton);
+                            if (contadorBoton == 1) {
+                                miScenario.printFullView();
+                            }
+                            click(buttonContinuar,5);
+                            view.temporalPage().clickBtnReintentar();
+                        }
+                    } catch (Exception e) {
+                        logInfo("Ya no se visualiza el BOTON CONTINUAR");
+                        existeBoton = true;
+                        logSevere("SE PRESENTA ERROR - " + e.getMessage());
+                    }
+                }
+                existeElement = true;
+            } catch (Exception e) {
+                logSevere("NO SE ENCONTRO ELEMENTO: " + e.getMessage());
+                logInfo("SE PROCEDE A REINTENTAR - REINTENTO N°" + cont);
+                if (cont == 3) {
+                    logInfo("SE SUPERO EL NUMERO DE REINTENTO - SE PROCEDE A CERRAR VENTANA");
+                    logSevere("ERROR PERSISTE - " + e.getMessage());
+                    driver().quit();
+                }
+            }
+        }
     }
 }

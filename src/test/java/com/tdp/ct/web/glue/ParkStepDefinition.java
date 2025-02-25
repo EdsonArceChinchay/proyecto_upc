@@ -30,12 +30,6 @@ public class ParkStepDefinition {
         parkStep.btnMovil();
     }
 
-    @Y("selecciono el boton Mostrar ofertas")
-    public void seleccionoElBotonMostrarOfertas() {
-        parkStep.scrollToLabelSelectService();
-        parkStep.btnMostrar();
-    }
-
     @Y("doy click en el boton Ver detalle del servicio {string}")
     public void seleccionoElBotonVerDetalleDelServicio(String nroServicio) {
         parkStep.scrollToLabelSelectService();
@@ -218,5 +212,15 @@ public class ParkStepDefinition {
     @E("ingreso el numero de ticket {string}")
     public void ingresoElNumeroDeTicket(String number) {
         parkStep.typeInTicketNumber(number);
+    }
+
+    /**
+     * FUNCION BOTON MOSTRAR OFERTA
+     * */
+
+    @Y("selecciono el boton Mostrar ofertas")
+    public void seleccionoElBotonMostrarOfertas() {
+        parkStep.scrollToLabelSelectService();
+        parkStep.btnMostrar();
     }
 }

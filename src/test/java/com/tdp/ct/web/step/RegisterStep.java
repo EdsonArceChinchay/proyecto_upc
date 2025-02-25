@@ -131,12 +131,6 @@ public class RegisterStep {
     }
 
     @ScreenShotBefore
-    public void clickButtonContinue() {
-        page.registerPage().clickButtonContinue();
-        UtilWeb.waitForSeconds(10);
-    }
-
-    @ScreenShotBefore
     public void clicValidarContrato() {
         page.altaFijaMovilRegistroPage().clicValidarContrato();
     }
@@ -256,5 +250,13 @@ public class RegisterStep {
     @ScreenShotBefore
     public void clickOnTheFinishRegistrationButton() {
         page.registerPage().clickOnTheFinishRegistrationButton();
+    }
+
+    /**
+     * FUNCION CLICK BOTON CONTINUAR
+     * */
+
+    public void clickButtonContinue() {
+        page.registerPage().clickButtonContinue();
     }
 }

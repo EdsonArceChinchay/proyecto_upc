@@ -91,11 +91,6 @@ public class ParkStep {
         page.parkPage().altaMovil();
     }
 
-    @ScreenShotBefore
-    public void btnMostrar() {
-        page.parkPage().mostrarOfertas();
-    }
-
     public void cerrarPopupCU() {
         page.parkPage().cerrarPopupCU();
     }
@@ -200,10 +195,6 @@ public class ParkStep {
         page.parkPage().clickOnButtonContinue();
     }
 
-    public void scrollToLabelSelectService() {
-        page.parkPage().scrollToLabelSelectService();
-    }
-
     @ScreenShotBefore
     public void clickBtnVerDetalle(String numberService) {
         page.parkPage().clickBtnVerDetalle(numberService);
@@ -264,5 +255,21 @@ public class ParkStep {
     @ScreenShotAfter
     public void typeInTicketNumber(String number) {
         page.parkPage().typeInput("inputTicketNumber", number);
+    }
+
+    /**
+     * FUNCION SCROLL SELECCIONAR SERVICIO
+     * */
+
+    public void scrollToLabelSelectService() {
+        page.parkPage().scrollToLabelSelectService();
+    }
+
+    /**
+     * FUNCION BOTON MOSTRAR OFERTA
+     * */
+
+    public void btnMostrar() {
+        page.parkPage().mostrarOfertas();
     }
 }

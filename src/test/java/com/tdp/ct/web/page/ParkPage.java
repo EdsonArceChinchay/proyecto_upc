@@ -23,12 +23,11 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class ParkPage extends WebBase {
 
-    // @FindBy(css = ".tdp-col-sm-4:nth-child(1) .stl-line_new")
     protected final String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
-    //@FindBy(css = "div[class='show-offerts']")
     protected final String btnShowOffers = "div[class='show-offerts']";
     protected final String cartillaHogar = "//app-card-line[1]";
     protected final String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
+
     @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
     protected WebElement btnMovil;
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
@@ -94,13 +93,13 @@ public class ParkPage extends WebBase {
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUpError;
     @FindBy(xpath = "//div[@class=\"div-product-name\"]")
-    WebElement scrollCartillaMT;
+    protected WebElement scrollCartillaMT;
     @FindBy(css = "tdp-st-input-text[placeholder='Nombres']")
-    WebElement inputName;
+    protected WebElement inputName;
     @FindBy(css = "tdp-st-input-text[placeholder='Apellidos']")
-    WebElement inputLastName;
+    protected WebElement inputLastName;
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
-    WebElement selectGender;
+    protected WebElement selectGender;
 
     StepPages view = new StepPages();
 
@@ -307,15 +306,6 @@ public class ParkPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void mostrarOfertas() {
-        //Addons.esperaCargaMontoDeuda(driver(),30);
-        revisarModalError(driver());
-        WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
-        revisarModalError(driver());
-        click(showOffer);
-        logInfo("Dio click al boton Mostrar Ofertas");
-    }
-
     public void selecciono_la_cartilla_del_plan_Activo() {
         revisarModalError(driver());
         WebElement selectCartilla = explicitWaitXpath(driver(), 25, cartillaHogar);
@@ -443,11 +433,6 @@ public class ParkPage extends WebBase {
                 status = false;
             }
         } while (status);
-    }
-
-    public void scrollToLabelSelectService() {
-        WebElement scroll = explicitWaitXpath(driver(), 30, labelSelectService);
-        js().scrollElementTop(scroll);
     }
 
     public void clickBtnVerDetalle(String nroService) {
@@ -706,5 +691,27 @@ public class ParkPage extends WebBase {
             cargarMsgLog(Level.INFO, "Ingreso a dar click a VER MAS");
             view.temporalPage().visualizarBtnCargarMas();
         }
+    }
+
+    /**
+     * FUNCION SCROLL SELECCIONAR SERVICIO
+     * */
+
+    public void scrollToLabelSelectService() {
+        logInfo("Ingreso a scrolear a seleccionar servicio");
+        WebElement scroll = explicitWaitXpath(driver(), 30, labelSelectService);
+        js().scrollElementTop(scroll);
+        logInfo("Se scroleo hasta seleccionar servicio");
+    }
+
+    /**
+     * FUNCION BOTON MOSTRAR OFERTA
+     * */
+
+    public void mostrarOfertas() {
+        logInfo("Ingreso a visualizar el BOTON MOSTRAR OFERTAS");
+        WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
+        click(showOffer,5);
+        logInfo("Dio click al boton Mostrar Ofertas");
     }
 }

@@ -1,6 +1,7 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
@@ -43,12 +44,17 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     protected WebElement btnYes;
     @FindBy(xpath = "//span[@class='mat-button-wrapper'][contains(text(),'Identidad Validada')]")
     protected WebElement buttonIdentidadValidada;
-    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
-    protected WebElement buttonValidarContrato;
     @FindBy(css = ".text-info")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
+
+    // BOTON VALIDAR CONTRATO
+    @FindBy(xpath = "//button[@type='button']//*[contains(text(),'Validar contrato')]")
+    protected WebElement buttonValidarContrato;
+
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public void clickOnTheValidateHolderIdentityButton() {
         esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
@@ -106,37 +112,6 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             logInfo("Identidad validada");
         }
         driver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-    }
-
-    public void clicValidarContrato() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(20);
-        Addons.esperaProgresiva(driver(), 7, 8, buttonValidarContrato);
-        Addons.revisarModalError(driver());
-        boolean buttonFound = false;
-        int contador = 0;
-        int reintentoBucles = 5;
-        while (!buttonFound && contador <= reintentoBucles) {
-            logInfo("Start while");
-            logInfo("Retry", (contador + 1));
-            try {
-                logInfo("Start try");
-                Addons.revisarModalError(driver());
-                buttonFound = waitUntilElementIsClickable(buttonValidarContrato, 60).isDisplayed();
-                UtilWeb.waitForSeconds(10);
-            } catch (Exception e) {
-                logSevere("ERROR", e.getMessage());
-                UtilWeb.waitForSeconds(10);
-            }
-            contador++;
-        }
-        logInfo("Finish while");
-        UtilWeb.waitForSeconds(10);
-        Addons.revisarModalError(driver());
-        js().scrollElementTop(buttonValidarContrato);
-        logInfo("Click button " + buttonValidarContrato.getText());
-        logInfo("buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() + " - isEnabled " + buttonValidarContrato.isEnabled() + " - isSelected " + buttonValidarContrato.isSelected());
-        buttonValidarContrato.click();
     }
 
     public void clicBotonContinuar() {
@@ -305,5 +280,35 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         js().scrollElementTop(buttonCrearCliente);
         click(buttonCrearCliente);
         UtilWeb.waitForSeconds(2);
+    }
+
+    /**
+     * FUNCION - VALIDAR CONTRATO GENERADO CALL CENTER
+     * */
+
+    public void clicValidarContrato() {
+        int contador = 0;
+        boolean existeElement = false;
+        while (contador <= 3 && !existeElement) {
+            contador++;
+            try {
+                logInfo("Ingreso a visualizar la existencia del boton VALIDAR CONTRATO");
+                UtilWeb.waitForSeconds(2);
+                if (buttonValidarContrato.isDisplayed()) {
+                    logInfo("BOTON VALIDAR CONTRATO - EXISTE");
+                    js().scrollElementTop(buttonValidarContrato);
+                    existeElement = true;
+                    logInfo("Click button " + buttonValidarContrato.getText());
+                    logInfo("buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() +
+                            " - isEnabled " + buttonValidarContrato.isEnabled() +
+                            " - isSelected " + buttonValidarContrato.isSelected());
+                    click(buttonValidarContrato,5);
+                    view.temporalPage().barraCargando();
+                }
+            } catch (Exception e) {
+                logInfo("NO SE VISUALIZO EL BOTON VALIDAR CONTRATO - N°" + contador);
+                logSevere("ERROR", e.getMessage());
+            }
+        }
     }
 }

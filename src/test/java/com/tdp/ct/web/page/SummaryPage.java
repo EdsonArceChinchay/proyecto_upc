@@ -2,17 +2,16 @@ package com.tdp.ct.web.page;
 
 import com.google.gson.JsonObject;
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
-import static com.tdp.ct.web.utils.LogUtils.logSevere;
 import static com.tdp.ct.web.utils.SessionStorage.getSessionStorageAsJsonObject;
 import static com.tdp.ct.web.utils.SessionStorage.getValueJsonObjectSessionStorage;
 import static com.tdp.ct.web.utils.WebUtils.*;
@@ -21,8 +20,7 @@ public class SummaryPage extends WebBase {
 
     private static JsonObject saleObject;
     protected final String summaryPage = "(//div[@class='title'])/span";
-    @FindBy(css = "button[class=\"btnStart\"],tdp-st-button[label=\"Iniciar Registro\"]")
-    protected WebElement btnStartRegister;
+
     @FindBy(xpath = "//mat-dialog-container//img[@alt='icon-close']")
     protected WebElement btnClose;
     @FindBy(css = ".title span")
@@ -31,6 +29,13 @@ public class SummaryPage extends WebBase {
     protected WebElement lblPrice;
     @FindBy(css = "app-agenda-page .info-user, app-agenda-mt .info-user")
     protected WebElement labelAppointment;
+
+    // BOTON INICIAR REGISTRO
+    @FindBy(css = "button[class=\"btnStart\"],tdp-st-button[label=\"Iniciar Registro\"]")
+    protected WebElement btnStartRegister;
+
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public void validacionPrecio(String precioPlan) {
         Assert.assertEquals(precioPlan, lblPrice.getText());
@@ -41,72 +46,12 @@ public class SummaryPage extends WebBase {
         compareWebElementTextAndString(nombrePlan, nomPlan);
     }
 
-    public void moverToElementStartRegister() {
-        UtilWeb.waitForSeconds(5);
-        esperaProgresiva(driver(), 6, 6, btnStartRegister);
-        js().scrollElementTop(btnStartRegister);
-    }
-
-    public void clickButtonStartRegister() {
-        UtilWeb.waitForSeconds(5);
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 6, 6, btnStartRegister);
-        btnStartRegister.click();
-        clickBtnCerrarModalError(btnStartRegister);
-        revisarModalError(driver());
-    }
-
-    public void clickBtnCerrarModalError(WebElement repeatedMethod) {
-        int contador = 0, i = 0;
-        int reintentosMax = 3;
-        int segundosEspera = 5;
-        boolean bOK = false;
-
-        UtilWeb.waitForSeconds(1);
-        do {
-            UtilWeb.waitForSeconds(segundosEspera * contador);
-            try {
-                boolean elementoExistente;
-                elementoExistente = !driver().findElements(By.xpath("//mat-dialog-container//*[contains(text(),'No se puede agendar la visita técnica, se deben modificar los datos de la venta')]")).isEmpty();
-                if (elementoExistente) {
-                    click(btnClose);
-                    logInfo("Dio click en cerrar - modal error Timeslot " + i);
-                    UtilWeb.waitForSeconds(5);
-                    click(repeatedMethod);
-                    bOK = true;
-                } else {
-                    logInfo("No se encontro el modal error Timeslot");
-                }
-
-            } catch (Exception e) {
-                logSevere("ERROR", e.getMessage());
-            }
-            if (validateIsDisplayed(labelAppointment)) {
-                logInfo("You are on appointment");
-                break;
-            }
-            contador++;
-        } while (!bOK && contador < reintentosMax);
-    }
-
     public void validateSummaryPage() {
         revisarModalError(driver());
         WebElement sumaryPage = explicitWaitXpath(driver(), 20, summaryPage);
         esperaProgresiva(driver(), 10, 10, sumaryPage);
         js().scrollElementTop(sumaryPage);
         Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
-    }
-
-    public void additionalData() {
-        saleObject = getSessionStorageAsJsonObject(driver(), "saleObject");
-        logInfo("getSalesID(): " + getSalesID());
-        logInfo("productType(): " + getProductType());
-        int number = (getProductType().equals("MT")) ? 1 : 0;
-        logInfo("needAppointment(): " + needAppointment(number));
-        logInfo("isUpfront(): " + isUpfront(number));
-        logInfo("getReason(): " + getReason(number));
-        logInfo("getAction(): " + getAction(number));
-        logInfo("getCOAdditionalData()" + getCOAdditionalData());
     }
 
     public String getSalesID() {
@@ -143,5 +88,42 @@ public class SummaryPage extends WebBase {
             default:
                 return null;
         }
+    }
+
+    /**
+     * FUNCION - MOVER A BOTON INICIAR REGISTR0
+     * */
+
+    public void moverToElementStartRegister() {
+        logInfo("Ingreso a visualizar el boton de INCIAR REGISTRO");
+        UtilWeb.waitForSeconds(2);
+        waitUntilElementIsClickable(btnStartRegister,15);
+        logInfo("Se visualizo el boton de INICIAR REGISTRO");
+        js().scrollElementTop(btnStartRegister);
+        logInfo("Se escrolea al boton de INICIAR REGISTRO");
+    }
+
+    public void additionalData() {
+        logInfo("Se procede a obtener datos");
+        logInfo("##########################");
+        saleObject = getSessionStorageAsJsonObject(driver(), "saleObject");
+        logInfo("getSalesID(): " + getSalesID());
+        logInfo("productType(): " + getProductType());
+        int number = (getProductType().equals("MT")) ? 1 : 0;
+        logInfo("needAppointment(): " + needAppointment(number));
+        logInfo("isUpfront(): " + isUpfront(number));
+        logInfo("getReason(): " + getReason(number));
+        logInfo("getAction(): " + getAction(number));
+        logInfo("getCOAdditionalData()" + getCOAdditionalData());
+        logInfo("##########################");
+    }
+
+    public void clickButtonStartRegister() {
+        logInfo("Se procede a dar click al boton de INICIAR REGISTRO");
+        waitUntilElementIsClickable(btnStartRegister,15);
+        miScenario.printFullView();
+        click(btnStartRegister,5);
+        logInfo("Se dio click al boton de INICIAR REGISTRO");
+        view.temporalPage().clickBtnReintentar();
     }
 }

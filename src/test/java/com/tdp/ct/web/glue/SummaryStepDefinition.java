@@ -15,12 +15,6 @@ public class SummaryStepDefinition {
         summaryStep.validateSummaryPage();
     }
 
-    @Y("doy click en el boton Iniciar registro")
-    public void doyClickEnIniciarRegistro() {
-        summaryStep.moverToElementStartRegister();
-        summaryStep.clickButtonStartRegister();
-    }
-
     @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
     public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
         summaryStep.validarNomPlan(nomPlan);
@@ -31,4 +25,13 @@ public class SummaryStepDefinition {
         summaryStep.validacionPrecio(precioPlan);
     }
 
+    /**
+     * FUNCION - MOVER A BOTON INICIAR REGISTR0
+     * */
+
+    @Y("doy click en el boton Iniciar registro")
+    public void doyClickEnIniciarRegistro() {
+        summaryStep.moverToElementStartRegister();
+        summaryStep.clickButtonStartRegister();
+    }
 }
