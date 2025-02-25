@@ -14,24 +14,16 @@ public class AddressStepDefinition {
     @Autowired
     private AddressStep addressStep;
 
+    String departamentoDireccion, provinciaDireccion, distritoDireccion, referenciaDireccion;
+
     @Entonces("me muestra la pantalla para ingresar la direccion de entrega")
     public void meMuestraLaPantallaParaIngresarLaDireccionEntrega() {
         addressStep.validarPantallaIngresarDireccionEntrega();
     }
 
-    @Entonces("me muestra la pantalla para ingresar la direccion")
-    public void meMuestraLaPantallaParaIngresarLaDireccion() {
-        addressStep.validarPantallaIngresarDireccion();
-    }
-
     @Entonces("me muestra la pantalla para verificar la direccion")
     public void meMuestraLaPantallaParaVerificarLaDireccion() {
         addressStep.validarPantallaVerificarDireccion();
-    }
-
-    @Y("selecciono el departamento donde sera la instalacion {string}")
-    public void seleccionoElDepartamentoDondeSeraLaInstalacion(String name) {
-        addressStep.selectDepartment(name);
     }
 
     @Y("selecciono el departamento donde sera la entrega {string}")
@@ -44,29 +36,9 @@ public class AddressStepDefinition {
         addressStep.ingresoDepartamento(department);
     }
 
-    @Y("selecciono el distrito donde sera la instalacion {string}")
-    public void seleccionoElDistritoDondeSeraLaInstalacion(String distri) {
-        addressStep.selectDistrict(distri);
-    }
-
-    @Y("selecciono el distrito donde sera la entrega {string}")
-    public void seleccionoElDistritoDondeSeraLaEntrega(String distri) {
-        addressStep.selectDistrict(distri);
-    }
-
     @Y("selecciono el distrito donde se instalara {string}")
     public void ingresoDistrito(String distrito) {
         addressStep.ingresoDistrito(distrito);
-    }
-
-    @Y("selecciono la provincia donde sera la entrega {string}")
-    public void seleccionoLaProvinciaDondeSeraLaInstalacion(String provincia) {
-        addressStep.selectProvince(provincia);
-    }
-
-    @Y("selecciono la provincia donde sera la instalacion {string}")
-    public void seleccionoLaProvinciaDondeSeraLaInstalacion2(String provincia) {
-        addressStep.selectProvince(provincia);
     }
 
     @Y("selecciono la provincia donde se instalara {string}")
@@ -79,18 +51,8 @@ public class AddressStepDefinition {
         addressStep.typeAddress(data);
     }
 
-    @Y("ingreso la direccion donde sera la instalacion {string}")
-    public void ingresoLaDireccionDondeSeraLaInstalacion2(String data) {
-        addressStep.typeAddress(data);
-    }
-
     @Y("ingreso la referencia de la direccion de entrega {string}")
     public void ingresoLaReferenciaDeLaDireccionDeEntrega(String referencia) {
-        addressStep.typeReference(referencia);
-    }
-
-    @Y("ingreso la referencia de la direccion {string}")
-    public void ingresoLaReferenciaDeLaDireccion(String referencia) {
         addressStep.typeReference(referencia);
     }
 
@@ -174,16 +136,6 @@ public class AddressStepDefinition {
         validateInputsAddress(apple, lot, floor, inside, block, houseType, houseName, housingComplexe, housingComplexName);
     }
 
-    @Y("presiono el boton Consultar ubicacion")
-    public void presionoElBotonConsultarUbicacion() {
-        addressStep.clickButtonConsultLocation();
-    }
-
-    @Y("presiono el boton Consultar cobertura")
-    public void presionoElBotonConsultarCobertura() {
-        addressStep.clickButtonConsultCoverage();
-    }
-
     @Y("selecciono una direccion sugerida")
     public void seleccionoUnaDireccionSugerida() {
         addressStep.seleccionoDireccionSugerida();
@@ -242,5 +194,80 @@ public class AddressStepDefinition {
     @Y("doy click en el boton Buscar")
     public void doyClickEnElBotonBuscar() {
         addressStep.clickOnSearchButton();
+    }
+
+    /**
+     * FUNCION - PANTALLA INSERTAR DIRECCION
+     * */
+
+    @Entonces("me muestra la pantalla para ingresar la direccion")
+    public void meMuestraLaPantallaParaIngresarLaDireccion() {
+        addressStep.validarPantallaIngresarDireccion();
+    }
+
+    /**
+     * FUNCION - SELECCIONAR DEPARTAMENTO
+     * */
+
+    @Y("selecciono el departamento donde sera la instalacion {string}")
+    public void seleccionoElDepartamentoDondeSeraLaInstalacion(String departamento) {
+        departamentoDireccion = departamento;
+        addressStep.selectDepartment(departamento);
+    }
+
+    /**
+     * FUNCION - SELECCIONAR PROVINCIA
+     * */
+
+    @Y("selecciono la provincia donde sera la instalacion {string}")
+    public void seleccionoLaProvinciaDondeSeraLaInstalacion2(String provincia) {
+        provinciaDireccion = provincia;
+        addressStep.selectProvince(departamentoDireccion, provincia);
+    }
+
+    /**
+     * FUNCION - SELECCIONAR DISTRITO
+     * */
+
+    @Y("selecciono el distrito donde sera la instalacion {string}")
+    public void seleccionoElDistritoDondeSeraLaInstalacion(String distrito) {
+        distritoDireccion = distrito;
+        addressStep.selectDistrict(departamentoDireccion, provinciaDireccion, distrito);
+    }
+
+    /**
+     * FUNCION - INSERTAR DIRECCION
+     * */
+
+    @Y("ingreso la direccion donde sera la instalacion {string}")
+    public void ingresoLaDireccionDondeSeraLaInstalacion2(String address) {
+        addressStep.typeAddress(address);
+    }
+
+    /**
+     * FUNCION - INSERTAR REFERENCIA
+     * */
+
+    @Y("ingreso la referencia de la direccion {string}")
+    public void ingresoLaReferenciaDeLaDireccion(String referencia) {
+        addressStep.typeReference(referencia);
+    }
+
+    /**
+     * FUNCION - CLICK BOTON CONSULTAR UBICACION
+     * */
+
+    @Y("presiono el boton Consultar ubicacion")
+    public void presionoElBotonConsultarUbicacion() {
+        addressStep.clickButtonConsultLocation();
+    }
+
+    /**
+     * FUNCION - CLICK BOTON CONSULTAR COBERTURA
+     * */
+
+    @Y("presiono el boton Consultar cobertura")
+    public void presionoElBotonConsultarCobertura() {
+        addressStep.clickButtonConsultCoverage();
     }
 }

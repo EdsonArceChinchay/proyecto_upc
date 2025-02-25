@@ -48,7 +48,6 @@ public class SummaryPage extends WebBase {
     }
 
     public void clickButtonStartRegister() {
-        UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
         esperaProgresiva(driver(), 6, 6, btnStartRegister);
         btnStartRegister.click();
