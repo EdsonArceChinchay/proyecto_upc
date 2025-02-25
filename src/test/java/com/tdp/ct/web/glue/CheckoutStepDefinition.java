@@ -68,6 +68,28 @@ public class CheckoutStepDefinition {
         checkoutStep.clickBotonRegistrarVenta();
     }
 
+    @Y("doy click en ver detalle del pedido")
+    public void doyClickenVerDetalleDelPedido() {
+        checkoutStep.doyClickenVerDetalleDelPedido();
+    }
+
+    @Y("valido que se muestre el detalle del pedido de {string}")
+    public void validoQueSeMuestreElDetalleDelPedido(String service) {
+        checkoutStep.ValidoQuePresenteDetallePedido(service);
+    }
+
+    @Entonces("visualizo en pantalla el mensaje de exito del ticket generado")
+    public void visualizoEnPantallaElMensajeDeExitoDelTicketGenerado() {
+        checkoutStep.validateTheBillingCycle();
+        checkoutStep.validateRegistrationHasBeenSuccessful();
+        checkoutStep.validateTicket();
+        this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
+    }
+
+    /**
+     * FUNCION - VISUALIZAR MENSAJE EXITOSO
+     * */
+
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
         UtilWeb.waitForSeconds(10); // TEST, Mejorar validacion de carga de pagina
@@ -87,23 +109,5 @@ public class CheckoutStepDefinition {
 
         String orderCode = checkoutStep.getOrderCode();
         getScenarioContext().put("orden", orderCode);
-    }
-
-    @Y("doy click en ver detalle del pedido")
-    public void doyClickenVerDetalleDelPedido() {
-        checkoutStep.doyClickenVerDetalleDelPedido();
-    }
-
-    @Y("valido que se muestre el detalle del pedido de {string}")
-    public void validoQueSeMuestreElDetalleDelPedido(String service) {
-        checkoutStep.ValidoQuePresenteDetallePedido(service);
-    }
-
-    @Entonces("visualizo en pantalla el mensaje de exito del ticket generado")
-    public void visualizoEnPantallaElMensajeDeExitoDelTicketGenerado() {
-        checkoutStep.validateTheBillingCycle();
-        checkoutStep.validateRegistrationHasBeenSuccessful();
-        checkoutStep.validateTicket();
-        this.scenario.log("[Código de Venta: " + checkoutStep.getSalesCode() + "]");
     }
 }
