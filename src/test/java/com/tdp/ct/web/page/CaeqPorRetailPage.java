@@ -25,6 +25,9 @@ public class CaeqPorRetailPage extends WebBase {
     @FindBy(xpath = "//div[@class='stl_plan_actual' and contains(text(),'PLAN ACTUAL')]")
     protected WebElement lblCurrentPlan;
 
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
+
     public void clickOnAddDevice() {
         UtilWeb.waitForSeconds(3);
         esperaProgresiva(driver(), 3, 5, LblEquipos);
@@ -66,9 +69,9 @@ public class CaeqPorRetailPage extends WebBase {
     }
 
 
-    public void seeTheChosenOffer( ManageScenario scenario) {
+    public void seeTheChosenOffer() {
         esperaProgresiva(driver(), 5, 5, lblCurrentPlan);
         js().scrollElementTop(lblCurrentPlan);
-        scenario.printFullView();
+        miScenario.printFullView();
     }
 }
