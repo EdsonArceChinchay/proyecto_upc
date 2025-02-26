@@ -1,7 +1,6 @@
 package com.tdp.ct.web.step;
 
 import com.tdp.ct.web.page.StepPages;
-import com.tdp.ct.web.service.aspect.evidence.ScreenShot;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +8,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@ScreenShot
 @Component
 public class AltaMovilSoloSimCallCenterStep {
 
     @Autowired
     private StepPages page;
 
-    @Autowired
-    private ManageScenario scenario;
     @Autowired
     private ServiceTest serviceTest;
 
@@ -26,7 +22,7 @@ public class AltaMovilSoloSimCallCenterStep {
     }
 
     public void seleccionarListaPlanMovil(String planMovil) {
-        page.altaMovilSoloSimCallCenterPage().listaPlanMovil(planMovil, scenario);
+        page.altaMovilSoloSimCallCenterPage().listaPlanMovil(planMovil);
     }
 
     public void seleccionarPlan(String tipoPlan) {
@@ -81,7 +77,7 @@ public class AltaMovilSoloSimCallCenterStep {
     }
 
     public void seeTheChosenOffer() {
-        page.caeqPorRetailPage().seeTheChosenOffer(scenario);
+        page.caeqPorRetailPage().seeTheChosenOffer();
     }
 
     public void imprimoLaOfertaSeleccionada(ManageScenario scenario) {

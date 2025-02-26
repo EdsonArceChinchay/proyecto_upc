@@ -34,6 +34,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
     @FindBy(xpath = "//h1[contains(text(),'Ofertas sugeridas')]")
     protected WebElement ofertasSugeridas;
 
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
+
     public void listaTipoPlanMovil(String planMovil) {
         UtilWeb.waitForSeconds(2);
         revisarModalError(driver());
@@ -41,9 +44,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
         clickElementInAList(listaTipoPlanMovil, planMovil, 10);
     }
 
-    public void listaPlanMovil(String planMovil, ManageScenario scenario) {
+    public void listaPlanMovil(String planMovil) {
         revisarModalError(driver());
-        scenario.printFullView();
+        miScenario.printFullView();
         UtilWeb.waitForSeconds(2);
         WebElement inputElement = driver().findElement(By.cssSelector(".search-section tdp-st-input-text[formcontrolname='name']"));
         esperaProgresiva(driver(), 3, 5, inputElement);
@@ -102,9 +105,9 @@ public class AltaMovilSoloSimCallCenterPage extends WebBase {
 
             }
             if (i == 2 || i == 5 || i == 8 || i == 11 || i == 14 || i == 17 || i == 20 || i == 23 || i == 26 || i == 29 || i == 32 || i == 35 || i == 38) {
-                scenario.printFullView();
+                miScenario.printFullView();
                 js().scrollElementTop(botonSeleccionarOferta);
-                scenario.printFullView();
+                miScenario.printFullView();
                 WebElement buscarButton = driver().findElement(By.cssSelector(".search-section .search-button"));
                 js().scrollElementTop(buscarButton);
                 boolean elementoExistente;
