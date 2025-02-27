@@ -11,7 +11,7 @@
 ##TAG : BERSERKERS
 ##DATA:  REUSABLE (CANCELAR ORDENES)
 ##ENCARGADO:
-##FECMOD: 20/11/2024
+##FECMOD: 26/02/2025
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14
 Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente con CE por canal Call Center
@@ -72,7 +72,7 @@ Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente
     Y busco por "codigo de venta"
     Y selecciono la solicitud
     Y cargo el audio en la web
-    #Y apruebo la solicitud
+    Y apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | fijoExistente | celularExistente | correo                    |
       | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | CE           | 1100000908     | 5010320405    | 975420738        | 1100000908@mailinator.com |
