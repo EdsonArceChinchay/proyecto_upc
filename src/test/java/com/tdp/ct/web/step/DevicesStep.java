@@ -71,4 +71,12 @@ public class DevicesStep {
     public void clickBtnSeeDeviceDetails(String equipo) {
         page.devicesPage().clickBtnSeeDeviceDetails(equipo);
     }
+
+    /**
+     * FUNCION VALIDAR STOCK EQUIPO
+     * */
+
+    public void validarStockDeEquipo(){
+        page.devicesPage().clickBtnSeeDeviceDetails();
+    }
 }

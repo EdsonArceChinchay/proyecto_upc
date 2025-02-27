@@ -19,6 +19,7 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 public class HomeStepDefinition {
 
     public final ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
+
     @Autowired
     private HomeStep homeStep;
     @Autowired
@@ -40,13 +41,6 @@ public class HomeStepDefinition {
             return;
         }
         action.run();
-    }
-
-    @Entonces("valido el login exitoso mediante el mensaje {string}")
-    public void validoElLoginExitosoMedianteElMensaje(String msg) {
-
-        homeStep.validateHomeMessage(msg);
-        homeStep.initializeAgent(agent.get());
     }
 
     @Y("valido que se presente el canal {string}")
@@ -139,7 +133,5 @@ public class HomeStepDefinition {
     @Y("doy click en el boton Consultar")
     public void doyClickEnElBotonConsultar() {
         homeStep.clickOnConsultButton();
-
     }
-
 }

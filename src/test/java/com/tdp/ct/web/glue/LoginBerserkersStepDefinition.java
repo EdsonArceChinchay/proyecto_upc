@@ -2,6 +2,7 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.datatable.DataTable;
@@ -37,6 +38,10 @@ public class LoginBerserkersStepDefinition {
     @Autowired
     private WebDriverManager manager;
 
+    String tipoUsuario, userName, passwordUser;
+
+    public final ThreadLocal<Agent> agent = ThreadLocal.withInitial(Agent::new);
+
     @Dado("que abro la pagina de movistar")
     public void queAbroLaPaginaDeMovistar() throws InterruptedException {
         String env = System.getProperty("environment");
@@ -60,11 +65,13 @@ public class LoginBerserkersStepDefinition {
 
     @Y("selecciono el tipo de usuario {string}")
     public void seleccionoElTipoDeUsuario(String user) {
+        tipoUsuario = user;
         loginBerserkerStep.selectUserType(user);
     }
 
     @Y("ingreso el usuario {string}")
     public void ingresoElUsuario(String name) {
+        userName = name;
         String userVendedor = getValueConfig("config", "credential.user." + name).trim();
         getScenarioContext().put("usuarioVendedor", userVendedor);
         loginBerserkerStep.typeUserName(name);
@@ -72,6 +79,7 @@ public class LoginBerserkersStepDefinition {
 
     @Y("ingreso el password {string}")
     public void ingresoElPassword(String pass) {
+        passwordUser = pass;
         loginBerserkerStep.typePassword(pass);
     }
 
@@ -98,6 +106,17 @@ public class LoginBerserkersStepDefinition {
     @E("ingreso el captcha")
     public void ingresoElCaptcha() {
         loginBerserkerStep.getAndTypeCaptcha();
+    }
+
+    /**
+     * FUNCION VISUALIZAR MENSAJE DE BIENVENIDA
+     * */
+
+    @Entonces("valido el login exitoso mediante el mensaje {string}")
+    public void validoElLoginExitosoMedianteElMensaje(String msg) {
+        logInfo("DATOS LOGIN: \n TIPO USUARIO: " + tipoUsuario + "\n NOMBRE DE USUARIO: " + userName + "\n PASSWORD DEL USUARIO: " + passwordUser);
+        loginBerserkerStep.validateHomeMessage(msg, tipoUsuario, userName, passwordUser);
+        loginBerserkerStep.initializeAgent(agent.get());
     }
 
     @Y("ingreso los datos para la bitacora")
@@ -131,5 +150,4 @@ public class LoginBerserkersStepDefinition {
         getScenarioContext().put("tipoVenta", UtilWeb.getValueFromDataTable(dataTable, "Tipo Venta"));
         UtilWeb.logger(this.getClass()).log(Level.INFO, "Tipo Venta:" + getScenarioContext().get("tipoVenta"));
     }
-
 }

@@ -69,4 +69,13 @@ public class DevicesStepDefinition {
         devicesStep.validateFeatures();
         devicesStep.clickButtonSelectDevice();
     }
+
+    /**
+     * FUNCION VALIDAR STOCK EQUIPO
+     * */
+
+    @Y("valido el stock del equipo")
+    public void validarStockDeEquipo() {
+        devicesStep.validarStockDeEquipo();
+    }
 }

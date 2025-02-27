@@ -46,14 +46,6 @@ public class SummaryPage extends WebBase {
         compareWebElementTextAndString(nombrePlan, nomPlan);
     }
 
-    public void validateSummaryPage() {
-        revisarModalError(driver());
-        WebElement sumaryPage = explicitWaitXpath(driver(), 20, summaryPage);
-        esperaProgresiva(driver(), 10, 10, sumaryPage);
-        js().scrollElementTop(sumaryPage);
-        Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
-    }
-
     public String getSalesID() {
         return getValueJsonObjectSessionStorage(saleObject, "salesId");
     }
@@ -88,6 +80,18 @@ public class SummaryPage extends WebBase {
             default:
                 return null;
         }
+    }
+
+    /**
+     * FUNCION - VISUALIZAR RESUMEN DE VENTA
+     * */
+
+    public void validateSummaryPage() {
+        revisarModalError(driver());
+        WebElement sumaryPage = explicitWaitXpath(driver(), 20, summaryPage);
+        esperaProgresiva(driver(), 10, 10, sumaryPage);
+        js().scrollElementTop(sumaryPage);
+        Assert.assertTrue("El elemento no existe", sumaryPage.isDisplayed());
     }
 
     /**

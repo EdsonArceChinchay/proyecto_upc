@@ -12,9 +12,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ParkStep {
+
     private static String simCard = null;
     private static String imei = null;
     private final MaterialService materialService;
+
     @Autowired
     private StepPages page;
     @Autowired
@@ -77,11 +79,6 @@ public class ParkStep {
     }
 
     @ScreenShotAfter
-    public void btnDetalleLineaCelularExistente(String numeroExistente) {
-        page.parkPage().detalleLineaCelularExistente(numeroExistente);
-    }
-
-    @ScreenShotAfter
     public void btnLineaMovilExistente() {
         page.parkPage().lineaMovilExistente();
     }
@@ -111,11 +108,6 @@ public class ParkStep {
     @ScreenShotBefore
     public void clickBtnCardPlanActual() {
         page.parkPage().clickBtnCardPlanActual();
-    }
-
-    @ScreenShotAfter
-    public void clickBtnRenovarPlan() {
-        page.parkPage().clickBtnRenovarPlan();
     }
 
     @ScreenShotBefore
@@ -200,11 +192,6 @@ public class ParkStep {
         page.parkPage().clickBtnVerDetalle(numberService);
     }
 
-    @ScreenShotAfter
-    public void selectLineWithNumber(String number) {
-        page.parkPage().selectLineWithNumber(number);
-    }
-
     @ScreenShotBefore
     @ScreenShotAfter
     public void cierroPopUpDeClienteExonerado() {
@@ -271,5 +258,29 @@ public class ParkStep {
 
     public void btnMostrar() {
         page.parkPage().mostrarOfertas();
+    }
+
+    /**
+     * FUNCION CLICK DETALLE PLAN
+     * */
+
+    public void btnDetalleLineaCelularExistente(String numeroExistente) {
+        page.parkPage().detalleLineaCelularExistente(numeroExistente);
+    }
+
+    /**
+     * FUNCION RENOVAR PLAN - POR DETALLE DE PLAN
+     * */
+
+    public void clickBtnRenovarPlan() {
+        page.parkPage().clickBtnRenovarPlan();
+    }
+
+    /**
+     * FUNCION SELECCIONAR LINEA
+     * */
+
+    public void selectLineWithNumber(String number) {
+        page.parkPage().selectLineWithNumber(number);
     }
 }

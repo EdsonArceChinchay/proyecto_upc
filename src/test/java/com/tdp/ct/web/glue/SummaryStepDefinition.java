@@ -10,11 +10,6 @@ public class SummaryStepDefinition {
     @Autowired
     private SummaryStep summaryStep;
 
-    @Y("valido que este en el resumen de venta")
-    public void valido_que_este_en_la_pagina_de_registro() {
-        summaryStep.validateSummaryPage();
-    }
-
     @Entonces("valido en la etapa resumen el nombre del plan escogido {string}")
     public void validoEnLaEtapaResumenElNombreDelPlanEscogido(String nomPlan) {
         summaryStep.validarNomPlan(nomPlan);
@@ -23,6 +18,15 @@ public class SummaryStepDefinition {
     @Y("valido el precio establecido sea {string}")
     public void validacionPrecio(String precioPlan) {
         summaryStep.validacionPrecio(precioPlan);
+    }
+
+    /**
+     * FUNCION - VISUALIZAR RESUMEN DE VENTA
+     * */
+
+    @Y("valido que este en el resumen de venta")
+    public void valido_que_este_en_la_pagina_de_registro() {
+        summaryStep.validateSummaryPage();
     }
 
     /**
