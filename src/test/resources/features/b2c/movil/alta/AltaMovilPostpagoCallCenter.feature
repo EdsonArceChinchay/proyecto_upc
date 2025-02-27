@@ -62,8 +62,8 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y doy click en confirmar delivery
     Y valido que este en la seccion completa los datos solicitados
     Y selecciono el metodo de pago "Contra entrega"
-    Y ingreso correo electronico "jlopez@mail.com"
-    Y ingreso nuevamente el correo electronico "jlopez@mail.com"
+    Y ingreso correo electronico "<correo>"
+    Y ingreso nuevamente el correo electronico "<correo>"
     Y doy click en datos del cliente
     Y completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -86,5 +86,5 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y cargo el audio en la web
     Y apruebo la solicitud
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                           |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100007777     | Postpago      | RV Plan Ilimitado Mi Movistar S/74.9 |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                    | tipoPlanMovil | nombrePlan                           |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100007777     | 1100007777@mailinator.com | Postpago      | RV Plan Ilimitado Mi Movistar S/74.9 |
