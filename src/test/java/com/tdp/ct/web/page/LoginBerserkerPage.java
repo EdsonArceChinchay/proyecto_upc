@@ -152,9 +152,9 @@ public class LoginBerserkerPage extends WebBase {
                     throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");
                 }
             }
-            view.homePage().Zoom(65);
-            miScenario.printFullView();
         }
+        view.homePage().Zoom(65);
+        miScenario.printFullView();
     }
 
     /**
@@ -173,5 +173,6 @@ public class LoginBerserkerPage extends WebBase {
         typeUserName(userName);
         typePassword(passwordUser);
         view.captchaPage().getCaptcha();
+        clickOnContinueButton();
     }
 }
