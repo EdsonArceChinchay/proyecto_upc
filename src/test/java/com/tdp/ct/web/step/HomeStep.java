@@ -17,9 +17,6 @@ public class HomeStep {
     @Autowired
     protected StepPages page;
 
-    @Autowired
-    protected AgentBuilder agentBuilder;
-
     @ScreenShotAfter
     public void selectDocumentType(String type) {
         page.homePage().selectDocumentType(type);
@@ -92,12 +89,6 @@ public class HomeStep {
         page.homePage().validateAgentData(agent, store);
     }
 
-    @ScreenShotAfter
-    public void validateHomeMessage(String msg) {
-        page.homePage().Zoom(65);
-        page.homePage().validateHomeMessage(msg);
-    }
-
     public void backToHomePage() {
         page.homePage().backToHomePage();
     }
@@ -127,15 +118,7 @@ public class HomeStep {
         return AgentBuilder.isRetention();
     }
 
-    public void initializeAgent(Agent agent) {
-        AgentBuilder.initializeAgent(agent);
-        agentBuilder.modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
-        agent.setRetention(AgentBuilder.isRetention());
-    }
-
     public String getChannelType() {
         return page.homePage().getChannelType();
     }
-
-
 }

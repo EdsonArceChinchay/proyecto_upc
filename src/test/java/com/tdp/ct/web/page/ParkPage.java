@@ -2,6 +2,7 @@ package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.model.Material;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import com.tdp.ct.web.utils.MaterialsManager;
@@ -12,13 +13,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.logging.Level;
+import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
-import static com.tdp.ct.web.utils.Utils.cargarMsgLog;
 import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class ParkPage extends WebBase {
@@ -34,16 +34,12 @@ public class ParkPage extends WebBase {
     protected WebElement btnLineaExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaCelularExistente;
-    @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .btn-try-again")
-    protected WebElement btnRefreshLineaCelularExistente;
     @FindBy(css = ".stl_position_movil:nth-child(3) app-card-mt:nth-child(1) .contenedor_park_plan_MT")
     protected WebElement btnPlanMtExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaMovilExistente;
     @FindBy(xpath = "//app-card-mt[1]")
     protected WebElement cartillaMovistarTotal;
-    @FindBy(xpath = "//img[@src='assets/images/Cargando.gif']")
-    protected WebElement btnCargango;
     @FindBy(xpath = "//div[@slot='modal_body']/div[2]/div/p[2]")
     protected WebElement txtDirC;
     @FindBy(xpath = "//button[@class='update_button']")
@@ -64,8 +60,6 @@ public class ParkPage extends WebBase {
     protected WebElement botonContinuar;
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
-    @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
-    protected WebElement btnRenovarPlan;
     @FindBy(css = ".text-info")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
@@ -101,7 +95,16 @@ public class ParkPage extends WebBase {
     @FindBy(css = "tdp-st-select[formcontrolname='genero']")
     protected WebElement selectGender;
 
+    // CANTIDAD LINEAS MOVILES
+    @FindBy(xpath = "//*[@class='content']/*/*[@class='flex header']/*[@class='number_line' and starts-with(normalize-space(text()), '9')] | //*[@class='number_line' and starts-with(normalize-space(text()), '9')]")
+    private List<WebElement> listaLineasMovil;
+
+    // BOTON RENOVAR
+    @FindBy(xpath = "//button[contains(text(),' Renovar ')]")
+    protected WebElement btnRenovarPlan;
+
     StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
@@ -247,43 +250,6 @@ public class ParkPage extends WebBase {
                 if (elementoExistente) {
                     if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
                         click(elemento);
-                        break;
-                    } else {
-                        i++;
-                    }
-                } else {
-                    logInfo("No cumplen con la condicion");
-                    break;
-                }
-            }
-        }
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void detalleLineaCelularExistente(String numeroExistente) {
-        esperaProgresiva(driver(), 3, 5, btnLineaCelularExistente);
-        js().scrollElementTop(btnLineaCelularExistente);
-        String LineaExistente = btnLineaCelularExistente.getText();
-        WebElement detalle;
-        if (LineaExistente.contains("Activo") && LineaExistente.contains(numeroExistente)) {
-            click(btnLineaCelularExistente);
-            detalle = driver().findElement(By.cssSelector(".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .detailHogar"));
-            click(detalle);
-        } else {
-            int i = 2;
-            int reintentos = 5;
-            boolean elementoExistente;
-            while (i < reintentos) {
-                String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
-                WebElement elemento = driver().findElement(By.cssSelector(selector));
-                detalle = driver().findElement(By.cssSelector(".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .detailHogar"));
-                elementoExistente = waitUntilElementIsVisible(elemento, 4).isDisplayed();
-                if (elementoExistente) {
-                    js().scrollElementTop(elemento);
-                    if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
-                        click(elemento);
-                        js().scrollElementTop(detalle);
-                        click(detalle);
                         break;
                     } else {
                         i++;
@@ -443,14 +409,6 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
     }
 
-    public void selectLineWithNumber(String number) {
-        seleccionarPlanCargarDeuda(number);
-        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
-        js().scrollElementTop(numberLine);
-        numberLine.click();
-        logInfo("Click in line", number);
-    }
-
     public void esperarBtnCardPlanActual() {
         UtilWeb.waitForSeconds(1);
         js().scrollElementTop(find().getElementByCss("h1.titleForm"));
@@ -462,17 +420,6 @@ public class ParkPage extends WebBase {
         esperaProgresiva(driver(), 3, 5, btnCardPlanActual);
         js().scrollElementTop(btnCardPlanActual);
         click(btnCardPlanActual);
-        UtilWeb.waitForSeconds(1);
-    }
-
-    public void clickBtnRenovarPlan() {
-        revisarModalError(driver());
-        UtilWeb.waitForSeconds(10);
-        revisarModalError(driver());
-        esperaProgresiva(driver(), 5, 5, btnRenovarPlan);
-        js().scrollElementTop(btnRenovarPlan);
-        logInfo("Click button", btnRenovarPlan.getText());
-        click(btnRenovarPlan);
         UtilWeb.waitForSeconds(1);
     }
 
@@ -636,20 +583,20 @@ public class ParkPage extends WebBase {
         while (cont < 3 && !existe) {
             cont++;
             try {
-                cargarMsgLog(Level.INFO, "Ingreso a validar que se halla cargado el contenido de Deuda del plan");
+                logInfo("Ingreso a validar que se halla cargado el contenido de Deuda del plan");
                 if (cont > 1) {
                     cargaDeDeuda(numeroPlan);
                 }
                 WebElement planCargoDeuda = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/following-sibling::*[contains(@class, 'footer')]/*/*[contains(@class, 'euda')]");
                 if (planCargoDeuda.isDisplayed()) {
-                    cargarMsgLog(Level.INFO, "Se visualizo la Deuda del plan");
+                    logInfo("Se visualizo la Deuda del plan");
                     existe = true;
                 }
             } catch (Exception e) {
-                cargarMsgLog(Level.INFO, "Ingreso a seleccionar Numero: " + numeroPlan);
+                logInfo("Ingreso a seleccionar Numero: " + numeroPlan);
                 WebElement numeroPlanCliente = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
                 click(numeroPlanCliente,5);
-                cargarMsgLog(Level.INFO, "Dio click al Numero: " + numeroPlan + " - Intendo N°" + cont);
+                logInfo("Dio click al Numero: " + numeroPlan + " - Intendo N°" + cont);
             }
         }
     }
@@ -659,7 +606,7 @@ public class ParkPage extends WebBase {
      * */
 
     public void cargaDeDeuda(String numeroPlan) {
-        cargarMsgLog(Level.INFO, "Ingreso a visualizar la barra cargando de deuda");
+        logInfo("Ingreso a visualizar la barra cargando de deuda");
         int cont = 0;
         boolean existe = false;
         while (cont < 300 && !existe){
@@ -667,10 +614,10 @@ public class ParkPage extends WebBase {
             try {
                 WebElement barraCargando = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/following-sibling::*[contains(@class, 'footer')]/*/*[contains(@class, 'loader')]");
                 if (barraCargando.isDisplayed()) {
-                    cargarMsgLog(Level.INFO, "SE VISUALIZA BARRA CARGANDO DEUDA ... N°" + cont);
+                    logInfo("SE VISUALIZA BARRA CARGANDO DEUDA ... N°" + cont);
                 }
             } catch (Exception e) {
-                cargarMsgLog(Level.INFO, "NO SE VISUALIZA LA BARRA CARGANDO DEUDA");
+                logInfo("NO SE VISUALIZA LA BARRA CARGANDO DEUDA");
                 existe = true;
             }
         }
@@ -682,13 +629,13 @@ public class ParkPage extends WebBase {
 
     public void visualizarLinea(String numeroPlan) {
         try {
-            cargarMsgLog(Level.INFO, "Ingreso a visualizar si existe Linea");
+            logInfo("Ingreso a visualizar si existe Linea");
             WebElement linea = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
             if (linea.isDisplayed()) {
-                cargarMsgLog(Level.INFO, "Linea - " + numeroPlan + " - existe");
+                logInfo("Linea - " + numeroPlan + " - existe");
             }
         } catch (Exception e) {
-            cargarMsgLog(Level.INFO, "Ingreso a dar click a VER MAS");
+            logInfo("Ingreso a dar click a VER MAS");
             view.temporalPage().visualizarBtnCargarMas();
         }
     }
@@ -713,5 +660,79 @@ public class ParkPage extends WebBase {
         WebElement showOffer = explicitWaitCss(driver(), 120, btnShowOffers);
         click(showOffer,5);
         logInfo("Dio click al boton Mostrar Ofertas");
+    }
+
+    /**
+     * FUNCION CLICK DETALLE PLAN
+     * */
+
+    public void detalleLineaCelularExistente(String numeroExistente) {
+        view.temporalPage().clickBtnReintentar();
+        visualizarLinea(numeroExistente);
+        logInfo("Ingreso a visualizar la linea a ver su detalle de plan");
+        int i = 1;
+        int cantidadMovil = listaLineasMovil.size();
+        boolean elementoExistente = false;
+        while (i <= cantidadMovil && !elementoExistente) {
+            try {
+                logInfo("Se inicia recorrido N°" + i + " para la busqueda del plan con Numero - " + numeroExistente);
+                String selector = ".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .container";
+                WebElement elemento = driver().findElement(By.cssSelector(selector));
+                WebElement detalle = driver().findElement(By.cssSelector(".stl_position_movil:nth-child(2) app-card-line:nth-child(" + i + ") .detailHogar"));
+                waitUntilElementIsVisible(elemento, 5).isDisplayed();
+                logInfo("Se encontro Linea con Numero - " + numeroExistente);
+                js().scrollElementTop(elemento);
+                if (elemento.getText().contains("Activo") && elemento.getText().contains(numeroExistente)) {
+                    logInfo("Se procede a realizar click al card con el numero de linea - " + numeroExistente);
+                    click(elemento,5);
+                    if (i > 1) {
+                        miScenario.printFullView();
+                    }
+                    js().scrollElementTop(detalle);
+                    logInfo("Se procede a realizar click al detalle de plan del card con el numero de linea - " + numeroExistente);
+                    click(detalle,5);
+                    view.temporalPage().clickBtnReintentar();
+                    miScenario.printFullView();
+                    elementoExistente = true;
+                } else {
+                    i++;
+                }
+            } catch (Exception e) {
+                i++;
+                logInfo("NO SE ENCONTRO ELEMENTO CON NUMERO - " + numeroExistente);
+                logSevere("ERROR - " + e.getMessage());
+                if (i == cantidadMovil + 1) {
+                    logInfo("Se supero los reintentos - Error - Linea con Numero - " + numeroExistente + " - no encontrado - Se procede a cerrar la ventana");
+                    driver().quit();
+                }
+            }
+        }
+    }
+
+    /**
+     * FUNCION RENOVAR PLAN - POR DETALLE DE PLAN
+     * */
+
+    public void clickBtnRenovarPlan() {
+        logInfo("Ingreso a visualizar al Boton de Renovacion");
+        waitUntilElementIsClickable(btnRenovarPlan,15);
+        logInfo("Se visualizo el contenido del boton de Renovacion");
+        js().scrollElementTop(btnRenovarPlan);
+        logInfo("Click button", btnRenovarPlan.getText());
+        miScenario.printFullView();
+        click(btnRenovarPlan,5);
+    }
+
+    /**
+     * FUNCION SELECCIONAR LINEA
+     * */
+
+    public void selectLineWithNumber(String number) {
+        seleccionarPlanCargarDeuda(number);
+        WebElement numberLine = find().getElementByXPath("(//*[contains(text(),'" + number + "')]/ancestor::div[contains(@class,'content') or contains(@class,'contenedor')]/div)[1]");
+        js().scrollElementTop(numberLine);
+        numberLine.click();
+        miScenario.printFullView();
+        logInfo("Click in line", number);
     }
 }

@@ -2,7 +2,6 @@ package com.tdp.ct.web.glue;
 
 import com.tdp.ct.web.model.Cliente;
 import com.tdp.ct.web.service.RetentionService;
-import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.CheckoutStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -16,7 +15,6 @@ public class CheckoutStepDefinition {
 
     @Autowired
     private CheckoutStep checkoutStep;
-
     @Autowired
     private Cliente cliente;
     private Scenario scenario;
@@ -92,8 +90,6 @@ public class CheckoutStepDefinition {
 
     @Entonces("visualizo en pantalla el mensaje de exito de la venta generada")
     public void visualizoEnPantallaElMensajeDeExitoDeLaVentaGenerada() {
-        UtilWeb.waitForSeconds(10); // TEST, Mejorar validacion de carga de pagina
-
         executeIfRetention(() -> checkoutStep.clickBotonRegistrarVenta());
         checkoutStep.validateTheBillingCycle();
         checkoutStep.validateRegistrationHasBeenSuccessful();

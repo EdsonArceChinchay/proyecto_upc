@@ -36,12 +36,6 @@ public class ParkStepDefinition {
         parkStep.clickBtnVerDetalle(nroServicio);
     }
 
-    @Y("selecciono la linea con numero {string}")
-    public void seleccionoLaLineaConNumero(String number) {
-        parkStep.scrollToLabelSelectService();
-        parkStep.selectLineWithNumber(number);
-    }
-
     @Y("selecciono el servicio mono {string} y  el servicio duo {string} a paquetizar")
     public void selecciono_el_mono_y_duo_a_paquetizar(String mono, String duo) {
         parkStep.scrollToLabelSelectService();
@@ -70,12 +64,6 @@ public class ParkStepDefinition {
     public void seleccionaElBotonDelNumeroDelPlanMtExistente(String numeroExistente) {
         parkStep.scrollToLabelSelectService();
         parkStep.btnPlanMtExistente(numeroExistente.trim());
-    }
-
-    @Y("selecciona el boton de detalle del numero de celular existente {string}")
-    public void seleccionaElBotonDeDetalleDelNumeroDeCelularExistente(String numeroExistente) {
-        parkStep.scrollToLabelSelectService();
-        parkStep.btnDetalleLineaCelularExistente(numeroExistente.trim());
     }
 
     @Y("selecciono el boton de la Linea Movil Existente")
@@ -121,11 +109,6 @@ public class ParkStepDefinition {
         parkStep.scrollToLabelSelectService();
         //parkStep.esperarBtnCardPlanActual();
         parkStep.clickBtnCardPlanActual();
-        parkStep.clickBtnRenovarPlan();
-    }
-
-    @Y("presiono el boton Renovar Plan")
-    public void presionoElBtnRenovarPlan() {
         parkStep.clickBtnRenovarPlan();
     }
 
@@ -222,5 +205,34 @@ public class ParkStepDefinition {
     public void seleccionoElBotonMostrarOfertas() {
         parkStep.scrollToLabelSelectService();
         parkStep.btnMostrar();
+    }
+
+    /**
+     * FUNCION CLICK DETALLE PLAN
+     * */
+
+    @Y("selecciona el boton de detalle del numero de celular existente {string}")
+    public void seleccionaElBotonDeDetalleDelNumeroDeCelularExistente(String numeroExistente) {
+        parkStep.scrollToLabelSelectService();
+        parkStep.btnDetalleLineaCelularExistente(numeroExistente.trim());
+    }
+
+    /**
+     * FUNCION RENOVAR PLAN - POR DETALLE DE PLAN
+     * */
+
+    @Y("presiono el boton Renovar Plan")
+    public void presionoElBtnRenovarPlan() {
+        parkStep.clickBtnRenovarPlan();
+    }
+
+    /**
+     * FUNCION SELECCIONAR LINEA
+     * */
+
+    @Y("selecciono la linea con numero {string}")
+    public void seleccionoLaLineaConNumero(String number) {
+        parkStep.scrollToLabelSelectService();
+        parkStep.selectLineWithNumber(number);
     }
 }

@@ -1,5 +1,7 @@
 package com.tdp.ct.web.step;
 
+import com.tdp.ct.web.builder.AgentBuilder;
+import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.model.Customer;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotAfter;
@@ -12,6 +14,9 @@ public class LoginBerserkerStep {
 
     @Autowired
     private StepPages page;
+
+    @Autowired
+    protected AgentBuilder agentBuilder;
 
     @Autowired
     private Customer customer;
@@ -73,5 +78,19 @@ public class LoginBerserkerStep {
             page.captchaPage().updateAndTypeCaptcha();
             page.loginBerserkerPage().clickOnContinueButton();
         }
+    }
+
+    /**
+     * FUNCION VISUALIZAR MENSAJE DE BIENVENIDA
+     * */
+
+    public void initializeAgent(Agent agent) {
+        AgentBuilder.initializeAgent(agent);
+        agentBuilder.modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
+        agent.setRetention(AgentBuilder.isRetention());
+    }
+
+    public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
+        page.loginBerserkerPage().validateHomeMessage(msg, tipoUsuario, userName, passwordUser);
     }
 }

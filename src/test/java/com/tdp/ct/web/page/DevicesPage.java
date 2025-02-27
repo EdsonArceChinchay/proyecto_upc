@@ -22,37 +22,33 @@ public class DevicesPage extends WebBase {
 
     @FindBy(css = "[class='option-boxes'] div")
     protected List<WebElement> listTypeOfPayment;
-
     @FindBy(css = ".col-2 ._info")
     protected WebElement featureContent;
-
     @FindBy(css = "tdp-st-button[label='Seleccionar']")
     protected WebElement btnSelect;
-
     @FindBy(xpath = "(//tdp-st-button[@label='Seleccionar equipo'])[1]")
     protected WebElement btnSelectDevice;
-
     @FindBy(css = "tdp-st-input-text[formcontrolname=\"name\"]")
     protected WebElement inputDevice;
-
     @FindBy(css = ".btn-detail tdp-st-button")
     protected WebElement btnSeeDetail;
-
     @FindBy(xpath = "//div[@class='stl_plan_actual' and contains(text(),'PLAN ACTUAL')]")
     protected WebElement lblCurrentPlan;
-
     @FindBy(xpath = "//span[@class='itemPriceEquip' and contains(text(),' Precio')]")
     protected WebElement lblDevicePaymentDetail;
-
     @FindBy(xpath = "(//div[@class='_item-device']/h3)")
     protected List<WebElement> deviceList;
 
-//    public void selectTypeOfPayment(String payment) {
-//        esperaProgresiva(driver(), 5, 5, listTypeOfPayment.get(0));
-//        js().scrollElementTop(listTypeOfPayment.get(0));
-//        selectElement(listTypeOfPayment, payment);
-//        UtilWeb.waitForSeconds(5);
-//    }
+    // VENTANA EMERGENTE DE EQUIPO SIN STOCK
+    @FindBy(xpath = "//*[contains(normalize-space(text()), 'Equipo No Disponible')]")
+    protected WebElement titleEquipoNoDisponible;
+    @FindBy(xpath = "//*[contains(normalize-space(text()), 'Equipo No Disponible')]/parent::*/following-sibling::*/*[contains(@class, 'detail')]/*/*[contains(@class, 'format')]")
+    protected WebElement obtenerNombreEquipoNoDisponible;
+    @FindBy(xpath = "//*[contains(normalize-space(text()), 'ELEGIR OTRO')] | //*[contains(normalize-space(text()), 'legir otro')]")
+    protected WebElement btnElegirOtroEquipo;
+
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public void selectTypeOfPayment(String payment) {
         boolean typePaymentMethod = false;
@@ -145,6 +141,25 @@ public class DevicesPage extends WebBase {
                         deviceList.indexOf(element) + "].shadowRoot.querySelector(\"button > div\").click()");
                 break;
             }
+        }
+    }
+
+    /**
+     * FUNCION VALIDAR STOCK EQUIPO
+     * */
+
+    public void clickBtnSeeDeviceDetails() {
+        try {
+            logInfo("Ingreso a visualizar si existe stock del equipo movil");
+            if (titleEquipoNoDisponible.isDisplayed()) {
+                miScenario.printFullView();
+                String nombreEquipoMovil = obtenerNombreEquipoNoDisponible.getText().trim();
+                logInfo("No hay stock disponible para el Equipo Movil - " + nombreEquipoMovil);
+                logInfo("Se procede a finalizar el script");
+                driver().quit();
+            }
+        } catch (Exception e) {
+            logInfo("No se visualizo alerta de equipo movil sin stock");
         }
     }
 }
