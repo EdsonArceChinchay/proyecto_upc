@@ -106,6 +106,8 @@ public class CheckoutStep {
         } else {
             logInfo("ERROR - Codigo de Venta - Null");
         }
+        logInfo("Se finalizo recorrido para SALES CODE");
+        logInfo("Sales code obtenido es: " + salesCode);
         return salesCode == null ? " " : salesCode;
     }
 

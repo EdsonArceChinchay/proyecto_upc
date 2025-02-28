@@ -545,26 +545,26 @@ public class DataClientePage extends WebBase {
 
     public void barraCargando() {
         UtilWeb.waitForSeconds(4);
-        boolean noExiste = false;
-        int cont = 1;
-        while (!noExiste && cont <= 15) {
+        boolean noExisteBtnReintento = false;
+        int contadorBtnReintento = 1;
+        while (!noExisteBtnReintento && contadorBtnReintento <= 15) {
             try {
                 if (titleCargando.isDisplayed()) {
-                    cargarMsgLog(Level.INFO,"Se visualizo la barra cargando N° " + cont);
+                    cargarMsgLog(Level.INFO,"Se visualizo la barra cargando N° " + contadorBtnReintento);
                     UtilWeb.waitForSeconds(2);
                     try {
                         if (titlesBtnsCargando.isDisplayed()) {
                             cargarMsgLog(Level.INFO,"CARGANDO ... FIN ...");
-                            noExiste = true;
+                            noExisteBtnReintento = true;
                         }
                     } catch (Exception e) {
                         cargarMsgLog(Level.INFO,"CARGANDO ...");
                     }
                 }
-                cont++;
+                contadorBtnReintento++;
             } catch (Exception e) {
                 cargarMsgLog(Level.INFO,"No se visualiza la barra cargando");
-                noExiste = true;
+                noExisteBtnReintento = true;
             }
         }
     }

@@ -3,6 +3,8 @@ package com.tdp.ct.web.step;
 import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.aspect.evidence.ScreenShotBefore;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,7 @@ import java.util.Map;
 @Component
 public class AltaMovilSoloSimCallCenterStep {
 
+    private static final Logger log = LoggerFactory.getLogger(AltaMovilSoloSimCallCenterStep.class);
     @Autowired
     private StepPages page;
 
