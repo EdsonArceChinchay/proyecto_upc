@@ -96,10 +96,14 @@ public class ServiceTest {
     }
 
     public Map<String, String> getSalesLead(String salesCode) {
+        logInfo("Ingreso a obtener los datos del servicio por medio de CURL");
         String FE = salesCode.trim();
+        logInfo("Codigo FE es: " + FE);
         Map<String, String> parameter = new HashMap<>();
 
         if (!FE.isEmpty()) {
+            logInfo("Ingreso a validar el servicio AKS");
+            logInfo("Servicio a validar es: " + URL_AKS + "fesimple/v2/saleslead/" + FE);
             String response = apiClient.get(URL_AKS + "fesimple/v2/saleslead/" + FE, headerService.getAksBerserkersHeaders());
             logInfo("Response FE: " + response);
             JSONArray additionalData = null;

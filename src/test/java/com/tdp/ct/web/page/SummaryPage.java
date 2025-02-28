@@ -128,6 +128,6 @@ public class SummaryPage extends WebBase {
         miScenario.printFullView();
         click(btnStartRegister,5);
         logInfo("Se dio click al boton de INICIAR REGISTRO");
-        view.temporalPage().clickBtnReintentar();
+        view.temporalPage().barraCargando();
     }
 }

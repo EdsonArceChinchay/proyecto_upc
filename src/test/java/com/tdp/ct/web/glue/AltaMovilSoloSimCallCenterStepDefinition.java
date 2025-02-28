@@ -112,10 +112,15 @@ public class AltaMovilSoloSimCallCenterStepDefinition {
     @Y("valido que CAEQ:{string}, CAPL: {string} y CASI:{string} en el response del salesLead")
     public void validoQueCAEQCAPLYCASIEnElResponseDelSales(String valueCAEQ, String valueCAPL, String valueCASI) {
         String salesCode = checkoutStep.getSalesCode();
+        logInfo("Paso recorrido de obtencion de Sales Code");
         salesCode = salesCode == null ? customer.getSalesCode() : salesCode;
+        logInfo("Paso la validacion de Sales Code si es null o no");
         this.scenario.log("[Código de Venta: " + salesCode + "]");
+        logInfo("Paso el this.scenario de Codigo de Venta");
         altaMovilSoloSimCallCenterStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, altaMovilSoloSimCallCenterStep.getSalesLead(salesCode));
+        logInfo("Paso la Funcion de: altaMovilSoloSimCallCenterStep.validoQueCAEQCAPLYCASIEnElResponseDelSales(valueCAEQ, valueCAPL, valueCASI, altaMovilSoloSimCallCenterStep.getSalesLead(salesCode))");
         this.scenario.log(altaMovilSoloSimCallCenterStep.getSalesLead(salesCode).toString());
+        logInfo("Paso el this.scneario de altaMovilSoloSimCallCenterStep.getSalesLead(salesCode).toString()");
     }
 
     @Y("selecciono un plan {string} movil")
