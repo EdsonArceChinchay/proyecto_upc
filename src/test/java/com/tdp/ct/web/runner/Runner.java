@@ -19,7 +19,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@MVP15"
+        tags = "@Alta_Postpago_sim_CC"
 )
 class Runner {
 
