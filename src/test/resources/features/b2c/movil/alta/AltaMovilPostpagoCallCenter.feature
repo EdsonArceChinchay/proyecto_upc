@@ -79,7 +79,7 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y valido que se muestre el detalle del pedido de "Información adicional"
     Dado regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y valido que se presente el canal "<channelType>"
     Y me dirijo a la bandeja de Back Office
     Y busco por "codigo de venta"
     Y selecciono la solicitud

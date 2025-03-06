@@ -43,7 +43,7 @@ Característica: AT-DT009_Alta fija mono Internet a cliente con CE por canal Tie
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | bloque | piso | int | conjunto                 | conjHabit |
       | A  |              |                | 1      | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -76,5 +76,5 @@ Característica: AT-DT009_Alta fija mono Internet a cliente con CE por canal Tie
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan        |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1423432127     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | tipoPlan | nombrePlan        |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | CE           | 1423432127     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Mono     | INTERNET MOVISTAR |

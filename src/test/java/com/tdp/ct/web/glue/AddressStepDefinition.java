@@ -7,6 +7,8 @@ import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Objects;
+
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
 
 public class AddressStepDefinition {
@@ -67,8 +69,10 @@ public class AddressStepDefinition {
         validateInputsAddress(apple, lot, floor, inside, null, null, null, housingComplexe, housingComplexName);
     }
 
-    @Y("ingreso la informacion del lugar de instalacion")
-    public void iingreso_la_informacion_del_lugar_de_instalacion(DataTable dirInstalacion) {
+    @Y("{string} ingreso la informacion del lugar de instalacion")
+    public void iingreso_la_informacion_del_lugar_de_instalacion(String insertarDireccion,DataTable dirInstalacion) {
+        String insertar = insertarDireccion.trim().toUpperCase();
+        logInfo("Selecciono " + insertar + " - Insertar Direccion");
         String apple = UtilWeb.getValueFromDataTable(dirInstalacion, "mz");
         String lot = UtilWeb.getValueFromDataTable(dirInstalacion, "lote");
         String houseType = UtilWeb.getValueFromDataTable(dirInstalacion, "tipoVivienda");
@@ -78,7 +82,9 @@ public class AddressStepDefinition {
         String housingComplexe = UtilWeb.getValueFromDataTable(dirInstalacion, "conjunto");
         String housingComplexName = UtilWeb.getValueFromDataTable(dirInstalacion, "conjHabit");
         String block = UtilWeb.getValueFromDataTable(dirInstalacion, "bloque");
-        validateInputsAddress(apple, lot, floor, inside, block, houseType, houseName, housingComplexe, housingComplexName);
+        if (Objects.equals(insertar, "SI")) {
+            validateInputsAddress(apple, lot, floor, inside, block, houseType, houseName, housingComplexe, housingComplexName);
+        }
     }
 
     @Y("ingresamos la Manzana o bloque {string}")

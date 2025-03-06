@@ -55,7 +55,7 @@ Característica: AT-DT037_Alta MT (Alta fija + alta movil) + SVA a cliente con D
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
@@ -92,5 +92,5 @@ Característica: AT-DT037_Alta MT (Alta fija + alta movil) + SVA a cliente con D
     Entonces apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío MT  | Trio     | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | sva                   | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | planType | planName | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | PACK ANTIVIRUS MCAFEE | DNI          | 46325790       | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | Inkafarma  | Trío MT  | Trio     | YOLANDA     | ABRAHAM     | PUEBLO LIBRE |

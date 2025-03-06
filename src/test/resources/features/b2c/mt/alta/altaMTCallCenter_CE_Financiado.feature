@@ -64,7 +64,7 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit | lote |
       | A  | TORRE        | ALEX MANCILLA  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     | 2    |
     Y        presiono el boton Confirmar ubicacion
@@ -102,5 +102,5 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1400001091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1400001091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |

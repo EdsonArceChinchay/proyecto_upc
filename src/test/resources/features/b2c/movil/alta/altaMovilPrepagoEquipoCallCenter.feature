@@ -57,7 +57,7 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo a cliente con CE por can
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
       | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
@@ -91,5 +91,5 @@ Característica: AT-DT098_Alta Movil Prepago con Equipo a cliente con CE por can
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464781     | PREPAGO   | Preplan    | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | planMovil | tipoPlanes | departamento | provincia | distrito | direccion                         | referencia | timpoPermanencia | nombreEquipo                      | tipoPago   |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1042464781     | PREPAGO   | Preplan    | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | INKAFARMA  | Sin permanencia  | SAMSUNG GXY A34 NEGRO A346M 128GB | Al Contado |

@@ -115,17 +115,23 @@ public class LoginBerserkerPage extends WebBase {
         int attempt = 0;
         boolean isMatched = false;
 
-        while (attempt < maxAttempts && !isMatched) {
+        while (attempt <= maxAttempts && !isMatched) {
+            attempt++;
             try {
                 // Verificar si existe un modal de error y cerrarlo
+                logInfo("Ingreso a revisar el Modal de Error del Menaje de Bienvenida");
                 Addons.revisarModalError(driver());
 
+                logInfo("Ingreso a la Funcion de Barra Cargando");
+                view.temporalPage().barraCargando();
+
                 // Intentar encontrar el mensaje de bienvenida
+                logInfo("Ingreso a la funcion de ExplicitWait");
                 WebElement message = explicitWaitCss(driver(), 30, ".message-welcome span");
                 compareWebElementTextAndString(message, msg);
 
                 // Verificar mensaje adicional, si aplica
-                esperaProgresiva(driver(), 5, 2, msgHome);
+                // esperaProgresiva(driver(), 5, 2, msgHome);
                 compareWebElementTextAndString(msgHome, msg);
 
                 // Si no lanza excepción, el texto coincide
@@ -142,11 +148,10 @@ public class LoginBerserkerPage extends WebBase {
             }
 
             if (!isMatched) {
-                attempt++;
                 if (attempt < maxAttempts) {
                     // Regresar a la página y reintentar
+                    logInfo("Se procede a Reintentar el Login... - Reintento N°" + attempt);
                     reintentarLogin(tipoUsuario, userName, passwordUser);
-                    logInfo("Página refrescada. Reintentando...");
                 } else {
                     // Agotar intentos
                     throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");

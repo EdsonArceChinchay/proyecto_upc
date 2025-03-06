@@ -43,7 +43,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -81,7 +81,7 @@ Característica: AT-DT017_Alta Fija Trio con SVA Bloque HBO a cliente con CE por
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                  | bloque | correo           |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1022102007     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | PISO 1     | TRIO MOV. VOZ INT. ESTANDAR | HBO    | correo@gmail.com |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan                  | bloque | correo           |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | CE           | 1022102007     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | PISO 1     | TRIO MOV. VOZ INT. ESTANDAR | HBO    | correo@gmail.com |
 
 

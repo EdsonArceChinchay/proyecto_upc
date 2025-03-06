@@ -41,7 +41,7 @@ Característica: AT-DT042_Alta MT (Alta fija + alta movil) + SVA a cliente con D
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -81,7 +81,7 @@ Característica: AT-DT042_Alta MT (Alta fija + alta movil) + SVA a cliente con D
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | planType | planName | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | DNI          | 70501364       | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia | planType | planName | tipoValidacion | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | DNI          | 70501364       | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | INKAFARMA  | Mono MT  | Mono BA  | discapacitado  | VICTORIA    | ERNESTO     | ACORA       |
 
 

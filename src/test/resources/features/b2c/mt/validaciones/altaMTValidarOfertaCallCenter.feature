@@ -49,7 +49,7 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-#   Y        ingreso la informacion del lugar de instalacion
+#   Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
 #      | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
 #      | A  | casa     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton consultar cobertura
@@ -61,5 +61,5 @@ Característica: Visualizacion de Ofertas MT - CE por Call Center
     Y        selecciono ir a Movistar Total
 
     Ejemplos:
-      | userType | userName     | password         | msgHome    | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | CE           | 1100000761     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MBPS       |
+      | userType | userName     | password         | msgHome    | insertarDireccion | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | nombrePlan |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | SI                | CE           | 1100000761     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | MBPS       |

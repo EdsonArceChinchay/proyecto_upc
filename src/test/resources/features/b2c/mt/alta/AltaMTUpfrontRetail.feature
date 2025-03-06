@@ -43,7 +43,7 @@ Característica: AT-DT040_Alta MT (Alta fija + alta movil) Upfront a cliente con
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -95,5 +95,5 @@ Característica: AT-DT040_Alta MT (Alta fija + alta movil) Upfront a cliente con
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1002569949     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | CASA       | Trío MT  | Trio HD  |
+      | userType | userName    | userPassword    | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
+      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | SI                | Retail      | CE           | 1002569949     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | CASA       | Trío MT  | Trio HD  |

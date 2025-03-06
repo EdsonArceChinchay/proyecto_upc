@@ -43,7 +43,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
       | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -79,5 +79,5 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | RUC          | 20534983612    | 1   | DNI             | 75448387       | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | insertarDireccion | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | SI                | RUC          | 20534983612    | 1   | DNI             | 75448387       | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |

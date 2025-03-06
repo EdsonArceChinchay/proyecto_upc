@@ -43,7 +43,7 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
       | A  | 1    | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -80,6 +80,6 @@ Característica: AT-DT010_Alta fija Internet mas SVA HBO a cliente con CE por ca
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlan | nombrePlan |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion                     | referencia | tipoPlan | nombrePlan |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | CE           | 1042464815     | LIMA         | LIMA      | SAN MIGUEL | CALLE CONDESA DE CHINCHON 107 | INKAFARMA  | Mono     | TV         |
 

@@ -46,7 +46,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                | 1    | 3   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -82,5 +82,5 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100000439     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono   | INTERNET MOVISTAR RA   |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName             |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100000439     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono     | INTERNET MOVISTAR RA |
