@@ -20,13 +20,13 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
   Esquema del escenario: Alta movil postpago a cliente con CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA              | HU          | Test        | Transaccion         | Tipo Venta | Tags                  |
-      | Jesus Abel Tornero Rojas | TIQLT-27350 | TIQLT-27350 | Alta movil postpago | Contado    | @Alta_Postpago_sim_CC |
+      | Analista QA     | HU          | Test        | Transaccion         | Tipo Venta | Tags                  |
+      | Giancarlo Rosas | TIQLT-XXXXX | TIQLT-XXXXX | Alta movil postpago | Contado    | @Alta_Postpago_sim_CC |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
     Y ingreso el password "<userPassword>"
-    Y ingreso el captcha
+    #Y ingreso el captcha
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y valido que se presente el canal "<channelType>"
