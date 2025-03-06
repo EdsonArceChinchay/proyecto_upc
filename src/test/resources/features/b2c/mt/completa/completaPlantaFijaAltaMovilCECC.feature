@@ -39,7 +39,7 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
     Y doy click en el boton "Actualizar direccion"
     Y ingreso la referencia de la direccion "."
     Y presiono el boton Consultar ubicacion
-    Y ingreso la informacion del lugar de instalacion
+    Y "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y presiono el boton Consultar cobertura
@@ -73,12 +73,12 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
     Y valido que se muestre el detalle del pedido de "Delivery"
     Y valido que se muestre el detalle del pedido de "Información adicional"
     Dado regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y valido que se presente el canal "<channelType>"
     Y me dirijo a la bandeja de Back Office
     Y busco por "codigo de venta"
     Y selecciono la solicitud
     Y cargo el audio en la web
     Y apruebo la solicitud
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | numeroExistente | correo                    |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | CE           | 1100007777     | Trio       | 14080258        | 1100007777@mailinator.com |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | nombrePlan | numeroExistente | correo                    |
+      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | SI                | Call Center | CE           | 1100007777     | Trio       | 14080258        | 1100007777@mailinator.com |

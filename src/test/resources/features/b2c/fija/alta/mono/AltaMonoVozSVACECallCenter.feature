@@ -43,7 +43,7 @@ Característica: AT-DT093_Alta Mono voz + SVA a cliente con CE por canal Call Ce
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
       | D  | EDIFICIO     | Familia Barrios | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -85,5 +85,5 @@ Característica: AT-DT093_Alta Mono voz + SVA a cliente con CE por canal Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1101000013     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia             | tipoPlan | nombrePlan                    | svaLinea             |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1101000013     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Mono     | LÍNEA TARIFA PLANA LOCAL VOIP | Plan Multidestino 20 |

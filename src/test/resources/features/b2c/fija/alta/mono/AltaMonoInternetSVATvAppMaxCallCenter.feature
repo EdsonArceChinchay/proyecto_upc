@@ -43,7 +43,7 @@ Característica: AT-DT0_Alta Fija Mono Internet + SVA Movistar Tv App Max por ca
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       | D  | 11   | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -85,5 +85,5 @@ Característica: AT-DT0_Alta Fija Mono Internet + SVA Movistar Tv App Max por ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1548787786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan           |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1548787786     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Mono     | INTERNET MOVISTAR RA |

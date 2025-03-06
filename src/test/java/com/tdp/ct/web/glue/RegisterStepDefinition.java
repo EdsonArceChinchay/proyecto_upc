@@ -112,6 +112,9 @@ public class RegisterStepDefinition {
 
     @Y("doy click en validar identidad del titular")
     public void doyClickEnValidarIdentidadDelTitular() {
+        logInfo("###############################");
+        logInfo("SE INGRESA A VALIDAR IDENTIDAD DEL TITULAR");
+        logInfo("###############################");
         executeIfNotRetention(() -> {
             registerStep.clickOnTheValidateHolderIdentityButton();
             isActiveValidateIdentity = registerStep.hasIdentityValidationError();
@@ -119,6 +122,9 @@ public class RegisterStepDefinition {
                 registerStep.clickOnButtonConfirm();
             }
         });
+        logInfo("###############################");
+        logInfo("SE TERMINO DE VALIDAR IDENTIDAD DEL TITULAR");
+        logInfo("###############################");
     }
 
     @Y("elijo el tipo de validacion a realizar {string}")
@@ -136,15 +142,18 @@ public class RegisterStepDefinition {
     public void ingresoLosDatosSolicitadosParaLaValidacionDelCliente(DataTable datos) {
         executeIfNotRetention(() -> {
             if (!isActiveValidateIdentity) {
-                UtilWeb.waitForSeconds(10);
                 for (int i = 0; i < 3; i++) {
+                    logInfo("###############################");
+                    logInfo("SE INGRESA A FORMULARIO N°" + i);
+                    logInfo("###############################");
                     registerStep.ingresarDatosValidacionSolicitada(datos, i);
                     logInfo("-- click en siguiente --");
                     registerStep.clicEnSiguiente();
-                    UtilWeb.waitForSeconds(5);
+                    logInfo("###############################");
+                    logInfo("SE TERMINO FORMULARIO N°" + i);
+                    logInfo("###############################");
                 }
                 logInfo("----- termino preguntas ----------");
-                UtilWeb.waitForSeconds(10);
                 registerStep.clicEnConfirmar();
             } else {
                 scenario.log("This step is skipped");

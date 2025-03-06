@@ -50,7 +50,7 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
@@ -82,8 +82,5 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
 #    Y        apruebo la solicitud
 
     Ejemplos:
-      | userType     | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
-#      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |
-
-#      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000760     | 920371847        | SAMSUNG GXY A34 NEGRO A346M 128GB |
-      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | Call Center | CE           | 1100000765     | 951011708        | OPPO RENO 10 AZUL 256GB 5G |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |

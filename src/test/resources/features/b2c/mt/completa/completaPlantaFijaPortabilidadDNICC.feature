@@ -44,9 +44,13 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y doy click en el boton Siguiente
     Entonces me muestra la pantalla para verificar la direccion
     Y doy click en el boton "Actualizar direccion"
-    Y ingreso la referencia de la direccion "casa"
+    Y selecciono el departamento donde sera la instalacion "LIMA"
+    Y selecciono la provincia donde sera la instalacion "LIMA"
+    Y selecciono el distrito donde sera la instalacion "LINCE"
+    Y ingreso la direccion donde sera la instalacion "JR MARISCAL JUAN MILLER 2236"
+    Y ingreso la referencia de la direccion "."
     Y presiono el boton Consultar ubicacion
-    Y ingreso la informacion del lugar de instalacion
+    Y "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y presiono el boton Consultar cobertura
@@ -87,14 +91,14 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y valido que se muestre el detalle del pedido de "Delivery"
     Y valido que se muestre el detalle del pedido de "Información adicional"
     Dado regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y valido que se presente el canal "<channelType>"
     Y me dirijo a la bandeja de Back Office
     Y busco por "codigo de venta"
     Y selecciono la solicitud
     Y cargo el audio en la web
     Y apruebo la solicitud
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                  | numero    | tipoLinea | operador           | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | DNI          | 47618664       | 47618664@mailinator.com | 920956351 | Postpago  | OPERADOR DE PRUEBA | Postpago | Trio       | YOLANDA     | ROMULO      | BELLAVISTA  | 14352768        |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                  | insertarDireccion | numero    | tipoLinea | operador | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
+      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | DNI          | 76181879       | 76181879@mailinator.com | No                | 902921279 | Prepago   | ENTEL    | Postpago | Duo        | ROSA        | BRADY       | CHEPEN      | 5010320750      |
 
 

@@ -47,7 +47,7 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
     Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
@@ -79,5 +79,5 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | documentType | documentNumber | EncontrarCelular |
-      | userType | userNameCC | userPasswordCC | CE           | 461960085      | 650029859        |
+      | userType | userName   | userPassword   | insertarDireccion | documentType | documentNumber | EncontrarCelular |
+      | userType | userNameCC | userPasswordCC | SI                | CE           | 461960085      | 650029859        |

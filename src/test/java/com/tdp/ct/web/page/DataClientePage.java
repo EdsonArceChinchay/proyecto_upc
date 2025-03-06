@@ -3214,6 +3214,16 @@ public class DataClientePage extends WebBase {
     }
 
     /**
+     * FUNCION - CLICK BOTON ESCAPE
+     * */
+
+    public void botonEscape() {
+        cargarMsgLog(Level.INFO, "Ingreso a dar click al boton ESCAPE");
+        action.sendKeys(Keys.ESCAPE).build().perform();
+        cargarMsgLog(Level.INFO, "DIO click al boton ESCAPE");
+    }
+
+    /**
      * FUNCION - CREAR EXCEL
      * */
 

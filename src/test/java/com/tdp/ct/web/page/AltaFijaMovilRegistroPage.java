@@ -57,9 +57,10 @@ public class AltaFijaMovilRegistroPage extends WebBase {
     ManageScenario miScenario = new ManageScenario();
 
     public void clickOnTheValidateHolderIdentityButton() {
-        esperaProgresiva(driver(), 6, 5, buttonValidarIdentidad);
+        esperaProgresiva(driver(), 6, 2, buttonValidarIdentidad);
+        waitUntilElementIsVisible(buttonValidarIdentidad, 10);
         js().scrollElementTop(buttonValidarIdentidad);
-        waitUntilElementIsVisible(buttonValidarIdentidad, 10).click();
+        click(buttonValidarIdentidad,5);
         UtilWeb.waitForSeconds(1);
     }
 
