@@ -43,7 +43,7 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA Movistar TV App por can
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |      |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -80,5 +80,5 @@ Característica: AT-DT00_Alta Duo (Voz + Internet) + SVA Movistar TV App por can
     Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1021303091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                | referencia | tipoPlan | nombrePlan                |
+      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | CE           | 1021303091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 | casa       | Duo      | DUO MOVISTAR VOZ INTERNET |

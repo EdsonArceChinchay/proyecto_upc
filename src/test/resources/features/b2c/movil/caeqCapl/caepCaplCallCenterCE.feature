@@ -49,7 +49,7 @@ Característica: AT-DT045_Caeq Mas Capl por canal Call Center
     Y        ingreso la direccion donde sera la instalacion "Jiron Julio Cesar Tello 469"
     Y        ingreso la referencia de la direccion "Esquina"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A  | EDIFICIO     | Tello          | 2    | 3   | URBANIZACION POPULAR | A         |
     Y        presiono el boton Confirmar ubicacion
@@ -80,5 +80,5 @@ Característica: AT-DT045_Caeq Mas Capl por canal Call Center
     Y        cargo el audio en la web
     Y        apruebo la solicitud
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465134     |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1042465134     |

@@ -37,11 +37,6 @@ public class PortabilityStepDefinition {
         portabilityStep.clickBotonPortabilidad();
     }
 
-    @Y("ingreso numero de telefono para portar {string}")
-    public void ingresoNumeroDeTelefonoParaPortar(String phoneNumber) {
-        portabilityStep.typePhoneNumber(phoneNumber);
-    }
-
     @Y("escojo tipo de linea {string}")
     public void escojoTipoDeLinea(String plan) {
         portabilityStep.selectLineType(plan);
@@ -118,5 +113,14 @@ public class PortabilityStepDefinition {
     public void validoElServicioDeStatusDePortabilidad(DataTable dataTable) {
         serviceTest.serviceManager("");
         serviceTest.receiveMessage(dataTable);
+    }
+
+    /**
+     * FUNCION PANTALLA DE PROTABILIDAD
+     * */
+
+    @Y("ingreso numero de telefono para portar {string}")
+    public void ingresoNumeroDeTelefonoParaPortar(String phoneNumber) {
+        portabilityStep.typePhoneNumber(phoneNumber);
     }
 }

@@ -43,7 +43,7 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | lote | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |      |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -80,5 +80,5 @@ Característica: AT-DT094_Alta trio con direccion pangea
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 166268244      | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion             | referencia             | tipoPlan | nombrePlan                  |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 166268244      | LIMA         | LIMA      | LINCE    | JULIO CESAR TELLO 469 | AL FRENTE DE LA BOTICA | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

@@ -43,7 +43,7 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por canal C
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
@@ -87,5 +87,5 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por canal C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 100712890      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 100712890      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |

@@ -46,7 +46,7 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit  |
       | D  | EDIFICIO     | Familia Lopez  | 3    | 2   | URBANIZACION POPULAR | conjunto c |
     Y        presiono el boton Consultar cobertura
@@ -90,5 +90,5 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |

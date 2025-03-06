@@ -42,6 +42,9 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     @FindBy(xpath = "//button[@type='submit']")
     protected WebElement btnConsultarCobertura;
 
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
+
     public void scrollUP() {
         revisarModalError(driver());
         UtilWeb.waitForSeconds(10);//10
@@ -75,6 +78,8 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
     }
 
     public void listaOfertas(String planOfertas, ManageScenario scenario) {
+
+        seleccionarTipoPlan(planOfertas.trim());
 
         String expectedOffer = planOfertas.trim().toUpperCase();
         esperaProgresiva(driver(), 5, 2, elementoSeleccionar);
@@ -197,5 +202,28 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         esperaProgresiva(driver(), 5, 6, btnIrAMovistar);
         btnIrAMovistar.click();
         UtilWeb.waitForSeconds(5);
+    }
+
+    /**
+     * FUNCION SELECCIONAR TIPO DE PLAN
+     * Trío, Duo y Mono
+     * */
+
+    public void seleccionarTipoPlan(String tipoPlan) {
+        logInfo("Ingreso a Seleccion el tipo de plan: " + tipoPlan);
+        WebElement tipoDePlan;
+        try {
+            logInfo("Ingreso a Validar si el boton: " + tipoPlan + " - ya se encuentra seleccionado");
+            tipoDePlan = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ tipoPlan +"') and contains(@class, 'ctive')]");
+            boolean activoBoton = tipoDePlan.isDisplayed();
+            logInfo("Boton " + tipoPlan + " Activo" + " - Estado: " + activoBoton);
+        } catch (Exception e) {
+            logInfo("Ingreso a Validar si el boton: " + tipoPlan + " - no se encuentra seleccionado");
+            tipoDePlan = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ tipoPlan +"') and contains(@class, 'utton')]");
+            click(tipoDePlan,5);
+            logInfo("Se selecciono el boton: " + tipoPlan);
+            view.temporalPage().barraCargando();
+            miScenario.printFullView();
+        }
     }
 }

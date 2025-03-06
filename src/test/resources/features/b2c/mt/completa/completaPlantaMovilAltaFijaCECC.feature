@@ -65,7 +65,7 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y valido que se muestre el detalle del pedido de "Información adicional"
     Dado regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y valido que se presente el canal "<channelType>"
     Y me dirijo a la bandeja de Back Office
     Y busco por "codigo de venta"
     Y selecciono la solicitud

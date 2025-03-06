@@ -7,11 +7,10 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import com.tdp.ct.web.utils.MaterialsManager;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -23,6 +22,7 @@ import static com.tdp.ct.web.utils.WebUtils.*;
 
 public class ParkPage extends WebBase {
 
+    private static final Logger log = LoggerFactory.getLogger(ParkPage.class);
     protected final String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
     protected final String btnShowOffers = "div[class='show-offerts']";
     protected final String cartillaHogar = "//app-card-line[1]";
@@ -594,9 +594,13 @@ public class ParkPage extends WebBase {
                 }
             } catch (Exception e) {
                 logInfo("Ingreso a seleccionar Numero: " + numeroPlan);
-                WebElement numeroPlanCliente = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
-                click(numeroPlanCliente,5);
-                logInfo("Dio click al Numero: " + numeroPlan + " - Intendo N°" + cont);
+                WebElement detallePlanCliente = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/parent::*/parent::*[contains(@class, 'container')]/*[contains(@class, 'detail')]");
+                logInfo("Ingreso a dar click al Numero: " + numeroPlan);
+                js().scrollElementTop(detallePlanCliente);
+                click(detallePlanCliente,5);
+                view.temporalPage().barraCargando();
+                view.temporalPage().botonEscape();
+                logInfo("Dio click al Detalle Numero: " + numeroPlan + " - Intendo N°" + cont);
             }
         }
     }
@@ -630,7 +634,7 @@ public class ParkPage extends WebBase {
     public void visualizarLinea(String numeroPlan) {
         try {
             logInfo("Ingreso a visualizar si existe Linea");
-            WebElement linea = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]/parent::*/parent::*/following-sibling::*[contains(@class, 'validate')]");
+            WebElement linea = find().getElementByXPath("//*[contains(normalize-space(text()), '"+ numeroPlan +"')]");
             if (linea.isDisplayed()) {
                 logInfo("Linea - " + numeroPlan + " - existe");
             }

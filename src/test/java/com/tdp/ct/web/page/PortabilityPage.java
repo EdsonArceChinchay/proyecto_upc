@@ -1,11 +1,14 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -18,42 +21,33 @@ import static com.tdp.ct.web.utils.WebUtils.validateAndTypeWithAndWithoutShadowR
 
 public class PortabilityPage extends WebBase {
 
+    private static final Logger log = LoggerFactory.getLogger(PortabilityPage.class);
     @FindBy(css = "[type=\"submit\"].button-g, [type=\"submit\"].buttonG")
     protected WebElement btnConsultar;
-
     @FindBy(xpath = "//div[contains(text(),'Portabilidad')]")
     protected WebElement btnPortabilidad;
-
     @FindBy(xpath = "//button[contains(text(),'Portabilidad móvil')]")
     protected WebElement btnPortaMovil;
-
     @FindBy(xpath = "//*[contains(text(),'Validar Código de Portabilidad')]/parent::button")
     protected WebElement btnCodePorta;
-
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Confirmar')]")
     protected WebElement btnConfirm;
-
     @FindBy(xpath = "//div[@class='modal_body']//button[contains(text(),'Continuar')]")
     protected WebElement btnContinue;
-
     @FindBy(css = "tdp-st-input-text[formcontrolname='numTelefono']")
     protected WebElement inputPhoneNumber;
-
     @FindBy(css = "tdp-st-select[formcontrolname='tipoLinea']")
     protected WebElement selectLineType;
-
     @FindBy(css = "tdp-st-select[formcontrolname='tipoOperador']")
     protected WebElement selectOperatorType;
+
+    StepPages view = new StepPages();
+    ManageScenario miScenario = new ManageScenario();
 
     public void clickBotonPortabilidad() {
         esperaProgresiva(driver(), 5, 6, btnPortabilidad);
         js().scrollElementTop(btnPortabilidad);
         click(btnPortabilidad);
-    }
-
-    public void typePhoneNumber(String phoneNumber) {
-        waitUntilElementIsClickable(inputPhoneNumber, 10);
-        validateAndTypeWithAndWithoutShadowRoot("mobile number", inputPhoneNumber, phoneNumber);
     }
 
     public void selectLineType(String plan) {
@@ -143,5 +137,30 @@ public class PortabilityPage extends WebBase {
         WebElement label = find().getElementByXPath("//*[contains(text(),'" + message.trim() + "')]");
         esperaProgresiva(driver(), 5, 6, label);
         Assertions.assertTrue(label.isDisplayed(), "No se muestra en mensaje");
+    }
+
+    /**
+     * FUNCION PANTALLA DE PROTABILIDAD
+     * */
+
+    public void typePhoneNumber(String phoneNumber) {
+        int contador = 0;
+        boolean existeElemento = false;
+        while (contador < 3 && !existeElemento) {
+            contador++;
+            logInfo("Intento N°" + contador + " - Verificacion de Pantalla Direccion");
+            boolean existePantalla = view.addressPage().ventanaActualizarDireccion();
+            logInfo("Paso pantalla de Verificacion de Direccion");
+            logInfo("Estado de pantalla de Verificacion de Direccion es: " + existePantalla);
+            if (existePantalla) {
+                view.addressPage().cerrarPantallaActualizarDireccion();
+                view.parkPage().mostrarOfertas();
+            } else {
+                existeElemento = true;
+            }
+        }
+        waitUntilElementIsClickable(inputPhoneNumber, 10);
+        miScenario.printFullView();
+        validateAndTypeWithAndWithoutShadowRoot("mobile number", inputPhoneNumber, phoneNumber);
     }
 }

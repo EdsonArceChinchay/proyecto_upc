@@ -44,7 +44,7 @@ Característica: AT-DT081_Migracion de Trio a MT por canal Call Center
     Cuando   doy click en el boton Iniciar registro
     Y        ingreso la referencia de la direccion "Inkafarma"
     Y        presiono el boton Consultar ubicacion
-    Y        ingreso la informacion del lugar de instalacion
+    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
       | A1 | EDIFICIO     | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
     Y        presiono el boton Confirmar ubicacion
@@ -71,5 +71,5 @@ Característica: AT-DT081_Migracion de Trio a MT por canal Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42465007       | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | correo           | nombreMadre | nombrePadre | distritoNac | bloque         |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | DNI          | 42465007       | correo@gmail.com | MARIA       | SANTOS      | CASCAS      | Bloque HBO+ RV |

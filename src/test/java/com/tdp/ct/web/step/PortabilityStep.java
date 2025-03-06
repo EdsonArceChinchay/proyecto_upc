@@ -17,12 +17,6 @@ public class PortabilityStep {
         page.portabilityPage().clickBotonPortabilidad();
     }
 
-    @ScreenShotBefore
-    @ScreenShotAfter
-    public void typePhoneNumber(String phoneNumber) {
-        page.portabilityPage().typePhoneNumber(phoneNumber);
-    }
-
     @ScreenShotAfter
     public void selectLineType(String plan) {
         page.portabilityPage().selectLineType(plan);
@@ -79,5 +73,13 @@ public class PortabilityStep {
     @ScreenShotAfter
     public void validateMessage(String message) {
         page.portabilityPage().validateMessage(message);
+    }
+
+    /**
+     * FUNCION PANTALLA DE PROTABILIDAD
+     * */
+
+    public void typePhoneNumber(String phoneNumber) {
+        page.portabilityPage().typePhoneNumber(phoneNumber);
     }
 }

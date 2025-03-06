@@ -42,8 +42,6 @@ public class AddressPage extends WebBase {
     protected WebElement btnConsultLocation;
     @FindBy(xpath = "//div[@class='_title' and contains(text(), 'DE ENTREGA')]")
     protected WebElement titleLugarInstalacionEntrega;
-    @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
-    protected WebElement titleVerificarLugarInstalacion;
     @FindBy(xpath = "(//*[@formcontrolname='longitude'])[1]")
     protected WebElement txtX;
     @FindBy(xpath = "(//*[@formcontrolname='latitude'])[1]")
@@ -74,6 +72,12 @@ public class AddressPage extends WebBase {
     // INSERTAR DISTRITO
     @FindBy(css = "form > div:nth-child(3) > div > tdp-st-select")
     protected WebElement selectDistrict;
+
+    // PANTALLA DE ACTUALIZAR DIRECCION
+    @FindBy(xpath = "//h4[contains(text(), 'Verifica la')]")
+    protected WebElement titleVerificarLugarInstalacion;
+    @FindBy(xpath = "//*[contains(text(), 'Verifica la')]/preceding-sibling::*")
+    protected WebElement cerrarPantallaVerificarLugarInstalacion;
 
     StepPages view = new StepPages();
     ManageScenario miScenario = new ManageScenario();
@@ -374,6 +378,35 @@ public class AddressPage extends WebBase {
         logInfo(String.format("Click button %s", ButtonConsultCoverage.getText()));
         ButtonConsultCoverage.click();
         view.temporalPage().clickBtnReintentar();
+    }
+
+    /**
+     * FUNCION - CUADRO ACTUALIZAR DIRECCION
+     * */
+
+    public boolean ventanaActualizarDireccion() {
+        view.temporalPage().barraCargando();
+        boolean existe = false;
+        try {
+            existe = waitUntilElementIsVisible(titleVerificarLugarInstalacion, 5).isDisplayed();
+            UtilWeb.waitForSeconds(1);
+            logInfo("Cuadro de Direccion es: " + existe);
+        } catch (Exception e) {
+            logInfo("No Existe Cuadro de Direccion");
+            logInfo("Cuadro de Direccion en el catch es: " + existe);
+        }
+        return existe;
+    }
+
+    /**
+     * FUNCION - CERRAR CUADRO ACTUALIZAR DIRECCION
+     * */
+
+    public void cerrarPantallaActualizarDireccion() {
+        logInfo("Ingreso a cerrar pantalla de actualizar direccion");
+        waitUntilElementIsVisible(cerrarPantallaVerificarLugarInstalacion,5);
+        click(cerrarPantallaVerificarLugarInstalacion,5);
+        logInfo("Cerro pantalla de actualizar direccion");
     }
 }
 
