@@ -88,4 +88,4 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | SI                | Call Center | CE           | 1100000515     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |

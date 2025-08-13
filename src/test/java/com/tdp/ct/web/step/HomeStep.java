@@ -27,6 +27,11 @@ public class HomeStep {
         page.homePage().typeDocumentNumber(documentNumber);
     }
 
+    @ScreenShotAfter
+    public void typeDocumentNumber1(String documentNumber) {
+        page.homePage().typeDocumentNumber1(documentNumber);
+    }
+
     @ScreenShotBefore
     public void clickOnConsultButton() {
         page.homePage().clickOnConsultButton();

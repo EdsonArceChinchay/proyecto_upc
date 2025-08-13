@@ -61,7 +61,8 @@ public class HomeStepDefinition {
     public void ingresoElDocumento(String customerDocumentNumber) {
         getScenarioContext().put("nroDocumento", customerDocumentNumber);
         customer.setDocumentNumber(customerDocumentNumber);
-        homeStep.typeDocumentNumber(customerDocumentNumber);
+        //homeStep.typeDocumentNumber(customerDocumentNumber);
+        homeStep.typeDocumentNumber1(customerDocumentNumber);
     }
 
     @Y("me dirijo a la bandeja de Back Office")

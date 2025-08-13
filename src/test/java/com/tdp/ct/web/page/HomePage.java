@@ -7,10 +7,7 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 
 import static com.tdp.ct.web.utils.Addons.*;
@@ -48,6 +45,7 @@ public class HomePage extends WebBase {
     protected WebElement btnBackOffice;
     @FindBy(css = "tdp-st-select[formcontrolname='tipoDoc']")
     protected WebElement selectDocumentType;
+
     @FindBy(css = "tdp-st-input-text[id=\"doc\"]")
     protected WebElement inputDocumentNumber;
 
@@ -82,6 +80,15 @@ public class HomePage extends WebBase {
 
     public void typeDocumentNumber(String documentNumber) {
         validateAndTypeWithAndWithoutShadowRoot("document number", inputDocumentNumber, documentNumber);
+    }
+
+    public void typeDocumentNumber1(String documentNumber) {
+
+        WebElement shadowHost = driver().findElement(By.xpath("//*[@id=\"id-searchclient-tdp\"]"));
+        SearchContext shadowRoot = shadowHost.getShadowRoot();
+        WebElement input = shadowRoot.findElement(By.cssSelector("input")); // Ajusta si el input tiene otro selector
+        input.clear();
+        input.sendKeys(documentNumber);
     }
 
     public void clickOnConsultButton() {

@@ -119,7 +119,7 @@ public class LoginBerserkerPage extends WebBase {
             attempt++;
             try {
                 // Verificar si existe un modal de error y cerrarlo
-                logInfo("Ingreso a revisar el Modal de Error del Menaje de Bienvenida");
+                logInfo("Ingreso a revisar el Modal de Error del Mensaje de Bienvenida");
                 Addons.revisarModalError(driver());
 
                 logInfo("Ingreso a la Funcion de Barra Cargando");
