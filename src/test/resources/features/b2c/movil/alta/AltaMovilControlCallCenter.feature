@@ -91,5 +91,5 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan          |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002104     | Control       | RV Plan Mi Movistar |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002104     | Control       | RV Plan Mi Movistar S/39.9 VII |
 

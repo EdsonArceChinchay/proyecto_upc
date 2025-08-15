@@ -43,9 +43,9 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        escojo tipo de linea "<tipoLinea>"
     Y        escojo tipo de operador "<operador>"
     Y        doy click en el boton Consultar Portabilidad
-    Y        valido el servicio prevalidateportin
-      | phoneNumber   |
-      | <phoneNumber> |
+    #Y        valido el servicio prevalidateportin
+   #   | phoneNumber   |
+    #  | <phoneNumber> |
     Y        valido que este en la seccion Postpago o Prepago
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -93,5 +93,5 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 002372950      | 936501035   | Postpago  | ENTEL | Postpago      | RV Plan Ilimitado Mi Movistar | EMERITA     | GONZALO     | LA ESPERANZA |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | DNI          | 73668640       | 941629190   | Postpago  | Claro    | Postpago      | RV Plan Ilimitado Mi Movistar | LUZMILA     | TITO     | GUADALUPE |

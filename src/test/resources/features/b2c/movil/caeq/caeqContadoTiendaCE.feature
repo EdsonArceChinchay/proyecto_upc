@@ -20,8 +20,8 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA              | HU          | Test        | Transaccion             | Tipo Venta | Tags                  |
-      | Jesus Abel Tornero Rojas | TIQLT-27346 | TIQLT-27346 | Cambio de equipo (CAEQ) | Contado    | @CaeqContadoTienda_CE |
+      | Analista QA   | HU          | Test        | Transaccion             | Tipo Venta | Tags                  |
+      | Jorge Cancino | TIQLT-27346 | TIQLT-27346 | Cambio de equipo (CAEQ) | Contado    | @CaeqContadoTienda_CE |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -38,8 +38,8 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y presiona el boton anadir equipo del mismo plan
     E ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName               |
-      | 12 meses    | Al Contado | VIVO V21 NEGRO 5G C/PACK |
+      | permanencia | tipoPago   | equipoName                  |
+      | 12 meses    | Al Contado | XIAOMI REDMI 12C GRIS 128GB |
     Y valido que existan resultados busqueda de equipos
     Y presiono el boton Ver detalle valido contenido y selecciono
     Y cierro pop up de CU
@@ -49,6 +49,10 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y valido el stock del equipo
     Y ingreso correo electronico "<correo>"
     Y ingreso nuevamente el correo electronico "<correo>"
+    Y doy click en validar identidad del titular
+    Y ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y doy click en Validar contrato "Móvil"
     Y me muestra en pantalla el contrato solicitado
     Y imprimo el texto del contrato solicitado
@@ -61,6 +65,7 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y doy click en ver detalle del pedido
     Y valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | numeroPlanMovil | correo                   |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Tienda      | CE           | 221011271      | 949883817       | 221011271@mailinator.com |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | numeroPlanMovil | correo                   | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Tienda      | DNI          | 71464050       | 920128555       | 221011271@mailinator.com | Silvia      | Francisco   | Comas       |

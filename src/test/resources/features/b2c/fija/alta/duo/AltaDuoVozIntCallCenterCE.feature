@@ -20,8 +20,8 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
   Esquema del escenario: Alta de dúo internet con CEX, por canal Call Center, web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA | HU          | Test        | Transaccion                | Tipo Venta | Tags       |
-      | XXXXX       | TIQLT-26007 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
+      | Analista QA   | HU          | Test        | Transaccion                | Tipo Venta | Tags       |
+      | Jorge Cancino | TIQLT-26007 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"

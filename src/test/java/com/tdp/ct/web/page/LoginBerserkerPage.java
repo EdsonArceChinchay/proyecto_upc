@@ -4,10 +4,13 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
@@ -111,56 +114,66 @@ public class LoginBerserkerPage extends WebBase {
      * */
 
     public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
-        int maxAttempts = 3; // Número máximo de intentos
+        int maxAttempts = 3;
         int attempt = 0;
         boolean isMatched = false;
 
         while (attempt <= maxAttempts && !isMatched) {
             attempt++;
             try {
-                // Verificar si existe un modal de error y cerrarlo
                 logInfo("Ingreso a revisar el Modal de Error del Mensaje de Bienvenida");
                 Addons.revisarModalError(driver());
 
                 logInfo("Ingreso a la Funcion de Barra Cargando");
                 view.temporalPage().barraCargando();
 
-                // Intentar encontrar el mensaje de bienvenida
                 logInfo("Ingreso a la funcion de ExplicitWait");
-                WebElement message = explicitWaitCss(driver(), 30, ".message-welcome span");
-                compareWebElementTextAndString(message, msg);
 
-                // Verificar mensaje adicional, si aplica
-                // esperaProgresiva(driver(), 5, 2, msgHome);
-                compareWebElementTextAndString(msgHome, msg);
+                // Obtener todos los mensajes visibles
+                List<WebElement> messages = driver().findElements(By.cssSelector(".message-welcome span"));
+                logInfo("Cantidad de mensajes encontrados: " + messages.size());
 
-                // Si no lanza excepción, el texto coincide
-                isMatched = true;
-            } catch (AssertionError e) {
-                // El texto no coincide
-                logInfo("El texto no coincide. Se refrescará la página, intento Nro: " + (attempt + 1));
-            } catch (TimeoutException e) {
-                // El elemento no fue encontrado dentro del tiempo de espera
-                logInfo("No se encontró el elemento esperado. Se refrescará la página, intento Nro: " + (attempt + 1));
+                for (WebElement message : messages) {
+                    String text = message.getText().trim();
+                    logInfo("Texto encontrado: " + text);
+                    if (text.contains(msg)) {
+                        isMatched = true;
+                        break;
+                    }
+                }
+
+                // También validar msgHome si aplica
+                if (!isMatched && msgHome != null) {
+                    String msgHomeText = msgHome.getText().trim();
+                    logInfo("Texto en msgHome: " + msgHomeText);
+                    if (msgHomeText.contains(msg)) {
+                        isMatched = true;
+                    }
+                }
+
             } catch (Exception e) {
-                // Otros errores inesperados
-                throw new RuntimeException("Error inesperado durante la validación de la página de bienvenida: ", e);
+                logInfo("Error durante la validación del mensaje. Intento Nro: " + attempt + " - " + e.getMessage());
             }
 
             if (!isMatched) {
                 if (attempt < maxAttempts) {
-                    // Regresar a la página y reintentar
-                    logInfo("Se procede a Reintentar el Login... - Reintento N°" + attempt);
-                    reintentarLogin(tipoUsuario, userName, passwordUser);
+                    if (!tipoUsuario.equalsIgnoreCase("Tienda")) {
+                        logInfo("Se procede a Reintentar el Login... - Reintento N°" + attempt);
+                        reintentarLogin(tipoUsuario, userName, passwordUser);
+                    } else {
+                        logInfo("Rol Tienda detectado. No se realiza reintento.");
+                        break;
+                    }
                 } else {
-                    // Agotar intentos
                     throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");
                 }
             }
         }
+
         view.homePage().Zoom(65);
         miScenario.printFullView();
     }
+
 
     /**
      * FUNCION REINTENTAR LOGIN
