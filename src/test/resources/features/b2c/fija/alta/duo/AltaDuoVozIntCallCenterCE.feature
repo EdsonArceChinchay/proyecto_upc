@@ -21,7 +21,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion                | Tipo Venta | Tags       |
-      | Jorge Cancino | TIQLT-26007 | TIQLT-20528 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
+      | Jorge Cancino | TIQLT-33473 | TIQLT-21922 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -29,14 +29,14 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<channelType>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos | genero   |
-      | Pruebas | Qan       | femenino |
+      | nombres      | apellidos     | genero    |
+      | QATIPROD QAN | CIENTO CUATRO | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -60,6 +60,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        presiono el boton confirmar agendamiento
     Y        ingreso correo electronico "pruebas@gmail.com"
     Y        ingreso nuevamente el correo electronico "pruebas@gmail.com"
+    Y        Ingreso callID "123456"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | nacionalidad | estadoCivil |
@@ -87,5 +88,6 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | plan_hogar | nombrePlan                |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | SI                | Call Center | CE           | 1100000515     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion              | referencia | plan_hogar | nombrePlan         |
+     # | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | Casa       | Mono       | Línea Control VoIP |

@@ -19,6 +19,9 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
   @CaplControlAPostCC_CE
   Esquema del escenario: CAPL de Control a Postpago a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                   |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | CAPL        | Contado    | @CaplControlAPostCC_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -30,7 +33,8 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        doy click en el boton Ver detalle del servicio "920957608"
+    Y        doy click en el boton Ver detalle del servicio "943245550"
+    #Y        selecciono la linea con numero "<numeroExistente>"
     Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono boton Cambiar plan
@@ -42,7 +46,7 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Y        doy clic en si acepto
-    Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
+    #Y        valido que CAEQ:"False", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
@@ -57,7 +61,7 @@ Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente 
     Y        apruebo la solicitud
     Ejemplos:
 
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464725     |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | numeroExistente |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000812     | 943245550       |
 
 

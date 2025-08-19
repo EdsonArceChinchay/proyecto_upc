@@ -14,14 +14,14 @@
 ##FECMOD: 30/07/2024
 
 @BERSERKERS @DoneDevOps
-Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call Center
+Característica: AT-DT064_Migracion UVSC fija con cliente a CE por canal Call Center
 
   @migraUVSCcallCenter @QAN
-  Esquema del escenario: Migracion UVSC fija con cliente a DNI por canal Call Center
+  Esquema del escenario: Migracion UVSC fija con cliente a CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA              | HU          | Test        | Transaccion         | Tipo Venta | Tags                 |
-      | Jesus Abel Tornero Rojas | TIQLT-27354 | TIQLT-27354 | Migracion UVSC fija | Contado    | @migraUVSCcallCenter |
+      | Analista QA   | HU          | Test        | Transaccion         | Tipo Venta | Tags                 |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migracion UVSC fija | Contado    | @migraUVSCcallCenter |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -72,4 +72,4 @@ Característica: AT-DT064_Migracion UVSC fija con cliente a DNI por canal Call C
     Y apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | numeroExistente | correo                 |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | SI                | Call Center | DNI          | 72079848       | 5066694236      | 72079848@malinator.com |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | DNI          | 71464050       | 5010313620      | 72079848@malinator.com |

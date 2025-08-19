@@ -19,6 +19,9 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
   @CaeqFinanciadoCallCenter_CE @QAN
   Esquema del escenario: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test      | Transaccion             | Tipo Venta | Tags                         |
+      | Jorge Cancino | TIQLT-xxxx | TIQLT-xxx | Cambio de equipo (CAEQ) | Contado    | @CaeqFinanciadoCallCenter_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -82,5 +85,5 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
 #    Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |

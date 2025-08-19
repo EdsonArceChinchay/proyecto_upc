@@ -22,15 +22,15 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
   Esquema del escenario: Alta movil control a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion | Tipo Venta |
-      | Jorge Cancino | TIQLT-JR1220 | TIQLT-20528 | ALTA MOVIL  | Contado    |
+      | Analista QA   | HU          | Test        | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-33473 | TIQLT-21909 | ALTA MOVIL  | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-    #Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
@@ -90,6 +90,6 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan          |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | CE           | 1100002104     | Control       | RV Plan Mi Movistar S/39.9 VII |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                     |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002104     | Control       | RV Plan Mi Movistar S/39.9 VII |
 

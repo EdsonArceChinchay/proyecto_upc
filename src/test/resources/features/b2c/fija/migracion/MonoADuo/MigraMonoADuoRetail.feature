@@ -19,6 +19,9 @@
    @MigracionMonoADuoRetail
    Esquema del escenario: Migracion de Mono Internet a DUO a cliente con CE por el canal Retail
      Dado     que abro la pagina de movistar
+     Y ingreso los datos para la bitacora
+       | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                     |
+       | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migracion   | Contado    | @MigracionMonoADuoRetail |
      Cuando   presiono el boton Iniciar Sesion
      Y        selecciono el tipo de usuario "<userType>"
      Y        ingreso el usuario "<userName>"
@@ -30,13 +33,18 @@
      Cuando   selecciono el tipo de documento "<documentType>"
      Y        ingreso el documento "<documentNumber>"
      Y        doy click en el boton Consultar
-     Y        selecciono la cartilla del plan activo
+     Y selecciono la linea con numero "<numeroExistente>"
+     #Y        selecciono la cartilla del plan activo
      Y        selecciono el boton Mostrar ofertas
-     Y        doy click en el boton "ACTUALIZAR DIRECCION"
-     Y        ingreso la referencia de la direccion "."
-     Y        presiono el boton Consultar ubicacion
-     Y        presiono el boton Consultar cobertura
-     Y        doy click en el boton "ENTENDIDO"
+     #Y        doy click en el boton "ACTUALIZAR DIRECCION"
+     #Y        ingreso la referencia de la direccion "."
+     #Y        presiono el boton Consultar ubicacion
+     #Y "<insertarDireccion>" ingreso la informacion del lugar de instalacion
+     #  | mz | tipoVivienda | nombreVivienda | piso | int | conjunto             | conjHabit |
+      # | A  | CASA         | alex mancilla  | 1    | 1   | URBANIZACION POPULAR | casa      |
+     #Y        presiono el boton Consultar cobertura
+     #Y        doy click en el boton "ENTENDIDO"
+     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
      Y        selecciono tipo de oferta
      Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
      Y        selecciono el plan "<plan>"
@@ -60,7 +68,14 @@
      Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
      Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
      Y        valido que se muestre el detalle del pedido de "Información adicional"
+     Dado regreso a la pagina de inicio
+     Y valido que se presente el canal "<channelType>"
+     Y me dirijo a la bandeja de Back Office
+     Y busco por "codigo de venta"
+     Y selecciono la solicitud
+     Y cargo el audio en la web
+     Y apruebo la solicitud
 
      Ejemplos:
-       | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                         |
-       | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 202300015      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA |
+       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                         | numeroExistente |
+       | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Retail      | CE           | 1100002371      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA | 5010330123      |

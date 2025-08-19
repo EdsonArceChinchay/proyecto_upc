@@ -20,8 +20,8 @@ Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente
   Esquema del escenario: Totalizacion MT - parque fijo + parque movil - a cliente con CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA              | HU          | Test        | Transaccion                                  | Tipo Venta | Tags                       |
-      | Jesus Abel Tornero Rojas | TIQLT-27349 | TIQLT-27349 | Totalizacion MT (parque fijo + parque movil) | Contado    | @TotalizacionMTTrioMovilCC |
+      | Analista QA   | HU          | Test        | Transaccion                                  | Tipo Venta | Tags                       |
+      | Jorgr Cancino | TIQLT-27349 | TIQLT-27349 | Totalizacion MT (parque fijo + parque movil) | Contado    | @TotalizacionMTTrioMovilCC |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -75,4 +75,4 @@ Característica: AT-DT110_Totalizacion MT (parque fijo + parque movil) a cliente
     Y apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | fijoExistente | celularExistente | correo                    |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | SI                | Call Center | CE           | 1100000908     | 5010320405    | 975420738        | 1100000908@mailinator.com |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000908     | 5010320405    | 975420738        | 1100000908@mailinator.com |

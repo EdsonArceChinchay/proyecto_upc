@@ -19,6 +19,9 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
   @migracionMTaMT_CC_CE
   Esquema del escenario: Migracion de MT a MT  en el canal CALL CENTER
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                  |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migra       | Contado    | @migracionMTaMT_CC_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -29,6 +32,8 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
+    Y        doy click en el boton Consultar
+    #Y       selecciono la linea con numero "<numeroExistente>"
     Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
@@ -66,5 +71,5 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo            |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042465107     | Mono       | tester@tester.com |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan                                   | correo            | numeroExistente |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 135004162      | DUO MOVISTAR VOZ INTERNET RA I AG24 200 MBPS | tester@tester.com | 5010306608      |

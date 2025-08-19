@@ -20,11 +20,19 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         //tags = "@AltaMovilCECallCenter"
-        //tags = "@AltaDuoCC"
+       // tags = "@AltaDuoCC"
        //tags = "@PortaNormalPostCC"
         //tags = "@CaeqContadoTienda_CE"
         //tags = "@CaeqContadoCallCenter_CE"
-        tags = ""
+        //tags = "@CaeqFinanciadoCallCenter_CE"
+
+
+
+        //tags = "@TotalizacionMTTrioMovilCC"
+        //tags = "@CompletaFijaCC"
+
+        tags = "@CaplControlAPostCC_CE"
+       //tags = "@MigracionMonoADuoRetail"
 )
 class Runner {
 

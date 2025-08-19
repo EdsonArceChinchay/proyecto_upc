@@ -73,6 +73,11 @@ public class RegisterStepDefinition {
         }
     }
 
+    @Y("Ingreso callID {string}" )
+    public void ingresocallid(String idCall){
+        registerStep.typeIdCall(idCall);
+    }
+
     @Y("completo los datos del cliente")
     public void completoLosDatosSolicitados(DataTable dataTable) {
         if (customer.isNewCustomer()) {
