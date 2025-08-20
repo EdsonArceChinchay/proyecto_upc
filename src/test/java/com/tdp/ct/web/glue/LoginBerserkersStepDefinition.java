@@ -85,9 +85,7 @@ public class LoginBerserkersStepDefinition {
     }
 
     @Y("presiono el boton Continuar hacia el home")
-    public void presionoElBotonContinuarHaciaElHome() {
-        StepPages view = new StepPages();
-        view.homePage().Zoom(65);
+    public void presionoElBotonContinuarHaciaElHome()  {
         loginBerserkerStep.clickBtnContinueToHome();
     }
 
