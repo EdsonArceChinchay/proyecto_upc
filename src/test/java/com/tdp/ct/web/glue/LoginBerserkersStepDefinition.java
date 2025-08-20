@@ -3,6 +3,7 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.WebAutomationApplication;
 import com.tdp.ct.web.lib.WebDriverManager;
 import com.tdp.ct.web.model.Agent;
+import com.tdp.ct.web.page.StepPages;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.LoginBerserkerStep;
 import io.cucumber.datatable.DataTable;
@@ -114,6 +115,8 @@ public class LoginBerserkersStepDefinition {
 
     @Entonces("valido el login exitoso mediante el mensaje {string}")
     public void validoElLoginExitosoMedianteElMensaje(String msg) {
+        StepPages view = new StepPages();
+        view.homePage().Zoom(65);
         logInfo("DATOS LOGIN: \n TIPO USUARIO: " + tipoUsuario + "\n NOMBRE DE USUARIO: " + userName + "\n PASSWORD DEL USUARIO: " + passwordUser);
         loginBerserkerStep.validateHomeMessage(msg, tipoUsuario, userName, passwordUser);
         loginBerserkerStep.initializeAgent(agent.get());
