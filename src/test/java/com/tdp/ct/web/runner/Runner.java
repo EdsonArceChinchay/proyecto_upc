@@ -22,6 +22,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         tags = "@AltaMovilCECallCenter"
 
 )
+
 class Runner {
 
     @BeforeClass
