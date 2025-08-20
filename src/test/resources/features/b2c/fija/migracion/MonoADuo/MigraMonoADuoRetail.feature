@@ -78,4 +78,4 @@
 
      Ejemplos:
        | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan                         | numeroExistente |
-       | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Retail      | CE           | 1100002371      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA | 5010330123      |
+       | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Retail      | CE           | 1100002371      | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET RA | 5010330124      |

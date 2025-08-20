@@ -83,7 +83,7 @@ public class LoginBerserkerPage extends WebBase {
     public void clickOnContinueButton() {
         js().scrollElementTop(btnContinue);
         logInfo("Click button", btnContinue.getText());
-        click(btnContinue,5);
+        click(btnContinue, 5);
     }
 
     public void validateErrorMessage(String msg) {
@@ -113,55 +113,62 @@ public class LoginBerserkerPage extends WebBase {
 
     /**
      * FUNCION VISUALIZAR MENSAJE DE BIENVENIDA
-     * */
+     *
+     */
 
     public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
-        int maxAttempts = 3;
+
+        int maxAttempts = 5;
         int attempt = 0;
         boolean isMatched = false;
 
-        while (attempt <= maxAttempts && !isMatched) {
+        while (attempt < maxAttempts && !isMatched) {
             attempt++;
             try {
-                logInfo("Ingreso a revisar el Modal de Error del Mensaje de Bienvenida");
+                logInfo("Intento #" + attempt + " - Revisando el Modal de Error del Mensaje de Bienvenida");
                 Addons.revisarModalError(driver());
 
-                logInfo("Ingreso a la Funcion de Barra Cargando");
+                logInfo("Verificando barra de carga...");
                 view.temporalPage().barraCargando();
 
-                logInfo("Ingreso a la funcion de ExplicitWait");
-
-                // Obtener todos los mensajes visibles
+                logInfo("Buscando mensajes visibles...");
                 List<WebElement> messages = driver().findElements(By.cssSelector(".message-welcome span"));
                 logInfo("Cantidad de mensajes encontrados: " + messages.size());
 
                 for (WebElement message : messages) {
-                    String text = message.getText().trim();
-                    logInfo("Texto encontrado: " + text);
-                    if (text.contains(msg)) {
-                        isMatched = true;
-                        break;
+                    if (message.isDisplayed()) {
+                        String text = message.getText().trim();
+                        logInfo("Texto encontrado: '" + text + "' vs esperado: '" + msg + "'");
+                        if (text.toLowerCase().contains(msg.toLowerCase())) {
+                            isMatched = true;
+                            break;
+                        }
                     }
                 }
 
-                // También validar msgHome si aplica
-                if (!isMatched && msgHome != null) {
+                // Validación adicional con msgHome si aplica
+                if (!isMatched && msgHome != null && msgHome.isDisplayed()) {
                     String msgHomeText = msgHome.getText().trim();
-                    logInfo("Texto en msgHome: " + msgHomeText);
-                    if (msgHomeText.contains(msg)) {
+                    logInfo("Texto en msgHome: '" + msgHomeText + "'");
+                    if (msgHomeText.toLowerCase().contains(msg.toLowerCase())) {
                         isMatched = true;
                     }
                 }
 
             } catch (Exception e) {
-                logInfo("Error durante la validación del mensaje. Intento Nro: " + attempt + " - " + e.getMessage());
+                logInfo("Error durante la validación del mensaje. Intento #" + attempt + " - " + e.getMessage());
             }
 
             if (!isMatched) {
                 if (attempt < maxAttempts) {
                     if (!tipoUsuario.equalsIgnoreCase("Tienda")) {
-                        logInfo("Se procede a Reintentar el Login... - Reintento N°" + attempt);
+                        logInfo("Reintentando login para usuario tipo '" + tipoUsuario + "' - Reintento #" + attempt);
                         reintentarLogin(tipoUsuario, userName, passwordUser);
+                        try {
+                            Thread.sleep(3000); // Espera de 3 segundos antes del siguiente intento
+                        } catch (InterruptedException ie) {
+                            logInfo("Interrupción durante la espera: " + ie.getMessage());
+                        }
                     } else {
                         logInfo("Rol Tienda detectado. No se realiza reintento.");
                         break;
@@ -174,20 +181,22 @@ public class LoginBerserkerPage extends WebBase {
 
         view.homePage().Zoom(65);
         miScenario.printFullView();
+
     }
 
 
     /**
      * FUNCION REINTENTAR LOGIN
-     * */
+     *
+     */
 
     public void reintentarLogin(String tipoUsuario, String userName, String passwordUser) {
         logInfo("Ingreso a reintentar Login");
-        click(btnIniciarSesion,5);
-        waitUntilElementIsVisible(errorIniciarSesion,15);
+        click(btnIniciarSesion, 5);
+        waitUntilElementIsVisible(errorIniciarSesion, 15);
         logInfo("Se visualiza el error de Iniciar Sesion");
-        click(btnRegresarAIniciarSesion,5);
-        waitUntilElementIsVisible(titlesIniciarSesion,15);
+        click(btnRegresarAIniciarSesion, 5);
+        waitUntilElementIsVisible(titlesIniciarSesion, 15);
         logInfo("Se visualiza el formulario de Inicio de Sesion");
         selectUserType(tipoUsuario);
         typeUserName(userName);

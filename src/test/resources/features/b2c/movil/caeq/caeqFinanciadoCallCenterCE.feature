@@ -14,14 +14,14 @@
 ##FECMOD: 17/07/2024
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
+Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
 
   @CaeqFinanciadoCallCenter_CE @QAN
-  Esquema del escenario: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extranjero (CE) por canal Call Center
+  Esquema del escenario: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU         | Test      | Transaccion             | Tipo Venta | Tags                         |
-      | Jorge Cancino | TIQLT-xxxx | TIQLT-xxx | Cambio de equipo (CAEQ) | Contado    | @CaeqFinanciadoCallCenter_CE |
+      | Analista QA   | HU         | Test      | Transaccion | Tipo Venta | Tags                         |
+      | Jorge Cancino | TIQLT-xxxx | TIQLT-xxx | CAEQ        | Financiado | @CaeqFinanciadoCallCenter_CE |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -38,8 +38,8 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E        ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName   |
-      | 12 meses    | Financiado | <equipoName> |
+      | permanencia | tipoPago             | equipoName   |
+      | 12 meses    | Financiado 12 cuotas | <equipoName> |
     Y        valido que existan resultados busqueda de equipos
 #    Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        presiono el boton Ver detalle valido contenido y selecciono el equipo elegido "<equipoName>"
@@ -55,7 +55,7 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        presiono el boton Consultar ubicacion
     Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
-      | A  | EDIFICIO     | Familia Lopez  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
+      |    |              |                | 1    | 3   | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
@@ -65,25 +65,29 @@ Característica: Cambio de Equipo (CAEQ) sin Cambio de SIM (CASI) a cliente extr
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    Y        doy click en validar identidad del titular
+    Y       ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
-#    Cuando   doy clic en si acepto
-#    Y        valido que CAEQ:"True", CAPL: "False" y CASI:"FALSE" en el response del salesLead
-#     Y        doy click en el boton de continuar
-#    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-#    Y        doy click en ver detalle del pedido
-#    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-#    Y        valido que se muestre el detalle del pedido de "Delivery"
-#    Y        valido que se muestre el detalle del pedido de "Información adicional"
-#    Dado     regreso a la pagina de inicio
-#    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-#    Y        me dirijo a la bandeja de Back Office
-#    Y        busco por "codigo de venta"
-#    Y        selecciono la solicitud
-#    Y        cargo el audio en la web
-#    Y        apruebo la solicitud
+    Cuando   doy clic en si acepto
+    #Y        valido que CAEQ:"True", CAPL: "False" y CASI:"FALSE" en el response del salesLead
+    Y        doy click en el boton de continuar
+    Entonces visualizo en pantalla el mensaje de exito de la venta generada
+    Y        doy click en ver detalle del pedido
+    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y        valido que se muestre el detalle del pedido de "Delivery"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "codigo de venta"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                        |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 723456454      | 650034426        | SAMSUNG GXY A34 NEGRO A346M 128GB |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                  | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | DNI          | 71464050       | 973641088        | XIAOMI REDMI 12C GRIS 128GB | SILVIA      | FRANCISCO   | COMAS       |

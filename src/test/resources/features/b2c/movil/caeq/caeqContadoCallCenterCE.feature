@@ -87,4 +87,4 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
 
     Ejemplos:
       | userType | userName     | userPassword     | insertarDireccion | documentType | documentNumber | numeroPlanMovil | departamento | provincia | distrito | direccion                   | referencia | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameQAN6 | userPasswordQAN6 | SI                | DNI          | 71464050       | 920128555       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |
+      | userType | userNameQAN6 | userPasswordQAN6 | SI                | DNI          | 71464050       | 973641088       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |

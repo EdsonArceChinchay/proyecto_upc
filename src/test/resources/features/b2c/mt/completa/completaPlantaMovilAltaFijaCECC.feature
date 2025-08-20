@@ -20,8 +20,8 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
   Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU          | Test        | Transaccion                                 | Tipo Venta | Tags            |
-      | Jorge Cancino | TIQLT-28160 | TIQLT-28160 | Completa Fija MT (Planta Movil + Alta Fija) | Contado    | @CompletaFijaCC |
+      | Analista QA   | HU         | Test       | Transaccion                                 | Tipo Venta | Tags            |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Completa Fija MT (Planta Movil + Alta Fija) | Contado    | @CompletaFijaCC |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -71,6 +71,7 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y selecciono la solicitud
     Y cargo el audio en la web
     Y apruebo la solicitud
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000812     | Trio       | 1100007777@mailinator.com | 943245550       |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 221011214      | Trío MT       | 1100007777@mailinator.com | 920126516       |

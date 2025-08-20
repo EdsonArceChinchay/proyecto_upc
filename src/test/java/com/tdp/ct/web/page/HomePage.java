@@ -9,6 +9,10 @@ import com.tdp.ct.web.utils.Addons;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
@@ -154,10 +158,14 @@ public class HomePage extends WebBase {
     }
 
     public void clickOnTheBackOfficeButton() {
-        esperaProgresiva(driver(), 5, 5, btnBackOffice);
-        click(btnBackOffice);
-        logInfo("Click button Back Office");
-        UtilWeb.waitForSeconds(5);
+        try {
+            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(20));
+            wait.until(ExpectedConditions.elementToBeClickable(btnBackOffice));
+            click(btnBackOffice);
+        } catch (Exception errorClickBackOffice) {
+            errorClickBackOffice.printStackTrace();
+            Assertions.fail("Error al hacer clic en Back Office: " + errorClickBackOffice.getMessage());
+        }
     }
 
     public String getChannelType() {

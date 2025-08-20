@@ -12,6 +12,7 @@
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
 ##ENCARGADO:
 ##FECMOD: 23/08/2024
+##OBS: Cambiar el servicio movil, verificar la data.
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @CAPL
 Característica: AT-DT099_Cambio de plan (CAPL) de Control a Postpago a cliente extranjero (CE) por canal Call Center
