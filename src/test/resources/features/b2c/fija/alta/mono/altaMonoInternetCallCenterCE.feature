@@ -20,8 +20,8 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
   Esquema del escenario: Realizar una Alta de Mono con instalación HFC por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion             | Tipo Venta |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA MONO INTERNET | Contado    |
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA FIJA   | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -29,7 +29,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "Call Center"
+    Y        valido que se presente el canal "Call Center"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
@@ -81,6 +81,7 @@ Característica: AT-DT011_Alta de Mono Internet con instalación HFC a cliente c
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName             |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100000439     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono     | INTERNET MOVISTAR RA |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000439     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Mono     | INTERNET MOVISTAR RA |

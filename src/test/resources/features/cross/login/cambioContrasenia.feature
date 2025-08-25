@@ -21,8 +21,8 @@ Característica: Cambio de contraseña
   Esquema del escenario: Usuario realiza un cambio de su contraseña
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion          | Tipo Venta | Tags          |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-17493 | Cambio de contraseña | Contado    | @cambio-clave |
+      | Analista QA   | HU         | Test       | Transaccion          | Tipo Venta | Tags          |
+      | Lucero Obispo | TIQLT-XXXX | TIQLT-XXXX | Cambio de contraseña | Contado    | @cambio-clave |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -38,6 +38,7 @@ Característica: Cambio de contraseña
     Y        doy click en el boton cambiar contraseña
     Entonces visualizo el mensaje de exito en el cambio de contraseña
     Y        presiono el boton entendido
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | userNewPassword |
       | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | tele#EP8fS00    |

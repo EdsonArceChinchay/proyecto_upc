@@ -241,4 +241,9 @@ public class RegisterStepDefinition {
     public void doyClickEnElBotonDeContinuar() {
         registerStep.clickButtonContinue();
     }
+
+    @Y("doy clic en continuar")
+    public void doyClickEnContinuar() {
+        registerStep.clickBtnContinue();
+    }
 }

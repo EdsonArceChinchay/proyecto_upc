@@ -20,6 +20,9 @@ Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
   @MigracionDuoDuocanalCallCenter
   Esquema del escenario: Migracion de Duo a Duo
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                            |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migra       | Contado    | @MigracionDuoDuocanalCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -57,5 +60,5 @@ Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464952     | tester@tester.com | Duo           | RA 100 MBPS |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1042464952     | tester@tester.com | Duo           | RA 100 MBPS |

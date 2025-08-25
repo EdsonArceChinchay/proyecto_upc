@@ -68,6 +68,10 @@ public class RegisterPage extends WebBase {
     @FindBy(xpath = "//*[contains(text(),'Continuar') or contains(text(),'Finalizar registro') ]/parent::button")
     protected WebElement buttonContinuar;
 
+    // BOTON CONTINUAR (RETAIL)
+    @FindBy(xpath = "//button[span[contains(text(), 'Continuar')]]")
+     protected WebElement buttonContinuarRetail;
+
     StepPages view = new StepPages();
     ManageScenario miScenario = new ManageScenario();
 
@@ -238,5 +242,12 @@ public class RegisterPage extends WebBase {
                 }
             }
         }
+    }
+
+    public void clickBtnContinue() {
+        log.info("Esperando que el botón 'Continuar' esté clickeable...");
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(buttonContinuarRetail));
+        button.click();
     }
 }

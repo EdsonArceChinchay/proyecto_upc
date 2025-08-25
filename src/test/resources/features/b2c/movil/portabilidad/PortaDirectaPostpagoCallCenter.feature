@@ -19,6 +19,9 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI por ca
   @PortaDirectaPostCC
   Esquema del escenario: Porta Directa solo chip postpago a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Porta       | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -85,6 +88,6 @@ Característica: AT-DT_Porta Directa solo chip postpago a cliente con DNI por ca
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador           | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | DNI          | 42565073       | 920956351   | Postpago  | OPERADOR DE PRUEBA | Postpago      | RV Plan Ilimitado Mi Movistar | ERMINIA     | APOLONIO    | LURIN       |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | DNI          | 73668640       | 941629190   | Postpago  | Claro    | Postpago      | RV Plan Ilimitado Mi Movistar | LUZMILA     | TITO        | GUADALUPE   |
 

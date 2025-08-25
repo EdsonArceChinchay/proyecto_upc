@@ -259,4 +259,8 @@ public class RegisterStep {
     public void clickButtonContinue() {
         page.registerPage().clickButtonContinue();
     }
+
+    public void clickBtnContinue() {
+        page.registerPage().clickBtnContinue();
+    }
 }

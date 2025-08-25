@@ -19,6 +19,9 @@ Característica: AT-DT003_Alta Trio a cliente con CE por canal Retail
   @AltaTrioRetail
   Esquema del escenario: Alta Trio a cliente con CE por canal Retail
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion    | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA FIJA Trio | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -32,8 +35,8 @@ Característica: AT-DT003_Alta Trio a cliente con CE por canal Retail
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos     | genero    |
-      | PEDRO   | GARCIA ZAPATA | MASCULINO |
+      | nombres      | apellidos     | genero    |
+      | QATIPROD QAN | CIENTO CUATRO | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -51,24 +54,29 @@ Característica: AT-DT003_Alta Trio a cliente con CE por canal Retail
     Entonces valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
-    Y        ingreso correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "pruebas@gmail.com"
+    Y        ingreso nuevamente el correo electronico "pruebas@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 03/10/1990 | Casado      | Aruba        |
     Y        doy click en el boton confirmar
     Y        doy click en Validar contrato "hogar"
+    Y        me muestra en pantalla el contrato solicitado
+    Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
+    #Y        doy click en el boton de continuar
+    Y        doy clic en continuar
+    Entonces me muestra la pantalla registrar venta
     Y        doy clic para descargar el contrato
-    Y        doy click en el boton Registrar venta
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | userType | userName    | userPassword    | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
-      | userType | userNameDLC | userPasswordDLC | Bienvenid@ | Retail      | CE           | 1042464816     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  |
+      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Retail      | CE           | 1100000244     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa crema | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
 

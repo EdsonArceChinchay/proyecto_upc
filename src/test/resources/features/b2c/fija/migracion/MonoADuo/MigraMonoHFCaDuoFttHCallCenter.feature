@@ -17,8 +17,11 @@
 Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
 
   @migracionMonoHFCDuoFtthCallCenter @MVP18 @Global @General
-  Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, por canal Call Center, web front end, flujo no biométrico
+  Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migra       | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -56,5 +59,5 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 123456744      | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 123456744      | tester@tester.com | Duo           | RA D22 200 MBPS |

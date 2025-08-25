@@ -20,8 +20,8 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
   Esquema del escenario: Alta MT (Alta fija + alta movil) Upfront a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU          | Test       | Transaccion                        | Tipo Venta | Tags       |
-      | Jefferson Riobueno | TIQLT-JR0111 | TIQLT-0006 | ALTA FIJA (Voz + Internet) Upfront | Contado    | @AltaDuoCC |
+      | Analista QA   | HU         | Test       | Transaccion       | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA FIJA Upfront | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -91,7 +91,7 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
 
 
 

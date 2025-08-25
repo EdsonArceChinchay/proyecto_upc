@@ -21,15 +21,15 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
   Esquema del escenario: Alta Trio a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test        | Transaccion   | Tipo Venta |
-      | Lucero Obispo | TIQLT-JR1220 | TIQLT-20528 | ALTA FIJA Trio | Contado    |
+      | Analista QA   | HU         | Test       | Transaccion    | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA FIJA Trio | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<userPassword>"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
@@ -72,6 +72,9 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
+    #Y        presiono el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -80,11 +83,11 @@ Característica: AT-DT001_Alta Trio a cliente con CE por canal Call Center
     Dado     regreso a la pagina de inicio
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        me dirijo a la bandeja de Back Office
-    Y        busco por "codigo de venta"
+    Y        busco por "CODIGO DE VENTA"
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName                    |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Trío     | TRIO MOV. VOZ INT. ESTANDAR |

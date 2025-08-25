@@ -33,7 +33,7 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    #Y       selecciono la linea con numero "<numeroExistente>"
+    Y       selecciono la linea con numero "<numeroExistente>"
     Y        doy click en el boton Consultar
     Y        Selecciono la cartilla del plan Motvistar Total
     Y        selecciono el boton Mostrar ofertas
@@ -72,4 +72,4 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan                                   | correo            | numeroExistente |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 135004162      | DUO MOVISTAR VOZ INTERNET RA I AG24 200 MBPS | tester@tester.com | 5010306608      |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002329      | DUO MOVISTAR VOZ INTERNET RA I AG24 200 MBPS | tester@tester.com | 5010306608      |

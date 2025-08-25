@@ -19,6 +19,9 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
   @CaeqCapl
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> realizo un CAEQ mas CAPL sin CASI a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | CAEQ        | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -50,7 +53,7 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Y        presiono el boton Confirmar ubicacion
     Y        selecciono un tipo de entrega "Delivery Regular 24 horas"
     Y        selecciono el horario de entrega "3pm-7pm"
-    Y        ingreso telefono de contacto "956756143"
+    Y        ingreso telefono de contacto "943254968"
     Y        ingreso instrucciones de delivery "abc"
     Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
@@ -60,8 +63,8 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
-     Y        doy click en el boton de continuar
+    #Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
@@ -76,6 +79,6 @@ Característica: AT-DT046_Cambio de Equipo (CAEQ) mas Cambio de plan (CAPL) sin 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464630     |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000402     |
 

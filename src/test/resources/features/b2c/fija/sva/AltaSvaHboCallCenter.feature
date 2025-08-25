@@ -19,6 +19,9 @@ Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
   @SvaCallCenter
   Esquema del escenario: Sva en el canal Call Center
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags           |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Alta        | Contado    | @SvaCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -30,7 +33,7 @@ Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        selecciono la linea con numero "5010013051"
+    Y        selecciono la linea con numero "14075379"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "ACTUALIZAR DIRECCION"
     Y        ingreso la referencia de la direccion "."
@@ -38,8 +41,8 @@ Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
     Y        presiono el boton Consultar cobertura
     Y        doy click en el boton "ENTENDIDO"
     Y        valido que este en la pagina de ofertas sugeridas
-    Y        valido que este en el resumen de venta
     Y        selecciono boton mantener plan
+    Y        valido que este en el resumen de venta
     Y        doy click en el boton Agregar SVA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA bloque "HBO"
@@ -63,5 +66,5 @@ Característica: AT-DT109_Alta sva a cliente con CE en el canal Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 120906347      |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000254      |

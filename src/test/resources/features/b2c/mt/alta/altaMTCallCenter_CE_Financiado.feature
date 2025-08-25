@@ -20,8 +20,8 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
   Esquema del escenario: Alta MT (Alta fija + alta movil) + Equipo Movil Financiado
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU           | Test       | Transaccion   | Tipo Venta | Tags                    |
-      | Jorge Cancino | TIQLT-JR0109 | TIQLT-0002 | ALTA FIJA DUO | Contado    | @AltaMTEquipoFinanciado |
+      | Analista QA   | HU         | Test      | Transaccion   | Tipo Venta | Tags                    |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXX | ALTA FIJA DUO | Contado    | @AltaMTEquipoFinanciado |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -101,6 +101,7 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1400001091     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA   |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName  |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA TV |
