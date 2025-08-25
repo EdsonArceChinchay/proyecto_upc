@@ -97,6 +97,7 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Y selecciono la solicitud
     Y cargo el audio en la web
     Y apruebo la solicitud
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                  | insertarDireccion | numero    | tipoLinea | operador | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
       | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | DNI          | 76181879       | 76181879@mailinator.com | No                | 902921279 | Prepago   | ENTEL    | Postpago | Duo        | ROSA        | BRADY       | CHEPEN      | 5010320750      |

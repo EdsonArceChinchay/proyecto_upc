@@ -19,7 +19,8 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@migracionMTaMT_CC_CE"
+        //tags = "@migracionMTaMT_CC_CE"
+        tags = "@CompletaFijaCC"
 
 )
 

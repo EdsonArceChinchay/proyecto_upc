@@ -111,78 +111,81 @@ public class LoginBerserkerPage extends WebBase {
         return getValueConfig("config", "credential.user." + key);
     }
 
-    /**
-     * FUNCION VISUALIZAR MENSAJE DE BIENVENIDA
-     *
-     */
+        /**
+         * FUNCION VISUALIZAR MENSAJE DE BIENVENIDA
+         *
+         */
 
-    public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
+        public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
 
-        int maxAttempts = 5;
-        int attempt = 0;
-        boolean isMatched = false;
+            int maxAttempts = 5;
+            int attempt = 0;
+            boolean isMatched = false;
 
-        while (attempt < maxAttempts && !isMatched) {
-            attempt++;
-            try {
-                logInfo("Intento #" + attempt + " - Revisando el Modal de Error del Mensaje de Bienvenida");
-                Addons.revisarModalError(driver());
+            while (attempt < maxAttempts && !isMatched) {
+                attempt++;
+                try {
+                    logInfo("Intento #" + attempt + " - Revisando el Modal de Error del Mensaje de Bienvenida");
+                    Addons.revisarModalError(driver());
 
-                logInfo("Verificando barra de carga...");
-                view.temporalPage().barraCargando();
+                    logInfo("Aplicando zoom a la página...");
+                    view.homePage().Zoom(65);
 
-                logInfo("Buscando mensajes visibles...");
-                List<WebElement> messages = driver().findElements(By.cssSelector(".message-welcome span"));
-                logInfo("Cantidad de mensajes encontrados: " + messages.size());
+                    logInfo("Verificando barra de carga...");
+                    view.temporalPage().barraCargando();
 
-                for (WebElement message : messages) {
-                    if (message.isDisplayed()) {
-                        String text = message.getText().trim();
-                        logInfo("Texto encontrado: '" + text + "' vs esperado: '" + msg + "'");
-                        if (text.toLowerCase().contains(msg.toLowerCase())) {
+                    logInfo("Buscando mensajes visibles...");
+                    List<WebElement> messages = driver().findElements(By.cssSelector(".message-welcome span"));
+                    logInfo("Cantidad de mensajes encontrados: " + messages.size());
+
+                    for (WebElement message : messages) {
+                        if (message.isDisplayed()) {
+                            String text = message.getText().trim();
+                            logInfo("Texto encontrado: '" + text + "' vs esperado: '" + msg + "'");
+                            if (text.toLowerCase().contains(msg.toLowerCase())) {
+                                isMatched = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    // Validación adicional con msgHome si aplica
+                    if (!isMatched && msgHome != null && msgHome.isDisplayed()) {
+                        String msgHomeText = msgHome.getText().trim();
+                        logInfo("Texto en msgHome: '" + msgHomeText + "'");
+                        if (msgHomeText.toLowerCase().contains(msg.toLowerCase())) {
                             isMatched = true;
+                        }
+                    }
+
+                } catch (Exception e) {
+                    logInfo("Error durante la validación del mensaje. Intento #" + attempt + " - " + e.getMessage());
+                }
+
+                if (!isMatched) {
+                    if (attempt < maxAttempts) {
+                        if (!tipoUsuario.equalsIgnoreCase("Tienda")) {
+                            logInfo("Reintentando login para usuario tipo '" + tipoUsuario + "' - Reintento #" + attempt);
+                            reintentarLogin(tipoUsuario, userName, passwordUser);
+                            try {
+                                Thread.sleep(3000); // Espera de 3 segundos antes del siguiente intento
+                            } catch (InterruptedException ie) {
+                                logInfo("Interrupción durante la espera: " + ie.getMessage());
+                            }
+                        } else {
+                            logInfo("Rol Tienda detectado. No se realiza reintento.");
                             break;
                         }
-                    }
-                }
-
-                // Validación adicional con msgHome si aplica
-                if (!isMatched && msgHome != null && msgHome.isDisplayed()) {
-                    String msgHomeText = msgHome.getText().trim();
-                    logInfo("Texto en msgHome: '" + msgHomeText + "'");
-                    if (msgHomeText.toLowerCase().contains(msg.toLowerCase())) {
-                        isMatched = true;
-                    }
-                }
-
-            } catch (Exception e) {
-                logInfo("Error durante la validación del mensaje. Intento #" + attempt + " - " + e.getMessage());
-            }
-
-            if (!isMatched) {
-                if (attempt < maxAttempts) {
-                    if (!tipoUsuario.equalsIgnoreCase("Tienda")) {
-                        logInfo("Reintentando login para usuario tipo '" + tipoUsuario + "' - Reintento #" + attempt);
-                        reintentarLogin(tipoUsuario, userName, passwordUser);
-                        try {
-                            Thread.sleep(3000); // Espera de 3 segundos antes del siguiente intento
-                        } catch (InterruptedException ie) {
-                            logInfo("Interrupción durante la espera: " + ie.getMessage());
-                        }
                     } else {
-                        logInfo("Rol Tienda detectado. No se realiza reintento.");
-                        break;
+                        throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");
                     }
-                } else {
-                    throw new RuntimeException("Se alcanzó el máximo de intentos. El texto no coincide.");
                 }
             }
+
+            //view.homePage().Zoom(65);
+            miScenario.printFullView();
+
         }
-
-        view.homePage().Zoom(65);
-        miScenario.printFullView();
-
-    }
 
 
     /**
