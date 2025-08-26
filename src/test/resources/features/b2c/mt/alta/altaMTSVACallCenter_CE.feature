@@ -20,8 +20,8 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
   Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA        | HU           | Test        | Transaccion | Tipo Venta |
-      | Jefferson Riobueno | TIQLT-JR0111 | TIQLT-20528 | Alta MT + SVA    | Contado    |
+      | Analista QA   | HU         | Test       | Transaccion   | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Alta MT + SVA | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -79,7 +79,7 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-     Y        doy click en el boton de continuar
+    Y        doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -94,6 +94,7 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        selecciono la solicitud
     Y        cargo el audio en la web
     Y        apruebo la solicitud
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva        |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | Call Center | CE           | 1100000317     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo BA   | SMART WIFI |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo      | SMART WIFI |

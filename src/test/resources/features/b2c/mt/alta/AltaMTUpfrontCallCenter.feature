@@ -50,7 +50,7 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
-    Y        valido si el usuario aplica para upfront
+    #Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"

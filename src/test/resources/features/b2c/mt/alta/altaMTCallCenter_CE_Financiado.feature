@@ -52,6 +52,8 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
+    #Y        selecciono el tipo de plan "<plan_hogar>"
+    #Y        selecciono el plan "<nombrePlan>"
     Y        selecciono añadir equipos
     E        ingreso permanencia, tipo de pago y equipo
       | permanencia     | tipoPago   | equipoName                        |
@@ -103,5 +105,5 @@ Característica: AT-DT0 _Alta MT (Alta fija + alta movil) + Equipo Movil Financi
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName  |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo BA TV |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                         | referencia | planType | planName |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JR JULIO CESAR TELLO 469 UR RISSO | Inkafarma  | Duo MT   | Duo      |

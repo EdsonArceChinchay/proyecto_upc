@@ -20,8 +20,8 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
   Esquema del escenario: Alta Duo Sva Linea + Sva bloque Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU        | Test       | Transaccion                                   | Tipo Venta | Tags                                |
-      | Lucero Obispo | TIQLT-JR0109 | TIQLT-0004 | ALTA FIJA (Voz + TV) + Sva Linea + Sva bloque | Contado    | @AltaDuoSvaLineaSvaBloqueCallCenter |
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                                |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA FIJA   | Contado    | @AltaDuoSvaLineaSvaBloqueCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -29,7 +29,7 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<channelType>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
@@ -91,4 +91,4 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                   | svaLinea             | bloque |
-      | userType | userNameQAN7 | userPasswordQAN7 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | DUO MOVISTAR VOZ ESTÁNDAR HD | Plan Multidestino 20 | HBO    |

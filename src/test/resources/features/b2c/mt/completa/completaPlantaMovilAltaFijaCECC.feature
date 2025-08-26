@@ -20,8 +20,8 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
   Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU         | Test       | Transaccion                                 | Tipo Venta | Tags            |
-      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Completa Fija MT (Planta Movil + Alta Fija) | Contado    | @CompletaFijaCC |
+      | Analista QA | HU         | Test       | Transaccion                                 | Tipo Venta | Tags            |
+      | Eyme Aliaga | TIQLT-XXXX | TIQLT-XXXX | Completa Fija MT (Planta Movil + Alta Fija) | Contado    | @CompletaFijaCC |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -37,11 +37,11 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y selecciono el boton Linea Nueva Hogar
     Y selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y selecciono el departamento donde sera la instalacion "LIMA"
-    Y selecciono la provincia donde sera la instalacion "LIMA"
-    Y selecciono el distrito donde sera la instalacion "LINCE"
-    Y ingreso la direccion donde sera la instalacion "JR JULIO CESAR TELLO 469"
-    Y ingreso la referencia de la direccion "INKAFARMA"
+    Y selecciono el departamento donde sera la instalacion "<departamento>"
+    Y selecciono la provincia donde sera la instalacion "<provincia>"
+    Y selecciono el distrito donde sera la instalacion "<distrito>"
+    Y ingreso la direccion donde sera la instalacion "<direccion>"
+    Y ingreso la referencia de la direccion "<referencia>"
     Y presiono el boton Consultar ubicacion
     Y presiono el boton Consultar cobertura
     Y selecciono tipo de oferta
@@ -73,5 +73,5 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002125      | Trío MT    | 1100007777@mailinator.com | 943447306       |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente | departamento | provincia | distrito   | direccion              | referencia |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000812     | Trío MT    | 1100007777@mailinator.com | 943245642       | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 359 | esquina    |
