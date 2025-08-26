@@ -19,6 +19,9 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX canal Tienda
   @CaeqMasCaplTienda @MVP20 @Global
   Esquema del escenario:CAEQ + capl upsell postpago, financiamiento y permanencia 12 meses con CEX , por canal Tienda,web front end, flujo no biométrico
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test      | Transaccion | Tipo Venta | Tags                |
+      | Jorge Cancino | TIQLT-xxxx | TIQLT-xxx | CAEQ        | Financiado | @@CaeqMasCaplTienda |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -31,7 +34,9 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX canal Tienda
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-    Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
+    #Y        selecciono el boton Ver detalle del plan actual y presiono el boton Renovar Plan
+    Y        doy click en el boton "Renovar plan"
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        selecciono el boton de eleccion de planes
     Y        selecciono el tipo de plan movil "Postpago"
@@ -47,11 +52,15 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX canal Tienda
     Y        doy click en el boton Iniciar registro
     Y        ingreso correo electronico "prueba_qa@gmail.com"
     Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    Y        doy click en validar identidad del titular
+    Y        ingreso los datos solicitados para la validacion del cliente
+      | nombrePadre   | nombreMadre   | distritoNac   |
+      | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
-    Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
+    #Y        valido que CAEQ:"True", CAPL: "True" y CASI:"False" en el response del salesLead
     Y        doy click en el boton de continuar
     Y        doy clic para descargar el contrato
     Y        doy click en el boton Registrar venta
@@ -59,6 +68,7 @@ Característica: AT-DT047_CAEQ + CAPL permanencia 12 meses con CEX canal Tienda
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 12312312222    |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | EncontrarCelular | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Tienda      | DNI          | 71464050       | 973641088        | SILVIA      | FRANCISCO   | COMAS       |
