@@ -101,8 +101,10 @@ public class OfferSVAStep {
                 page.offerSVAPage().addSVACheckBox("Bloque Hot Pack");
                 break;
 
+            case "BLOQUE HBO+":
+            case "HBO+":
             case "HBO":
-                page.offerSVAPage().addSVACheckBox("HBO");
+                page.offerSVAPage().addSVACheckBox("Bloque HBO+");
                 break;
 
             case "BLOQUE ESTELAR":
@@ -116,10 +118,11 @@ public class OfferSVAStep {
                 break;
 
             default:
-                logInfo("Blocks does not exist " + nameSVA);
-                page.offerSVAPage().addSVACheckBox("Bloque");
+                logInfo("❌ Bloque no reconocido: " + nameSVA);
+                break;
         }
     }
+
 
     @ScreenShotAfter
     public void addSVAModem(String sva) {

@@ -79,7 +79,8 @@ public class AltaFijaTiendaPage extends WebBase {
         UtilWeb.waitForSeconds(5);
         revisarModalError(driver());
 
-        int countMax = 6;
+        //int countMax = 6;
+        int countMax = 23;
         try {
             boolean isBtnRigth;
             isBtnRigth = btnRight.isDisplayed();
