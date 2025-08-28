@@ -19,8 +19,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@AltaDuoSvaLineaSvaBloqueCallCenter" // cambiar el tag por el que se quiera ejecutar
-
+        tags = "@AltaMovilCECallCenter" // cambiar el tag por el que se quiera ejecutar
 )
 
 class Runner {

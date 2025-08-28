@@ -5,8 +5,10 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -58,7 +60,25 @@ public class LoginBerserkerPage extends WebBase {
     public void clickOnLoginButton() {
         Addons.resetTimeOut(driver());
         Addons.esperaProgresiva(driver(), 3, 5, btnLogIn);
-        click(btnLogIn);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", btnLogIn);
+
+        boolean isObstructed = (Boolean) js.executeScript(
+                "var elem = arguments[0];" +
+                        "var rect = elem.getBoundingClientRect();" +
+                        "var x = rect.left + rect.width / 2;" +
+                        "var y = rect.top + rect.height / 2;" +
+                        "return document.elementFromPoint(x, y) !== elem;",
+                btnLogIn
+        );
+
+        if (isObstructed) {
+            js.executeScript("document.querySelector('.footer').style.display='none';");
+        }
+
+        new Actions(driver()).moveToElement(btnLogIn).click().perform();
+
     }
 
     public void selectUserType(String user) {
