@@ -20,7 +20,7 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA              | HU          | Test        | Transaccion         | Tipo Venta | Tags                              |
-      | Jesus Abel Tornero Rojas | TIQLT-27344 | TIQLT-27344 | Alta movil postpago | Contado    | @CompletaPlantaFijaPortabilidadCC |
+      | Jesus Abel Tornero Rojas | TIQLT-XXXX | TIQLT-27344 | Alta movil postpago | Contado    | @CompletaPlantaFijaPortabilidadCC |
     Cuando presiono el boton Iniciar Sesion
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
@@ -100,6 +100,6 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Porta Directa Movil) a 
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                  | insertarDireccion | numero    | tipoLinea | operador | tipoPlan | nombrePlan | nombreMadre | nombrePadre | distritoNac | numeroExistente |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | DNI          | 76181879       | 76181879@mailinator.com | No                | 902921279 | Prepago   | ENTEL    | Postpago | Duo        | ROSA        | BRADY       | CHEPEN      | 5010320750      |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | DNI          | 76181879       | 76181879@mailinator.com | No                | 902921279 | Prepago   | ENTEL    | Postpago | Duo        | ROSA        | BRADY       | CHEPEN      | 5010320750      |
 
 
