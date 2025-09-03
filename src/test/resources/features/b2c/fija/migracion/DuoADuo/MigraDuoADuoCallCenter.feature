@@ -12,6 +12,7 @@
 ##DATA:
 ##ENCARGADO:
 ##FECMOD: 30/03/2023
+##OBS:
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI13
 Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
@@ -35,9 +36,16 @@ Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
+    #Y selecciono la linea con numero "<fijoExistente>"
     Y        selecciono el boton Mostrar ofertas
-    Y        verifico la direccion "LINCE , LIMA , LIMA" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
+    #Y        verifico la direccion "LINCE , LIMA , LIMA" actual del servicio
+    #Y        doy click en el boton "Confirmar direccion"
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono el plan "<plan>"
@@ -54,11 +62,21 @@ Característica: AT-DT063_Migracion Duo a Duo por canal CALL CENTER
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    Y        doy clic para descargar el contrato
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
+    Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "CODIGO DE VENTA"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan        |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1042464952     | tester@tester.com | Duo           | RA 100 MBPS |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan         | fijoExistente |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100002178     | tester@tester.com | Duo           | Duo Internet | 5010348207    |

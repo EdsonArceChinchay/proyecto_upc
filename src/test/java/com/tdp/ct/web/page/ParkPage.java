@@ -276,10 +276,34 @@ public class ParkPage extends WebBase {
         revisarModalError(driver());
         WebElement selectCartilla = explicitWaitXpath(driver(), 25, cartillaHogar);
         revisarModalError(driver());
-        js().scrollElementTop(selectCartilla);
-        selectCartilla.click();
-        UtilWeb.waitForSeconds(1);
+
+        if (selectCartilla != null && selectCartilla.isDisplayed() && selectCartilla.isEnabled()) {
+            try {
+                // Scroll al elemento
+                js().scrollElementTop(selectCartilla);
+                UtilWeb.waitForSeconds(1);
+
+                // Primer clic
+                selectCartilla.click();
+                System.out.println("Primer clic ejecutado.");
+
+                UtilWeb.waitForSeconds(1); // pequeña espera
+
+                // Segundo clic
+                selectCartilla.click();
+                System.out.println("Segundo clic ejecutado.");
+
+                UtilWeb.waitForSeconds(1); // espera para que el DOM se actualice
+
+            } catch (Exception e) {
+                System.out.println("Error al hacer clic en la cartilla: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Cartilla no está disponible para interacción.");
+        }
     }
+
+
 
     public void seleccionoCartillaMovistarTotal() {
         revisarModalError(driver());
