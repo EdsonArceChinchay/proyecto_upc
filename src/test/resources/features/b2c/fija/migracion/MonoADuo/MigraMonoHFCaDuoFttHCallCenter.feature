@@ -20,8 +20,8 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
   Esquema del escenario: Migración upsell de internet movistar 50Mb HFC a dúo internet TV Estándar HD 200Mb Hacia FTTH , con CEX, por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
-      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
-      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migra       | Contado    |
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta | Tags                               |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Migra       | Contado    | @migracionMonoHFCDuoFtthCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -35,8 +35,14 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        doy click en el boton Consultar
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
+    Y        doy click en el boton "Actualizar direccion"
+    Y        ingreso la referencia de la direccion "."
+    Y        presiono el boton Consultar ubicacion
+    Y        presiono el boton Consultar cobertura
+    Y        doy click en el boton "ENTENDIDO"
     #Y        verifico la direccion "SAN MIGUEL,LIMA ,LIMA" actual del servicio
-    Y        doy click en el boton "Confirmar direccion"
+    #Y        doy click en el boton "Confirmar direccion"
+    Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
@@ -58,6 +64,14 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
     Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "CODIGO DE VENTA"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
+
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 123456744      | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100000327      | tester@tester.com | Duo           | RA D22 200 MBPS |
