@@ -35,8 +35,8 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos     | genero    |
-      | Elvis   | Lopez Barrios | masculino |
+      | nombres | apellidos | genero    |
+      | PRUEBAS | QATIPROD  | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -91,4 +91,4 @@ Característica: AT-DT088_Alta Duo (Voz + TV) + Sva Linea + Sva bloque a cliente
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan         | svaLinea             | bloque      |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | Duo TV Voz RA AG24 | Plan Multidestino 20 | Bloque HBO+ |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | SI                | Call Center | CE           | 1100002107     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Duo      | Duo TV Voz RA AG24 | Plan Multidestino 20 | Bloque HBO+ |

@@ -70,7 +70,7 @@ public class RegisterPage extends WebBase {
 
     // BOTON CONTINUAR (RETAIL)
     @FindBy(xpath = "//button[span[contains(text(), 'Continuar')]]")
-     protected WebElement buttonContinuarRetail;
+    protected WebElement buttonContinuarRetail;
 
     StepPages view = new StepPages();
     ManageScenario miScenario = new ManageScenario();
@@ -202,7 +202,8 @@ public class RegisterPage extends WebBase {
 
     /**
      * FUNCION CLICK BOTON CONTINUAR
-     * */
+     *
+     */
 
     public void clickButtonContinue() {
         int cont = 0;
@@ -213,7 +214,7 @@ public class RegisterPage extends WebBase {
             cont++;
             try {
                 logInfo("Ingreso a visualizar el BOTON CONTINUAR");
-                waitUntilElementIsVisible(buttonContinuar,5);
+                waitUntilElementIsVisible(buttonContinuar, 5);
                 while (contadorBoton < 3 && !existeBoton) {
                     contadorBoton++;
                     try {
@@ -222,7 +223,7 @@ public class RegisterPage extends WebBase {
                             if (contadorBoton == 1) {
                                 miScenario.printFullView();
                             }
-                            click(buttonContinuar,5);
+                            click(buttonContinuar, 5);
                             view.temporalPage().clickBtnReintentar();
                         }
                     } catch (Exception e) {
@@ -245,9 +246,22 @@ public class RegisterPage extends WebBase {
     }
 
     public void clickBtnContinue() {
+
         log.info("Esperando que el botón 'Continuar' esté clickeable...");
         WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+
+        // Esperar a que el botón esté clickeable
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(buttonContinuarRetail));
         button.click();
+        log.info("Primer clic realizado en el botón 'Continuar'.");
+
+        // Esperar a que desaparezca el overlay que bloquea el botón
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loadingCard")));
+        log.info("Overlay 'loadingCard' desaparecido.");
+
+        // Esperar nuevamente a que el botón esté clickeable
+        button = wait.until(ExpectedConditions.elementToBeClickable(buttonContinuarRetail));
+        button.click();
+        log.info("Segundo clic realizado en el botón 'Continuar'.");
     }
 }

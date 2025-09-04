@@ -60,7 +60,7 @@ public class AppointmentPage extends WebBase {
     }
 
     public void typeContactNumber(String contact) {
-        contact = (contact == null) ? "956425985" : contact;
+        contact = (contact == null) ? "987654321" : contact;
         revisarModalError(driver());
         js().scrollElementTop(btnConfirm);
         validateCalendarAndSelectedDay();

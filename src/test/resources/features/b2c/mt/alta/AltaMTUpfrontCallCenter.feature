@@ -34,8 +34,8 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos   | genero   |
-      | Ana     | Lopez Lopez | femenino |
+      | nombres | apellidos | genero   |
+      | PRUEBAS | QANPROD   | femenino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
     Y        selecciono el boton Mostrar ofertas
@@ -50,7 +50,7 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit |
       |    |              |                |      |     | URBANIZACION RESIDENCIAL | RISSO     |
     Y        presiono el boton Consultar cobertura
-    #Y        valido si el usuario aplica para upfront
+    Y        valido si el usuario aplica para upfront
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
@@ -71,11 +71,11 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
     Y        selecciono el metodo de pago "Contra entrega"
     Y        ingreso correo electronico "tester@tester.com"
     Y        ingreso nuevamente el correo electronico "tester@tester.com"
-    Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | nacionalidad | estadoCivil |
-      | 12/12/1980 | Albania      | Casado      |
-    Y        doy click en el boton confirmar
+    #Y        doy click en datos del cliente
+    #Y        completo los datos del cliente
+    #  | fechaNac   | nacionalidad | estadoCivil |
+    #  | 12/12/1980 | Albania      | Casado      |
+    #Y        doy click en el boton confirmar
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -88,10 +88,17 @@ Característica: AT-DT039_Alta MT (Alta fija + alta movil) Upfront a cliente con
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Delivery"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+    Dado     regreso a la pagina de inicio
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        me dirijo a la bandeja de Back Office
+    Y        busco por "CODIGO DE VENTA"
+    Y        selecciono la solicitud
+    Y        cargo el audio en la web
+    Y        apruebo la solicitud
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | SI                | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Inkafarma  | Mono MT  | Mono     |
 
 
 
