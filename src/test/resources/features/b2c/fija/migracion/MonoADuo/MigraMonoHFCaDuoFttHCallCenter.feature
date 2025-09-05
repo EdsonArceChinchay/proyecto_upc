@@ -33,7 +33,8 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        selecciono la cartilla del plan activo
+    #Y        selecciono la cartilla del plan activo
+    Y        selecciono la linea con numero "<fijoExistente>"
     Y        selecciono el boton Mostrar ofertas
     Y        doy click en el boton "Actualizar direccion"
     Y        ingreso la referencia de la direccion "."
@@ -59,6 +60,8 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        imprimo el texto del contrato solicitado
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
+    Entonces me muestra la pantalla registrar venta
+    #Y        doy clic para descargar el contrato
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
@@ -73,5 +76,5 @@ Característica: AT-DT074_Migracion de Mono HFC a Duo FTTH Call Center
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            |
-      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100000327      | tester@tester.com | Duo           | RA D22 200 MBPS |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo            | tipoPlanHogar | plan            | fijoExistente |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | Call Center | CE           | 1100000244     | tester@tester.com | Duo           | RA D22 200 MBPS | 5067825156    |
