@@ -23,7 +23,7 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion | Tipo Venta |
-      | Jorge Cancino | TIQLT-33473 | TIQLT-21909 | ALTA MOVIL  | Contado    |
+      | Jorge Cancino | TIQLT-33617 | TIQLT-21909 | ALTA MOVIL  | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"

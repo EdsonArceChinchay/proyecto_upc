@@ -54,8 +54,10 @@ public class OfferSVAPage extends WebBase {
     }
 
     public void addSVASelect(String section, String nameSVA) {
-        WebElement listElementPLan = find().getElementByXPath("//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select");
-        selectElementXpath(nameSVA, listElementPLan, "//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select//li");
-    }
+        WebElement listElementPlan = find().getElementByXPath(
+                "//div[contains(text(),'" + section + "')]/../descendant-or-self::tdp-st-select"
+        );
 
+        selectElementXpath(nameSVA, listElementPlan);
+    }
 }

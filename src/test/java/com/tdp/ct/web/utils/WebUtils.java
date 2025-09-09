@@ -260,11 +260,48 @@ public class WebUtils extends WebBase {
         }
     }
 
-    public static void selectElementXpath(String value, WebElement webElement, String webElementList) {
+    public static void selectElementXpath(String value, WebElement webElement) {
+        System.out.println(">>> Haciendo click en el select...");
         webElement.click();
-        UtilWeb.waitForSeconds(2);
-        List<WebElement> elementsList = getDriver().findElements(By.xpath(webElementList));
-        selectElement(elementsList, value);
+
+        try {
+            // Esperar un par de segundos a que se abra el menú
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+
+        System.out.println(">>> Obteniendo opciones dentro del Shadow DOM...");
+        // Obtenemos todas las opciones dentro del shadowRoot
+        String script = "const root = arguments[0].shadowRoot;" +
+                "const menu = root.querySelector('div.mdc-select__menu > ul');" +
+                "return Array.from(menu.querySelectorAll('li.mdc-list-item'));";
+
+        List<WebElement> options = (List<WebElement>) js.executeScript(script, webElement);
+        System.out.println(">>> Opciones encontradas: " + options.size());
+
+        boolean found = false;
+        for (WebElement el : options) {
+            String text = el.getText().trim();
+            String dataValue = el.getAttribute("data-value");
+            System.out.println("---- Texto opción: '" + text + "', data-value: " + dataValue);
+
+            if ((dataValue != null && dataValue.equalsIgnoreCase(value.trim()))
+                    || text.equalsIgnoreCase(value.trim())
+                    || text.toLowerCase().contains(value.trim().toLowerCase())) {
+
+                System.out.println(">>> Seleccionando opción: '" + text + "'");
+                js.executeScript("arguments[0].click();", el);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println(">>> ERROR: No se encontró la opción '" + value + "'");
+        }
     }
 
     public static void scrollTo(WebElement webElement) {

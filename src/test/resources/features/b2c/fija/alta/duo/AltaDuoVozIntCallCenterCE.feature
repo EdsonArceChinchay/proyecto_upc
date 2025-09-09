@@ -21,7 +21,7 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion                | Tipo Venta | Tags       |
-      | Jorge Cancino | TIQLT-33473 | TIQLT-21922 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
+      | Jorge Cancino | TIQLT-33617 | TIQLT-21922 | ALTA FIJA (Voz + Internet) | Contado    | @AltaDuoCC |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"

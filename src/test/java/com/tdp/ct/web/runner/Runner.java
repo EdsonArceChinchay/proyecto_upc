@@ -19,9 +19,9 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = " @migracionMonoHFCDuoFtthCallCenter" // cambiar el tag por el que se quiera ejecutar
-)
+        tags = "@AltaTrioSvaBloqueSvaInternetSvaLineaCallCenter" // cambiar el tag por el que se quiera ejecutar
 
+)
 class Runner {
 
     @BeforeClass
@@ -33,7 +33,7 @@ class Runner {
     public static void afterExecution() {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
         boolean Flag = Boolean.parseBoolean(getValueConfig("config", "environment.notification.sendReporte").trim());
-        if (Flag){
+        if (Flag) {
             new HttpSender().sendDetailsRun(getValueConfig("config", "environment.notification.huKey").trim());
         }
         JiraXray.importResults("/target/build/report/cucumber.json");

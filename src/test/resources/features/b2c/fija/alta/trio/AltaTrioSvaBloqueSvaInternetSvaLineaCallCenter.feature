@@ -19,6 +19,9 @@ Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet + sva Linea CANA
   @AltaTrioSvaBloqueSvaInternetSvaLineaCallCenter
   Esquema del escenario: Alta Trio con sva Bloque + sva Internet + sva Linea CANAL CALL CENTER
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion   | Tipo Venta | Tags                                            |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Alta Trio SVA | Contado    | @AltaTrioSvaBloqueSvaInternetSvaLineaCallCenter |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -32,8 +35,8 @@ Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet + sva Linea CANA
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos | genero    |
-      | Oscar   | Ramos     | masculino |
+      | nombres   | apellidos | genero    |
+      | PRUEBASQA | QATIPROD  | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
@@ -55,7 +58,7 @@ Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet + sva Linea CANA
     Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
     Y        agrego SVA linea "<svaLinea>"
     Y        agrego SVA bloque "<bloque>"
-    Y        agrego SVA internet "<svaInternet>"
+    Y        agrego SVA repetidor "<svaRepetidor>"
     Y        doy click en el boton Guardar cambios
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
@@ -87,5 +90,5 @@ Característica: AT-DT0_Alta Trio con sva Bloque + sva Internet + sva Linea CANA
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea             | bloque         | svaInternet           |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 10000486488    | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | Bloque estelar | PACK ANTIVIRUS MCAFEE |
+      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion            | referencia             | tipoPlan | nombrePlan                  | svaLinea             | bloque         | svaRepetidor          |
+      | userType | userNameQAN4 | userPasswordQAN4 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN MIGUEL | CALLE SAN MARTIN 399 | AL FRENTE DE LA BOTICA | Trio     | TRIO MOV. VOZ INT. ESTANDAR | Plan Multidestino 20 | Bloque estelar | REP. SMART WIFI Venta |
