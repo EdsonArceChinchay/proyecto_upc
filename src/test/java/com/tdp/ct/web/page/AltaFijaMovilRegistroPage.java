@@ -5,10 +5,7 @@ import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import io.cucumber.datatable.DataTable;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -287,23 +284,33 @@ public class AltaFijaMovilRegistroPage extends WebBase {
      * FUNCION - VALIDAR CONTRATO GENERADO CALL CENTER
      * */
 
+
     public void clicValidarContrato() {
         int contador = 0;
         boolean existeElement = false;
+
         while (contador <= 3 && !existeElement) {
             contador++;
             try {
                 logInfo("Ingreso a visualizar la existencia del boton VALIDAR CONTRATO");
                 UtilWeb.waitForSeconds(2);
-                if (buttonValidarContrato.isDisplayed()) {
+
+                if (buttonValidarContrato.isDisplayed() && buttonValidarContrato.isEnabled()) {
                     logInfo("BOTON VALIDAR CONTRATO - EXISTE");
                     js().scrollElementTop(buttonValidarContrato);
+                    UtilWeb.waitForSeconds(1); // Espera breve para que se acomode el DOM
+
                     existeElement = true;
-                    logInfo("Click button " + buttonValidarContrato.getText());
+
+                    logInfo("Intentando click con JavaScript en el botón: " + buttonValidarContrato.getText());
                     logInfo("buttonValidarContrato isDisplayed: " + buttonValidarContrato.isDisplayed() +
-                            " - isEnabled " + buttonValidarContrato.isEnabled() +
-                            " - isSelected " + buttonValidarContrato.isSelected());
-                    click(buttonValidarContrato,5);
+                            " - isEnabled: " + buttonValidarContrato.isEnabled() +
+                            " - isSelected: " + buttonValidarContrato.isSelected());
+
+                    // Click con JavaScript para evitar intercepción
+                    JavascriptExecutor js = (JavascriptExecutor) driver();
+                    js.executeScript("arguments[0].click();", buttonValidarContrato);
+
                     view.temporalPage().barraCargando();
                 }
             } catch (Exception e) {
@@ -312,4 +319,5 @@ public class AltaFijaMovilRegistroPage extends WebBase {
             }
         }
     }
+
 }

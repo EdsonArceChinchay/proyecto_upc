@@ -148,9 +148,6 @@ public class LoginBerserkerPage extends WebBase {
                     logInfo("Intento #" + attempt + " - Revisando el Modal de Error del Mensaje de Bienvenida");
                     Addons.revisarModalError(driver());
 
-                    logInfo("Aplicando zoom a la página...");
-                    view.homePage().Zoom(65);
-
                     logInfo("Verificando barra de carga...");
                     view.temporalPage().barraCargando();
 
@@ -202,7 +199,7 @@ public class LoginBerserkerPage extends WebBase {
                 }
             }
 
-            //view.homePage().Zoom(65);
+            view.homePage().Zoom(65);
             miScenario.printFullView();
 
         }

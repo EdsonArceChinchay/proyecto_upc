@@ -70,24 +70,23 @@ Característica:  AT-DT029_Alta movil control a cliente con CE por canal Call Ce
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
       | 12/12/1980 | Divorciado  | Aruba        |
-    Y        doy click en el boton confirmar
-    Y        doy click en Validar contrato "Móvil"
-    Y        me muestra en pantalla el contrato solicitado
-    Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        cierro popup de error
+    Y     doy click en el boton confirmar
+    Y     doy click en Validar contrato "Móvil"
+    Y      me muestra en pantalla el contrato solicitado
+    Y     imprimo el texto del contrato solicitado
+    Cuando doy clic en si acepto
+    Y   doy click en el boton de continuar
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
-    Dado     regreso a la pagina de inicio
-    Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
-    Y        me dirijo a la bandeja de Back Office
-    Y        busco por "codigo de venta"
-    Y        selecciono la solicitud
-    Y        cargo el audio en la web
-    Y        apruebo la solicitud
+    Y   doy click en ver detalle del pedido
+    Y   valido que se muestre el detalle del pedido de "Servicio Móvil"
+    Y   valido que se muestre el detalle del pedido de "Información adicional"
+    Dado  regreso a la pagina de inicio
+    Y   valido que se presente el canal "<channelType>"
+    Y   me dirijo a la bandeja de Back Office
+    Y   busco por "codigo de venta"
+    Y   selecciono la solicitud
+    Y   cargo el audio en la web
+    Y   apruebo la solicitud
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan                     |
