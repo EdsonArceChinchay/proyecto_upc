@@ -13,16 +13,16 @@
 ##ENCARGADO:
 ##FECMOD: 09/01/2025
 
-@cambio-clave
+
 
 Característica: Cambio de contraseña
 
-  @QAN
+  @QAN @cambio-clave
   Esquema del escenario: Usuario realiza un cambio de su contraseña
     Dado     que abro la pagina de movistar
     Y        ingreso los datos para la bitacora
       | Analista QA   | HU         | Test       | Transaccion          | Tipo Venta | Tags          |
-      | Lucero Obispo | TIQLT-XXXX | TIQLT-XXXX | Cambio de contraseña | Contado    | @cambio-clave |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | Cambio de contraseña | Contado    | @cambio-clave |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
@@ -41,5 +41,5 @@ Característica: Cambio de contraseña
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | userNewPassword |
-      | userType | userNameQAN2 | userPasswordQAN2 | Bienvenid@ | tele#EP8fS00    |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | $t3l3f0n1c5$   |
 
