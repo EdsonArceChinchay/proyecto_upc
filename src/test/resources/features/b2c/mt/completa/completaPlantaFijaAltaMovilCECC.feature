@@ -82,4 +82,4 @@ Característica: AT-DT0_Completa Movil MT (Planta Fija + Alta Movil) a cliente c
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | nombrePlan | numeroExistente | correo                    |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | Trío MT    | 12241220        | 1100007777@mailinator.com |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1632547903     | Trío MT    | 14353772        | 1100007777@mailinator.com |

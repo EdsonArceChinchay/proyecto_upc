@@ -32,13 +32,15 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y       selecciona el boton de detalle del numero de celular existente "<numeroPlanMovil>"
+    #Y        selecciono la linea con numero "<numeroPlanMovil>"
+   # Y       selecciona el boton de detalle del numero de celular existente "<numeroPlanMovil>"
+    Y        doy click en el boton Ver detalle del servicio "650030368"
     Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E ingreso permanencia, tipo de pago y equipo
-      | permanencia | tipoPago   | equipoName                  |
-      | 12 meses    | Al Contado | XIAOMI REDMI 12C GRIS 128GB |
+      | permanencia | tipoPago   | equipoName              |
+      | 12 meses    | Al Contado | XIAOMI REDMI NOTE 9 PRO |
     Y        valido que existan resultados busqueda de equipos
     Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "MANTENER PLAN"
@@ -86,5 +88,5 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | insertarDireccion | documentType | documentNumber | numeroPlanMovil | departamento | provincia | distrito | direccion                   | referencia | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameQAN6 | userPasswordQAN6 | SI                | DNI          | 71464050       | 973641088       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |
+      | userType | userName   | userPassword   | insertarDireccion | documentType | documentNumber | numeroPlanMovil | departamento | provincia | distrito | direccion                   | referencia | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | SI                | CE           | 1632547903     | 650030368       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |

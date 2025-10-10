@@ -74,4 +74,4 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente | departamento | provincia | distrito   | direccion              | referencia |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100000812     | Trío MT    | 1100007777@mailinator.com | 943245642       | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 359 | esquina    |
+      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1632547904     | Trío MT    | 1632547904@mailinator.com | 650030369       | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 359 | esquina    |
