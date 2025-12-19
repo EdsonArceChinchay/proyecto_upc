@@ -72,4 +72,4 @@ Característica: AT-DT066_Migracion de MT a MT en Call Center
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan                                   | correo            | numeroExistente |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002329      | DUO MOVISTAR VOZ INTERNET RA I AG24 200 MBPS | tester@tester.com | 5010306608      |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100002329      | DUO MOVISTAR VOZ INTERNET RA I AG24 200 MBPS | tester@tester.com | 5010306608      |

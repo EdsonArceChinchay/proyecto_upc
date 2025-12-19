@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.*;
 import static com.tdp.ct.web.utils.LogUtils.logInfo;
@@ -87,12 +88,101 @@ public class HomePage extends WebBase {
     }
 
     public void typeDocumentNumber1(String documentNumber) {
+        WebDriver driver = driver();
+        driver.switchTo().defaultContent();
 
-        WebElement shadowHost = driver().findElement(By.xpath("//*[@id=\"id-searchclient-tdp\"]"));
-        SearchContext shadowRoot = shadowHost.getShadowRoot();
-        WebElement input = shadowRoot.findElement(By.cssSelector("input")); // Ajusta si el input tiene otro selector
-        input.clear();
-        input.sendKeys(documentNumber);
+        System.out.println("[DOC] Intento 1: defaultContent()");
+
+        if (tryTypeDocumentNumberInCurrentContext(driver, documentNumber)) {
+            System.out.println("[DOC] Funcionó en Intento 1 (defaultContent)");
+            return;
+        }
+
+        List<WebElement> frames = driver.findElements(By.tagName("iframe"));
+        System.out.println("[DOC] Cantidad de iframes encontrados: " + frames.size());
+
+        int i = 0;
+        for (WebElement frame : frames) {
+            try {
+                driver.switchTo().defaultContent();
+                driver.switchTo().frame(frame);
+
+                System.out.println("[DOC] Intento 2: iframe #" + i);
+
+                if (tryTypeDocumentNumberInCurrentContext(driver, documentNumber)) {
+                    System.out.println("[DOC]Funcionó en Intento 2 (iframe #" + i + ")");
+                    return;
+                }
+            } catch (Exception ignored) {
+                // seguimos con el siguiente frame
+            }
+            i++;
+        }
+
+        throw new TimeoutException(String.format(
+                "No se pudo escribir el documento '%s': no se encontró el input ni en defaultContent ni en %d iframe(s).",
+                documentNumber, frames.size()));
+    }
+
+
+    private boolean tryTypeDocumentNumberInCurrentContext(WebDriver driver, String documentNumber) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // A) Primero: si existe input normal (light DOM), úsalo (más simple y rápido)
+        try {
+            WebElement normal = driver.findElement(By.cssSelector("input[placeholder='Número de documento']"));
+            if (normal.isDisplayed()) {
+                normal.click();
+                normal.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+                normal.sendKeys(Keys.DELETE);
+                normal.sendKeys(documentNumber);
+                normal.sendKeys(Keys.TAB);
+                return true;
+            }
+        } catch (NoSuchElementException ignored) {
+        }
+
+        // B) Si no está en light DOM: buscamos “profundo” dentro de shadow DOMs abiertos
+        try {
+            Boolean ok = wait.until(d -> (Boolean) js.executeScript(
+                    "function querySelectorDeep(selector, root) {" +
+                            "  root = root || document;" +
+                            "  const el = root.querySelector(selector);" +
+                            "  if (el) return el;" +
+                            "  const nodes = root.querySelectorAll('*');" +
+                            "  for (const n of nodes) {" +
+                            "    if (n.shadowRoot) {" +
+                            "      const found = querySelectorDeep(selector, n.shadowRoot);" +
+                            "      if (found) return found;" +
+                            "    }" +
+                            "  }" +
+                            "  return null;" +
+                            "}" +
+
+                            // 1) Encuentra el host aunque esté dentro de un shadow anidado
+                            "const host = querySelectorDeep('tdp-st-input-text#id-searchclient-tdp');" +
+                            "if (!host) return false;" +
+
+                            // 2) Busca el input dentro del shadow del host
+                            "const root = host.shadowRoot;" +
+                            "if (!root) return false;" +
+
+                            "const input = root.querySelector('input.mdc-text-field__input[type=\"text\"], input[type=\"text\"], input');" +
+                            "if (!input) return false;" +
+
+                            // 3) Setea valor y dispara eventos (Angular/MDC)
+                            "input.focus();" +
+                            "input.value = arguments[0];" +
+                            "input.dispatchEvent(new Event('input', { bubbles: true }));" +
+                            "input.dispatchEvent(new Event('change', { bubbles: true }));" +
+                            "return true;",
+                    documentNumber
+            ));
+            return Boolean.TRUE.equals(ok);
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
     public void clickOnConsultButton() {
