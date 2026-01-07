@@ -9,7 +9,7 @@ webdriver:
   headless.dimension: --window-size=1400,600
   pageload: EAGER
   chrome:
-    extraArgs: "--disable-features=PasswordCheck,--disable-popup-blocking,--incognito,user-data-dir=/tmp/chrome-profile"
+    extraArgs: "--disable-features=PasswordCheck,OmniboxFocusHighlight,--disable-popup-blocking,user-data-dir=/tmp/chrome-profile"
 
 
 
