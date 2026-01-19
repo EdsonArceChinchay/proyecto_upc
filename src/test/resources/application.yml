@@ -7,9 +7,12 @@ webdriver:
   path: drivers/chrome/chromedriver.exe
   headless: off
   headless.dimension: --window-size=1400,600
-  pageload: EAGER
+  page load: EAGER
   chrome:
-    extraArgs: "--disable-features=PasswordCheck,OmniboxFocusHighlight,--disable-popup-blocking,user-data-dir=/tmp/chrome-profile"
+    extraArgs:
+      "--disable-features=PasswordCheck,OmniboxFocusHighlight,
+      --incognito,
+      --disable-popup-blocking"
 
 
 

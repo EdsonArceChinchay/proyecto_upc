@@ -88,6 +88,6 @@ Característica: AT-DT005_Alta Duo (Voz + Internet) a cliente con CE por canal C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion              | referencia | plan_hogar | nombrePlan         |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion              | referencia | plan_hogar | nombrePlan         |
      # | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | Casa       | Duo        | DUO MOVISTAR VOZ INTERNET |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | Casa       | Mono       | Línea Control VoIP |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1100000244     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | Casa       | Mono       | Línea Control VoIP |
