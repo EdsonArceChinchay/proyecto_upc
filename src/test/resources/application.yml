@@ -5,7 +5,7 @@
 webdriver:
   browser: chrome #chrome, safari, firefox, edge
   path: drivers/chrome/chromedriver.exe
-  headless: on
+  headless: off
   headless.dimension: --window-size=1400,600
   page load: EAGER
   chrome:
