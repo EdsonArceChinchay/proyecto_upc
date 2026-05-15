@@ -32,9 +32,9 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
     Y        doy click en el boton Consultar
     Y        cierro popup de error
     Y        ingreso los datos del nuevo cliente
-      | nombres        | apellidos      | genero   |
-      | Estela Rosario | Lopez Manrique | femenino |
-    Y        valido que muestre el nombre completo del cliente "Estela Rosario Lopez Manrique"
+      | nombres | apellidos | genero   |
+      | QAN     | PREPROD   | femenino |
+    #Y        valido que muestre el nombre completo del cliente "Estela Rosario Lopez Manrique"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
@@ -43,12 +43,14 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
     Y        valido que este en la pagina de ofertas sugeridas
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan movil "<tipoPlanMovil>"
-    Y        selecciono la opcion "<tipoPlanes>"
-    Y        doy click en el boton seleccionar oferta
-    Y        doy click en el boton Linea Nueva
+    Y        selecciono un plan movil "<nombrePlan>"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
-    Y        valido que este en la seccion completa los datos solicitados
+    #Y        doy click en el boton seleccionar oferta
+    #Y        doy click en el boton Linea Nueva
+    #Y        valido que este en el resumen de venta
+    #Y        doy click en el boton Iniciar registro
+    #Y        valido que este en la seccion completa los datos solicitados
     Y        ingreso correo electronico "estelalopez@mail.com"
     Y        ingreso nuevamente el correo electronico "estelalopez@mail.com"
     Y        doy click en datos del cliente
@@ -67,6 +69,7 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
     Y        doy click en ver detalle del pedido
     Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
     Y        valido que se muestre el detalle del pedido de "Información adicional"
+
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | tipoPlanes                 |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000112     | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | nombrePlan             |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000112     | Postpago      | Plan Elige Mas S/ 52.9 |

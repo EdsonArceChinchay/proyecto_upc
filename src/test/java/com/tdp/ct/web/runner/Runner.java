@@ -20,7 +20,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         //tags = "@AltaDuoCC"
-        tags= "@AltaMovilCECallCenter"
+        tags= "@AltaMovilPostpagoCanalTienda"
 )
 class Runner {
 
