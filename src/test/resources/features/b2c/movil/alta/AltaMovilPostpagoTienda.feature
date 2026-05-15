@@ -19,6 +19,9 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
   @AltaMovilPostpagoCanalTienda
   Esquema del escenario: Alta Movil Postpago a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
+    Y ingreso los datos para la bitacora
+      | Analista QA   | HU         | Test       | Transaccion | Tipo Venta |
+      | Jorge Cancino | TIQLT-XXXX | TIQLT-XXXX | ALTA MOVIL  | Contado    |
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
