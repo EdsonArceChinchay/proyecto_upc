@@ -5,13 +5,14 @@
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT025
-##GDAP: GDAP-1007
+##GDAP: GDAP-1007 v1
+##GDAP: GDAP-1948 v2
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO:
-##FECMOD: 01/08/2024
+##ENCARGADO: Hiro Macuri
+##FECMOD: 26/05/2026
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI14 @AltaMovil
 Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
@@ -31,12 +32,13 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro popup de error
-    Y        ingreso los datos del nuevo cliente
-      | nombres        | apellidos      | genero   |
-      | Estela Rosario | Lopez Manrique | femenino |
-    Y        valido que muestre el nombre completo del cliente "Estela Rosario Lopez Manrique"
+    ##Y        ingreso los datos del nuevo cliente
+    ##  | nombres        | apellidos      | genero   |
+    ##  | Estela Rosario | Lopez Manrique | femenino |
+    ## Y        valido que muestre el nombre completo del cliente "Estela Rosario Lopez Manrique"
     Y        selecciono el boton Linea Nueva Movil
     Y        cierro el popup de validación de estado de contraseña única
+    Y        cierro el popup de cliente con exoneracion
     Y        selecciono el boton Mostrar ofertas
     Y        selecciono el plan "Postpago" que desea
     Y        doy click en el boton Siguiente
@@ -62,11 +64,19 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
     Cuando   doy clic en si acepto
     Y        doy click en el boton de continuar
     Y        doy clic para descargar el contrato
+    Entonces valido el contrato descargado
     Y        doy click en el boton Registrar venta
     Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
+   ## Y        doy click en ver detalle del pedido
+   ## Y        valido que se muestre el detalle del pedido de "Servicio Móvil"
+   ## Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | tipoPlanes                 |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1100000112     | Postpago      | Plan Ilimitado Mi Movistar |
+      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 444455687   | Postpago | Plan Ilimitado Mi Movistar S/69.9 VII |
+
+  ## Data Sanity v1 : 1042464796
+  ## Data Sanity v2 : 444455687
+  ## userNameST | userPasswordST
+  # #userNameDLC | userPasswordDLC
+  ##Descomentar lineas con son clientes nuevos : 7077003355
+  ## tipoPlanes :Plan Movistar Maximo S/79.9 u Plan Ilimitado Mi Movistar S/69.9 VII

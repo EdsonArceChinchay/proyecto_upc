@@ -19,10 +19,12 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         stepNotifications = true,
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
-        tags = "@CaeqContadoCallCenter_CE" // cambiar el tag por el que se quiera ejecutar
+        tags = "@Alta_Postpago_sim_CC")
+// @AltaMovilPostpagoCanalTienda - SANITY PRE PRDO
+//  @AltaMTCallCenter_CE @test-altas @sanity-1701
+//@Alta_Postpago_sim_CC
 
-)
-class Runner {
+ class Runner {
 
     @BeforeClass
     public static void beforeExecution() {
@@ -39,3 +41,8 @@ class Runner {
         JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }
+
+
+
+
+
