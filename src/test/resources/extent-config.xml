@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extentreports>
     <configuration>
-        <!-- report theme -->
-        <!-- standard, dark -->
-
         <theme>dark</theme>
-
-        <!-- document encoding -->
-        <!-- defaults to UTF-8 -->
         <encoding>UTF-8</encoding>
-
-        <!-- protocol for script and stylesheets -->
-        <!-- defaults to https -->
         <protocol>http</protocol>
 
-        <!-- title of the document -->
         <documentTitle>
             DITO Report
         </documentTitle>
 
         <reportName>
             <![CDATA[
-            <img src="../../../src/test/resources/logo/favicon.ico"  style="width:12px;height:10px;" />
-]]>
-            DITO Report
-        </reportName>
-        <!-- location of charts in the test view -->
+            <img src="../../../src/test/resources/logo/favicon.ico" style="width:12px;height:10px;"rtName>
 
-        <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
-        <!--        <dateFormat>dd/MM/yyyy</dateFormat>-->
-
-        <!-- global time format override -->   <!-- defaults to HH:mm:ss -->
-        <!--        <timeFormat>HH:mm:ss a</timeFormat>-->
         <timeStampFormat>dd/MM/yyyy HH:mm:ss a</timeStampFormat>
 
-        <!-- top, bottom -->
-
         <testViewChartLocation>bottom</testViewChartLocation>
-        <!-- custom javascript -->
 
         <scripts>
             <![CDATA[
 $(document).ready(function() {
 });
 ]]>
-        </scripts>
+        </reportName>
 
-        <!-- custom styles -->
         <styles>
             <![CDATA[
-]]>
+                img {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    display: block !important;
+                }
+
+                td, th {
+                    max-width: none !important;
+                }
+
+                table {
+                    width: 100% !important;
+                }
+
+                .table {
+                    width: 100% !important;
+                }
+
+                .step-details {
+                    width: 100% !important;
+                }
+
+                .step-details img {
+                    width: 100% !important;
+                    height: auto !important;
+                }
+            ]]>
         </styles>
     </configuration>
 </extentreports>

@@ -10,6 +10,7 @@ import io.cucumber.java.*;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 public class Hooks {
 
     @Autowired
@@ -55,40 +56,84 @@ public class Hooks {
         this.scenario.setScenario(scenario);
     }
 
-//    @After(order = 0)
-//    public void afterScenario() {
-//        manager.quitDriver();
-//    }
-
     @After(order = 1)
     public void tearDown() {
-//        saveHTMLCode(manager.getDriver());
-        scenario.shotWhenFail();
+        try {
+            scenario.shotWhenFail();
+
+            // ✅ NUEVO: Screenshot grande (no thumbnail)
+            attachScreenshotGrandeOnFail();
+
+        } catch (Exception e) {
+            System.out.println("⚠️ Error en screenshot (ignorado): " + e.getMessage());
+        }
     }
+
     @After(order = 0)
     public void afterScenario() {
-        httpSender.disableSSLValidation();
-        // Captura el error de Selenium si existe
-        String seleniumError =  WebDriverErrorDecorator.getLastSeleniumError();// Obtiene el error de Selenium
 
-        // Genera la bitácora utilizando el servicio BitacoraService
+        httpSender.disableSSLValidation();
+
+        String seleniumError = WebDriverErrorDecorator.getLastSeleniumError();
+
         bitacoraService.generarBitacora();
 
-        // Llama la petición post usando SendPost
         httpSender.sendRunStatus(
                 (String) getScenarioContext().get("transaccion"),
                 (String) getScenarioContext().get("tags"),
                 String.valueOf(scenario.getScenario().getStatus()),
                 (String) getScenarioContext().get("test"),
                 (String) getScenarioContext().get("hu"),
-                seleniumError // Pasa el error de Selenium
+                seleniumError
         );
 
-        // Cierro el driver de manera segura
-        if (manager.isDriverOn()) manager.quitDriver();
+        // ✅ NO cerrar si falló
+        if (!scenario.getScenario().isFailed()) {
+            if (manager.isDriverOn()) manager.quitDriver();
+        } else {
+            System.out.println("❌ Escenario falló → NO cierro navegador para análisis");
+        }
     }
 
     public static ScenarioContext getScenarioContext() {
         return scenarioContext.get();
     }
+
+    // ================== MÉTODOS NUEVOS ==================
+
+    /**
+     * Adjunta screenshot en tamaño completo (HTML + Base64)
+     */
+    private void attachScreenshotGrande() {
+        try {
+            WebDriver driver = manager.getDriver();
+
+            if (driver == null || !(driver instanceof org.openqa.selenium.TakesScreenshot)) {
+                return;
+            }
+
+            byte[] bytes = ((org.openqa.selenium.TakesScreenshot) driver)
+                    .getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
+
+            String base64 = java.util.Base64.getEncoder().encodeToString(bytes);
+
+            // HTML que evita thumbnail
+            String html = "<img src='data:image/png;base64," + base64 + "' style='width:100%; height:auto;'/>";
+
+            scenario.getScenario().attach(html.getBytes(), "text/html", "📸 Evidencia");
+
+        } catch (Exception e) {
+            System.out.println("⚠️ Error adjuntando screenshot grande: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Ejecuta screenshot solo si el escenario falla
+     */
+    private void attachScreenshotGrandeOnFail() {
+        if (scenario.getScenario().isFailed()) {
+            attachScreenshotGrande();
+        }
+    }
+
 }

@@ -163,6 +163,7 @@ public class AltaFijaTiendaPage extends WebBase {
         String nameButton = btnLineaNueva.getText();
         click(btnLineaNueva);
         logInfo("Dio click en el boton: " + nameButton);
+        UtilWeb.waitForSeconds(5);
     }
 
     public void descargarContrato() {

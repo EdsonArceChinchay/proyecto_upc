@@ -3,6 +3,7 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -223,6 +224,7 @@ public class AddressPage extends WebBase {
         logInfo("Estas en la pagina de Lugar de instalacion >>> {0}", isExisted);
         return isExisted;
     }
+
 
     /**
      * FUNCION - SELECCIONAR DEPARTAMENTO

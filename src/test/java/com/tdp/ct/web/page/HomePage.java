@@ -100,93 +100,79 @@ public class HomePage extends WebBase {
 
     }
 
-
     public void typeDocumentNumber1(String documentNumber) {
 
-        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(40));
         JavascriptExecutor js = (JavascriptExecutor) driver();
 
-        int maxRetries = 6;
+        int maxRetries = 5;
 
         for (int attempt = 1; attempt <= maxRetries; attempt++) {
+
             try {
+                logInfo("🚀 intento #" + attempt);
 
-                logInfo("============ INTENTO " + attempt + " ============");
+                WebElement input = null;
 
-                // ✅ 1. SOLO esperar visible + enabled (NO Angular state)
-                wait.until(d -> {
+                // ✅ 1. localizar input (shadow o normal)
+                try {
+                    WebElement host = driver().findElement(By.id("id-searchclient-tdp"));
+
                     try {
-                        WebElement host = driver().findElement(By.id("id-searchclient-tdp"));
-                        SearchContext shadow = host.getShadowRoot();
-                        WebElement input = shadow.findElement(By.cssSelector("input"));
+                        // intentar shadow
+                        input = host.getShadowRoot().findElement(By.cssSelector("input"));
+                        logInfo("✅ encontrado en SHADOW DOM");
 
-                        return input.isDisplayed() && input.isEnabled();
-
-                    } catch (Exception e) {
-                        return false;
+                    } catch (Exception shadowError) {
+                        // fallback: buscar dentro del host (light DOM)
+                        input = host.findElement(By.cssSelector("input"));
+                        logInfo("✅ encontrado en DOM INTERNO (sin shadow)");
                     }
-                });
 
-                logInfo("✅ Input visible y habilitado");
+                } catch (Exception e) {
+                    // fallback global por si todo cambia
+                    input = driver().findElement(By.cssSelector("input[id='id-searchclient-tdp']"));
+                    logInfo("✅ encontrado en DOM GLOBAL");
+                }
 
-                // ✅ 2. obtener SIEMPRE elemento fresco
-                WebElement host = driver().findElement(By.id("id-searchclient-tdp"));
-                WebElement input = host.getShadowRoot().findElement(By.cssSelector("input"));
-
-                // ✅ 3. SCROLL + FOCUS REAL
-                js.executeScript("arguments[0].scrollIntoView({block:'center'});", input);
-                js.executeScript("arguments[0].focus();", input);
-                input.click();
-
-                logInfo("✅ Input enfocado");
-
-                // 🔥 4. FORZAR ACTIVACIÓN ANGULAR (CLAVE DEL FIX)
+                // ✅ 2. escribir directo (sin esperar Angular)
                 js.executeScript(
-                        "arguments[0].dispatchEvent(new Event('focus', { bubbles: true }));", input);
+                        "arguments[0].value = arguments[1];",
+                        input,
+                        documentNumber
+                );
 
+                // ✅ 3. eventos Angular
                 js.executeScript(
-                        "arguments[0].dispatchEvent(new Event('click', { bubbles: true }));", input);
-
-                Thread.sleep(300); // micro delay crítico
-
-                // ✅ 5. set value (JS evita problemas de Angular)
-                js.executeScript("arguments[0].value = '';", input);
-                js.executeScript("arguments[0].value = arguments[1];", input, documentNumber);
-
-                logInfo("✅ Valor seteado: " + documentNumber);
-
-                // ✅ 6. eventos Angular obligatorios
-                js.executeScript(
-                        "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));", input);
+                        "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));",
+                        input
+                );
 
                 js.executeScript(
-                        "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));", input);
+                        "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+                        input
+                );
 
-                // ✅ 7. validar persistencia
-                boolean success = wait.until(d -> {
-                    String value = input.getAttribute("value");
-                    logInfo("🔍 valor actual: " + value);
-                    return documentNumber.equals(value);
-                });
+                // ✅ 4. pequeña espera
+                UtilWeb.waitForSeconds(1);
 
-                if (success) {
+                // ✅ 5. validar
+                String value = input.getAttribute("value");
+                logInfo("🔍 valor actual: " + value);
+
+                if (documentNumber.equals(value)) {
                     logInfo("✅ DOCUMENTO INGRESADO OK");
                     return;
                 }
 
             } catch (Exception e) {
-
-                logInfo("❌ intento " + attempt + " falló -> " + e.getMessage());
-
-                if (attempt == maxRetries) {
-                    throw new RuntimeException("No se pudo escribir documento (Angular timing issue)", e);
-                }
-
-                UtilWeb.waitForSeconds(2 + attempt);
+                logInfo("❌ intento falló -> " + e.getMessage());
             }
-        }
-    }
 
+            UtilWeb.waitForSeconds(2);
+        }
+
+        throw new RuntimeException("No se pudo ingresar documento (shadow + DOM dinámico)");
+    }
 
     public void clickOnConsultButton() {
         esperaProgresiva(driver(), 5, 5, btnSearch);

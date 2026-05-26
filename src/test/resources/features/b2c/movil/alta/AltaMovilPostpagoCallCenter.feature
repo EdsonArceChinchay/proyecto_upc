@@ -5,13 +5,14 @@
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT027
-##GDAP: GDAP-1151
+##GDAP: GDAP-1151 v1
+##GDAP: GDAP-1943 v2
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
-##ENCARGADO: Angel Medina
-##FECMOD: 01/08/2024
+##ENCARGADO: Hiro Macuri
+##FECMOD: 26/05/2026
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @AT-DT027 @AltaMovil
 Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Center
@@ -26,7 +27,7 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y selecciono el tipo de usuario "<userType>"
     Y ingreso el usuario "<userName>"
     Y ingreso el password "<userPassword>"
-    #Y ingreso el captcha
+    Y ingreso el captcha
     Y presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y valido que se presente el canal "<channelType>"
@@ -34,9 +35,9 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
     Y ingreso el documento "<documentNumber>"
     Y doy click en el boton Consultar
     Y cierro popup de error
-    Y ingreso los datos del nuevo cliente
-      | nombres | apellidos    | genero    |
-      | Pruebas | QANDOCIENTOS | masculino |
+    ##Y ingreso los datos del nuevo cliente
+    ##  | nombres | apellidos    | genero    |
+    ##  | Pruebas | QANDOCIENTOS | masculino |
     Y selecciono el boton Linea Nueva Movil
     Y cierro el popup de validación de estado de contraseña única
     Y selecciono el boton Mostrar ofertas
@@ -88,4 +89,6 @@ Característica: AT-DT027_Alta movil postpago a cliente con CE por canal Call Ce
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | correo                    | tipoPlanMovil | nombrePlan                           |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100007777     | 1100007777@mailinator.com | Postpago      | RV Plan Ilimitado Mi Movistar S/74.9 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464796    | 1100007777@mailinator.com | Postpago      | Plan Ilimitado Mi Movistar S/74.9 VII |
+   ##nombrePlanPlan Ilimitado Mi Movistar S/74.9 VII
+    ##Paso call center: 1042464796
