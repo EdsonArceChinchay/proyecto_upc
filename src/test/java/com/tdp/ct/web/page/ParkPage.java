@@ -63,7 +63,8 @@ public class ParkPage extends WebBase {
     protected WebElement botonContinuar;
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
-    @FindBy(css = ".text-info")
+    //@FindBy(css = ".text-info")
+    @FindBy(xpath = "//*[contains(translate(normalize-space(.), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'CLIENTE NUEVO')]")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
@@ -112,6 +113,7 @@ public class ParkPage extends WebBase {
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
         String texto = nombreClienteUserData.getText().toUpperCase();
+        logInfo("isNewCustomer - Texto obtenido: [" + texto + "]");
         return texto.contains("CLIENTE NUEVO");
 
     }
