@@ -9,9 +9,12 @@ import com.tdp.ct.web.utils.MaterialsManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -60,7 +63,8 @@ public class ParkPage extends WebBase {
     protected WebElement botonContinuar;
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
-    @FindBy(css = ".text-info")
+    //@FindBy(css = ".text-info")
+    @FindBy(xpath = "//*[contains(translate(normalize-space(.), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'CLIENTE NUEVO')]")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
@@ -108,7 +112,10 @@ public class ParkPage extends WebBase {
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
-        return nombreClienteUserData.getText().length() <= 8;
+        String texto = nombreClienteUserData.getText().toUpperCase();
+        logInfo("isNewCustomer - Texto obtenido: [" + texto + "]");
+        return texto.contains("CLIENTE NUEVO");
+
     }
 
     public void ingresarNombreClienteExtranjero(String name) {
@@ -484,20 +491,28 @@ public class ParkPage extends WebBase {
         }
     }
 
+
+
     public void cerrarPopUpEstadoCU() {
         try {
-            if (cerrarPopUpEstadoCU.isDisplayed()) {
-                logInfo("Cierre Nuevo Popup....");
-                UtilWeb.waitForSeconds(4);
-                click(cerrarPopUpEstadoCU);
-            } else {
-                UtilWeb.waitForSeconds(4);
-                logInfo("No existe Popup....");
-            }
+            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(6));
+            WebElement boton = wait.until(driver -> {
+                List<WebElement> elementos = driver.findElements(
+                        By.xpath("//app-modal-uniquepass-park//button[contains(.,'CONTINUAR')]")
+                );
+                return elementos.isEmpty() ? null : elementos.get(0);
+            });
+            logInfo("Popup encontrado, cerrando...");
+            boton.click();
+        } catch (TimeoutException e) {
+            logInfo("No existe Popup (no apareció en el tiempo esperado)");
         } catch (Exception e) {
-            logSevere("No hay ningún popup.....");
+            logSevere("Error cerrando popup: " + e.getMessage());
         }
     }
+
+
+
 
     public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado

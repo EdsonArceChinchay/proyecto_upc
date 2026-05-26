@@ -5,7 +5,7 @@
 ##FUNCIONALIDAD: ALTA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT038
-##GDAP: GDAP-589
+##GDAP: GDAP-589 GDAP-1949
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
@@ -17,7 +17,7 @@
 Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
 
   @AltaMTCallCenter_CE @test-altas @sanity-1701
-  Esquema del escenario: Alta MT (Alta fija + alta movil) a cliente con CE por canal Call Center
+  Esquema del escenario: Alta MT a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion | Tipo Venta | Tags                 |
@@ -41,10 +41,12 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        cierro el popup de validación de estado de contraseña única
     Y        selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
+
     Y        selecciono el departamento donde sera la instalacion "<departamento>"
     Y        selecciono la provincia donde sera la instalacion "<provincia>"
     Y        selecciono el distrito donde sera la instalacion "<distrito>"
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
+
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
@@ -57,6 +59,7 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
     Y        presiono el boton Consultar ubicacion
+
     Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit | lote |
       | A  | TORRE        | ALEX MANCILLA  | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     | 2    |
@@ -68,8 +71,8 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
+    Y        ingreso correo electronico "pruebas@gmail.com"
+    Y        ingreso nuevamente el correo electronico "pruebas@gmail.com"
     Y        doy click en datos del cliente
     Y        completo los datos del cliente
       | fechaNac   | estadoCivil | nacionalidad |
@@ -96,7 +99,7 @@ Característica: AT-DT038_Alta MT (Alta fija + alta movil) a cliente con CE por 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion              | referencia | planType | planName |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | CE           | 1100002329     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | CASA       | Trío MT  | Trio HD   |
+      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito   | direccion              | referencia | planType | planName |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 1100002329     | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 367 | CASA       | Trío MT  | Trio HD  |
 
 

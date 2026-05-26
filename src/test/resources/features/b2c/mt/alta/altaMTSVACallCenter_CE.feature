@@ -96,5 +96,5 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva        |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo      | SMART WIFI |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo      | SMART WIFI |
