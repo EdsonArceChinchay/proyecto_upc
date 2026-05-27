@@ -119,4 +119,10 @@ public class CheckoutStep {
     public void ValidoQuePresenteDetallePedido(String service) {
         page.checkoutPage().ValidoQuePresenteDetallePedido(service);
     }
+
+    @ScreenShotAfter
+    public void validarContratoDescargado() {
+        page.checkoutPage().validarContratoDescargado();
+    }
+
 }

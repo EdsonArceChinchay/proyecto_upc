@@ -16,7 +16,7 @@
 @BERSERKERS @QAN @DoneDevOps @DoneDevOpsPI11SP5 @CAPL
 Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente extranjero (CE) por canal Call Center
 
-  @CaplPreAPostCC_CE @QAN
+  @CaplPreAPostCC_CE
   Esquema del escenario: CAPL Prepago a Postpago a cliente extranjero - por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -35,7 +35,7 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y doy click en el boton Consultar
     Y selecciona el boton de detalle del numero de celular existente "<nroMovil>"
     Y presiono el boton Renovar Plan
-    Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
+   ## Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y selecciono el boton de eleccion de planes
     Y selecciono el tipo de plan movil "Postpago"
     Y selecciono un plan movil "<planMovil>"
@@ -61,4 +61,8 @@ Característica: AT-DT101_Cambio de plan (CAPL) de Prepago a Postpago a cliente 
     Y apruebo la solicitud
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nroMovil  | correo                   | planMovil                       |
-      | userType | userNameQAN8 | userPasswordQAN8 | Bienvenid@ | Call Center | CE           | 221011125      | 970045282 | 221011125@mailinator.com | Plan Ilimitado Mi Movistar S/85 |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1042464934      | 920955204 | 221011125@mailinator.com | Plan Ilimitado Mi Movistar S/85 |
+
+  ## CE A PROBAR : 1042464934
+  ## N° CELULAR A PROBAR  : 920955204
+  ##PLAN A PROBAR : Plan Ilimitado Mi Movistar S/114.9VII O Plan Ilimitado Mi Movistar S/85

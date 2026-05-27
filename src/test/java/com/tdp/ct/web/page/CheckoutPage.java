@@ -5,6 +5,7 @@ import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import com.tdp.ct.web.utils.PDFUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -417,4 +418,50 @@ public class CheckoutPage extends WebBase {
     public void validateTicket() {
         js().scrollElementTop(tittleTicket);
     }
+
+    public void validarContratoDescargado() {
+
+        String rutaBase = getAbsolutePathString("target/contrato-pdf");
+
+        File carpeta = new File(rutaBase);
+
+        File[] archivos = carpeta.listFiles((dir, name) -> name.endsWith(".pdf"));
+
+        if (archivos == null || archivos.length == 0) {
+            throw new RuntimeException("❌ No se encontraron archivos PDF");
+        }
+
+        for (File pdf : archivos) {
+
+            logInfo("Validando PDF: " + pdf.getName());
+
+            String texto = PDFUtils.leerTextoPDF(pdf.getAbsolutePath());
+
+            // Normalizamos texto (importante)
+            texto = texto.replaceAll("\\s+", " ").toLowerCase();
+
+            // ✅ VALIDACIONES BÁSICAS
+            if (!texto.contains("movistar")) {
+                throw new AssertionError("❌ PDF no contiene 'movistar'");
+            }
+
+            if (!texto.contains("contrato")) {
+                throw new AssertionError("❌ PDF no contiene 'contrato'");
+            }
+
+            if (!texto.contains("qa test")) {
+                throw new AssertionError("❌ No contiene el nombre del cliente");
+            }
+
+            if (!texto.contains("444455687")) {
+                throw new AssertionError("❌ No contiene el documento");
+            }
+
+            logInfo("✅ PDF válido: " + pdf.getName());
+        }
+
+        logInfo("✅ Todos los contratos validados correctamente");
+    }
+
+
 }

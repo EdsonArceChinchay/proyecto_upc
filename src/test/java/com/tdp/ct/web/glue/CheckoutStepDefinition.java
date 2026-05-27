@@ -51,6 +51,12 @@ public class CheckoutStepDefinition {
         checkoutStep.clicDescargarContrato();
     }
 
+    @Entonces("valido el contrato descargado")
+    public void validoElContratoDescargado() {
+        checkoutStep.validarContratoDescargado();
+    }
+
+
     @Entonces("me muestra la pantalla registrar venta")
     public void meMuestraLaPantallaParaRegistrarVenta() {
         checkoutStep.validarPantallaRegistrarVenta();
