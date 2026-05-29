@@ -12,13 +12,13 @@
 ##TAG : BERSERKERS
 ##DATA: REUSABLE
 ##ENCARGADO: HIRO MACURI
-##FECMOD: 28/05/2026
+##FECMOD: 29/05/2026
 
 @BERSERKERS @QAN @DoneDevOps  @AltaMT
-Característica: Alta MT a cliente con CE por canal Call Center
+Característica: Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
 
   @AltaMTCallCenter_CE
-  Esquema del escenario: Alta MT a cliente con CE por canal Call Center
+  Esquema del escenario: Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU          | Test        | Transaccion | Tipo Venta | Tags                 |
@@ -60,11 +60,13 @@ Característica: Alta MT a cliente con CE por canal Call Center
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
-   ## Y        valido que este en el resumen de venta
+    Y        valido que este en el resumen de venta
     Cuando   doy click en el boton Iniciar registro
     Y        valido que me encuentre en la pantalla agendamiento
     Y        ingreso los datos de agendamiento
     Y        presiono el boton confirmar agendamiento
+    Y        ingreso la direccion donde sera la instalacion "JIRON JULIO CESAR TELLO 469"
+    Y        ingreso la referencia de la direccion "conjunto b"
     Y        presiono el boton Consultar ubicacion
     Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
       | mz | tipoVivienda | nombreVivienda | piso | int | conjunto                 | conjHabit | lote |
@@ -77,13 +79,13 @@ Característica: Alta MT a cliente con CE por canal Call Center
     Y        doy click en confirmar delivery
     Y        valido que este en la seccion completa los datos solicitados
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en datos del cliente
-    Y        completo los datos del cliente
-      | fechaNac   | estadoCivil | nacionalidad |
-      | 10/12/1990 | Divorciado  | Alemania     |
-    Y        doy click en el boton confirmar
+    Y        ingreso correo electronico "estelalopez@mail.com"
+    Y        ingreso nuevamente el correo electronico "estelalopez@mail.com"
+    ##Y        doy click en datos del cliente
+    ##Y        completo los datos del cliente
+    ##  | fechaNac   | estadoCivil | nacionalidad |
+    ##  | 10/12/1990 | Divorciado  | Alemania     |
+    ##Y        doy click en el boton confirmar
     Y        doy click en Validar contrato ""
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -106,7 +108,7 @@ Característica: Alta MT a cliente con CE por canal Call Center
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber |tipodireccion |direccion         |tipovia| planType |planName |
-      | userType | userNameCC |userPasswordCC  | Bienvenid@ | SI                | Call Center | CE           | 1042464796     |Casa          | LINCE, LIMA, LIMA|JIRON  | Trío MT  |Trio HD 400 Mbps RA + Ilimitado 120 Gb RA |
+      | userType | userNameCC |userPasswordCC  | Bienvenid@ | SI                | Call Center | CE           | 1042464796     |Casa          | LINCE, LIMA, LIMA|JIRON  | Trío MT  |Trio HD 400 Mbps RA + Ilimitado 120 Gb RA  |
 
 
   ##CE : 1042464796

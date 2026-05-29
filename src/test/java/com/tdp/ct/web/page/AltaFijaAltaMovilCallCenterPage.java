@@ -78,149 +78,95 @@ public class AltaFijaAltaMovilCallCenterPage extends WebBase {
         click(ofertaUno);
         UtilWeb.waitForSeconds(2);
     }
+   /////////////////////BUSCAR Y LISTAR OFERTAS //////////
 
-    public void listaOfertas(String nombrePlan, ManageScenario scenario) {
+   public void listaOfertas(String nombrePlan, ManageScenario scenario) {
+       String expected = nombrePlan
+           .replaceAll("\\s+", " ")
+           .trim()
+           .toUpperCase();
 
-        logInfo("====================================");
-        logInfo("INICIO listaOfertas DEBUG PRO FINAL");
-        logInfo("Plan recibido: [" + nombrePlan + "]");
+       logInfo("PLAN BUSCADO (FEATURE): [" + expected + "]");
 
-        String expectedOffer = nombrePlan.trim().toUpperCase();
-        logInfo("Plan normalizado: [" + expectedOffer + "]");
+       int intentos = 0;
 
-        WebElement shadowHost;
-        try {
-            shadowHost = driver().findElement(By.cssSelector("tdp-st-modal"));
-            logInfo("✅ Encontró shadowHost");
-        } catch (Exception e) {
-            logInfo("❌ NO encontró shadowHost: " + e.getMessage());
-            throw e;
-        }
+       while (intentos < 10) {
 
-        SearchContext shadow;
-        try {
-            shadow = shadowHost.getShadowRoot();
-            logInfo("✅ Acceso a shadowRoot OK");
-        } catch (Exception e) {
-            logInfo("❌ ERROR accediendo a shadowRoot: " + e.getMessage());
-            throw e;
-        }
+           logInfo("===== PESTAÑA #" + intentos + " =====");
 
-        int contador = 0;
-        boolean encontrado = false;
+           List<WebElement> planes = driver().findElements(By.cssSelector(".stl_plan_valor"));
 
-        while (contador < 15) {
+           logInfo("Cantidad de planes visibles: " + planes.size());
 
-            logInfo("------------ ITERACIÓN: " + contador + " ------------");
+           int index = 0;
 
-            List<WebElement> cards;
-            try {
-                cards = shadow.findElements(By.cssSelector(".offer-card-container"));
-                logInfo("Cards encontradas: " + cards.size());
-            } catch (Exception e) {
-                logInfo("❌ Error buscando cards: " + e.getMessage());
-                break;
-            }
+           for (WebElement plan : planes) {
 
-            if (cards.isEmpty()) {
-                logInfo("⚠️ No hay cards visibles en esta iteración");
-            }
+               String texto = "";
 
-            int index = 0;
-            for (WebElement card : cards) {
+               try {
+                   texto = plan.getText()
+                           .replaceAll("\\s+", " ")
+                           .trim()
+                           .toUpperCase();
+               } catch (Exception e) {
+                   logInfo("❌ Error leyendo plan index: " + index);
+                   continue;
+               }
 
-                String texto = "";
-                try {
-                    texto = card.getText();
-                    logInfo("Card[" + index + "] RAW: [" + texto + "]");
-                } catch (Exception e) {
-                    logInfo("❌ Error texto card[" + index + "]");
-                }
+               logInfo("PLAN [" + index + "]: [" + texto + "]");
 
-                String normalizado = texto.replaceAll("\\s+", " ").toUpperCase();
-                logInfo("Card[" + index + "] NORMALIZADO: [" + normalizado + "]");
+               if (texto.equals(expected)) {
 
-                if (normalizado.contains(expectedOffer)) {
+                   logInfo("✅ MATCH ENCONTRADO EN INDEX: " + index);
 
-                    logInfo("✅ MATCH ENCONTRADO EN CARD[" + index + "]");
+                   try {
 
-                    try {
-                        ((JavascriptExecutor) driver())
-                                .executeScript("arguments[0].scrollIntoView(true);", card);
+                       // 🔥 SCROLL AL TEXTO
+                       ((JavascriptExecutor) driver())
+                               .executeScript("arguments[0].scrollIntoView(true);", plan);
 
-                        ((JavascriptExecutor) driver())
-                                .executeScript("arguments[0].click();", card);
+                       // 🔥 CLICK FUERTE (Angular-friendly)
+                       ((JavascriptExecutor) driver()).executeScript(
+                               "arguments[0].dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));" +
+                                       "arguments[0].dispatchEvent(new MouseEvent('mouseup',{bubbles:true}));" +
+                                       "arguments[0].click();",
+                               plan
+                       );
 
-                        logInfo("✅ CLICK HECHO EN CARD");
-                        encontrado = true;
+                       logInfo("✅ PLAN SELECCIONADO CORRECTAMENTE");
+                       return;
 
-                    } catch (Exception e) {
-                        logInfo("❌ ERROR CLICK CARD: " + e.getMessage());
-                    }
+                   } catch (Exception e) {
+                       logInfo("❌ ERROR HACIENDO CLICK: " + e.getMessage());
+                   }
+               }
 
-                    break;
-                }
+               index++;
+           }
 
-                index++;
-            }
+           // 👉 mover carrusel
+           try {
+               js().scrollElementTop(btnRight);
+               btnRight.click();
+               UtilWeb.waitForSeconds(2);
 
-            if (encontrado) {
-                logInfo("✅ SALIENDO → PLAN ENCONTRADO");
-                break;
-            }
+           } catch (Exception e) {
+               logInfo("❌ No hay más páginas");
+               break;
+           }
 
-            // ===== FLECHA CORREGIDA =====
-            List<WebElement> flechas;
-            try {
-                flechas = shadow.findElements(By.cssSelector("div._right"));
-                logInfo("Flechas encontradas: " + flechas.size());
-            } catch (Exception e) {
-                logInfo("❌ Error buscando flecha: " + e.getMessage());
-                break;
-            }
+           intentos++;
+       }
 
-            if (flechas.isEmpty()) {
-                logInfo("❌ NO SE ENCONTRÓ FLECHA → FIN");
-                break;
-            }
+       throw new RuntimeException("❌ No se encontró el plan: " + expected);
+   }
 
-            try {
-                WebElement flecha = flechas.get(0);
 
-                logInfo("➡ Intentando click REAL Angular");
 
-                ((JavascriptExecutor) driver()).executeScript(
-                        "arguments[0].dispatchEvent(new MouseEvent('mousedown', {bubbles:true}));" +
-                                "arguments[0].dispatchEvent(new MouseEvent('mouseup', {bubbles:true}));" +
-                                "arguments[0].click();",
-                        flecha
-                );
 
-                logInfo("✅ CLICK FLECHA EJECUTADO");
 
-                UtilWeb.waitForSeconds(2);
-
-                // 🔥 REFRESH DEL SHADOW (CLAVE)
-                shadow = shadowHost.getShadowRoot();
-                logInfo("🔄 ShadowRoot refrescado");
-
-            } catch (Exception e) {
-                logInfo("❌ ERROR CLICK FLECHA: " + e.getMessage());
-                break;
-            }
-
-            contador++;
-        }
-
-        if (!encontrado) {
-            logInfo("❌ RESULTADO FINAL: NO SE ENCONTRÓ PLAN");
-            throw new RuntimeException("No se encontró el plan: " + expectedOffer);
-        }
-
-        logInfo("✅ RESULTADO FINAL: PLAN SELECCIONADO");
-        logInfo("FIN listaOfertas DEBUG PRO FINAL");
-        logInfo("====================================");
-    }
+    ////////////////   ////////////////   ////////////////   ////////////////
 
     public void clickBotonIrMovistarTotal() {
         esperaProgresiva(driver(), 4, 5, botoneraIrA.get(1));
