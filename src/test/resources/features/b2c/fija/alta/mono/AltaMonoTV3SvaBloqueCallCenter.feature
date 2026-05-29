@@ -88,4 +88,6 @@ Característica: AT-DT014_Alta Mono TV 3 Sva Bloque a cliente con CE por canal C
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan | bloque | bloque1         | bloque2        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 100712890      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | TV         | HBO    | Bloque Hot Pack | Bloque estelar |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE           | 100712890      | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | INKAFARMA  | Mono     | Movistar TV RA AG24 | Bloque Hot Pack    | HBO | Bloque estelar |
+
+    ##Movistar TV RA AG24

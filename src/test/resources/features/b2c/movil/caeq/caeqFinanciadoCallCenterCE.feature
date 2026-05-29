@@ -5,18 +5,19 @@
 ##FUNCIONALIDAD:
 ##ESTADO: ACTIVO
 ##CODIGO:
-##GDAP: GDAP-1420
+##GDAP: GDAP-1420 v1
+##GDAP: GDAP-1946 v2
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
 ##ENCARGADO:
-##FECMOD: 17/07/2024
+##FECMOD: 27/05/2026
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
 
-  @CaeqFinanciadoCallCenter_CE @QAN
+  @CaeqFinanciadoCallCenter_CE
   Esquema del escenario: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -62,13 +63,13 @@ Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Cent
     Y        ingreso telefono de contacto "984093119"
     Y        ingreso instrucciones de delivery "abc"
     Y        doy click en confirmar delivery
-    Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso correo electronico "prueba_qa@gmail.com"
-    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-    Y        doy click en validar identidad del titular
-    Y       ingreso los datos solicitados para la validacion del cliente
-      | nombrePadre   | nombreMadre   | distritoNac   |
-      | <nombrePadre> | <nombreMadre> | <distritoNac> |
+   ## Y        selecciono el metodo de pago "Contra entrega"
+   ##  Y        ingreso correo electronico "prueba_qa@gmail.com"
+   ##  Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+   ##  Y        doy click en validar identidad del titular
+   ##  Y       ingreso los datos solicitados para la validacion del cliente
+   ##    | nombrePadre   | nombreMadre   | distritoNac   |
+   ##    | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -90,4 +91,9 @@ Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Cent
 
     Ejemplos:
       | userType | userName     | userPassword     | msgHome    | insertarDireccion | channelType | documentType | documentNumber | EncontrarCelular | equipoName                  | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | SI                | Call Center | DNI          | 71464050       | 973641088        | XIAOMI REDMI 12C GRIS 128GB | SILVIA      | FRANCISCO   | COMAS       |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | SI                | Call Center | CE          | 1042464939       | 920955026        | HONOR X8A VERDE CRT-LX3 C/PACK | SILVIA      | FRANCISCO   | COMAS       |
+
+
+  ## CE A PROBAR : 1042464939
+  ## N° CELULAR A PROBAR  : 920955026
+  ##NOMBRE DEL EQUIPO : HONOR X8A VERDE CRT-LX3 C/PACK

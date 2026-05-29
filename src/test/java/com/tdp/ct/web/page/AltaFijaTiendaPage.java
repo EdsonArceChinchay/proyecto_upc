@@ -143,6 +143,7 @@ public class AltaFijaTiendaPage extends WebBase {
         }
     }
 
+
     public void seleccionarOferta() {
         logInfo("Metodo Seleccionar Oferta");
         revisarModalError(driver());

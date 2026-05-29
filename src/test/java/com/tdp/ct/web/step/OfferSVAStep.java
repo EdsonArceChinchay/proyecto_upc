@@ -90,11 +90,8 @@ public class OfferSVAStep {
 
     @ScreenShotAfter
     public void addSVABlocks(String sva) {
-
         String nameSVA = sva.trim().toUpperCase();
-
         page.offerSVAPage().scrollToTitle("BLOQUES");
-
         switch (nameSVA) {
             case "BLOQUE HOT PACK":
             case "HOT PACK":
@@ -104,7 +101,7 @@ public class OfferSVAStep {
             case "BLOQUE HBO+":
             case "HBO+":
             case "HBO":
-                page.offerSVAPage().addSVACheckBox("Bloque HBO+");
+                page.offerSVAPage().addSVACheckBox("HBO");
                 break;
 
             case "BLOQUE ESTELAR":

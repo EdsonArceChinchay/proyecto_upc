@@ -5,18 +5,19 @@
 ##FUNCIONALIDAD: PORTABILIDAD
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT105
-##GDAP: GDAP-893
+##GDAP: GDAP-893 V1
+##GDAP: GDAP-1944 V2
 ##SPRINT CREADO:
 ##FRECUENCIA: DIARIO
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDENES EN VUELO)
-##ENCARGADO: VICTOR CARPIO
-##FECMOD: 11/10/2024
+##ENCARGADO: HIRO MACURI
+##FECMOD: 29/05/2026
 
 @BERSERKERS @DoneDevOps
 Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por canal Call Center
 
-  @PortaNormalPostCC @MVP16 @Global
+  @PortaNormalPostCC
   Esquema del escenario: Porta Normal solo chip postpago a cliente con DNI por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -29,14 +30,14 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<channelType>"
+    Y        valido que se presente el canal "<channelType>"
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
     Y        cierro el popup de contraseña Única
-    Y        ingreso los datos del nuevo cliente
-      | nombres | apellidos | genero   |
-      | Pruebas | Qan       | femenino |
+   ## Y        ingreso los datos del nuevo cliente
+      ##   | nombres | apellidos | genero   |
+      ##   | Pruebas | Qan       | femenino |
     Y        doy click en el boton portabilidad
     Y        selecciono el boton Mostrar ofertas
     Y        ingreso numero de telefono para portar "<phoneNumber>"
@@ -93,5 +94,14 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | phoneNumber | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
-      | userType | userNameQAN5 | userPasswordQAN5 | Bienvenid@ | Call Center | DNI          | 73668640       | 941629190   | Postpago  | Claro    | Postpago      | RV Plan Ilimitado Mi Movistar | LUZMILA     | TITO     | GUADALUPE |
+      | userType|userName   | userPassword     | msgHome        | channelType     | documentType | documentNumber | phoneNumber | tipoLinea | operador | tipoPlanMovil | nombrePlan                    | nombreMadre | nombrePadre | distritoNac  |
+      | userType|userNameCC | userPasswordCC   | Bienvenid@     | Call Center     | DNI          | 42464554       | 920950266   | Postpago  | Claro    | Postpago      | RV Plan Ilimitado Mi Movistar | FELICITAS| WALTER     | PUNO |
+
+## userType =Interno
+##userNameCC =CC_Jllamoca
+## userNameCC =DamIslas20251
+##DNI :42464855 | 42464554
+  #PADRE :FELIX | WALTER
+  #MADRE :PASCUALA MARIA | FELICITAS
+  #DISTRITO: CARHUAZ | PUNO
+##NUMERO PARA REALIZAR LA PROTA :920950266

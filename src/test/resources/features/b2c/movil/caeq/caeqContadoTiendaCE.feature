@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por canal Tienda
 
-  @CaeqContadoTienda_CE @RegreDito
+  @CaeqContadoTienda_CE
   Esquema del escenario: Como usuario <userName> de la Tienda <channelType> deseo consultar el cliente con <documentType>: <documento>
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -69,3 +69,8 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | numeroPlanMovil | correo                   | nombreMadre | nombrePadre | distritoNac |
       | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 1632547903     | 650030376       | 221011271@mailinator.com | Silvia      | Francisco   | Comas       |
+
+
+      ## CE A PROBAR : 1042464939
+  ## N° CELULAR A PROBAR  : 920955026
+  ##NOMBRE DEL EQUIPO : HONOR X8A VERDE CRT-LX3 C/PACK

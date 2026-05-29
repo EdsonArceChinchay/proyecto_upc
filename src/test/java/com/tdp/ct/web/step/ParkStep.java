@@ -256,8 +256,13 @@ public class ParkStep {
      * FUNCION BOTON MOSTRAR OFERTA
      * */
 
+    @ScreenShotAfter
     public void btnMostrar() {
         page.parkPage().mostrarOfertas();
+    }
+
+    public void btnMostrarMT() {
+        page.parkPage().mostrarOfertasMT();
     }
 
     /**
@@ -282,5 +287,9 @@ public class ParkStep {
 
     public void selectLineWithNumber(String number) {
         page.parkPage().selectLineWithNumber(number);
+    }
+
+    public void cerrarPopUpClienteConExoneracion() {
+        page.parkPage().cerrarPopUpClienteConExoneracion();
     }
 }

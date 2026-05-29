@@ -195,4 +195,59 @@ public class AddressStep {
     public void clickButtonConsultCoverage() {
         page.addressPage().clickButtonConsultCoverage();
     }
+
+    @ScreenShotAfter
+    public void ingresarTipoDireccion(String tipodireccion) {
+        page.addressPage().ingresarTipoDireccion(tipodireccion);
+    }
+
+    @ScreenShotAfter
+    public void ingresarDistritoProvinciaYDepartamento(String direccion) {
+        page.addressPage().ingresarDistritoProvinciaYDepartamento(direccion);
+    }
+    @ScreenShotAfter
+    public void ingresarTipoDeVida(String tipodevia) {
+        page.addressPage().ingresarTipoDeVida(tipodevia);
+    }
+
+    @ScreenShotAfter
+    public void ingresarNombreVia(String nombrevia) {
+        page.addressPage().ingresarNombreVia(nombrevia);
+
+    }
+    @ScreenShotAfter
+    public void ingresarPuerta(String puerta) {
+        page.addressPage().ingresarPuerta(puerta);
+
+    }
+    @ScreenShotAfter
+    public void ingresarManzana(String manzana) {
+        page.addressPage().ingresarManzana(manzana);
+
+    }
+
+    @ScreenShotAfter
+    public void ingresarLote(String lote) {
+        page.addressPage().ingresarLote(lote);
+
+    }
+
+    @ScreenShotAfter
+    public void ingresarReferencia(String referencia) {
+        page.addressPage().ingresarReferencia(referencia);
+
+    }
+    @ScreenShotAfter
+    public void clickBtnConsultar() {
+        page.addressPage().clickBtnConsultar();
+
+    }
+
+    @ScreenShotAfter
+    public void clickBtnConsultarDireccion() {
+        page.addressPage().clickBtnConsultarDireccion();
+
+    }
+
+
 }

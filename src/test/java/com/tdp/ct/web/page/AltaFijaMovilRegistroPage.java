@@ -76,12 +76,15 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         UtilWeb.waitForSeconds(1);
     }
 
-    public void ingresarDatosValidacionReniec(DataTable datos, Integer i) {
-        String nomMadre = UtilWeb.getValueFromDataTable(datos, "nombreMadre");
-        String nomPadre = UtilWeb.getValueFromDataTable(datos, "nombrePadre");
-        String distritoNacimiento = UtilWeb.getValueFromDataTable(datos, "distritoNac");
-        validacionesCliente(nomMadre, nomPadre, distritoNacimiento, i);
-    }
+  //////// VALIDACION E INGRESO DE DATOS DEL CLIENTE EN RENIEC////////////
+
+
+  public void ingresarDatosValidacionReniec(DataTable datos, Integer i) {
+      String nomMadre = UtilWeb.getValueFromDataTable(datos, "nombreMadre");
+      String nomPadre = UtilWeb.getValueFromDataTable(datos, "nombrePadre");
+      String distritoNacimiento = UtilWeb.getValueFromDataTable(datos, "distritoNac");
+      validacionesCliente(nomMadre, nomPadre, distritoNacimiento, i);
+  }
 
     public void clicSiguiente() {
         WebElement rootInputCorreo = find().getElementByXPath("(//div[@class='modal_footer']//tdp-st-button)[1]");
@@ -99,6 +102,9 @@ public class AltaFijaMovilRegistroPage extends WebBase {
         logInfo("Click en confirmar");
         UtilWeb.waitForSeconds(2);
     }
+
+    ////////  ////////  ////////
+
 
     public void verificarIdentidadValidada() {
         driver().manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);

@@ -206,7 +206,11 @@ public class ParkStepDefinition {
         parkStep.scrollToLabelSelectService();
         parkStep.btnMostrar();
     }
-
+    @Y("selecciono el boton Mostrar ofertas MT")
+    public void seleccionoElBotonMostrarOfertasMT() {
+        parkStep.scrollToLabelSelectService();
+        parkStep.btnMostrarMT();
+    }
     /**
      * FUNCION CLICK DETALLE PLAN
      * */
@@ -234,5 +238,11 @@ public class ParkStepDefinition {
     public void seleccionoLaLineaConNumero(String number) {
         parkStep.scrollToLabelSelectService();
         parkStep.selectLineWithNumber(number);
+    }
+
+
+    @Y("cierro el popup de cliente con exoneracion")
+    public void cierroElPopupDeClienteConExoneracion() {
+        parkStep.cerrarPopUpClienteConExoneracion();
     }
 }

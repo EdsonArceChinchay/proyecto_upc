@@ -14,10 +14,10 @@
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @RegresionLegacy
-Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
+Característica: Completa Fija MT por canal Call Center
 
   @CompletaFijaCC
-  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
+  Esquema del escenario: Completa Fija MT por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA | HU         | Test       | Transaccion                                 | Tipo Venta | Tags            |
@@ -37,13 +37,22 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y selecciono el boton Linea Nueva Hogar
     Y selecciono el boton Mostrar ofertas
     Entonces me muestra la pantalla para ingresar la direccion
-    Y selecciono el departamento donde sera la instalacion "<departamento>"
-    Y selecciono la provincia donde sera la instalacion "<provincia>"
-    Y selecciono el distrito donde sera la instalacion "<distrito>"
-    Y ingreso la direccion donde sera la instalacion "<direccion>"
-    Y ingreso la referencia de la direccion "<referencia>"
-    Y presiono el boton Consultar ubicacion
-    Y presiono el boton Consultar cobertura
+    Cuando   ingreso el tipo de direccion "<tipodireccion>"
+    E        ingreso el distrito,provincia y departamento "<direccion>"
+    E        ingreso el tipo de via "<tipovia>"
+    Y        completamos los datos faltantes de la direccion
+      | nombrevia | puerta |manzana|lote|referencia|
+      | JULIO CESAR TELLO|469|1|1|test |
+    Y        doy click en el boton consultar
+    Y        doy click en el boton confimar direccion
+    ## Entonces me muestra la pantalla para ingresar la direccion
+    ## Y selecciono el departamento donde sera la instalacion "<departamento>"
+   ##  Y selecciono la provincia donde sera la instalacion "<provincia>"
+   ##  Y selecciono el distrito donde sera la instalacion "<distrito>"
+   ##  Y ingreso la direccion donde sera la instalacion "<direccion>"
+   ##  Y ingreso la referencia de la direccion "<referencia>"
+   ##  Y presiono el boton Consultar ubicacion
+   ##  Y presiono el boton Consultar cobertura
     Y selecciono tipo de oferta
     Y selecciono el plan "<nombrePlan>" Movistar Total
     Y doy click en el boton Ir a movistar total
@@ -73,5 +82,11 @@ Característica: AT-DT0 _Completa Fija MT (Planta Movil + Alta Fija) a cliente c
     Y apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente | departamento | provincia | distrito   | direccion              | referencia |
-      | userType | userNameQAN6 | userPasswordQAN6 | Bienvenid@ | Call Center | CE           | 1632547904     | Trío MT    | 1632547904@mailinator.com | 650030369       | LIMA         | LIMA      | SAN ISIDRO | CALLE LOS NARANJOS 359 | esquina    |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente |tipodireccion |direccion         |tipovia|
+      | userType | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 1042464796     | Trío MT    | 1632547904@mailinator.com | 920959416       |Casa          | LINCE, LIMA, LIMA|JIRON  |
+
+
+  ##CE : 1042464796
+##Nombre de plan : Trio HD 400 Mbps RA + Ilimitado 120 Gb RA
+##Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
+  ## llamaDA Esquema del escenario: : Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center

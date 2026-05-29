@@ -166,6 +166,7 @@ public class RegisterStepDefinition {
         });
     }
 
+
     @Entonces("valido que me muestre el boton con el texto de identidad validada")
     public void validoQueMeMuestreElBotonConElTextoDeIdentidadValidada() {
         executeIfNotRetention(() -> {

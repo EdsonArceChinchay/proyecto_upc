@@ -3,6 +3,8 @@ package com.tdp.ct.web.glue;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.step.AddressStep;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.E;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -275,5 +277,49 @@ public class AddressStepDefinition {
     @Y("presiono el boton Consultar cobertura")
     public void presionoElBotonConsultarCobertura() {
         addressStep.clickButtonConsultCoverage();
+    }
+
+    @Cuando("ingreso el tipo de direccion {string}")
+    public void ingresoElTipoDeDireccion(String tipodireccion) {
+
+        addressStep.ingresarTipoDireccion(tipodireccion);
+
+    }
+
+    @E("ingreso el distrito,provincia y departamento {string}")
+    public void ingresoLaDistritoProvinciaYDepartamento(String direccion) {
+
+        addressStep.ingresarDistritoProvinciaYDepartamento(direccion);
+    }
+
+    @E("ingreso el tipo de via {string}")
+    public void ingresoElTipoDeVia(String tipodevia) {
+        addressStep.ingresarTipoDeVida(tipodevia);
+    }
+
+    @Y("completamos los datos faltantes de la direccion")
+    public void completamosLosDatosFaltantesDeLaDireccion(DataTable datos) {
+
+        String nombrevia =     UtilWeb.getValueFromDataTable(datos, "nombrevia");
+        String puerta =         UtilWeb.getValueFromDataTable(datos, "puerta");
+        String manzana = UtilWeb.getValueFromDataTable(datos, "manzana");
+        String lote = UtilWeb.getValueFromDataTable(datos, "lote");
+        String referencia =       UtilWeb.getValueFromDataTable(datos, "referencia");
+
+        addressStep.ingresarNombreVia(nombrevia);
+        addressStep.ingresarPuerta(puerta);
+        addressStep.ingresarManzana(manzana);
+        addressStep.ingresarLote(lote);
+        addressStep.ingresarReferencia(referencia);
+    }
+
+    @Y("doy click en el boton consultar")
+    public void doyClickEnElConsultar() {
+        addressStep.clickBtnConsultar();
+    }
+
+    @Y("doy click en el boton confimar direccion")
+    public void clickBtnConsultarDireccion() {
+        addressStep.clickBtnConsultarDireccion();
     }
 }

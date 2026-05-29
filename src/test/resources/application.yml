@@ -29,7 +29,7 @@ jxray:
 ###################
 url:
   qa:
-    movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/inicio
+    movistar: https://scberserkerswebcert-fgc6dpdbd9hshvd5.a03.azurefd.net/login
   dev:
     movistar: https://scberserkerswebditocertendpointcdn.azureedge.net/inicio
   prod:

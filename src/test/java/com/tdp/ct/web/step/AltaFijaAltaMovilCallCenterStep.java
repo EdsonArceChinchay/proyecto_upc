@@ -35,8 +35,8 @@ public class AltaFijaAltaMovilCallCenterStep {
         page.altaFijaAltaMovilCallCenterPage().BtonOpciones();
     }
 
-    public void seleccionarListaOferta(String listaOferta) {
-        page.altaFijaAltaMovilCallCenterPage().listaOfertas(listaOferta, scenario);
+    public void seleccionarListaOferta(String nombrePlan) {
+        page.altaFijaAltaMovilCallCenterPage().listaOfertas(nombrePlan, scenario);
     }
 
     public void clickIrAMovistarTotal() {

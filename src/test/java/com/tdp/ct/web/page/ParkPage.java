@@ -27,12 +27,16 @@ public class ParkPage extends WebBase {
 
     private static final Logger log = LoggerFactory.getLogger(ParkPage.class);
     protected final String btnHogar = ".tdp-col-sm-4:nth-child(1) .stl-line_new";
+    protected final String btnMovil = ".tdp-col-sm-2:nth-child(2) .stl-movil";
+
     protected final String btnShowOffers = "div[class='show-offerts']";
     protected final String cartillaHogar = "//app-card-line[1]";
     protected final String labelSelectService = "//*[contains(@class,'titleForm') or contains(text(),'Selecciona los servicios a consultar')]";
 
-    @FindBy(css = ".tdp-col-sm-2:nth-child(2) .stl-movil")
-    protected WebElement btnMovil;
+
+    @FindBy(xpath = "//div[contains(@class,'show-offers')]//button[contains(normalize-space(.),'Mostrar Ofertas')]")
+    protected WebElement btnOfertasMt;
+
     @FindBy(css = ".stl_position_movil:nth-child(1) app-card-line:nth-child(1) .container")
     protected WebElement btnLineaExistente;
     @FindBy(css = ".stl_position_movil:nth-child(2) app-card-line:nth-child(1) .container")
@@ -63,8 +67,7 @@ public class ParkPage extends WebBase {
     protected WebElement botonContinuar;
     @FindBy(xpath = "(//*[@class='detailHogar'])[1]")
     protected WebElement btnCardPlanActual;
-    //@FindBy(css = ".text-info")
-    @FindBy(xpath = "//*[contains(translate(normalize-space(.), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'CLIENTE NUEVO')]")
+    @FindBy(css = ".text-info")
     protected WebElement nombreClienteUserData;
     @FindBy(xpath = "//button[text()='Crear cliente']")
     protected WebElement buttonCrearCliente;
@@ -86,8 +89,13 @@ public class ParkPage extends WebBase {
     protected WebElement btnClienteExonerado;
     @FindBy(xpath = "//app-banner-cu/div/div/div[1]/img[2]")
     protected WebElement cerrarCU;
-    @FindBy(xpath = "//*[@id='mat-mdc-dialog-1']/div/div/app-modal-uniquepass-park/div/mat-dialog-actions/button")
+    @FindBy(xpath = "//*[@id=\"mat-mdc-dialog-0\"]/div/div/app-modal-uniquepass-park/div/div/img")
     protected WebElement cerrarPopUpEstadoCU;
+    @FindBy(css = "mat-dialog-container button.button-principal")
+    protected WebElement cerrarPopUpClienteExoneracion;
+
+
+
     @FindBy(xpath = "//div[contains(@class,'dialog-close')]/*")
     protected WebElement cierrePopUpError;
     @FindBy(xpath = "//div[@class=\"div-product-name\"]")
@@ -112,10 +120,7 @@ public class ParkPage extends WebBase {
 
     public boolean isNewCustomer() {
         esperaProgresiva(driver(), 5, 5, nombreClienteUserData);
-        String texto = nombreClienteUserData.getText().toUpperCase();
-        logInfo("isNewCustomer - Texto obtenido: [" + texto + "]");
-        return texto.contains("CLIENTE NUEVO");
-
+        return nombreClienteUserData.getText().length() <= 8;
     }
 
     public void ingresarNombreClienteExtranjero(String name) {
@@ -145,7 +150,7 @@ public class ParkPage extends WebBase {
 
     public void altaHogar() {
         WebElement BotonAltaHogar = explicitWaitCss(driver(), 10, btnHogar);
-        esperaProgresiva(driver(),5,2,BotonAltaHogar);
+        esperaProgresiva(driver(),5,5,BotonAltaHogar);
         js().scrollElementTop(BotonAltaHogar);
         if (BotonAltaHogar.isDisplayed()) {
             click(BotonAltaHogar);
@@ -154,18 +159,18 @@ public class ParkPage extends WebBase {
             click(BotonAltaHogar);
         }
     }
-
     public void altaMovil() {
-        UtilWeb.waitForSeconds(2);
-        esperaProgresiva(driver(),8,2,btnMovil);
-        js().scrollElementTop(btnMovil);
-        if (btnMovil.isDisplayed()) {
-            click(btnMovil);
+        WebElement BotonAltamovil = explicitWaitCss(driver(), 10, btnMovil);
+        esperaProgresiva(driver(),5,5,BotonAltamovil);
+        js().scrollElementTop(BotonAltamovil);
+        if (BotonAltamovil.isDisplayed()) {
+            click(BotonAltamovil);
         } else {
             revisarModalError(driver());
-            click(btnMovil);
+            click(BotonAltamovil);
         }
     }
+
 
     public void lineaExistente(String numeroExistente) {
         esperaProgresiva(driver(), 5, 5, btnLineaExistente);
@@ -491,28 +496,20 @@ public class ParkPage extends WebBase {
         }
     }
 
-
-
     public void cerrarPopUpEstadoCU() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(6));
-            WebElement boton = wait.until(driver -> {
-                List<WebElement> elementos = driver.findElements(
-                        By.xpath("//app-modal-uniquepass-park//button[contains(.,'CONTINUAR')]")
-                );
-                return elementos.isEmpty() ? null : elementos.get(0);
-            });
-            logInfo("Popup encontrado, cerrando...");
-            boton.click();
-        } catch (TimeoutException e) {
-            logInfo("No existe Popup (no apareció en el tiempo esperado)");
+            if (cerrarPopUpEstadoCU.isDisplayed()) {
+                logInfo("Cierre Nuevo Popup....");
+                UtilWeb.waitForSeconds(4);
+                click(cerrarPopUpEstadoCU);
+            } else {
+                UtilWeb.waitForSeconds(4);
+                logInfo("No existe Popup....");
+            }
         } catch (Exception e) {
-            logSevere("Error cerrando popup: " + e.getMessage());
+            logSevere("No hay ningún popup.....");
         }
     }
-
-
-
 
     public void clickCierrePopup() {
         UtilWeb.waitForSeconds(3);//inhabilitado
@@ -705,6 +702,13 @@ public class ParkPage extends WebBase {
         logInfo("Dio click al boton Mostrar Ofertas");
     }
 
+    public void mostrarOfertasMT() {
+        logInfo("Ingreso a visualizar el BOTON MOSTRAR OFERTAS MT");
+        click(btnOfertasMt, 5);
+        logInfo("Dio click al boton Mostrar Ofertas MT");
+    }
+
+
     /**
      * FUNCION CLICK DETALLE PLAN
      * */
@@ -746,7 +750,7 @@ public class ParkPage extends WebBase {
                 logSevere("ERROR - " + e.getMessage());
                 if (i == cantidadMovil + 1) {
                     logInfo("Se supero los reintentos - Error - Linea con Numero - " + numeroExistente + " - no encontrado - Se procede a cerrar la ventana");
-                    driver().quit();
+                    throw new RuntimeException("❌ No se encontró la línea: " + numeroExistente);
                 }
             }
         }
@@ -778,4 +782,30 @@ public class ParkPage extends WebBase {
         miScenario.printFullView();
         logInfo("Click in line", number);
     }
+    public void cerrarPopUpClienteConExoneracion() {
+
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+
+        try {
+            // Espera a que el botón aparezca
+            WebElement btn = wait.until(ExpectedConditions.visibilityOf(cerrarPopUpClienteExoneracion));
+
+            logInfo("Popup Cliente con Exoneración detectado");
+
+            // Esperar que sea clickeable
+            wait.until(ExpectedConditions.elementToBeClickable(btn));
+
+            // Click (puedes usar normal o JS según estabilidad)
+            btn.click();
+
+            logInfo("Se hizo click en CONTINUAR");
+
+        } catch (TimeoutException e) {
+            logInfo("Popup Cliente con Exoneración NO apareció");
+        } catch (Exception e) {
+            logSevere("Error al intentar cerrar popup: " + e.getMessage());
+        }
+    }
+
+
 }

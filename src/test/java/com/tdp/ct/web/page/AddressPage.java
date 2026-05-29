@@ -3,10 +3,9 @@ package com.tdp.ct.web.page;
 import com.tdp.ct.web.base.WebBase;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
 import static com.tdp.ct.web.utils.Addons.revisarModalError;
@@ -225,8 +224,223 @@ public class AddressPage extends WebBase {
         return isExisted;
     }
 
+    public void ingresarTipoDireccion(String tipodireccion) {
+        try {
+            logInfo("Seleccionando tipo de direccion: " + tipodireccion);
 
-    /**
+            String xpath = String.format(
+                    "//div[contains(@class,'options')]//div[@class='name' and normalize-space()='%s']/parent::div",
+                    tipodireccion
+            );
+
+            WebElement opcion = explicitWaitXpath(driver(), 15, xpath);
+
+            js().scrollElementTop(opcion);
+
+            try {
+                opcion.click(); // click real
+            } catch (Exception e) {
+                logInfo("Click normal falló, usando JS click");
+                ((JavascriptExecutor) driver()).executeScript("arguments[0].click();", opcion);
+            }
+
+        } catch (Exception e) {
+            logSevere("Error al seleccionar tipo de direccion: " + tipodireccion + " - " + e.getMessage());
+        }
+    }
+
+    public void ingresarDistritoProvinciaYDepartamento(String direccion) {
+        try {
+            logInfo("Ingresando ubicación: " + direccion);
+
+            String[] partes = direccion.split(",");
+            String distrito = partes[0].trim();
+
+            WebElement inputBusqueda = find().getElementByCss(
+                    "input[formcontrolname='direction']"
+            );
+
+            js().scrollElementTop(inputBusqueda);
+
+            inputBusqueda.clear();
+            inputBusqueda.sendKeys(distrito);
+
+            // ✅ esperar a que aparezca la lista
+            String xpathOpcion = String.format(
+                    "//div[contains(@class,'search-list-match')]//*[contains(text(),'%s')]",
+                    distrito.toUpperCase()
+            );
+
+            WebElement opcion = explicitWaitXpath(driver(), 15, xpathOpcion);
+
+            opcion.click();
+
+            logInfo("Se seleccionó correctamente el distrito: " + distrito);
+
+        } catch (Exception e) {
+            logSevere("Error al seleccionar ubicación: " + direccion + " - " + e.getMessage());
+        }
+    }
+
+    public void ingresarTipoDeVida(String tipodevia) {
+        try {
+            logInfo("Seleccionando tipo de vía: " + tipodevia);
+
+            WebElement selectTipoVia = find().getElementByCss(
+                    "select[formcontrolname='roadType']"
+            );
+
+            js().scrollElementTop(selectTipoVia);
+
+            Select select = new Select(selectTipoVia);
+
+            // ✅ selecciona por texto visible
+            select.selectByVisibleText(tipodevia.toUpperCase());
+
+            logInfo("Se seleccionó correctamente el tipo de vía: " + tipodevia);
+
+        } catch (Exception e) {
+            logSevere("Error al seleccionar tipo de vía: " + tipodevia + " - " + e.getMessage());
+        }
+    }
+    public void ingresarNombreVia(String nombrevia) {
+        try {
+            WebElement input = find().getElementByCss("#roadName");
+
+            js().scrollElementTop(input);
+            input.click();
+            input.clear();
+            input.sendKeys(nombrevia);
+            input.sendKeys(Keys.TAB); // 🔥 fuerza evento Angular
+
+            logInfo("Nombre de vía ingresado: " + nombrevia);
+
+        } catch (Exception e) {
+            logSevere("Error en nombre vía: " + e.getMessage());
+        }
+    }
+
+    public void ingresarPuerta(String puerta) {
+        try {
+            WebElement input = find().getElementByCss("#doorNumber");
+
+            js().scrollElementTop(input);
+            input.click();
+            input.clear();
+            input.sendKeys(puerta);
+            input.sendKeys(Keys.TAB); // 🔥 fuerza evento Angular
+
+            logInfo("Nombre de puerta ingresado: " + puerta);
+
+        } catch (Exception e) {
+            logSevere("Error en puerta: " + e.getMessage());
+        }
+    }
+
+    public void ingresarManzana(String manzana) {
+        try {
+            WebElement input = find().getElementByCss(
+                    "input[formcontrolname='apple']"
+            );
+
+            js().scrollElementTop(input);
+            input.click();
+            input.clear();
+            input.sendKeys(manzana);
+
+        } catch (Exception e) {
+            logSevere("Error en manzana: " + e.getMessage());
+        }
+    }
+
+    public void ingresarLote(String lote) {
+        try {
+            WebElement input = find().getElementByCss(
+                    "input[formcontrolname='lot']"
+            );
+
+            js().scrollElementTop(input);
+            input.click();
+            input.clear();
+            input.sendKeys(lote);
+
+        } catch (Exception e) {
+            logSevere("Error en lote: " + e.getMessage());
+        }
+    }
+
+    public void ingresarReferencia(String referencia) {
+        try {
+            WebElement input = find().getElementByCss(
+                    "input[formcontrolname='reference']"
+            );
+
+            js().scrollElementTop(input);
+            input.click();
+            input.clear();
+            input.sendKeys(referencia);
+
+            logInfo("Referencia ingresada: " + referencia);
+
+        } catch (Exception e) {
+            logSevere("Error en referencia: " + e.getMessage());
+        }
+    }
+
+    public void clickBtnConsultar() {
+        try {
+            logInfo("Click en botón Consultar");
+
+            WebElement btnConsultar = explicitWaitXpath(
+                    driver(),
+                    15,
+                    "//button[contains(@class,'submit_button') and contains(text(),'Consultar')]"
+            );
+
+            js().scrollElementTop(btnConsultar);
+
+            try {
+                btnConsultar.click(); // ✅ intento normal
+            } catch (Exception e) {
+                logInfo("Click normal falló, usando JS click");
+                ((JavascriptExecutor) driver()).executeScript("arguments[0].click();", btnConsultar);
+            }
+
+            logInfo("Se hizo click en Consultar correctamente");
+
+        } catch (Exception e) {
+            logSevere("Error al hacer click en Consultar: " + e.getMessage());
+        }
+    }
+
+    public void clickBtnConsultarDireccion() {
+        try {
+            logInfo("Click en botón Confirmar dirección");
+
+            WebElement btnConfirmar = explicitWaitXpath(
+                    driver(),
+                    15,
+                    "//button[contains(@class,'filled_button') and contains(text(),'Confirmar')]"
+            );
+
+            js().scrollElementTop(btnConfirmar);
+
+            try {
+                btnConfirmar.click(); // ✅ click normal
+            } catch (Exception e) {
+                logInfo("Click normal falló, usando JS click");
+                ((JavascriptExecutor) driver()).executeScript("arguments[0].click();", btnConfirmar);
+            }
+
+            logInfo("Se hizo click en Confirmar dirección correctamente");
+
+        } catch (Exception e) {
+            logSevere("Error al hacer click en Confirmar dirección: " + e.getMessage());
+        }
+    }
+
+
+     /**
      * FUNCION - SELECCIONAR DEPARTAMENTO
      * */
 
@@ -254,7 +468,7 @@ public class AddressPage extends WebBase {
                 logInfo("Se procede a reintentar - N°" + cont);
                 if (cont == 3) {
                     logInfo("NO SE ENCONTRO LA LISTA DE DEPARTAMENTOS - SE PROCEDE A CERRAR NAVEGADOR");
-                    driver().quit();
+
                 }
             }
         }
@@ -289,7 +503,7 @@ public class AddressPage extends WebBase {
                 logInfo("Se procede a reintentar - N°" + cont);
                 if (cont == 3) {
                     logInfo("NO SE ENCONTRO LA LISTA DE PROVINCIAS - SE PROCEDE A CERRAR NAVEGADOR");
-                    driver().quit();
+
                 }
             }
         }
@@ -325,7 +539,7 @@ public class AddressPage extends WebBase {
                 logInfo("Se procede a reintentar - N°" + cont);
                 if (cont == 3) {
                     logInfo("NO SE ENCONTRO LA LISTA DE PROVINCIAS - SE PROCEDE A CERRAR NAVEGADOR");
-                    driver().quit();
+
                 }
             }
         }

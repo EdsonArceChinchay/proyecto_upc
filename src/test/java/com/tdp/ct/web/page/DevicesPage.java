@@ -36,8 +36,14 @@ public class DevicesPage extends WebBase {
     protected WebElement lblCurrentPlan;
     @FindBy(xpath = "//span[@class='itemPriceEquip' and contains(text(),' Precio')]")
     protected WebElement lblDevicePaymentDetail;
-    @FindBy(xpath = "(//div[@class='_item-device']/h3)")
+
+    @FindBy(xpath = "//app-device-detail//h3")
     protected List<WebElement> deviceList;
+
+    protected List<WebElement> getDeviceList() {
+        return driver().findElements(By.xpath("//h3[contains(text(),'')]"));
+    }
+
 
     // VENTANA EMERGENTE DE EQUIPO SIN STOCK
     @FindBy(xpath = "//*[contains(normalize-space(text()), 'Equipo No Disponible')]")
@@ -132,17 +138,48 @@ public class DevicesPage extends WebBase {
         UtilWeb.waitForSeconds(5);
     }
 
+
     public void clickBtnSeeDeviceDetails(String equipo) {
+
         JavascriptExecutor js = (JavascriptExecutor) driver();
-        for (WebElement element : deviceList) {
-            if (element.getText().equals(equipo)) {
-                js.executeScript("return document.querySelectorAll(\"body > app-root > app-devices > " +
-                        "div.cont-devices > div > div:nth-child(1) > div > div.btn-detail > tdp-st-button\")[" +
-                        deviceList.indexOf(element) + "].shadowRoot.querySelector(\"button > div\").click()");
-                break;
+
+        List<WebElement> devices = driver().findElements(
+                By.xpath("//app-device-detail//h3")
+        );
+
+        if (devices.isEmpty()) {
+            throw new RuntimeException("❌ No se encontraron dispositivos en el DOM");
+        }
+
+        for (WebElement element : devices) {
+
+            String deviceName = element.getText().trim();
+            logInfo("🔍 Evaluando: " + deviceName);
+
+            if (deviceName.equalsIgnoreCase(equipo)) {
+
+                logInfo("✅ Equipo encontrado");
+
+                WebElement container = element.findElement(
+                        By.xpath("./ancestor::app-device-detail")
+                );
+
+                WebElement button = container.findElement(
+                        By.xpath(".//tdp-st-button[@label='Ver detalle']//button")
+                );
+
+                js.executeScript("arguments[0].scrollIntoView({block:'center'});", button);
+                js.executeScript("arguments[0].click();", button);
+
+                logInfo("✅ Click ejecutado");
+
+                return;
             }
         }
+
+        throw new RuntimeException("❌ No se encontró el equipo: " + equipo);
     }
+
 
     /**
      * FUNCION VALIDAR STOCK EQUIPO

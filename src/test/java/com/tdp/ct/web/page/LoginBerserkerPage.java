@@ -59,7 +59,7 @@ public class LoginBerserkerPage extends WebBase {
 
     public void clickOnLoginButton() {
         Addons.resetTimeOut(driver());
-        Addons.esperaProgresiva(driver(), 3, 5, btnLogIn);
+        Addons.esperaProgresiva(driver(), 5, 15, btnLogIn);
 
         JavascriptExecutor js = (JavascriptExecutor) driver();
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", btnLogIn);

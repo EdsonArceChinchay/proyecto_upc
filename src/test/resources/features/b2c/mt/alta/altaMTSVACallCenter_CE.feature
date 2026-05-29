@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI11 @DROP35 @AT-DT035 @AltaMTSVA
 Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
 
-  @AltaMTSVACallCenter_CE @robotQAN @QAN @test-fija
+  @AltaMTSVACallCenterCE
   Esquema del escenario: Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
@@ -33,17 +33,18 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Cuando   selecciono el tipo de documento "<documentType>"
     Y        ingreso el documento "<documentNumber>"
     Y        doy click en el boton Consultar
-    Y        ingreso los datos del nuevo cliente
-      | nombres      | apellidos     | genero    |
-      | JOSE SEGUNDO | LLAMOCA LOPEZ | masculino |
+  ##  Y        ingreso los datos del nuevo cliente
+   ##   | nombres      | apellidos     | genero    |
+   ##   | JOSE SEGUNDO | LLAMOCA LOPEZ | masculino |
     Y        selecciono el boton Linea Nueva Hogar
     Y        selecciono el boton Linea Nueva Movil
-    Y        selecciono el boton Mostrar ofertas
-    Entonces me muestra la pantalla para ingresar la direccion
-    Y        selecciono el departamento donde sera la instalacion "<departamento>"
-    Y        selecciono la provincia donde sera la instalacion "<provincia>"
-    Y        selecciono el distrito donde sera la instalacion "<distrito>"
-    Y        ingreso la direccion donde sera la instalacion "<direccion>"
+   ## Y        selecciono el boton Mostrar ofertas
+    ##Y        selecciono el boton Mostrar ofertas MT
+     Entonces me muestra la pantalla para ingresar la direccion
+    #Y        selecciono el departamento donde sera la instalacion "<departamento>"
+    #Y        selecciono la provincia donde sera la instalacion "<provincia>"
+   # Y        selecciono el distrito donde sera la instalacion "<distrito>"
+   # Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
     Y        presiono el boton Consultar cobertura
@@ -96,5 +97,5 @@ Característica: AT-DT035_Alta MT (Alta fija + alta movil) + SVA a cliente con C
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva        |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 1100002303     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo      | SMART WIFI |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | departamento | provincia | distrito | direccion                   | referencia | planType | planName | sva        |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | CE           | 444455687     | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | Casa       | Duo MT   | Duo      | SMART WIFI |
