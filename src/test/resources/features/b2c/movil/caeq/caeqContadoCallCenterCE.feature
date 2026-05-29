@@ -5,19 +5,20 @@
 ##FUNCIONALIDAD: CAMBIO DE EQUIPO (CAEQ)
 ##ESTADO: ACTIVO
 ##CODIGO:
-##GDAP: GDAP-1422
+##GDAP: GDAP-1422 v1
+##GDAP: GDAP-1945 v2
 ##SPRINT CREADO:
 ##FRECUENCIA:
 ##TAG : BERSERKERS
 ##DATA: REUSABLE (CANCELAR ORDEN EN VUELO)
-##ENCARGADO:
-##FECMOD: 26/06/2024
+##ENCARGADO: HIRO MACURI
+##FECMOD: 29/05/2026
 
 @BERSERKERS @DoneDevOps
-Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (CE) por canal Call Center
+Característica: Cambio de equipo movil al contado a un cliente extranjero (CE) por canal Call Center
 
   @CaeqContadoCallCenter_CE
-  Esquema del escenario: Cambio de equipo movil a un cliente extranjero (CE) por canal Call Center
+  Esquema del escenario: Cambio de equipo movil al contado a un cliente extranjero (CE) por canal Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU         | Test      | Transaccion             | Tipo Venta | Tags                      |
@@ -34,15 +35,16 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        doy click en el boton Consultar
     #Y        selecciono la linea con numero "<numeroPlanMovil>"
    # Y       selecciona el boton de detalle del numero de celular existente "<numeroPlanMovil>"
-    Y        doy click en el boton Ver detalle del servicio "650030368"
+    Y        doy click en el boton Ver detalle del servicio "920959416"
     Y        presiono el boton Renovar Plan
     Entonces valido que se presente la pantalla con el titulo "Ofertas sugeridas"
     Y        presiona el boton anadir equipo del mismo plan
     E ingreso permanencia, tipo de pago y equipo
       | permanencia | tipoPago   | equipoName              |
-      | 12 meses    | Al Contado | XIAOMI REDMI NOTE 9 PRO |
+      | 12 meses    | Al Contado | <equipoName> |
     Y        valido que existan resultados busqueda de equipos
-    Y        presiono el boton Ver detalle valido contenido y selecciono
+    Y        presiono el boton Ver detalle valido contenido y selecciono el equipo elegido "<equipoName>"
+    ##Y        presiono el boton Ver detalle valido contenido y selecciono
     Y        doy click en el boton "MANTENER PLAN"
     Y        valido que este en el resumen de venta
     Y        doy click en el boton Iniciar registro
@@ -62,12 +64,12 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        ingreso instrucciones de delivery "abc"
     Y        doy click en confirmar delivery
     Y        selecciono el metodo de pago "Contra entrega"
-    Y        ingreso correo electronico "prueba_qa@gmail.com"
-    Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
-    Y        doy click en validar identidad del titular
-    Y       ingreso los datos solicitados para la validacion del cliente
-      | nombrePadre   | nombreMadre   | distritoNac   |
-      | <nombrePadre> | <nombreMadre> | <distritoNac> |
+    ## Y        ingreso correo electronico "prueba_qa@gmail.com"
+    ## Y        ingreso nuevamente el correo electronico "prueba_qa@gmail.com"
+    ## Y        doy click en validar identidad del titular
+   ##  Y       ingreso los datos solicitados para la validacion del cliente
+   ##    | nombrePadre   | nombreMadre   | distritoNac   |
+   ##    | <nombrePadre> | <nombreMadre> | <distritoNac> |
     Y        doy click en Validar contrato "Móvil"
     Y        me muestra en pantalla el contrato solicitado
     Y        imprimo el texto del contrato solicitado
@@ -88,5 +90,12 @@ Característica: Cambio de equipo (CAEQ) movil al contado a cliente extranjero (
     Y        apruebo la solicitud
 
     Ejemplos:
-      | userType | userName   | userPassword   | insertarDireccion | documentType | documentNumber | numeroPlanMovil | departamento | provincia | distrito | direccion                   | referencia | nombreMadre | nombrePadre | distritoNac |
-      | userType | userNameCC | userPasswordCC | SI                | CE           | 1632547903     | 650030368       | LIMA         | LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |
+      | userType | userName   | userPassword   | insertarDireccion | documentType | documentNumber | departamento |equipoName |provincia | distrito | direccion                   | referencia | nombreMadre | nombrePadre | distritoNac |
+      | userType | userNameCC | userPasswordCC | SI                | CE           | 1042464796     | LIMA         |HONOR X8A VERDE CRT-LX3 C/PACK |LIMA      | LINCE    | JIRON JULIO CESAR TELLO 469 | casa       | SILVIA      | FRANCISCO   | COMAS       |
+
+
+
+    ## CE A PROBAR : 1042464796
+    ## SERVICIO/N°A PROBAR A PROBAR  : 920959416
+    ## NOMBRE DEL EQUIPO : HONOR X8A VERDE CRT-LX3 C/PACK
+    ## NOMBRE DEL Esquema del escenario: : Cambio de equipo movil al contado a un cliente extranjero (CE) por canal Call Center
