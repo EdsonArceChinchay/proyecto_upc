@@ -15,10 +15,10 @@
 ##FECMOD: 29/05/2026
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: CaeqFinanciadoCallCenter_CE
+Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
 
   @CaeqFinanciadoCallCenter_CE
-  Esquema del escenario: CaeqFinanciadoCallCenter_CE
+  Esquema del escenario: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU         | Test      | Transaccion | Tipo Venta | Tags                         |
