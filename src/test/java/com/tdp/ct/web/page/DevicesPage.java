@@ -7,9 +7,12 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.tdp.ct.web.utils.Addons.esperaProgresiva;
@@ -91,10 +94,49 @@ public class DevicesPage extends WebBase {
         revisarModalError(driver());
     }
 
+
     public void clickButtonSelectDevice() {
-        esperaProgresiva(driver(), 5, 5, btnSelectDevice);
-        js().scrollElementTop(btnSelectDevice);
-        waitUntilElementIsClickable(btnSelectDevice, 10).click();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver();
+
+        logInfo("🔍 Buscando botón 'Seleccionar equipo'");
+
+        WebElement shadowHost = driver().findElement(
+                By.xpath("//tdp-st-button[@label='Seleccionar equipo']")
+        );
+
+        waitUntilElementIsVisible(shadowHost, 10);
+
+        logInfo("🌑 Shadow host encontrado");
+
+        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+
+        WebElement button = wait.until(driver -> {
+            try {
+                return (WebElement) ((JavascriptExecutor) driver).executeScript(
+                        "return arguments[0].shadowRoot ? arguments[0].shadowRoot.querySelector('button') : null",
+                        shadowHost
+                );
+            } catch (Exception e) {
+                return null;
+            }
+        });
+
+        if (button == null) {
+            throw new RuntimeException("❌ No se pudo obtener botón 'Seleccionar equipo'");
+        }
+
+        logInfo("🔘 Botón listo dentro del shadowRoot");
+
+        js.executeScript(
+                "arguments[0].scrollIntoView({block:'center'});",
+                button
+        );
+
+        js.executeScript("arguments[0].click();", button);
+
+        logInfo("✅ Click en 'Seleccionar equipo' ejecutado");
+
         revisarModalError(driver());
     }
 
@@ -143,35 +185,64 @@ public class DevicesPage extends WebBase {
 
         JavascriptExecutor js = (JavascriptExecutor) driver();
 
-        List<WebElement> devices = driver().findElements(
-                By.xpath("//app-device-detail//h3")
+        List<WebElement> titles = driver().findElements(
+                By.xpath("//div[contains(@class,'_item-device')]//h3")
         );
 
-        if (devices.isEmpty()) {
-            throw new RuntimeException("❌ No se encontraron dispositivos en el DOM");
-        }
+        logInfo("📊 Total equipos encontrados: " + titles.size());
+        logInfo("🎯 Equipo buscado: [" + equipo + "]");
 
-        for (WebElement element : devices) {
+        for (WebElement title : titles) {
 
-            String deviceName = element.getText().trim();
-            logInfo("🔍 Evaluando: " + deviceName);
+            String nombreEquipo = title.getText()
+                    .replace("\n", " ")
+                    .replaceAll("\\s+", " ")
+                    .trim();
 
-            if (deviceName.equalsIgnoreCase(equipo)) {
+            logInfo("🔍 Evaluando equipo: [" + nombreEquipo + "]");
+
+            if (nombreEquipo.equalsIgnoreCase(equipo.trim())) {
 
                 logInfo("✅ Equipo encontrado");
 
-                WebElement container = element.findElement(
-                        By.xpath("./ancestor::app-device-detail")
+                WebElement card = title.findElement(
+                        By.xpath("./ancestor::div[contains(@class,'tdp-col')]")
                 );
 
-                WebElement button = container.findElement(
-                        By.xpath(".//tdp-st-button[@label='Ver detalle']//button")
+                WebElement shadowHost = card.findElement(
+                        By.xpath(".//tdp-st-button[@label='Ver detalle']")
                 );
 
-                js.executeScript("arguments[0].scrollIntoView({block:'center'});", button);
+                logInfo("🌑 Shadow host encontrado");
+
+                WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
+
+                // 🔥 Espera inteligente al shadowRoot
+                WebElement button = wait.until(driver -> {
+                    try {
+                        return (WebElement) ((JavascriptExecutor) driver).executeScript(
+                                "return arguments[0].shadowRoot ? arguments[0].shadowRoot.querySelector('button') : null",
+                                shadowHost
+                        );
+                    } catch (Exception e) {
+                        return null;
+                    }
+                });
+
+                if (button == null) {
+                    throw new RuntimeException("❌ ShadowRoot nunca estuvo disponible");
+                }
+
+                logInfo("🔘 Botón listo dentro del shadowRoot");
+
+                js.executeScript(
+                        "arguments[0].scrollIntoView({block:'center'});",
+                        button
+                );
+
                 js.executeScript("arguments[0].click();", button);
 
-                logInfo("✅ Click ejecutado");
+                logInfo("✅ Click en Ver detalle ejecutado");
 
                 return;
             }
@@ -179,8 +250,6 @@ public class DevicesPage extends WebBase {
 
         throw new RuntimeException("❌ No se encontró el equipo: " + equipo);
     }
-
-
     /**
      * FUNCION VALIDAR STOCK EQUIPO
      * */

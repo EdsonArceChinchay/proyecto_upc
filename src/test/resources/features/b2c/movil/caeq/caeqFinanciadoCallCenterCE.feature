@@ -15,10 +15,10 @@
 ##FECMOD: 27/05/2026
 
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
-Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
+Característica: CaeqFinanciadoCallCenter_CE
 
   @CaeqFinanciadoCallCenter_CE
-  Esquema del escenario: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
+  Esquema del escenario: CaeqFinanciadoCallCenter_CE
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA   | HU         | Test      | Transaccion | Tipo Venta | Tags                         |
@@ -97,3 +97,4 @@ Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Cent
   ## CE A PROBAR : 1042464939
   ## N° CELULAR A PROBAR  : 920955026
   ##NOMBRE DEL EQUIPO : HONOR X8A VERDE CRT-LX3 C/PACK
+  ## NOMBRE DEL Esquema del escenario: : Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center

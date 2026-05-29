@@ -64,10 +64,10 @@ public class DevicesStepDefinition {
 
     @Y("presiono el boton Ver detalle valido contenido y selecciono el equipo elegido {string}")
     public void presionoBotonVerDetalleValidoContenidoYSeleccionoElEquipoElegido(String device) {
-        devicesStep.scrollToDeviceList();
-        devicesStep.clickBtnSeeDeviceDetails(device);
-        devicesStep.validateFeatures();
-        devicesStep.clickButtonSelectDevice();
+       devicesStep.scrollToDeviceList();
+       devicesStep.clickBtnSeeDeviceDetails(device);
+       devicesStep.validateFeatures();
+       devicesStep.clickButtonSelectDevice();
     }
 
     /**
