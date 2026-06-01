@@ -5,7 +5,8 @@
 ##FUNCIONALIDAD: COMPLETA FIJA
 ##ESTADO: ACTIVO
 ##CODIGO: AT-DT0
-##GDAP: GDAP-1434
+##GDAP: GDAP-1434 v1
+  ##GDAP: GDAP-1950 v2
 ##SPRINT CREADO: PI18_SP2
 ##FRECUENCIA:SEMANAL
 ##TAG : BERSERKERS
@@ -14,10 +15,10 @@
 ##FECMOD: 12/03/2024
 
 @BERSERKERS @DoneDevOps @RegresionLegacy
-Característica: Completa Fija MT por canal Call Center
+Característica: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
 
   @CompletaFijaCC
-  Esquema del escenario: Completa Fija MT por canal Call Center
+  Esquema del escenario: Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
     Dado que abro la pagina de movistar
     Y ingreso los datos para la bitacora
       | Analista QA | HU         | Test       | Transaccion                                 | Tipo Venta | Tags            |
@@ -54,8 +55,11 @@ Característica: Completa Fija MT por canal Call Center
    ##  Y presiono el boton Consultar ubicacion
    ##  Y presiono el boton Consultar cobertura
     Y selecciono tipo de oferta
-    Y selecciono el plan "<nombrePlan>" Movistar Total
-    Y doy click en el boton Ir a movistar total
+    ##   Y selecciono el plan "<nombrePlan>" Movistar Total
+    Y        selecciono el tipo de plan "<planType>"
+    Y        selecciono un plan Movistar Total "<planName>"
+    Y        valido que este en el resumen de venta
+   ## Y doy click en el boton Ir a movistar total
     Cuando doy click en el boton Iniciar registro
     Y valido que me encuentre en la pantalla agendamiento
     Y ingreso los datos de agendamiento
@@ -82,11 +86,11 @@ Característica: Completa Fija MT por canal Call Center
     Y apruebo la solicitud
 
     Ejemplos:
-      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente |tipodireccion |direccion         |tipovia|
-      | userType | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 1042464796     | Trío MT    | 1632547904@mailinator.com | 920959416       |Casa          | LINCE, LIMA, LIMA|JIRON  |
+      | userType | userName     | userPassword     | msgHome    | channelType | documentType | documentNumber | nombrePlan | correo                    | numeroExistente |tipodireccion |direccion         |tipovia| planType |planName |
+      | userType | userNameCC   | userPasswordCC   | Bienvenid@ | Call Center | CE           | 1042464796     | Trío MT    | estelalopez@mail.com | 920959416       |Casa          | LINCE, LIMA, LIMA|JIRON  | Trío MT  |Trio HD 200 Mbps RA + Ilimitado 120 Gb RV  |
 
 
   ##CE : 1042464796
-##Nombre de plan : Trio HD 400 Mbps RA + Ilimitado 120 Gb RA
-##Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
+  ##Nombre de plan : Trio HD 200 Mbps RA + Ilimitado 120 Gb RV
+  ##Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
   ## llamaDA Esquema del escenario: : Completa Fija MT (Planta Movil + Alta Fija) a cliente con CE por canal Call Center
