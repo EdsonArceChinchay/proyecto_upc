@@ -97,4 +97,4 @@ Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Cent
   ## CE A PROBAR : 1042464939
   ## N° CELULAR A PROBAR  : 920955026
   ##NOMBRE DEL EQUIPO : HONOR X8A VERDE CRT-LX3 C/PACK
-  ## NOMBRE DEL Esquema del escenario: : Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
+  ## NOMBRE DEL Esquema del escenario: : Cambio de Equipo (CAEQ) financiado a cliente extranjero (CE) por Call Center

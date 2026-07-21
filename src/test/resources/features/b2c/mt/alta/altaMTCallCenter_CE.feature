@@ -56,7 +56,7 @@ Característica: Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
    ## Y        ingreso la direccion donde sera la instalacion "<direccion>"
    ## Y        ingreso la referencia de la direccion "<referencia>"
    ## Y        presiono el boton Consultar ubicacion
-    ##Y        presiono el boton Consultar cobertura
+   ##Y        presiono el boton Consultar cobertura
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan "<planType>"
     Y        selecciono un plan Movistar Total "<planName>"
@@ -108,9 +108,9 @@ Característica: Alta MT(Alta fija+ Alta movil) a CE por canal Call Center
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | documentType | documentNumber |tipodireccion |direccion         |tipovia| planType |planName |
-      | userType | userNameCC |userPasswordCC  | Bienvenid@ | SI                | Call Center | CE           | 1042464796     |Casa          | LINCE, LIMA, LIMA|JIRON  | Trío MT  |Trio HD 400 Mbps RA + Ilimitado 120 Gb RA  |
+      | userType | userNameCC |userPasswordCC  | Bienvenid@ | SI                | Call Center | CE           | 1042464796     |Casa          | LINCE, LIMA, LIMA|JIRON  | Trío MT  |Trio HD 600 Mbps RA + Ilimitado 120 Gb RA  |
 
 
   ##CE : 1042464796
-##Nombre de plan : Trio HD 400 Mbps RA + Ilimitado 120 Gb RA
+##Nombre de plan : Trio HD 600 Mbps RA + Ilimitado 120 Gb RA
 ## LLAMDADA Esquema del escenario: : Alta MT(Alta fija+ Alta movil) a CE por canal Call Center

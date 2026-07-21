@@ -98,10 +98,10 @@ public class LoginBerserkersStepDefinition {
     public void validoQueSePresenteElMensajeDeCredencialesIncorrectas(String msg) {
         loginBerserkerStep.validateIncorrectCredentialsMessage(msg);
     }
-
+    @Y("ingreso el captcha")
     @E("ingreso el captcha")
     public void ingresoElCaptcha() {
-        loginBerserkerStep.getAndTypeCaptcha();
+        loginBerserkerStep.resolveCloudflareTurnstile();
     }
 
     /**

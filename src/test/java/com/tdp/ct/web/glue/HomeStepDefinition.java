@@ -51,9 +51,9 @@ public class HomeStepDefinition {
 
     @Y("selecciono el tipo de documento {string}")
     public void seleccionoElTipoDeDocumento(String customerDocumentType) {
-        logInfo("Cliente: " + customer.getCustomerTest());
-        getScenarioContext().put("tipoDocumento", customerDocumentType);
-        customer.setDocumentType(customerDocumentType);
+        //logInfo("Cliente: " + customer.getCustomerTest());
+        //getScenarioContext().put("tipoDocumento", customerDocumentType);
+        //  customer.setDocumentType(customerDocumentType);
         homeStep.selectDocumentType(customerDocumentType);
     }
 

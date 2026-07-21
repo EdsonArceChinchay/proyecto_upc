@@ -2,9 +2,13 @@ package com.tdp.ct.web.hooks;
 
 import com.tdp.ct.web.context.ScenarioContext;
 import com.tdp.ct.web.lib.WebDriverManager;
+import com.tdp.ct.web.service.config.PropertiesVault;
+import com.tdp.ct.web.service.config.options.BaseOptions;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.utils.BitacoraService;
+import com.tdp.ct.web.utils.ChromeStealthApplier;
 import com.tdp.ct.web.utils.HttpSender;
+import com.tdp.ct.web.utils.StealthChromeDriverFactory;
 import com.tdp.ct.web.utils.WebDriverErrorDecorator;
 import io.cucumber.java.*;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +29,12 @@ public class Hooks {
     @Autowired
     private BitacoraService bitacoraService;
 
+    @Autowired
+    private BaseOptions baseOptions;
+
+    @Autowired
+    private PropertiesVault propertiesVault;
+
     private static final ThreadLocal<ScenarioContext> scenarioContext = ThreadLocal.withInitial(ScenarioContext::new);
 
     @DataTableType(replaceWithEmptyString = "[blank]")
@@ -44,10 +54,11 @@ public class Hooks {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         manager.setUpDriver();
 
-        // Crea una instancia del WebDriver decorado con el soporte para errores y capturas
-        WebDriver decoratedDriver = WebDriverErrorDecorator.create(manager.getDriver());
+        WebDriver realDriver = StealthChromeDriverFactory.recreateIfNeeded(
+                manager.getDriver(), baseOptions, propertiesVault);
+        ChromeStealthApplier.applyToDriver(realDriver);
 
-        // Actualiza el driver en manager con el decorado
+        WebDriver decoratedDriver = WebDriverErrorDecorator.create(realDriver);
         manager.setDriver(decoratedDriver);
     }
 

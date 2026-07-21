@@ -27,7 +27,7 @@ Característica: AT-DT105_Porta Normal solo chip postpago a cliente con DNI por 
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<userPassword>"
-    Y        ingreso el captcha
+    ##Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"

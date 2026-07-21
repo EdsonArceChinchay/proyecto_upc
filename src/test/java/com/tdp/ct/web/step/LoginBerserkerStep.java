@@ -44,7 +44,7 @@ public class LoginBerserkerStep {
     @ScreenShotAfter
     public void clickBtnContinueToHome() {
         page.loginBerserkerPage().clickOnContinueButton();
-        retryCaptcha();
+      //  retryCaptcha();
     }
 
     @ScreenShotBefore
@@ -67,15 +67,23 @@ public class LoginBerserkerStep {
 
     @ScreenShotAfter
     @ScreenShotBefore
+    /**
+     * Step legacy "ingreso el captcha": ahora resuelve Cloudflare Turnstile (checkbox).
+     * El captcha clásico de imagen ya no aplica en login Azure B2C CERT.
+     */
+    public void resolveCloudflareTurnstile() {
+        page.loginBerserkerPage().handleCloudflareTurnstileBeforeContinue();
+    }
+
+    /** @deprecated usar {@link #resolveCloudflareTurnstile()} — mantiene compatibilidad con glue. */
     public void getAndTypeCaptcha() {
-        page.captchaPage().getCaptcha();
+        resolveCloudflareTurnstile();
     }
 
     @ScreenShotAfter
     public void retryCaptcha() {
-        boolean isTrue = page.loginBerserkerPage().validateCaptchaErrorMessage();
-        if (isTrue) {
-            page.captchaPage().updateAndTypeCaptcha();
+        if (page.loginBerserkerPage().validateCaptchaErrorMessage()) {
+            page.loginBerserkerPage().handleCloudflareTurnstileBeforeContinue();
             page.loginBerserkerPage().clickOnContinueButton();
         }
     }

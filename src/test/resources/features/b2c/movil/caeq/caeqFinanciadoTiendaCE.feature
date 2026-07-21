@@ -23,7 +23,7 @@ Característica: AT-DT048_Cambio de equipo (CAEQ) movil financiado a cliente ext
     Y        selecciono el tipo de usuario "<userType>"
     Y        ingreso el usuario "<userName>"
     Y        ingreso el password "<userPassword>"
-    Y        ingreso el captcha
+    E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "<msgHome>"
     Y        valido que se presente el canal "<channelType>"

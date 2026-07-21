@@ -38,6 +38,19 @@ public class WebDriverErrorDecorator implements InvocationHandler{
             );
         }
 
+        /**
+         * Obtiene el WebDriver real (sin proxy) para CDP / Turnstile.
+         */
+        public static WebDriver unwrap(WebDriver driver) {
+            if (driver != null && Proxy.isProxyClass(driver.getClass())) {
+                InvocationHandler handler = Proxy.getInvocationHandler(driver);
+                if (handler instanceof WebDriverErrorDecorator) {
+                    return ((WebDriverErrorDecorator) handler).originalDriver;
+                }
+            }
+            return driver;
+        }
+
         // Método auxiliar para extraer todas las interfaces implementadas por el driver
         private static Class<?>[] extractInterfaces(WebDriver driver) {
             Set<Class<?>> interfaces = new HashSet<>();
