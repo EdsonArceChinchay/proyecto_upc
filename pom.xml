@@ -16,6 +16,7 @@
         <spring.boot.version>2.5.4</spring.boot.version>
         <springboot.jdbc.version>2.7.11</springboot.jdbc.version>
         <postgresql.version>42.5.5</postgresql.version>
+        <webdrivermanager.version>5.9.2</webdrivermanager.version>
     </properties>
     <dependencies>
         <dependency>
@@ -47,6 +48,11 @@
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
             <version>2.0.30</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
         </dependency>
 
     </dependencies>
