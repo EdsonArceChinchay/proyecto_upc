@@ -98,7 +98,7 @@ public class LoginBerserkerStep {
         agentBuilder.modifyGroupAgent("B2C_FRONTEND_WEB_RETENCIONES", agent);
         agent.setRetention(AgentBuilder.isRetention());
     }
-
+    @ScreenShotBefore
     public void validateHomeMessage(String msg, String tipoUsuario, String userName, String passwordUser) {
         page.loginBerserkerPage().validateHomeMessage(msg, tipoUsuario, userName, passwordUser);
     }
