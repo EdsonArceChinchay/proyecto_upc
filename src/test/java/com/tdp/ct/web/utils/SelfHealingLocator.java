@@ -24,11 +24,17 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
  * (por ejemplo, porque cambió un id/name en el HTML), este componente escanea
  * todos los {@code <input>} visibles de la página y les asigna un puntaje de
  * confianza (0-100) según qué tan bien coinciden sus atributos (id, name,
- * type, placeholder, aria-label, autocomplete) con el rol esperado del campo.
- * Se seleccionan los 3 mejores candidatos, se usa el de mayor puntaje, y todo
- * el resultado (si el localizador cambió o no, candidatos evaluados y sus
- * puntajes) se adjunta al reporte de Cucumber para que quede visible al
- * revisar la ejecución.
+ * type, placeholder, aria-label, autocomplete) con el rol esperado del campo,
+ * para así identificar cuál es el campo correcto en el DOM actual.
+ * <p>
+ * Una vez identificado ESE campo (y solo ese, no otros campos del formulario),
+ * se generan hasta 3 <b>estrategias de localizador</b> distintas para
+ * encontrarlo (por id, por name, por placeholder/aria-label/autocomplete, por
+ * type), cada una con su propio puntaje de robustez. Se usa la más robusta, y
+ * todo el resultado (si el localizador cambió o no, y las 3 estrategias
+ * evaluadas para ese campo con sus puntajes) se adjunta al reporte de
+ * Cucumber en el paso correspondiente para que quede visible al revisar la
+ * ejecución.
  */
 public final class SelfHealingLocator {
 
@@ -60,11 +66,13 @@ public final class SelfHealingLocator {
         final By locator;
         final String description;
         final int score;
+        final String strategy;
 
-        Candidate(By locator, String description, int score) {
+        Candidate(By locator, String description, int score, String strategy) {
             this.locator = locator;
             this.description = description;
             this.score = score;
+            this.strategy = strategy;
         }
     }
 
@@ -90,21 +98,31 @@ public final class SelfHealingLocator {
         logInfo(String.format("[SELF-HEALING] Localizador original de '%s' no encontrado o no usable (%s). "
                 + "Buscando reemplazo...", fieldLabel, originalLocator));
 
-        List<Candidate> top3 = scoreCandidates(driver, role).stream()
-                .sorted((a, b) -> Integer.compare(b.score, a.score))
-                .limit(3)
-                .collect(Collectors.toList());
+        // 1) Identifica, entre TODOS los inputs visibles, cuál es el que corresponde a este
+        //    campo (rol) específico. No se mezclan candidatos de otros campos del formulario.
+        WebElement target = findBestElementForRole(driver, role);
 
-        if (top3.isEmpty() || top3.get(0).score <= 0) {
-            report(fieldLabel, originalLocator, null, top3, true);
+        if (target == null) {
+            report(fieldLabel, originalLocator, null, Collections.emptyList(), true);
             throw new NoSuchElementException(
                     "[SELF-HEALING] No se encontró ningún candidato viable para el campo '" + fieldLabel + "'");
         }
 
-        Candidate best = top3.get(0);
-        report(fieldLabel, originalLocator, best, top3, true);
-        logInfo(String.format("[SELF-HEALING] Campo '%s' reparado -> nuevo localizador: %s (confianza %d%%)",
-                fieldLabel, best.locator, best.score));
+        // 2) Para ESE único campo, genera hasta 3 estrategias distintas de localizarlo
+        //    (por id, por name, por placeholder/aria-label/autocomplete, por type), ordenadas
+        //    de la más robusta a la menos robusta.
+        List<Candidate> strategies = buildLocatorStrategies(target);
+
+        if (strategies.isEmpty()) {
+            report(fieldLabel, originalLocator, null, Collections.emptyList(), true);
+            throw new NoSuchElementException(
+                    "[SELF-HEALING] No se pudo construir ningún localizador para el campo '" + fieldLabel + "'");
+        }
+
+        Candidate best = strategies.get(0);
+        report(fieldLabel, originalLocator, best, strategies, true);
+        logInfo(String.format("[SELF-HEALING] Campo '%s' reparado -> nuevo localizador: %s (%s, confianza %d%%)",
+                fieldLabel, best.locator, best.strategy, best.score));
 
         return driver.findElement(best.locator);
     }
@@ -126,31 +144,82 @@ public final class SelfHealingLocator {
         }
     }
 
-    private static List<Candidate> scoreCandidates(WebDriver driver, FieldRole role) {
+    /**
+     * Busca, entre todos los {@code <input>} visibles de la página, el único elemento
+     * que mejor corresponde al rol solicitado (usuario o contraseña). No retorna una lista
+     * de candidatos de distintos campos: identifica CUÁL es el campo correcto para poder
+     * luego generar, solo para ese campo, las distintas estrategias de localizador.
+     */
+    private static WebElement findBestElementForRole(WebDriver driver, FieldRole role) {
         List<WebElement> inputs;
         try {
             inputs = driver.findElements(By.cssSelector("input"));
         } catch (Exception e) {
-            return Collections.emptyList();
+            return null;
         }
 
-        List<Candidate> candidates = new ArrayList<>();
+        WebElement best = null;
+        int bestScore = 0;
         for (WebElement input : inputs) {
             try {
                 if (!input.isDisplayed()) {
                     continue;
                 }
-                By by = buildLocatorFor(input);
-                if (by == null) {
-                    continue;
-                }
                 int score = scoreElement(input, role);
-                candidates.add(new Candidate(by, describeElement(input), score));
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = input;
+                }
             } catch (Exception ignored) {
                 // Elemento "stale" u otro problema puntual al leer atributos: se descarta ese candidato.
             }
         }
-        return candidates;
+        return bestScore > 0 ? best : null;
+    }
+
+    /**
+     * Genera hasta 3 estrategias distintas de localizador para UN MISMO elemento
+     * (el campo ya identificado por {@link #findBestElementForRole}), ordenadas de la
+     * más robusta a la menos robusta: por id, por name, por placeholder, por aria-label,
+     * por autocomplete y, como último recurso, por type.
+     */
+    private static List<Candidate> buildLocatorStrategies(WebElement element) {
+        String description = describeElement(element);
+        List<Candidate> strategies = new ArrayList<>();
+
+        String id = safeAttr(element, "id");
+        if (!id.isEmpty()) {
+            strategies.add(new Candidate(By.id(id), description, 95, "por id"));
+        }
+        String name = safeAttr(element, "name");
+        if (!name.isEmpty()) {
+            strategies.add(new Candidate(By.name(name), description, 80, "por name"));
+        }
+        String placeholder = safeAttr(element, "placeholder");
+        if (!placeholder.isEmpty()) {
+            strategies.add(new Candidate(By.cssSelector(String.format("input[placeholder='%s']", placeholder)),
+                    description, 65, "por placeholder"));
+        }
+        String ariaLabel = safeAttr(element, "aria-label");
+        if (!ariaLabel.isEmpty()) {
+            strategies.add(new Candidate(By.cssSelector(String.format("input[aria-label='%s']", ariaLabel)),
+                    description, 60, "por aria-label"));
+        }
+        String autocomplete = safeAttr(element, "autocomplete");
+        if (!autocomplete.isEmpty()) {
+            strategies.add(new Candidate(By.cssSelector(String.format("input[autocomplete='%s']", autocomplete)),
+                    description, 55, "por autocomplete"));
+        }
+        String type = safeAttr(element, "type");
+        if (!type.isEmpty()) {
+            strategies.add(new Candidate(By.cssSelector(String.format("input[type='%s']", type)),
+                    description, 30, "por type"));
+        }
+
+        return strategies.stream()
+                .sorted((a, b) -> Integer.compare(b.score, a.score))
+                .limit(3)
+                .collect(Collectors.toList());
     }
 
     private static int scoreElement(WebElement input, FieldRole role) {
@@ -211,26 +280,6 @@ public final class SelfHealingLocator {
         }
     }
 
-    private static By buildLocatorFor(WebElement element) {
-        String id = safeAttr(element, "id");
-        if (!id.isEmpty()) {
-            return By.id(id);
-        }
-        String name = safeAttr(element, "name");
-        if (!name.isEmpty()) {
-            return By.name(name);
-        }
-        String placeholder = safeAttr(element, "placeholder");
-        if (!placeholder.isEmpty()) {
-            return By.cssSelector(String.format("input[placeholder='%s']", placeholder));
-        }
-        String type = safeAttr(element, "type");
-        if (!type.isEmpty()) {
-            return By.cssSelector(String.format("input[type='%s']", type));
-        }
-        return null;
-    }
-
     private static String describeElement(WebElement element) {
         return String.format("<input id='%s' name='%s' type='%s' placeholder='%s'>",
                 safeAttr(element, "id"), safeAttr(element, "name"),
@@ -251,19 +300,21 @@ public final class SelfHealingLocator {
         } else {
             html.append("Estado: <span style='color:#b8860b;'>⚠️ Localizador reparado automáticamente</span><br/>");
             html.append("Nuevo localizador usado: <code>").append(escape(String.valueOf(chosen.locator)))
-                    .append("</code> (confianza ").append(chosen.score).append("%)");
+                    .append("</code> (").append(escape(chosen.strategy)).append(", confianza ").append(chosen.score).append("%)");
         }
 
         if (!evaluatedCandidates.isEmpty()) {
             html.append("<br/><table style='border-collapse:collapse; margin-top:4px;'>");
             html.append("<tr><th style='border:1px solid #ccc; padding:2px 6px;'>#</th>")
-                    .append("<th style='border:1px solid #ccc; padding:2px 6px;'>Candidato</th>")
+                    .append("<th style='border:1px solid #ccc; padding:2px 6px;'>Campo detectado</th>")
+                    .append("<th style='border:1px solid #ccc; padding:2px 6px;'>Estrategia</th>")
                     .append("<th style='border:1px solid #ccc; padding:2px 6px;'>Localizador propuesto</th>")
                     .append("<th style='border:1px solid #ccc; padding:2px 6px;'>Puntaje</th></tr>");
             for (int i = 0; i < evaluatedCandidates.size(); i++) {
                 Candidate c = evaluatedCandidates.get(i);
                 html.append("<tr><td style='border:1px solid #ccc; padding:2px 6px;'>").append(i + 1).append("</td>")
                         .append("<td style='border:1px solid #ccc; padding:2px 6px;'>").append(escape(c.description)).append("</td>")
+                        .append("<td style='border:1px solid #ccc; padding:2px 6px;'>").append(escape(c.strategy)).append("</td>")
                         .append("<td style='border:1px solid #ccc; padding:2px 6px;'>").append(escape(String.valueOf(c.locator))).append("</td>")
                         .append("<td style='border:1px solid #ccc; padding:2px 6px;'>").append(c.score).append("%</td></tr>");
             }
