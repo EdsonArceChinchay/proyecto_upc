@@ -36,7 +36,7 @@ public class LoginBerserkerStep {
     public void typeUserName(String name) {
         page.loginBerserkerPage().typeUserName(name);
     }
-
+    @ScreenShotAfter
     public void typePassword(String pass) {
         page.loginBerserkerPage().typePassword(pass);
     }
