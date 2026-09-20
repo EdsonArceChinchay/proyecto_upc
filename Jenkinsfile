@@ -55,6 +55,15 @@ pipeline {
                         $ErrorActionPreference = "Stop"
                         New-Item -ItemType Directory -Force -Path "src\\test\\resources\\certificado" | Out-Null
                         Copy-Item -Path $env:PFX_CERT_FILE -Destination "src\\test\\resources\\certificado\\apim-client-certificate.pfx" -Force
+
+                        $chromeDriverSource = "C:\\UPC_PI2\\proyecto_upc\\drivers\\Chrome\\chromedriver.exe"
+                        New-Item -ItemType Directory -Force -Path "drivers\\chrome" | Out-Null
+                        if (Test-Path $chromeDriverSource) {
+                            Copy-Item -Path $chromeDriverSource -Destination "drivers\\chrome\\chromedriver.exe" -Force
+                        } elseif (-not (Test-Path "drivers\\chrome\\chromedriver.exe")) {
+                            Write-Warning "chromedriver.exe not found at $chromeDriverSource nor in workspace drivers\\chrome\\"
+                        }
+
                         mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
                     '''
                 }
