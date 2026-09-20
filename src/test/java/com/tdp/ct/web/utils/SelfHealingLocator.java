@@ -140,14 +140,11 @@ public final class SelfHealingLocator {
                 if (!input.isDisplayed()) {
                     continue;
                 }
-                int score = scoreElement(input, role);
-                if (score <= 0) {
-                    continue;
-                }
                 By by = buildLocatorFor(input);
                 if (by == null) {
                     continue;
                 }
+                int score = scoreElement(input, role);
                 candidates.add(new Candidate(by, describeElement(input), score));
             } catch (Exception ignored) {
                 // Elemento "stale" u otro problema puntual al leer atributos: se descarta ese candidato.
