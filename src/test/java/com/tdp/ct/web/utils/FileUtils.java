@@ -69,7 +69,7 @@ public class FileUtils {
         String overrideValue = getOverrideValue(properties, key);
         if (overrideValue != null) {
             logInfo(String.format("Key: %s - value from override", key));
-            return overrideValue;
+            return overrideValue.trim();
         }
 
         String path = getPropertiesPath(properties);
@@ -81,7 +81,8 @@ public class FileUtils {
             throw new RuntimeException(String.format("Error in read values %s", key));
         }
         logInfo(String.format("Key: %s - value: %s", key, properties1.getProperty(key)));
-        return properties1.getProperty(key);
+        String value = properties1.getProperty(key);
+        return value != null ? value.trim() : null;
     }
 
     private static String getPropertiesPath(String properties) {
