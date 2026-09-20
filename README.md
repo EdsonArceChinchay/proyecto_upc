@@ -501,6 +501,77 @@ $(document).ready(function() {
 4. Ejecutar la prueba desde la clase Runner o por comandos. Al finalizar se creara una carpeta en el root del proyecto
    con los reportes en formato PDF y HTML.
 
+## Ejecucion desde Jenkins
+
+El proyecto incluye un `Jenkinsfile` para ejecutar la suite desde un pipeline sobre un agente Windows con Java 11, Maven y Chrome.
+
+### Parametros del pipeline
+
+* **ENVIRONMENT**: `dev`, `cert` o `prod`
+* **TEST_TAGS**: tags de Cucumber a ejecutar
+* **HEADLESS**: define si el navegador corre en modo headless
+
+### Comando ejecutado por Jenkins
+
+```
+mvn clean verify -Denvironment=<ENVIRONMENT> -Dcucumber.filter.tags=<TEST_TAGS>
+```
+
+### Credenciales requeridas en Jenkins
+
+Configurar las siguientes credenciales:
+
+* `upc-db-url`
+* `upc-db-username`
+* `upc-db-password`
+* `upc-db-driver`
+* `upc-api-secret`
+* `upc-cert-password`
+* `upc-supervisor-doc-type`
+* `upc-supervisor-doc-number`
+* `upc-supervisor-username`
+* `upc-supervisor-password`
+* `upc-user-cc`
+* `upc-password-cc`
+* `upc-user-st`
+* `upc-password-st`
+* `upc-apim-pfx` (tipo archivo)
+
+### Sobrescritura de propiedades para CI/CD
+
+Para evitar depender de secretos en `config.properties` y `application.properties`, el proyecto ahora permite sobrescribir cualquier propiedad por:
+
+1. **System property exacta**, por ejemplo:
+   `-Dspring.datasource.url=...`
+2. **System property namespaced**, por ejemplo:
+   `-Dapplication.spring.datasource.url=...`
+   `-Dconfig.credential.api.secret=...`
+3. **Variable de entorno**, por ejemplo:
+   `APPLICATION_SPRING_DATASOURCE_URL`
+   `CONFIG_CREDENTIAL_API_SECRET`
+
+La convención para variables de entorno es:
+
+```
+<ORIGEN>_<PROPIEDAD>
+```
+
+Donde:
+
+* `ORIGEN` es `APPLICATION` o `CONFIG`
+* la propiedad se convierte a mayúsculas y reemplaza `.` y `-` por `_`
+
+Ejemplos:
+
+```
+APPLICATION_SPRING_DATASOURCE_URL
+APPLICATION_SPRING_DATASOURCE_USERNAME
+APPLICATION_SPRING_DATASOURCE_PASSWORD
+CONFIG_BROWSER_HEADLESS
+CONFIG_CREDENTIAL_CERTIFICATE_PASSWORD
+CONFIG_CREDENTIAL_USER_USERNAMECC
+```
+
 ##Recomendaciones
 
 ** Se recomienda utilizar una clase @Component que centralise las creación de los PageObject

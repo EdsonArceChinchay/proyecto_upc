@@ -21,6 +21,9 @@ import static com.tdp.ct.web.utils.LogUtils.logInfo;
 import static com.tdp.ct.web.utils.LogUtils.logSevere;
 
 public class FileUtils {
+    private static final String APPLICATION_PROPERTIES_PATH = "src/test/resources/application.properties";
+    private static final String CONFIG_PROPERTIES_PATH = "src/test/resources/config.properties";
+
     public static List<Material> readSimCards(String filePath) throws Exception {
         List<Material> simCards = new ArrayList<>();
         List<String> lines = Files.readAllLines(Paths.get(filePath));
@@ -63,7 +66,13 @@ public class FileUtils {
     }
 
     public static String getValueConfig(String properties, String key) {
-        String path = ((properties.equalsIgnoreCase("config")) ? "src/test/resources/config.properties" : "src/test/resources/application.properties");
+        String overrideValue = getOverrideValue(properties, key);
+        if (overrideValue != null) {
+            logInfo(String.format("Key: %s - value from override", key));
+            return overrideValue;
+        }
+
+        String path = getPropertiesPath(properties);
         Properties properties1 = new Properties();
         try {
             properties1.load(new FileInputStream(path));
@@ -73,6 +82,40 @@ public class FileUtils {
         }
         logInfo(String.format("Key: %s - value: %s", key, properties1.getProperty(key)));
         return properties1.getProperty(key);
+    }
+
+    private static String getPropertiesPath(String properties) {
+        return properties.equalsIgnoreCase("config") ? CONFIG_PROPERTIES_PATH : APPLICATION_PROPERTIES_PATH;
+    }
+
+    private static String getOverrideValue(String properties, String key) {
+        String exactProperty = System.getProperty(key);
+        if (exactProperty != null) {
+            return exactProperty;
+        }
+
+        String namespacedProperty = System.getProperty(buildOverrideKey(properties, key));
+        if (namespacedProperty != null) {
+            return namespacedProperty;
+        }
+
+        String envValue = System.getenv(toEnvironmentVariableName(properties, key));
+        if (envValue != null) {
+            return envValue;
+        }
+
+        return null;
+    }
+
+    private static String buildOverrideKey(String properties, String key) {
+        return properties.toLowerCase() + "." + key;
+    }
+
+    private static String toEnvironmentVariableName(String properties, String key) {
+        return (properties + "_" + key)
+                .toUpperCase()
+                .replace('.', '_')
+                .replace('-', '_');
     }
 
     public static String getAbsolutePathString(String relativePath) {
@@ -167,4 +210,3 @@ public class FileUtils {
     }
 
 }
-
