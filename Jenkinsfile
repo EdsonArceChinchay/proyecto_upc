@@ -73,7 +73,20 @@ pipeline {
                             # scenarios (the test code intentionally keeps the browser open on
                             # failure for manual debugging), so the pipeline never hangs waiting
                             # for child processes to exit.
-                            Get-Process -Name "chromedriver","chrome" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+                            # IMPORTANT: only target processes belonging to THIS automation run -
+                            # never kill the developer's own Chrome windows/tabs. The test's stealth
+                            # profile always launches with a unique --user-data-dir under the
+                            # workspace (see config.properties: browser.stealth.user-data-dir),
+                            # so we match on that instead of killing every "chrome" process by name.
+                            Get-Process -Name "chromedriver" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+
+                            $stealthProfileMarker = (Join-Path (Get-Location) "target\\chrome-stealth-berserkers-profile")
+                            Get-CimInstance Win32_Process -Filter "Name='chrome.exe'" -ErrorAction SilentlyContinue |
+                                Where-Object { $_.CommandLine -and $_.CommandLine.Contains($stealthProfileMarker) } |
+                                ForEach-Object {
+                                    Write-Host "Stopping leftover automation Chrome PID $($_.ProcessId)"
+                                    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+                                }
                         }
                     '''
                 }
