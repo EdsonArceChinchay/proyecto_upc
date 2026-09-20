@@ -6,6 +6,7 @@ import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
 import com.tdp.ct.web.utils.CloudflareTurnstileHelper;
 import com.tdp.ct.web.utils.LoginConfigUtil;
+import com.tdp.ct.web.utils.SelfHealingLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -136,12 +137,16 @@ public class LoginBerserkerPage extends WebBase {
     }
 
     public void typeUserName(String name) {
-        validateAndType("user name", inputNameUser, readValues(name));
+        WebElement userField = SelfHealingLocator.resolve(
+                driver(), By.id("signInName"), "Usuario (login)", SelfHealingLocator.FieldRole.USERNAME);
+        validateAndType("user name", userField, readValues(name));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typePassword(String pass) {
-        validateAndType("password", inputPassword, readValues(pass));
+        WebElement passwordField = SelfHealingLocator.resolve(
+                driver(), By.id("password"), "Contraseña (login)", SelfHealingLocator.FieldRole.PASSWORD);
+        validateAndType("password", passwordField, readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
 
