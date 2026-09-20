@@ -15,6 +15,7 @@ pipeline {
     options {
         timestamps()
         disableConcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
     }
 
     environment {
@@ -64,7 +65,16 @@ pipeline {
                             Write-Warning "chromedriver.exe not found at $chromeDriverSource nor in workspace drivers\\chrome\\"
                         }
 
-                        mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
+                        try {
+                            mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
+                            if ($LASTEXITCODE -ne 0) { throw "Maven build failed with exit code $LASTEXITCODE" }
+                        } finally {
+                            # Kill any leftover Chrome/chromedriver processes left open by failed
+                            # scenarios (the test code intentionally keeps the browser open on
+                            # failure for manual debugging), so the pipeline never hangs waiting
+                            # for child processes to exit.
+                            Get-Process -Name "chromedriver","chrome" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+                        }
                     '''
                 }
             }
