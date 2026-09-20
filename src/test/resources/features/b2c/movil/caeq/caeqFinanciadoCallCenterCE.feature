@@ -29,11 +29,11 @@ Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Cent
     Y        ingreso el password "<userPassword>"
     Y        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
-#    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
-#    Y        valido que se presente el canal "<channelType>"
-#    Cuando   selecciono el tipo de documento "<documentType>"
-#    Y        ingreso el documento "<documentNumber>"
-#    Y        doy click en el boton Consultar
+    Entonces valido el login exitoso mediante el mensaje "<msgHome>"
+    Y        valido que se presente el canal "<channelType>"
+    Cuando   selecciono el tipo de documento "<documentType>"
+    Y        ingreso el documento "<documentNumber>"
+    Y        doy click en el boton Consultar
 #    Y        selecciona el boton de detalle del numero de celular existente "<EncontrarCelular>"
 #    Y        doy click en el boton "Renovar plan"
 #    Y        valido que se presente la pantalla con el titulo "Ofertas sugeridas"
