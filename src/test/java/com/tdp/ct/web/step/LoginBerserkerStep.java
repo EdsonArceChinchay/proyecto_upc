@@ -41,6 +41,7 @@ public class LoginBerserkerStep {
         page.loginBerserkerPage().typePassword(pass);
     }
 
+    @ScreenShotBefore
     @ScreenShotAfter
     public void clickBtnContinueToHome() {
         page.loginBerserkerPage().clickOnContinueButton();
