@@ -138,14 +138,14 @@ public class LoginBerserkerPage extends WebBase {
 
     public void typeUserName(String name) {
         WebElement userField = SelfHealingLocator.resolve(
-                driver(), By.id("signInName"), "Usuario (login)", SelfHealingLocator.FieldRole.USERNAME);
+                driver(), By.id("signInN"), "Usuario (login)", SelfHealingLocator.FieldRole.USERNAME);
         validateAndType("user name", userField, readValues(name));
         UtilWeb.waitForSeconds(1);
     }
 
     public void typePassword(String pass) {
         WebElement passwordField = SelfHealingLocator.resolve(
-                driver(), By.id("password"), "Contraseña (login)", SelfHealingLocator.FieldRole.PASSWORD);
+                driver(), By.id("passw"), "Contraseña (login)", SelfHealingLocator.FieldRole.PASSWORD);
         validateAndType("password", passwordField, readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
