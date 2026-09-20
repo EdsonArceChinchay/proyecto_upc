@@ -415,7 +415,7 @@ public class LoginBerserkerPage extends WebBase {
 
     public void reintentarLogin(String tipoUsuario, String userName, String passwordUser) {
         logInfo("Ingreso a reintentar Login");
-        click(btnIniciarSesion, 5);
+        click(btnIniciarSesion, 15);
         waitUntilElementIsVisible(errorIniciarSesion, 15);
         logInfo("Se visualiza el error de Iniciar Sesion");
         click(btnRegresarAIniciarSesion, 5);
