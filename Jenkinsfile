@@ -55,7 +55,7 @@ pipeline {
                         $ErrorActionPreference = "Stop"
                         New-Item -ItemType Directory -Force -Path "src\\test\\resources\\certificado" | Out-Null
                         Copy-Item -Path $env:PFX_CERT_FILE -Destination "src\\test\\resources\\certificado\\apim-client-certificate.pfx" -Force
-                        mvn clean verify "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
+                        mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
                     '''
                 }
             }
