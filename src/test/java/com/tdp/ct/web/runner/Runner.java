@@ -17,7 +17,7 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
 @CucumberOptions(plugin = {"json:target/build/report/cucumber.json",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         stepNotifications = true,
-        features = {"src/test/resources/features"},
+        features = {"src/test/resources/features"},GI
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         tags = "@CaeqFinanciadoCallCenter_CE")
 

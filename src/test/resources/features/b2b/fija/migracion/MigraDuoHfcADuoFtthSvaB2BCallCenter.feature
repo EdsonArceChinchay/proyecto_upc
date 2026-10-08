@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps
 Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 
-  @MigracionRucCambioTegnologia @MVP11 @Global
+  @MigracionRucCambioTegnologia @MVP11 @Global @UPC
   Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion

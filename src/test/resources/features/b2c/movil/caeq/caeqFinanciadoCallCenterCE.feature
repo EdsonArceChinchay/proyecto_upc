@@ -17,7 +17,7 @@
 @BERSERKERS @DoneDevOps @DoneDevOpsPI12
 Característica: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
 
-  @CaeqFinanciadoCallCenter_CE
+  @CaeqFinanciadoCallCenter_CE @UPC
   Esquema del escenario: Cambio de Equipo (CAEQ) a cliente extranjero (CE) por Call Center
     Dado     que abro la pagina de movistar
     Y ingreso los datos para la bitacora
