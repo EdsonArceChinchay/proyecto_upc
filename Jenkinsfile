@@ -65,6 +65,16 @@ pipeline {
                             Write-Warning "chromedriver.exe not found at $chromeDriverSource nor in workspace drivers\\chrome\\"
                         }
 
+                        # Limpia restos de ejecuciones anteriores (builds abortados o con timeout no
+                        # llegan al bloque finally) que mantienen bloqueado el perfil de Chrome y
+                        # provocan "session not created: Chrome instance exited".
+                        Get-Process -Name "chromedriver" -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+                        $profileMarker = "chrome-stealth-berserkers-profile"
+                        Get-CimInstance Win32_Process -Filter "Name='chrome.exe'" -ErrorAction SilentlyContinue |
+                            Where-Object { $_.CommandLine -and $_.CommandLine.Contains($profileMarker) } |
+                            ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
+                        Start-Sleep -Seconds 2
+
                         try {
                             mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS"
                             if ($LASTEXITCODE -ne 0) { throw "Maven build failed with exit code $LASTEXITCODE" }

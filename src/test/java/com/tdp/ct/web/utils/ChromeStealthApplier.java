@@ -80,6 +80,9 @@ public final class ChromeStealthApplier {
             if (!profilePath.isAbsolute()) {
                 profilePath = Paths.get(System.getProperty("user.dir")).resolve(profilePath).normalize();
             }
+            // Un perfil por hilo: Chrome bloquea el user-data-dir, así que escenarios en paralelo
+            // no pueden compartirlo (session not created: Chrome instance exited).
+            profilePath = profilePath.resolveSibling(profilePath.getFileName() + "-t" + Thread.currentThread().getId());
 
             Files.createDirectories(profilePath);
             cleanupChromeLockFiles(profilePath);
