@@ -99,7 +99,9 @@ public class Hooks {
         );
 
         // ✅ NO cerrar si falló
-        if (!scenario.getScenario().isFailed()) {
+        // En local no se cierra si falló (para análisis); en Jenkins sí, para liberar el perfil de Chrome.
+        boolean runningInJenkins = System.getenv("JENKINS_URL") != null || System.getenv("BUILD_NUMBER") != null;
+        if (!scenario.getScenario().isFailed() || runningInJenkins) {
             if (manager.isDriverOn()) manager.quitDriver();
         } else {
             System.out.println("❌ Escenario falló → NO cierro navegador para análisis");
