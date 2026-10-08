@@ -39,29 +39,7 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        selecciono tipo de oferta
     Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
     Y        selecciono la oferta "<plan>"
-    Y        doy click en Cambiar plan hogar
-    Y        valido que este en el resumen de venta
-    Y        doy click en el boton Agregar SVA
-    Y        valido que me encuentre en la pantalla "Añade tus servicios adicionales (SVA's)"
-    Y        agrego SVA linea "<sva>"
-    Y        doy click en el boton Guardar cambios
-    Cuando   doy click en el boton Iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento para RUC
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso correo electronico "<correo>"
-    Y        ingreso nuevamente el correo electronico "<correo>"
-    Y        doy click en el boton validar identidad representante legal
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre | nombrePadre | distritoNac          |
-      | BERTHA      | LEOBILDO    | LA BANDA DE SHILCAYO |
-    Y        doy click en Validar contrato "hogar"
-    Y        me muestra en pantalla el contrato solicitado
-    Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en Finalizar registro
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | correo            | tipoPlanHogar | plan                      | sva                  |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | tester@tester.com | Duo           | DUO MOVISTAR VOZ INTERNET | Plan Multidestino 20 |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal      | tipoPlanHogar | plan                      |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | Duo           | DUO MOVISTAR VOZ INTERNET |

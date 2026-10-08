@@ -43,41 +43,7 @@ Característica: AT-DT019_Alta Trío familiar 100 Mbps tecnología FTTH + SVA co
     Y        ingreso la direccion donde sera la instalacion "<direccion>"
     Y        ingreso la referencia de la direccion "<referencia>"
     Y        presiono el boton Consultar ubicacion
-    Y        "<insertarDireccion>" ingreso la informacion del lugar de instalacion
-      | mz | tipoVivienda | nombreVivienda  | piso | int | conjunto                 | conjHabit |
-      | A  | EDIFICIO     | Familia Barreto | 1    | 1   | URBANIZACION RESIDENCIAL | RISSO     |
-    Y        presiono el boton Consultar cobertura
-    Y        valido si el usuario aplica para upfront
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan "<tipoPlan>"
-    Y        selecciono la oferta "<nombrePlan>"
-    Y        doy click en el boton Linea Nueva
-    Cuando   doy click en el boton Iniciar registro
-    Y        valido que me encuentre en la pantalla agendamiento
-    Y        ingreso los datos de agendamiento para RUC
-    Y        presiono el boton confirmar agendamiento
-    Y        ingreso correo electronico "hola@gmail.com"
-    Y        ingreso nuevamente el correo electronico "hola@gmail.com"
-    Y        doy click en el boton validar identidad representante legal
-    Y        elijo el tipo de validacion a realizar "<tipoValidacion>"
-    Y        ingreso los datos del supervisor
-    Y        doy click en el boton de continuar
-    Y        ingreso los datos solicitados para la validacion del cliente
-      | nombreMadre | nombrePadre | distritoNac            |
-      | MARIBEL     | RUBEN       | SAN JUAN DE MIRAFLORES |
-    Y        doy click en Validar contrato "hogar"
-    Y        me muestra en pantalla el contrato solicitado
-    Y        imprimo el texto del contrato solicitado
-    Cuando   doy clic en si acepto
-    Y        doy click en el boton de continuar
-    Y        doy clic para descargar el contrato
-    Y        doy click en el boton Registrar venta
-    Entonces visualizo en pantalla el mensaje de exito de la venta generada
-    Y        doy click en ver detalle del pedido
-    Y        valido que se muestre el detalle del pedido de "Servicio Hogar"
-    Y        valido que se muestre el detalle del pedido de "Dirección de instalación"
-    Y        valido que se muestre el detalle del pedido de "Información adicional"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | insertarDireccion | channelType | insertarDireccion | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia | tipoPlan | nombrePlan                  | tipoValidacion |
-      | userType | userNameST | userPasswordST | Bienvenid@ | SI                | Tienda      | SI                | RUC          | 20534983612    | 1   | DNI             | 75448387       | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          | Trío     | TRIO MOV. VOZ INT. ESTANDAR | discapacitado  |
+      | userType | userName   | userPassword   | msgHome     | channelType  | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal | departamento | provincia | distrito | direccion                   | referencia |
+      | userType | userNameST | userPasswordST | Bienvenid@   | Tienda        | RUC          | 20534983612    | 1   | DNI             | 75448387       | LIMA         | LIMA      | LINCE    | Jiron Julio Cesar Tello 469 | A          |

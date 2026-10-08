@@ -6,6 +6,7 @@ import com.tdp.ct.web.model.Agent;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
+import com.tdp.ct.web.utils.SelfHealingLocator;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -223,7 +224,10 @@ public class HomePage extends WebBase {
     }
 
     public void clickOnTheValidateLegalRepresentativeButton() {
-        waitUntilElementIsVisible(btnValidar, 10).click();
+        UtilWeb.waitForSeconds(10);
+        WebElement validateButton = SelfHealingLocator.resolveButton(
+                driver(), By.xpath("//*[@class='valids']//app-simple-button"), "Botón validar representante legal");
+        validateButton.click();
         UtilWeb.waitForSeconds(20);
     }
 

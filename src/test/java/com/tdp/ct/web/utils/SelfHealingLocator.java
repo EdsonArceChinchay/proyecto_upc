@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -125,6 +126,178 @@ public final class SelfHealingLocator {
                 fieldLabel, best.locator, best.strategy, best.score));
 
         return driver.findElement(best.locator);
+    }
+
+    /**
+     * Igual que {@link #resolve} pero para botones: si el localizador original falla,
+     * busca entre los botones visibles el que mejor coincida con las palabras clave
+     * (texto, id, aria-label, clase) y genera estrategias de localizador alternativas.
+     */
+    public static WebElement resolveButton(WebDriver driver, By originalLocator, String fieldLabel) {
+        List<String> keywords = Arrays.stream(fieldLabel.toLowerCase(Locale.ROOT).split("[^\\p{L}\\p{N}]+"))
+                .filter(w -> w.length() >= 4)
+                .collect(Collectors.toList());
+        WebElement original = safeFindFirst(driver, originalLocator);
+        if (original != null && isUsable(original)) {
+            report(fieldLabel, originalLocator, null, Collections.emptyList(), false);
+            return original;
+        }
+
+        logInfo(String.format("[SELF-HEALING] Localizador original de '%s' no encontrado o no usable (%s). "
+                + "Buscando reemplazo...", fieldLabel, originalLocator));
+
+        WebElement target = findBestButton(driver, keywords);
+        List<Candidate> strategies = target == null
+                ? Collections.emptyList() : buildButtonStrategies(target);
+
+        if (strategies.isEmpty()) {
+            report(fieldLabel, originalLocator, null, Collections.emptyList(), true);
+            throw new NoSuchElementException(
+                    "[SELF-HEALING] No se encontró ningún botón viable para '" + fieldLabel + "'");
+        }
+
+        Candidate best = strategies.get(0);
+        report(fieldLabel, originalLocator, best, strategies, true);
+        logInfo(String.format("[SELF-HEALING] Botón '%s' reparado -> nuevo localizador: %s (%s, confianza %d%%)",
+                fieldLabel, best.locator, best.strategy, best.score));
+        return driver.findElement(best.locator);
+    }
+
+    private static WebElement findBestButton(WebDriver driver, List<String> keywords) {
+        List<WebElement> buttons;
+        try {
+            buttons = driver.findElements(By.cssSelector(
+                    "button, app-simple-button, [role='button'], input[type='button'], input[type='submit']"));
+        } catch (Exception e) {
+            return null;
+        }
+
+        WebElement best = null;
+        int bestScore = 0;
+        for (WebElement button : buttons) {
+            try {
+                if (!button.isDisplayed()) {
+                    continue;
+                }
+                int score = keywordScore(button.getText().trim().toLowerCase(Locale.ROOT), keywords) * 50
+                        + keywordScore(safeAttr(button, "id").toLowerCase(Locale.ROOT), keywords) * 20
+                        + keywordScore(safeAttr(button, "aria-label").toLowerCase(Locale.ROOT), keywords) * 20
+                        + keywordScore(safeAttr(button, "label").toLowerCase(Locale.ROOT), keywords) * 20
+                        + keywordScore(safeAttr(button, "class").toLowerCase(Locale.ROOT), keywords) * 10;
+                if (score > bestScore) {
+                    bestScore = score;
+                    best = button;
+                }
+            } catch (Exception ignored) {
+                // Elemento "stale" al leer atributos: se descarta.
+            }
+        }
+        return best;
+    }
+
+    private static List<Candidate> buildButtonStrategies(WebElement element) {
+        String tag = element.getTagName();
+        String text = safeText(element);
+        String description = String.format("<%s id='%s' text='%s'>", tag, safeAttr(element, "id"), text);
+        List<Candidate> strategies = new ArrayList<>();
+
+        String id = safeAttr(element, "id");
+        if (!id.isEmpty()) {
+            strategies.add(new Candidate(By.id(id), description, 95, "por id"));
+        }
+        if (!text.isEmpty() && !text.contains("'")) {
+            strategies.add(new Candidate(By.xpath(String.format("//%s[normalize-space(.)='%s']", tag, text)),
+                    description, 75, "por texto"));
+        }
+        String ariaLabel = safeAttr(element, "aria-label");
+        if (!ariaLabel.isEmpty() && !ariaLabel.contains("'")) {
+            strategies.add(new Candidate(By.cssSelector(String.format("%s[aria-label='%s']", tag, ariaLabel)),
+                    description, 60, "por aria-label"));
+        }
+        String cssClass = safeAttr(element, "class").trim();
+        if (!cssClass.isEmpty()) {
+            strategies.add(new Candidate(By.cssSelector(tag + "." + cssClass.split("\\s+")[0]),
+                    description, 30, "por clase"));
+        }
+
+        return strategies.stream()
+                .sorted((a, b) -> Integer.compare(b.score, a.score))
+                .limit(3)
+                .collect(Collectors.toList());
+    }
+
+    private static String safeText(WebElement element) {
+        try {
+            return element.getText().trim();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    /**
+     * Resuelve una opción dentro de una lista por su texto. Intenta primero los elementos
+     * del localizador original cuyo texto coincida; si no hay, busca entre los elementos
+     * visibles (li, button, a, label, option, div hoja) uno cuyo texto coincida y propone
+     * localizadores alternativos (por texto exacto, por texto contenido).
+     */
+    public static WebElement resolveListOption(WebDriver driver, By originalListLocator, String optionText,
+                                               String fieldLabel) {
+        String wanted = normalize(optionText);
+        try {
+            for (WebElement e : driver.findElements(originalListLocator)) {
+                if (isUsable(e) && normalize(e.getText()).contains(wanted)) {
+                    report(fieldLabel, originalListLocator, null, Collections.emptyList(), false);
+                    return e;
+                }
+            }
+        } catch (Exception ignored) {
+            // Se continúa con el self-healing.
+        }
+
+        logInfo(String.format("[SELF-HEALING] Opción '%s' no encontrada con %s. Buscando reemplazo...",
+                optionText, originalListLocator));
+
+        WebElement target = null;
+        int bestLength = Integer.MAX_VALUE;
+        try {
+            for (WebElement e : driver.findElements(By.cssSelector("li, button, a, label, option, div, span, p"))) {
+                try {
+                    String text = normalize(e.getText());
+                    // El más corto que contenga el texto es el elemento más específico.
+                    if (e.isDisplayed() && text.contains(wanted) && text.length() < bestLength) {
+                        bestLength = text.length();
+                        target = e;
+                    }
+                } catch (Exception ignored) {
+                    // Elemento "stale": se descarta.
+                }
+            }
+        } catch (Exception ignored) {
+            // Sin candidatos.
+        }
+
+        if (target == null || optionText.contains("'")) {
+            report(fieldLabel, originalListLocator, null, Collections.emptyList(), true);
+            throw new NoSuchElementException(
+                    "[SELF-HEALING] No se encontró la opción '" + optionText + "' para '" + fieldLabel + "'");
+        }
+
+        String tag = target.getTagName();
+        String description = String.format("<%s text='%s'>", tag, safeText(target));
+        List<Candidate> strategies = new ArrayList<>();
+        strategies.add(new Candidate(By.xpath(String.format("//%s[normalize-space(.)='%s']", tag, safeText(target).replace("'", ""))),
+                description, 80, "por texto exacto"));
+        strategies.add(new Candidate(By.xpath(String.format("//%s[contains(normalize-space(.),'%s')]", tag, optionText)),
+                description, 60, "por texto contenido"));
+
+        Candidate best = strategies.get(0);
+        report(fieldLabel, originalListLocator, best, strategies, true);
+        logInfo(String.format("[SELF-HEALING] Opción '%s' reparada -> %s", optionText, best.locator));
+        return target;
+    }
+
+    private static String normalize(String s) {
+        return s == null ? "" : s.replaceAll("\\s+", " ").trim().toLowerCase(Locale.ROOT);
     }
 
     private static WebElement safeFindFirst(WebDriver driver, By locator) {
