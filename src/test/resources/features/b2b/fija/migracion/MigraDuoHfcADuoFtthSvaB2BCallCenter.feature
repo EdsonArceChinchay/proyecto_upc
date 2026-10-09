@@ -36,10 +36,7 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
     Y        selecciono el boton Mostrar ofertas
-    Y        selecciono tipo de oferta
-    Y        selecciono el tipo de plan Hogar "<tipoPlanHogar>"
-    Y        selecciono la oferta "<plan>"
 
     Ejemplos:
-      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal      | tipoPlanHogar | plan                      |
-      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       | Duo           | DUO MOVISTAR VOZ INTERNET |
+      | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal      |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Call Center | RUC          | 20100323002    | 1   | DNI             | 75447576       |

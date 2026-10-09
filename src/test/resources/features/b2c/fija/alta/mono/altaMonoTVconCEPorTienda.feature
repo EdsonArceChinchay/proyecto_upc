@@ -21,8 +21,8 @@ Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Tienda
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
     Y        selecciono el tipo de usuario "userType"
-    Y        ingreso el usuario "userNameST"
-    Y        ingreso el password "userPasswordST"
+    Y        ingreso el usuario "userNameCC"
+    Y        ingreso el password "userPasswordCC"
     E        ingreso el captcha
     Y        presiono el boton Continuar hacia el home
     Entonces valido el login exitoso mediante el mensaje "Bienvenid@"
