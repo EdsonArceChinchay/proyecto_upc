@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 08/04/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC @AltaFija @AltaMono
+@BERSERKERS @DoneDevOps @DoneDevOpsPI14SP1 @RegresionDitoC @AltaFija @AltaMono @UPC
 Característica: AT-DT0_Alta Mono TV a cliente con CE por canal Tienda
 
   @AltaMonoTVTienda

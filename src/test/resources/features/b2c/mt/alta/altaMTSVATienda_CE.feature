@@ -13,7 +13,7 @@
 ##ENCARGADO:
 ##FECMOD: 13/02/2024
 
-@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC @AltaMTSVA
+@BERSERKERS @DoneDevOps @DoneDevOpsPI11 @Sanity28 @DROP-G04 @RegresionDitoC @AltaMTSVA @UPC
 Característica: AT-DT116_Alta MT (Alta fija + alta movil) + SVA a cliente con CE por canal Tienda
 
   @AltaMTSVATienda_CE

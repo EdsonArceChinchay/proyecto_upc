@@ -16,7 +16,7 @@
 @BERSERKERS @DoneDevOps
 Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
 
-  @MigracionRucCambioTegnologia @MVP11 @Global @UPC
+  @MigracionRucCambioTegnologia @MVP11 @Global @UPC1
   Esquema del escenario: Migración con Cambio de Velocidad de dúo 100 Mbps con tecnología HFC a dúo 200mbps, con ruc,en proactivo, con flujo biométrico
     Dado     que abro la pagina de movistar
     Cuando   presiono el boton Iniciar Sesion
@@ -35,7 +35,6 @@ Característica: AT-DT062_Migracion de Duo HFC Cambio de tegnologia
     E        ingreso el numero de documento "<numDocRepLegal>" del Representante Legal
     Y        doy click en Validar Representa Legal
     Y        selecciono la cartilla del plan activo
-    Y        selecciono el boton Mostrar ofertas
 
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | nro | tipoDocRepLegal | numDocRepLegal      |
