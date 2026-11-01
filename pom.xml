@@ -16,7 +16,8 @@
         <spring.boot.version>2.5.4</spring.boot.version>
         <springboot.jdbc.version>2.7.11</springboot.jdbc.version>
         <postgresql.version>42.5.5</postgresql.version>
-        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <xgboost.version>2.1.4</xgboost.version>
+        <pdfbox.version>2.0.30</pdfbox.version>
     </properties>
     <dependencies>
         <dependency>
@@ -51,16 +52,15 @@
             <version>${postgresql.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>pdfbox</artifactId>
-            <version>2.0.30</version>
+            <groupId>ml.dmlc</groupId>
+            <artifactId>xgboost4j_2.12</artifactId>
+            <version>${xgboost.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>

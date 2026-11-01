@@ -7,6 +7,7 @@ la complejidad de la herramienta de automatización, en este caso soportado por 
 
 * Integración entre SpringBoot + Selenium + Cucumber
 * Librería de automatización: **Selenium 4**
+* Librería de ML añadida: **XGBoost4J**
 
 ## Integración de SpringBoot + Cucumber
 

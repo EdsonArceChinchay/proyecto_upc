@@ -1,5 +1,6 @@
 package com.tdp.ct.web.runner;
 
+import com.tdp.ct.web.healing.HealingReporter;
 import com.tdp.ct.web.jira.JiraXray;
 import com.tdp.ct.web.utils.HttpSender;
 import io.cucumber.junit.Cucumber;
@@ -8,6 +9,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +22,6 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         features = {"src/test/resources/features"},
         glue = {"com.tdp.ct.web.hooks", "com.tdp.ct.web.glue"},
         tags = "@CaeqFinanciadoCallCenter_CE")
-
  class Runner {
 
     @BeforeClass
@@ -29,8 +30,12 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
     }
 
     @AfterClass
-    public static void afterExecution() {
+    public static void afterExecution() throws IOException {
         Logger.getLogger(Runner.class.getName()).log(Level.INFO, "AFTER EXECUTION --->");
+        String healingReportPath = System.getProperty("healing.report.pdf");
+        if (healingReportPath != null && !healingReportPath.trim().isEmpty()) {
+            HealingReporter.generateHealingReportPDF(healingReportPath);
+        }
         boolean Flag = Boolean.parseBoolean(getValueConfig("config", "environment.notification.sendReporte").trim());
         if (Flag) {
             new HttpSender().sendDetailsRun(getValueConfig("config", "environment.notification.huKey").trim());
@@ -38,8 +43,6 @@ import static com.tdp.ct.web.utils.FileUtils.getValueConfig;
         JiraXray.importResults("/target/build/report/cucumber.json");
     }
 }
-
-
 
 
 
