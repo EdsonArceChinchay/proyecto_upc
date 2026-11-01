@@ -118,8 +118,10 @@ runner.
 En Jenkins, configura las instalaciones de herramientas `JDK11` y `Maven3`,
 ademas de las credenciales que ya utiliza el pipeline. El `Jenkinsfile` ejecuta
 `mvn clean verify` con ese JDK, el tag de Cucumber elegido y archiva los reportes
-del build, incluido el PDF. El parametro `HEALING_MINUTES_PER_REPAIR` permite
-ajustar la estimacion.
+del build, incluido el PDF. Si el archivo se genero, tambien lo envia adjunto a
+`earcechin@gmail.com` mediante el plugin Email Extension. Configura el plugin y
+el servidor SMTP saliente en Jenkins (Manage Jenkins > System) para habilitar el
+envio. El parametro `HEALING_MINUTES_PER_REPAIR` permite ajustar la estimacion.
 
 ## 📊 Estrategias de Recuperación
 

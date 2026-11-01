@@ -125,6 +125,19 @@ pipeline {
                 reportFiles: 'overview-features.html',
                 reportName: 'Cucumber HTML Report'
             ])
+            script {
+                if (fileExists('target/reports/healing-report.pdf')) {
+                    emailext(
+                        to: 'earcechin@gmail.com',
+                        subject: "Reporte Auto-Healing - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: "Adjunto el reporte PDF de Auto-Healing del build #${env.BUILD_NUMBER} (${env.JOB_NAME}).",
+                        attachmentsPattern: 'target/reports/healing-report.pdf',
+                        mimeType: 'text/plain'
+                    )
+                } else {
+                    echo 'No se envio el correo: no se genero target/reports/healing-report.pdf.'
+                }
+            }
         }
     }
 }
