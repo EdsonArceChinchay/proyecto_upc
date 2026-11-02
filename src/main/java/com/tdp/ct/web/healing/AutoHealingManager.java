@@ -155,6 +155,14 @@ public class AutoHealingManager {
     }
 
     /**
+     * Registra en el histórico un evento de reparación realizado por otros motores
+     * (p. ej. SelfHealingLocator) para que aparezca en las métricas y el reporte PDF.
+     */
+    public static void recordHealingEvent(String elementName, String strategy, boolean success, String originalLocator) {
+        logHealing(elementName, strategy, success, originalLocator);
+    }
+
+    /**
      * Registra alternativas para un elemento
      */
     public static void registerAlternative(String elementName, String xpathAlternative) {

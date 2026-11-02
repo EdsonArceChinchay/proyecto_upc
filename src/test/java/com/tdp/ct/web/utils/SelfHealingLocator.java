@@ -1,5 +1,6 @@
 package com.tdp.ct.web.utils;
 
+import com.tdp.ct.web.healing.AutoHealingManager;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.By;
@@ -461,6 +462,12 @@ public final class SelfHealingLocator {
 
     private static void report(String fieldLabel, By originalLocator, Candidate chosen,
                                 List<Candidate> evaluatedCandidates, boolean healingTriggered) {
+        if (healingTriggered) {
+            AutoHealingManager.recordHealingEvent(fieldLabel,
+                    chosen != null ? "SelfHealingLocator " + chosen.strategy + " -> " + chosen.locator : "FAILED",
+                    chosen != null, String.valueOf(originalLocator));
+        }
+
         StringBuilder html = new StringBuilder();
         html.append("<div style='font-family:monospace; font-size:12px; border:1px solid #ccc; padding:8px; margin:4px 0;'>");
         html.append("<b>🔧 Self-Healing Locator — campo: ").append(escape(fieldLabel)).append("</b><br/>");
