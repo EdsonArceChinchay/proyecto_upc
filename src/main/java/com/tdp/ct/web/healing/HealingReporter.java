@@ -1,5 +1,6 @@
 package com.tdp.ct.web.healing;
 
+import java.awt.Color;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -211,8 +213,10 @@ public class HealingReporter {
         }
 
         try (PDDocument document = new PDDocument()) {
-            int pageCount = (lines.size() + 49) / 50;
-            for (int pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+            int textPages = (lines.size() + 49) / 50;
+            int pageCount = textPages + 1;
+            drawDashboardPage(document, history, stats, minutesPerRepair, pageCount);
+            for (int pageIndex = 0; pageIndex < textPages; pageIndex++) {
                 PDPage page = new PDPage();
                 document.addPage(page);
                 try (PDPageContentStream content = new PDPageContentStream(document, page)) {
@@ -222,7 +226,7 @@ public class HealingReporter {
                     content.showText("REPORTE DE AUTO-REPARACIÓN");
                     content.setFont(PDType1Font.HELVETICA, 9);
                     content.newLineAtOffset(0, -18);
-                    content.showText("Página " + (pageIndex + 1) + " de " + pageCount);
+                    content.showText("Página " + (pageIndex + 2) + " de " + pageCount);
 
                     int start = pageIndex * 50;
                     int end = Math.min(start + 50, lines.size());
@@ -236,6 +240,201 @@ public class HealingReporter {
             document.save(output.toFile());
         }
         logger.log(Level.INFO, "Reporte PDF de auto-reparación generado localmente en: " + output);
+    }
+
+    private static final Color COLOR_BLUE = new Color(0, 102, 204);
+    private static final Color COLOR_GREEN = new Color(76, 175, 80);
+    private static final Color COLOR_RED = new Color(244, 67, 54);
+    private static final Color COLOR_ORANGE = new Color(255, 152, 0);
+    private static final Color COLOR_GRAY = new Color(224, 224, 224);
+    private static final Color COLOR_TEXT = new Color(51, 51, 51);
+    private static final Color COLOR_MUTED = new Color(110, 110, 110);
+    private static final Color COLOR_CARD = new Color(244, 247, 252);
+
+    private static void drawDashboardPage(PDDocument document,
+                                          Map<String, AutoHealingManager.HealingResult> history,
+                                          AutoHealingManager.HealingStatistics stats,
+                                          double minutesPerRepair, int pageCount) throws IOException {
+        PDPage page = new PDPage();
+        document.addPage(page);
+        double savedMinutes = stats.getSuccessful() * minutesPerRepair;
+
+        try (PDPageContentStream c = new PDPageContentStream(document, page)) {
+            drawText(c, PDType1Font.HELVETICA_BOLD, 18, 50, 745, "DASHBOARD DE AUTO-REPARACIÓN", COLOR_TEXT);
+            drawText(c, PDType1Font.HELVETICA, 9, 50, 730,
+                    "Generado: " + Instant.now() + "   |   Página 1 de " + pageCount, COLOR_MUTED);
+            c.setNonStrokingColor(COLOR_BLUE);
+            c.addRect(50, 722, 512, 2);
+            c.fill();
+
+            // Tarjetas de indicadores
+            float cardW = 120, cardH = 62, cardY = 645;
+            drawCard(c, 50, cardY, cardW, cardH, "AHSR",
+                    String.format(Locale.ROOT, "%.1f%%", stats.getAHSR()), COLOR_ORANGE);
+            drawCard(c, 182, cardY, cardW, cardH, "Eventos detectados",
+                    String.valueOf(stats.getTotal()), COLOR_BLUE);
+            drawCard(c, 314, cardY, cardW, cardH, "Reparaciones exitosas",
+                    String.valueOf(stats.getSuccessful()), COLOR_GREEN);
+            drawCard(c, 446, cardY, cardW - 4, cardH, "Reparaciones fallidas",
+                    String.valueOf(stats.getFailed()), COLOR_RED);
+
+            c.setNonStrokingColor(COLOR_CARD);
+            c.addRect(50, 595, 512, 36);
+            c.fill();
+            drawText(c, PDType1Font.HELVETICA_BOLD, 11, 62, 617,
+                    String.format(Locale.ROOT, "Tiempo estimado ahorrado: %.2f minutos (%.2f horas)",
+                            savedMinutes, savedMinutes / 60), COLOR_TEXT);
+            drawText(c, PDType1Font.HELVETICA, 8, 62, 603,
+                    String.format(Locale.ROOT, "Estimación: %.2f minutos por reparación exitosa", minutesPerRepair),
+                    COLOR_MUTED);
+
+            // Dona + medidor AHSR
+            drawText(c, PDType1Font.HELVETICA_BOLD, 12, 50, 570, "Resultado de las reparaciones", COLOR_TEXT);
+            drawDonut(c, 140, 490, 62, 36,
+                    new double[]{stats.getSuccessful(), stats.getFailed()}, new Color[]{COLOR_GREEN, COLOR_RED});
+            drawCenteredText(c, PDType1Font.HELVETICA_BOLD, 12, 140, 487,
+                    String.format(Locale.ROOT, "%.0f%%", stats.getAHSR()), COLOR_TEXT);
+
+            drawLegend(c, 240, 520, COLOR_GREEN, "Exitosas: " + stats.getSuccessful());
+            drawLegend(c, 240, 500, COLOR_RED, "Fallidas: " + stats.getFailed());
+            drawText(c, PDType1Font.HELVETICA, 9, 240, 470, "Tasa de éxito (AHSR)", COLOR_MUTED);
+            float gaugeW = 300;
+            c.setNonStrokingColor(COLOR_GRAY);
+            c.addRect(240, 450, gaugeW, 12);
+            c.fill();
+            c.setNonStrokingColor(COLOR_GREEN);
+            c.addRect(240, 450, (float) (gaugeW * Math.min(100, stats.getAHSR()) / 100.0), 12);
+            c.fill();
+            if (stats.getTotal() == 0) {
+                drawText(c, PDType1Font.HELVETICA, 8, 240, 436, "Sin eventos de reparación en este ciclo.", COLOR_MUTED);
+            }
+
+            // Gráficos de barras
+            Map<String, Integer> byStrategy = new LinkedHashMap<>();
+            Map<String, Integer> byElement = new LinkedHashMap<>();
+            for (AutoHealingManager.HealingResult r : history.values()) {
+                byStrategy.merge(strategyGroup(r.getStrategy()), 1, Integer::sum);
+                byElement.merge(r.getElementName(), 1, Integer::sum);
+            }
+            drawBarChart(c, 50, 395, "Eventos por estrategia de recuperación", byStrategy, COLOR_BLUE);
+            drawBarChart(c, 50, 230, "Eventos por elemento", byElement, COLOR_ORANGE);
+        }
+    }
+
+    private static String strategyGroup(String strategy) {
+        if (strategy == null) {
+            return "Desconocida";
+        }
+        String group = strategy;
+        for (String separator : new String[]{" -> ", " #", " score="}) {
+            int idx = group.indexOf(separator);
+            if (idx > 0) {
+                group = group.substring(0, idx);
+            }
+        }
+        return group.trim();
+    }
+
+    private static void drawBarChart(PDPageContentStream c, float x, float topY, String title,
+                                     Map<String, Integer> data, Color color) throws IOException {
+        drawText(c, PDType1Font.HELVETICA_BOLD, 12, x, topY, title, COLOR_TEXT);
+        if (data.isEmpty()) {
+            drawText(c, PDType1Font.HELVETICA, 9, x, topY - 20, "Sin datos para graficar.", COLOR_MUTED);
+            return;
+        }
+        List<Map.Entry<String, Integer>> rows = new ArrayList<>(data.entrySet());
+        rows.sort((a, b) -> Integer.compare(b.getValue(), a.getValue()));
+        int max = rows.get(0).getValue();
+        float labelW = 190, barMaxW = 280, rowH = 22;
+        for (int i = 0; i < Math.min(5, rows.size()); i++) {
+            float y = topY - 28 - i * rowH;
+            String label = toPdfSafeText(rows.get(i).getKey());
+            if (label.length() > 38) {
+                label = label.substring(0, 35) + "...";
+            }
+            drawText(c, PDType1Font.HELVETICA, 8, x, y + 2, label, COLOR_TEXT);
+            float w = Math.max(3, barMaxW * rows.get(i).getValue() / max);
+            c.setNonStrokingColor(color);
+            c.addRect(x + labelW, y - 2, w, 12);
+            c.fill();
+            drawText(c, PDType1Font.HELVETICA_BOLD, 8, x + labelW + w + 5, y + 2,
+                    String.valueOf(rows.get(i).getValue()), COLOR_TEXT);
+        }
+    }
+
+    private static void drawCard(PDPageContentStream c, float x, float y, float w, float h,
+                                 String label, String value, Color accent) throws IOException {
+        c.setNonStrokingColor(COLOR_CARD);
+        c.addRect(x, y, w, h);
+        c.fill();
+        c.setNonStrokingColor(accent);
+        c.addRect(x, y, 4, h);
+        c.fill();
+        drawText(c, PDType1Font.HELVETICA_BOLD, 20, x + 14, y + 28, value, accent);
+        drawText(c, PDType1Font.HELVETICA, 8, x + 14, y + 12, label, COLOR_MUTED);
+    }
+
+    private static void drawLegend(PDPageContentStream c, float x, float y, Color color, String text)
+            throws IOException {
+        c.setNonStrokingColor(color);
+        c.addRect(x, y, 10, 10);
+        c.fill();
+        drawText(c, PDType1Font.HELVETICA, 10, x + 16, y + 1, text, COLOR_TEXT);
+    }
+
+    private static void drawDonut(PDPageContentStream c, float cx, float cy, float outer, float inner,
+                                  double[] values, Color[] colors) throws IOException {
+        double total = 0;
+        for (double v : values) {
+            total += v;
+        }
+        if (total <= 0) {
+            values = new double[]{1};
+            colors = new Color[]{COLOR_GRAY};
+            total = 1;
+        }
+        double start = Math.PI / 2;
+        for (int i = 0; i < values.length; i++) {
+            double sweep = values[i] / total * 2 * Math.PI;
+            if (sweep <= 0) {
+                continue;
+            }
+            int steps = Math.max(2, (int) Math.ceil(sweep / (Math.PI / 90)));
+            c.setNonStrokingColor(colors[i]);
+            for (int k = 0; k <= steps; k++) {
+                double a = start - sweep * k / steps;
+                float px = (float) (cx + outer * Math.cos(a));
+                float py = (float) (cy + outer * Math.sin(a));
+                if (k == 0) {
+                    c.moveTo(px, py);
+                } else {
+                    c.lineTo(px, py);
+                }
+            }
+            for (int k = steps; k >= 0; k--) {
+                double a = start - sweep * k / steps;
+                c.lineTo((float) (cx + inner * Math.cos(a)), (float) (cy + inner * Math.sin(a)));
+            }
+            c.closePath();
+            c.fill();
+            start -= sweep;
+        }
+    }
+
+    private static void drawText(PDPageContentStream c, PDType1Font font, float size, float x, float y,
+                                 String text, Color color) throws IOException {
+        c.beginText();
+        c.setFont(font, size);
+        c.setNonStrokingColor(color);
+        c.newLineAtOffset(x, y);
+        c.showText(toPdfSafeText(text));
+        c.endText();
+    }
+
+    private static void drawCenteredText(PDPageContentStream c, PDType1Font font, float size, float cx, float y,
+                                         String text, Color color) throws IOException {
+        float width = font.getStringWidth(toPdfSafeText(text)) / 1000 * size;
+        drawText(c, font, size, cx - width / 2, y, text, color);
     }
 
     private static double configuredMinutesPerRepair() {
