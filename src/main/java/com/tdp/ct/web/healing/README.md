@@ -98,7 +98,7 @@ ademas del tiempo estimado ahorrado. El AHSR se calcula sobre los intentos de
 auto-healing (no sobre las busquedas que encontraron el localizador original). El
 contenido del PDF se presenta en español.
 
-Por defecto, cada reparacion exitosa representa 30 minutos ahorrados. Para ajustar
+Por defecto, cada reparacion exitosa representa 15 minutos ahorrados. Para ajustar
 la estimacion y solicitar el reporte al finalizar el runner:
 
 ```shell
@@ -122,7 +122,7 @@ ademas de las credenciales que ya utiliza el pipeline. El `Jenkinsfile` ejecuta
 del build, incluido el PDF. Si el archivo se genero, tambien lo envia adjunto a
 `earcechin@gmail.com` mediante el plugin Email Extension. Configura el plugin y
 el servidor SMTP saliente en Jenkins (Manage Jenkins > System) para habilitar el
-envio. El parametro `HEALING_MINUTES_PER_REPAIR` permite ajustar la estimacion.
+envio.
 
 ## 📊 Estrategias de Recuperación
 

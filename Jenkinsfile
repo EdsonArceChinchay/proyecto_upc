@@ -10,7 +10,6 @@ pipeline {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'cert', 'prod'], description: 'Ambiente a ejecutar')
         string(name: 'TEST_TAGS', defaultValue: '@CaeqFinanciadoCallCenter_CE', description: 'Tags de Cucumber')
         booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Ejecutar navegador en modo headless')
-        string(name: 'HEALING_MINUTES_PER_REPAIR', defaultValue: '15', description: 'Minutos estimados ahorrados por reparacion exitosa')
     }
 
     options {
@@ -81,7 +80,7 @@ pipeline {
                         Start-Sleep -Seconds 2
 
                         try {
-                            mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS" "-Dhealing.report.pdf=target/reports/healing-report.pdf" "-Dhealing.report.minutes-per-repair=$env:HEALING_MINUTES_PER_REPAIR"
+                            mvn clean verify "-Dmaven.repo.local=C:\\Users\\earce\\.m2\\repository" "-Denvironment=$env:ENVIRONMENT" "-Dcucumber.filter.tags=$env:TEST_TAGS" "-Dhealing.report.pdf=target/reports/healing-report.pdf"
                             if ($LASTEXITCODE -ne 0) { throw "Maven build failed with exit code $LASTEXITCODE" }
                         } finally {
                             # Kill any leftover Chrome/chromedriver processes left open by failed
