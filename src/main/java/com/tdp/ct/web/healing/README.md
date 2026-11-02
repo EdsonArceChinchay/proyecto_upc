@@ -95,7 +95,8 @@ HealingReporter.generateHealingReportPDF("target/reports/healing-report.pdf");
 El PDF se genera localmente, sin conectarse a un servidor, y contiene el AHSR, los
 intentos de reparacion exitosos y fallidos, la estrategia y el localizador original,
 ademas del tiempo estimado ahorrado. El AHSR se calcula sobre los intentos de
-auto-healing (no sobre las busquedas que encontraron el localizador original).
+auto-healing (no sobre las busquedas que encontraron el localizador original). El
+contenido del PDF se presenta en español.
 
 Por defecto, cada reparacion exitosa representa 30 minutos ahorrados. Para ajustar
 la estimacion y solicitar el reporte al finalizar el runner:

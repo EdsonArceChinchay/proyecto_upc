@@ -186,9 +186,8 @@ public class HealingReporter {
     }
 
     /**
-     * Generates a local PDF with healing KPIs and repair events.
-     * Configure the estimated time saved per repair with
-     * -Dhealing.report.minutes-per-repair (defaults to 30 minutes).
+     * Genera un PDF local en español con los indicadores y eventos de reparación.
+     * La estimación se configura con -Dhealing.report.minutes-per-repair (30 minutos por defecto).
      */
     public static void generateHealingReportPDF(String outputPath) throws IOException {
         generateHealingReportPDF(outputPath, configuredMinutesPerRepair());
@@ -199,7 +198,7 @@ public class HealingReporter {
             throw new IllegalArgumentException("La ruta de salida del reporte PDF es obligatoria.");
         }
         if (!Double.isFinite(minutesPerRepair) || minutesPerRepair < 0) {
-            throw new IllegalArgumentException("Los minutos ahorrados por reparacion deben ser un numero finito no negativo.");
+            throw new IllegalArgumentException("Los minutos ahorrados por reparación deben ser un número finito no negativo.");
         }
 
         Map<String, AutoHealingManager.HealingResult> history = AutoHealingManager.getHealingHistory();
@@ -220,10 +219,10 @@ public class HealingReporter {
                     content.beginText();
                     content.setFont(PDType1Font.HELVETICA_BOLD, 14);
                     content.newLineAtOffset(50, 750);
-                    content.showText("AUTO-HEALING REPAIR REPORT");
+                    content.showText("REPORTE DE AUTO-REPARACIÓN");
                     content.setFont(PDType1Font.HELVETICA, 9);
                     content.newLineAtOffset(0, -18);
-                    content.showText("Page " + (pageIndex + 1) + " of " + pageCount);
+                    content.showText("Página " + (pageIndex + 1) + " de " + pageCount);
 
                     int start = pageIndex * 50;
                     int end = Math.min(start + 50, lines.size());
@@ -236,7 +235,7 @@ public class HealingReporter {
             }
             document.save(output.toFile());
         }
-        logger.log(Level.INFO, "Reporte PDF de healing generado localmente en: " + output);
+        logger.log(Level.INFO, "Reporte PDF de auto-reparación generado localmente en: " + output);
     }
 
     private static double configuredMinutesPerRepair() {
@@ -255,34 +254,34 @@ public class HealingReporter {
             double minutesPerRepair) {
         List<String> lines = new ArrayList<>();
         double savedMinutes = stats.getSuccessful() * minutesPerRepair;
-        lines.add("Generated: " + Instant.now());
+        lines.add("Generado: " + Instant.now());
         lines.add("");
-        lines.add("KPIs");
-        lines.add("AHSR (Auto-Healing Success Rate): "
+        lines.add("INDICADORES CLAVE");
+        lines.add("AHSR (Tasa de éxito de Auto-Healing): "
                 + String.format(Locale.ROOT, "%.2f%%", stats.getAHSR()));
-        lines.add("Healing events detected: " + stats.getTotal());
-        lines.add("Successfully repaired: " + stats.getSuccessful());
-        lines.add("Unrecovered: " + stats.getFailed());
-        lines.add("Estimated time saved: " + String.format(Locale.ROOT, "%.2f minutes", savedMinutes));
-        lines.add("Estimate per successful repair: "
-                + String.format(Locale.ROOT, "%.2f minutes", minutesPerRepair));
+        lines.add("Eventos de reparación detectados: " + stats.getTotal());
+        lines.add("Reparaciones exitosas: " + stats.getSuccessful());
+        lines.add("Reparaciones fallidas: " + stats.getFailed());
+        lines.add("Tiempo estimado ahorrado: " + String.format(Locale.ROOT, "%.2f minutos", savedMinutes));
+        lines.add("Ahorro estimado por reparación exitosa: "
+                + String.format(Locale.ROOT, "%.2f minutos", minutesPerRepair));
         lines.add("");
-        lines.add("REPAIR EVENT DETAILS");
+        lines.add("DETALLE DE EVENTOS DE REPARACIÓN");
         lines.add("--------------------------------------------------------------------------------");
 
         List<AutoHealingManager.HealingResult> events = new ArrayList<>(history.values());
         events.sort(Comparator.comparingLong(AutoHealingManager.HealingResult::getTimestamp));
         if (events.isEmpty()) {
-            lines.add("No repair events were recorded for this test cycle.");
+            lines.add("No se registraron eventos de reparación en este ciclo de pruebas.");
         } else {
             int index = 1;
             for (AutoHealingManager.HealingResult event : events) {
-                lines.add(index++ + ". " + (event.isSuccess() ? "REPAIRED" : "NOT REPAIRED")
+                lines.add(index++ + ". " + (event.isSuccess() ? "REPARADO" : "NO REPARADO")
                         + " | " + Instant.ofEpochMilli(event.getTimestamp()));
-                addWrapped(lines, "   Element: " + event.getElementName());
-                addWrapped(lines, "   Recovery strategy: " + event.getStrategy());
-                addWrapped(lines, "   Original locator: "
-                        + (event.getOriginalLocator() == null ? "N/A" : event.getOriginalLocator()));
+                addWrapped(lines, "   Elemento: " + event.getElementName());
+                addWrapped(lines, "   Estrategia de recuperación: " + event.getStrategy());
+                addWrapped(lines, "   Localizador original: "
+                        + (event.getOriginalLocator() == null ? "No disponible" : event.getOriginalLocator()));
                 lines.add("");
             }
         }
