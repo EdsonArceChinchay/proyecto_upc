@@ -189,7 +189,7 @@ public class HealingReporter {
 
     /**
      * Genera un PDF local en español con los indicadores y eventos de reparación.
-     * La estimación se configura con -Dhealing.report.minutes-per-repair (30 minutos por defecto).
+     * La estimación se configura con -Dhealing.report.minutes-per-repair (15 minutos por defecto).
      */
     public static void generateHealingReportPDF(String outputPath) throws IOException {
         generateHealingReportPDF(outputPath, configuredMinutesPerRepair());
@@ -451,7 +451,7 @@ public class HealingReporter {
     }
 
     private static double configuredMinutesPerRepair() {
-        String configuredValue = System.getProperty("healing.report.minutes-per-repair", "30");
+        String configuredValue = System.getProperty("healing.report.minutes-per-repair", "15");
         try {
             return Double.parseDouble(configuredValue);
         } catch (NumberFormatException e) {

@@ -10,7 +10,7 @@ pipeline {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'cert', 'prod'], description: 'Ambiente a ejecutar')
         string(name: 'TEST_TAGS', defaultValue: '@CaeqFinanciadoCallCenter_CE', description: 'Tags de Cucumber')
         booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Ejecutar navegador en modo headless')
-        string(name: 'HEALING_MINUTES_PER_REPAIR', defaultValue: '30', description: 'Minutos estimados ahorrados por reparacion exitosa')
+        string(name: 'HEALING_MINUTES_PER_REPAIR', defaultValue: '15', description: 'Minutos estimados ahorrados por reparacion exitosa')
     }
 
     options {
