@@ -72,7 +72,7 @@ Característica: AT-DT025_Alta Movil Postpago a cliente con CE por canal Tienda
    ## Y        valido que se muestre el detalle del pedido de "Información adicional"
     Ejemplos:
       | userType | userName   | userPassword   | msgHome    | channelType | documentType | documentNumber | tipoPlanMovil | tipoPlanes                 |
-      | userType | userNameST | userPasswordST | Bienvenid@ | Tienda      | CE           | 444455687   | Postpago | Plan Ilimitado Mi Movistar S/69.9 VII |
+      | userType | userNameCC | userPasswordCC | Bienvenid@ | Tienda      | CE           | 444455687   | Postpago | Plan Ilimitado Mi Movistar S/69.9 VII |
 
   ## Data Sanity v1 : 1042464796
   ## Data Sanity v2 : 444455687

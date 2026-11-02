@@ -1,6 +1,8 @@
 package com.tdp.ct.web.page;
 
 import com.tdp.ct.web.base.WebBase;
+import com.tdp.ct.web.healing.ai.DomAnalyzer;
+import com.tdp.ct.web.healing.model.CandidateElement;
 import com.tdp.ct.web.service.stepdefinition.ManageScenario;
 import com.tdp.ct.web.service.util.UtilWeb;
 import com.tdp.ct.web.utils.Addons;
@@ -31,10 +33,10 @@ public class LoginBerserkerPage extends WebBase {
     protected WebElement btnLogIn;
     @FindBy(id = "procedencia_usuario")
     protected WebElement userType;
-    @FindBy(id = "signInName")
-    protected WebElement inputNameUser;
-    @FindBy(id = "password")
-    protected WebElement inputPassword;
+   // @FindBy(id = "signInName")
+   // protected WebElement inputNameUser;
+    //@FindBy(id = "password")
+   // protected WebElement inputPassword;
     @FindBy(name = "btnpruebavalidate")
     protected WebElement btnContinue;
     /** Botón Continuar Azure B2C (login CERT integratel). */
@@ -70,6 +72,12 @@ public class LoginBerserkerPage extends WebBase {
 
     StepPages view = new StepPages();
     ManageScenario miScenario = new ManageScenario();
+
+    public LoginBerserkerPage() {
+        super();
+    }
+
+
 
     public void clickOnLoginButton() {
         Addons.resetTimeOut(driver());
@@ -124,7 +132,7 @@ public class LoginBerserkerPage extends WebBase {
 
         try {
             waitUntilElementIsVisible(userType, timeoutSeconds);
-            waitUntilElementIsVisible(inputNameUser, timeoutSeconds);
+            //waitUntilElementIsVisible(inputNameUser, timeoutSeconds);
         } catch (Exception e) {
             logInfo("[B2C] Formulario B2C no listo a tiempo: " + e.getMessage());
         }
@@ -135,7 +143,6 @@ public class LoginBerserkerPage extends WebBase {
             UtilWeb.waitForSeconds(fallbackSeconds);
         }
     }
-
     public void typeUserName(String name) {
         WebElement userField = SelfHealingLocator.resolve(
                 driver(), By.id("signInN"), "Usuario (login)", SelfHealingLocator.FieldRole.USERNAME);
@@ -149,6 +156,7 @@ public class LoginBerserkerPage extends WebBase {
         validateAndType("password", passwordField, readValues(pass));
         UtilWeb.waitForSeconds(1);
     }
+
 
     public void clickOnContinueButton() {
         int timeoutSeconds = LoginConfigUtil.getInt("environment.login.turnstile.wait-seconds", 15);
