@@ -60,9 +60,13 @@ pipeline {
 
                         $chromeDriverSource = "C:\\UPC_PI2\\proyecto_upc\\drivers\\Chrome\\chromedriver.exe"
                         New-Item -ItemType Directory -Force -Path "drivers\\chrome" | Out-Null
-                        if (Test-Path $chromeDriverSource) {
+                        # El chromedriver versionado en el repo tiene prioridad; la copia externa
+                        # (C:\\UPC_PI2) solo se usa si el workspace no lo trae (evita drivers desfasados).
+                        if (Test-Path "drivers\\chrome\\chromedriver.exe") {
+                            Write-Host "Usando chromedriver del workspace: $(& 'drivers\\chrome\\chromedriver.exe' --version)"
+                        } elseif (Test-Path $chromeDriverSource) {
                             Copy-Item -Path $chromeDriverSource -Destination "drivers\\chrome\\chromedriver.exe" -Force
-                        } elseif (-not (Test-Path "drivers\\chrome\\chromedriver.exe")) {
+                        } else {
                             Write-Warning "chromedriver.exe not found at $chromeDriverSource nor in workspace drivers\\chrome\\"
                         }
 
