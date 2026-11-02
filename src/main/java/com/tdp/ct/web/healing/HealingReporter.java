@@ -257,7 +257,8 @@ public class HealingReporter {
                                           double minutesPerRepair, int pageCount) throws IOException {
         PDPage page = new PDPage();
         document.addPage(page);
-        double savedMinutes = stats.getSuccessful() * minutesPerRepair;
+        double savedMinutes = savedMinutes(history, minutesPerRepair);
+        double healingMinutes = healingMinutes(history);
 
         try (PDPageContentStream c = new PDPageContentStream(document, page)) {
             drawText(c, PDType1Font.HELVETICA_BOLD, 18, 50, 745, "DASHBOARD DE AUTO-REPARACIÓN", COLOR_TEXT);
@@ -285,7 +286,8 @@ public class HealingReporter {
                     String.format(Locale.ROOT, "Tiempo estimado ahorrado: %.2f minutos (%.2f horas)",
                             savedMinutes, savedMinutes / 60), COLOR_TEXT);
             drawText(c, PDType1Font.HELVETICA, 8, 62, 603,
-                    String.format(Locale.ROOT, "Estimación: %.2f minutos por reparación exitosa", minutesPerRepair),
+                    String.format(Locale.ROOT, "Tiempo manual estimado: %.2f min/reparación - tiempo real de auto-reparación: %.2f min",
+                            minutesPerRepair, healingMinutes),
                     COLOR_MUTED);
 
             // Dona + medidor AHSR
@@ -319,6 +321,17 @@ public class HealingReporter {
             drawBarChart(c, 50, 395, "Eventos por estrategia de recuperación", byStrategy, COLOR_BLUE);
             drawBarChart(c, 50, 230, "Eventos por elemento", byElement, COLOR_ORANGE);
         }
+    }
+
+    private static double healingMinutes(Map<String, AutoHealingManager.HealingResult> history) {
+        return history.values().stream().mapToLong(AutoHealingManager.HealingResult::getDurationMs).sum() / 60000.0;
+    }
+
+    private static double savedMinutes(Map<String, AutoHealingManager.HealingResult> history, double manualMinutes) {
+        return history.values().stream()
+                .filter(AutoHealingManager.HealingResult::isSuccess)
+                .mapToDouble(r -> Math.max(0, manualMinutes - r.getDurationMs() / 60000.0))
+                .sum();
     }
 
     private static String strategyGroup(String strategy) {
@@ -452,7 +465,8 @@ public class HealingReporter {
             AutoHealingManager.HealingStatistics stats,
             double minutesPerRepair) {
         List<String> lines = new ArrayList<>();
-        double savedMinutes = stats.getSuccessful() * minutesPerRepair;
+        double savedMinutes = savedMinutes(history, minutesPerRepair);
+        double healingMinutes = healingMinutes(history);
         lines.add("Generado: " + Instant.now());
         lines.add("");
         lines.add("INDICADORES CLAVE");
@@ -462,8 +476,11 @@ public class HealingReporter {
         lines.add("Reparaciones exitosas: " + stats.getSuccessful());
         lines.add("Reparaciones fallidas: " + stats.getFailed());
         lines.add("Tiempo estimado ahorrado: " + String.format(Locale.ROOT, "%.2f minutos", savedMinutes));
-        lines.add("Ahorro estimado por reparación exitosa: "
+        lines.add("Tiempo real invertido en auto-reparación: "
+                + String.format(Locale.ROOT, "%.2f minutos", healingMinutes));
+        lines.add("Tiempo manual estimado por reparación: "
                 + String.format(Locale.ROOT, "%.2f minutos", minutesPerRepair));
+        lines.add("Cálculo: por cada reparación exitosa = tiempo manual - tiempo real de auto-reparación");
         lines.add("");
         lines.add("DETALLE DE EVENTOS DE REPARACIÓN");
         lines.add("--------------------------------------------------------------------------------");
@@ -481,6 +498,8 @@ public class HealingReporter {
                 addWrapped(lines, "   Estrategia de recuperación: " + event.getStrategy());
                 addWrapped(lines, "   Localizador original: "
                         + (event.getOriginalLocator() == null ? "No disponible" : event.getOriginalLocator()));
+                addWrapped(lines, "   Tiempo real de auto-reparación: "
+                        + String.format(Locale.ROOT, "%.1f s", event.getDurationMs() / 1000.0));
                 lines.add("");
             }
         }

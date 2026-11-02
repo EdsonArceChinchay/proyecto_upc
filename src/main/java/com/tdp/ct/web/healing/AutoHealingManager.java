@@ -25,6 +25,7 @@ public class AutoHealingManager {
     private static final Map<String, List<String>> locatorAlternatives = new ConcurrentHashMap<>();
     private static final Map<String, HealingResult> healingHistory = new ConcurrentHashMap<>();
     private static final int DEFAULT_TIMEOUT = 10;
+    private static final ThreadLocal<Long> HEALING_START_NANOS = new ThreadLocal<>();
 
     static {
         // Inicializa alternativas de localizadores comunes
@@ -39,6 +40,15 @@ public class AutoHealingManager {
      * @return WebElement encontrado
      */
     public static WebElement findElementWithHealing(WebDriver driver, By primaryLocator, String elementName) {
+        HEALING_START_NANOS.set(System.nanoTime());
+        try {
+            return findElementWithHealingTimed(driver, primaryLocator, elementName);
+        } finally {
+            HEALING_START_NANOS.remove();
+        }
+    }
+
+    private static WebElement findElementWithHealingTimed(WebDriver driver, By primaryLocator, String elementName) {
         try {
             // Intenta primero con el localizador principal
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
@@ -146,7 +156,15 @@ public class AutoHealingManager {
      * Registra un resultado de healing en el histórico
      */
     private static void logHealing(String elementName, String strategy, boolean success, String originalLocator) {
-        HealingResult result = new HealingResult(elementName, strategy, success, originalLocator, System.currentTimeMillis());
+        Long start = HEALING_START_NANOS.get();
+        long durationMs = start == null ? 0 : (System.nanoTime() - start) / 1_000_000;
+        logHealing(elementName, strategy, success, originalLocator, durationMs);
+    }
+
+    private static void logHealing(String elementName, String strategy, boolean success, String originalLocator,
+                                   long durationMs) {
+        HealingResult result = new HealingResult(elementName, strategy, success, originalLocator,
+                System.currentTimeMillis(), durationMs);
         healingHistory.put(elementName + "_" + System.nanoTime(), result);
 
         String message = String.format("HEALING [%s] - Element: %s, Strategy: %s",
@@ -158,8 +176,9 @@ public class AutoHealingManager {
      * Registra en el histórico un evento de reparación realizado por otros motores
      * (p. ej. SelfHealingLocator) para que aparezca en las métricas y el reporte PDF.
      */
-    public static void recordHealingEvent(String elementName, String strategy, boolean success, String originalLocator) {
-        logHealing(elementName, strategy, success, originalLocator);
+    public static void recordHealingEvent(String elementName, String strategy, boolean success,
+                                          String originalLocator, long durationMs) {
+        logHealing(elementName, strategy, success, originalLocator, Math.max(0, durationMs));
     }
 
     /**
@@ -296,8 +315,15 @@ public class AutoHealingManager {
         private final boolean success;
         private final String originalLocator;
         private final long timestamp;
+        private final long durationMs;
 
         public HealingResult(String elementName, String strategy, boolean success, String originalLocator, long timestamp) {
+            this(elementName, strategy, success, originalLocator, timestamp, 0);
+        }
+
+        public HealingResult(String elementName, String strategy, boolean success, String originalLocator,
+                             long timestamp, long durationMs) {
+            this.durationMs = durationMs;
             this.elementName = elementName;
             this.strategy = strategy;
             this.success = success;
@@ -310,6 +336,7 @@ public class AutoHealingManager {
         public boolean isSuccess() { return success; }
         public String getOriginalLocator() { return originalLocator; }
         public long getTimestamp() { return timestamp; }
+        public long getDurationMs() { return durationMs; }
 
         @Override
         public String toString() {

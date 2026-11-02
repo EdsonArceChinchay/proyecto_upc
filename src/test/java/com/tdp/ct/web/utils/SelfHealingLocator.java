@@ -43,6 +43,8 @@ public final class SelfHealingLocator {
     private SelfHealingLocator() {
     }
 
+    private static final ThreadLocal<Long> START_NANOS = new ThreadLocal<>();
+
     /** Rol esperado del campo, usado para puntuar qué tan bien encaja cada candidato. */
     public enum FieldRole {
         USERNAME(
@@ -91,6 +93,7 @@ public final class SelfHealingLocator {
      * @return el WebElement encontrado (original o reparado)
      */
     public static WebElement resolve(WebDriver driver, By originalLocator, String fieldLabel, FieldRole role) {
+        START_NANOS.set(System.nanoTime());
         WebElement original = safeFindFirst(driver, originalLocator);
         if (original != null && isUsable(original)) {
             report(fieldLabel, originalLocator, null, Collections.emptyList(), false);
@@ -135,6 +138,7 @@ public final class SelfHealingLocator {
      * (texto, id, aria-label, clase) y genera estrategias de localizador alternativas.
      */
     public static WebElement resolveButton(WebDriver driver, By originalLocator, String fieldLabel) {
+        START_NANOS.set(System.nanoTime());
         List<String> keywords = Arrays.stream(fieldLabel.toLowerCase(Locale.ROOT).split("[^\\p{L}\\p{N}]+"))
                 .filter(w -> w.length() >= 4)
                 .collect(Collectors.toList());
@@ -243,6 +247,7 @@ public final class SelfHealingLocator {
      */
     public static WebElement resolveListOption(WebDriver driver, By originalListLocator, String optionText,
                                                String fieldLabel) {
+        START_NANOS.set(System.nanoTime());
         String wanted = normalize(optionText);
         try {
             for (WebElement e : driver.findElements(originalListLocator)) {
@@ -462,10 +467,12 @@ public final class SelfHealingLocator {
 
     private static void report(String fieldLabel, By originalLocator, Candidate chosen,
                                 List<Candidate> evaluatedCandidates, boolean healingTriggered) {
+        long durationMs = START_NANOS.get() == null ? 0 : (System.nanoTime() - START_NANOS.get()) / 1_000_000;
+        START_NANOS.remove();
         if (healingTriggered) {
             AutoHealingManager.recordHealingEvent(fieldLabel,
                     chosen != null ? "SelfHealingLocator " + chosen.strategy + " -> " + chosen.locator : "FAILED",
-                    chosen != null, String.valueOf(originalLocator));
+                    chosen != null, String.valueOf(originalLocator), durationMs);
         }
 
         StringBuilder html = new StringBuilder();
